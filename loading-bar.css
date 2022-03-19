@@ -1,0 +1,23 @@
+.ldBar-label {
+    color: rgb(255, 158, 198);
+    font-family: 'varela round';
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.ldBar.label-center>.ldBar-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -75%);
+}
+
+.ldBar-label:after {
+    content: "%";
+    display: inline;
+}
+
+.ldBar.no-percent .ldBar-label:after {
+    content: "";
+}

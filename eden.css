@@ -1,17 +1,54 @@
 .container {
     display: flex;
+    justify-content: space-around;
     flex-flow: row wrap;
-    width: 90%;
+    width: 95%;
     border: 2px black solid;
 }
 
-.container img {
-    width: 200px;
+.pictures {
+    width: 250px;
     margin: 2px 20px 10px 10px;
+}
+
+.icon {
+    width: 45px;
+    margin: 7px;
 }
 
 .container p {
     font-size: 20px;
     font-weight: bold;
     margin: 15px 20px 0px 20px;
+}
+
+.loadingframe,
+.ldBar {
+    position: absolute;
+    width: fit-content;
+    top: 0px;
+}
+
+#alpaga,
+#girl {
+    display: none;
+    z-index: 3;
+    position: relative;
+    top: 50px;
+    left: -230px;
+    object-fit: cover;
+    height: 60px;
+    object-position: 0% 0;
+}
+
+#girl {
+    left: 227px;
+}
+
+.loading-container {
+    position: relative;
+    justify-content: center;
+    width: 99%;
+    display: flex;
+    text-align: center;
 }
