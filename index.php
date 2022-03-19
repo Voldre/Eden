@@ -4,86 +4,96 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="http://voldre.free.fr/style.css">
     <link rel="stylesheet" href="eden.css">
+  
+  <!--
     <script src="http://voldre.free.fr/Eden/p5.min.js"></script>
     <script src="sketch.js"></script>
+    -->
+
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="loading-bar.css"/>
+<script type="text/javascript" src="loading-bar.js"></script>
 </head>
 
-<body>
+<body onload="load()">
 <a href="../"><button class="root">Retourner sur le site global</button></a>
 
-    <form method="GET">
-    <select name="img">
-    <option value="maps">maps</option>
-    <option value="wallpaper">wallpaper</option>
-    </select>
-    <input type="submit" value="Modifier">
-</form>
-    <h2>Liste des maps</h2>
-    <?php
-    $maplist = array(1=>"Aven",
-        2=>"Monts Calcaires",
-        3=>"Colline tranquille",
-        4=>"Forêt Arc-en-Ciel",
-        5=>"Monts Arides",
-        6=>"Baie Bélouga",
-        7=>"Bourbes",
-        8=>"Vallée des Rois", 
-        9=>"Volcan Avila", 
-        10=>"Plaines Dorées",
-        11=>"Terres des Dunes Éternelles",
-        12=>"Forêt de Delphes",
-        13=>"Pic de Noireflammes",
-        14=>"Marais Décrépits",
-        15=>"Hautes-terres",
-        16=>"Croc Brumeux",
-        19=>"Vallée Feregal",
-        20=>"Désert du Couchant",
-        21=>"Jungle Céleste",
-        22=>"Forêt Ensorcelée",
-        23=>"Crète Diamantée",
-        24=>"Pic du Maëlstrom",
-        25=>"Vallée de la Mort",
-        26=>"Plaines Fleuries",
-        27=>"Falaise des Grands Vents",
-        28=>"Lagune Enchantée",
-        29=>"Côte de Hurlevent",
-        30=>"Jungle du Dieu Serpent",
-        31=>"Île Cerisier ?",
-        32=>"Vallée de Vulcain",
-        33=>"Plaines du Levant",
-        34=>"Royaume Dévasté"
-        /*"Plaines d'Elos",
-        Marina d'Edouard 
-        Royaume Durango 
-        3=>"Croc Brumeux",
-        */
-);
+<div class="loading-container">
+    <img  id="alpaga" src="images/loadingframe/alpaga1.png">
+    <img  id="girl" src="images/loadingframe/alpaga3.png">
 
-    echo "<div class='container'>";
-    foreach($maplist as $key=>$value){
-        echo"<div class='img_block'>";
-        echo "<p>$value</p>";
+    <img class="loadingframe" style="top:5px; z-index:2;" src="images/loadingframe/barloading.png">
+    <div id="loading-jauge" class="ldBar" 
+    data-type="fill" 
+    data-fill-dir="ltr"  
+    data-img="images/loadingframe/bar.png"
+    data-value=0 
+    data-duration=6
+    data-fill-background="rgba(70,70,70,0.1)">
+    </div>
+</div>
+<script type="text/javascript">
 
-        $keyZ = $key;
+    function load(){
+    var jauge = new ldBar("#loading-jauge");
+    jauge.set(100);
 
-        while(strlen($keyZ)<2){
-            $keyZ = "0$key";
-        }
+    console.log(typeof document.getElementById("#alpaga"))
 
-        $img = "maps/s0".$keyZ."m.png";
+    repeat();
 
-    
-        if(isset($_GET["img"])){
-            if($_GET["img"] == "wallpaper"){
-                $img = "loadingframe/loading_".$key.".png";
-            }
-        } 
-        echo "<img src='images/".$img."' />";
-        echo "</div>";
+    console.log(jauge)
     }
-    echo "</div>";
 
-    ?>
+    var interval1, interval2;
+    var timesRun = 0;
+    function repeat() {
+
+        $("#alpaga").fadeIn(900);
+        $("#girl").fadeIn();
+
+        interval1 = setInterval(move1, 200);
+        interval2 = setInterval(move2, 400);
+
+    }
+
+    function move1() {
+        console.log($("#alpaga").css("left"))
+        $("#alpaga").attr('src',"images/loadingframe/alpaga1.png"); 
+        $("#girl").attr('src',"images/loadingframe/alpaga3.png"); 
+        $("#alpaga").css("left", "+=13"); 
+    }
+    function move2() {
+        $("#alpaga").attr('src',"images/loadingframe/alpaga2.png"); 
+        $("#girl").attr('src',"images/loadingframe/alpaga4.png"); 
+        
+        timesRun++;
+
+        // Evolution de la vitesse
+        if(timesRun < 5){
+            $("#alpaga").css("left", "+=3");
+        }
+        else if(timesRun < 10){
+            $("#alpaga").css("left", "+=21"); 
+        }else{ $("#alpaga").css("left", "+=4"); }
+
+        if(timesRun == 13){
+            clearInterval(interval2)
+            clearInterval(interval1)
+            $("#girl").css("display","none"); 
+            $("#alpaga").attr('src',"images/loadingframe/alpaga5.png"); 
+
+            $(".loading-container").fadeOut(2000);
+            setTimeout(() => {
+                document.location = 'database.php';
+            }, 1500);
+        }
+        //document.getElementById("#alpaga").style.src = "images/loadingframe/alpaga2.png";
+    }
+</script>
+
 </body>
 
 </HTML>
