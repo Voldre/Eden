@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Imageset Name="NewKnowledge" Imagefile="NewKnowledge.png" >
+    <Image Name="NewKnowledge" XPos="15" YPos="16" Width="366" Height="472" />
+</Imageset>

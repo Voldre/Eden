@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Imageset Name="worldmapcity" Imagefile="worldmap.png" NativeHorzRes="800" NativeVertRes="600" >
+    <Image Name="CityHover" XPos="41" YPos="6" Width="36" Height="40" />
+    <Image Name="CityHover2" XPos="41" YPos="60" Width="36" Height="40" />
+    <Image Name="CityNormal" XPos="3" YPos="6" Width="36" Height="40" />
+    <Image Name="CityNormal2" XPos="3" YPos="60" Width="36" Height="40" />
+</Imageset>

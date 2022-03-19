@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Imageset Name="KRConsideration" Imagefile="KRConsideration.png" >
+    <Image Name="Img" XPos="0" YPos="0" Width="640" Height="360" />
+</Imageset>
