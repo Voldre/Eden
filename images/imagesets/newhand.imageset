@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Imageset Name="newhand" Imagefile="newhand.png" >
+    <Image Name="Bag" XPos="430" YPos="184" Width="24" Height="32" />
+    <Image Name="LSN" XPos="455" YPos="60" Width="24" Height="24" />
+    <Image Name="Lty" XPos="455" YPos="114" Width="24" Height="24" />
+    <Image Name="SFN" XPos="428" YPos="33" Width="24" Height="24" />
+    <Image Name="SYS" XPos="482" YPos="218" Width="24" Height="32" />
+    <Image Name="Yes" XPos="286" YPos="209" Width="63" Height="16" />
+    <Image Name="Char" XPos="404" YPos="184" Width="24" Height="32" />
+    <Image Name="City" XPos="430" YPos="218" Width="24" Height="32" />
+    <Image Name="Help" XPos="392" YPos="6" Width="33" Height="33" />
+    <Image Name="Mail" XPos="428" YPos="6" Width="24" Height="24" />
+    <Image Name="Rank" XPos="455" YPos="141" Width="24" Height="24" />
+    <Image Name="Team" XPos="378" YPos="184" Width="24" Height="38" />
+    <Image Name="Combo" XPos="428" YPos="60" Width="24" Height="24" />
+    <Image Name="Quest" XPos="246" YPos="213" Width="30" Height="30" />
+    <Image Name="Skill" XPos="404" YPos="218" Width="24" Height="32" />
+    <Image Name="Stall" XPos="11" YPos="133" Width="24" Height="32" />
+    <Image Name="Title" XPos="482" YPos="141" Width="24" Height="24" />
+    <Image Name="Accept" XPos="286" YPos="230" Width="63" Height="16" />
+    <Image Name="Battle" XPos="482" YPos="33" Width="24" Height="24" />
+    <Image Name="Helper" XPos="11" YPos="98" Width="24" Height="32" />
+    <Image Name="Social" XPos="482" YPos="184" Width="24" Height="32" />
+    <Image Name="Achieve" XPos="482" YPos="60" Width="24" Height="24" />
+    <Image Name="Collect" XPos="482" YPos="87" Width="24" Height="24" />
+    <Image Name="Mission" XPos="456" YPos="184" Width="24" Height="32" />
+    <Image Name="Activity" XPos="482" YPos="6" Width="24" Height="24" />
+    <Image Name="Itemmall" XPos="456" YPos="218" Width="24" Height="32" />
+    <Image Name="MallGold" XPos="11" YPos="232" Width="13" Height="14" />
+    <Image Name="Prestige" XPos="455" YPos="6" Width="24" Height="24" />
+    <Image Name="Weakness" XPos="85" YPos="7" Width="20" Height="20" />
+    <Image Name="HonorIcon" XPos="59" YPos="232" Width="14" Height="14" />
+    <Image Name="MallBonus" XPos="27" YPos="232" Width="13" Height="14" />
+    <Image Name="MallPoint" XPos="43" YPos="232" Width="13" Height="14" />
+    <Image Name="Territory" XPos="455" YPos="33" Width="24" Height="24" />
+    <Image Name="HeroIcon01" XPos="11" YPos="213" Width="14" Height="14" />
+    <Image Name="HeroIcon02" XPos="27" YPos="213" Width="14" Height="14" />
+    <Image Name="HeroIcon03" XPos="43" YPos="213" Width="14" Height="14" />
+    <Image Name="HeroIcon04" XPos="59" YPos="213" Width="14" Height="14" />
+    <Image Name="HeroIcon05" XPos="75" YPos="213" Width="14" Height="14" />
+    <Image Name="HeroIcon06" XPos="91" YPos="213" Width="14" Height="14" />
+    <Image Name="HeroIcon07" XPos="107" YPos="213" Width="14" Height="14" />
+    <Image Name="HeroIcon08" XPos="123" YPos="213" Width="14" Height="14" />
+    <Image Name="HeroIcon09" XPos="139" YPos="213" Width="14" Height="14" />
+    <Image Name="MonsterKing" XPos="11" YPos="11" Width="36" Height="36" />
+    <Image Name="Crystalcross" XPos="75" YPos="232" Width="14" Height="14" />
+</Imageset>

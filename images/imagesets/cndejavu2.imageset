@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Imageset Name="CNDejaVu2" Imagefile="CNDejaVu2.png" >
+    <Image Name="ALHover" XPos="411" YPos="33" Width="40" Height="40" />
+    <Image Name="ALPress" XPos="369" YPos="33" Width="40" Height="40" />
+    <Image Name="UpArrow" XPos="329" YPos="361" Width="42" Height="42" />
+    <Image Name="ALNormal" XPos="327" YPos="33" Width="40" Height="40" />
+    <Image Name="MainBase" XPos="158" YPos="292" Width="318" Height="64" />
+    <Image Name="LeftArrow" XPos="281" YPos="361" Width="42" Height="42" />
+    <Image Name="MainBase2" XPos="142" YPos="292" Width="16" Height="64" />
+    <Image Name="NumberLeft" XPos="29" YPos="8" Width="20" Height="20" />
+    <Image Name="RightArrow" XPos="235" YPos="361" Width="42" Height="42" />
+    <Image Name="BottomArrow" XPos="192" YPos="361" Width="42" Height="42" />
+    <Image Name="NumberLeftH" XPos="29" YPos="31" Width="20" Height="20" />
+    <Image Name="NumberLeftP" XPos="29" YPos="54" Width="20" Height="20" />
+    <Image Name="NumberRight" XPos="49" YPos="8" Width="20" Height="20" />
+    <Image Name="NumberRightH" XPos="49" YPos="31" Width="20" Height="20" />
+    <Image Name="NumberRightP" XPos="49" YPos="54" Width="20" Height="20" />
+    <Image Name="NumberLeftMost" XPos="8" YPos="8" Width="20" Height="20" />
+    <Image Name="NumberLeftMostH" XPos="8" YPos="31" Width="20" Height="20" />
+    <Image Name="NumberLeftMostP" XPos="8" YPos="54" Width="20" Height="20" />
+    <Image Name="NumberRightMost" XPos="69" YPos="8" Width="20" Height="20" />
+    <Image Name="NumberRightMostH" XPos="69" YPos="31" Width="20" Height="20" />
+    <Image Name="NumberRightMostP" XPos="69" YPos="54" Width="20" Height="20" />
+</Imageset>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Imageset Name="promotion" Imagefile="promotion.png" NativeHorzRes="800" NativeVertRes="600" >
+    <Image Name="LImage1" XPos="161" YPos="121" Width="30" Height="60" />
+    <Image Name="LImage2" XPos="196" YPos="121" Width="30" Height="60" />
+    <Image Name="LImage3" XPos="246" YPos="125" Width="30" Height="60" />
+    <Image Name="LImage4" XPos="284" YPos="125" Width="30" Height="60" />
+    <Image Name="LImage5" XPos="163" YPos="192" Width="30" Height="40" />
+    <Image Name="LImage6" XPos="194" YPos="182" Width="30" Height="50" />
+    <Image Name="LImage7" XPos="233" YPos="186" Width="40" Height="60" />
+    <Image Name="LImage8" XPos="285" YPos="186" Width="40" Height="60" />
+    <Image Name="LImage9" XPos="177" YPos="239" Width="30" Height="60" />
+    <Image Name="LImage10" XPos="238" YPos="252" Width="40" Height="60" />
+    <Image Name="LImage11" XPos="282" YPos="251" Width="40" Height="60" />
+</Imageset>

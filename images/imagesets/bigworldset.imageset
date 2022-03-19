@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Imageset Name="BigWorldSet" Imagefile="worldmap1.png" >
+    <Image Name="North" XPos="548" YPos="42" Width="243" Height="121" />
+    <Image Name="Center" XPos="261" YPos="151" Width="270" Height="277" />
+    <Image Name="EastSouth" XPos="575" YPos="236" Width="212" Height="215" />
+    <Image Name="WestNorth" XPos="58" YPos="51" Width="154" Height="140" />
+    <Image Name="WestSouth" XPos="62" YPos="312" Width="166" Height="120" />
+</Imageset>
