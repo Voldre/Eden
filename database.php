@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="http://voldre.free.fr/style.css">
     <link rel="stylesheet" href="eden.css">
+
+    <script type="text/javascript" src="three.min.js"></script>
+    <script type="text/javascript" src="MTLLoader.js"></script>
+    <script type="text/javascript" src="OBJLoader.js"></script>
+
+    <script type="text/javascript" src="threeEden.js"></script>
+
 </head>
 
 <body>
@@ -15,8 +22,8 @@
         <a href="database.php?data=items"><li><img src="images/itemIcon/A00016.png" /> Objets</li></a>
         <a href="database.php?data=maps"><li><img src="images/maps/s013m.png" /> Régions</li></a>
         <a href="database.php?data=class"><li><img src="images/skillIcon/E0013.png" /> Classes</li></a>
-        <a href="Gacha_LTE/"><li><img src="gacha_lte.png"  /> Gacha LTE (Jeu)</li></a>
-        <li>Autre</li>
+        <a href="3D.php?data=monster"><li><img src="images/skillIcon/m081.png" /> Monstres</li></a>
+        <a href="3D.php?data=char"><li><img src="images/skillIcon/m321.png" /> Personnages</li></a>
     </ul>
 </div>
 
@@ -66,6 +73,7 @@ $maplist = array(1=>"Aven",
 
 $itemRepository = 'images/itemIcon/';
 $skillRepository = 'images/skillIcon/';
+$monsterRepository = 'images/monster/';
 
 $categorieslist = array(
     "a"=>"Anneaux / Armures",
@@ -95,7 +103,7 @@ if(isset($_GET["data"])){
     <?php
         drawIcons($skillRepository);
     }else if($_GET["data"] == "maps"){
-?>
+    ?>
     <form method="POST" action="database.php?data=maps">
         <select name="img">
         <option value="maps">maps</option>
@@ -125,6 +133,8 @@ if(isset($_GET["data"])){
             echo "<img class='pictures' src='images/".$img."' />";
             echo "</div>";
         }
+    }else if($_GET["data"] == "---"){
+   
     }
 }
 ?>

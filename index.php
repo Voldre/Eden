@@ -24,7 +24,7 @@
     <img  id="alpaga" src="images/loadingframe/alpaga1.png">
     <img  id="girl" src="images/loadingframe/alpaga3.png">
 
-    <img class="loadingframe" style="top:5px; z-index:2;" src="images/loadingframe/barloading.png">
+    <img class="loadingframe" style="top:6px; z-index:2;" src="images/loadingframe/barloading.png">
     <div id="loading-jauge" class="ldBar" 
     data-type="fill" 
     data-fill-dir="ltr"  
