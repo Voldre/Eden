@@ -1,0 +1,20 @@
+newmtl object0010_Material #311_5
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B1162H01B.png
+
+newmtl object0082_02_80
+Kd 1.000000 0.811765 0.662745
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/X616A51.png
+
+newmtl object0109_06_107
+Kd 1.000000 0.811765 0.662745
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B116251.png
+

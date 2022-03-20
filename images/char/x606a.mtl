@@ -1,0 +1,13 @@
+newmtl X606A_3
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/X606AH01B.png
+
+newmtl Standard_4_12
+Kd 1.000000 0.933333 0.729412
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.800000
+map_Kd http://voldre.free.fr/Eden/images/char/B1215H51.png
+

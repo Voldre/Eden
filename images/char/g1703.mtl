@@ -1,0 +1,30 @@
+newmtl object0010_B1703_5
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B1703H01B.png
+
+newmtl object0098_97
+Kd 0.270588 0.000000 0.325490
+Ks 0.270588 0.000000 0.325490
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/
+
+newmtl object0098_100
+Kd 0.270588 0.000000 0.325490
+Ks 0.270588 0.000000 0.325490
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/
+
+newmtl object0103_102
+Kd 1.000000 1.000000 0.000000
+Ks 1.000000 1.000000 0.000000
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/
+
+newmtl object0106_105
+Kd 1.000000 0.000000 0.000000
+Ks 1.000000 0.000000 0.000000
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/
+

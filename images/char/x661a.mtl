@@ -1,0 +1,21 @@
+newmtl object0004_X661A51_2
+Kd 1.000000 0.874510 0.494118
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.600000
+map_Kd http://voldre.free.fr/Eden/images/char/X661A54.png
+
+newmtl object0004_X661A51_430
+Kd 1.000000 0.874510 0.494118
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.600000
+map_Kd http://voldre.free.fr/Eden/images/char/X661A54.png
+
+newmtl object0470_Standard_14_469
+Kd 1.000000 0.913726 0.329412
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.300000
+map_Kd http://voldre.free.fr/Eden/images/char/B1215H51.png
+

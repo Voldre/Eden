@@ -1,0 +1,97 @@
+newmtl object0007_02 - Default_4
+Kd 1.000000 1.000000 1.000000
+Ks 0.900000 0.900000 0.900000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/monster/M60701.png
+
+newmtl object0039_Standard_2_38
+Kd 1.000000 0.968628 0.768628
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/monster/M60751.png
+
+newmtl object0050_02-02_49
+Kd 1.000000 0.968628 0.768628
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/monster/M60755.png
+
+newmtl object0060_02-04_59
+Kd 1.000000 0.968628 0.768628
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/monster/M60755.png
+
+newmtl object0069_02-03_68
+Kd 1.000000 0.968628 0.768628
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/monster/M60755.png
+
+newmtl object0078_03-02_77
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/monster/M60754.png
+
+newmtl object0088_03-03_87
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/monster/M60754.png
+
+newmtl object0096_03-06_95
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/monster/M60754.png
+
+newmtl object0105_03-05_104
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/monster/M60754.png
+
+newmtl object0113_03-04_112
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/monster/M60754.png
+
+newmtl object0096_03-06_120
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/monster/M60754.png
+
+newmtl object0125_03-07_124
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/monster/M60754.png
+
+newmtl object0178_000_176
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/monster/M60752.png
+
+newmtl object0183_03-01_182
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/monster/M60754.png
+

@@ -1,0 +1,150 @@
+newmtl object0004_Material #1466_3
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B1289H01B.png
+
+newmtl object0015_04 - Default_13
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128985.png
+
+newmtl object0015_04 - Default_26
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128985.png
+
+newmtl object0015_04 - Default_30
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128985.png
+
+newmtl object0015_04 - Default_34
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128985.png
+
+newmtl object0015_04 - Default_38
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128985.png
+
+newmtl object0015_04 - Default_42
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128985.png
+
+newmtl object0015_04 - Default_46
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128985.png
+
+newmtl object0015_04 - Default_50
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128985.png
+
+newmtl object0054_01 - DefaultD_52
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.400000
+map_Kd http://voldre.free.fr/Eden/images/char/B128984.png
+
+newmtl object0065_01 - Default_63
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128152.png
+
+newmtl object0054_01 - DefaultD_73
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.400000
+map_Kd http://voldre.free.fr/Eden/images/char/B128984.png
+
+newmtl object0065_01 - Default_76
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128152.png
+
+newmtl object0081_01 - DefaultDD_79
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.400000
+map_Kd http://voldre.free.fr/Eden/images/char/B128984.png
+
+newmtl object0089_Material #1467_87
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128981.png
+
+newmtl object0138_06-012_137
+Kd 1.000000 0.984314 0.807843
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.800000
+map_Kd http://voldre.free.fr/Eden/images/char/B128951.png
+
+newmtl object0149_06-01e_147
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128981.png
+
+newmtl object0166_06-03_164
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128981.png
+
+newmtl object0089_Material #1467_181
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128981.png
+
+newmtl object0166_06-03_184
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128981.png
+
+newmtl object0149_06-01e_187
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128981.png
+
+newmtl object0138_06-012_192
+Kd 1.000000 0.984314 0.807843
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.800000
+map_Kd http://voldre.free.fr/Eden/images/char/B128951.png
+
+newmtl object0081_01 - DefaultDD_194
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.400000
+map_Kd http://voldre.free.fr/Eden/images/char/B128984.png
+

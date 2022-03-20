@@ -1,0 +1,12 @@
+newmtl X675A_5
+Kd 0.592157 0.592157 0.592157
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/X675AH01B.png
+
+newmtl X675A_33
+Kd 0.592157 0.592157 0.592157
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/X675AH01B.png
+

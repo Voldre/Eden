@@ -1,0 +1,12 @@
+newmtl object0008_B1207H01_7
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B1207H01B.png
+
+newmtl object0046_44
+Kd 0.890196 0.596078 0.596078
+Ks 0.890196 0.596078 0.596078
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/
+

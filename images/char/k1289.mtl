@@ -1,0 +1,150 @@
+newmtl object0004_Material #1466_3
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B1289H01B.png
+
+newmtl object0015_06-012_13
+Kd 1.000000 0.984314 0.807843
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.800000
+map_Kd http://voldre.free.fr/Eden/images/char/B128951.png
+
+newmtl object0057_06-01e_55
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128981.png
+
+newmtl object0075_06-03_73
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128981.png
+
+newmtl object0092_Material #1467_90
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128981.png
+
+newmtl object0109_01 - DefaultDD_107
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.400000
+map_Kd http://voldre.free.fr/Eden/images/char/B128984.png
+
+newmtl object0119_01 - DefaultD_117
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.400000
+map_Kd http://voldre.free.fr/Eden/images/char/B128984.png
+
+newmtl object0127_01 - Default_125
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128152.png
+
+newmtl object0139_04 - Default_138
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128985.png
+
+newmtl object0139_04 - Default_149
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128985.png
+
+newmtl object0139_04 - Default_153
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128985.png
+
+newmtl object0139_04 - Default_157
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128985.png
+
+newmtl object0127_01 - Default_159
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128152.png
+
+newmtl object0015_06-012_164
+Kd 1.000000 0.984314 0.807843
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.800000
+map_Kd http://voldre.free.fr/Eden/images/char/B128951.png
+
+newmtl object0139_04 - Default_168
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128985.png
+
+newmtl object0075_06-03_170
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128981.png
+
+newmtl object0139_04 - Default_175
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128985.png
+
+newmtl object0139_04 - Default_179
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128985.png
+
+newmtl object0119_01 - DefaultD_181
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.400000
+map_Kd http://voldre.free.fr/Eden/images/char/B128984.png
+
+newmtl object0139_04 - Default_186
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128985.png
+
+newmtl object0092_Material #1467_188
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128981.png
+
+newmtl object0057_06-01e_191
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B128981.png
+
+newmtl object0109_01 - DefaultDD_194
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.400000
+map_Kd http://voldre.free.fr/Eden/images/char/B128984.png
+

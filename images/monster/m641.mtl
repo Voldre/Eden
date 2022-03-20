@@ -1,0 +1,174 @@
+newmtl object0008_M641_4
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/monster/M64101.png
+
+newmtl object0108_Standard_2_107
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.800000
+map_Kd http://voldre.free.fr/Eden/images/monster/M64151.png
+
+newmtl object0108_Standard_2_121
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.800000
+map_Kd http://voldre.free.fr/Eden/images/monster/M64151.png
+
+newmtl object0108_Standard_2_125
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.800000
+map_Kd http://voldre.free.fr/Eden/images/monster/M64151.png
+
+newmtl object0108_Standard_2_129
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.800000
+map_Kd http://voldre.free.fr/Eden/images/monster/M64151.png
+
+newmtl object0108_Standard_2_133
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.800000
+map_Kd http://voldre.free.fr/Eden/images/monster/M64151.png
+
+newmtl object0108_Standard_2_137
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.800000
+map_Kd http://voldre.free.fr/Eden/images/monster/M64151.png
+
+newmtl object0108_Standard_2_141
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.800000
+map_Kd http://voldre.free.fr/Eden/images/monster/M64151.png
+
+newmtl object0108_Standard_2_145
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.800000
+map_Kd http://voldre.free.fr/Eden/images/monster/M64151.png
+
+newmtl object0150_22_149
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.900000
+map_Kd http://voldre.free.fr/Eden/images/monster/M64152.png
+
+newmtl object0150_22_159
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.900000
+map_Kd http://voldre.free.fr/Eden/images/monster/M64152.png
+
+newmtl object0150_22_163
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.900000
+map_Kd http://voldre.free.fr/Eden/images/monster/M64152.png
+
+newmtl object0150_22_167
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.900000
+map_Kd http://voldre.free.fr/Eden/images/monster/M64152.png
+
+newmtl object0150_22_171
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.900000
+map_Kd http://voldre.free.fr/Eden/images/monster/M64152.png
+
+newmtl object0150_22_175
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.900000
+map_Kd http://voldre.free.fr/Eden/images/monster/M64152.png
+
+newmtl object0150_22_179
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.900000
+map_Kd http://voldre.free.fr/Eden/images/monster/M64152.png
+
+newmtl object0150_22_183
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.900000
+map_Kd http://voldre.free.fr/Eden/images/monster/M64152.png
+
+newmtl object0150_22_187
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.900000
+map_Kd http://voldre.free.fr/Eden/images/monster/M64152.png
+
+newmtl object0150_22_191
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.900000
+map_Kd http://voldre.free.fr/Eden/images/monster/M64152.png
+
+newmtl object0150_22_195
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.900000
+map_Kd http://voldre.free.fr/Eden/images/monster/M64152.png
+
+newmtl object0150_22_199
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.900000
+map_Kd http://voldre.free.fr/Eden/images/monster/M64152.png
+
+newmtl object0150_22_203
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.900000
+map_Kd http://voldre.free.fr/Eden/images/monster/M64152.png
+
+newmtl object0150_22_207
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.900000
+map_Kd http://voldre.free.fr/Eden/images/monster/M64152.png
+
+newmtl object0108_Standard_2_211
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.800000
+map_Kd http://voldre.free.fr/Eden/images/monster/M64151.png
+
+newmtl object0238_Standard_4_235
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/monster/
+

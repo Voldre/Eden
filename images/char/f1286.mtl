@@ -1,0 +1,68 @@
+newmtl F1286_3
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B1286H01B.png
+
+newmtl 03F_9
+Kd 0.541612 0.932462 0.728105
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.444444
+map_Kd http://voldre.free.fr/Eden/images/char/B1286H52.png
+
+newmtl 03Q_31
+Kd 1.000000 1.000000 0.388235
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 1.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B1286H51.png
+
+newmtl 03FQ_54
+Kd 1.000000 1.000000 0.388235
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.700000
+map_Kd http://voldre.free.fr/Eden/images/char/B1286H52.png
+
+newmtl 03_74
+Kd 1.000000 0.517647 0.388235
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B1286H51.png
+
+newmtl 01s_91
+Kd 0.480345 0.921224 0.784659
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.352000
+map_Kd http://voldre.free.fr/Eden/images/char/B1286H52.png
+
+newmtl 02_108
+Kd 1.000000 0.517647 0.388235
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B1286H52.png
+
+newmtl 02_169
+Kd 1.000000 0.517647 0.388235
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B1286H52.png
+
+newmtl 01_172
+Kd 1.000000 0.517647 0.388235
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B1286H52.png
+
+newmtl mesh193material
+Kd 0.650980 0.898039 0.898039
+Ks 0.650980 0.898039 0.898039
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/
+

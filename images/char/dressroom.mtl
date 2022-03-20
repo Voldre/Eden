@@ -1,0 +1,36 @@
+newmtl 2_3
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/F91005.png
+
+newmtl 14 - Default_10
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/F90006.png
+
+newmtl C_27
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/F90006.png
+
+newmtl E_34
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/F90006.png
+
+newmtl D_40
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/F90006.png
+
+newmtl F_46
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/F90006.png
+

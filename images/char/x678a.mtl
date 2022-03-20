@@ -1,0 +1,33 @@
+newmtl X67801_4
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/X678AH01B.png
+
+newmtl mesh208material
+Kd 0.031373 0.239216 0.541176
+Ks 0.031373 0.239216 0.541176
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/
+
+newmtl Standard_2_235
+Kd 0.549020 0.152941 0.776471
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.700000
+map_Kd http://voldre.free.fr/Eden/images/char/B123851.png
+
+newmtl Standard_2_244
+Kd 0.549020 0.152941 0.776471
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.700000
+map_Kd http://voldre.free.fr/Eden/images/char/B123851.png
+
+newmtl Standard_2_247
+Kd 0.549020 0.152941 0.776471
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.700000
+map_Kd http://voldre.free.fr/Eden/images/char/B123851.png
+

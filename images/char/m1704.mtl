@@ -1,0 +1,13 @@
+newmtl M1704_5
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B1704H01B.png
+
+newmtl 02_48
+Kd 1.000000 0.952941 0.435294
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/G0000454.png
+

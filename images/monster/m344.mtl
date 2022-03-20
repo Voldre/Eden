@@ -1,0 +1,30 @@
+newmtl M344_3
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/monster/M34401.png
+
+newmtl Standard3_2_21
+Kd 1.000000 0.701961 0.317647
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/monster/M14256.png
+
+newmtl Standard3_2_56
+Kd 1.000000 0.701961 0.317647
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/monster/M14256.png
+
+newmtl mesh108material
+Kd 0.580392 0.694118 0.101961
+Ks 0.580392 0.694118 0.101961
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/monster/
+
+newmtl M344_135
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/monster/M34401.png
+

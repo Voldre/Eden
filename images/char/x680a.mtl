@@ -1,0 +1,39 @@
+newmtl object0009_X680A_5
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/X680AH01B.png
+
+newmtl object0357_Standard_8_355
+Kd 1.000000 0.917647 0.376471
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/X680A51.png
+
+newmtl object0371_Standeard_8_370
+Kd 1.000000 0.917647 0.376471
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/X680A52.png
+
+newmtl object0380_Standard_2_378
+Kd 1.000000 0.976471 0.400000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B1215H51.png
+
+newmtl object0389_387
+Kd 0.835294 0.603922 0.898039
+Ks 0.835294 0.603922 0.898039
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/
+
+newmtl object0437_435
+Kd 0.690196 0.101961 0.101961
+Ks 0.690196 0.101961 0.101961
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/
+

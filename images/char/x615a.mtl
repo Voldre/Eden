@@ -1,0 +1,25 @@
+newmtl object0013_X615A_5
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/X615AH01B.png
+
+newmtl object0066_65
+Kd 1.000000 1.000000 0.000000
+Ks 1.000000 1.000000 0.000000
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/
+
+newmtl object0144_06_139
+Kd 0.572549 0.933333 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/X615AH55.png
+
+newmtl object0151_150
+Kd 1.000000 0.000000 0.000000
+Ks 1.000000 0.000000 0.000000
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/
+

@@ -1,0 +1,13 @@
+newmtl Material #2_5
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B1163H01B.png
+
+newmtl R_54
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.300000
+map_Kd http://voldre.free.fr/Eden/images/char/B1163H01A.png
+

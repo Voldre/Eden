@@ -1,0 +1,12 @@
+newmtl M034_3
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/monster/M23301.png
+
+newmtl 51_15
+Kd 0.360784 1.000000 0.862745
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/monster/M63052.png
+

@@ -1,0 +1,12 @@
+newmtl X674A_5
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/X668AH01B.png
+
+newmtl mesh136material
+Kd 1.000000 0.000000 0.000000
+Ks 1.000000 0.000000 0.000000
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/
+

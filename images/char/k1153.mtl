@@ -1,0 +1,13 @@
+newmtl mesh1material
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 32.000000
+map_Kd http://voldre.free.fr/Eden/images/char/B1246H01B.png
+
+newmtl 2_8
+Kd 1.000000 0.945098 0.396078
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.800000
+map_Kd http://voldre.free.fr/Eden/images/char/B1215H51.png
+

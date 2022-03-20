@@ -1,0 +1,87 @@
+newmtl object0010_X619_5
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/X619AH01B.png
+
+newmtl object0083_Standard_2_80
+Kd 1.000000 0.976471 0.294118
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/X609A53.png
+
+newmtl object0099_Standard_2D_97
+Kd 1.000000 0.976471 0.294118
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/char/X609A53.png
+
+newmtl object0114_Standard_5_113
+Kd 1.000000 0.827451 0.368627
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/X619A53.png
+
+newmtl object0128_Standard_5x_127
+Kd 1.000000 0.827451 0.368627
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.500000
+map_Kd http://voldre.free.fr/Eden/images/char/X619A53.png
+
+newmtl object0135_133
+Kd 0.835294 0.603922 0.898039
+Ks 0.835294 0.603922 0.898039
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/
+
+newmtl object0152_X619FWDF_151
+Kd 1.000000 0.949020 0.427451
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/X619AH01A.png
+
+newmtl object0152_X619FWDF_172
+Kd 1.000000 0.949020 0.427451
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/X619AH01A.png
+
+newmtl object0188_X619FWDFS_187
+Kd 1.000000 0.949020 0.427451
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/X619AH01A.png
+
+newmtl object0207_X619FWDFSFF_206
+Kd 1.000000 0.949020 0.427451
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/X619AH01A.png
+
+newmtl object0226_X619FWDFF_225
+Kd 1.000000 0.949020 0.427451
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/X619AH01A.png
+
+newmtl object0245_X619FWFDFSFF_244
+Kd 1.000000 0.949020 0.427451
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/X619AH01A.png
+
+newmtl object0264_X619FWDDDF_263
+Kd 1.000000 0.949020 0.427451
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/char/X619AH01A.png
+

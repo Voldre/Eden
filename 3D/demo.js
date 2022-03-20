@@ -105,7 +105,9 @@ function init() {
     camera.lookAt(new THREE.Vector3(0, player.height, 0));
 
     renderer = new THREE.WebGLRenderer();
-    renderer.setSize(1280, 720);
+
+    // Size (width, height) of the canvas
+    renderer.setSize(1152, 648);
 
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.BasicShadowMap;
