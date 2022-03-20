@@ -63,7 +63,11 @@
         console.log($("#alpaga").css("left"))
         $("#alpaga").attr('src',"images/loadingframe/alpaga1.png"); 
         $("#girl").attr('src',"images/loadingframe/alpaga3.png"); 
-        $("#alpaga").css("left", "+=13"); 
+        if(timesRun < 5){
+            $("#alpaga").css("left", "+=8");
+        }else{
+            $("#alpaga").css("left", "+=16.6"); 
+        }
     }
     function move2() {
         $("#alpaga").attr('src',"images/loadingframe/alpaga2.png"); 

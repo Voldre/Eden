@@ -1,0 +1,16 @@
+
+newmtl Material.000001
+Ka 1 1 1
+Kd 0.992157 0.992157 0.992157
+Ks 0.638025 0.46302 0.46302
+d 1
+Ns 10
+map_Kd http://voldre.free.fr/Eden/3D/bird.png
+
+newmtl Material.000694
+Ka 1 1 1
+Kd 0.992157 0.992157 0.992157
+Ks 0.638025 0.46302 0.46302
+d 1
+Ns 10
+map_Kd http://voldre.free.fr/Eden/3D/bird.png
