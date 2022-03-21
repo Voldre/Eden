@@ -1,0 +1,2 @@
+nif obj		-objmtl -flipuv
+$inpath$\$inname$.$outext$

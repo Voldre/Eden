@@ -21,10 +21,9 @@ https://wiki.vg-resource.com/Noesis , Noesis Download : http://www.richwhitehous
 
     <script type="text/javascript" src="threeEden.js"></script>
 </head>
-
+                        <!-- wind loc search = param in URL, on recup la VALUE -->
 <body onload="init(1152, 648)" style="overflow:hidden; text-align:center;">
     <a href="index.php"><button class="root">Retourner au menu d'Eden</button></a>
-
     <select onchange="update()" id="objets">
     <?php
         //$monsterRepository = 'images/monster/';
