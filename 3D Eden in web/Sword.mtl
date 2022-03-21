@@ -1,0 +1,144 @@
+
+newmtl Material.000001
+Ka 0 0 0
+Kd 0.541176 0.694118 1
+Ks 0 0 0
+d 0.3
+Ns 10
+map_Kd C:/Users/Acer/OneDrive - CFAI EURE - ADAMIC/Documents/Eden Eternal Datas/item/model/W14351.dds
+decal textures\Scene Root
+bump textures\Scene Root
+
+newmtl Material.000005
+Ka 0 0 0
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 10
+map_Kd C:/Users/Acer/OneDrive - CFAI EURE - ADAMIC/Documents/Eden Eternal Datas/item/model/W14353.DDS
+decal textures\Scene Root
+bump textures\Scene Root
+
+newmtl Material.000044
+Ka 0 0 0
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 10
+map_Kd C:/Users/Acer/OneDrive - CFAI EURE - ADAMIC/Documents/Eden Eternal Datas/item/model/W14353.DDS
+decal textures\Scene Root
+bump textures\Scene Root
+
+newmtl Material.000083
+Ka 0 0 0
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 10
+map_Kd C:/Users/Acer/OneDrive - CFAI EURE - ADAMIC/Documents/Eden Eternal Datas/item/model/W14353.DDS
+decal textures\Scene Root
+bump textures\Scene Root
+
+newmtl Material.0000c2
+Ka 0 0 0
+Kd 0.541176 0.694118 1
+Ks 0 0 0
+d 0.3
+Ns 10
+map_Kd C:/Users/Acer/OneDrive - CFAI EURE - ADAMIC/Documents/Eden Eternal Datas/item/model/W14351.dds
+decal textures\Scene Root
+bump textures\Scene Root
+
+newmtl Material.0000ca
+Ka 0 0 0
+Kd 0.294118 0.152941 1
+Ks 0 0 0
+d 0.3
+Ns 10
+map_Kd C:/Users/Acer/OneDrive - CFAI EURE - ADAMIC/Documents/Eden Eternal Datas/item/model/W14351.dds
+decal textures\Scene Root
+bump textures\Scene Root
+
+newmtl Material.0000d2
+Ka 0 0 0
+Kd 0.541176 0.694118 1
+Ks 0 0 0
+d 0.5
+Ns 10
+map_Kd C:/Users/Acer/OneDrive - CFAI EURE - ADAMIC/Documents/Eden Eternal Datas/item/model/G0000252.dds
+decal textures\Scene Root
+bump textures\Scene Root
+
+newmtl Material.000102
+Ka 0 0 0
+Kd 1 0.843137 0.505882
+Ks 0 0 0
+d 0
+Ns 10
+map_Kd C:/Users/Acer/OneDrive - CFAI EURE - ADAMIC/Documents/Eden Eternal Datas/item/model/W24751.DDS
+decal textures\Scene Root
+bump textures\Scene Root
+
+newmtl Material.000122
+Ka 0 0 0
+Kd 0.541176 0.505882 1
+Ks 0 0 0
+d 0.5
+Ns 10
+map_Kd C:/Users/Acer/OneDrive - CFAI EURE - ADAMIC/Documents/Eden Eternal Datas/item/model/W14352.DDS
+decal textures\Scene Root
+bump textures\Scene Root
+
+newmtl Material.000142
+Ka 0 0 0
+Kd 0.505882 0.635294 0.960784
+Ks 0 0 0
+d 0.6
+Ns 10
+map_Kd C:/Users/Acer/OneDrive - CFAI EURE - ADAMIC/Documents/Eden Eternal Datas/item/model/W14352.DDS
+decal textures\Scene Root
+bump textures\Scene Root
+
+newmtl Material.000162
+Ka 0 0 0
+Kd 1 0.878431 0.505882
+Ks 0 0 0
+d 1
+Ns 10
+map_Kd C:/Users/Acer/OneDrive - CFAI EURE - ADAMIC/Documents/Eden Eternal Datas/item/model/W14352.DDS
+decal textures\Scene Root
+bump textures\Scene Root
+
+newmtl Material.000182
+Ka 0 0 0
+Kd 0.505882 0.635294 0.960784
+Ks 0 0 0
+d 0.666667
+Ns 10
+map_Kd C:/Users/Acer/OneDrive - CFAI EURE - ADAMIC/Documents/Eden Eternal Datas/item/model/W24751.DDS
+decal textures\Scene Root
+bump textures\Scene Root
+
+newmtl Material.0001a2
+Ka 0 0 0
+Kd 0.505882 0.635294 0.960784
+Ks 0 0 0
+d 0.6
+Ns 10
+map_Kd C:/Users/Acer/OneDrive - CFAI EURE - ADAMIC/Documents/Eden Eternal Datas/item/model/W14352.DDS
+decal textures\Scene Root
+bump textures\Scene Root
+
+newmtl Material.0001e2
+Ka 0.423529 0.0313726 0.533333
+Kd 0.423529 0.0313726 0.533333
+Ks 0.423529 0.0313726 0.533333
+d 1
+Ns 0
+
+newmtl Material.0001fa
+Ka 0.101961 0.694118 0.580392
+Kd 0.101961 0.694118 0.580392
+Ks 0.101961 0.694118 0.580392
+d 1
+Ns 0

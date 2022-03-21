@@ -1,0 +1,40 @@
+newmtl object0008_house_3
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/house/H01001.png
+
+newmtl object0020_Standard_2_18
+Kd 1.000000 0.894118 0.466667
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.600000
+map_Kd http://voldre.free.fr/Eden/images/house/H00151.png
+
+newmtl object0028_3_27
+Kd 1.000000 0.894118 0.466667
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.600000
+map_Kd http://voldre.free.fr/Eden/images/house/H01556.png
+
+newmtl object0097_02_96
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/house/BLACK.png
+
+newmtl object0104_Material #898_101
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/house/H00453.png
+
+newmtl object0104_Material #898_107
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/house/H00453.png
+

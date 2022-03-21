@@ -1,0 +1,31 @@
+newmtl G00003_3
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/items/G0000301.png
+
+newmtl 22_9
+Kd 1.000000 0.917647 0.588235
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/items/G0000253.png
+
+newmtl Standard_2_21
+Kd 1.000000 0.917647 0.588235
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.500000
+map_Kd http://voldre.free.fr/Eden/images/items/G0000251.png
+
+newmtl 22_30
+Kd 1.000000 0.917647 0.588235
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/items/G0000253.png
+
+newmtl mesh33material
+Kd 0.878431 0.776471 0.341176
+Ks 0.878431 0.776471 0.341176
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/
+

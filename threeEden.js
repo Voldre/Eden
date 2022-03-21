@@ -17,7 +17,12 @@ function update() {
     init(1152, 648);
 }
 
-function init(width, height, obj = null) {
+function init(width, height) {
+
+    // Première valeur en paramètre de l'URL
+    console.log(window.location.search.split('=')[1]);
+    folder = window.location.search.split('=')[1];
+
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(90, 1280 / 720, 0.1, 1000);
 
@@ -44,15 +49,13 @@ function init(width, height, obj = null) {
 
     // Model/material loading
 
-    // Variable dans ma liste déroulante <select> OU sélectionnée par la Database
-    if (obj == null) {
-        var myObject = document.getElementById("objets").value;
-    } else { var myObject = obj; }
+    // Variable dans ma liste déroulante <select>
+    var myObject = document.getElementById("objets").value;
 
     //console.log("Objet:" + myObject)
 
     var mtlLoader = new THREE.MTLLoader();
-    mtlLoader.load("http://voldre.free.fr/Eden/images/monster/" + myObject + ".mtl", function(materials) {
+    mtlLoader.load("http://voldre.free.fr/Eden/images/" + folder + "/" + myObject + ".mtl", function(materials) {
 
         materials.preload();
         var objLoader = new THREE.OBJLoader();
@@ -62,7 +65,7 @@ function init(width, height, obj = null) {
         mesh.receiveShadow = true;
         mesh.castShadow = true;
 
-        objLoader.load("http://voldre.free.fr/Eden/images/monster/" + myObject + ".obj", function(mesh) {
+        objLoader.load("http://voldre.free.fr/Eden/images/" + folder + "/" + myObject + ".obj", function(mesh) {
 
             mesh.traverse(function(node) {
                 if (node instanceof THREE.Mesh) {
@@ -75,7 +78,9 @@ function init(width, height, obj = null) {
             scene.add(mesh);
 
             // Position de notre objet
-            mesh.position.set(-0.2, 0.25, -2);
+            if (folder != "items") {
+                mesh.position.set(-0.2, 0.25, -2);
+            } else { mesh.position.set(0, 1.3, -3) }
 
             // Angles de notre objet
             mesh.rotation.y = 0; // Math.PI / 6;

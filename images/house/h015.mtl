@@ -1,0 +1,166 @@
+newmtl object0008_house_4
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/house/H01501.png
+
+newmtl object0020_25_19
+Kd 0.631373 1.000000 0.603922
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/house/H01553.png
+
+newmtl object0029_26_28
+Kd 0.631373 1.000000 0.603922
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/house/H01553.png
+
+newmtl object0035_23_34
+Kd 0.227451 0.552941 0.098039
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/house/H01551.png
+
+newmtl object0045_24_44
+Kd 0.631373 1.000000 0.603922
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/house/H01553.png
+
+newmtl object0050_05_48
+Kd 0.223529 1.000000 0.223529
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/house/H01552.png
+
+newmtl object0060_Standard_3_58
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/house/H01552.png
+
+newmtl object0068_b_fxa0055_66
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 1.200000
+map_Kd http://voldre.free.fr/Eden/images/house/H01555.png
+
+newmtl object0078_a_fxa0055_76
+Kd 0.803922 0.976471 0.764706
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 1.200000
+map_Kd http://voldre.free.fr/Eden/images/house/H01555.png
+
+newmtl object0068_b_fxa0055_81
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 1.200000
+map_Kd http://voldre.free.fr/Eden/images/house/H01555.png
+
+newmtl object0078_a_fxa0055_84
+Kd 0.803922 0.976471 0.764706
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 1.200000
+map_Kd http://voldre.free.fr/Eden/images/house/H01555.png
+
+newmtl object0090_Standard_10_89
+Kd 0.188235 0.650980 0.164706
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/house/H01551.png
+
+newmtl object0097_10_96
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/house/H01553.png
+
+newmtl object0103_11_102
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/house/H01553.png
+
+newmtl object0109_13_108
+Kd 0.631373 1.000000 0.603922
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/house/H01553.png
+
+newmtl object0115_15_114
+Kd 0.631373 1.000000 0.603922
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/house/H01553.png
+
+newmtl object0121_16_120
+Kd 0.364706 0.694118 0.098039
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/house/H01551.png
+
+newmtl object0130_17_129
+Kd 0.529412 0.870588 0.164706
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/house/H01553.png
+
+newmtl object0136_28_135
+Kd 0.756863 0.988235 0.603922
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/house/H01553.png
+
+newmtl object0181_Standard_2_179
+Kd 1.000000 0.894118 0.466667
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.600000
+map_Kd http://voldre.free.fr/Eden/images/house/H00151.png
+
+newmtl object0188_3_187
+Kd 1.000000 0.894118 0.466667
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.600000
+map_Kd http://voldre.free.fr/Eden/images/house/H01556.png
+
+newmtl object0196_Standard_18_195
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/house/BLACK.png
+
+newmtl object0226_02_223
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/house/H00453.png
+
+newmtl object0226_02_229
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/house/H00453.png
+

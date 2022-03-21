@@ -1,0 +1,75 @@
+newmtl object0008_W171_5
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/items/W17101.png
+
+newmtl object0008_W171_15
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/items/W17101.png
+
+newmtl object0046_Standard_7_44
+Kd 0.784314 0.466667 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/items/G0000251.png
+
+newmtl object0057_Standard_8_56
+Kd 0.905882 0.270588 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/W17152.png
+
+newmtl object0070_Standard_D8_69
+Kd 0.854902 0.270588 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.740741
+map_Kd http://voldre.free.fr/Eden/images/items/W17152.png
+
+newmtl object0081_StanAdard_D8_80
+Kd 0.592157 0.262745 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.740741
+map_Kd http://voldre.free.fr/Eden/images/items/W17152.png
+
+newmtl object0046_Standard_7_88
+Kd 0.784314 0.466667 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/items/G0000251.png
+
+newmtl object0046_Standard_7_92
+Kd 0.784314 0.466667 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/items/G0000251.png
+
+newmtl object0046_Standard_7_96
+Kd 0.784314 0.466667 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/items/G0000251.png
+
+newmtl object0046_Standard_7_100
+Kd 0.784314 0.466667 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/items/G0000251.png
+
+newmtl object0111_110
+Kd 0.603922 0.843137 0.898039
+Ks 0.603922 0.843137 0.898039
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/
+
+newmtl object0114_113
+Kd 0.345098 0.780392 0.882353
+Ks 0.345098 0.780392 0.882353
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/
+
