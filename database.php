@@ -25,7 +25,7 @@
         <a href="3D.php?data=monster"><li><img src="images/skillIcon/m081.png" /> Monstres</li></a>
         <a href="3D.php?data=char"><li><img src="images/skillIcon/m321.png" /> Costumes (RGB)</li></a>
         <a href="3D.php?data=house"><li><img src="images/itemIcon/I00466.png" /> Maisons</li></a>
-        <a href="3D.php?data=items"><li><img src="images/itemIcon/w25502.png" /> Equipements</li></a>
+        <a href="3D.php?data=items"><li><img src="images/itemIcon/w25502.png" /> Armements</li></a>
     </ul>
 </div>
  
