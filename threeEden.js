@@ -51,8 +51,7 @@ function init(width, height) {
 
     // Variable dans ma liste déroulante <select>
     var myObject = document.getElementById("objets").value;
-
-    //console.log("Objet:" + myObject)
+    console.log("Objet:" + myObject)
 
     var mtlLoader = new THREE.MTLLoader();
     mtlLoader.load("http://voldre.free.fr/Eden/images/" + folder + "/" + myObject + ".mtl", function(materials) {
@@ -80,12 +79,12 @@ function init(width, height) {
             // Position de notre objet
             if (folder != "items") {
                 mesh.position.set(-0.2, 0.25, -2);
-            } else { mesh.position.set(0, 1.3, -3) }
+            } else { mesh.position.set(0, 1.1, -3.6) }
 
             // Angles de notre objet
             mesh.rotation.y = 0; // Math.PI / 6;
             mesh.rotation.x = -Math.PI / 2;
-            mesh.rotation.z = Math.PI / 1.8; // Pour qu'il regarde vers nous
+            mesh.rotation.z = Math.PI / 1.4; // Pour qu'il regarde vers nous
         });
 
     });
@@ -139,9 +138,11 @@ function animate() {
 
     // Rotation de la caméra
     if (keyboard[37]) { // left arrow key
+        $('#objets').blur();
         camera.rotation.y -= player.turnSpeed;
     }
     if (keyboard[39]) { // right arrow key
+        $('#objets').blur();
         camera.rotation.y += player.turnSpeed;
     }
 
@@ -152,6 +153,14 @@ function animate() {
     if (keyboard[69]) { // E
         scene.children[3].rotation.y -= 0.01;
     }
+    if (keyboard[38]) { // Top Arrow
+        $('#objets').focus();
+    }
+    if (keyboard[40]) { // Bottom Arrow
+        $('#objets').focus();
+    }
+
+
 
     renderer.render(scene, camera);
 }

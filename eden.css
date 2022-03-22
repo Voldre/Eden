@@ -69,7 +69,8 @@ li {
     background-size: cover;
 }
 
-li img {
+li img,
+.iconImg {
     vertical-align: middle;
     margin: 5px;
     margin-top: 11px;
