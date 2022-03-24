@@ -1,7 +1,35 @@
+::-webkit-scrollbar {
+    width: 22px;
+    height: 22px;
+    opacity: 0.2;
+}
+
+::-webkit-scrollbar-thumb {
+    background-image: url("images/scrollPicture.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.2;
+    height: 50px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px darkslategrey;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px darkslategrey;
+    border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    box-shadow: inset 0 0 5px grey;
+    opacity: 1;
+}
+
 .container {
     display: flex;
     justify-content: space-around;
     flex-flow: row wrap;
+    margin: 1%;
     width: 95%;
     border: 2px black solid;
 }
@@ -53,6 +81,11 @@
     text-align: center;
 }
 
+a {
+    color: wheat;
+    text-decoration: none;
+}
+
 li {
     display: inline-block;
     text-align: left;
@@ -77,4 +110,54 @@ li img,
     display: inline;
     width: 50px;
     height: 50px;
+}
+
+.mapIcon {
+    opacity: 0.7;
+    width: 40px;
+    height: 40px;
+    float: right;
+}
+
+.mapIcon:hover {
+    opacity: 1;
+}
+
+.continent {
+    min-width: 700px;
+    position: relative;
+    text-align: center;
+}
+
+.point {
+    position: absolute;
+    width: 34px;
+    height: 36px;
+    border: none;
+    background-image: url("images/mapIcon_1.png");
+}
+
+.point:hover {
+    background-image: url("images/mapIcon_2.png");
+}
+
+.point:hover .name {
+    display: block;
+}
+
+.point .name {
+    position: absolute;
+    z-index: 1;
+    top: 16px;
+    left: 16px;
+    display: none;
+    background-image: none;
+    background-color: rgba(40, 40, 40, 1);
+    border: 2px grey solid;
+    min-width: 80px;
+    max-width: 250px;
+    font-size: 16px;
+    font-weight: 0;
+    margin: 1px;
+    color: wheat;
 }
