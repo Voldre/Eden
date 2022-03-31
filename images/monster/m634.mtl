@@ -2,12 +2,12 @@ newmtl M634_3
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/M63401.png
+map_Kd M63401.DDS
 
 newmtl 31_15
 Kd 1.000000 1.000000 0.427451
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.800000
-map_Kd http://voldre.free.fr/Eden/images/monster/M15851.png
+map_Kd M15851.dds
 

@@ -87,6 +87,9 @@ $categorieslist = array(
     "m"=>"Ennemis",
     "n"=>"Gestes",
     "q"=>"Objets de quêtes (Quêtes de guildes, Quêtes de livres)",
+    "x"=>"Classes",
+    "x"=>"Classes",
+    "y"=>"Passifs des personnages",
     "w"=>"Armement (Armes, Boucliers)",
 );
 
@@ -158,6 +161,9 @@ if(isset($_GET["data"])){
    
     <?php
     }
+}else if(isset($_GET["map"])){
+    
+
 }
 ?>
 </div>

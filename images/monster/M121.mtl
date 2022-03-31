@@ -2,11 +2,11 @@ newmtl M121_3
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/M12101.png
+map_Kd M12101.dds
 
 newmtl M12162_58
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/M12162.png
+map_Kd M12162.dds
 

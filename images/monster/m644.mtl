@@ -3,11 +3,11 @@ Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.900000
-map_Kd http://voldre.free.fr/Eden/images/monster/M64152.png
+map_Kd M64152.dds
 
 newmtl M644_15
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/M64401.png
+map_Kd M64401.DDS
 

@@ -2,53 +2,53 @@ newmtl object0008_7
 Kd 0.682353 0.729412 0.796079
 Ks 0.682353 0.729412 0.796079
 Ns 0.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/
+map_Kd 
 
 newmtl object0008_14
 Kd 0.682353 0.729412 0.796079
 Ks 0.682353 0.729412 0.796079
 Ns 0.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/
+map_Kd 
 
 newmtl object0024_M331_20
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/M33101.png
+map_Kd M33101.DDS
 
 newmtl object0008_33
 Kd 0.682353 0.729412 0.796079
 Ks 0.682353 0.729412 0.796079
 Ns 0.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/
+map_Kd 
 
 newmtl object0008_35
 Kd 0.682353 0.729412 0.796079
 Ks 0.682353 0.729412 0.796079
 Ns 0.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/
+map_Kd 
 
 newmtl object0046_45
 Kd 0.525490 0.023529 0.023529
 Ks 0.525490 0.023529 0.023529
 Ns 0.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/
+map_Kd 
 
 newmtl object0053_52
 Kd 0.109804 0.109804 0.694118
 Ks 0.109804 0.109804 0.694118
 Ns 0.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/
+map_Kd 
 
 newmtl object0061_60
 Kd 0.878431 0.776471 0.341176
 Ks 0.878431 0.776471 0.341176
 Ns 0.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/
+map_Kd 
 
 newmtl object0064_63
 Kd 0.023529 0.525490 0.023529
 Ks 0.023529 0.525490 0.023529
 Ns 0.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/
+map_Kd 
 

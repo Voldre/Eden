@@ -2,11 +2,11 @@ newmtl M270_3
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/M27001.png
+map_Kd M27001.DDS
 
 newmtl M270_60
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/M27001.png
+map_Kd M27001.DDS
 

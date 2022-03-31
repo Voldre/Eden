@@ -1,0 +1,257 @@
+newmtl object0007_W202_4
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/items/W29501.png
+
+newmtl object0041_Standard_23_40
+Kd 1.000000 0.752941 0.360784
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/items/W63153.png
+
+newmtl object0068_Standard_18_67
+Kd 1.000000 0.525490 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/S29551.png
+
+newmtl object0082_StanEdard_18_81
+Kd 1.000000 0.498039 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/S29551.png
+
+newmtl object0093_Stan2Edard_18_92
+Kd 0.984314 0.592157 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/S29551.png
+
+newmtl object0104_Standard_18W_103
+Kd 1.000000 0.525490 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/S29551.png
+
+newmtl object0110_109
+Kd 0.843137 1.000000 0.000000
+Ks 0.843137 1.000000 0.000000
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/
+
+newmtl object0153_152
+Kd 0.000000 1.000000 0.662745
+Ks 0.000000 1.000000 0.662745
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/
+
+newmtl object0041_Standard_23_181
+Kd 1.000000 0.752941 0.360784
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/items/W63153.png
+
+newmtl object0093_Stan2Edard_18_204
+Kd 0.984314 0.592157 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/S29551.png
+
+newmtl object0082_StanEdard_18_211
+Kd 1.000000 0.498039 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/S29551.png
+
+newmtl object0104_Standard_18W_218
+Kd 1.000000 0.525490 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/S29551.png
+
+newmtl object0068_Standard_18_225
+Kd 1.000000 0.525490 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/S29551.png
+
+newmtl object0110_227
+Kd 0.843137 1.000000 0.000000
+Ks 0.843137 1.000000 0.000000
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/
+
+newmtl object0153_269
+Kd 0.000000 1.000000 0.662745
+Ks 0.000000 1.000000 0.662745
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/
+
+newmtl object0272_271
+Kd 0.000000 1.000000 0.439216
+Ks 0.000000 1.000000 0.439216
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/
+
+newmtl object0327_Standard_19_324
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/W29954.png
+
+newmtl object0348_StanFdard_19_347
+Kd 0.992157 0.427451 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/G0000251.png
+
+newmtl object0357_Standard_219_355
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/W29954.png
+
+newmtl object0371_Standeard_19_369
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/W29954.png
+
+newmtl object0371_Standeard_19_383
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/W29954.png
+
+newmtl object0357_Standard_219_386
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/W29954.png
+
+newmtl object0327_Standard_19_389
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/W29954.png
+
+newmtl object0398_StanFdRard_19_397
+Kd 0.545098 0.250980 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/W29555.png
+
+newmtl object0414_StRanFdRard_19_413
+Kd 0.992157 0.427451 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/W33152.png
+
+newmtl object0357_Standard_219_421
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/W29954.png
+
+newmtl object0371_Standeard_19_424
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/W29954.png
+
+newmtl object0327_Standard_19_427
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/W29954.png
+
+newmtl object0414_StRanFdRard_19_435
+Kd 0.992157 0.427451 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/W33152.png
+
+newmtl object0398_StanFdRard_19_442
+Kd 0.545098 0.250980 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/W29555.png
+
+newmtl object0348_StanFdard_19_449
+Kd 0.992157 0.427451 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/G0000251.png
+
+newmtl object0453_Standard_16_451
+Kd 1.000000 0.415686 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/items/G0000251.png
+
+newmtl object0458_455
+Kd 0.549020 0.345098 0.882353
+Ks 0.549020 0.345098 0.882353
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/
+
+newmtl object0461_460
+Kd 0.988235 0.000000 0.000000
+Ks 0.988235 0.000000 0.000000
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/
+
+newmtl object0466_Standard_2_464
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/items/W29453.png
+
+newmtl object0493_Standard_24_477
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/items/w26851.png
+
+newmtl object0466_Standard_2_498
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/items/W29453.png
+
+newmtl object0466_Standard_2_501
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/items/W29453.png
+
+newmtl object0466_Standard_2_504
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/items/W29453.png
+

@@ -2,11 +2,11 @@ newmtl 01 - Default_3
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/M29301.png
+map_Kd M29301.dds
 
 newmtl 01 - Default_51
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/M29301.png
+map_Kd M29301.dds
 

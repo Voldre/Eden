@@ -1,0 +1,70 @@
+newmtl W269_5
+Kd 0.572549 0.572549 0.843137
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/W26901.png
+
+newmtl 3_16
+Kd 0.749020 1.000000 0.980392
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+d 0.100000
+map_Kd http://voldre.free.fr/Eden/images/items/W24952.png
+
+newmtl 4_28
+Kd 0.223529 1.000000 0.937255
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+d 0.500000
+map_Kd http://voldre.free.fr/Eden/images/items/W24953.png
+
+newmtl 4_37
+Kd 0.223529 1.000000 0.937255
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+d 0.500000
+map_Kd http://voldre.free.fr/Eden/images/items/W24953.png
+
+newmtl 42_40
+Kd 0.223529 1.000000 0.937255
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+d 0.500000
+map_Kd http://voldre.free.fr/Eden/images/items/W24953.png
+
+newmtl 42_48
+Kd 0.223529 1.000000 0.937255
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+d 0.500000
+map_Kd http://voldre.free.fr/Eden/images/items/W24953.png
+
+newmtl 42_51
+Kd 0.223529 1.000000 0.937255
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+d 0.500000
+map_Kd http://voldre.free.fr/Eden/images/items/W24953.png
+
+newmtl 4_54
+Kd 0.223529 1.000000 0.937255
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+d 0.500000
+map_Kd http://voldre.free.fr/Eden/images/items/W24953.png
+
+newmtl 2_57
+Kd 0.690196 1.000000 0.976471
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+d 0.360000
+map_Kd http://voldre.free.fr/Eden/images/items/W63252.png
+
+newmtl 3_66
+Kd 0.749020 1.000000 0.980392
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+d 0.100000
+map_Kd http://voldre.free.fr/Eden/images/items/W24952.png
+

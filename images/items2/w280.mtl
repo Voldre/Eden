@@ -1,0 +1,80 @@
+newmtl object0012_W280_8
+Kd 0.992157 0.992157 0.992157
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/items/W28001.png
+
+newmtl object0025_1_24
+Kd 1.000000 0.450980 0.301961
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/items/G0000453.png
+
+newmtl object0042_1d_41
+Kd 1.000000 0.450980 0.301961
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.500000
+map_Kd http://voldre.free.fr/Eden/images/items/G0000751.png
+
+newmtl object0065_1de_64
+Kd 1.000000 0.450980 0.301961
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/G0000751.png
+
+newmtl object0086_1dsa_85
+Kd 1.000000 0.450980 0.301961
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/G0000751.png
+
+newmtl object0107_1ds_106
+Kd 1.000000 0.450980 0.301961
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/G0000751.png
+
+newmtl object0128_1dew_127
+Kd 1.000000 0.450980 0.301961
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/W28051.png
+
+newmtl object0150_1dw_149
+Kd 1.000000 0.450980 0.301961
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.500000
+map_Kd http://voldre.free.fr/Eden/images/items/W28051.png
+
+newmtl object0171_1dsaw_170
+Kd 1.000000 0.450980 0.301961
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/W28051.png
+
+newmtl object0192_1dsw_191
+Kd 1.000000 0.450980 0.301961
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/W28051.png
+
+newmtl object0025_1_209
+Kd 1.000000 0.450980 0.301961
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/items/G0000453.png
+
+newmtl object0219_217
+Kd 0.768628 0.345098 0.882353
+Ks 0.768628 0.345098 0.882353
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/items/
+

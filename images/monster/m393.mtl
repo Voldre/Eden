@@ -3,24 +3,24 @@ Kd 1.000000 0.847059 0.439216
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/S0115103.png
+map_Kd S0115103.dds
 
 newmtl 01-05_40
 Kd 1.000000 0.792157 0.592157
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/M24556.png
+map_Kd M24556.dds
 
 newmtl mesh48material
 Kd 0.890196 0.596078 0.596078
 Ks 0.890196 0.596078 0.596078
 Ns 0.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/
+map_Kd 
 
 newmtl M393_96
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/M39301.png
+map_Kd M39301.dds
 

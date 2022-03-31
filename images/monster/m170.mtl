@@ -2,11 +2,11 @@ newmtl Standard_24_3
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/M17001.png
+map_Kd M17001.dds
 
 newmtl Standard_24_43
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/M17001.png
+map_Kd M17001.dds
 

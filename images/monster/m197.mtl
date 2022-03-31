@@ -2,11 +2,11 @@ newmtl M197_3
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/M19701.png
+map_Kd M19701.dds
 
 newmtl M197_43
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/M19701.png
+map_Kd M19701.dds
 

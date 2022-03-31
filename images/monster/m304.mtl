@@ -2,23 +2,23 @@ newmtl M304_3
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/M30401.png
+map_Kd M30401.dds
 
 newmtl M304_70
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/M30401.png
+map_Kd M30401.dds
 
 newmtl 02_88
 Kd 0.792157 0.541176 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/m30451.png
+map_Kd m30451.DDS
 
 newmtl 02_97
 Kd 0.792157 0.541176 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/m30451.png
+map_Kd m30451.DDS
 

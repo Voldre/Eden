@@ -1,0 +1,13 @@
+newmtl W0217_4
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/items/W021701.png
+
+newmtl 07 - Default 2_10
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.700000
+map_Kd http://voldre.free.fr/Eden/images/items/W021701.png
+

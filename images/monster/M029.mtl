@@ -2,11 +2,11 @@ newmtl M029_3
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/M02901.png
+map_Kd M02901.DDS
 
 newmtl M029_59
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd http://voldre.free.fr/Eden/images/monster/M02901.png
+map_Kd M02901.DDS
 

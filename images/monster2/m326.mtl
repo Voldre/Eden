@@ -1,0 +1,12 @@
+newmtl M326_4
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/monster/M32601.png
+
+newmtl Standard_4_42
+Kd 1.000000 0.807843 0.317647
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/monster/M32652.png
+
