@@ -54,6 +54,7 @@ function init(width, height) {
     console.log("Objet:" + myObject)
 
     var mtlLoader = new THREE.MTLLoader();
+    mtlLoader.setMaterialOptions({ ignoreZeroRGBs: true });
     mtlLoader.load("http://voldre.free.fr/Eden/images/" + folder + "/" + myObject + ".mtl", function(materials) {
 
         materials.preload();

@@ -13,7 +13,7 @@ https://wiki.vg-resource.com/Noesis , Noesis Download : http://www.richwhitehous
     <link rel="stylesheet" href="http://voldre.free.fr/style.css">
     <link rel="stylesheet" href="http://voldre.free.fr/Eden/eden.css">
 
-    <script src="jquery-3.6.0.min.js"></script>
+    <!--<script src="jquery-3.6.0.min.js"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <meta charset="utf-8">

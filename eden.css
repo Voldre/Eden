@@ -1,3 +1,7 @@
+body {
+    cursor: url('images/cursor.png'), auto;
+}
+
 ::-webkit-scrollbar {
     width: 22px;
     height: 22px;
@@ -139,6 +143,7 @@ li img,
 
 .point:hover {
     background-image: url("images/mapIcon_2.png");
+    cursor: url('images/cursor_tp.png'), auto;
 }
 
 .point:hover .name {
