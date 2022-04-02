@@ -65,6 +65,7 @@ https://wiki.vg-resource.com/Noesis , Noesis Download : http://www.richwhitehous
                 if(UrlExists("http://voldre.free.fr/Eden/images/itemIcon/"+letter[i]+file+"01.png")){
                     document.getElementById("iconPic").style.visibility = "visible";
                     document.getElementById("iconPic").src = "http://voldre.free.fr/Eden/images/itemIcon/"+letter[i]+file+"01.png";
+                    break;
                 }
             }
         }
