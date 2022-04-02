@@ -2,11 +2,11 @@ newmtl object0071_M253_67
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd M25301.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M25301.png
 
 newmtl object0071_M253_80
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd M25301.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M25301.png
 

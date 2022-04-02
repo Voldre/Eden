@@ -3,445 +3,445 @@ Kd 1.000000 0.505882 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M60751.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M60751.png
 
 newmtl object0028_7_25
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43451.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43451.png
 
 newmtl object0028_7_36
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43451.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43451.png
 
 newmtl object0042_4_41
 Kd 0.901961 0.368627 0.733333
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M60751.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M60751.png
 
 newmtl object0048_5_47
 Kd 0.878431 0.529412 0.890196
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43456.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43456.png
 
 newmtl object0055_6_53
 Kd 0.882353 0.223529 0.800000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43451.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43451.png
 
 newmtl object0064_Material #5_63
 Kd 1.000000 0.215686 0.796079
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43455.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43455.png
 
 newmtl object0072_58_71
 Kd 1.000000 0.560784 0.858824
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43457.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43457.png
 
 newmtl object0080_Standard_10_79
 Kd 0.929412 0.400000 0.815686
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43456.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43456.png
 
 newmtl object0086_9_85
 Kd 1.000000 0.447059 0.760784
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M60751.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M60751.png
 
 newmtl object0116_24_114
 Kd 1.000000 0.862745 0.105882
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.800000
-map_Kd M43459.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43459.png
 
 newmtl object0162_161
 Kd 0.423529 0.031373 0.533333
 Ks 0.423529 0.031373 0.533333
 Ns 0.000000
-map_Kd 
+map_Kd http://voldre.free.fr/Eden/images/monster/
 
 newmtl object0169_168
 Kd 0.443137 0.525490 0.023529
 Ks 0.443137 0.525490 0.023529
 Ns 0.000000
-map_Kd 
+map_Kd http://voldre.free.fr/Eden/images/monster/
 
 newmtl object0180_Standard_2_178
 Kd 0.901961 0.368627 0.733333
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd M60751.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M60751.png
 
 newmtl object0186_Material #8_183
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43454.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43454.png
 
 newmtl object0193_192
 Kd 0.031373 0.431373 0.525490
 Ks 0.031373 0.431373 0.525490
 Ns 0.000000
-map_Kd 
+map_Kd http://voldre.free.fr/Eden/images/monster/
 
 newmtl object0216_Standard_22_213
 Kd 1.000000 0.321569 0.945098
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d -0.003750
-map_Kd M43454.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43454.png
 
 newmtl object0222_Standard_21_221
 Kd 1.000000 0.380392 0.729412
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M60751.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M60751.png
 
 newmtl object0228_5-8_226
 Kd 1.000000 0.321569 0.945098
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d -0.003750
-map_Kd M43452.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43452.png
 
 newmtl object0234_5-1_232
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43451.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43451.png
 
 newmtl object0241_Standard_23_240
 Kd 0.917647 0.400000 0.850980
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M63356.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M63356.png
 
 newmtl object0234_5-1_247
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43451.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43451.png
 
 newmtl object0253_5-2_252
 Kd 0.917647 0.400000 0.850980
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M63356.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M63356.png
 
 newmtl object0259_5-3_258
 Kd 0.917647 0.400000 0.850980
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43456.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43456.png
 
 newmtl object0277_5-4_276
 Kd 0.949020 0.635294 0.909804
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43456.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43456.png
 
 newmtl object0283_5-5_281
 Kd 0.917647 0.400000 0.850980
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43356.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43356.png
 
 newmtl object0283_5-5_289
 Kd 0.917647 0.400000 0.850980
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43356.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43356.png
 
 newmtl object0295_5-6_294
 Kd 0.917647 0.400000 0.850980
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43455.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43455.png
 
 newmtl object0301_5-7_300
 Kd 0.917647 0.400000 0.850980
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M60751.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M60751.png
 
 newmtl object0308_Material #1_306
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43451.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43451.png
 
 newmtl object0308_Material #1_313
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43451.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43451.png
 
 newmtl object0330_Material #2_328
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43453.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43453.png
 
 newmtl object0338_79_336
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43453.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43453.png
 
 newmtl object0330_Material #2_343
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43453.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43453.png
 
 newmtl object0348_80_346
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43453.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43453.png
 
 newmtl object0355_5-10_353
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43451.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43451.png
 
 newmtl object0355_5-10_360
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43451.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43451.png
 
 newmtl object0366_510_365
 Kd 0.917647 0.400000 0.850980
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43455.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43455.png
 
 newmtl object0372_511_371
 Kd 0.917647 0.400000 0.850980
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43457.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43457.png
 
 newmtl object0378_4_377
 Kd 0.901961 0.368627 0.733333
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M60751.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M60751.png
 
 newmtl object0384_4-2_383
 Kd 0.901961 0.254902 0.811765
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M14263.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M14263.png
 
 newmtl object0393_Standard_24_392
 Kd 0.929412 0.584314 0.862745
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43455.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43455.png
 
 newmtl object0399_4-3_398
 Kd 0.972549 0.584314 0.862745
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43457.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43457.png
 
 newmtl object0405_4-4_404
 Kd 0.898039 0.337255 0.866667
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43457.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43457.png
 
 newmtl object0411_44_410
 Kd 0.988235 0.564706 0.835294
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43356.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43356.png
 
 newmtl object0418_57_417
 Kd 0.976471 0.290196 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43356.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43356.png
 
 newmtl object0424_45_423
 Kd 0.984314 0.564706 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43356.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43356.png
 
 newmtl object0430_46_429
 Kd 0.984314 0.564706 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43356.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43356.png
 
 newmtl object0436_Material #4_435
 Kd 1.000000 0.172549 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43356.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43356.png
 
 newmtl object0442_55_441
 Kd 0.968628 0.349020 0.725490
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43458.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43458.png
 
 newmtl object0442_55_449
 Kd 0.968628 0.349020 0.725490
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43458.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43458.png
 
 newmtl object0467_Material #7_465
 Kd 0.929412 0.400000 0.921569
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43455.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43455.png
 
 newmtl object0475_21_474
 Kd 0.952941 0.690196 0.870588
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43451.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43451.png
 
 newmtl object0494_2-11_492
 Kd 0.929412 0.400000 0.921569
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43455.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43455.png
 
 newmtl object0502_22_501
 Kd 0.952941 0.690196 0.870588
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43451.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43451.png
 
 newmtl object0494_2-11_518
 Kd 0.929412 0.400000 0.921569
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43455.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43455.png
 
 newmtl object0502_22_523
 Kd 0.952941 0.690196 0.870588
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43451.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43451.png
 
 newmtl object0494_2-11_538
 Kd 0.929412 0.400000 0.921569
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43455.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43455.png
 
 newmtl object0502_22_543
 Kd 0.952941 0.690196 0.870588
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43451.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43451.png
 
 newmtl object0549_212_548
 Kd 0.952941 0.690196 0.870588
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43451.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43451.png
 
 newmtl object0570_569
 Kd 1.000000 1.000000 0.000000
 Ks 1.000000 1.000000 0.000000
 Ns 0.000000
-map_Kd 
+map_Kd http://voldre.free.fr/Eden/images/monster/
 
 newmtl object0573_572
 Kd 1.000000 0.000000 0.000000
 Ks 1.000000 0.000000 0.000000
 Ns 0.000000
-map_Kd 
+map_Kd http://voldre.free.fr/Eden/images/monster/
 
 newmtl object0186_Material #8_575
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M43454.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43454.png
 
 newmtl object0583_M434_579
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd M43401.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43401.png
 
 newmtl object0583_M434_588
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd M43401.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M43401.png
 

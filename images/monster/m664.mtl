@@ -2,17 +2,17 @@ newmtl M664_3
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd M66401.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M66401.png
 
 newmtl M664_37
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd M66401.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M66401.png
 
 newmtl mesh55material
 Kd 0.694118 0.109804 0.584314
 Ks 0.694118 0.109804 0.584314
 Ns 0.000000
-map_Kd 
+map_Kd http://voldre.free.fr/Eden/images/monster/
 

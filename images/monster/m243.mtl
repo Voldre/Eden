@@ -2,11 +2,11 @@ newmtl M24301_3
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd M24301.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M24301.png
 
 newmtl M24301_65
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd M24301.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M24301.png
 

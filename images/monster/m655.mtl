@@ -2,25 +2,25 @@ newmtl Standard_3_3
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd M65501.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M65501.png
 
 newmtl Standard_2_21
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.300000
-map_Kd M65152.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M65152.png
 
 newmtl 02_31
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.300000
-map_Kd M65153.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M65153.png
 
 newmtl Standard_4_38
 Kd 0.737255 0.976471 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd M63751.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M63751.png
 

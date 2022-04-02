@@ -2,11 +2,11 @@ newmtl Standard_7_3
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd M11901.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M11901.png
 
 newmtl Standard_4_55
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd M11959.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M11959.png
 

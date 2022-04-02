@@ -2,11 +2,11 @@ newmtl M662_3
 Kd 0.980392 0.980392 0.980392
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd M66201.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M66201.png
 
 newmtl M662_47
 Kd 0.980392 0.980392 0.980392
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd M66201.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M66201.png
 

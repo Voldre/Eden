@@ -2,11 +2,11 @@ newmtl m172_3
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd M17201.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M17201.png
 
 newmtl m172_59
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd M17201.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M17201.png
 

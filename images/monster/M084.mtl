@@ -2,11 +2,11 @@ newmtl M08401_3
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd M08401.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M08401.png
 
 newmtl M08401_67
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd M08401.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M08401.png
 

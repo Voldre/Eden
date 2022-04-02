@@ -2,17 +2,17 @@ newmtl object0008_M470_3
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd M47001.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M47001.png
 
 newmtl object0086_85
 Kd 0.839216 0.894118 0.600000
 Ks 0.839216 0.894118 0.600000
 Ns 0.000000
-map_Kd 
+map_Kd http://voldre.free.fr/Eden/images/monster/
 
 newmtl object0089_88
 Kd 0.690196 0.101961 0.101961
 Ks 0.690196 0.101961 0.101961
 Ns 0.000000
-map_Kd 
+map_Kd http://voldre.free.fr/Eden/images/monster/
 

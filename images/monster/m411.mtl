@@ -2,11 +2,11 @@ newmtl M41101_knock_3
 Kd 0.972549 0.972549 0.972549
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd M41101.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M41101.png
 
 newmtl M41101_knock_65
 Kd 0.972549 0.972549 0.972549
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd M41101.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M41101.png
 

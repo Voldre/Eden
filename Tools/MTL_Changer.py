@@ -7,10 +7,10 @@ import glob
 EdenRep = "C:\\wamp\\www\Site free.fr\\Eden\\"
 #TempoRep = "C:\\wamp\www\\Site free.fr\\Eden\\3D Eden in web\\NIF tests\\"
 
-#currentFolder = "monster"
+currentFolder = "monster"
 #currentFolder = "char"
 #currentFolder = "house"
-currentFolder = "items"
+#currentFolder = "items"
 
 #for file in glob.glob(EdenRep+"images\\monster\\*.mtl"):
 for file in glob.glob(EdenRep+"images\\"+currentFolder+"\\*.mtl"):
@@ -19,6 +19,8 @@ for file in glob.glob(EdenRep+"images\\"+currentFolder+"\\*.mtl"):
     content = f.read()
     content = content.replace("DDS", "png") 
     content = content.replace("dds", "png") 
+    content = content.replace("NIF", "png") 
+    content = content.replace("nif", "png") 
     #content = content.replace("map_Kd http://voldre.free.fr/Eden/3D/","map_Kd http://voldre.free.fr/Eden/images/monster/")
 
     if 'http://voldre.free.fr/' not in content: 

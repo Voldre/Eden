@@ -2,23 +2,23 @@ newmtl M312_3
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd M31201.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M31201.png
 
 newmtl mesh44material
 Kd 0.031373 0.431373 0.525490
 Ks 0.031373 0.431373 0.525490
 Ns 0.000000
-map_Kd 
+map_Kd http://voldre.free.fr/Eden/images/monster/
 
 newmtl mesh77material
 Kd 0.878431 0.776471 0.341176
 Ks 0.878431 0.776471 0.341176
 Ns 0.000000
-map_Kd 
+map_Kd http://voldre.free.fr/Eden/images/monster/
 
 newmtl mesh82material
 Kd 1.000000 0.000000 0.000000
 Ks 1.000000 0.000000 0.000000
 Ns 0.000000
-map_Kd 
+map_Kd http://voldre.free.fr/Eden/images/monster/
 

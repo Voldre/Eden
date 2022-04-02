@@ -2,11 +2,11 @@ newmtl M254_3
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd M25401.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M25401.png
 
 newmtl M254_52
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd M25401.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M25401.png
 

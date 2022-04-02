@@ -2,11 +2,11 @@ newmtl M286_3
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd M28601.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M28601.png
 
 newmtl M286_96
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd M28601.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M28601.png
 

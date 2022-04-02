@@ -2,11 +2,11 @@ newmtl orig_orig_orig_07 - Default_3
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd M10401.DDS
+map_Kd http://voldre.free.fr/Eden/images/monster/M10401.png
 
 newmtl orig_orig_orig_07 - Default_66
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd M10401.DDS
+map_Kd http://voldre.free.fr/Eden/images/monster/M10401.png
 

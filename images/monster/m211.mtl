@@ -2,11 +2,11 @@ newmtl M211_3
 Kd 0.992157 0.992157 0.992157
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd M21101.DDS
+map_Kd http://voldre.free.fr/Eden/images/monster/M21101.png
 
 newmtl M211_39
 Kd 0.992157 0.992157 0.992157
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd M21101.DDS
+map_Kd http://voldre.free.fr/Eden/images/monster/M21101.png
 

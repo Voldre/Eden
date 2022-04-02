@@ -2,77 +2,77 @@ newmtl 03_34
 Kd 1.000000 0.274510 0.890196
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd M60751.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M60751.png
 
 newmtl 51_43
 Kd 0.984314 0.580392 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.689655
-map_Kd M63753.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M63753.png
 
 newmtl 52_55
 Kd 1.000000 0.564706 0.882353
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.937500
-map_Kd M63753.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M63753.png
 
 newmtl 52-02_66
 Kd 0.996078 0.639216 0.639216
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M63753.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M63753.png
 
 newmtl 02_77
 Kd 0.968628 0.623529 0.858824
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd M63752.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M63752.png
 
 newmtl Standard_4-01_87
 Kd 1.000000 0.843137 0.913726
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.250000
-map_Kd M63751.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M63751.png
 
 newmtl 03-02_96
 Kd 1.000000 0.000000 0.447059
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd M60751.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M60751.png
 
 newmtl Standard_4_102
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M63754.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M63754.png
 
 newmtl 02-02_111
 Kd 1.000000 0.768628 0.843137
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd M63752.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M63752.png
 
 newmtl Standard_4-02_116
 Kd 1.000000 0.843137 0.941177
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd M63751.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M63751.png
 
 newmtl mesh122material
 Kd 0.345098 0.694118 0.101961
 Ks 0.345098 0.694118 0.101961
 Ns 0.000000
-map_Kd 
+map_Kd http://voldre.free.fr/Eden/images/monster/
 
 newmtl mesh125material
 Kd 0.560784 0.878431 0.341176
 Ks 0.560784 0.878431 0.341176
 Ns 0.000000
-map_Kd 
+map_Kd http://voldre.free.fr/Eden/images/monster/
 

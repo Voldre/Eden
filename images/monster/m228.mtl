@@ -2,5 +2,5 @@ newmtl Standard_1_3
 Kd 1.000000 1.000000 1.000000
 Ks 0.900000 0.900000 0.900000
 Ns 10.000000
-map_Kd M22801.nif
+map_Kd http://voldre.free.fr/Eden/images/monster/M22801.nif
 

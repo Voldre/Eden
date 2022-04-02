@@ -2,86 +2,86 @@ newmtl M41801_knock_3
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd M41801.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M41801.png
 
 newmtl mesh18material
 Kd 0.682353 0.729412 0.796079
 Ks 0.682353 0.729412 0.796079
 Ns 0.000000
-map_Kd 
+map_Kd http://voldre.free.fr/Eden/images/monster/
 
 newmtl mesh23material
 Kd 0.682353 0.729412 0.796079
 Ks 0.682353 0.729412 0.796079
 Ns 0.000000
-map_Kd 
+map_Kd http://voldre.free.fr/Eden/images/monster/
 
 newmtl mesh71material
 Kd 1.000000 0.000000 0.000000
 Ks 1.000000 0.000000 0.000000
 Ns 0.000000
-map_Kd 
+map_Kd http://voldre.free.fr/Eden/images/monster/
 
 newmtl mesh74material
 Kd 1.000000 0.000000 0.000000
 Ks 1.000000 0.000000 0.000000
 Ns 0.000000
-map_Kd 
+map_Kd http://voldre.free.fr/Eden/images/monster/
 
 newmtl mesh76material
 Kd 1.000000 0.000000 0.000000
 Ks 1.000000 0.000000 0.000000
 Ns 0.000000
-map_Kd 
+map_Kd http://voldre.free.fr/Eden/images/monster/
 
 newmtl mesh78material
 Kd 1.000000 0.000000 0.000000
 Ks 1.000000 0.000000 0.000000
 Ns 0.000000
-map_Kd 
+map_Kd http://voldre.free.fr/Eden/images/monster/
 
 newmtl M41801_knock_92
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd M41801.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M41801.png
 
 newmtl M4e1801_knock_97
 Kd 0.713726 0.670588 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.600000
-map_Kd M41801.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M41801.png
 
 newmtl mesh115material
 Kd 0.341176 0.878431 0.341176
 Ks 0.341176 0.878431 0.341176
 Ns 0.000000
-map_Kd 
+map_Kd http://voldre.free.fr/Eden/images/monster/
 
 newmtl mesh118material
 Kd 1.000000 0.200000 0.200000
 Ks 1.000000 0.200000 0.200000
 Ns 0.000000
-map_Kd 
+map_Kd http://voldre.free.fr/Eden/images/monster/
 
 newmtl mesh121material
 Kd 0.682353 0.729412 0.796079
 Ks 0.682353 0.729412 0.796079
 Ns 0.000000
-map_Kd 
+map_Kd http://voldre.free.fr/Eden/images/monster/
 
 newmtl M4180E1_knock_127
 Kd 1.000000 0.964706 0.835294
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.500000
-map_Kd M41851.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M41851.png
 
 newmtl M4180E1_knock_138
 Kd 1.000000 0.964706 0.835294
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.500000
-map_Kd M41851.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M41851.png
 

@@ -2,5 +2,5 @@ newmtl M670_5
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd M67001.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M67001.png
 

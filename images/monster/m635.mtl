@@ -2,11 +2,11 @@ newmtl M635_3
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd M63501.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M63501.png
 
 newmtl mesh34material
 Kd 0.839216 0.894118 0.600000
 Ks 0.839216 0.894118 0.600000
 Ns 0.000000
-map_Kd 
+map_Kd http://voldre.free.fr/Eden/images/monster/
 

@@ -2,5 +2,5 @@ newmtl object0007_Material #1952_3
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd M13101.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M13101.png
 

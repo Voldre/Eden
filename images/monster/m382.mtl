@@ -2,47 +2,47 @@ newmtl M345_3
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd M38201.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M38201.png
 
 newmtl StandWEard_2_94
 Kd 1.000000 0.972549 0.192157
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd M38253.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M38253.png
 
 newmtl Standard_2_112
 Kd 1.000000 1.000000 0.388235
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd M38251.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M38251.png
 
 newmtl Standard_7_129
 Kd 1.000000 0.956863 0.466667
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd M38252.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M38252.png
 
 newmtl Standared_7_142
 Kd 1.000000 0.956863 0.898039
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd M38252.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M38252.png
 
 newmtl Standared_7_153
 Kd 1.000000 0.956863 0.898039
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd M38252.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M38252.png
 
 newmtl Material #2_159
 Kd 1.000000 0.972549 0.192157
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd M63751.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M63751.png
 
 newmtl M345_175
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd M38201.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M38201.png
 

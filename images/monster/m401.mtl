@@ -2,17 +2,17 @@ newmtl M401_3
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd M40101.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M40101.png
 
 newmtl mesh54material
 Kd 0.682353 0.729412 0.796079
 Ks 0.682353 0.729412 0.796079
 Ns 0.000000
-map_Kd 
+map_Kd http://voldre.free.fr/Eden/images/monster/
 
 newmtl M401_59
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd M40101.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M40101.png
 

@@ -2,11 +2,11 @@ newmtl 23_18
 Kd 1.000000 0.525490 0.580392
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd M15851.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M15851.png
 
 newmtl Material #2186_70
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd M15901.DDS
+map_Kd http://voldre.free.fr/Eden/images/monster/M15901.png
 

@@ -2,29 +2,29 @@ newmtl M663_4
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd M66301.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M66301.png
 
 newmtl M663_28
 Kd 1.000000 1.000000 1.000000
 Ks 0.039216 0.039216 0.039216
 Ns 10.000000
-map_Kd M66301.dds
+map_Kd http://voldre.free.fr/Eden/images/monster/M66301.png
 
 newmtl mesh63material
 Kd 0.600000 0.894118 0.839216
 Ks 0.600000 0.894118 0.839216
 Ns 0.000000
-map_Kd 
+map_Kd http://voldre.free.fr/Eden/images/monster/
 
 newmtl mesh67material
 Kd 0.600000 0.894118 0.839216
 Ks 0.600000 0.894118 0.839216
 Ns 0.000000
-map_Kd 
+map_Kd http://voldre.free.fr/Eden/images/monster/
 
 newmtl mesh73material
 Kd 0.345098 0.560784 0.882353
 Ks 0.345098 0.560784 0.882353
 Ns 0.000000
-map_Kd 
+map_Kd http://voldre.free.fr/Eden/images/monster/
 
