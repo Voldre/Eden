@@ -1,0 +1,13 @@
+newmtl R12301_3
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R12301.png
+
+newmtl Standard_3_34
+Kd 0.588000 0.588000 0.588000
+Ks 0.900000 0.900000 0.900000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/
+

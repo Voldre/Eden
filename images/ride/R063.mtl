@@ -1,0 +1,80 @@
+newmtl object0009_R063_5
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R06301.png
+
+newmtl object0033_32
+Kd 0.345098 0.345098 0.882353
+Ks 0.345098 0.345098 0.882353
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/
+
+newmtl object0057_56
+Kd 0.109804 0.109804 0.694118
+Ks 0.109804 0.109804 0.694118
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/
+
+newmtl object0064_63
+Kd 0.023529 0.525490 0.023529
+Ks 0.023529 0.525490 0.023529
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/
+
+newmtl object0067_66
+Kd 0.031373 0.431373 0.525490
+Ks 0.031373 0.431373 0.525490
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/
+
+newmtl object0110_109
+Kd 0.839216 0.898039 0.650980
+Ks 0.839216 0.898039 0.650980
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/
+
+newmtl object0113_112
+Kd 0.690196 0.101961 0.101961
+Ks 0.690196 0.101961 0.101961
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/
+
+newmtl object0123_Standard_2_117
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/
+
+newmtl object0184_Standard_3s_174
+Kd 1.000000 0.749020 0.780392
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.600000
+map_Kd http://voldre.free.fr/Eden/images/ride/R28254.png
+
+newmtl object0198_Standard_302sss_189
+Kd 1.000000 0.631373 0.882353
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R04753.png
+
+newmtl object0210_Stande_204
+Kd 1.000000 0.603922 0.749020
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R04753.png
+
+newmtl object0221_Standew_215
+Kd 1.000000 0.631373 0.631373
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R04753.png
+
+newmtl object0232_Standeww_226
+Kd 0.988235 0.678431 0.737255
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R04753.png
+

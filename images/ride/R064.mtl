@@ -1,0 +1,42 @@
+newmtl R064_5
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R06401.png
+
+newmtl mesh32material
+Kd 0.345098 0.345098 0.882353
+Ks 0.345098 0.345098 0.882353
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/
+
+newmtl mesh56material
+Kd 0.109804 0.109804 0.694118
+Ks 0.109804 0.109804 0.694118
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/
+
+newmtl mesh63material
+Kd 0.023529 0.525490 0.023529
+Ks 0.023529 0.525490 0.023529
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/
+
+newmtl mesh66material
+Kd 0.031373 0.431373 0.525490
+Ks 0.031373 0.431373 0.525490
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/
+
+newmtl mesh109material
+Kd 0.839216 0.898039 0.650980
+Ks 0.839216 0.898039 0.650980
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/
+
+newmtl mesh112material
+Kd 0.690196 0.101961 0.101961
+Ks 0.690196 0.101961 0.101961
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/
+

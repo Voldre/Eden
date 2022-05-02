@@ -1,0 +1,266 @@
+newmtl object0007_R134_3
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13401.png
+
+newmtl object0031_Standard_22_29
+Kd 0.650980 0.929412 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13357.png
+
+newmtl object0046_25We_44
+Kd 0.196078 0.870588 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d -0.250000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13354.png
+
+newmtl object0055_25W_54
+Kd 0.196078 0.870588 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d -0.250000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13357.png
+
+newmtl object0055_25W_65
+Kd 0.196078 0.870588 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d -0.250000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13357.png
+
+newmtl object0046_25We_69
+Kd 0.196078 0.870588 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d -0.250000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13354.png
+
+newmtl object0031_Standard_22_71
+Kd 0.650980 0.929412 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13357.png
+
+newmtl object0055_25W_79
+Kd 0.196078 0.870588 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d -0.250000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13357.png
+
+newmtl object0046_25We_83
+Kd 0.196078 0.870588 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d -0.250000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13354.png
+
+newmtl object0087_StanEdard_22_85
+Kd 0.650980 0.929412 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13357.png
+
+newmtl object0216_Standard_6_215
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13351.png
+
+newmtl object0224_Standard_12_223
+Kd 0.341176 0.835294 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13356.png
+
+newmtl object0234_R114-0001-023_232
+Kd 0.196078 0.870588 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13357.png
+
+newmtl object0242_R114-0001-024_240
+Kd 0.196078 0.870588 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13357.png
+
+newmtl object0251_25R_250
+Kd 0.196078 0.870588 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d -0.250000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13357.png
+
+newmtl object0258_R114-e0001-024_256
+Kd 0.196078 0.870588 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13357.png
+
+newmtl object0266_R114-R0001-023_264
+Kd 0.196078 0.870588 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13357.png
+
+newmtl object0274_R114-00R01-024_272
+Kd 0.196078 0.870588 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13357.png
+
+newmtl object0283_25RR_282
+Kd 0.196078 0.870588 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d -0.250000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13357.png
+
+newmtl object0290_R114-e0E001-024_288
+Kd 0.196078 0.870588 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13357.png
+
+newmtl object0298_R11E4-e0E001-024_296
+Kd 0.196078 0.870588 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13357.png
+
+newmtl object0306_R11E14-e0E001-024_304
+Kd 0.196078 0.870588 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13357.png
+
+newmtl object0314_R114-00E01-024_312
+Kd 0.196078 0.870588 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13357.png
+
+newmtl object0322_R114-0001E-023_320
+Kd 0.196078 0.870588 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13357.png
+
+newmtl object0332_25_331
+Kd 0.678431 0.949020 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13352.png
+
+newmtl object0341_25_340
+Kd 0.196078 0.870588 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d -0.250000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13354.png
+
+newmtl object0349_26_348
+Kd 0.152941 0.870588 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d -0.250000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13354.png
+
+newmtl object0357_27_356
+Kd 0.156863 0.862745 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d -0.250000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13354.png
+
+newmtl object0365_cE_364
+Kd 0.196078 0.870588 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13357.png
+
+newmtl object0376_cEE_375
+Kd 0.196078 0.870588 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13357.png
+
+newmtl object0387_c_386
+Kd 0.196078 0.870588 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13357.png
+
+newmtl object0398_cEEw_397
+Kd 0.196078 0.870588 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13357.png
+
+newmtl object0341_25_403
+Kd 0.196078 0.870588 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d -0.250000
+map_Kd http://voldre.free.fr/Eden/images/ride/R13354.png
+
+newmtl object0407_405
+Kd 0.768628 0.345098 0.882353
+Ks 0.768628 0.345098 0.882353
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/
+
+newmtl object0415_413
+Kd 0.031373 0.239216 0.541176
+Ks 0.031373 0.239216 0.541176
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/
+
+newmtl object0415_417
+Kd 0.031373 0.239216 0.541176
+Ks 0.031373 0.239216 0.541176
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/
+
+newmtl object0415_420
+Kd 0.031373 0.239216 0.541176
+Ks 0.031373 0.239216 0.541176
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/
+
+newmtl object0415_423
+Kd 0.031373 0.239216 0.541176
+Ks 0.031373 0.239216 0.541176
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/
+
+newmtl object0407_426
+Kd 0.768628 0.345098 0.882353
+Ks 0.768628 0.345098 0.882353
+Ns 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/
+

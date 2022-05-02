@@ -1,0 +1,94 @@
+newmtl R17101_60
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R17101.png
+
+newmtl 03 - Default_70
+Kd 0.698039 0.341176 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R17155.png
+
+newmtl 03 - DefaultAX_85
+Kd 0.698039 0.341176 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R17154.png
+
+newmtl 17 - Default_97
+Kd 0.427451 0.521569 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R17153.png
+
+newmtl 17 - Default_110
+Kd 0.427451 0.521569 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R17153.png
+
+newmtl Standard_6_115
+Kd 1.000000 0.894118 0.317647
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R05155.png
+
+newmtl 03 - DefaultAX_124
+Kd 0.698039 0.341176 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R17154.png
+
+newmtl 17 - Default2_130
+Kd 0.592157 0.368627 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R17156.png
+
+newmtl Material #0_143
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R17101.png
+
+newmtl 03 - Default_150
+Kd 0.698039 0.341176 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R17155.png
+
+newmtl 03 - Default_156
+Kd 0.698039 0.341176 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R17155.png
+
+newmtl 03 - Default_162
+Kd 0.698039 0.341176 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R17155.png
+
+newmtl 17 - Default_168
+Kd 0.427451 0.521569 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R17153.png
+
+newmtl 17 - Default_173
+Kd 0.427451 0.521569 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R17153.png
+
+newmtl 17 - Default_178
+Kd 0.427451 0.521569 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R17153.png
+

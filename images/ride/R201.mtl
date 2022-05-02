@@ -1,0 +1,34 @@
+newmtl R201_3
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R20101.png
+
+newmtl 02 - Default_57
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.800000
+map_Kd http://voldre.free.fr/Eden/images/ride/R20151.png
+
+newmtl 22_71
+Kd 1.000000 0.874510 0.376471
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.200000
+map_Kd http://voldre.free.fr/Eden/images/ride/R20152.png
+
+newmtl 22_84
+Kd 1.000000 0.874510 0.376471
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.200000
+map_Kd http://voldre.free.fr/Eden/images/ride/R20152.png
+
+newmtl 22_90
+Kd 1.000000 0.874510 0.376471
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.200000
+map_Kd http://voldre.free.fr/Eden/images/ride/R20152.png
+

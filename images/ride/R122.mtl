@@ -1,0 +1,37 @@
+newmtl object0014_R12201_10
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R12201.png
+
+newmtl object0091_2_90
+Kd 1.000000 0.870588 0.474510
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R05155.png
+
+newmtl object0091_2_98
+Kd 1.000000 0.870588 0.474510
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R05155.png
+
+newmtl object0091_2_102
+Kd 1.000000 0.870588 0.474510
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R05155.png
+
+newmtl object0091_2_106
+Kd 1.000000 0.870588 0.474510
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/R05155.png
+
+newmtl object0111_11 - Default_108
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd http://voldre.free.fr/Eden/images/ride/
+
