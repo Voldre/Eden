@@ -115,7 +115,7 @@ function animate() {
     // Objet 3D
 
     if (typeof scene.children[3] != "undefined") {
-        scene.children[3].rotation.z += 0.01;
+        scene.children[3].rotation.z += 0.003;
         //console.log(scene.children[3]);
     }
 

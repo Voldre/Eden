@@ -7,10 +7,11 @@ import glob
 EdenRep = "C:\\wamp\\www\Site free.fr\\Eden\\"
 #TempoRep = "C:\\wamp\www\\Site free.fr\\Eden\\3D Eden in web\\NIF tests\\"
 
-currentFolder = "monster"
+#currentFolder = "monster"
 #currentFolder = "char"
 #currentFolder = "house"
 #currentFolder = "items"
+currentFolder = "ride"
 
 #for file in glob.glob(EdenRep+"images\\monster\\*.mtl"):
 for file in glob.glob(EdenRep+"images\\"+currentFolder+"\\*.mtl"):
