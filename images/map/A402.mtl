@@ -1,0 +1,16 @@
+
+newmtl Material.000001
+Ka 1 1 1
+Kd 0 0 0
+Ks 0 0 0
+d 1
+Ns 10
+map_Kd images/map/A40201.png
+
+newmtl Material.0000f5
+Ka 0 0 0
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 10
+map_Kd images/map/crescent.png
