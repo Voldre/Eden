@@ -21,17 +21,17 @@ for file in glob.glob(EdenRep+"images\\"+currentFolder+"\\*.mtl"):
     content = f.read()
     content = content.replace("DDS", "png") 
     content = content.replace("dds", "png") 
-    content = content.replace("NIF", "png") 
-    content = content.replace("nif", "png") 
+    # content = content.replace("NIF", "png") 
+    # content = content.replace("nif", "png") 
     #content = content.replace("map_Kd http://voldre.free.fr/Eden/3D/","map_Kd http://voldre.free.fr/Eden/images/monster/")
-
-    if 'http://voldre.free.fr/' not in content: 
+        # 'http://voldre.free.fr/'
+    if 'map_Kd images/' not in content: 
         # Si la redirection de map_Kd ne contient pas le path complet :
         content = content.replace("map_Kd ","map_Kd images/"+currentFolder+"/")
                             # Ou map_Kd http://voldre.free.fr/Eden/images/ ...
     f.truncate(0) # On clear le fichier
     f.seek(0) # On remet le curseur au début
-    f.write(content)
+    f.write(content) # Puis on écrit
 
     f.close()
 

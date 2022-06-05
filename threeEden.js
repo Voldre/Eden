@@ -1,4 +1,4 @@
-var scene, camera, renderer, mesh;
+var scene, camera, renderer, mesh, mesh2;
 var meshFloor, ambientLight, light;
 
 var keyboard = {};
@@ -24,23 +24,38 @@ function update() {
     init(1152, 648);
 }
 
+function myObjectInit(){
+    if(typeof window.location.search.split("&")[1] != "undefined"){
+        return window.location.search.split("&")[1].split('=')[1];
+    }else{ return null; }
+    
+}
 
 function init(width, height) {
 
     // Première valeur en paramètre de l'URL
     //console.log(window.location.search.split('=')[1]);
     folder = window.location.search.split('=')[1];
-
+    folder = folder.split("&")[0];
     if(folder == "map"){
         player.speed = 1;
-        if(!myrequest){
+        var myObject =  myObjectInit();
+        // console.log(myObject);
+        if(!myrequest && (myObject == "" || myObject == null) ){
             console.log("Présence sur les cartes de donjons, détecté.");
             throw new Error("En attente du choix de l'utilisateur");
         }
     }
 
-    scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera(90, 1280 / 720, 0.1, 1000);
+
+    scene = new THREE.Scene();  
+    /* **************************************************
+    Le secret pour afficher le background (qui est éloigné?)
+    ==> Il faut aggrandir la distance d'affichage !
+    Car là elle est trop petite et du coup on voit rien sauf quand
+    on est collé dessus, c'est pas le but. 5000 >> 1000
+    ************************************************** */
+    camera = new THREE.PerspectiveCamera(90, 1280 / 720, 0.1, 5000);
 
     mesh = new THREE.Mesh();
 
@@ -62,17 +77,67 @@ function init(width, height) {
     light.shadow.camera.far = 25;
     scene.add(light);
 
+    /*
+    
+    // Add Background 05/06/2022
+    function setBackground(scene, backgroundImageWidth, backgroundImageHeight) {
+        var windowSize = function(withScrollBar) {
+            var wid = 0;
+            var hei = 0;
+            if (typeof window.innerWidth != "undefined") {
+                wid = window.innerWidth;
+                hei = window.innerHeight;
+            }
+            else {
+                if (document.documentElement.clientWidth == 0) {
+                    wid = document.body.clientWidth;
+                    hei = document.body.clientHeight;
+                }
+                else {
+                    wid = document.documentElement.clientWidth;
+                    hei = document.documentElement.clientHeight;
+                }
+            }
+            return { width: wid - (withScrollBar ? (wid - document.body.offsetWidth + 1) : 0), height: hei };
+        };
+    
+        if (scene.background) {
+    
+            var size = windowSize(true);
+            var factor = (backgroundImageWidth / backgroundImageHeight) / (size.width / size.height);
+    
+            scene.background.offset.x = factor > 1 ? (1 - 1 / factor) / 2 : 0;
+            scene.background.offset.y = factor > 1 ? 0 : (1 - factor) / 2;
+    
+            scene.background.repeat.x = factor > 1 ? 1 / factor : 1;
+            scene.background.repeat.y = factor > 1 ? 1 : factor;
+        }
+    }
+    var img = new Image();
+    img.onload = function () {
+        scene.background = new THREE.TextureLoader().load(img.src);
+        setBackground(scene, img.width, img.height);
+    };
+    img.src = "background.jpg";
+    */
+
 
     // Model/material loading
 
-    // Variable dans ma liste déroulante <select>
-    var myObject = document.getElementById("objets").value;
+    // Variable potentiellement envoyé dans l'URL
+    var myObject = myObjectInit();
+    if(myObject == null || myObject == ""){
+        // Variable dans ma liste déroulante <select>
+        myObject = document.getElementById("objets").value;
+    }else{ document.getElementById("objets").value = myObject; }
+    document.getElementById("objets")
+
     console.log("Objet:" + myObject)
 
     var mtlLoader = new THREE.MTLLoader();
     mtlLoader.setMaterialOptions({ ignoreZeroRGBs: true });
 
-    console.log(mtlLoader);
+    // console.log(mtlLoader);
     mtlLoader.load("http://voldre.free.fr/Eden/images/" + folder + "/" + myObject + ".mtl", function(materials) {
        
         var listLiensTextures = [];
@@ -87,8 +152,7 @@ function init(width, height) {
             return self.indexOf(value) === index;
           }
         listLiensTextures = listLiensTextures.filter(onlyUnique);
-
-        console.log(listLiensTextures);
+        // console.log(listLiensTextures);
         
         /*
         for(var i = 0; i < listLiensTextures.length; i++){
@@ -167,6 +231,23 @@ function init(width, height) {
             mesh.matrixWorld.matrixWorldNeedsUpdate = true;
             scene.add(mesh);
 
+            
+            // 06/06/2022 - Ajout du background d'Eden
+            mesh2 = new THREE.Mesh();
+                                                        // " + myBackGround + "
+            mtlLoader.load("http://voldre.free.fr/Eden/images/map/A402.mtl", function(materials2) {      
+            objLoader.setMaterials(materials2);
+        
+                                                        // " + myBackGround + "
+            objLoader.load("http://voldre.free.fr/Eden/images/map/A402.obj", function(mesh2){
+            
+            scene.add(mesh2);
+            mesh2.rotation.x = -Math.PI/2;
+        
+            });
+            });
+            
+
             // Position de notre objet
             if(folder == "map"){ // -520, 18, 80
                 mesh.position.set(280, -28, 5);
@@ -235,9 +316,15 @@ function animate() {
 
     // Rotation de la caméra
     if (keyboard[37]) { // left arrow key
+        if($('#objets').is(":focus")){
+            $('#objets').blur();
+        }
         camera.rotation.y -= player.turnSpeed/1.3;
     }
     if (keyboard[39]) { // right arrow key
+        if($('#objets').is(":focus")){
+            $('#objets').blur();
+        }
         camera.rotation.y += player.turnSpeed/1.3;
     }
 
