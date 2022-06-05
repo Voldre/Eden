@@ -4,6 +4,9 @@
  * @author angelxuanchang
  */
 
+
+
+
 THREE.MTLLoader = function( manager ) {
 
 	this.manager = ( manager !== undefined ) ? manager : THREE.DefaultLoadingManager;
@@ -390,7 +393,35 @@ THREE.MTLLoader.MaterialCreator.prototype = {
 
 					if ( params.map ) break; // Keep the first encountered texture
 
-					params.map = this.loadTexture( resolveURL( this.baseUrl, value ) );
+					/*
+					const getCookieValue = (name) => (
+						document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || ''
+					  )
+					  
+					console.log(JSON.parse(getCookieValue('listTextures1')));
+					console.log(JSON.parse(getCookieValue('listTextures2')));
+					array1 = JSON.parse(getCookieValue('listTextures1'));
+					array2 = JSON.parse(getCookieValue('listTextures2'));
+					listLiensTextures = array1.concat(array2);
+					
+					console.log(this);
+					
+					
+					listTextures = [];
+					for(var i=0; i < document.getElementById("listTextures").childElementCount; i++){
+						listLiensTextures[document.getElementById("listTextures").children[i].src] = document.getElementById("listTextures").children[i];
+					}
+
+						console.log('Une ressource de non re-requété : ' + value );
+						params.map = this.loadTexture(listLiensTextures[document.getElementById("listTextures").children[i].src]);
+					
+					}else{
+					*/
+						//console.log("Texture Généré : " + resolveURL( this.baseUrl, value ) );
+						params.map = this.loadTexture( resolveURL( this.baseUrl, value ) );
+						//console.log("Texture Complète : ");
+						//console.log(params.map );
+					
 					params.map.wrapS = this.wrap;
 					params.map.wrapT = this.wrap;
 

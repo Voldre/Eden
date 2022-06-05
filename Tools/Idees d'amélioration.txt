@@ -1,0 +1,10 @@
+Recréer l'UI d'Eden
+Recréer les classes avec les données bien placées
+
+Reprendre tous les autels de cristal 
++ photos Discord et Vendetta
+Fille chevauche l'Alpaga
+
+
+Quand on clique sur une map, on a son wallpaper,
+sa description, sa musique (?), des items et donjons

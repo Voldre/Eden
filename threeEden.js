@@ -5,6 +5,11 @@ var keyboard = {};
 var player = { height: 1.8, speed: 0.2, turnSpeed: Math.PI * 0.02 };
 var USE_WIREFRAME = false;
 
+
+var myrequest = false;
+
+THREE.Cache.enabled = true; // VD 04/06/2022 : Alléger les chargements
+
 function update() {
 
     // Permet d'annuler l'execution automatique de la fonction animate()
@@ -12,16 +17,27 @@ function update() {
     cancelAnimationFrame(myrequest);
 
     // On supprime le canvas de l'ancien Objet 3D
+    if(document.getElementsByTagName("canvas")[0]){
     document.getElementsByTagName("canvas")[0].remove();
-
+    }
+    myrequest = true;
     init(1152, 648);
 }
+
 
 function init(width, height) {
 
     // Première valeur en paramètre de l'URL
-    console.log(window.location.search.split('=')[1]);
+    //console.log(window.location.search.split('=')[1]);
     folder = window.location.search.split('=')[1];
+
+    if(folder == "map"){
+        player.speed = 1;
+        if(!myrequest){
+            console.log("Présence sur les cartes de donjons, détecté.");
+            throw new Error("En attente du choix de l'utilisateur");
+        }
+    }
 
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(90, 1280 / 720, 0.1, 1000);
@@ -35,8 +51,8 @@ function init(width, height) {
     meshFloor.rotation.x -= Math.PI / 2;
     meshFloor.receiveShadow = true;
     scene.add(meshFloor);
-
-    ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+                                                // 0.4
+    ambientLight = new THREE.AmbientLight(0xffffff, 0.75);
     scene.add(ambientLight);
 
     light = new THREE.PointLight(0xffffff, 1.5, 20);
@@ -55,17 +71,91 @@ function init(width, height) {
 
     var mtlLoader = new THREE.MTLLoader();
     mtlLoader.setMaterialOptions({ ignoreZeroRGBs: true });
-    mtlLoader.load("http://voldre.free.fr/Eden/images/" + folder + "/" + myObject + ".mtl", function(materials) {
 
-        materials.preload();
+    console.log(mtlLoader);
+    mtlLoader.load("http://voldre.free.fr/Eden/images/" + folder + "/" + myObject + ".mtl", function(materials) {
+       
+        var listLiensTextures = [];
+        for(var material in materials.materialsInfo){
+            // console.log(materials.materialsInfo[material]["map_kd"]);
+            if(materials.materialsInfo[material]["map_kd"] != null){
+                listLiensTextures.push(materials.materialsInfo[material]["map_kd"]);
+            }
+        }
+        
+        function onlyUnique(value, index, self) {
+            return self.indexOf(value) === index;
+          }
+        listLiensTextures = listLiensTextures.filter(onlyUnique);
+
+        console.log(listLiensTextures);
+        
+        /*
+        for(var i = 0; i < listLiensTextures.length; i++){
+            console.log(listLiensTextures[i]);
+            console.log(i);
+            monLien = listLiensTextures[i];
+            if(!monLien.includes('.png')){ 
+                //delete listLiensTextures[i]; 
+            }else{
+
+                var img = document.createElement("img");
+                img.id = monLien;
+                img.src = monLien;
+                document.getElementById("listTextures").appendChild(img);
+            }
+        }
+        */
+        
+        /*
+        listTextures = {};
+		
+        var loader = new THREE.TextureLoader();
+
+        for(var texture in listLiensTextures){
+            if(!texture.includes('.png')){ 
+                delete texture; 
+            }else{
+                console.log(loader.load(texture));
+                listTextures[texture] = loader.load(texture);
+            }
+        } 
+        console.log(listTextures);
+
+        
+        const middleIndex = Math.ceil(listTextures.length / 2);
+        const firstHalf = listTextures.splice(0, middleIndex);   
+        const secondHalf = listTextures.splice(-middleIndex);
+
+        document.cookie='listTextures1='+JSON.stringify(firstHalf);
+        document.cookie='listTextures2='+JSON.stringify(secondHalf);
+
+        console.log(mtlLoader);
+        console.log(document.cookie);
+        */
+
+        // materials.preload();
+        
+        // Ajout VD - 04/06/2022 - suivi du loading :
+        console.log('On loading ...');
+
+        var onProgress = function ( xhr ) {
+            if ( xhr.lengthComputable ) {
+                var percentComplete = xhr.loaded / xhr.total * 100;
+                console.log( Math.round(percentComplete, 2) + '% downloaded' );
+                document.getElementById("loading").innerHTML = "Chargement : " + Math.round(percentComplete, 2) + "%";}        };
+        
         var objLoader = new THREE.OBJLoader();
         objLoader.setMaterials(materials);
 
+        
         mesh.position.y += 1;
         mesh.receiveShadow = true;
         mesh.castShadow = true;
 
         objLoader.load("http://voldre.free.fr/Eden/images/" + folder + "/" + myObject + ".obj", function(mesh) {
+            console.log('Loaded : ' + myObject );
+            document.getElementById("loading").innerHTML = null;
 
             mesh.traverse(function(node) {
                 if (node instanceof THREE.Mesh) {
@@ -78,15 +168,19 @@ function init(width, height) {
             scene.add(mesh);
 
             // Position de notre objet
-            if (folder != "items") {
-                mesh.position.set(-0.2, 0.25, -2);
-            } else { mesh.position.set(0, 1.1, -3.6) }
+            if(folder == "map"){ // -520, 18, 80
+                mesh.position.set(280, -28, 5);
+            }else if (folder == "items") {
+                mesh.position.set(0, 1.1, -3.6);
+            }else {mesh.position.set(-0.2, 0.25, -2); }
 
             // Angles de notre objet
             mesh.rotation.y = 0; // Math.PI / 6;
             mesh.rotation.x = -Math.PI / 2;
+            if(folder != "map"){
             mesh.rotation.z = Math.PI / 1.4; // Pour qu'il regarde vers nous
-        });
+            }else{ mesh.rotation.z = Math.PI / 1; }
+        }, onProgress);
 
     });
 
@@ -114,7 +208,7 @@ function animate() {
 
     // Objet 3D
 
-    if (typeof scene.children[3] != "undefined") {
+    if (typeof scene.children[3] != "undefined" && folder != "map") {
         scene.children[3].rotation.z += 0.003;
         //console.log(scene.children[3]);
     }
@@ -137,14 +231,14 @@ function animate() {
         camera.position.z += -Math.cos(camera.rotation.y - Math.PI / 2) * player.speed;
     }
 
+    //console.log(camera.position);
+
     // Rotation de la caméra
     if (keyboard[37]) { // left arrow key
-        $('#objets').blur();
-        camera.rotation.y -= player.turnSpeed;
+        camera.rotation.y -= player.turnSpeed/1.3;
     }
     if (keyboard[39]) { // right arrow key
-        $('#objets').blur();
-        camera.rotation.y += player.turnSpeed;
+        camera.rotation.y += player.turnSpeed/1.3;
     }
 
     // Rotation de l'objet
@@ -155,12 +249,37 @@ function animate() {
         scene.children[3].rotation.y -= 0.01;
     }
     if (keyboard[38]) { // Top Arrow
+        if(folder == "map"){
+            camera.position.y += player.speed;
+        }else{
         $('#objets').focus();
+        }
     }
     if (keyboard[40]) { // Bottom Arrow
+        if(folder == "map"){
+            camera.position.y -= player.speed;
+        }else{
         $('#objets').focus();
+        }
+    }
+    if(keyboard[16]){
+        if(player.speed == 1){
+        player.speed = 2;
+        }else{ player.speed = 1;}
     }
 
+    if (keyboard[161] || keyboard[48]) { // "!" ou "0", 04/06/2022 - Kill du programme        console.log("Programme stoppé");
+        console.log("Programme stoppé");
+        cancelAnimationFrame(myrequest);
+        this.renderer.domElement.addEventListener('dblclick', null, false); //remove listener to render
+        this.scene = null;
+        this.projector = null;
+        this.camera = null;
+        this.controls = null;
+        empty(this.modelContainer);
+        // On supprime le canvas de l'ancien Objet 3D
+        document.getElementsByTagName("canvas")[0].remove();
+    }
 
 
     renderer.render(scene, camera);
@@ -178,3 +297,5 @@ window.addEventListener('keydown', keyDown);
 window.addEventListener('keyup', keyUp);
 
 //window.onload = init(1152, 648);
+
+  
