@@ -4,14 +4,15 @@
 
 import glob
 
-EdenRep = "C:\\wamp\\www\Site free.fr\\Eden\\"
+EdenRep = 'C:\wamp\www\Site free.fr\Eden\\'
 #TempoRep = "C:\\wamp\www\\Site free.fr\\Eden\\3D Eden in web\\NIF tests\\"
 
 #currentFolder = "monster"
 #currentFolder = "char"
 #currentFolder = "house"
 #currentFolder = "items"
-currentFolder = "ride"
+# currentFolder = "ride"
+currentFolder = "map"
 
 #for file in glob.glob(EdenRep+"images\\monster\\*.mtl"):
 for file in glob.glob(EdenRep+"images\\"+currentFolder+"\\*.mtl"):
@@ -26,8 +27,8 @@ for file in glob.glob(EdenRep+"images\\"+currentFolder+"\\*.mtl"):
 
     if 'http://voldre.free.fr/' not in content: 
         # Si la redirection de map_Kd ne contient pas le path complet :
-        content = content.replace("map_Kd ","map_Kd http://voldre.free.fr/Eden/images/"+currentFolder+"/")
-
+        content = content.replace("map_Kd ","map_Kd images/"+currentFolder+"/")
+                            # Ou map_Kd http://voldre.free.fr/Eden/images/ ...
     f.truncate(0) # On clear le fichier
     f.seek(0) # On remet le curseur au début
     f.write(content)

@@ -1,4 +1,4 @@
-<HTML>
+<!DOCTYPE html>
 <!-- 
 
 Noesis paramètres avancés pour l'export :
@@ -44,11 +44,12 @@ https://wiki.vg-resource.com/Noesis , Noesis Download : http://www.richwhitehous
         <!--<option value="Axe">Hache</option>
         <option value="bird">Oiseau</option>-->
     </select>
-    <img id="iconPic" class="iconImg" />
+    <h2 id="loading"></h2>
+        <img id="iconPic" class="iconImg" />
 
     <!--<button onclick="update()">Afficher</button>-->
     <br/>
-    <span style="position:absolute;top:0px;left:0px;"><input type="button" value="Toggle Wireframe" onclick="mesh.material.wireframe=!mesh.material.wireframe;meshFloor.material.wireframe=!meshFloor.material.wireframe;"/> ZQSD : pour bouger.  &nbsp; &nbsp; &nbsp; &#8616; : pour changer d'image.  &nbsp; &nbsp;   &harr; : pour tourner</span>
+    <span style="position:absolute;top:0px;left:0px;"><input type="button" value="Toggle Wireframe" onclick="mesh.material.wireframe=!mesh.material.wireframe;meshFloor.material.wireframe=!meshFloor.material.wireframe;"/> ZQSD : pour bouger.  &nbsp; &nbsp; &nbsp; &#8616; : pour changer d'image (sauf sur les maps).  &nbsp; &nbsp;   &harr; : pour tourner</span>
 
     <script type="text/javascript">
     
@@ -79,6 +80,8 @@ https://wiki.vg-resource.com/Noesis , Noesis Download : http://www.richwhitehous
         return http.status!=404;
     }
     </script>
+
+    <div style="display:none;" id="listTextures"></div>
 </body>
 
 </html>

@@ -1,5 +1,4 @@
-<HTML>
-
+<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="http://voldre.free.fr/style.css">
@@ -27,6 +26,7 @@
         <a href="3D.php?data=house"><li><img src="images/itemIcon/I00466.png" /> Maisons</li></a>
         <a href="3D.php?data=items"><li><img src="images/itemIcon/w25502.png" /> Armements</li></a>
         <a href="3D.php?data=ride"><li><img src="images/itemIcon/i00887.png" /> Montures</li></a>
+        <a href="3D.php?data=map"><li><img src="images/otherIcon/group037.png" /> Donjons</li></a>
     </ul>
 </div>
  
@@ -158,7 +158,7 @@ if(isset($_GET["data"])){
             }
         }
     ?>
-        <img src="images/mapworld01.png" />
+        <img src="images/mapworld012.png" />
     </div>    
     </div>
     <div class="container">
