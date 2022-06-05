@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <!-- 
 
@@ -25,7 +28,8 @@ https://wiki.vg-resource.com/Noesis , Noesis Download : http://www.richwhitehous
     <script type="text/javascript" src="threeEden.js"></script>
 </head>
 <body onload="init(1152, 648)" style="overflow:hidden; text-align:center;">
-    <a href="index.php"><button class="root">Retourner au menu  d'Eden</button></a>
+    
+<a href="index.php"><button class="root">Retourner au menu  d'Eden</button></a>
     <span style="font-size:20px">&#8616;</span> <select onchange="update(); changeIcon();" id="objets">
     <?php
         //$monsterRepository = 'images/monster/';
@@ -37,7 +41,16 @@ https://wiki.vg-resource.com/Noesis , Noesis Download : http://www.richwhitehous
             if(strpos($file,".obj") !== false){
                 // On garde tout sauf l'extension
                 $file = strtok($file,  '.');
-                echo "<option value=$file>$file</option>";
+                if($repository == "map"){
+                    if(isset($_SESSION["maplist"][substr($file,1)][0])){
+                        $mapName = $_SESSION["maplist"][substr($file,1)][0];
+                        echo "<option value=$file>$mapName</option>";
+                    }else{
+                        echo "<option value=$file>$file</option>";
+                    }
+                }else{
+                    echo "<option value=$file>$file</option>";
+                }
             }
         }
     ?>
@@ -53,7 +66,7 @@ https://wiki.vg-resource.com/Noesis , Noesis Download : http://www.richwhitehous
 
     <script type="text/javascript">
     
-    document.getElementById("iconPic").style.visibility = "hidden";
+    document.getElementById("iconPic").style.display = "none";
 
     function changeIcon(){
         if(window.location.search.split('=')[1] == "items"){
@@ -61,10 +74,10 @@ https://wiki.vg-resource.com/Noesis , Noesis Download : http://www.richwhitehous
 
             letter = ["w","W"];
             
-            document.getElementById("iconPic").style.visibility = "hidden";
+            document.getElementById("iconPic").style.display = "none";
             for (let i = 0; i < letter.length; i++) {
                 if(UrlExists("http://voldre.free.fr/Eden/images/itemIcon/"+letter[i]+file+"01.png")){
-                    document.getElementById("iconPic").style.visibility = "visible";
+                    document.getElementById("iconPic").style.display = "block";
                     document.getElementById("iconPic").src = "http://voldre.free.fr/Eden/images/itemIcon/"+letter[i]+file+"01.png";
                     break;
                 }

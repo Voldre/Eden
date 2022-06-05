@@ -54,6 +54,11 @@ body {
     margin: 15px 20px 0px 20px;
 }
 
+#loading{
+    position: fixed;
+    left: 40%;
+}
+
 .loadingframe,
 .ldBar {
     position: absolute;
