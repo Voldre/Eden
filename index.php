@@ -1,20 +1,16 @@
-<HTML>
-
+<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="http://voldre.free.fr/style.css">
     <link rel="stylesheet" href="eden.css">
-  
-  <!--
+    <!--
     <script src="http://voldre.free.fr/Eden/p5.min.js"></script>
     <script src="sketch.js"></script>
     -->
-
     <script src="jquery-3.6.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
     <link rel="stylesheet" type="text/css" href="loading-bar.css"/>
-<script type="text/javascript" src="loading-bar.js"></script>
+    <script type="text/javascript" src="loading-bar.js"></script>
 </head>
 
 <body onload="load()">

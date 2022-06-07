@@ -1,7 +1,7 @@
 <?php
-session_start();
+include("header.php");
 ?>
-<!DOCTYPE html>
+
 <!-- 
 
 Noesis paramètres avancés pour l'export :
@@ -11,22 +11,6 @@ Noesis Wiki (+ QuickBMS) et d'autres outils à regarder :
 https://wiki.vg-resource.com/Noesis , Noesis Download : http://www.richwhitehouse.com/index.php?content=inc_projects.php&filemirror=noesisv4464.zip
 
 -->
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="http://voldre.free.fr/style.css">
-    <link rel="stylesheet" href="http://voldre.free.fr/Eden/eden.css">
-
-    <!--<script src="jquery-3.6.0.min.js"></script>-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-    <meta charset="utf-8">
-    <title>Démonstration 3D</title>
-    <script type="text/javascript" src="three.min.js"></script>
-    <script type="text/javascript" src="MTLLoader.js"></script>
-    <script type="text/javascript" src="OBJLoader.js"></script>
-
-    <script type="text/javascript" src="threeEden.js"></script>
-</head>
 <body onload="init(1152, 648)" style="overflow:hidden; text-align:center;">
     
 <a href="index.php"><button class="root">Retourner au menu  d'Eden</button></a>

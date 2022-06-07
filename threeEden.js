@@ -2,7 +2,7 @@ var scene, camera, renderer, mesh, mesh2;
 var meshFloor, ambientLight, light;
 
 var keyboard = {};
-var player = { height: 1.8, speed: 0.2, turnSpeed: Math.PI * 0.02 };
+var player = { height: 1.6, speed: 0.2, turnSpeed: Math.PI * 0.02 };
 var USE_WIREFRAME = false;
 
 
@@ -67,7 +67,7 @@ function init(width, height) {
     meshFloor.receiveShadow = true;
     scene.add(meshFloor);
                                                 // 0.4
-    ambientLight = new THREE.AmbientLight(0xffffff, 0.75);
+    ambientLight = new THREE.AmbientLight(0xffffff, 0.85);
     scene.add(ambientLight);
 
     light = new THREE.PointLight(0xffffff, 1.5, 20);
@@ -212,6 +212,7 @@ function init(width, height) {
         var objLoader = new THREE.OBJLoader();
         objLoader.setMaterials(materials);
 
+        console.log(materials);
         
         mesh.position.y += 1;
         mesh.receiveShadow = true;
@@ -220,13 +221,30 @@ function init(width, height) {
         objLoader.load("http://voldre.free.fr/Eden/images/" + folder + "/" + myObject + ".obj", function(mesh) {
             console.log('Loaded : ' + myObject );
             document.getElementById("loading").innerHTML = null;
-
+            
             mesh.traverse(function(node) {
                 if (node instanceof THREE.Mesh) {
+                    console.log(node);
                     node.castShadow = true;
                     node.receiveShadow = true;
                 }
             });
+                
+            /******************************************
+             07/06/2022 - Most important update :
+             Adding alphaTest and transparent parameters
+             in order to make transparent part of PNG effective !
+             If not, the transparent part will render black or white
+             Examples here : "Tools/Issue with the PNG transparent - alpha.png"
+            ******************************************/
+            var children = mesh.children;
+            for ( var i = 0 ; i < children.length; i++ ) {
+                children[i].castShadow = true;
+                children[i].material.alphaTest = 0.5;
+                children[i].material.transparent = true;
+            }
+
+
             // Paramètre autorisant à update la rotation de l'objet
             mesh.matrixWorld.matrixWorldNeedsUpdate = true;
             scene.add(mesh);
@@ -275,8 +293,8 @@ function init(width, height) {
             if(folder == "map"){ // -520, 18, 80
                 mesh.position.set(280, -28, 5);
             }else if (folder == "items") {
-                mesh.position.set(0, 1.1, -3.3);
-            }else {mesh.position.set(-0.2, 0.45, -0.8); }
+                mesh.position.set(0, 1, -3.3);
+            }else {mesh.position.set(-0.2, 0.25, -0.8); }
 
             // Angles de notre objet
             mesh.rotation.y = 0; // Math.PI / 6;
@@ -292,7 +310,7 @@ function init(width, height) {
     camera.position.set(0, player.height, -5);
     camera.lookAt(new THREE.Vector3(0, player.height, 0));
 
-    renderer = new THREE.WebGLRenderer();
+    renderer = new THREE.WebGLRenderer({alpha:true, antialias:true});
 
     // Size (width, height) of the canvas
     renderer.setSize(width, height);
