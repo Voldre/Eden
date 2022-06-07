@@ -1,0 +1,246 @@
+newmtl object0007_6
+Kd 0.337255 0.337255 0.337255
+Ks 0.337255 0.337255 0.337255
+Ns 0.000000
+map_Kd images/map/
+
+newmtl object0007_9
+Kd 0.337255 0.337255 0.337255
+Ks 0.337255 0.337255 0.337255
+Ns 0.000000
+map_Kd images/map/
+
+newmtl object0012_11
+Kd 0.031373 0.431373 0.525490
+Ks 0.031373 0.431373 0.525490
+Ns 0.000000
+map_Kd images/map/
+
+newmtl object0007_16
+Kd 0.337255 0.337255 0.337255
+Ks 0.337255 0.337255 0.337255
+Ns 0.000000
+map_Kd images/map/
+
+newmtl object0021_20
+Kd 0.525490 0.231373 0.031373
+Ks 0.525490 0.231373 0.031373
+Ns 0.000000
+map_Kd images/map/
+
+newmtl object0025_S043004_24
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/map/S043004.png
+
+newmtl object0033_S0180d01_31
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/map/S0180d01.png
+
+newmtl object0038_S043002_37
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/map/S095002.png
+
+newmtl object0044_v_43
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/map/UC33101.png
+
+newmtl object0050_02 - Default_49
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/map/UC00501.png
+
+newmtl object0057_Standard_11_56
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/map/UC01101.png
+
+newmtl object0062_kome01_61
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/map/UC01701.png
+
+newmtl object0067_Material #1570286210_66
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/map/UC01001.png
+
+newmtl object0072_Standard_2_71
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/map/UC01801.png
+
+newmtl object0077_01 - Default_76
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/map/UC00301.png
+
+newmtl object0050_02 - Default_82
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/map/UC00501.png
+
+newmtl object0050_02 - Default_85
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/map/UC00501.png
+
+newmtl object0050_02 - Default_88
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/map/UC00501.png
+
+newmtl object0050_02 - Default_91
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/map/UC00501.png
+
+newmtl object0094_Box01_93
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/map/UC02001.png
+
+newmtl object0050_02 - Default_98
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/map/UC00501.png
+
+newmtl object0107_WebBlinn02_106
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/map/S095003.png
+
+newmtl object0113_WebBlinn03_112
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/map/S095004.png
+
+newmtl object0119_dark_117
+Kd 0.000000 0.000000 0.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/map/
+
+newmtl object0119_dark_122
+Kd 0.000000 0.000000 0.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/map/
+
+newmtl object0126_GunPower_125
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/map/S095001.png
+
+newmtl object0135_Materrial_Grass02_134
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/map/UE70301.png
+
+newmtl object0135_Materrial_Grass02_143
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/map/UE70301.png
+
+newmtl object0147_Standard_12_145
+Kd 0.000000 0.000000 0.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/map/water_env.png
+
+newmtl object0126_GunPower_151
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/map/S095001.png
+
+newmtl object0156_S043001_155
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/map/S095006.png
+
+newmtl object0161_01 floor02_160
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/map/dust_04.png
+
+newmtl object0166_01 floor03_165
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/map/grass_04.png
+
+newmtl object0119_dark_172
+Kd 0.000000 0.000000 0.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/map/
+
+newmtl object0119_dark_174
+Kd 0.000000 0.000000 0.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/map/
+
+newmtl object0119_dark_177
+Kd 0.000000 0.000000 0.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/map/
+
+newmtl object0119_dark_179
+Kd 0.000000 0.000000 0.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/map/
+
+newmtl object0126_GunPower_182
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/map/S095001.png
+
+newmtl object0126_GunPower_185
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/map/S095001.png
+
+newmtl object0126_GunPower_188
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/map/S095001.png
+
+newmtl object0126_GunPower_191
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/map/S095001.png
+

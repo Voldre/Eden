@@ -1,16 +1,12 @@
-
-newmtl Material.000001
-Ka 1 1 1
-Kd 0 0 0
-Ks 0 0 0
-d 1
-Ns 10
+newmtl Standard_2_5
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
 map_Kd images/map/A40201.png
 
-newmtl Material.0000f5
-Ka 0 0 0
-Kd 1 1 1
-Ks 0 0 0
-d 1
-Ns 10
+newmtl 1 - Default_10
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
 map_Kd images/map/crescent.png
+

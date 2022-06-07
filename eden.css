@@ -58,6 +58,10 @@ body {
     position: fixed;
     left: 40%;
 }
+#iconPic{
+    position: fixed;
+    left: 25%;
+}
 
 .loadingframe,
 .ldBar {
