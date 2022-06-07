@@ -12,7 +12,7 @@ EdenRep = 'C:\wamp\www\Site free.fr\Eden\\'
 #currentFolder = "house"
 #currentFolder = "items"
 # currentFolder = "ride"
-currentFolder = "map"
+currentFolder = "map/toTest"
 
 #for file in glob.glob(EdenRep+"images\\monster\\*.mtl"):
 for file in glob.glob(EdenRep+"images\\"+currentFolder+"\\*.mtl"):
