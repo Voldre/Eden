@@ -40,13 +40,15 @@ https://wiki.vg-resource.com/Noesis , Noesis Download : http://www.richwhitehous
         foreach($files as $file){
             if(strpos($file,".obj") !== false){
                 // On garde tout sauf l'extension
-                $file = strtok($file,  '.');
-                if($repository == "map"){
-                    if(isset($_SESSION["maplist"][substr($file,1)][0])){
-                        $mapName = $_SESSION["maplist"][substr($file,1)][0];
-                        echo "<option value=$file>$mapName</option>";
-                    }else{
-                        echo "<option value=$file>$file</option>";
+                $file = strtok($file,  '.');  
+                if($repository == "map"){ 
+                    if($file[0] == "S"){ // Si le fichier est bien une carte (S***.obj), # 1er char = "S"
+                        if(isset($_SESSION["maplist"][substr($file,1)][0])){
+                            $mapName = $_SESSION["maplist"][substr($file,1)][0];
+                            echo "<option value=$file>$mapName</option>";
+                        }else{
+                            echo "<option value=$file>$file</option>";
+                        }
                     }
                 }else{
                     echo "<option value=$file>$file</option>";

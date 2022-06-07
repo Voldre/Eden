@@ -206,7 +206,7 @@ function init(width, height) {
         var onProgress = function ( xhr ) {
             if ( xhr.lengthComputable ) {
                 var percentComplete = xhr.loaded / xhr.total * 100;
-                console.log( Math.round(percentComplete, 2) + '% downloaded' );
+                //console.log( Math.round(percentComplete, 2) + '% downloaded' );
                 document.getElementById("loading").innerHTML = "Chargement : " + Math.round(percentComplete, 2) + "%";}        };
         
         var objLoader = new THREE.OBJLoader();
@@ -233,13 +233,36 @@ function init(width, height) {
 
             
             // 06/06/2022 - Ajout du background d'Eden
+            const date = new Date(); 
+            currentHours = date.toLocaleTimeString({hour: '2-digit',   hour12: false, timeZone: 'Europe/Paris' }).split(":")[0];
+        
+            if(currentHours <= 5){
+                myBG = "A402";
+            }else if(currentHours <= 8){
+                myBG = "A102";
+            }else if(currentHours <= 11){
+                myBG = "D502";
+            }else if(currentHours <= 15){
+                myBG = "G602";
+            }else if(currentHours <= 17){
+            myBG = "G603";
+            }else if(currentHours <= 18){
+            myBG = "D302";
+            }else if(currentHours <= 19){
+            myBG = "A302";
+            }else if(currentHours <= 20){
+            myBG = "C301";
+            }else if(currentHours <= 21){
+            myBG = "C402";
+            }else{ myBG = "G604";}
+
             mesh2 = new THREE.Mesh();
                                                         // " + myBackGround + "
-            mtlLoader.load("http://voldre.free.fr/Eden/images/map/A402.mtl", function(materials2) {      
+            mtlLoader.load("http://voldre.free.fr/Eden/images/map/"+myBG+".mtl", function(materials2) {      
             objLoader.setMaterials(materials2);
         
                                                         // " + myBackGround + "
-            objLoader.load("http://voldre.free.fr/Eden/images/map/A402.obj", function(mesh2){
+            objLoader.load("http://voldre.free.fr/Eden/images/map/"+myBG+".obj", function(mesh2){
             
             scene.add(mesh2);
             mesh2.rotation.x = -Math.PI/2;
@@ -252,8 +275,8 @@ function init(width, height) {
             if(folder == "map"){ // -520, 18, 80
                 mesh.position.set(280, -28, 5);
             }else if (folder == "items") {
-                mesh.position.set(0, 1.1, -3.6);
-            }else {mesh.position.set(-0.2, 0.25, -2); }
+                mesh.position.set(0, 1.1, -3.3);
+            }else {mesh.position.set(-0.2, 0.45, -0.8); }
 
             // Angles de notre objet
             mesh.rotation.y = 0; // Math.PI / 6;
@@ -296,10 +319,16 @@ function animate() {
 
     // ZQSD mouvement translation
     if (keyboard[90]) { // Z key
+        if($('#objets').is(":focus")){
+            $('#objets').blur();
+        }
         camera.position.x -= Math.sin(camera.rotation.y) * player.speed;
         camera.position.z -= -Math.cos(camera.rotation.y) * player.speed;
     }
     if (keyboard[83]) { // S key
+        if($('#objets').is(":focus")){
+            $('#objets').blur();
+        }
         camera.position.x += Math.sin(camera.rotation.y) * player.speed;
         camera.position.z += -Math.cos(camera.rotation.y) * player.speed;
     }
