@@ -154,5 +154,56 @@ $_SESSION["maplist"] = array(1=>["Aven",26.5,64.9,0],
 
     <!-- Never forget the viewport ! -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
 </head>
+    
+
+<div id="google_translate_element" style="float:right;">
+</div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+new google.translate.TranslateElement({
+pageLanguage: 'fr', includedLanguages: 'fr,en,de,pl',
+layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+}, 'google_translate_element');
+}
+</script>
+<style>
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+} body { top: 0px !important; }
+.goog-tooltip {
+    display: none !important;
+}
+.goog-tooltip:hover {
+    display: none !important;
+}
+.goog-text-highlight {
+    background-color: transparent !important;
+    border: none !important; 
+    box-shadow: none !important;
+}
+.goog-logo-link{
+    display: none !important;
+}
+.goog-te-gadget{
+    font-size:0;
+    user-select: none;
+}
+
+select{
+	background: #999;
+	border: 2px solid #0a0a0a ;
+	background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.4));
+	background-image: -moz-linear-gradient(top, transparent, rgba(0, 0, 0, 0.4));
+	background-image: -o-linear-gradient(top, transparent, rgba(0, 0, 0, 0.4));
+	background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.4));
+	-webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px 1px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+</style>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
