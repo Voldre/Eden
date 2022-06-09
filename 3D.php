@@ -11,10 +11,25 @@ Noesis Wiki (+ QuickBMS) et d'autres outils à regarder :
 https://wiki.vg-resource.com/Noesis , Noesis Download : http://www.richwhitehouse.com/index.php?content=inc_projects.php&filemirror=noesisv4464.zip
 
 -->
-<body onload="init(1152, 648)" style="overflow:hidden; text-align:center;">
+<body onload="init(1152, 648)" style="overflow:hidden; text-align:center;margin-top:0px;">
+<header style="display:flex;justify-content:space-between;margin-bottom:-5px;">
+    <input type="button" value="Toggle Wireframe" onclick="mesh.material.wireframe=!mesh.material.wireframe;meshFloor.material.wireframe=!meshFloor.material.wireframe;" /> ZQSD : pour bouger.  &nbsp; &nbsp; &#8616; : pour changer d'image (sauf sur les maps).  &nbsp; &nbsp; &harr; : pour tourner
+  
+<a href="index.php"><button class="root" style="margin-right: 27px;">Retourner au menu  d'Eden</button></a>
+
+    <!-- 09/06 Ajout du Toggle pour le Background -->
+    <div>
+    <p style="margin:0px;margin-right:15px;">Afficher l'arrière plan</p>
+    <label class="switch">
+    <input id="backgroundToggle" type="checkbox" <?php if(isset($_COOKIE['backgroundState'])){ echo $_COOKIE['backgroundState'];} ?> />
+    <span class="slider round"></span>
+    </label>
+    </div>
     
-<a href="index.php"><button class="root">Retourner au menu  d'Eden</button></a>
-    <span style="font-size:20px">&#8616;</span> <select onchange="update(); changeIcon();" id="objets">
+</header>
+<img id="iconPic" class="iconImg" />
+<h2 id="loading"></h2>
+<span style="font-size:20px;">&#8616;</span> <select onchange="update(); changeIcon();" id="objets">
     <?php
         //$monsterRepository = 'images/monster/';
         if(isset($_GET["data"])){
@@ -43,13 +58,6 @@ https://wiki.vg-resource.com/Noesis , Noesis Download : http://www.richwhitehous
         <!--<option value="Axe">Hache</option>
         <option value="bird">Oiseau</option>-->
     </select>
-    <h2 id="loading"></h2>
-        <img id="iconPic" class="iconImg" />
-
-    <!--<button onclick="update()">Afficher</button>-->
-    <br/>
-    <span style="position:absolute;top:0px;left:0px;"><input type="button" value="Toggle Wireframe" onclick="mesh.material.wireframe=!mesh.material.wireframe;meshFloor.material.wireframe=!meshFloor.material.wireframe;"/> ZQSD : pour bouger.  &nbsp; &nbsp; &nbsp; &#8616; : pour changer d'image (sauf sur les maps).  &nbsp; &nbsp;   &harr; : pour tourner</span>
-
     <script type="text/javascript">
     
     document.getElementById("iconPic").style.display = "none";

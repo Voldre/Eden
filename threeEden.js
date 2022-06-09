@@ -11,6 +11,10 @@ var myrequest = false;
 THREE.Cache.enabled = true; // VD 04/06/2022 : Alléger les chargements
 
 function update() {
+    
+    // 10/06/22 - Update : window.stop() arrête toutes les requêtes
+    // Cela permet donc d'annuler les anciens chargements encore en cours
+    window.stop();
 
     // Permet d'annuler l'execution automatique de la fonction animate()
     // qui a été lancé lors de l'initialisation de l'objet précédent
@@ -21,6 +25,7 @@ function update() {
     document.getElementsByTagName("canvas")[0].remove();
     }
     myrequest = true;
+    
     init(1152, 648);
 }
 
@@ -31,7 +36,22 @@ function myObjectInit(){
     
 }
 
+function read_cookie(key)
+{
+    var result;
+    return (result = new RegExp('(?:^|; )' + encodeURIComponent(key) + '=([^;]*)').exec(document.cookie)) ? (result[1]) : null;
+}
+
 function init(width, height) {
+
+    /* Update 09.06.22 - Ajout d'un toggle permettant
+    de choisir si on veut ou non afficher l'arrière plan.
+    Car il met un peu + de temps à se générer et avec plein de
+    designs c'est vite désagréable, mais pas les maps  */ 
+    if(document.getElementById("backgroundToggle").checked) {
+        document.cookie = "backgroundState=checked";
+    } else{ document.cookie = "backgroundState="; }
+
 
     // Première valeur en paramètre de l'URL
     //console.log(window.location.search.split('=')[1]);
@@ -132,7 +152,7 @@ function init(width, height) {
     }else{ document.getElementById("objets").value = myObject; }
     document.getElementById("objets")
 
-    console.log("Objet:" + myObject)
+    //console.log("Objet:" + myObject)
 
     var mtlLoader = new THREE.MTLLoader();
     mtlLoader.setMaterialOptions({ ignoreZeroRGBs: true });
@@ -142,7 +162,6 @@ function init(width, height) {
        
         var listLiensTextures = [];
         for(var material in materials.materialsInfo){
-            // console.log(materials.materialsInfo[material]["map_kd"]);
             if(materials.materialsInfo[material]["map_kd"] != null){
                 listLiensTextures.push(materials.materialsInfo[material]["map_kd"]);
             }
@@ -152,26 +171,19 @@ function init(width, height) {
             return self.indexOf(value) === index;
           }
         listLiensTextures = listLiensTextures.filter(onlyUnique);
-        // console.log(listLiensTextures);
-        
         /*
         for(var i = 0; i < listLiensTextures.length; i++){
             console.log(listLiensTextures[i]);
-            console.log(i);
             monLien = listLiensTextures[i];
             if(!monLien.includes('.png')){ 
                 //delete listLiensTextures[i]; 
             }else{
-
                 var img = document.createElement("img");
                 img.id = monLien;
                 img.src = monLien;
                 document.getElementById("listTextures").appendChild(img);
             }
         }
-        */
-        
-        /*
         listTextures = {};
 		
         var loader = new THREE.TextureLoader();
@@ -184,21 +196,17 @@ function init(width, height) {
                 listTextures[texture] = loader.load(texture);
             }
         } 
-        console.log(listTextures);
-
-        
         const middleIndex = Math.ceil(listTextures.length / 2);
         const firstHalf = listTextures.splice(0, middleIndex);   
         const secondHalf = listTextures.splice(-middleIndex);
 
         document.cookie='listTextures1='+JSON.stringify(firstHalf);
         document.cookie='listTextures2='+JSON.stringify(secondHalf);
-
-        console.log(mtlLoader);
-        console.log(document.cookie);
         */
 
-        // materials.preload();
+        if(folder != "map"){
+            materials.preload();
+        }
         
         // Ajout VD - 04/06/2022 - suivi du loading :
         console.log('On loading ...');
@@ -206,13 +214,12 @@ function init(width, height) {
         var onProgress = function ( xhr ) {
             if ( xhr.lengthComputable ) {
                 var percentComplete = xhr.loaded / xhr.total * 100;
-                //console.log( Math.round(percentComplete, 2) + '% downloaded' );
                 document.getElementById("loading").innerHTML = "Chargement : " + Math.round(percentComplete, 2) + "%";}        };
         
         var objLoader = new THREE.OBJLoader();
         objLoader.setMaterials(materials);
 
-        console.log(materials);
+        // console.log(materials);
         
         mesh.position.y += 1;
         mesh.receiveShadow = true;
@@ -224,7 +231,6 @@ function init(width, height) {
             
             mesh.traverse(function(node) {
                 if (node instanceof THREE.Mesh) {
-                    console.log(node);
                     node.castShadow = true;
                     node.receiveShadow = true;
                 }
@@ -274,20 +280,17 @@ function init(width, height) {
             myBG = "C402";
             }else{ myBG = "G604";}
 
-            mesh2 = new THREE.Mesh();
-                                                        // " + myBackGround + "
-            mtlLoader.load("http://voldre.free.fr/Eden/images/map/"+myBG+".mtl", function(materials2) {      
-            objLoader.setMaterials(materials2);
-        
-                                                        // " + myBackGround + "
-            objLoader.load("http://voldre.free.fr/Eden/images/map/"+myBG+".obj", function(mesh2){
-            
-            scene.add(mesh2);
-            mesh2.rotation.x = -Math.PI/2;
-        
-            });
-            });
-            
+            // 09/06 -- On n'affiche le fond d'écran que si c'est voulu
+            if(read_cookie('backgroundState') == "checked"){
+                mesh2 = new THREE.Mesh();   
+                mtlLoader.load("http://voldre.free.fr/Eden/images/map/"+myBG+".mtl", function(materials2) {      
+                    objLoader.setMaterials(materials2);
+                    objLoader.load("http://voldre.free.fr/Eden/images/map/"+myBG+".obj", function(mesh2){
+                        scene.add(mesh2);
+                        mesh2.rotation.x = -Math.PI/2;    
+                    });
+                });
+            }
 
             // Position de notre objet
             if(folder == "map"){ // -520, 18, 80
@@ -402,7 +405,7 @@ function animate() {
         }else{ player.speed = 1;}
     }
 
-    if (keyboard[161] || keyboard[48]) { // "!" ou "0", 04/06/2022 - Kill du programme        console.log("Programme stoppé");
+    if (keyboard[161] || keyboard[48]) { // "!" ou "0", 04/06/2022 - Kill du programme
         console.log("Programme stoppé");
         cancelAnimationFrame(myrequest);
         this.renderer.domElement.addEventListener('dblclick', null, false); //remove listener to render
@@ -410,11 +413,9 @@ function animate() {
         this.projector = null;
         this.camera = null;
         this.controls = null;
-        empty(this.modelContainer);
         // On supprime le canvas de l'ancien Objet 3D
         document.getElementsByTagName("canvas")[0].remove();
     }
-
 
     renderer.render(scene, camera);
 }

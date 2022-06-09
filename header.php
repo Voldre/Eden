@@ -193,8 +193,7 @@ layout: google.translate.TranslateElement.InlineLayout.VERTICAL
 }
 
 select{
-	background: #999;
-	border: 2px solid #0a0a0a ;
+	border: 0px ;
 	background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.4));
 	background-image: -moz-linear-gradient(top, transparent, rgba(0, 0, 0, 0.4));
 	background-image: -o-linear-gradient(top, transparent, rgba(0, 0, 0, 0.4));
