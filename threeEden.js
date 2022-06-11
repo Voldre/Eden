@@ -26,7 +26,8 @@ function update() {
     }
     myrequest = true;
     
-    init(1152, 648);
+    init();
+    //init(1152, 648);
 }
 
 function myObjectInit(){
@@ -42,7 +43,7 @@ function read_cookie(key)
     return (result = new RegExp('(?:^|; )' + encodeURIComponent(key) + '=([^;]*)').exec(document.cookie)) ? (result[1]) : null;
 }
 
-function init(width, height) {
+function init() {
 
     /* Update 09.06.22 - Ajout d'un toggle permettant
     de choisir si on veut ou non afficher l'arrière plan.
@@ -51,6 +52,9 @@ function init(width, height) {
     if(document.getElementById("backgroundToggle").checked) {
         document.cookie = "backgroundState=checked";
     } else{ document.cookie = "backgroundState="; }
+
+    // 11.06.22 - Pour l'UI, on retire le choix de langue sur les designs
+    document.getElementById("google_translate_element").style.display = "none";
 
 
     // Première valeur en paramètre de l'URL
@@ -315,8 +319,10 @@ function init(width, height) {
 
     renderer = new THREE.WebGLRenderer({alpha:true, antialias:true});
 
-    // Size (width, height) of the canvas
-    renderer.setSize(width, height);
+    /* Size (width, height) of the canvas
+    11.06.22 - UI Improvement : Adaptation du canvas selon l'écran 
+    seulement, donc plus besoin de paramètre pour init() */
+    renderer.setSize(window.screen.width*0.98, window.screen.width*0.54);
 
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.BasicShadowMap;

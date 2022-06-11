@@ -1,5 +1,7 @@
 body {
     cursor: url('images/cursor.png'), auto;
+    width: fit-content;
+    margin:1%;
 }
 
 ::-webkit-scrollbar {
@@ -36,6 +38,7 @@ body {
     margin: 1%;
     width: 95%;
     border: 2px black solid;
+    min-width: 300px;
 }
 
 .pictures {
@@ -45,6 +48,7 @@ body {
 
 .icon {
     width: 45px;
+    height: 45px;
     margin: 7px;
 }
 
@@ -54,10 +58,25 @@ body {
     margin: 15px 20px 0px 20px;
 }
 
+.header3D{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:3px;
+}
+.select3D{
+    position: absolute;
+    left: 42%;
+    font-size:20px;
+    background-color: rgba(40, 40, 40, 0.7);
+    border: 2px solid rgba(40, 40, 40, 1);
+    padding:10px;
+    border-radius: 0 0 20px 20px;
+}
+
 #loading{
     position: fixed;
-    left: 40%;
-    top:+11%;
+    left:40%;
+    top:12.5%;
 }
 #iconPic{
     position: fixed;
@@ -100,7 +119,7 @@ a {
     text-decoration: none;
 }
 
-li {
+.dbMenu li {
     display: inline-block;
     text-align: left;
     vertical-align: middle;
@@ -184,7 +203,7 @@ li img,
     position: relative;
     display: inline-block;
     width: 40px;
-    height: 24px;
+    height: 22px;
 }
 
 
@@ -214,8 +233,8 @@ li img,
 .slider:before {
     position: absolute;
     content: "";
-    height: 16px;
-    width: 16px;
+    height: 14px;
+    width: 14px;
     left: 4px;
     bottom: 4px;
     background-color: white;
@@ -245,3 +264,57 @@ input:checked+.slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+/* 11/06/22 Ajout du menu */
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 720px;
+    margin: 0 auto;
+    list-style: none;
+    padding: 0px;
+    margin-left:-15px;
+    font-weight: bold;
+  }
+  
+  .menu li {
+    width: 125px;
+    height: 50px;
+    transition: background-position-x 0.9s linear;
+    text-align: center;
+  }
+  .menu li  a {
+    display: inline-block;
+    position: relative;
+    color: rgb(246, 196, 104);
+    text-decoration:none;
+  }
+  .menu li a:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, rgba(111, 111, 243, 0.61), rgba(236, 133, 236, 0.733));
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .menu li a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+@media only screen and (max-width: 700px) {
+    .icon {
+        width: 32px;
+        margin: 4px;
+    }
+    h2{
+        font-size: 16px;
+    }
+  }

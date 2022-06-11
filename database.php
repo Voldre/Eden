@@ -1,12 +1,9 @@
 <?php
 include("header.php");
+include("menu.html");
 ?>
-
 <body>
-<a href="../"><button class="root">Retourner sur le site global</button></a>
-<br/>
-
-<div class="menu">
+<div class="dbMenu">
     <ul>
         <a href="database.php?data=items"><li><img src="images/itemIcon/A00016.png" /> Objets</li></a>
         <a href="database.php?data=maps"><li href="database.php?data=maps"><img src="images/maps/S013m.png" /><p style="display:inline-block;width: 48%;height: 24px;"> Régions </p><a href="database.php?data=worldmap"><img src="images/worldmapIcon.png" class="mapIcon" ></a></li></a>
@@ -45,8 +42,8 @@ $skillRepository = 'images/skillIcon/';
 $monsterRepository = 'images/monster/';
 
 $categorieslist = array(
-    "a"=>"Anneaux / Armures",
-    "A"=>"Armures Eveillés / Autres",
+    "A"=>"Anneaux / Armures",
+    "a"=>"Armures Eveillés / Autres",
     "e"=>"Compétences",
     "j"=>"Passifs des personnages et des classes",
     "i"=>"Objets / Potions / Trophées / Familiés / Montures / Gemmes / Compos / Plans",
@@ -65,15 +62,16 @@ if(isset($_GET["data"])){
     if($_GET["data"] == "items"){
     ?>
     <h2>Liste des objets</h2>
-    <div class="container">
     <?php
         drawIcons($itemRepository);
+        echo  "<iframe style='width:0px;' onload='changeCategory();'></iframe>";
+
     }else if($_GET["data"] == "class"){
     ?>
     <h2>Liste des compétences</h2>
-    <div class="container">
     <?php
         drawIcons($skillRepository);
+        echo  "<iframe style='width:0px;' onload='changeCategory();'></iframe>";
     }else if($_GET["data"] == "maps"){
     ?>
     <form method="POST" action="database.php?data=maps">
@@ -156,7 +154,23 @@ if(isset($_GET["data"])){
 }
 ?>
 </div>
+<script type="text/javascript">
+function changeCategory() {
 
+    console.log(document.getElementsByClassName("container"));
+    for(children in document.getElementsByClassName("container")[0].childNodes){
+        //console.log(document.getElementsByClassName("container")[0].childNodes[children].currentSrc.split('/').slice(-1)[0].slice(0)[0]);
+        if(typeof document.getElementsByClassName("container")[0].childNodes[children].currentSrc != "undefined"){
+                // Si la première lettre slice(0) du nom de fichier slice(-1) est différent de la categorie choisie, on le cache
+            if(document.getElementsByClassName("container")[0].childNodes[children].currentSrc.split('/').slice(-1)[0].slice(0)[0] != $("#categorie").val()){
+                document.getElementsByClassName("container")[0].childNodes[children].style.display = "none";
+            }else{
+                document.getElementsByClassName("container")[0].childNodes[children].style.display = "inline";   
+            }
+        }
+    }
+}
+</script>
 <?php
 
 // Functions to draw datas 
@@ -168,19 +182,26 @@ function drawIcons($repository){
     $categorie = null;
     $categorienom = null;
 
+    $myCategories = array();
+    foreach($files as $file) {
+        // Si la catégorie n'est pas encore ajouté ET qu'on l'a identifié (#on veut l'afficher)
+        if (!isset($myCategories[$file[0]]) && isset($categorieslist[$file[0]])){
+            $myCategories[$file[0]] = $file[0];
+        }
+    }
+?>
+<select onchange="changeCategory();" id="categorie">
+    <?php
+    foreach($myCategories as $categorie){
+    echo "<option value=$categorie>".$categorieslist[$categorie]."</option>";
+    }
+    ?>
+</select>
+<?php
+    echo "<div class='container'>";
     foreach($files as $file){
         if(strlen($file) >= 3){
-            if(strtolower($file[0]) != $categorie){
-                if($categorie != null){
-                    echo "</div>";
-                }
-                $categorie = strtolower($file[0]);
-                $categorienom = $categorieslist[$categorie];
-                echo "<h2 style='margin: 0 -10px -10px -20px;'>$categorienom</h2><br/>";
-                echo "<div class='container'>";
-
-            }
-            echo "<img class='icon' src='$repository$file' />";
+            echo "<img class='icon' src='$repository$file' onerror=\"this.onerror=null;this.src='$repository$file';\" />";
         }
     }
 }
