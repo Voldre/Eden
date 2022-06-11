@@ -8,12 +8,6 @@ include("menu.html");
         <a href="database.php?data=items"><li><img src="images/itemIcon/A00016.png" /> Objets</li></a>
         <a href="database.php?data=maps"><li href="database.php?data=maps"><img src="images/maps/S013m.png" /><p style="display:inline-block;width: 48%;height: 24px;"> Régions </p><a href="database.php?data=worldmap"><img src="images/worldmapIcon.png" class="mapIcon" ></a></li></a>
         <a href="database.php?data=class"><li><img src="images/skillIcon/E0013.png" /> Classes</li></a>
-        <a href="3D.php?data=monster"><li><img src="images/skillIcon/m081.png" /> Monstres</li></a>
-        <a href="3D.php?data=char"><li><img src="images/skillIcon/m321.png" /> Costumes (RGB)</li></a>
-        <a href="3D.php?data=house"><li><img src="images/itemIcon/I00466.png" /> Maisons</li></a>
-        <a href="3D.php?data=items"><li><img src="images/itemIcon/w25502.png" /> Armements</li></a>
-        <a href="3D.php?data=ride"><li><img src="images/itemIcon/i00887.png" /> Montures</li></a>
-        <a href="3D.php?data=map"><li><img src="images/otherIcon/group037.png" /> Donjons</li></a>
     </ul>
 </div>
  
@@ -46,7 +40,7 @@ $categorieslist = array(
     "a"=>"Armures Eveillés / Autres",
     "e"=>"Compétences",
     "j"=>"Passifs des personnages et des classes",
-    "i"=>"Objets / Potions / Trophées / Familiés / Montures / Gemmes / Compos / Plans",
+    "i"=>"Objets / Potions / Trophées / Familiers / Montures / Gemmes / Compos / Plans",
     "k"=>"Costumes",
     "m"=>"Ennemis",
     "n"=>"Gestes",

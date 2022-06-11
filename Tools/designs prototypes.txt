@@ -1,0 +1,11 @@
+Première arme 3D : w227 Axe
+Première map 3D : S221 Temple de la Rose
+Premier design PNG avec transparence : Monster M619  L'arbre arc-en-ciel (Monument VdG)
+Première (map) 3D où j'ai retiré les murs bloquants qui s'affichent en bleu/violet/blanc : UA106 (Bâtiment central Aven)
+	PS : Noesis n'a pas réussi à me l'exporter, il mettait un faux bug "pas de material trouvé"
+--> La solution : analyser sur les MTL files les matériaux (les noms) qui n'ont pas de design/img.
+    Autrement dit, soit "map_Kd  " soit rien, et ensuite dans l'OBJ supprimer ces matériaux.
+--> Sur la S221 Temple de la Rose, ces matériaux sont nommés "kake", sur l'UA106 #Aven "true wall"
+
+--> Solution alternative sans toucher les OBJ (meilleures) : 
+	Dans ThreeJS, désactiver les matériaux (un à un) qui n'ont pas de textures
