@@ -11,15 +11,18 @@ Noesis Wiki (+ QuickBMS) et d'autres outils à regarder :
 https://wiki.vg-resource.com/Noesis , Noesis Download : http://www.richwhitehouse.com/index.php?content=inc_projects.php&filemirror=noesisv4464.zip
 
 -->
-<body onload="init(1152, 648)" style="overflow:hidden; text-align:center;margin-top:0px;">
-<header style="display:flex;justify-content:space-between;margin-bottom:-5px;">
-    <input type="button" value="Toggle Wireframe" onclick="mesh.material.wireframe=!mesh.material.wireframe;meshFloor.material.wireframe=!meshFloor.material.wireframe;" /> ZQSD : pour bouger.  &nbsp; &nbsp; &#8616; : pour changer d'image (sauf sur les maps).  &nbsp; &nbsp; &harr; : pour tourner
-  
-<a href="index.php"><button class="root" style="margin-right: 27px;">Retourner au menu  d'Eden</button></a>
-
+<body onload="init()" style="overflow:hidden; text-align:center;margin-top:0px;">
+<header class="header3D">
+    <!--<input type="button" value="Toggle Wireframe" onclick="mesh.material.wireframe=!mesh.material.wireframe;meshFloor.material.wireframe=!meshFloor.material.wireframe;" />--> 
+    ZQSD : pour bouger  &nbsp;  &nbsp;  &#8616; : pour changer d'image (sauf sur les maps).  &nbsp; &nbsp; &harr; : pour tourner
+    <nav>
+    <ul class="menu">
+      <li><a href="index.php">Page principale</a></li>
+    </ul>
+</nav>
     <!-- 09/06 Ajout du Toggle pour le Background -->
-    <div>
-    <p style="margin:0px;margin-right:15px;">Afficher l'arrière plan</p>
+    <div style="margin-right:17px;">
+    <p style="margin:0px;">Afficher l'arrière plan</p>
     <label class="switch">
     <input id="backgroundToggle" type="checkbox" <?php if(isset($_COOKIE['backgroundState'])){ echo $_COOKIE['backgroundState'];} ?> />
     <span class="slider round"></span>
@@ -27,9 +30,27 @@ https://wiki.vg-resource.com/Noesis , Noesis Download : http://www.richwhitehous
     </div>
     
 </header>
-<img id="iconPic" class="iconImg" />
-<h2 id="loading"></h2>
-<span style="font-size:20px;">&#8616;</span> <select onchange="update(); changeIcon();" id="objets">
+<?php 
+if(!isset($_GET["data"])){
+    ?>
+    
+<div class="dbMenu">
+    <ul>
+        <a href="3D.php?data=monster"><li><img src="images/skillIcon/m081.png" /> Monstres</li></a>
+        <!--<a href="3D.php?data=char"><li><img src="images/skillIcon/m321.png" /> Costumes (RGB)</li></a>-->
+        <a href="3D.php?data=house"><li><img src="images/itemIcon/I00466.png" /> Maisons</li></a>
+        <a href="3D.php?data=items"><li><img src="images/itemIcon/w25502.png" /> Armements</li></a>
+        <a href="3D.php?data=ride"><li><img src="images/itemIcon/i00887.png" /> Montures</li></a>
+        <a href="3D.php?data=map"><li><img src="images/otherIcon/group037.png" /> Donjons</li></a>
+    </ul>
+</div>
+    <?php
+exit();
+}
+?>
+<div class="select3D">
+    <img id="iconPic" class="iconImg" />
+    <span style="font-size:20px">&#8616;</span> <select onchange="update(); changeIcon();" id="objets">
     <?php
         //$monsterRepository = 'images/monster/';
         if(isset($_GET["data"])){
@@ -58,6 +79,8 @@ https://wiki.vg-resource.com/Noesis , Noesis Download : http://www.richwhitehous
         <!--<option value="Axe">Hache</option>
         <option value="bird">Oiseau</option>-->
     </select>
+</div>
+<h2 id="loading"></h2>
     <script type="text/javascript">
     
     document.getElementById("iconPic").style.display = "none";
@@ -87,8 +110,6 @@ https://wiki.vg-resource.com/Noesis , Noesis Download : http://www.richwhitehous
         return http.status!=404;
     }
     </script>
-
-    <div style="display:none;" id="listTextures"></div>
 </body>
 
 </html>

@@ -128,7 +128,7 @@ $_SESSION["maplist"] = array(1=>["Aven",26.5,64.9,0],
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="http://voldre.free.fr/style.css">
-    <link rel="stylesheet" href="http://voldre.free.fr/Eden/eden.css">
+    <link rel="stylesheet" href="eden.css">
 
     <!--<script src="jquery-3.6.0.min.js"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -141,7 +141,7 @@ $_SESSION["maplist"] = array(1=>["Aven",26.5,64.9,0],
 
     <script type="text/javascript" src="threeEden.js"></script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FPLLJ4M61Z"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -150,14 +150,13 @@ $_SESSION["maplist"] = array(1=>["Aven",26.5,64.9,0],
 
     gtag('config', 'G-FPLLJ4M61Z');
     </script>
-
+    -->
 
     <!-- Never forget the viewport ! -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
 </head>
     
-
 <div id="google_translate_element" style="float:right;">
 </div>
 
