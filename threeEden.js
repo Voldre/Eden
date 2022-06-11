@@ -53,13 +53,16 @@ function init() {
         document.cookie = "backgroundState=checked";
     } else{ document.cookie = "backgroundState="; }
 
-    // 11.06.22 - Pour l'UI, on retire le choix de langue sur les designs
-    document.getElementById("google_translate_element").style.display = "none";
-
-
     // Première valeur en paramètre de l'URL
     //console.log(window.location.search.split('=')[1]);
     folder = window.location.search.split('=')[1];
+    
+    if(typeof folder == "undefined"){
+            // 11.06.22 - Pour l'UI, on retire le choix de langue sur les designs
+            throw new Error("En attente de la sélection");
+    }else{
+        document.getElementById("google_translate_element").style.display = "none";
+    }
     folder = folder.split("&")[0];
     if(folder == "map"){
         player.speed = 1;
@@ -70,7 +73,6 @@ function init() {
             throw new Error("En attente du choix de l'utilisateur");
         }
     }
-
 
     scene = new THREE.Scene();  
     /* **************************************************
@@ -164,52 +166,21 @@ function init() {
     // console.log(mtlLoader);
     mtlLoader.load("http://voldre.free.fr/Eden/images/" + folder + "/" + myObject + ".mtl", function(materials) {
        
+        /*
         var listLiensTextures = [];
         for(var material in materials.materialsInfo){
             if(materials.materialsInfo[material]["map_kd"] != null){
                 listLiensTextures.push(materials.materialsInfo[material]["map_kd"]);
             }
         }
-        
         function onlyUnique(value, index, self) {
             return self.indexOf(value) === index;
           }
         listLiensTextures = listLiensTextures.filter(onlyUnique);
-        /*
-        for(var i = 0; i < listLiensTextures.length; i++){
-            console.log(listLiensTextures[i]);
-            monLien = listLiensTextures[i];
-            if(!monLien.includes('.png')){ 
-                //delete listLiensTextures[i]; 
-            }else{
-                var img = document.createElement("img");
-                img.id = monLien;
-                img.src = monLien;
-                document.getElementById("listTextures").appendChild(img);
-            }
-        }
-        listTextures = {};
-		
-        var loader = new THREE.TextureLoader();
-
-        for(var texture in listLiensTextures){
-            if(!texture.includes('.png')){ 
-                delete texture; 
-            }else{
-                console.log(loader.load(texture));
-                listTextures[texture] = loader.load(texture);
-            }
-        } 
-        const middleIndex = Math.ceil(listTextures.length / 2);
-        const firstHalf = listTextures.splice(0, middleIndex);   
-        const secondHalf = listTextures.splice(-middleIndex);
-
-        document.cookie='listTextures1='+JSON.stringify(firstHalf);
-        document.cookie='listTextures2='+JSON.stringify(secondHalf);
         */
 
         if(folder != "map"){
-            materials.preload();
+            // materials.preload();
         }
         
         // Ajout VD - 04/06/2022 - suivi du loading :
@@ -247,7 +218,8 @@ function init() {
              If not, the transparent part will render black or white
              Examples here : "Tools/Issue with the PNG transparent - alpha.png"
             ******************************************/
-            var children = mesh.children;
+            var children = mesh.children;                
+            console.log(children)
             for ( var i = 0 ; i < children.length; i++ ) {
                 children[i].castShadow = true;
                 children[i].material.alphaTest = 0.5;
@@ -313,16 +285,22 @@ function init() {
 
     });
 
+    if(folder != "house"){
+        camera.position.set(0, player.height, -5);
+        camera.lookAt(new THREE.Vector3(0, player.height, 0));
 
-    camera.position.set(0, player.height, -5);
-    camera.lookAt(new THREE.Vector3(0, player.height, 0));
+    }else{ 
+        camera.position.set(0, player.height+3.2, -17); 
+        camera.lookAt(new THREE.Vector3(0, player.height+3, 0));
+    }
 
     renderer = new THREE.WebGLRenderer({alpha:true, antialias:true});
 
     /* Size (width, height) of the canvas
     11.06.22 - UI Improvement : Adaptation du canvas selon l'écran 
     seulement, donc plus besoin de paramètre pour init() */
-    renderer.setSize(window.screen.width*0.98, window.screen.width*0.54);
+    // window.innerWidth = Taille fenêtre, window.screen.width = Taille écran
+    renderer.setSize(window.innerWidth*0.98, window.innerWidth*0.46);
 
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.BasicShadowMap;
@@ -414,6 +392,8 @@ function animate() {
     if (keyboard[161] || keyboard[48]) { // "!" ou "0", 04/06/2022 - Kill du programme
         console.log("Programme stoppé");
         cancelAnimationFrame(myrequest);
+        window.stop();
+
         this.renderer.domElement.addEventListener('dblclick', null, false); //remove listener to render
         this.scene = null;
         this.projector = null;
