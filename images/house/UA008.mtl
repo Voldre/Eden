@@ -2,31 +2,31 @@ newmtl Material #880_5
 Kd 1.000000 1.000000 1.000000
 Ks 1.000000 1.000000 1.000000
 Ns 10.000000
-map_Kd UA00801.dds
+map_Kd images/house/UA00801.png
 
 newmtl mesh14material
 Kd 0.878431 0.560784 0.341176
 Ks 0.878431 0.560784 0.341176
 Ns 0.000000
-map_Kd 
+map_Kd images/house/
 
 newmtl Standard_2_24
 Kd 1.000000 0.894118 0.466667
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.600000
-map_Kd UA01751.dds
+map_Kd images/house/UA01751.png
 
 newmtl 3_37
 Kd 1.000000 0.894118 0.466667
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.800000
-map_Kd UA00251.dds
+map_Kd images/house/UA00251.png
 
 newmtl mesh48material
 Kd 0.839216 0.894118 0.600000
 Ks 0.839216 0.894118 0.600000
 Ns 0.000000
-map_Kd 
+map_Kd images/house/
 

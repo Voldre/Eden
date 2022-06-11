@@ -2,11 +2,11 @@ newmtl object0010_Standard_3_5
 Kd 1.000000 1.000000 1.000000
 Ks 1.000000 1.000000 1.000000
 Ns 10.000000
-map_Kd UA01304.dds
+map_Kd images/house/UA01304.png
 
 newmtl object0015_14
 Kd 0.525490 0.231373 0.031373
 Ks 0.525490 0.231373 0.031373
 Ns 0.000000
-map_Kd 
+map_Kd images/house/
 

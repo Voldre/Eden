@@ -3,23 +3,23 @@ Kd 1.000000 0.894118 0.466667
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.800000
-map_Kd UA11951.dds
+map_Kd images/house/UA11951.png
 
 newmtl Material #551499390_25
 Kd 1.000000 1.000000 1.000000
 Ks 1.000000 1.000000 1.000000
 Ns 10.000000
-map_Kd UA11901.dds
+map_Kd images/house/UA11901.png
 
 newmtl mesh33material
 Kd 0.694118 0.580392 0.101961
 Ks 0.694118 0.580392 0.101961
 Ns 0.000000
-map_Kd 
+map_Kd images/house/
 
 newmtl mesh37material
 Kd 0.894118 0.721569 0.600000
 Ks 0.894118 0.721569 0.600000
 Ns 0.000000
-map_Kd 
+map_Kd images/house/
 

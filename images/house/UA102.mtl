@@ -2,48 +2,48 @@ newmtl UA10201_5
 Kd 1.000000 1.000000 1.000000
 Ks 1.000000 1.000000 1.000000
 Ns 10.000000
-map_Kd UA10201.dds
+map_Kd images/house/UA10201.png
 
 newmtl UA10202_11
 Kd 1.000000 1.000000 1.000000
 Ks 1.000000 1.000000 1.000000
 Ns 10.000000
-map_Kd UA10202.dds
+map_Kd images/house/UA10202.png
 
 newmtl UA10201_17
 Kd 1.000000 1.000000 1.000000
 Ks 1.000000 1.000000 1.000000
 Ns 10.000000
-map_Kd UA10201.dds
+map_Kd images/house/UA10201.png
 
 newmtl mesh20material
 Kd 0.000000 0.000000 0.000000
 Ks 0.000000 0.000000 0.000000
 Ns 0.000000
-map_Kd 
+map_Kd images/house/
 
 newmtl mesh24material
 Kd 0.525490 0.431373 0.031373
 Ks 0.525490 0.431373 0.031373
 Ns 0.000000
-map_Kd 
+map_Kd images/house/
 
 newmtl Standard_2_34
 Kd 1.000000 0.894118 0.466667
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.600000
-map_Kd UA01751.dds
+map_Kd images/house/UA01751.png
 
 newmtl 3_47
 Kd 1.000000 0.894118 0.466667
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd UA00251.dds
+map_Kd images/house/UA00251.png
 
 newmtl mesh59material
 Kd 0.341176 0.878431 0.341176
 Ks 0.341176 0.878431 0.341176
 Ns 0.000000
-map_Kd 
+map_Kd images/house/
 

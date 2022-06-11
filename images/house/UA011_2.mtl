@@ -2,17 +2,17 @@ newmtl UA011_2_4
 Kd 1.000000 1.000000 1.000000
 Ks 1.000000 1.000000 1.000000
 Ns 10.000000
-map_Kd UA01102.dds
+map_Kd images/house/UA01102.png
 
 newmtl UA011_2_13
 Kd 1.000000 1.000000 1.000000
 Ks 1.000000 1.000000 1.000000
 Ns 10.000000
-map_Kd UA01102.dds
+map_Kd images/house/UA01102.png
 
 newmtl mesh16material
 Kd 0.694118 0.580392 0.101961
 Ks 0.694118 0.580392 0.101961
 Ns 0.000000
-map_Kd 
+map_Kd images/house/
 

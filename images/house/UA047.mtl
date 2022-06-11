@@ -2,29 +2,29 @@ newmtl Material #0_4
 Kd 1.000000 1.000000 1.000000
 Ks 1.000000 1.000000 1.000000
 Ns 10.000000
-map_Kd UA04701.dds
+map_Kd images/house/UA04701.png
 
 newmtl mesh11material
 Kd 0.580392 0.694118 0.101961
 Ks 0.580392 0.694118 0.101961
 Ns 0.000000
-map_Kd 
+map_Kd images/house/
 
 newmtl Material #0_15
 Kd 1.000000 1.000000 1.000000
 Ks 1.000000 1.000000 1.000000
 Ns 10.000000
-map_Kd UA04701.dds
+map_Kd images/house/UA04701.png
 
 newmtl mesh18material
 Kd 0.000000 0.000000 0.000000
 Ks 0.000000 0.000000 0.000000
 Ns 0.000000
-map_Kd 
+map_Kd images/house/
 
 newmtl mesh22material
 Kd 0.525490 0.431373 0.031373
 Ks 0.525490 0.431373 0.031373
 Ns 0.000000
-map_Kd 
+map_Kd images/house/
 

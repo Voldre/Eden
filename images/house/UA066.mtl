@@ -2,305 +2,305 @@ newmtl object0006_03 - Default_4
 Kd 1.000000 1.000000 1.000000
 Ks 1.000000 1.000000 1.000000
 Ns 10.000000
-map_Kd UA06601.dds
+map_Kd images/house/UA06601.png
 
 newmtl object0014_13
 Kd 0.423529 0.031373 0.533333
 Ks 0.423529 0.031373 0.533333
 Ns 0.000000
-map_Kd 
+map_Kd images/house/
 
 newmtl object0021_light-ball new 1 2_19
 Kd 1.000000 0.839216 0.839216
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.800000
-map_Kd UB07351.dds
+map_Kd images/house/UB07351.png
 
 newmtl object0021_light-ball new 1 2_31
 Kd 1.000000 0.839216 0.839216
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.800000
-map_Kd UB07351.dds
+map_Kd images/house/UB07351.png
 
 newmtl object0021_light-ball new 1 2_34
 Kd 1.000000 0.839216 0.839216
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.800000
-map_Kd UB07351.dds
+map_Kd images/house/UB07351.png
 
 newmtl object0021_light-ball new 1 2_37
 Kd 1.000000 0.839216 0.839216
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.800000
-map_Kd UB07351.dds
+map_Kd images/house/UB07351.png
 
 newmtl object0021_light-ball new 1 2_40
 Kd 1.000000 0.839216 0.839216
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.800000
-map_Kd UB07351.dds
+map_Kd images/house/UB07351.png
 
 newmtl object0045_light-bar new 1 2_43
 Kd 1.000000 0.694118 0.513726
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.500000
-map_Kd UA02051.dds
+map_Kd images/house/UA02051.png
 
 newmtl object0045_light-bar new 1 2_61
 Kd 1.000000 0.694118 0.513726
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.500000
-map_Kd UA02051.dds
+map_Kd images/house/UA02051.png
 
 newmtl object0045_light-bar new 1 2_64
 Kd 1.000000 0.694118 0.513726
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.500000
-map_Kd UA02051.dds
+map_Kd images/house/UA02051.png
 
 newmtl object0045_light-bar new 1 2_67
 Kd 1.000000 0.694118 0.513726
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.500000
-map_Kd UA02051.dds
+map_Kd images/house/UA02051.png
 
 newmtl object0045_light-bar new 1 2_70
 Kd 1.000000 0.694118 0.513726
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.500000
-map_Kd UA02051.dds
+map_Kd images/house/UA02051.png
 
 newmtl object0045_light-bar new 1 2_73
 Kd 1.000000 0.694118 0.513726
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.500000
-map_Kd UA02051.dds
+map_Kd images/house/UA02051.png
 
 newmtl object0021_light-ball new 1 2_76
 Kd 1.000000 0.839216 0.839216
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.800000
-map_Kd UB07351.dds
+map_Kd images/house/UB07351.png
 
 newmtl object0021_light-ball new 1 2_79
 Kd 1.000000 0.839216 0.839216
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.800000
-map_Kd UB07351.dds
+map_Kd images/house/UB07351.png
 
 newmtl object0045_light-bar new 1 2_82
 Kd 1.000000 0.694118 0.513726
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.500000
-map_Kd UA02051.dds
+map_Kd images/house/UA02051.png
 
 newmtl object0045_light-bar new 1 2_85
 Kd 1.000000 0.694118 0.513726
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.500000
-map_Kd UA02051.dds
+map_Kd images/house/UA02051.png
 
 newmtl object0021_light-ball new 1 2_88
 Kd 1.000000 0.839216 0.839216
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.800000
-map_Kd UB07351.dds
+map_Kd images/house/UB07351.png
 
 newmtl object0093_light-ball new 3_91
 Kd 1.000000 0.839216 0.839216
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.800000
-map_Kd UB07351.dds
+map_Kd images/house/UB07351.png
 
 newmtl object0093_light-ball new 3_98
 Kd 1.000000 0.839216 0.839216
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.800000
-map_Kd UB07351.dds
+map_Kd images/house/UB07351.png
 
 newmtl object0093_light-ball new 3_101
 Kd 1.000000 0.839216 0.839216
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.800000
-map_Kd UB07351.dds
+map_Kd images/house/UB07351.png
 
 newmtl object0093_light-ball new 3_104
 Kd 1.000000 0.839216 0.839216
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.800000
-map_Kd UB07351.dds
+map_Kd images/house/UB07351.png
 
 newmtl object0093_light-ball new 3_107
 Kd 1.000000 0.839216 0.839216
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.800000
-map_Kd UB07351.dds
+map_Kd images/house/UB07351.png
 
 newmtl object0093_light-ball new 3_110
 Kd 1.000000 0.839216 0.839216
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.800000
-map_Kd UB07351.dds
+map_Kd images/house/UB07351.png
 
 newmtl object0045_light-bar new 1 2_113
 Kd 1.000000 0.694118 0.513726
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.500000
-map_Kd UA02051.dds
+map_Kd images/house/UA02051.png
 
 newmtl object0045_light-bar new 1 2_116
 Kd 1.000000 0.694118 0.513726
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.500000
-map_Kd UA02051.dds
+map_Kd images/house/UA02051.png
 
 newmtl object0045_light-bar new 1 2_119
 Kd 1.000000 0.694118 0.513726
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.500000
-map_Kd UA02051.dds
+map_Kd images/house/UA02051.png
 
 newmtl object0045_light-bar new 1 2_122
 Kd 1.000000 0.694118 0.513726
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.500000
-map_Kd UA02051.dds
+map_Kd images/house/UA02051.png
 
 newmtl object0045_light-bar new 1 2_125
 Kd 1.000000 0.694118 0.513726
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.500000
-map_Kd UA02051.dds
+map_Kd images/house/UA02051.png
 
 newmtl object0045_light-bar new 1 2_128
 Kd 1.000000 0.694118 0.513726
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.500000
-map_Kd UA02051.dds
+map_Kd images/house/UA02051.png
 
 newmtl object0133_light-ball new 4-1_131
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.600000
-map_Kd UB07351.dds
+map_Kd images/house/UB07351.png
 
 newmtl object0133_light-ball new 4-1_138
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.600000
-map_Kd UB07351.dds
+map_Kd images/house/UB07351.png
 
 newmtl object0133_light-ball new 4-1_141
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.600000
-map_Kd UB07351.dds
+map_Kd images/house/UB07351.png
 
 newmtl object0133_light-ball new 4-1_144
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.600000
-map_Kd UB07351.dds
+map_Kd images/house/UB07351.png
 
 newmtl object0133_light-ball new 4-1_147
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.600000
-map_Kd UB07351.dds
+map_Kd images/house/UB07351.png
 
 newmtl object0133_light-ball new 4-1_150
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.600000
-map_Kd UB07351.dds
+map_Kd images/house/UB07351.png
 
 newmtl object0133_light-ball new 4-1_153
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.600000
-map_Kd UB07351.dds
+map_Kd images/house/UB07351.png
 
 newmtl object0159_light-ball ball_158
 Kd 0.882353 0.952941 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.400000
-map_Kd UA06003.dds
+map_Kd images/house/UA06003.png
 
 newmtl object0159_light-ball ball_168
 Kd 0.882353 0.952941 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.400000
-map_Kd UA06003.dds
+map_Kd images/house/UA06003.png
 
 newmtl object0159_light-ball ball_172
 Kd 0.882353 0.952941 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.400000
-map_Kd UA06003.dds
+map_Kd images/house/UA06003.png
 
 newmtl object0159_light-ball ball_176
 Kd 0.882353 0.952941 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.400000
-map_Kd UA06003.dds
+map_Kd images/house/UA06003.png
 
 newmtl object0159_light-ball ball_180
 Kd 0.882353 0.952941 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.400000
-map_Kd UA06003.dds
+map_Kd images/house/UA06003.png
 
 newmtl object0159_light-ball ball_184
 Kd 0.882353 0.952941 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.400000
-map_Kd UA06003.dds
+map_Kd images/house/UA06003.png
 
 newmtl object0159_light-ball ball_188
 Kd 0.882353 0.952941 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.400000
-map_Kd UA06003.dds
+map_Kd images/house/UA06003.png
 

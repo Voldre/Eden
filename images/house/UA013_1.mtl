@@ -2,45 +2,45 @@ newmtl object0008_Material #885_4
 Kd 1.000000 1.000000 1.000000
 Ks 1.000000 1.000000 1.000000
 Ns 10.000000
-map_Kd UA01302.dds
+map_Kd images/house/UA01302.png
 
 newmtl object0012_11
 Kd 0.345098 0.780392 0.882353
 Ks 0.345098 0.780392 0.882353
 Ns 0.000000
-map_Kd 
+map_Kd images/house/
 
 newmtl object0027_05_23
 Kd 1.000000 1.000000 0.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.700000
-map_Kd UA00252.dds
+map_Kd images/house/UA00252.png
 
 newmtl object0036_42_32
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.700000
-map_Kd UB21002.dds
+map_Kd images/house/UB21002.png
 
 newmtl object0036_42_42
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.700000
-map_Kd UB21002.dds
+map_Kd images/house/UB21002.png
 
 newmtl object0027_05_47
 Kd 1.000000 1.000000 0.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.700000
-map_Kd UA00252.dds
+map_Kd images/house/UA00252.png
 
 newmtl object0008_Material #885_49
 Kd 1.000000 1.000000 1.000000
 Ks 1.000000 1.000000 1.000000
 Ns 10.000000
-map_Kd UA01302.dds
+map_Kd images/house/UA01302.png
 

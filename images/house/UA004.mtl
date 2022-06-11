@@ -2,30 +2,30 @@ newmtl Standard_3_4
 Kd 1.000000 1.000000 1.000000
 Ks 1.000000 1.000000 1.000000
 Ns 10.000000
-map_Kd UA00401.dds
+map_Kd images/house/UA00401.png
 
 newmtl mesh12material
 Kd 0.580392 0.694118 0.101961
 Ks 0.580392 0.694118 0.101961
 Ns 0.000000
-map_Kd 
+map_Kd images/house/
 
 newmtl Standard_2_22
 Kd 1.000000 0.894118 0.466667
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.600000
-map_Kd UA01751.dds
+map_Kd images/house/UA01751.png
 
 newmtl 3_35
 Kd 1.000000 0.894118 0.466667
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
-map_Kd UA00251.dds
+map_Kd images/house/UA00251.png
 
 newmtl mesh47material
 Kd 0.109804 0.349020 0.694118
 Ks 0.109804 0.349020 0.694118
 Ns 0.000000
-map_Kd 
+map_Kd images/house/
 

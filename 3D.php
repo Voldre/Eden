@@ -17,6 +17,9 @@ https://wiki.vg-resource.com/Noesis , Noesis Download : http://www.richwhitehous
     ZQSD : pour bouger  &nbsp;  &nbsp;  &#8616; : pour changer d'image (sauf sur les maps).  &nbsp; &nbsp; &harr; : pour tourner
     <nav>
     <ul class="menu">
+      <?php if(isset($_GET['data'])){ ?>
+        <li><a href="3D.php">Designs 3D</a></li>
+      <?php } ?>
       <li><a href="index.php">Page principale</a></li>
     </ul>
 </nav>
@@ -36,9 +39,9 @@ if(!isset($_GET["data"])){
     
 <div class="dbMenu">
     <ul>
-        <a href="3D.php?data=monster"><li><img src="images/skillIcon/m081.png" /> Monstres</li></a>
+        <a href="3D.php?data=monster"><li><img src="images/skillIcon/m081.png" /> Ennemis / Persos</li></a>
         <!--<a href="3D.php?data=char"><li><img src="images/skillIcon/m321.png" /> Costumes (RGB)</li></a>-->
-        <a href="3D.php?data=house"><li><img src="images/itemIcon/I00466.png" /> Maisons</li></a>
+        <a href="3D.php?data=house"><li><img src="images/itemIcon/I00466.png" /> Bâtiments</li></a>
         <a href="3D.php?data=items"><li><img src="images/itemIcon/w25502.png" /> Armements</li></a>
         <a href="3D.php?data=ride"><li><img src="images/itemIcon/i00887.png" /> Montures</li></a>
         <a href="3D.php?data=map"><li><img src="images/otherIcon/group037.png" /> Donjons</li></a>

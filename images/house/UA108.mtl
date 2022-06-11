@@ -2,17 +2,17 @@ newmtl 01 - Default_5
 Kd 1.000000 1.000000 1.000000
 Ks 1.000000 1.000000 1.000000
 Ns 10.000000
-map_Kd UA10801.dds
+map_Kd images/house/UA10801.png
 
 newmtl Material #1_11
 Kd 1.000000 1.000000 1.000000
 Ks 1.000000 1.000000 1.000000
 Ns 10.000000
-map_Kd UA10802.dds
+map_Kd images/house/UA10802.png
 
 newmtl mesh17material
 Kd 0.694118 0.101961 0.345098
 Ks 0.694118 0.101961 0.345098
 Ns 0.000000
-map_Kd 
+map_Kd images/house/
 

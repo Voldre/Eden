@@ -2,11 +2,11 @@ newmtl Standard_24_4
 Kd 1.000000 1.000000 1.000000
 Ks 0.900000 0.900000 0.900000
 Ns 10.000000
-map_Kd UA10901.dds
+map_Kd images/house/UA10901.png
 
 newmtl mesh11material
 Kd 0.023529 0.525490 0.023529
 Ks 0.023529 0.525490 0.023529
 Ns 0.000000
-map_Kd 
+map_Kd images/house/
 
