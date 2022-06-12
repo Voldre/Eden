@@ -48,7 +48,7 @@ $_SESSION["maplist"] = array(1=>["Aven",26.5,64.9,0],
 
     //95=>[,0,0,5],
     100=>["Mine Andrew",0,0,5],
-    101=>["Mine d'Angor",0,0,5],
+    101=>["Carrière d'Angor",0,0,5],
     102=>["Fort Verdure",0,0,5],
     103=>["Canal Tassos",0,0,5],
     104=>["Caverne de Schiste",0,0,5],

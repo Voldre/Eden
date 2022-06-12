@@ -39,12 +39,12 @@ if(!isset($_GET["data"])){
     
 <div class="dbMenu">
     <ul>
-        <a href="3D.php?data=monster"><li><img src="images/skillIcon/m081.png" /> Ennemis / Persos</li></a>
+        <a href="3D.php?data=monsters"><li><img src="images/monsters/m081.png" /> Ennemis / Persos</li></a>
         <!--<a href="3D.php?data=char"><li><img src="images/skillIcon/m321.png" /> Costumes (RGB)</li></a>-->
-        <a href="3D.php?data=house"><li><img src="images/itemIcon/I00466.png" /> Bâtiments</li></a>
-        <a href="3D.php?data=items"><li><img src="images/itemIcon/w25502.png" /> Armements</li></a>
-        <a href="3D.php?data=ride"><li><img src="images/itemIcon/i00887.png" /> Montures</li></a>
-        <a href="3D.php?data=map"><li><img src="images/otherIcon/group037.png" /> Donjons</li></a>
+        <a href="3D.php?data=house"><li><img src="images/items/I00466.png" /> Bâtiments</li></a>
+        <a href="3D.php?data=items"><li><img src="images/items/W25502.png" /> Armements</li></a>
+        <a href="3D.php?data=ride"><li><img src="images/items/i00887.png" /> Montures</li></a>
+        <a href="3D.php?data=maps"><li><img src="images/otherIcon/group037.png" /> Donjons</li></a>
     </ul>
 </div>
     <?php
@@ -52,19 +52,19 @@ exit();
 }
 ?>
 <div class="select3D">
-    <img id="iconPic" class="iconImg" />
+    <img id="iconPic" class="iconImg" onerror='document.getElementById("iconPic").style.display = "none"'; />
     <span style="font-size:20px">&#8616;</span> <select onchange="update(); changeIcon();" id="objets">
     <?php
         //$monsterRepository = 'images/monster/';
         if(isset($_GET["data"])){
             $repository = $_GET["data"];
-        }else{ $repository = "monster"; }
-        $files = scandir("images/$repository/");
+        }
+        $files = scandir("images/3D/$repository/");
         foreach($files as $file){
             if(strpos($file,".obj") !== false){
                 // On garde tout sauf l'extension
                 $file = strtok($file,  '.');  
-                if($repository == "map"){ 
+                if($repository == "maps"){ 
                     if($file[0] == "S"){ // Si le fichier est bien une carte (S***.obj), # 1er char = "S"
                         if(isset($_SESSION["maplist"][substr($file,1)][0])){
                             $mapName = $_SESSION["maplist"][substr($file,1)][0];
@@ -89,28 +89,18 @@ exit();
     document.getElementById("iconPic").style.display = "none";
 
     function changeIcon(){
-        if(window.location.search.split('=')[1] == "items"){
-            file = document.getElementById("objets").value.slice(1); // On récupère tout sauf le "w" "W"
+        foldersWithIcons = ['items','monsters'];
+        currentFolder = window.location.search.split('=')[1];
+        if(foldersWithIcons.includes(currentFolder)){
+            file = document.getElementById("objets").value.slice(1); // On récupère tout sauf la 1ere lettre
 
-            letter = ["w","W"];
-            
-            document.getElementById("iconPic").style.display = "none";
-            for (let i = 0; i < letter.length; i++) {
-                if(UrlExists("http://voldre.free.fr/Eden/images/itemIcon/"+letter[i]+file+"01.png")){
-                    document.getElementById("iconPic").style.display = "block";
-                    document.getElementById("iconPic").src = "http://voldre.free.fr/Eden/images/itemIcon/"+letter[i]+file+"01.png";
-                    break;
-                }
-            }
+            if(currentFolder == "items"){letter = "W";}else{ letter = "m"}
+
+            // Update 12/06/2022 pour mieux gérer l'affichage ou non de l'icone
+            document.getElementById("iconPic").style.display = "block";
+            if(currentFolder == "items"){ file = file + "01";}
+            document.getElementById("iconPic").src = "images/"+currentFolder+"/"+letter+file+".png";
         }
-    }
-
-    function UrlExists(url)
-    {
-        var http = new XMLHttpRequest();
-        http.open('HEAD', url, false);
-        http.send();
-        return http.status!=404;
     }
     </script>
 </body>

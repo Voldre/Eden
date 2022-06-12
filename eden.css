@@ -36,9 +36,11 @@ body {
     justify-content: space-around;
     flex-flow: row wrap;
     margin: 1%;
-    width: 95%;
+    /*width: 95%;*/
     border: 2px black solid;
     min-width: 300px;
+    max-height: 450px;
+    overflow-y: auto;
 }
 
 .pictures {

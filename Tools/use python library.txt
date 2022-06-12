@@ -1,0 +1,2 @@
+To use python library like Fandom :
+python.exe -m pip install fandom-py==0.2.1
