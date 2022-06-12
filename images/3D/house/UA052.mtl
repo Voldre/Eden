@@ -1,0 +1,30 @@
+newmtl Material #567114_5
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/house/UA05201.png
+
+newmtl Material #567115_12
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/house/UA05202.png
+
+newmtl mesh18material
+Kd 0.031373 0.431373 0.525490
+Ks 0.031373 0.431373 0.525490
+Ns 0.000000
+map_Kd images/3D/house/
+
+newmtl mesh22material
+Kd 0.101961 0.694118 0.580392
+Ks 0.101961 0.694118 0.580392
+Ns 0.000000
+map_Kd images/3D/house/
+
+newmtl mesh26material
+Kd 0.525490 0.231373 0.031373
+Ks 0.525490 0.231373 0.031373
+Ns 0.000000
+map_Kd images/3D/house/
+

@@ -1,0 +1,12 @@
+newmtl R221_3
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd images/3D/ride/R22101.png
+
+newmtl mesh57material
+Kd 0.776471 0.878431 0.341176
+Ks 0.776471 0.878431 0.341176
+Ns 0.000000
+map_Kd images/3D/ride/
+

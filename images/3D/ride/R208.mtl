@@ -1,0 +1,48 @@
+newmtl R208_3
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd images/3D/ride/R20801.png
+
+newmtl mesh48material
+Kd 0.109804 0.109804 0.694118
+Ks 0.109804 0.109804 0.694118
+Ns 0.000000
+map_Kd images/3D/ride/
+
+newmtl mesh55material
+Kd 0.023529 0.525490 0.023529
+Ks 0.023529 0.525490 0.023529
+Ns 0.000000
+map_Kd images/3D/ride/
+
+newmtl mesh75material
+Kd 0.878431 0.560784 0.341176
+Ks 0.878431 0.560784 0.341176
+Ns 0.000000
+map_Kd images/3D/ride/
+
+newmtl mesh147material
+Kd 0.109804 0.109804 0.694118
+Ks 0.109804 0.109804 0.694118
+Ns 0.000000
+map_Kd images/3D/ride/
+
+newmtl mesh149material
+Kd 0.650980 0.898039 0.898039
+Ks 0.650980 0.898039 0.898039
+Ns 0.000000
+map_Kd images/3D/ride/
+
+newmtl mesh152material
+Kd 0.839216 0.898039 0.650980
+Ks 0.839216 0.898039 0.650980
+Ns 0.000000
+map_Kd images/3D/ride/
+
+newmtl mesh155material
+Kd 0.690196 0.101961 0.101961
+Ks 0.690196 0.101961 0.101961
+Ns 0.000000
+map_Kd images/3D/ride/
+

@@ -1,0 +1,73 @@
+newmtl R203_3
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd images/3D/ride/R20301.png
+
+newmtl mesh68material
+Kd 0.694118 0.101961 0.345098
+Ks 0.694118 0.101961 0.345098
+Ns 0.000000
+map_Kd images/3D/ride/
+
+newmtl mesh77material
+Kd 0.694118 0.101961 0.345098
+Ks 0.694118 0.101961 0.345098
+Ns 0.000000
+map_Kd images/3D/ride/
+
+newmtl mesh85material
+Kd 0.694118 0.101961 0.345098
+Ks 0.694118 0.101961 0.345098
+Ns 0.000000
+map_Kd images/3D/ride/
+
+newmtl mesh87material
+Kd 0.839216 0.894118 0.600000
+Ks 0.839216 0.894118 0.600000
+Ns 0.000000
+map_Kd images/3D/ride/
+
+newmtl mesh90material
+Kd 0.690196 0.101961 0.101961
+Ks 0.690196 0.101961 0.101961
+Ns 0.000000
+map_Kd images/3D/ride/
+
+newmtl R203sE_94
+Kd 0.509804 0.494118 0.592157
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd images/3D/ride/R20301.png
+
+newmtl R203EE_128
+Kd 0.337255 0.282353 0.415686
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd images/3D/ride/R20301.png
+
+newmtl 22_136
+Kd 0.231373 0.000000 0.309804
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.800000
+map_Kd images/3D/ride/R20152.png
+
+newmtl 02 - Default_150
+Kd 0.400000 0.117647 0.376471
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/ride/R20351.png
+
+newmtl R203EE_162
+Kd 0.337255 0.282353 0.415686
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd images/3D/ride/R20301.png
+
+newmtl 02 - Default_169
+Kd 0.400000 0.117647 0.376471
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/ride/R20351.png
+

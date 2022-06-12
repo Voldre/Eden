@@ -1,0 +1,81 @@
+newmtl object0009_W178_5
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/items/W17801.png
+
+newmtl object0024_StaWndard_7_23
+Kd 0.898039 0.898039 0.898039
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/items/W17801.png
+
+newmtl object0037_Stanedard_7_36
+Kd 0.898039 0.898039 0.898039
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/items/W17801.png
+
+newmtl object0049_StaWndeard_7_48
+Kd 0.898039 0.898039 0.898039
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/items/W17801.png
+
+newmtl object0062_Staneedard_7_61
+Kd 0.898039 0.898039 0.898039
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/items/W17801.png
+
+newmtl object0074_StaWnEdard_7_73
+Kd 0.898039 0.898039 0.898039
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/items/W17801.png
+
+newmtl object0086_StanedEard_7_85
+Kd 0.898039 0.898039 0.898039
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/items/W17801.png
+
+newmtl object0098_StaWndeard_7E_97
+Kd 0.898039 0.898039 0.898039
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/items/W17801.png
+
+newmtl object0110_StaWendard_7_109
+Kd 0.898039 0.898039 0.898039
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/items/W17801.png
+
+newmtl object0122_StEaWendard_7_121
+Kd 0.898039 0.898039 0.898039
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/items/W17801.png
+
+newmtl object0134_StanedEEard_7_133
+Kd 0.898039 0.898039 0.898039
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.648000
+map_Kd images/3D/items/W17801.png
+
+newmtl object0145_Standard_7_144
+Kd 0.898039 0.898039 0.898039
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/items/W17801.png
+

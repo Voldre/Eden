@@ -1,0 +1,203 @@
+newmtl object0200_199
+Kd 1.000000 1.000000 0.000000
+Ks 1.000000 1.000000 0.000000
+Ns 0.000000
+map_Kd images/3D/items/W80154.png
+
+newmtl object0210_Standard_7_208
+Kd 0.184314 0.000000 0.262745
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/items/W29455.png
+
+newmtl object0230_Standard_6_228
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/items/W29953.png
+
+newmtl object0248_Standard_6E_246
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/items/W29953.png
+
+newmtl object0262_Standard_19_260
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/items/W29952.png
+
+newmtl object0277_Standard_19E_275
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/items/W29952.png
+
+newmtl object0295_SStanSSdard_13_294
+Kd 0.113725 0.000000 0.274510
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/items/G0000251.png
+
+newmtl object0319_StaDndEard_6E_302
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/items/W29953.png
+
+newmtl object0339_StandEa2Erd_6E_324
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/items/W29953.png
+
+newmtl object0346_StanEdard_19_344
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/items/W29952.png
+
+newmtl object0360_StanEdarWd_19_358
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/items/W29952.png
+
+newmtl object0360_StanEdarWd_19_372
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/items/W29952.png
+
+newmtl object0360_StanEdarWd_19_375
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/items/W29952.png
+
+newmtl object0360_StanEdarWd_19_378
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/items/W29952.png
+
+newmtl object0383_Standard_2_381
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/items/W29951.png
+
+newmtl object0398_Standard_3_396
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/items/W29954.png
+
+newmtl object0409_StandEard_3_407
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/items/W29954.png
+
+newmtl object0420_StandEard_R3_418
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/items/W29954.png
+
+newmtl object0431_StandEaErd_R3_429
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/items/W29954.png
+
+newmtl object0483_StandEaEErd_6E_468
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/items/W29953.png
+
+newmtl object0503_StandEard_6E_488
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/items/W29953.png
+
+newmtl object0523_StandEaErd_6E_508
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/items/W29953.png
+
+newmtl object0543_StandEEaErd_6E_528
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/items/W29953.png
+
+newmtl object0565_StanedEard_6_548
+Kd 0.925490 0.537255 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/items/W29953.png
+
+newmtl object0588_StandEard_6_573
+Kd 0.854902 0.466667 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/items/W29953.png
+
+newmtl object0598_StandEar2d_6E_596
+Kd 0.137255 0.000000 0.235294
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/items/G0000251.png
+
+newmtl object0230_Standard_6_603
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/items/W29953.png
+
+newmtl object0248_Standard_6E_606
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/items/W29953.png
+
+newmtl object0610_609
+Kd 1.000000 0.000000 0.000000
+Ks 1.000000 0.000000 0.000000
+Ns 0.000000
+map_Kd images/3D/items/
+
+newmtl object0621_W299_617
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd images/3D/items/W29901.png
+
+newmtl object0628_626
+Kd 0.341176 0.878431 0.776471
+Ks 0.341176 0.878431 0.776471
+Ns 0.000000
+map_Kd images/3D/items/
+

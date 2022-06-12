@@ -64,7 +64,7 @@ function init() {
         document.getElementById("google_translate_element").style.display = "none";
     }
     folder = folder.split("&")[0];
-    if(folder == "map"){
+    if(folder == "maps"){
         player.speed = 1;
         var myObject =  myObjectInit();
         // console.log(myObject);
@@ -164,22 +164,18 @@ function init() {
     mtlLoader.setMaterialOptions({ ignoreZeroRGBs: true });
 
     // console.log(mtlLoader);
-    mtlLoader.load("http://voldre.free.fr/Eden/images/" + folder + "/" + myObject + ".mtl", function(materials) {
+    mtlLoader.load("http://voldre.free.fr/Eden/images/3D/" + folder + "/" + myObject + ".mtl", function(materials) {
        
         //console.log(materials);
         var listWrongMaterials = [];
         for(var material in materials.materialsInfo){
-            if(materials.materialsInfo[material]["map_kd"] == "images/map/" || typeof materials.materialsInfo[material]["map_kd"] == "undefined" || materials.materialsInfo[material]["map_kd"] == "" ){
+            // Gestion des 3 cas possibles d'absence de textures : 1) "chemin sans arrivé",  2) rien de déclaré,  3) textures ""
+            if(materials.materialsInfo[material]["map_kd"] == "images/3D/map/" || typeof materials.materialsInfo[material]["map_kd"] == "undefined" || materials.materialsInfo[material]["map_kd"] == "" ){
                 listWrongMaterials.push(materials.materialsInfo[material]["name"]);
             }
         }
         console.log(listWrongMaterials);
         /*
-        function onlyUnique(value, index, self) {
-            return self.indexOf(value) === index;
-          }
-        listLiensTextures = listLiensTextures.filter(onlyUnique);
-        
         var listLiensTextures = [];
         for(var material in materials.materialsInfo){
             if(materials.materialsInfo[material]["map_kd"] != null){
@@ -213,7 +209,7 @@ function init() {
         mesh.receiveShadow = true;
         mesh.castShadow = true;
 
-        objLoader.load("http://voldre.free.fr/Eden/images/" + folder + "/" + myObject + ".obj", function(mesh) {
+        objLoader.load("http://voldre.free.fr/Eden/images/3D/" + folder + "/" + myObject + ".obj", function(mesh) {
             console.log('Loaded : ' + myObject );
             document.getElementById("loading").innerHTML = null;
             
@@ -287,9 +283,9 @@ function init() {
             // 09/06 -- On n'affiche le fond d'écran que si c'est voulu
             if(read_cookie('backgroundState') == "checked"){
                 mesh2 = new THREE.Mesh();   
-                mtlLoader.load("http://voldre.free.fr/Eden/images/map/"+myBG+".mtl", function(materials2) {      
+                mtlLoader.load("http://voldre.free.fr/Eden/images/3D/maps/"+myBG+".mtl", function(materials2) {      
                     objLoader.setMaterials(materials2);
-                    objLoader.load("http://voldre.free.fr/Eden/images/map/"+myBG+".obj", function(mesh2){
+                    objLoader.load("http://voldre.free.fr/Eden/images/3D/maps/"+myBG+".obj", function(mesh2){
                         scene.add(mesh2);
                         mesh2.rotation.x = -Math.PI/2;    
                     });
@@ -297,7 +293,7 @@ function init() {
             }
 
             // Position de notre objet
-            if(folder == "map"){ // -520, 18, 80
+            if(folder == "maps"){ // -520, 18, 80
                 mesh.position.set(280, -28, 5);
             }else if (folder == "items") {
                 mesh.position.set(0, 1, -3.3);
@@ -306,7 +302,7 @@ function init() {
             // Angles de notre objet
             mesh.rotation.y = 0; // Math.PI / 6;
             mesh.rotation.x = -Math.PI / 2;
-            if(folder != "map"){
+            if(folder != "maps"){
             mesh.rotation.z = Math.PI / 1.4; // Pour qu'il regarde vers nous
             }else{ mesh.rotation.z = Math.PI / 1; }
         }, onProgress);
@@ -345,7 +341,7 @@ function animate() {
 
     // Objet 3D
 
-    if (typeof scene.children[3] != "undefined" && folder != "map") {
+    if (typeof scene.children[3] != "undefined" && folder != "maps") {
         scene.children[3].rotation.z += 0.003;
         //console.log(scene.children[3]);
     }
@@ -398,14 +394,14 @@ function animate() {
         scene.children[3].rotation.y -= 0.01;
     }
     if (keyboard[38]) { // Top Arrow
-        if(folder == "map"){
+        if(folder == "maps"){
             camera.position.y += player.speed;
         }else{
         $('#objets').focus();
         }
     }
     if (keyboard[40]) { // Bottom Arrow
-        if(folder == "map"){
+        if(folder == "maps"){
             camera.position.y -= player.speed;
         }else{
         $('#objets').focus();

@@ -1,0 +1,12 @@
+newmtl object0011_02 - Default_10
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd images/3D/items/W11901.png
+
+newmtl object0011_02 - Default_20
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd images/3D/items/W11901.png
+

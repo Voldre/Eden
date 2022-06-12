@@ -1,0 +1,39 @@
+newmtl object0008_W153_5
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/items/W15301.png
+
+newmtl object0056_55
+Kd 0.878431 0.337255 0.337255
+Ks 0.878431 0.337255 0.337255
+Ns 0.000000
+map_Kd images/3D/items/
+
+newmtl object0068_02 - Default_58
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/items/W15352.png
+
+newmtl object0080_02 - DefaultX_77
+Kd 0.172549 0.631373 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/items/W15352.png
+
+newmtl object0095_02 - DefaultX3_88
+Kd 0.639216 0.835294 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/items/W15351.png
+
+newmtl object0104_103
+Kd 0.333333 0.109804 0.694118
+Ks 0.333333 0.109804 0.694118
+Ns 0.000000
+map_Kd images/3D/items/
+

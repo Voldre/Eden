@@ -1,0 +1,151 @@
+newmtl object0007_R204_3
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd images/3D/ride/R20401.png
+
+newmtl object0079_78
+Kd 0.839216 0.894118 0.600000
+Ks 0.839216 0.894118 0.600000
+Ns 0.000000
+map_Kd images/3D/ride/
+
+newmtl object0086_Standard_6_83
+Kd 0.466667 0.929412 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/ride/R05254.png
+
+newmtl object0097_StandEard_6_95
+Kd 0.466667 0.929412 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/ride/R28255.png
+
+newmtl object0106_StaEndEard_6_104
+Kd 0.466667 0.929412 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/ride/R28255.png
+
+newmtl object0116_Standard_18 stl_115
+Kd 0.243137 0.627451 0.984314
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/ride/R05155.png
+
+newmtl object0127_Standard_18 bright_126
+Kd 0.564706 0.854902 0.964706
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/ride/R05155.png
+
+newmtl object0134_ Standard_18 2_133
+Kd 0.564706 0.854902 0.964706
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/ride/R20451.png
+
+newmtl object0142_Standard_18_141
+Kd 0.564706 0.854902 0.964706
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/ride/R20451.png
+
+newmtl object0149_Standard_3 shoot 24 2_148
+Kd 0.447059 0.756863 0.972549
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/ride/R20152.png
+
+newmtl object0158_Standard_3 shoot 24 one _157
+Kd 0.521569 0.788235 0.976471
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/ride/R05155.png
+
+newmtl object0164_Standard_3 shoot 24 one_163
+Kd 0.490196 0.776471 0.972549
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/ride/R71253.png
+
+newmtl object0172_Standard_3 shoot 24_171
+Kd 0.490196 0.776471 0.972549
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/ride/R71253.png
+
+newmtl object0177_Standard_20_175
+Kd 0.274510 0.568627 0.933333
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/ride/R20453.png
+
+newmtl object0185_184
+Kd 0.690196 0.101961 0.101961
+Ks 0.690196 0.101961 0.101961
+Ns 0.000000
+map_Kd images/3D/ride/
+
+newmtl object0200_Stanedard_7_188
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/ride/R53154.png
+
+newmtl object0200_Stanedard_7_205
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/ride/R53154.png
+
+newmtl object0219_Standard_19_211
+Kd 0.133333 0.643137 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/ride/R06151.png
+
+newmtl object0226_224
+Kd 0.568627 0.109804 0.694118
+Ks 0.568627 0.109804 0.694118
+Ns 0.000000
+map_Kd images/3D/ride/
+
+newmtl object0257_R204 tes_250
+Kd 0.992157 0.709804 0.223529
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+d 0.700000
+map_Kd images/3D/ride/R20452.png
+
+newmtl object0219_Standard_19_262
+Kd 0.133333 0.643137 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/ride/R06151.png
+
+newmtl object0274_Standard_19 head_268
+Kd 0.133333 0.643137 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/ride/R28152.png
+
+newmtl object0274_Standard_19 head_282
+Kd 0.133333 0.643137 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/ride/R28152.png
+

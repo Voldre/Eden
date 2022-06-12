@@ -1,0 +1,30 @@
+newmtl object0010_07 - Default_5
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/house/UA02902.png
+
+newmtl object0015_12 - Default_12
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/house/UA02903.png
+
+newmtl object0019_18
+Kd 0.580392 0.694118 0.101961
+Ks 0.580392 0.694118 0.101961
+Ns 0.000000
+map_Kd images/3D/house/
+
+newmtl object0019_22
+Kd 0.580392 0.694118 0.101961
+Ks 0.580392 0.694118 0.101961
+Ns 0.000000
+map_Kd images/3D/house/
+
+newmtl object0026_25
+Kd 0.694118 0.580392 0.101961
+Ks 0.694118 0.580392 0.101961
+Ns 0.000000
+map_Kd images/3D/house/
+

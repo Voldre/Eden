@@ -1,0 +1,77 @@
+newmtl Material #165_3
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd images/3D/ride/R50901.png
+
+newmtl StandaEred_7_171
+Kd 0.964706 0.584314 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/ride/R50852.png
+
+newmtl Standared_7_185
+Kd 0.894118 0.466667 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/ride/R50852.png
+
+newmtl Staxndard_1_196
+Kd 0.913726 0.439216 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd images/3D/ride/R50956.png
+
+newmtl Material #165_209
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd images/3D/ride/R50901.png
+
+newmtl Standard_1_215
+Kd 0.807843 0.474510 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd images/3D/ride/R50853.png
+
+newmtl StanEdard_1_232
+Kd 0.839216 0.494118 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd images/3D/ride/R50955.png
+
+newmtl Material #e165_246
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+d 0.800000
+map_Kd images/3D/ride/R50954.png
+
+newmtl Staxrnedard_1_255
+Kd 0.745098 0.301961 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+d 0.800000
+map_Kd images/3D/ride/R50956.png
+
+newmtl StaxrnEdard_1_267
+Kd 0.717647 0.270588 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+d 0.800000
+map_Kd images/3D/ride/R50956.png
+
+newmtl Staxrndard_1_278
+Kd 0.717647 0.270588 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+d 0.800000
+map_Kd images/3D/ride/R50956.png
+
+newmtl StaxrnedaErd_1_289
+Kd 0.745098 0.301961 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+d 0.800000
+map_Kd images/3D/ride/R50956.png
+

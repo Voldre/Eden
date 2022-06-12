@@ -1,0 +1,30 @@
+newmtl 01 - Default_4
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/house/UA11001.png
+
+newmtl 02 - Default_11
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/house/UA11002.png
+
+newmtl mesh17material
+Kd 0.031373 0.239216 0.541176
+Ks 0.031373 0.239216 0.541176
+Ns 0.000000
+map_Kd images/3D/house/
+
+newmtl mesh21material
+Kd 0.101961 0.694118 0.580392
+Ks 0.101961 0.694118 0.580392
+Ns 0.000000
+map_Kd images/3D/house/
+
+newmtl mesh25material
+Kd 0.600000 0.894118 0.721569
+Ks 0.600000 0.894118 0.721569
+Ns 0.000000
+map_Kd images/3D/house/
+

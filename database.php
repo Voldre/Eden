@@ -5,9 +5,10 @@ include("menu.html");
 <body>
 <div class="dbMenu">
     <ul>
-        <a href="database.php?data=items"><li><img src="images/itemIcon/A00016.png" /> Objets</li></a>
+        <a href="database.php?data=items"><li><img src="images/items/A00006.png" /> Objets</li></a>
         <a href="database.php?data=maps"><li href="database.php?data=maps"><img src="images/maps/S013m.png" /><p style="display:inline-block;width: 48%;height: 24px;"> Régions </p><a href="database.php?data=worldmap"><img src="images/worldmapIcon.png" class="mapIcon" ></a></li></a>
-        <a href="database.php?data=class"><li><img src="images/skillIcon/E0013.png" /> Classes</li></a>
+        <a href="database.php?data=class"><li><img src="images/skillIcon/j047.png" />Classes / Compétences</li></a>
+        <a href="database.php?data=monsters"><li><img src="images/monsters/m229.png" />Monstres</li></a>
     </ul>
 </div>
  
@@ -31,9 +32,9 @@ function Donjons($value){
 }
 
 
-$itemRepository = 'images/itemIcon/';
+$itemRepository = 'images/items/';
 $skillRepository = 'images/skillIcon/';
-$monsterRepository = 'images/monster/';
+$monsterRepository = 'images/monsters/';
 
 $categorieslist = array(
     "A"=>"Anneaux / Armures",
@@ -62,9 +63,15 @@ if(isset($_GET["data"])){
 
     }else if($_GET["data"] == "class"){
     ?>
-    <h2>Liste des compétences</h2>
+    <h2>Liste des compétences et classes</h2>
     <?php
         drawIcons($skillRepository);
+        echo  "<iframe style='width:0px;' onload='changeCategory();'></iframe>";
+    }else if($_GET["data"] == "monsters"){
+    ?>
+    <h2>Liste des monstres et personnages</h2>
+        <?php
+        drawIcons($monsterRepository);
         echo  "<iframe style='width:0px;' onload='changeCategory();'></iframe>";
     }else if($_GET["data"] == "maps"){
     ?>

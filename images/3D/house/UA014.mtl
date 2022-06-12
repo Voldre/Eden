@@ -1,0 +1,18 @@
+newmtl object0009_2548_5
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/house/UA01401.png
+
+newmtl object0014_13
+Kd 0.031373 0.239216 0.541176
+Ks 0.031373 0.239216 0.541176
+Ns 0.000000
+map_Kd images/3D/house/
+
+newmtl object0019_18
+Kd 0.101961 0.694118 0.101961
+Ks 0.101961 0.694118 0.101961
+Ns 0.000000
+map_Kd images/3D/house/
+

@@ -1,0 +1,65 @@
+newmtl object0009_UA060_4
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/house/UA0601.png
+
+newmtl object0013_Standard_3_12
+Kd 0.588000 0.588000 0.588000
+Ks 0.900000 0.900000 0.900000
+Ns 10.000000
+map_Kd images/3D/house/
+
+newmtl object0009_UA060_16
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/house/UA0601.png
+
+newmtl object0020_19
+Kd 0.580392 0.694118 0.101961
+Ks 0.580392 0.694118 0.101961
+Ns 0.000000
+map_Kd images/3D/house/
+
+newmtl object0035_1_28
+Kd 1.000000 0.894118 0.466667
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.600000
+map_Kd images/3D/house/UA01751.png
+
+newmtl object0044_2_41
+Kd 1.000000 0.894118 0.466667
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.800000
+map_Kd images/3D/house/UA00251.png
+
+newmtl object0062_Material #900_53
+Kd 1.000000 1.000000 0.494118
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.500000
+map_Kd images/3D/house/UA00252.png
+
+newmtl object0062_Material #900_69
+Kd 1.000000 1.000000 0.494118
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.500000
+map_Kd images/3D/house/UA00252.png
+
+newmtl object0062_Material #900_73
+Kd 1.000000 1.000000 0.494118
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.500000
+map_Kd images/3D/house/UA00252.png
+
+newmtl object0077_76
+Kd 0.694118 0.580392 0.101961
+Ks 0.694118 0.580392 0.101961
+Ns 0.000000
+map_Kd images/3D/house/
+

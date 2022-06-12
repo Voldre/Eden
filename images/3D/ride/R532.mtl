@@ -1,0 +1,174 @@
+newmtl object0007_R53201_3
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd images/3D/ride/R53201.png
+
+newmtl object0018_Standard_7_17
+Kd 1.000000 0.400000 0.568627
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/ride/R05155.png
+
+newmtl object0026_Standard_38GF_25
+Kd 1.000000 0.560784 0.388235
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/ride/R05151.png
+
+newmtl object0036_Standard_38_35
+Kd 1.000000 0.945098 0.388235
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/ride/R05155.png
+
+newmtl object0041_Standard_38G_40
+Kd 1.000000 0.945098 0.388235
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/ride/R05151.png
+
+newmtl object0085_Standard_2_84
+Kd 1.000000 0.356863 0.721569
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/ride/R05155.png
+
+newmtl object0124_Standard_4_123
+Kd 0.458824 0.654902 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/ride/R53151.png
+
+newmtl object0137_Standard_4Dx_136
+Kd 0.419608 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/ride/R53151.png
+
+newmtl object0149_Standard_4D_148
+Kd 0.458824 0.654902 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/ride/R53151.png
+
+newmtl object0157_Standard_4E_156
+Kd 0.341176 0.729412 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/ride/R20152.png
+
+newmtl object0157_Standard_4E_169
+Kd 0.341176 0.729412 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/ride/R20152.png
+
+newmtl object0177_Standard_4Ed_176
+Kd 0.341176 0.721569 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.800000
+map_Kd images/3D/ride/R20152.png
+
+newmtl object0157_Standard_4E_187
+Kd 0.341176 0.729412 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/ride/R20152.png
+
+newmtl object0149_Standard_4D_194
+Kd 0.458824 0.654902 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/ride/R53151.png
+
+newmtl object0208_Material #0_196
+Kd 0.686275 0.717647 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.600000
+map_Kd images/3D/ride/R53154.png
+
+newmtl object0223_Standard_19_214
+Kd 0.349020 0.945098 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.600000
+map_Kd images/3D/ride/R53154.png
+
+newmtl object0208_Material #0_228
+Kd 0.686275 0.717647 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.600000
+map_Kd images/3D/ride/R53154.png
+
+newmtl object0223_Standard_19_234
+Kd 0.349020 0.945098 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.600000
+map_Kd images/3D/ride/R53154.png
+
+newmtl object0251_Standard_19R_240
+Kd 0.713726 0.407843 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.700000
+map_Kd images/3D/ride/R53155.png
+
+newmtl object0223_Standard_19_256
+Kd 0.349020 0.945098 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.600000
+map_Kd images/3D/ride/R53154.png
+
+newmtl object0271_Standard_19RS_262
+Kd 0.654902 0.427451 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.700000
+map_Kd images/3D/ride/R53155.png
+
+newmtl object0271_Standard_19RS_276
+Kd 0.654902 0.427451 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.700000
+map_Kd images/3D/ride/R53155.png
+
+newmtl object0284_Standard_191_282
+Kd 0.686275 0.717647 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.600000
+map_Kd images/3D/ride/R53154.png
+
+newmtl object0157_Standard_4E_319
+Kd 0.341176 0.729412 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/ride/R20152.png
+
+newmtl object0149_Standard_4D_326
+Kd 0.458824 0.654902 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/ride/R53151.png
+
+newmtl object0007_R53201_349
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd images/3D/ride/R53201.png
+
+newmtl object0360_Standard_5_356
+Kd 1.000000 0.329412 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/ride/R53156.png
+
