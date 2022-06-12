@@ -5,33 +5,44 @@
 import glob
 
 EdenRep = 'C:\wamp\www\Site free.fr\Eden\\'
+folder3D = 'images/3D/' 
 #TempoRep = "C:\\wamp\www\\Site free.fr\\Eden\\3D Eden in web\\NIF tests\\"
 
-#currentFolder = "monster"
-#currentFolder = "char"
-currentFolder = "house"
-#currentFolder = "items"
+# currentFolder = "monsters"
+# currentFolder = "char"
+# currentFolder = "house"
+# currentFolder = "items"
 # currentFolder = "ride"
-# currentFolder = "map"
+currentFolder = "maps"
 
 #for file in glob.glob(EdenRep+"images\\monster\\*.mtl"):
-for file in glob.glob(EdenRep+"images\\"+currentFolder+"\\*.mtl"):
+for file in glob.glob(EdenRep+"images\\3D\\"+currentFolder+"\\*.mtl"):
 #for file in glob.glob(TempoRep+"*.mtl"):
     f = open(file,'r+')
     content = f.read()
     content = content.replace("DDS", "png") 
     content = content.replace("dds", "png") 
+
+    # Only for "items"
+    # content = content.replace("/w","/W")
+
     # content = content.replace("NIF", "png") 
     # content = content.replace("nif", "png") 
     #content = content.replace("map_Kd http://voldre.free.fr/Eden/3D/","map_Kd http://voldre.free.fr/Eden/images/monster/")
         # 'http://voldre.free.fr/'
-    if 'map_Kd images/' not in content: 
+
+    if ('map_Kd '+folder3D) not in content: 
         # Si la redirection de map_Kd ne contient pas le path complet :
-        content = content.replace("map_Kd ","map_Kd images/"+currentFolder+"/")
-                            # Ou map_Kd http://voldre.free.fr/Eden/images/ ...
+        if 'map_Kd images/' in content:
+            content = content.replace("images","images/3D") # Gestion du changement de répertoire
+        else:
+            content = content.replace("map_Kd ","map_Kd "+folder3D+currentFolder+"/")
+                            # Ou map_Kd http://voldre.free.fr/Eden/images/3D/ ...
+    else:
+        print('contenu déjà à jour')
     f.truncate(0) # On clear le fichier
     f.seek(0) # On remet le curseur au début
     f.write(content) # Puis on écrit
 
     f.close()
-
+input("Press Enter to continue...")
