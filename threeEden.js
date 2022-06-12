@@ -166,7 +166,20 @@ function init() {
     // console.log(mtlLoader);
     mtlLoader.load("http://voldre.free.fr/Eden/images/" + folder + "/" + myObject + ".mtl", function(materials) {
        
+        //console.log(materials);
+        var listWrongMaterials = [];
+        for(var material in materials.materialsInfo){
+            if(materials.materialsInfo[material]["map_kd"] == "images/map/" || typeof materials.materialsInfo[material]["map_kd"] == "undefined" || materials.materialsInfo[material]["map_kd"] == "" ){
+                listWrongMaterials.push(materials.materialsInfo[material]["name"]);
+            }
+        }
+        console.log(listWrongMaterials);
         /*
+        function onlyUnique(value, index, self) {
+            return self.indexOf(value) === index;
+          }
+        listLiensTextures = listLiensTextures.filter(onlyUnique);
+        
         var listLiensTextures = [];
         for(var material in materials.materialsInfo){
             if(materials.materialsInfo[material]["map_kd"] != null){
@@ -211,19 +224,34 @@ function init() {
                 }
             });
                 
-            /******************************************
-             07/06/2022 - Most important update :
+            /********* Most important update *********
+             07/06/2022 :
              Adding alphaTest and transparent parameters
              in order to make transparent part of PNG effective !
              If not, the transparent part will render black or white
              Examples here : "Tools/Issue with the PNG transparent - alpha.png"
-            ******************************************/
+             12/06/2022 - (the best part of update) :
+             Analyze of each material and their "map kd" (their PNG texture)
+             in order to find which materials have no texture.
+             Because I understood that all "white/blue/purple" walls were
+             materials built in the game to block the player. As a real wall.
+             And so, these materials got no texture but exist !
+             That's not a "miss conversion", that's intended transparent !
+             But the NIF to OBJ conversion, by default, show them ...
+             ... even if they have no texture", and that's on what I have worked.
+             I checked PNG for all materials, and if I find no one, "visibile = false"
+             ******************************************/
             var children = mesh.children;                
             console.log(children)
             for ( var i = 0 ; i < children.length; i++ ) {
                 children[i].castShadow = true;
+                // Make PNG transparence efficient
                 children[i].material.alphaTest = 0.5;
                 children[i].material.transparent = true;
+                // Check if this material are in my "black list" of materials
+                if(listWrongMaterials.includes(children[i].material.name) ){
+                    mesh.children[i].visible = false; // If yes, I hide it for real, like in the game
+                }
             }
 
 

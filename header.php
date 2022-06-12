@@ -100,7 +100,7 @@ $_SESSION["maplist"] = array(1=>["Aven",26.5,64.9,0],
     219=>["Iyernafalo",0,0,5],
 
     220=>["Terre sacrée de Kamodo",0,0,5],
-    221=>["Temple aquatique",0,0,5],
+    221=>["Temple aquatique",0,0,5,142,-330,22,1],
     222=>["Labo Antigravité",0,0,5],
     223=>["Grey Lynn",0,0,5],
     224=>["Bataille Spatiotemporelle",0,0,5],
