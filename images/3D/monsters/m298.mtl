@@ -1,0 +1,12 @@
+newmtl Material #0_3
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd images/3D/monsters/M29801.png
+
+newmtl Material #0_71
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd images/3D/monsters/M29801.png
+

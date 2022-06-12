@@ -1,0 +1,36 @@
+newmtl M665_3
+Kd 0.952941 0.952941 0.952941
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd images/3D/monsters/M66501.png
+
+newmtl mesh26material
+Kd 0.031373 0.239216 0.541176
+Ks 0.031373 0.239216 0.541176
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh44material
+Kd 0.031373 0.239216 0.541176
+Ks 0.031373 0.239216 0.541176
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh67material
+Kd 0.031373 0.239216 0.541176
+Ks 0.031373 0.239216 0.541176
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh69material
+Kd 0.031373 0.239216 0.541176
+Ks 0.031373 0.239216 0.541176
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl M665_75
+Kd 0.952941 0.952941 0.952941
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd images/3D/monsters/M66501.png
+

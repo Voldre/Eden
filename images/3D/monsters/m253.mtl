@@ -1,0 +1,12 @@
+newmtl object0071_M253_67
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/monsters/M25301.png
+
+newmtl object0071_M253_80
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/monsters/M25301.png
+

@@ -1,0 +1,162 @@
+newmtl M474_3
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd images/3D/monsters/M47401.png
+
+newmtl mesh19material
+Kd 0.423529 0.031373 0.533333
+Ks 0.423529 0.031373 0.533333
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh22material
+Kd 0.423529 0.031373 0.533333
+Ks 0.423529 0.031373 0.533333
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh24material
+Kd 0.423529 0.031373 0.533333
+Ks 0.423529 0.031373 0.533333
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh26material
+Kd 0.109804 0.109804 0.694118
+Ks 0.109804 0.109804 0.694118
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh29material
+Kd 0.109804 0.109804 0.694118
+Ks 0.109804 0.109804 0.694118
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh31material
+Kd 0.109804 0.109804 0.694118
+Ks 0.109804 0.109804 0.694118
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh39material
+Kd 0.443137 0.525490 0.023529
+Ks 0.443137 0.525490 0.023529
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh42material
+Kd 0.443137 0.525490 0.023529
+Ks 0.443137 0.525490 0.023529
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh44material
+Kd 0.443137 0.525490 0.023529
+Ks 0.443137 0.525490 0.023529
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh46material
+Kd 0.023529 0.525490 0.023529
+Ks 0.023529 0.525490 0.023529
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh49material
+Kd 0.023529 0.525490 0.023529
+Ks 0.023529 0.525490 0.023529
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh51material
+Kd 0.023529 0.525490 0.023529
+Ks 0.023529 0.525490 0.023529
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh65material
+Kd 0.109804 0.109804 0.694118
+Ks 0.109804 0.109804 0.694118
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh73material
+Kd 0.023529 0.525490 0.023529
+Ks 0.023529 0.525490 0.023529
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh75material
+Kd 0.031373 0.431373 0.525490
+Ks 0.031373 0.431373 0.525490
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh83material
+Kd 0.000000 0.000000 1.000000
+Ks 0.000000 0.000000 1.000000
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh91material
+Kd 0.000000 0.000000 1.000000
+Ks 0.000000 0.000000 1.000000
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh98material
+Kd 0.000000 0.000000 1.000000
+Ks 0.000000 0.000000 1.000000
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh105material
+Kd 0.000000 0.000000 1.000000
+Ks 0.000000 0.000000 1.000000
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh123material
+Kd 0.000000 0.000000 1.000000
+Ks 0.000000 0.000000 1.000000
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh130material
+Kd 0.000000 0.000000 1.000000
+Ks 0.000000 0.000000 1.000000
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh137material
+Kd 0.000000 0.000000 1.000000
+Ks 0.000000 0.000000 1.000000
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh144material
+Kd 0.000000 0.000000 1.000000
+Ks 0.000000 0.000000 1.000000
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh167material
+Kd 0.878431 0.776471 0.341176
+Ks 0.878431 0.776471 0.341176
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh170material
+Kd 1.000000 0.000000 0.843137
+Ks 1.000000 0.000000 0.843137
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh173material
+Kd 1.000000 0.000000 0.000000
+Ks 1.000000 0.000000 0.000000
+Ns 0.000000
+map_Kd images/3D/monsters/
+

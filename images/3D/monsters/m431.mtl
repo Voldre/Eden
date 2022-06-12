@@ -1,0 +1,48 @@
+newmtl object0009_M431_5
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd images/3D/monsters/M43101.png
+
+newmtl object0019_18
+Kd 0.898039 0.603922 0.843137
+Ks 0.898039 0.603922 0.843137
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl object0019_21
+Kd 0.898039 0.603922 0.843137
+Ks 0.898039 0.603922 0.843137
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl object0019_23
+Kd 0.898039 0.603922 0.843137
+Ks 0.898039 0.603922 0.843137
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl object0043_42
+Kd 0.031373 0.431373 0.525490
+Ks 0.031373 0.431373 0.525490
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl object0043_60
+Kd 0.031373 0.431373 0.525490
+Ks 0.031373 0.431373 0.525490
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl object0085_84
+Kd 0.878431 0.776471 0.341176
+Ks 0.878431 0.776471 0.341176
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl object0088_87
+Kd 0.690196 0.101961 0.101961
+Ks 0.690196 0.101961 0.101961
+Ns 0.000000
+map_Kd images/3D/monsters/
+

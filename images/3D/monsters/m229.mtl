@@ -1,0 +1,24 @@
+newmtl M229_3
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/monsters/M22901.png
+
+newmtl mesh24material
+Kd 0.682353 0.729412 0.796079
+Ks 0.682353 0.729412 0.796079
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh28material
+Kd 0.682353 0.729412 0.796079
+Ks 0.682353 0.729412 0.796079
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl M229_53
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/monsters/M22901.png
+

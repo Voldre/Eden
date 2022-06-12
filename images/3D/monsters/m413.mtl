@@ -1,0 +1,36 @@
+newmtl M41301_3
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd images/3D/monsters/M41301.png
+
+newmtl mesh37material
+Kd 0.423529 0.031373 0.533333
+Ks 0.423529 0.031373 0.533333
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh46material
+Kd 0.313726 0.313726 0.313726
+Ks 0.313726 0.313726 0.313726
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh70material
+Kd 0.443137 0.525490 0.023529
+Ks 0.443137 0.525490 0.023529
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl mesh77material
+Kd 0.313726 0.313726 0.313726
+Ks 0.313726 0.313726 0.313726
+Ns 0.000000
+map_Kd images/3D/monsters/
+
+newmtl M41301_93
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ns 10.000000
+map_Kd images/3D/monsters/M41301.png
+
