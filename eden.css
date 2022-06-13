@@ -1,6 +1,6 @@
 body {
     cursor: url('images/cursor.png'), auto;
-    width: fit-content;
+    width: 99%;
     margin:1%;
 }
 
@@ -39,12 +39,18 @@ body {
     /*width: 95%;*/
     border: 2px black solid;
     min-width: 300px;
+    /* 12/06 Improvement : all containers of icons have
+    a max-height in order to reduce scrolling in
+    the main page, to only scroll in this frame : UX
+    Because there are >100 icons to display and we 
+    can need to scroll until 3 entire pages  */
     max-height: 450px;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .pictures {
-    width: 250px;
+    width: 240px;
     margin: 2px 20px 10px 10px;
 }
 
@@ -311,6 +317,52 @@ input:checked+.slider:before {
     transform-origin: bottom left;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    background-color: #2196F3;
+    padding: 10px;
+    display: none;
+  }
+  
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+text-align: center;
+}
+
+.grid-item img{
+    height:50px;
+    width:50px;
+}
+
+.hover-animation {
+    position: sticky;
+    width: 240px;
+    height: 240px;
+}
+
+.hover-animation img {
+    position: absolute;
+    display: block;
+    transition: opacity 1s ease-in-out;
+}
+
+.hover-animation img.image-front:hover {
+    opacity: 0;
+    cursor: pointer;
+}
+
+.image-front{
+
+}
+.image-back{
+    display:none;
+}
+
+
 @media only screen and (max-width: 700px) {
     .icon {
         width: 32px;
@@ -318,5 +370,11 @@ input:checked+.slider:before {
     }
     h2{
         font-size: 16px;
+    }
+    .commandes{
+        display: none;
+    }
+    .grid-container{
+        display: grid;
     }
   }

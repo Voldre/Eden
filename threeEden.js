@@ -329,7 +329,7 @@ function init() {
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.BasicShadowMap;
 
-    document.body.appendChild(renderer.domElement);
+    document.getElementById('canvasPosition').appendChild(renderer.domElement);
 
     animate();
 }
@@ -346,29 +346,57 @@ function animate() {
         //console.log(scene.children[3]);
     }
 
+    function up(){
+        camera.position.x -= Math.sin(camera.rotation.y) * player.speed;
+        camera.position.z -= -Math.cos(camera.rotation.y) * player.speed;
+    }
+    function right(){
+        camera.position.x += Math.sin(camera.rotation.y - Math.PI / 2) * player.speed;
+        camera.position.z += -Math.cos(camera.rotation.y - Math.PI / 2) * player.speed;
+    }
+    function down(){
+        camera.position.x += Math.sin(camera.rotation.y) * player.speed;
+        camera.position.z += -Math.cos(camera.rotation.y) * player.speed;
+
+    }
+    function left(){
+        camera.position.x += Math.sin(camera.rotation.y + Math.PI / 2) * player.speed;
+        camera.position.z += -Math.cos(camera.rotation.y + Math.PI / 2) * player.speed;
+    }
+    $("#up").on("click",function(){player.speed = 0.001; up();});
+    $("#down").on("click",function(){player.speed = 0.001; down();});
+    $("#left").on("click",function(){player.speed = 0.001; left();});
+    $("#right").on("click",function(){player.speed = 0.001; right();});
+    $("#prev").on("click",function(){ 
+        $("#objets > option:selected")
+        .prop("selected", false)
+        .prev()
+        .prop("selected", true);});
+    $("#next").on("click",function(){ 
+        $("#objets > option:selected")
+        .prop("selected", false)
+        .next()
+        .prop("selected", true);});
     // ZQSD mouvement translation
     if (keyboard[90]) { // Z key
         if($('#objets').is(":focus")){
             $('#objets').blur();
         }
-        camera.position.x -= Math.sin(camera.rotation.y) * player.speed;
-        camera.position.z -= -Math.cos(camera.rotation.y) * player.speed;
+        up();
     }
     if (keyboard[83]) { // S key
         if($('#objets').is(":focus")){
             $('#objets').blur();
         }
-        camera.position.x += Math.sin(camera.rotation.y) * player.speed;
-        camera.position.z += -Math.cos(camera.rotation.y) * player.speed;
+        down();
+       
     }
     if (keyboard[81]) { // Q key
-        camera.position.x += Math.sin(camera.rotation.y + Math.PI / 2) * player.speed;
-        camera.position.z += -Math.cos(camera.rotation.y + Math.PI / 2) * player.speed;
+        left();
     }
     if (keyboard[68]) { // D key
-        camera.position.x += Math.sin(camera.rotation.y - Math.PI / 2) * player.speed;
-        camera.position.z += -Math.cos(camera.rotation.y - Math.PI / 2) * player.speed;
-    }
+        right();
+   }
 
     //console.log(camera.position);
 

@@ -14,7 +14,7 @@ https://wiki.vg-resource.com/Noesis , Noesis Download : http://www.richwhitehous
 <body onload="init()" style="overflow:hidden; text-align:center;margin-top:0px;">
 <header class="header3D">
     <!--<input type="button" value="Toggle Wireframe" onclick="mesh.material.wireframe=!mesh.material.wireframe;meshFloor.material.wireframe=!meshFloor.material.wireframe;" />--> 
-    ZQSD : pour bouger  &nbsp;  &nbsp;  &#8616; : pour changer d'image (sauf sur les maps).  &nbsp; &nbsp; &harr; : pour tourner
+    <span class="commandes">ZQSD : pour bouger  &nbsp;  &nbsp;  &#8616; : pour changer d'image (sauf sur les maps).  &nbsp; &nbsp; &harr; : pour tourner</span>
     <nav>
     <ul class="menu">
       <?php if(isset($_GET['data'])){ ?>
@@ -84,6 +84,7 @@ exit();
     </select>
 </div>
 <h2 id="loading"></h2>
+<div id="canvasPosition"></div>
     <script type="text/javascript">
     
     document.getElementById("iconPic").style.display = "none";
@@ -103,6 +104,21 @@ exit();
         }
     }
     </script>
+<footer>
+<div class="grid-container">
+  <div class="grid-item"></div>
+  <div class="grid-item"><img id="up" src="images/arrow2.png" style="transform: rotate(0deg);" /></div>
+  <div class="grid-item"></div>  
+  <div class="grid-item"><img id="prev" src="images/arrow2.png" style="transform: rotate(0deg);" /></div>
+  <div class="grid-item"><img id="left" src="images/arrow2.png" style="transform: rotate(270deg);" /></div>
+  <div class="grid-item"></div>  
+  <div class="grid-item"><img id="right" src="images/arrow2.png" style="transform: rotate(90deg);" /></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>  
+  <div class="grid-item"><img id="down" src="images/arrow2.png" style="transform: rotate(180deg);" /></div>  
+  <div class="grid-item"></div>  
+  <div class="grid-item"><img id="next" src="images/arrow2.png" style="transform: rotate(180deg);" /></div>  
+</div>
+</footer>
 </body>
-
 </html>
