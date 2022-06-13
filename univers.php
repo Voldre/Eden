@@ -7,6 +7,7 @@ include("menu.html");
     <ul>
         <a href="univers.php?data=maps"><li><img src="images/maps/S013m.png" /><p style="display:inline-block;width: 48%;height: 24px;"> Régions </p><a href="univers.php?data=worldmap"><img src="images/worldmapIcon.png" class="mapIcon" ></a></li></a>
         <a href="univers.php?data=class"><li><img src="images/skillIcon/E0013.png" /> Classes</li></a>
+        <a href="univers.php?data=videos"><li><img src="images/uiiconPNG/script00.png" />Trailers / Openings</li></a>
     </ul>
 </div>
 
@@ -46,7 +47,7 @@ if(isset($_GET["data"])){
                 $_POST["filter"] = "All";
             }
             foreach(array_filter($maplist, $_POST["filter"]) as $key=>$value){
-                echo"<div class='img_block'>";
+                echo"<div class='img-block'>";
                 echo "<p>$value[0]</p>";
     
                 $keyZ = $key;
@@ -112,6 +113,13 @@ if(isset($_GET["data"])){
         <p>Second wiki : https://eden-eternal.fandom.com/fr/wiki/Classes</p>
         <p>Troisième wiki : https://edenfr.wordpress.com/ </p>
         <?php        
+    }else if($_GET["data"] == "videos"){
+        ?>
+        <div class="flexContainer">
+        <iframe src="https://www.youtube.com/embed/Ks9kTC_vzLQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/Jr9b2L2_kvM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/Vf-qP5joSsg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ <?php
     }
 }
 ?>
