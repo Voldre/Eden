@@ -15,7 +15,7 @@ function update() {
     // 10/06/22 - Update : window.stop() arrête toutes les requêtes
     // Cela permet donc d'annuler les anciens chargements encore en cours
     window.stop();
-
+    player = { height: 1.6, speed: 0.2, turnSpeed: Math.PI * 0.02 };
     // Permet d'annuler l'execution automatique de la fonction animate()
     // qui a été lancé lors de l'initialisation de l'objet précédent
     cancelAnimationFrame(myrequest);
@@ -334,6 +334,21 @@ function init() {
     animate();
 }
 
+$("#prev").on("click",function(){ 
+    $("#objets > option:selected")
+    .prop("selected", false)
+    .prev()
+    .change()
+    .blur()
+    .prop("selected", true);});
+$("#next").on("click",function(){ 
+    $("#objets > option:selected")
+    .prop("selected", false)
+    .next()
+    .change()
+    .blur()
+    .prop("selected", true);});
+
 function animate() {
 
     // Récupération de la requête dans une variable pour la garder en mémoire
@@ -363,20 +378,19 @@ function animate() {
         camera.position.x += Math.sin(camera.rotation.y + Math.PI / 2) * player.speed;
         camera.position.z += -Math.cos(camera.rotation.y + Math.PI / 2) * player.speed;
     }
+    function turnLeft(){
+        camera.rotation.y -= player.turnSpeed/1.3;
+    }
+    function turnRight(){
+        camera.rotation.y += player.turnSpeed/1.3;
+    }
     $("#up").on("click",function(){player.speed = 0.001; up();});
     $("#down").on("click",function(){player.speed = 0.001; down();});
     $("#left").on("click",function(){player.speed = 0.001; left();});
     $("#right").on("click",function(){player.speed = 0.001; right();});
-    $("#prev").on("click",function(){ 
-        $("#objets > option:selected")
-        .prop("selected", false)
-        .prev()
-        .prop("selected", true);});
-    $("#next").on("click",function(){ 
-        $("#objets > option:selected")
-        .prop("selected", false)
-        .next()
-        .prop("selected", true);});
+    $("#turnLeft").on("click",function(){player.turnSpeed = 0.001; turnLeft();});
+    $("#turnRight").on("click",function(){player.turnSpeed = 0.001; turnRight();});
+  
     // ZQSD mouvement translation
     if (keyboard[90]) { // Z key
         if($('#objets').is(":focus")){
