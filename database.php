@@ -1,6 +1,6 @@
 <?php
 include("header.php");
-include("menu.html");
+include("menu2.html");
 ?>
 <body>
 <div class="dbMenu">
