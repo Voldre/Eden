@@ -22,14 +22,14 @@ include("menu2.html");
 </div>
 <div style="border:2px black solid;padding:1.5%;">
 
-<h3>Nos convictions</h3>
+<h2>Nos convictions</h2>
 <p>Nous sommes convaincus que nous pouvons améliorer la vie de millions de joueurs à travers des designs.<br/><br/> 
 Nous souhaitons mettre des étoiles dans les yeux des joueurs pour qu'ils vivent une expérience mémorable.</p>
 <div class="flexContainer">
 <img src="images/Paladin.webp" style="width:45%;text-align:center;margin-right:2px;"/>
 <img src="images/Grenadier.webp" style="width:45%;text-align:center;"/>
 </div>
-<h3>Nos partenaires</h3>
+<h2>Nos partenaires</h2>
 <p>Feravena est le partenaire de grands fournisseurs de solutions dans le domaine vidéoludique, notamment :</p>
 <div class="flexContainer" >
     <img style="width:37%;margin:8px;" src="https://cdn2.steamgriddb.com/file/sgdb-cdn/logo/15134fabce1af48f50bc470ddfacdf56.png" />
@@ -39,5 +39,6 @@ Nous souhaitons mettre des étoiles dans les yeux des joueurs pour qu'ils vivent
     <img style="width:40%;margin:8px;" src="https://www.hoyoverse.com/_nuxt/img/logo-light.3def3bc.png" />
 </div>
 </div>
+<p>Nos produits ou notre entreprise vous intéresse ? Alors venez <a href="contact.php">nous écrire</a>.</p>
 </body>
 </html>

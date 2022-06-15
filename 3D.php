@@ -106,18 +106,18 @@ exit();
     </script>
 <footer>
 <div class="grid-container">
-  <div class="grid-item"><img id="turnLeft" src="images/arrow2.png" style="transform: rotate(235deg);" /></div>
-  <div class="grid-item"><img id="up" src="images/arrow2.png" style="transform: rotate(0deg);" /></div>
-  <div class="grid-item"><img id="turnRight" src="images/arrow2.png" style="transform: rotate(125deg);" /></div>  
-  <div class="grid-item"><img id="prev" src="images/arrow2.png" style="transform: rotate(0deg);" /></div>
-  <div class="grid-item"><img id="left" src="images/arrow2.png" style="transform: rotate(270deg);" /></div>
+  <div class="grid-item"><img id="turnLeft" src="images/layout/arrow2.png" style="transform: rotate(235deg);" /></div>
+  <div class="grid-item"><img id="up" src="images/layout/arrow2.png" style="transform: rotate(0deg);" /></div>
+  <div class="grid-item"><img id="turnRight" src="images/layout/arrow2.png" style="transform: rotate(125deg);" /></div>  
+  <div class="grid-item"><img id="prev" src="images/layout/arrow2.png" style="transform: rotate(0deg);" /></div>
+  <div class="grid-item"><img id="left" src="images/layout/arrow2.png" style="transform: rotate(270deg);" /></div>
   <div class="grid-item"></div>  
-  <div class="grid-item"><img id="right" src="images/arrow2.png" style="transform: rotate(90deg);" /></div>
+  <div class="grid-item"><img id="right" src="images/layout/arrow2.png" style="transform: rotate(90deg);" /></div>
   <div class="grid-item"></div>
   <div class="grid-item"></div>  
-  <div class="grid-item"><img id="down" src="images/arrow2.png" style="transform: rotate(180deg);" /></div>  
+  <div class="grid-item"><img id="down" src="images/layout/arrow2.png" style="transform: rotate(180deg);" /></div>  
   <div class="grid-item"></div>  
-  <div class="grid-item"><img id="next" src="images/arrow2.png" style="transform: rotate(180deg);" /></div>  
+  <div class="grid-item"><img id="next" src="images/layout/arrow2.png" style="transform: rotate(180deg);" /></div>  
 </div>
 </footer>
 </body>
