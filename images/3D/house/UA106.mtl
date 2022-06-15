@@ -5,8 +5,7 @@ Kd 1 1 1
 Ks 1 1 1
 d 1
 Ns 10
-map_Kd images/3D/map/UA10601.png
-
+map_Kd images/3D/house/UA10601.png
 
 newmtl Material.001335
 Ka 1 1 1
@@ -14,8 +13,7 @@ Kd 1 1 1
 Ks 1 1 1
 d 1
 Ns 10
-map_Kd images/3D/map/UA10603.png
-
+map_Kd images/3D/house/UA10603.png
 
 newmtl Material.0019e6
 Ka 1 1 1
@@ -23,8 +21,7 @@ Kd 1 1 1
 Ks 1 1 1
 d 1
 Ns 10
-map_Kd images/3D/map/UA10602.png
-
+map_Kd images/3D/house/UA10602.png
 
 newmtl Material.0024ae
 Ka 1 1 1
@@ -32,8 +29,7 @@ Kd 1 1 1
 Ks 1 1 1
 d 1
 Ns 10
-map_Kd images/3D/map/UA10604.png
-
+map_Kd images/3D/house/UA10604.png
 
 newmtl Material.0026f7
 Ka 1 1 1
@@ -41,8 +37,7 @@ Kd 1 1 1
 Ks 1 1 1
 d 1
 Ns 10
-map_Kd images/3D/map/UA10601.png
-
+map_Kd images/3D/house/UA10601.png
 
 newmtl Material.00289d
 Ka 0.0313726 0.431373 0.52549
@@ -78,8 +73,7 @@ Kd 1 1 1
 Ks 0 0 0
 d 0.6
 Ns 10
-map_Kd images/3D/map/UA10651.png
-
+map_Kd images/3D/house/UA10651.png
 
 newmtl Material.002aca
 Ka 0 0 0
@@ -87,8 +81,7 @@ Kd 1 1 1
 Ks 0 0 0
 d 0.6
 Ns 10
-map_Kd images/3D/map/UA10651.png
-
+map_Kd images/3D/house/UA10651.png
 
 newmtl Material.002ae8
 Ka 0 0 0
@@ -96,8 +89,7 @@ Kd 1 1 1
 Ks 0 0 0
 d 0.6
 Ns 10
-map_Kd images/3D/map/UA10651.png
-
+map_Kd images/3D/house/UA10651.png
 
 newmtl Material.002b06
 Ka 0 0 0
@@ -105,8 +97,7 @@ Kd 1 1 1
 Ks 0 0 0
 d 0.6
 Ns 10
-map_Kd images/3D/map/UA10651.png
-
+map_Kd images/3D/house/UA10651.png
 
 newmtl Material.002b24
 Ka 0 0 0
@@ -114,8 +105,7 @@ Kd 1 1 1
 Ks 0 0 0
 d 0.6
 Ns 10
-map_Kd images/3D/map/UA10651.png
-
+map_Kd images/3D/house/UA10651.png
 
 newmtl Material.002b42
 Ka 0 0 0
@@ -123,8 +113,7 @@ Kd 1 1 1
 Ks 0 0 0
 d 0.6
 Ns 10
-map_Kd images/3D/map/UA10651.png
-
+map_Kd images/3D/house/UA10651.png
 
 newmtl Material.002b60
 Ka 0 0 0
@@ -132,8 +121,7 @@ Kd 1 1 1
 Ks 0 0 0
 d 0.6
 Ns 10
-map_Kd images/3D/map/UA10651.png
-
+map_Kd images/3D/house/UA10651.png
 
 newmtl Material.002b7e
 Ka 0 0 0
@@ -141,8 +129,7 @@ Kd 1 1 1
 Ks 0 0 0
 d 0.6
 Ns 10
-map_Kd images/3D/map/UA10651.png
-
+map_Kd images/3D/house/UA10651.png
 
 newmtl Material.002b9c
 Ka 0 0 0
@@ -150,8 +137,7 @@ Kd 1 1 1
 Ks 0 0 0
 d 0.6
 Ns 10
-map_Kd images/3D/map/UA10651.png
-
+map_Kd images/3D/house/UA10651.png
 
 newmtl Material.002bba
 Ka 0 0 0
@@ -159,8 +145,7 @@ Kd 1 1 1
 Ks 0 0 0
 d 0.6
 Ns 10
-map_Kd images/3D/map/UA10651.png
-
+map_Kd images/3D/house/UA10651.png
 
 newmtl Material.002bd8
 Ka 0 0 0
@@ -168,8 +153,7 @@ Kd 1 1 1
 Ks 0 0 0
 d 0.6
 Ns 10
-map_Kd images/3D/map/UA10651.png
-
+map_Kd images/3D/house/UA10651.png
 
 newmtl Material.002bf6
 Ka 0 0 0
@@ -177,8 +161,7 @@ Kd 1 1 1
 Ks 0 0 0
 d 0.6
 Ns 10
-map_Kd images/3D/map/UA10651.png
-
+map_Kd images/3D/house/UA10651.png
 
 newmtl Material.002c14
 Ka 0 0 0
@@ -186,8 +169,7 @@ Kd 1 1 1
 Ks 0 0 0
 d 0
 Ns 10
-map_Kd images/3D/map/UA10655.png
-
+map_Kd images/3D/house/UA10655.png
 
 newmtl Material.002c2a
 Ka 0 0 0
@@ -195,8 +177,7 @@ Kd 1 1 1
 Ks 0 0 0
 d 0
 Ns 10
-map_Kd images/3D/map/UA00251.png
-
+map_Kd images/3D/house/UA00251.png
 
 newmtl Material.002c36
 Ka 0 0 0
@@ -204,8 +185,7 @@ Kd 1 1 1
 Ks 0 0 0
 d 0.5
 Ns 10
-map_Kd images/3D/map/UA10654.png
-
+map_Kd images/3D/house/UA10654.png
 
 newmtl Material.002c3a
 Ka 0 0 0
@@ -213,8 +193,7 @@ Kd 1 1 1
 Ks 0 0 0
 d 0.6
 Ns 10
-map_Kd images/3D/map/UA10652.png
-
+map_Kd images/3D/house/UA10652.png
 
 newmtl Material.002c3e
 Ka 0 0 0
@@ -222,5 +201,4 @@ Kd 1 1 1
 Ks 0 0 0
 d 0.8
 Ns 10
-map_Kd images/3D/map/UA10653.png
-
+map_Kd images/3D/house/UA10653.png

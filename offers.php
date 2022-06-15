@@ -31,8 +31,13 @@ include("menu2.html");
 <div style="border:2px black solid;padding:1.5%;">
 <h2>Accès à nos outils de conceptions :</h2>
 <p>Vous appréciez nos conceptions et vous pensez que les logiciels pour les créés sont trop onéreux ? Eh bien non, ils sont moins chers que les équivalents sur le marché ! Ainsi Feravena peut vous mettre à disposition ses outils afin d'aider vous et votre équipe à développer vos propres ressources !</p>
-VIDEO
+<div class="flexContainer">
+<video style="width:77%;" controls>
+<source src="Nifskope demonstration.mp4" type="video/mp4"></source>
+</video>
+</div>
 <p>Notre suite d'outils comprend un concepteur 3D et 2D, un outil d'animation et un outil d'édition sonore (uniquement d'édition).</p>
 </div>
+<p>Nos produits ou notre entreprise vous intéresse ? Alors venez <a href="contact.php">nous écrire</a>.</p>
 </body>
 </html>

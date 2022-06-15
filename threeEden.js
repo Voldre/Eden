@@ -334,21 +334,6 @@ function init() {
     animate();
 }
 
-$("#prev").on("click",function(){ 
-    $("#objets > option:selected")
-    .prop("selected", false)
-    .prev()
-    .change()
-    .blur()
-    .prop("selected", true);});
-$("#next").on("click",function(){ 
-    $("#objets > option:selected")
-    .prop("selected", false)
-    .next()
-    .change()
-    .blur()
-    .prop("selected", true);});
-
 function animate() {
 
     // Récupération de la requête dans une variable pour la garder en mémoire
@@ -384,48 +369,77 @@ function animate() {
     function turnRight(){
         camera.rotation.y += player.turnSpeed/1.3;
     }
+
+    // Création des intéractions pour l'interface mobile
+
     $("#up").on("click",function(){player.speed = 0.001; up();});
     $("#down").on("click",function(){player.speed = 0.001; down();});
     $("#left").on("click",function(){player.speed = 0.001; left();});
     $("#right").on("click",function(){player.speed = 0.001; right();});
     $("#turnLeft").on("click",function(){player.turnSpeed = 0.001; turnLeft();});
     $("#turnRight").on("click",function(){player.turnSpeed = 0.001; turnRight();});
-  
+        
+    document.getElementById("prev").onclick = function (){
+        // console.log($("#objets").val());
+        if(folder == "maps"){
+            camera.position.y += 2.5;
+        }else{
+            $("#objets option:selected").prev().prop('selected',true).change();
+        }
+    }
+    document.getElementById("next").onclick = function(){
+        // console.log($("#objets").val());    
+        if(folder == "maps"){
+            camera.position.y -= 2.5;
+        }else{    
+            $("#objets option:selected").next().prop('selected',true).change();
+        }
+    }
+
     // ZQSD mouvement translation
     if (keyboard[90]) { // Z key
-        if($('#objets').is(":focus")){
-            $('#objets').blur();
-        }
+        if($('#objets').is(":focus")){ $('#objets').blur(); }
         up();
     }
     if (keyboard[83]) { // S key
-        if($('#objets').is(":focus")){
-            $('#objets').blur();
-        }
-        down();
-       
+        if($('#objets').is(":focus")){ $('#objets').blur(); }
+        down();   
     }
     if (keyboard[81]) { // Q key
         left();
     }
     if (keyboard[68]) { // D key
         right();
-   }
+    }
 
     //console.log(camera.position);
 
     // Rotation de la caméra
     if (keyboard[37]) { // left arrow key
         if($('#objets').is(":focus")){
-            $('#objets').blur();
-        }
+            $('#objets').blur(); }
         camera.rotation.y -= player.turnSpeed/1.3;
     }
     if (keyboard[39]) { // right arrow key
         if($('#objets').is(":focus")){
-            $('#objets').blur();
-        }
+            $('#objets').blur(); }
         camera.rotation.y += player.turnSpeed/1.3;
+    }
+
+    if (keyboard[38]) { // Top Arrow
+        if(folder == "maps"){
+            camera.position.y += player.speed;
+        }else{ $('#objets').focus(); }
+    }
+    if (keyboard[40]) { // Bottom Arrow
+        if(folder == "maps"){
+            camera.position.y -= player.speed;
+        }else{ $('#objets').focus(); }
+    }
+    if(keyboard[16]){
+        if(player.speed == 1){
+        player.speed = 2;
+        }else{ player.speed = 1;}
     }
 
     // Rotation de l'objet
@@ -434,25 +448,6 @@ function animate() {
     }
     if (keyboard[69]) { // E
         scene.children[3].rotation.y -= 0.01;
-    }
-    if (keyboard[38]) { // Top Arrow
-        if(folder == "maps"){
-            camera.position.y += player.speed;
-        }else{
-        $('#objets').focus();
-        }
-    }
-    if (keyboard[40]) { // Bottom Arrow
-        if(folder == "maps"){
-            camera.position.y -= player.speed;
-        }else{
-        $('#objets').focus();
-        }
-    }
-    if(keyboard[16]){
-        if(player.speed == 1){
-        player.speed = 2;
-        }else{ player.speed = 1;}
     }
 
     if (keyboard[161] || keyboard[48]) { // "!" ou "0", 04/06/2022 - Kill du programme
@@ -468,7 +463,6 @@ function animate() {
         // On supprime le canvas de l'ancien Objet 3D
         document.getElementsByTagName("canvas")[0].remove();
     }
-
     renderer.render(scene, camera);
 }
 
@@ -484,5 +478,3 @@ window.addEventListener('keydown', keyDown);
 window.addEventListener('keyup', keyUp);
 
 //window.onload = init(1152, 648);
-
-  

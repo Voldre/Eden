@@ -1,5 +1,5 @@
 body {
-    cursor: url('images/cursor.png'), auto;
+    cursor: url('images/layout/cursor.png'), auto;
     width: 99%;
     margin:1%;
 }
@@ -29,6 +29,10 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     box-shadow: inset 0 0 5px grey;
     opacity: 1;
+}
+
+h2{
+    margin-top: 8px;
 }
 
 .container {
@@ -126,7 +130,9 @@ a {
     color: rgb(246, 196, 104);
     text-decoration: none;
 }
-
+.dbMenu ul{
+    padding-left: 5px;
+}
 .dbMenu li {
     display: inline-block;
     text-align: left;
@@ -180,7 +186,7 @@ li img,
 
 .point:hover {
     background-image: url("images/mapIcon_2.png");
-    cursor: url('images/cursor_tp.png'), auto;
+    cursor: url('images/layout/cursor_tp.png'), auto;
 }
 
 .point:hover .name {
@@ -321,17 +327,16 @@ input:checked+.slider:before {
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto auto;
-    background-color: #2196F3;
-    padding: 10px;
     display: none;
+    background-image: url("images/layout/0937346-dark.png");
+    background-size: cover;
+    /*opacity: 0.8;*/
   }
   
 .grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    font-size: 30px;
-text-align: center;
+    padding: 15px;
+    text-align: center;
 }
 
 .grid-item img{
@@ -364,7 +369,6 @@ text-align: center;
     display:none;
 }
 
-/* Video carousel */
 .flexContainer{
     display:flex;
     justify-content:space-around;
@@ -374,6 +378,18 @@ text-align: center;
     aspect-ratio: 16/9;
     margin:1%;
 }
+
+/* 15/06/2022 Interaction Indicator for improve UX : 
+Brightness on mouseover and onclick */
+
+.dbMenu li:hover, .grid-item img:hover {
+    filter : brightness(120%);
+}
+.dbMenu li:active, .grid-item img:active{
+    filter : brightness(80%);
+}
+
+
 @media only screen and (max-width: 700px) {
     .icon {
         width: 32px;
