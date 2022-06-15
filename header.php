@@ -162,8 +162,7 @@ $_SESSION["maplist"] = array(1=>["Aven",26.5,64.9,0],
 
 <script type="text/javascript">
 function googleTranslateElementInit() {
-new google.translate.TranslateElement({
-pageLanguage: 'fr', includedLanguages: 'fr,en,de,pl',
+new google.translate.TranslateElement({includedLanguages: 'fr,en,de,pl',
 layout: google.translate.TranslateElement.InlineLayout.VERTICAL
 }, 'google_translate_element');
 }
