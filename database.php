@@ -8,6 +8,7 @@ include("menu2.html");
         <a href="database.php?data=items"><li><img src="images/items/A00006.png" /> Objets</li></a>
         <a href="database.php?data=class"><li><img src="images/skillIcon/j047.png" />Classes / Compétences</li></a>
         <a href="database.php?data=monsters"><li><img src="images/monsters/m229.png" />Monstres</li></a>
+        <a href="database.php?data=bgm"><li><img src="images/uiiconPNG/prefer04.png" />Musiques</li></a>
     </ul>
 </div>
  
@@ -16,6 +17,7 @@ include("menu2.html");
 $itemRepository = 'images/items/';
 $skillRepository = 'images/skillIcon/';
 $monsterRepository = 'images/monsters/';
+$musicRepository = 'bgm/';
 
 $categorieslist = array(
     "A"=>"Anneaux / Armures",
@@ -54,7 +56,13 @@ if(isset($_GET["data"])){
         <?php
         drawIcons($monsterRepository);
         echo  "<iframe style='width:0px;' onload='changeCategory();'></iframe>";
+    }else if($_GET["data"] == "bgm"){
+    ?>
+    <h2>Liste des musiques</h2>
+        <?php
+        drawMusics($musicRepository);
     }else{ 
+    
     }
 }
 ?>
@@ -110,8 +118,37 @@ function drawIcons($repository){
         }
     }
 }
+
+function drawMusics($repository){
+
+    $files = scandir($repository);
+    echo "<div class='container'>";
+    foreach($files as $file) {
+        if (strpos($file,"bgm") !== false){
+            echo "<div>";
+            echo "<p>".explode(".",$file)[0]."</p>";
+            echo "<audio controls ><source src='bgm/$file' type='audio/ogg' /></audio>";
+            echo "</div>";
+        }
+    }
+    echo "</div>";
+}
 ?>
 
+<script type="text/javascript">
+// Disable the possibility of launching several audio simultaneously
+document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for(var i = 0, len = audios.length; i < len;i++){
+        if(audios[i] != e.target){
+            audios[i].pause();
+            if(audios[i].currentTime < 30){
+                audios[i].currentTime = 0;
+            }
+        }
+    }
+}, true);
+</script>
 </body>
 
 </HTML>
