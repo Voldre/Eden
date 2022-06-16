@@ -49,9 +49,13 @@ function init() {
     de choisir si on veut ou non afficher l'arrière plan.
     Car il met un peu + de temps à se générer et avec plein de
     designs c'est vite désagréable, mais pas les maps  */ 
-    if(document.getElementById("backgroundToggle").checked) {
-        document.cookie = "backgroundState=checked";
-    } else{ document.cookie = "backgroundState="; }
+    if(document.getElementById("bgToggle").checked) {
+        document.cookie = "bgState=checked";
+    } else{ document.cookie = "bgState="; }
+    // 16.06.22 - Ajout d'un toggle pour la musique !
+    if(document.getElementById("bgmToggle").checked) {
+        document.cookie = "bgmState=checked";
+    } else{ document.cookie = "bgmState="; }
 
     // Première valeur en paramètre de l'URL
     //console.log(window.location.search.split('=')[1]);
@@ -158,7 +162,6 @@ function init() {
         // Variable dans ma liste déroulante <select>
         myObject = document.getElementById("objets").value;
     }else{ document.getElementById("objets").value = myObject; }
-    document.getElementById("objets")
 
     //console.log("Objet:" + myObject)
 
@@ -283,7 +286,7 @@ function init() {
             }else{ myBG = "G604";}
 
             // 09/06 -- On n'affiche le fond d'écran que si c'est voulu
-            if(read_cookie('backgroundState') == "checked"){
+            if(read_cookie('bgState') == ""){
                 mesh2 = new THREE.Mesh();   
                 mtlLoader.load("http://voldre.free.fr/Eden/images/3D/maps/"+myBG+".mtl", function(materials2) {      
                     objLoader.setMaterials(materials2);
@@ -332,7 +335,12 @@ function init() {
     renderer.shadowMap.type = THREE.BasicShadowMap;
 
     document.getElementById('canvasPosition').appendChild(renderer.domElement);
-
+    
+    myBGM = myObject.substring(1);
+    while(myBGM.length < 3){ myBGM = "0"+myBGM; }
+    if(folder == "maps" && read_cookie('bgmState') == ""){
+        document.getElementById("bgmPosition").innerHTML = '<audio controls loop><source src="bgm/bgm'+myBGM+'.ogg" volume="30" type="audio/ogg" /></audio>';
+    }            
     animate();
 }
 

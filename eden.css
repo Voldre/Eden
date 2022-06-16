@@ -1,6 +1,7 @@
 body {
     cursor: url('images/layout/cursor.png'), auto;
     margin:1%;
+    width:100%;
 }
 
 ::-webkit-scrollbar {
@@ -218,10 +219,17 @@ li img,
 .switch {
     position: relative;
     display: inline-block;
-    width: 40px;
-    height: 22px;
+    width: 38px;
+    height: 34px;
+    margin-left:5px;
+    margin-right:3px;
 }
-
+#iconBG{
+    background-image: url('images/layout/iconBG.png');
+}
+#iconBGM{
+    background-image: url('images/layout/iconBGM.png');
+}
 
 /* Hide default HTML checkbox */
 
@@ -241,29 +249,15 @@ li img,
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
+    -webkit-transition: .2s;
+    transition: .2s;
+    border:1px solid #f39f21;
 }
 
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 14px;
-    width: 14px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
 
 input:checked+.slider {
-    background-color: #2196F3;
-}
-
-input:focus+.slider {
-    box-shadow: 0 0 1px #2196F3;
+    background-color:rgba(40, 40, 40, 0.7);
+    border:1px solid black;
 }
 
 input:checked+.slider:before {
@@ -273,12 +267,7 @@ input:checked+.slider:before {
 }
 
 .slider.round {
-    border-radius: 34px;
-    width: 50px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
+    width: 37px;
 }
 
 /* 11/06/22 Ajout du menu */

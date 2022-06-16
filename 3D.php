@@ -25,9 +25,12 @@ https://wiki.vg-resource.com/Noesis , Noesis Download : http://www.richwhitehous
 </nav>
     <!-- 09/06 Ajout du Toggle pour le Background -->
     <div style="margin-right:17px;">
-    <p style="margin:0px;">Afficher l'arrière plan</p>
-    <label class="switch">
-    <input id="backgroundToggle" type="checkbox" <?php if(isset($_COOKIE['backgroundState'])){ echo $_COOKIE['backgroundState'];} ?> />
+    <label class="switch" id="iconBG">
+    <input id="bgToggle" type="checkbox" <?php if(isset($_COOKIE['bgState'])){ echo $_COOKIE['bgState'];} ?> />
+    <span class="slider round"></span>
+    </label>
+    <label class="switch" id="iconBGM">
+    <input id="bgmToggle" type="checkbox" <?php if(isset($_COOKIE['bgmState'])){ echo $_COOKIE['bgmState'];} ?> />
     <span class="slider round"></span>
     </label>
     </div>
@@ -85,6 +88,7 @@ exit();
 </div>
 <h2 id="loading"></h2>
 <div id="canvasPosition"></div>
+<div id="bgmPosition"></div>
     <script type="text/javascript">
     
     document.getElementById("iconPic").style.display = "none";

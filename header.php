@@ -123,6 +123,13 @@ $_SESSION["maplist"] = array(1=>["Aven",26.5,64.9,0],
     */
 );
 
+/* // Generate JSON file from data
+$newName = [];
+foreach($_SESSION["maplist"] as $key => $value){
+    $newName[] = ["map"=>$key, "name"=>$value[0], "wmap_x"=>$value[1],"wmap_y"=>$value[2],"wmap"=>$value[3],"map_x"=>$value[4],"map_y"=>$value[5],"map_z"=>$value[6],"map_r"=>$value[7],"bgm"=>$value[8]];
+}
+file_put_contents('maps.json',json_encode($newName));
+*/
 ?>
 <!DOCTYPE html>
 <head>

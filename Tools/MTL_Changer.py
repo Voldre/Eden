@@ -39,7 +39,7 @@ for file in glob.glob(EdenRep+"images\\3D\\"+currentFolder+"\\*.mtl"):
             content = content.replace("map_Kd ","map_Kd "+folder3D+currentFolder+"/")
                             # Ou map_Kd http://voldre.free.fr/Eden/images/3D/ ...
     else:
-        print('contenu déjà à jour')
+        print(file.split('\\')[-1]+' : contenu déjà à jour')
     f.truncate(0) # On clear le fichier
     f.seek(0) # On remet le curseur au début
     f.write(content) # Puis on écrit
