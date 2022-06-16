@@ -67,6 +67,8 @@ function init() {
     if(folder == "maps"){
         player.speed = 1;
         var myObject =  myObjectInit();
+        // Add 16/06/2022 : change text if the user is on map
+        document.getElementById("isMap").innerHTML = " &#8616; : monter/descendre &nbsp; ";
         // console.log(myObject);
         if(!myrequest && (myObject == "" || myObject == null) ){
             console.log("Présence sur les cartes de donjons, détecté.");

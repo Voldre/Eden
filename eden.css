@@ -1,6 +1,5 @@
 body {
     cursor: url('images/layout/cursor.png'), auto;
-    width: 99%;
     margin:1%;
 }
 
@@ -129,6 +128,9 @@ h2{
 a {
     color: rgb(246, 196, 104);
     text-decoration: none;
+}
+.dbMenu{
+    text-align: center;
 }
 .dbMenu ul{
     padding-left: 5px;
@@ -344,6 +346,10 @@ input:checked+.slider:before {
     width:50px;
 }
 
+#canvasPosition{
+    min-height: 175px;
+}
+
 /* Hover elements for display a new image on mouseover (universe > maps) */
 .hover-animation {
     position: sticky;
@@ -396,8 +402,12 @@ Brightness on mouseover and onclick */
         height: 32px;
         margin: 4px;
     }
+
+    p{
+        font-size:14.5px;
+    }
     h2{
-        font-size: 16px;
+        font-size: 16.5px;
     }
     .commandes, #google_translate_element{
         display: none;
