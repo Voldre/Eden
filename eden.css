@@ -1,7 +1,7 @@
 body {
     cursor: url('images/layout/cursor.png'), auto;
     margin:1%;
-    width:100%;
+    width:99%;
 }
 
 ::-webkit-scrollbar {
@@ -88,7 +88,7 @@ h2{
 #loading{
     position: fixed;
     left:40%;
-    top:12.5%;
+    top:16.5%;
 }
 #iconPic{
     position: fixed;

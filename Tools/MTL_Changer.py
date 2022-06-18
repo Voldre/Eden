@@ -13,11 +13,26 @@ folder3D = 'images/3D/'
 # currentFolder = "house"
 # currentFolder = "items"
 # currentFolder = "ride"
-currentFolder = "maps"
+# currentFolder = "maps"
+# currentFolder = "test"
 
 #for file in glob.glob(EdenRep+"images\\monster\\*.mtl"):
 for file in glob.glob(EdenRep+"images\\3D\\"+currentFolder+"\\*.mtl"):
 #for file in glob.glob(TempoRep+"*.mtl"):
+    f = open(file,'r+')
+    # Add functionality to remove empty material
+    lines = f.readlines()
+    i = -1
+    for line in lines:
+        i = i+1
+        if line.strip() == "map_Kd" or line.strip() == "map_Kd images/3D/"+currentFolder+"/":
+            # line = ""
+            lines[i] = ""
+    f.truncate(0) # On clear le fichier
+    f.seek(0) # On remet le curseur au début
+    f.writelines(lines)
+    f.close()
+    # Processing
     f = open(file,'r+')
     content = f.read()
     content = content.replace("DDS", "png") 

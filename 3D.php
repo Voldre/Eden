@@ -14,11 +14,11 @@ https://wiki.vg-resource.com/Noesis , Noesis Download : http://www.richwhitehous
 <body onload="init()" style="overflow:hidden; text-align:center;margin-top:0px;">
 <header class="header3D">
     <!--<input type="button" value="Toggle Wireframe" onclick="mesh.material.wireframe=!mesh.material.wireframe;meshFloor.material.wireframe=!meshFloor.material.wireframe;" />--> 
-    <span class="commandes">ZQSD : bouger  &nbsp;  &nbsp;  <span id="isMap"> &#8616; : changer d'image  &nbsp; </span> &nbsp; &harr; : tourner</span>
+    <span class="commandes">ZQSD : bouger  &nbsp;  &nbsp;  <span id="textMap"> &#8616; : changer d'image  &nbsp; </span> &nbsp; &harr; : tourner</span>
     <nav>
     <ul class="menu">
       <?php if(isset($_GET['data'])){ ?>
-        <li><a href="3D.php">Designs 3D</a></li>
+        <li><a href="3D.php" class="notranslate">3D Designs</a></li>
       <?php } ?>
       <li><a href="index.php">Page principale</a></li>
     </ul>
@@ -63,6 +63,9 @@ exit();
             $repository = $_GET["data"];
         }
         $files = scandir("images/3D/$repository/");
+        if($repository == "maps"){
+            echo "<option>Sélectionner ...</option>";
+        }
         foreach($files as $file){
             if(strpos($file,".obj") !== false){
                 // On garde tout sauf l'extension
