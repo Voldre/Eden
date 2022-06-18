@@ -72,8 +72,9 @@ exit();
                 $file = strtok($file,  '.');  
                 if($repository == "maps"){ 
                     if($file[0] == "S"){ // Si le fichier est bien une carte (S***.obj), # 1er char = "S"
-                        if(isset($_SESSION["maplist"][substr($file,1)][0])){
-                            $mapName = $_SESSION["maplist"][substr($file,1)][0];
+                        
+                        if(isset($_SESSION["maplist"][ intval(substr($file,1)) ])){
+                            $mapName = $_SESSION["maplist"][ intval(substr($file,1))]["name"];
                             echo "<option value=$file>$mapName</option>";
                         }else{
                             echo "<option value=$file>$file</option>";

@@ -13,7 +13,7 @@ folder3D = 'images/3D/'
 # currentFolder = "house"
 # currentFolder = "items"
 # currentFolder = "ride"
-# currentFolder = "maps"
+currentFolder = "maps"
 # currentFolder = "test"
 
 #for file in glob.glob(EdenRep+"images\\monster\\*.mtl"):
