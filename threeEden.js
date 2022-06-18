@@ -10,6 +10,8 @@ var myrequest = false;
 
 THREE.Cache.enabled = true; // VD 04/06/2022 : Alléger les chargements
 
+window.performance.setResourceTimingBufferSize(700);
+
 function update() {
     
     // 10/06/22 - Update : window.stop() arrête toutes les requêtes
@@ -31,8 +33,10 @@ function update() {
 }
 
 function myObjectInit(){
-    if(typeof window.location.search.split("&")[1] != "undefined"){
-        return window.location.search.split("&")[1].split('=')[1];
+    if(typeof window.location.search.split("&")[1] != "undefined" && !myrequest){
+        myValue = window.location.search.split("&")[1].split('=')[1];
+        while(myValue.length < 3){ myValue = "0"+myValue; }
+        return "S"+myValue;
     }else{ return null; }
     
 }
@@ -72,13 +76,13 @@ function init() {
         player.speed = 1;
         var myObject =  myObjectInit();
         // Add 16/06/2022 : change text if the user is on map
-        document.getElementById("isMap").innerHTML = " &#8616; : monter/descendre &nbsp; ";
+        document.getElementById("textMap").innerHTML = " &#8616; : monter/descendre &nbsp; ";
         // console.log(myObject);
         if(!myrequest && (myObject == "" || myObject == null) ){
             console.log("Présence sur les cartes de donjons, détecté.");
             throw new Error("En attente du choix de l'utilisateur");
         }
-    }
+    }else{ document.getElementById("iconBGM").style.display = "none"; }
 
     scene = new THREE.Scene();  
     /* **************************************************
@@ -339,8 +343,9 @@ function init() {
     myBGM = myObject.substring(1);
     while(myBGM.length < 3){ myBGM = "0"+myBGM; }
     if(folder == "maps" && read_cookie('bgmState') == ""){
-        document.getElementById("bgmPosition").innerHTML = '<audio controls loop><source src="bgm/bgm'+myBGM+'.ogg" volume="30" type="audio/ogg" /></audio>';
-    }            
+        document.getElementById("bgmPosition").innerHTML = '<audio loop><source src="bgm/bgm'+myBGM+'.ogg" volume="30" type="audio/ogg" /></audio>';
+        document.getElementsByTagName('audio')[0].autoplay= true ;
+    }else if(folder == "maps"){ document.getElementById("bgmPosition").innerHTML = "";}
     animate();
 }
 
@@ -388,7 +393,13 @@ function animate() {
     $("#right").on("click",function(){player.speed = 0.001; right();});
     $("#turnLeft").on("click",function(){player.turnSpeed = 0.001; turnLeft();});
     $("#turnRight").on("click",function(){player.turnSpeed = 0.001; turnRight();});
-        
+    
+    $("#bgmToggle").on("click",function(){
+        if(!$("#bgmToggle").is(':checked')){
+            document.getElementById("bgmPosition").innerHTML = "";
+        }
+    })
+
     document.getElementById("prev").onclick = function (){
         // console.log($("#objets").val());
         if(folder == "maps"){
