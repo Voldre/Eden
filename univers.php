@@ -48,7 +48,7 @@ if(isset($_GET["data"])){
             }
             foreach(array_filter($maplist, $_POST["filter"]) as $key=>$value){
                 echo"<div class='img-block'>";
-                echo "<p>$value[0]</p>";
+                echo "<p>".$value["name"]."</p>";
     
                 $keyZ = $key;
                 while(strlen($keyZ)<3){
@@ -121,7 +121,7 @@ if(isset($_GET["data"])){
         <iframe src="https://www.youtube.com/embed/Vf-qP5joSsg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
  <?php
     }else if($_GET["data"] == "map"){
-        echo "<h2>".$maplist[$_GET["map"]][0]."<a href='3D.php?data=maps&map=".$_GET["map"]."'> lien </a></h2>";
+        echo "<h2>".$maplist[$_GET["map"]]["name"]."<a href='3D.php?data=maps&map=".$_GET["map"]."'> lien </a></h2>";
     }
 }
 ?>
