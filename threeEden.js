@@ -5,13 +5,81 @@ var keyboard = {};
 var player = { height: 1.6, speed: 0.2, turnSpeed: Math.PI * 0.02 };
 var USE_WIREFRAME = false;
 
+// 18/06/22 - Read json file with maps data
+var onMap;
+var myObject;
+var map;
+var maplist;
+
+function myObjectInit(){
+    // Si une map est précisée dans l'URL    et qu'on n'a pas demandé de map (dans le select)
+    if(typeof window.location.search.split("&")[1] != "undefined" && !myrequest){
+        myValue = window.location.search.split("&")[1].split('=')[1];
+        while(myValue.length < 3){ myValue = "0"+myValue; }
+        return "S"+myValue;
+    }else{ return null; }
+    
+}
+
+function initForMap(){
+    onMap = false;
+    folder = window.location.search.split('=')[1];
+    if(typeof folder != "undefined"){
+        folder = folder.split("&")[0];
+        if(folder == "maps"){ onMap = true;}
+
+        if(!onMap){
+            myObject =  myObjectInit();
+            if(myObject == null){
+                myObject = document.getElementById("objets").value;
+            }
+        }else{
+            // Changement du texte pour les maps
+            document.getElementById("textMap").innerHTML = " &#8616; : monter/descendre &nbsp; ";
+
+            player.speed = 1;
+
+            myObject =  myObjectInit();
+
+            // Si j'ai une requête et qu'on n'a pas de map dans l'URL
+            if(myrequest && myObject == null || myObject == ""){
+                // Variable dans ma dropdown list <select>
+                myObject = document.getElementById("objets").value;
+            // Si j'ai pas de requête et pas de données dans l'URL
+            }else if(!myrequest && (myObject == "" || myObject == null) ){
+                console.log("Présence sur les cartes de donjons, détecté.");
+                throw new Error("En attente du choix de l'utilisateur");
+            // Sinon (si j'ai des données dans l'URL)
+            }else{ document.getElementById("objets").value = myObject; }
+            
+            // console.log(myObject);
+            map = parseInt(myObject.replace('S',''));
+        }
+    }
+    maplist = (function () {
+        var json = null;
+        $.ajax({
+            'async': false,
+            'global': false,
+            'url': 'maps.json',
+            'dataType': "json",
+            'success': function (data) {
+                json = data;
+            }
+        });
+        return json;
+    })(); 
+    console.log(maplist)
+}
+
+initForMap();
 
 var myrequest = false;
 
 THREE.Cache.enabled = true; // VD 04/06/2022 : Alléger les chargements
 
-window.performance.setResourceTimingBufferSize(700);
-
+window.performance.setResourceTimingBufferSize(2000);
+// window.performance.getEntriesByType("resource")
 function update() {
     
     // 10/06/22 - Update : window.stop() arrête toutes les requêtes
@@ -32,15 +100,6 @@ function update() {
     //init(1152, 648);
 }
 
-function myObjectInit(){
-    if(typeof window.location.search.split("&")[1] != "undefined" && !myrequest){
-        myValue = window.location.search.split("&")[1].split('=')[1];
-        while(myValue.length < 3){ myValue = "0"+myValue; }
-        return "S"+myValue;
-    }else{ return null; }
-    
-}
-
 function read_cookie(key)
 {
     var result;
@@ -48,6 +107,8 @@ function read_cookie(key)
 }
 
 function init() {
+
+    initForMap();
 
     /* Update 09.06.22 - Ajout d'un toggle permettant
     de choisir si on veut ou non afficher l'arrière plan.
@@ -66,23 +127,14 @@ function init() {
     folder = window.location.search.split('=')[1];
     
     if(typeof folder == "undefined"){
-            // 11.06.22 - Pour l'UI, on retire le choix de langue sur les designs
             throw new Error("En attente de la sélection");
     }else{
+        // 11.06.22 - Pour l'UI, on retire le choix de langue sur les designs
         document.getElementById("google_translate_element").style.display = "none";
     }
     folder = folder.split("&")[0];
-    if(folder == "maps"){
-        player.speed = 1;
-        var myObject =  myObjectInit();
-        // Add 16/06/2022 : change text if the user is on map
-        document.getElementById("textMap").innerHTML = " &#8616; : monter/descendre &nbsp; ";
-        // console.log(myObject);
-        if(!myrequest && (myObject == "" || myObject == null) ){
-            console.log("Présence sur les cartes de donjons, détecté.");
-            throw new Error("En attente du choix de l'utilisateur");
-        }
-    }else{ document.getElementById("iconBGM").style.display = "none"; }
+    
+    if(!onMap){ document.getElementById("iconBGM").style.display = "none"; }
 
     scene = new THREE.Scene();  
     /* **************************************************
@@ -113,62 +165,6 @@ function init() {
     light.shadow.camera.far = 25;
     scene.add(light);
 
-    /*
-    
-    // Add Background 05/06/2022
-    function setBackground(scene, backgroundImageWidth, backgroundImageHeight) {
-        var windowSize = function(withScrollBar) {
-            var wid = 0;
-            var hei = 0;
-            if (typeof window.innerWidth != "undefined") {
-                wid = window.innerWidth;
-                hei = window.innerHeight;
-            }
-            else {
-                if (document.documentElement.clientWidth == 0) {
-                    wid = document.body.clientWidth;
-                    hei = document.body.clientHeight;
-                }
-                else {
-                    wid = document.documentElement.clientWidth;
-                    hei = document.documentElement.clientHeight;
-                }
-            }
-            return { width: wid - (withScrollBar ? (wid - document.body.offsetWidth + 1) : 0), height: hei };
-        };
-    
-        if (scene.background) {
-    
-            var size = windowSize(true);
-            var factor = (backgroundImageWidth / backgroundImageHeight) / (size.width / size.height);
-    
-            scene.background.offset.x = factor > 1 ? (1 - 1 / factor) / 2 : 0;
-            scene.background.offset.y = factor > 1 ? 0 : (1 - factor) / 2;
-    
-            scene.background.repeat.x = factor > 1 ? 1 / factor : 1;
-            scene.background.repeat.y = factor > 1 ? 1 : factor;
-        }
-    }
-    var img = new Image();
-    img.onload = function () {
-        scene.background = new THREE.TextureLoader().load(img.src);
-        setBackground(scene, img.width, img.height);
-    };
-    img.src = "background.jpg";
-    */
-
-
-    // Model/material loading
-
-    // Variable potentiellement envoyé dans l'URL
-    var myObject = myObjectInit();
-    if(myObject == null || myObject == ""){
-        // Variable dans ma liste déroulante <select>
-        myObject = document.getElementById("objets").value;
-    }else{ document.getElementById("objets").value = myObject; }
-
-    //console.log("Objet:" + myObject)
-
     var mtlLoader = new THREE.MTLLoader();
     mtlLoader.setMaterialOptions({ ignoreZeroRGBs: true });
 
@@ -197,8 +193,8 @@ function init() {
         listLiensTextures = listLiensTextures.filter(onlyUnique);
         */
 
-        if(folder != "map"){
-            // materials.preload();
+        if(folder == "maps"){
+            materials.preload();
         }
         
         // Ajout VD - 04/06/2022 - suivi du loading :
@@ -302,8 +298,14 @@ function init() {
             }
 
             // Position de notre objet
-            if(folder == "maps"){ // -520, 18, 80
-                mesh.position.set(280, -28, 5);
+            if(onMap){ 
+                // Coordonnées de la génération de la map
+                // Pour changer en live la position :
+                // scene.children[3].position.set = (0,0,0)
+                if(maplist[map]['map_x'] != null){
+                mesh.position.set(maplist[map]['map_x'],maplist[map]['map_y'],maplist[map]['map_z']);
+                }else{ mesh.position.set(0,0,0); }
+
             }else if (folder == "items") {
                 mesh.position.set(0, 1, -3.3);
             }else {mesh.position.set(-0.2, 0.25, -0.8); }
@@ -311,9 +313,10 @@ function init() {
             // Angles de notre objet
             mesh.rotation.y = 0; // Math.PI / 6;
             mesh.rotation.x = -Math.PI / 2;
+
             if(folder != "maps"){
             mesh.rotation.z = Math.PI / 1.4; // Pour qu'il regarde vers nous
-            }else{ mesh.rotation.z = Math.PI / 1; }
+            }else{ mesh.rotation.z = maplist[map]['map_r']*Math.PI || Math.PI; }
         }, onProgress);
 
     });
@@ -340,12 +343,14 @@ function init() {
 
     document.getElementById('canvasPosition').appendChild(renderer.domElement);
     
-    myBGM = myObject.substring(1);
-    while(myBGM.length < 3){ myBGM = "0"+myBGM; }
-    if(folder == "maps" && read_cookie('bgmState') == ""){
-        document.getElementById("bgmPosition").innerHTML = '<audio loop><source src="bgm/bgm'+myBGM+'.ogg" volume="30" type="audio/ogg" /></audio>';
-        document.getElementsByTagName('audio')[0].autoplay= true ;
-    }else if(folder == "maps"){ document.getElementById("bgmPosition").innerHTML = "";}
+    if(onMap){
+        if(onMap && read_cookie('bgmState') == "" && maplist[map]['bgm'] != null){
+            myBGM = maplist[map]['bgm'].toString();
+            while(myBGM.length < 3){ myBGM = "0"+myBGM; }
+            document.getElementById("bgmPosition").innerHTML = '<audio loop><source src="bgm/bgm'+myBGM+'.ogg" volume="30" type="audio/ogg" /></audio>';
+            document.getElementsByTagName('audio')[0].autoplay= true ;
+        }else if(onMap){ document.getElementById("bgmPosition").innerHTML = "";}
+    }
     animate();
 }
 
@@ -402,7 +407,7 @@ function animate() {
 
     document.getElementById("prev").onclick = function (){
         // console.log($("#objets").val());
-        if(folder == "maps"){
+        if(onMap){
             camera.position.y += 2.5;
         }else{
             $("#objets option:selected").prev().prop('selected',true).change();
@@ -410,7 +415,7 @@ function animate() {
     }
     document.getElementById("next").onclick = function(){
         // console.log($("#objets").val());    
-        if(folder == "maps"){
+        if(onMap){
             camera.position.y -= 2.5;
         }else{    
             $("#objets option:selected").next().prop('selected',true).change();
@@ -448,12 +453,12 @@ function animate() {
     }
 
     if (keyboard[38]) { // Top Arrow
-        if(folder == "maps"){
+        if(onMap){
             camera.position.y += player.speed;
         }else{ $('#objets').focus(); }
     }
     if (keyboard[40]) { // Bottom Arrow
-        if(folder == "maps"){
+        if(onMap){
             camera.position.y -= player.speed;
         }else{ $('#objets').focus(); }
     }
@@ -485,17 +490,18 @@ function animate() {
         document.getElementsByTagName("canvas")[0].remove();
     }
     renderer.render(scene, camera);
-}
 
-function keyDown(event) {
-    keyboard[event.keyCode] = true;
+    function keyDown(event) {
+        keyboard[event.keyCode] = true;
+    }
+    
+    function keyUp(event) {
+        keyboard[event.keyCode] = false;
+    }
+    
+    window.addEventListener('keydown', keyDown);
+    window.addEventListener('keyup', keyUp);
+    
 }
-
-function keyUp(event) {
-    keyboard[event.keyCode] = false;
-}
-
-window.addEventListener('keydown', keyDown);
-window.addEventListener('keyup', keyUp);
 
 //window.onload = init(1152, 648);
