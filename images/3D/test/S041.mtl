@@ -2,26 +2,31 @@ newmtl object0010_9
 Kd 0.345098 0.780392 0.882353
 Ks 0.345098 0.780392 0.882353
 Ns 0.000000
+map_Kd images/3D/maps/
 
 newmtl object0014_Standard_17_13
 Kd 0.588000 0.588000 0.588000
 Ks 0.900000 0.900000 0.900000
 Ns 10.000000
+map_Kd images/3D/maps/
 
 newmtl object0010_18
 Kd 0.345098 0.780392 0.882353
 Ks 0.345098 0.780392 0.882353
 Ns 0.000000
+map_Kd images/3D/maps/
 
 newmtl object0010_21
 Kd 0.345098 0.780392 0.882353
 Ks 0.345098 0.780392 0.882353
 Ns 0.000000
+map_Kd images/3D/maps/
 
 newmtl object0014_Standard_17_24
 Kd 0.588000 0.588000 0.588000
 Ks 0.900000 0.900000 0.900000
 Ns 10.000000
+map_Kd images/3D/maps/
 
 newmtl object0031_water_env_30
 Kd 1.000000 1.000000 1.000000
@@ -725,6 +730,7 @@ newmtl object0932_Standard_22_931
 Kd 0.435294 0.000000 0.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
+map_Kd images/3D/maps/
 
 newmtl object0937_shingingslow01_936
 Kd 1.000000 1.000000 1.000000
@@ -1718,11 +1724,13 @@ newmtl object0932_Standard_22_1437
 Kd 0.435294 0.000000 0.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
+map_Kd images/3D/maps/
 
 newmtl object0932_Standard_22_1439
 Kd 0.435294 0.000000 0.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
+map_Kd images/3D/maps/
 
 newmtl object0953_shingingslow02_1442
 Kd 1.000000 1.000000 1.000000
@@ -4578,6 +4586,7 @@ newmtl object2243_2242
 Kd 0.694118 0.101961 0.345098
 Ks 0.694118 0.101961 0.345098
 Ns 0.000000
+map_Kd images/3D/maps/
 
 newmtl object2251_brick_04_2250
 Kd 1.000000 1.000000 1.000000
@@ -4601,26 +4610,31 @@ newmtl object0932_Standard_22_2263
 Kd 0.435294 0.000000 0.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
+map_Kd images/3D/maps/
 
 newmtl object0932_Standard_22_2265
 Kd 0.435294 0.000000 0.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
+map_Kd images/3D/maps/
 
 newmtl object0932_Standard_22_2267
 Kd 0.435294 0.000000 0.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
+map_Kd images/3D/maps/
 
 newmtl object0932_Standard_22_2269
 Kd 0.435294 0.000000 0.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
+map_Kd images/3D/maps/
 
 newmtl object0932_Standard_22_2271
 Kd 0.435294 0.000000 0.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
+map_Kd images/3D/maps/
 
 newmtl object0446_Standard_3_2275
 Kd 1.000000 1.000000 0.494118
@@ -4934,4 +4948,5 @@ newmtl object2243_2408
 Kd 0.694118 0.101961 0.345098
 Ks 0.694118 0.101961 0.345098
 Ns 0.000000
+map_Kd images/3D/maps/
 
