@@ -16,7 +16,6 @@ newmtl mesh50material
 Kd 0.890196 0.596078 0.596078
 Ks 0.890196 0.596078 0.596078
 Ns 0.000000
-map_Kd images/3D/ride/
 
 newmtl R701_98
 Kd 1.000000 1.000000 1.000000

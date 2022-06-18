@@ -130,7 +130,6 @@ newmtl mesh188material
 Kd 0.603922 0.843137 0.898039
 Ks 0.603922 0.843137 0.898039
 Ns 0.000000
-map_Kd images/3D/ride/
 
 newmtl Standard_6_196
 Kd 1.000000 1.000000 1.000000

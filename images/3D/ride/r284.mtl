@@ -8,7 +8,6 @@ newmtl object0079_78
 Kd 0.839216 0.894118 0.600000
 Ks 0.839216 0.894118 0.600000
 Ns 0.000000
-map_Kd images/3D/ride/
 
 newmtl object0086_StandEard_6_83
 Kd 0.364706 0.290196 0.937255
@@ -280,7 +279,6 @@ newmtl object0283_282
 Kd 0.690196 0.101961 0.101961
 Ks 0.690196 0.101961 0.101961
 Ns 0.000000
-map_Kd images/3D/ride/
 
 newmtl object0298_Stanedard_7_286
 Kd 1.000000 1.000000 1.000000
@@ -304,7 +302,6 @@ newmtl object0324_321
 Kd 0.568627 0.109804 0.694118
 Ks 0.568627 0.109804 0.694118
 Ns 0.000000
-map_Kd images/3D/ride/
 
 newmtl object0356_R204 tes_348
 Kd 0.992157 0.588235 0.227451

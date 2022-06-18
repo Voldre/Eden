@@ -22,13 +22,11 @@ newmtl object0048_46
 Kd 0.223529 0.031373 0.533333
 Ks 0.223529 0.031373 0.533333
 Ns 0.000000
-map_Kd images/3D/items/
 
 newmtl object0048_55
 Kd 0.223529 0.031373 0.533333
 Ks 0.223529 0.031373 0.533333
 Ns 0.000000
-map_Kd images/3D/items/
 
 newmtl object0024_24 - Default_60
 Kd 1.000000 1.000000 1.000000
@@ -48,7 +46,6 @@ newmtl object0069_67
 Kd 0.423529 0.031373 0.533333
 Ks 0.423529 0.031373 0.533333
 Ns 0.000000
-map_Kd images/3D/items/
 
 newmtl object0077_07 - DefaultD_76
 Kd 1.000000 1.000000 0.329412

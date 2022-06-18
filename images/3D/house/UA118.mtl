@@ -2,19 +2,16 @@ newmtl mesh4material
 Kd 0.423529 0.031373 0.533333
 Ks 0.423529 0.031373 0.533333
 Ns 0.000000
-map_Kd images/3D/house/
 
 newmtl mesh8material
 Kd 0.878431 0.776471 0.341176
 Ks 0.878431 0.776471 0.341176
 Ns 0.000000
-map_Kd images/3D/house/
 
 newmtl mesh12material
 Kd 0.109804 0.349020 0.694118
 Ks 0.109804 0.349020 0.694118
 Ns 0.000000
-map_Kd images/3D/house/
 
 newmtl Material #0_16
 Kd 1.000000 1.000000 1.000000

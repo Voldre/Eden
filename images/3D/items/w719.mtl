@@ -50,11 +50,9 @@ newmtl object0114_113
 Kd 0.776471 0.878431 0.341176
 Ks 0.776471 0.878431 0.341176
 Ns 0.000000
-map_Kd images/3D/items/
 
 newmtl object0117_116
 Kd 0.541176 0.031373 0.431373
 Ks 0.541176 0.031373 0.431373
 Ns 0.000000
-map_Kd images/3D/items/
 

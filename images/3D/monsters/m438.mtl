@@ -8,91 +8,76 @@ newmtl mesh22material
 Kd 0.525490 0.023529 0.023529
 Ks 0.525490 0.023529 0.023529
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl mesh27material
 Kd 0.109804 0.109804 0.694118
 Ks 0.109804 0.109804 0.694118
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl mesh35material
 Kd 0.650980 0.792157 0.941177
 Ks 0.650980 0.792157 0.941177
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl mesh43material
 Kd 0.878431 0.776471 0.341176
 Ks 0.878431 0.776471 0.341176
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl mesh48material
 Kd 0.023529 0.525490 0.023529
 Ks 0.023529 0.525490 0.023529
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl mesh57material
 Kd 0.109804 0.109804 0.694118
 Ks 0.109804 0.109804 0.694118
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl mesh59material
 Kd 0.109804 0.109804 0.694118
 Ks 0.109804 0.109804 0.694118
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl mesh65material
 Kd 0.023529 0.525490 0.023529
 Ks 0.023529 0.525490 0.023529
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl mesh67material
 Kd 0.023529 0.525490 0.023529
 Ks 0.023529 0.525490 0.023529
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl mesh75material
 Kd 0.682353 0.729412 0.796079
 Ks 0.682353 0.729412 0.796079
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl mesh80material
 Kd 0.682353 0.729412 0.796079
 Ks 0.682353 0.729412 0.796079
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl mesh100material
 Kd 0.600000 0.894118 0.839216
 Ks 0.600000 0.894118 0.839216
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl mesh103material
 Kd 0.603922 0.843137 0.898039
 Ks 0.603922 0.843137 0.898039
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl mesh107material
 Kd 0.890196 0.596078 0.596078
 Ks 0.890196 0.596078 0.596078
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl mesh110material
 Kd 0.031373 0.431373 0.525490
 Ks 0.031373 0.431373 0.525490
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl Standard_2_187
 Kd 0.603922 0.968628 1.000000
@@ -351,27 +336,23 @@ Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd images/3D/monsters/
 
 newmtl Standgard_24_446
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd images/3D/monsters/
 
 newmtl mesh450material
 Kd 0.345098 0.560784 0.882353
 Ks 0.345098 0.560784 0.882353
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl Standgard_24_454
 Kd 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd images/3D/monsters/
 
 newmtl Standard_e24E_459
 Kd 0.301961 0.909804 1.000000

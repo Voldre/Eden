@@ -8,35 +8,29 @@ newmtl mesh19material
 Kd 1.000000 0.000000 0.843137
 Ks 1.000000 0.000000 0.843137
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl mesh22material
 Kd 1.000000 0.000000 0.843137
 Ks 1.000000 0.000000 0.843137
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl mesh24material
 Kd 1.000000 0.000000 0.843137
 Ks 1.000000 0.000000 0.843137
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl mesh62material
 Kd 0.031373 0.431373 0.525490
 Ks 0.031373 0.431373 0.525490
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl mesh86material
 Kd 0.878431 0.776471 0.341176
 Ks 0.878431 0.776471 0.341176
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl mesh89material
 Kd 1.000000 0.000000 0.000000
 Ks 1.000000 0.000000 0.000000
 Ns 0.000000
-map_Kd images/3D/monsters/
 

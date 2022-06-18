@@ -169,13 +169,11 @@ newmtl object0220_219
 Kd 0.423529 0.031373 0.533333
 Ks 0.423529 0.031373 0.533333
 Ns 0.000000
-map_Kd images/3D/house/
 
 newmtl object0224_223
 Kd 0.878431 0.776471 0.341176
 Ks 0.878431 0.776471 0.341176
 Ns 0.000000
-map_Kd images/3D/house/
 
 newmtl object0231_light-ball new 1 7_229
 Kd 1.000000 0.956863 0.839216

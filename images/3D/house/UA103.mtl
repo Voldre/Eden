@@ -80,7 +80,6 @@ newmtl object0058_57
 Kd 0.345098 0.780392 0.882353
 Ks 0.345098 0.780392 0.882353
 Ns 0.000000
-map_Kd images/3D/house/
 
 newmtl object0063_Material #3870_60
 Kd 1.000000 1.000000 1.000000
@@ -92,19 +91,16 @@ newmtl object0068_67
 Kd 0.450980 0.450980 0.450980
 Ks 0.450980 0.450980 0.450980
 Ns 0.000000
-map_Kd images/3D/house/
 
 newmtl object0073_72
 Kd 0.101961 0.694118 0.580392
 Ks 0.101961 0.694118 0.580392
 Ns 0.000000
-map_Kd images/3D/house/
 
 newmtl object0078_77
 Kd 0.000000 0.000000 0.000000
 Ks 0.000000 0.000000 0.000000
 Ns 0.000000
-map_Kd images/3D/house/
 
 newmtl object0091_Standard_3_82
 Kd 0.776471 0.945098 1.000000

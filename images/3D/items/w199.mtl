@@ -14,7 +14,6 @@ newmtl mesh31material
 Kd 0.768628 0.345098 0.882353
 Ks 0.768628 0.345098 0.882353
 Ns 0.000000
-map_Kd images/3D/items/
 
 newmtl Standard_19_57
 Kd 1.000000 0.878431 0.796079

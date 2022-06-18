@@ -3,6 +3,7 @@ session_start();
 
 
 // Datas
+/*
 $_SESSION["maplist"] = array(1=>["Aven",26.5,64.9,0],
     2=>["Monts Calcaires",10.6,69.2,0],
     3=>["Colline tranquille",17.6,73.3,0],
@@ -111,26 +112,18 @@ $_SESSION["maplist"] = array(1=>["Aven",26.5,64.9,0],
 
     308=>["Ville de Guilde: Couloir de l'Esprit Gardien",0,0,5],
 
-    /*
-    102=>["",0,0,5],
-    102=>["",0,0,5],
-    102=>["",0,0,5],
-    102=>["",0,0,5],
-    102=>["",0,0,5],
-    102=>["",0,0,5],
-    102=>["",0,0,5],
-    "Plaines du L",
-    3=>"Croc Brumeux",
-    */
 );
 
-/* // Generate JSON file from data
+// Generate JSON file from data
 $newName = [];
 foreach($_SESSION["maplist"] as $key => $value){
-    $newName[] = ["map"=>$key, "name"=>$value[0], "wmap_x"=>$value[1],"wmap_y"=>$value[2],"wmap"=>$value[3],"map_x"=>$value[4],"map_y"=>$value[5],"map_z"=>$value[6],"map_r"=>$value[7],"bgm"=>$value[8]];
+    $newName[$key] = ["name"=>$value[0], "wmap_x"=>$value[1],"wmap_y"=>$value[2],"wmap"=>$value[3],"map_x"=>$value[4],"map_y"=>$value[5],"map_z"=>$value[6],"map_r"=>$value[7],"bgm"=>$value[8]];
 }
 file_put_contents('maps.json',json_encode($newName));
 */
+
+$_SESSION['maplist'] = json_decode(file_get_contents("maps.json"),true);
+
 ?>
 <!DOCTYPE html>
 <head>
@@ -149,6 +142,7 @@ file_put_contents('maps.json',json_encode($newName));
 
     <script type="text/javascript" src="threeEden.js"></script>
 
+
     <!-- Global site tag (gtag.js) - Google Analytics
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FPLLJ4M61Z"></script>
     <script>
@@ -162,7 +156,6 @@ file_put_contents('maps.json',json_encode($newName));
 
     <!-- Never forget the viewport ! -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
 </head>
     
 <div id="google_translate_element" style="float:right;">

@@ -8,7 +8,6 @@ newmtl object0086_84
 Kd 0.835294 0.603922 0.898039
 Ks 0.835294 0.603922 0.898039
 Ns 0.000000
-map_Kd images/3D/items/
 
 newmtl object0092_Standard_7_90
 Kd 0.603922 0.901961 1.000000
@@ -44,7 +43,6 @@ newmtl object0086_153
 Kd 0.835294 0.603922 0.898039
 Ks 0.835294 0.603922 0.898039
 Ns 0.000000
-map_Kd images/3D/items/
 
 newmtl object0158_AAE2_156
 Kd 0.105882 0.988235 1.000000

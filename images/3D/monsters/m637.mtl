@@ -68,11 +68,9 @@ newmtl mesh122material
 Kd 0.345098 0.694118 0.101961
 Ks 0.345098 0.694118 0.101961
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl mesh125material
 Kd 0.560784 0.878431 0.341176
 Ks 0.560784 0.878431 0.341176
 Ns 0.000000
-map_Kd images/3D/monsters/
 

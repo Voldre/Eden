@@ -2,7 +2,6 @@ newmtl object0026_24
 Kd 0.878431 0.337255 0.337255
 Ks 0.878431 0.337255 0.337255
 Ns 0.000000
-map_Kd images/3D/ride/
 
 newmtl object0033_Standard_2_30
 Kd 0.309804 0.619608 1.000000
@@ -161,5 +160,4 @@ newmtl object0250_248
 Kd 0.031373 0.239216 0.541176
 Ks 0.031373 0.239216 0.541176
 Ns 0.000000
-map_Kd images/3D/ride/
 

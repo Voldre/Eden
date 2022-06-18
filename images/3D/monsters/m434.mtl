@@ -79,13 +79,11 @@ newmtl object0162_161
 Kd 0.423529 0.031373 0.533333
 Ks 0.423529 0.031373 0.533333
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl object0169_168
 Kd 0.443137 0.525490 0.023529
 Ks 0.443137 0.525490 0.023529
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl object0180_Standard_2_178
 Kd 0.901961 0.368627 0.733333
@@ -104,7 +102,6 @@ newmtl object0193_192
 Kd 0.031373 0.431373 0.525490
 Ks 0.031373 0.431373 0.525490
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl object0216_Standard_22_213
 Kd 1.000000 0.321569 0.945098
@@ -418,13 +415,11 @@ newmtl object0570_569
 Kd 1.000000 1.000000 0.000000
 Ks 1.000000 1.000000 0.000000
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl object0573_572
 Kd 1.000000 0.000000 0.000000
 Ks 1.000000 0.000000 0.000000
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl object0186_Material #8_575
 Kd 1.000000 1.000000 1.000000

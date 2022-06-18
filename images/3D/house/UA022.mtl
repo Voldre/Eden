@@ -105,7 +105,6 @@ newmtl object0271_270
 Kd 0.109804 0.584314 0.694118
 Ks 0.109804 0.584314 0.694118
 Ns 0.000000
-map_Kd images/3D/house/
 
 newmtl object0286_Standard_2_279
 Kd 1.000000 0.894118 0.466667
@@ -124,5 +123,4 @@ newmtl object0305_304
 Kd 0.600000 0.894118 0.839216
 Ks 0.600000 0.894118 0.839216
 Ns 0.000000
-map_Kd images/3D/house/
 

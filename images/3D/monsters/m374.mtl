@@ -14,19 +14,16 @@ newmtl object0052_51
 Kd 0.341176 0.878431 0.776471
 Ks 0.341176 0.878431 0.776471
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl object0055_54
 Kd 0.878431 0.560784 0.341176
 Ks 0.878431 0.560784 0.341176
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl object0058_57
 Kd 0.690196 0.101961 0.101961
 Ks 0.690196 0.101961 0.101961
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl object0074_a_UB508010X_61
 Kd 1.000000 0.792157 0.341176

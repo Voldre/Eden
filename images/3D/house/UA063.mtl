@@ -14,13 +14,11 @@ newmtl object0016_15
 Kd 0.878431 0.776471 0.341176
 Ks 0.878431 0.776471 0.341176
 Ns 0.000000
-map_Kd images/3D/house/
 
 newmtl object0020_Standard_3_19
 Kd 0.588000 0.588000 0.588000
 Ks 0.900000 0.900000 0.900000
 Ns 10.000000
-map_Kd images/3D/house/
 
 newmtl object0032_32_23
 Kd 0.717647 0.680392 0.614272

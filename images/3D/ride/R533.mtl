@@ -8,19 +8,16 @@ newmtl mesh65material
 Kd 0.345098 0.560784 0.882353
 Ks 0.345098 0.560784 0.882353
 Ns 0.000000
-map_Kd images/3D/ride/
 
 newmtl mesh68material
 Kd 0.839216 0.898039 0.650980
 Ks 0.839216 0.898039 0.650980
 Ns 0.000000
-map_Kd images/3D/ride/
 
 newmtl mesh71material
 Kd 0.690196 0.101961 0.101961
 Ks 0.690196 0.101961 0.101961
 Ns 0.000000
-map_Kd images/3D/ride/
 
 newmtl Standard_6_109
 Kd 1.000000 1.000000 1.000000
@@ -57,7 +54,6 @@ newmtl mesh167material
 Kd 0.109804 0.349020 0.694118
 Ks 0.109804 0.349020 0.694118
 Ns 0.000000
-map_Kd images/3D/ride/
 
 newmtl Stadndard_6_270
 Kd 1.000000 1.000000 1.000000

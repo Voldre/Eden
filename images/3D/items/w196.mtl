@@ -82,7 +82,6 @@ newmtl object0195_193
 Kd 0.690196 0.101961 0.101961
 Ks 0.690196 0.101961 0.101961
 Ns 0.000000
-map_Kd images/3D/items/
 
 newmtl object0203_StandaErd_24_202
 Kd 0.290196 0.843137 1.000000

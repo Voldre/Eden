@@ -20,7 +20,6 @@ newmtl mesh108material
 Kd 0.580392 0.694118 0.101961
 Ks 0.580392 0.694118 0.101961
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl M344_135
 Kd 1.000000 1.000000 1.000000

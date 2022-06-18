@@ -8,13 +8,11 @@ newmtl mesh35material
 Kd 0.109804 0.109804 0.694118
 Ks 0.109804 0.109804 0.694118
 Ns 0.000000
-map_Kd images/3D/ride/
 
 newmtl mesh42material
 Kd 0.023529 0.525490 0.023529
 Ks 0.023529 0.525490 0.023529
 Ns 0.000000
-map_Kd images/3D/ride/
 
 newmtl Standard_13 v_51
 Kd 0.184314 0.662745 1.000000
@@ -42,19 +40,16 @@ Kd 0.588000 0.588000 0.588000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd images/3D/ride/
 
 newmtl mesh119material
 Kd 0.109804 0.109804 0.694118
 Ks 0.109804 0.109804 0.694118
 Ns 0.000000
-map_Kd images/3D/ride/
 
 newmtl mesh125material
 Kd 0.023529 0.525490 0.023529
 Ks 0.023529 0.525490 0.023529
 Ns 0.000000
-map_Kd images/3D/ride/
 
 newmtl Standard_13 v_147
 Kd 0.184314 0.662745 1.000000
@@ -82,7 +77,6 @@ Kd 0.588000 0.588000 0.588000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd images/3D/ride/
 
 newmtl Standard_13 mid_181
 Kd 0.909804 0.796079 0.164706
@@ -143,7 +137,6 @@ newmtl mesh260material
 Kd 0.878431 0.776471 0.341176
 Ks 0.878431 0.776471 0.341176
 Ns 0.000000
-map_Kd images/3D/ride/
 
 newmtl Standard_13_267
 Kd 0.184314 0.662745 1.000000
@@ -176,7 +169,6 @@ newmtl mesh280material
 Kd 0.878431 0.776471 0.341176
 Ks 0.878431 0.776471 0.341176
 Ns 0.000000
-map_Kd images/3D/ride/
 
 newmtl Standard_5_286
 Kd 0.247059 0.600000 1.000000
@@ -204,26 +196,22 @@ Kd 0.588000 0.588000 0.588000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd images/3D/ride/
 
 newmtl sh_306
 Kd 0.588000 0.588000 0.588000
 Ks 0.000000 0.000000 0.000000
 Ns 10.000000
 d 0.000000
-map_Kd images/3D/ride/
 
 newmtl mesh329material
 Kd 0.839216 0.898039 0.650980
 Ks 0.839216 0.898039 0.650980
 Ns 0.000000
-map_Kd images/3D/ride/
 
 newmtl mesh332material
 Kd 0.690196 0.101961 0.101961
 Ks 0.690196 0.101961 0.101961
 Ns 0.000000
-map_Kd images/3D/ride/
 
 newmtl Standard_13 v z_462
 Kd 1.000000 0.290196 0.992157

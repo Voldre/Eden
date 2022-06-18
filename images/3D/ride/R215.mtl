@@ -36,7 +36,6 @@ newmtl mesh91material
 Kd 0.878431 0.337255 0.337255
 Ks 0.878431 0.337255 0.337255
 Ns 0.000000
-map_Kd images/3D/ride/
 
 newmtl Material #0_113
 Kd 0.992157 0.803922 0.058824

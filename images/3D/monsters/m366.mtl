@@ -120,13 +120,11 @@ newmtl object0203_201
 Kd 0.101961 0.694118 0.345098
 Ks 0.101961 0.694118 0.345098
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl object0203_207
 Kd 0.101961 0.694118 0.345098
 Ks 0.101961 0.694118 0.345098
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl object0226_StandW1Dard_181_225
 Kd 0.439216 0.913726 1.000000
@@ -250,67 +248,56 @@ newmtl object0386_383
 Kd 0.890196 0.596078 0.596078
 Ks 0.890196 0.596078 0.596078
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl object0203_388
 Kd 0.101961 0.694118 0.345098
 Ks 0.101961 0.694118 0.345098
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl object0203_391
 Kd 0.101961 0.694118 0.345098
 Ks 0.101961 0.694118 0.345098
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl object0203_394
 Kd 0.101961 0.694118 0.345098
 Ks 0.101961 0.694118 0.345098
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl object0203_397
 Kd 0.101961 0.694118 0.345098
 Ks 0.101961 0.694118 0.345098
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl object0203_400
 Kd 0.101961 0.694118 0.345098
 Ks 0.101961 0.694118 0.345098
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl object0203_403
 Kd 0.101961 0.694118 0.345098
 Ks 0.101961 0.694118 0.345098
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl object0203_406
 Kd 0.101961 0.694118 0.345098
 Ks 0.101961 0.694118 0.345098
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl object0203_409
 Kd 0.101961 0.694118 0.345098
 Ks 0.101961 0.694118 0.345098
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl object0203_412
 Kd 0.101961 0.694118 0.345098
 Ks 0.101961 0.694118 0.345098
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl object0203_415
 Kd 0.101961 0.694118 0.345098
 Ks 0.101961 0.694118 0.345098
 Ns 0.000000
-map_Kd images/3D/monsters/
 
 newmtl object0430_2Standar2d_18A_418
 Kd 1.000000 1.000000 1.000000

@@ -8,13 +8,11 @@ newmtl object0056_55
 Kd 0.878431 0.776471 0.341176
 Ks 0.878431 0.776471 0.341176
 Ns 0.000000
-map_Kd images/3D/items/
 
 newmtl object0059_58
 Kd 0.525490 0.023529 0.023529
 Ks 0.525490 0.023529 0.023529
 Ns 0.000000
-map_Kd images/3D/items/
 
 newmtl object0063_W659_Wing_61
 Kd 1.000000 1.000000 1.000000
