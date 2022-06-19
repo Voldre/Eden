@@ -1,6 +1,6 @@
 <?php
 include("header.php");
-include("menu2.html");
+include("menu.html");
 ?>
 <body>
 <img src="images/Feravena.png" style="width:70%;max-width:600px"/>
@@ -26,8 +26,8 @@ include("menu2.html");
 <p>Nous sommes convaincus que nous pouvons améliorer la vie de millions de joueurs à travers des designs.<br/><br/> 
 Nous souhaitons mettre des étoiles dans les yeux des joueurs pour qu'ils vivent une expérience mémorable.</p>
 <div class="flexContainer">
-<img src="images/Paladin.webp" style="width:45%;text-align:center;margin-right:2px;"/>
-<img src="images/Grenadier.webp" style="width:45%;text-align:center;"/>
+<img src="images/Paladin.webp" style="width:45%;max-width:330px;text-align:center;margin-right:2px;"/>
+<img src="images/Grenadier.webp" style="width:45%;max-width:330px;text-align:center;"/>
 </div>
 <h2>Nos partenaires</h2>
 <p>Feravena est le partenaire de grands fournisseurs de solutions dans le domaine vidéoludique, notamment :</p>
@@ -39,6 +39,13 @@ Nous souhaitons mettre des étoiles dans les yeux des joueurs pour qu'ils vivent
     <img style="width:40%;margin:8px;" src="https://www.hoyoverse.com/_nuxt/img/logo-light.3def3bc.png" />
 </div>
 </div>
-<p>Nos produits ou notre entreprise vous intéresse ? Alors venez <a href="contact.php">nous écrire</a>.</p>
+<p>Nos <a href="offers.php">offres</a> ou notre entreprise vous intéresse ? Alors venez et <a href="contact.php">contactez-nous</a> (prise de rendez-vous ou mail).</p>
+
+<div class="dbMenu">
+    <ul>
+        <a href="#"><li><img src="images/uiiconPNG/prefer01.png" />Actualités</li></a>
+        <a href="#"><li><img src="images/uiiconPNG/prefer15.png" />Nous rejoindre</li></a>
+    </ul>
+</div>
 </body>
 </html>
