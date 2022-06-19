@@ -1,6 +1,6 @@
 <?php
 include("header.php");
-include("menu2.html");
+include("menu.html");
 ?>
 <body>
 <h2>Les offres de Feravena :</h2>
@@ -15,6 +15,7 @@ include("menu2.html");
     <li>Création d'images et illustrations</li>
     <li>Composition de pistes sonores</li>
 </ul>
+<p>Nous sommes capables <span style='font-weight:bold'>de travailler et convertir n'importe quel format de fichiers</span>, vous pouvez vous affranchir de ce problème.</p>
 <div class="flexContainer">
 <img src="images/screen_1.jpg" style="width:45%;text-align:center;margin-right:2px;"/>
 <img src="images/screen_2.jpg" style="width:45%;text-align:center;"/>

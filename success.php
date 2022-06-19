@@ -1,6 +1,6 @@
 <?php
 include("header.php");
-include("menu2.html");
+include("menu.html");
 ?>
 <body>
 <h1>Projets de nos clients</h1>

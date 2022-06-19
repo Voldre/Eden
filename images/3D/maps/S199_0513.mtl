@@ -1,0 +1,766 @@
+newmtl object0005_02 - Defaultgferccewacedwa_3
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/S018001.png
+
+newmtl object0005_02 - Defaultgferccewacedwa_13
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/S018001.png
+
+newmtl object0016_Standard_2grea_15
+Kd 0.949020 0.972549 0.972549
+Ks 0.066667 0.066667 0.066667
+Ns 10.000000
+map_Kd images/3D/maps/S199004.png
+
+newmtl object0021_Material #885_20
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UA01001.png
+
+newmtl object0027_Material #880cac_26
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UA00801.png
+
+newmtl object0032_02 - Defaultgrae_31
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UB10701.png
+
+newmtl object0037_UB211_1_36
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UB21102.png
+
+newmtl object0005_02 - Defaultgferccewacedwa_47
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/S018001.png
+
+newmtl object0016_Standard_2grea_49
+Kd 0.949020 0.972549 0.972549
+Ks 0.066667 0.066667 0.066667
+Ns 10.000000
+map_Kd images/3D/maps/S199004.png
+
+newmtl object0021_Material #885_51
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UA01001.png
+
+newmtl object0027_Material #880cac_53
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UA00801.png
+
+newmtl object0032_02 - Defaultgrae_55
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UB10701.png
+
+newmtl object0037_UB211_1_57
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UB21102.png
+
+newmtl object0016_Standard_2grea_61
+Kd 0.949020 0.972549 0.972549
+Ks 0.066667 0.066667 0.066667
+Ns 10.000000
+map_Kd images/3D/maps/S199004.png
+
+newmtl object0005_02 - Defaultgferccewacedwa_66
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/S018001.png
+
+newmtl object0032_02 - Defaultgrae_68
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UB10701.png
+
+newmtl object0016_Standard_2grea_70
+Kd 0.949020 0.972549 0.972549
+Ks 0.066667 0.066667 0.066667
+Ns 10.000000
+map_Kd images/3D/maps/S199004.png
+
+newmtl object0021_Material #885_72
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UA01001.png
+
+newmtl object0037_UB211_1_74
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UB21102.png
+
+newmtl object0005_02 - Defaultgferccewacedwa_78
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/S018001.png
+
+newmtl object0032_02 - Defaultgrae_80
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UB10701.png
+
+newmtl object0016_Standard_2grea_82
+Kd 0.949020 0.972549 0.972549
+Ks 0.066667 0.066667 0.066667
+Ns 10.000000
+map_Kd images/3D/maps/S199004.png
+
+newmtl object0021_Material #885_84
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UA01001.png
+
+newmtl object0088_03 - Defaultcvsewgf_87
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UB02002.png
+
+newmtl object0093_02 - Defaultgfercfewa_92
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/S199002.png
+
+newmtl object0005_02 - Defaultgferccewacedwa_97
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/S018001.png
+
+newmtl object0100_02 - Defaultgfercadger_99
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/bed02.png
+
+newmtl object0005_02 - Defaultgferccewacedwa_106
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/S018001.png
+
+newmtl object0032_02 - Defaultgrae_108
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UB10701.png
+
+newmtl object0117_116
+Kd 0.525490 0.231373 0.031373
+Ks 0.525490 0.231373 0.031373
+Ns 0.000000
+
+newmtl object0121_Material #84_120
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UB23703.png
+
+newmtl object0126_Standard_1vdsd_125
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UB00701.png
+
+newmtl object0132_Standard_1hts_130
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UB00401.png
+
+newmtl object0138_Material #8544_137
+Kd 0.996078 1.000000 0.525490
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.900000
+map_Kd images/3D/maps/UA00252.png
+
+newmtl object0150_5 - Default_149
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.500000
+map_Kd images/3D/maps/EFS11201.png
+
+newmtl object0185_Material #264296ngfxfdwa_184
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/A00401.png
+
+newmtl object0190_Material #264296_189
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/A00401.png
+
+newmtl object0194_02 - Defaultgfercc_193
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/wall02.png
+
+newmtl object0005_02 - Defaultgferccewacedwa_198
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/S018001.png
+
+newmtl object0201_Standard_11_200
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UE03301.png
+
+newmtl object0206_Standard_10fewae_205
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UE03301.png
+
+newmtl object0209_02 - Default_208
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UE03101.png
+
+newmtl object0214_no2sided_213
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UE03101.png
+
+newmtl object0121_Material #84_216
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UB11001.png
+
+newmtl object0221_02 - Defaultgferccfswa_220
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/S018001.png
+
+newmtl object0224_Material #880gras_223
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UA00701.png
+
+newmtl object0229_Material #264964_228
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UA00401.png
+
+newmtl object0234_Standard_2_233
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UA00901.png
+
+newmtl object0239_Material #11317_238
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UA01001.png
+
+newmtl object0242_Material #880vfrea_241
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UA00901.png
+
+newmtl object0245_Material #264959_244
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UA00102.png
+
+newmtl object0250_Material #264955_249
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UA01101.png
+
+newmtl object0255_Material #264965_254
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UA00401.png
+
+newmtl object0258_02 - Defaultgraegr_257
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UE30701.png
+
+newmtl object0263_Standard_4erar_262
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/maps/brick_07.png
+
+newmtl object0268_Material #264966_267
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UA00601.png
+
+newmtl object0273_Standard_4erarfeQW_272
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/maps/brick_07.png
+
+newmtl object0276_Standard_1rgrs_275
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/A00202.png
+
+newmtl object0282_Mater_281
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/A00302.png
+
+newmtl object0288_Material #164grawdvge_287
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UC30901.png
+
+newmtl object0293_Standard_2greasa_292
+Kd 0.949020 0.972549 0.972549
+Ks 0.066667 0.066667 0.066667
+Ns 10.000000
+map_Kd images/3D/maps/A00202.png
+
+newmtl object0296_Material #164grawd_295
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/A00102.png
+
+newmtl object0303_02 - Defaultgfercad_302
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/living02.png
+
+newmtl object0100_02 - Defaultgfercadger_307
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/bed02.png
+
+newmtl object0276_Standard_1rgrs_309
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/A00202.png
+
+newmtl object0005_02 - Defaultgferccewacedwa_311
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/S018001.png
+
+newmtl object0315_Standard_1grawgrwa_314
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/water_env.png
+
+newmtl object0365_Material #8_364
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UE73101.png
+
+newmtl object0365_Material #8_373
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UE73101.png
+
+newmtl object0365_Material #8_379
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UE73101.png
+
+newmtl object0365_Material #8_385
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UE73101.png
+
+newmtl object0365_Material #8_391
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UE73101.png
+
+newmtl object0365_Material #8_397
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UE73101.png
+
+newmtl object0365_Material #8_403
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UE73101.png
+
+newmtl object0408_1212_407
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 10.000000
+map_Kd images/3D/maps/UB11102.png
+
+newmtl object0416_155_414
+Kd 0.992157 0.992157 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.200000
+map_Kd images/3D/maps/UB11151.png
+
+newmtl object0437_Standard_81_435
+Kd 0.494118 0.921569 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.300000
+map_Kd images/3D/maps/UA00251.png
+
+newmtl object0443_Standard_766_441
+Kd 0.992157 0.992157 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.300000
+map_Kd images/3D/maps/UB11151.png
+
+newmtl object0463_a_fxa0055_461
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 1.200000
+map_Kd images/3D/maps/UD50104.png
+
+newmtl object0463_a_fxa0055_482
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 1.200000
+map_Kd images/3D/maps/UD50104.png
+
+newmtl object0463_a_fxa0055_485
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 1.200000
+map_Kd images/3D/maps/UD50104.png
+
+newmtl object0463_a_fxa0055_488
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 1.200000
+map_Kd images/3D/maps/UD50104.png
+
+newmtl object0493_02_491
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/maps/UD50101.png
+
+newmtl object0502_Material #26_500
+Kd 0.776471 0.945098 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/maps/UD50106.png
+
+newmtl object0502_Material #26_509
+Kd 0.776471 0.945098 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/maps/UD50106.png
+
+newmtl object0514_Material #27_512
+Kd 0.776471 0.945098 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/maps/UD50106.png
+
+newmtl object0514_Material #27_520
+Kd 0.776471 0.945098 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/maps/UD50106.png
+
+newmtl object0514_Material #27_523
+Kd 0.776471 0.945098 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/maps/UD50106.png
+
+newmtl object0514_Material #27_526
+Kd 0.776471 0.945098 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/maps/UD50106.png
+
+newmtl object0531_Material #0_529
+Kd 0.866667 0.992157 0.992157
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/maps/UB21704.png
+
+newmtl object0531_Material #0_538
+Kd 0.866667 0.992157 0.992157
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/maps/UB21704.png
+
+newmtl object0514_Material #27_546
+Kd 0.776471 0.945098 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/maps/UD50106.png
+
+newmtl object0514_Material #27_553
+Kd 0.776471 0.945098 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/maps/UD50106.png
+
+newmtl object0558_07-01_557
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.300000
+map_Kd images/3D/maps/WaterairAni-11.png
+
+newmtl object0588_07-03_587
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.300000
+map_Kd images/3D/maps/WaterairAni-01.png
+
+newmtl object0493_02_594
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/maps/UD50101.png
+
+newmtl object0588_07-03_599
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.300000
+map_Kd images/3D/maps/WaterairAni-01.png
+
+newmtl object0558_07-01_603
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.300000
+map_Kd images/3D/maps/WaterairAni-11.png
+
+newmtl object0493_02_605
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/maps/UD50101.png
+
+newmtl object0588_07-03_610
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.300000
+map_Kd images/3D/maps/WaterairAni-01.png
+
+newmtl object0493_02_612
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/maps/UD50101.png
+
+newmtl object0493_02_615
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/maps/UD50101.png
+
+newmtl object0588_07-03_620
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.300000
+map_Kd images/3D/maps/WaterairAni-01.png
+
+newmtl object0558_07-01_624
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.300000
+map_Kd images/3D/maps/WaterairAni-11.png
+
+newmtl object0493_02_626
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/maps/UD50101.png
+
+newmtl object0588_07-03_631
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.300000
+map_Kd images/3D/maps/WaterairAni-01.png
+
+newmtl object0558_07-01_635
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.300000
+map_Kd images/3D/maps/WaterairAni-11.png
+
+newmtl object0437_Standard_81_637
+Kd 0.494118 0.921569 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.300000
+map_Kd images/3D/maps/UA00251.png
+
+newmtl object0443_Standard_766_640
+Kd 0.992157 0.992157 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.300000
+map_Kd images/3D/maps/UB11151.png
+
+newmtl object0645_33_643
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.000000
+map_Kd images/3D/maps/UD51201.png
+
+newmtl object0588_07-03_668
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.300000
+map_Kd images/3D/maps/WaterairAni-01.png
+
+newmtl object0558_07-01_672
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.300000
+map_Kd images/3D/maps/WaterairAni-11.png
+
+newmtl object0558_07-01_676
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.300000
+map_Kd images/3D/maps/WaterairAni-11.png
+
+newmtl object0588_07-03_680
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.300000
+map_Kd images/3D/maps/WaterairAni-01.png
+
+newmtl object0588_07-03_684
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.300000
+map_Kd images/3D/maps/WaterairAni-01.png
+
+newmtl object0558_07-01_688
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.300000
+map_Kd images/3D/maps/WaterairAni-11.png
+
+newmtl object0558_07-01_692
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.300000
+map_Kd images/3D/maps/WaterairAni-11.png
+
+newmtl object0588_07-03_696
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+d 0.300000
+map_Kd images/3D/maps/WaterairAni-01.png
+
+newmtl object0704_Standard_4FEWqf_703
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/maps/N20101.png
+
+newmtl object0710_Sunlight_708
+Kd 1.000000 0.898039 0.678431
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/maps/EFS10001.png
+
+newmtl object0710_Sunlight_714
+Kd 1.000000 0.898039 0.678431
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/maps/EFS10001.png
+
+newmtl object0710_Sunlight_717
+Kd 1.000000 0.898039 0.678431
+Ks 0.000000 0.000000 0.000000
+Ns 10.000000
+map_Kd images/3D/maps/EFS10001.png
+
+newmtl object0293_Standard_2greasa_722
+Kd 0.949020 0.972549 0.972549
+Ks 0.066667 0.066667 0.066667
+Ns 10.000000
+map_Kd images/3D/maps/A00202.png
+
