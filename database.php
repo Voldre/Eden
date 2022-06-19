@@ -1,6 +1,6 @@
 <?php
 include("header.php");
-include("menu2.html");
+include("menu.html");
 ?>
 <body>
 <div class="dbMenu">
@@ -58,7 +58,7 @@ if(isset($_GET["data"])){
         echo  "<iframe style='width:0px;' onload='changeCategory();'></iframe>";
     }else if($_GET["data"] == "bgm"){
     ?>
-    <h2>Liste des musiques</h2>
+    <h2>Liste des musiques <span class="menu" id="currentMusic"></span></h2>
         <?php
         drawMusics($musicRepository);
     }else{ 
@@ -145,8 +145,10 @@ document.addEventListener('play', function(e){
             if(audios[i].currentTime < 30){
                 audios[i].currentTime = 0;
             }
-        }
+        }    
     }
+    console.log(e.target.firstChild.attributes.src.nodeValue.split("/")[1].split(".")[0]);
+    document.getElementById("currentMusic").innerHTML = e.target.firstChild.attributes.src.nodeValue.split("/")[1].split(".")[0];
 }, true);
 </script>
 </body>

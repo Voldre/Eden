@@ -127,6 +127,7 @@ function init() {
     folder = window.location.search.split('=')[1];
     
     if(typeof folder == "undefined"){
+            document.getElementById("google_translate_element").style.display = "inline";
             throw new Error("En attente de la sélection");
     }else{
         // 11.06.22 - Pour l'UI, on retire le choix de langue sur les designs
@@ -154,8 +155,12 @@ function init() {
     meshFloor.rotation.x -= Math.PI / 2;
     meshFloor.receiveShadow = true;
     scene.add(meshFloor);
-                                                // 0.4
-    ambientLight = new THREE.AmbientLight(0xffffff, 0.85);
+
+    if(onMap){
+        ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    }else{
+        ambientLight = new THREE.AmbientLight(0xffffff, 0.85);
+    }
     scene.add(ambientLight);
 
     light = new THREE.PointLight(0xffffff, 1.5, 20);
@@ -194,7 +199,7 @@ function init() {
         */
 
         if(folder == "maps"){
-            materials.preload();
+            // materials.preload();
         }
         
         // Ajout VD - 04/06/2022 - suivi du loading :
@@ -347,8 +352,9 @@ function init() {
         if(onMap && read_cookie('bgmState') == "" && maplist[map]['bgm'] != null){
             myBGM = maplist[map]['bgm'].toString();
             while(myBGM.length < 3){ myBGM = "0"+myBGM; }
-            document.getElementById("bgmPosition").innerHTML = '<audio loop><source src="bgm/bgm'+myBGM+'.ogg" volume="30" type="audio/ogg" /></audio>';
+            document.getElementById("bgmPosition").innerHTML = '<audio loop><source src="bgm/bgm'+myBGM+'.ogg" type="audio/ogg" /></audio>';
             document.getElementsByTagName('audio')[0].autoplay= true ;
+            document.getElementsByTagName('audio')[0].volume= 0.4 ;
         }else if(onMap){ document.getElementById("bgmPosition").innerHTML = "";}
     }
     animate();

@@ -25,11 +25,11 @@ https://wiki.vg-resource.com/Noesis , Noesis Download : http://www.richwhitehous
 </nav>
     <!-- 09/06 Ajout du Toggle pour le Background -->
     <div style="margin-right:17px;">
-    <label class="switch" id="iconBG">
+    <label class="switch" title="Afficher l'arrière plan" id="iconBG">
     <input id="bgToggle" type="checkbox" <?php if(isset($_COOKIE['bgState'])){ echo $_COOKIE['bgState'];} ?> />
     <span class="slider round"></span>
     </label>
-    <label class="switch" id="iconBGM">
+    <label class="switch" title="Jouer la musique" id="iconBGM">
     <input id="bgmToggle" type="checkbox" <?php if(isset($_COOKIE['bgmState'])){ echo $_COOKIE['bgmState'];} ?> />
     <span class="slider round"></span>
     </label>

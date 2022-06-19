@@ -316,7 +316,7 @@
     "map_y": null,
     "map_z": null,
     "map_r": null,
-    "bgm": null
+    "bgm": 15
   },
   "32": {
     "name": "Vallée de Vulcain",
@@ -462,7 +462,7 @@
     "bgm": 58
   },
   "100": {
-    "name": "Mine Andrew",
+    "name": "Mine d'Andrew",
     "wmap_x": 0,
     "wmap_y": 0,
     "wmap": 5,
@@ -613,7 +613,7 @@
     "map_y": null,
     "map_z": null,
     "map_r": null,
-    "bgm": 9
+    "bgm": 23
   },
   "114": {
     "name": "Chambre de Baïra",
@@ -748,7 +748,7 @@
     "bgm": 37
   },
   "127": {
-    "name": "Grotte de la Marée des Ombres",
+    "name": "Grotte de la Marée Noire",
     "wmap_x": 0,
     "wmap_y": 0,
     "wmap": 5,
@@ -998,7 +998,7 @@
     "map_y": null,
     "map_z": null,
     "map_r": null,
-    "bgm": 60
+    "bgm": 61
   },
   "223": {
     "name": "Grey Lynn",

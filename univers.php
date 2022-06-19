@@ -1,13 +1,13 @@
 <?php
 include("header.php");
-include("menu2.html");
+include("menu.html");
 ?>
 <body>
 <div class="dbMenu">
     <ul>
         <a href="univers.php?data=maps"><li><img src="images/maps/S013m.png" /><p style="display:inline-block;width: 48%;height: 24px;"> Régions </p><a href="univers.php?data=worldmap"><img src="images/worldmapIcon.png" class="mapIcon" ></a></li></a>
         <a href="univers.php?data=class"><li><img src="images/skillIcon/E0013.png" /> Classes</li></a>
-        <a href="univers.php?data=videos"><li><img src="images/uiiconPNG/script00.png" />Trailers / Openings</li></a>
+        <a href="univers.php?data=videos" class="notranslate"><li><img src="images/uiiconPNG/script00.png" />Trailers / Openings</li></a>
     </ul>
 </div>
 

@@ -75,14 +75,22 @@ h2{
     justify-content:space-between;
     margin-bottom:3px;
 }
+
+select{
+    max-width: 225px;
+}
+
 .select3D{
     position: absolute;
-    left: 42%;
+    left: 30%;
     font-size:20px;
     background-color: rgba(40, 40, 40, 0.7);
     border: 2px solid rgba(40, 40, 40, 1);
     padding:10px;
     border-radius: 0 0 20px 20px;
+}
+.select3D select{
+    max-width: 175px;
 }
 
 #loading{
@@ -397,6 +405,10 @@ Brightness on mouseover and onclick */
     }
     h2{
         font-size: 16.5px;
+    }
+    
+    .dbMenu li {
+        font-size : 16.5px;
     }
     .commandes, #google_translate_element{
         display: none;
