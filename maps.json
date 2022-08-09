@@ -56,7 +56,7 @@
   },
   "6": {
     "name": "Baie Bélouga",
-    "wmap_x": 17,
+    "wmap_x": 16.9,
     "wmap_y": 54,
     "wmap": 0,
     "map_x": null,
@@ -68,7 +68,7 @@
   "7": {
     "name": "Bourbes",
     "wmap_x": 21.2,
-    "wmap_y": 48.6,
+    "wmap_y": 48.3,
     "wmap": 0,
     "map_x": null,
     "map_y": null,
@@ -78,7 +78,7 @@
   },
   "8": {
     "name": "Vallée des Rois",
-    "wmap_x": 13,
+    "wmap_x": 12.9,
     "wmap_y": 42.6,
     "wmap": 0,
     "map_x": null,
@@ -89,7 +89,7 @@
   },
   "9": {
     "name": "Volcan Avila",
-    "wmap_x": 28.4,
+    "wmap_x": 28.3,
     "wmap_y": 42.2,
     "wmap": 0,
     "map_x": null,
@@ -100,7 +100,7 @@
   },
   "10": {
     "name": "Plaines Dorées",
-    "wmap_x": 33.4,
+    "wmap_x": 33.1,
     "wmap_y": 52.1,
     "wmap": 0,
     "map_x": null,
@@ -111,8 +111,8 @@
   },
   "11": {
     "name": "Terres des Dunes Éternelles",
-    "wmap_x": 42,
-    "wmap_y": 58.3,
+    "wmap_x": 41.7,
+    "wmap_y": 58.4,
     "wmap": 0,
     "map_x": null,
     "map_y": null,
@@ -122,7 +122,7 @@
   },
   "12": {
     "name": "Forêt de Delphes",
-    "wmap_x": 38.8,
+    "wmap_x": 38.5,
     "wmap_y": 41.1,
     "wmap": 0,
     "map_x": null,
@@ -133,7 +133,7 @@
   },
   "13": {
     "name": "Pic de Noireflammes",
-    "wmap_x": 40.6,
+    "wmap_x": 40.2,
     "wmap_y": 32.3,
     "wmap": 0,
     "map_x": null,
@@ -144,7 +144,7 @@
   },
   "14": {
     "name": "Marais Décrépits",
-    "wmap_x": 46.2,
+    "wmap_x": 45.6,
     "wmap_y": 46.4,
     "wmap": 0,
     "map_x": null,
@@ -155,7 +155,7 @@
   },
   "15": {
     "name": "Hautes-terres",
-    "wmap_x": 54.5,
+    "wmap_x": 53.9,
     "wmap_y": 45.5,
     "wmap": 0,
     "map_x": null,
@@ -166,7 +166,7 @@
   },
   "16": {
     "name": "Crocs Brumeux",
-    "wmap_x": 39.7,
+    "wmap_x": 39.3,
     "wmap_y": 75,
     "wmap": 0,
     "map_x": null,
@@ -177,8 +177,8 @@
   },
   "19": {
     "name": "Vallée Férégal",
-    "wmap_x": 40,
-    "wmap_y": 40,
+    "wmap_x": 58,
+    "wmap_y": 58.2,
     "wmap": 1,
     "map_x": null,
     "map_y": null,
@@ -188,8 +188,8 @@
   },
   "20": {
     "name": "Désert du Couchant",
-    "wmap_x": 30,
-    "wmap_y": 30,
+    "wmap_x": 49.7,
+    "wmap_y": 51.8,
     "wmap": 1,
     "map_x": null,
     "map_y": null,
@@ -199,8 +199,8 @@
   },
   "21": {
     "name": "Jungle Céleste",
-    "wmap_x": 20,
-    "wmap_y": 20,
+    "wmap_x": 51.4,
+    "wmap_y": 43.4,
     "wmap": 1,
     "map_x": null,
     "map_y": null,
@@ -210,7 +210,7 @@
   },
   "22": {
     "name": "Forêt Ensorcelée",
-    "wmap_x": 30.5,
+    "wmap_x": 30.1,
     "wmap_y": 30.7,
     "wmap": 0,
     "map_x": null,
@@ -221,7 +221,7 @@
   },
   "23": {
     "name": "Crète Diamantée",
-    "wmap_x": 35.9,
+    "wmap_x": 35.6,
     "wmap_y": 21.3,
     "wmap": 0,
     "map_x": null,
@@ -232,7 +232,7 @@
   },
   "24": {
     "name": "Pic du Maëlstrom",
-    "wmap_x": 25,
+    "wmap_x": 24.6,
     "wmap_y": 24.8,
     "wmap": 0,
     "map_x": null,
@@ -254,7 +254,7 @@
   },
   "26": {
     "name": "Plaines Fleuries",
-    "wmap_x": 24,
+    "wmap_x": 23.6,
     "wmap_y": 35.6,
     "wmap": 0,
     "map_x": null,
@@ -265,7 +265,7 @@
   },
   "27": {
     "name": "Falaise des Grands Vents",
-    "wmap_x": 11.4,
+    "wmap_x": 11.2,
     "wmap_y": 29.8,
     "wmap": 0,
     "map_x": null,
@@ -276,8 +276,8 @@
   },
   "28": {
     "name": "Lagune Enchantée",
-    "wmap_x": 20,
-    "wmap_y": 60,
+    "wmap_x": 37.3,
+    "wmap_y": 48.4,
     "wmap": 2,
     "map_x": null,
     "map_y": null,
@@ -287,8 +287,8 @@
   },
   "29": {
     "name": "Côte de Hurlevent",
-    "wmap_x": 30,
-    "wmap_y": 70,
+    "wmap_x": 27.6,
+    "wmap_y": 38,
     "wmap": 2,
     "map_x": null,
     "map_y": null,
@@ -298,8 +298,8 @@
   },
   "30": {
     "name": "Jungle du Dieu Serpent",
-    "wmap_x": 40,
-    "wmap_y": 50,
+    "wmap_x": 22,
+    "wmap_y": 47.2,
     "wmap": 2,
     "map_x": null,
     "map_y": null,
@@ -320,7 +320,7 @@
   },
   "32": {
     "name": "Vallée de Vulcain",
-    "wmap_x": 48.3,
+    "wmap_x": 47.8,
     "wmap_y": 33.1,
     "wmap": 0,
     "map_x": null,
@@ -331,7 +331,7 @@
   },
   "33": {
     "name": "Plaines du Levant",
-    "wmap_x": 48.2,
+    "wmap_x": 48,
     "wmap_y": 23,
     "wmap": 0,
     "map_x": null,
@@ -342,7 +342,7 @@
   },
   "34": {
     "name": "Royaume Dévasté",
-    "wmap_x": 56.2,
+    "wmap_x": 55.7,
     "wmap_y": 23,
     "wmap": 0,
     "map_x": null,
@@ -360,13 +360,13 @@
     "map_y": -97,
     "map_z": -15,
     "map_r": -0.5,
-    "bgm": 42
+    "bgm": 43
   },
   "36": {
     "name": "Plaines d'Elos",
-    "wmap_x": 0,
-    "wmap_y": null,
-    "wmap": null,
+    "wmap_x": 55.1,
+    "wmap_y": 55.4,
+    "wmap": 0,
     "map_x": null,
     "map_y": null,
     "map_z": null,
@@ -375,9 +375,9 @@
   },
   "37": {
     "name": "Marina d'Edouard",
-    "wmap_x": 0,
-    "wmap_y": null,
-    "wmap": null,
+    "wmap_x": 64.4,
+    "wmap_y": 57.1,
+    "wmap": 0,
     "map_x": null,
     "map_y": null,
     "map_z": null,
@@ -386,9 +386,9 @@
   },
   "38": {
     "name": "Royaume Durango",
-    "wmap_x": 0,
-    "wmap_y": null,
-    "wmap": null,
+    "wmap_x": 60.5,
+    "wmap_y": 49.4,
+    "wmap": 0,
     "map_x": null,
     "map_y": null,
     "map_z": null,
@@ -400,16 +400,16 @@
     "wmap_x": 0,
     "wmap_y": 0,
     "wmap": 5,
-    "map_x": null,
-    "map_y": null,
-    "map_z": null,
-    "map_r": null,
-    "bgm": null
+    "map_x": -20,
+    "map_y": -60,
+    "map_z": 0,
+    "map_r": -0.5,
+    "bgm": 46
   },
   "51": {
     "name": "Dôme Céleste",
-    "wmap_x": 30,
-    "wmap_y": 30,
+    "wmap_x": 70,
+    "wmap_y": 60,
     "wmap": 2,
     "map_x": null,
     "map_y": null,
@@ -420,7 +420,7 @@
   "52": {
     "name": "Hauteurs Feudegivre",
     "wmap_x": 40,
-    "wmap_y": 40,
+    "wmap_y": 60,
     "wmap": 2,
     "map_x": null,
     "map_y": null,
@@ -431,7 +431,7 @@
   "53": {
     "name": "Meeryasha",
     "wmap_x": 30,
-    "wmap_y": 40,
+    "wmap_y": 60,
     "wmap": 2,
     "map_x": null,
     "map_y": null,
@@ -441,7 +441,7 @@
   },
   "54": {
     "name": "Jungle Mayland",
-    "wmap_x": 10,
+    "wmap_x": 50,
     "wmap_y": 30,
     "wmap": 1,
     "map_x": null,
@@ -452,8 +452,8 @@
   },
   "55": {
     "name": "Bassin Shaxia",
-    "wmap_x": 20,
-    "wmap_y": 40,
+    "wmap_x": 40,
+    "wmap_y": 30,
     "wmap": 1,
     "map_x": null,
     "map_y": null,
@@ -477,10 +477,10 @@
     "wmap_x": 0,
     "wmap_y": 0,
     "wmap": 5,
-    "map_x": null,
-    "map_y": null,
-    "map_z": null,
-    "map_r": null,
+    "map_x": -70,
+    "map_y": -32,
+    "map_z": 270,
+    "map_r": 2,
     "bgm": 18
   },
   "102": {
