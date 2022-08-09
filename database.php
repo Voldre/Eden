@@ -14,6 +14,9 @@ include("menu.html");
  
 <?php
 
+global $audioMap;
+$audioMap = json_decode(file_get_contents("audioMap.json"),true);
+
 $itemRepository = 'images/items/';
 $skillRepository = 'images/skillIcon/';
 $monsterRepository = 'images/monsters/';
@@ -42,7 +45,7 @@ if(isset($_GET["data"])){
     <h2>Liste des objets</h2>
     <?php
         drawIcons($itemRepository);
-        echo  "<iframe style='width:0px;' onload='changeCategory();'></iframe>";
+        echo  "<iframe style='width:0px;height:0px' onload='changeCategory();'></iframe>";
 
     }else if($_GET["data"] == "class"){
     ?>
@@ -60,7 +63,7 @@ if(isset($_GET["data"])){
     ?>
     <h2>Liste des musiques <span class="menu" id="currentMusic"></span></h2>
         <?php
-        drawMusics($musicRepository);
+        drawMusics($musicRepository,$audioMap);
     }else{ 
     
     }
@@ -119,14 +122,15 @@ function drawIcons($repository){
     }
 }
 
-function drawMusics($repository){
+function drawMusics($repository,$audioMap){
 
     $files = scandir($repository);
     echo "<div class='container'>";
     foreach($files as $file) {
         if (strpos($file,"bgm") !== false){
             echo "<div>";
-            echo "<p>".explode(".",$file)[0]."</p>";
+            // echo "<p>".explode(".",$file)[0]."</p>";
+            echo "<p id='".explode(".",$file)[0]."'>".$audioMap[explode(".",$file)[0]]."</p>";
             echo "<audio controls ><source src='bgm/$file' type='audio/ogg' /></audio>";
             echo "</div>";
         }
@@ -147,8 +151,9 @@ document.addEventListener('play', function(e){
             }
         }    
     }
-    console.log(e.target.firstChild.attributes.src.nodeValue.split("/")[1].split(".")[0]);
-    document.getElementById("currentMusic").innerHTML = e.target.firstChild.attributes.src.nodeValue.split("/")[1].split(".")[0];
+    currentBGM = e.target.firstChild.attributes.src.nodeValue.split("/")[1].split(".")[0]
+    console.log(currentBGM);
+    document.getElementById("currentMusic").innerText = document.getElementById(currentBGM).innerText +" ("+currentBGM+")";
 }, true);
 </script>
 </body>

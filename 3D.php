@@ -90,7 +90,7 @@ exit();
         <option value="bird">Oiseau</option>-->
     </select>
 </div>
-<h2 id="loading"></h2>
+<h2 id="loading" class="notranslate"></h2>
 <div id="canvasPosition"></div>
 <div id="bgmPosition"></div>
     <script type="text/javascript">
@@ -111,6 +111,7 @@ exit();
             document.getElementById("iconPic").src = "images/"+currentFolder+"/"+letter+file+".png";
         }
     }
+
     </script>
 <footer>
 <div class="grid-container">

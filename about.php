@@ -20,8 +20,8 @@ include("menu.html");
     <li>Formation sur Audacity</li>
 </ul>
 </div>
-<div style="border:2px black solid;padding:1.5%;">
 
+<div style="border:2px black solid;padding:1.5%;">
 <h2>Nos convictions</h2>
 <p>Nous sommes convaincus que nous pouvons améliorer la vie de millions de joueurs à travers des designs.<br/><br/> 
 Nous souhaitons mettre des étoiles dans les yeux des joueurs pour qu'ils vivent une expérience mémorable.</p>
@@ -29,6 +29,9 @@ Nous souhaitons mettre des étoiles dans les yeux des joueurs pour qu'ils vivent
 <img src="images/Paladin.webp" style="width:45%;max-width:330px;text-align:center;margin-right:2px;"/>
 <img src="images/Grenadier.webp" style="width:45%;max-width:330px;text-align:center;"/>
 </div>
+</div>
+
+<div style="border:2px black solid;padding:1.5%;">
 <h2>Nos partenaires</h2>
 <p>Feravena est le partenaire de grands fournisseurs de solutions dans le domaine vidéoludique, notamment :</p>
 <div class="flexContainer" >
