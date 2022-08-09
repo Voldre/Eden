@@ -19,12 +19,12 @@ function All($value){
     return true;
 }
 function Mondes($value){
-    if($value[3] <= 2){
+    if($value["wmap"] <= 2){
         return true;
     }else{ return false; }
 }
 function Donjons($value){
-    if($value[3] <= 2){
+    if($value["wmap"] <= 2){
         return false;
     }else{ return true; }
 }
@@ -65,40 +65,44 @@ if(isset($_GET["data"])){
     }else if($_GET["data"] == "worldmap"){
     
         ?>
-        <div class="container" style="overflow-y: hidden;">
-        <div class="continent" style="max-width:70%; max-height:70%:" >
-        <?php
-            foreach($maplist as $key=>$value){
-                if(isset($value[3]) && $value[3]==0){
-                    echo "<a href='univers.php?data=map&map=".$key."'><div class='point' style='top:".$value[1]."%; left:".$value[2]."%;' ><p class='name'>".$value[0]."</p></div></a>";
-                }
-            }
-        ?>
-            <img src="images/mapworld012.png" />
-        </div>    
+        <div id="worldmapContainer" class="container" style="overflow-y: hidden;">
+        <div class="select3D" style="left:auto;z-index:10;margin:0px;padding:0px;">
+            <ul style="display:flex;margin:0px;padding:0px;">
+                <li class="mapMenu"  data-map=1>Sud-Ouest</li>
+                <li class="mapMenu activate" data-map=0>Central <img src="images/otherIcon/function026.png" class="YVES"></li>
+                <li class="mapMenu" data-map=2>Sud-Est</li>
+            </ul>
         </div>
-    
-        <div class="container">
-        <div class="continent" style="max-width:70%; max-height:70%:" >
-        <?php
-            foreach($maplist as $key=>$value){
-                if(isset($value[3]) && $value[3]==2){
-                    echo "<a href='univers.php?data=map&map=".$key."'><div class='point' style='top:".$value[1]."%; left:".$value[2]."%;' ><p class='name'>".$value[0]."</p></div></a>";
+            <div class="continent active" id="C0">
+            <?php
+                foreach($maplist as $key=>$value){
+                    if(isset($value["wmap"]) && $value["wmap"]==0){
+                        echo "<a href='univers.php?data=map&map=".$key."'><div class='point' style='top:".$value["wmap_x"]."%; left:".$value["wmap_y"]."%;' ><p class='name'>".$value["name"]."</p></div></a>";
+                    }
                 }
-            }
-        ?>
-        <img src="images/mapworld02.png" style="max-width:47%;" />
-    
-        <?php
-            foreach($maplist as $key=>$value){
-                if(isset($value[3]) && $value[3]==1){
-                    echo "<a href='univers.php?map=".$key."'><div class='point' style='top:".$value[1]."%; left:".$value[2]."%;' ><p class='name'>".$value[0]."</p></div></a>";
+            ?>
+                <img id="worldmap01" src="images/mapworld01-YVES.png"/>
+            </div>
+            <div class="continent" id="C1">
+            <?php
+                foreach($maplist as $key=>$value){
+                    if(isset($value["wmap"]) && $value["wmap"]==1){
+                        echo "<a href='univers.php?data=map&map=".$key."'><div class='point' style='top:".$value["wmap_x"]."%; left:".$value["wmap_y"]."%;' ><p class='name'>".$value["name"]."</p></div></a>";
+                    }
                 }
-            }
-        ?>
-        <img src="images/mapworld03.png" style="max-width:47%;" />
-    
-        </div>
+            ?>
+                <img src="images/mapworld02.png"/>
+            </div>
+            <div class="continent" id="C2">
+            <?php
+                foreach($maplist as $key=>$value){
+                    if(isset($value["wmap"]) && $value["wmap"]==2){
+                        echo "<a href='univers.php?data=map&map=".$key."'><div class='point' style='top:".$value["wmap_x"]."%; left:".$value["wmap_y"]."%;' ><p class='name'>".$value["name"]."</p></div></a>";
+                    }
+                }
+            ?>
+                <img src="images/mapworld03.png"/>
+            </div>
         </div>
        
         <?php
@@ -117,13 +121,38 @@ if(isset($_GET["data"])){
         ?>
         <div class="flexContainer">
         <iframe src="https://www.youtube.com/embed/Ks9kTC_vzLQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/cp1cKHJw_yA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <iframe src="https://www.youtube.com/embed/Jr9b2L2_kvM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <iframe src="https://www.youtube.com/embed/Vf-qP5joSsg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
  <?php
     }else if($_GET["data"] == "map"){
         echo "<h2>".$maplist[$_GET["map"]]["name"]."<a href='3D.php?data=maps&map=".$_GET["map"]."'> lien </a></h2>";
     }
 }
 ?>
+<script>
+    document.querySelector("#worldmapContainer").addEventListener('click', e =>{
+        if(e.target.matches('li')){
+            if(e.target.dataset.map == null){
+                e.target.dataset.map = 0;
+            }
+            document.querySelector(".activate").classList.remove('activate');
+            e.target.classList.add('activate');
+            mapID = e.target.dataset.map;
+            document.querySelector(".active").classList.remove('active');
+            document.querySelector("#C"+mapID).classList.add('active');
+        }
+    });
+
+    document.querySelector(".YVES").addEventListener('click', e =>{
+        if(document.querySelector("#worldmap01").src.includes('YVES')){
+            document.querySelector("#worldmap01").src = "images/mapworld012.png";
+            // document.querySelectorAll(".point").style.backgroundImage = 'url("images/mapIcon_1.png")';
+            // document.querySelectorAll(".point:hover").style.backgroundImage = 'url("images/mapIcon_2.png")';
+        }else{  document.querySelector("#worldmap01").src = "images/mapworld01-YVES.png"; 
+        }
+    })
+</script>
 </body>
 </html> 

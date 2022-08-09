@@ -1,2 +1,2 @@
-nif obj		-objmtl -flipuv
+nif obj		-objmtl -flipuv -vertclr -nifusevcolors
 $inpath$\$inname$.$outext$

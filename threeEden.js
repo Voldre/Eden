@@ -48,6 +48,7 @@ function initForMap(){
             // Si j'ai pas de requête et pas de données dans l'URL
             }else if(!myrequest && (myObject == "" || myObject == null) ){
                 console.log("Présence sur les cartes de donjons, détecté.");
+                document.getElementById('loading').innerHTML = "<h4 style='position: fixed;width: 98vw;text-align:center;left: 0px;top: 20%;'>Ici vous pouvez sélectionner un donjon présent dans le jeu.<br/>Malheureusement certaines d'entres eux ne s'affichent pas correctement.</h4>";
                 throw new Error("En attente du choix de l'utilisateur");
             // Sinon (si j'ai des données dans l'URL)
             }else{ document.getElementById("objets").value = myObject; }
@@ -156,6 +157,13 @@ function init() {
     meshFloor.receiveShadow = true;
     scene.add(meshFloor);
 
+    /*
+    const fbxloader = new THREE.FBXLoader();
+    fbxloader.load('http://voldre.free.fr/Eden/UD338out.fbx', object => {
+        scene.add(object);
+    });
+    */
+
     if(onMap){
         ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     }else{
@@ -208,7 +216,7 @@ function init() {
         var onProgress = function ( xhr ) {
             if ( xhr.lengthComputable ) {
                 var percentComplete = xhr.loaded / xhr.total * 100;
-                document.getElementById("loading").innerHTML = "Chargement : " + Math.round(percentComplete, 2) + "%";}        };
+                document.getElementById("loading").innerHTML = "Loading : " + Math.round(percentComplete, 2) + "%";}        };
         
         var objLoader = new THREE.OBJLoader();
         objLoader.setMaterials(materials);
@@ -306,7 +314,7 @@ function init() {
             if(onMap){ 
                 // Coordonnées de la génération de la map
                 // Pour changer en live la position :
-                // scene.children[3].position.set = (0,0,0)
+                // scene.children[3].position.set(0,0,0)
                 if(maplist[map]['map_x'] != null){
                 mesh.position.set(maplist[map]['map_x'],maplist[map]['map_y'],maplist[map]['map_z']);
                 }else{ mesh.position.set(0,0,0); }
@@ -320,6 +328,7 @@ function init() {
             mesh.rotation.x = -Math.PI / 2;
 
             if(folder != "maps"){
+            // Pour la rotation : scene.children[3].rotation.z
             mesh.rotation.z = Math.PI / 1.4; // Pour qu'il regarde vers nous
             }else{ mesh.rotation.z = maplist[map]['map_r']*Math.PI || Math.PI; }
         }, onProgress);
@@ -349,16 +358,20 @@ function init() {
     document.getElementById('canvasPosition').appendChild(renderer.domElement);
     
     if(onMap){
-        if(onMap && read_cookie('bgmState') == "" && maplist[map]['bgm'] != null){
+        if(onMap && maplist[map]['bgm'] != null){
             myBGM = maplist[map]['bgm'].toString();
             while(myBGM.length < 3){ myBGM = "0"+myBGM; }
             document.getElementById("bgmPosition").innerHTML = '<audio loop><source src="bgm/bgm'+myBGM+'.ogg" type="audio/ogg" /></audio>';
-            document.getElementsByTagName('audio')[0].autoplay= true ;
+            if(read_cookie('bgmState') == ""){
+                document.getElementsByTagName('audio')[0].autoplay= true ;
+            }
             document.getElementsByTagName('audio')[0].volume= 0.4 ;
         }else if(onMap){ document.getElementById("bgmPosition").innerHTML = "";}
     }
+    
     animate();
 }
+
 
 function animate() {
 
@@ -405,11 +418,11 @@ function animate() {
     $("#turnLeft").on("click",function(){player.turnSpeed = 0.001; turnLeft();});
     $("#turnRight").on("click",function(){player.turnSpeed = 0.001; turnRight();});
     
-    $("#bgmToggle").on("click",function(){
-        if(!$("#bgmToggle").is(':checked')){
-            document.getElementById("bgmPosition").innerHTML = "";
-        }
-    })
+    // $("#bgmToggle").on("click",function(){
+    //     if(!$("#bgmToggle").is(':checked')){
+    //         document.getElementById("bgmPosition").innerHTML = "";
+    //     }
+    // })
 
     document.getElementById("prev").onclick = function (){
         // console.log($("#objets").val());
@@ -505,8 +518,13 @@ function animate() {
         keyboard[event.keyCode] = false;
     }
     
+    function bgmState(event){    
+        if(document.getElementById("bgmToggle").checked) document.querySelector('audio').pause(); 
+        else document.querySelector('audio').play(); 
+    }
     window.addEventListener('keydown', keyDown);
     window.addEventListener('keyup', keyUp);
+    document.getElementById("bgmToggle").addEventListener('change', bgmState);
     
 }
 

@@ -3,7 +3,7 @@ include("header.php");
 include("menu.html");
 ?>
 <body>
-<h2>Les offres de Feravena :</h2>
+<h1>Les offres de Feravena :</h1>
 <div style="border:2px black solid;padding:1.5%;">
 <h2>Développement de ressources :</h2>
 <p>Besoin d'ajouter de nouveaux designs 2D ou 3D à votre jeu ? Envie de nouvelles pistes sonores ? Ou encore besoin d'améliorer des ressources existantes ? Feravena est là pour répondre à ces besoins !</p>

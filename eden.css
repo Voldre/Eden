@@ -40,6 +40,7 @@ h2{
     justify-content: space-around;
     flex-flow: row wrap;
     margin: 1%;
+    padding: 4px;
     /*width: 95%;*/
     border: 2px black solid;
     min-width: 300px;
@@ -143,6 +144,7 @@ a {
 }
 .dbMenu ul{
     padding-left: 5px;
+    margin:4px;
 }
 .dbMenu li {
     display: inline-block;
@@ -171,32 +173,60 @@ li img,
 }
 
 .mapIcon {
-    opacity: 0.7;
-    width: 40px;
-    height: 40px;
+    opacity: 0.75;
+    width: 45px;
+    height: 45px;
     float: right;
+    position: relative;
+    top: -5px;
 }
 
 .mapIcon:hover {
     opacity: 1;
 }
-
+.container ul .mapMenu{
+    min-width:10%;
+    max-width:30%;
+    font-size:16px;
+    margin:7px;
+    padding:8px;
+    color:white;
+    font-weight:400;
+    background: linear-gradient(to right, rgba(64, 64, 92, 0.61), rgba(141, 95, 141, 0.733));
+    cursor: pointer;
+}
+.activate{
+    background: linear-gradient(to right, rgba(111, 111, 243, 0.61), rgba(236, 133, 236, 0.733)) !important;
+}
+.active{
+    display:block !important;
+}
+.YVES{
+    position:absolute;
+    left:57%;
+    width:30px;
+    height:30px;
+}
+.YVES:hover{
+    background-image: url("images/otherIcon/function027.png");
+}
 .continent {
     min-width: 700px;
     position: relative;
     text-align: center;
+    display:none;
 }
 
 .point {
     position: absolute;
     width: 34px;
-    height: 36px;
+    height: 42px;
     border: none;
-    background-image: url("images/mapIcon_1.png");
+    background-image: url("images/mapIcon_1B.png");
 }
 
 .point:hover {
-    background-image: url("images/mapIcon_2.png");
+    background-image: url("images/mapIcon_2B.png");
     cursor: url('images/layout/cursor_tp.png'), auto;
 }
 
@@ -374,18 +404,24 @@ input:checked+.slider:before {
 
 .flexContainer{
     display:flex;
+    flex-flow: row wrap;
     justify-content:space-around;
     text-align: center;
 }
 .flexContainer iframe{
     aspect-ratio: 16/9;
     margin:1%;
+    width:40%;
+}
+
+#currentMusic{
+    color: darkorange;
 }
 
 /* 15/06/2022 Interaction Indicator for improve UX : 
 Brightness on mouseover and onclick */
 
-.dbMenu li:hover, .grid-item img:hover {
+.dbMenu li:hover, .grid-item img:hover, .switch:hover {
     filter : brightness(120%);
 }
 .dbMenu li:active, .grid-item img:active{

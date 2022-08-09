@@ -1,5 +1,5 @@
 Première arme 3D : w227 Axe
-Première map 3D : S221 Temple de la Rose
+Première map 3D : S211 Temple de la rose S221 Temple de la mer
 Premier design PNG avec transparence : Monster M619  L'arbre arc-en-ciel (Monument VdG)
 Première (map) 3D où j'ai retiré les murs bloquants qui s'affichent en bleu/violet/blanc : UA106 (Bâtiment central Aven)
 	PS : Noesis n'a pas réussi à me l'exporter, il mettait un faux bug "pas de material trouvé"
