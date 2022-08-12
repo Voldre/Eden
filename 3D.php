@@ -11,6 +11,12 @@ Noesis Wiki (+ QuickBMS) et d'autres outils à regarder :
 https://wiki.vg-resource.com/Noesis , Noesis Download : http://www.richwhitehouse.com/index.php?content=inc_projects.php&filemirror=noesisv4464.zip
 
 -->
+
+<script defer type="text/javascript" src="three.min.js"></script>
+<script defer type="text/javascript" src="MTLLoader.js"></script>
+<script defer type="text/javascript" src="OBJLoader.js"></script>
+<script defer type="text/javascript" src="threeEden.js"></script>
+
 <body onload="init()" style="overflow:hidden; text-align:center;margin-top:0px;">
 <header class="header3D">
     <!--<input type="button" value="Toggle Wireframe" onclick="mesh.material.wireframe=!mesh.material.wireframe;meshFloor.material.wireframe=!meshFloor.material.wireframe;" />--> 
@@ -44,10 +50,10 @@ if(!isset($_GET["data"])){
     <ul>
         <a href="3D.php?data=monsters"><li><img src="images/monsters/m081.png" /> Ennemis / Persos</li></a>
         <!--<a href="3D.php?data=char"><li><img src="images/skillIcon/m321.png" /> Costumes (RGB)</li></a>-->
-        <a href="3D.php?data=house"><li><img src="images/items/I00466.png" /> Bâtiments</li></a>
-        <a href="3D.php?data=items"><li><img src="images/items/W25502.png" /> Armements</li></a>
-        <a href="3D.php?data=ride"><li><img src="images/items/i00887.png" /> Montures</li></a>
-        <a href="3D.php?data=maps"><li><img src="images/otherIcon/group037.png" /> Donjons</li></a>
+        <a href="3D.php?data=house"><li><img src="images/items/I00466.png" alt="Bâtiments" /> Bâtiments</li></a>
+        <a href="3D.php?data=items"><li><img src="images/items/W25502.png" alt="Armements" /> Armements</li></a>
+        <a href="3D.php?data=ride"><li><img src="images/items/i00887.png" alt="Montures" /> Montures</li></a>
+        <a href="3D.php?data=maps"><li><img src="images/otherIcon/group037.png" alt="Donjons" /> Donjons</li></a>
     </ul>
 </div>
     <?php
@@ -115,18 +121,18 @@ exit();
     </script>
 <footer>
 <div class="grid-container">
-  <div class="grid-item"><img id="turnLeft" src="images/layout/arrow2.png" style="transform: rotate(235deg);" /></div>
-  <div class="grid-item"><img id="up" src="images/layout/arrow2.png" style="transform: rotate(0deg);" /></div>
-  <div class="grid-item"><img id="turnRight" src="images/layout/arrow2.png" style="transform: rotate(125deg);" /></div>  
-  <div class="grid-item"><img id="prev" src="images/layout/arrow2.png" style="transform: rotate(0deg);" /></div>
-  <div class="grid-item"><img id="left" src="images/layout/arrow2.png" style="transform: rotate(270deg);" /></div>
+  <div class="grid-item"><img id="turnLeft" src="images/layout/arrow2.png" alt="Arrow" style="transform: rotate(235deg);" /></div>
+  <div class="grid-item"><img id="up" src="images/layout/arrow2.png" alt="Arrow" style="transform: rotate(0deg);" /></div>
+  <div class="grid-item"><img id="turnRight" src="images/layout/arrow2.png" alt="Arrow" style="transform: rotate(125deg);" /></div>  
+  <div class="grid-item"><img id="prev" src="images/layout/arrow2.png" alt="Arrow" style="transform: rotate(0deg);" /></div>
+  <div class="grid-item"><img id="left" src="images/layout/arrow2.png" alt="Arrow" style="transform: rotate(270deg);" /></div>
   <div class="grid-item"></div>  
-  <div class="grid-item"><img id="right" src="images/layout/arrow2.png" style="transform: rotate(90deg);" /></div>
+  <div class="grid-item"><img id="right" src="images/layout/arrow2.png" alt="Arrow" style="transform: rotate(90deg);" /></div>
   <div class="grid-item"></div>
   <div class="grid-item"></div>  
-  <div class="grid-item"><img id="down" src="images/layout/arrow2.png" style="transform: rotate(180deg);" /></div>  
+  <div class="grid-item"><img id="down" src="images/layout/arrow2.png" alt="Arrow" style="transform: rotate(180deg);" /></div>  
   <div class="grid-item"></div>  
-  <div class="grid-item"><img id="next" src="images/layout/arrow2.png" style="transform: rotate(180deg);" /></div>  
+  <div class="grid-item"><img id="next" src="images/layout/arrow2.png" alt="Arrow" style="transform: rotate(180deg);" /></div>  
 </div>
 </footer>
 </body>

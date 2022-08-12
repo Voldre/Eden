@@ -1,6 +1,14 @@
 <?php
 session_start();
 
+// Allow from any origin
+if (isset($_SERVER['HTTP_ORIGIN'])) {
+    // should do a check here to match $_SERVER['HTTP_ORIGIN'] to a
+    // whitelist of safe domains
+    header("Access-Control-Allow-Origin: {*}");
+    header('Access-Control-Allow-Credentials: true');
+    header('Access-Control-Max-Age: 86400');    // cache for 1 day
+}
 
 // Datas
 /*
@@ -126,24 +134,29 @@ $_SESSION['maplist'] = json_decode(file_get_contents("maps.json"),true);
 
 ?>
 <!DOCTYPE html>
+<html lang="fr">
 <head>
+    
     <meta charset="UTF-8">
+    
+    <meta name="description" content="Eden Eternal Wiki avec des designs 3D (Monstrers, Donjons, Armes, Personnages) ainsi que les musiques et l'univers du jeu.">
+
     <link rel="stylesheet" href="http://voldre.free.fr/style.css">
     <link rel="stylesheet" href="eden.css">
 
     <!--<script src="jquery-3.6.0.min.js"></script>-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script async src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <meta charset="utf-8">
-    <title>Démonstration 3D</title>
-    <script type="text/javascript" src="three.min.js"></script>
-    <script type="text/javascript" src="MTLLoader.js"></script>
-    <script type="text/javascript" src="OBJLoader.js"></script>
+    <title>Eden Wiki</title>
 
-    <script type="text/javascript" src="threeEden.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Never forget the viewport ! -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+</head>
 
-
-    <!-- Global site tag (gtag.js) - Google Analytics
+   <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FPLLJ4M61Z"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -152,16 +165,11 @@ $_SESSION['maplist'] = json_decode(file_get_contents("maps.json"),true);
 
     gtag('config', 'G-FPLLJ4M61Z');
     </script>
-    -->
 
-    <!-- Never forget the viewport ! -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-    
 <div id="google_translate_element" style="float:right;">
 </div>
 
-<script type="text/javascript">
+<script defer type="text/javascript">
 function googleTranslateElementInit() {
 new google.translate.TranslateElement({includedLanguages: 'fr,en,de,pl',
 layout: google.translate.TranslateElement.InlineLayout.VERTICAL
@@ -203,5 +211,5 @@ select{
 
 </style>
 
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+<script defer type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
 </script>
