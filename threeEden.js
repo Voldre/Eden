@@ -2,7 +2,10 @@ var scene, camera, renderer, mesh, mesh2;
 var meshFloor, ambientLight, light;
 
 var keyboard = {};
-var player = { height: 1.6, speed: 0.2, turnSpeed: Math.PI * 0.02 };
+
+var factor = 1;
+var player = initPlayer(factor);
+
 var USE_WIREFRAME = false;
 
 // 18/06/22 - Read json file with maps data
@@ -10,6 +13,24 @@ var onMap;
 var myObject;
 var map;
 var maplist;
+
+let folder;
+
+
+function initPlayer(factor = 1){
+    factorSpeed = onMap ? 4 : 1;
+    // if(onMap){
+    //     factorSpeed = 5;
+    // }else{ factorSpeed = 1;}
+
+    if ("ontouchstart" in document.documentElement){
+    // content for touch-screen (mobile) devices
+    return { height: 1.6, speed: 0.002*factor*factorSpeed, turnSpeed: Math.PI * 0.0002*factor };
+    }else{
+    // everything else (desktop)
+    return { height: 1.6, speed: 0.2*factor*factorSpeed, turnSpeed: Math.PI * 0.02*factor };
+    }
+}
 
 function myObjectInit(){
     // Si une map est précisée dans l'URL    et qu'on n'a pas demandé de map (dans le select)
@@ -23,40 +44,50 @@ function myObjectInit(){
 
 function initForMap(){
     onMap = false;
+    // Première valeur en paramètre de l'URL
     folder = window.location.search.split('=')[1];
-    if(typeof folder != "undefined"){
-        folder = folder.split("&")[0];
-        if(folder == "maps"){ onMap = true;}
+    if(folder){ folder = folder.split("&")[0]; }
+    // folder = folder.split("&")[0];
 
-        if(!onMap){
-            myObject =  myObjectInit();
-            if(myObject == null){
-                myObject = document.getElementById("objets").value;
-            }
-        }else{
-            // Changement du texte pour les maps
-            document.getElementById("textMap").innerHTML = " &#8616; : monter/descendre &nbsp; ";
-
-            player.speed = 1;
-
-            myObject =  myObjectInit();
-
-            // Si j'ai une requête et qu'on n'a pas de map dans l'URL
-            if(myrequest && myObject == null || myObject == ""){
-                // Variable dans ma dropdown list <select>
-                myObject = document.getElementById("objets").value;
-            // Si j'ai pas de requête et pas de données dans l'URL
-            }else if(!myrequest && (myObject == "" || myObject == null) ){
-                console.log("Présence sur les cartes de donjons, détecté.");
-                document.getElementById('loading').innerHTML = "<h4 style='position: fixed;width: 98vw;text-align:center;left: 0px;top: 20%;'>Ici vous pouvez sélectionner un donjon présent dans le jeu.<br/>Malheureusement certaines d'entres eux ne s'affichent pas correctement.</h4>";
-                throw new Error("En attente du choix de l'utilisateur");
-            // Sinon (si j'ai des données dans l'URL)
-            }else{ document.getElementById("objets").value = myObject; }
-            
-            // console.log(myObject);
-            map = parseInt(myObject.replace('S',''));
-        }
+    if(typeof folder == "undefined"){
+        document.getElementById("google_translate_element").style.display = "inline";
+        return console.warn("En attente de la sélection");
     }
+
+    // 11.06.22 - Pour l'UI, on retire le choix de langue sur les designs
+    document.getElementById("google_translate_element").style.display = "none";
+
+    if(folder == "maps"){ onMap = true;}
+
+    if(!onMap){
+        myObject =  myObjectInit();
+        if(myObject == null){
+            myObject = document.getElementById("objets").value;
+        }
+    }else{
+        // Changement du texte pour les maps
+        document.getElementById("textMap").innerHTML = " &#8616; : monter/descendre &nbsp; ";
+
+        player = initPlayer(factor);
+
+        myObject =  myObjectInit();
+
+        // Si j'ai une requête et qu'on n'a pas de map dans l'URL
+        if(myrequest && myObject == null || myObject == ""){
+            // Variable dans ma dropdown list <select>
+            myObject = document.getElementById("objets").value;
+        // Si j'ai pas de requête et pas de données dans l'URL
+        }else if(!myrequest && (myObject == "" || myObject == null) ){
+            console.log("Présence sur les cartes de donjons, détecté.");
+            document.getElementById('loading').innerHTML = "<h4 style='position: fixed;width: 98vw;text-align:center;left: 0px;'>Ici vous pouvez sélectionner un donjon présent dans le jeu.<br/>Malheureusement certaines d'entres eux ne s'affichent pas correctement.</h4>";
+            throw new Error("En attente du choix de l'utilisateur");
+        // Sinon (si j'ai des données dans l'URL)
+        }else{ document.getElementById("objets").value = myObject; }
+        
+        // console.log(myObject);
+        map = parseInt(myObject.replace('S',''));
+    }
+    
     maplist = (function () {
         var json = null;
         $.ajax({
@@ -70,7 +101,7 @@ function initForMap(){
         });
         return json;
     })(); 
-    console.log(maplist)
+    // console.log(maplist)
 }
 
 initForMap();
@@ -81,20 +112,19 @@ THREE.Cache.enabled = true; // VD 04/06/2022 : Alléger les chargements
 
 window.performance.setResourceTimingBufferSize(2000);
 // window.performance.getEntriesByType("resource")
+
 function update() {
-    
     // 10/06/22 - Update : window.stop() arrête toutes les requêtes
     // Cela permet donc d'annuler les anciens chargements encore en cours
     window.stop();
-    player = { height: 1.6, speed: 0.2, turnSpeed: Math.PI * 0.02 };
+    player = initPlayer(factor);
     // Permet d'annuler l'execution automatique de la fonction animate()
-    // qui a été lancé lors de l'initialisation de l'objet précédent
+    // qui a été lancée lors de l'initialisation de l'objet précédent
     cancelAnimationFrame(myrequest);
 
     // On supprime le canvas de l'ancien Objet 3D
-    if(document.getElementsByTagName("canvas")[0]){
-    document.getElementsByTagName("canvas")[0].remove();
-    }
+    // if(document.getElementsByTagName("canvas")[0]){
+    document.getElementsByTagName("canvas")[0]?.remove();
     myrequest = true;
     
     init();
@@ -123,19 +153,6 @@ function init() {
         document.cookie = "bgmState=checked";
     } else{ document.cookie = "bgmState="; }
 
-    // Première valeur en paramètre de l'URL
-    //console.log(window.location.search.split('=')[1]);
-    folder = window.location.search.split('=')[1];
-    
-    if(typeof folder == "undefined"){
-            document.getElementById("google_translate_element").style.display = "inline";
-            throw new Error("En attente de la sélection");
-    }else{
-        // 11.06.22 - Pour l'UI, on retire le choix de langue sur les designs
-        document.getElementById("google_translate_element").style.display = "none";
-    }
-    folder = folder.split("&")[0];
-    
     if(!onMap){ document.getElementById("iconBGM").style.display = "none"; }
 
     scene = new THREE.Scene();  
@@ -143,9 +160,9 @@ function init() {
     Le secret pour afficher le background (qui est éloigné?)
     ==> Il faut aggrandir la distance d'affichage !
     Car là elle est trop petite et du coup on voit rien sauf quand
-    on est collé dessus, c'est pas le but. 5000 >> 1000
+    on est collé dessus, ce n'est pas le but. 4000 >> 1000
     ************************************************** */
-    camera = new THREE.PerspectiveCamera(90, 1280 / 720, 0.1, 5000);
+    camera = new THREE.PerspectiveCamera(90, 1280 / 720, 0.1, 4000);
 
     mesh = new THREE.Mesh();
 
@@ -213,14 +230,14 @@ function init() {
         // Ajout VD - 04/06/2022 - suivi du loading :
         console.log('On loading ...');
 
-        var onProgress = function ( xhr ) {
+        var onProgress = (xhr) => {
             if ( xhr.lengthComputable ) {
                 var percentComplete = xhr.loaded / xhr.total * 100;
-                document.getElementById("loading").innerHTML = "Loading : " + Math.round(percentComplete, 2) + "%";}        };
+                document.getElementById("loading").innerHTML = "Loading : " + Math.round(percentComplete, 2) + "%";}        
+        };
         
         var objLoader = new THREE.OBJLoader();
         objLoader.setMaterials(materials);
-
         // console.log(materials);
         
         mesh.position.y += 1;
@@ -268,7 +285,6 @@ function init() {
                 }
             }
 
-
             // Paramètre autorisant à update la rotation de l'objet
             mesh.matrixWorld.matrixWorldNeedsUpdate = true;
             scene.add(mesh);
@@ -276,29 +292,36 @@ function init() {
             
             // 06/06/2022 - Ajout du background d'Eden
             const date = new Date(); 
-            currentHours = date.toLocaleTimeString({hour: '2-digit',   hour12: false, timeZone: 'Europe/Paris' }).split(":")[0];
+            const currentHour = parseInt(date.toLocaleTimeString({hour: '2-digit',   hour12: false, timeZone: 'Europe/Paris' }).split(":")[0]);
         
-            if(currentHours <= 5){
+            const backgroundByHour = {5:"A402",8:"A102",11:"D502",15:"G602",17:"G603",18:"D302",19:"A302",20:"C301",21:"C402",23:"G604"};
+            const choosenHour = Object.keys(backgroundByHour).find(hour => hour >= currentHour);
+            // console.log(currentHour+":"+choosenHour)
+            const myBG = backgroundByHour[choosenHour];
+
+            /*
+            if(currentHour <= 5){
                 myBG = "A402";
-            }else if(currentHours <= 8){
+            }else if(currentHour <= 8){
                 myBG = "A102";
-            }else if(currentHours <= 11){
+            }else if(currentHour <= 11){
                 myBG = "D502";
-            }else if(currentHours <= 15){
+            }else if(currentHour <= 15){
                 myBG = "G602";
-            }else if(currentHours <= 17){
+            }else if(currentHour <= 17){
             myBG = "G603";
-            }else if(currentHours <= 18){
+            }else if(currentHour <= 18){
             myBG = "D302";
-            }else if(currentHours <= 19){
+            }else if(currentHour <= 19){
             myBG = "A302";
-            }else if(currentHours <= 20){
+            }else if(currentHour <= 20){
             myBG = "C301";
-            }else if(currentHours <= 21){
+            }else if(currentHour <= 21){
             myBG = "C402";
             }else{ myBG = "G604";}
+            */
 
-            // 09/06 -- On n'affiche le fond d'écran que si c'est voulu
+            // 09/06 -- On affiche le fond d'écran que si c'est voulu
             if(read_cookie('bgState') == ""){
                 mesh2 = new THREE.Mesh();   
                 mtlLoader.load("http://voldre.free.fr/Eden/images/3D/maps/"+myBG+".mtl", function(materials2) {      
@@ -310,35 +333,37 @@ function init() {
                 });
             }
 
-            // Position de notre objet
+            // Position et Rotation de notre objet
             if(onMap){ 
                 // Coordonnées de la génération de la map
-                // Pour changer en live la position :
-                // scene.children[3].position.set(0,0,0)
+                // Pour changer en live la position : scene.children[3].position.set = (0,0,0)
                 if(maplist[map]['map_x'] != null){
-                mesh.position.set(maplist[map]['map_x'],maplist[map]['map_y'],maplist[map]['map_z']);
-                }else{ mesh.position.set(0,0,0); }
-
+                    mesh.position.set(maplist[map]['map_x'],maplist[map]['map_y'],maplist[map]['map_z']);
+                    mesh.rotation.z = maplist[map]['map_r']*Math.PI;    
+                }else{ 
+                    mesh.position.set(0,0,0);
+                    mesh.rotation.z = Math.PI;
+                }
             }else if (folder == "items") {
                 mesh.position.set(0, 1, -3.3);
-            }else {mesh.position.set(-0.2, 0.25, -0.8); }
+                mesh.rotation.z = Math.PI / 1.4; // Pour qu'il regarde vers nous
+            }else {
+                mesh.position.set(-0.2, 0.25, -0.8); 
+                mesh.rotation.z = Math.PI / 1.4; // Pour qu'il regarde vers nous
+            }
 
-            // Angles de notre objet
+            // Angles pour tous nos objet
             mesh.rotation.y = 0; // Math.PI / 6;
             mesh.rotation.x = -Math.PI / 2;
-
-            if(folder != "maps"){
-            // Pour la rotation : scene.children[3].rotation.z
-            mesh.rotation.z = Math.PI / 1.4; // Pour qu'il regarde vers nous
-            }else{ mesh.rotation.z = maplist[map]['map_r']*Math.PI || Math.PI; }
         }, onProgress);
 
     });
 
+    // Caméra
+
     if(folder != "house"){
         camera.position.set(0, player.height, -5);
         camera.lookAt(new THREE.Vector3(0, player.height, 0));
-
     }else{ 
         camera.position.set(0, player.height+3.2, -17); 
         camera.lookAt(new THREE.Vector3(0, player.height+3, 0));
@@ -355,21 +380,22 @@ function init() {
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.BasicShadowMap;
 
-    document.getElementById('canvasPosition').appendChild(renderer.domElement);
-    
-    if(onMap){
-        if(onMap && maplist[map]['bgm'] != null){
-            myBGM = maplist[map]['bgm'].toString();
-            while(myBGM.length < 3){ myBGM = "0"+myBGM; }
-            document.getElementById("bgmPosition").innerHTML = '<audio loop><source src="bgm/bgm'+myBGM+'.ogg" type="audio/ogg" /></audio>';
-            if(read_cookie('bgmState') == ""){
-                document.getElementsByTagName('audio')[0].autoplay= true ;
-            }
-            document.getElementsByTagName('audio')[0].volume= 0.4 ;
-        }else if(onMap){ document.getElementById("bgmPosition").innerHTML = "";}
+    if(typeof document.getElementById('canvasPosition') != null){
+        document.getElementById('canvasPosition').appendChild(renderer.domElement);
+        if(onMap){
+            if(maplist[map]['bgm'] != null){
+                myBGM = maplist[map]['bgm'].toString();
+                while(myBGM.length < 3){ myBGM = "0"+myBGM; }
+                document.getElementById("bgmPosition").innerHTML = '<audio loop><source src="bgm/bgm'+myBGM+'.ogg" type="audio/ogg" /></audio>';
+                if(read_cookie('bgmState') == ""){
+                    document.getElementsByTagName('audio')[0].autoplay= true ;
+                }
+                document.getElementsByTagName('audio')[0].volume= 0.4 ;
+            }else{ document.getElementById("bgmPosition").innerHTML = "";}
+        }
+        
+        animate();
     }
-    
-    animate();
 }
 
 
@@ -380,14 +406,14 @@ function animate() {
 
     // Objet 3D
 
-    if (typeof scene.children[3] != "undefined" && folder != "maps") {
+    if (typeof scene.children[3] != "undefined" && !onMap) {
         scene.children[3].rotation.z += 0.003;
         //console.log(scene.children[3]);
     }
 
     function up(){
-        camera.position.x -= Math.sin(camera.rotation.y) * player.speed;
-        camera.position.z -= -Math.cos(camera.rotation.y) * player.speed;
+        camera.position.x += -Math.sin(camera.rotation.y) * player.speed;
+        camera.position.z += Math.cos(camera.rotation.y) * player.speed;
     }
     function right(){
         camera.position.x += Math.sin(camera.rotation.y - Math.PI / 2) * player.speed;
@@ -410,13 +436,12 @@ function animate() {
     }
 
     // Création des intéractions pour l'interface mobile
-
-    $("#up").on("click",function(){player.speed = 0.001; up();});
-    $("#down").on("click",function(){player.speed = 0.001; down();});
-    $("#left").on("click",function(){player.speed = 0.001; left();});
-    $("#right").on("click",function(){player.speed = 0.001; right();});
-    $("#turnLeft").on("click",function(){player.turnSpeed = 0.001; turnLeft();});
-    $("#turnRight").on("click",function(){player.turnSpeed = 0.001; turnRight();});
+    $("#up").on("click",function(){ up();});
+    $("#down").on("click",function(){ down();});
+    $("#left").on("click",function(){ left();});
+    $("#right").on("click",function(){ right();});
+    $("#turnLeft").on("click",function(){ turnLeft();});
+    $("#turnRight").on("click",function(){ turnRight();});
     
     // $("#bgmToggle").on("click",function(){
     //     if(!$("#bgmToggle").is(':checked')){
@@ -463,12 +488,12 @@ function animate() {
     if (keyboard[37]) { // left arrow key
         if($('#objets').is(":focus")){
             $('#objets').blur(); }
-        camera.rotation.y -= player.turnSpeed/1.3;
+            turnLeft();
     }
     if (keyboard[39]) { // right arrow key
         if($('#objets').is(":focus")){
             $('#objets').blur(); }
-        camera.rotation.y += player.turnSpeed/1.3;
+            turnRight();
     }
 
     if (keyboard[38]) { // Top Arrow
@@ -482,9 +507,11 @@ function animate() {
         }else{ $('#objets').focus(); }
     }
     if(keyboard[16]){
-        if(player.speed == 1){
-        player.speed = 2;
-        }else{ player.speed = 1;}
+        factor = factor == 1 ? 2 : 1;
+        player = initPlayer(factor);
+        // if(player.speed == 1){
+        // player.speed = 2;
+        // }else{ player.speed = 1;}
     }
 
     // Rotation de l'objet

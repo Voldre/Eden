@@ -5,13 +5,33 @@ include("menu.html");
 <body>
 <div class="dbMenu">
     <ul>
-        <a href="database.php?data=items"><li><img src="images/items/A00006.png" /> Objets</li></a>
-        <a href="database.php?data=class"><li><img src="images/skillIcon/j047.png" />Classes / Compétences</li></a>
-        <a href="database.php?data=monsters"><li><img src="images/monsters/m229.png" />Monstres</li></a>
-        <a href="database.php?data=bgm"><li><img src="images/uiiconPNG/prefer04.png" />Musiques</li></a>
+        <a href="database.php?data=items"><li><img src="images/items/A00006.png" alt="Objets" /> Objets</li></a>
+        <a href="database.php?data=class"><li><img src="images/skillIcon/j047.png" alt="Compétences" />Classes / Compétences</li></a>
+        <a href="database.php?data=monsters"><li><img src="images/monsters/m229.png" alt="Monstres" />Monstres</li></a>
+        <a href="database.php?data=bgm"><li><img src="images/uiiconPNG/prefer04.png" alt="Musiques" />Musiques</li></a>
     </ul>
-</div>
- 
+</div> 
+<script type="text/javascript">
+function changeCategory() {
+
+    console.log(document.getElementsByClassName("container"));
+    
+    children = document.getElementsByClassName("container")[0].childNodes;
+
+    for(child in children){
+        //console.log(children[child].currentSrc.split('/').slice(-1)[0].slice(0)[0]);
+        if(typeof children[child].currentSrc != "undefined"){
+                // Si la première lettre slice(0) du nom de fichier slice(-1) est différent de la categorie choisie, on le cache
+            if(children[child].currentSrc.split('/').slice(-1)[0].slice(0)[0] != $("#categorie").val()){
+                children[child].style.display = "none";
+            }else{
+                children[child].style.display = "inline";   
+            }
+        }
+    }
+}
+</script>
+
 <?php
 
 global $audioMap;
@@ -45,20 +65,29 @@ if(isset($_GET["data"])){
     <h2>Liste des objets</h2>
     <?php
         drawIcons($itemRepository);
-        echo  "<iframe style='width:0px;height:0px' onload='changeCategory();'></iframe>";
+        ?>
+        <script>changeCategory();</script>
+        <?php
+        // echo  "<iframe style='width:0px;height:0px' onload='changeCategory();'></iframe>";
 
     }else if($_GET["data"] == "class"){
     ?>
     <h2>Liste des compétences et classes</h2>
     <?php
         drawIcons($skillRepository);
-        echo  "<iframe style='width:0px;' onload='changeCategory();'></iframe>";
+        ?>
+        <script>changeCategory();</script>
+        <?php
+        // echo  "<iframe style='width:0px;' onload='changeCategory();'></iframe>";
     }else if($_GET["data"] == "monsters"){
     ?>
     <h2>Liste des monstres et personnages</h2>
         <?php
         drawIcons($monsterRepository);
-        echo  "<iframe style='width:0px;' onload='changeCategory();'></iframe>";
+        ?>
+        <script>changeCategory();</script>
+        <?php
+        // echo  "<iframe style='width:0px;' onload='changeCategory();'></iframe>";
     }else if($_GET["data"] == "bgm"){
     ?>
     <h2>Liste des musiques <span class="menu" id="currentMusic"></span></h2>
@@ -70,23 +99,6 @@ if(isset($_GET["data"])){
 }
 ?>
 </div>
-<script type="text/javascript">
-function changeCategory() {
-
-    console.log(document.getElementsByClassName("container"));
-    for(children in document.getElementsByClassName("container")[0].childNodes){
-        //console.log(document.getElementsByClassName("container")[0].childNodes[children].currentSrc.split('/').slice(-1)[0].slice(0)[0]);
-        if(typeof document.getElementsByClassName("container")[0].childNodes[children].currentSrc != "undefined"){
-                // Si la première lettre slice(0) du nom de fichier slice(-1) est différent de la categorie choisie, on le cache
-            if(document.getElementsByClassName("container")[0].childNodes[children].currentSrc.split('/').slice(-1)[0].slice(0)[0] != $("#categorie").val()){
-                document.getElementsByClassName("container")[0].childNodes[children].style.display = "none";
-            }else{
-                document.getElementsByClassName("container")[0].childNodes[children].style.display = "inline";   
-            }
-        }
-    }
-}
-</script>
 <?php
 
 // Functions to draw datas 
@@ -117,7 +129,7 @@ function drawIcons($repository){
     echo "<div class='container'>";
     foreach($files as $file){
         if(strlen($file) >= 3){
-            echo "<img class='icon' src='$repository$file' onerror=\"this.onerror=null;this.src='$repository$file';\" />";
+            echo "<img class='icon' src='$repository$file' onerror=\"this.onerror=null;this.src='$repository$file';\" alt='$repository$file' />";
         }
     }
 }

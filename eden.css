@@ -357,7 +357,7 @@ input:checked+.slider:before {
     display: grid;
     grid-template-columns: auto auto auto auto;
     display: none;
-    background-image: url("images/layout/0937346-dark.png");
+    background-image: url("images/layout/0937346-dark2.png");
     background-size: cover;
     /*opacity: 0.8;*/
   }
@@ -371,6 +371,9 @@ input:checked+.slider:before {
 .grid-item img{
     height:50px;
     width:50px;
+    user-select:none;
+    -webkit-user-select:none;
+    -webkit-touch-callout:none;
 }
 
 #canvasPosition{
