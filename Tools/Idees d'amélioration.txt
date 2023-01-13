@@ -1,6 +1,10 @@
 Recréer l'UI d'Eden
 Recréer les classes avec les données bien placées
 
+Ajouter les maps dans le jeu
+Ajouter des liens cliquables pour les donjons
+Ajouter les costumes en 3D sur un perso
+
 Reprendre tous les autels de cristal 
 + photos Discord et Vendetta
 Fille chevauche l'Alpaga
