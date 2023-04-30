@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    
+    <meta name="description" content="Eden Eternal - Fiches de personnages pour JDR (Jeu De Rôle)">
+
+    <link rel="stylesheet" href="http://voldre.free.fr/style.css">
+    <link rel="stylesheet" href="eden.css">
+    <link rel="stylesheet" href="JDRstyle.css">
+
+
+    <!--<script src="jquery-3.6.0.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="html2canvas.js"></script> 
+
+    <script src="JDRscript.js" defer></script>
+    <title>Eden JDR</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Never forget the viewport ! -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link type="text/css" rel="stylesheet" charset="UTF-8" href="https://www.gstatic.com/_/translate_http/_/ss/k=translate_http.tr.69JJaQ5G5xA.L.W.O/d=0/rs=AN8SPfpC36MIoWPngdVwZ4RUzeJYZaC7rg/m=el_main_css"><script type="text/javascript" charset="UTF-8" src="https://translate.googleapis.com/_/translate_http/_/js/k=translate_http.tr.fr.xzcOHDlE6Fc.O/d=1/exm=el_conf/ed=1/rs=AN8SPfrWILEaI2rfUPi9GzxamtXuZkMSHg/m=el_main"></script> -->
+</head>
+<body style="position: relative; min-height: 100%; top: 0px;">
+    <nav style="margin-left:10px;">
+        <ul class="menu">
+        <!-- <li><a href="">Présentation</a></li> -->
+        <li><a href="jdr_univers.html">L'Univers</a></li>
+            <!--  # Races # Classes -->
+        <li><a href="jdr.html">Fiches de persos</a></li>
+        <li><a href="3D.php">Designs 3D</a></li>
+        <li><select name="selectPerso" id="selectPerso">
+            <option value="J1">J1</option>
+            <option value="J2">J2</option>
+            </select>
+        </li>
+        <li><button id="save">Sauvegarder</button></li>
+        <li><button id="screenshot">Download</button></li>
+        </ul>
+    </nav>
+    <div class="perso" id="1" style="border: 1px gray solid;">
+        <div class="hide galerie"></div>
+        <div class="flexContainer">
+            <div class="topleft">
+                <label for="nom">Nom</label>
+                <input type='text' id="nom" name="nom"></input><br/>
+                <label for="race">Race</label>
+                <select id="race" name="race">
+                    <option value="Humain">Humain</option>
+                    <option value="Ezelin">Ezelin</option>
+                    <option value="Ursun">Ursun</option>
+                    <option value="Zumi">Zumi</option>
+                    <option value="Anuran">Anuran</option>
+                    <option value="Torturran">Torturran</option>
+                    <option value="Drakai">Drakai</option>
+                    <option value="Tuskar">Tuskar</option>
+                    <option value="Ogre">Ogre</option></select><br/>
+                <label for="classeP">Classe 1</label>
+                <select name="classeP" id="classeP"></select><br/>
+                <label for="classeS">Classe 2</label>
+                <select name="classeS" id="classeS"></select><br/>
+                <div class="iconClasses"><img src="" style="width:60px;height:33px;" alt=""><img src="" style="width:60px;height:33px;" alt=""></div>
+                <label for="xp">XP</label>
+                <input style='width: 60px;' type='number' id="xp" name="xp"></input><br/>
+                <label for="niv">Niv</label>
+                <input style='width: 50px;' type='number' id="niv" name="niv" readonly></input><br/>
+                <!-- auto via xp -->
+
+                <label for="pv">PV/Max</label>
+                <input style='width: 38px;' type='number' id="pv" name="pv"></input>
+                <input style='width: 38px;' type='number' id="pvmax" name="pvmax"></input><br/>
+                <!-- <label for="pv">PV</label>
+                <input style='width: 60px;' type='number' id="pv" name="pv"></input><br/>
+                <label for="pvmax">PV Max</label>
+                <input style='width: 60px;' type='number' id="pvmax" name="pvmax"></input><br/> -->
+            </div>
+            <div class="topright">
+                <img id="pp"src="./images/Grenadier.webp" alt="">
+                <button class="hide" id="galerie">Changer (Galerie)</button>
+            </div>
+        </div>
+        <h4>Statistiques</h4>
+        <div class="stats">
+            <div class="stat" ><label for="force">Force</label>
+                <input type='number' min="1" max="19" id="force" name="force"></input>
+            </div>
+            <div class="stat" ><label for="dexté">Dextérité</label>
+                <input type='number' min="1" max="19" id="dexté" name="dexté"></input>
+            </div>
+            <div class="stat" ><label for="intel">Intelligence</label>
+                <input type='number' min="1" max="19" id="intel" name="intel"></input>
+            </div>
+            <div class="stat" ><label for="charisme">Charisme</label>
+                <input type='number' min="1" max="19" id="charisme" name="charisme"></input>
+            </div>
+            <div class="stat" ><label for="">---</label>
+                <input type='number' min="1" max="19" id="" name=""></input>
+            </div>
+        </div>
+        <h4>Compétences</h4>
+        <div class="skills">
+            <!-- p.desc+ -->
+            <!-- (.skill>(input.nom+p.effet+p.montant+img.icone))*3  -->
+            <!-- (.skill>(select.nom+p.effet+p.montant+img.icone))*3  -->
+            <div class="skill">
+                <select name="" class="nom"></select>
+                <!-- <p class="desc">Desc</p> -->
+                <p class="effet"></p>
+                <p class="montant"></p>
+                <img src="" alt="" class="icone" title="Description de la compétence">
+                <!-- icone + élément ?  -->
+            </div>
+            <div class="skill">
+                <select name="" class="nom"></select>
+                <!-- <p class="desc">Desc</p> -->
+                <p class="effet"></p>
+                <p class="montant"></p>
+                <img src="" alt="" class="icone" title="Description de la compétence">
+                <!-- icone + élément ?  -->
+            </div>
+            <div class="skill">
+                <select name="" class="nom"></select>
+                <!-- <p class="desc">Desc</p> -->
+                <p class="effet"></p>
+                <p class="montant"></p>
+                <img src="" alt="" class="icone" title="Description de la compétence">
+                <!-- icone + élément ?  -->
+            </div>
+        </div>
+        <div class="flexContainer">
+            <div class="bag">
+                <h4>Equipements</h4>
+                <div class="equipements"></div>
+                <h4>Inventaire</h4>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <div class="inventaire"></div>
+                <label for="argent">Pièces d'or</label>
+                <input type='text' id="argent" name="argent"></input><br/>
+            </div>
+            <div class="detailsPerso">
+                <div class="personnalité">Personnalité : <textarea name="" id="" cols="30" rows="10"></textarea></div>
+                <div class="background">Background : <textarea name="" id="" cols="30" rows="10"></textarea></div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<footer>
+    <li><a href="../">Site général</a></li>
+    <div class="admin">
+        <h4>Ajout de compétences</h4>
+        <div class="addSkill">
+            Nom<input type="text"><br/>
+            Desc<input type="text"><br/>
+            Effet<input type="text"><br/>
+            Montant<input type="text"><br/>
+            Icone<input type="text"><br/>
+            Stat<input type="text"><br/>
+            <button id="createSkill">Créer</button>
+        </div>
+        <h4>Ajout d'équipements</h4>
+        <h4>Ajout d'objets</h4>
+    </div>
+</footer>
+</html>
