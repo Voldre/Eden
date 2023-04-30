@@ -7,12 +7,14 @@ if(window.location.href.includes('http')){
     xhReq.open("GET", "./JDRskills.json", false);
     xhReq.send(null);
     var skillsJSON = JSON.parse(xhReq.responseText);
-
     
+    xhReq.open("GET", "./JDReqpt.json", false);
+    xhReq.send(null);
+    var eqptJSON = JSON.parse(xhReq.responseText);
+
     xhReq.open("GET", "./JDRpersos.json", false);
     xhReq.send(null);
     var persosJSON = JSON.parse(xhReq.responseText);
-
     
     
     xhReq.open("GET", "./JDRgalery.json", false);
@@ -21,7 +23,9 @@ if(window.location.href.includes('http')){
 
 }else{
     var skillsJSON = skills;
+    var eqptJSON = {};
     var persosJSON = {};
+    var galeryJSON = {};
 }
 
 console.log('Skills JSON',skillsJSON)
@@ -40,8 +44,6 @@ const skillsInfo = ['nom','desc','effet','montant','icone','stat'];
 
 
 // CLASSES
-
-
 document.querySelectorAll('[id^="classe"]').forEach( (classeElem, i) =>{
 
     var option = document.createElement('option')
@@ -69,7 +71,6 @@ document.querySelectorAll('[id^="classe"]').forEach( (classeElem, i) =>{
 
 
 // Niv
-
 document.querySelector('#xp').addEventListener('change', e=>{
     xp = parseInt(e.target.value);
     console.log(xp)
@@ -79,7 +80,6 @@ document.querySelector('#xp').addEventListener('change', e=>{
 
 
 // COMPETENCES 
-
 competences = document.querySelector('.skills');
 
 [...competences.children].forEach(competence =>{
@@ -117,6 +117,7 @@ function insertSkill(skillElement, skillName){
 }
 
 
+//  LOADING
 window.addEventListener('load', () =>{loadFiche(0)})
 selectPerso = document.querySelector('#selectPerso');
 selectedPerso = selectPerso.value;
@@ -126,6 +127,8 @@ selectPerso.addEventListener('change', e =>{
     indexPerso = e.target.selectedIndex;
 
     loadFiche(indexPerso)
+
+    toastNotification('Chargement réussi de ' + perso);
 })
 
 function loadFiche(indexPerso){
@@ -185,10 +188,9 @@ function loadFiche(indexPerso){
 }
 
 
-
+//  DOWNLOAD as FILE
 // Function to download data to a file
 function download(data, filename, type) {
-
     xhReq.open("POST", "http://voldre.free.fr/Eden/"+filename, true);
     xhReq.send(data);
     /*
@@ -209,7 +211,7 @@ function download(data, filename, type) {
     }
     */
 }
-
+// Download as screenshot under body
 document.querySelector("#screenshot").addEventListener('click',() =>{
     html2canvas(document.querySelector('.perso')).then(function(canvas) {
     // Export the canvas to its data URI representation
@@ -271,6 +273,7 @@ document.querySelector("#save").addEventListener('click',() =>{
     console.log('JDRsaveFile.php executed')
     
     saveWithPHP("persos");
+    toastNotification('Sauvegarde effectuée');
 })
 
 function savePerso(){
@@ -330,7 +333,6 @@ function savePerso(){
 }
 
 
-
 // Create skill & Save
 
 document.querySelector('#createSkill').addEventListener('click', ()=>{
@@ -370,4 +372,41 @@ function saveWithPHP(nameJSON){
 $.ajax({
     url: "JDRgalery.php",
     type: "post", 
+})
+
+
+
+
+// Toasts 
+const params = new URLSearchParams(window.location.search)
+/*
+if(params.has('state')){
+    var link = document.createElement("a");
+    link.innerText = "Cliquez ici"
+    link.href = "/"
+
+    if(params.get('state') == "subscribed"){
+
+
+        toastNotification("Inscription réussie, envoi du mail de confirmation ...",12000);
+        setTimeout(() => {
+            toastNotification('Mail de confirmation envoyé',40000);
+        }, 5000);
+    }
+}
+*/
+
+
+function toastNotification(text, duration = 3000) {
+    console.log('toasted')
+    var x = document.getElementById("toast");
+    if(!x.classList.contains("show")){
+        x.classList.add("show");
+        x.innerText = text;
+        // if(lastElement){ x.append(lastElement)}
+        setTimeout(function(){ x.classList.remove("show"); }, duration);
+    }
+}
+document.getElementById("toast").addEventListener('click', ()=>{
+    document.getElementById("toast").classList.remove("show");
 })
