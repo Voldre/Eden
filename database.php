@@ -45,7 +45,7 @@ $musicRepository = 'bgm/';
 $categorieslist = array(
     "A"=>"Anneaux / Armures",
     "a"=>"Armures Eveillés / Autres",
-    "e"=>"Compétences",
+    "E"=>"Compétences",
     "j"=>"Passifs des personnages et des classes",
     "i"=>"Objets / Potions / Trophées / Familiers / Montures / Gemmes / Compos / Plans",
     "k"=>"Costumes",
@@ -53,9 +53,9 @@ $categorieslist = array(
     "n"=>"Gestes",
     "q"=>"Objets de quêtes (Quêtes de guildes, Quêtes de livres)",
     "x"=>"Classes",
-    "x"=>"Classes",
     "y"=>"Passifs des personnages",
     "w"=>"Armement (Armes, Boucliers)",
+    "W"=>"Armement (Armes, Boucliers)",
 );
 
 
