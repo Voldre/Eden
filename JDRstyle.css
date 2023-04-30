@@ -49,7 +49,9 @@ input[type=number] {
 .topright img{
     border: 3px black solid;
     /* width: 100%; */
-    max-height: 250px;
+    max-height: 270px;
+    min-width:50px;
+    min-height: 70px;
 }
 
 .stats{
@@ -163,3 +165,37 @@ input[type=number] {
 .skill > .desc{
     grid-area: desc;
 }
+
+
+
+/* Toast Notification */
+#toast {
+    min-width: 250px;
+    margin:auto;
+    background-color: hsla(43, 84%, 54%, 0.92);
+    border : 2px gray solid;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color: black;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    position: fixed;
+    z-index: 10;
+    
+    user-select: none; /* all */
+    cursor:pointer;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  
+    bottom: -60px;
+    font-size: 17px;
+    transition: bottom 1s;
+    transition-timing-function: ease-in-out;
+  }
+  #toast:hover{
+    filter: hue-rotate(-60deg);
+  }
+  #toast.show {
+    bottom: 40px;
+  }
