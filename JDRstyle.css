@@ -1,0 +1,165 @@
+body{
+    overflow-x: hidden;
+}
+
+select{
+    max-height: 26px;
+}
+
+input[type=text], input[type=number]{
+    background-color: #333;
+    color: wheat;
+    border: 2px rgb(190,190,190,0.3) solid;
+    margin: 2px;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.flexContainer{
+    display: flex;
+    width: 100%;
+}
+.topleft{
+    display: inline-block;
+    width: 48%;
+    min-width: 100px;
+    text-align: end;
+    line-height: 2;
+}
+
+.topleft input[type=text]{
+    width: 80px;
+    margin :2px;
+    padding:2px;
+}
+
+.topright{
+    width: 48%;
+    max-height: 250px;
+}
+.topright img{
+    border: 3px black solid;
+    /* width: 100%; */
+    max-height: 250px;
+}
+
+.stats{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.stats input[type=text], .stats input[type=number]{
+    width: 50px;
+    height: 30px;
+    font-size:24px;
+    text-align: center;
+    margin:auto;
+}
+
+.stat{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 14px;
+}
+
+.skill{
+    border: 1px gray solid;
+    margin : 10px;
+    margin-left: 2px;
+    display: grid;
+    width: 100%;
+    grid-template-areas: "nom nom eff ico"  "mon mon mon ico";
+}
+.skill> .nom{
+    grid-area: nom;
+}
+.skill> .effet{
+    grid-area: eff;
+}
+.skill> .icone{
+    grid-area: ico;
+}
+.skill> .montant{
+    grid-area: mon;
+}
+
+.skill input[type=text]{
+    width: 120px;
+    margin :2px;
+    padding:2px;
+}
+
+.skill p{
+    font-size: 16px;
+    margin: 2px;
+    padding-right: 4px;
+    border-right: 1px gray solid;
+}
+
+#pp{
+    cursor:pointer;
+}
+
+.icone{
+    width: 60px;
+    height: 60px;
+}
+
+.hide{
+    display: none !important;
+}
+
+.galerie{
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+.galerie img{
+    width: 45vw;
+    margin: 2px;
+    height: auto;
+    border: 2px gray solid;
+    cursor: pointer;
+    filter:brightness(90%);
+}
+
+.galerie img:hover{
+    filter:brightness(120%);
+}
+
+
+/* JDR Univers */
+.skillslist{
+    display:flex;
+    flex-direction: column;
+}
+.skillslist div{
+    border: 1px gray solid;
+    margin : 10px;
+    margin-left: 2px;
+    display: grid;
+    width: 100%;
+    grid-template-areas: "nom nom eff ico"  "mon mon mon ico" "desc desc desc desc";
+}
+/*
+.skillslist div img{
+    float:right;
+}
+*/
+.skill > .desc{
+    grid-area: desc;
+}

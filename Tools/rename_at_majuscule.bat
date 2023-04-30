@@ -3,7 +3,7 @@
 
 setlocal enableDelayedExpansion
 
-pushd C:\wamp\www\Site free.fr\Eden\images\ride
+pushd C:\wamp\www\Site free.fr\Eden\images\skillIcon
 
 for %%f in (*.png) do (
    set "filename=%%~f"
@@ -14,6 +14,6 @@ for %%f in (*.png) do (
     ren "%%f" "!filename!" >nul 2>&1
 )
 
-for /r "C:\wamp\www\Site free.fr\Eden\images\ride\" %%G in (*.PNG) do ren "%%~G" *.png
+for /r "C:\wamp\www\Site free.fr\Eden\images\skillIcon\" %%G in (*.PNG) do ren "%%~G" *.png
 
 endlocal
