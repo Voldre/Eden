@@ -65,6 +65,8 @@ document.querySelectorAll('[id^="classe"]').forEach( (classeElem, i) =>{
             // nom, desc, effet, montant, icone
             // classeElem.children[1].innerText = selectedSkill.desc;
             document.querySelector('.iconClasses').children[i].src = "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE"+iconsClasses[selectedClasseID]+".png";
+
+            updateSkillsList();
         }
     })
 })
@@ -83,19 +85,24 @@ document.querySelector('#xp').addEventListener('change', e=>{
 competences = document.querySelector('.skills');
 
 [...competences.children].forEach(competence =>{
-
+    /*
     // Skills list
 
     var option = document.createElement('option')
     option.value = "";
     competence.children[0].append(option);
 
+    var classeP = document.querySelector('#classeP').value;
+    var classeS = document.querySelector('#classeS').value;
     Object.values(skillsJSON).forEach(skill =>{
-        var option = document.createElement('option')
-        option.value = skill.nom;
-        option.innerText = skill.nom;
-        competence.children[0].append(option);
+        if(skill.classe.includes(classeP) || skill.classe.includes(classeS)){ // Si la classe est dans la liste
+            var option = document.createElement('option')
+            option.value = skill.nom;
+            option.innerText = skill.nom;
+            competence.children[0].append(option);
+        }
     })
+    */
 
     // Selected skill
     competence.children[0].addEventListener('change', e=>{
@@ -103,6 +110,30 @@ competences = document.querySelector('.skills');
         insertSkill(competence, e.target.value);
     })
 })
+
+function updateSkillsList(){
+    competences = document.querySelector('.skills');
+    [...competences.children].forEach(competence =>{
+        // Skills list
+        selectedOption = competence.children[0].value;
+        removeOptions(competence.children[0]);
+        var option = document.createElement('option')
+        option.value = "";
+        competence.children[0].append(option);
+
+        var classeP = document.querySelector('#classeP').value;
+        var classeS = document.querySelector('#classeS').value;
+        Object.values(skillsJSON).forEach(skill =>{
+            if(skill.classe.includes(classeP) || skill.classe.includes(classeS)){ // Si la classe est dans la liste
+                var option = document.createElement('option')
+                option.value = skill.nom;
+                option.innerText = skill.nom;
+                competence.children[0].append(option);
+            }
+        })
+        competence.children[0].value = selectedOption;
+    });
+}
 
 function insertSkill(skillElement, skillName){
     selectedSkill = Object.values(skillsJSON).find(skill => skill.nom == skillName);
@@ -158,7 +189,7 @@ function loadFiche(indexPerso){
     classeSID = classes.indexOf(persoData.classeS);
     document.querySelector('.iconClasses').children[0].src = "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE"+iconsClasses[classePID]+".png";
     document.querySelector('.iconClasses').children[1].src = "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE"+iconsClasses[classeSID]+".png";
-
+    updateSkillsList();
 
     // Skills du perso
     JSON.parse(persoData.skills).forEach( (skill, index) =>{
@@ -343,9 +374,10 @@ document.querySelector('#createSkill').addEventListener('click', ()=>{
     montant = addSkill.children[6].value;
     icone = addSkill.children[8].value;
     stat = addSkill.children[10].value;
+    classe = [addSkill.children[10].value];
 
     skillID = parseInt(Object.keys(skillsJSON).reverse()[0])+1
-    newSkill = { skillID : {"nom":nom,"desc":desc,"effet":effet,"montant":montant,"icone":icone,"stat":stat}};
+    newSkill = { skillID : {"nom":nom,"desc":desc,"effet":effet,"montant":montant,"icone":icone,"stat":stat,"classe":classe}};
     console.log(newSkill)
     
     document.cookie = "skillsJSON="+JSON.stringify(newSkill);
@@ -398,7 +430,6 @@ if(params.has('state')){
 
 
 function toastNotification(text, duration = 3000) {
-    console.log('toasted')
     var x = document.getElementById("toast");
     if(!x.classList.contains("show")){
         x.classList.add("show");
@@ -410,3 +441,11 @@ function toastNotification(text, duration = 3000) {
 document.getElementById("toast").addEventListener('click', ()=>{
     document.getElementById("toast").classList.remove("show");
 })
+
+function removeOptions(selectElement) {
+    var i, L = selectElement.options.length - 1;
+    for(i = L; i >= 0; i--) {
+       selectElement.remove(i);
+    }
+ }
+ 
