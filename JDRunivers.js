@@ -17,39 +17,86 @@ if(window.location.href.includes('http')){
     var persosJSON = {};
 }
 
+const classes = ['Guerrier','Chevalier','Templier','Chev Dragon','Voleur','Assassin','Danselame','Samouraï','Chasseur','Ingénieur','Corsaire','Juge','Clerc','Barde','Shaman','Sage','Magicien','Illusioniste','Démoniste','Luminary'];
+const iconsClasses = ['01','02','03','18','04','05','06','16','07','08','09','59','10','11','12','17','13','14','15','19']
 
-Object.values(skillsJSON).forEach(skill =>{
-    var skillE = document.createElement('div')
-    skillE.classList.add('skill')
+// Generate classes elements
+classes.forEach( (classe,i) =>{
+    var classeE = document.createElement('div');
+    classeE.id = classe;
     var nomE = document.createElement('p');
-    nomE.classList.add('nom');
-    var descE = document.createElement('p');
-    descE.classList.add('desc');
-    var effetE = document.createElement('p');
-    effetE.classList.add('effet');
-    var montantE = document.createElement('p');
-    montantE.classList.add('montant');
-    
+    if(classe == "Chev Dragon"){
+        classe = "C. Dragon";
+    }
+    nomE.innerText = classe;
+    var iconeE = document.createElement('img');
+    iconeE.src = "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE"+iconsClasses[i]+".png";
 
-    var iconeE = document.createElement('img');    
-    iconeE.classList.add('icone');
+    classeE.append(nomE);
+    classeE.append(iconeE);
+
+    document.querySelector('.classeslist').append(classeE);
+});
+
+// Update classes elements (highlighting)
+[...document.querySelector('.classeslist').children].forEach(selectedE =>{
+    selectedE.addEventListener('click', () =>{
+        [...document.querySelector('.classeslist').children].forEach(classeE =>{
+            classeE.classList.remove('highlight');
+        });
+        selectedE.classList.add('highlight');    
+        updateSkillsList(selectedE.id);     
+    })
+});
+
+// Show/Hide races
+buttonRace = document.querySelector('#buttonRace');
+buttonRace.addEventListener('click', ()=>{
+    if(buttonRace.innerText == 'Afficher'){
+        buttonRace.innerText = 'Masquer';
+    }else{ buttonRace.innerText = 'Afficher'; }
+    document.querySelector('#race').classList.toggle('hide');
+});
+
+// Skills list
+
+function updateSkillsList(classe){
+    document.querySelector('.skillslist').innerHTML = "";
+
+    Object.values(skillsJSON).forEach(skill =>{
+
+        if(!skill.classe.includes(classe)) return;
+
+        var skillE = document.createElement('div')
+        skillE.classList.add('skill')
+        var nomE = document.createElement('p');
+        nomE.classList.add('nom');
+        var descE = document.createElement('p');
+        descE.classList.add('desc');
+        var effetE = document.createElement('p');
+        effetE.classList.add('effet');
+        var montantE = document.createElement('p');
+        montantE.classList.add('montant');
+        
+
+        var iconeE = document.createElement('img');    
+        iconeE.classList.add('icone');
 
 
-    nomE.innerText = skill.nom;
-    descE.innerText = skill.desc;
-    effetE.innerText = skill.effet + " / " + skill.stat + " / " + skill.classe;
-    montantE.innerText = skill.montant;
-    iconeE.src = "http://voldre.free.fr/Eden/images/skillIcon/"+skill.icone+".png";
+        nomE.innerText = skill.nom;
+        descE.innerText = skill.desc;
+        effetE.innerText = skill.effet + " / " + skill.stat + " / " + skill.classe; // Ajout Sanofi
+        montantE.innerText = skill.montant;
+        iconeE.src = "http://voldre.free.fr/Eden/images/skillIcon/"+skill.icone+".png";
 
-    skillE.append(nomE);
-    skillE.append(descE);
-    skillE.append(effetE);
-    skillE.append(montantE);
-    skillE.append(iconeE);
-    document.querySelector('.skillslist').append(skillE);
-
-})
-
+        skillE.append(nomE);
+        skillE.append(descE);
+        skillE.append(effetE);
+        skillE.append(montantE);
+        skillE.append(iconeE);
+        document.querySelector('.skillslist').append(skillE);
+    })
+}
 
 
 
