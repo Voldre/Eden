@@ -145,6 +145,38 @@ input[type=number] {
 
 
 /* JDR Univers */
+
+.race{
+    display: block;
+    padding: 10px 0px;
+    width: 100%;
+}
+.race h4{
+    border-top: 1px gray dashed;
+    text-decoration: underline;
+    font-size: 17px;
+    margin-bottom: 2px;
+}
+.race img{
+    width: 200px;
+    height: 200px;
+}
+.classeslist div{
+    border: 1px gray solid;
+    margin: 1px;
+    width: 9vw;
+    display: inline-block;
+}
+
+.classeslist div p{
+    text-align: center;
+    padding : 2px;
+}
+.classeslist div img{
+    display: block;
+    margin: auto;
+}
+
 .skillslist{
     display:flex;
     flex-direction: column;
@@ -156,6 +188,10 @@ input[type=number] {
     display: grid;
     width: 100%;
     grid-template-areas: "nom nom eff ico"  "mon mon mon ico" "desc desc desc desc";
+    background-color: transparent;
+}
+.highlight{
+    background-color: rgba(96, 69, 216, 0.5) !important;
 }
 /*
 .skillslist div img{
@@ -192,10 +228,19 @@ input[type=number] {
     font-size: 17px;
     transition: bottom 1s;
     transition-timing-function: ease-in-out;
+}
+#toast:hover{
+filter: hue-rotate(-60deg);
+}
+#toast.show {
+bottom: 40px;
+}
+
+@media (max-width: 700px) {
+  .classeslist div{
+    width: 22vw;
   }
-  #toast:hover{
-    filter: hue-rotate(-60deg);
+  .classeslist div p{
+    margin: auto;
   }
-  #toast.show {
-    bottom: 40px;
-  }
+}
