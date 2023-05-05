@@ -76,15 +76,23 @@ document.querySelectorAll('[id^="classe"]').forEach( (classeElem, i) =>{
 document.querySelector('#xp').addEventListener('change', e=>{
     xp = parseInt(e.target.value);
     console.log(xp)
-    var niv = Math.trunc(xp/100);
+    var niv = Math.trunc(xp/100)+1;
     document.querySelector('#niv').value = niv;
+
+    updateSkillsSlots();
 })
 
 
 // COMPETENCES 
 competences = document.querySelector('.skills');
 
-[...competences.children].forEach(competence =>{
+[...competences.children].forEach( (competence,i) =>{
+    var niv = document.querySelector('#niv').value || 1;
+    if(i > niv){
+        competence.classList.add('hide');
+    }else{ 
+        competence.classList.remove('hide');
+    }
     /*
     // Skills list
 
@@ -111,6 +119,18 @@ competences = document.querySelector('.skills');
     })
 })
 
+function updateSkillsSlots(){
+    competences = document.querySelector('.skills');
+    [...competences.children].forEach( (competence,i) =>{
+        // Display skils slots
+        var niv = document.querySelector('#niv').value || 1;
+        if(i > niv){
+            competence.classList.add('hide');
+        }else{ 
+            competence.classList.remove('hide');
+        }
+    });
+}
 function updateSkillsList(){
     competences = document.querySelector('.skills');
     [...competences.children].forEach(competence =>{
@@ -170,7 +190,7 @@ function loadFiche(indexPerso){
     if(!persoData) return;
 
     document.querySelector('#nom').value = persoData.nom;
-    document.querySelector('#race').selectedOptions = persoData.race;
+    document.querySelector('#race').value = persoData.race;
     document.querySelector('#classeP').value = persoData.classeP;
     document.querySelector('#classeS').value = persoData.classeS;
     document.querySelector('#xp').value = persoData.xp;
@@ -190,6 +210,7 @@ function loadFiche(indexPerso){
     document.querySelector('.iconClasses').children[0].src = "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE"+iconsClasses[classePID]+".png";
     document.querySelector('.iconClasses').children[1].src = "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE"+iconsClasses[classeSID]+".png";
     updateSkillsList();
+    updateSkillsSlots();
 
     // Skills du perso
     JSON.parse(persoData.skills).forEach( (skill, index) =>{
