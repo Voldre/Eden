@@ -37,7 +37,7 @@ Object.values(skillsJSON).forEach(skill =>{
 
     nomE.innerText = skill.nom;
     descE.innerText = skill.desc;
-    effetE.innerText = skill.effet + " / " + skill.stat;
+    effetE.innerText = skill.effet + " / " + skill.stat + " / " + skill.classe;
     montantE.innerText = skill.montant;
     iconeE.src = "http://voldre.free.fr/Eden/images/skillIcon/"+skill.icone+".png";
 
