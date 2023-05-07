@@ -17,7 +17,7 @@ if(window.location.href.includes('http')){
     var persosJSON = {};
 }
 
-const classes = ['Guerrier','Chevalier','Templier','Chev Dragon','Voleur','Assassin','Danselame','Samouraï','Chasseur','Ingénieur','Corsaire','Juge','Clerc','Barde','Shaman','Sage','Magicien','Illusioniste','Démoniste','Luminary'];
+const classes = ['Guerrier','Chevalier','Templier','Chev Dragon','Voleur','Assassin','Danselame','Samouraï','Chasseur','Ingénieur','Corsaire','Juge','Clerc','Barde','Shaman','Sage','Magicien','Illusionniste','Démoniste','Luminary'];
 const iconsClasses = ['01','02','03','18','04','05','06','16','07','08','09','59','10','11','12','17','13','14','15','19']
 
 // Generate classes elements
@@ -99,8 +99,15 @@ function updateSkillsList(classe){
 }
 
 
+// Counts which stats are most used for skills
 
+var skillsJSONStat = Object.values(skillsJSON).map(skill => skill.stat) 
 
+const occurrences = skillsJSONStat.reduce(function (acc, curr) {
+    return acc[curr] ? ++acc[curr] : acc[curr] = 1, acc
+  }, {});
+  
+document.querySelector('.statsBySkills').innerText = JSON.stringify(occurrences);
 
 skills = {}
 
