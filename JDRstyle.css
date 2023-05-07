@@ -168,6 +168,9 @@ input[type=number] {
     display: inline-block;
 }
 
+.classeslist div:hover{
+    background-color: rgba(96, 69, 216, 0.2) ;
+}
 .classeslist div p{
     text-align: center;
     padding : 2px;

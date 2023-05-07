@@ -5,15 +5,26 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D10",
     "icone": "E0280",
-    "classe":["Guerrier","Chevalier","Templier","Chev Dragon"]
+    "stat": "Force",
+    "classe": ["Guerrier", "Chevalier", "Templier", "Chev Dragon"]
   },
   "1": {
+    "nom": "Attaque Cyclone",
+    "desc": "Tournoie et frappe les ennemis autour du personnage",
+    "effet": "D\u00e9g\u00e2t",
+    "montant": "1D6",
+    "icone": "E0005",
+    "stat": "Force",
+    "classe": ["Guerrier", "Chevalier", "Templier", "Chev Dragon"]
+  },
+  "57": {
     "nom": "Mur de Titan",
     "desc": "R\u00e9duit les d\u00e9g\u00e2ts subis",
     "effet": "D\u00e9g\u00e2t r\u00e9duit",
     "montant": "2 + 1D6 pendant 3 tours",
-    "icone": "E0291",
-    "classe":["Guerrier"]
+    "icone": "E0029",
+    "stat": "Force",
+    "classe": ["Guerrier"]
   },
   "2": {
     "nom": "Provocation",
@@ -21,7 +32,8 @@
     "effet": "Provocation",
     "montant": " 1D4 fois plus de chance pendant 3 tours",
     "icone": "E0003",
-    "classe":["Guerrier","Chevalier","Templier","Chev Dragon"]
+    "stat": "Charisme",
+    "classe": ["Guerrier", "Chevalier", "Templier", "Chev Dragon"]
   },
   "3": {
     "nom": "Euphorie",
@@ -29,7 +41,8 @@
     "effet": "Bonus D\u00e9g\u00e2t",
     "montant": "+1D4 par coup. Buff pendant 3 tours",
     "icone": "E0286",
-    "classe":["Guerrier"]
+    "stat": "Esprit",
+    "classe": ["Guerrier"]
   },
   "4": {
     "nom": "Perc\u00e9e du Chevalier",
@@ -37,7 +50,8 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D10 + 1D6 + 1D4",
     "icone": "E0290",
-    "classe":["Chevalier"]
+    "stat": "Force",
+    "classe": ["Chevalier"]
   },
   "5": {
     "nom": "Vivacit\u00e9 Accrue",
@@ -45,7 +59,8 @@
     "effet": "Buff",
     "montant": "2 pendant 4 tours",
     "icone": "E0294",
-    "classe":["Chevalier"]
+    "stat": "Esprit",
+    "classe": ["Chevalier"]
   },
   "6": {
     "nom": "Lumi\u00e8re Sacr\u00e9e",
@@ -53,7 +68,8 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D10",
     "icone": "E0302",
-    "classe":["Templier"]
+    "stat": "Intelligence",
+    "classe": ["Templier"]
   },
   "7": {
     "nom": "Coup Infernal",
@@ -61,7 +77,8 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D6",
     "icone": "E0303",
-    "classe":["Templier"]
+    "stat": "Intelligence",
+    "classe": ["Templier"]
   },
   "8": {
     "nom": "Bouclier de Lumi\u00e8re",
@@ -69,7 +86,8 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D6 pendant 3 tours",
     "icone": "E0309",
-    "classe":["Templier"]
+    "stat": "Esprit",
+    "classe": ["Templier"]
   },
   "9": {
     "nom": "Revers d'\u00e9caille",
@@ -77,7 +95,8 @@
     "effet": "Renvoi",
     "montant": "3 tentatives par combat max",
     "icone": "E0566",
-    "classe":["Chev Dragon"]
+    "stat": "Esprit",
+    "classe": ["Chev Dragon"]
   },
   "10": {
     "nom": "Pouvoir du dragon",
@@ -85,7 +104,8 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D10",
     "icone": "E0569",
-    "classe":["Chev Dragon"]
+    "stat": "Force",
+    "classe": ["Chev Dragon"]
   },
   "11": {
     "nom": "Attaque Furieuse",
@@ -93,7 +113,8 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D8",
     "icone": "E0010",
-    "classe":["Voleur","Assassin","Danselame","Samouraï"]
+    "stat": "Dextérité",
+    "classe": ["Voleur", "Assassin", "Danselame", "Samoura\u00ef"]
   },
   "12": {
     "nom": "Furtivit\u00e9",
@@ -101,7 +122,8 @@
     "effet": "Invisible",
     "montant": "Dur\u00e9e 3 tours sauf annulation",
     "icone": "E0318",
-    "classe":["Voleur"]
+    "stat": "Esprit",
+    "classe": ["Voleur"]
   },
   "20": {
     "nom": "Embuscade",
@@ -109,7 +131,8 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D8 (X2)",
     "icone": "E0048",
-    "classe":["Voleur"]
+    "stat": "Dextérité",
+    "classe": ["Voleur"]
   },
   "21": {
     "nom": "Perce-Armure",
@@ -117,7 +140,8 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D6",
     "icone": "E0054",
-    "classe":["Voleur","Assassin","Danselame","Samouraï"]
+    "stat": "Force",
+    "classe": ["Voleur", "Assassin", "Danselame", "Samoura\u00ef"]
   },
   "22": {
     "nom": "Faiblesse Critique",
@@ -125,7 +149,8 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D10 (X2)",
     "icone": "E0057",
-    "classe":["Assassin"]
+    "stat": "Force",
+    "classe": ["Assassin"]
   },
   "23": {
     "nom": "Cicatrice de l'esprit",
@@ -133,7 +158,8 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D6",
     "icone": "E0060",
-    "classe":["Assassin"]
+    "stat": "Force",
+    "classe": ["Assassin"]
   },
   "24": {
     "nom": "Lames Dansante",
@@ -141,7 +167,8 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D6 2D4",
     "icone": "E0062",
-    "classe":["Danselame"]
+    "stat": "Dextérité",
+    "classe": ["Danselame"]
   },
   "25": {
     "nom": "Charme tape-\u00e0-l-oeil",
@@ -149,7 +176,8 @@
     "effet": "Malus",
     "montant": "R\u00e9duit l'esquive et la pr\u00e9cision",
     "icone": "E0067",
-    "classe":["Danselame"]
+    "stat": "Charisme",
+    "classe": ["Danselame"]
   },
   "26": {
     "nom": "Coupe Asura",
@@ -157,7 +185,8 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D10 + (1D10)",
     "icone": "E0481",
-    "classe":["Samouraï"]
+    "stat": "Force",
+    "classe": ["Samoura\u00ef"]
   },
   "27": {
     "nom": "Eclair unique",
@@ -165,7 +194,8 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D10 + (1D10)",
     "icone": "E0480",
-    "classe":["Samouraï"]
+    "stat": "Force",
+    "classe": ["Samoura\u00ef"]
   },
   "28": {
     "nom": "Tir de Pr\u00e9cision",
@@ -173,7 +203,8 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "R\u00e9ussite +2, 1D6 (X2)",
     "icone": "E0011",
-    "classe":["Chasseur","Ingénieur","Corsaire","Juge"]
+    "stat": "Dextérité",
+    "classe": ["Chasseur", "Ing\u00e9nieur", "Corsaire", "Juge"]
   },
   "29": {
     "nom": "Triple Tir",
@@ -181,7 +212,8 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D10 + 1D6 + 1D4",
     "icone": "E0068",
-    "classe":["Chasseur"]
+    "stat": "Dextérité",
+    "classe": ["Chasseur"]
   },
   "30": {
     "nom": "Invocation du Tigre",
@@ -189,7 +221,8 @@
     "effet": "Invocation",
     "montant": "Invocation jusqu'\u00e0 coupure magique",
     "icone": "E0075",
-    "classe":["Chasseur"]
+    "stat": "Esprit",
+    "classe": ["Chasseur"]
   },
   "31": {
     "nom": "Invocation Aigle Chasseur",
@@ -197,7 +230,8 @@
     "effet": "Invocation",
     "montant": "Invocation jusqu'\u00e0 coupure magique",
     "icone": "E0264",
-    "classe":["Chasseur"]
+    "stat": "Esprit",
+    "classe": ["Chasseur"]
   },
   "32": {
     "nom": "Blessure Douloureuse",
@@ -205,7 +239,8 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D8",
     "icone": "E0070",
-    "classe":["Chasseur","Ingénieur","Corsaire","Juge"]
+    "stat": "Dextérité",
+    "classe": ["Chasseur", "Ing\u00e9nieur", "Corsaire", "Juge"]
   },
   "33": {
     "nom": "R\u00e9cup\u00e9ration de la b\u00eate",
@@ -213,7 +248,8 @@
     "effet": "Soin",
     "montant": "4 + 1D10",
     "icone": "E0260",
-    "classe":["Chasseur"]
+    "stat": "Esprit",
+    "classe": ["Chasseur"]
   },
   "34": {
     "nom": "Robotisation",
@@ -221,7 +257,8 @@
     "effet": "Transformation",
     "montant": "R\u00e9duit les d\u00e9g\u00e2ts re\u00e7u de 2D4, Toutes Stats-1, dure 5 tours",
     "icone": "E0083",
-    "classe":["Ingénieur"]
+    "stat": "Esprit",
+    "classe": ["Ing\u00e9nieur"]
   },
   "35": {
     "nom": "Bombe \u00e0 Huile",
@@ -229,7 +266,8 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D10",
     "icone": "E0080",
-    "classe":["Ingénieur"]
+    "stat": "Dextérité",
+    "classe": ["Ing\u00e9nieur"]
   },
   "36": {
     "nom": "Explosifs Visqueux",
@@ -237,7 +275,8 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D6, d\u00e9placement/esquive tr\u00e8s r\u00e9duit",
     "icone": "E0082",
-    "classe":["Ingénieur"]
+    "stat": "Dextérité",
+    "classe": ["Ing\u00e9nieur"]
   },
   "37": {
     "nom": "Saut d'esquive",
@@ -245,7 +284,8 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D8",
     "icone": "E0087",
-    "classe":["Corsaire"]
+    "stat": "Dextérité",
+    "classe": ["Corsaire"]
   },
   "38": {
     "nom": "Fl\u00e8che Terrorisante",
@@ -253,7 +293,8 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D6",
     "icone": "E0090",
-    "classe":["Corsaire"]
+    "stat": "Dextérité",
+    "classe": ["Corsaire"]
   },
   "39": {
     "nom": "S\u00e9r\u00e9nit\u00e9",
@@ -261,15 +302,17 @@
     "effet": "Buff",
     "montant": "Dext\u00e9+2, D\u00e9g\u00e2t subi -1D6 pendant 3 tours",
     "icone": "E0091",
-    "classe":["Corsaire"]
+    "stat": "Esprit",
+    "classe": ["Corsaire"]
   },
   "40": {
-    "nom": "Séisme",
+    "nom": "S\u00e9isme",
     "desc": "Inflige des d\u00e9g\u00e2ts de terre",
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D8",
     "icone": "E0016",
-    "classe":["Clerc","Barde","Shaman","Sage"]
+    "stat":"Intelligence",
+    "classe": ["Clerc", "Barde", "Shaman", "Sage"]
   },
   "41": {
     "nom": "Gu\u00e9rison",
@@ -277,7 +320,8 @@
     "effet": "Soin",
     "montant": "2D8",
     "icone": "E0018",
-    "classe":["Clerc","Barde","Shaman","Sage"]
+    "stat":"Intelligence",
+    "classe": ["Clerc", "Barde", "Shaman", "Sage"]
   },
   "42": {
     "nom": "Punition Divine",
@@ -285,7 +329,8 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D8",
     "icone": "E0092",
-    "classe":["Clerc"]
+    "stat":"Intelligence",
+    "classe": ["Clerc"]
   },
   "43": {
     "nom": "Pr\u00e9vention",
@@ -293,7 +338,8 @@
     "effet": "Buff",
     "montant": "D\u00e9g\u00e2t r\u00e9duit 1D4 pendant 3 tours",
     "icone": "E0019",
-    "classe":["Clerc"]
+    "stat":"Esprit",
+    "classe": ["Clerc"]
   },
   "44": {
     "nom": "Bombe Vocale",
@@ -301,7 +347,8 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D8",
     "icone": "E0100",
-    "classe":["Barde"]
+    "stat":"Intelligence",
+    "classe": ["Barde"]
   },
   "45": {
     "nom": "Hymne \u00e0 la Guerre",
@@ -309,7 +356,8 @@
     "effet": "Buff",
     "montant": "Bonus 1D4 pendant 3 tours",
     "icone": "E0105",
-    "classe":["Barde"]
+    "stat":"Esprit",
+    "classe": ["Barde"]
   },
   "46": {
     "nom": "Bouclier d'\u00e9pines",
@@ -317,7 +365,8 @@
     "effet": "Buff",
     "montant": "D\u00e9g\u00e2t r\u00e9duit 1D4, d\u00e9g\u00e2t des piques 1D4  pendant 5 tours",
     "icone": "E0110",
-    "classe":["Shaman"]
+    "stat":"Intelligence",
+    "classe": ["Shaman"]
   },
   "47": {
     "nom": "Totem Gracieux",
@@ -325,7 +374,8 @@
     "effet": "Soin",
     "montant": "1D10 pendant 1D8 tours",
     "icone": "E0115",
-    "classe":["Shaman"]
+    "stat":"Intelligence",
+    "classe": ["Shaman"]
   },
   "48": {
     "nom": "Puma Noir",
@@ -333,14 +383,79 @@
     "effet": "Transformation",
     "montant": "Attaque 1D10, Force+2, Dext\u00e9+3 pendant 1D6 tours (annulable)",
     "icone": "E0271",
-    "classe":["Shaman"]
+    "stat":"Esprit",
+    "classe": ["Shaman"]
   },
-  "skillID": {
-    "nom": "Baloi",
-    "desc": "aoze",
-    "effet": "qsdj",
-    "montant": "45",
-    "icone": "E055",
-    "classe":["Shaman"]
+  "49": {
+    "nom": "Bombe Incendiaire",
+    "desc": "Boule de feu sur l'ennemi",
+    "effet": "D\u00e9g\u00e2t",
+    "montant": "1D10",
+    "icone": "E0021",
+    "stat": "Intelligence",
+    "classe": ["Magicien", "Illusionniste", "D\u00e9moniste", "Luminary"]
+  },
+  "50": {
+    "nom": "Attaque Foudroyante",
+    "desc": "Attaque de foudre autour de soi (4m)",
+    "effet": "D\u00e9g\u00e2t",
+    "montant": "1D6",
+    "icone": "E0022",
+    "stat": "Intelligence",
+    "classe": ["Magicien", "Illusionniste", "D\u00e9moniste", "Luminary"]
+  },
+  "51": {
+    "nom": "Saut Dimensionnel",
+    "desc": "T\u00e9l\u00e9porte l'ennemi jusqu'\u00e0 6m en avant",
+    "effet": "D\u00e9placement",
+    "montant": "---",
+    "icone": "E0025",
+    "stat": "Intelligence",
+    "classe": ["Magicien", "Illusionniste", "D\u00e9moniste", "Luminary"]
+  },
+  "52": {
+    "nom": "Temp\u00eate de Glace",
+    "desc": "Tourbillon de glace dans la zone choisie, ralenti l'ennemi",
+    "effet": "D\u00e9g\u00e2t",
+    "montant": "1D6",
+    "icone": "E0118",
+    "stat": "Intelligence",
+    "classe": ["Magicien"]
+  },
+  "53": {
+    "nom": "Affaiblissement Mental",
+    "desc": "R\u00e9duit la resistance aux \u00e9l\u00e9ments",
+    "effet": "Malus",
+    "montant": "D\u00e9g\u00e2t magique subi  1D4",
+    "icone": "E0120",
+    "stat": "Esprit",
+    "classe": ["Magicien"]
+  },
+  "54": {
+    "nom": "Voile du Blizzard",
+    "desc": "Rend invisible, pendant l'invisibilit\u00e9, bonus d'intelligence de 2",
+    "effet": "Buff",
+    "montant": "",
+    "icone": "E0119",
+    "stat": "Esprit",
+    "classe": ["Magicien","Illusionniste"]
+  },
+  "55": {
+    "nom": "Contr\u00f4le de l'Esprit",
+    "desc": "La cible est charm\u00e9e et attaque les ennemis",
+    "effet": "Hypnose",
+    "montant": "Dur\u00e9e 1D4, l'ennemi peut l'annuler",
+    "icone": "E0129",
+    "stat": "Esprit",
+    "classe": ["Illusionniste"]
+  },
+  "56": {
+    "nom": "Oeil Hypnotique",
+    "desc": "Les ennemis dans la zone cibl\u00e9e s'endorment",
+    "effet": "Endormissement",
+    "montant": "Prend fin si r\u00e9veill\u00e9",
+    "icone": "E0125",
+    "stat": "Intelligence",
+    "classe": ["Illusionniste"]
   }
 }

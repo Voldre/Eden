@@ -37,7 +37,7 @@ console.log('Persos JSON',persosJSON)
 
 // Table Initialisation
 
-const classes = ['Guerrier','Chevalier','Templier','Chev Dragon','Voleur','Assassin','Danselame','Samouraï','Chasseur','Ingénieur','Corsaire','Juge','Clerc','Barde','Shaman','Sage','Magicien','Illusioniste','Démoniste','Luminary'];
+const classes = ['Guerrier','Chevalier','Templier','Chev Dragon','Voleur','Assassin','Danselame','Samouraï','Chasseur','Ingénieur','Corsaire','Juge','Clerc','Barde','Shaman','Sage','Magicien','Illusionniste','Démoniste','Luminary'];
 const iconsClasses = ['01','02','03','18','04','05','06','16','07','08','09','59','10','11','12','17','13','14','15','19']
 
 const skillsInfo = ['nom','desc','effet','montant','icone','stat'];
@@ -202,6 +202,7 @@ function loadFiche(indexPerso){
     document.querySelector('#dexté').value = persoData.dexté;
     document.querySelector('#intel').value = persoData.intel;
     document.querySelector('#charisme').value = persoData.charisme;
+    document.querySelector('#esprit').value = persoData.esprit;
     // + la dernière stat
 
     // Classes du perso
@@ -366,6 +367,7 @@ function savePerso(){
         "dexté":document.querySelector('#dexté').value,
         "intel":document.querySelector('#intel').value,
         "charisme":document.querySelector('#charisme').value,
+        "esprit":document.querySelector('#esprit').value,
         // "--":document.querySelector('#--').value,
         "skills": skillsStringified,
         // "equipments": equipmentsStringified,
@@ -395,15 +397,17 @@ document.querySelector('#createSkill').addEventListener('click', ()=>{
     montant = addSkill.children[6].value;
     icone = addSkill.children[8].value;
     stat = addSkill.children[10].value;
-    classe = [addSkill.children[10].value];
+    classe = [addSkill.children[12].value];
 
     skillID = parseInt(Object.keys(skillsJSON).reverse()[0])+1
-    newSkill = { skillID : {"nom":nom,"desc":desc,"effet":effet,"montant":montant,"icone":icone,"stat":stat,"classe":classe}};
+    newSkill = {};
+    newSkill[skillID] = {"nom":nom,"desc":desc,"effet":effet,"montant":montant,"icone":icone,"stat":stat,"classe":classe};
     console.log(newSkill)
     
     document.cookie = "skillsJSON="+JSON.stringify(newSkill);
 
     saveWithPHP("skills")
+    skillsJSON[skillID] = newSkill[skillID];
 })
 
 
