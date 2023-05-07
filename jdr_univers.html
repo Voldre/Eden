@@ -20,10 +20,10 @@
     <body style="position: relative; min-height: 100%; top: 0px;">
         <nav style="margin-left:10px;">
             <ul class="menu">
-                <!-- <li><a href="">Présentation</a></li> -->
-                <li>
-                    <a href="jdr_univers.html">L'Univers</a>
-                </li>
+                <!-- <li><a href="">Présentation</a></li> -->       
+        <li><a href="univers.php">L'Univers</a></li>
+            <!--  # Races # Classes -->
+        <li><a href="jdr.html">Fiches de persos</a></li>
                 <!--  # Races # Classes -->
                 <li>
                     <a href="jdr.html">Fiches de persos</a>
@@ -34,8 +34,8 @@
             </ul>
         </nav>
         <h4 style="display: inline; margin-right: 12px;">Races</h4>
-        <button id="buttonRace">Masquer</button>
-        <div id="race">
+        <button id="buttonRace">Afficher</button>
+        <div id="race" class="hide">
             <div class="race">
                 <h4>Humains</h4>
                 <img src="images/jdrgalerie/Race_Humain.webp" alt="">
@@ -99,6 +99,7 @@
         </div>
         <h4>Classes</h4>
         <div class="classeslist"></div>
+        <p class="statsBySkills"></p>
         <h4>Compétences</h4>
         <div class="skillslist"></div>
     </body>
