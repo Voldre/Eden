@@ -83,16 +83,16 @@ input[type=number] {
     width: 100%;
     grid-template-areas: "nom nom eff ico"  "mon mon mon ico";
 }
-.skill> .nom{
+.skill> .nom, .equipements div > .nom{
     grid-area: nom;
 }
-.skill> .effet{
+.skill> .effet, .equipements div > .effet{
     grid-area: eff;
 }
-.skill> .icone{
+.skill> .icone, .equipements div > .icone{
     grid-area: ico;
 }
-.skill> .montant{
+.skill> .montant, .equipements div > .montant{
     grid-area: mon;
 }
 
@@ -180,11 +180,11 @@ input[type=number] {
     margin: auto;
 }
 
-.skillslist{
+.skillslist, .equipements{
     display:flex;
     flex-direction: column;
 }
-.skillslist div{
+.skillslist div, .equipements div{
     border: 1px gray solid;
     margin : 10px;
     margin-left: 2px;
@@ -201,7 +201,7 @@ input[type=number] {
     float:right;
 }
 */
-.skill > .desc{
+.skill > .desc, .equipements div > .desc{
     grid-area: desc;
 }
 
