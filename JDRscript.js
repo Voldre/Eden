@@ -75,7 +75,6 @@ document.querySelectorAll('[id^="classe"]').forEach( (classeElem, i) =>{
 // Niv
 document.querySelector('#xp').addEventListener('change', e=>{
     xp = parseInt(e.target.value);
-    console.log(xp)
     var niv = Math.trunc(xp/100)+1;
     document.querySelector('#niv').value = niv;
 
@@ -87,36 +86,11 @@ document.querySelector('#xp').addEventListener('change', e=>{
 competences = document.querySelector('.skills');
 
 [...competences.children].forEach( (competence,i) =>{
-    var niv = document.querySelector('#niv').value || 1;
-    if(i > niv){
-        competence.classList.add('hide');
-    }else{ 
-        competence.classList.remove('hide');
-    }
-    /*
-    // Skills list
-
-    var option = document.createElement('option')
-    option.value = "";
-    competence.children[0].append(option);
-
-    var classeP = document.querySelector('#classeP').value;
-    var classeS = document.querySelector('#classeS').value;
-    Object.values(skillsJSON).forEach(skill =>{
-        if(skill.classe.includes(classeP) || skill.classe.includes(classeS)){ // Si la classe est dans la liste
-            var option = document.createElement('option')
-            option.value = skill.nom;
-            option.innerText = skill.nom;
-            competence.children[0].append(option);
-        }
-    })
-    */
-
     // Selected skill
     competence.children[0].addEventListener('change', e=>{
         // console.log(e.target.value)
         insertSkill(competence, e.target.value);
-    })
+    });
 })
 
 function updateSkillsSlots(){
@@ -124,7 +98,9 @@ function updateSkillsSlots(){
     [...competences.children].forEach( (competence,i) =>{
         // Display skils slots
         var niv = document.querySelector('#niv').value || 1;
-        if(i > niv){
+        SlotsAvailable = Math.trunc(niv/2) + 2;
+        console.log(SlotsAvailable);
+        if(i > SlotsAvailable){
             competence.classList.add('hide');
         }else{ 
             competence.classList.remove('hide');
@@ -166,6 +142,33 @@ function insertSkill(skillElement, skillName){
         skillElement.children[3].title = selectedSkill.desc;
     }
 }
+
+
+
+// EQUIPEMENTS
+equipements = document.querySelector('.equipements');
+
+[...equipements.children].forEach( (equipement,i) =>{
+    // Selected skill
+    equipement.children[0].addEventListener('change', e=>{
+        // console.log(e.target.value)
+        insertEqpt(equipement, e.target.value);
+    });
+})
+
+function insertEqpt(eqptElement, eqptName){
+    selectedEqpt = Object.values(eqptJSON).find(eqpt => eqpt.nom == eqptName);
+    if(!selectedEqpt){
+        console.log(eqptName+ " is not an eqpt (in the list)")
+    }else{
+        eqptElement.children[1].innerText = selectedEqpt.effet;
+        eqptElement.children[2].innerText = selectedEqpt.montant;
+        eqptElement.children[3].src = "http://voldre.free.fr/Eden/images/items/"+selectedEqpt.icone+".png";
+        eqptElement.children[3].title = selectedEqpt.desc;
+    }
+}
+
+
 
 
 //  LOADING
@@ -217,21 +220,19 @@ function loadFiche(indexPerso){
     JSON.parse(persoData.skills).forEach( (skill, index) =>{
         // console.log(skill)
         competence = [...document.querySelector('.skills').children][index];
-
-        // console.log(Object.values(competence.children[0].options))
         competence.children[0].value = skill; // Object.values(competence.children[0].options).find(option => option.value == skill.nom);
-        
         insertSkill(competence,skill);
-        /*
-        competence.children[1].innerText = skill.effet;
-        competence.children[2].innerText = skill.montant;
-        competence.children[3].src = "http://voldre.free.fr/Eden/images/skillIcon/"+skill.icone+".png";
-        competence.children[3].title = skill.desc;
-        */
     })
 
+
     // Equipements du perso
-    
+    JSON.parse(persoData.eqpts).forEach( (eqpt, index) =>{
+        // console.log(skill)
+        equipement = [...document.querySelector('.equipements').children][index];
+        equipement.children[0].value = eqpt; // Object.values(competence.children[0].options).find(option => option.value == skill.nom);
+        insertEqpt(equipement,eqpt);
+    })
+
     // Inventaire du perso
     document.querySelector(".inventaire").value = persoData.inventaire,
     document.querySelector("#argent").value = persoData.argent
@@ -334,20 +335,19 @@ function savePerso(){
     skillsData = []
     document.querySelectorAll('.skill').forEach(competence =>{
         nom = competence.children[0].value;
-
         skillsData.push(nom);
-        /*
-        effet = competence.children[1].innerText;
-        montant = competence.children[2].innerText;
-        icone = competence.children[3].src.replace("http://voldre.free.fr/Eden/images/skillIcon/","");
-        icone = icone.replace(".png","");
-        desc = competence.children[3].title
-        skillsData.push({"nom":nom,"desc":desc,"effet":effet,"montant":montant,"icone":icone});
-        */
     })
 
-    console.log(skillsData)
+    eqptsData = []    
+    equipements = document.querySelector('.equipements');
+    [...equipements.children].forEach( (equipement,i) =>{
+        nom = equipement.children[0].value;
+        eqptsData.push(nom);
+    })
+
+    console.log(eqptsData)
     skillsStringified = JSON.stringify(skillsData);
+    eqptsStringified = JSON.stringify(eqptsData);
 
     // same for equipments
 
@@ -370,7 +370,7 @@ function savePerso(){
         "esprit":document.querySelector('#esprit').value,
         // "--":document.querySelector('#--').value,
         "skills": skillsStringified,
-        // "equipments": equipmentsStringified,
+        "eqpts": eqptsStringified,
         "inventaire": document.querySelector(".inventaire").value,
         "argent": document.querySelector("#argent").value,
         "personnalité": document.querySelector(".personnalité").value,
@@ -408,6 +408,29 @@ document.querySelector('#createSkill').addEventListener('click', ()=>{
 
     saveWithPHP("skills")
     skillsJSON[skillID] = newSkill[skillID];
+    toastNotification('Compétence créé');
+})
+
+// Create eqpt & Save
+
+document.querySelector('#createEqpt').addEventListener('click', ()=>{
+    addEqpt = document.querySelector('.addEqpt');
+    nom = addEqpt.children[0].value;
+    desc = addEqpt.children[2].value;
+    effet = addEqpt.children[4].value;
+    montant = addEqpt.children[6].value;
+    icone = addEqpt.children[8].value;
+
+    eqptID = parseInt(Object.keys(eqptJSON).reverse()[0])+1
+    newEqpt = {};
+    newEqpt[eqptID] = {"nom":nom,"desc":desc,"effet":effet,"montant":montant,"icone":icone};
+    console.log(newEqpt)
+    
+    document.cookie = "eqptJSON="+JSON.stringify(newEqpt);
+
+    saveWithPHP("eqpt")
+    eqptJSON[eqptID] = newEqpt[eqptID];
+    toastNotification('Equipement créé');
 })
 
 
