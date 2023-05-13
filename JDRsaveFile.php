@@ -8,7 +8,7 @@ if($name == "persos" && isset($_COOKIE[$name.'JSON'])) {
 }
 
 
-if(($name == "skills" || $name == "eqpt") && isset($_COOKIE[$name.'JSON'])) {
+if(($name == "skills" || $name == "eqpt" || $name == "master" || $name == "enemy") && isset($_COOKIE[$name.'JSON'])) {
 
     $file = file_get_contents('JDR'.$name.'.json', true);
     $file = json_decode($file);

@@ -210,3 +210,5 @@ skills[48] = {"nom":"Puma Noir","desc":"Vous transforme en Puma Noir","effet":"T
 
 // Sage
 
+
+// var skillsJSON = Object.values(skills) // Remove all keys

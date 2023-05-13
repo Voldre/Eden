@@ -37,6 +37,10 @@
         <li><select name="selectPerso" id="selectPerso">
             <option value="J1">J1</option>
             <option value="J2">J2</option>
+            <option value="J3">J3</option>
+            <option value="J4">J4</option>
+            <option value="J5">J5</option>
+            <option value="J6">J6</option>
             </select>
         </li>
         <li><button id="save">Sauvegarder</button></li>
@@ -73,7 +77,7 @@
                 <!-- auto via xp -->
 
                 <label for="pv">PV/Max</label>
-                <input style='width: 38px;' type='number' id="pv" name="pv"></input>
+                <input style='width: 38px;' type='number' id="pv" name="pv"></input>
                 <input style='width: 38px;' type='number' id="pvmax" name="pvmax"></input><br/>
                 <!-- <label for="pv">PV</label>
                 <input style='width: 60px;' type='number' id="pv" name="pv"></input><br/>
@@ -193,37 +197,16 @@
         </div>
         <div class="detailsPerso">
             <h4>Personnalité</h4>
-            <textarea name="" id="" cols="30" rows="10" class="personnalité"></textarea>
+            <textarea name="" id="" cols="40" rows="10" class="personnalité"></textarea>
             <h4>Background</h4>
-            <textarea name="" id="" cols="30" rows="10" class="background"></textarea>
+            <textarea name="" id="" cols="40" rows="10" class="background"></textarea>
         </div>
+        <h4>Notes</h4>
+        <textarea name="" id="" cols="45" rows="10" class="notes"></textarea>
 
     </div>
 </body>
 <footer>
     <li><a href="../">Site général</a></li>
-    <div class="admin">
-        <h4>Ajout de compétences</h4>
-        <div class="addSkill">
-            Nom<input type="text"><br/>
-            Desc<input type="text"><br/>
-            Effet<input type="text"><br/>
-            Montant<input type="text"><br/>
-            Icone<input type="text"><br/>
-            Stat<input type="text"><br/>
-            Classe<input type="text"><br/>
-            <button id="createSkill">Créer</button>
-        </div>
-        <h4>Ajout d'équipements</h4>
-        <div class="addEqpt">
-            Nom<input type="text"><br/>
-            Desc<input type="text"><br/>
-            Effet<input type="text"><br/>
-            Montant<input type="text"><br/>
-            Icone<input type="text"><br/>
-            <button id="createEqpt">Créer</button>
-        </div>
-        <h4>Ajout d'objets</h4>
-    </div>
 </footer>
 </html>

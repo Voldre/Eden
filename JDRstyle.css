@@ -205,7 +205,61 @@ input[type=number] {
     grid-area: desc;
 }
 
-
+/* JDR Master */
+.combat{  
+    display: grid;
+    width: 100%;
+    grid-template-columns: 32vw 32vw 32vw;
+}
+.infoEnnemi{
+    border: 2px black solid;
+    margin: 5px;
+}
+.infoEnnemi .commentaire{
+    width: 85%;
+}
+.infoEnnemi input[type="number"]{
+    width: 30px;
+}
+.infoEnnemi .buff, .infoEnnemi .debuff{
+    width: 70%;
+    margin: 5px;
+}
+.notes{
+    width: 80%;
+    height: 100px;
+}
+.adding{
+    display: flex;
+    justify-content: space-around;
+}
+.adding h4{
+    margin-bottom: 8px;
+}
+#currentMusic{
+    display: block;
+    margin: 0px;
+    width: 54vw;
+}
+.musique{
+    max-width: 525px;
+    height: 95px;
+    overflow-y: auto;
+    width: 54vw;
+    border: 1px black solid;
+    margin: 2px;
+}
+.musique div{
+    display: flex;
+    height: 47px;
+}
+.musique div audio{
+    height: 40px;
+}
+.musique div p{
+    margin: auto;
+    max-width: 21vw;
+}
 
 /* Toast Notification */
 #toast {

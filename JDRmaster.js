@@ -1,6 +1,48 @@
+// JSON Initialisation
+var xhReq = new XMLHttpRequest();
+
+console.log(window.location.href)
+if(window.location.href.includes('http')){
+    xhReq.open("GET", "./JDRskills.json", false);
+    xhReq.send(null);
+    var skillsJSON = JSON.parse(xhReq.responseText);
+    
+    xhReq.open("GET", "./JDReqpt.json", false);
+    xhReq.send(null);
+    var eqptJSON = JSON.parse(xhReq.responseText);
+
+    xhReq.open("GET", "./JDRpersos.json", false);
+    xhReq.send(null);
+    var persosJSON = JSON.parse(xhReq.responseText);
+    
+    
+    xhReq.open("GET", "./JDRgalery.json", false);
+    xhReq.send(null);
+    var galeryJSON = JSON.parse(xhReq.responseText);
+
+    xhReq.open("GET", "./JDRmaster.json", false);
+    xhReq.send(null);
+    var masterJSON = JSON.parse(xhReq.responseText);
+    
+    xhReq.open("GET", "./JDRenemy.json", false);
+    xhReq.send(null);
+    var enemyJSON = JSON.parse(xhReq.responseText);
+}else{
+    var skillsJSON = skills;
+    var eqptJSON = {};
+    var persosJSON = {};
+    var galeryJSON = {};
+    var masterJSON = {};
+    var enemyJSON = {};
+}
+
+console.log('Master JSON', masterJSON);
+console.log('Enemy JSON', enemyJSON);
+
 /*
 $.ajax({
     url: "JDRlogin.php",
+
     type: "post", 
     success: function(data) {
       $('body').html(data);
@@ -12,4 +54,235 @@ if(window.location.href.includes('html')){
     console.log('no');
     stop();
 }
+
+
+// Next turn
+document.querySelector('#nextTurn').addEventListener('click', ()=>{
+    document.querySelector('#tour').value = parseInt(document.querySelector('#tour').value) + 1;
+    [...document.querySelector('.combat').querySelectorAll('input[type="number"]')].forEach(buffTurn =>{
+        if(!buffTurn.id.includes('pv') && buffTurn.value >= 1){
+            buffTurn.value -= 1;
+            // if(buffTurn.value == 0){}
+        }
+    })
+})
+
+// Disable the possibility of launching many audio simultaneously
+
+document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for(var i = 0, len = audios.length; i < len;i++){
+        if(audios[i] != e.target){
+            audios[i].pause();
+            if(audios[i].currentTime < 30){
+                audios[i].currentTime = 0;
+            }
+        }    
+    }
+    currentBGM = e.target.firstChild.attributes.src.nodeValue.split("/")[1].split(".")[0]
+    console.log(currentBGM);
+    document.getElementById("currentMusic").innerText = document.getElementById(currentBGM).innerText +" ("+currentBGM+")";
+}, true);
+
+
+// Load Enemies
+
+[...document.querySelectorAll('.ennemi')].forEach( (selectEnnemi, i) =>{ 
+    
+    // Fill Select elements
+    var option = document.createElement('option')
+    option.value = "";
+    selectEnnemi.append(option);
+
+    Object.values(enemyJSON).forEach(enemy =>{
+        var option = document.createElement('option')
+        option.value = enemy.nom;
+        option.innerText = enemy.nom;
+        selectEnnemi.append(option);
+    })
+
+    // Change enemy selected
+
+    selectEnnemi.addEventListener('change', e =>{
+        enemy = e.target.value;
+        indexEnemy = e.target.selectedIndex;
+
+        loadEnemy(indexEnemy, i)
+
+        toastNotification("Chargement de l'ennemi réussi : " + enemy);
+    })
+})
+
+function loadEnemy(indexEnemy, indexElement){    
+
+    ennemiElement = [...document.querySelectorAll('.infoEnnemi')][indexElement];
+
+    enemyData = enemyJSON[indexEnemy];
+
+    if(!enemyData){
+        
+        console.log(indexEnemy + " is not an enemy (in the list)");
+        ennemiElement.querySelector('#nom').innerText = "";
+        ennemiElement.querySelector('#desc').innerText = "";
+        ennemiElement.querySelector('#infos').innerText = "";
+        ennemiElement.querySelector('#drop').innerText = "";
+        ennemiElement.querySelector('#visuel').value = "";
+        ennemiElement.querySelector('.icon').src = "";
+        ennemiElement.querySelector('#pv').value = "";
+        ennemiElement.querySelector('#pvmax').value = "";
+
+        [...ennemiElement.querySelectorAll('.competence')].forEach(e => e.innerText = "");
+        return;
+    }
+
+    
+
+    ennemiElement.querySelector('#nom').innerText = enemyData.nom;
+    ennemiElement.querySelector('#desc').innerText = enemyData.desc;
+    ennemiElement.querySelector('#infos').innerText = enemyData.infos;
+    ennemiElement.querySelector('#drop').innerText = enemyData.drop;
+    ennemiElement.querySelector('#visuel').innerText = enemyData.visuel3D;
+    ennemiElement.querySelector('.icon').src = "http://voldre.free.fr/Eden/images/monsters/"+enemyData.visuel3D.toLowerCase()+".png";
+    ennemiElement.querySelector('.icon').alt = enemyData.visuel3D.toLowerCase();
+    ennemiElement.querySelector('#pv').value = enemyData.pvmax;
+    ennemiElement.querySelector('#pvmax').value = enemyData.pvmax;
+    
+    // Skills de l'ennemi
+    JSON.parse(enemyData.skills).forEach( (skill, index) =>{
+        competence = [...ennemiElement.querySelectorAll('.competence')][index];
+        competence.innerText = skill;
+    })
+}
+
+
+
+// ALL SAVES 
+
+// Allow save for users
+function toggleButton(){
+    if(masterJSON.allow == true){
+        document.querySelector('#allowSave').style = "border: 3px solid green";
+    }else{
+        document.querySelector('#allowSave').style = "border: 3px solid red";
+    }
+}
+
+toggleButton();
+document.querySelector('#allowSave').addEventListener('click', () =>{
+    masterJSON.allow = !masterJSON.allow;
+    toggleButton();
+    
+    notes = document.querySelector('.notes').value;
+    masterJSON.notes = notes;
+
+    document.cookie = "masterJSON="+JSON.stringify(masterJSON);
+    saveWithPHP('master'); // Save it to JSON
+    toastNotification('Autorisation modifiée');
+})
+
+document.querySelector('#save').addEventListener('click', () =>{
+    notes = document.querySelector('.notes').value;
+    masterJSON.notes = notes;
+    document.cookie = "masterJSON="+JSON.stringify(masterJSON);
+    saveWithPHP('master'); // Save it to JSON
+    toastNotification('Données sauvegardées');
+})
+
+// Create skill & Save
+
+document.querySelector('#createSkill').addEventListener('click', ()=>{
+    addSkill = document.querySelector('.addSkill');
+    nom = addSkill.children[0+1].value;
+    desc = addSkill.children[2+1].value;
+    effet = addSkill.children[4+1].value;
+    montant = addSkill.children[6+1].value;
+    icone = addSkill.children[8+1].value;
+    stat = addSkill.children[10+1].value;
+    classe = [addSkill.children[12+1].value];
+
+    skillID = parseInt(Object.keys(skillsJSON).reverse()[0])+1 || 1;
+    newSkill = {};
+    newSkill[skillID] = {"nom":nom,"desc":desc,"effet":effet,"montant":montant,"icone":icone,"stat":stat,"classe":classe};
+    console.log(newSkill)
+    
+    document.cookie = "skillsJSON="+JSON.stringify(newSkill);
+
+    saveWithPHP("skills")
+    skillsJSON[skillID] = newSkill[skillID];
+    toastNotification('Compétence créé');
+})
+
+// Create eqpt & Save
+
+document.querySelector('#createEqpt').addEventListener('click', ()=>{
+    addEqpt = document.querySelector('.addEqpt');
+    nom = addEqpt.children[0+1].value;
+    desc = addEqpt.children[2+1].value;
+    effet = addEqpt.children[4+1].value;
+    montant = addEqpt.children[6+1].value;
+    icone = addEqpt.children[8+1].value;
+
+    eqptID = parseInt(Object.keys(eqptJSON).reverse()[0])+1 || 1;
+    newEqpt = {};
+    newEqpt[eqptID] = {"nom":nom,"desc":desc,"effet":effet,"montant":montant,"icone":icone};
+    console.log(newEqpt)
+    
+    document.cookie = "eqptJSON="+JSON.stringify(newEqpt);
+
+    saveWithPHP("eqpt")
+    eqptJSON[eqptID] = newEqpt[eqptID];
+    toastNotification('Equipement créé');
+})
+
+
+// Create enemy & Save
+
+document.querySelector('#createEnemy').addEventListener('click', ()=>{
+    addEnemy = document.querySelector('.addEnemy');
+    visuel3D = addEnemy.children[0+1].value;
+    nom = addEnemy.children[2+1].value;
+    pvmax = addEnemy.children[4+1].value;
+    skills = [addEnemy.children[6+1].value,addEnemy.children[8+1].value,addEnemy.children[10+1].value,addEnemy.children[12+1].value];
+    desc = addEnemy.children[14+1].value;
+    infos = addEnemy.children[16+1].value;
+    drop = addEnemy.children[18+1].value;
+
+    enemyID = parseInt(Object.keys(enemyJSON).reverse()[0])+1 || 1;
+    newEnemy = {};
+    newEnemy[enemyID] = {"visuel3D":visuel3D,"nom":nom, "pvmax":pvmax, "skills":JSON.stringify(skills),"desc":desc,"infos":infos,"drop":drop};
+    console.log(newEnemy)
+    
+    document.cookie = "enemyJSON="+JSON.stringify(newEnemy);
+
+    saveWithPHP("enemy")
+    enemyJSON[enemyID] = newEnemy[enemyID];
+    toastNotification('Ennemi créé');
+})
+
+// Global Save
+
+function saveWithPHP(nameJSON){
+    $.ajax({
+        url: "JDRsaveFile.php",
+        type: "post", 
+        data: {name: nameJSON},/*
+        success: function(data) {
+          $('body').html(data);
+        }*/
+    })
+}
+
+
+function toastNotification(text, duration = 3000) {
+    var x = document.getElementById("toast");
+    if(!x.classList.contains("show")){
+        x.classList.add("show");
+        x.innerText = text;
+        // if(lastElement){ x.append(lastElement)}
+        setTimeout(function(){ x.classList.remove("show"); }, duration);
+    }
+}
+document.getElementById("toast").addEventListener('click', ()=>{
+    document.getElementById("toast").classList.remove("show");
+})
 
