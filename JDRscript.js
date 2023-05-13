@@ -21,11 +21,15 @@ if(window.location.href.includes('http')){
     xhReq.send(null);
     var galeryJSON = JSON.parse(xhReq.responseText);
 
+    xhReq.open("GET", "./JDRmaster.json", false);
+    xhReq.send(null);
+    var masterJSON = JSON.parse(xhReq.responseText);
 }else{
     var skillsJSON = skills;
     var eqptJSON = {};
     var persosJSON = {};
     var galeryJSON = {};
+    var masterJSON = {};
 }
 
 console.log('Skills JSON',skillsJSON)
@@ -33,7 +37,6 @@ console.log('Persos JSON',persosJSON)
 
 
 // download(skills, 'skills.json', 'text/plain')
-// var skillsJSON = Object.values(skills) // Remove all keys
 
 // Table Initialisation
 
@@ -62,10 +65,7 @@ document.querySelectorAll('[id^="classe"]').forEach( (classeElem, i) =>{
         if(selectedClasseID == -1){
             console.log(e.target.value + " is not a class (in the list)")
         }else{
-            // nom, desc, effet, montant, icone
-            // classeElem.children[1].innerText = selectedSkill.desc;
             document.querySelector('.iconClasses').children[i].src = "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE"+iconsClasses[selectedClasseID]+".png";
-
             updateSkillsList();
         }
     })
@@ -88,15 +88,13 @@ competences = document.querySelector('.skills');
 [...competences.children].forEach( (competence,i) =>{
     // Selected skill
     competence.children[0].addEventListener('change', e=>{
-        // console.log(e.target.value)
         insertSkill(competence, e.target.value);
     });
 })
 
-function updateSkillsSlots(){
+function updateSkillsSlots(){ // Display skils slots
     competences = document.querySelector('.skills');
     [...competences.children].forEach( (competence,i) =>{
-        // Display skils slots
         var niv = document.querySelector('#niv').value || 1;
         SlotsAvailable = Math.trunc(niv/2) + 2;
         console.log(SlotsAvailable);
@@ -107,7 +105,7 @@ function updateSkillsSlots(){
         }
     });
 }
-function updateSkillsList(){
+function updateSkillsList(){ // Depending on classes
     competences = document.querySelector('.skills');
     [...competences.children].forEach(competence =>{
         // Skills list
@@ -131,10 +129,22 @@ function updateSkillsList(){
     });
 }
 
+function removeOptions(selectElement) {
+    var i, L = selectElement.options.length - 1;
+    for(i = L; i >= 0; i--) {
+       selectElement.remove(i);
+    }
+ }
+ 
+
 function insertSkill(skillElement, skillName){
     selectedSkill = Object.values(skillsJSON).find(skill => skill.nom == skillName);
     if(!selectedSkill){
-        console.log(skillName+ " is not a skill (in the list)")
+        console.log(skillName+ " is not a skill (in the list)");
+        skillElement.children[1].innerText = "";
+        skillElement.children[2].innerText = "";
+        skillElement.children[3].src = "";
+        skillElement.children[3].title = "";
     }else{
         skillElement.children[1].innerText = selectedSkill.effet + " / " + selectedSkill.stat;
         skillElement.children[2].innerText = selectedSkill.montant;
@@ -151,7 +161,6 @@ equipements = document.querySelector('.equipements');
 [...equipements.children].forEach( (equipement,i) =>{
     // Selected skill
     equipement.children[0].addEventListener('change', e=>{
-        // console.log(e.target.value)
         insertEqpt(equipement, e.target.value);
     });
 })
@@ -160,6 +169,10 @@ function insertEqpt(eqptElement, eqptName){
     selectedEqpt = Object.values(eqptJSON).find(eqpt => eqpt.nom == eqptName);
     if(!selectedEqpt){
         console.log(eqptName+ " is not an eqpt (in the list)")
+        eqptElement.children[1].innerText = "";
+        eqptElement.children[2].innerText = "";
+        eqptElement.children[3].src = "";
+        eqptElement.children[3].title = "";
     }else{
         eqptElement.children[1].innerText = selectedEqpt.effet;
         eqptElement.children[2].innerText = selectedEqpt.montant;
@@ -172,12 +185,15 @@ function insertEqpt(eqptElement, eqptName){
 
 
 //  LOADING
-window.addEventListener('load', () =>{loadFiche(0)})
 selectPerso = document.querySelector('#selectPerso');
 selectedPerso = selectPerso.value;
+selectedID = selectPerso.selectedIndex;
 
+window.addEventListener('load', () =>{
+loadFiche(selectedID)
+})
 selectPerso.addEventListener('change', e =>{
-    perso = e.target.value
+    perso = e.target.value;
     indexPerso = e.target.selectedIndex;
 
     loadFiche(indexPerso)
@@ -218,7 +234,6 @@ function loadFiche(indexPerso){
 
     // Skills du perso
     JSON.parse(persoData.skills).forEach( (skill, index) =>{
-        // console.log(skill)
         competence = [...document.querySelector('.skills').children][index];
         competence.children[0].value = skill; // Object.values(competence.children[0].options).find(option => option.value == skill.nom);
         insertSkill(competence,skill);
@@ -227,7 +242,6 @@ function loadFiche(indexPerso){
 
     // Equipements du perso
     JSON.parse(persoData.eqpts).forEach( (eqpt, index) =>{
-        // console.log(skill)
         equipement = [...document.querySelector('.equipements').children][index];
         equipement.children[0].value = eqpt; // Object.values(competence.children[0].options).find(option => option.value == skill.nom);
         insertEqpt(equipement,eqpt);
@@ -322,6 +336,10 @@ document.querySelector('.galerie').addEventListener('click', e =>{
 // Save persos
 
 document.querySelector("#save").addEventListener('click',() =>{
+    if(!masterJSON.allow){
+        toastNotification('Les sauvegardes sont bloquées par le MJ');
+        return;
+    }
     savePerso();
     console.log("saveFiche() done")
     console.log('JDRsaveFile.php executed')
@@ -387,53 +405,6 @@ function savePerso(){
 }
 
 
-// Create skill & Save
-
-document.querySelector('#createSkill').addEventListener('click', ()=>{
-    addSkill = document.querySelector('.addSkill');
-    nom = addSkill.children[0].value;
-    desc = addSkill.children[2].value;
-    effet = addSkill.children[4].value;
-    montant = addSkill.children[6].value;
-    icone = addSkill.children[8].value;
-    stat = addSkill.children[10].value;
-    classe = [addSkill.children[12].value];
-
-    skillID = parseInt(Object.keys(skillsJSON).reverse()[0])+1
-    newSkill = {};
-    newSkill[skillID] = {"nom":nom,"desc":desc,"effet":effet,"montant":montant,"icone":icone,"stat":stat,"classe":classe};
-    console.log(newSkill)
-    
-    document.cookie = "skillsJSON="+JSON.stringify(newSkill);
-
-    saveWithPHP("skills")
-    skillsJSON[skillID] = newSkill[skillID];
-    toastNotification('Compétence créé');
-})
-
-// Create eqpt & Save
-
-document.querySelector('#createEqpt').addEventListener('click', ()=>{
-    addEqpt = document.querySelector('.addEqpt');
-    nom = addEqpt.children[0].value;
-    desc = addEqpt.children[2].value;
-    effet = addEqpt.children[4].value;
-    montant = addEqpt.children[6].value;
-    icone = addEqpt.children[8].value;
-
-    eqptID = parseInt(Object.keys(eqptJSON).reverse()[0])+1
-    newEqpt = {};
-    newEqpt[eqptID] = {"nom":nom,"desc":desc,"effet":effet,"montant":montant,"icone":icone};
-    console.log(newEqpt)
-    
-    document.cookie = "eqptJSON="+JSON.stringify(newEqpt);
-
-    saveWithPHP("eqpt")
-    eqptJSON[eqptID] = newEqpt[eqptID];
-    toastNotification('Equipement créé');
-})
-
-
 
 // Global Save
 
@@ -441,10 +412,11 @@ function saveWithPHP(nameJSON){
     $.ajax({
         url: "JDRsaveFile.php",
         type: "post", 
-        data: {name: nameJSON},/*
+        data: {name: nameJSON},
+        
         success: function(data) {
           $('body').html(data);
-        }*/
+        }
     })
 }
 
@@ -489,11 +461,3 @@ function toastNotification(text, duration = 3000) {
 document.getElementById("toast").addEventListener('click', ()=>{
     document.getElementById("toast").classList.remove("show");
 })
-
-function removeOptions(selectElement) {
-    var i, L = selectElement.options.length - 1;
-    for(i = L; i >= 0; i--) {
-       selectElement.remove(i);
-    }
- }
- 
