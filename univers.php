@@ -13,6 +13,9 @@ include("menu.html");
 
 <?php
 
+global $audioMap;
+$audioMap = json_decode(file_get_contents("audioMap.json"),true);
+
 $maplist = $_SESSION["maplist"];
 
 function All($value){
@@ -128,6 +131,28 @@ if(isset($_GET["data"])){
  <?php
     }else if($_GET["data"] == "map"){
         echo "<h2>".$maplist[$_GET["map"]]["name"]."<a href='3D.php?data=maps&map=".$_GET["map"]."'> lien </a></h2>";
+
+        $keyZ = $_GET["map"];
+        while(strlen($keyZ)<3){
+            $keyZ = "0$keyZ";
+        }
+        $img = "maps/S".$keyZ."m.png";
+        
+        
+        $bgm = $maplist[$_GET["map"]]["bgm"];
+        while(strlen($bgm)<3){
+            $bgm = "0$bgm";
+        }
+        echo"<div class='img-block'>";
+        echo "<img class='pictures' style='width:300px;' src='images/".$img."' />";
+        echo "<img class='pictures' style='width:300px;' src='images/loadingframe/Loading_".$_GET["map"].".png' />";
+        echo "</div></a></div>";
+        
+        echo "<div>";
+        // echo "<p>".explode(".",$file)[0]."</p>";
+        // echo "<p>OST : ".$audioMap[explode(".",$file)[0]]."</p>";
+        echo "<audio controls ><source src='bgm/bgm$bgm.ogg' type='audio/ogg' /></audio>";
+        echo "</div>";
     }
 }
 ?>
