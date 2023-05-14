@@ -155,6 +155,46 @@ function loadEnemy(indexEnemy, indexElement){
 }
 
 
+// eqpts list
+Object.values(eqptJSON).forEach(eqpt =>{
+
+    var eqptE = document.createElement('div')
+    eqptE.classList.add('eqpt')
+    var nomE = document.createElement('p');
+    nomE.classList.add('nom');
+    var descE = document.createElement('p');
+    descE.classList.add('desc');
+    var effetE = document.createElement('p');
+    effetE.classList.add('effet');
+    var montantE = document.createElement('p');
+    montantE.classList.add('montant');
+    
+    var iconeE = document.createElement('img');    
+    iconeE.classList.add('icone');
+
+    nomE.innerText = eqpt.nom;
+    descE.innerText = eqpt.desc;
+    effetE.innerText = eqpt.effet; // Ajout Sanofi
+    montantE.innerText = eqpt.montant;
+    iconeE.src = "http://voldre.free.fr/Eden/images/items/"+eqpt.icone+".png";
+
+    eqptE.append(nomE);
+    eqptE.append(descE);
+    eqptE.append(effetE);
+    eqptE.append(montantE);
+    eqptE.append(iconeE);
+    document.querySelector('.equipements').append(eqptE);
+})
+
+// Show/Hide eqpts
+buttonEqpt = document.querySelector('#buttonEqpt');
+buttonEqpt.addEventListener('click', ()=>{
+    if(buttonEqpt.innerText == 'Afficher'){
+        buttonEqpt.innerText = 'Masquer';
+    }else{ buttonEqpt.innerText = 'Afficher'; }
+    document.querySelector('.equipements').classList.toggle('hide');
+});
+
 
 // ALL SAVES 
 
@@ -175,7 +215,7 @@ document.querySelector('#allowSave').addEventListener('click', () =>{
     notes = document.querySelector('.notes').value;
     masterJSON.notes = notes;
 
-    document.cookie = "masterJSON="+JSON.stringify(masterJSON);
+    document.cookie = "masterJSON="+encodeURIComponent(JSON.stringify(masterJSON));
     saveWithPHP('master'); // Save it to JSON
     toastNotification('Autorisation modifiée');
 })
@@ -183,7 +223,7 @@ document.querySelector('#allowSave').addEventListener('click', () =>{
 document.querySelector('#save').addEventListener('click', () =>{
     notes = document.querySelector('.notes').value;
     masterJSON.notes = notes;
-    document.cookie = "masterJSON="+JSON.stringify(masterJSON);
+    document.cookie = "masterJSON="+encodeURIComponent(JSON.stringify(masterJSON));
     saveWithPHP('master'); // Save it to JSON
     toastNotification('Données sauvegardées');
 })
@@ -205,7 +245,7 @@ document.querySelector('#createSkill').addEventListener('click', ()=>{
     newSkill[skillID] = {"nom":nom,"desc":desc,"effet":effet,"montant":montant,"icone":icone,"stat":stat,"classe":classe};
     console.log(newSkill)
     
-    document.cookie = "skillsJSON="+JSON.stringify(newSkill);
+    document.cookie = "skillsJSON="+encodeURIComponent(JSON.stringify(newSkill));
 
     saveWithPHP("skills")
     skillsJSON[skillID] = newSkill[skillID];
@@ -227,7 +267,7 @@ document.querySelector('#createEqpt').addEventListener('click', ()=>{
     newEqpt[eqptID] = {"nom":nom,"desc":desc,"effet":effet,"montant":montant,"icone":icone};
     console.log(newEqpt)
     
-    document.cookie = "eqptJSON="+JSON.stringify(newEqpt);
+    document.cookie = "eqptJSON="+ encodeURIComponent(JSON.stringify(newEqpt));
 
     saveWithPHP("eqpt")
     eqptJSON[eqptID] = newEqpt[eqptID];
@@ -252,7 +292,7 @@ document.querySelector('#createEnemy').addEventListener('click', ()=>{
     newEnemy[enemyID] = {"visuel3D":visuel3D,"nom":nom, "pvmax":pvmax, "skills":JSON.stringify(skills),"desc":desc,"infos":infos,"drop":drop};
     console.log(newEnemy)
     
-    document.cookie = "enemyJSON="+JSON.stringify(newEnemy);
+    document.cookie = "enemyJSON="+encodeURIComponent(JSON.stringify(newEnemy));
 
     saveWithPHP("enemy")
     enemyJSON[enemyID] = newEnemy[enemyID];
@@ -265,10 +305,12 @@ function saveWithPHP(nameJSON){
     $.ajax({
         url: "JDRsaveFile.php",
         type: "post", 
-        data: {name: nameJSON},/*
+        data: {name: nameJSON},
+        /*
         success: function(data) {
           $('body').html(data);
-        }*/
+        }
+        */
     })
 }
 

@@ -97,7 +97,6 @@ function updateSkillsSlots(){ // Display skils slots
     [...competences.children].forEach( (competence,i) =>{
         var niv = document.querySelector('#niv').value || 1;
         SlotsAvailable = Math.trunc(niv/2) + 2;
-        console.log(SlotsAvailable);
         if(i > SlotsAvailable){
             competence.classList.add('hide');
         }else{ 
@@ -140,7 +139,10 @@ function removeOptions(selectElement) {
 function insertSkill(skillElement, skillName){
     selectedSkill = Object.values(skillsJSON).find(skill => skill.nom == skillName);
     if(!selectedSkill){
-        console.log(skillName+ " is not a skill (in the list)");
+        
+        if(skillName != ""){
+            console.log(skillName+ " is not a skill (in the list)");
+        }
         skillElement.children[1].innerText = "";
         skillElement.children[2].innerText = "";
         skillElement.children[3].src = "";
@@ -168,7 +170,9 @@ equipements = document.querySelector('.equipements');
 function insertEqpt(eqptElement, eqptName){
     selectedEqpt = Object.values(eqptJSON).find(eqpt => eqpt.nom == eqptName);
     if(!selectedEqpt){
-        console.log(eqptName+ " is not an eqpt (in the list)")
+        if(eqptName != ""){
+            console.log(eqptName+ " is not an eqpt (in the list)");
+        }
         eqptElement.children[1].innerText = "";
         eqptElement.children[2].innerText = "";
         eqptElement.children[3].src = "";
@@ -222,6 +226,7 @@ function loadFiche(indexPerso){
     document.querySelector('#intel').value = persoData.intel;
     document.querySelector('#charisme').value = persoData.charisme;
     document.querySelector('#esprit').value = persoData.esprit;
+    document.querySelector(".notes").value = persoData.notes;
     // + la dernière stat
 
     // Classes du perso
@@ -251,8 +256,8 @@ function loadFiche(indexPerso){
     document.querySelector(".inventaire").value = persoData.inventaire,
     document.querySelector("#argent").value = persoData.argent
 
-    // "personnalité": document.querySelector(".personnalité").value,
-    // "background": document.querySelector(".background").value
+    document.querySelector(".personnalité").value = persoData.personnalite,
+    document.querySelector(".background").value = persoData.background
 }
 
 
@@ -299,7 +304,7 @@ document.querySelector("#screenshot").addEventListener('click',() =>{
 
 // Change Profil Picture
 document.querySelector('#pp').addEventListener('click',() =>{
-    console.log('pp clicked')
+    // console.log('pp clicked')
     document.querySelector('#galerie').classList.toggle('hide');
 })
 document.querySelector('#galerie').addEventListener('click', () =>{
@@ -341,8 +346,7 @@ document.querySelector("#save").addEventListener('click',() =>{
         return;
     }
     savePerso();
-    console.log("saveFiche() done")
-    console.log('JDRsaveFile.php executed')
+    console.log("saveFiche() done : JDRsaveFile.php executed")
     
     saveWithPHP("persos");
     toastNotification('Sauvegarde effectuée');
@@ -363,7 +367,7 @@ function savePerso(){
         eqptsData.push(nom);
     })
 
-    console.log(eqptsData)
+    // console.log(eqptsData)
     skillsStringified = JSON.stringify(skillsData);
     eqptsStringified = JSON.stringify(eqptsData);
 
@@ -391,15 +395,20 @@ function savePerso(){
         "eqpts": eqptsStringified,
         "inventaire": document.querySelector(".inventaire").value,
         "argent": document.querySelector("#argent").value,
-        "personnalité": document.querySelector(".personnalité").value,
-        "background": document.querySelector(".background").value
+        "personnalite": document.querySelector(".personnalité").value,
+        "background": document.querySelector(".background").value,
+        "notes": document.querySelector(".notes").value
     };
 
     console.log(persosJSON)
+    
+    newPerso = {};
+    newPerso[document.querySelector('.perso').id] = persosJSON[document.querySelector('.perso').id];
+    console.log(newPerso)
 
     // Save to JSON...
-
-    document.cookie = "persosJSON="+JSON.stringify(persosJSON);
+    // Only store persosJSON current user (perso id)    
+    document.cookie = "persosJSON="+encodeURIComponent(JSON.stringify(newPerso));
 
     // alert('Fiche sauvegardé sous forme de cookie avec succès')
 }
@@ -413,10 +422,11 @@ function saveWithPHP(nameJSON){
         url: "JDRsaveFile.php",
         type: "post", 
         data: {name: nameJSON},
-        
+        /*
         success: function(data) {
           $('body').html(data);
         }
+        */
     })
 }
 
@@ -461,3 +471,6 @@ function toastNotification(text, duration = 3000) {
 document.getElementById("toast").addEventListener('click', ()=>{
     document.getElementById("toast").classList.remove("show");
 })
+
+
+

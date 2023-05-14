@@ -1,1 +1,128 @@
-{"1":{"nom":"Tenue en soie","desc":"Simple tenue en soie","effet":"","montant":"D\u00e9g\u00e2t -1","icone":"A20002"},"2":{"nom":"Veste en cuir","desc":"Simple veste en cuir","effet":"","montant":"D\u00e9g\u00e2t -2","icone":"A20061"},"3":{"nom":"Plastron en mailles","desc":"Simple plastron en mailles","effet":"","montant":"D\u00e9g\u00e2t -3","icone":"A20101"},"4":{"nom":"Robe \u00e9toil\u00e9","desc":"Robe de mage astral","effet":"Intelligence +1","montant":"D\u00e9g\u00e2t -2","icone":"A20032"},"5":{"nom":"Veste d'aventurier","desc":"Veste renforc\u00e9 et l\u00e9g\u00e8re","effet":"Dext\u00e9rit\u00e9 +1","montant":"D\u00e9g\u00e2t -3","icone":"A20037"},"6":{"nom":"Plastron de garde","desc":"Plastron renforc\u00e9","effet":"Force +1","montant":"D\u00e9g\u00e2t -4","icone":"A20105"},"7":{"nom":"Ep\u00e9e en Acier","desc":"Simple \u00e9p\u00e9e en acier","effet":"","montant":"D\u00e9g\u00e2t  2","icone":"W10101"},"8":{"nom":"Ep\u00e9e Colossale en Acier","desc":"Simple \u00e9p\u00e9e colossale","effet":"","montant":"D\u00e9g\u00e2t  4","icone":"W10301"},"9":{"nom":"Lance en Acier","desc":"Simple lance en acier","effet":"","montant":"D\u00e9g\u00e2t  3","icone":"W10801"},"10":{"nom":"Dague en Acier","desc":"Simple dague en acier","effet":"","montant":"D\u00e9g\u00e2t  2","icone":"W10901"},"11":{"nom":"Ep\u00e9e de chevalier","desc":"Ep\u00e9e sp\u00e9cialis\u00e9 pour les chevaliers","effet":"","montant":"D\u00e9g\u00e2t  2 (X2 si Chevalier)","icone":"W11402"},"12":{"nom":"Lame de l'Empereur des T\u00e9n\u00e8bres","desc":"Une dague maudite venant d'un autre monde","effet":"Peut maudire l'ennemi","montant":"D\u00e9g\u00e2t  6","icone":"W14201"},"13":{"nom":"Ep\u00e9e sacr\u00e9 des Plaines","desc":"Ep\u00e9e l\u00e9gendaire des Plaines Dor\u00e9es","effet":"D\u00e9g\u00e2t  4 sur les t\u00e9n\u00e8bres","montant":"D\u00e9g\u00e2t  6","icone":"W14301"},"14":{"nom":"Hache en Acier","desc":"Simple hache en acier","effet":"","montant":"D\u00e9g\u00e2t  4","icone":"W20201"},"15":{"nom":"Katana en Acier","desc":"Simple Katana en acier","effet":"","montant":"D\u00e9g\u00e2t  4","icone":"W21301"},"16":{"nom":"Masse en Acier","desc":"Simple masse en acier","effet":"","montant":"D\u00e9g\u00e2t  2","icone":"W30101"},"17":{"nom":"Griffe en Acier","desc":"Simple griffe en acier","effet":"","montant":"D\u00e9g\u00e2t  2","icone":"W31301"},"18":{"nom":"Marteau en Acier","desc":"Simple marteau en acier","effet":"","montant":"D\u00e9g\u00e2t  4","icone":"W40301"}}
+{
+  "1": {
+    "nom": "Tenue en soie",
+    "desc": "Simple tenue en soie",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t -1",
+    "icone": "A20002"
+  },
+  "2": {
+    "nom": "Veste en cuir",
+    "desc": "Simple veste en cuir",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t -2",
+    "icone": "A20061"
+  },
+  "3": {
+    "nom": "Plastron en mailles",
+    "desc": "Simple plastron en mailles",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t -3",
+    "icone": "A20101"
+  },
+  "4": {
+    "nom": "Robe \u00e9toil\u00e9",
+    "desc": "Robe de mage astral",
+    "effet": "Intelligence +1",
+    "montant": "D\u00e9g\u00e2t -2",
+    "icone": "A20032"
+  },
+  "5": {
+    "nom": "Veste d'aventurier",
+    "desc": "Veste renforc\u00e9 et l\u00e9g\u00e8re",
+    "effet": "Dext\u00e9rit\u00e9 +1",
+    "montant": "D\u00e9g\u00e2t -3",
+    "icone": "A20037"
+  },
+  "6": {
+    "nom": "Plastron de garde",
+    "desc": "Plastron renforc\u00e9",
+    "effet": "Force +1",
+    "montant": "D\u00e9g\u00e2t -4",
+    "icone": "A20105"
+  },
+  "7": {
+    "nom": "Ep\u00e9e en Acier",
+    "desc": "Simple \u00e9p\u00e9e en acier",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +2",
+    "icone": "W10101"
+  },
+  "8": {
+    "nom": "Ep\u00e9e Colossale en Acier",
+    "desc": "Simple \u00e9p\u00e9e colossale",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +4",
+    "icone": "W10301"
+  },
+  "9": {
+    "nom": "Lance en Acier",
+    "desc": "Simple lance en acier",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +3",
+    "icone": "W10801"
+  },
+  "10": {
+    "nom": "Dague en Acier",
+    "desc": "Simple dague en acier",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +2",
+    "icone": "W10901"
+  },
+  "11": {
+    "nom": "Ep\u00e9e de chevalier",
+    "desc": "Ep\u00e9e sp\u00e9cialis\u00e9 pour les chevaliers",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +2 (X2 si Chevalier)",
+    "icone": "W11402"
+  },
+  "12": {
+    "nom": "Lame de l'Empereur des T\u00e9n\u00e8bres",
+    "desc": "Une dague maudite venant d'un autre monde",
+    "effet": "Peut maudire l'ennemi",
+    "montant": "D\u00e9g\u00e2t +6",
+    "icone": "W14201"
+  },
+  "13": {
+    "nom": "Ep\u00e9e sacr\u00e9 des Plaines",
+    "desc": "Ep\u00e9e l\u00e9gendaire des Plaines Dor\u00e9es",
+    "effet": "D\u00e9g\u00e2t +4 sur les t\u00e9n\u00e8bres",
+    "montant": "D\u00e9g\u00e2t +6",
+    "icone": "W14301"
+  },
+  "14": {
+    "nom": "Hache en Acier",
+    "desc": "Simple hache en acier",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +4",
+    "icone": "W20201"
+  },
+  "15": {
+    "nom": "Katana en Acier",
+    "desc": "Simple Katana en acier",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +4",
+    "icone": "W21301"
+  },
+  "16": {
+    "nom": "Masse en Acier",
+    "desc": "Simple masse en acier",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +2",
+    "icone": "W30101"
+  },
+  "17": {
+    "nom": "Griffe en Acier",
+    "desc": "Simple griffe en acier",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +2",
+    "icone": "W31301"
+  },
+  "18": {
+    "nom": "Marteau en Acier",
+    "desc": "Simple marteau en acier",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +4",
+    "icone": "W40301"
+  }
+}
