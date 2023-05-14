@@ -77,7 +77,8 @@
                 <!-- auto via xp -->
 
                 <label for="pv">PV/Max</label>
-                <input style='width: 38px;' type='number' id="pv" name="pv"></input>
+                <input style='width: 38px;' type='number' id="pv" name="pv"></input>
+
                 <input style='width: 38px;' type='number' id="pvmax" name="pvmax"></input><br/>
                 <!-- <label for="pv">PV</label>
                 <input style='width: 60px;' type='number' id="pv" name="pv"></input><br/>
@@ -92,19 +93,19 @@
         <h4>Statistiques</h4>
         <div class="stats">
             <div class="stat" ><label for="force">Force</label>
-                <input type='number' min="1" max="19" id="force" name="force"></input>
+                <input type='text' min="1" max="19" id="force" name="force"></input>
             </div>
             <div class="stat" ><label for="dexté">Dextérité</label>
-                <input type='number' min="1" max="19" id="dexté" name="dexté"></input>
+                <input type='text' min="1" max="19" id="dexté" name="dexté"></input>
             </div>
             <div class="stat" ><label for="intel">Intelligence</label>
-                <input type='number' min="1" max="19" id="intel" name="intel"></input>
+                <input type='text' min="1" max="19" id="intel" name="intel"></input>
             </div>
             <div class="stat" ><label for="charisme">Charisme</label>
-                <input type='number' min="1" max="19" id="charisme" name="charisme"></input>
+                <input type='text' min="1" max="19" id="charisme" name="charisme"></input>
             </div>
             <div class="stat" ><label for="esprit">Esprit</label>
-                <input type='number' min="1" max="19" id="esprit" name="esprit"></input>
+                <input type='text' min="1" max="19" id="esprit" name="esprit"></input>
             </div>
         </div>
         <h4>Compétences</h4>
@@ -190,8 +191,8 @@
                 </div>
             </div>
             <h4>Inventaire</h4>
-            <textarea name="" id="" cols="30" rows="10"></textarea>
-            <div class="inventaire"></div>
+            <textarea class="inventaire" name="" id="" cols="30" rows="10"></textarea><br/>
+            <!-- <div class="inventaire"></div> -->
             <label for="argent">Pièces d'or</label>
             <input type='text' id="argent" name="argent"></input><br/>
         </div>
