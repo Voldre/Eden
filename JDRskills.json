@@ -113,7 +113,7 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D8",
     "icone": "E0010",
-    "stat": "Dextérité",
+    "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Voleur", "Assassin", "Danselame", "Samoura\u00ef"]
   },
   "12": {
@@ -131,7 +131,7 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D8 (X2)",
     "icone": "E0048",
-    "stat": "Dextérité",
+    "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Voleur"]
   },
   "21": {
@@ -167,7 +167,7 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D6 2D4",
     "icone": "E0062",
-    "stat": "Dextérité",
+    "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Danselame"]
   },
   "25": {
@@ -203,7 +203,7 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "R\u00e9ussite +2, 1D6 (X2)",
     "icone": "E0011",
-    "stat": "Dextérité",
+    "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Chasseur", "Ing\u00e9nieur", "Corsaire", "Juge"]
   },
   "29": {
@@ -212,7 +212,7 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D10 + 1D6 + 1D4",
     "icone": "E0068",
-    "stat": "Dextérité",
+    "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Chasseur"]
   },
   "30": {
@@ -239,7 +239,7 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D8",
     "icone": "E0070",
-    "stat": "Dextérité",
+    "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Chasseur", "Ing\u00e9nieur", "Corsaire", "Juge"]
   },
   "33": {
@@ -266,7 +266,7 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D10",
     "icone": "E0080",
-    "stat": "Dextérité",
+    "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Ing\u00e9nieur"]
   },
   "36": {
@@ -275,7 +275,7 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D6, d\u00e9placement/esquive tr\u00e8s r\u00e9duit",
     "icone": "E0082",
-    "stat": "Dextérité",
+    "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Ing\u00e9nieur"]
   },
   "37": {
@@ -284,7 +284,7 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D8",
     "icone": "E0087",
-    "stat": "Dextérité",
+    "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Corsaire"]
   },
   "38": {
@@ -293,7 +293,7 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D6",
     "icone": "E0090",
-    "stat": "Dextérité",
+    "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Corsaire"]
   },
   "39": {
@@ -311,7 +311,7 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D8",
     "icone": "E0016",
-    "stat":"Intelligence",
+    "stat": "Intelligence",
     "classe": ["Clerc", "Barde", "Shaman", "Sage"]
   },
   "41": {
@@ -320,7 +320,7 @@
     "effet": "Soin",
     "montant": "2D8",
     "icone": "E0018",
-    "stat":"Intelligence",
+    "stat": "Intelligence",
     "classe": ["Clerc", "Barde", "Shaman", "Sage"]
   },
   "42": {
@@ -329,7 +329,7 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D8",
     "icone": "E0092",
-    "stat":"Intelligence",
+    "stat": "Intelligence",
     "classe": ["Clerc"]
   },
   "43": {
@@ -338,7 +338,7 @@
     "effet": "Buff",
     "montant": "D\u00e9g\u00e2t r\u00e9duit 1D4 pendant 3 tours",
     "icone": "E0019",
-    "stat":"Esprit",
+    "stat": "Esprit",
     "classe": ["Clerc"]
   },
   "44": {
@@ -347,7 +347,7 @@
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D8",
     "icone": "E0100",
-    "stat":"Intelligence",
+    "stat": "Intelligence",
     "classe": ["Barde"]
   },
   "45": {
@@ -356,16 +356,16 @@
     "effet": "Buff",
     "montant": "Bonus 1D4 pendant 3 tours",
     "icone": "E0105",
-    "stat":"Esprit",
+    "stat": "Esprit",
     "classe": ["Barde"]
   },
   "46": {
     "nom": "Bouclier d'\u00e9pines",
     "desc": "Octroie un bouclier \u00e0 la cible, r\u00e9duit les d\u00e9g\u00e2ts et pique les ennemis qui le touche",
     "effet": "Buff",
-    "montant": "D\u00e9g\u00e2t r\u00e9duit 1D4, d\u00e9g\u00e2t des piques 1D4  pendant 5 tours",
+    "montant": "D\u00e9g\u00e2t r\u00e9duit 1D4, d\u00e9g\u00e2t des piques 1D4 pendant 5 tours",
     "icone": "E0110",
-    "stat":"Intelligence",
+    "stat": "Intelligence",
     "classe": ["Shaman"]
   },
   "47": {
@@ -374,7 +374,7 @@
     "effet": "Soin",
     "montant": "1D10 pendant 1D8 tours",
     "icone": "E0115",
-    "stat":"Intelligence",
+    "stat": "Intelligence",
     "classe": ["Shaman"]
   },
   "48": {
@@ -383,7 +383,7 @@
     "effet": "Transformation",
     "montant": "Attaque 1D10, Force+2, Dext\u00e9+3 pendant 1D6 tours (annulable)",
     "icone": "E0271",
-    "stat":"Esprit",
+    "stat": "Esprit",
     "classe": ["Shaman"]
   },
   "49": {
@@ -406,8 +406,8 @@
   },
   "51": {
     "nom": "Saut Dimensionnel",
-    "desc": "T\u00e9l\u00e9porte l'ennemi jusqu'\u00e0 6m en avant",
-    "effet": "D\u00e9placement",
+    "desc": "T\u00e9l\u00e9porte le joueur jusqu'\u00e0 6m en avant",
+    "effet": "Téléportation",
     "montant": "---",
     "icone": "E0025",
     "stat": "Intelligence",
@@ -426,7 +426,7 @@
     "nom": "Affaiblissement Mental",
     "desc": "R\u00e9duit la resistance aux \u00e9l\u00e9ments",
     "effet": "Malus",
-    "montant": "D\u00e9g\u00e2t magique subi  1D4",
+    "montant": "D\u00e9g\u00e2t magique subi +1D4",
     "icone": "E0120",
     "stat": "Esprit",
     "classe": ["Magicien"]
@@ -438,7 +438,7 @@
     "montant": "",
     "icone": "E0119",
     "stat": "Esprit",
-    "classe": ["Magicien","Illusionniste"]
+    "classe": ["Magicien", "Illusionniste"]
   },
   "55": {
     "nom": "Contr\u00f4le de l'Esprit",
@@ -457,5 +457,59 @@
     "icone": "E0125",
     "stat": "Intelligence",
     "classe": ["Illusionniste"]
+  },
+  "58": {
+    "nom": "Destruction de l'aurore",
+    "desc": "Envoie un rayon de lumi\u00e8re jusqu'\u00e0 4m",
+    "effet": "D\u00e9g\u00e2t",
+    "montant": "1D8",
+    "icone": "E0604",
+    "stat": "Intelligence",
+    "classe": ["Luminary"]
+  },
+  "59": {
+    "nom": "Coupure Noire",
+    "desc": "Inflige une triple tranche de t\u00e9n\u00e8bres \u00e0 l'ennemi",
+    "effet": "D\u00e9g\u00e2t",
+    "montant": "1D6 + 1D4 + 1D4",
+    "icone": "E0603",
+    "stat": "Force",
+    "classe": ["Luminary"]
+  },
+  "60": {
+    "nom": "Pri\u00e8re Divine",
+    "desc": "Soigne l'utilisateur et boost les prochains d\u00e9g\u00e2ts de lumi\u00e8res",
+    "effet": "Soin et Buff",
+    "montant": "Soin 1D10. Prochain d\u00e9g\u00e2t lumi\u00e8res +1D4",
+    "icone": "E0610",
+    "stat": "Esprit",
+    "classe": ["Luminary"]
+  },
+  "61": {
+    "nom": "Portail des t\u00e9n\u00e8bres",
+    "desc": "T\u00e9l\u00e9porte le personnage vers la cible, boost les prochains d\u00e9g\u00e2ts de t\u00e9n\u00e8bres",
+    "effet": "T\u00e9l\u00e9portation et Buff",
+    "montant": "Prochain d\u00e9g\u00e2t de t\u00e9n\u00e8bres +1D6 +2",
+    "icone": "E0609",
+    "stat": "Intelligence",
+    "classe": ["Luminary"]
+  },
+  "62": {
+    "nom": "Sacrifice d'Ombre Noire",
+    "desc": "Diminue les PV, tant que l'utilisateur fait des t\u00e9n\u00e8bres, boost l'intelligence et les d\u00e9g\u00e2ts de t\u00e9n\u00e8bres",
+    "effet": "Buff",
+    "montant": "PV - 1D10 +5, Intelligence+3 et D\u00e9g\u00e2t t\u00e9n\u00e8bres +4",
+    "icone": "E0611",
+    "stat": "Esprit",
+    "classe": ["Luminary"]
+  },
+  "63": {
+    "nom": "Coupure de lumi\u00e8re",
+    "desc": "Tranche l'ennemi avec de la lumi\u00e8re",
+    "effet": "D\u00e9g\u00e2t",
+    "montant": "1D10",
+    "icone": "E0602",
+    "stat": "Force",
+    "classe": ["Luminary"]
   }
 }
