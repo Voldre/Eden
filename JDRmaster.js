@@ -122,7 +122,7 @@ function loadEnemy(indexEnemy, indexElement){
     if(!enemyData){
         
         console.log(indexEnemy + " is not an enemy (in the list)");
-        ennemiElement.querySelector('#nom').innerText = "";
+        // ennemiElement.querySelector('#nom').innerText = "";
         ennemiElement.querySelector('#desc').innerText = "";
         ennemiElement.querySelector('#infos').innerText = "";
         ennemiElement.querySelector('#drop').innerText = "";
@@ -130,25 +130,38 @@ function loadEnemy(indexEnemy, indexElement){
         ennemiElement.querySelector('.icon').src = "";
         ennemiElement.querySelector('#pv').value = "";
         ennemiElement.querySelector('#pvmax').value = "";
+        
+        ennemiElement.querySelector('#force').value = "";
+        ennemiElement.querySelector('#dexté').value = "";
+        ennemiElement.querySelector('#intel').value = "";
+        ennemiElement.querySelector('#charisme').value = "";
+        ennemiElement.querySelector('#esprit').value = "";
 
         [...ennemiElement.querySelectorAll('.competence')].forEach(e => e.innerText = "");
+
         return;
     }
 
-    
 
-    ennemiElement.querySelector('#nom').innerText = enemyData.nom;
-    ennemiElement.querySelector('#desc').innerText = enemyData.desc;
-    ennemiElement.querySelector('#infos').innerText = enemyData.infos;
-    ennemiElement.querySelector('#drop').innerText = enemyData.drop;
+    // ennemiElement.querySelector('#nom').innerText = enemyData.nom;
+    ennemiElement.querySelector('#desc').innerText = "Desc : " + enemyData.desc;
+    ennemiElement.querySelector('#infos').innerText = "Infos / BP : " + enemyData.infos;
+    ennemiElement.querySelector('#drop').innerText = "Drop : " + enemyData.drop;
     ennemiElement.querySelector('#visuel').innerText = enemyData.visuel3D;
     ennemiElement.querySelector('.icon').src = "http://voldre.free.fr/Eden/images/monsters/"+enemyData.visuel3D.toLowerCase()+".png";
     ennemiElement.querySelector('.icon').alt = enemyData.visuel3D.toLowerCase();
     ennemiElement.querySelector('#pv').value = enemyData.pvmax;
     ennemiElement.querySelector('#pvmax').value = enemyData.pvmax;
     
+    // Stats
+    ennemiElement.querySelector('#force').value = enemyData.stats.split(",")[0];
+    ennemiElement.querySelector('#dexté').value = enemyData.stats.split(",")[1];
+    ennemiElement.querySelector('#intel').value = enemyData.stats.split(",")[2];
+    ennemiElement.querySelector('#charisme').value = enemyData.stats.split(",")[3];
+    ennemiElement.querySelector('#esprit').value = enemyData.stats.split(",")[4];
+
     // Skills de l'ennemi
-    JSON.parse(enemyData.skills).forEach( (skill, index) =>{
+    enemyData.skills.forEach( (skill, index) =>{
         competence = [...ennemiElement.querySelectorAll('.competence')][index];
         competence.innerText = skill;
     })
@@ -227,6 +240,18 @@ document.querySelector('#save').addEventListener('click', () =>{
     saveWithPHP('master'); // Save it to JSON
     toastNotification('Données sauvegardées');
 })
+document.querySelector('#saveBackup').addEventListener('click', () =>{
+    $.ajax({
+        url: "JDRsaveBackup.php",
+        type: "post", 
+        // /*
+        success: function(data) {
+          $('body').html(data);
+        }
+        // */
+    })
+    toastNotification('JDRpersos_backup.json sauvegardés');
+})
 
 // Create skill & Save
 
@@ -283,13 +308,14 @@ document.querySelector('#createEnemy').addEventListener('click', ()=>{
     nom = addEnemy.children[2+1].value;
     pvmax = addEnemy.children[4+1].value;
     skills = [addEnemy.children[6+1].value,addEnemy.children[8+1].value,addEnemy.children[10+1].value,addEnemy.children[12+1].value];
-    desc = addEnemy.children[14+1].value;
-    infos = addEnemy.children[16+1].value;
-    drop = addEnemy.children[18+1].value;
+    stats = addEnemy.children[14+1].value; // .split(",")
+    desc = addEnemy.children[16+1].value;
+    infos = addEnemy.children[18+1].value;
+    drop = addEnemy.children[20+1].value;
 
     enemyID = parseInt(Object.keys(enemyJSON).reverse()[0])+1 || 1;
     newEnemy = {};
-    newEnemy[enemyID] = {"visuel3D":visuel3D,"nom":nom, "pvmax":pvmax, "skills":JSON.stringify(skills),"desc":desc,"infos":infos,"drop":drop};
+    newEnemy[enemyID] = {"visuel3D":visuel3D,"nom":nom, "pvmax":pvmax, "skills":skills,"stats":stats,"desc":desc,"infos":infos,"drop":drop};
     console.log(newEnemy)
     
     document.cookie = "enemyJSON="+encodeURIComponent(JSON.stringify(newEnemy));

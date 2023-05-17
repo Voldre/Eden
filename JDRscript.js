@@ -36,6 +36,7 @@ console.log('Skills JSON',skillsJSON)
 console.log('Persos JSON',persosJSON)
 
 
+
 // download(skills, 'skills.json', 'text/plain')
 
 // Table Initialisation
@@ -45,6 +46,15 @@ const iconsClasses = ['01','02','03','18','04','05','06','16','07','08','09','59
 
 const skillsInfo = ['nom','desc','effet','montant','icone','stat'];
 
+const races = ["Humain","Ezelin","Ursun","Zumi","Anuran","Torturran","Drakai","Tuskar","Ogre"];
+const poids = ["Moyen","Léger","Lourd","Léger","Moyen","Moyen","Léger","Lourd","Lourd"];
+
+
+// RACES
+
+document.querySelector('#race').addEventListener('change', e =>{
+    document.querySelector('.poids').innerText = poids[races.indexOf(e.target.value)];
+})
 
 // CLASSES
 document.querySelectorAll('[id^="classe"]').forEach( (classeElem, i) =>{
@@ -89,6 +99,12 @@ competences = document.querySelector('.skills');
     // Selected skill
     competence.children[0].addEventListener('change', e=>{
         insertSkill(competence, e.target.value);
+    });
+    // Click on skill element
+    competence.addEventListener('click', e =>{
+        if(!e.target.classList.contains('nom')){ // If click on select element, don't show/hide the desc ?
+        competence.children[4].classList.toggle('hide');
+        }
     });
 })
 
@@ -147,11 +163,13 @@ function insertSkill(skillElement, skillName){
         skillElement.children[2].innerText = "";
         skillElement.children[3].src = "";
         skillElement.children[3].title = "";
+        skillElement.children[4].innerText = "";
     }else{
         skillElement.children[1].innerText = selectedSkill.effet + " / " + selectedSkill.stat;
         skillElement.children[2].innerText = selectedSkill.montant;
         skillElement.children[3].src = "http://voldre.free.fr/Eden/images/skillIcon/"+selectedSkill.icone+".png";
         skillElement.children[3].title = selectedSkill.desc;
+        skillElement.children[4].innerText = selectedSkill.desc;
     }
 }
 
@@ -165,6 +183,14 @@ equipements = document.querySelector('.equipements');
     equipement.children[0].addEventListener('change', e=>{
         insertEqpt(equipement, e.target.value);
     });
+    
+    // Click on skill element
+    equipement.addEventListener('click', e =>{
+        if(!e.target.classList.contains('nom')){ // If click on select element, don't show/hide the desc ?
+            equipement.children[4].classList.toggle('hide');
+        }
+    });
+    
 })
 
 function insertEqpt(eqptElement, eqptName){
@@ -177,11 +203,13 @@ function insertEqpt(eqptElement, eqptName){
         eqptElement.children[2].innerText = "";
         eqptElement.children[3].src = "";
         eqptElement.children[3].title = "";
+        eqptElement.children[4].innerText = "";
     }else{
         eqptElement.children[1].innerText = selectedEqpt.effet;
         eqptElement.children[2].innerText = selectedEqpt.montant;
         eqptElement.children[3].src = "http://voldre.free.fr/Eden/images/items/"+selectedEqpt.icone+".png";
         eqptElement.children[3].title = selectedEqpt.desc;
+        eqptElement.children[4].innerText = selectedEqpt.desc;
     }
 }
 
@@ -211,6 +239,7 @@ function loadFiche(indexPerso){
     persoData = persosJSON[indexPerso];
 
     if(!persoData) return;
+    
 
     document.querySelector('#nom').value = persoData.nom;
     document.querySelector('#race').value = persoData.race;
@@ -254,6 +283,8 @@ function loadFiche(indexPerso){
 
     // Inventaire du perso
     document.querySelector(".inventaire").value = persoData.inventaire,
+    document.querySelector('.poids').innerText = poids[races.indexOf(persoData.race)];
+
     document.querySelector("#argent").value = persoData.argent
 
     document.querySelector(".personnalité").value = persoData.personnalite,
@@ -471,6 +502,4 @@ function toastNotification(text, duration = 3000) {
 document.getElementById("toast").addEventListener('click', ()=>{
     document.getElementById("toast").classList.remove("show");
 })
-
-
 

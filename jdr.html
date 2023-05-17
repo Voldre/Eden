@@ -79,6 +79,7 @@
                 <label for="pv">PV/Max</label>
                 <input style='width: 38px;' type='number' id="pv" name="pv"></input>
 
+
                 <input style='width: 38px;' type='number' id="pvmax" name="pvmax"></input><br/>
                 <!-- <label for="pv">PV</label>
                 <input style='width: 60px;' type='number' id="pv" name="pv"></input><br/>
@@ -93,19 +94,24 @@
         <h4>Statistiques</h4>
         <div class="stats">
             <div class="stat" ><label for="force">Force</label>
-                <input type='text' min="1" max="19" id="force" name="force"></input>
+                <input type='number' min="1" max="17" id="force" name="force"></input>
+                <input type='number' min="-10" max="10" style="height: 23px; font-size: 17px;"></input>
             </div>
             <div class="stat" ><label for="dexté">Dextérité</label>
-                <input type='text' min="1" max="19" id="dexté" name="dexté"></input>
+                <input type='number' min="1" max="17" id="dexté" name="dexté"></input>
+                <input type='number' min="-10" max="10" style="height: 23px; font-size: 17px;"></input>
             </div>
             <div class="stat" ><label for="intel">Intelligence</label>
-                <input type='text' min="1" max="19" id="intel" name="intel"></input>
+                <input type='number' min="1" max="17" id="intel" name="intel"></input>
+                <input type='number' min="-10" max="10" style="height: 23px; font-size: 17px;"></input>
             </div>
             <div class="stat" ><label for="charisme">Charisme</label>
-                <input type='text' min="1" max="19" id="charisme" name="charisme"></input>
+                <input type='number' min="1" max="17" id="charisme" name="charisme"></input>
+                <input type='number' min="-10" max="10" style="height: 23px; font-size: 17px;"></input>
             </div>
             <div class="stat" ><label for="esprit">Esprit</label>
-                <input type='text' min="1" max="19" id="esprit" name="esprit"></input>
+                <input type='number' min="1" max="17" id="esprit" name="esprit"></input>
+                <input type='number' min="-10" max="10" style="height: 23px; font-size: 17px;"></input>
             </div>
         </div>
         <h4>Compétences</h4>
@@ -118,6 +124,7 @@
                 <p class="effet"></p>
                 <p class="montant"></p>
                 <img src="" alt="" class="icone" title="Description de la compétence">
+                <p class="desc hide"></p>
                 <!-- icone + élément ?  -->
             </div>
             <div class="skill">
@@ -125,72 +132,78 @@
                 <p class="effet"></p>
                 <p class="montant"></p>
                 <img src="" alt="" class="icone" title="Description de la compétence">
-                <!-- icone + élément ?  -->
+                <p class="desc hide"></p>
             </div>
             <div class="skill">
                 <select name="" class="nom"></select>
                 <p class="effet"></p>
                 <p class="montant"></p>
                 <img src="" alt="" class="icone" title="Description de la compétence">
-                <!-- icone + élément ?  -->
+                <p class="desc hide"></p>
             </div>
             <div class="skill">
                 <select name="" class="nom"></select>
                 <p class="effet"></p>
                 <p class="montant"></p>
                 <img src="" alt="" class="icone" title="Description de la compétence">
-                <!-- icone + élément ?  -->
+                <p class="desc hide"></p>
             </div>
             <div class="skill">
                 <select name="" class="nom"></select>
                 <p class="effet"></p>
                 <p class="montant"></p>
                 <img src="" alt="" class="icone" title="Description de la compétence">
-                <!-- icone + élément ?  -->
+                <p class="desc hide"></p>
             </div>
             <div class="skill">
                 <select name="" class="nom"></select>
                 <p class="effet"></p>
                 <p class="montant"></p>
                 <img src="" alt="" class="icone" title="Description de la compétence">
-                <!-- icone + élément ?  -->
+                <p class="desc hide"></p>
             </div>
         </div>
         <div class="bag">
             <h4>Equipements</h4>
+            
             <div class="equipements">
                 <div class="arme">
                     <input type="text" name="" class="nom"  placeholder="arme"></input>
                     <p class="effet"></p>
                     <p class="montant"></p>
                     <img src="" alt="" class="icone" title="Description de l'arme">
+                    <p class="desc hide"></p>
                 </div>
                 <div class="arme">
                     <input type="text" name="" class="nom" placeholder="arme"></input>
                     <p class="effet"></p>
                     <p class="montant"></p>
                     <img src="" alt="" class="icone" title="Description de l'arme">
+                    <p class="desc hide"></p>
                 </div>
                 <div class="equipement">
                     <input type="text" name="" class="nom" placeholder="equipement"></input>
                     <p class="effet"></p>
                     <p class="montant"></p>
                     <img src="" alt="" class="icone" title="Description de l'équipement">
+                    <p class="desc hide"></p>
                 </div>
                 <div class="accessoire">
                     <input type="text" name="" class="nom" placeholder="accessoire"></input>
                     <p class="effet"></p>
                     <p class="montant"></p>
                     <img src="" alt="" class="icone" title="Description de l'accessoire">
+                    <p class="desc hide"></p>
                 </div>
                 <div class="accessoire">
                     <input type="text" name="" class="nom" placeholder="accessoire"></input>
                     <p class="effet"></p>
                     <p class="montant"></p>
                     <img src="" alt="" class="icone" title="Description de l'accessoire">
+                    <p class="desc hide"></p>
                 </div>
             </div>
-            <h4>Inventaire</h4>
+            <h4>Inventaire (Poids supportable : <span class="poids">- - -</span>)</h4>
             <textarea class="inventaire" name="" id="" cols="30" rows="10"></textarea><br/>
             <!-- <div class="inventaire"></div> -->
             <label for="argent">Pièces d'or</label>
