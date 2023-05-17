@@ -34,7 +34,7 @@ if(window.location.href.includes('http')){
 
 console.log('Skills JSON',skillsJSON)
 console.log('Persos JSON',persosJSON)
-
+
 
 
 // download(skills, 'skills.json', 'text/plain')
@@ -112,7 +112,7 @@ function updateSkillsSlots(){ // Display skils slots
     competences = document.querySelector('.skills');
     [...competences.children].forEach( (competence,i) =>{
         var niv = document.querySelector('#niv').value || 1;
-        SlotsAvailable = Math.trunc(niv/2) + 2;
+        SlotsAvailable = Math.trunc(niv/2) + 3; // Update 17/05/23, 3 au lieu de 2, car 4 skills sur ~ 12-13 possibles
         if(i > SlotsAvailable){
             competence.classList.add('hide');
         }else{ 
@@ -467,6 +467,15 @@ $.ajax({
     type: "post", 
 })
 
+
+// Show/Hide other pages of Eden
+buttonIframe = document.querySelector('#buttonIframe');
+buttonIframe.addEventListener('click', ()=>{
+    if(buttonIframe.innerText == 'Afficher le site'){
+        buttonIframe.innerText = 'Masquer le site';
+    }else{ buttonIframe.innerText = 'Afficher le site'; }
+    document.querySelector('iframe').classList.toggle('hide');
+});
 
 
 

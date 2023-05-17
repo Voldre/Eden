@@ -1,7 +1,10 @@
 body{
     overflow-x: hidden;
 }
-
+ul{
+    
+    list-style-image: url(https://static.wikia.nocookie.net/edeneternal/images/7/72/Listbullet.png/revision/latest?cb=20230516201107&format=original);
+}
 select{
     max-height: 26px;
 }
@@ -222,17 +225,23 @@ input[type=number] {
     width: 100%;
     grid-template-columns: 32vw 32vw 32vw;
 }
+.infoPersos{
+    width: 99vw;
+    display: grid;
+    grid-template-columns: 25vw 25vw 25vw 25vw;
+}
 .infoEnnemi{
     border: 2px black solid;
     margin: 5px;
 }
-.infoEnnemi .commentaire{
-    width: 85%;
-}
-.infoEnnemi input[type="number"]{
+.infoPersos input[type="number"], .infoEnnemi input[type="number"]{
     width: 30px;
 }
-.infoEnnemi .buff, .infoEnnemi .debuff{
+
+.infoPersos .commentaire, .infoEnnemi .commentaire{
+    width: 85%;
+}
+.buff, .debuff{
     width: 70%;
     margin: 5px;
 }
