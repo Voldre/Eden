@@ -19,25 +19,31 @@
     <body style="position: relative; min-height: 100%; top: 0px;">
         <nav style="margin-left:10px;">
             <ul class="menu">
-                <!-- <li><a href="">Présentation</a></li> -->       
-        <li><a href="univers.php">L'Univers</a></li>
-            <!--  # Races # Classes -->
-        <li><a href="jdr.html">Fiches de persos</a></li>
+                <!-- <li><a href="">Présentation</a></li> -->
+                <li>
+                    <a href="univers.php">L'Univers</a>
+                </li>
+                <!--  # Races # Classes -->
+                <li>
+                    <a href="jdr.html">Fiches de persos</a>
+                </li>
                 <!--  # Races # Classes -->
                 <li>
                     <a href="jdr_master.php">Fiche MJ</a>
                 </li>
-                <!-- <li>
+                <li>
                     <a href="3D.php">Designs 3D</a>
-                </li> -->
+                </li>
             </ul>
         </nav>
         <h4 style="display: inline; margin-right: 12px;">Races</h4>
-        <button id="buttonRace">Afficher</button>
+        <button id="buttonRace">Afficher</button> &nbsp; &nbsp; &nbsp;
+        <h4 style="display: inline; margin-right: 12px;">Eléments</h4>
+        <button id="buttonElem">Afficher</button>
         <div id="race" class="hide">
             <div class="race">
                 <h4>Humains</h4>
-                <img src="images/jdrgalerie/Race_Humain.webp" alt="">
+                <img src="images/jdrgalerie/Race_Humain.webp">
                 <p>Les humains sont une race intelligente, provenant du continent nord. Étant une des premières races à avoir colonisé le continent central, leurs cultures tendent à être les plus diverses et répandues. Ils ont construit de nombreuses villes et même des pays sur le continent central, et tout ce qui reste de leur passé dans le Nord sont quelques tribus nomades éparpillées.</p>
             </div>
             <div class="race">
@@ -72,7 +78,7 @@
                     <li>Herbologie, magie ancienne</li>
                     <li>Conseiller et intelligent</li>
                     <li>Antihéros : culte sombre</li>
-                </ul>
+                </ul>
                 <p>Les Torturrans foulaient déjà le sol d'Eden alors que les rivières n'avaient même pas encore rempli les mers. Ancienne comme aucune autre, cette race est célèbre pour son savoir accumulé dans les herbes traditionnelles, la magie et les secrets perdus. Avec le temps, ils sont devenus un symbole de bons conseils et d'intelligence. Malgré cela, un culte s'est formé parmi la race. Ce culte exécute de sombres rituels, et bien que ces pratiquants soient une minorité, leur notoriété grandit.</p>
             </div>
             <div class="race">
@@ -90,11 +96,16 @@
             <div class="race">
                 <h4>Ogres</h4>
                 <div style="display:inline">
-                <img src="images/jdrgalerie/Race_Ogre.webp" alt="">
+                    <img src="images/jdrgalerie/Race_Ogre.webp" alt="">
                 </div>
                 <p>Les Ogres passent la plupart de leur temps à se battre. Ils ne quittent jamais un combat et se réjouissent particulièrement lors des massacres.Bien qu'ambitieux, ils ne sont pas très malins et finissent souvent comme soldats d'infanterie dans les armées humaines.</p>
             </div>
             <!-- <iframe src="https://eden-eternal.fandom.com/fr/wiki/Races" frameborder="0"></iframe> -->
+        </div>
+            
+        <div id="elem" class="hide">
+            <p>Chaque attaque possède un élément, un élément physique et/ou magique, connaîtres les faiblesses élémentaires des ennemis permet de récupérer des trésors précieux.</p>
+            <img src="images/elements.png" style="max-width:105%;" alt="Liste des éléments PNG">
         </div>
         <p class="statsBySkills"></p>
         <h4>Classes</h4>

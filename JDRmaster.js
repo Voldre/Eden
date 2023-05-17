@@ -23,7 +23,10 @@ if(window.location.href.includes('http')){
     xhReq.open("GET", "./JDRmaster.json", false);
     xhReq.send(null);
     var masterJSON = JSON.parse(xhReq.responseText);
-    
+
+    // load notes
+    document.querySelector('.notes').value = masterJSON.notes;
+
     xhReq.open("GET", "./JDRenemy.json", false);
     xhReq.send(null);
     var enemyJSON = JSON.parse(xhReq.responseText);

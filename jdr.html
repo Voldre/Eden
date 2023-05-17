@@ -36,11 +36,12 @@
         <li><a href="3D.php">Designs 3D</a></li>
         <li><select name="selectPerso" id="selectPerso">
             <option value="J1">J1</option>
-            <option value="J2">J2</option>
-            <option value="J3">J3</option>
-            <option value="J4">J4</option>
-            <option value="J5">J5</option>
-            <option value="J6">J6</option>
+            <option value="J2">Florian</option>
+            <option value="J3">Jérémy</option>
+            <option value="J4">Victorine</option>
+            <option value="J5">Angie</option>
+            <option value="J6">Yves</option>
+            <option value="J7">J7</option>
             </select>
         </li>
         <li><button id="save">Sauvegarder</button></li>
@@ -52,6 +53,7 @@
         <div id="toast"></div>
         <div class="flexContainer">
             <div class="topleft">
+                <ul>
                 <label for="nom">Nom</label>
                 <input type='text' id="nom" name="nom"></input><br/>
                 <label for="race">Race</label>
@@ -85,6 +87,7 @@
                 <input style='width: 60px;' type='number' id="pv" name="pv"></input><br/>
                 <label for="pvmax">PV Max</label>
                 <input style='width: 60px;' type='number' id="pvmax" name="pvmax"></input><br/> -->
+                </ul>
             </div>
             <div class="topright">
                 <img id="pp"src="./images/Grenadier.webp" alt="">
@@ -95,30 +98,29 @@
         <div class="stats">
             <div class="stat" ><label for="force">Force</label>
                 <input type='number' min="1" max="17" id="force" name="force"></input>
-                <input type='number' min="-10" max="10" style="height: 23px; font-size: 17px;"></input>
+                <input type='text' min="-10" max="10" style="height: 23px; font-size: 17px;"></input>
             </div>
             <div class="stat" ><label for="dexté">Dextérité</label>
                 <input type='number' min="1" max="17" id="dexté" name="dexté"></input>
-                <input type='number' min="-10" max="10" style="height: 23px; font-size: 17px;"></input>
+                <input type='text' min="-10" max="10" style="height: 23px; font-size: 17px;"></input>
             </div>
             <div class="stat" ><label for="intel">Intelligence</label>
                 <input type='number' min="1" max="17" id="intel" name="intel"></input>
-                <input type='number' min="-10" max="10" style="height: 23px; font-size: 17px;"></input>
+                <input type='text' min="-10" max="10" style="height: 23px; font-size: 17px;"></input>
             </div>
             <div class="stat" ><label for="charisme">Charisme</label>
                 <input type='number' min="1" max="17" id="charisme" name="charisme"></input>
-                <input type='number' min="-10" max="10" style="height: 23px; font-size: 17px;"></input>
+                <input type='text' min="-10" max="10" style="height: 23px; font-size: 17px;"></input>
             </div>
             <div class="stat" ><label for="esprit">Esprit</label>
                 <input type='number' min="1" max="17" id="esprit" name="esprit"></input>
-                <input type='number' min="-10" max="10" style="height: 23px; font-size: 17px;"></input>
+                <input type='text' min="-10" max="10" style="height: 23px; font-size: 17px;"></input>
             </div>
         </div>
         <h4>Compétences</h4>
         <div class="skills">
             <!-- p.desc+ -->
             <!-- (.skill>(input.nom+p.effet+p.montant+img.icone))*3  -->
-            <!-- (.skill>(select.nom+p.effet+p.montant+img.icone))*3  -->
             <div class="skill">
                 <select name="" class="nom"></select>
                 <p class="effet"></p>
@@ -126,6 +128,13 @@
                 <img src="" alt="" class="icone" title="Description de la compétence">
                 <p class="desc hide"></p>
                 <!-- icone + élément ?  -->
+            </div>
+            <div class="skill">
+                <select name="" class="nom"></select>
+                <p class="effet"></p>
+                <p class="montant"></p>
+                <img src="" alt="" class="icone" title="Description de la compétence">
+                <p class="desc hide"></p>
             </div>
             <div class="skill">
                 <select name="" class="nom"></select>
@@ -221,6 +230,9 @@
     </div>
 </body>
 <footer>
-    <li><a href="../">Site général</a></li>
+    <br/>
+    <button id="buttonIframe">Afficher le site</button>
+    <iframe class="hide" src="http://voldre.free.fr/Eden/univers.php?data=worldmap" style="width: 100vw; height: 92vh;border-top: 4px double wheat" frameborder="0"></iframe>
+    <!-- <li><a href="../">Site général</a></li> -->
 </footer>
 </html>
