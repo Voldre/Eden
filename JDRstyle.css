@@ -75,13 +75,17 @@ input[type=number] {
     font-size: 14px;
 }
 
-.skill{
+.skill, .equipements div{
     border: 1px gray solid;
     margin : 10px;
     margin-left: 2px;
     display: grid;
     width: 100%;
-    grid-template-areas: "nom nom eff ico"  "mon mon mon ico";
+    grid-template-areas: "nom nom eff ico"  "mon mon mon ico" "desc desc desc desc";
+    cursor: pointer;
+}
+.skill:hover, .equipements div:hover{
+    background-color: rgba(96, 69, 216, 0.1);
 }
 .skill> .nom, .equipements div > .nom{
     grid-area: nom;

@@ -11,7 +11,7 @@
   "1": {
     "nom": "Attaque Cyclone",
     "desc": "Tournoie et frappe les ennemis autour du personnage",
-    "effet": "D\u00e9g\u00e2t",
+    "effet": "D\u00e9g\u00e2t AoE",
     "montant": "1D6",
     "icone": "E0005",
     "stat": "Force",
@@ -19,7 +19,7 @@
   },
   "57": {
     "nom": "Mur de Titan",
-    "desc": "R\u00e9duit les d\u00e9g\u00e2ts subis",
+    "desc": "R\u00e9duit les d\u00e9g\u00e2ts subis par la cible",
     "effet": "D\u00e9g\u00e2t r\u00e9duit",
     "montant": "2 + 1D6 pendant 3 tours",
     "icone": "E0029",
@@ -55,7 +55,7 @@
   },
   "5": {
     "nom": "Vivacit\u00e9 Accrue",
-    "desc": "+2 Dext\u00e9rit\u00e9 pendant 4 tours",
+    "desc": "+2 Dext\u00e9rit\u00e9 pendant 4 tours à la cible",
     "effet": "Buff",
     "montant": "2 pendant 4 tours",
     "icone": "E0294",
@@ -64,7 +64,7 @@
   },
   "6": {
     "nom": "Lumi\u00e8re Sacr\u00e9e",
-    "desc": "D\u00e9g\u00e2ts de lumi\u00e8re \u00e0 distance",
+    "desc": "D\u00e9g\u00e2ts de lumi\u00e8re à distance sur la cible",
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D10",
     "icone": "E0302",
@@ -74,7 +74,7 @@
   "7": {
     "nom": "Coup Infernal",
     "desc": "D\u00e9g\u00e2ts de lumi\u00e8re sur 3m autour du lanceur",
-    "effet": "D\u00e9g\u00e2t",
+    "effet": "D\u00e9g\u00e2t AoE",
     "montant": "1D6",
     "icone": "E0303",
     "stat": "Intelligence",
@@ -83,7 +83,7 @@
   "8": {
     "nom": "Bouclier de Lumi\u00e8re",
     "desc": "R\u00e9duit les d\u00e9g\u00e2ts magique re\u00e7u de tout le monde",
-    "effet": "D\u00e9g\u00e2t",
+    "effet": "D\u00e9g\u00e2t réduit AoE",
     "montant": "1D6 pendant 3 tours",
     "icone": "E0309",
     "stat": "Esprit",
@@ -110,7 +110,7 @@
   "11": {
     "nom": "Attaque Furieuse",
     "desc": "Tournoie et frappe les ennemis autour du personnage",
-    "effet": "D\u00e9g\u00e2t",
+    "effet": "D\u00e9g\u00e2t AoE",
     "montant": "1D8",
     "icone": "E0010",
     "stat": "Dext\u00e9rit\u00e9",
@@ -163,7 +163,7 @@
   },
   "24": {
     "nom": "Lames Dansante",
-    "desc": "Envoi des lames au vent et tranche 3 fois les ennemis aux alentours",
+    "desc": "Envoi des lames au vent et tranche 3 fois l'ennemi choisi",
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D6 2D4",
     "icone": "E0062",
@@ -172,9 +172,9 @@
   },
   "25": {
     "nom": "Charme tape-\u00e0-l-oeil",
-    "desc": "Lance un charme sur la cible, efficace si sexe oppos\u00e9",
+    "desc": "Lance un charme sur la cible pour réduire sa concentration, efficace si sexe oppos\u00e9",
     "effet": "Malus",
-    "montant": "R\u00e9duit l'esquive et la pr\u00e9cision",
+    "montant": "R\u00e9duit l'esquive et la pr\u00e9cision de la cible",
     "icone": "E0067",
     "stat": "Charisme",
     "classe": ["Danselame"]
@@ -182,7 +182,7 @@
   "26": {
     "nom": "Coupe Asura",
     "desc": "Envoi une tranche sur plusieurs m\u00e8tres, peut toucher les ennemis larges 2 fois",
-    "effet": "D\u00e9g\u00e2t",
+    "effet": "D\u00e9g\u00e2t AoE",
     "montant": "1D10 + (1D10)",
     "icone": "E0481",
     "stat": "Force",
@@ -263,7 +263,7 @@
   "35": {
     "nom": "Bombe \u00e0 Huile",
     "desc": "Inflige une explosion sur plusieurs m\u00e8tres autour de la cible",
-    "effet": "D\u00e9g\u00e2t",
+    "effet": "D\u00e9g\u00e2t AoE",
     "montant": "1D10",
     "icone": "E0080",
     "stat": "Dext\u00e9rit\u00e9",
@@ -272,7 +272,7 @@
   "36": {
     "nom": "Explosifs Visqueux",
     "desc": "La bombe explose et englue tout autour de la cible, attaquer peut d\u00e9faire la glue",
-    "effet": "D\u00e9g\u00e2t",
+    "effet": "D\u00e9g\u00e2t AoE",
     "montant": "1D6, d\u00e9placement/esquive tr\u00e8s r\u00e9duit",
     "icone": "E0082",
     "stat": "Dext\u00e9rit\u00e9",
@@ -307,7 +307,7 @@
   },
   "40": {
     "nom": "S\u00e9isme",
-    "desc": "Inflige des d\u00e9g\u00e2ts de terre",
+    "desc": "Inflige des d\u00e9g\u00e2ts de terre à la cible",
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D8",
     "icone": "E0016",
@@ -325,7 +325,7 @@
   },
   "42": {
     "nom": "Punition Divine",
-    "desc": "Inflige des d\u00e9g\u00e2ts de lumi\u00e8res",
+    "desc": "Inflige des d\u00e9g\u00e2ts de lumi\u00e8res à la cible",
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D8",
     "icone": "E0092",
@@ -343,7 +343,7 @@
   },
   "44": {
     "nom": "Bombe Vocale",
-    "desc": "Inflige al\u00e9atoirement des d\u00e9g\u00e2ts de feu ou d'eau",
+    "desc": "Inflige al\u00e9atoirement des d\u00e9g\u00e2ts de feu ou d'eau à la cible",
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D8",
     "icone": "E0100",
@@ -353,7 +353,7 @@
   "45": {
     "nom": "Hymne \u00e0 la Guerre",
     "desc": "Augmente les d\u00e9g\u00e2ts physiques inflig\u00e9s par le groupe",
-    "effet": "Buff",
+    "effet": "Buff AoE",
     "montant": "Bonus 1D4 pendant 3 tours",
     "icone": "E0105",
     "stat": "Esprit",
@@ -371,7 +371,7 @@
   "47": {
     "nom": "Totem Gracieux",
     "desc": "Tous les deux tours, soigne les alli\u00e9s aux alentours",
-    "effet": "Soin",
+    "effet": "Soin AoE",
     "montant": "1D10 pendant 1D8 tours",
     "icone": "E0115",
     "stat": "Intelligence",
@@ -398,7 +398,7 @@
   "50": {
     "nom": "Attaque Foudroyante",
     "desc": "Attaque de foudre autour de soi (4m)",
-    "effet": "D\u00e9g\u00e2t",
+    "effet": "D\u00e9g\u00e2t AoE",
     "montant": "1D6",
     "icone": "E0022",
     "stat": "Intelligence",
@@ -407,7 +407,7 @@
   "51": {
     "nom": "Saut Dimensionnel",
     "desc": "T\u00e9l\u00e9porte le joueur jusqu'\u00e0 6m en avant",
-    "effet": "Téléportation",
+    "effet": "T\u00e9l\u00e9portation",
     "montant": "---",
     "icone": "E0025",
     "stat": "Intelligence",
@@ -416,7 +416,7 @@
   "52": {
     "nom": "Temp\u00eate de Glace",
     "desc": "Tourbillon de glace dans la zone choisie, ralenti l'ennemi",
-    "effet": "D\u00e9g\u00e2t",
+    "effet": "D\u00e9g\u00e2t AoE",
     "montant": "1D6",
     "icone": "E0118",
     "stat": "Intelligence",
@@ -452,7 +452,7 @@
   "56": {
     "nom": "Oeil Hypnotique",
     "desc": "Les ennemis dans la zone cibl\u00e9e s'endorment",
-    "effet": "Endormissement",
+    "effet": "Endormissement AoE",
     "montant": "Prend fin si r\u00e9veill\u00e9",
     "icone": "E0125",
     "stat": "Intelligence",
@@ -461,8 +461,8 @@
   "58": {
     "nom": "Destruction de l'aurore",
     "desc": "Envoie un rayon de lumi\u00e8re jusqu'\u00e0 4m",
-    "effet": "D\u00e9g\u00e2t",
-    "montant": "1D8",
+    "effet": "D\u00e9g\u00e2t AoE",
+    "montant": "1D6 +1",
     "icone": "E0604",
     "stat": "Intelligence",
     "classe": ["Luminary"]
@@ -511,5 +511,77 @@
     "icone": "E0602",
     "stat": "Force",
     "classe": ["Luminary"]
+  },
+  "64": {
+    "nom": "Po\u00e8me du Vent",
+    "desc": "Un chant qui augmente la dext\u00e9rit\u00e9 des alliés",
+    "effet": "Buff AoE",
+    "montant": "Dext\u00e9rit\u00e9 +2 pendant 1D4 +2",
+    "icone": "E0107",
+    "stat": "Charisme",
+    "classe": ["Barde"]
+  },
+  "65": {
+    "nom": "Symphonie D\u00e9moniaque",
+    "desc": "Augmente les d\u00e9g\u00e2ts magiques inflig\u00e9s par le groupe",
+    "effet": "Buff AoE",
+    "montant": "Bonus 1D4 pendant 3 tours",
+    "icone": "E0103",
+    "stat": "Esprit",
+    "classe": ["Barde"]
+  },
+  "66": {
+    "nom": "Danse de l'oiseau de feu",
+    "desc": "Le lanceur danse autour des ennemis et les br\u00fblent",
+    "effet": "D\u00e9g\u00e2t AoE",
+    "montant": "1D6 +1",
+    "icone": "E0345",
+    "stat": "Dext\u00e9rit\u00e9",
+    "classe": ["Danselame"]
+  },
+  "67": {
+    "nom": "Rituel de Mana",
+    "desc": "Augmente l'Esprit de tous les alli\u00e9s",
+    "effet": "Buff AoE",
+    "montant": "Esprit +2 pendant 1D4 +2 tours",
+    "icone": "E0128",
+    "stat": "Esprit",
+    "classe": ["Illusionniste"]
+  },
+  "68": {
+    "nom": "Parasite Obscur",
+    "desc": "Inflige des d\u00e9g\u00e2ts de t\u00e9n\u00e8bres pendant 3 tours",
+    "effet": "D\u00e9g\u00e2t et Debuff",
+    "montant": "2 d\u00e9g\u00e2ts chaque tour (3 tours)",
+    "icone": "E0133",
+    "stat": "Intelligence",
+    "classe": ["D\u00e9moniste"]
+  },
+  "69": {
+    "nom": "Fl\u00e8ches des Ombres",
+    "desc": "D\u00e9g\u00e2ts de t\u00e9n\u00e8bres, si l'ennemi subi un parasite, soigne l'utilisateur",
+    "effet": "D\u00e9g\u00e2t + Soin",
+    "montant": "D\u00e9g\u00e2t 1D8 et si parasite : soin 1D6",
+    "icone": "E0132",
+    "stat": "Intelligence",
+    "classe": ["D\u00e9moniste"]
+  },
+  "70": {
+    "nom": "Menaces Mortelles",
+    "desc": "Peut apeurer les ennemis et diminue leurs esprits",
+    "effet": "Malus AoE",
+    "montant": "---",
+    "icone": "E0135",
+    "stat": "Esprit",
+    "classe": ["D\u00e9moniste"]
+  },
+  "71": {
+    "nom": "Magie Extr\u00eame",
+    "desc": "Renforce la prochaine attaque magique du lanceur",
+    "effet": "Buff",
+    "montant": "Prochain d\u00e9g\u00e2t magique +1D6 +2",
+    "icone": "E0430",
+    "stat": "Esprit",
+    "classe": ["Magicien"]
   }
 }
