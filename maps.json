@@ -107,7 +107,8 @@
     "map_y": null,
     "map_z": null,
     "map_r": null,
-    "bgm": 7
+    "bgm": 7,
+    "desc" : "Surnom : Le carrefour verdoyant.\n\n\"Qu'il est bon de s'allonger dans l'herbe et de regarder le soleil passer au dessus des Plaines Dorées ! Cette immense plaine bénéficie de terres fertiles grâce au Volcan située à proximité, et baigne toute l'année dans une chaleur agréable.\n\nSituée en plus au carrefour de grandes routes, il paraît donc normal que les commerçants aient décidé d'y fonder une cité, où les appels des marchands se mélangent aux chants des ménestrels.\n\nDe grandes forteresses, au loin, rappellent les vestiges d'un temps inconnu des habitants actuels d'Ezur.\" (présentation provenant du jeu). \n\nZones et Donjons de la région\n\nIl y a quatre zones et deux donjons aux Plaines Dorées.\n\n\nZones\n\n    Orville\n    Le Mirage de Sam\n    Forêt Saken\n    Montée de Sana\n\nDonjons\n\n    Rêve du Maire (zone d'Orville)\n    Crocvenin (zone Montée de Sana)\n\nListes des Monstres\n\nMonstres simples :\n\n    Epineur vil (41)\n    Epineur acéré (41)\n    Scarabée-scorpion (41)\n    Scarabée-scorpion toxique (42)\n    Yak Tueur (42)\n    Taureau Enragé (42)\n    Taureau à Cornes de Roc (43)\n    Busard Epineux (43)\n    Rapaces à Crêtes (43)\n    Busard à Griffe Acéré (43)\n    Rapace Hachecrête (44)\n    Bandit Œil de Loup (44)\n    Soldat Œil de Loup (44)\n    Tueur Œil de Loup (44)\n    Docteur Œil de Loup (45)\n    Berseker Œil de Loup (45)\n\n\n    \"Reine Maudite des insectes\" Gilz (Boss monde)"
   },
   "11": {
     "name": "Terres des Dunes Éternelles",
