@@ -3,6 +3,7 @@ include("header.php");
 include("menu.html");
 ?>
 <body>
+<a target="_blank" style="color:rgb(0,125,255)" href="https://edeneternal.fandom.com/wiki/">Wiki Eden English (with maps and classes)</a>
 <div class="dbMenu">
     <ul>
         <a href="univers.php?data=maps"><li><img src="images/maps/S013m.png" /><p style="display:inline-block;width: 48%;height: 24px;"> Régions </p><a href="univers.php?data=worldmap"><img src="images/worldmapIcon.png" class="mapIcon" ></a></li></a>
@@ -143,7 +144,7 @@ if(isset($_GET["data"])){
         while(strlen($bgm)<3){
             $bgm = "0$bgm";
         }
-        echo"<div class='img-block'>";
+        echo "<div class='img-block'>";
         echo "<img class='pictures' style='width:300px;' src='images/".$img."' />";
         echo "<img class='pictures' style='width:300px;' src='images/loadingframe/Loading_".$_GET["map"].".png' />";
         echo "</div></a></div>";
@@ -151,8 +152,13 @@ if(isset($_GET["data"])){
         echo "<div>";
         // echo "<p>".explode(".",$file)[0]."</p>";
         // echo "<p>OST : ".$audioMap[explode(".",$file)[0]]."</p>";
-        echo "<audio controls ><source src='bgm/bgm$bgm.ogg' type='audio/ogg' /></audio>";
+        echo "<audio loop controls ><source src='bgm/bgm$bgm.ogg' type='audio/ogg' /></audio>";
         echo "</div>";
+        echo "<h3>Description</h3>";
+        if(isset($maplist[$_GET["map"]]["desc"])){
+            $description = str_replace("\\n","<br/>",json_encode($maplist[$_GET["map"]]["desc"]));
+            echo "<p>".json_decode($description)."</p>";
+        }
     }
 }
 ?>
