@@ -3,35 +3,31 @@ var xhReq = new XMLHttpRequest();
 
 console.log(window.location.href)
 if(window.location.href.includes('http')){
-    xhReq.open("GET", "./JDRskills.json", false);
+    
+    xhReq.open("GET", "./JDRskills.json" + "?" + new Date().getTime(), false);
     xhReq.send(null);
     var skillsJSON = JSON.parse(xhReq.responseText);
     
-    xhReq.open("GET", "./JDReqpt.json", false);
+    xhReq.open("GET", "./JDReqpt.json" + "?" + new Date().getTime(), false);
     xhReq.send(null);
     var eqptJSON = JSON.parse(xhReq.responseText);
 
-    xhReq.open("GET", "./JDRpersos.json", false);
-    xhReq.send(null);
-    var persosJSON = JSON.parse(xhReq.responseText);
+    // xhReq.open("GET", "./JDRpersos.json" + "?" + new Date().getTime(), false);
+    // xhReq.send(null);
+    // var persosJSON = JSON.parse(xhReq.responseText);
     
-    
-    xhReq.open("GET", "./JDRgalery.json", false);
-    xhReq.send(null);
-    var galeryJSON = JSON.parse(xhReq.responseText);
-
-    xhReq.open("GET", "./JDRmaster.json", false);
+    xhReq.open("GET", "./JDRmaster.json" + "?" + new Date().getTime(), false);
     xhReq.send(null);
     var masterJSON = JSON.parse(xhReq.responseText);
 
     // load notes
     document.querySelector('.notes').value = masterJSON.notes;
 
-    xhReq.open("GET", "./JDRenemy.json", false);
+    xhReq.open("GET", "./JDRenemy.json" + "?" + new Date().getTime(), false);
     xhReq.send(null);
     var enemyJSON = JSON.parse(xhReq.responseText);
 }else{
-    var skillsJSON = skills;
+    var skillsJSON = {};
     var eqptJSON = {};
     var persosJSON = {};
     var galeryJSON = {};
@@ -63,7 +59,8 @@ if(window.location.href.includes('html')){
 document.querySelector('#nextTurn').addEventListener('click', ()=>{
     document.querySelector('#tour').value = parseInt(document.querySelector('#tour').value) + 1;
     [...document.querySelector('.combat').querySelectorAll('input[type="number"]')].forEach(buffTurn =>{
-        if(!buffTurn.id.includes('pv') && buffTurn.value >= 1){
+        if(!buffTurn.closest(".stats") && !buffTurn.id.includes('pv') && buffTurn.value >= 1){
+            // If the input is not in stats and is not the pv and is not 0, then ...
             buffTurn.value -= 1;
             // if(buffTurn.value == 0){}
         }
@@ -266,8 +263,8 @@ document.querySelector('#createSkill').addEventListener('click', ()=>{
     montant = addSkill.children[6+1].value;
     icone = addSkill.children[8+1].value;
     stat = addSkill.children[10+1].value;
-    classe = [addSkill.children[12+1].value];
-
+    classe = addSkill.children[12+1].value.split(",");
+    
     skillID = parseInt(Object.keys(skillsJSON).reverse()[0])+1 || 1;
     newSkill = {};
     newSkill[skillID] = {"nom":nom,"desc":desc,"effet":effet,"montant":montant,"icone":icone,"stat":stat,"classe":classe};

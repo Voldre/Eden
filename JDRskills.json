@@ -138,7 +138,7 @@
     "nom": "Perce-Armure",
     "desc": "Frappe et r\u00e9duit la d\u00e9fense de l'ennemi",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "Dégât 1D6, puis pendant 3 tours : dégât physique +2",
+    "montant": "D\u00e9g\u00e2t 1D6, puis pendant 3 tours : d\u00e9g\u00e2t physique +2",
     "icone": "E0054",
     "stat": "Force",
     "classe": ["Voleur", "Assassin", "Danselame", "Samoura\u00ef"]
@@ -330,7 +330,7 @@
     "montant": "1D8",
     "icone": "E0092",
     "stat": "Intelligence",
-    "classe": ["Clerc"]
+    "classe": ["Clerc", "Barde", "Shaman", "Sage"]
   },
   "43": {
     "nom": "Pr\u00e9vention",
@@ -372,7 +372,7 @@
     "nom": "Totem Gracieux",
     "desc": "Tous les deux tours, soigne les alli\u00e9s aux alentours",
     "effet": "Soin AoE",
-    "montant": "1D10 pendant 1D8 tours",
+    "montant": "1D6 +4 pendant 1D8 tours",
     "icone": "E0115",
     "stat": "Intelligence",
     "classe": ["Shaman"]
@@ -498,7 +498,7 @@
     "nom": "Sacrifice d'Ombre Noire",
     "desc": "Diminue les PV, tant que l'utilisateur fait des t\u00e9n\u00e8bres, boost l'intelligence et les d\u00e9g\u00e2ts de t\u00e9n\u00e8bres",
     "effet": "Buff",
-    "montant": "PV - 1D10 +5, Intelligence+3 et D\u00e9g\u00e2t t\u00e9n\u00e8bres +4",
+    "montant": "PV - 1D10 +5, Force et Intelligence+3 et D\u00e9g\u00e2t t\u00e9n\u00e8bres +4",
     "icone": "E0611",
     "stat": "Esprit",
     "classe": ["Luminary"]
@@ -591,7 +591,7 @@
     "montant": "2 tours d'incantation : soigne de 2D10",
     "icone": "E0020",
     "stat": "Intelligence",
-    "classe": ["Clerc,Barde,Shaman,Sage"]
+    "classe": ["Clerc", "Barde", "Shaman", "Sage"]
   },
   "73": {
     "nom": "Purgatoire",
@@ -610,5 +610,41 @@
     "icone": "E0109",
     "stat": "Intelligence",
     "classe": ["Shaman"]
+  },
+  "75": {
+    "nom": "Invocation d'Alpaga",
+    "desc": "Invoque un esprit Alpaga de t\u00e9n\u00e8bres qui accompagne partout, peut flotter et cracher sur les ennemis",
+    "effet": "Invocation",
+    "montant": "Invocation jusqu'\u00e0 coupure magique",
+    "icone": "VicAlpaga",
+    "stat": "Esprit",
+    "classe": ["Chasseur"]
+  },
+  "76": {
+    "nom": "Pacte",
+    "desc": "Invoque un Panopticor (d\u00e9mons tentaculaires aux yeux multiples)",
+    "effet": "Invocation",
+    "montant": "Invocation jusqu'\u00e0 coupure magique",
+    "icone": "E0139",
+    "stat": "Intelligence",
+    "classe": ["D\u00e9moniste"]
+  },
+  "77": {
+    "nom": "Pacte",
+    "desc": "Invoque un Panopticor (d\u00e9mons tentaculaires aux yeux multiples)",
+    "effet": "Invocation",
+    "montant": "Invocation jusqu'\u00e0 coupure magique",
+    "icone": "E0139",
+    "stat": "Intelligence",
+    "classe": ["D\u00e9moniste"]
+  },
+  "78": {
+    "nom": "Hommage",
+    "desc": "Sacrifie le familier. Soigne selon ses PV et renforce",
+    "effet": "Buff",
+    "montant": "Soin de 2 \u00e0 20 PV, r\u00e9duit les d\u00e9g\u00e2ts re\u00e7us de 2 pendant 3 tours",
+    "icone": "E0137",
+    "stat": "Esprit",
+    "classe": ["D\u00e9moniste"]
   }
 }
