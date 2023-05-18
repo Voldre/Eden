@@ -4,17 +4,15 @@ var xhReq = new XMLHttpRequest();
 
 console.log(window.location.href)
 if(window.location.href.includes('http')){
-    xhReq.open("GET", "./JDRskills.json", false);
+    xhReq.open("GET", "./JDRskills.json" + "?" + new Date().getTime(), false);
     xhReq.send(null);
     var skillsJSON = JSON.parse(xhReq.responseText);
-
     
-    xhReq.open("GET", "./JDRpersos.json", false);
-    xhReq.send(null);
-    var persosJSON = JSON.parse(xhReq.responseText);
+    // xhReq.open("GET", "./JDRpersos.json", false);
+    // xhReq.send(null);
+    // var persosJSON = JSON.parse(xhReq.responseText);
 }else{
-    var skillsJSON = skills;
-    var persosJSON = {};
+    var skillsJSON = {};
 }
 
 const classes = ['Guerrier','Chevalier','Templier','Chev Dragon','Voleur','Assassin','Danselame','Samouraï','Chasseur','Ingénieur','Corsaire','Juge','Clerc','Barde','Shaman','Sage','Magicien','Illusionniste','Démoniste','Luminary'];

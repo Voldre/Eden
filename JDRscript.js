@@ -4,28 +4,28 @@ var xhReq = new XMLHttpRequest();
 
 console.log(window.location.href)
 if(window.location.href.includes('http')){
-    xhReq.open("GET", "./JDRskills.json", false);
+    xhReq.open("GET", "./JDRskills.json" + "?" + new Date().getTime(), false);
     xhReq.send(null);
     var skillsJSON = JSON.parse(xhReq.responseText);
     
-    xhReq.open("GET", "./JDReqpt.json", false);
+    xhReq.open("GET", "./JDReqpt.json" + "?" + new Date().getTime(), false);
     xhReq.send(null);
     var eqptJSON = JSON.parse(xhReq.responseText);
 
-    xhReq.open("GET", "./JDRpersos.json", false);
+    xhReq.open("GET", "./JDRpersos.json" + "?" + new Date().getTime(), false);
     xhReq.send(null);
     var persosJSON = JSON.parse(xhReq.responseText);
     
     
-    xhReq.open("GET", "./JDRgalery.json", false);
+    xhReq.open("GET", "./JDRgalery.json" + "?" + new Date().getTime(), false);
     xhReq.send(null);
     var galeryJSON = JSON.parse(xhReq.responseText);
 
-    xhReq.open("GET", "./JDRmaster.json", false);
+    xhReq.open("GET", "./JDRmaster.json" + "?" + new Date().getTime(), false);
     xhReq.send(null);
     var masterJSON = JSON.parse(xhReq.responseText);
 }else{
-    var skillsJSON = skills;
+    var skillsJSON = {};
     var eqptJSON = {};
     var persosJSON = {};
     var galeryJSON = {};
@@ -34,7 +34,8 @@ if(window.location.href.includes('http')){
 
 console.log('Skills JSON',skillsJSON)
 console.log('Persos JSON',persosJSON)
-
+
+
 
 
 // download(skills, 'skills.json', 'text/plain')
