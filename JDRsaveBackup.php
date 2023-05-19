@@ -13,4 +13,4 @@ if(isset($_SESSION['login'])){
 }
 ?>
 
-<meta http-equiv="refresh" content="2; URL=./jdr.html">
+<meta http-equiv="refresh" content="2; URL=./jdr_master.php">
