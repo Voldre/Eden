@@ -30,7 +30,7 @@
     "nom": "Provocation",
     "desc": "L'ennemi \u00e0 X fois plus de chance de cibler le joueur",
     "effet": "Provocation",
-    "montant": " 1D4 fois plus de chance pendant 3 tours",
+    "montant": "Dégât 1D6, et 1D4 fois plus de chance d'être visé pendant 3 tours",
     "icone": "E0003",
     "stat": "Charisme",
     "classe": ["Guerrier", "Chevalier", "Templier", "Chev Dragon"]
@@ -48,23 +48,23 @@
     "nom": "Perc\u00e9e du Chevalier",
     "desc": "Frappe la cible 3 fois",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "1D10 + 1D6 + 1D4",
+    "montant": "1D8 + 1D6 + 1D4",
     "icone": "E0290",
     "stat": "Force",
     "classe": ["Chevalier"]
   },
   "5": {
     "nom": "Vivacit\u00e9 Accrue",
-    "desc": "+2 Dext\u00e9rit\u00e9 pendant 4 tours \u00e0 la cible",
+    "desc": "Boost l'esquive et la dextérité de la cible",
     "effet": "Buff",
-    "montant": "2 pendant 4 tours",
+    "montant": "Esquive+2, Dextérité+2 à la cible pendant 4 tours",
     "icone": "E0294",
     "stat": "Esprit",
     "classe": ["Chevalier"]
   },
   "6": {
     "nom": "Lumi\u00e8re Sacr\u00e9e",
-    "desc": "D\u00e9g\u00e2ts de lumi\u00e8re \u00e0 distance sur la cible",
+    "desc": "D\u00e9g\u00e2ts de lumi\u00e8re \u00e0 distance sur la cible, peut provoquer l'ennemi",
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D10",
     "icone": "E0302",
@@ -73,9 +73,9 @@
   },
   "7": {
     "nom": "Coup Infernal",
-    "desc": "D\u00e9g\u00e2ts de lumi\u00e8re sur 3m autour du lanceur",
+    "desc": "D\u00e9g\u00e2ts de lumi\u00e8re sur 3m autour du lanceur, diminue l'esquive et le blocage de l'ennemi",
     "effet": "D\u00e9g\u00e2t AoE",
-    "montant": "1D6",
+    "montant": "1D6 +1, diminue de 2 l'esquive et le blocage pour 3 tours",
     "icone": "E0303",
     "stat": "Intelligence",
     "classe": ["Templier"]
@@ -129,7 +129,7 @@
     "nom": "Embuscade",
     "desc": "Frappe sournoisement l'ennemi, d\u00e9g\u00e2t doubl\u00e9 si par surprise",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "1D8 (X2)",
+    "montant": "1D10 (X2)",
     "icone": "E0048",
     "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Voleur"]
@@ -138,16 +138,16 @@
     "nom": "Perce-Armure",
     "desc": "Frappe et r\u00e9duit la d\u00e9fense de l'ennemi",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "D\u00e9g\u00e2t 1D6, puis pendant 3 tours : d\u00e9g\u00e2t physique +2",
+    "montant": "D\u00e9g\u00e2t 1D8, puis pendant 3 tours : d\u00e9g\u00e2t physique +2 (non cumulable)",
     "icone": "E0054",
     "stat": "Force",
     "classe": ["Voleur", "Assassin", "Danselame", "Samoura\u00ef"]
   },
   "22": {
     "nom": "Faiblesse Critique",
-    "desc": "Frappe efficacement l'ennemi, d\u00e9g\u00e2t doubl\u00e9 si coup critique",
+    "desc": "Frappe efficacement l'ennemi, d\u00e9g\u00e2t doubl\u00e9 si coup critique (d\u00e9 : 1 ou 2)",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "1D10 (X2)",
+    "montant": "1D10 +2 (X2)",
     "icone": "E0057",
     "stat": "Force",
     "classe": ["Assassin"]
@@ -156,7 +156,7 @@
     "nom": "Cicatrice de l'esprit",
     "desc": "Frappe et retire un buff de l'ennemi",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "1D6",
+    "montant": "1D8 +2",
     "icone": "E0060",
     "stat": "Force",
     "classe": ["Assassin"]
@@ -165,7 +165,7 @@
     "nom": "Lames Dansante",
     "desc": "Envoi des lames au vent et tranche 3 fois l'ennemi choisi",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "1D6 2D4",
+    "montant": "3D6",
     "icone": "E0062",
     "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Danselame"]
@@ -174,7 +174,7 @@
     "nom": "Charme tape-\u00e0-l-oeil",
     "desc": "Lance un charme sur la cible pour r\u00e9duire sa concentration, efficace si sexe oppos\u00e9",
     "effet": "Malus",
-    "montant": "R\u00e9duit l'esquive et la pr\u00e9cision de la cible",
+    "montant": "R\u00e9duit l'esquive et la pr\u00e9cision (force/intel) de la cible",
     "icone": "E0067",
     "stat": "Charisme",
     "classe": ["Danselame"]
@@ -199,9 +199,9 @@
   },
   "28": {
     "nom": "Tir de Pr\u00e9cision",
-    "desc": "Chance de touch\u00e9 augment\u00e9, si coup critique d\u00e9g\u00e2t X2",
+    "desc": "Chance de touch\u00e9 augment\u00e9, si coup critique (d\u00e9 : 1 ou 2) d\u00e9g\u00e2t X2",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "R\u00e9ussite +2, 1D6 (X2)",
+    "montant": "R\u00e9ussite +2, 1D8 (X2)",
     "icone": "E0011",
     "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Chasseur", "Ing\u00e9nieur", "Corsaire", "Juge"]
@@ -210,7 +210,7 @@
     "nom": "Triple Tir",
     "desc": "Lance trois tirs sur la cible",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "1D10 + 1D6 + 1D4",
+    "montant": "1D8 + 1D6 + 1D4",
     "icone": "E0068",
     "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Chasseur"]
@@ -237,7 +237,7 @@
     "nom": "Blessure Douloureuse",
     "desc": "Blesse l'ennemi et l'emp\u00eache de se soigner pendant 3 tours",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "1D8",
+    "montant": "1D8 +1",
     "icone": "E0070",
     "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Chasseur", "Ing\u00e9nieur", "Corsaire", "Juge"]
@@ -264,7 +264,7 @@
     "nom": "Bombe \u00e0 Huile",
     "desc": "Inflige une explosion sur plusieurs m\u00e8tres autour de la cible",
     "effet": "D\u00e9g\u00e2t AoE",
-    "montant": "1D10",
+    "montant": "1D10 +1",
     "icone": "E0080",
     "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Ing\u00e9nieur"]
@@ -289,7 +289,7 @@
   },
   "38": {
     "nom": "Fl\u00e8che Terrorisante",
-    "desc": "Le tir effraye l'ennemi et le d\u00e9concentre (malus), r\u00e9duit la chance d'\u00eatre cibl\u00e9",
+    "desc": "Le tir effraye l'ennemi et le d\u00e9concentre (malus dext\u00e9 et esprit), r\u00e9duit la chance d'\u00eatre cibl\u00e9",
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D6",
     "icone": "E0090",
@@ -316,9 +316,9 @@
   },
   "41": {
     "nom": "Gu\u00e9rison",
-    "desc": "Soigne la cible",
+    "desc": "Soigne la cible (+4 si classe de Clerc)",
     "effet": "Soin",
-    "montant": "2D8",
+    "montant": "2D10 (+4)",
     "icone": "E0018",
     "stat": "Intelligence",
     "classe": ["Clerc", "Barde", "Shaman", "Sage"]
@@ -339,7 +339,7 @@
     "montant": "D\u00e9g\u00e2t r\u00e9duit 1D4 pendant 3 tours",
     "icone": "E0019",
     "stat": "Esprit",
-    "classe": ["Clerc"]
+    "classe": ["Clerc", "Barde", "Shaman", "Sage"]
   },
   "44": {
     "nom": "Bombe Vocale",
@@ -381,7 +381,7 @@
     "nom": "Puma Noir",
     "desc": "Vous transforme en Puma Noir",
     "effet": "Transformation",
-    "montant": "Attaque 1D10, Force+2, Dext\u00e9+3 pendant 1D6 tours (annulable)",
+    "montant": "Attaque de Puma (Force, sans arme) : 1D10 +4, Force+2, Dext\u00e9+3 pendant 1D6 tours (annulable)",
     "icone": "E0271",
     "stat": "Esprit",
     "classe": ["Shaman"]
@@ -426,7 +426,7 @@
     "nom": "Affaiblissement Mental",
     "desc": "R\u00e9duit la resistance aux \u00e9l\u00e9ments",
     "effet": "Malus",
-    "montant": "D\u00e9g\u00e2t magique subi +1D4 pendant 3 tours",
+    "montant": "D\u00e9g\u00e2t magique subi +1D4 +1 pendant 3 tours",
     "icone": "E0120",
     "stat": "Esprit",
     "classe": ["Magicien"]
@@ -480,7 +480,7 @@
     "nom": "Pri\u00e8re Divine",
     "desc": "Soigne l'utilisateur et boost les prochains d\u00e9g\u00e2ts de lumi\u00e8res",
     "effet": "Soin et Buff",
-    "montant": "Soin 1D10. Prochain d\u00e9g\u00e2t lumi\u00e8res +1D4",
+    "montant": "Soin 1D10 +5. Prochain d\u00e9g\u00e2t lumi\u00e8res +1D6 +4",
     "icone": "E0610",
     "stat": "Esprit",
     "classe": ["Luminary"]
@@ -534,7 +534,7 @@
     "nom": "Danse de l'oiseau de feu",
     "desc": "Le lanceur danse autour des ennemis et les br\u00fblent",
     "effet": "D\u00e9g\u00e2t AoE",
-    "montant": "1D6 +1",
+    "montant": "1D10 +1",
     "icone": "E0345",
     "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Danselame"]
@@ -543,7 +543,7 @@
     "nom": "Rituel de Mana",
     "desc": "Augmente l'Esprit de tous les alli\u00e9s",
     "effet": "Buff AoE",
-    "montant": "Esprit +2 pendant 1D4 +2 tours",
+    "montant": "Esprit +3 pendant 1D4 +2 tours",
     "icone": "E0128",
     "stat": "Esprit",
     "classe": ["Illusionniste"]
@@ -579,7 +579,7 @@
     "nom": "Magie Extr\u00eame",
     "desc": "Renforce la prochaine attaque magique du lanceur",
     "effet": "Buff",
-    "montant": "Prochain d\u00e9g\u00e2t magique +1D6 +2",
+    "montant": "Prochain d\u00e9g\u00e2t magique +1D10 +2",
     "icone": "E0430",
     "stat": "Esprit",
     "classe": ["Magicien"]
@@ -597,7 +597,7 @@
     "nom": "Purgatoire",
     "desc": "Envoi une tranche de flamme sur plusieurs m\u00e8tres, peut toucher les ennemis larges 2 fois. D\u00e9g\u00e2t+4 si l'ennemi \u00e0 subi la Coupe Asura",
     "effet": "D\u00e9g\u00e2t AoE",
-    "montant": "1D10",
+    "montant": "1D10 (+4)",
     "icone": "E0462",
     "stat": "Esprit",
     "classe": ["Samoura\u00ef"]
@@ -630,15 +630,6 @@
     "classe": ["D\u00e9moniste"]
   },
   "77": {
-    "nom": "Pacte",
-    "desc": "Invoque un Panopticor (d\u00e9mons tentaculaires aux yeux multiples)",
-    "effet": "Invocation",
-    "montant": "Invocation jusqu'\u00e0 coupure magique",
-    "icone": "E0139",
-    "stat": "Intelligence",
-    "classe": ["D\u00e9moniste"]
-  },
-  "78": {
     "nom": "Hommage",
     "desc": "Sacrifie le familier. Soigne selon ses PV et renforce",
     "effet": "Buff",
@@ -646,5 +637,68 @@
     "icone": "E0137",
     "stat": "Esprit",
     "classe": ["D\u00e9moniste"]
+  },
+  "78": {
+    "nom": "Vent Purificateur",
+    "desc": "\u00d4te un d\u00e9buff au hasard aux membres \u00e0 proximit\u00e9, soigne un peu",
+    "effet": "D\u00e9buff et Soin",
+    "montant": "Soin 1D6",
+    "icone": "E0098",
+    "stat": "Intelligence",
+    "classe": ["Clerc"]
+  },
+  "79": {
+    "nom": "Gr\u00e2ce de la Sagesse",
+    "desc": "Augmente l'intelligence et l'esprit",
+    "effet": "Buff",
+    "montant": "Intelligence et Esprit +2 pendant 3 tours",
+    "icone": "E0095",
+    "stat": "Esprit",
+    "classe": ["Clerc"]
+  },
+  "80": {
+    "nom": "Ch\u00e2timent Sacr\u00e9",
+    "desc": "Un rayon de lumi\u00e8res de 3m d'envergure s'abat sur les ennemis",
+    "effet": "D\u00e9g\u00e2t AoE",
+    "montant": "1D8",
+    "icone": "E0093",
+    "stat": "Intelligence",
+    "classe": ["Clerc"]
+  },
+  "81": {
+    "nom": "Int\u00e9gration",
+    "desc": "Augmente l'Esquive des membres autour du personnage",
+    "effet": "Buff AoE",
+    "montant": "Esquive +3 pendant 1D4 +1 tours",
+    "icone": "E0053",
+    "stat": "Esprit",
+    "classe": ["Voleur"]
+  },
+  "82": {
+    "nom": "Attaque Rapide",
+    "desc": "Lance une triple attaque",
+    "effet": "D\u00e9g\u00e2t",
+    "montant": "1D8 + 1D6 + 1D4",
+    "icone": "E0047",
+    "stat": "Dext\u00e9rit\u00e9",
+    "classe": ["Voleur"]
+  },
+  "83": {
+    "nom": "Foi du Temple ",
+    "desc": "R\u00e9duit les d\u00e9g\u00e2ts re\u00e7us et augmente l'esprit",
+    "effet": "Buff",
+    "montant": "Esprit+2, D\u00e9g\u00e2t subi -1D6 pendant 3 tours",
+    "icone": "E0483",
+    "stat": "Esprit",
+    "classe": ["Samoura\u00ef"]
+  },
+  "84": {
+    "nom": "Contr\u00f4le de l'Energie",
+    "desc": "Met en transe : soigne et r\u00e9duit la dext\u00e9rit\u00e9, immunise contre la plupart des stuns",
+    "effet": "Buff et Soin",
+    "montant": "Soin 2D10 +2, pendant 3 tours : dext\u00e9-4, r\u00e9sistance au stun",
+    "icone": "E0334",
+    "stat": "Esprit",
+    "classe": ["Assassin"]
   }
 }
