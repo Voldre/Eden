@@ -223,7 +223,13 @@ selectedPerso = selectPerso.value;
 selectedID = selectPerso.selectedIndex;
 
 window.addEventListener('load', () =>{
-loadFiche(selectedID)
+    const urlParams = new URLSearchParams(window.location.search);
+    if(urlParams.has('perso')){
+        selectPerso.value = "J" + urlParams.get('perso');
+        // loadFiche(urlParams.get('perso'));
+        selectedID = selectPerso.selectedIndex;
+    }
+    loadFiche(selectedID);
 })
 selectPerso.addEventListener('change', e =>{
     perso = e.target.value;

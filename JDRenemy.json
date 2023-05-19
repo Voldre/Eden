@@ -59,21 +59,6 @@
     "infos": "Faible \u00e0 la foudre et \u00e0 la perc\u00e9e",
     "drop": "Noyau de Schiste"
   },
-  "5": {
-    "visuel3D": "M034",
-    "nom": "Ancien Garde",
-    "pvmax": "70",
-    "skills": [
-      "Bras \u00e9tendu : 1D10 1D6 : force",
-      "Bras rayon : 2D10 : intelligence",
-      "Autodestruction : 3D10 : esprit",
-      ""
-    ],
-    "stats": "14,10,14,9,12",
-    "desc": "Robot gardant la caverne de schiste",
-    "infos": "Faible \u00e0 la foudre et \u00e0 la perc\u00e9e",
-    "drop": "Noyau de Schiste"
-  },
   "6": {
     "visuel3D": "m086",
     "nom": "Lutin des For\u00eats",
@@ -161,7 +146,142 @@
     ],
     "stats": "16,14,9,8,9",
     "desc": "Petit Zumi sp\u00e9cialis\u00e9 dans l'assassinat",
-    "infos": "Faible \u00e0 la nature et au per\u00e7ant",
+    "infos": "Faible \u00e0 la nature et au ténèbres",
     "drop": "Griffe embras\u00e9e"
+  },
+  "12": {
+    "visuel3D": "m024",
+    "nom": "Angel\u00e9e",
+    "pvmax": "50",
+    "skills": [
+      "Stalactite : 1D10 + 1D6 + 1D4 : intelligence",
+      "Soin : 1D10 +5 : intelligence",
+      "Coup de tentacule : 1D10 +3 : dext\u00e9rit\u00e9",
+      ""
+    ],
+    "stats": "9,12,16,9,12",
+    "desc": "Angel\u00e9e ros\u00e2tre vivant pr\u00e8s des baies",
+    "infos": "Faible au tranchant et foudre",
+    "drop": "R\u00e9sidu d'angel\u00e9e"
+  },
+  "13": {
+    "visuel3D": "m087",
+    "nom": "Champigno\u00efde magique",
+    "pvmax": "50",
+    "skills": [
+      "Stalactite : 1D10 + 1D6 + 1D4 : intelligence",
+      "Boule de feu : 1D10 + 3 : intelligence",
+      "Seisme : 1D10 Aoe : Intelligence",
+      ""
+    ],
+    "stats": "9,12,16,9,12",
+    "desc": "Champigno\u00efde des bourbes, rempli de magie",
+    "infos": "Faible au contondant et \u00e0 la lumière",
+    "drop": "Germe de champignon, rare : Chapeau de champigno\u00efde"
+  },
+  "14": {
+    "visuel3D": "m090",
+    "nom": "Esprit de l'Abysse",
+    "pvmax": "55",
+    "skills": [
+      "Foudre noire : 1D10 +5 : intelligence",
+      "Charge : 1D10 +5 : force",
+      "Peur : peut stun 2 tours : esprit",
+      ""
+    ],
+    "stats": "12,8,15,8,14",
+    "desc": "Esprit tentaculaire cr\u00e9\u00e9 de magie noire",
+    "infos": "Faible au per\u00e7ant et \u00e0 la lumi\u00e8re",
+    "drop": "R\u00e9sidu d'esprit, rare : Noyau abyssal"
+  },
+  "15": {
+    "visuel3D": "m104",
+    "nom": "Mante terrestre",
+    "pvmax": "65",
+    "skills": [
+      "Coup de crochet : 1D10 +5 : dext\u00e9rit\u00e9",
+      "Vague terrestre : 1D10 +1 AoE : force",
+      "D\u00e9fense : d\u00e9g\u00e2t re\u00e7u -5 pendant 2 tours : esprit",
+      ""
+    ],
+    "stats": "14,13,8,9,12",
+    "desc": "Mantes s'engoufrant dans le sol ",
+    "infos": "Faible au feu et \u00e0 la glace",
+    "drop": "Rare : Crochet porte bonheur"
+  },
+  "16": {
+    "visuel3D": "m103",
+    "nom": "Ver des sables",
+    "pvmax": "80",
+    "skills": [
+      "Morsure : 2D10 : force",
+      "S\u00e9isme : 1D10 +3 : force",
+      "Souffle ralentissant : dext\u00e9-2 : esprit",
+      ""
+    ],
+    "stats": "15,7,10,8,13",
+    "desc": "Ver vivant dans les sables et terres poussi\u00e9reuses",
+    "infos": "Faible a la perc\u00e9e et aux t\u00e9n\u00e8bres",
+    "drop": "Peau de ver, rare : Ep\u00e9e odorante"
+  },
+  "17": {
+    "visuel3D": "m124",
+    "nom": "Pirate aggressif",
+    "pvmax": "70",
+    "skills": [
+      "Coup de flingue : 1D10 +6 : dext\u00e9rit\u00e9",
+      "Esquive facile : (3 fois max) : dext\u00e9rit\u00e9",
+      "Coup de feu : 1D10+6 : intelligence",
+      ""
+    ],
+    "stats": "10,14,13,10,11",
+    "desc": "Pirate corsaire, grand marin",
+    "infos": "Faible \u00e0 la foudre et au contondant",
+    "drop": "Cache oeil de Pirate"
+  },
+  "18": {
+    "visuel3D": "m123",
+    "nom": "Voleur avide",
+    "pvmax": "65",
+    "skills": [
+      "Tranch\u00e9es aggressives : 2D8 +3 : force",
+      "Embuscade : 1D10 +2 (X2 si discret) : dext\u00e9rit\u00e9",
+      "Int\u00e9gration : Buff Aoe : Esquive +3 pendant 1D4 +1 tours : esprit",
+      ""
+    ],
+    "stats": "11,14,10,10,13",
+    "desc": "Voleur ne pr\u00eatant sa confiance qu'\u00e0 lui-m\u00eame, avide et cupide",
+    "infos": "Faible \u00e0 la glace et au tranchant",
+    "drop": "Rare : Dague dent\u00e9e OU Ep\u00e9e de Pirate"
+  },
+  "19": {
+    "visuel3D": "m158",
+    "nom": "Ma\u00eetre D\u00e9moniste",
+    "pvmax": "60",
+    "skills": [
+      "Parasite Obscur : 4 d\u00e9g\u00e2ts *(3 tours) : intelligence",
+      "Pacte : Invoque un Panopticor : esprit",
+      "Fl\u00e8ches des Ombres : 1D12 et si parasite : soin 1D10+4 : intelligence",
+      "Attaque Cauchemardesque : 3D10 +5 (mais tue panopticor) : intelligence"
+    ],
+    "stats": "9,13,16,8,14",
+    "desc": "Un grand ma\u00eetre d\u00e9moniste, plong\u00e9 dans des cultes sombres",
+    "infos": "Faible au tranchant et \u00e0 la lumi\u00e8re",
+    "drop": "B\u00e2ton mal\u00e9fique, Pendentif occulte, tr\u00e8s rare : Cape de sorcier"
+  },
+  "20": {
+    "visuel3D": "m013",
+    "nom": "Guerrier Ursun",
+    "pvmax": "80",
+    "skills": [
+      "Perce-Armure : 1D8 + d\u00e9g\u00e2t physique re\u00e7u +2 (3 tours) : force",
+      "Charge : 2D8 : force",
+      "",
+      ""
+    ],
+    "stats": "16,9,8,13,14",
+    "desc": "Ursun guerrier servant g\u00e9n\u00e9ralement une bonne cause",
+    "infos": "Faible \u00e0 la foudre et au per\u00e7ant",
+    "drop": "Plastron de garde, rare : Pendentif du Croc Brumeux"
   }
 }

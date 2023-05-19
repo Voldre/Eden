@@ -87,6 +87,10 @@ document.addEventListener('play', function(e){
 
 // Load Enemies
 
+enemyWeakness = Object.values(enemyJSON).map(enemy => enemy.infos);
+console.log("Enemies Weakness :")
+console.log(enemyWeakness);
+
 [...document.querySelectorAll('.ennemi')].forEach( (selectEnnemi, i) =>{ 
     
     // Fill Select elements
