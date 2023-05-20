@@ -87,9 +87,23 @@ document.addEventListener('play', function(e){
 
 // Load Enemies
 
+const elements = ["ontond","ranch","perç","perc","feu","lace","oudre","ature","énèbre","umière"];
+
 enemyWeakness = Object.values(enemyJSON).map(enemy => enemy.infos);
-console.log("Enemies Weakness :")
+
+var elementsCount = {};
+
+elements.forEach(element =>{
+    // The g in the regular expression (meaning "g"lobal) says to search the whole string rather than just find the first occurrence
+    fullText = JSON.stringify(enemyWeakness);
+    var regex = new RegExp(element, 'g'); // Regex for the element in global 
+    var count = (fullText.match(regex) || []).length;
+    // var count = (temp.match(/is/g) || []).length;
+    elementsCount[element] = count;
+});
+console.log("Enemies Weaknesses :")
 console.log(enemyWeakness);
+console.log(elementsCount);
 
 [...document.querySelectorAll('.ennemi')].forEach( (selectEnnemi, i) =>{ 
     
