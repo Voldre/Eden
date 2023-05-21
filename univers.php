@@ -148,6 +148,7 @@ if(isset($_GET["data"])){
         echo "<div class='img-block'>";
         echo "<img class='pictures' style='width:300px;' src='images/".$img."' />";
         echo "<img class='pictures' style='width:300px;' src='images/loadingframe/Loading_".$_GET["map"].".png' />";
+        echo "<img class='pictures' style='width:300px;' src='images/loadingframe/Loading_".$_GET["map"]."B.jpg' />";
         echo "</div></a></div>";
         
         echo "<div>";

@@ -262,9 +262,15 @@ function loadFiche(indexPerso){
     document.querySelector('#intel').value = persoData.intel;
     document.querySelector('#charisme').value = persoData.charisme;
     document.querySelector('#esprit').value = persoData.esprit;
-    document.querySelector(".notes").value = persoData.notes;
-    // + la dernière stat
+    
+    document.querySelector('#forceB').value = persoData.forceB;
+    document.querySelector('#dextéB').value = persoData.dextéB;
+    document.querySelector('#intelB').value = persoData.intelB;
+    document.querySelector('#charismeB').value = persoData.charismeB;
+    document.querySelector('#espritB').value = persoData.espritB;
 
+    document.querySelector(".notes").value = persoData.notes;
+    
     // Classes du perso
     classePID = classes.indexOf(persoData.classeP);
     classeSID = classes.indexOf(persoData.classeS);
@@ -428,7 +434,13 @@ function savePerso(){
         "intel":document.querySelector('#intel').value,
         "charisme":document.querySelector('#charisme').value,
         "esprit":document.querySelector('#esprit').value,
-        // "--":document.querySelector('#--').value,
+        
+        "forceB":document.querySelector('#forceB').value,
+        "dextéB":document.querySelector('#dextéB').value,
+        "intelB":document.querySelector('#intelB').value,
+        "charismeB":document.querySelector('#charismeB').value,
+        "espritB":document.querySelector('#espritB').value,
+        
         "skills": skillsStringified,
         "eqpts": eqptsStringified,
         "inventaire": document.querySelector(".inventaire").value,
