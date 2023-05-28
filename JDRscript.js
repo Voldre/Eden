@@ -90,6 +90,13 @@ document.querySelector('#xp').addEventListener('change', e=>{
     document.querySelector('#niv').value = niv;
 
     updateSkillsSlots();
+
+    // Nouveauté 27/05 : 4eme accessoire au niveau 4
+    if(niv >= 4){
+        document.querySelector('.equipements').lastElementChild.classList.remove('hide');
+    }else{
+        document.querySelector('.equipements').lastElementChild.classList.add('hide');
+    }
 })
 
 
@@ -531,3 +538,53 @@ document.getElementById("toast").addEventListener('click', ()=>{
     document.getElementById("toast").classList.remove("show");
 })
 
+// Modal (Dialog) des informations de bases des labels
+
+labelsDescription = {'force':"Permet d'utiliser des attaques lourdes, de pousser, de soulever.<br/>Permet de bloquer des coups physiques (Dé/2) <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff.",
+             'dexté':"Permet d'utiliser des attaques agiles et rapide, de se mouvoir, courir.<br/>Permet d'esquiver des attaques mono-cible (Dé/2) <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff.",
+             'intel':"Permet d'utiliser des attaques magiques, de tester son érudition, sa réflexion.<br/>Permet de bloquer des coups magiques (Dé/2) <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff.",
+             'charisme':"Permet d'intéragir avec les autres personnes dans différents contexte :<br/> éloquence, persuasion, négociation, menace, distraction, ... <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff.",
+             'esprit': "Permet d'utiliser des buffs, des débuffs et des invocations.<br/> Permet aussi de résister à des envoûtements (contrôle d'esprit, peur) <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff.",
+             'niv':"Augmente automatiquement tous les 100 points d'expériences.<br/> Tous les niveaux paire (2,4,6), vous obtenez une compétence.",
+             'pv':"Statistique des PV, augmente de 5 par niveau.",
+            //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."
+            }
+
+
+const dialog = document.querySelector("dialog")
+document.querySelectorAll('label').forEach(label => {
+
+    if(!labelsDescription[label.htmlFor]) return; // Si le label n'a pas de description
+
+    label.addEventListener('click', () =>{
+        dialog.innerText = "";
+        text = document.createElement('p');    
+        text.innerHTML = labelsDescription[label.htmlFor]; // description
+        dialog.append(text);
+        // Bouton de fermeture
+        var closeE = document.createElement('button');
+        closeE.id = "close";
+        closeE.innerText = "Fermer";
+        closeE.addEventListener('click', () =>{
+            dialog.close();
+        });
+        dialog.append(closeE);
+
+        // Ouverture en "modal"
+        dialog.showModal() 
+    })
+});
+
+// Allow user to close Modal (Dialogue) by clicking outside
+dialog.addEventListener("click", e => {
+  const dialogDimensions = dialog.getBoundingClientRect()
+  if (
+    e.clientX < dialogDimensions.left ||
+    e.clientX > dialogDimensions.right ||
+    e.clientY < dialogDimensions.top ||
+    e.clientY > dialogDimensions.bottom
+  ) {
+    dialog.close()
+  }
+})
+// dialog.show() // Opens a non-modal dialog
