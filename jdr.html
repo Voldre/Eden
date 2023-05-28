@@ -93,6 +93,10 @@
             </div>
         </div>
         <h4>Statistiques</h4>
+        <dialog>
+            <span>Permet d'utiliser des attaques fortes, de pousser, de soulever</span>
+            <button id="close">Fermer</button>
+        </dialog>
         <div class="stats">
             <div class="stat" ><label for="force">Force</label>
                 <input type='number' min="1" max="17" id="force" name="force"></input>
@@ -217,6 +221,13 @@
                     <p class="desc hide"></p>
                 </div>
                 <div class="accessoire">
+                    <input type="text" name="" class="nom" placeholder="accessoire"></input>
+                    <p class="effet"></p>
+                    <p class="montant"></p>
+                    <img src="" alt="" class="icone" title="Description de l'accessoire">
+                    <p class="desc hide"></p>
+                </div>
+                <div class="accessoire hide"> <!-- Nouveauté 27/05 : 4eme accessoire au niveau 4 -->
                     <input type="text" name="" class="nom" placeholder="accessoire"></input>
                     <p class="effet"></p>
                     <p class="montant"></p>
