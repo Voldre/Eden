@@ -29,5 +29,7 @@ https://eden-eternal.fandom.com/fr/wiki/Montures
 Maps du jeu : 
 https://edeneternal.fandom.com/wiki/Maps 
 
-Bouton dans le site pour forcer à réactualiser les cookies
-réactualiser les json
+--Bouton dans le site pour forcer à réactualiser les cookies--
+--réactualiser les json--
+==> Juste forcer les JSON à se réactualiser grâce à un paramètre, car du coup
+l'url du json sera toujours unique

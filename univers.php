@@ -165,7 +165,7 @@ if(isset($_GET["data"])){
 }
 ?>
 <script>
-    document.querySelector("#worldmapContainer").addEventListener('click', e =>{
+    document.querySelector("#worldmapContainer")?.addEventListener('click', e =>{
         if(e.target.matches('li')){
             if(e.target.dataset.map == null){
                 e.target.dataset.map = 0;
@@ -178,7 +178,7 @@ if(isset($_GET["data"])){
         }
     });
 
-    document.querySelector(".YVES").addEventListener('click', e =>{
+    document.querySelector(".YVES")?.addEventListener('click', e =>{
         if(document.querySelector("#worldmap01").src.includes('YVES')){
             document.querySelector("#worldmap01").src = "images/mapworld012.png";
             // document.querySelectorAll(".point").style.backgroundImage = 'url("images/mapIcon_1.png")';

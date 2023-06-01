@@ -35,7 +35,7 @@
   },
 6 : {
     "nom": "Sac d'Alpaga Dor\u00e9",
-    "desc": "k60100",
+    "desc": "Sac à dos à l'effigie d'un Alpaga doré. Très mignon.",
     "effet": "Buff",
     "montant": "Renforce l'invocation Alpaga : PV+10, toutes stat +1, d\u00e9g\u00e2t+2",
     "icone": "k60100"
