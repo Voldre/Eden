@@ -111,7 +111,7 @@
     "nom": "Attaque Furieuse",
     "desc": "Tournoie et frappe les ennemis autour du personnage",
     "effet": "D\u00e9g\u00e2t AoE",
-    "montant": "1D8",
+    "montant": "1D6+2",
     "icone": "E0010",
     "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Voleur", "Assassin", "Danselame", "Samoura\u00ef"]
@@ -264,7 +264,7 @@
     "nom": "Bombe \u00e0 Huile",
     "desc": "Inflige une explosion sur plusieurs m\u00e8tres autour de la cible",
     "effet": "D\u00e9g\u00e2t AoE",
-    "montant": "1D10 +1",
+    "montant": "1D8+1",
     "icone": "E0080",
     "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Ing\u00e9nieur"]
@@ -273,7 +273,7 @@
     "nom": "Explosifs Visqueux",
     "desc": "La bombe explose et englue tout autour de la cible, attaquer peut d\u00e9faire la glue",
     "effet": "D\u00e9g\u00e2t AoE",
-    "montant": "1D6, d\u00e9placement/esquive tr\u00e8s r\u00e9duit",
+    "montant": "1D6, d\u00e9placement/esquive tr\u00e8s r\u00e9duit pour 3 tours",
     "icone": "E0082",
     "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Ing\u00e9nieur"]
@@ -354,7 +354,7 @@
     "nom": "Hymne \u00e0 la Guerre",
     "desc": "Augmente les d\u00e9g\u00e2ts physiques inflig\u00e9s par le groupe",
     "effet": "Buff AoE",
-    "montant": "Bonus 1D4 pendant 3 tours",
+    "montant": "Bonus 1D4+1 pendant 3 tours",
     "icone": "E0105",
     "stat": "Esprit",
     "classe": ["Barde"]
@@ -372,7 +372,7 @@
     "nom": "Totem Gracieux",
     "desc": "Tous les deux tours, soigne les alli\u00e9s aux alentours",
     "effet": "Soin AoE",
-    "montant": "1D6 +4 pendant 1D8 tours",
+    "montant": "1D6 +4 pendant 1D8 tours (tous les 2 tours)",
     "icone": "E0115",
     "stat": "Intelligence",
     "classe": ["Shaman"]
@@ -462,7 +462,7 @@
     "nom": "Destruction de l'aurore",
     "desc": "Envoie un rayon de lumi\u00e8re jusqu'\u00e0 4m",
     "effet": "D\u00e9g\u00e2t AoE",
-    "montant": "1D6 +1",
+    "montant": "1D6 +2",
     "icone": "E0604",
     "stat": "Intelligence",
     "classe": ["Luminary"]
@@ -496,9 +496,9 @@
   },
   "62": {
     "nom": "Sacrifice d'Ombre Noire",
-    "desc": "Action Instantan\u00e9e. Diminue les PV, tant que l'utilisateur fait des t\u00e9n\u00e8bres, boost l'intelligence et les d\u00e9g\u00e2ts de t\u00e9n\u00e8bres",
+    "desc": "Action Instantan\u00e9e. Diminue les PV, tant que l'utilisateur fait des t\u00e9n\u00e8bres, boost la force et l'intel et les d\u00e9g\u00e2ts de t\u00e9n\u00e8bres",
     "effet": "Buff",
-    "montant": "PV - 1D10 -5, Force et Intelligence+3 et D\u00e9g\u00e2t t\u00e9n\u00e8bres +4",
+    "montant": "PV - 1D10 -5, Force + Intel +3, D\u00e9g\u00e2t t\u00e9n\u00e8bres +4",
     "icone": "E0611",
     "stat": "Esprit",
     "classe": ["Luminary"]
@@ -507,7 +507,7 @@
     "nom": "Coupure de lumi\u00e8re",
     "desc": "Tranche l'ennemi avec de la lumi\u00e8re",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "1D10 +1",
+    "montant": "1D10 +2",
     "icone": "E0602",
     "stat": "Force",
     "classe": ["Luminary"]
@@ -525,16 +525,16 @@
     "nom": "Symphonie D\u00e9moniaque",
     "desc": "Augmente les d\u00e9g\u00e2ts magiques inflig\u00e9s par le groupe",
     "effet": "Buff AoE",
-    "montant": "Bonus 1D4 pendant 3 tours",
+    "montant": "Bonus 1D4+1 pendant 3 tours",
     "icone": "E0103",
     "stat": "Esprit",
     "classe": ["Barde"]
   },
   "66": {
     "nom": "Danse de l'oiseau de feu",
-    "desc": "Le lanceur danse autour des ennemis et les br\u00fblent",
+    "desc": "Le lanceur danse autour des ennemis (sur quelques mètres) et les br\u00fblent",
     "effet": "D\u00e9g\u00e2t AoE",
-    "montant": "1D10 +1",
+    "montant": "1D8 +1",
     "icone": "E0345",
     "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Danselame"]
@@ -577,7 +577,7 @@
   },
   "71": {
     "nom": "Magie Extr\u00eame",
-    "desc": "Renforce la prochaine attaque magique du lanceur",
+    "desc": "Renforce la prochaine attaque magique réussie du lanceur",
     "effet": "Buff",
     "montant": "Prochain d\u00e9g\u00e2t magique +1D8 +4",
     "icone": "E0430",

@@ -309,7 +309,7 @@
     "bgm": 15
   },
   "31": {
-    "name": "Île Cerisier ?",
+    "name": "Île du Cerisier",
     "wmap_x": null,
     "wmap_y": null,
     "wmap": null,
@@ -462,6 +462,17 @@
     "map_r": null,
     "bgm": 58
   },
+  "97":{
+    "name": "Île du Mariage",
+    "wmap_x": 23.5,
+    "wmap_y": 69.9,
+    "wmap": 0,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": 34
+  },
   "100": {
     "name": "Mine d'Andrew",
     "wmap_x": 0,
@@ -496,7 +507,7 @@
     "bgm": 14
   },
   "103": {
-    "name": "Canal Tassos / Racine Branda / Pourriture",
+    "name": "Canal Tassos",
     "wmap_x": 0,
     "wmap_y": 0,
     "wmap": 5,
