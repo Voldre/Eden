@@ -284,7 +284,14 @@ function loadFiche(indexPerso){
     document.querySelector('.iconClasses').children[0].src = "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE"+iconsClasses[classePID]+".png";
     document.querySelector('.iconClasses').children[1].src = "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE"+iconsClasses[classeSID]+".png";
     updateSkillsList();
+
     updateSkillsSlots();
+    // Nouveauté 27/05 : 4eme accessoire si le perso est au moins niveau 4
+    if(persoData.niv >= 4){
+        document.querySelector('.equipements').lastElementChild.classList.remove('hide');
+    }else{
+        document.querySelector('.equipements').lastElementChild.classList.add('hide');
+    }
 
     // Skills du perso
     JSON.parse(persoData.skills).forEach( (skill, index) =>{
@@ -314,6 +321,10 @@ function loadFiche(indexPerso){
 
 //  DOWNLOAD as FILE
 // Function to download data to a file
+document.querySelector('#download').addEventListener('click', () =>{
+    download(persosJSON[document.querySelector('.perso').id], selectedPerso+'.json', 'text/plain')
+});
+
 function download(data, filename, type) {
     xhReq.open("POST", "http://voldre.free.fr/Eden/"+filename, true);
     xhReq.send(data);
@@ -336,6 +347,7 @@ function download(data, filename, type) {
     */
 }
 // Download as screenshot under body
+/*
 document.querySelector("#screenshot").addEventListener('click',() =>{
     html2canvas(document.querySelector('.perso')).then(function(canvas) {
     // Export the canvas to its data URI representation
@@ -349,6 +361,7 @@ document.querySelector("#screenshot").addEventListener('click',() =>{
     document.body.append(screenshot)
     });
 });
+*/
 
 
 // PROFIL PICTURE
@@ -465,7 +478,7 @@ function savePerso(){
 
     // Save to JSON...
     // Only store persosJSON current user (perso id)    
-    document.cookie = "persosJSON="+encodeURIComponent(JSON.stringify(newPerso));
+    document.cookie = "persosJSON="+encodeURIComponent(JSON.stringify(newPerso))+"; SameSite=Strict";
 
     // alert('Fiche sauvegardé sous forme de cookie avec succès')
 }
