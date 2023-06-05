@@ -139,7 +139,7 @@ $_SESSION['maplist'] = json_decode(file_get_contents("maps.json"),true);
     
     <meta charset="UTF-8">
     
-    <meta name="description" content="Eden Eternal Wiki avec des designs 3D (Monstrers, Donjons, Armes, Personnages) ainsi que les musiques et l'univers du jeu.">
+    <meta name="description" content="Eden Eternal Wiki avec des designs 3D (Monstres, Donjons, Armes, Personnages) ainsi que les musiques et l'univers du jeu.">
 
     <link rel="stylesheet" href="http://voldre.free.fr/style.css">
     <link rel="stylesheet" href="eden.css">
@@ -157,7 +157,7 @@ $_SESSION['maplist'] = json_decode(file_get_contents("maps.json"),true);
 </head>
 
    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FPLLJ4M61Z"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-FPLLJ4M61Z"></script> 
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -165,6 +165,7 @@ $_SESSION['maplist'] = json_decode(file_get_contents("maps.json"),true);
 
     gtag('config', 'G-FPLLJ4M61Z');
     </script>
+    -->
 
 <div id="google_translate_element" style="float:right;">
 </div>
