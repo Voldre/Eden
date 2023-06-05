@@ -79,7 +79,7 @@ document.addEventListener('play', function(e){
             }
         }    
     }
-    if(e){
+    if(e.target.firstChild.attributes){
         currentBGM = e.target.firstChild.attributes.src.nodeValue.split("/")[1].split(".")[0]
         console.log(currentBGM);
         document.getElementById("currentMusic").innerText = document.getElementById(currentBGM).innerText +" ("+currentBGM+")";
