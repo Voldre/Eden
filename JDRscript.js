@@ -86,13 +86,25 @@ document.querySelectorAll('[id^="classe"]').forEach( (classeElem, i) =>{
 // Niv
 document.querySelector('#xp').addEventListener('change', e=>{
     xp = parseInt(e.target.value);
-    var niv = Math.trunc(xp/100)+1;
+
+    // Update 12/06 : From lvl 5 to 10 : 150 xp instead of 100
+    if(xp >= 400){
+        var niv = Math.trunc((xp-400)/150)+5;
+    }else{
+        var niv = Math.trunc(xp/100)+1;
+    }
     document.querySelector('#niv').value = niv;
 
     updateSkillsSlots();
 
     // Nouveauté 27/05 : 4eme accessoire au niveau 4
     if(niv >= 4){
+        document.querySelector('.equipements').lastElementChild.previousElementSibling.classList.remove('hide');
+    }else{
+        document.querySelector('.equipements').lastElementChild.previousElementSibling.classList.add('hide');
+    }
+    // Nouveauté 27/05 : 5eme accessoire au niveau 4
+    if(niv >= 8){
         document.querySelector('.equipements').lastElementChild.classList.remove('hide');
     }else{
         document.querySelector('.equipements').lastElementChild.classList.add('hide');
@@ -559,7 +571,7 @@ labelsDescription = {'force':"Permet d'utiliser des attaques lourdes, de pousser
              'intel':"Permet d'utiliser des attaques magiques, de tester son érudition, sa réflexion.<br/>Permet de bloquer des coups magiques (Dé/2) <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff.",
              'charisme':"Permet d'intéragir avec les autres personnes dans différents contexte :<br/> éloquence, persuasion, négociation, menace, distraction, ... <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff.",
              'esprit': "Permet d'utiliser des buffs, des débuffs et des invocations.<br/> Permet aussi de résister (Dé/2) à des envoûtements (contrôle d'esprit, peur) <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff.",
-             'niv':"Augmente automatiquement tous les 100 points d'expériences.<br/> Tous les niveaux paire (2,4,6), vous obtenez une compétence.",
+             'niv':"Augmente automatiquement tous les 100 points d'expériences du Niveau 1 à 5, puis tous les 150.<br/> Tous les niveaux paire (2,4,6,8), vous obtenez une compétence.",
              'pv':"Statistique des PV, augmente de 5 par niveau.",
             //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."
             }
