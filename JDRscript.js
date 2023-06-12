@@ -234,6 +234,7 @@ window.addEventListener('load', () =>{
     if(urlParams.has('perso')){
         selectPerso.value = "J" + urlParams.get('perso');
         // loadFiche(urlParams.get('perso'));
+        selectedPerso = selectPerso.value;
         selectedID = selectPerso.selectedIndex;
     }
     loadFiche(selectedID);
@@ -322,13 +323,13 @@ function loadFiche(indexPerso){
 //  DOWNLOAD as FILE
 // Function to download data to a file
 document.querySelector('#download').addEventListener('click', () =>{
-    download(persosJSON[document.querySelector('.perso').id], selectedPerso+'.json', 'text/plain')
+    download(JSON.stringify(persosJSON[document.querySelector('.perso').id]), selectedPerso+'.json', 'text/plain')
 });
 
 function download(data, filename, type) {
     xhReq.open("POST", "http://voldre.free.fr/Eden/"+filename, true);
     xhReq.send(data);
-    /*
+    
     var file = new Blob([data], {type: type});
     if (window.navigator.msSaveOrOpenBlob) // IE10+
         window.navigator.msSaveOrOpenBlob(file, filename);
@@ -344,7 +345,7 @@ function download(data, filename, type) {
             window.URL.revokeObjectURL(url);  
         }, 0); 
     }
-    */
+    
 }
 // Download as screenshot under body
 /*
@@ -557,7 +558,7 @@ labelsDescription = {'force':"Permet d'utiliser des attaques lourdes, de pousser
              'dexté':"Permet d'utiliser des attaques agiles et rapide, de se mouvoir, courir.<br/>Permet d'esquiver des attaques mono-cible (Dé/2) <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff.",
              'intel':"Permet d'utiliser des attaques magiques, de tester son érudition, sa réflexion.<br/>Permet de bloquer des coups magiques (Dé/2) <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff.",
              'charisme':"Permet d'intéragir avec les autres personnes dans différents contexte :<br/> éloquence, persuasion, négociation, menace, distraction, ... <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff.",
-             'esprit': "Permet d'utiliser des buffs, des débuffs et des invocations.<br/> Permet aussi de résister à des envoûtements (contrôle d'esprit, peur) <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff.",
+             'esprit': "Permet d'utiliser des buffs, des débuffs et des invocations.<br/> Permet aussi de résister (Dé/2) à des envoûtements (contrôle d'esprit, peur) <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff.",
              'niv':"Augmente automatiquement tous les 100 points d'expériences.<br/> Tous les niveaux paire (2,4,6), vous obtenez une compétence.",
              'pv':"Statistique des PV, augmente de 5 par niveau.",
             //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."
