@@ -19,9 +19,9 @@
   },
   "57": {
     "nom": "Mur de Titan",
-    "desc": "R\u00e9duit les d\u00e9g\u00e2ts subis par la cible",
+    "desc": "R\u00e9duit les d\u00e9g\u00e2ts subis par la cible (soi-même)",
     "effet": "D\u00e9g\u00e2t r\u00e9duit",
-    "montant": "2 + 1D6 pendant 3 tours",
+    "montant": "2 + 1D4 pendant 3 tours",
     "icone": "E0029",
     "stat": "Force",
     "classe": ["Guerrier"]
@@ -118,9 +118,9 @@
   },
   "12": {
     "nom": "Furtivit\u00e9",
-    "desc": "Vous rend invisible (Annulation si coup reçu ou si compétence force/dexté/intel utilisée)",
+    "desc": "Vous rend invisible (Annulation si coup reçu ou si compétence force/dexté/intel utilisée), renforce",
     "effet": "Invisible",
-    "montant": "Dur\u00e9e 3 tours sauf annulation",
+    "montant": "Dur\u00e9e 3 tours sauf annulation, Dexté+1, Dégât+2",
     "icone": "E0318",
     "stat": "Esprit",
     "classe": ["Voleur"]
@@ -300,7 +300,7 @@
     "nom": "S\u00e9r\u00e9nit\u00e9",
     "desc": "R\u00e9duit les d\u00e9g\u00e2ts et augmente la dext\u00e9rit\u00e9",
     "effet": "Buff",
-    "montant": "Dext\u00e9+2, D\u00e9g\u00e2t subi -1D6 pendant 3 tours",
+    "montant": "Dext\u00e9+2, D\u00e9g\u00e2t subi -1D4 pendant 3 tours",
     "icone": "E0091",
     "stat": "Esprit",
     "classe": ["Corsaire"]
@@ -363,7 +363,7 @@
     "nom": "Bouclier d'\u00e9pines",
     "desc": "Octroie un bouclier \u00e0 la cible, r\u00e9duit les d\u00e9g\u00e2ts et pique les ennemis qui le touche",
     "effet": "Buff",
-    "montant": "D\u00e9g\u00e2t r\u00e9duit 1D4, d\u00e9g\u00e2t des piques 1D4 pendant 4 tours",
+    "montant": "D\u00e9g\u00e2t subi -1D4, d\u00e9g\u00e2t des piques 1D4 pendant 4 tours",
     "icone": "E0110",
     "stat": "Intelligence",
     "classe": ["Shaman"]
@@ -433,9 +433,10 @@
   },
   "54": {
     "nom": "Voile du Blizzard",
-    "desc": "Rend invisible jusqu'à la fin du tour suivant (Annulation si coup reçu ou si compétence force/dexté/intel utilisée), bonus d'intelligence et de d\u00e9g\u00e2t",
+    "desc": "Vous rend invisible (Annulation si coup reçu ou si compétence force/dexté/intel utilisée), renforce",
+    "desc": "",
     "effet": "Buff",
-    "montant": "Rend invisible jusqu'à la fin du tour suivant ; Intelligence +2, d\u00e9g\u00e2t+1D4+1",
+    "montant": "Dur\u00e9e 3 tours sauf annulation, Intel+1, Dégât+2",
     "icone": "E0119",
     "stat": "Esprit",
     "classe": ["Magicien", "Illusionniste"]
@@ -687,7 +688,7 @@
     "nom": "Foi du Temple",
     "desc": "R\u00e9duit les d\u00e9g\u00e2ts re\u00e7us et augmente l'esprit",
     "effet": "Buff",
-    "montant": "Esprit+2, D\u00e9g\u00e2t subi -1D6 pendant 3 tours",
+    "montant": "Esprit+2, D\u00e9g\u00e2t subi -1D4 pendant 3 tours",
     "icone": "E0483",
     "stat": "Esprit",
     "classe": ["Samoura\u00ef"]

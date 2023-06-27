@@ -246,3 +246,49 @@ skills[48] = {"nom":"Puma Noir","desc":"Vous transforme en Puma Noir","effet":"T
 
 // var skillsJSON = Object.values(skills) // Remove all keys
 */
+
+
+labelsDescription = {'critique':"Le Dé 1 est une réussite critique (dégâts et buffs au max), le Dé 2 un semi-critique (boosté). Pareil pour les échecs avec Dé 19 et Dé 20.",
+             'invisible':"Quand un personnage est invisible : au 1er tour, -3 de chance de le toucher (sauf AoE : 0); et /2 aux suivants (sauf AoE : -3).<br/>&nbsp; A l'inverse, un personnage invisible qui frappe réduit les chances d'esquive et blocage de -3.",
+             'endormissement':"Un personnage endormi se réveil avec une réussite à :  Tour 1 : Esprit*0.5, Tour 2 : Esprit*0.75, Tour 3+ : Esprit",
+            //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."
+            }
+
+
+const dialog = document.querySelector("dialog")
+document.querySelectorAll('label').forEach(label => {
+
+    if(!labelsDescription[label.htmlFor]) return; // Si le label n'a pas de description
+
+    label.addEventListener('click', () =>{
+        dialog.innerText = "";
+        text = document.createElement('p');    
+        text.innerHTML = labelsDescription[label.htmlFor]; // description
+        dialog.append(text);
+        // Bouton de fermeture
+        var closeE = document.createElement('button');
+        closeE.id = "close";
+        closeE.innerText = "Fermer";
+        closeE.addEventListener('click', () =>{
+            dialog.close();
+        });
+        dialog.append(closeE);
+
+        // Ouverture en "modal"
+        dialog.showModal() 
+    })
+});
+
+// Allow user to close Modal (Dialogue) by clicking outside
+dialog.addEventListener("click", e => {
+  const dialogDimensions = dialog.getBoundingClientRect()
+  if (
+    e.clientX < dialogDimensions.left ||
+    e.clientX > dialogDimensions.right ||
+    e.clientY < dialogDimensions.top ||
+    e.clientY > dialogDimensions.bottom
+  ) {
+    dialog.close()
+  }
+})
+// dialog.show() // Opens a non-modal dialog
