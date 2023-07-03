@@ -138,8 +138,14 @@ var skillsJSONStat = Object.values(skillsJSON).map(skill => skill.stat)
 const occurrences = skillsJSONStat.reduce(function (acc, curr) {
     return acc[curr] ? ++acc[curr] : acc[curr] = 1, acc
   }, {});
-  
+
 document.querySelector('.statsBySkills').innerText = JSON.stringify(occurrences);
+
+var skillsJSONEffect = Object.values(skillsJSON).map(skill => skill.effet)
+const listEffects = skillsJSONEffect.reduce(function (acc, curr) {
+    return acc[curr] ? ++acc[curr] : acc[curr] = 1, acc
+  }, {});
+
 
 /*
 skills = {}
@@ -250,7 +256,8 @@ skills[48] = {"nom":"Puma Noir","desc":"Vous transforme en Puma Noir","effet":"T
 
 labelsDescription = {'critique':"Le Dé 1 est une réussite critique (dégâts et buffs au max), le Dé 2 un semi-critique (boosté). Pareil pour les échecs avec Dé 19 et Dé 20.",
              'invisible':"Quand un personnage est invisible : au 1er tour, -3 de chance de le toucher (sauf AoE : 0); et /2 aux suivants (sauf AoE : -3).<br/>&nbsp; A l'inverse, un personnage invisible qui frappe réduit les chances d'esquive et blocage de -3.",
-             'endormissement':"Un personnage endormi se réveil avec une réussite à :  Tour 1 : Esprit*0.5, Tour 2 : Esprit*0.75, Tour 3+ : Esprit",
+             'endormi':"Un personnage endormi se réveil avec une réussite à :  Tour 1 : Esprit*0.5, Tour 2 : Esprit*0.75, Tour 3+ : Esprit.",
+             'protege':"Un personnage peut protéger un autre. Pour cela, il aura un malus de blocage selon la situation (2 ou +)."
             //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."
             }
 
