@@ -111,6 +111,13 @@ document.querySelector('#xp').addEventListener('change', e=>{
     }
 })
 
+// STRESS
+document.querySelector('#stress').addEventListener('change', e =>{
+    if(e.target.value >= 50){
+    document.querySelector('#stressImpact').innerText = "(Stats -"+Math.trunc(e.target.value/50)+")";
+    }else{ document.querySelector('#stressImpact').innerText = '';}
+})
+
 
 // COMPETENCES 
 competences = document.querySelector('.skills');
@@ -276,6 +283,9 @@ function loadFiche(indexPerso){
     document.querySelector('#niv').value = persoData.niv;
     document.querySelector('#pv').value = persoData.pv;
     document.querySelector('#pvmax').value = persoData.pvmax;
+
+    document.querySelector('#stress').value = persoData.stress;
+
     document.querySelector('#pp').src = persoData.pp;
     document.querySelector('#force').value = persoData.force;
     document.querySelector('#dexté').value = persoData.dexté;
@@ -461,6 +471,9 @@ function savePerso(){
         "niv":document.querySelector('#niv').value,
         "pv":document.querySelector('#pv').value,
         "pvmax":document.querySelector('#pvmax').value,
+        
+        "stress":document.querySelector('#stress').value,
+
         "pp":document.querySelector('#pp').src,
         "force":document.querySelector('#force').value,
         "dexté":document.querySelector('#dexté').value,
