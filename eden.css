@@ -49,7 +49,7 @@ h2{
     the main page, to only scroll in this frame : UX
     Because there are >100 icons to display and we 
     can need to scroll until 3 entire pages  */
-    max-height: 450px;
+    max-height: 475px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -84,6 +84,7 @@ select{
 .select3D{
     position: absolute;
     left: 30%;
+    width: 45%;
     font-size:20px;
     background-color: rgba(40, 40, 40, 0.7);
     border: 2px solid rgba(40, 40, 40, 1);
@@ -185,8 +186,6 @@ li img,
     opacity: 1;
 }
 .container ul .mapMenu{
-    min-width:10%;
-    max-width:30%;
     font-size:16px;
     margin:7px;
     padding:8px;
@@ -194,6 +193,7 @@ li img,
     font-weight:400;
     background: linear-gradient(to right, rgba(64, 64, 92, 0.61), rgba(141, 95, 141, 0.733));
     cursor: pointer;
+    width: 66%;
 }
 .activate{
     background: linear-gradient(to right, rgba(111, 111, 243, 0.61), rgba(236, 133, 236, 0.733)) !important;
@@ -203,7 +203,7 @@ li img,
 }
 .YVES{
     position:absolute;
-    left:57%;
+    left:39%;
     width:30px;
     height:30px;
 }
@@ -224,10 +224,16 @@ li img,
     border: none;
     background-image: url("images/mapIcon_1B.png");
 }
-
 .point:hover {
     background-image: url("images/mapIcon_2B.png");
     cursor: url('images/layout/cursor_tp.png'), auto;
+}
+
+.noB{
+    background-image: url("images/mapIcon_1.png") !important;
+}
+.noB:hover{
+    background-image: url("images/mapIcon_2.png") !important;
 }
 
 .point:hover .name {
@@ -461,5 +467,12 @@ Brightness on mouseover and onclick */
     }
     .flexContainer{
         display : block;
+    }
+        
+    .select3D{
+        width: 95%;
+    }
+    .container ul .mapMenu{
+        min-width: auto;
     }
   }

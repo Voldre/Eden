@@ -75,6 +75,7 @@ if(isset($_GET["data"])){
                 <li class="mapMenu"  data-map=1>Sud-Ouest</li>
                 <li class="mapMenu activate" data-map=0>Central <img src="images/otherIcon/function026.png" class="YVES"></li>
                 <li class="mapMenu" data-map=2>Sud-Est</li>
+                <li class="mapMenu" data-map=9>Île Sombre</li>
             </ul>
         </div>
             <div class="continent active" id="C0">
@@ -106,6 +107,16 @@ if(isset($_GET["data"])){
                 }
             ?>
                 <img src="images/mapworld03.png"/>
+            </div>
+            <div class="continent" id="C9">
+            <?php
+                foreach($maplist as $key=>$value){
+                    if(isset($value["wmap"]) && $value["wmap"]==9){
+                        echo "<a href='univers.php?data=map&map=".$key."'><div class='point noB' style='top:".$value["wmap_x"]."%; left:".$value["wmap_y"]."%;' ><p class='name'>".$value["name"]."</p></div></a>";
+                    }
+                }
+            ?>
+                <img src="images/EE-DD.png"/>
             </div>
         </div>
        
