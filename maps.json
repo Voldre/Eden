@@ -176,6 +176,17 @@
     "map_r": null,
     "bgm": 33
   },
+  "17": {
+    "name": "Vestiges du Belliqueux",
+    "wmap_x": 46,
+    "wmap_y": 66,
+    "wmap": 0,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": 28
+  },
   "19": {
     "name": "Vallée Férégal",
     "wmap_x": 58,
@@ -472,6 +483,17 @@
     "map_z": null,
     "map_r": null,
     "bgm": 34
+  },
+  "98":{
+    "name": "Temple enchanté - Passé",
+    "wmap_x": 0,
+    "wmap_y": 0,
+    "wmap": 0,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": 1
   },
   "100": {
     "name": "Mine d'Andrew",
@@ -1056,8 +1078,129 @@
     "map_r": null,
     "bgm": 21
   },
+  "280": {
+    "name": "Temple des Ogres",
+    "wmap_x": 0,
+    "wmap_y": 0,
+    "wmap": 5,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": null
+  },
+  "281": {
+    "name": "Donjon du Dieu Serpent",
+    "wmap_x": 0,
+    "wmap_y": 0,
+    "wmap": 5,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": null
+  },
+  "282": {
+    "name": "Eglise des Chevaliers de la Rose",
+    "wmap_x": 0,
+    "wmap_y": 0,
+    "wmap": 5,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": null
+  },
+  "283": {
+    "name": "Donjon de Ronces",
+    "wmap_x": 0,
+    "wmap_y": 0,
+    "wmap": 5,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": null
+  },
   "284": {
     "name": "Laboratoire de Réno",
+    "wmap_x": 0,
+    "wmap_y": 0,
+    "wmap": 5,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": null
+  },
+  "301": {
+    "name": "Nouvelle Ville Forestière",
+    "wmap_x": 0,
+    "wmap_y": 0,
+    "wmap": 5,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": null
+  },
+  "302": {
+    "name": "Nouvelle Ville Volacanique",
+    "wmap_x": 0,
+    "wmap_y": 0,
+    "wmap": 5,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": null
+  },
+  "303": {
+    "name": "Nouvelle Ville Portuaire",
+    "wmap_x": 0,
+    "wmap_y": 0,
+    "wmap": 5,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": null
+  },
+  "304": {
+    "name": "Zone T4",
+    "wmap_x": 0,
+    "wmap_y": 0,
+    "wmap": 5,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": null
+  },
+  "305": {
+    "name": "Territoire de Terre (GvG)",
+    "wmap_x": 0,
+    "wmap_y": 0,
+    "wmap": 5,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": null
+  },
+  "306": {
+    "name": "Territoire de l'Île (GvG)",
+    "wmap_x": 0,
+    "wmap_y": 0,
+    "wmap": 5,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": null
+  },
+  "307": {
+    "name": "Territoire de Glace (GvG)",
     "wmap_x": 0,
     "wmap_y": 0,
     "wmap": 5,
@@ -1077,5 +1220,247 @@
     "map_z": null,
     "map_r": null,
     "bgm": null
+  },
+  "501": {
+    "name": "Ville de Guilde - Forêt",
+    "wmap_x": 0,
+    "wmap_y": 0,
+    "wmap": 5,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": null
+  },
+  "502": {
+    "name": "Ville de Guilde - Montagne",
+    "wmap_x": 0,
+    "wmap_y": 0,
+    "wmap": 5,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": null
+  },
+  "503": {
+    "name": "Donjon Gris",
+    "wmap_x": 0,
+    "wmap_y": 0,
+    "wmap": 5,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": null
+  },
+  "504": {
+    "name": "Zone Grise 1",
+    "wmap_x": 0,
+    "wmap_y": 0,
+    "wmap": 5,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": null
+  },
+  "619": {
+    "name": "Arène Démoniaque Inconnue",
+    "wmap_x": 0,
+    "wmap_y": 0,
+    "wmap": 5,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": null
+  },
+  "620": {
+    "name": "Sanctuaire Inconnu",
+    "wmap_x": 0,
+    "wmap_y": 0,
+    "wmap": 5,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": null
+  },
+  "621": {
+    "name": "Zone Minière Volcanique",
+    "wmap_x": 0,
+    "wmap_y": 0,
+    "wmap": 5,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": null
+  },
+  "622": {
+    "name": "Donjon du Désert",
+    "wmap_x": 0,
+    "wmap_y": 0,
+    "wmap": 5,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": null
+  },
+  "623": {
+    "name": "Labo Antigravité - Etage 2",
+    "wmap_x": 0,
+    "wmap_y": 0,
+    "wmap": 5,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": null
+  },
+  "766": {
+    "name": "Grotte Souterraine",
+    "wmap_x": 0,
+    "wmap_y": 0,
+    "wmap": 5,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": null
+  },
+  "889": {
+    "name": "Zone Grise 2",
+    "wmap_x": 0,
+    "wmap_y": 0,
+    "wmap": 5,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": null
+  },
+  "901": {
+    "name": "Le Hameau",
+    "wmap_x": 79.6,
+    "wmap_y": 51.2,
+    "wmap": 9,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": 7
+  },
+  "902": {
+    "name": "Crique Ravageuse",
+    "wmap_x": 64.2,
+    "wmap_y": 26.1,
+    "wmap": 9,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": 10
+  },
+  "903": {
+    "name": "Forêt des Ombres",
+    "wmap_x": 57.2,
+    "wmap_y": 39.8,
+    "wmap": 9,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": 8
+  },
+  "904": {
+    "name": "Grotte des Cauchemars",
+    "wmap_x": 53.2,
+    "wmap_y": 27.9,
+    "wmap": 9,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": 8
+  },
+  "905": {
+    "name": "Marais de la Désolation",
+    "wmap_x": 50.8,
+    "wmap_y": 68.1,
+    "wmap": 9,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": 8
+  },
+  "906": {
+    "name": "Ruines du Manoir",
+    "wmap_x": 48,
+    "wmap_y": 47,
+    "wmap": 9,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": 8
+  },
+  "907": {
+    "name": "Village des Âmes Perdues",
+    "wmap_x": 34.2,
+    "wmap_y": 39,
+    "wmap": 9,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": 8
+  },
+  "908": {
+    "name": "Manoir des Ombres",
+    "wmap_x": 34.8,
+    "wmap_y": 52.6,
+    "wmap": 9,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": 8
+  },
+  "909": {
+    "name": "Abîme Éternelles",
+    "wmap_x": 16.6,
+    "wmap_y": 57.4,
+    "wmap": 9,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": 8
+  },
+  "910": {
+    "name": "--",
+    "wmap_x": 18.2,
+    "wmap_y": 40.5,
+    "wmap": 7,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": 8
+  },
+  "995": {
+    "name": "Arène d'Aven 3v3",
+    "wmap_x": 18.2,
+    "wmap_y": 40.5,
+    "wmap": 5,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": 8
   }
 }
