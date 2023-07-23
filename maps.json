@@ -211,8 +211,8 @@
   },
   "21": {
     "name": "Jungle Céleste",
-    "wmap_x": 51.4,
-    "wmap_y": 43.4,
+    "wmap_x": 51.3,
+    "wmap_y": 43.3,
     "wmap": 1,
     "map_x": null,
     "map_y": null,
@@ -473,10 +473,21 @@
     "map_r": null,
     "bgm": 58
   },
+  "57": {
+    "name": "(Île chez les Zumis)",
+    "wmap_x": 60,
+    "wmap_y": 30,
+    "wmap": 1,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": 58
+  },
   "97":{
     "name": "Île du Mariage",
-    "wmap_x": 23.5,
-    "wmap_y": 69.9,
+    "wmap_x": 25.5,
+    "wmap_y": 75.9,
     "wmap": 0,
     "map_x": null,
     "map_y": null,
@@ -1178,7 +1189,7 @@
     "bgm": null
   },
   "305": {
-    "name": "Territoire de Terre (GvG)",
+    "name": "Zone de guerre (GvG)",
     "wmap_x": 0,
     "wmap_y": 0,
     "wmap": 5,
@@ -1189,7 +1200,7 @@
     "bgm": null
   },
   "306": {
-    "name": "Territoire de l'Île (GvG)",
+    "name": "île du boucanier (GvG)",
     "wmap_x": 0,
     "wmap_y": 0,
     "wmap": 5,
@@ -1200,7 +1211,7 @@
     "bgm": null
   },
   "307": {
-    "name": "Territoire de Glace (GvG)",
+    "name": "Toundra Hostile (GvG)",
     "wmap_x": 0,
     "wmap_y": 0,
     "wmap": 5,
@@ -1212,6 +1223,17 @@
   },
   "308": {
     "name": "Couloir de l'Esprit Gardien",
+    "wmap_x": 0,
+    "wmap_y": 0,
+    "wmap": 5,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": null
+  },
+  "406": {
+    "name": "Arène du Temple antique du chaos",
     "wmap_x": 0,
     "wmap_y": 0,
     "wmap": 5,
@@ -1285,7 +1307,7 @@
     "map_y": null,
     "map_z": null,
     "map_r": null,
-    "bgm": null
+    "bgm": 59
   },
   "621": {
     "name": "Zone Minière Volcanique",

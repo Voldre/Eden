@@ -6,7 +6,7 @@ Anneau du Sorcier OU Plaque Réfléchissante
 Cache oeil de Pirate ou Bible du Familier
 Bague de Vigueur ou Brassard du Combattant
 Collier Asbi OU Crochet enchanté
-Calice de la Curie Métérole
+Calice de la Curie Métérole OU Boucle d'oreilles du Maëlstrom
 Amulette d'Expérience
 Gourde miraculeuse
 Ceinture de Samouraï
@@ -14,7 +14,7 @@ Pendentif du Croc Brumeux
 Charme d'Expérience
 Pierre de sécurité
 Anneau de résistance magique
-Glyphe des Ursuns
+Glyphe des Ursuns OU Puce Electronique Silus
 Glyphe des Ursuns (2)
 Croc de Smilodon
 Anneau du remède

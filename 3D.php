@@ -109,8 +109,13 @@ exit();
         if(foldersWithIcons.includes(currentFolder)){
             file = document.getElementById("objets").value.slice(1); // On récupère tout sauf la 1ere lettre
 
-            if(currentFolder == "items"){letter = "W";}else{ letter = "m"}
-
+            if(currentFolder == "items"){letter = "W";}
+            // if currentFolder == "monsters"
+            if(document.getElementById("objets").value[0] == "M"){
+                letter = "m"
+            }else if(document.getElementById("objets").value[0] == "R"){
+                letter = "R";
+            }
             // Update 12/06/2022 pour mieux gérer l'affichage ou non de l'icone
             document.getElementById("iconPic").style.display = "block";
             if(currentFolder == "items"){ file = file + "01";}
