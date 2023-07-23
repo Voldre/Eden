@@ -211,7 +211,7 @@ dialog::backdrop {
 }
 .skillslist div, .equipements div{
     border: 1px gray solid;
-    margin : 10px;
+    margin : 8px;
     margin-left: 2px;
     display: grid;
     width: 100%;

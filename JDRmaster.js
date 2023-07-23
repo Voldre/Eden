@@ -146,7 +146,7 @@ function loadEnemy(indexEnemy, indexElement){
         ennemiElement.querySelector('#desc').innerText = "";
         ennemiElement.querySelector('#infos').innerText = "";
         ennemiElement.querySelector('#drop').innerText = "";
-        ennemiElement.querySelector('#visuel').value = "";
+        ennemiElement.querySelector('#visuel').innerText = "";
         ennemiElement.querySelector('.icon').src = "";
         ennemiElement.querySelector('#pv').value = "";
         ennemiElement.querySelector('#pvmax').value = "";
@@ -168,7 +168,7 @@ function loadEnemy(indexEnemy, indexElement){
     ennemiElement.querySelector('#infos').innerText = "Infos / BP : " + enemyData.infos;
     ennemiElement.querySelector('#drop').innerText = "Drop : " + enemyData.drop;
     ennemiElement.querySelector('#visuel').innerText = enemyData.visuel3D;
-    ennemiElement.querySelector('.icon').src = "http://voldre.free.fr/Eden/images/monsters/"+enemyData.visuel3D.toLowerCase()+".png";
+    ennemiElement.querySelector('.icon').src = "http://voldre.free.fr/Eden/images/monsters/"+enemyData.visuel3D+".png";
     ennemiElement.querySelector('.icon').alt = enemyData.visuel3D.toLowerCase();
     ennemiElement.querySelector('#pv').value = enemyData.pvmax;
     ennemiElement.querySelector('#pvmax').value = enemyData.pvmax;
