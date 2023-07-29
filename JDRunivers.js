@@ -96,7 +96,7 @@ function updateSkillsList(classe){
     document.querySelector('.skillslist').innerHTML = "";
 
     Object.values(skillsJSON).forEach(skill =>{
-
+        
         if(!skill.classe.includes(classe)) return;
 
         var skillE = document.createElement('div')
@@ -126,6 +126,7 @@ function updateSkillsList(classe){
         skillE.append(effetE);
         skillE.append(montantE);
         skillE.append(iconeE);
+
         document.querySelector('.skillslist').append(skillE);
     })
 }
@@ -255,7 +256,7 @@ skills[48] = {"nom":"Puma Noir","desc":"Vous transforme en Puma Noir","effet":"T
 
 
 labelsDescription = {'critique':"Le Dé 1 est une réussite critique (dégâts et buffs au max), le Dé 2 un semi-critique (boosté). Pareil pour les échecs avec Dé 19 et Dé 20.",
-             'invisible':"Quand un personnage est invisible : au 1er tour, -3 de chance de le toucher (sauf AoE : 0); et /2 aux suivants (sauf AoE : -3).<br/>&nbsp; A l'inverse, un personnage invisible qui frappe réduit les chances d'esquive et blocage de -3.",
+             'invisible':"Quand un personnage est invisible : au 1er tour, -3 de chance de le toucher (sauf AoE : 0); et /2 aux suivants (sauf AoE : -3).<br/>&nbsp; A l'inverse, un personnage invisible qui frappe réduit les chances d'esquive et blocage de -3. <br/>&nbsp; Seuls les sorts d'Esprit laisse invisible, les autres font sortir.",
              'endormi':"Réussir à endormir dépend de l'énervement de l'ennemi (réussite décroissante). Un personnage endormi se réveil avec une réussite à :  Tour 1 : Esprit*0.5, Tour 2 : Esprit*0.75, Tour 3+ : Esprit.",
              'protege':"Un personnage peut protéger un autre. Pour cela, il aura un malus de blocage selon la situation (2 ou +).",
              'incanter':"Un personnage peut incanter un sort sur plusieurs tours. Pendant ce temps, le personnage ne peut plus esquiver ni se déplacer. Sur un échec critique de blocage, l'incantation est annulé."

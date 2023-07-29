@@ -181,6 +181,7 @@ function removeOptions(selectElement) {
 
 function insertSkill(skillElement, skillName){
     selectedSkill = Object.values(skillsJSON).find(skill => skill.nom == skillName);
+
     if(!selectedSkill){
         
         if(skillName != ""){
@@ -197,6 +198,15 @@ function insertSkill(skillElement, skillName){
         skillElement.children[3].src = "http://voldre.free.fr/Eden/images/skillIcon/"+selectedSkill.icone+".png";
         skillElement.children[3].title = selectedSkill.desc;
         skillElement.children[4].innerText = selectedSkill.desc;
+        
+        // Update 29/07/2023, case de PV pour familiers
+        if(skillElement.children.length >= 6){ skillElement.removeChild(skillElement.children[5]);}
+
+        if(selectedSkill.effet == "Invocation"){
+            var pvPetE = document.createElement('input');
+            pvPetE.type = 'number';
+            skillElement.append(pvPetE);
+        }
     }
 }
 
