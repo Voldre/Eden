@@ -107,6 +107,20 @@ console.log("Enemies Weaknesses :")
 console.log(enemyWeakness);
 console.log(elementsCount);
 
+// console.log("Pour trouver des ennemis par nom  : Object.values(enemyJSON).filter(enemy => enemy.nom.includes('rsun')");
+document.querySelector('#filtre').addEventListener('change',e =>{
+    document.querySelector('#filteredEnemys').innerHTML = null;
+    console.log('triggered')
+    enemiesList = Object.values(enemyJSON).filter(enemy => enemy.nom.toLowerCase().includes(e.target.value));
+    enemiesList.forEach(enemy =>{
+        liElem = document.createElement('li');
+        liElem.innerText = enemy.nom + " - " + enemy.visuel3D;
+        document.querySelector('#filteredEnemys').append(liElem); 
+    });
+});
+
+
+
 [...document.querySelectorAll('.ennemi')].forEach( (selectEnnemi, i) =>{ 
     
     // Fill Select elements
