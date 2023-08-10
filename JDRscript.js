@@ -57,6 +57,7 @@ document.querySelector('#race').addEventListener('change', e =>{
     document.querySelector('.poids').innerText = poids[races.indexOf(e.target.value)];
 })
 
+
 // CLASSES
 document.querySelectorAll('[id^="classe"]').forEach( (classeElem, i) =>{
 
@@ -295,6 +296,11 @@ function loadFiche(indexPerso){
     document.querySelector('#pvmax').value = persoData.pvmax;
 
     document.querySelector('#stress').value = persoData.stress;
+    
+    if(persoData.stress >= 50){
+        document.querySelector('#stressImpact').innerText = "(Stats -"+Math.trunc(persoData.stress/50)+")";
+        }else{ document.querySelector('#stressImpact').innerText = '';
+    }
 
     document.querySelector('#pp').src = persoData.pp;
     document.querySelector('#force').value = persoData.force;
@@ -554,39 +560,6 @@ buttonIframe.addEventListener('click', ()=>{
 
 
 
-// Toasts 
-const params = new URLSearchParams(window.location.search)
-/*
-if(params.has('state')){
-    var link = document.createElement("a");
-    link.innerText = "Cliquez ici"
-    link.href = "/"
-
-    if(params.get('state') == "subscribed"){
-
-
-        toastNotification("Inscription réussie, envoi du mail de confirmation ...",12000);
-        setTimeout(() => {
-            toastNotification('Mail de confirmation envoyé',40000);
-        }, 5000);
-    }
-}
-*/
-
-
-function toastNotification(text, duration = 3000) {
-    var x = document.getElementById("toast");
-    if(!x.classList.contains("show")){
-        x.classList.add("show");
-        x.innerText = text;
-        // if(lastElement){ x.append(lastElement)}
-        setTimeout(function(){ x.classList.remove("show"); }, duration);
-    }
-}
-document.getElementById("toast").addEventListener('click', ()=>{
-    document.getElementById("toast").classList.remove("show");
-})
-
 // Modal (Dialog) des informations de bases des labels
 
 labelsDescription = {'force':"Permet d'utiliser des attaques lourdes, de pousser, de soulever.<br/>Permet de bloquer des coups physiques (Dé/2) <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff.",
@@ -594,8 +567,9 @@ labelsDescription = {'force':"Permet d'utiliser des attaques lourdes, de pousser
              'intel':"Permet d'utiliser des attaques magiques, de tester son érudition, sa réflexion.<br/>Permet de bloquer des coups magiques (Dé/2) <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff.",
              'charisme':"Permet d'intéragir avec les autres personnes dans différents contexte :<br/> éloquence, persuasion, négociation, menace, distraction, ... <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff.",
              'esprit': "Permet d'utiliser des buffs, des débuffs et des invocations.<br/> Permet aussi de résister (Dé/2) à des envoûtements (contrôle d'esprit, peur) <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff.",
-             'niv':"Augmente automatiquement tous les 100 points d'expériences du Niveau 1 à 5, puis tous les 150.<br/> Tous les niveaux paire (2,4,6,8), vous obtenez une compétence.",
+             'niv':"Augmente automatiquement tous les 100 points d'expériences du Niveau 1 à 5, puis tous les 150.<br/> Tous les niveaux paire (2,4,6,8), vous obtenez une compétence.<br/> Au Niveau 5 vous avez +1 en Esprit.<br/> Au Niveau 10, c'est +1 où vous voulez.",
              'pv':"Statistique des PV, augmente de 5 par niveau.",
+             'stress':"Stress max : 200%. Chaque 50% de stress, les stats diminue de 1 (donc 4 maxi).<br/>Le stress accentué augmente de 50%, la réduction diminue de 33% (1/3)."
             //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."
             }
 
@@ -637,3 +611,20 @@ dialog.addEventListener("click", e => {
   }
 })
 // dialog.show() // Opens a non-modal dialog
+
+
+// Toasts 
+const params = new URLSearchParams(window.location.search)
+
+function toastNotification(text, duration = 3000) {
+    var x = document.getElementById("toast");
+    if(!x.classList.contains("show")){
+        x.classList.add("show");
+        x.innerText = text;
+        // if(lastElement){ x.append(lastElement)}
+        setTimeout(function(){ x.classList.remove("show"); }, duration);
+    }
+}
+document.getElementById("toast").addEventListener('click', ()=>{
+    document.getElementById("toast").classList.remove("show");
+})

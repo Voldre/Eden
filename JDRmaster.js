@@ -274,6 +274,7 @@ document.querySelector('#save').addEventListener('click', () =>{
     saveWithPHP('master'); // Save it to JSON
     toastNotification('Données sauvegardées');
 })
+
 document.querySelector('#saveBackup').addEventListener('click', () =>{
     $.ajax({
         url: "JDRsaveBackup.php",
@@ -286,6 +287,23 @@ document.querySelector('#saveBackup').addEventListener('click', () =>{
     })
     toastNotification('JDRpersos_backup.json sauvegardés');
 })
+
+
+// Add new enemy (4th)
+
+document.querySelector('#newEnemy').addEventListener('click', () =>{
+    
+    lastEnemy = [...document.querySelectorAll('.infoEnnemi')][3]
+    if(lastEnemy.style.display == "none"){
+        lastEnemy.style.display = "block";
+        document.querySelector('.combat').style.gridTemplateColumns = '25vw 25vw 25vw 25vw';
+    }else{
+        lastEnemy.style.display = "none";   
+        document.querySelector('.combat').style.gridTemplateColumns = '33vw 33vw 33vw';
+
+    }
+})
+
 
 // Create skill & Save
 

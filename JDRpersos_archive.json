@@ -1,0 +1,30 @@
+{
+  "4": {
+    "nom": "Ash",
+    "race": "Humain",
+    "classeP": "Shaman",
+    "classeS": "Magicien",
+    "xp": "65",
+    "niv": "1",
+    "pv": "75",
+    "pvmax": "75",
+    "pp": "http://voldre.free.fr/Eden/images/jdrgalerie/MJ21YPR10G28_500.jpg",
+    "force": "6",
+    "dext\u00e9": "10",
+    "intel": "17",
+    "charisme": "13",
+    "esprit": "15",
+    "forceB": "",
+    "dext\u00e9B": "",
+    "intelB": "+1",
+    "charismeB": "",
+    "espritB": "",
+    "skills": "[\"Bombe Incendiaire\",\"Totem Gracieux\",\"Temp\u00eate de Glace\",\"Attaque Foudroyante\",\"\",\"\",\"\"]",
+    "eqpts": "[\"Sakura\",\"\",\"\",\"Robe \u00e9toil\u00e9e\",\"\",\"\",\"\"]",
+    "inventaire": "---",
+    "argent": "50",
+    "personnalite": "Peureux, intelligent, d\u00e9brouillard, r\u00e2leur, paresseux ",
+    "background": "Provient d'une famille de magicien renomm\u00e9 hors durant la guerre qui fait rage celui ci pr\u00e9f\u00e8re se travestir en femme pour \u00e9viter le front. Suite \u00e0 quoi sa famille le renie et il se retrouve tel un nomade \u00e0 vivre au jour le jour. Cependant toujours dans des lieux s\u00fbr et \u00e0 l'abris du danger\nJe vis \u00e0 la colline tranquille et je subviens \u00e0 mes besoins avec l'aide d'une grand m\u00e8re du village qui m'a vu reclus et compl\u00e8tement amaigris",
+    "notes": "Rr"
+  }
+}
