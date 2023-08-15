@@ -98,6 +98,11 @@ document.querySelector('#xp').addEventListener('change', e=>{
 
     updateSkillsSlots();
 
+    // Nouveauté 15/08 : Calcul automatique du montant des stats
+    var sommeStats =  parseInt(document.querySelector('#force').value) + parseInt(document.querySelector('#dexté').value) + parseInt(document.querySelector('#intel').value) + parseInt(document.querySelector('#charisme').value) + parseInt(document.querySelector('#esprit').value);
+    statsVerification(sommeStats,niv);
+    
+
     // Nouveauté 27/05 : 4eme accessoire au niveau 4
     if(niv >= 4){
         document.querySelector('.equipements').lastElementChild.previousElementSibling.classList.remove('hide');
@@ -111,6 +116,18 @@ document.querySelector('#xp').addEventListener('change', e=>{
         document.querySelector('.equipements').lastElementChild.classList.add('hide');
     }
 })
+
+// Nouveauté 15/08 : Calcul automatique du montant des stats
+function statsVerification(sommeStats, niv){
+    if(sommeStats != 61 + Math.trunc(parseInt(niv)/5)){
+        document.querySelector('#errorStat').innerText = " - Attention, vos points de stats ne sont pas bon : " + sommeStats +", attendu : " + (61 + Math.trunc(parseInt(niv)/5)); 
+    }else{ document.querySelector('#errorStat').innerText ="";}
+}
+document.querySelector('.stats').addEventListener('change', () =>{
+    var sommeStats =  parseInt(document.querySelector('#force').value) + parseInt(document.querySelector('#dexté').value) + parseInt(document.querySelector('#intel').value) + parseInt(document.querySelector('#charisme').value) + parseInt(document.querySelector('#esprit').value);
+    statsVerification(sommeStats, document.querySelector('#niv').value);
+})
+
 
 // STRESS
 document.querySelector('#stress').addEventListener('change', e =>{
@@ -325,6 +342,12 @@ function loadFiche(indexPerso){
     updateSkillsList();
 
     updateSkillsSlots();
+    
+    // Nouveauté 15/08 : Calcul automatique du montant des stats
+    var sommeStats =  parseInt(persoData.force) + parseInt(persoData.dexté) + parseInt(persoData.intel) + parseInt(persoData.charisme) + parseInt(persoData.esprit);
+    statsVerification(sommeStats,persoData.niv);
+
+
     // Nouveauté 27/05 : 4eme accessoire si le perso est au moins niveau 4
     if(persoData.niv >= 4){
         document.querySelector('.equipements').lastElementChild.classList.remove('hide');
@@ -569,7 +592,8 @@ labelsDescription = {'force':"Permet d'utiliser des attaques lourdes, de pousser
              'esprit': "Permet d'utiliser des buffs, des débuffs et des invocations.<br/> Permet aussi de résister (Dé/2) à des envoûtements (contrôle d'esprit, peur) <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff.",
              'niv':"Augmente automatiquement tous les 100 points d'expériences du Niveau 1 à 5, puis tous les 150.<br/> Tous les niveaux paire (2,4,6,8), vous obtenez une compétence.<br/> Au Niveau 5 vous avez +1 en Esprit.<br/> Au Niveau 10, c'est +1 où vous voulez.",
              'pv':"Statistique des PV, augmente de 5 par niveau.",
-             'stress':"Stress max : 200%. Chaque 50% de stress, les stats diminue de 1 (donc 4 maxi).<br/>Le stress accentué augmente de 50%, la réduction diminue de 33% (1/3)."
+             'stress':"Stress max : 200%. Chaque 50% de stress, les stats diminue de 1 (donc 4 maxi).<br/>Le stress accentué augmente de 50%, la réduction diminue de 33% (1/3).",
+             'infoEQPT':"Changer d'arme en combat se fait en début de tour (action instantanée). <br/>Porter une armure non adapté (magique, léger, lourd) n'est pas possible. <br/>Le montant fixe total (hors %) des accessoires est limité : +2 par stat, +3 blocage/esquive, pour les soins et dégâts (infligés, reçus) : 6"
             //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."
             }
 

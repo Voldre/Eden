@@ -178,6 +178,17 @@
   },
   "17": {
     "name": "Vestiges du Belliqueux",
+    "wmap_x": 58,
+    "wmap_y": 71,
+    "wmap": 0,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": 28
+  },
+  "18": {
+    "name": "Ruines d'Amur",
     "wmap_x": 46,
     "wmap_y": 66,
     "wmap": 0,
@@ -185,7 +196,7 @@
     "map_y": null,
     "map_z": null,
     "map_r": null,
-    "bgm": 28
+    "bgm": 21
   },
   "19": {
     "name": "Vallée Férégal",
