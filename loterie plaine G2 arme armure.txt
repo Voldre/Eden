@@ -1,23 +1,23 @@
 Plastron de Templier
-Armure Distinguée
+Armure Distinguée OU Plastron d'Obsidienne
 Katana Eclair Pourpre
-Guitare Congelé
+Guitare Congelé OU Guitare du Papillon
 Robe légère
-Guitare Electronique
 Katana Incisif
+*Guitare Electronique
 Grimoire de la Bête
 Bâton Flocon
-Grimoire de l'apprenti
+Grimoire de l'apprenti OU Guitare Electronique
 Plastron des plaines
-Guitare Enchantée
+Guitare Enchantée OU *Tunique de Delphes
 Croix sacrée
-Tunique de Delphes
-Grimoire corrosif
+Plastron de Tuskar
+Grimoire corrosif ?
 Katana de l'apprenti
 Guitare Flamboyante
 Katana Plume
 Bâton de Delphes
-Veste d'aventurier OU Epée Colossale de parade
+Epée de parade
 
 
 6 armures (2 lourd 2 léger 2 magique)
