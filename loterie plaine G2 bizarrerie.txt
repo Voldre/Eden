@@ -1,18 +1,20 @@
-Lapin ...
+R231 Portalpaga volant	(Bateau Volant Alpaga) **trajet gratuit (jet de Dé navigation)**       R232 Montgolfiere i00967 i01700
+R47-48 (i01545) Lapin ... **dégât +2 si présent**
 Pot du ...
 Pièce argentée Alpaga OU Baga portatif
-Licorne Tempête
+R121-124 (i00851 - i01068 - i01318) Calèche/Carrosse Citrouille  **nuit gratuite mode auberge (15 PV) et 0 po (3-5 po)**
 Bijou Iris
+R141 Dragon Gardien (i00887) - **dissuade les monstres sauvages d'attaquer le groupe**
 Potion Changeante (Tuskar) x2
-Licorne Boréal
+R103-R105 Licorne Tempête **dégât +2 si présent** (i00854) / Boréale Exceptionnelle **dégât -2 si présent** (i00849) / Boréale (i00848) (customisable)
 Pot du ...
+R41 Alpaga rose ou blanc (0 effet) / Destrier de preux chevalier (i00884) (si chevalier, charisme+1)
 Poupée de Tortue
 Acier de Platine x2
 Crysal d'Asbi x2
 Amulette d'Expérience
 Acier d'Obsidienne x2 (+ Volcanique)
-Fourrure d'Alpaga x2
-Alpaga rose (0 effet)
+Fourrure d'Alpaga x4
 Fleur apaisante x2
 Pot du ...
 Epines de monstres

@@ -248,8 +248,9 @@ equipements = document.querySelector('.equipements');
     
 })
 
-function insertEqpt(eqptElement, eqptName){
-    selectedEqpt = Object.values(eqptJSON).find(eqpt => eqpt.nom == eqptName);
+function insertEqpt(eqptElement, eqptName){ 
+    // Best update 18/08/2023 (finally !) : "la casse maj/min" the case (upper/lower) now doesn't matter ! 
+    selectedEqpt = Object.values(eqptJSON).find(eqpt => eqpt.nom.toLowerCase() == eqptName.toLowerCase());
     if(!selectedEqpt){
         if(eqptName != ""){
             console.log(eqptName+ " is not an eqpt (in the list)");
@@ -497,8 +498,6 @@ function savePerso(){
     skillsStringified = JSON.stringify(skillsData);
     eqptsStringified = JSON.stringify(eqptsData);
 
-    // same for equipments
-
     persosJSON = persosJSON || {};
 
     persosJSON[document.querySelector('.perso').id] = {
@@ -585,17 +584,17 @@ buttonIframe.addEventListener('click', ()=>{
 
 // Modal (Dialog) des informations de bases des labels
 
-labelsDescription = {'force':"Permet d'utiliser des attaques lourdes, de pousser, de soulever.<br/>Permet de bloquer des coups physiques (Dé/2) <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff.",
-             'dexté':"Permet d'utiliser des attaques agiles et rapide, de se mouvoir, courir.<br/>Permet d'esquiver des attaques mono-cible (Dé/2) <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff.",
-             'intel':"Permet d'utiliser des attaques magiques, de tester son érudition, sa réflexion.<br/>Permet de bloquer des coups magiques (Dé/2) <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff.",
-             'charisme':"Permet d'intéragir avec les autres personnes dans différents contexte :<br/> éloquence, persuasion, négociation, menace, distraction, ... <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff.",
-             'esprit': "Permet d'utiliser des buffs, des débuffs et des invocations.<br/> Permet aussi de résister (Dé/2) à des envoûtements (contrôle d'esprit, peur) <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff.",
+labelsDescription = {'force':"Permet d'utiliser des attaques lourdes, de pousser, de soulever.<br/>Permet de bloquer des coups physiques (Dé/2) <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff/stuff.<br/>Le blocage est limité à 13.",
+             'dexté':"Permet d'utiliser des attaques agiles et rapide, de se mouvoir, courir.<br/>Permet d'esquiver des attaques mono-cible (Dé/2) <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff/stuff.<br/>L'esquive est limité à 13.",
+             'intel':"Permet d'utiliser des attaques magiques, de tester son érudition, sa réflexion.<br/>Permet de bloquer des coups magiques (Dé/2) <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff/stuff.<br/>Le blocage est limité à 13.",
+             'charisme':"Permet d'intéragir avec les autres personnes dans différents contexte :<br/> éloquence, persuasion, négociation, menace, distraction, ... <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff/stuff.",
+             'esprit': "Permet d'utiliser des buffs, des débuffs et des invocations.<br/> Permet aussi de résister (Dé/2) à des envoûtements (contrôle d'esprit, peur) <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff/stuff.<br/>La résistance est limitée à 13.",
              'niv':"Augmente automatiquement tous les 100 points d'expériences du Niveau 1 à 5, puis tous les 150.<br/> Tous les niveaux paire (2,4,6,8), vous obtenez une compétence.<br/> Au Niveau 5 vous avez +1 en Esprit.<br/> Au Niveau 10, c'est +1 où vous voulez.",
              'pv':"Statistique des PV, augmente de 5 par niveau.",
              'stress':"Stress max : 200%. Chaque 50% de stress, les stats diminue de 1 (donc 4 maxi).<br/>Le stress accentué augmente de 50%, la réduction diminue de 33% (1/3).",
              'infoEQPT':"Changer d'arme en combat se fait en début de tour (action instantanée). <br/>Porter une armure non adapté (magique, léger, lourd) n'est pas possible. <br/>Le montant fixe total (hors %) des accessoires est limité : +2 par stat, +3 blocage/esquive, pour les soins et dégâts (infligés, reçus) : 6"
             //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."
-            }
+}
 
 
 const dialog = document.querySelector("dialog")

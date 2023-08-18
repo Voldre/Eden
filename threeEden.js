@@ -521,6 +521,13 @@ function animate() {
     if (keyboard[69]) { // E
         scene.children[3].rotation.y -= 0.01;
     }
+    // Add 18/08/2023 (finally ! After all this time, one year ! xD)
+    if (keyboard[82]){ // R
+        scene.children[3].position.y += 0.01;
+    }
+    if (keyboard[70]){ // F
+        scene.children[3].position.y -= 0.01;
+    }
 
     if (keyboard[161] || keyboard[48]) { // "!" ou "0", 04/06/2022 - Kill du programme
         console.log("Programme stoppé");
