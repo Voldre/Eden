@@ -205,9 +205,9 @@ dialog::backdrop {
     margin: auto;
 }
 
-.skillslist, .equipements{
-    display:flex;
-    flex-direction: column;
+.admin .equipements{
+    display: grid; 
+    grid-template-columns: 33vw 33vw 33vw;
 }
 .skillslist div, .equipements div{
     border: 1px gray solid;
@@ -262,6 +262,7 @@ dialog::backdrop {
 .adding{
     display: flex;
     justify-content: space-around;
+    overflow-x: auto;
 }
 .adding h4{
     margin-bottom: 8px;
@@ -323,6 +324,9 @@ filter: hue-rotate(-60deg);
 #toast.show {
 bottom: 40px;
 }
+.notInMobile{
+    display: block;
+  }
 
 @media (max-width: 700px) {
   .classeslist div{
@@ -330,5 +334,20 @@ bottom: 40px;
   }
   .classeslist div p{
     margin: auto;
+  }
+  .combat{  
+    display: grid;
+    width: 100%;
+    grid-template-columns: 99vw;
+  }
+  .adding{
+    justify-content: flex-start;
+  }
+    
+  .admin .equipements{
+    grid-template-columns: 50vw 50vw;
+  }
+  .notInMobile{
+    display: none;
   }
 }

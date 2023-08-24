@@ -256,10 +256,10 @@ skills[48] = {"nom":"Puma Noir","desc":"Vous transforme en Puma Noir","effet":"T
 
 
 labelsDescription = {'critique':"Le Dé 1 est une réussite critique (dégâts et buffs au max), le Dé 2 un semi-critique (boosté). Pareil pour les échecs avec Dé 19 et Dé 20.",
-             'invisible':"Quand un personnage est invisible : au 1er tour, -3 de chance de le toucher (sauf AoE : 0); et /2 aux suivants (sauf AoE : -3).<br/>&nbsp; A l'inverse, un personnage invisible qui frappe réduit les chances d'esquive et blocage de -3. <br/>&nbsp; Seuls les sorts d'Esprit laisse invisible, les autres font sortir.",
-             'endormi':"Réussir à endormir dépend de l'énervement de l'ennemi (réussite décroissante). Un personnage endormi se réveil avec une réussite à :  Tour 1 : Esprit*0.5, Tour 2 : Esprit*0.75, Tour 3+ : Esprit.",
+             'invisible':"Quand un personnage est invisible : au 1er tour, -3 de chance de le toucher (sauf AoE : 0); aux tours suivants (2+) : Chance/2 (sauf AoE : -3).<br/>&nbsp; A l'inverse, un personnage invisible qui frappe réduit les chances d'esquive et blocage de -2. <br/>&nbsp; Seuls les sorts d'Esprit laisse invisible, les autres font sortir. Se prendre un coup fait sortir aussi.",
+             'endormi':"Réussir à endormir dépend de l'état de l'ennemi (réussite décroissante (calme : Esprit, éveillé : Esprit*0.75, énervé : Esprit*0.5)). Ceci est similaire pour l'hypnose<br/> Un personnage endormi (ou Hypnotisé) se réveil avec une réussite à :  Tour 1 : Esprit*0.5, Tour 2 : Esprit*0.75, Tour 3+ : Esprit.<br/>L'endormissement et l'hypnose ne sont pas des malus pouvant être retiré par un sort (ex : Prévention). Mais frapper peut en faire sortir.",
              'protege':"Un personnage peut protéger un autre. Pour cela, il aura un malus de blocage selon la situation (2 ou +).",
-             'incanter':"Un personnage peut incanter un sort sur plusieurs tours. Pendant ce temps, le personnage ne peut plus esquiver ni se déplacer. Sur un échec critique de blocage, l'incantation est annulé."
+             'incanter':"Un personnage peut incanter un sort sur plusieurs tours. Pendant ce temps, le personnage ne peut plus esquiver ni se déplacer.<br/> Sur un échec critique de blocage (voire une réussite critique de l'ennemi, selon le contexte), l'incantation est annulée."
             //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."
             }
 
