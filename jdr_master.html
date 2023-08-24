@@ -62,7 +62,7 @@
             <p id="drop"></p>
             <p id="desc"></p>
         </div>
-        <div class="infoEnnemi">
+        <div class="infoEnnemi notInMobile">
             <select name="ennemi" class="ennemi"></select>
             <img class="icon" src="" alt="">
             <a id="visuel" href="#">Visuel</a>
@@ -116,7 +116,7 @@
             <p id="desc"></p>
         </div>
         
-        <div class="infoEnnemi">
+        <div class="infoEnnemi notInMobile">
             <select name="ennemi" class="ennemi"></select>
             <img class="icon" src="" alt="">
             <a id="visuel" href="#">Visuel</a>
@@ -273,7 +273,7 @@
                 <input type="number"/>
                 <input type="text" class="debuff" placeholder="effet / montant / durée"></input>
             </div>
-            <div class="perso">
+            <div class="perso notInMobile">
                 <input type="text">
                 <input type="text" class="commentaire" placeholder="est étourdi, attiré par, enragé, ... prépare une ataque..."></input>
                 <br/>
@@ -289,7 +289,7 @@
                 <input type="number"/>
                 <input type="text" class="debuff" placeholder="effet / montant / durée"></input>
             </div>
-            <div class="perso">
+            <div class="perso notInMobile">
                 <input type="text">
                 <input type="text" class="commentaire" placeholder="est étourdi, attiré par, enragé, ... prépare une ataque..."></input>
                 <br/>
@@ -360,7 +360,7 @@
                     </audio>
                 </div>
                 <div>
-                    <p id="bgm008">Forêt-arc-en-Ciel / Hautes-Terres / Jungle Céleste</p>
+                    <p id="bgm008">Forêt Arc-en-Ciel / Hautes-Terres / Jungle Céleste</p>
                     <audio loop controls="">
                         <source src="bgm/bgm008.ogg" type="audio/ogg">
                     </audio>
@@ -772,7 +772,7 @@
         <!-- <div class="addObj">
             <h4>Ajout d'objets</h4>
         </div> -->
-        <div>
+        <div class="notInMobile">
             <h4>Filtres ennemis</h4>
             <input type="text" id="filtre">
             <br/>
@@ -787,26 +787,26 @@
             <br/>
             PV Max<input type="text">
             <br/>
-            Skill<input type="text" placeholder="nom : desc : effet : stat/dés : montant">
+            Skill<input type="text" placeholder="nom :montant effet :stat">
             <br/>
-            Skill<input type="text" placeholder="nom : desc : effet : stat/dés : montant">
+            Skill<input type="text" placeholder="nom :montant effet :stat">
             <br/>
-            Skill<input type="text" placeholder="nom : desc : effet : stat/dés : montant">
+            Skill<input type="text" placeholder="nom :montant effet :stat">
             <br/>
-            Skill<input type="text" placeholder="nom : desc : effet : stat/dés : montant">
+            Skill<input type="text" placeholder="nom :montant effet :stat">
             <br/>
             Stats<input type="text" placeholder="9,12,14,13,11">
             <br/>
             Desc<input type="text" placeholder="petit ... brun et ...">
             <br/>
-            Infos/BP<input type="text" placeholder="Faible au feu, contondant, peut voler, ...">
+            Infos BP<input type="text" placeholder="Faible au feu et contondant.">
             <br/>
-            Drop<input type="text" placeholder="60% item 1, 40% item 2, ...">
+            Drop<input type="text" placeholder="compo 1, rare : accessoire, ...">
             <br/>
             <button id="createEnemy">Créer</button>
         </div>
     </div>
     <h4 style="display: inline; margin-right: 12px;">Equipements</h4>
     <button id="buttonEqpt">Afficher</button>
-    <div class="equipements hide" style="display: grid; grid-template-columns: 33vw 33vw 33vw;"></div>
+    <div class="equipements hide"></div>
 </div>

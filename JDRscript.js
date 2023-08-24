@@ -119,8 +119,9 @@ document.querySelector('#xp').addEventListener('change', e=>{
 
 // Nouveauté 15/08 : Calcul automatique du montant des stats
 function statsVerification(sommeStats, niv){
-    if(sommeStats != 61 + Math.trunc(parseInt(niv)/5)){
-        document.querySelector('#errorStat').innerText = " - Attention, vos points de stats ne sont pas bon : " + sommeStats +", attendu : " + (61 + Math.trunc(parseInt(niv)/5)); 
+    statsRequired = 61 + Math.trunc(parseInt(niv)/5)
+    if(sommeStats != statsRequired){
+        document.querySelector('#errorStat').innerText = " - Attention, vos points de stats ne sont pas bon : " + sommeStats +", attendu : " + statsRequired; 
     }else{ document.querySelector('#errorStat').innerText ="";}
 }
 document.querySelector('.stats').addEventListener('change', () =>{

@@ -292,15 +292,25 @@ document.querySelector('#saveBackup').addEventListener('click', () =>{
 // Add new enemy (4th)
 
 document.querySelector('#newEnemy').addEventListener('click', () =>{
-    
-    lastEnemy = [...document.querySelectorAll('.infoEnnemi')][3]
-    if(lastEnemy.style.display == "none"){
-        lastEnemy.style.display = "block";
-        document.querySelector('.combat').style.gridTemplateColumns = '25vw 25vw 25vw 25vw';
-    }else{
-        lastEnemy.style.display = "none";   
-        document.querySelector('.combat').style.gridTemplateColumns = '33vw 33vw 33vw';
 
+    beforeLastEnemy = [...document.querySelectorAll('.infoEnnemi')][2]
+    lastEnemy = [...document.querySelectorAll('.infoEnnemi')][3]
+    if(beforeLastEnemy.checkVisibility() == false){ // Mobile view 
+        if(lastEnemy.style.display == "none"){
+            lastEnemy.style.display = "block";
+            document.querySelector('.combat').style.gridTemplateColumns = '50vw 50vw';
+        }else{
+            lastEnemy.style.display = "none";   
+            document.querySelector('.combat').style.gridTemplateColumns = '99vw';
+        }
+    }else{ // Desktop view
+        if(lastEnemy.style.display == "none"){
+            lastEnemy.style.display = "block";
+            document.querySelector('.combat').style.gridTemplateColumns = '25vw 25vw 25vw 25vw';
+        }else{
+            lastEnemy.style.display = "none";   
+            document.querySelector('.combat').style.gridTemplateColumns = '33vw 33vw 33vw';
+        }
     }
 })
 
