@@ -20,22 +20,22 @@ if(window.location.href.includes('http')){
     xhReq.send(null);
     var masterJSON = JSON.parse(xhReq.responseText);
 
-    // load notes
-    document.querySelector('.notes').value = masterJSON.notes;
-
     xhReq.open("GET", "./JDRenemy.json" + "?" + new Date().getTime(), false);
     xhReq.send(null);
     var enemyJSON = JSON.parse(xhReq.responseText);
+
+    // load notes
+    document.querySelector('.notes').value = masterJSON.notes;
+
 }else{
     var skillsJSON = {};
     var eqptJSON = {};
-    var persosJSON = {};
     var galeryJSON = {};
     var masterJSON = {};
     var enemyJSON = {};
 }
 
-console.log('Master JSON', masterJSON);
+// console.log('Master JSON', masterJSON);
 console.log('Enemy JSON', enemyJSON);
 
 /*
@@ -48,9 +48,8 @@ $.ajax({
     }
 })
 */
-console.log(window.location.href);
 if(window.location.href.includes('html')){
-    console.log('no');
+    console.log('Page must not be read in .html, use .php instead');
     stop();
 }
 
@@ -110,7 +109,6 @@ console.log(elementsCount);
 // console.log("Pour trouver des ennemis par nom  : Object.values(enemyJSON).filter(enemy => enemy.nom.includes('rsun')");
 document.querySelector('#filtre').addEventListener('change',e =>{
     document.querySelector('#filteredEnemys').innerHTML = null;
-    console.log('triggered')
     enemiesList = Object.values(enemyJSON).filter(enemy => enemy.nom.toLowerCase().includes(e.target.value));
     enemiesList.forEach(enemy =>{
         liElem = document.createElement('li');
@@ -185,7 +183,9 @@ function loadEnemy(indexEnemy, indexElement){
     ennemiElement.querySelector('.icon').src = "http://voldre.free.fr/Eden/images/monsters/"+enemyData.visuel3D+".png";
     ennemiElement.querySelector('.icon').alt = enemyData.visuel3D.toLowerCase();
     ennemiElement.querySelector('#pv').value = enemyData.pvmax;
-    ennemiElement.querySelector('#pvmax').value = enemyData.pvmax;
+
+    nbP = document.querySelector('#nbP').value; // new functionality 28/08/2023
+    ennemiElement.querySelector('#pvmax').value = Math.round(enemyData.pvmax * (1+((nbP-3)*0.33)));
     
     // Stats
     ennemiElement.querySelector('#force').value = enemyData.stats.split(",")[0];
@@ -313,6 +313,42 @@ document.querySelector('#newEnemy').addEventListener('click', () =>{
         }
     }
 })
+
+// Get and update players PV (new functionality 28/08/2023)
+
+document.querySelector('#updatePInfo').addEventListener('click', ()=>{
+
+    const pInfo = document.querySelector('#pInfo')
+    xhReq.open("GET", "./JDRpersos.json" + "?" + new Date().getTime(), false);
+    xhReq.send(null);
+    var persosJSON = JSON.parse(xhReq.responseText);
+    
+    playersListID = document.querySelector('#pList').value.split(',')
+
+    pInfo.innerHTML = "";
+
+    playersListID.forEach(pID =>{
+        var player = persosJSON[(parseInt(pID)-1).toString()]; // Car index 0 à la première
+        if(!player) return // Can't continue
+
+        liElem = document.createElement('li');
+        liElem.innerText = player.nom+ ' : ' + player.pv + "/" + player.pvmax;
+        pInfo.append(liElem);
+
+    });
+});
+
+// Variateurs de PV et Dégâts selon le nombre de joueurs (new functionality 28/08/2023)
+
+document.querySelector('#nbP').addEventListener('change', e=>{
+    var nbP = e.target.value
+    if(nbP >= 3){
+        document.querySelector('#variation').innerText = "+" + ((nbP-3) *33)+"%";
+    }else{
+        document.querySelector('#variation').innerText = "-" + ((3-nbP) *33)+"%";
+    }
+})
+
 
 
 // Create skill & Save
