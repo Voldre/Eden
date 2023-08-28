@@ -1,12 +1,18 @@
 <div class="admin">
     <div id="toast"></div>
     <label for="tour">Tour n°</label>
-    <input type="number" name="tour" id="tour" value="1"/>
+    <input type="number" name="tour" id="tour" value="1" style="width: 46px;"/>
     <button name="nextTurn" id="nextTurn">+</button>
-    &nbsp;&nbsp;&nbsp;<button id="allowSave">Autoriser la sauvegarde</button>
-    &nbsp;&nbsp;&nbsp;<button id="save">Sauvegarder les notes</button>
-    &nbsp;&nbsp;&nbsp;<button id="saveBackup">Sauvegarder les persos en backup</button>
+    &nbsp;&nbsp;&nbsp;<button id="allowSave">Autoriser la Save</button>
+    &nbsp;&nbsp;&nbsp;<button id="save">Save les notes</button>
+    &nbsp;&nbsp;&nbsp;<button id="saveBackup">Save les persos en backup</button>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="newEnemy">Ajout d'un 4eme ennemi</button>
+    <div class="playersInfo">
+        <input type="text" id="pList"></input><button name="updatePInfo" id="updatePInfo">Update</button>
+        <ul id="pInfo"></ul>
+    </div>
+    <br/>
+    <div style="display: inline;">Nb P : <input type="number" name="nbP" id="nbP" value="3"></input>, PV et dégât (fixe) : <span id="variation"></span></div>
     <div class="combat">
         <!-- mettre 2 ennemis sur une même ligne ? -->
         <div class="infoEnnemi">
@@ -307,7 +313,8 @@
             </div>
         </div>
     </div>
-    <h5>Bonus de drop si BreakPoint (BP) comme dans le jeu, # faiblesse élémentaire et type (contondant, tranchant, perçant)</h5>
+    <!-- Line below is useless, because I know it -->
+    <!-- <h5>Bonus de drop si BreakPoint (BP) comme dans le jeu, # faiblesse élémentaire et type (contondant, tranchant, perçant)</h5> -->
     
     <div class="flexContainer">
         <div style="width:50%;">

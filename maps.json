@@ -495,6 +495,28 @@
     "map_r": null,
     "bgm": 58
   },
+  "58": {
+    "name": "Côte d'Aristère",
+    "wmap_x": 22,
+    "wmap_y": 13.5,
+    "wmap": 0,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": 28
+  },
+  "59": {
+    "name": "Steppes d'Aristère",
+    "wmap_x": 42.5,
+    "wmap_y": 16.5,
+    "wmap": 0,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": 42
+  },
   "97":{
     "name": "Île du Mariage",
     "wmap_x": 25.5,
