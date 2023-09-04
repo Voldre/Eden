@@ -342,9 +342,6 @@ filter: hue-rotate(-60deg);
 #toast.show {
 bottom: 40px;
 }
-.notInMobile{
-    display: block;
-}
 
 @media (max-width: 700px) {
   .classeslist div{

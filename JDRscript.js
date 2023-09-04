@@ -251,7 +251,7 @@ equipements = document.querySelector('.equipements');
 
 function insertEqpt(eqptElement, eqptName){ 
     // Best update 18/08/2023 (finally !) : "la casse maj/min" the case (upper/lower) now doesn't matter ! 
-    selectedEqpt = Object.values(eqptJSON).find(eqpt => eqpt.nom.toLowerCase() == eqptName.toLowerCase());
+    selectedEqpt = Object.values(eqptJSON).find(eqpt => eqpt.nom.toLowerCase().trim() == eqptName.toLowerCase().trim());
     if(!selectedEqpt){
         if(eqptName != ""){
             console.log(eqptName+ " is not an eqpt (in the list)");
