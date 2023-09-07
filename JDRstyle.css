@@ -92,7 +92,7 @@ dialog::backdrop {
     font-size: 14px;
 }
 
-.skill, .equipements div{
+.skill, .equipements div, .skillCombat{
     border: 1px gray solid;
     margin : 10px;
     margin-left: 2px;
@@ -100,6 +100,9 @@ dialog::backdrop {
     width: 100%;
     grid-template-areas: "nom nom eff ico"  "mon mon mon ico" "desc desc desc desc";
     cursor: pointer;
+}
+.skillCombat{
+    margin:2px;
 }
 .skill:hover, .equipements div:hover{
     background-color: rgba(96, 69, 216, 0.1);
@@ -310,6 +313,55 @@ dialog::backdrop {
     padding-left: 25px;
     margin: 2px 0px;
 }
+
+/* JDR Combat */
+.actions{
+    border : 2px gray solid;
+    width: 99%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+.action{
+    margin:2px;
+}
+.playerAction{
+    margin: 0px 5px;
+    width: 25%;
+}
+.enemyAction{
+    margin: 0px 5px;
+    width: 25%;
+}
+
+.statName{
+    font-size:20px;  
+    width: 75px;
+    text-align: center;
+}
+.dice{
+    background-image: url('./images/Dice20.png');
+    color: #333;
+    font-size: 20px;
+    height: 75px;
+    width: 75px;
+    background-position: center;
+    background-size: 75px 75px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+    -ms-transition: -ms-transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;  
+}
+.dice.show{
+    filter: hue-rotate(-60deg);
+    -webkit-transform: rotate(720deg);
+    transform: rotate(720def);
+}
+
 
 /* Toast Notification */
 #toast {

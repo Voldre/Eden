@@ -597,7 +597,6 @@ labelsDescription = {'force':"Permet d'utiliser des attaques lourdes, de pousser
             //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."
 }
 
-
 const dialog = document.querySelector("dialog")
 document.querySelectorAll('label').forEach(label => {
 
