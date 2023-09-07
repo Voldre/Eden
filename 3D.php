@@ -20,7 +20,7 @@ https://wiki.vg-resource.com/Noesis , Noesis Download : http://www.richwhitehous
 <body onload="init()" style="overflow:hidden; text-align:center;margin-top:0px;">
 <header class="header3D">
     <!--<input type="button" value="Toggle Wireframe" onclick="mesh.material.wireframe=!mesh.material.wireframe;meshFloor.material.wireframe=!meshFloor.material.wireframe;" />--> 
-    <span class="commandes">ZQSD : bouger  &nbsp;  &nbsp;  <span id="textMap"> &#8616; : changer d'image  &nbsp; </span> &nbsp; &harr; : tourner</span>
+    <span class="commandes">ZQSD : bouger  &nbsp;  &nbsp;  <span id="textMap"> &#8616; : changer d'image  &nbsp; R/F : haut/bas  &nbsp; </span> &nbsp; &harr; : tourner</span>
     <nav>
     <ul class="menu">
       <?php if(isset($_GET['data'])){ ?>
