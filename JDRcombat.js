@@ -37,6 +37,35 @@ if(window.location.href.includes('http')){
 const classes = ['Guerrier','Chevalier','Templier','Chev Dragon','Voleur','Assassin','Danselame','Samouraï','Chasseur','Ingénieur','Corsaire','Juge','Clerc','Barde','Shaman','Sage','Magicien','Illusionniste','Démoniste','Luminary'];
 const iconsClasses = ['01','02','03','18','04','05','06','16','07','08','09','59','10','11','12','17','13','14','15','19']
 
+// ALL SKILLS
+
+// la (les) classe(s), nom, stat utilisée (skillStat), montant [montant,stat,durée], icone,
+
+// Buff : montant, stat (ou carac), durée
+// Soin (ou atk) (++ type action "soin" ou "attaque")
+// 
+
+var skillSoin = [];
+skillSoin['nom'] = "Guérison";
+skillSoin['classe'] = "Clerc,Barde,Shaman,Sage";
+skillSoin['statUsed'] = "intel";
+skillSoin['type'] = "soin";
+skillSoin['montant'] = "1D10";
+skillSoin['montantFixe'] = 6;
+skillSoin['icone'] = "E0018";
+
+var buffDPSMag = [];
+buffDPSMag['nom'] = "Magic Boost";
+buffDPSMag['classe'] = "Magicien,Illusionniste,Démoniste,Luminary";
+buffDPSMag['statUsed'] = "intel";
+buffDPSMag['type'] = "buff";
+buffDPSMag['buffElem'] = "degat";
+buffDPSMag['montant'] = "1D6";
+buffDPSMag['montantFixe'] = 6;
+buffDPSMag['duree'] = 3;
+buffDPSMag['icone'] = "E0024";
+
+var allSkills = [skillSoin,buffDPSMag];
 
 var perso = {}
 var enemy = {}
@@ -81,7 +110,7 @@ window.addEventListener('load', () =>{
 })
 
 selectPerso.addEventListener('change', e =>{
-    indexPerso = e.target.selectedIndex-1; // -1 très important
+    indexPerso = e.target.selectedIndex;
     persoNom = e.target.value;
     loadFiche(indexPerso);
     loadEnemy(chooseEnemy());
@@ -123,9 +152,32 @@ function loadFiche(indexPerso){
     // Classes du perso
     classePID = classes.indexOf(perso.classeP);
     classeSID = classes.indexOf(perso.classeS);
+
+    loadSkills(perso.classeP,perso.classeS);
+
     document.querySelector('.iconClasses').children[0].src = "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE"+iconsClasses[classePID]+".png";
     document.querySelector('.iconClasses').children[1].src = "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE"+iconsClasses[classeSID]+".png";
 
+}
+
+function loadSkills(c1, c2){
+  Object.entries([...document.querySelectorAll('.skillCombat')]).forEach( ([id,skillE]) =>{
+    listSkills = allSkills.filter(skill => skill.classe.includes(c1) || skill.classe.includes(c2));
+    if(!listSkills[id]) return;
+    skillE.querySelector('.skillName').value = listSkills[id].nom; 
+    skillE.querySelector('.skillStat').innerText = listSkills[id].statUsed; 
+
+    if(listSkills[id].type == "buff"){
+      skillE.querySelector('.montant').innerText = listSkills[id].type + " : " + listSkills[id].buffElem + " +" + listSkills[id].montant + "+" + listSkills[id].montantFixe + " " + listSkills[id].duree + " tours"; 
+    }else{
+      skillE.querySelector('.montant').innerText = listSkills[id].type + " : " + listSkills[id].montant + "+" + listSkills[id].montantFixe; 
+    }
+    skillE.querySelector('.icone').src = "http://voldre.free.fr/Eden/images/skillIcon/"+listSkills[id].icone+".png"; 
+
+    skillE.addEventListener('click', () =>{
+      turnExecution(listSkills[id]);
+    })
+  });
 }
 
 function Perso(persoData){
@@ -140,7 +192,7 @@ function Perso(persoData){
       return Object.values(eqptJSON).find(eqpt => eqpt.nom.toLowerCase().trim() == eqptName.toLowerCase().trim());
   })
 
-  stuffs[1] = stuffs[1] || {"montant":"Dégât +0"};
+  stuffs[1] = stuffs[1] || {"nom":"","montant":"Dégât +0"};
   if(stuffs[1].nom.includes('Bouclier')){ 
       montantBouclier = stuffs[1].montant.split('Dégât -')[1].split(',')[0].split(' ')[0];
       stuffs[1] = {"montant":"Dégât +0"};
@@ -246,38 +298,7 @@ function Enemy(enemyData){
     // console.log(average)
 
     // In average, add Dices
-    var dices = 0;
-
-    if(skill.includes('1D12')){
-      dices += 6.5;
-    }
-    if(skill.includes('1D10')){
-      dices += 5.5;
-    }
-    if(skill.includes('2D10')){
-      dices += 11;
-    }
-    if(skill.includes('3D10')){
-      dices += 16;
-    }
-    if(skill.includes('1D8')){
-      dices += 4.5;
-    }
-    if(skill.includes('2D8')){
-      dices += 9;
-    }
-    if(skill.includes('1D6')){
-      dices += 3.5;
-    }
-    if(skill.includes('2D6')){
-      dices += 7;
-    }
-    if(skill.includes('3D6')){
-      dices += 10;
-    }
-    if(skill.includes('1D4')){
-      dices += 2.5;
-    }
+    var dices = dicesAverageConversion(skill);
 
     return average + dices;
   });
@@ -336,31 +357,107 @@ function chooseEnemy(category = null){
 }
 
 
+function dicesAverageConversion(skill){
+  dices = 0;
+  if(skill.includes('1D12')){
+    dices += 6.5;
+  }
+  if(skill.includes('1D10')){
+    dices += 5.5;
+  }
+  if(skill.includes('2D10')){
+    dices += 11;
+  }
+  if(skill.includes('3D10')){
+    dices += 16;
+  }
+  if(skill.includes('1D8')){
+    dices += 4.5;
+  }
+  if(skill.includes('2D8')){
+    dices += 9;
+  }
+  if(skill.includes('1D6')){
+    dices += 3.5;
+  }
+  if(skill.includes('2D6')){
+    dices += 7;
+  }
+  if(skill.includes('3D6')){
+    dices += 10;
+  }
+  if(skill.includes('1D4')){
+    dices += 2.5;
+  }
+  return dices;
+}
+
+function dicesConversion(skill){
+  dices = 0;
+  if(skill.includes('1D12')){
+    dices += Math.floor(Math.random()*12 +1);
+  }
+  if(skill.includes('1D10')){
+    dices += Math.floor(Math.random()*10 +1);
+  }
+  if(skill.includes('2D10')){
+    dices += Math.floor(Math.random()*10 +1)+Math.floor(Math.random()*10 +1);
+  }
+  if(skill.includes('3D10')){
+    dices += Math.floor(Math.random()*10 +1)*2+Math.floor(Math.random()*10 +1);
+  }
+  if(skill.includes('1D8')){
+    dices += Math.floor(Math.random()*8 +1);
+  }
+  if(skill.includes('2D8')){
+    dices += Math.floor(Math.random()*8 +1)+Math.floor(Math.random()*8 +1);
+  }
+  if(skill.includes('1D6')){
+    dices += Math.floor(Math.random()*6 +1);
+  }
+  if(skill.includes('2D6')){
+    dices += Math.floor(Math.random()*6 +1)+Math.floor(Math.random()*8 +1);
+  }
+  if(skill.includes('3D6')){
+    dices += Math.floor(Math.random()*6 +1)*2+Math.floor(Math.random()*8 +1);
+  }
+  if(skill.includes('1D4')){
+    dices += Math.floor(Math.random()*4 +1);
+  }
+  return dices;
+}
+
 // FIGHT
 
 function newturn(){
 
-  if(document.querySelector('#epv').value < 0){
-    toastNotification("Victoire !");
-    document.querySelector('#instruction').innerText = "Victoire !";
-    updateDesc('Vous avez vaincu '+enemy.nom);
-    ingame = false;
-    return;
-  }else if(document.querySelector('#pv').value <0){
-    toastNotification("Défaite");
-    document.querySelector('#instruction').innerText = "Défaite";
-    updateDesc('Vous avez perdu contre '+enemy.nom);
-    ingame = false;
-    return;
-  }
+  isEnded()
+  
   turn++
   document.querySelector('#turn').innerText = turn;
   toastNotification('Tour n°'+turn + ', choisissez une action');
   document.querySelector('#instruction').innerText = "Choisissez une action";
 
   unlockInputs(true);
+
+  updateBuff();
 }
 
+function isEnded(){
+  if(document.querySelector('#epv').value <= 0){
+    toastNotification("Victoire !");
+    document.querySelector('#instruction').innerText = "Victoire !";
+    updateDesc('Vous avez vaincu '+enemy.nom);
+    ingame = false;
+    return;
+  }else if(document.querySelector('#pv').value <= 0){
+    toastNotification("Défaite");
+    document.querySelector('#instruction').innerText = "Défaite";
+    updateDesc('Vous avez perdu contre '+enemy.nom);
+    ingame = false;
+    return;
+  }
+}
 
 // Dice
 
@@ -377,15 +474,14 @@ function rollDice(user, type, statName) {
   }
 
   var stat = user[statName];
-  console.log(user,statName,stat)
+  // console.log(user,statName,stat)
 
   var dice = section.querySelector(".dice");
   
   // Stat name section + Success amount
-  if(type =="attack" || type=="skill"){
+  if(type == "attaque" || type == "skill" || type == "soin" || type == "buff"){
     section.querySelector(".statName").innerText = statName;
     success = stat;
-
   }else{ 
     section.querySelector(".statName").innerText = statName+"/2"; 
     success = Math.ceil(stat/2)
@@ -446,55 +542,81 @@ function resetDices(){
 
 // Stats clicked
 
-var statsButton = ['bforce','bdexté',"bintel","bcharisme","besprit"];
+var statsButton = ['bforce','bdexté',"bintel"]; //,"bcharisme","besprit"];
 
 statsButton.forEach(buttonStat =>{
   var statName = buttonStat.slice(1,);
   document.querySelector('#'+buttonStat).addEventListener('click', () => {
+    persoAttack = {'type':'attaque','montant':'Dégât +1D10','statUsed':statName}
+    turnExecution(persoAttack);
+  });
+});
 
+// *** Turn execution ***
+
+function turnExecution(persoSkill){
+  if(!ingame){
+    toastNotification("Le combat est terminé");
+    return;
+  }
+
+  // Déroulement du tour
+  unlockInputs(false);
+
+  executeAction(perso,persoSkill);
+    
+
+  setTimeout(function(){ 
+    enemyTurn(enemy);
+  }, 3000);
+
+  setTimeout(function(){ 
+    newturn();
+  }, 6000);
+}
+
+// Enemy Turn 
+
+function enemyTurn(enemy){
+
+    isEnded();
+    
     if(!ingame){
       toastNotification("Le combat est terminé");
       return;
     }
 
-    // Déroulement du tour
-    unlockInputs(false);
-
-    executeAction(perso,"attack",statName);
-      
-
-    setTimeout(function(){ 
-      enemyTurn(enemy);
-    }, 3000);
-
-    setTimeout(function(){ 
-      newturn();
-    }, 6000);
-
-  });
-});
-
-// Turn execution
-
-function enemyTurn(enemy){
-
     toastNotification("Au tour de l'ennemi...");
     document.querySelector('#instruction').innerText = "Au tour de l'ennemi...";
 
-    sumStatsATK = enemy.force+enemy.dexté+enemy.intel;
+    // CHOIX DE STAT : Stat choisi par l'ennemi : que l'une des 2 meilleures
+    stats = {"force":enemy.force,"dexté":enemy.dexté,"intel":enemy.intel};
+    var minStat = Object.keys(stats).reduce((key, v) => stats[v] < stats[key] ? v : key);
 
+    delete stats[minStat] 
+    sumStatsATK = Object.values(stats)[0] + Object.values(stats)[1];
+  
+    // enemy.force+enemy.dexté+enemy.intel;
     randValue = Math.round(Math.random()*sumStatsATK);
 
-    if(randValue < enemy.force){
-      statName = "force";
-    }else if(randValue < enemy.force + enemy.dexté){
-      statName = "dexté";
-    }else{ statName = "intel"; }
+    if(randValue < Object.values(stats)[0]){
+      statName = Object.keys(stats)[0];
+    }else{ statName = Object.keys(stats)[1]; }
 
-    executeAction(enemy,"attack", statName);
+    // if(randValue < enemy.force){
+    //   statName = "force";
+    // }else if(randValue < enemy.force + enemy.dexté){
+    //   statName = "dexté";
+    // }else{ statName = "intel"; }
+
+    enemyAttack = {'type':'attaque','montant':'Dégât +1D10','statUsed':statName};
+    executeAction(enemy,enemyAttack);
 }
 
-function executeAction(user, type, statName){
+function executeAction(user, userSkill){
+  console.log(userSkill);
+  type = userSkill.type;
+  statName = userSkill.statUsed
   
   resetDices();
 
@@ -504,31 +626,59 @@ function executeAction(user, type, statName){
 
   userResult = rollDice(user,type,statName);
 
-  console.log(userResult);
-
+  // Montant des dégâts
   if(userResult == "crit success"){
-    hit(opponent, Math.ceil(user.degat *1.5));
-    updateDesc("Touché critique !")
+    montant = dicesAverageConversion(userSkill.montant)*2 + (userSkill.montantFixe || 0);
+    console.log(montant);
   }else if(userResult == "success"){
-    
-    setTimeout(function(){ 
-      opponentResult = rollDice(opponent,"defense",statName);
-      if(opponentResult == "fail"){
-        updateDesc("Touché !");
-        hit(opponent, user.degat);
-      }else if(opponentResult == "crit fail"){
-        hit(opponent, user.degat+5);
-        updateDesc("Touché !");
-      }else{
-        updateDesc("Bloqué / Esquivé");
-      }
-    }, 1500);
+    montant = dicesConversion(userSkill.montant) + (userSkill.montantFixe || 0);
+    // console.log(montant);
+  }
 
+  if(type == "attaque"){
+    if(userResult == "crit success"){
+      hit(opponent, user.degat + montant);
+      updateDesc("Touché critique !")
+    }else if(userResult == "success"){
+      
+      setTimeout(function(){ 
+        opponentResult = rollDice(opponent,"defense",statName);
+        if(opponentResult == "fail"){
+          updateDesc("Touché !");
+          hit(opponent, user.degat + montant);
+        }else if(opponentResult == "crit fail"){
+          hit(opponent, user.degat+5 + montant);
+          updateDesc("Touché !");
+        }else{
+          updateDesc("Bloqué / Esquivé");
+        }
+      }, 1500);
+
+    }
+
+  }else if(type == "soin"){
+    if(userResult == "crit success"){
+      heal(user, user.degat + montant);
+      updateDesc("Soin critique !");
+    }else if(userResult == "success"){ 
+      heal(user, user.degat + montant);
+      updateDesc("Soin !");
+    }
+  }else if(type == "buff"){
+    if(userResult == "crit success"){
+      buff(userSkill, montant);
+      updateDesc("Buff critique !");
+    }else if(userResult == "success"){ 
+      buff(userSkill, montant);
+      updateDesc("Buff !");
+    }
     
-  }else if(userResult == "fail"){
+  }
+    
+  if(userResult == "fail"){
     updateDesc("Echec");
   }else if(userResult == "crit fail"){
-    hit(user, Math.trunc(user.degat/2) + user.degatR || 0);
+    hit(user, Math.trunc(user.degat/2) + (user.degatR || 0));
     updateDesc("Echec critique");
   }
 }
@@ -539,13 +689,36 @@ function hit(user,amount){
 
   damage = amount + diceDamage - (user.degatR || 0);
   if(damage > 0){ // Si <0 == Big armure, mal chance, etc... donc 0 mais ça ne soigne pas
-    user.pv -= damage = amount + diceDamage - (user.degatR || 0);
+    user.pv -= damage;
   }
   if(user == perso){
     document.querySelector('#pv').value = user.pv;
   }else{
     document.querySelector('#epv').value = user.pv;
   }
+}
+
+function heal(user, amount){
+  // +1D10+6 de Heal
+  diceHeal = Math.ceil(Math.random()*10+6);
+  user.pv = parseInt(user.pv) + amount + diceHeal;
+  
+  // min() permet de gérer si les PV soignés sont > aux PV max
+  document.querySelector('#pv').value = Math.min(user.pvmax,user.pv);
+}
+
+function buff(userSkill, amount){
+  [...document.querySelectorAll('.buff')].every(buffE =>{
+    if(buffE.querySelector('.duree').innerText != "") return true
+    buffE.querySelector('.duree').innerText = userSkill.duree +1 ; // +1 car tour actuel à ne pas compter !
+    buffE.querySelector('.montant').innerText = amount;
+    buffE.querySelector('.icone').src = "http://voldre.free.fr/Eden/images/skillIcon/"+userSkill.icone+".png";
+    buffE.querySelector('.icone').title = userSkill.buffElem;
+
+    perso[userSkill.buffElem] += amount;
+    document.querySelector('#'+userSkill.buffElem).value = perso[userSkill.buffElem];
+    return false;
+  });
 }
 
 function updateDesc(desc){
@@ -561,7 +734,30 @@ function unlockInputs(bool){
   });
 }
 
+function updateBuff(){
+[...document.querySelectorAll('.buff')].forEach(buffE =>{
 
+  dureeE = buffE.querySelector('.duree');
+  buffElem = buffE.querySelector('.icone').title;
+
+  if(dureeE.innerText == "") return
+  
+  if(dureeE.innerText != "1"){
+    dureeE.innerText = parseInt(dureeE.innerText)-1;
+  }else{
+    dureeE.innerText = "";
+    
+    perso[buffElem] -= parseInt(buffE.querySelector('.montant').innerText);
+    document.querySelector('#'+buffElem).value = perso[buffElem];
+
+    buffE.querySelector('.montant').innerText = "";
+    buffE.querySelector('.icone').src = "";  
+    buffElem = "";
+  }
+
+  return false;
+});
+}
 
 // Modal (Dialog) des informations de bases des labels
 
