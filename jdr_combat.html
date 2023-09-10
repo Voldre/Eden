@@ -60,6 +60,18 @@
                 <input style='width: 20px;' type='number' id="degat" name="degat" readonly></input>
                 <label for="degat">Armure</label>
                 <input style='width: 20px;' type='number' id="degatR" name="degatR" readonly></input><br/>
+                <div class="buffs">
+                    <div class="buff"> 
+                        <p class="montant"></p>
+                        <p class="duree"></p>
+                        <img src="" alt="" class="icone" title="Description de la compétence">
+                    </div>
+                    <div class="buff"> 
+                        <p class="montant"></p>
+                        <p class="duree"></p>
+                        <img src="" alt="" class="icone" title="Description de la compétence">
+                    </div>
+                </div>
             </div>
             <div class="topright">
                 <img style="max-height: 220px;" id="pp"src="" alt="--">
@@ -80,10 +92,10 @@
             <div class="stat" ><input type="button" id="bintel" value="Intelligence"></input>
                 <input type='text' readonly id="intel" name="intel" style="width:42px">
             </div>
-            <div class="stat" ><input type="button" id="bcharisme" value="Charisme"></input>
+            <div class="stat" ><label for="charisme">Charisme</label>
                 <input type='text' readonly id="charisme" name="charisme" style="width:42px">
             </div>
-            <div class="stat" ><input type="button" id="besprit" value="Esprit"></input>
+            <div class="stat" ><label for="esprit">Esprit</label>
                 <input type='text' readonly id="esprit" name="esprit" style="width:42px">
             </div>
         </div>
@@ -91,33 +103,34 @@
         <br/>
         <div class="skills" style="grid-template-columns: 50% 50%; display: grid;">
             <div class="skill skillCombat">
-                <input type="button" id="bSkill" value="Sort 1"></input>
-                <p class="effet">Esprit</p>
+                <input type="button" class=skillName value="Sort 1"></input>
+                <p class="skillStat">Esprit</p>
                 <p class="montant">Dégât +4, Force +2 sur 3 tours</p>
                 <img src="http://voldre.free.fr/Eden/images/skillIcon/E0010.png" alt="" class="icone" title="Description de la compétence">
                 <p class="desc hide"></p>
             </div>
-            <div class="skill">
-                <p class="nom"></p>
-                <p class="effet"></p>
+            <div class="skill skillCombat">
+                <input type="button" class=skillName value="Sort 2"></input>
+                <p class="skillStat"></p>
                 <p class="montant"></p>
                 <img src="" alt="" class="icone" title="Description de la compétence">
                 <p class="desc hide"></p>
             </div>
-            <div class="skill">
-                <p class="nom"></p>
-                <p class="effet"></p>
+            <div class="skill skillCombat">
+                <input type="button" class=skillName value="Sort 3"></input>
+                <p class="skillStat"></p>
                 <p class="montant"></p>
                 <img src="" alt="" class="icone" title="Description de la compétence">
                 <p class="desc hide"></p>
             </div>
-            <!-- <div class="skill">
-                <p class="nom"></p>
-                <p class="effet"></p>
+            <div class="skill skillCombat">
+                <input type="button" class=skillName value="Sort 4"></input>
+                <p class="skillStat"></p>
                 <p class="montant"></p>
                 <img src="" alt="" class="icone" title="Description de la compétence">
                 <p class="desc hide"></p>
             </div>
+            <!-- 
             <div class="skill">
                 <p class="nom"></p>
                 <p class="effet"></p>
