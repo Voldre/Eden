@@ -258,10 +258,40 @@ dialog::backdrop {
 .infoPersos .commentaire, .infoEnnemi .commentaire{
     width: 85%;
 }
+.buffs{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-content: center;
+}
+
+.buffs .buff{
+    width: 50%;
+    margin: 5px;
+    display: grid;
+    grid-template-areas: "ico mon" "ico dur";
+    
+}
 .buff, .debuff{
     width: 70%;
     margin: 5px;
 }
+
+.buff .montant{
+    margin: 3px;
+    line-height: 1;
+    text-align: left;
+    grid-area: mon;
+}
+.buff .duree{
+    margin: 3px;
+    line-height: 1;
+    text-align: left;
+    grid-area: dur;
+}
+.buff .icone{
+    grid-area: ico;
+}
+
 .adding{
     display: flex;
     justify-content: space-around;
