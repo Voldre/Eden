@@ -54,17 +54,40 @@ if(window.location.href.includes('html')){
 }
 
 
+var allSlots = [document.querySelectorAll('.infoEnnemi')];
+function updateSlots(){
+    enemiesList = [...document.querySelectorAll('.infoEnnemi')].filter(infoE => infoE.querySelector(".ennemi").value != "");
+    persosList = [...document.querySelectorAll('.perso')].filter(persoE => persoE.children[0].value != "");
+    allSlots = [...enemiesList,...persosList] || [document.querySelectorAll('.infoEnnemi')];
+}
+
 // Next turn
-document.querySelector('#nextTurn').addEventListener('click', ()=>{
-    document.querySelector('#tour').value = parseInt(document.querySelector('#tour').value) + 1;
-    [...document.querySelector('.combat').querySelectorAll('input[type="number"]')].forEach(buffTurn =>{
-        if(!buffTurn.closest(".stats") && !buffTurn.id.includes('pv') && buffTurn.value >= 1){
-            // If the input is not in stats and is not the pv and is not 0, then ...
-            buffTurn.value -= 1;
-            // if(buffTurn.value == 0){}
+allTurnE = [...document.querySelectorAll('.nextTurn')];
+
+allTurnE.forEach( turnE =>{
+    turnE.addEventListener('click', ()=>{
+
+        mainE= turnE.closest('.perso') || turnE.closest('.infoEnnemi');
+
+        slotID = allSlots.indexOf(mainE)
+
+        if(allSlots.length == slotID+1){ // If all done, new turn
+            document.querySelector('#tour').value = parseInt(document.querySelector('#tour').value) + 1;
+            slotID = -1;
         }
-    })
-})
+        
+        // Turn of character done
+        [...mainE.querySelector('#buffs').querySelectorAll('input[type="number"]')].forEach(buffTurnE =>{
+            if(buffTurnE.value > 0){
+                buffTurnE.value -= 1;
+            }
+        });
+        
+        turnE.classList.add('hide');
+        allSlots[slotID+1].querySelector('.nextTurn').classList.remove('hide');
+    });
+});
+
 
 // Disable the possibility of launching many audio simultaneously
 
@@ -146,6 +169,8 @@ document.querySelector('#filtre').addEventListener('change',e =>{
 })
 
 function loadEnemy(indexEnemy, indexElement){    
+
+    updateSlots();
 
     ennemiElement = [...document.querySelectorAll('.infoEnnemi')][indexElement];
 
@@ -318,6 +343,8 @@ document.querySelector('#newEnemy').addEventListener('click', () =>{
 
 document.querySelector('#updatePInfo').addEventListener('click', ()=>{
 
+    updateSlots();
+
     const pInfo = document.querySelector('#pInfo')
     xhReq.open("GET", "./JDRpersos.json" + "?" + new Date().getTime(), false);
     xhReq.send(null);
@@ -327,10 +354,11 @@ document.querySelector('#updatePInfo').addEventListener('click', ()=>{
 
     pInfo.innerHTML = "";
 
-    playersListID.forEach(pID =>{
+    Object.entries(playersListID).forEach( ([index,pID]) =>{
         var player = persosJSON[(parseInt(pID)-1).toString()]; // Car index 0 à la première
         if(!player) return // Can't continue
 
+        [...document.querySelectorAll('.perso')][index].children[0].value = player.nom;
         liElem = document.createElement('li');
         liElem.innerText = player.nom+ ' : ' + player.pv + "/" + player.pvmax;
         pInfo.append(liElem);
