@@ -271,7 +271,8 @@ dialog::backdrop {
     grid-template-areas: "ico mon" "ico dur";
     
 }
-.buff, .debuff{
+
+.buff{
     width: 70%;
     margin: 5px;
 }
@@ -324,6 +325,19 @@ dialog::backdrop {
 .musique div p{
     margin: auto;
     max-width: 21vw;
+}
+
+.nextTurn{
+    padding: 5px;
+    font-size: 20px;
+    margin-right: 10px;
+    float: right;
+}
+
+.perso .nextTurn{
+    float: none;
+    padding: 0px 10px;
+    font-size: 17.5px;
 }
 
 .playersInfo{  

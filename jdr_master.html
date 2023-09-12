@@ -2,7 +2,6 @@
     <div id="toast"></div>
     <label for="tour">Tour n°</label>
     <input type="number" name="tour" id="tour" value="1" style="width: 46px;"/>
-    <button name="nextTurn" id="nextTurn">+</button>
     &nbsp;&nbsp;&nbsp;<button id="allowSave">Autoriser la Save</button>
     &nbsp;&nbsp;&nbsp;<button id="save">Save les notes</button>
     &nbsp;&nbsp;&nbsp;<button id="saveBackup">Save les persos en backup</button>
@@ -14,11 +13,10 @@
     <br/>
     <div class="combat">
         <!-- mettre 2 ennemis sur une même ligne ? -->
-        <div class="infoEnnemi">
+        <div class="infoEnnemi" id="e0">
             <select name="ennemi" class="ennemi"></select>
             <img class="icon" src="" alt="">
             <a id="visuel" href="#">Visuel</a>
-            <!-- <h4 id="nom">Nom</h4> -->
             <br/><label for="pv">PV/Max</label>
             <input style='width: 38px;' type='number' id="pv" name="pv"></input>
             <input style='width: 38px;' type='number' id="pvmax" name="pvmax"></input>
@@ -51,27 +49,29 @@
             </div>
             <p id="infos"></p>
             <input type="text" class="commentaire" placeholder="est étourdi, attiré par, enragé, ... prépare une ataque..."></input>
+            <button name="nextTurn" class="nextTurn">+</button>
             <br/>
-            <input type="number"/>
-            <input type="text" class="buff" placeholder="effet / montant / durée"></input>
-            <br/>
-            <input type="number"/>
-            <input type="text" class="buff" placeholder="effet / montant / durée"></input>
-            <br/>
-            <input type="number"/>
-            <input type="text" class="debuff" placeholder="effet / montant / durée"></input>
-            <br/>
-            <input type="number"/>
-            <input type="text" class="debuff" placeholder="effet / montant / durée"></input>
+            <div id="buffs">
+                <input type="number" class="buffT"/>
+                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                <br/>
+                <input type="number" class="buffT"/>
+                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                <br/>
+                <input type="number" class="buffT"/>
+                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                <br/>
+                <input type="number" class="buffT"/>
+                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+            </div>
             <br/>
             <p id="drop"></p>
             <p id="desc"></p>
         </div>
-        <div class="infoEnnemi notInMobile">
+        <div class="infoEnnemi notInMobile" id="e1">
             <select name="ennemi" class="ennemi"></select>
             <img class="icon" src="" alt="">
             <a id="visuel" href="#">Visuel</a>
-            <!-- <h4 id="nom">Nom</h4> -->
             <br/><label for="pv">PV/Max</label>
             <input style='width: 38px;' type='number' id="pv" name="pv"></input>
             <input style='width: 38px;' type='number' id="pvmax" name="pvmax"></input>
@@ -104,28 +104,30 @@
             </div>
             <p id="infos"></p>
             <input type="text" class="commentaire" placeholder="est étourdi, attiré par, enragé, ... prépare une ataque..."></input>
+            <button name="nextTurn" class="nextTurn hide">+</button>
             <br/>
-            <input type="number"/>
-            <input type="text" class="buff" placeholder="effet / montant / durée"></input>
-            <br/>
-            <input type="number"/>
-            <input type="text" class="buff" placeholder="effet / montant / durée"></input>
-            <br/>
-            <input type="number"/>
-            <input type="text" class="debuff" placeholder="effet / montant / durée"></input>
-            <br/>
-            <input type="number"/>
-            <input type="text" class="debuff" placeholder="effet / montant / durée"></input>
+            <div id="buffs">
+                <input type="number" class="buffT"/>
+                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                <br/>
+                <input type="number" class="buffT"/>
+                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                <br/>
+                <input type="number" class="buffT"/>
+                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                <br/>
+                <input type="number" class="buffT"/>
+                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+            </div>
             <br/>
             <p id="drop"></p>
             <p id="desc"></p>
         </div>
         
-        <div class="infoEnnemi notInMobile">
+        <div class="infoEnnemi notInMobile" id="e2">
             <select name="ennemi" class="ennemi"></select>
             <img class="icon" src="" alt="">
             <a id="visuel" href="#">Visuel</a>
-            <!-- <h4 id="nom">Nom</h4> -->
             <br/><label for="pv">PV/Max</label>
             <input style='width: 38px;' type='number' id="pv" name="pv"></input>
             <input style='width: 38px;' type='number' id="pvmax" name="pvmax"></input>
@@ -158,27 +160,29 @@
             </div>
             <p id="infos"></p>
             <input type="text" class="commentaire" placeholder="est étourdi, attiré par, enragé, ... prépare une ataque..."></input>
+            <button name="nextTurn" class="nextTurn hide">+</button>
             <br/>
-            <input type="number"/>
-            <input type="text" class="buff" placeholder="effet / montant / durée"></input>
-            <br/>
-            <input type="number"/>
-            <input type="text" class="buff" placeholder="effet / montant / durée"></input>
-            <br/>
-            <input type="number"/>
-            <input type="text" class="debuff" placeholder="effet / montant / durée"></input>
-            <br/>
-            <input type="number"/>
-            <input type="text" class="debuff" placeholder="effet / montant / durée"></input>
+            <div id="buffs">
+                <input type="number" class="buffT"/>
+                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                <br/>
+                <input type="number" class="buffT"/>
+                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                <br/>
+                <input type="number" class="buffT"/>
+                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                <br/>
+                <input type="number" class="buffT"/>
+                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+            </div>
             <br/>
             <p id="drop"></p>
             <p id="desc"></p>
         </div>
-        <div class="infoEnnemi" style="display:none">
+        <div class="infoEnnemi" id="e3" style="display:none">
             <select name="ennemi" class="ennemi"></select>
             <img class="icon" src="" alt="">
             <a id="visuel" href="#">Visuel</a>
-            <!-- <h4 id="nom">Nom</h4> -->
             <br/><label for="pv">PV/Max</label>
             <input style='width: 38px;' type='number' id="pv" name="pv"></input>
             <input style='width: 38px;' type='number' id="pvmax" name="pvmax"></input>
@@ -213,102 +217,135 @@
             </div>
             <p id="infos"></p>
             <input type="text" class="commentaire" placeholder="est étourdi, attiré par, enragé, ... prépare une ataque..."></input>
+            <button name="nextTurn" class="nextTurn hide">+</button>
             <br/>
-            <input type="number"/>
-            <input type="text" class="buff" placeholder="effet / montant / durée"></input>
-            <br/>
-            <input type="number"/>
-            <input type="text" class="buff" placeholder="effet / montant / durée"></input>
-            <br/>
-            <input type="number"/>
-            <input type="text" class="debuff" placeholder="effet / montant / durée"></input>
-            <br/>
-            <input type="number"/>
-            <input type="text" class="debuff" placeholder="effet / montant / durée"></input>
+            <div id="buffs">
+                <input type="number" class="buffT"/>
+                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                <br/>
+                <input type="number" class="buffT"/>
+                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                <br/>
+                <input type="number" class="buffT"/>
+                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                <br/>
+                <input type="number" class="buffT"/>
+                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+            </div>
             <br/>
             <p id="drop"></p>
             <p id="desc"></p>
         </div>
         <div class="infoPersos">
-            <div class="perso">
+            <div class="perso" id="p0">
                 <input type="text">
+                <button name="nextTurn" class="nextTurn hide">+</button>
                 <input type="text" class="commentaire" placeholder="est étourdi, attiré par, enragé, ... prépare une ataque..."></input>
-                <br/>
-                <input type="number"/>
-                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
-                <br/>
-                <input type="number"/>
-                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
-                <br/>
-                <input type="number"/>
-                <input type="text" class="debuff" placeholder="effet / montant / durée"></input>
-                <br/>
-                <input type="number"/>
-                <input type="text" class="debuff" placeholder="effet / montant / durée"></input>
+                <br/> 
+                <div id="buffs">
+                    <input type="number" class="buffT"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                    <br/>
+                    <input type="number" class="buffT"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                    <br/>
+                    <input type="number" class="buffT"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                    <br/>
+                    <input type="number" class="buffT"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                    <br/>
+                    <input type="number" class="buffT"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                </div>
             </div>
-            <div class="perso">
+            <div class="perso" id="p1">
                 <input type="text">
+                <button name="nextTurn" class="nextTurn hide">+</button>
                 <input type="text" class="commentaire" placeholder="est étourdi, attiré par, enragé, ... prépare une ataque..."></input>
-                <br/>
-                <input type="number"/>
-                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
-                <br/>
-                <input type="number"/>
-                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
-                <br/>
-                <input type="number"/>
-                <input type="text" class="debuff" placeholder="effet / montant / durée"></input>
-                <br/>
-                <input type="number"/>
-                <input type="text" class="debuff" placeholder="effet / montant / durée"></input>
+                <br/> 
+                <div id="buffs">
+                    <input type="number" class="buffT"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                    <br/>
+                    <input type="number" class="buffT"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                    <br/>
+                    <input type="number" class="buffT"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                    <br/>
+                    <input type="number" class="buffT"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                    <br/>
+                    <input type="number" class="buffT"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                </div>
             </div>
-            <div class="perso">
+            <div class="perso" id="p2">
                 <input type="text">
+                <button name="nextTurn" class="nextTurn hide">+</button>
                 <input type="text" class="commentaire" placeholder="est étourdi, attiré par, enragé, ... prépare une ataque..."></input>
-                <br/>
-                <input type="number"/>
-                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
-                <br/>
-                <input type="number"/>
-                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
-                <br/>
-                <input type="number"/>
-                <input type="text" class="debuff" placeholder="effet / montant / durée"></input>
-                <br/>
-                <input type="number"/>
-                <input type="text" class="debuff" placeholder="effet / montant / durée"></input>
+                <br/> 
+                <div id="buffs">
+                    <input type="number" class="buffT"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                    <br/>
+                    <input type="number" class="buffT"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                    <br/>
+                    <input type="number" class="buffT"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                    <br/>
+                    <input type="number" class="buffT"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                    <br/>
+                    <input type="number" class="buffT"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                </div>
             </div>
-            <div class="perso notInMobile">
+            <div class="perso notInMobile" id="p3">
                 <input type="text">
+                <button name="nextTurn" class="nextTurn hide">+</button>
                 <input type="text" class="commentaire" placeholder="est étourdi, attiré par, enragé, ... prépare une ataque..."></input>
-                <br/>
-                <input type="number"/>
-                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
-                <br/>
-                <input type="number"/>
-                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
-                <br/>
-                <input type="number"/>
-                <input type="text" class="debuff" placeholder="effet / montant / durée"></input>
-                <br/>
-                <input type="number"/>
-                <input type="text" class="debuff" placeholder="effet / montant / durée"></input>
+                <br/> 
+                <div id="buffs">
+                    <input type="number" class="buffT"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                    <br/>
+                    <input type="number" class="buffT"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                    <br/>
+                    <input type="number" class="buffT"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                    <br/>
+                    <input type="number" class="buffT"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                    <br/>
+                    <input type="number" class="buffT"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                </div>
             </div>
-            <div class="perso notInMobile">
+            <div class="perso notInMobile" id="p4">
                 <input type="text">
+                <button name="nextTurn" class="nextTurn hide">+</button>
                 <input type="text" class="commentaire" placeholder="est étourdi, attiré par, enragé, ... prépare une ataque..."></input>
-                <br/>
-                <input type="number"/>
-                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
-                <br/>
-                <input type="number"/>
-                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
-                <br/>
-                <input type="number"/>
-                <input type="text" class="debuff" placeholder="effet / montant / durée"></input>
-                <br/>
-                <input type="number"/>
-                <input type="text" class="debuff" placeholder="effet / montant / durée"></input>
+                <br/> 
+                <div id="buffs">
+                    <input type="number" class="buffT"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                    <br/>
+                    <input type="number" class="buffT"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                    <br/>
+                    <input type="number" class="buffT"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                    <br/>
+                    <input type="number" class="buffT"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                    <br/>
+                    <input type="number" class="buffT"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                </div>
             </div>
         </div>
     </div>
