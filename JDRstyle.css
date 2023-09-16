@@ -1,18 +1,19 @@
-body{
-    overflow-x: hidden;
+body {
+  overflow-x: hidden;
 }
-ul{    
-    list-style-image: url("./images/Listbullet.png");
+ul {
+  list-style-image: url("./images/Listbullet.png");
 }
-select{
-    max-height: 26px;
+select {
+  max-height: 26px;
 }
 
-input[type=text], input[type=number]{
-    background-color: #333;
-    color: wheat;
-    border: 2px rgb(190,190,190,0.3) solid;
-    margin: 2px;
+input[type="text"],
+input[type="number"] {
+  background-color: #333;
+  color: wheat;
+  border: 2px rgb(190, 190, 190, 0.3) solid;
+  margin: 2px;
 }
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -22,443 +23,460 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 
-.flexContainer{
-    display: flex;
-    width: 100%;
+.flexContainer {
+  display: flex;
+  width: 100%;
 }
-.topleft{
-    display: inline-block;
-    width: 48%;
-    min-width: 100px;
-    text-align: end;
-    line-height: 2;
-}
-
-.topleft input[type=text]{
-    width: 80px;
-    margin :2px;
-    padding:2px;
+.topleft {
+  display: inline-block;
+  width: 48%;
+  min-width: 100px;
+  text-align: end;
+  line-height: 2;
 }
 
-.topright{
-    width: 48%;
-    max-height: 250px;
+.topleft input[type="text"] {
+  width: 80px;
+  margin: 2px;
+  padding: 2px;
 }
-.topright img{
-    border: 2px black solid;
-    /* width: 100%; */
-    max-height: 270px;
-    min-width:50px;
-    min-height: 70px;
+
+.topright {
+  width: 48%;
+  max-height: 250px;
+}
+.topright img {
+  border: 2px black solid;
+  /* width: 100%; */
+  max-height: 270px;
+  min-width: 50px;
+  min-height: 70px;
 }
 dialog {
-    z-index: 10;
-    margin-top: 10px;
-    background-color: rgba(26, 25, 25, 0.99);
-    position: fixed;
-    width: 98%;
-    top: 30%;
-    border: 2px wheat solid;
-    border-radius: 1rem;
-    color: wheat;
+  z-index: 10;
+  margin-top: 10px;
+  background-color: rgba(26, 25, 25, 0.99);
+  position: fixed;
+  width: 98%;
+  top: 30%;
+  border: 2px wheat solid;
+  border-radius: 1rem;
+  color: wheat;
 }
 
 dialog::backdrop {
-    background-color: rgba(0, 0, 0, 0.35);
+  background-color: rgba(0, 0, 0, 0.35);
 }
 
-.stats{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
+.stats {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 
-.stats input[type=text], .stats input[type=number]{
-    width: 54px;
-    height: 30px;
-    font-size:20px;
-    text-align: center;
-    margin:auto;
+.stats input[type="text"],
+.stats input[type="number"] {
+  width: 54px;
+  height: 30px;
+  font-size: 20px;
+  text-align: center;
+  margin: auto;
 }
 
-.stat{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    font-size: 14px;
+.stat {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 14px;
+}
+.statB {
+  height: 23px;
+  font-size: 17px;
 }
 
-.skill, .equipements div, .skillCombat{
-    border: 1px gray solid;
-    margin : 10px;
-    margin-left: 2px;
-    display: grid;
-    width: 100%;
-    grid-template-areas: "nom nom eff ico"  "mon mon mon ico" "desc desc desc desc";
-    cursor: pointer;
+.skill,
+.equipements div,
+.skillCombat {
+  border: 1px gray solid;
+  margin: 10px;
+  margin-left: 2px;
+  display: grid;
+  width: 100%;
+  grid-template-areas: "nom nom eff ico" "mon mon mon ico" "desc desc desc desc";
+  cursor: pointer;
 }
-.skillCombat{
-    margin:2px;
+.skillCombat {
+  margin: 2px;
 }
-.skill:hover, .equipements div:hover{
-    background-color: rgba(96, 69, 216, 0.1);
+.skill:hover,
+.equipements div:hover {
+  background-color: rgba(96, 69, 216, 0.1);
 }
-.skill> .nom, .equipements div > .nom{
-    grid-area: nom;
+.skill > .nom,
+.equipements div > .nom {
+  grid-area: nom;
 }
-.skill> .effet, .equipements div > .effet{
-    grid-area: eff;
+.skill > .effet,
+.equipements div > .effet {
+  grid-area: eff;
 }
-.skill> .icone, .equipements div > .icone{
-    grid-area: ico;
+.skill > .icone,
+.equipements div > .icone {
+  grid-area: ico;
 }
-.skill> .montant, .equipements div > .montant{
-    grid-area: mon;
-}
-
-.skill input[type=text]{
-    width: 120px;
-    margin :2px;
-    padding:2px;
-}
-
-.skill p{
-    font-size: 16px;
-    margin: 2px;
-    padding-right: 4px;
-    border-right: 1px gray solid;
+.skill > .montant,
+.equipements div > .montant {
+  grid-area: mon;
 }
 
-#pp{
-    cursor:pointer;
+.skill input[type="text"] {
+  width: 120px;
+  margin: 2px;
+  padding: 2px;
 }
 
-.icone{
-    width: 60px;
-    height: 60px;
+.skill p {
+  font-size: 16px;
+  margin: 2px;
+  padding-right: 4px;
+  border-right: 1px gray solid;
 }
 
-.hide{
-    display: none !important;
+#pp {
+  cursor: pointer;
 }
 
-.galerie{
-    position: absolute;
-    top: 0;
-    left:0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-}
-.galerie img{
-    width: 45vw;
-    margin: 2px;
-    height: auto;
-    border: 2px gray solid;
-    cursor: pointer;
-    filter:brightness(90%);
+.icone {
+  width: 60px;
+  height: 60px;
 }
 
-.galerie img:hover{
-    filter:brightness(120%);
+.hide {
+  display: none !important;
 }
 
-.inventaire, .personnalité, .background, .notes{
-    width: 80%;
-    height: 100px;
+.galerie {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.galerie img {
+  width: 45vw;
+  margin: 2px;
+  height: auto;
+  border: 2px gray solid;
+  cursor: pointer;
+  filter: brightness(90%);
+}
+
+.galerie img:hover {
+  filter: brightness(120%);
+}
+
+.inventaire,
+.personnalité,
+.background,
+.notes {
+  width: 80%;
+  height: 100px;
 }
 
 /* JDR Univers */
 
-.race{
-    display: block;
-    padding: 10px 0px;
-    width: 100%;
+.race {
+  display: block;
+  padding: 10px 0px;
+  width: 100%;
 }
-.race h4{
-    border-top: 1px gray dashed;
-    text-decoration: underline;
-    font-size: 17px;
-    margin-bottom: 2px;
+.race h4 {
+  border-top: 1px gray dashed;
+  text-decoration: underline;
+  font-size: 17px;
+  margin-bottom: 2px;
 }
-.race img{
-    width: 200px;
-    height: 200px;
+.race img {
+  width: 200px;
+  height: 200px;
 }
-.classeslist div{
-    border: 1px gray solid;
-    margin: 1px;
-    width: 9vw;
-    display: inline-block;
-}
-
-.classeslist div:hover{
-    background-color: rgba(96, 69, 216, 0.2) ;
-}
-.classeslist div p{
-    text-align: center;
-    padding : 2px;
-}
-.classeslist div img{
-    display: block;
-    margin: auto;
+.classeslist div {
+  border: 1px gray solid;
+  margin: 1px;
+  width: 9vw;
+  display: inline-block;
 }
 
-.admin .equipements{
-    display: grid; 
-    grid-template-columns: 33vw 33vw 33vw;
+.classeslist div:hover {
+  background-color: rgba(96, 69, 216, 0.2);
 }
-.skillslist div, .equipements div{
-    border: 1px gray solid;
-    margin : 8px;
-    margin-left: 2px;
-    display: grid;
-    width: 100%;
-    grid-template-areas: "nom nom eff ico"  "mon mon mon ico" "desc desc desc desc";
-    background-color: transparent;
+.classeslist div p {
+  text-align: center;
+  padding: 2px;
 }
-.equipements p{
-    margin: 2px;
+.classeslist div img {
+  display: block;
+  margin: auto;
 }
-.highlight{
-    background-color: rgba(96, 69, 216, 0.5) !important;
+
+.admin .equipements {
+  display: grid;
+  grid-template-columns: 33vw 33vw 33vw;
+}
+.skillslist div,
+.equipements div {
+  border: 1px gray solid;
+  margin: 8px;
+  margin-left: 2px;
+  display: grid;
+  width: 100%;
+  grid-template-areas: "nom nom eff ico" "mon mon mon ico" "desc desc desc desc";
+  background-color: transparent;
+}
+.equipements p {
+  margin: 2px;
+}
+.highlight {
+  background-color: rgba(96, 69, 216, 0.5) !important;
 }
 /*
 .skillslist div img{
     float:right;
 }
 */
-.skill > .desc, .equipements div > .desc{
-    grid-area: desc;
+.skill > .desc,
+.equipements div > .desc {
+  grid-area: desc;
 }
 
 /* JDR Master */
-.combat{  
-    display: grid;
-    width: 100%;
-    grid-template-columns: 32vw 32vw 32vw;
+.combat {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 32vw 32vw 32vw;
 }
-.infoPersos{
-    width: 99vw;
-    display: grid;
-    grid-template-columns: 20vw 20vw 20vw 20vw 20vw;
+.infoPersos {
+  width: 99vw;
+  display: grid;
+  grid-template-columns: 20vw 20vw 20vw 20vw 20vw;
 }
-.infoEnnemi{
-    border: 2px black solid;
-    margin: 5px;
+.infoEnnemi {
+  border: 2px black solid;
+  margin: 5px;
 }
-.infoPersos input[type="number"], .infoEnnemi input[type="number"]{
-    width: 30px;
-}
-
-.infoPersos .commentaire, .infoEnnemi .commentaire{
-    width: 85%;
-}
-.buffs{
-    display: grid;
-    grid-template-columns: 50% 50%;
-    justify-content: center;
+.infoPersos input[type="number"],
+.infoEnnemi input[type="number"] {
+  width: 30px;
 }
 
-.buffs .buff{
-    width: 50%;
-    margin: 5px;
-    display: grid;
-    grid-template-areas: "ico mon" "ico dur";
-    
+.infoPersos .commentaire,
+.infoEnnemi .commentaire {
+  width: 85%;
+}
+.buffs {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-content: center;
 }
 
-.buff{
-    width: 70%;
-    margin: 5px;
+.buffs .buff {
+  width: 50%;
+  margin: 5px;
+  display: grid;
+  grid-template-areas: "ico mon" "ico dur";
 }
 
-.buff .montant{
-    margin: 3px;
-    line-height: 1;
-    text-align: left;
-    grid-area: mon;
-}
-.buff .duree{
-    margin: 3px;
-    line-height: 1;
-    text-align: left;
-    grid-area: dur;
-}
-.buff .icone{
-    grid-area: ico;
+.buff {
+  width: 70%;
+  margin: 5px;
 }
 
-.adding{
-    display: flex;
-    justify-content: space-around;
-    overflow-x: auto;
+.buff .montant {
+  margin: 3px;
+  line-height: 1;
+  text-align: left;
+  grid-area: mon;
 }
-.adding h4{
-    margin-bottom: 8px;
+.buff .duree {
+  margin: 3px;
+  line-height: 1;
+  text-align: left;
+  grid-area: dur;
 }
-#currentMusic{
-    display: block;
-    margin: 0px;
-    width: 54vw;
-}
-.musique{
-    max-width: 545px;
-    height: 110px;
-    overflow-y: auto;
-    width: 54vw;
-    border: 1px black solid;
-    margin: 2px;
-    margin-left: 10px;
-}
-.musique div{
-    display: flex;
-    height: 47px;
-}
-.musique div audio{
-    height: 40px;
-}
-.musique div p{
-    margin: auto;
-    max-width: 21vw;
+.buff .icone {
+  grid-area: ico;
 }
 
-.nextTurn{
-    padding: 5px;
-    font-size: 20px;
-    margin-right: 10px;
-    float: right;
+.adding {
+  display: flex;
+  justify-content: space-around;
+  overflow-x: auto;
+}
+.adding h4 {
+  margin-bottom: 8px;
+}
+#currentMusic {
+  display: block;
+  margin: 0px;
+  width: 54vw;
+}
+.musique {
+  max-width: 545px;
+  height: 110px;
+  overflow-y: auto;
+  width: 54vw;
+  border: 1px black solid;
+  margin: 2px;
+  margin-left: 10px;
+}
+.musique div {
+  display: flex;
+  height: 47px;
+}
+.musique div audio {
+  height: 40px;
+}
+.musique div p {
+  margin: auto;
+  max-width: 21vw;
 }
 
-.perso .nextTurn{
-    float: none;
-    padding: 0px 10px;
-    font-size: 17.5px;
+.nextTurn {
+  padding: 5px;
+  font-size: 20px;
+  margin-right: 10px;
+  float: right;
 }
 
-.playersInfo{  
-    height: 75px;
-    width: -moz-available;
-    border: 2px green solid;
-    display: inline-block;
-    position: absolute;
-    margin: -52px 10px;
-    overflow-y: auto;
+.perso .nextTurn {
+  float: none;
+  padding: 0px 10px;
+  font-size: 17.5px;
 }
 
-#pInfo{
-    display: grid;
-    justify-content: space-around;
-    grid-template-columns: 33% 33% 33%;
-    padding-left: 25px;
-    margin: 2px 0px;
+.playersInfo {
+  height: 75px;
+  width: -moz-available;
+  border: 2px green solid;
+  display: inline-block;
+  position: absolute;
+  margin: -52px 10px;
+  overflow-y: auto;
+}
+
+#pInfo {
+  display: grid;
+  justify-content: space-around;
+  grid-template-columns: 33% 33% 33%;
+  padding-left: 25px;
+  margin: 2px 0px;
 }
 
 /* JDR Combat */
-.actions{
-    border : 2px gray solid;
-    width: 99%;
-    height: 100px;
-    display: flex;
-    justify-content: space-around;
+.actions {
+  border: 2px gray solid;
+  width: 99%;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
 }
-.action{
-    margin:2px;
+.action {
+  margin: 2px;
 }
-.playerAction{
-    margin: 0px 5px;
-    width: 25%;
+.playerAction {
+  margin: 0px 5px;
+  width: 25%;
 }
-.enemyAction{
-    margin: 0px 5px;
-    width: 25%;
-}
-
-.statName{
-    font-size:20px;  
-    width: 75px;
-    text-align: center;
-}
-.dice{
-    background-image: url('./images/Dice20.png');
-    color: #333;
-    font-size: 20px;
-    height: 75px;
-    width: 75px;
-    background-position: center;
-    background-size: 75px 75px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    font-weight: bold;
-    
-    -webkit-transition: -webkit-transform 0.5s ease-in-out;
-    -ms-transition: -ms-transform 0.5s ease-in-out;
-    transition: transform 0.5s ease-in-out;  
-}
-.dice.show{
-    filter: hue-rotate(-60deg);
-    -webkit-transform: rotate(720deg);
-    transform: rotate(720def);
+.enemyAction {
+  margin: 0px 5px;
+  width: 25%;
 }
 
+.statName {
+  font-size: 20px;
+  width: 75px;
+  text-align: center;
+}
+.dice {
+  background-image: url("./images/Dice20.png");
+  color: #333;
+  font-size: 20px;
+  height: 75px;
+  width: 75px;
+  background-position: center;
+  background-size: 75px 75px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  -ms-transition: -ms-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+}
+.dice.show {
+  filter: hue-rotate(-60deg);
+  -webkit-transform: rotate(720deg);
+  transform: rotate(720def);
+}
 
 /* Toast Notification */
 #toast {
-    min-width: 250px;
-    margin:auto;
-    background-color: hsla(43, 84%, 54%, 0.92);
-    border : 2px gray solid;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    color: black;
-    text-align: center;
-    border-radius: 10px;
-    padding: 10px;
-    position: fixed;
-    z-index: 10;
-    
-    user-select: none; /* all */
-    cursor:pointer;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-  
-    bottom: -60px;
-    font-size: 17px;
-    transition: bottom 1s;
-    transition-timing-function: ease-in-out;
+  min-width: 250px;
+  margin: auto;
+  background-color: hsla(43, 84%, 54%, 0.92);
+  border: 2px gray solid;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  color: black;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  position: fixed;
+  z-index: 10;
+
+  user-select: none; /* all */
+  cursor: pointer;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+
+  bottom: -60px;
+  font-size: 17px;
+  transition: bottom 1s;
+  transition-timing-function: ease-in-out;
 }
-#toast:hover{
-filter: hue-rotate(-60deg);
+#toast:hover {
+  filter: hue-rotate(-60deg);
 }
 #toast.show {
-bottom: 40px;
+  bottom: 40px;
 }
 
 @media (max-width: 700px) {
-  .classeslist div{
+  .classeslist div {
     width: 22vw;
   }
-  .classeslist div p{
+  .classeslist div p {
     margin: auto;
   }
-  .combat{  
+  .combat {
     display: grid;
     width: 100%;
     grid-template-columns: 99vw;
   }
-  .adding{
+  .adding {
     justify-content: flex-start;
   }
-    
-  .admin .equipements{
+
+  .admin .equipements {
     grid-template-columns: 50vw 50vw;
   }
-  .notInMobile{
+  .notInMobile {
     display: none;
   }
 }
