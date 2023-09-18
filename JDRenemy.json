@@ -1204,10 +1204,10 @@
     "nom": "Lutin pr\u00e9historique",
     "pvmax": "85",
     "skills": [
-      "Poison : 1D4+5 d\u00e9g\u00e2t pendant 4 tours : intelligence",
+      "Poison : 1D4+5 d\u00e9g\u00e2t pendant 3 tours : intelligence",
       "Coup de boule : 2D6+14 : force",
-      "Racine claquante : 2D10+10 AoE : intelligence",
-      "Magie extr\u00eame : +2D6+4  \u00e0 tlm pour 4 tours : esprit"
+      "Racine claquante : 2D10+8 AoE : intelligence",
+      "Magie extr\u00eame : +2D4+3 (à la cible) pour 4 tours : esprit"
     ],
     "stats": "14,10,16,11,15",
     "desc": "Petit dryade (farfadet) du pass\u00e9 tout rond et vert avec une feuille",

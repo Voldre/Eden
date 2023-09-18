@@ -1,4 +1,5 @@
 images/3D/maps/*.obj
+images/3D/
 Fichier de JDR/Audio recap JDR/*.ogg
 node_modules
 package-lock.json

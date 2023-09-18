@@ -1577,7 +1577,7 @@
   "227": {
     "nom": "Grimoire des bourbes",
     "desc": "Un grimoire cr\u00e9\u00e9 par un puissant Magicien Anuran vivant aux Bourbes au temps de la grande guerre. On raconte qu'il aurait scell\u00e9 son \u00e2me \u00e0 l'int\u00e9rieur.",
-    "effet": "Esprit +1",
+    "effet": "Esprit +2",
     "montant": "D\u00e9g\u00e2t +9",
     "icone": "W62402"
   },
@@ -2017,7 +2017,7 @@
   },
   "290": {
     "nom": "Veste du Combattant",
-    "desc": "Une veste augmentant la puissance du porteur. Appartient \u00e0 la panoplie du combattant.",
+    "desc": "Une veste augmentant la r\u00e9sistance du porteur. Appartient \u00e0 la panoplie du combattant.",
     "effet": "",
     "montant": "D\u00e9g\u00e2t -4 (+2 si panoplie)",
     "icone": "A20039"
@@ -2039,8 +2039,43 @@
   "293": {
     "nom": "Statuette de Pr\u00e9vention",
     "desc": "Une statue qui prie pour le salut, elle permet \u00e0 son porteur de venir en aide \u00e0 lui-m\u00eame ou aux autres.",
-    "effet": "Capacité",
+    "effet": "Capacit\u00e9",
     "montant": "2 fois par combat (Instantan\u00e9e Esprit) : retire un malus. D\u00e9g\u00e2t subi -1D4 (min 2) -1 pour 3 tours",
     "icone": "I00408"
+  },
+  "294": {
+    "nom": "Parchemin de l'\u00e9pine",
+    "desc": "Permet \u00e0 son porteur de lanceur de g\u00e9n\u00e9rer un bouclier d'\u00e9pines, permettant de mieux r\u00e9sister et de blesser l'ennemi.",
+    "effet": "Capacit\u00e9",
+    "montant": "2 fois par combat (Instantan\u00e9e Esprit) : D\u00e9g\u00e2t re\u00e7u -4, d\u00e9g\u00e2t d'\u00e9pines +4 (3 tours)",
+    "icone": "I00312"
+  },
+  "295": {
+    "nom": "Poignard Quartz d'Automne",
+    "desc": "Un poignard forg\u00e9 \u00e0 la m\u00e9thode Heldentod avec du Quartz d'Automne",
+    "effet": "Dur\u00e9e des sorts +1",
+    "montant": "D\u00e9g\u00e2t +5",
+    "icone": "W11306"
+  },
+  "296": {
+    "nom": "B\u00e2ton Quartz d'Automne",
+    "desc": "Un b\u00e2ton fabriqu\u00e9e \u00e0 la m\u00e9thode Heldentod et incrust\u00e9 d'un Quartz d'Automne",
+    "effet": "Dur\u00e9e des sorts +1",
+    "montant": "D\u00e9g\u00e2t +9",
+    "icone": "W62505"
+  },
+  "297": {
+    "nom": "Plastron Quartz d'Automne",
+    "desc": "Un plastron forg\u00e9 \u00e0 la m\u00e9thode Heldentod et incrust\u00e9 d'un Quartz d'Automne",
+    "effet": "Dur\u00e9e des sorts +1",
+    "montant": "D\u00e9g\u00e2t -5",
+    "icone": "A20090"
+  },
+  "298": {
+    "nom": "Dague vorace",
+    "desc": "Une dague maudite en recherche de vitalit\u00e9",
+    "effet": "-3 PV par coup",
+    "montant": "D\u00e9g\u00e2t +7, si critique (1,2) : soin PV = d\u00e9g\u00e2ts/2",
+    "icone": "W13207"
   }
 }
