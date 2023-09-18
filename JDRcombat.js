@@ -3,6 +3,7 @@ var xhReq = new XMLHttpRequest();
 var eqptJSON = {};
 var enemyJSON = {};
 var persosJSON = {};
+var allSkills = [];
 
 console.log(window.location.href);
 if (window.location.href.includes("http")) {
@@ -14,6 +15,8 @@ if (window.location.href.includes("http")) {
   eqptJSON = getData("eqpt");
 
   persosJSON = getData("persos");
+
+  allSkills = getData("combatS");
 }
 
 function getData(filename) {
@@ -39,7 +42,8 @@ const iconsClasses = [ "01", "02", "03", "18", "04", "05", "06", "16", "07", "08
 // Soin (ou atk) (++ type action "soin" ou "attaque")
 //
 
-var skillSoin = [];
+/*
+var skillSoin = {};
 skillSoin["nom"] = "Guérison";
 skillSoin["classe"] = "Clerc,Barde,Shaman,Sage";
 skillSoin["statUsed"] = "intel";
@@ -47,8 +51,7 @@ skillSoin["type"] = "soin";
 skillSoin["montant"] = "1D10";
 skillSoin["montantFixe"] = 6;
 skillSoin["icone"] = "E0018";
-
-var buffDPSMag = [];
+var buffDPSMag = {};
 buffDPSMag["nom"] = "Magic Boost";
 buffDPSMag["classe"] = "Magicien,Illusionniste,Démoniste,Luminary";
 buffDPSMag["statUsed"] = "intel";
@@ -58,7 +61,7 @@ buffDPSMag["montant"] = "1D6";
 buffDPSMag["montantFixe"] = 6;
 buffDPSMag["duree"] = 3;
 buffDPSMag["icone"] = "E0024";
-var buffDPSCac = [];
+var buffDPSCac = {};
 buffDPSCac["nom"] = "Encouragement";
 buffDPSCac["classe"] = "Voleur,Assassin,Danselame,Samouraï";
 buffDPSCac["statUsed"] = "esprit";
@@ -68,19 +71,17 @@ buffDPSCac["montant"] = "1D6";
 buffDPSCac["montantFixe"] = 6;
 buffDPSCac["duree"] = 3;
 buffDPSCac["icone"] = "E0008";
-
-var buffDPSDist = [];
+var buffDPSDist = {};
 buffDPSDist["nom"] = "Instinct Sauvage";
 buffDPSDist["classe"] = "Chasseur,Ingénieur,Corsaire,Juge";
 buffDPSDist["statUsed"] = "esprit";
 buffDPSDist["type"] = "buff";
 buffDPSDist["buffElem"] = "degat";
-buffDPSDist["montant"] = "1D6";
-buffDPSDist["montantFixe"] = 6;
-buffDPSDist["duree"] = 3;
+buffDPSDist["montant"] = "1D4";
+buffDPSDist["montantFixe"] = 4;
+buffDPSDist["duree"] = 4;
 buffDPSDist["icone"] = "E0014";
-
-var buffDPSTank = [];
+var buffDPSTank = {};
 buffDPSTank["nom"] = "Mur de Titan";
 buffDPSTank["classe"] = "Guerrier,Chevalier,Templier,Chev Dragon";
 buffDPSTank["statUsed"] = "force";
@@ -90,8 +91,10 @@ buffDPSTank["montant"] = "1D4";
 buffDPSTank["montantFixe"] = 2;
 buffDPSTank["duree"] = 4;
 buffDPSTank["icone"] = "E0029";
-
 var allSkills = [skillSoin, buffDPSMag, buffDPSCac, buffDPSDist, buffDPSTank];
+*/
+
+console.log(allSkills);
 
 var perso = {};
 var enemy = {};
@@ -203,7 +206,7 @@ function loadSkills(c1, c2) {
           listSkills[id].montant +
           "+" +
           listSkills[id].montantFixe +
-          " " +
+          ", " +
           listSkills[id].duree +
           " tours";
       } else {
@@ -396,53 +399,13 @@ var enemyGenerated = Object.values(enemyJSON).map((enemy) => {
 console.log(enemyGenerated);
 
 function chooseEnemy(category = null) {
-  const forbidden = [
-    "71",
-    "74",
-    "80",
-    "82",
-    "85",
-    "90",
-    "101",
-    "104",
-    "109",
-    "113",
-  ];
+  // prettier-ignore
+  const forbidden = ["71","74","80","82","85","90","101","104","109","113"];
   // console.log(forbidden.map(f => enemyJSON[f]))
 
-  const boss = [
-    "24",
-    "29",
-    "45",
-    "46",
-    "50",
-    "54",
-    "56",
-    "57",
-    "59",
-    "61",
-    "62",
-    "67",
-    "70",
-    "71",
-    "74",
-    "75",
-    "76",
-    "77",
-    "80",
-    "82",
-    "84",
-    "85",
-    "86",
-    "89",
-    "90",
-    "101",
-    "106",
-    "109",
-    "111",
-    "113",
-    "114",
-  ];
+  // prettier-ignore
+  const boss = ["24","29","45","46","50","54","56","57","59","61","62","67","70","71","74","75","76","77","80","82","84","85","86","89","90","101","106","109","111","113","114"];
+
   var enemyList = [];
 
   if (!category) {
@@ -468,6 +431,7 @@ function chooseEnemy(category = null) {
     // console.log(enemyList[randomEnemy])
     // console.log(Object.entries(enemyJSON).find(e => e[1] == enemyList[randomEnemy])[0]);
 
+    console.log(enemyList, randomEnemy);
     return Object.entries(enemyJSON).find(
       (e) => e[1] == enemyList[randomEnemy]
     )[0];
@@ -669,9 +633,11 @@ function resetDices() {
   updateDesc("");
 }
 
-// Stats clicked
-
-var statsButton = ["bforce", "bdexté", "bintel"]; //,"bcharisme","besprit"];
+// Skills and stats buttons
+const skillsButton = [...document.querySelectorAll(".skillCombat")].map(
+  (skillE) => skillE.children[0]
+);
+const statsButton = ["bforce", "bdexté", "bintel"]; //,"bcharisme","besprit"];
 
 statsButton.forEach((buttonStat) => {
   var statName = buttonStat.slice(1);
@@ -850,17 +816,28 @@ function heal(user, amount) {
 
 function buff(userSkill, amount) {
   [...document.querySelectorAll(".buff")].every((buffE) => {
-    if (buffE.id == userSkill.nom) return false;
-    if (buffE.querySelector(".duree").innerText != "") return true;
+    if (buffE.id == userSkill.nom) {
+      // if already applied, update buff time
+      buffE.querySelector(".duree").children[0].innerText = userSkill.duree + 1; // +1 car tour actuel à ne pas compter !
+      buffE.querySelector(".duree").children[1].innerText = userSkill.duree;
+      return false;
+    }
 
-    buffE.querySelector(".duree").innerText = userSkill.duree + 1; // +1 car tour actuel à ne pas compter !
+    if (buffE.querySelector(".duree").children[0].innerText != "") return true;
+
+    buffE.querySelector(".duree").children[0].innerText = userSkill.duree + 1; // +1 car tour actuel à ne pas compter !
+    buffE.querySelector(".duree").children[1].innerText = userSkill.duree;
     buffE.querySelector(".montant").innerText = amount;
     buffE.querySelector(".icone").src =
       "http://voldre.free.fr/Eden/images/skillIcon/" + userSkill.icone + ".png";
+
     buffE.querySelector(".icone").title = userSkill.buffElem;
 
     buffE.id = userSkill.nom;
 
+    if (userSkill.buffElem.includes("/tour")) {
+      userSkill.buffElem = userSkill.buffElem.replace("/tour", "");
+    }
     perso[userSkill.buffElem] += amount;
     document.querySelector("#" + userSkill.buffElem).value =
       perso[userSkill.buffElem];
@@ -875,33 +852,47 @@ function updateDesc(desc) {
 }
 
 function unlockInputs(bool) {
-  var unlockValue = bool == true ? "auto" : "none";
-  var colorValue = bool == true ? "black" : "grey";
   statsButton.forEach((buttonStat) => {
-    document.querySelector("#" + buttonStat).style.pointerEvents = unlockValue;
-    document.querySelector("#" + buttonStat).style.color = colorValue;
+    document.querySelector("#" + buttonStat).disabled = !bool;
+  });
+  skillsButton.forEach((buttonSkill) => {
+    buttonSkill.disabled = !bool;
   });
 }
 
 function updateBuff() {
   [...document.querySelectorAll(".buff")].forEach((buffE) => {
     var dureeE = buffE.querySelector(".duree");
-    var buffElem = buffE.querySelector(".icone").title;
+    var buffElem = buffE.querySelector(".icone").title.replace("/tour", "");
 
-    if (dureeE.innerText == "") return;
+    if (dureeE.children[0].innerText == "") return;
 
-    if (dureeE.innerText != "1") {
-      dureeE.innerText = parseInt(dureeE.innerText) - 1;
+    if (dureeE.children[0].innerText != "1") {
+      dureeE.children[0].innerText = parseInt(dureeE.children[0].innerText) - 1;
+
+      // If buff per turn (ex : Euphorie), apply buff
+      if (buffE.querySelector(".icone").title.includes("/tour")) {
+        perso[buffElem] += parseInt(buffE.querySelector(".montant").innerText);
+        document.querySelector("#" + buffElem).value = perso[buffElem];
+      }
     } else {
-      dureeE.innerText = "";
-
-      perso[buffElem] -= parseInt(buffE.querySelector(".montant").innerText);
+      if (buffE.querySelector(".icone").title.includes("/tour")) {
+        // If buff each turn, we remove the whole buff (amount * duration)
+        perso[buffElem] -=
+          parseInt(buffE.querySelector(".montant").innerText) *
+          (parseInt(dureeE.children[1].innerText) + 1);
+      } else {
+        perso[buffElem] -= parseInt(buffE.querySelector(".montant").innerText);
+      }
       document.querySelector("#" + buffElem).value = perso[buffElem];
+
+      dureeE.children[0].innerText = "";
+      dureeE.children[1].innerText = "";
 
       buffE.querySelector(".montant").innerText = "";
       buffE.querySelector(".icone").src = "";
+      buffE.querySelector(".icone").title = "";
       buffE.id = "";
-      buffElem = "";
     }
 
     return false;

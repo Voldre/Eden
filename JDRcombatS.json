@@ -1,0 +1,99 @@
+[
+  {
+    "nom": "Guérison",
+    "classe": "Clerc,Barde,Shaman,Sage",
+    "statUsed": "intel",
+    "type": "soin",
+    "montant": "1D10",
+    "montantFixe": 6,
+    "icone": "E0018"
+  },
+  {
+    "nom": "Magic Boost",
+    "classe": "Magicien,Illusionniste,Démoniste,Luminary",
+    "statUsed": "intel",
+    "type": "buff",
+    "buffElem": "degat",
+    "montant": "1D6",
+    "montantFixe": 6,
+    "duree": 3,
+    "icone": "E0024"
+  },
+  {
+    "nom": "Encouragement",
+    "classe": "Voleur,Assassin,Danselame,Samouraï",
+    "statUsed": "esprit",
+    "type": "buff",
+    "buffElem": "degat",
+    "montant": "1D6",
+    "montantFixe": 6,
+    "duree": 3,
+    "icone": "E0008"
+  },
+  {
+    "nom": "Instinct Sauvage",
+    "classe": "Chasseur,Ingénieur,Corsaire,Juge",
+    "statUsed": "esprit",
+    "type": "buff",
+    "buffElem": "degat",
+    "montant": "1D4",
+    "montantFixe": 4,
+    "duree": 4,
+    "icone": "E0014"
+  },
+  {
+    "nom": "Mur de Titan",
+    "classe": "Guerrier,Chevalier,Templier,Chev Dragon",
+    "statUsed": "force",
+    "type": "buff",
+    "buffElem": "armure",
+    "montant": "1D4",
+    "montantFixe": 2,
+    "duree": 4,
+    "icone": "E0029"
+  },
+  {
+    "nom": "Euphorie",
+    "classe": "Guerrier",
+    "statUsed": "esprit",
+    "type": "buff",
+    "buffElem": "degat/tour",
+    "montant": "1D4",
+    "montantFixe": 1,
+    "duree": 4,
+    "icone": "E0286"
+  },
+  {
+    "nom": "---",
+    "classe": "Chevalier",
+    "statUsed": "force",
+    "type": "buff",
+    "buffElem": "armure",
+    "montant": "1D4",
+    "montantFixe": 2,
+    "duree": 4,
+    "icone": "E0029"
+  },
+  {
+    "nom": "---",
+    "classe": "Templier",
+    "statUsed": "force",
+    "type": "buff",
+    "buffElem": "armure",
+    "montant": "1D4",
+    "montantFixe": 2,
+    "duree": 4,
+    "icone": "E0029"
+  },
+  {
+    "nom": "---",
+    "classe": "Chev Dragon",
+    "statUsed": "force",
+    "type": "buff",
+    "buffElem": "armure",
+    "montant": "1D4",
+    "montantFixe": 2,
+    "duree": 4,
+    "icone": "E0029"
+  }
+]
