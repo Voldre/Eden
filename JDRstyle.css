@@ -425,6 +425,66 @@ dialog::backdrop {
   transform: rotate(720def);
 }
 
+/* JDR Quest */
+
+.game {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  aspect-ratio: 16/12;
+  position: relative;
+  overflow: hidden;
+  z-index: -1;
+}
+
+#mapName {
+  position: absolute;
+  top: 0px;
+  margin-top: 2px;
+  padding: 5px;
+  text-align: center;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#actions {
+  position: absolute;
+  width: 75%;
+  top: 13%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0px;
+  list-style-type: none;
+  list-style-image: none;
+  display: flex;
+  z-index: 2;
+}
+#actions li {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 2px gray solid;
+  margin: 5px;
+  padding: 7px;
+}
+#actions li:hover {
+  background-color: rgba(36, 36, 106, 0.8);
+}
+#pnj {
+  max-width: min(800px, 50%);
+  max-height: min(200px, 70%);
+  position: absolute;
+  bottom: -10px;
+  left: 0%;
+}
+#perso {
+  /* width: 50%; */
+  max-width: min(800px, 50%);
+  max-height: min(200px, 70%);
+  position: absolute;
+  bottom: -5px;
+  right: 0%;
+}
+
 /* Toast Notification */
 #toast {
   min-width: 250px;

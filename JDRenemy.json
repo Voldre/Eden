@@ -625,7 +625,7 @@
       "D\u00e9fense : d\u00e9g\u00e2t re\u00e7u -5 pendant 3 tours : esprit"
     ],
     "stats": "14,16,9,13,14",
-    "desc": "Chevalier tr\u00e8s noble de la Curie M\u00e9t\u00e9role",
+    "desc": "Chevalier de la Curie M\u00e9t\u00e9role. Il est lieutenant d'une unit\u00e9 d'exp\u00e9dition, tr\u00e8s gentil, social et ouvert d'esprit. Il est en couple avec Malvis",
     "infos": "Faible aux t\u00e9n\u00e8bres et au per\u00e7ant",
     "drop": "rare : Calice de la Curie M\u00e9t\u00e9role"
   },
@@ -670,7 +670,7 @@
       "Attaque tournoyante : 2D8 +3 : force"
     ],
     "stats": "15,11,16,12,12",
-    "desc": "Templier de la Curie dans une armure noble, chef d'arm\u00e9e",
+    "desc": "Un Templier de la Curie M\u00e9t\u00e9role, il est chef d'une unit\u00e9 d\u00e9fensive et est quelqu'un de gentil et social. Il essaye de faire les choses s\u00e9rieusement.",
     "infos": "Faible aux t\u00e9n\u00e8bres et \u00e0 la foudre",
     "drop": "Calice de la Curie M\u00e9t\u00e9role, tr\u00e8s rare : Plastron de Templier"
   },
@@ -685,7 +685,7 @@
       "Foi du temple : Esprit+3, D\u00e9g\u00e2t subi -1D6-6 pendant 4 tours : esprit"
     ],
     "stats": "17,13,9,12,15",
-    "desc": "Zumi \u00e0 la peau bleue et aux yeux orang\u00e9 per\u00e7ant, fier et tr\u00e8s social",
+    "desc": "Zumi \u00e0 la peau bleue et aux yeux orang\u00e9 per\u00e7ant, fier et tr\u00e8s social. Il aide les gens ambitieux.",
     "infos": "Faible \u00e0 la glace et au contondant",
     "drop": "A voir !"
   },
@@ -880,7 +880,7 @@
       "Destruct de l'aurore/noire : 2D6 +12 : intel"
     ],
     "stats": "15,6,17,8,16",
-    "desc": "Une Ezelin de g\u00e9nie, d\u00e9termin\u00e9e et ambitieuse, puissante",
+    "desc": "Une Ezelin de g\u00e9nie, d\u00e9termin\u00e9e et ambitieuse, puissante, elle a un sale caract\u00e8re.",
     "infos": "Faible au tranchant et \u00e0 la nature",
     "drop": "A voir !"
   },
@@ -925,7 +925,7 @@
       "Revers d'\u00e9caille : 5 tentatives par combat (<10 : 66%, >=10 : 33%) (+ mode Cf. DK) : Esprit"
     ],
     "stats": "15,11,7,15,15",
-    "desc": "H\u00e9riti\u00e8re de l'empire Heldentod, connue pour sa d\u00e9termination et sa prestance",
+    "desc": "H\u00e9riti\u00e8re de l'empire Heldentod, connue pour sa d\u00e9termination et sa prestance. Elle est tr\u00e8s strat\u00e8ge mais froide et parfois sans piti\u00e9.",
     "infos": "Faible \u00e0 la nature et aux t\u00e9n\u00e8bres",
     "drop": "Ep\u00e9e de parade OU Gantelet de Lieutenant, tr\u00e8s rare : Brassard du Pouvoir"
   },
@@ -994,9 +994,9 @@
     "nom": "Adonis - Tueur Juge",
     "pvmax": "240",
     "skills": [
-      "\u00c2me Enchain\u00e9e : 2D6+11 et dext\u00e9-3 sur 3 tours : Dext\u00e9rit\u00e9",
+      "\u00c2me Enchain\u00e9e : 2D6+11 et dext\u00e9-3 (AoE) sur 3 tours : Dext\u00e9rit\u00e9",
       "Scellement Douloureux : Aucun sort physique, 0 SOIN pendant 3 tours : Esprit",
-      "Atk Solo / Verdict Final : (2D6+12) 3D6 +14 (X1.5) : Force",
+      "Atk Solo / Verdict Final : (2D6+13) 3D6 +15 (crit X1.5) : Force",
       "Furtivit\u00e9 / Aura du Pourfendeur : DGT T\u00e9n\u00e8b +1D6+6 pendant 4 tours : Esprit - - - 2 fois : Oeil Hypnotique (res esprit -3)"
     ],
     "stats": "16,16,9,12,16",
@@ -1045,7 +1045,7 @@
       "Attaque tournoyante : 2D8 +8 : force"
     ],
     "stats": "14,9,16,12,15",
-    "desc": "Templier de la Curie dans une armure noble, chef d'arm\u00e9e (v2 = capitaine?)",
+    "desc": "Un Templier de la Curie M\u00e9t\u00e9role, il est chef d'une unit\u00e9 d\u00e9fensive et est quelqu'un de gentil et social. Il essaye de faire les choses s\u00e9rieusement.",
     "infos": "Faible aux t\u00e9n\u00e8bres et \u00e0 la foudre",
     "drop": "Calice de la Curie M\u00e9t\u00e9role, tr\u00e8s rare : Plastron de Templier"
   },
@@ -1120,7 +1120,7 @@
       "Silence : Aucun sort magique pendant 3 tours : Esprit"
     ],
     "stats": "13,16,9,13,16",
-    "desc": "Chevalier tr\u00e8s noble de la Curie M\u00e9t\u00e9role, promu en tant que Chef (1 unit\u00e9)",
+    "desc": "Chevalier de la Curie M\u00e9t\u00e9role. Il est lieutenant d'une unit\u00e9 d'exp\u00e9dition, tr\u00e8s gentil, social et ouvert d'esprit. Il est en couple avec Malvis",
     "infos": "Faible aux t\u00e9n\u00e8bres et au per\u00e7ant",
     "drop": "Ep\u00e9e de parade, rare : Calice de la Curie M\u00e9t\u00e9role"
   },
@@ -1207,7 +1207,7 @@
       "Poison : 1D4+5 d\u00e9g\u00e2t pendant 3 tours : intelligence",
       "Coup de boule : 2D6+14 : force",
       "Racine claquante : 2D10+8 AoE : intelligence",
-      "Magie extr\u00eame : +2D4+3 (à la cible) pour 4 tours : esprit"
+      "Magie extr\u00eame : +2D4+3 (\u00e0 la cible) pour 4 tours : esprit"
     ],
     "stats": "14,10,16,11,15",
     "desc": "Petit dryade (farfadet) du pass\u00e9 tout rond et vert avec une feuille",
@@ -1342,7 +1342,7 @@
       "Soin Inverseur : Transforme les soins ennemis en d\u00e9g\u00e2t (AoE) 4 tours : Esprit",
       "Atk Solo (-6) / Faiblesse Critique : 3D6 +17 (Crit X1.5), r\u00e9ussite-1 : Force",
       "Griffure Noire : 2D6 +10, et -2 blocage/esquive pour 3 tours AoE : Esprit",
-      "Pelote d'entrave : 4 tentatives (Instantanée) : Mono/AoE force à re-esquiver ou re-bloquer (réussite -2 si lui) : Esprit"
+      "Pelote d'entrave : 4 tentatives (Instantan\u00e9e) : Mono/AoE force \u00e0 re-esquiver ou re-bloquer (r\u00e9ussite -2 si lui) : Esprit"
     ],
     "stats": "16,7,13,12,17",
     "desc": "Ezelin au cheveux argent\u00e9 et aux yeux bleux. Roi ayant v\u00e9cu il y a 300 ans, expert en magie noire.",
@@ -1723,5 +1723,35 @@
     "desc": "Grand dragon terrestre gris brun \u00e0 la peau \u00e9cailleuse et rocheuse, petites ailes",
     "infos": "Faible \u00e0 la glace et \u00e0 la lumi\u00e8re",
     "drop": "Ecailles de dragon, rare : Dague \u00e9cailles noires, Croc sombre"
+  },
+  "116": {
+    "visuel3D": "m369",
+    "nom": "Dragon Fourrure Mythique",
+    "pvmax": "300",
+    "skills": [
+      "Tremblement Intense : 2D10 +10 AoE : force",
+      "Croc/Griffe Imposante : 3D6+15 : force",
+      "Hurlement Glac\u00e9 : \"Effet froid amplifi\u00e9\" (-1 stat) + 1 Scarab\u00e9e : esprit",
+      "Manteau Polaire : Blocage+4 pendant 2 tours, puis \u00e0 la fin d\u00e9g\u00e2t glace +2D6+6 : esprit"
+    ],
+    "stats": "17,9,9,11,16",
+    "desc": "Un dragon fourrure qui sommeillait pr\u00e8s de l'Empire Dulong \u00e0 Ma\u00eblstrom, c'est une version mythique de ses semblables d'Elos",
+    "infos": "Faible au feu et aux t\u00e9n\u00e8bres",
+    "drop": "Ecailles de dragon, Fourrure Polaire, rare : Manteau Polaire, Croc Sombre"
+  },
+  "117": {
+    "visuel3D": "m403",
+    "nom": "Assassin Illusionniste",
+    "pvmax": "220",
+    "skills": [
+      "Furtivit\u00e9/Voile blizz : Invisible, bonus ALL STATS +2 (Prochain coup +2D10) : Esprit",
+      "Contr\u00f4le de l'Esprit : Dur\u00e9e 1D4, annulable : Esprit",
+      "Attaque rapide : 3D6 +14 : Dext\u00e9rit\u00e9",
+      "Int\u00e9gration : Esquive +3 sur 3 tours AoE : Esprit"
+    ],
+    "stats": "13,16,11,10,17",
+    "desc": "Homme de l'ombre qui ma\u00eetrise les illusions et frappe violemment.",
+    "infos": "Faible \u00e0 la lumi\u00e8re et au contondant",
+    "drop": "rare : Chaussures d'agilit\u00e9 OU Gilet des Dunes Eternelles, tr\u00e8s rare : Dague \u00e9cailles noires"
   }
 }

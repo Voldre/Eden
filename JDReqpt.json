@@ -86,7 +86,7 @@
   "13": {
     "nom": "Ep\u00e9e sacr\u00e9e des Plaines",
     "desc": "Ep\u00e9e l\u00e9gendaire des Plaines Dor\u00e9es",
-    "effet": "D\u00e9g\u00e2t lumi\u00e8res +3",
+    "effet": "D\u00e9g\u00e2t lumi\u00e8re +3",
     "montant": "D\u00e9g\u00e2t +6",
     "icone": "W14301"
   },
@@ -325,7 +325,7 @@
     "nom": "Calice de la Curie M\u00e9t\u00e9role",
     "desc": "Un des calices datant de la grande guerre, gard\u00e9 par la Curie M\u00e9t\u00e9role",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t de lumi\u00e8res +3",
+    "montant": "D\u00e9g\u00e2t de lumi\u00e8re +3",
     "icone": "i00552"
   },
   "48": {
@@ -562,7 +562,7 @@
   "81": {
     "nom": "Plastron des plaines",
     "desc": "Plastron forg\u00e9 aux plaines dor\u00e9es, le soleil \u00e9nergise.",
-    "effet": "D\u00e9g\u00e2t de lumi\u00e8res +1",
+    "effet": "D\u00e9g\u00e2t de lumi\u00e8re +1",
     "montant": "D\u00e9g\u00e2t -5",
     "icone": "A20088"
   },
@@ -1066,7 +1066,7 @@
   "154": {
     "nom": "Ep\u00e9e des Plaines Dor\u00e9es",
     "desc": "Une \u00e9p\u00e9e forg\u00e9e sous le soleil des Pla\u00eenes Dor\u00e9es",
-    "effet": "D\u00e9g\u00e2t de lumi\u00e8res +1",
+    "effet": "D\u00e9g\u00e2t de lumi\u00e8re +1",
     "montant": "D\u00e9g\u00e2t +5",
     "icone": "W13404"
   },
@@ -1122,7 +1122,7 @@
   "162": {
     "nom": "Katana Br\u00fblant",
     "desc": "Les veines de ce Katana ressemblent \u00e0 des flammes.",
-    "effet": "D\u00e9g\u00e2t feu+2",
+    "effet": "D\u00e9g\u00e2t de feu+2",
     "montant": "D\u00e9g\u00e2t +9",
     "icone": "W21302"
   },
@@ -1283,7 +1283,7 @@
   "185": {
     "nom": "Marteau Canon Glacial",
     "desc": "Un marteau canon fait en platine de glace",
-    "effet": "D\u00e9g\u00e2t glace +3",
+    "effet": "D\u00e9g\u00e2t de glace +3",
     "montant": "D\u00e9g\u00e2t +7",
     "icone": "W40505"
   },
@@ -1424,14 +1424,14 @@
     "nom": "Glyphe du Chasseur",
     "desc": "Un glyphe con\u00e7u pour am\u00e9liorer 2 \u00e9l\u00e9ments",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t nature +3, per\u00e7ant +2",
+    "montant": "D\u00e9g\u00e2t per\u00e7ant +3, nature +2",
     "icone": "i01130"
   },
   "206": {
     "nom": "Glyphe du Danselame",
     "desc": "Un glyphe con\u00e7u pour am\u00e9liorer 2 \u00e9l\u00e9ments",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t feu +3, tranchant +2",
+    "montant": "D\u00e9g\u00e2t de feu +3, tranchant +2",
     "icone": "i01128"
   },
   "207": {
@@ -1445,14 +1445,14 @@
     "nom": "Glyphe du Magicien",
     "desc": "Un glyphe con\u00e7u pour am\u00e9liorer 2 \u00e9l\u00e9ments",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t glace +3, foudre +2",
+    "montant": "D\u00e9g\u00e2t de glace +3, foudre +2",
     "icone": "i01137"
   },
   "209": {
     "nom": "Crystal du Forgeron",
     "desc": "Un ancien crystal ayant appartenu \u00e0 un grand forgeron",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t feu +3, contondant +2",
+    "montant": "D\u00e9g\u00e2t de feu +3, contondant +2",
     "icone": "I00221"
   },
   "210": {
@@ -1500,7 +1500,7 @@
   "216": {
     "nom": "Hache de Glace",
     "desc": "Une hache forg\u00e9e avec un alliage d'acier et de platine de glace",
-    "effet": "D\u00e9g\u00e2t glace +3",
+    "effet": "D\u00e9g\u00e2t de glace +3",
     "montant": "D\u00e9g\u00e2t +8",
     "icone": "W20106"
   },
@@ -2040,7 +2040,7 @@
     "nom": "Statuette de Pr\u00e9vention",
     "desc": "Une statue qui prie pour le salut, elle permet \u00e0 son porteur de venir en aide \u00e0 lui-m\u00eame ou aux autres.",
     "effet": "Capacit\u00e9",
-    "montant": "2 fois par combat (Instantan\u00e9e Esprit) : retire un malus. D\u00e9g\u00e2t subi -1D4 (min 2) -1 pour 3 tours",
+    "montant": "2 fois par combat (Instantan\u00e9e Esprit) : retire un malus. D\u00e9g\u00e2t re\u00e7u -1D4 (min 2) -1 pour 3 tours",
     "icone": "I00408"
   },
   "294": {
@@ -2077,5 +2077,194 @@
     "effet": "-3 PV par coup",
     "montant": "D\u00e9g\u00e2t +7, si critique (1,2) : soin PV = d\u00e9g\u00e2ts/2",
     "icone": "W13207"
+  },
+  "299": {
+    "nom": "Pistolet Quartz d'Automne",
+    "desc": "Un pistolet forg\u00e9 \u00e0 la m\u00e9thode Heldentod et incrust\u00e9 d'un Quartz d'Automne",
+    "effet": "Dur\u00e9e des sorts +1",
+    "montant": "D\u00e9g\u00e2t +9",
+    "icone": "W52008"
+  },
+  "300": {
+    "nom": "Marteau Pulv\u00e9risant",
+    "desc": "Un marteau capable de pulv\u00e9riser la d\u00e9fense de sa cible.",
+    "effet": "Blocage cible -2",
+    "montant": "D\u00e9g\u00e2t +9",
+    "icone": "W40701"
+  },
+  "301": {
+    "nom": "Marteau du Sage",
+    "desc": "Un marteau con\u00e7u pour aider les sages.",
+    "effet": "Intelligence +1",
+    "montant": "D\u00e9g\u00e2t +6, Soin PV +2 (+1 si sage)",
+    "icone": "W40908"
+  },
+  "302": {
+    "nom": "Griffe en platine",
+    "desc": "Une griffe en platine con\u00e7ue pour infliger de lourd d\u00e9g\u00e2ts",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +5, D\u00e9g\u00e2t re\u00e7u -1",
+    "icone": "W31402"
+  },
+  "303": {
+    "nom": "Masse de T\u00e9n\u00e8bres",
+    "desc": "Une masse incrust\u00e9 d'une pierre pleine de magie obscure",
+    "effet": "D\u00e9g\u00e2t t\u00e9n\u00e8bres +2",
+    "montant": "D\u00e9g\u00e2t +4",
+    "icone": "W30505"
+  },
+  "304": {
+    "nom": "Cotte de Maille",
+    "desc": "Une cotte de maille, flexible et solide \u00e0 la fois, permet \u00e0 son porteur de mieux bloquer.",
+    "effet": "Blocage +1",
+    "montant": "D\u00e9g\u00e2t -4",
+    "icone": "A20076"
+  },
+  "305": {
+    "nom": "Robe Elementaire",
+    "desc": "Une robe cr\u00e9\u00e9 par des magiciens voulant renforc\u00e9 leur magie \u00e9l\u00e9mentaire.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t -3, d\u00e9g\u00e2t \u00e9l\u00e9mentaire +2",
+    "icone": "A20019"
+  },
+  "306": {
+    "nom": "Veste de l'Esprit",
+    "desc": "Une veste renfor\u00e7ant l'esprit de son porteur. Appartient \u00e0 la Panoplie de l'Esprit (tout objet \"de l'esprit\" en fait partie)",
+    "effet": "Esprit +1",
+    "montant": "D\u00e9g\u00e2t -4, (si panoplie : r\u00e9sistance esprit +2)",
+    "icone": "A20064"
+  },
+  "307": {
+    "nom": "Plastron Elementaire",
+    "desc": "Un plastron renfor\u00e7ant la magie \u00e9l\u00e9mentaire de son porteur (feu, glace, nature, ...).",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t -5, d\u00e9g\u00e2t \u00e9l\u00e9mentaire +2",
+    "icone": "A20095"
+  },
+  "308": {
+    "nom": "Masse Grav\u00e9e",
+    "desc": "Une masse grav\u00e9e d'un glyphe. Plus il serait en contact avec des glyphes, plus il se renforcerait.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +4 (+1 par glyphe \u00e9quip\u00e9e, max 3)",
+    "icone": "W34704"
+  },
+  "309": {
+    "nom": "Glyphe des Ursuns (3)",
+    "desc": "Un glyphe rare con\u00e7u pour am\u00e9liorer certaines armes",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t tranchant +3, contondant +3",
+    "icone": "i01607"
+  },
+  "310": {
+    "nom": "Glyphe du Sage",
+    "desc": "Un glyphe con\u00e7u pour am\u00e9liorer 2 \u00e9l\u00e9ments",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t de glace +3, contondant +2",
+    "icone": "i01136"
+  },
+  "311": {
+    "nom": "Glyphe du Samoura\u00ef",
+    "desc": "Un glyphe con\u00e7u pour am\u00e9liorer 2 \u00e9l\u00e9ments",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t de tranchant +3, foudre +2",
+    "icone": "i01129"
+  },
+  "312": {
+    "nom": "Glyphe du Shaman",
+    "desc": "Un glyphe con\u00e7u pour am\u00e9liorer 2 \u00e9l\u00e9ments",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t de nature +3, lumi\u00e8re +2",
+    "icone": "i01135"
+  },
+  "313": {
+    "nom": "B\u00e2ton Chromatique",
+    "desc": "Ce b\u00e2ton l\u00e9gendaire \u00e0 le pouvoir d'inverser les \u00e9l\u00e9ments (ex : nature/foudre). On raconte qu'il viendrait d'une autre dimension...",
+    "effet": "Inversion Elementaire",
+    "montant": "D\u00e9g\u00e2t +9",
+    "icone": "W62507"
+  },
+  "314": {
+    "nom": "Sph\u00e8re des Elus",
+    "desc": "Une Sph\u00e8re pourpre ayant le pouvoir de d\u00e9tecter les \u00e9lus d'un \"\u00e9v\u00e8nement\". Certains disent qu'elle vient d'un autre monde. Am\u00e9liore tous les alli\u00e9s.",
+    "effet": "Groupe",
+    "montant": "Exp\u00e9rience re\u00e7u +20%, porteur +10 PV",
+    "icone": "I00348b"
+  },
+  "315": {
+    "nom": "Sph\u00e8re Opaque",
+    "desc": "Une Sph\u00e8re myst\u00e9rieuse qui semble rapprocher les gens. Un petit point semble indiquer une \"direction\". Certains disent qu'elle vient d'un autre monde. Am\u00e9liore tous les alli\u00e9s.",
+    "effet": "Groupe",
+    "montant": "Exp\u00e9rience re\u00e7u +10%, porteur +5 PV",
+    "icone": "I00348"
+  },
+  "316": {
+    "nom": "Ep\u00e9e Knowledge",
+    "desc": "Une \u00e9p\u00e9e capable d'extraire de ses ennemis une chose incroyable : la connaissance ! Appartient \u00e0 la Panoplie du Savoir (tout objet donnant de l'XP).",
+    "effet": "XP re\u00e7u +10%",
+    "montant": "D\u00e9g\u00e2t +4 (+2 si panoplie)",
+    "icone": "W10108"
+  },
+  "317": {
+    "nom": "Manteau Polaire",
+    "desc": "Un manteau cousu avec une fourrure d'une cr\u00e9ature mythique, tr\u00e8s utile dans des climats hostiles.",
+    "effet": "Blocage +1",
+    "montant": "D\u00e9g\u00e2t -5 (0 malus froid), d\u00e9g\u00e2t de glace +2",
+    "icone": "A20059b"
+  },
+  "318": {
+    "nom": "Manteau Fourrure",
+    "desc": "Un manteau cousu avec une \u00e9paisse fourrure, malgr\u00e9 sa r\u00e9sistance elle reste tr\u00e8s l\u00e9g\u00e8re et permet \u00e0 son porteur d'\u00eatre plus agile.",
+    "effet": "Esquive & Blocage +1",
+    "montant": "D\u00e9g\u00e2t -4",
+    "icone": "A20057"
+  },
+  "319": {
+    "nom": "Bague Apaisante",
+    "desc": "Une bague compos\u00e9e de fleurs apaisantes. Ces fleurs lib\u00e8rent un parfum agr\u00e9able de lavande, tous ceux qui la sente seront d\u00e9tendus.",
+    "effet": "Capacit\u00e9",
+    "montant": "2 fois par combat (Instantan\u00e9e Charisme) : Apaise les ennemis (blocage -1, r\u00e9sistance esprit -2) sur 3 tours",
+    "icone": "A00003b"
+  },
+  "320": {
+    "nom": "Masse Pulv\u00e9risante",
+    "desc": "Une masse capable de pulv\u00e9riser la d\u00e9fense de sa cible.",
+    "effet": "Blocage cible -1",
+    "montant": "D\u00e9g\u00e2t +5",
+    "icone": "W33501"
+  },
+  "321": {
+    "nom": "B\u00e2ton de Stella",
+    "desc": "Un b\u00e2ton Heldentod forg\u00e9 avec le minerai de Stella, perce efficacement l'ennemi.",
+    "effet": "Blocage magique cible -2",
+    "montant": "D\u00e9g\u00e2t +10",
+    "icone": "W64504"
+  },
+  "322": {
+    "nom": "Arc de pr\u00e9cision",
+    "desc": "Un arc qui aide \u00e0 ne pas rater sa cible.",
+    "effet": "Esquive/Blocage cible -2",
+    "montant": "D\u00e9g\u00e2t +8",
+    "icone": "W50705"
+  },
+  "323": {
+    "nom": "Arc de l'apprenti",
+    "desc": "Un arc apportant du savoir \u00e0 son porteur",
+    "effet": "XP re\u00e7u +10%",
+    "montant": "D\u00e9g\u00e2t +7",
+    "icone": "W50102"
+  },
+  "324": {
+    "nom": "Arc Divin",
+    "desc": "Un arc con\u00e7u par une magie divine de l'\u00e9glise, elle enchante vos coups physiques en d\u00e9g\u00e2t de lumi\u00e8re",
+    "effet": "Element : Lumi\u00e8re",
+    "montant": "D\u00e9g\u00e2t +10 (lumi\u00e8re)",
+    "icone": "W54001"
+  },
+  "325": {
+    "nom": "Fusil d'Asbi",
+    "desc": "Un Fusil technologique inscrust\u00e9 d'une pierre Asbi",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +8, r\u00e9ussite des sorts +1",
+    "icone": "W51002"
   }
 }

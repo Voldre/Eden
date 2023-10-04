@@ -110,7 +110,7 @@ document.querySelector("#xp").addEventListener("change", (e) => {
       .querySelector(".equipements")
       .lastElementChild.previousElementSibling.classList.add("hide");
   }
-  // Nouveauté 27/05 : 5eme accessoire au niveau 4
+  // Nouveauté 12/06 : 5eme accessoire au niveau 8
   if (niv >= 8) {
     document
       .querySelector(".equipements")
@@ -389,6 +389,16 @@ function loadFiche(indexPerso) {
   if (persoData.niv >= 4) {
     document
       .querySelector(".equipements")
+      .lastElementChild.previousElementSibling.classList.remove("hide");
+  } else {
+    document
+      .querySelector(".equipements")
+      .lastElementChild.previousElementSibling.classList.add("hide");
+  }
+  // Nouveauté 12/06 : 5eme accessoire au niveau 8
+  if (persoData.niv >= 8) {
+    document
+      .querySelector(".equipements")
       .lastElementChild.classList.remove("hide");
   } else {
     document
@@ -408,7 +418,7 @@ function loadFiche(indexPerso) {
     var equipement = [...document.querySelector(".equipements").children][
       index
     ];
-    equipement.children[0].value = eqpt; // Object.values(competence.children[0].options).find(option => option.value == skill.nom);
+    equipement.children[0].value = eqpt;
     insertEqpt(equipement, eqpt);
   });
 

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    
+    <meta name="description" content="Eden Eternal - Fiches de personnages pour JDR (Jeu De Rôle)">
+
+    <link rel="stylesheet" href="http://voldre.free.fr/style.css">
+    <link rel="stylesheet" href="eden.css">
+    <link rel="stylesheet" href="JDRstyle.css">
+
+    <!--<script src="jquery-3.6.0.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <script src="JDRquest.js" defer></script>
+    <title>JDR Quête</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Never forget the viewport ! -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="position: relative; min-height: 100%; top: 0px; z-index:0;">
+    <nav style="margin-left:10px;">
+        <ul class="menu">
+        <!-- <li><a href="">Présentation</a></li> -->
+            <li><a href="jdr_univers.html">Infos JDR</a></li>
+            <li><a href="univers.php">L'Univers</a></li>
+                <!--  # Races # Classes -->
+            <!-- <li><a href="jdr.html">Fiches de persos</a></li> -->
+            <li><a href="jdr.html">Fiches de persos</a></li>
+            <li id="persoName"></li>
+            <li>
+                <audio loop controls="" style="width: 240px;">
+                    <source src="bgm/bgm040.ogg" type="audio/ogg">
+                </audio>
+            </li>
+        </ul>
+    </nav>
+    <br/>
+    <div class="game">
+        <h2 id="mapName"></h2>
+        <ul id="actions"></ul>
+        <img id="pnj"></img>
+        <img id="perso"></img>
+    </div>
+    <img id="enemy" src="" alt="">
+    <div id="response"></div>
+</body>
+<footer>
+    <br/>
+</footer>
+</html>

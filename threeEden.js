@@ -16,92 +16,114 @@ var maplist;
 
 let folder;
 
+function initPlayer(factor = 1) {
+  factorSpeed = onMap ? 4 : 1;
+  // if(onMap){
+  //     factorSpeed = 5;
+  // }else{ factorSpeed = 1;}
 
-function initPlayer(factor = 1){
-    factorSpeed = onMap ? 4 : 1;
-    // if(onMap){
-    //     factorSpeed = 5;
-    // }else{ factorSpeed = 1;}
-
-    if ("ontouchstart" in document.documentElement){
+  if ("ontouchstart" in document.documentElement) {
     // content for touch-screen (mobile) devices
-    return { height: 1.6, speed: 0.002*factor*factorSpeed, turnSpeed: Math.PI * 0.0002*factor };
-    }else{
+    return {
+      height: 1.6,
+      speed: 0.002 * factor * factorSpeed,
+      turnSpeed: Math.PI * 0.0002 * factor,
+    };
+  } else {
     // everything else (desktop)
-    return { height: 1.6, speed: 0.2*factor*factorSpeed, turnSpeed: Math.PI * 0.02*factor };
-    }
+    return {
+      height: 1.6,
+      speed: 0.2 * factor * factorSpeed,
+      turnSpeed: Math.PI * 0.02 * factor,
+    };
+  }
 }
 
-function myObjectInit(){
-    // Si une map est précisée dans l'URL    et qu'on n'a pas demandé de map (dans le select)
-    if(typeof window.location.search.split("&")[1] != "undefined" && !myrequest){
-        myValue = window.location.search.split("&")[1].split('=')[1];
-        while(myValue.length < 3){ myValue = "0"+myValue; }
-        return "S"+myValue;
-    }else{ return null; }
-    
+function myObjectInit() {
+  // Si une map est précisée dans l'URL    et qu'on n'a pas demandé de map (dans le select)
+  if (
+    typeof window.location.search.split("&")[1] != "undefined" &&
+    !myrequest
+  ) {
+    myValue = window.location.search.split("&")[1].split("=")[1];
+    while (myValue.length < 3) {
+      myValue = "0" + myValue;
+    }
+    return "S" + myValue;
+  } else {
+    return null;
+  }
 }
 
-function initForMap(){
-    onMap = false;
-    // Première valeur en paramètre de l'URL
-    folder = window.location.search.split('=')[1];
-    if(folder){ folder = folder.split("&")[0]; }
-    // folder = folder.split("&")[0];
+function initForMap() {
+  onMap = false;
+  // Première valeur en paramètre de l'URL
+  folder = window.location.search.split("=")[1];
+  if (folder) {
+    folder = folder.split("&")[0];
+  }
+  // folder = folder.split("&")[0];
 
-    if(typeof folder == "undefined"){
-        document.getElementById("google_translate_element").style.display = "inline";
-        return console.warn("En attente de la sélection");
+  if (typeof folder == "undefined") {
+    document.getElementById("google_translate_element").style.display =
+      "inline";
+    return console.warn("En attente de la sélection");
+  }
+
+  // 11.06.22 - Pour l'UI, on retire le choix de langue sur les designs
+  document.getElementById("google_translate_element").style.display = "none";
+
+  if (folder == "maps") {
+    onMap = true;
+  }
+
+  if (!onMap) {
+    myObject = myObjectInit();
+    if (myObject == null) {
+      myObject = document.getElementById("objets").value;
+    }
+  } else {
+    // Changement du texte pour les maps
+    document.getElementById("textMap").innerHTML =
+      " &#8616; : monter/descendre &nbsp; ";
+
+    player = initPlayer(factor);
+
+    myObject = myObjectInit();
+
+    // Si j'ai une requête et qu'on n'a pas de map dans l'URL
+    if ((myrequest && myObject == null) || myObject == "") {
+      // Variable dans ma dropdown list <select>
+      myObject = document.getElementById("objets").value;
+      // Si j'ai pas de requête et pas de données dans l'URL
+    } else if (!myrequest && (myObject == "" || myObject == null)) {
+      console.log("Présence sur les cartes de donjons, détecté.");
+      document.getElementById("loading").innerHTML =
+        "<h4 style='position: fixed;width: 98vw;text-align:center;left: 0px;'>Ici vous pouvez sélectionner un donjon présent dans le jeu.<br/>Malheureusement certaines d'entres eux ne s'affichent pas correctement.</h4>";
+      throw new Error("En attente du choix de l'utilisateur");
+      // Sinon (si j'ai des données dans l'URL)
+    } else {
+      document.getElementById("objets").value = myObject;
     }
 
-    // 11.06.22 - Pour l'UI, on retire le choix de langue sur les designs
-    document.getElementById("google_translate_element").style.display = "none";
+    // console.log(myObject);
+    map = parseInt(myObject.replace("S", ""));
+  }
 
-    if(folder == "maps"){ onMap = true;}
-
-    if(!onMap){
-        myObject =  myObjectInit();
-        if(myObject == null){
-            myObject = document.getElementById("objets").value;
-        }
-    }else{
-        // Changement du texte pour les maps
-        document.getElementById("textMap").innerHTML = " &#8616; : monter/descendre &nbsp; ";
-
-        player = initPlayer(factor);
-
-        myObject =  myObjectInit();
-
-        // Si j'ai une requête et qu'on n'a pas de map dans l'URL
-        if(myrequest && myObject == null || myObject == ""){
-            // Variable dans ma dropdown list <select>
-            myObject = document.getElementById("objets").value;
-        // Si j'ai pas de requête et pas de données dans l'URL
-        }else if(!myrequest && (myObject == "" || myObject == null) ){
-            console.log("Présence sur les cartes de donjons, détecté.");
-            document.getElementById('loading').innerHTML = "<h4 style='position: fixed;width: 98vw;text-align:center;left: 0px;'>Ici vous pouvez sélectionner un donjon présent dans le jeu.<br/>Malheureusement certaines d'entres eux ne s'affichent pas correctement.</h4>";
-            throw new Error("En attente du choix de l'utilisateur");
-        // Sinon (si j'ai des données dans l'URL)
-        }else{ document.getElementById("objets").value = myObject; }
-        
-        // console.log(myObject);
-        map = parseInt(myObject.replace('S',''));
-    }
-    
-    maplist = (function () {
-        var json = null;
-        $.ajax({
-            'async': false,
-            'global': false,
-            'url': 'maps.json',
-            'dataType': "json",
-            'success': function (data) {
-                json = data;
-            }
-        });
-        return json;
-    })(); 
-    // console.log(maplist)
+  maplist = (function () {
+    var json = null;
+    $.ajax({
+      async: false,
+      global: false,
+      url: "maps.json",
+      dataType: "json",
+      success: function (data) {
+        json = data;
+      },
+    });
+    return json;
+  })();
+  // console.log(maplist)
 }
 
 initForMap();
@@ -114,103 +136,119 @@ window.performance.setResourceTimingBufferSize(2000);
 // window.performance.getEntriesByType("resource")
 
 function update() {
-    // 10/06/22 - Update : window.stop() arrête toutes les requêtes
-    // Cela permet donc d'annuler les anciens chargements encore en cours
-    window.stop();
-    player = initPlayer(factor);
-    // Permet d'annuler l'execution automatique de la fonction animate()
-    // qui a été lancée lors de l'initialisation de l'objet précédent
-    cancelAnimationFrame(myrequest);
+  // 10/06/22 - Update : window.stop() arrête toutes les requêtes
+  // Cela permet donc d'annuler les anciens chargements encore en cours
+  window.stop();
+  player = initPlayer(factor);
+  // Permet d'annuler l'execution automatique de la fonction animate()
+  // qui a été lancée lors de l'initialisation de l'objet précédent
+  cancelAnimationFrame(myrequest);
 
-    // On supprime le canvas de l'ancien Objet 3D
-    // if(document.getElementsByTagName("canvas")[0]){
-    document.getElementsByTagName("canvas")[0]?.remove();
-    myrequest = true;
-    
-    init();
-    //init(1152, 648);
+  // On supprime le canvas de l'ancien Objet 3D
+  // if(document.getElementsByTagName("canvas")[0]){
+  document.getElementsByTagName("canvas")[0]?.remove();
+  myrequest = true;
+
+  init();
+  //init(1152, 648);
 }
 
-function read_cookie(key)
-{
-    var result;
-    return (result = new RegExp('(?:^|; )' + encodeURIComponent(key) + '=([^;]*)').exec(document.cookie)) ? (result[1]) : null;
+function read_cookie(key) {
+  var result;
+  return (result = new RegExp(
+    "(?:^|; )" + encodeURIComponent(key) + "=([^;]*)"
+  ).exec(document.cookie))
+    ? result[1]
+    : null;
 }
 
 function init() {
+  initForMap();
 
-    initForMap();
-
-    /* Update 09.06.22 - Ajout d'un toggle permettant
+  /* Update 09.06.22 - Ajout d'un toggle permettant
     de choisir si on veut ou non afficher l'arrière plan.
     Car il met un peu + de temps à se générer et avec plein de
-    designs c'est vite désagréable, mais pas les maps  */ 
-    if(document.getElementById("bgToggle").checked) {
-        document.cookie = "bgState=checked";
-    } else{ document.cookie = "bgState="; }
-    // 16.06.22 - Ajout d'un toggle pour la musique !
-    if(document.getElementById("bgmToggle").checked) {
-        document.cookie = "bgmState=checked";
-    } else{ document.cookie = "bgmState="; }
+    designs c'est vite désagréable, mais pas les maps  */
+  if (document.getElementById("bgToggle").checked) {
+    document.cookie = "bgState=checked";
+  } else {
+    document.cookie = "bgState=";
+  }
+  // 16.06.22 - Ajout d'un toggle pour la musique !
+  if (document.getElementById("bgmToggle").checked) {
+    document.cookie = "bgmState=checked";
+  } else {
+    document.cookie = "bgmState=";
+  }
 
-    if(!onMap){ document.getElementById("iconBGM").style.display = "none"; }
+  if (!onMap) {
+    document.getElementById("iconBGM").style.display = "none";
+  }
 
-    scene = new THREE.Scene();  
-    /* **************************************************
+  scene = new THREE.Scene();
+  /* **************************************************
     Le secret pour afficher le background (qui est éloigné?)
     ==> Il faut aggrandir la distance d'affichage !
     Car là elle est trop petite et du coup on voit rien sauf quand
     on est collé dessus, ce n'est pas le but. 4000 >> 1000
     ************************************************** */
-    camera = new THREE.PerspectiveCamera(90, 1280 / 720, 0.1, 4000);
+  camera = new THREE.PerspectiveCamera(90, 1280 / 720, 0.1, 4000);
 
-    mesh = new THREE.Mesh();
+  mesh = new THREE.Mesh();
 
-    meshFloor = new THREE.Mesh(
-        new THREE.PlaneGeometry(20, 20, 10, 10),
-        new THREE.MeshPhongMaterial({ color: 0xffffff, wireframe: USE_WIREFRAME })
-    );
-    meshFloor.rotation.x -= Math.PI / 2;
-    meshFloor.receiveShadow = true;
-    scene.add(meshFloor);
+  meshFloor = new THREE.Mesh(
+    new THREE.PlaneGeometry(20, 20, 10, 10),
+    new THREE.MeshPhongMaterial({ color: 0xffffff, wireframe: USE_WIREFRAME })
+  );
+  meshFloor.rotation.x -= Math.PI / 2;
+  meshFloor.receiveShadow = true;
+  scene.add(meshFloor);
 
-    /*
+  /*
     const fbxloader = new THREE.FBXLoader();
     fbxloader.load('http://voldre.free.fr/Eden/UD338out.fbx', object => {
         scene.add(object);
     });
     */
 
-    if(onMap){
-        ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-    }else{
-        ambientLight = new THREE.AmbientLight(0xffffff, 0.85);
-    }
-    scene.add(ambientLight);
+  if (onMap) {
+    ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+  } else {
+    ambientLight = new THREE.AmbientLight(0xffffff, 0.85);
+  }
+  scene.add(ambientLight);
 
-    light = new THREE.PointLight(0xffffff, 1.5, 20);
-    light.position.set(-3, 6, -6);
-    light.castShadow = true;
-    light.shadow.camera.near = 0.1;
-    light.shadow.camera.far = 25;
-    scene.add(light);
+  light = new THREE.PointLight(0xffffff, 1.5, 20);
+  light.position.set(-3, 6, -6);
+  light.castShadow = true;
+  light.shadow.camera.near = 0.1;
+  light.shadow.camera.far = 25;
+  scene.add(light);
 
-    var mtlLoader = new THREE.MTLLoader();
-    mtlLoader.setMaterialOptions({ ignoreZeroRGBs: true });
+  // VD 23/09/23 : Light make weird shadow
+  light.position.z = 100;
 
-    // console.log(mtlLoader);
-    mtlLoader.load("http://voldre.free.fr/Eden/images/3D/" + folder + "/" + myObject + ".mtl", function(materials) {
-       
-        //console.log(materials);
-        var listWrongMaterials = [];
-        for(var material in materials.materialsInfo){
-            // Gestion des 3 cas possibles d'absence de textures : 1) "chemin sans arrivé",  2) rien de déclaré,  3) textures ""
-            if(materials.materialsInfo[material]["map_kd"] == "images/3D/map/" || typeof materials.materialsInfo[material]["map_kd"] == "undefined" || materials.materialsInfo[material]["map_kd"] == "" ){
-                listWrongMaterials.push(materials.materialsInfo[material]["name"]);
-            }
+  var mtlLoader = new THREE.MTLLoader();
+  mtlLoader.setMaterialOptions({ ignoreZeroRGBs: true });
+
+  // console.log(mtlLoader);
+  mtlLoader.load(
+    "http://voldre.free.fr/Eden/images/3D/" + folder + "/" + myObject + ".mtl",
+    function (materials) {
+      //console.log(materials);
+      var listWrongMaterials = [];
+      for (var material in materials.materialsInfo) {
+        // Gestion des 3 cas possibles d'absence de textures : 1) "chemin sans arrivé",  2) rien de déclaré,  3) textures ""
+        if (
+          materials.materialsInfo[material]["map_kd"] == "images/3D/map/" ||
+          typeof materials.materialsInfo[material]["map_kd"] == "undefined" ||
+          materials.materialsInfo[material]["map_kd"] == ""
+        ) {
+          listWrongMaterials.push(materials.materialsInfo[material]["name"]);
         }
-        console.log(listWrongMaterials);
-        /*
+      }
+      console.log(listWrongMaterials);
+      /*
         var listLiensTextures = [];
         for(var material in materials.materialsInfo){
             if(materials.materialsInfo[material]["map_kd"] != null){
@@ -223,39 +261,47 @@ function init() {
         listLiensTextures = listLiensTextures.filter(onlyUnique);
         */
 
-        if(folder == "maps"){
-            // materials.preload();
+      if (folder == "maps") {
+        // materials.preload();
+      }
+
+      // Ajout VD - 04/06/2022 - suivi du loading :
+      console.log("On loading ...");
+
+      var onProgress = (xhr) => {
+        if (xhr.lengthComputable) {
+          var percentComplete = (xhr.loaded / xhr.total) * 100;
+          document.getElementById("loading").innerHTML =
+            "Loading : " + Math.round(percentComplete, 2) + "%";
         }
-        
-        // Ajout VD - 04/06/2022 - suivi du loading :
-        console.log('On loading ...');
+      };
 
-        var onProgress = (xhr) => {
-            if ( xhr.lengthComputable ) {
-                var percentComplete = xhr.loaded / xhr.total * 100;
-                document.getElementById("loading").innerHTML = "Loading : " + Math.round(percentComplete, 2) + "%";}        
-        };
-        
-        var objLoader = new THREE.OBJLoader();
-        objLoader.setMaterials(materials);
-        // console.log(materials);
-        
-        mesh.position.y += 1;
-        mesh.receiveShadow = true;
-        mesh.castShadow = true;
+      var objLoader = new THREE.OBJLoader();
+      objLoader.setMaterials(materials);
+      // console.log(materials);
 
-        objLoader.load("http://voldre.free.fr/Eden/images/3D/" + folder + "/" + myObject + ".obj", function(mesh) {
-            console.log('Loaded : ' + myObject );
-            document.getElementById("loading").innerHTML = null;
-            
-            mesh.traverse(function(node) {
-                if (node instanceof THREE.Mesh) {
-                    node.castShadow = true;
-                    node.receiveShadow = true;
-                }
-            });
-                
-            /********* Most important update *********
+      mesh.position.y += 1;
+      mesh.receiveShadow = true;
+      mesh.castShadow = true;
+
+      objLoader.load(
+        "http://voldre.free.fr/Eden/images/3D/" +
+          folder +
+          "/" +
+          myObject +
+          ".obj",
+        function (mesh) {
+          console.log("Loaded : " + myObject);
+          document.getElementById("loading").innerHTML = null;
+
+          mesh.traverse(function (node) {
+            if (node instanceof THREE.Mesh) {
+              node.castShadow = true;
+              node.receiveShadow = true;
+            }
+          });
+
+          /********* Most important update *********
              07/06/2022 :
              Adding alphaTest and transparent parameters
              in order to make transparent part of PNG effective !
@@ -272,34 +318,54 @@ function init() {
              ... even if they have no texture", and that's on what I have worked.
              I checked PNG for all materials, and if I find no one, "visibile = false"
              ******************************************/
-            var children = mesh.children;                
-            console.log(children)
-            for ( var i = 0 ; i < children.length; i++ ) {
-                children[i].castShadow = true;
-                // Make PNG transparence efficient
-                children[i].material.alphaTest = 0.5;
-                children[i].material.transparent = true;
-                // Check if this material are in my "black list" of materials
-                if(listWrongMaterials.includes(children[i].material.name) ){
-                    mesh.children[i].visible = false; // If yes, I hide it for real, like in the game
-                }
+          var children = mesh.children;
+          console.log(children);
+          for (var i = 0; i < children.length; i++) {
+            children[i].castShadow = true;
+            // Make PNG transparence efficient
+            children[i].material.alphaTest = 0.5;
+            children[i].material.transparent = true;
+            // Check if this material are in my "black list" of materials
+            if (listWrongMaterials.includes(children[i].material.name)) {
+              mesh.children[i].visible = false; // If yes, I hide it for real, like in the game
             }
+          }
 
-            // Paramètre autorisant à update la rotation de l'objet
-            mesh.matrixWorld.matrixWorldNeedsUpdate = true;
-            scene.add(mesh);
+          // Paramètre autorisant à update la rotation de l'objet
+          mesh.matrixWorld.matrixWorldNeedsUpdate = true;
+          scene.add(mesh);
 
-            
-            // 06/06/2022 - Ajout du background d'Eden
-            const date = new Date(); 
-            const currentHour = parseInt(date.toLocaleTimeString({hour: '2-digit',   hour12: false, timeZone: 'Europe/Paris' }).split(":")[0]);
-        
-            const backgroundByHour = {5:"A402",8:"A102",11:"D502",15:"G602",17:"G603",18:"D302",19:"A302",20:"C301",21:"C402",23:"G604"};
-            const choosenHour = Object.keys(backgroundByHour).find(hour => hour >= currentHour);
-            // console.log(currentHour+":"+choosenHour)
-            const myBG = backgroundByHour[choosenHour];
+          // 06/06/2022 - Ajout du background d'Eden
+          const date = new Date();
+          const currentHour = parseInt(
+            date
+              .toLocaleTimeString({
+                hour: "2-digit",
+                hour12: false,
+                timeZone: "Europe/Paris",
+              })
+              .split(":")[0]
+          );
 
-            /*
+          const backgroundByHour = {
+            5: "A402",
+            8: "A102",
+            11: "D502",
+            15: "G602",
+            17: "G603",
+            18: "D302",
+            19: "A302",
+            20: "C301",
+            21: "C402",
+            23: "G604",
+          };
+          const choosenHour = Object.keys(backgroundByHour).find(
+            (hour) => hour >= currentHour
+          );
+          // console.log(currentHour+":"+choosenHour)
+          const myBG = backgroundByHour[choosenHour];
+
+          /*
             if(currentHour <= 5){
                 myBG = "A402";
             }else if(currentHour <= 8){
@@ -321,245 +387,305 @@ function init() {
             }else{ myBG = "G604";}
             */
 
-            // 09/06 -- On affiche le fond d'écran que si c'est voulu
-            if(read_cookie('bgState') == ""){
-                mesh2 = new THREE.Mesh();   
-                mtlLoader.load("http://voldre.free.fr/Eden/images/3D/maps/"+myBG+".mtl", function(materials2) {      
-                    objLoader.setMaterials(materials2);
-                    objLoader.load("http://voldre.free.fr/Eden/images/3D/maps/"+myBG+".obj", function(mesh2){
-                        scene.add(mesh2);
-                        mesh2.rotation.x = -Math.PI/2;    
-                    });
-                });
+          // 09/06 -- On affiche le fond d'écran que si c'est voulu
+          if (read_cookie("bgState") == "") {
+            mesh2 = new THREE.Mesh();
+            mtlLoader.load(
+              "http://voldre.free.fr/Eden/images/3D/maps/" + myBG + ".mtl",
+              function (materials2) {
+                objLoader.setMaterials(materials2);
+                objLoader.load(
+                  "http://voldre.free.fr/Eden/images/3D/maps/" + myBG + ".obj",
+                  function (mesh2) {
+                    scene.add(mesh2);
+                    mesh2.rotation.x = -Math.PI / 2;
+                  }
+                );
+              }
+            );
+          }
+
+          // Position et Rotation de notre objet
+          if (onMap) {
+            // Coordonnées de la génération de la map
+            // Pour changer en live la position : scene.children[3].position.set = (0,0,0)
+            if (maplist[map]["map_x"] != null) {
+              mesh.position.set(
+                maplist[map]["map_x"],
+                maplist[map]["map_y"],
+                maplist[map]["map_z"]
+              );
+              mesh.rotation.z = maplist[map]["map_r"] * Math.PI;
+            } else {
+              mesh.position.set(0, 0, 0);
+              mesh.rotation.z = Math.PI;
             }
+          } else if (folder == "items") {
+            mesh.position.set(0, 1, -3.3);
+            mesh.rotation.z = Math.PI / 1.4; // Pour qu'il regarde vers nous
+          } else {
+            mesh.position.set(-0.2, 0.25, -0.8);
+            mesh.rotation.z = Math.PI / 1.4; // Pour qu'il regarde vers nous
+          }
 
-            // Position et Rotation de notre objet
-            if(onMap){ 
-                // Coordonnées de la génération de la map
-                // Pour changer en live la position : scene.children[3].position.set = (0,0,0)
-                if(maplist[map]['map_x'] != null){
-                    mesh.position.set(maplist[map]['map_x'],maplist[map]['map_y'],maplist[map]['map_z']);
-                    mesh.rotation.z = maplist[map]['map_r']*Math.PI;    
-                }else{ 
-                    mesh.position.set(0,0,0);
-                    mesh.rotation.z = Math.PI;
-                }
-            }else if (folder == "items") {
-                mesh.position.set(0, 1, -3.3);
-                mesh.rotation.z = Math.PI / 1.4; // Pour qu'il regarde vers nous
-            }else {
-                mesh.position.set(-0.2, 0.25, -0.8); 
-                mesh.rotation.z = Math.PI / 1.4; // Pour qu'il regarde vers nous
-            }
-
-            // Angles pour tous nos objet
-            mesh.rotation.y = 0; // Math.PI / 6;
-            mesh.rotation.x = -Math.PI / 2;
-        }, onProgress);
-
-    });
-
-    // Caméra
-
-    if(folder != "house"){
-        camera.position.set(0, player.height, -5);
-        camera.lookAt(new THREE.Vector3(0, player.height, 0));
-    }else{ 
-        camera.position.set(0, player.height+3.2, -17); 
-        camera.lookAt(new THREE.Vector3(0, player.height+3, 0));
+          // Angles pour tous nos objet
+          mesh.rotation.y = 0; // Math.PI / 6;
+          mesh.rotation.x = -Math.PI / 2;
+        },
+        onProgress
+      );
     }
+  );
 
-    renderer = new THREE.WebGLRenderer({alpha:true, antialias:true});
+  // Caméra
 
-    /* Size (width, height) of the canvas
+  if (folder != "house") {
+    camera.position.set(0, player.height, -5);
+    camera.lookAt(new THREE.Vector3(0, player.height, 0));
+  } else {
+    camera.position.set(0, player.height + 3.2, -17);
+    camera.lookAt(new THREE.Vector3(0, player.height + 3, 0));
+  }
+
+  renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+
+  /* Size (width, height) of the canvas
     11.06.22 - UI Improvement : Adaptation du canvas selon l'écran 
     seulement, donc plus besoin de paramètre pour init() */
-    // window.innerWidth = Taille fenêtre, window.screen.width = Taille écran
-    renderer.setSize(window.innerWidth*0.98, window.innerWidth*0.46);
+  // window.innerWidth = Taille fenêtre, window.screen.width = Taille écran
+  renderer.setSize(window.innerWidth * 0.98, window.innerWidth * 0.46);
 
-    renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = THREE.BasicShadowMap;
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.BasicShadowMap;
 
-    if(typeof document.getElementById('canvasPosition') != null){
-        document.getElementById('canvasPosition').appendChild(renderer.domElement);
-        if(onMap){
-            if(maplist[map]['bgm'] != null){
-                myBGM = maplist[map]['bgm'].toString();
-                while(myBGM.length < 3){ myBGM = "0"+myBGM; }
-                document.getElementById("bgmPosition").innerHTML = '<audio loop><source src="bgm/bgm'+myBGM+'.ogg" type="audio/ogg" /></audio>';
-                if(read_cookie('bgmState') == ""){
-                    document.getElementsByTagName('audio')[0].autoplay= true ;
-                }
-                document.getElementsByTagName('audio')[0].volume= 0.4 ;
-            }else{ document.getElementById("bgmPosition").innerHTML = "";}
+  if (typeof document.getElementById("canvasPosition") != null) {
+    document.getElementById("canvasPosition").appendChild(renderer.domElement);
+    if (onMap) {
+      if (maplist[map]["bgm"] != null) {
+        myBGM = maplist[map]["bgm"].toString();
+        while (myBGM.length < 3) {
+          myBGM = "0" + myBGM;
         }
-        
-        animate();
+        document.getElementById("bgmPosition").innerHTML =
+          '<audio loop><source src="bgm/bgm' +
+          myBGM +
+          '.ogg" type="audio/ogg" /></audio>';
+        if (read_cookie("bgmState") == "") {
+          document.getElementsByTagName("audio")[0].autoplay = true;
+        }
+        document.getElementsByTagName("audio")[0].volume = 0.4;
+      } else {
+        document.getElementById("bgmPosition").innerHTML = "";
+      }
     }
+
+    animate();
+  }
 }
 
-
 function animate() {
+  // Récupération de la requête dans une variable pour la garder en mémoire
+  myrequest = requestAnimationFrame(animate);
 
-    // Récupération de la requête dans une variable pour la garder en mémoire
-    myrequest = requestAnimationFrame(animate);
+  // Objet 3D
 
-    // Objet 3D
+  if (typeof scene.children[3] != "undefined" && !onMap) {
+    // scene.children[3].rotation.z += 0.003;
+    scene.children[3].position.z = -2.75;
+    // "Remove" the floor
+    scene.children[0].position.z = 1000;
+    // Put camera in front of
+    scene.children[3].rotation.z = 3.4;
+    //console.log(scene.children[3]);
+  }
 
-    if (typeof scene.children[3] != "undefined" && !onMap) {
-        scene.children[3].rotation.z += 0.003;
-        //console.log(scene.children[3]);
-    }
+  function up() {
+    camera.position.x += -Math.sin(camera.rotation.y) * player.speed;
+    camera.position.z += Math.cos(camera.rotation.y) * player.speed;
+  }
+  function right() {
+    camera.position.x +=
+      Math.sin(camera.rotation.y - Math.PI / 2) * player.speed;
+    camera.position.z +=
+      -Math.cos(camera.rotation.y - Math.PI / 2) * player.speed;
+  }
+  function down() {
+    camera.position.x += Math.sin(camera.rotation.y) * player.speed;
+    camera.position.z += -Math.cos(camera.rotation.y) * player.speed;
+  }
+  function left() {
+    camera.position.x +=
+      Math.sin(camera.rotation.y + Math.PI / 2) * player.speed;
+    camera.position.z +=
+      -Math.cos(camera.rotation.y + Math.PI / 2) * player.speed;
+  }
+  function turnLeft() {
+    camera.rotation.y -= player.turnSpeed / 1.3;
+  }
+  function turnRight() {
+    camera.rotation.y += player.turnSpeed / 1.3;
+  }
 
-    function up(){
-        camera.position.x += -Math.sin(camera.rotation.y) * player.speed;
-        camera.position.z += Math.cos(camera.rotation.y) * player.speed;
-    }
-    function right(){
-        camera.position.x += Math.sin(camera.rotation.y - Math.PI / 2) * player.speed;
-        camera.position.z += -Math.cos(camera.rotation.y - Math.PI / 2) * player.speed;
-    }
-    function down(){
-        camera.position.x += Math.sin(camera.rotation.y) * player.speed;
-        camera.position.z += -Math.cos(camera.rotation.y) * player.speed;
+  // Création des intéractions pour l'interface mobile
+  $("#up").on("click", function () {
+    up();
+  });
+  $("#down").on("click", function () {
+    down();
+  });
+  $("#left").on("click", function () {
+    left();
+  });
+  $("#right").on("click", function () {
+    right();
+  });
+  $("#turnLeft").on("click", function () {
+    turnLeft();
+  });
+  $("#turnRight").on("click", function () {
+    turnRight();
+  });
 
-    }
-    function left(){
-        camera.position.x += Math.sin(camera.rotation.y + Math.PI / 2) * player.speed;
-        camera.position.z += -Math.cos(camera.rotation.y + Math.PI / 2) * player.speed;
-    }
-    function turnLeft(){
-        camera.rotation.y -= player.turnSpeed/1.3;
-    }
-    function turnRight(){
-        camera.rotation.y += player.turnSpeed/1.3;
-    }
+  // $("#bgmToggle").on("click",function(){
+  //     if(!$("#bgmToggle").is(':checked')){
+  //         document.getElementById("bgmPosition").innerHTML = "";
+  //     }
+  // })
 
-    // Création des intéractions pour l'interface mobile
-    $("#up").on("click",function(){ up();});
-    $("#down").on("click",function(){ down();});
-    $("#left").on("click",function(){ left();});
-    $("#right").on("click",function(){ right();});
-    $("#turnLeft").on("click",function(){ turnLeft();});
-    $("#turnRight").on("click",function(){ turnRight();});
-    
-    // $("#bgmToggle").on("click",function(){
-    //     if(!$("#bgmToggle").is(':checked')){
-    //         document.getElementById("bgmPosition").innerHTML = "";
-    //     }
-    // })
+  document.getElementById("prev").onclick = function () {
+    // console.log($("#objets").val());
+    if (onMap) {
+      camera.position.y += 2.5;
+    } else {
+      $("#objets option:selected").prev().prop("selected", true).change();
+    }
+  };
+  document.getElementById("next").onclick = function () {
+    // console.log($("#objets").val());
+    if (onMap) {
+      camera.position.y -= 2.5;
+    } else {
+      $("#objets option:selected").next().prop("selected", true).change();
+    }
+  };
 
-    document.getElementById("prev").onclick = function (){
-        // console.log($("#objets").val());
-        if(onMap){
-            camera.position.y += 2.5;
-        }else{
-            $("#objets option:selected").prev().prop('selected',true).change();
-        }
+  // ZQSD mouvement translation
+  if (keyboard[90]) {
+    // Z key
+    if ($("#objets").is(":focus")) {
+      $("#objets").blur();
     }
-    document.getElementById("next").onclick = function(){
-        // console.log($("#objets").val());    
-        if(onMap){
-            camera.position.y -= 2.5;
-        }else{    
-            $("#objets option:selected").next().prop('selected',true).change();
-        }
+    up();
+  }
+  if (keyboard[83]) {
+    // S key
+    if ($("#objets").is(":focus")) {
+      $("#objets").blur();
     }
+    down();
+  }
+  if (keyboard[81]) {
+    // Q key
+    left();
+  }
+  if (keyboard[68]) {
+    // D key
+    right();
+  }
 
-    // ZQSD mouvement translation
-    if (keyboard[90]) { // Z key
-        if($('#objets').is(":focus")){ $('#objets').blur(); }
-        up();
-    }
-    if (keyboard[83]) { // S key
-        if($('#objets').is(":focus")){ $('#objets').blur(); }
-        down();   
-    }
-    if (keyboard[81]) { // Q key
-        left();
-    }
-    if (keyboard[68]) { // D key
-        right();
-    }
+  //console.log(camera.position);
 
-    //console.log(camera.position);
+  // Rotation de la caméra
+  if (keyboard[37]) {
+    // left arrow key
+    if ($("#objets").is(":focus")) {
+      $("#objets").blur();
+    }
+    turnLeft();
+  }
+  if (keyboard[39]) {
+    // right arrow key
+    if ($("#objets").is(":focus")) {
+      $("#objets").blur();
+    }
+    turnRight();
+  }
 
-    // Rotation de la caméra
-    if (keyboard[37]) { // left arrow key
-        if($('#objets').is(":focus")){
-            $('#objets').blur(); }
-            turnLeft();
+  if (keyboard[38]) {
+    // Top Arrow
+    if (onMap) {
+      camera.position.y += player.speed;
+    } else {
+      $("#objets").focus();
     }
-    if (keyboard[39]) { // right arrow key
-        if($('#objets').is(":focus")){
-            $('#objets').blur(); }
-            turnRight();
+  }
+  if (keyboard[40]) {
+    // Bottom Arrow
+    if (onMap) {
+      camera.position.y -= player.speed;
+    } else {
+      $("#objets").focus();
     }
+  }
+  if (keyboard[16]) {
+    factor = factor == 1 ? 2 : 1;
+    player = initPlayer(factor);
+    // if(player.speed == 1){
+    // player.speed = 2;
+    // }else{ player.speed = 1;}
+  }
 
-    if (keyboard[38]) { // Top Arrow
-        if(onMap){
-            camera.position.y += player.speed;
-        }else{ $('#objets').focus(); }
-    }
-    if (keyboard[40]) { // Bottom Arrow
-        if(onMap){
-            camera.position.y -= player.speed;
-        }else{ $('#objets').focus(); }
-    }
-    if(keyboard[16]){
-        factor = factor == 1 ? 2 : 1;
-        player = initPlayer(factor);
-        // if(player.speed == 1){
-        // player.speed = 2;
-        // }else{ player.speed = 1;}
-    }
+  // Rotation de l'objet
+  if (keyboard[65]) {
+    // A
+    scene.children[3].rotation.y += 0.01;
+  }
+  if (keyboard[69]) {
+    // E
+    scene.children[3].rotation.y -= 0.01;
+  }
+  // Add 18/08/2023 (finally ! After all this time, one year ! xD)
+  if (keyboard[82]) {
+    // R
+    scene.children[3].position.y += 0.01;
+  }
+  if (keyboard[70]) {
+    // F
+    scene.children[3].position.y -= 0.01;
+  }
 
-    // Rotation de l'objet
-    if (keyboard[65]) { // A
-        scene.children[3].rotation.y += 0.01;
-    }
-    if (keyboard[69]) { // E
-        scene.children[3].rotation.y -= 0.01;
-    }
-    // Add 18/08/2023 (finally ! After all this time, one year ! xD)
-    if (keyboard[82]){ // R
-        scene.children[3].position.y += 0.01;
-    }
-    if (keyboard[70]){ // F
-        scene.children[3].position.y -= 0.01;
-    }
+  if (keyboard[161] || keyboard[48]) {
+    // "!" ou "0", 04/06/2022 - Kill du programme
+    console.log("Programme stoppé");
+    cancelAnimationFrame(myrequest);
+    window.stop();
 
-    if (keyboard[161] || keyboard[48]) { // "!" ou "0", 04/06/2022 - Kill du programme
-        console.log("Programme stoppé");
-        cancelAnimationFrame(myrequest);
-        window.stop();
+    this.renderer.domElement.addEventListener("dblclick", null, false); //remove listener to render
+    this.scene = null;
+    this.projector = null;
+    this.camera = null;
+    this.controls = null;
+    // On supprime le canvas de l'ancien Objet 3D
+    document.getElementsByTagName("canvas")[0].remove();
+  }
+  renderer.render(scene, camera);
 
-        this.renderer.domElement.addEventListener('dblclick', null, false); //remove listener to render
-        this.scene = null;
-        this.projector = null;
-        this.camera = null;
-        this.controls = null;
-        // On supprime le canvas de l'ancien Objet 3D
-        document.getElementsByTagName("canvas")[0].remove();
-    }
-    renderer.render(scene, camera);
+  function keyDown(event) {
+    keyboard[event.keyCode] = true;
+  }
 
-    function keyDown(event) {
-        keyboard[event.keyCode] = true;
-    }
-    
-    function keyUp(event) {
-        keyboard[event.keyCode] = false;
-    }
-    
-    function bgmState(event){    
-        if(document.getElementById("bgmToggle").checked) document.querySelector('audio').pause(); 
-        else document.querySelector('audio').play(); 
-    }
-    window.addEventListener('keydown', keyDown);
-    window.addEventListener('keyup', keyUp);
-    document.getElementById("bgmToggle").addEventListener('change', bgmState);
-    
+  function keyUp(event) {
+    keyboard[event.keyCode] = false;
+  }
+
+  function bgmState(event) {
+    if (document.getElementById("bgmToggle").checked)
+      document.querySelector("audio").pause();
+    else document.querySelector("audio").play();
+  }
+  window.addEventListener("keydown", keyDown);
+  window.addEventListener("keyup", keyUp);
+  document.getElementById("bgmToggle").addEventListener("change", bgmState);
 }
 
 //window.onload = init(1152, 648);
