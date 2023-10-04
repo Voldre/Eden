@@ -23,6 +23,7 @@
   },
   "3": {
     "name": "Colline tranquille",
+    "desc": "La Colline Tranquille se situe le long de la magnifique Côte Etoilée. Son emplacement en fait un important port d'attache pour de nombreux navires. Le port de Clochemer crée ainsi une économie florissante où l'on trouve toutes les dernières nouveautés ainsi que des objets rares. La vie quotidienne de la plupart des habitants est liée à la mer. Les spéciliatés culinaires de la ville attirent de nombreux touristes faisant prospérer l'économie de la région.",
     "wmap_x": 17.6,
     "wmap_y": 73.3,
     "wmap": 0,
@@ -34,6 +35,7 @@
   },
   "4": {
     "name": "Forêt Arc-en-Ciel",
+    "desc": "Les voyageurs se rendent à la Forêt Arc-en-Ciel pour ses magnifiques cascades et son hospitalité. L'eau y coule toute l'année, donnant l'impression que la montagne est enveloppée de soie. la brume qu'elle crée projette des arcs-en-ciel sur les rochers.\n De nombreuses cascades alimentent les eaux clair du lac Prismata autour duquel sont éparpillées les reliques d'une civilisation perdue, ce qui donne une aura mystérieuse à la forêt.",
     "wmap_x": 16,
     "wmap_y": 66.1,
     "wmap": 0,
@@ -45,6 +47,7 @@
   },
   "5": {
     "name": "Monts Arides",
+    "desc": "Le climat des Monts Arides est rude toute l'année. Seules les plantes les plus résistantes peuvent prendre racine dans ce sol sec. De féroces tempêtes de sable tournoient dans le paysage rocheux et des animaux féroces rendent la survie encore plus compliquée. \n La légende raconte qu'un dragon antique dort dans le désert et le chef de la ville Cenana pense qu'une grande civilisation vivait autrefois sous terre. Personne ne sait si ces légendes sont vraies.",
     "wmap_x": 11.5,
     "wmap_y": 60.7,
     "wmap": 0,
@@ -56,6 +59,7 @@
   },
   "6": {
     "name": "Baie Bélouga",
+    "desc": "Le Port Bélouga est tout aussi célèbre que le port de Clochemer à la Colline Tranquille. Comme il est entouré de falaises et sujet aux tempêtes, y accoster n'est pas toujours chose facile. Afin d'aider les bateaux à manoeuvrer en sécurité, la ville a fait construire un grand phare. \n De hauts murs encerclent la ville, la protégeant contre d'éventuelles attaques. Ils ont ainsi permis au port de continuer de prospérer même avec la présence de pirates et de bandits.",
     "wmap_x": 16.9,
     "wmap_y": 54,
     "wmap": 0,
@@ -67,6 +71,7 @@
   },
   "7": {
     "name": "Bourbes",
+    "desc": "Au fil du temps, les nombreuses sources de cette région l'ont transformée en une zone marécageuse. La mousse et le lichen envahissent tout, même les anciennes ruines qui s'y dressent.\n Un puissant magicien nommé Rumbledore y vit. Ses expériences ont créés une faune et une flore bien étrange.",
     "wmap_x": 20.8,
     "wmap_y": 48.8,
     "wmap": 0,
@@ -78,6 +83,7 @@
   },
   "8": {
     "name": "Vallée des Rois",
+    "desc": "Dans la luxuriante et prospère Vallée des Rois, cinq cascades alimentent un magnifique lac. Ce magnifique paysage attire de nombreux touristes. De nombreuses générations de grands rois d'Ezur y reposent, d'où le nom de la Vallée. Jardin est le nom de la ville de la Vallée des Rois. On y trouve de nombreuses statues et reliques de ces dirigeants du passé dans toute la région. Il n'est donc pas rare d'en trouver. Elle a beaucoup de valeur aux yeux de la Curie Métérole, c'est pourquoi elle a confiée sa protection aux Torturrans. Les Torturrans ce sont les plus aptes à garder et maîtriser les anciens secrets. Malgré cela, une faune et une flore très pestilentielle a aussi pris place dans la Vallée.",
     "wmap_x": 12.9,
     "wmap_y": 42.6,
     "wmap": 0,
@@ -89,6 +95,7 @@
   },
   "9": {
     "name": "Volcan Avila",
+    "desc": "Entourée de volcans, c'est une terre de feu et de flammes. Des cendres brûlantes virevoltent dans les airs et le sol y est rouge. Des marres de lave riches en soufre bouillonnent à la surface et rendent le sol si brûlant que personne n'ose y marcher pieds nus.\n Cela dit, les Tuskars (des hommes sangliers) ont réussi à y développer une civilisation florissante. Puissants et courageux, ils ont construit leur forteresse nommée Baltaroï, leur capitale près du cratère du volcan.",
     "wmap_x": 28.3,
     "wmap_y": 42.2,
     "wmap": 0,
@@ -100,6 +107,7 @@
   },
   "10": {
     "name": "Plaines Dorées",
+    "desc": "Surnom : Le carrefour verdoyant.\n\n\"Qu'il est bon de s'allonger dans l'herbe et de regarder le soleil passer au dessus des Plaines Dorées ! Cette immense plaine bénéficie de terres fertiles grâce au Volcan située à proximité, et baigne toute l'année dans une chaleur agréable.\n\nSituée en plus au carrefour de grandes routes, il paraît donc normal que les commerçants aient décidé d'y fonder une cité, où les appels des marchands se mélangent aux chants des ménestrels.\n\nDe grandes forteresses, au loin, rappellent les vestiges d'un temps inconnu des habitants actuels d'Ezur.\" (présentation provenant du jeu). \n\nZones et Donjons de la région\n\nIl y a quatre zones et deux donjons aux Plaines Dorées.\n\n\nZones\n\n    Orville\n    Le Mirage de Sam\n    Forêt Saken\n    Montée de Sana\n\nDonjons\n\n    Rêve du Maire (zone d'Orville)\n    Crocvenin (zone Montée de Sana)\n\nListes des Monstres\n\nMonstres simples :\n\n    Epineur vil (41)\n    Epineur acéré (41)\n    Scarabée-scorpion (41)\n    Scarabée-scorpion toxique (42)\n    Yak Tueur (42)\n    Taureau Enragé (42)\n    Taureau à Cornes de Roc (43)\n    Busard Epineux (43)\n    Rapaces à Crêtes (43)\n    Busard à Griffe Acéré (43)\n    Rapace Hachecrête (44)\n    Bandit Œil de Loup (44)\n    Soldat Œil de Loup (44)\n    Tueur Œil de Loup (44)\n    Docteur Œil de Loup (45)\n    Berseker Œil de Loup (45)\n\n\n    \"Reine Maudite des insectes\" Gilz (Boss monde)",
     "wmap_x": 33.1,
     "wmap_y": 52.1,
     "wmap": 0,
@@ -107,8 +115,7 @@
     "map_y": null,
     "map_z": null,
     "map_r": null,
-    "bgm": 7,
-    "desc": "Surnom : Le carrefour verdoyant.\n\n\"Qu'il est bon de s'allonger dans l'herbe et de regarder le soleil passer au dessus des Plaines Dorées ! Cette immense plaine bénéficie de terres fertiles grâce au Volcan située à proximité, et baigne toute l'année dans une chaleur agréable.\n\nSituée en plus au carrefour de grandes routes, il paraît donc normal que les commerçants aient décidé d'y fonder une cité, où les appels des marchands se mélangent aux chants des ménestrels.\n\nDe grandes forteresses, au loin, rappellent les vestiges d'un temps inconnu des habitants actuels d'Ezur.\" (présentation provenant du jeu). \n\nZones et Donjons de la région\n\nIl y a quatre zones et deux donjons aux Plaines Dorées.\n\n\nZones\n\n    Orville\n    Le Mirage de Sam\n    Forêt Saken\n    Montée de Sana\n\nDonjons\n\n    Rêve du Maire (zone d'Orville)\n    Crocvenin (zone Montée de Sana)\n\nListes des Monstres\n\nMonstres simples :\n\n    Epineur vil (41)\n    Epineur acéré (41)\n    Scarabée-scorpion (41)\n    Scarabée-scorpion toxique (42)\n    Yak Tueur (42)\n    Taureau Enragé (42)\n    Taureau à Cornes de Roc (43)\n    Busard Epineux (43)\n    Rapaces à Crêtes (43)\n    Busard à Griffe Acéré (43)\n    Rapace Hachecrête (44)\n    Bandit Œil de Loup (44)\n    Soldat Œil de Loup (44)\n    Tueur Œil de Loup (44)\n    Docteur Œil de Loup (45)\n    Berseker Œil de Loup (45)\n\n\n    \"Reine Maudite des insectes\" Gilz (Boss monde)"
+    "bgm": 7
   },
   "11": {
     "name": "Terres des Dunes Éternelles",

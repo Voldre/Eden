@@ -129,9 +129,15 @@ window.addEventListener("load", () => {
     var selectedID = selectPerso.selectedIndex;
   }
   loadFiche(selectedID);
-  loadEnemy(chooseEnemy());
-  // Math.round(Math.random()*110)
-
+  if (urlParams.has("enemy")) {
+    const selectedEnemy = Object.values(enemyJSON).find(
+      (e) => e.nom == urlParams.get("enemy")
+    );
+    loadEnemy(selectedEnemy);
+  } else {
+    loadEnemy(chooseEnemy());
+    // Math.round(Math.random()*110)
+  }
   newturn();
 });
 
@@ -300,13 +306,13 @@ function Perso(persoData) {
   this.classeS = persoData.classeS;
 }
 
-function loadEnemy(indexEnemy) {
+function loadEnemy(enemyData) {
   ingame = true;
   turn = 0;
 
   // Useless with new chooseEnemy() function
-  document.querySelector(".enemies").id = indexEnemy;
-  var enemyData = enemyJSON[indexEnemy];
+  // document.querySelector(".enemies").id = indexEnemy;
+  // var enemyData = enemyJSON[indexEnemy];
 
   if (!enemyData) return;
 
@@ -415,29 +421,36 @@ function chooseEnemy(category = null) {
     });
   } else if (category == "boss") {
     enemyList = { ...enemyJSON };
-
     enemyList = Object.keys(enemyList).filter((enemy) => boss.includes(enemy));
-    console.log(enemyList);
 
     forbidden.forEach((enemyF) => {
       enemyList = enemyList.filter((enemy) => enemy != enemyF);
     });
-    console.log(enemyList);
   }
-  // console.log(enemyList);
+
   var randomEnemy = Math.floor(Math.random() * Object.keys(enemyList).length);
   // console.log(randomEnemy,enemyList)
   if (!category) {
     // console.log(enemyList[randomEnemy])
     // console.log(Object.entries(enemyJSON).find(e => e[1] == enemyList[randomEnemy])[0]);
 
-    console.log(enemyList, randomEnemy);
-    return Object.entries(enemyJSON).find(
-      (e) => e[1] == enemyList[randomEnemy]
-    )[0];
-  } else {
-    return enemyList[randomEnemy];
+    // Reset index
+    enemyList = format(enemyList);
   }
+
+  console.log(enemyList, randomEnemy);
+  return enemyList[randomEnemy];
+}
+
+function format(object) {
+  var items = {};
+
+  var i = 0;
+  for (var index in object) {
+    items[i] = object[index];
+    i++;
+  }
+  return items;
 }
 
 function dicesAverageConversion(skill) {
