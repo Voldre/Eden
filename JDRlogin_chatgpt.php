@@ -1,12 +1,10 @@
-<?php $specialPath = getenv('chatgpt_api'); 
+<?php 
 
-if(!isset($specialPath)){
-    return false
+$chatgptkey = getenv('chatgpt_api'); 
+
+if(!isset($chatgptkey)){
+    echo false;
 }else{
-    return $specialPath
+    echo $chatgptkey;
 }
-
 ?>
-
-<meta http-equiv="refresh" content="5; URL=./jdr.html">
-

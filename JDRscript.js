@@ -524,11 +524,20 @@ document.querySelector("#save").addEventListener("click", () => {
     toastNotification("Les sauvegardes sont bloquées par le MJ");
     return;
   }
-  savePerso();
-  console.log("saveFiche() done : JDRsaveFile.php executed");
+  const cookiePerso = savePerso();
+  // Save to JSON...
+  // Only store persosJSON current user (perso id)
+  console.log(cookiePerso.length);
+  document.cookie = cookiePerso;
+  if (cookiePerso.length < 4000) {
+    document.cookie = cookiePerso;
+    console.log("saveFiche() done : JDRsaveFile.php executed");
 
-  saveWithPHP("persos");
-  toastNotification("Sauvegarde effectuée");
+    saveWithPHP("persos");
+    toastNotification("Sauvegarde effectuée");
+  } else {
+    toastNotification("ECHEC : Plus de place disponible sur la fiche !", 10000);
+  }
 });
 
 function savePerso() {
@@ -585,13 +594,11 @@ function savePerso() {
     persosJSON[document.querySelector(".perso").id];
   console.log(newPerso);
 
-  // Save to JSON...
-  // Only store persosJSON current user (perso id)
-  document.cookie =
-    "persosJSON=" +
-    encodeURIComponent(JSON.stringify(newPerso)) +
-    "; SameSite=Strict";
+  // encodeURIComponent(JSON.stringify(newPerso))
+  const cookiePerso =
+    "persosJSON=" + JSON.stringify(newPerso) + "; SameSite=Strict";
 
+  return cookiePerso;
   // alert('Fiche sauvegardé sous forme de cookie avec succès')
 }
 

@@ -17,11 +17,12 @@ var mapsJSON = {};
 
 // const apiKey = data;
 
-const apiKey = "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";
+// Obsolete
+// const apiKey = "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";
 const apiUrl = "https://api.openai.com/v1/chat/completions";
 
 console.log(window.location.href);
-if (window.location.href.includes("http")) {
+if (window.location.href.includes("voldre.free.fr")) {
   xhReq.open("GET", "./JDRskills.json" + "?" + new Date().getTime(), false);
   xhReq.send(null);
 
@@ -242,12 +243,7 @@ if (window.location.href.includes("http")) {
       visuel3D: "m075",
       nom: "Sanglier Dentranchante",
       pvmax: "70",
-      skills: [
-        "Charge : fonce : 2D6+4 : force",
-        "Morsure : mord : 1D10+4 : force",
-        "",
-        "",
-      ],
+      skills: ["Charge : fonce : 2D6+4 : force", "Morsure : mord : 1D10+4 : force", "", ""],
       stats: "15,11,9,9,12",
       desc: "Sanglier brun vivant \u00e0 la Colline Tranquille",
       infos: "Faible au feu",
@@ -302,12 +298,7 @@ if (window.location.href.includes("http")) {
       visuel3D: "m025",
       nom: "Champigno\u00efde Baga",
       pvmax: "55",
-      skills: [
-        "Coup de boule : 1D10+4 : force",
-        "Spore : 1D6+4 AoE nature : intelligence",
-        "",
-        "",
-      ],
+      skills: ["Coup de boule : 1D10+4 : force", "Spore : 1D6+4 AoE nature : intelligence", "", ""],
       stats: "14,9,14,10,13",
       desc: "Petit champigno\u00efde rouge du Mont Calcaire",
       infos: "Faible au feu et \u00e0 la glace",
@@ -332,12 +323,7 @@ if (window.location.href.includes("http")) {
       visuel3D: "m083",
       nom: "Crabe carapace de fer",
       pvmax: "65",
-      skills: [
-        "Coup de pince : 1D10 + 1D6 +5 : force",
-        "Coup de carapace : 1D10+5 zone : force",
-        "",
-        "",
-      ],
+      skills: ["Coup de pince : 1D10 + 1D6 +5 : force", "Coup de carapace : 1D10+5 zone : force", "", ""],
       stats: "17,9,9,12,14",
       desc: "Gros crabe vivant \u00e0 la Baie Belouga",
       infos: "Faible au contondant et glace",
@@ -677,12 +663,7 @@ if (window.location.href.includes("http")) {
       visuel3D: "m096",
       nom: "Floraison f\u00e9tide",
       pvmax: "70",
-      skills: [
-        "Poison : AoE 1D8 +5 : intelligence",
-        "Claque : 1D0+6 : force",
-        "",
-        "",
-      ],
+      skills: ["Poison : AoE 1D8 +5 : intelligence", "Claque : 1D0+6 : force", "", ""],
       stats: "14,11,15,8,8",
       desc: "Petite floraison verd\u00e2tre avec un chapeau",
       infos: "Faible au feu et per\u00e7ant",
@@ -2078,8 +2059,7 @@ if (window.location.href.includes("http")) {
       inventaire:
         "Monture Avocat Alpaga -> Brocoli\n1 semaine de repas Alpaga\n10 m\u00e9daille d'ar\u00e8ne\nCristal asbi \u00d72\nChapeau de capitaine\nCrystal de Volesang\nPendentif occulte\nCroc de Smilodon\n2 fragment des cristaux eden\nCarapace tortue\nPierre algue\nMoi :\nBadge pirate\nLivre sur les drakais\nSac friandises poudre un reste\nPotion de confusion \u00d71\nParchemin langue chelou \n",
       argent: "48",
-      personnalite:
-        "Malvis: joviale, drôle, mignonne,fonce dans le tas, attire les problèmes, ne sait pas chanter.",
+      personnalite: "Malvis: joviale, drôle, mignonne,fonce dans le tas, attire les problèmes, ne sait pas chanter.",
       background:
         "Malvis est originaire de la haute terre et vit avec sa famille dans une ferme d'alpaga. Son p\u00e8re, puis son fr\u00e8re jumeau Milo qui a pris le relais, a poursuivi son exploration pour trouver les alpagas les plus rares au monde << alpagas dor\u00e9s >>. Cependant lors d'une exp\u00e9ditions son fr\u00e8re Milo meurt tragiquement. \nElle doit donc prendre sa place pour trouver des alpagas uniques, n\u00e9anmoins elle ne sera jamais vraiment seule lors de ses exp\u00e9ditions car l'\u00e2me de son fr\u00e8re a trouv\u00e9 refuge dans sa folie.\n",
       notes:
@@ -2251,8 +2231,7 @@ if (window.location.href.includes("http")) {
         "Personne atteinte de chuunibyou : Elle se croit \u00eatre Aradia, g\u00e9n\u00e9ral de l'arm\u00e9e de d\u00e9mon du nord, soeur de Lucifer lui-m\u00eame.\nCe personnage incarn\u00e9 permet d\u2019\u00e9chapper \u00e0 sa timidit\u00e9 et lui donne le courage de se rapprocher des autres.\n\nMalgr\u00e9 cette particularit\u00e9 et son insouciance, elle n'a pas mauvais fond et n'h\u00e9sitera pas \u00e0 prendre sous son \"commandement\" les personnes qui en ont besoin.\n",
       background:
         "Son vrai nom est Adelaide von Ryner, cousine \u00e9loign\u00e9 de Erida von Ryner.\n\nTrop loin de la succession et ne pr\u00e9sentant aucun r\u00e9sultat probant lors de son \u00e9ducation, elle n'a pas \u00e9t\u00e9 touch\u00e9 par les jeux de l'aristocratie.\nDe ce fait, elle s'isolait dans la biblioth\u00e8que pour lire un peu de tout, elle a pu ainsi apprendre sa premi\u00e8re profession illusionniste.\nElle \u00e9tait passionn\u00e9 par les histoires de h\u00e9ros et de d\u00e9mon mais principalement par le c\u00f4t\u00e9 des d\u00e9mons et c'est ainsi que Aradia, g\u00e9n\u00e9ral de l'arm\u00e9e de d\u00e9mon du nord, naquit. Elle se concentra alors pour essayer d'invoquer son premier familier.\n\nUn jour, Erida s'enfuit du fief et la famille \u00e9tait en panique afin de trouver une rempla\u00e7ante au mariage. Par chance, l'\u00e9tranget\u00e9 de la librairie ne fut m\u00eame pas consid\u00e9r\u00e9 :)\n\nApr\u00e8s de nombreuse tentative, elle pu invoqu\u00e9 et pactis\u00e9 avec son premier d\u00e9mon : (Anthith\u00e9e : d\u00e9mone mineure illusionniste) --> A voir si et comment on peut int\u00e9grer cela au Panopticor/Alternative (Trait noire on conserve, fouet \u00e0 la place de tentacule et \u00e0 voir si \u00e9volution futur?).\n\nElle laissa alors un mot dans la biblioth\u00e8que avant de partir : \nMoi, Aradia, g\u00e9n\u00e9ral de l'arm\u00e9e de d\u00e9mon du nord et soeur de Lucifer, d\u00e9clare ici pr\u00e9sent le d\u00e9but de la conqu\u00eate du monde.\n\n",
-      notes:
-        "Anurant bourbe scell\u00e9 livre.\nScl\u00e9rose pic de maelsrom\nLumi\u00e8re et tranchant",
+      notes: "Anurant bourbe scell\u00e9 livre.\nScl\u00e9rose pic de maelsrom\nLumi\u00e8re et tranchant",
     },
     9: {
       nom: "War",
@@ -2279,8 +2258,7 @@ if (window.location.href.includes("http")) {
         '["Coupe Asura","Eclair unique","Silence","Fr\u00e9n\u00e9sie des Ogres","Perce-Armure","Purgatoire","Purgatoire","Vivacit\u00e9 Accrue"]',
       eqpts:
         '["Katana Lame Noire","","","Plastron d\'Ogre","Pierre de s\u00e9curit\u00e9","Crochet porte bonheur","Noyau charg\u00e9 de Stella","Gantelet Noireflammes","Gantelet Noireflammes"]',
-      inventaire:
-        "1 potions de soin (2D10 +6)\nEcaille d'Ankylosaure\nFiole de jus de larve de reine insecte \n\n",
+      inventaire: "1 potions de soin (2D10 +6)\nEcaille d'Ankylosaure\nFiole de jus de larve de reine insecte \n\n",
       argent: "17",
       personnalite:
         "pas tr\u00e8s aimable et pas tr\u00e8s malin, il  respecte le code honneur des samourai et il est toujours pret pour combat et \u00e0 acharn\u00e9 et peu vite perdre un peu les p\u00e9dales mais s'arrete toujours avant que l'adversaire ne clames. Ce m\u00e9fit des races vu son histoire.",
@@ -2313,8 +2291,7 @@ if (window.location.href.includes("http")) {
         '["Encouragement Musical","R\u00e9surrection","Explosion Glaciale","Voile du Blizzard","Brisure Vibrante","Eclair charg\u00e9","Eclair charg\u00e9","Symphonie D\u00e9moniaque"]',
       eqpts:
         '["Guitare Electronique","","","Tenue d\'Idole","Pantoufles Discr\u00e8tes","Pierre de Chance","Charme d\'Exp\u00e9rience","Oreillette-micro","Oreillette-micro"]',
-      inventaire:
-        "2 Potion de vie (2 d\u00e9 10 +6)\nPotion de paillettes Hans ribo\nRobe de l'hiver",
+      inventaire: "2 Potion de vie (2 d\u00e9 10 +6)\nPotion de paillettes Hans ribo\nRobe de l'hiver",
       argent: "45",
       personnalite:
         "Jovial joyeux prend peu de chose au s\u00e9rieux un peu folle folle. Tr\u00e8s curieuse.\nVeut faire plaisir et sourire les gens. Toujours souriante et enjou\u00e9e.\nDes fois a vouloir \u00eatre un peu trop parfaite. Et prend un peu mal de ne pas \u00eatre connu \nCheveux rose et yeux bleu.\n\nChanteuse connue ",
@@ -2376,8 +2353,7 @@ if (window.location.href.includes("http")) {
       espritB: "15",
       skills:
         '["Gu\u00e9rison","Coupure Noire","Sacrifice d\'Ombre Noire","Pri\u00e8re Divine","Ch\u00e2timent Sacr\u00e9","Saut Dimensionnel","",""]',
-      eqpts:
-        '["Grimoire de l\'apprenti","","","Tunique de Delphes","Noyau abyssal","Anneau du rem\u00e8de","","",""]',
+      eqpts: '["Grimoire de l\'apprenti","","","Tunique de Delphes","Noyau abyssal","Anneau du rem\u00e8de","","",""]',
       inventaire: "Carapace de tortue\nFusil de guerre",
       argent: "28",
       personnalite:
@@ -2411,8 +2387,7 @@ if (window.location.href.includes("http")) {
         '["Provocation de Groupe","Charge du Guerrier","Robotisation","R\u00e9paration Armure","Mur de Titan","Protection Absolue","Attaque Cyclone","Euphorie"]',
       eqpts:
         '["Masse en Acier","Bouclier d\'\u00e9pines","","Plastron de garde","Pierre de s\u00e9curit\u00e9","Bottes de Guerre","Pendentif du Croc Brumeux","",""]',
-      inventaire:
-        "2 Potion de vie (2 d\u00e9 10 +6)\n\n1 m\u00e9daille en chocolat du tournoi versatile ",
+      inventaire: "2 Potion de vie (2 d\u00e9 10 +6)\n\n1 m\u00e9daille en chocolat du tournoi versatile ",
       argent: "5 pi\u00e8ces, plus que toutes les s\u00e9ances d'avant",
       personnalite:
         "Kibo est une petite souris qui r\u00eave de devenir grande. L'espoir et l'optimisme le guide tout au long de son chemin. Il a un sens obtus de la justice et tentera de venir en aide \u00e0 ceux qui s'\u00e9cartent du droit chemin, il s'est jur\u00e9 de prot\u00e9ger aussi bien ses amis que ses principes.\n\nLa cr\u00e9dulit\u00e9 fait partie de son quotidien, si bien qu'il est la cible r\u00e9guli\u00e8re d'arnaques qui l'ont d\u00e9pouill\u00e9 de ses richesses.\n\nIl se refuse cat\u00e9goriquement \u00e0 tuer les humano\u00efdes. ",
@@ -2477,8 +2452,7 @@ if (window.location.href.includes("http")) {
       intelB: "",
       charismeB: "",
       espritB: "",
-      skills:
-        '["","","","","A la Charge ! ","Gu\u00e9rison","Blessure Douloureuse","Saut d\'esquive"]',
+      skills: '["","","","","A la Charge ! ","Gu\u00e9rison","Blessure Douloureuse","Saut d\'esquive"]',
       eqpts: '["","","","","","","","",""]',
       inventaire: "2 Potion de vie (2 d\u00e9 10 +6)",
       argent: "50",
@@ -2509,8 +2483,7 @@ if (window.location.href.includes("http")) {
       espritB: "courage",
       skills:
         '["Coupe Asura","Dash Foudroyant","Purgatoire","Mode Draconique","Armure Draconique","Pouvoir du dragon","Terreur du Dragon","Revers d\'\u00e9caille"]',
-      eqpts:
-        '["Katana Plume","","","Plastron de garde","Gourde Miraculeuse","Amulette d\'exp\u00e9rience","","",""]',
+      eqpts: '["Katana Plume","","","Plastron de garde","Gourde Miraculeuse","Amulette d\'exp\u00e9rience","","",""]',
       inventaire: "1 potion 2 des 10 +6\nPlastron en mailles",
       argent: "5",
       personnalite:
@@ -2671,8 +2644,7 @@ if (window.location.href.includes("http")) {
         '["Aura : Bouclier protecteur","Aura : Ami du Marteau","B\u00e9n\u00e9diction de la Lumi\u00e8re","R\u00e9surrection","Vent Purificateur","Ch\u00e2timent Sacr\u00e9","Marteau du Scellement","Gr\u00e2ce de la Sagesse"]',
       eqpts:
         '["Sceptre du shaman","","","Robe \u00e9toil\u00e9e","Chapeau de champigno\u00efde","Amulette d\'exp\u00e9rience","","",""]',
-      inventaire:
-        "Marteau du chevalier\nHach\u00e9 de glace\n2 potions de soin (2D10 +6)",
+      inventaire: "Marteau du chevalier\nHach\u00e9 de glace\n2 potions de soin (2D10 +6)",
       argent: "60",
       personnalite:
         "Un peu cr\u00e9dule, elle ne connait pour le moment que les zones proche de son enfance. Elle adore soigner son prochain, m\u00eame si le soin peut \u00eatre un peu brutal parfois (Ogre :) )",
@@ -2747,17 +2719,13 @@ if (window.location.href.includes("http")) {
 }
 
 function getData(filename) {
-  xhReq.open(
-    "GET",
-    "./JDR" + filename + ".json" + "?" + new Date().getTime(),
-    false
-  );
+  xhReq.open("GET", "./JDR" + filename + ".json" + "?" + new Date().getTime(), false);
   xhReq.send(null);
   return JSON.parse(xhReq.responseText);
 }
 
 // Load perso if URL parameter
-window.addEventListener("load", () => {
+window.addEventListener("load", async () => {
   const urlParams = new URLSearchParams(window.location.search);
   if (!urlParams.has("perso")) {
     document.querySelector("body").innerHTML =
@@ -2768,9 +2736,7 @@ window.addEventListener("load", () => {
   const indexPerso = urlParams.get("perso") - 1;
   const persoData = persosJSON[indexPerso];
   const enemyData = chooseEnemy();
-  const randomPNJ = Math.floor(
-    Math.random() * Object.entries(pnjJSON).length + 1
-  );
+  const randomPNJ = Math.floor(Math.random() * Object.entries(pnjJSON).length + 1);
   console.log(randomPNJ);
   const pnjData = pnjJSON[randomPNJ];
 
@@ -2778,8 +2744,7 @@ window.addEventListener("load", () => {
   const mapID = Math.round(Math.random() * 7 + 3);
   const mapData = mapsJSON[mapID.toString()];
 
-  document.querySelector(".game").style.backgroundImage =
-    "url('./images/loadingframe/Loading_" + mapID + "B.jpg')";
+  document.querySelector(".game").style.backgroundImage = "url('./images/loadingframe/Loading_" + mapID + "B.jpg')";
 
   document.querySelector("#mapName").innerText = mapData["name"];
 
@@ -2792,58 +2757,25 @@ window.addEventListener("load", () => {
     actions = ["Accepter la Quête", "Refuser la Quête"];
   }
 
-  initializeActions(actions);
+  initializeActions(actions, enemyData, pnjEnemy);
 
   document.querySelector("#pnj").src = "./images/PNJ/" + pnjData["id"] + ".png";
   document.querySelector("#persoName").innerText = persoData["nom"];
-  document.querySelector("#perso").src = persoData["pp"].replace(
-    "http://voldre.free.fr/Eden",
-    "."
-  );
+  document.querySelector("#perso").src = persoData["pp"].replace("http://voldre.free.fr/Eden", ".");
 
-  document.querySelector("#enemy").src =
-    "./images/monsters/" + enemyData.visuel3D + ".png";
+  document.querySelector("#enemy").src = "./images/monsters/" + enemyData.visuel3D + ".png";
   // Math.round(Math.random()*110)
 
   const instruction =
     "Consignes à respecter : Tu dois parler pour demander de l'aide à " +
     persoData["nom"] +
-    ".\n Ta réponse doit faire 5 à 6 phrases avec des paragraphes et saute des lignes à chaque phrase. Enfin : " +
+    ".\n Ta réponse doit faire entre 6 à 8 phrases avec des paragraphes et saute des lignes à chaque phrase. Enfin : " +
     pnjData["lang"];
 
-  const pnjDesc =
-    "Ton personnage est " + pnjData["nom"] + ". Tu es : " + pnjData["desc"];
-  const mapDesc =
-    "Tu vies au (à la) " +
-    mapData["name"] +
-    ", description : " +
-    mapData["desc"];
-  const enemyDesc =
-    "Là où tu vies, vous avez des problèmes avec : " +
-    enemyData["nom"] +
-    ", cette personne est : " +
-    enemyData["desc"];
-  const persoDesc =
-    "La personne a qui tu parles, et à qui tu vas demander de l'aide s'appelle " +
-    persoData["nom"] +
-    ", voici sa personnalité : " +
-    persoData["personnalite"];
-  // ". Et voici son histoire : " +persoData["background"];
-
-  const message =
-    "Tu incarnes un personnage dans l'univers de Eden Eternal." +
-    pnjDesc +
-    "\n" +
-    persoData +
-    "\n" +
-    mapDesc +
-    "\n" +
-    enemyDesc +
-    "\n" +
-    persoDesc;
-
+  const message = writeMessage(persoData, pnjData, mapData, enemyData);
   // const message = "Bonjour, que pouvez-vous me dire sur les étoiles ?";
-
+  console.log(message);
+  const apiKey = await getChatGPTKey();
   fetch(apiUrl, {
     method: "POST",
     headers: {
@@ -2863,19 +2795,13 @@ window.addEventListener("load", () => {
     .then((data) => {
       console.log(data);
       const response = data.choices[0].message.content;
-      document.querySelector("#response").innerHTML = response.replaceAll(
-        "\n",
-        "<br/>"
-      );
-      // Affichez la réponse de l'assistant dans votre application web
+      document.querySelector("#response").innerHTML = response.replaceAll("\n", "<br/>");
     })
     .catch((error) => {
-      console.error("Erreur lors de la requête à l'API :", error);
+      console.error("Erreur lors de la requête à l'API :", JSON.stringify(error));
     });
 
   // Assurez-vous de consulter la documentation de l'API ChatGPT d'OpenAI pour obtenir des informations détaillées sur la manière d'envoyer des requêtes et de gérer les interactions conversationnelles avec le modèle.
-  //   },
-  // });
 });
 
 function chooseEnemy(category = null) {
@@ -2927,39 +2853,61 @@ function format(object) {
   return items;
 }
 
-function initializeActions(actions) {
-  const urlParams = new URLSearchParams(window.location.search);
-  const indexPerso = urlParams.get("perso") - 1;
+function getChatGPTKey() {
+  return $.ajax({
+    url: "JDRlogin_chatgpt.php",
+    type: "POST",
+    data: {},
+    error: function (error) {
+      console.log(error);
 
-  Object.entries(actions).forEach((id, action) => {
+      alert("Echec de la récupération de la clé de l'API ChatGPT :" + JSON.stringify(error));
+    },
+  });
+}
+
+function writeMessage(persoData, pnjData, mapData, enemyData) {
+  const pnjDesc = "Ton personnage est " + pnjData["nom"] + ". Tu es : " + pnjData["desc"];
+  const mapDesc = "Tu vies au (à la) " + mapData["name"] + ", description : " + mapData["desc"];
+  const enemyDesc =
+    "Là où tu vies, vous avez des problèmes avec : " + enemyData["nom"] + ", cette personne est : " + enemyData["desc"];
+  const persoDesc =
+    "La personne a qui tu parles, et à qui tu vas demander de l'aide s'appelle " +
+    persoData["nom"] +
+    ", voici sa personnalité : " +
+    persoData["personnalite"];
+  // ". Et voici son histoire : " +persoData["background"];
+
+  return (message = `Tu incarnes un personnage dans l'univers de Eden Eternal. 
+  ${pnjDesc}.\n ${mapDesc}.\n ${enemyDesc}.\n ${persoDesc}.\n`);
+}
+
+function initializeActions(actions, enemyData, pnjEnemy = { nom: null }) {
+  const urlParams = new URLSearchParams(window.location.search);
+  const indexPerso = urlParams.get("perso");
+
+  Object.entries(actions).forEach(([id, action]) => {
     const liElem = document.createElement("li");
     liElem.innerText = action;
-    document.querySelector("#actions").append(liElem);
 
-    const dirname =
-      window.location.host || "file:///C:/wamp/www/Site%20free.fr";
-
+    const dirname = window.location.host || "file:///C:/wamp/www/Site%20free.fr";
     var enemy;
+    var actionURL;
     if (id == 0) {
       enemy = enemyData["nom"];
-      window.location.href =
-        dirname +
-        "/Eden/jdr_combat.html?perso=" +
-        indexPerso +
-        "&enemy=" +
-        enemy;
+      actionURL = "jdr_combat.html?perso=" + indexPerso + "&enemy=" + enemy;
     } else if (id == 1) {
-      // Make Home page
-      window.location.href = dirname + "/Eden/jdr_.html?perso=" + indexPerso;
+      // @TODO : Créer la HomePage
+      actionURL = "jdr_.html?perso=" + indexPerso;
     } else if (id == 2) {
       // Change enemy
       enemy = pnjEnemy["nom"];
-      window.location.href =
-        dirname +
-        "/Eden/jdr_combat.html?perso=" +
-        indexPerso +
-        "&enemy=" +
-        enemy;
+      actionURL = "jdr_combat.html?perso=" + indexPerso + "&enemy=" + enemy;
     }
+
+    liElem.addEventListener("click", () => {
+      window.location.href = actionURL;
+    });
+    document.querySelector("#actions").append(liElem);
   });
 }
