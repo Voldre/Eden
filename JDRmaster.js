@@ -23,11 +23,7 @@ if (window.location.href.includes("http")) {
 }
 
 function getData(filename) {
-  xhReq.open(
-    "GET",
-    "./JDR" + filename + ".json" + "?" + new Date().getTime(),
-    false
-  );
+  xhReq.open("GET", "./JDR" + filename + ".json" + "?" + new Date().getTime(), false);
   xhReq.send(null);
   return JSON.parse(xhReq.responseText);
 }
@@ -55,12 +51,8 @@ function updateSlots() {
   var enemiesList = [...document.querySelectorAll(".infoEnnemi")].filter(
     (infoE) => infoE.querySelector(".ennemi").value != ""
   );
-  var persosList = [...document.querySelectorAll(".perso")].filter(
-    (persoE) => persoE.children[0].value != ""
-  );
-  allSlots = [...enemiesList, ...persosList] || [
-    document.querySelectorAll(".infoEnnemi"),
-  ];
+  var persosList = [...document.querySelectorAll(".perso")].filter((persoE) => persoE.children[0].value != "");
+  allSlots = [...enemiesList, ...persosList] || [document.querySelectorAll(".infoEnnemi")];
 }
 
 // Next turn
@@ -74,15 +66,12 @@ allTurnE.forEach((turnE) => {
 
     if (allSlots.length == slotID + 1) {
       // If all done, new turn
-      document.querySelector("#tour").value =
-        parseInt(document.querySelector("#tour").value) + 1;
+      document.querySelector("#tour").value = parseInt(document.querySelector("#tour").value) + 1;
       slotID = -1;
     }
 
     // Turn of character done
-    [
-      ...mainE.querySelector("#buffs").querySelectorAll('input[type="number"]'),
-    ].forEach((buffTurnE) => {
+    [...mainE.querySelector("#buffs").querySelectorAll('input[type="number"]')].forEach((buffTurnE) => {
       if (buffTurnE.value > 0) {
         buffTurnE.value -= 1;
       }
@@ -108,9 +97,7 @@ document.addEventListener(
       }
     }
     if (e.target.firstChild.attributes) {
-      var currentBGM = e.target.firstChild.attributes.src.nodeValue
-        .split("/")[1]
-        .split(".")[0];
+      var currentBGM = e.target.firstChild.attributes.src.nodeValue.split("/")[1].split(".")[0];
       console.log(currentBGM);
       document.getElementById("currentMusic").innerText =
         document.getElementById(currentBGM).innerText + " (" + currentBGM + ")";
@@ -142,7 +129,7 @@ console.log(elementsCount);
 document.querySelector("#filtre").addEventListener("change", (e) => {
   document.querySelector("#filteredEnemys").innerHTML = null;
   var enemiesList = Object.values(enemyJSON).filter((enemy) =>
-    enemy.nom.toLowerCase().includes(e.target.value)
+    enemy.nom.toLowerCase().includes(e.target.value.toLowerCase())
   );
   enemiesList.forEach((enemy) => {
     var liElem = document.createElement("li");
@@ -175,9 +162,7 @@ document.querySelector("#filtre").addEventListener("change", (e) => {
 function loadEnemy(indexEnemy, indexElement) {
   updateSlots();
 
-  var ennemiElement = [...document.querySelectorAll(".infoEnnemi")][
-    indexElement
-  ];
+  var ennemiElement = [...document.querySelectorAll(".infoEnnemi")][indexElement];
 
   var enemyData = enemyJSON[indexEnemy];
 
@@ -198,17 +183,14 @@ function loadEnemy(indexEnemy, indexElement) {
     ennemiElement.querySelector("#charisme").value = "";
     ennemiElement.querySelector("#esprit").value = "";
 
-    [...ennemiElement.querySelectorAll(".competence")].forEach(
-      (e) => (e.innerText = "")
-    );
+    [...ennemiElement.querySelectorAll(".competence")].forEach((e) => (e.innerText = ""));
 
     return;
   }
 
   // ennemiElement.querySelector('#nom').innerText = enemyData.nom;
   ennemiElement.querySelector("#desc").innerText = "Desc : " + enemyData.desc;
-  ennemiElement.querySelector("#infos").innerText =
-    "Infos / BP : " + enemyData.infos;
+  ennemiElement.querySelector("#infos").innerText = "Infos / BP : " + enemyData.infos;
   ennemiElement.querySelector("#drop").innerText = "Drop : " + enemyData.drop;
   ennemiElement.querySelector("#visuel").innerText = enemyData.visuel3D;
   ennemiElement.querySelector(".icon").src =
@@ -217,16 +199,13 @@ function loadEnemy(indexEnemy, indexElement) {
   ennemiElement.querySelector("#pv").value = enemyData.pvmax;
 
   var nbP = document.querySelector("#nbP").value; // new functionality 28/08/2023
-  ennemiElement.querySelector("#pvmax").value = Math.round(
-    enemyData.pvmax * (1 + (nbP - 3) * 0.33)
-  );
+  ennemiElement.querySelector("#pvmax").value = Math.round(enemyData.pvmax * (1 + (nbP - 3) * 0.33));
 
   // Stats
   ennemiElement.querySelector("#force").value = enemyData.stats.split(",")[0];
   ennemiElement.querySelector("#dexté").value = enemyData.stats.split(",")[1];
   ennemiElement.querySelector("#intel").value = enemyData.stats.split(",")[2];
-  ennemiElement.querySelector("#charisme").value =
-    enemyData.stats.split(",")[3];
+  ennemiElement.querySelector("#charisme").value = enemyData.stats.split(",")[3];
   ennemiElement.querySelector("#esprit").value = enemyData.stats.split(",")[4];
 
   // Skills de l'ennemi
@@ -295,16 +274,14 @@ document.querySelector("#allowSave").addEventListener("click", () => {
 
   masterJSON.notes = document.querySelector(".notes").value;
 
-  document.cookie =
-    "masterJSON=" + encodeURIComponent(JSON.stringify(masterJSON));
+  document.cookie = "masterJSON=" + encodeURIComponent(JSON.stringify(masterJSON));
   saveWithPHP("master"); // Save it to JSON
   toastNotification("Autorisation modifiée");
 });
 
 document.querySelector("#save").addEventListener("click", () => {
   masterJSON.notes = document.querySelector(".notes").value;
-  document.cookie =
-    "masterJSON=" + encodeURIComponent(JSON.stringify(masterJSON));
+  document.cookie = "masterJSON=" + encodeURIComponent(JSON.stringify(masterJSON));
   saveWithPHP("master"); // Save it to JSON
   toastNotification("Données sauvegardées");
 });
@@ -342,12 +319,10 @@ document.querySelector("#newEnemy").addEventListener("click", () => {
     // Desktop view
     if (allEnemies[3].style.display == "none") {
       allEnemies[3].style.display = "block";
-      document.querySelector(".combat").style.gridTemplateColumns =
-        "25vw 25vw 25vw 25vw";
+      document.querySelector(".combat").style.gridTemplateColumns = "25vw 25vw 25vw 25vw";
     } else {
       allEnemies[3].style.display = "none";
-      document.querySelector(".combat").style.gridTemplateColumns =
-        "33vw 33vw 33vw";
+      document.querySelector(".combat").style.gridTemplateColumns = "33vw 33vw 33vw";
     }
   }
 });
@@ -370,8 +345,9 @@ document.querySelector("#updatePInfo").addEventListener("click", () => {
     var player = persosJSON[(parseInt(pID) - 1).toString()]; // Car index 0 à la première
     if (!player) return; // Can't continue
 
-    [...document.querySelectorAll(".perso")][index].children[0].value =
-      player.nom;
+    if ([...document.querySelectorAll(".perso")][index])
+      [...document.querySelectorAll(".perso")][index].children[0].value = player.nom;
+
     var liElem = document.createElement("li");
     liElem.innerText = player.nom + " : " + player.pv + "/" + player.pvmax;
     pInfo.append(liElem);
@@ -406,8 +382,7 @@ document.querySelector("#createSkill").addEventListener("click", () => {
   };
   console.log(newSkill);
 
-  document.cookie =
-    "skillsJSON=" + encodeURIComponent(JSON.stringify(newSkill));
+  document.cookie = "skillsJSON=" + encodeURIComponent(JSON.stringify(newSkill));
 
   saveWithPHP("skills");
   skillsJSON[skillID] = newSkill[skillID];

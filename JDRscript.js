@@ -21,11 +21,7 @@ if (window.location.href.includes("http")) {
 }
 
 function getData(filename) {
-  xhReq.open(
-    "GET",
-    "./JDR" + filename + ".json" + "?" + new Date().getTime(),
-    false
-  );
+  xhReq.open("GET", "./JDR" + filename + ".json" + "?" + new Date().getTime(), false);
   xhReq.send(null);
   return JSON.parse(xhReq.responseText);
 }
@@ -46,8 +42,7 @@ const poids = [ "Moyen", "Léger", "Lourd", "Léger", "Moyen", "Moyen", "Léger"
 
 // RACES
 document.querySelector("#race").addEventListener("change", (e) => {
-  document.querySelector(".poids").innerText =
-    poids[races.indexOf(e.target.value)];
+  document.querySelector(".poids").innerText = poids[races.indexOf(e.target.value)];
 });
 
 // CLASSES
@@ -69,9 +64,7 @@ document.querySelectorAll('[id^="classe"]').forEach((classeElem, i) => {
       console.log(e.target.value + " is not a class (in the list)");
     } else {
       document.querySelector(".iconClasses").children[i].src =
-        "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" +
-        iconsClasses[selectedClasseID] +
-        ".png";
+        "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" + iconsClasses[selectedClasseID] + ".png";
       updateSkillsList();
     }
   });
@@ -102,23 +95,15 @@ document.querySelector("#xp").addEventListener("change", (e) => {
 
   // Nouveauté 27/05 : 4eme accessoire au niveau 4
   if (niv >= 4) {
-    document
-      .querySelector(".equipements")
-      .lastElementChild.previousElementSibling.classList.remove("hide");
+    document.querySelector(".equipements").lastElementChild.previousElementSibling.classList.remove("hide");
   } else {
-    document
-      .querySelector(".equipements")
-      .lastElementChild.previousElementSibling.classList.add("hide");
+    document.querySelector(".equipements").lastElementChild.previousElementSibling.classList.add("hide");
   }
   // Nouveauté 12/06 : 5eme accessoire au niveau 8
   if (niv >= 8) {
-    document
-      .querySelector(".equipements")
-      .lastElementChild.classList.remove("hide");
+    document.querySelector(".equipements").lastElementChild.classList.remove("hide");
   } else {
-    document
-      .querySelector(".equipements")
-      .lastElementChild.classList.add("hide");
+    document.querySelector(".equipements").lastElementChild.classList.add("hide");
   }
 });
 
@@ -127,10 +112,7 @@ function statsVerification(sommeStats, niv) {
   var statsRequired = 61 + Math.trunc(parseInt(niv) / 5);
   if (sommeStats != statsRequired) {
     document.querySelector("#errorStat").innerText =
-      " - Attention, vos points de stats ne sont pas bon : " +
-      sommeStats +
-      ", attendu : " +
-      statsRequired;
+      " - Attention, vos points de stats ne sont pas bon : " + sommeStats + ", attendu : " + statsRequired;
   } else {
     document.querySelector("#errorStat").innerText = "";
   }
@@ -148,8 +130,7 @@ document.querySelector(".stats").addEventListener("change", () => {
 // STRESS
 document.querySelector("#stress").addEventListener("change", (e) => {
   if (e.target.value >= 50) {
-    document.querySelector("#stressImpact").innerText =
-      "(Stats -" + Math.trunc(e.target.value / 50) + ")";
+    document.querySelector("#stressImpact").innerText = "(Stats -" + Math.trunc(e.target.value / 50) + ")";
   } else {
     document.querySelector("#stressImpact").innerText = "";
   }
@@ -218,9 +199,7 @@ function removeOptions(selectElement) {
 }
 
 function insertSkill(skillElement, skillName) {
-  var selectedSkill = Object.values(skillsJSON).find(
-    (skill) => skill.nom == skillName
-  );
+  var selectedSkill = Object.values(skillsJSON).find((skill) => skill.nom == skillName);
 
   if (!selectedSkill) {
     if (skillName != "") {
@@ -232,13 +211,9 @@ function insertSkill(skillElement, skillName) {
     skillElement.children[3].title = "";
     skillElement.children[4].innerText = "";
   } else {
-    skillElement.children[1].innerText =
-      selectedSkill.effet + " / " + selectedSkill.stat;
+    skillElement.children[1].innerText = selectedSkill.effet + " / " + selectedSkill.stat;
     skillElement.children[2].innerText = selectedSkill.montant;
-    skillElement.children[3].src =
-      "http://voldre.free.fr/Eden/images/skillIcon/" +
-      selectedSkill.icone +
-      ".png";
+    skillElement.children[3].src = "http://voldre.free.fr/Eden/images/skillIcon/" + selectedSkill.icone + ".png";
     skillElement.children[3].title = selectedSkill.desc;
     skillElement.children[4].innerText = selectedSkill.desc;
 
@@ -290,8 +265,7 @@ function insertEqpt(eqptElement, eqptName) {
   } else {
     eqptElement.children[1].innerText = selectedEqpt.effet;
     eqptElement.children[2].innerText = selectedEqpt.montant;
-    eqptElement.children[3].src =
-      "http://voldre.free.fr/Eden/images/items/" + selectedEqpt.icone + ".png";
+    eqptElement.children[3].src = "http://voldre.free.fr/Eden/images/items/" + selectedEqpt.icone + ".png";
     eqptElement.children[3].title = selectedEqpt.desc;
     eqptElement.children[4].innerText = selectedEqpt.desc;
   }
@@ -340,8 +314,7 @@ function loadFiche(indexPerso) {
   document.querySelector("#stress").value = persoData.stress;
 
   if (persoData.stress >= 50) {
-    document.querySelector("#stressImpact").innerText =
-      "(Stats -" + Math.trunc(persoData.stress / 50) + ")";
+    document.querySelector("#stressImpact").innerText = "(Stats -" + Math.trunc(persoData.stress / 50) + ")";
   } else {
     document.querySelector("#stressImpact").innerText = "";
   }
@@ -365,13 +338,9 @@ function loadFiche(indexPerso) {
   var classePID = classes.indexOf(persoData.classeP);
   var classeSID = classes.indexOf(persoData.classeS);
   document.querySelector(".iconClasses").children[0].src =
-    "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" +
-    iconsClasses[classePID] +
-    ".png";
+    "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" + iconsClasses[classePID] + ".png";
   document.querySelector(".iconClasses").children[1].src =
-    "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" +
-    iconsClasses[classeSID] +
-    ".png";
+    "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" + iconsClasses[classeSID] + ".png";
   updateSkillsList();
 
   updateSkillsSlots();
@@ -387,23 +356,15 @@ function loadFiche(indexPerso) {
 
   // Nouveauté 27/05 : 4eme accessoire si le perso est au moins niveau 4
   if (persoData.niv >= 4) {
-    document
-      .querySelector(".equipements")
-      .lastElementChild.previousElementSibling.classList.remove("hide");
+    document.querySelector(".equipements").lastElementChild.previousElementSibling.classList.remove("hide");
   } else {
-    document
-      .querySelector(".equipements")
-      .lastElementChild.previousElementSibling.classList.add("hide");
+    document.querySelector(".equipements").lastElementChild.previousElementSibling.classList.add("hide");
   }
   // Nouveauté 12/06 : 5eme accessoire au niveau 8
   if (persoData.niv >= 8) {
-    document
-      .querySelector(".equipements")
-      .lastElementChild.classList.remove("hide");
+    document.querySelector(".equipements").lastElementChild.classList.remove("hide");
   } else {
-    document
-      .querySelector(".equipements")
-      .lastElementChild.classList.add("hide");
+    document.querySelector(".equipements").lastElementChild.classList.add("hide");
   }
 
   // Skills du perso
@@ -415,17 +376,14 @@ function loadFiche(indexPerso) {
 
   // Equipements du perso
   JSON.parse(persoData.eqpts).forEach((eqpt, index) => {
-    var equipement = [...document.querySelector(".equipements").children][
-      index
-    ];
+    var equipement = [...document.querySelector(".equipements").children][index];
     equipement.children[0].value = eqpt;
     insertEqpt(equipement, eqpt);
   });
 
   // Inventaire du perso
   (document.querySelector(".inventaire").value = persoData.inventaire),
-    (document.querySelector(".poids").innerText =
-      poids[races.indexOf(persoData.race)]);
+    (document.querySelector(".poids").innerText = poids[races.indexOf(persoData.race)]);
 
   document.querySelector("#argent").value = persoData.argent;
 
@@ -436,11 +394,7 @@ function loadFiche(indexPerso) {
 //  DOWNLOAD as FILE
 // Function to download data to a file
 document.querySelector("#download").addEventListener("click", () => {
-  download(
-    JSON.stringify(persosJSON[document.querySelector(".perso").id]),
-    selectedPerso + ".json",
-    "text/plain"
-  );
+  download(JSON.stringify(persosJSON[document.querySelector(".perso").id]), selectedPerso + ".json", "text/plain");
 });
 
 function download(data, filename, type) {
@@ -590,13 +544,11 @@ function savePerso() {
   console.log(persosJSON);
 
   var newPerso = {};
-  newPerso[document.querySelector(".perso").id] =
-    persosJSON[document.querySelector(".perso").id];
+  newPerso[document.querySelector(".perso").id] = persosJSON[document.querySelector(".perso").id];
   console.log(newPerso);
 
   // encodeURIComponent(JSON.stringify(newPerso))
-  const cookiePerso =
-    "persosJSON=" + JSON.stringify(newPerso) + "; SameSite=Strict";
+  const cookiePerso = "persosJSON=" + JSON.stringify(newPerso).replaceAll("+", "%2B") + "; SameSite=Strict";
 
   return cookiePerso;
   // alert('Fiche sauvegardé sous forme de cookie avec succès')
