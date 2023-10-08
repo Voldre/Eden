@@ -2096,7 +2096,7 @@
     "nom": "Marteau du Sage",
     "desc": "Un marteau con\u00e7u pour aider les sages.",
     "effet": "Intelligence +1",
-    "montant": "D\u00e9g\u00e2t +6, Soin PV +2 (+1 si sage)",
+    "montant": "D\u00e9g\u00e2t +6, Soin PV +2 (AoE 1) (+1 si sage)",
     "icone": "W40908"
   },
   "302": {
@@ -2266,5 +2266,19 @@
     "effet": "",
     "montant": "D\u00e9g\u00e2t +8, r\u00e9ussite des sorts +1",
     "icone": "W51002"
+  },
+  "326": {
+    "nom": "Joyau de Sekhmet",
+    "desc": "Un joyau rouge mal\u00e9fique contenant l'\u00e2me d'une ancienne guerri\u00e8re d'il y a plusieurs si\u00e8cles : Sekhmet. Une force mal\u00e9fique en \u00e9mane.",
+    "effet": "Conversion Lumi\u00e8re en T\u00e9n\u00e8bres",
+    "montant": "Force +1, Intelligence +1",
+    "icone": "i01082b"
+  },
+  "327": {
+    "nom": "Graine Sacr\u00e9e",
+    "desc": "Cette graine provient d'un marais sp\u00e9cial. Il est dit qu'il conf\u00e8re \u00e0 son porteur une protection.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -2, d\u00e9g\u00e2t nature +3",
+    "icone": "I00160"
   }
 }
