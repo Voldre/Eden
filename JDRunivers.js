@@ -11,6 +11,7 @@ if (window.location.href.includes("http")) {
   // xhReq.send(null);
   // var persosJSON = JSON.parse(xhReq.responseText);
 } else {
+  // eslint-disable-next-line no-redeclare
   var skillsJSON = {};
 }
 
@@ -52,10 +53,7 @@ classes.forEach((classe, i) => {
   }
   nomE.innerText = classe;
   var iconeE = document.createElement("img");
-  iconeE.src =
-    "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" +
-    iconsClasses[i] +
-    ".png";
+  iconeE.src = "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" + iconsClasses[i] + ".png";
 
   classeE.append(nomE);
   classeE.append(iconeE);
@@ -71,15 +69,14 @@ classes.forEach((classe, i) => {
     });
     selectedE.classList.add("highlight");
 
-    document.querySelector(".classeDesc").innerHTML =
-      classesDesc[classes.indexOf(selectedE.id)];
+    document.querySelector(".classeDesc").innerHTML = classesDesc[classes.indexOf(selectedE.id)];
     // document.querySelector('.classeDesc').setHTML(classesDesc[classes.indexOf(selectedE.id)]);
     updateSkillsList(selectedE.id);
   });
 });
 
 // Show/Hide races
-buttonRace = document.querySelector("#buttonRace");
+const buttonRace = document.querySelector("#buttonRace");
 buttonRace.addEventListener("click", () => {
   if (buttonRace.innerText == "Afficher") {
     buttonRace.innerText = "Masquer";
@@ -89,7 +86,7 @@ buttonRace.addEventListener("click", () => {
   document.querySelector("#race").classList.toggle("hide");
 });
 // Show/Hide elements
-buttonElem = document.querySelector("#buttonElem");
+const buttonElem = document.querySelector("#buttonElem");
 buttonElem.addEventListener("click", () => {
   if (buttonElem.innerText == "Afficher") {
     buttonElem.innerText = "Masquer";
@@ -125,8 +122,7 @@ function updateSkillsList(classe) {
     descE.innerText = skill.desc;
     effetE.innerText = skill.effet + " / " + skill.stat + " / " + skill.classe; // Ajout Sanofi
     montantE.innerText = skill.montant;
-    iconeE.src =
-      "http://voldre.free.fr/Eden/images/skillIcon/" + skill.icone + ".png";
+    iconeE.src = "http://voldre.free.fr/Eden/images/skillIcon/" + skill.icone + ".png";
 
     skillE.append(nomE);
     skillE.append(descE);
@@ -138,17 +134,17 @@ function updateSkillsList(classe) {
   });
 }
 
-// Counts which stats are most used for skills
+// ANALYZE :  Counts which stats are most used for skills
 
+// Nb skills by stats
 var skillsJSONStat = Object.values(skillsJSON).map((skill) => skill.stat);
-
 const occurrences = skillsJSONStat.reduce(function (acc, curr) {
   return acc[curr] ? ++acc[curr] : (acc[curr] = 1), acc;
 }, {});
 
-document.querySelector(".statsBySkills").innerText =
-  JSON.stringify(occurrences);
+document.querySelector(".statsBySkills").innerText = JSON.stringify(occurrences);
 
+// Nb skills by effect
 var skillsJSONEffect = Object.values(skillsJSON).map((skill) => skill.effet);
 const listEffects = skillsJSONEffect.reduce(function (acc, curr) {
   return acc[curr] ? ++acc[curr] : (acc[curr] = 1), acc;
@@ -156,20 +152,29 @@ const listEffects = skillsJSONEffect.reduce(function (acc, curr) {
 
 console.log("Nb skills by effect", listEffects);
 
-var skillsJSONClass = Object.values(skillsJSON).map((skill) => skill.classe);
+// Nb skills by class
+const skillsJSONClass = Object.values(skillsJSON).map((skill) => skill.classe);
 const listSkillsByClass = skillsJSONClass.reduce(function (acc, curr) {
   return acc[curr] ? ++acc[curr] : (acc[curr] = 1), acc;
 }, {});
 
-console.log("Nb skills by class", listSkillsByClass);
+const skillsJSONClassIndiv = [].concat(...skillsJSONClass);
+const listSkillsByClassIndiv = skillsJSONClassIndiv.reduce(function (acc, curr) {
+  return acc[curr] ? ++acc[curr] : (acc[curr] = 1), acc;
+}, {});
 
-allListSkillsByClassByStats = {};
+console.log("Nb skills by class", listSkillsByClass);
+console.log(
+  "Nb skills by class (Indiv)",
+  Object.entries(listSkillsByClassIndiv).sort((a, b) => b[1] - a[1])
+);
+
+// Nb skills by class by stat
+var allListSkillsByClassByStats = {};
 classes.forEach((classe) => {
-  skillsClass = Object.values(skillsJSON).filter(
-    (skill) => skill.classe == classe
-  );
+  const skillsClass = Object.values(skillsJSON).filter((skill) => skill.classe == classe);
   // console.log(skillsClass)
-  skillsClassStats = Object.values(skillsClass).map((skill) => skill.stat);
+  const skillsClassStats = Object.values(skillsClass).map((skill) => skill.stat);
   // console.log(skillsClassStats)
   var listSkillsByClassStats = skillsClassStats.reduce(function (acc, curr) {
     return acc[curr] ? ++acc[curr] : (acc[curr] = 1), acc;
@@ -180,7 +185,7 @@ console.log("Nb skills by class by stat", allListSkillsByClassByStats);
 
 // ---
 
-labelsDescription = {
+const labelsDescription = {
   critique:
     "Le Dé 1 est une réussite critique (dégâts et buffs au max), le Dé 2 un semi-critique (boosté). Pareil pour les échecs avec Dé 19 et Dé 20.",
   invisible:
@@ -200,7 +205,7 @@ document.querySelectorAll("label").forEach((label) => {
 
   label.addEventListener("click", () => {
     dialog.innerText = "";
-    text = document.createElement("p");
+    const text = document.createElement("p");
     text.innerHTML = labelsDescription[label.htmlFor]; // description
     dialog.append(text);
     // Bouton de fermeture
