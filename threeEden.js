@@ -1,4 +1,5 @@
-var scene, camera, renderer, mesh, mesh2;
+/* eslint-disable no-undef */
+var scene, camera, renderer, mesh;
 var meshFloor, ambientLight, light;
 
 var keyboard = {};
@@ -17,7 +18,7 @@ var maplist;
 let folder;
 
 function initPlayer(factor = 1) {
-  factorSpeed = onMap ? 4 : 1;
+  const factorSpeed = onMap ? 4 : 1;
   // if(onMap){
   //     factorSpeed = 5;
   // }else{ factorSpeed = 1;}
@@ -41,11 +42,8 @@ function initPlayer(factor = 1) {
 
 function myObjectInit() {
   // Si une map est précisée dans l'URL    et qu'on n'a pas demandé de map (dans le select)
-  if (
-    typeof window.location.search.split("&")[1] != "undefined" &&
-    !myrequest
-  ) {
-    myValue = window.location.search.split("&")[1].split("=")[1];
+  if (typeof window.location.search.split("&")[1] != "undefined" && !myrequest) {
+    var myValue = window.location.search.split("&")[1].split("=")[1];
     while (myValue.length < 3) {
       myValue = "0" + myValue;
     }
@@ -65,8 +63,7 @@ function initForMap() {
   // folder = folder.split("&")[0];
 
   if (typeof folder == "undefined") {
-    document.getElementById("google_translate_element").style.display =
-      "inline";
+    document.getElementById("google_translate_element").style.display = "inline";
     return console.warn("En attente de la sélection");
   }
 
@@ -84,8 +81,7 @@ function initForMap() {
     }
   } else {
     // Changement du texte pour les maps
-    document.getElementById("textMap").innerHTML =
-      " &#8616; : monter/descendre &nbsp; ";
+    document.getElementById("textMap").innerHTML = " &#8616; : monter/descendre &nbsp; ";
 
     player = initPlayer(factor);
 
@@ -135,6 +131,7 @@ THREE.Cache.enabled = true; // VD 04/06/2022 : Alléger les chargements
 window.performance.setResourceTimingBufferSize(2000);
 // window.performance.getEntriesByType("resource")
 
+// eslint-disable-next-line no-unused-vars
 function update() {
   // 10/06/22 - Update : window.stop() arrête toutes les requêtes
   // Cela permet donc d'annuler les anciens chargements encore en cours
@@ -155,9 +152,8 @@ function update() {
 
 function read_cookie(key) {
   var result;
-  return (result = new RegExp(
-    "(?:^|; )" + encodeURIComponent(key) + "=([^;]*)"
-  ).exec(document.cookie))
+  // eslint-disable-next-line no-cond-assign
+  return (result = new RegExp("(?:^|; )" + encodeURIComponent(key) + "=([^;]*)").exec(document.cookie))
     ? result[1]
     : null;
 }
@@ -232,23 +228,21 @@ function init() {
   mtlLoader.setMaterialOptions({ ignoreZeroRGBs: true });
 
   // console.log(mtlLoader);
-  mtlLoader.load(
-    "http://voldre.free.fr/Eden/images/3D/" + folder + "/" + myObject + ".mtl",
-    function (materials) {
-      //console.log(materials);
-      var listWrongMaterials = [];
-      for (var material in materials.materialsInfo) {
-        // Gestion des 3 cas possibles d'absence de textures : 1) "chemin sans arrivé",  2) rien de déclaré,  3) textures ""
-        if (
-          materials.materialsInfo[material]["map_kd"] == "images/3D/map/" ||
-          typeof materials.materialsInfo[material]["map_kd"] == "undefined" ||
-          materials.materialsInfo[material]["map_kd"] == ""
-        ) {
-          listWrongMaterials.push(materials.materialsInfo[material]["name"]);
-        }
+  mtlLoader.load("http://voldre.free.fr/Eden/images/3D/" + folder + "/" + myObject + ".mtl", function (materials) {
+    //console.log(materials);
+    var listWrongMaterials = [];
+    for (var material in materials.materialsInfo) {
+      // Gestion des 3 cas possibles d'absence de textures : 1) "chemin sans arrivé",  2) rien de déclaré,  3) textures ""
+      if (
+        materials.materialsInfo[material]["map_kd"] == "images/3D/map/" ||
+        typeof materials.materialsInfo[material]["map_kd"] == "undefined" ||
+        materials.materialsInfo[material]["map_kd"] == ""
+      ) {
+        listWrongMaterials.push(materials.materialsInfo[material]["name"]);
       }
-      console.log(listWrongMaterials);
-      /*
+    }
+    console.log(listWrongMaterials);
+    /*
         var listLiensTextures = [];
         for(var material in materials.materialsInfo){
             if(materials.materialsInfo[material]["map_kd"] != null){
@@ -261,47 +255,42 @@ function init() {
         listLiensTextures = listLiensTextures.filter(onlyUnique);
         */
 
-      if (folder == "maps") {
-        // materials.preload();
+    if (folder == "maps") {
+      // materials.preload();
+    }
+
+    // Ajout VD - 04/06/2022 - suivi du loading :
+    console.log("On loading ...");
+
+    var onProgress = (xhr) => {
+      if (xhr.lengthComputable) {
+        var percentComplete = (xhr.loaded / xhr.total) * 100;
+        document.getElementById("loading").innerHTML = "Loading : " + Math.round(percentComplete, 2) + "%";
       }
+    };
 
-      // Ajout VD - 04/06/2022 - suivi du loading :
-      console.log("On loading ...");
+    var objLoader = new THREE.OBJLoader();
+    objLoader.setMaterials(materials);
+    // console.log(materials);
 
-      var onProgress = (xhr) => {
-        if (xhr.lengthComputable) {
-          var percentComplete = (xhr.loaded / xhr.total) * 100;
-          document.getElementById("loading").innerHTML =
-            "Loading : " + Math.round(percentComplete, 2) + "%";
-        }
-      };
+    mesh.position.y += 1;
+    mesh.receiveShadow = true;
+    mesh.castShadow = true;
 
-      var objLoader = new THREE.OBJLoader();
-      objLoader.setMaterials(materials);
-      // console.log(materials);
+    objLoader.load(
+      "http://voldre.free.fr/Eden/images/3D/" + folder + "/" + myObject + ".obj",
+      function (mesh) {
+        console.log("Loaded : " + myObject);
+        document.getElementById("loading").innerHTML = null;
 
-      mesh.position.y += 1;
-      mesh.receiveShadow = true;
-      mesh.castShadow = true;
+        mesh.traverse(function (node) {
+          if (node instanceof THREE.Mesh) {
+            node.castShadow = true;
+            node.receiveShadow = true;
+          }
+        });
 
-      objLoader.load(
-        "http://voldre.free.fr/Eden/images/3D/" +
-          folder +
-          "/" +
-          myObject +
-          ".obj",
-        function (mesh) {
-          console.log("Loaded : " + myObject);
-          document.getElementById("loading").innerHTML = null;
-
-          mesh.traverse(function (node) {
-            if (node instanceof THREE.Mesh) {
-              node.castShadow = true;
-              node.receiveShadow = true;
-            }
-          });
-
-          /********* Most important update *********
+        /********* Most important update *********
              07/06/2022 :
              Adding alphaTest and transparent parameters
              in order to make transparent part of PNG effective !
@@ -318,54 +307,52 @@ function init() {
              ... even if they have no texture", and that's on what I have worked.
              I checked PNG for all materials, and if I find no one, "visibile = false"
              ******************************************/
-          var children = mesh.children;
-          console.log(children);
-          for (var i = 0; i < children.length; i++) {
-            children[i].castShadow = true;
-            // Make PNG transparence efficient
-            children[i].material.alphaTest = 0.5;
-            children[i].material.transparent = true;
-            // Check if this material are in my "black list" of materials
-            if (listWrongMaterials.includes(children[i].material.name)) {
-              mesh.children[i].visible = false; // If yes, I hide it for real, like in the game
-            }
+        var children = mesh.children;
+        console.log(children);
+        for (var i = 0; i < children.length; i++) {
+          children[i].castShadow = true;
+          // Make PNG transparence efficient
+          children[i].material.alphaTest = 0.5;
+          children[i].material.transparent = true;
+          // Check if this material are in my "black list" of materials
+          if (listWrongMaterials.includes(children[i].material.name)) {
+            mesh.children[i].visible = false; // If yes, I hide it for real, like in the game
           }
+        }
 
-          // Paramètre autorisant à update la rotation de l'objet
-          mesh.matrixWorld.matrixWorldNeedsUpdate = true;
-          scene.add(mesh);
+        // Paramètre autorisant à update la rotation de l'objet
+        mesh.matrixWorld.matrixWorldNeedsUpdate = true;
+        scene.add(mesh);
 
-          // 06/06/2022 - Ajout du background d'Eden
-          const date = new Date();
-          const currentHour = parseInt(
-            date
-              .toLocaleTimeString({
-                hour: "2-digit",
-                hour12: false,
-                timeZone: "Europe/Paris",
-              })
-              .split(":")[0]
-          );
+        // 06/06/2022 - Ajout du background d'Eden
+        const date = new Date();
+        const currentHour = parseInt(
+          date
+            .toLocaleTimeString({
+              hour: "2-digit",
+              hour12: false,
+              timeZone: "Europe/Paris",
+            })
+            .split(":")[0]
+        );
 
-          const backgroundByHour = {
-            5: "A402",
-            8: "A102",
-            11: "D502",
-            15: "G602",
-            17: "G603",
-            18: "D302",
-            19: "A302",
-            20: "C301",
-            21: "C402",
-            23: "G604",
-          };
-          const choosenHour = Object.keys(backgroundByHour).find(
-            (hour) => hour >= currentHour
-          );
-          // console.log(currentHour+":"+choosenHour)
-          const myBG = backgroundByHour[choosenHour];
+        const backgroundByHour = {
+          5: "A402",
+          8: "A102",
+          11: "D502",
+          15: "G602",
+          17: "G603",
+          18: "D302",
+          19: "A302",
+          20: "C301",
+          21: "C402",
+          23: "G604",
+        };
+        const choosenHour = Object.keys(backgroundByHour).find((hour) => hour >= currentHour);
+        // console.log(currentHour+":"+choosenHour)
+        const myBG = backgroundByHour[choosenHour];
 
-          /*
+        /*
             if(currentHour <= 5){
                 myBG = "A402";
             }else if(currentHour <= 8){
@@ -387,55 +374,44 @@ function init() {
             }else{ myBG = "G604";}
             */
 
-          // 09/06 -- On affiche le fond d'écran que si c'est voulu
-          if (read_cookie("bgState") == "") {
-            mesh2 = new THREE.Mesh();
-            mtlLoader.load(
-              "http://voldre.free.fr/Eden/images/3D/maps/" + myBG + ".mtl",
-              function (materials2) {
-                objLoader.setMaterials(materials2);
-                objLoader.load(
-                  "http://voldre.free.fr/Eden/images/3D/maps/" + myBG + ".obj",
-                  function (mesh2) {
-                    scene.add(mesh2);
-                    mesh2.rotation.x = -Math.PI / 2;
-                  }
-                );
-              }
-            );
-          }
+        // 09/06 -- On affiche le fond d'écran que si c'est voulu
+        if (read_cookie("bgState") == "") {
+          mesh2 = new THREE.Mesh();
+          mtlLoader.load("http://voldre.free.fr/Eden/images/3D/maps/" + myBG + ".mtl", function (materials2) {
+            objLoader.setMaterials(materials2);
+            objLoader.load("http://voldre.free.fr/Eden/images/3D/maps/" + myBG + ".obj", function (mesh2) {
+              scene.add(mesh2);
+              mesh2.rotation.x = -Math.PI / 2;
+            });
+          });
+        }
 
-          // Position et Rotation de notre objet
-          if (onMap) {
-            // Coordonnées de la génération de la map
-            // Pour changer en live la position : scene.children[3].position.set = (0,0,0)
-            if (maplist[map]["map_x"] != null) {
-              mesh.position.set(
-                maplist[map]["map_x"],
-                maplist[map]["map_y"],
-                maplist[map]["map_z"]
-              );
-              mesh.rotation.z = maplist[map]["map_r"] * Math.PI;
-            } else {
-              mesh.position.set(0, 0, 0);
-              mesh.rotation.z = Math.PI;
-            }
-          } else if (folder == "items") {
-            mesh.position.set(0, 1, -3.3);
-            mesh.rotation.z = Math.PI / 1.4; // Pour qu'il regarde vers nous
+        // Position et Rotation de notre objet
+        if (onMap) {
+          // Coordonnées de la génération de la map
+          // Pour changer en live la position : scene.children[3].position.set = (0,0,0)
+          if (maplist[map]["map_x"] != null) {
+            mesh.position.set(maplist[map]["map_x"], maplist[map]["map_y"], maplist[map]["map_z"]);
+            mesh.rotation.z = maplist[map]["map_r"] * Math.PI;
           } else {
-            mesh.position.set(-0.2, 0.25, -0.8);
-            mesh.rotation.z = Math.PI / 1.4; // Pour qu'il regarde vers nous
+            mesh.position.set(0, 0, 0);
+            mesh.rotation.z = Math.PI;
           }
+        } else if (folder == "items") {
+          mesh.position.set(0, 1, -3.3);
+          mesh.rotation.z = Math.PI / 1.4; // Pour qu'il regarde vers nous
+        } else {
+          mesh.position.set(-0.2, 0.25, -0.8);
+          mesh.rotation.z = Math.PI / 1.4; // Pour qu'il regarde vers nous
+        }
 
-          // Angles pour tous nos objet
-          mesh.rotation.y = 0; // Math.PI / 6;
-          mesh.rotation.x = -Math.PI / 2;
-        },
-        onProgress
-      );
-    }
-  );
+        // Angles pour tous nos objet
+        mesh.rotation.y = 0; // Math.PI / 6;
+        mesh.rotation.x = -Math.PI / 2;
+      },
+      onProgress
+    );
+  });
 
   // Caméra
 
@@ -458,6 +434,8 @@ function init() {
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.BasicShadowMap;
 
+  var myBGM;
+  // eslint-disable-next-line valid-typeof
   if (typeof document.getElementById("canvasPosition") != null) {
     document.getElementById("canvasPosition").appendChild(renderer.domElement);
     if (onMap) {
@@ -467,9 +445,7 @@ function init() {
           myBGM = "0" + myBGM;
         }
         document.getElementById("bgmPosition").innerHTML =
-          '<audio loop><source src="bgm/bgm' +
-          myBGM +
-          '.ogg" type="audio/ogg" /></audio>';
+          '<audio loop><source src="bgm/bgm' + myBGM + '.ogg" type="audio/ogg" /></audio>';
         if (read_cookie("bgmState") == "") {
           document.getElementsByTagName("audio")[0].autoplay = true;
         }
@@ -504,20 +480,16 @@ function animate() {
     camera.position.z += Math.cos(camera.rotation.y) * player.speed;
   }
   function right() {
-    camera.position.x +=
-      Math.sin(camera.rotation.y - Math.PI / 2) * player.speed;
-    camera.position.z +=
-      -Math.cos(camera.rotation.y - Math.PI / 2) * player.speed;
+    camera.position.x += Math.sin(camera.rotation.y - Math.PI / 2) * player.speed;
+    camera.position.z += -Math.cos(camera.rotation.y - Math.PI / 2) * player.speed;
   }
   function down() {
     camera.position.x += Math.sin(camera.rotation.y) * player.speed;
     camera.position.z += -Math.cos(camera.rotation.y) * player.speed;
   }
   function left() {
-    camera.position.x +=
-      Math.sin(camera.rotation.y + Math.PI / 2) * player.speed;
-    camera.position.z +=
-      -Math.cos(camera.rotation.y + Math.PI / 2) * player.speed;
+    camera.position.x += Math.sin(camera.rotation.y + Math.PI / 2) * player.speed;
+    camera.position.z += -Math.cos(camera.rotation.y + Math.PI / 2) * player.speed;
   }
   function turnLeft() {
     camera.rotation.y -= player.turnSpeed / 1.3;
@@ -678,9 +650,8 @@ function animate() {
     keyboard[event.keyCode] = false;
   }
 
-  function bgmState(event) {
-    if (document.getElementById("bgmToggle").checked)
-      document.querySelector("audio").pause();
+  function bgmState() {
+    if (document.getElementById("bgmToggle").checked) document.querySelector("audio").pause();
     else document.querySelector("audio").play();
   }
   window.addEventListener("keydown", keyDown);

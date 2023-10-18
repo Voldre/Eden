@@ -139,11 +139,20 @@ dialog::backdrop {
   padding: 2px;
 }
 
-.skill p {
+.skill p,
+.awakenSkill p {
   font-size: 16px;
   margin: 2px;
   padding-right: 4px;
   border-right: 1px gray solid;
+}
+
+.awakenSkill {
+  width: 90%;
+  margin: auto;
+  border: 2px solid goldenrod;
+  border-radius: 5px;
+  display: flex;
 }
 
 #pp {
@@ -153,6 +162,11 @@ dialog::backdrop {
 .icone {
   width: 60px;
   height: 60px;
+}
+
+.iconClasses img {
+  width: 60px;
+  height: 33px;
 }
 
 .hide {
@@ -186,6 +200,10 @@ dialog::backdrop {
 .notes {
   width: 80%;
   height: 100px;
+}
+
+.awaken {
+  border: 2px solid goldenrod;
 }
 
 /* JDR Univers */

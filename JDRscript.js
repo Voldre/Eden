@@ -65,9 +65,40 @@ document.querySelectorAll('[id^="classe"]').forEach((classeElem, i) => {
     } else {
       document.querySelector(".iconClasses").children[i].src =
         "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" + iconsClasses[selectedClasseID] + ".png";
+
       updateSkillsList();
     }
   });
+});
+
+// CLASSES EVEILLES
+const iconClassesEs = [...document.querySelector(".iconClasses").children];
+iconClassesEs.forEach((icClasseE) => {
+  icClasseE.addEventListener("click", (e) => {
+    if (document.querySelector("#niv").value < 10) return;
+
+    iconClassesEs.forEach((e) => e.classList.remove("awaken"));
+    const classe = document.querySelector("#" + e.target.className).value;
+    e.target.classList.add("awaken");
+    defineAwaken(classe);
+  });
+});
+function defineAwaken(classe) {
+  if (document.querySelector("#niv").value < 10) return;
+  const awakenSkillE = document.querySelector(".awakenSkill");
+  awakenSkillE.id = classe;
+  awakenSkillE.querySelector(".nom").innerText = "Eveil du " + classe;
+  awakenSkillE.querySelector(".effet").innerText = "Boost de compétences";
+  awakenSkillE.querySelector(".montant").innerText = "Durée 3 tours";
+  awakenSkillE.querySelector(".icone").src =
+    "http://voldre.free.fr/Eden/images/skillIcon/E00" + iconsClasses[Math.round(Math.random() * 18 + 1)] + ".png";
+  awakenSkillE.querySelector(".desc").innerText =
+    "Eveil de la classe du " + classe + ", la majorité de ses compétences sont altérés et améliorés !";
+}
+
+// Click on awaken skill element
+document.querySelector(".awakenSkill").addEventListener("click", () => {
+  document.querySelector(".awakenSkill").querySelector(".desc").classList.toggle("hide");
 });
 
 // Niv
@@ -93,17 +124,23 @@ document.querySelector("#xp").addEventListener("change", (e) => {
     parseInt(document.querySelector("#esprit").value);
   statsVerification(sommeStats, niv);
 
-  // Nouveauté 27/05 : 4eme accessoire au niveau 4
+  // Nouveauté 27/05/23 : 4eme accessoire au niveau 4
   if (niv >= 4) {
     document.querySelector(".equipements").lastElementChild.previousElementSibling.classList.remove("hide");
   } else {
     document.querySelector(".equipements").lastElementChild.previousElementSibling.classList.add("hide");
   }
-  // Nouveauté 12/06 : 5eme accessoire au niveau 8
+  // Nouveauté 12/06/23 : 5eme accessoire au niveau 8
   if (niv >= 8) {
     document.querySelector(".equipements").lastElementChild.classList.remove("hide");
   } else {
     document.querySelector(".equipements").lastElementChild.classList.add("hide");
+  }
+  // Nouveauté 18/10/23 : Compétence éveillés
+  if (niv >= 10) {
+    document.querySelector(".awakenSkill").classList.remove("hide");
+  } else {
+    document.querySelector(".awakenSkill").classList.add("hide");
   }
 });
 
@@ -303,11 +340,14 @@ function loadFiche(indexPerso) {
   if (!persoData) return;
 
   document.querySelector("#nom").value = persoData.nom;
+  document.querySelector(".topleft").children[0].title = "Perso n°" + (parseInt(indexPerso) + 1);
+  document.querySelector("#nom").title = "Perso n°" + parseInt(indexPerso) + 1;
   document.querySelector("#race").value = persoData.race;
   document.querySelector("#classeP").value = persoData.classeP;
   document.querySelector("#classeS").value = persoData.classeS;
   document.querySelector("#xp").value = persoData.xp;
   document.querySelector("#niv").value = persoData.niv;
+
   document.querySelector("#pv").value = persoData.pv;
   document.querySelector("#pvmax").value = persoData.pvmax;
 
@@ -366,6 +406,12 @@ function loadFiche(indexPerso) {
   } else {
     document.querySelector(".equipements").lastElementChild.classList.add("hide");
   }
+  // Nouveauté 18/10/23 : Compétence éveillés
+  if (persoData.niv >= 10) {
+    document.querySelector(".awakenSkill").classList.remove("hide");
+  } else {
+    document.querySelector(".awakenSkill").classList.add("hide");
+  }
 
   // Skills du perso
   JSON.parse(persoData.skills).forEach((skill, index) => {
@@ -373,6 +419,8 @@ function loadFiche(indexPerso) {
     competence.children[0].value = skill; // Object.values(competence.children[0].options).find(option => option.value == skill.nom);
     insertSkill(competence, skill);
   });
+
+  defineAwaken(persoData.awaken);
 
   // Equipements du perso
   JSON.parse(persoData.eqpts).forEach((eqpt, index) => {
@@ -514,6 +562,9 @@ function savePerso() {
     classeS: document.querySelector("#classeS").value,
     xp: document.querySelector("#xp").value,
     niv: document.querySelector("#niv").value,
+
+    awaken: document.querySelector(".awakenSkill").id,
+
     pv: document.querySelector("#pv").value,
     pvmax: document.querySelector("#pvmax").value,
 
@@ -547,8 +598,9 @@ function savePerso() {
   newPerso[document.querySelector(".perso").id] = persosJSON[document.querySelector(".perso").id];
   console.log(newPerso);
 
+  const newPersoEncoded = JSON.stringify(newPerso).replaceAll("+", "%2B").replaceAll(";", "%3B");
   // encodeURIComponent(JSON.stringify(newPerso))
-  const cookiePerso = "persosJSON=" + JSON.stringify(newPerso).replaceAll("+", "%2B") + "; SameSite=Strict";
+  const cookiePerso = "persosJSON=" + newPersoEncoded + "; SameSite=Strict";
 
   return cookiePerso;
   // alert('Fiche sauvegardé sous forme de cookie avec succès')
@@ -563,10 +615,9 @@ function saveWithPHP(nameJSON) {
     type: "post",
     data: { name: nameJSON },
     /*
-        success: function(data) {
-          $('body').html(data);
-        }
-        */
+    success: function (data) {
+      $("body").html(data);
+    },*/
   });
 }
 

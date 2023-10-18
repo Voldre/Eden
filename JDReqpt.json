@@ -1548,7 +1548,7 @@
   },
   "223": {
     "nom": "Guitare Radieuse",
-    "desc": "Une guitare compos\u00e9 de crystaux de la lagune enchant\u00e9e et de l'\u00e9corce de l'Arbre Sacr\u00e9 Rando",
+    "desc": "Une guitare compos\u00e9e de crystaux de la lagune enchant\u00e9e et de l'\u00e9corce de l'Arbre Sacr\u00e9 Rando",
     "effet": "Dur\u00e9e des sorts +1 tour",
     "montant": "D\u00e9g\u00e2t +9",
     "icone": "W62301"
@@ -2040,7 +2040,7 @@
     "nom": "Statuette de Pr\u00e9vention",
     "desc": "Une statue qui prie pour le salut, elle permet \u00e0 son porteur de venir en aide \u00e0 lui-m\u00eame ou aux autres.",
     "effet": "Capacit\u00e9",
-    "montant": "2 fois par combat (Instantan\u00e9e Esprit) : retire un malus. D\u00e9g\u00e2t re\u00e7u -1D4 (min 2) -1 pour 3 tours",
+    "montant": "2 fois par combat (Instantan\u00e9e Esprit) : retire un malus. D\u00e9g\u00e2t re\u00e7u -1D4 (min 2) pour 3 tours",
     "icone": "I00408"
   },
   "294": {
@@ -2280,5 +2280,19 @@
     "effet": "",
     "montant": "D\u00e9g\u00e2t re\u00e7u -2, d\u00e9g\u00e2t nature +3",
     "icone": "I00160"
+  },
+  "328": {
+    "nom": "Insigne de l'Ordre du Temple",
+    "desc": "Ancien insigne en or pur, il aurait appartenu aux anc\u00eatres de la Curie M\u00e9t\u00e9role : l'Ordre des Chevaliers du Temple, les meilleurs templiers d'Aven.",
+    "effet": "(Clerc, Sage, Chev, Templ, Cors)",
+    "montant": " D\u00e9g\u00e2t & Soin +1, pour chaque classe poss\u00e9d\u00e9e : +2 (AoE +1)",
+    "icone": "i01667"
+  },
+  "329": {
+    "nom": "Anneau Ouragan",
+    "desc": "Un anneau portant la magie du Port Ouragan. Il a le pouvoir de soigner miraculeusement son porteur.",
+    "effet": "",
+    "montant": "Si coup critique (1,2) : Soigne 1D6+6",
+    "icone": "A00019"
   }
 }

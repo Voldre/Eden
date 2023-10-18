@@ -2748,8 +2748,9 @@ window.addEventListener("load", async () => {
 
   document.querySelector("#mapName").innerText = mapData["name"];
 
-  pnjEnemy = Object.values(enemyJSON).find((e) => e.visuel3D == pnjData["id"]);
+  const pnjEnemy = Object.values(enemyJSON).find((e) => e.visuel3D == pnjData["id"]);
 
+  var actions;
   if (pnjEnemy) {
     console.log("Combattable !");
     actions = ["Accepter la Quête", "Refuser la Quête", "Refuser et combattre"];
@@ -2854,6 +2855,7 @@ function format(object) {
 }
 
 function getChatGPTKey() {
+  // eslint-disable-next-line no-undef
   return $.ajax({
     url: "JDRlogin_chatgpt.php",
     type: "POST",
@@ -2878,8 +2880,7 @@ function writeMessage(persoData, pnjData, mapData, enemyData) {
     persoData["personnalite"];
   // ". Et voici son histoire : " +persoData["background"];
 
-  return (message = `Tu incarnes un personnage dans l'univers de Eden Eternal. 
-  ${pnjDesc}.\n ${mapDesc}.\n ${enemyDesc}.\n ${persoDesc}.\n`);
+  return `Tu incarnes un personnage dans l'univers de Eden Eternal.  ${pnjDesc}.\n ${mapDesc}.\n ${enemyDesc}.\n ${persoDesc}.\n`;
 }
 
 function initializeActions(actions, enemyData, pnjEnemy = { nom: null }) {
@@ -2890,7 +2891,7 @@ function initializeActions(actions, enemyData, pnjEnemy = { nom: null }) {
     const liElem = document.createElement("li");
     liElem.innerText = action;
 
-    const dirname = window.location.host || "file:///C:/wamp/www/Site%20free.fr";
+    // const dirname = window.location.host || "file:///C:/wamp/www/Site%20free.fr";
     var enemy;
     var actionURL;
     if (id == 0) {
