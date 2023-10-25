@@ -4,12 +4,15 @@ var xhReq = new XMLHttpRequest();
 console.log(window.location.href);
 if (window.location.href.includes("http")) {
   var skillsJSON = {};
+  var skillsAwakenJSON = {};
   var eqptJSON = {};
   var persosJSON = {};
   var galeryJSON = {};
   var masterJSON = {};
 
   skillsJSON = getData("skills");
+
+  skillsAwakenJSON = getData("skillsAwaken");
 
   eqptJSON = getData("eqpt");
 
@@ -84,28 +87,64 @@ iconClassesEs.forEach((icClasseE) => {
   });
 });
 function defineAwaken(classe) {
-  if (document.querySelector("#niv").value < 10) return;
+  const niv = document.querySelector("#niv").value;
+  if (niv < 10) return;
+
+  var nbUse;
+  if (niv >= 15) {
+    nbUse = 3;
+  } else if (niv >= 12) {
+    nbUse = 2;
+  } else {
+    nbUse = 1;
+  }
+
   const awakenSkillE = document.querySelector(".awakenSkill");
   awakenSkillE.id = classe;
   awakenSkillE.querySelector(".nom").innerText = "Eveil du " + classe;
-  awakenSkillE.querySelector(".effet").innerText = "Boost de compétences";
-  awakenSkillE.querySelector(".montant").innerText = "Durée 3 tours";
+  awakenSkillE.querySelector(".effet").innerText = "Inactif";
+  awakenSkillE.querySelector(".montant").innerText = nbUse + " fois par combat : Eveil des compétences : Durée 3 tours";
   awakenSkillE.querySelector(".icone").src =
     "http://voldre.free.fr/Eden/images/skillIcon/E00" + iconsClasses[Math.round(Math.random() * 18 + 1)] + ".png";
   awakenSkillE.querySelector(".desc").innerText =
-    "Eveil de la classe du " + classe + ", la majorité de ses compétences sont altérés et améliorés !";
+    "Eveil de la classe du " + classe + ", la majorité de ses compétences sont altérées et améliorées !";
 }
 
 // Click on awaken skill element
-document.querySelector(".awakenSkill").addEventListener("click", () => {
-  document.querySelector(".awakenSkill").querySelector(".desc").classList.toggle("hide");
+const awakenSkillE = document.querySelector(".awakenSkill");
+awakenSkillE.addEventListener("click", (e) => {
+  if (e.target.id !== "awakenButton") {
+    awakenSkillE.querySelector(".desc").classList.toggle("hide");
+  }
+});
+
+document.querySelector("#awakenButton").addEventListener("click", (e) => {
+  var awakenClass; // Classe à éveiller
+  if (e.target.innerText == "Inactif") {
+    e.target.innerText = "Actif";
+    e.target.style.color = "green";
+    awakenClass = awakenSkillE.id;
+  } else {
+    e.target.innerText = "Inactif";
+    e.target.style.color = "black";
+    awakenClass = "No class";
+  }
+
+  const indexPerso = document.querySelector(".perso").id;
+  const persoData = persosJSON[indexPerso];
+
+  JSON.parse(persoData.skills).forEach((skill, index) => {
+    var competence = [...document.querySelector(".skills").children][index];
+    competence.children[0].value = skill;
+    insertSkill(competence, skill, awakenClass);
+  });
 });
 
 // Niv
 document.querySelector("#xp").addEventListener("change", (e) => {
   var xp = parseInt(e.target.value);
   var niv;
-  // Update 12/06 : From lvl 5 to 10 : 150 xp instead of 100
+  // Update 12/06/23 : From lvl 5 to 10 : 150 xp instead of 100
   if (xp >= 400) {
     niv = Math.trunc((xp - 400) / 150) + 5;
   } else {
@@ -235,8 +274,10 @@ function removeOptions(selectElement) {
   }
 }
 
-function insertSkill(skillElement, skillName) {
+function insertSkill(skillElement, skillName, awakenClass = false) {
   var selectedSkill = Object.values(skillsJSON).find((skill) => skill.nom == skillName);
+
+  skillElement.classList.remove("awaken");
 
   if (!selectedSkill) {
     if (skillName != "") {
@@ -248,11 +289,17 @@ function insertSkill(skillElement, skillName) {
     skillElement.children[3].title = "";
     skillElement.children[4].innerText = "";
   } else {
+    var selectedAwakenSkill;
+    if (selectedSkill.classe.includes(awakenClass)) {
+      skillElement.classList.add("awaken");
+      selectedAwakenSkill = Object.values(skillsAwakenJSON).find((skill) => skill.nom == skillName);
+    }
+
     skillElement.children[1].innerText = selectedSkill.effet + " / " + selectedSkill.stat;
-    skillElement.children[2].innerText = selectedSkill.montant;
+    skillElement.children[2].innerText = selectedAwakenSkill?.montant || selectedSkill.montant;
     skillElement.children[3].src = "http://voldre.free.fr/Eden/images/skillIcon/" + selectedSkill.icone + ".png";
-    skillElement.children[3].title = selectedSkill.desc;
-    skillElement.children[4].innerText = selectedSkill.desc;
+    skillElement.children[3].title = selectedAwakenSkill?.desc || selectedSkill.desc;
+    skillElement.children[4].innerText = selectedAwakenSkill?.desc || selectedSkill.desc;
 
     // Update 29/07/2023, case de PV pour familiers
     if (skillElement.children.length >= 6) {
@@ -271,12 +318,12 @@ function insertSkill(skillElement, skillName) {
 const equipements = document.querySelector(".equipements");
 
 [...equipements.children].forEach((equipement) => {
-  // Selected skill
+  // Selected eqpt
   equipement.children[0].addEventListener("change", (e) => {
     insertEqpt(equipement, e.target.value);
   });
 
-  // Click on skill element
+  // Click on eqpt element
   equipement.addEventListener("click", (e) => {
     if (!e.target.classList.contains("nom")) {
       // If click on select element, don't show/hide the desc ?
@@ -335,7 +382,7 @@ selectPerso.addEventListener("change", (e) => {
 function loadFiche(indexPerso) {
   document.querySelector(".perso").id = indexPerso;
 
-  var persoData = persosJSON[indexPerso];
+  const persoData = persosJSON[indexPerso];
 
   if (!persoData) return;
 
@@ -416,7 +463,7 @@ function loadFiche(indexPerso) {
   // Skills du perso
   JSON.parse(persoData.skills).forEach((skill, index) => {
     var competence = [...document.querySelector(".skills").children][index];
-    competence.children[0].value = skill; // Object.values(competence.children[0].options).find(option => option.value == skill.nom);
+    competence.children[0].value = skill;
     insertSkill(competence, skill);
   });
 
@@ -642,11 +689,11 @@ buttonIframe.addEventListener("click", () => {
 
 var labelsDescription = {
   force:
-    "Permet d'utiliser des attaques lourdes, de pousser, de soulever.<br/>Permet de bloquer des coups physiques (Dé/2) <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff/stuff.<br/>Le blocage est limité à 13.",
+    "Permet d'utiliser des attaques lourdes, de pousser, de soulever.<br/>Permet de bloquer des coups physiques (Dé/2)<br/>Un blocage à 20 inflige 5 dégâts de plus. <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff/stuff.<br/>Le blocage est limité à 13.",
   dexté:
-    "Permet d'utiliser des attaques agiles et rapide, de se mouvoir, courir.<br/>Permet d'esquiver des attaques mono-cible (Dé/2) <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff/stuff.<br/>L'esquive est limité à 13.",
+    "Permet d'utiliser des attaques agiles et rapide, de se mouvoir, courir.<br/>Permet d'esquiver des attaques mono-cible (Dé/2)<br/>Une esquive à 20 inflige 5 dégâts de plus. <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff/stuff.<br/>L'esquive est limité à 13.",
   intel:
-    "Permet d'utiliser des attaques magiques, de tester son érudition, sa réflexion.<br/>Permet de bloquer des coups magiques (Dé/2) <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff/stuff.<br/>Le blocage est limité à 13.",
+    "Permet d'utiliser des attaques magiques, de tester son érudition, sa réflexion.<br/>Permet de bloquer des coups magiques (Dé/2)<br/>Un blocage à 20 inflige 5 dégâts de plus. <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff/stuff.<br/>Le blocage est limité à 13.",
   charisme:
     "Permet d'intéragir avec les autres personnes dans différents contexte :<br/> éloquence, persuasion, négociation, menace, distraction, ... <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff/stuff.",
   esprit:

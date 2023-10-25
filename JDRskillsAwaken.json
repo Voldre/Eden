@@ -1,0 +1,32 @@
+{
+  "29": {
+    "nom": "Triple Tir",
+    "desc": "Lance quatre tirs sur la cible",
+    "effet": "D\u00e9g\u00e2t",
+    "montant": "1D8 + 2D6 + 1D4",
+    "icone": "E0068",
+    "stat": "Dext\u00e9rit\u00e9",
+    "classe": ["Chasseur"]
+  },
+  "62": {
+    "nom": "Sacrifice d'Ombre Noire",
+    "desc": "Action Instantan\u00e9e. Tant que l'utilisateur fait des t\u00e9n\u00e8bres, diminue les PV, boost la force et l'intel et les d\u00e9g\u00e2ts de t\u00e9n\u00e8bres",
+    "montant": "Chaque tour : PV -(1D6)-4, Force + Intel +3, D\u00e9g\u00e2t t\u00e9n\u00e8bres +(1D6)+4"
+  },
+  "75": {
+    "nom": "Invocation d'Alpaga",
+    "desc": "Invoque un esprit Alpaga de t\u00e9n\u00e8bres, peut flotter. 30 PV, Force : 12, Dext\u00e9 : 13, Intel : 15, Charisme : 12, Esprit : 10. Sort : Crachat 1D8 (Intel), Charge 1D10 (Force), Aura Noire (Intel) : Maître phys > ten, dégât +4 (3t)",
+    "effet": "Invocation",
+    "montant": "Invocation jusqu'\u00e0 coupure magique, Apprend \"Aura Noire\" "
+  },
+  "124": {
+    "nom": "Infection Pullulante",
+    "desc": "La cible \u00e9met une explosion qui peut entra\u00eener l'explosion d'un autre parasite obscur originel. L'explosion propage le parasite aux ennemis (max 4). Le parasite propagé est un originel (durée identique à celui du porteur). Le porteur qui a explosé ne peut plus exploser.",
+    "montant": "1D8 + 2*(tours parasite restant)"
+  },
+  "132": {
+    "nom": "Pi\u00e8ge d'Entrave",
+    "desc": "Pose un pi\u00e8ge au sol pour entraver l'ennemi (d\u00e9g\u00e2t tranchant), l'emp\u00eachant de se d\u00e9placer. L'ennemi peut tenter de s'en \u00e9chapper (force).",
+    "montant": "1D10+8 (0 d\u00e9g\u00e2t d'arme), entrave 3 tours (annulable) et Blocage -2"
+  }
+}
