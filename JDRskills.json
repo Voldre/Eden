@@ -1013,7 +1013,7 @@
     "effet": "Buff AoE",
     "montant": "D\u00e9g\u00e2t subi -1D4-2, 0 dodo, +2 r\u00e9s esprit, pour 4 tours",
     "icone": "E0406",
-    "stat": "Esprit",
+    "stat": "Charisme",
     "classe": ["Barde"]
   },
   "120": {
