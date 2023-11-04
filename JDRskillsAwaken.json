@@ -1,23 +1,61 @@
 {
+  "11": {
+    "nom": "Attaque Furieuse",
+    "desc": "Tournoie et frappe les ennemis autour de soi (1m)",
+    "effet": "D\u00e9g\u00e2t AoE",
+    "montant": "1D10+3"
+  },
+  "21": {
+    "nom": "Perce-Armure",
+    "desc": "Frappe et r\u00e9duit la d\u00e9fense de l'ennemi (non cumulable)",
+    "montant": "D\u00e9g\u00e2t 1D10, et d\u00e9g\u00e2t physique re\u00e7u +5 pendant 4 tours"
+  },
+  "24": {
+    "nom": "Lames Dansantes",
+    "desc": "Envoi des lames au vent et tranche 3 fois l'ennemi choisi",
+    "montant": "3D6 (Blocage/Esquive -2)"
+  },
+  "25": {
+    "nom": "Charme tape-\u00e0-l-oeil",
+    "desc": "Lance un charme sur la cible pour r\u00e9duire sa concentration, efficace si sexe oppos\u00e9, sinon : r\u00e9ussite -3",
+    "montant": "(Réussite +1) Esquive et r\u00e9ussite des sorts : -3 sur 3 tours"
+  },
   "29": {
     "nom": "Triple Tir",
     "desc": "Lance quatre tirs sur la cible",
-    "effet": "D\u00e9g\u00e2t",
-    "montant": "1D8 + 2D6 + 1D4",
-    "icone": "E0068",
-    "stat": "Dext\u00e9rit\u00e9",
-    "classe": ["Chasseur"]
+    "montant": "1D8 + 2D6 + 1D4"
   },
   "62": {
     "nom": "Sacrifice d'Ombre Noire",
     "desc": "Action Instantan\u00e9e. Tant que l'utilisateur fait des t\u00e9n\u00e8bres, diminue les PV, boost la force et l'intel et les d\u00e9g\u00e2ts de t\u00e9n\u00e8bres",
     "montant": "Chaque tour : PV -(1D6)-4, Force + Intel +3, D\u00e9g\u00e2t t\u00e9n\u00e8bres +(1D6)+4"
   },
+  "66": {
+    "nom": "Danse de l'oiseau de feu",
+    "desc": "Le lanceur danse autour des ennemis (sur quelques m\u00e8tres) et les br\u00fblent",
+    "effet": "D\u00e9g\u00e2t AoE",
+    "montant": "1D10+3 (+5 si charmé)"
+  },
   "75": {
     "nom": "Invocation d'Alpaga",
     "desc": "Invoque un esprit Alpaga de t\u00e9n\u00e8bres, peut flotter. 30 PV, Force : 12, Dext\u00e9 : 13, Intel : 15, Charisme : 12, Esprit : 10. Sort : Crachat 1D8 (Intel), Charge 1D10 (Force), Aura Noire (Intel) : Maître phys > ten, dégât +4 (3t)",
     "effet": "Invocation",
     "montant": "Invocation jusqu'\u00e0 coupure magique, Apprend \"Aura Noire\" "
+  },
+  "88": {
+    "nom": "Lame Dansante du Po\u00e8te",
+    "desc": "Envoi des lames de vent (d\u00e9g\u00e2ts de nature si Po\u00e8me du Vent actif) et tranche 3 fois l'ennemi choisi",
+    "montant": "3D6 (+3 si Po\u00e8me du Vent) (Blocage/Esquive -2)"
+  },
+  "91": {
+    "nom": "Danse de la guerri\u00e8re",
+    "desc": "Encha\u00eene des pas de danse pour infliger un prochain coup puissant",
+    "montant": "Prochain d\u00e9g\u00e2t physique +1D10+5, r\u00e9ussite +1"
+  },
+  "101": {
+    "nom": "Ombre Rapide",
+    "desc": "Acc\u00e9l\u00e8re le corps du lanceur",
+    "montant": "(Force & Dexté +1) Esquive +3 pendant 1D4 (min 2) +1 tours"
   },
   "124": {
     "nom": "Infection Pullulante",
