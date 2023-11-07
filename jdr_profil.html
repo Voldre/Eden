@@ -32,10 +32,89 @@
           <a href="3D.php">Designs 3D</a>
         </li>
         <li><select name="selectPlayer" id="selectPlayer">
+            <option value="">---</option>
+          </select>
+        </li>
+        <li>
+          <span class="alpagaCoin"></span> <span class="alpagaCoinSpent"></span>
+          <img src="images/alpagaCoin.png" style="display: inline;width:30px;height:30px;margin:0px" alt="Coin :">
+        </li>
       </ul>
     </nav>
     <div id="toast"></div>
 
-    <div class="flexContainer charactersList"></div>
+    <div class="flexContainer charactersList">
+      <div class="perso hide">
+        <div>
+          <label for="nom">Nom</label>
+          <input type='text' id="nom" name="nom"  readonly></input><br/>
+          <label for="niv">Niv</label>
+          <input style='width: 50px;' type='number' id="niv" name="niv" readonly></input>
+        </div>
+          <div class="iconClasses"><img src="" style="width:60px;height:33px;" alt=""><img src="" style="width:60px;height:33px;" alt=""></div>
+          <img  class="persoPic"src="" alt="--">
+      </div>
+      <div class="perso hide">
+        <div>
+          <label for="nom">Nom</label>
+          <input type='text' id="nom" name="nom"  readonly></input><br/>
+          <label for="niv">Niv</label>
+          <input style='width: 50px;' type='number' id="niv" name="niv" readonly></input>
+        </div>
+          <div class="iconClasses"><img src="" style="width:60px;height:33px;" alt=""><img src="" style="width:60px;height:33px;" alt=""></div>
+          <img  class="persoPic"src="" alt="--">
+      </div>
+      <div class="perso hide">
+        <div>
+          <label for="nom">Nom</label>
+          <input type='text' id="nom" name="nom"  readonly></input><br/>
+          <label for="niv">Niv</label>
+          <input style='width: 50px;' type='number' id="niv" name="niv" readonly></input>
+        </div>
+          <div class="iconClasses"><img src="" style="width:60px;height:33px;" alt=""><img src="" style="width:60px;height:33px;" alt=""></div>
+          <img  class="persoPic"src="" alt="--">
+      </div>
+      <div class="perso hide">
+        <div>
+          <label for="nom">Nom</label>
+          <input type='text' id="nom" name="nom"  readonly></input><br/>
+          <label for="niv">Niv</label>
+          <input style='width: 50px;' type='number' id="niv" name="niv" readonly></input>
+        </div>
+          <div class="iconClasses"><img src="" style="width:60px;height:33px;" alt=""><img src="" style="width:60px;height:33px;" alt=""></div>
+          <img  class="persoPic"src="" alt="--">
+      </div>
+      <div class="perso hide">
+        <div>
+          <label for="nom">Nom</label>
+          <input type='text' id="nom" name="nom"  readonly></input><br/>
+          <label for="niv">Niv</label>
+          <input style='width: 50px;' type='number' id="niv" name="niv" readonly></input>
+        </div>
+          <div class="iconClasses"><img src="" style="width:60px;height:33px;" alt=""><img src="" style="width:60px;height:33px;" alt=""></div>
+          <img  class="persoPic"src="" alt="--">
+      </div>
+      <div class="perso hide">
+        <div>
+          <label for="nom">Nom</label>
+          <input type='text' id="nom" name="nom"  readonly></input><br/>
+          <label for="niv">Niv</label>
+          <input style='width: 50px;' type='number' id="niv" name="niv" readonly></input>
+        </div>
+          <div class="iconClasses"><img src="" style="width:60px;height:33px;" alt=""><img src="" style="width:60px;height:33px;" alt=""></div>
+          <img  class="persoPic"src="" alt="--">
+      </div>
+    </div>
+    <h2 style="margin-bottom: 0px;">Cartes à collectionner</h2>
+    <div class="flexContainer">
+      <h3>Maps & Donjons <span id="mapCount"></span></h3>
+      <div id="map"></div>
+      <h3>Boss <span id="bossCount"></span></h3>
+      <div class="flexContainer" id="boss"></div>
+      <h3>Composants <span id="composantCount"></span></h3>
+      <div class="flexContainer" id="composant"></div>
+      <h3>Anecdotes de Personnages <span id="anecdoteCount"></span></h3>
+      <div class="flexContainer" id="anecdote"></div>
+    </div>
   </body>
 </html>

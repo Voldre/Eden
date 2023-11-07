@@ -4,6 +4,7 @@ var eqptJSON = {};
 var enemyJSON = {};
 var persosJSON = {};
 var allSkills = [];
+var playerJSON = {};
 
 console.log(window.location.href);
 if (window.location.href.includes("http")) {
@@ -17,14 +18,12 @@ if (window.location.href.includes("http")) {
   persosJSON = getData("persos");
 
   allSkills = getData("combatS");
+
+  playerJSON = getData("player");
 }
 
 function getData(filename) {
-  xhReq.open(
-    "GET",
-    "./JDR" + filename + ".json" + "?" + new Date().getTime(),
-    false
-  );
+  xhReq.open("GET", "./JDR" + filename + ".json" + "?" + new Date().getTime(), false);
   xhReq.send(null);
   return JSON.parse(xhReq.responseText);
 }
@@ -121,18 +120,39 @@ const selectPerso = document.querySelector("#selectPerso");
 
 // Load perso if URL parameter
 window.addEventListener("load", () => {
+  // getCookie(loadJDRcombat)
+  let name = "loadJDRcombat=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(";");
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == " ") {
+      c = c.substring(1);
+    }
+    var cookieAllow = false;
+    if (c.indexOf(name) == 0) {
+      cookieAllow = c.substring(name.length, c.length);
+    }
+  }
+
+  if (cookieAllow !== "true") {
+    toastNotification("Erreur : Lancez un combat à partir d'une quête", 6000);
+    endRediction();
+  } else {
+    console.log("Allowed");
+    // Remove permission for next attempt
+    document.cookie = "loadJDRcombat=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  }
   const urlParams = new URLSearchParams(window.location.search);
   if (urlParams.has("perso")) {
     selectPerso.value = urlParams.get("perso") - 1;
     // loadFiche(urlParams.get('perso'));
     // selectedPerso = selectPerso.value;
-    var selectedID = selectPerso.selectedIndex;
+    var selectedID = selectPerso.selectedIndex + 1;
   }
   loadFiche(selectedID);
   if (urlParams.has("enemy")) {
-    const selectedEnemy = Object.values(enemyJSON).find(
-      (e) => e.nom == urlParams.get("enemy")
-    );
+    const selectedEnemy = Object.values(enemyJSON).find((e) => e.nom == urlParams.get("enemy"));
     loadEnemy(selectedEnemy);
   } else {
     loadEnemy(chooseEnemy());
@@ -184,55 +204,44 @@ function loadFiche(indexPerso) {
   loadSkills(perso.classeP, perso.classeS);
 
   document.querySelector(".iconClasses").children[0].src =
-    "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" +
-    iconsClasses[classePID] +
-    ".png";
+    "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" + iconsClasses[classePID] + ".png";
   document.querySelector(".iconClasses").children[1].src =
-    "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" +
-    iconsClasses[classeSID] +
-    ".png";
+    "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" + iconsClasses[classeSID] + ".png";
 }
 
 function loadSkills(c1, c2) {
-  Object.entries([...document.querySelectorAll(".skillCombat")]).forEach(
-    ([id, skillE]) => {
-      var listSkills = allSkills.filter(
-        (skill) => skill.classe.includes(c1) || skill.classe.includes(c2)
-      );
-      if (!listSkills[id]) return;
-      skillE.querySelector(".skillName").value = listSkills[id].nom;
-      skillE.querySelector(".skillStat").innerText = listSkills[id].statUsed;
+  Object.entries([...document.querySelectorAll(".skillCombat")]).forEach(([id, skillE]) => {
+    var listSkills = allSkills.filter((skill) => skill.classe.includes(c1) || skill.classe.includes(c2));
+    if (!listSkills[id]) return;
+    skillE.querySelector(".skillName").value = listSkills[id].nom;
+    skillE.querySelector(".skillStat").innerText = listSkills[id].statUsed;
 
-      if (listSkills[id].type == "buff") {
-        skillE.querySelector(".montant").innerText =
-          listSkills[id].type +
-          " : " +
-          listSkills[id].buffElem +
-          " +" +
-          listSkills[id].montant +
-          "+" +
-          listSkills[id].montantFixe +
-          ", " +
-          listSkills[id].duree +
-          " tours";
+    if (listSkills[id].type == "buff") {
+      skillE.querySelector(".montant").innerText =
+        listSkills[id].type +
+        " : " +
+        listSkills[id].buffElem +
+        " +" +
+        listSkills[id].montant +
+        "+" +
+        listSkills[id].montantFixe +
+        ", " +
+        listSkills[id].duree +
+        " tours";
+    } else {
+      if (!listSkills[id].montantFixe) {
+        skillE.querySelector(".montant").innerText = listSkills[id].type + " : " + listSkills[id].montant;
       } else {
         skillE.querySelector(".montant").innerText =
-          listSkills[id].type +
-          " : " +
-          listSkills[id].montant +
-          "+" +
-          listSkills[id].montantFixe;
+          listSkills[id].type + " : " + listSkills[id].montant + "+" + listSkills[id].montantFixe;
       }
-      skillE.querySelector(".icone").src =
-        "http://voldre.free.fr/Eden/images/skillIcon/" +
-        listSkills[id].icone +
-        ".png";
-
-      skillE.addEventListener("click", () => {
-        turnExecution(listSkills[id]);
-      });
     }
-  );
+    skillE.querySelector(".icone").src = "http://voldre.free.fr/Eden/images/skillIcon/" + listSkills[id].icone + ".png";
+
+    skillE.addEventListener("click", () => {
+      turnExecution(listSkills[id], skillE);
+    });
+  });
 }
 
 function Perso(persoData) {
@@ -243,47 +252,58 @@ function Perso(persoData) {
 
   // Calcul des dégâts fixes et de l'armure
   var stuffs = JSON.parse(persoData.eqpts).map((eqptName) => {
-    return Object.values(eqptJSON).find(
-      (eqpt) => eqpt.nom.toLowerCase().trim() == eqptName.toLowerCase().trim()
-    );
+    return Object.values(eqptJSON).find((eqpt) => eqpt.nom.toLowerCase().trim() == eqptName.toLowerCase().trim());
   });
 
-  var montantBouclier, montantArmure, montantArme1, montantArme2;
+  // stuffs = stuffs.filter((s) => s != undefined);
+
+  var montantBouclier, montantArmure, montantArme1, montantArme2, montantAccessDegat, montantAccessArmure;
+
+  // Add 05/11/2023 : Accessories effects (+ Damage or + Armor), according to access specificites
+  // console.log(stuffs);
+  montantAccessDegat = stuffs
+    .map((stuff) => {
+      if (!stuff) return 0;
+      if (!!stuff.access && stuff.access[0] == "D") {
+        return parseInt(stuff.access[1]);
+      }
+      return 0;
+    })
+    .reduce((a, b) => a + b);
+
+  montantAccessArmure = stuffs
+    .map((stuff) => {
+      if (!stuff) return 0;
+      if (!!stuff.access && stuff.access[0] == "A") {
+        return parseInt(stuff.access[1]);
+      }
+      return 0;
+    })
+    .reduce((a, b) => a + b);
+
+  console.log("Access effets (D, A) : ", montantAccessDegat, montantAccessArmure);
 
   stuffs[1] = stuffs[1] || { nom: "", montant: "Dégât +0" };
   if (stuffs[1].nom.includes("Bouclier")) {
-    montantBouclier = stuffs[1].montant
-      .split("Dégât -")[1]
-      .split(",")[0]
-      .split(" ")[0];
+    montantBouclier = stuffs[1].montant.split("Dégât -")[1].split(",")[0].split(" ")[0];
     stuffs[1] = { montant: "Dégât +0" };
   } else {
     montantBouclier = 0;
   }
 
-  montantArme1 = stuffs[0].montant
-    .split("Dégât +")[1]
-    .split(",")[0]
-    .split(" ")[0];
-  montantArme2 = stuffs[1].montant
-    .split("Dégât +")[1]
-    .split(",")[0]
-    .split(" ")[0];
+  montantArme1 = stuffs[0].montant.split("Dégât +")[1].split(",")[0].split(" ")[0];
+  montantArme2 = stuffs[1].montant.split("Dégât +")[1].split(",")[0].split(" ")[0];
 
   // Bonus de dégât par niveau
   this.degat = Math.round(
-    (parseInt(montantArme1) + parseInt(montantArme2)) * Math.pow(1.1, this.niv)
+    (parseInt(montantArme1) + parseInt(montantArme2)) * Math.pow(1.1, this.niv) + montantAccessDegat
   );
 
-  montantArmure = stuffs[3].montant
-    .split("Dégât -")[1]
-    .split(",")[0]
-    .split(" ")[0];
+  montantArmure = stuffs[3].montant.split("Dégât -")[1].split(",")[0].split(" ")[0];
 
   // Bonus d'armure par niveau
   this.armure = Math.round(
-    (parseInt(montantBouclier) + parseInt(montantArmure)) *
-      Math.pow(1.1, this.niv)
+    (parseInt(montantBouclier) + parseInt(montantArmure)) * Math.pow(1.1, this.niv) + montantAccessArmure
   );
 
   // ---
@@ -291,8 +311,7 @@ function Perso(persoData) {
   this.force = persoData.force + persoData.forceB.replace(/[^\d.+-]/g, "");
   this.dexté = persoData.dexté + persoData.dextéB.replace(/[^\d.+-]/g, "");
   this.intel = persoData.intel + persoData.intelB.replace(/[^\d.+-]/g, "");
-  this.charisme =
-    persoData.charisme + persoData.charismeB.replace(/[^\d.+-]/g, "");
+  this.charisme = persoData.charisme + persoData.charismeB.replace(/[^\d.+-]/g, "");
   this.esprit = persoData.esprit + persoData.espritB.replace(/[^\d.+-]/g, "");
 
   this.force = eval(this.force).toString().slice(0, 2);
@@ -323,8 +342,7 @@ function loadEnemy(enemyData) {
   document.querySelector("#epv").value = enemy.pvmax;
   document.querySelector("#epvmax").value = enemy.pvmax;
 
-  document.querySelector("#epp").src =
-    "http://voldre.free.fr/Eden/images/monsters/" + enemyData.visuel3D + ".png";
+  document.querySelector("#epp").src = "http://voldre.free.fr/Eden/images/monsters/" + enemyData.visuel3D + ".png";
   document.querySelector("#epp").alt = enemyData.visuel3D;
 
   document.querySelector("#desc").innerText = enemyData.desc;
@@ -369,9 +387,7 @@ function Enemy(enemyData) {
       // console.log(skill[plusPosition+1], skill)
       if (parseInt(skill[plusPosition + 1]) > 0) {
         // console.log(skill[plusPosition+1],skill[plusPosition+2])
-        amount.push(
-          parseInt(skill[plusPosition + 1] + skill[plusPosition + 2])
-        );
+        amount.push(parseInt(skill[plusPosition + 1] + skill[plusPosition + 2]));
       }
     });
 
@@ -393,9 +409,7 @@ function Enemy(enemyData) {
 
   // Pour les ennemis, sachant que des sorts sont mal comptés (ex 1D8 +1D6 +4)
   // Je rajoute 50% de dégâts (contre 10% par niveau pour les joueurs), que 50% pas 100% car les des (1D10,2D6,...) sont comptés !
-  this.degat = Math.round(
-    (montantSkills.reduce((a, b) => a + b, 0) / montantSkills.length) * 1.5
-  );
+  this.degat = Math.round((montantSkills.reduce((a, b) => a + b, 0) / montantSkills.length) * 1.5);
   // console.log(this.degat)
 }
 
@@ -406,11 +420,11 @@ console.log(enemyGenerated);
 
 function chooseEnemy(category = null) {
   // prettier-ignore
-  const forbidden = ["71","74","80","82","85","90","101","104","109","113"];
+  const forbidden = ["71","82","85","101","104","109","118","121"];
   // console.log(forbidden.map(f => enemyJSON[f]))
 
   // prettier-ignore
-  const boss = ["24","29","45","46","50","54","56","57","59","61","62","67","70","71","74","75","76","77","80","82","84","85","86","89","90","101","106","109","111","113","114"];
+  const boss = ["24","29","45","46","50","54","56","57","59","61","62","67","70","71","74","75","76","77","80","82","84","85","86","89","90","101","106","109","111","113","114","115","116","117","118","121","122"];
 
   var enemyList = [];
 
@@ -497,31 +511,25 @@ function dicesConversion(skill) {
     dices += Math.floor(Math.random() * 10 + 1);
   }
   if (skill.includes("2D10")) {
-    dices +=
-      Math.floor(Math.random() * 10 + 1) + Math.floor(Math.random() * 10 + 1);
+    dices += Math.floor(Math.random() * 10 + 1) + Math.floor(Math.random() * 10 + 1);
   }
   if (skill.includes("3D10")) {
-    dices +=
-      Math.floor(Math.random() * 10 + 1) * 2 +
-      Math.floor(Math.random() * 10 + 1);
+    dices += Math.floor(Math.random() * 10 + 1) * 2 + Math.floor(Math.random() * 10 + 1);
   }
   if (skill.includes("1D8")) {
     dices += Math.floor(Math.random() * 8 + 1);
   }
   if (skill.includes("2D8")) {
-    dices +=
-      Math.floor(Math.random() * 8 + 1) + Math.floor(Math.random() * 8 + 1);
+    dices += Math.floor(Math.random() * 8 + 1) + Math.floor(Math.random() * 8 + 1);
   }
   if (skill.includes("1D6")) {
     dices += Math.floor(Math.random() * 6 + 1);
   }
   if (skill.includes("2D6")) {
-    dices +=
-      Math.floor(Math.random() * 6 + 1) + Math.floor(Math.random() * 8 + 1);
+    dices += Math.floor(Math.random() * 6 + 1) + Math.floor(Math.random() * 6 + 1);
   }
   if (skill.includes("3D6")) {
-    dices +=
-      Math.floor(Math.random() * 6 + 1) * 2 + Math.floor(Math.random() * 8 + 1);
+    dices += Math.floor(Math.random() * 6 + 1) * 2 + Math.floor(Math.random() * 6 + 1);
   }
   if (skill.includes("1D4")) {
     dices += Math.floor(Math.random() * 4 + 1);
@@ -550,14 +558,34 @@ function isEnded() {
     document.querySelector("#instruction").innerText = "Victoire !";
     updateDesc("Vous avez vaincu " + enemy.nom);
     ingame = false;
-    return;
   } else if (document.querySelector("#pv").value <= 0) {
     toastNotification("Défaite");
     document.querySelector("#instruction").innerText = "Défaite";
     updateDesc("Vous avez perdu contre " + enemy.nom);
     ingame = false;
-    return;
   }
+
+  if (!ingame) {
+    endRediction();
+  }
+}
+
+function endRediction() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const indexPerso = urlParams.get("perso");
+
+  const indexPlayer = Object.entries(playerJSON)
+    .map((player) => {
+      if (player[1].persos.includes(parseInt(indexPerso))) {
+        return player[0];
+      }
+    })
+    .filter((e) => e != undefined)[0];
+
+  setTimeout(() => {
+    window.location.href = "jdr_profil.html?joueur=" + indexPlayer;
+  }, 6000);
+  return;
 }
 
 // Dice
@@ -581,17 +609,14 @@ function rollDice(user, type, statName) {
   var success;
 
   // Stat name section + Success amount
-  if (
-    type == "attaque" ||
-    type == "skill" ||
-    type == "soin" ||
-    type == "buff"
-  ) {
+  console.log(stat, type);
+  if (type == "attaque" || type == "skill" || type == "soin" || type == "buff") {
     section.querySelector(".statName").innerText = statName;
     success = stat;
   } else {
     section.querySelector(".statName").innerText = statName + "/2";
     success = Math.ceil(stat / 2);
+    console.log(success);
   }
 
   // Result
@@ -647,9 +672,11 @@ function resetDices() {
 }
 
 // Skills and stats buttons
-const skillsButton = [...document.querySelectorAll(".skillCombat")].map(
-  (skillE) => skillE.children[0]
-);
+const skillsButton = [...document.querySelectorAll(".skillCombat")].map((skillE) => {
+  if (skillE) {
+    skillE.children[0];
+  }
+});
 const statsButton = ["bforce", "bdexté", "bintel"]; //,"bcharisme","besprit"];
 
 statsButton.forEach((buttonStat) => {
@@ -665,7 +692,7 @@ statsButton.forEach((buttonStat) => {
 
 // *** Turn execution ***
 
-function turnExecution(persoSkill) {
+function turnExecution(persoSkill, skillE = null) {
   if (!ingame) {
     toastNotification("Le combat est terminé");
     return;
@@ -682,6 +709,8 @@ function turnExecution(persoSkill) {
 
   setTimeout(function () {
     newturn();
+    // Add 05/11/2023 : Can't use same skill 2 times
+    skillE.querySelector(".skillName").disabled = true;
   }, 6000);
 }
 
@@ -700,9 +729,7 @@ function enemyTurn(enemy) {
 
   // CHOIX DE STAT : Stat choisi par l'ennemi : que l'une des 2 meilleures
   var stats = { force: enemy.force, dexté: enemy.dexté, intel: enemy.intel };
-  var minStat = Object.keys(stats).reduce((key, v) =>
-    stats[v] < stats[key] ? v : key
-  );
+  var minStat = Object.keys(stats).reduce((key, v) => (stats[v] < stats[key] ? v : key));
 
   delete stats[minStat];
   var sumStatsATK = Object.values(stats)[0] + Object.values(stats)[1];
@@ -749,14 +776,14 @@ function executeAction(user, userSkill) {
 
   // Montant des dégâts
   if (userResult == "crit success") {
-    montant =
-      dicesAverageConversion(userSkill.montant) * 2 +
-      (userSkill.montantFixe || 0);
+    montant = dicesAverageConversion(userSkill.montant) * 2 + (userSkill.montantFixe || 0);
     console.log(montant);
   } else if (userResult == "success") {
     montant = dicesConversion(userSkill.montant) + (userSkill.montantFixe || 0);
     // console.log(montant);
   }
+
+  console.log("montant : ", montant);
 
   if (type == "attaque") {
     if (userResult == "crit success") {
@@ -803,10 +830,7 @@ function executeAction(user, userSkill) {
 }
 
 function hit(user, amount) {
-  // +1D10 de dégâts
-  var diceDamage = Math.ceil(Math.random() * 10);
-
-  var damage = amount + diceDamage - (user.armure || 0);
+  var damage = amount - (user.armure || 0);
   if (damage > 0) {
     // Si <0 == Big armure, mal chance, etc... donc 0 mais ça ne soigne pas
     user.pv -= damage;
@@ -819,9 +843,7 @@ function hit(user, amount) {
 }
 
 function heal(user, amount) {
-  // +1D10+6 de Heal
-  var diceHeal = Math.ceil(Math.random() * 10 + 6);
-  user.pv = parseInt(user.pv) + amount + diceHeal;
+  user.pv = parseInt(user.pv) + amount;
 
   // min() permet de gérer si les PV soignés sont > aux PV max
   document.querySelector("#pv").value = Math.min(user.pvmax, user.pv);
@@ -841,8 +863,7 @@ function buff(userSkill, amount) {
     buffE.querySelector(".duree").children[0].innerText = userSkill.duree + 1; // +1 car tour actuel à ne pas compter !
     buffE.querySelector(".duree").children[1].innerText = userSkill.duree;
     buffE.querySelector(".montant").innerText = amount;
-    buffE.querySelector(".icone").src =
-      "http://voldre.free.fr/Eden/images/skillIcon/" + userSkill.icone + ".png";
+    buffE.querySelector(".icone").src = "http://voldre.free.fr/Eden/images/skillIcon/" + userSkill.icone + ".png";
 
     buffE.querySelector(".icone").title = userSkill.buffElem;
 
@@ -852,8 +873,7 @@ function buff(userSkill, amount) {
       userSkill.buffElem = userSkill.buffElem.replace("/tour", "");
     }
     perso[userSkill.buffElem] += amount;
-    document.querySelector("#" + userSkill.buffElem).value =
-      perso[userSkill.buffElem];
+    document.querySelector("#" + userSkill.buffElem).value = perso[userSkill.buffElem];
     return false;
   });
 }
@@ -869,7 +889,7 @@ function unlockInputs(bool) {
     document.querySelector("#" + buttonStat).disabled = !bool;
   });
   skillsButton.forEach((buttonSkill) => {
-    buttonSkill.disabled = !bool;
+    if (buttonSkill) buttonSkill.disabled = !bool;
   });
 }
 
@@ -892,8 +912,7 @@ function updateBuff() {
       if (buffE.querySelector(".icone").title.includes("/tour")) {
         // If buff each turn, we remove the whole buff (amount * duration)
         perso[buffElem] -=
-          parseInt(buffE.querySelector(".montant").innerText) *
-          (parseInt(dureeE.children[1].innerText) + 1);
+          parseInt(buffE.querySelector(".montant").innerText) * (parseInt(dureeE.children[1].innerText) + 1);
       } else {
         perso[buffElem] -= parseInt(buffE.querySelector(".montant").innerText);
       }

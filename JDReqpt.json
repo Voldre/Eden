@@ -144,35 +144,40 @@
     "desc": "Pendentif de magie noire con\u00e7u par les Drakais",
     "effet": "Buff",
     "montant": "D\u00e9g\u00e2ts de t\u00e9n\u00e8bres +3",
-    "icone": "A00047"
+    "icone": "A00047",
+    "access": "D1"
   },
   "22": {
     "nom": "Ceinture Tuskar",
     "desc": "Ceinture fabriqu\u00e9 par l'artisanat Tuskar",
     "effet": "Buff",
     "montant": "PV +10",
-    "icone": "A30018"
+    "icone": "A30018",
+    "access": "A1"
   },
   "23": {
     "nom": "Noyau de Schiste",
     "desc": "Noyau concentr\u00e9 de schiste, peut augmenter l'effet des soins",
     "effet": "Soin",
     "montant": "Soin Critique (D\u00e9 1,2) : X2, si AoE : 50%. D\u00e9 3 : la moiti\u00e9",
-    "icone": "i00667"
+    "icone": "i00667",
+    "access": "A3"
   },
   "24": {
     "nom": "Anneau du rem\u00e8de",
     "desc": "Anneau am\u00e9liorant l'effet des soins",
     "effet": "Buff",
     "montant": "PV des soins effectu\u00e9s +4, AoE : +2",
-    "icone": "A00005"
+    "icone": "A00005",
+    "access": "D2"
   },
   "25": {
     "nom": "Anneau de r\u00e9sistance",
     "desc": "R\u00e9duit les d\u00e9g\u00e2ts physiques re\u00e7us",
     "effet": "Buff",
     "montant": "D\u00e9g\u00e2t physique re\u00e7u -2",
-    "icone": "A00017"
+    "icone": "A00017",
+    "access": "A1"
   },
   "26": {
     "nom": "Marteau de guerre",
@@ -249,21 +254,24 @@
     "desc": "Noyau alimentant un esprit de l'abysse",
     "effet": "",
     "montant": "Esprit +2",
-    "icone": "I00223"
+    "icone": "I00223",
+    "access": "A1"
   },
   "37": {
     "nom": "Pierre algue",
     "desc": "Une pierre en forme d'algue b\u00e9nie par les Torturrans",
     "effet": "",
     "montant": "D\u00e9g\u00e2t de nature +3",
-    "icone": "I00210"
+    "icone": "I00210",
+    "access": "D2"
   },
   "38": {
     "nom": "Crochet porte bonheur",
     "desc": "Un crochet d'une mante, tr\u00e8s color\u00e9e",
     "effet": "",
     "montant": "D\u00e9g\u00e2t physique +1",
-    "icone": "I00286"
+    "icone": "I00286",
+    "access": "D1"
   },
   "39": {
     "nom": "Ep\u00e9e odorante",
@@ -291,7 +299,8 @@
     "desc": "Le couvre-t\u00eate d'un capitaine de navire, donne l'air plus s\u00e9rieux",
     "effet": "",
     "montant": "Charisme +2",
-    "icone": "k10328"
+    "icone": "k10328",
+    "access": "A1"
   },
   "43": {
     "nom": "Dague dent\u00e9e",
@@ -312,84 +321,96 @@
     "desc": "Une cape enchant\u00e9e par un puissant sorcier de la grande guerre. Prolonge la dur\u00e9e des sorts",
     "effet": "Intelligence+1",
     "montant": "Dur\u00e9e des sorts +1 tour",
-    "icone": "A60011"
+    "icone": "A60011",
+    "access": "A2"
   },
   "46": {
     "nom": "Crystal de Baltaro\u00ef",
     "desc": "Une pierre volcanique ayant \u00e9t\u00e9 cristalis\u00e9 dans Baltaro\u00ef",
     "effet": "",
     "montant": "D\u00e9g\u00e2t de feu +3",
-    "icone": "I00400"
+    "icone": "I00400",
+    "access": "D2"
   },
   "47": {
     "nom": "Calice de la Curie M\u00e9t\u00e9role",
     "desc": "Un des calices datant de la grande guerre, gard\u00e9 par la Curie M\u00e9t\u00e9role",
     "effet": "",
     "montant": "D\u00e9g\u00e2t de lumi\u00e8re +3",
-    "icone": "i00552"
+    "icone": "i00552",
+    "access": "D2"
   },
   "48": {
     "nom": "Puce \u00e9lectronique Silus",
     "desc": "Une puce de l'Institut Silus fond\u00e9 par les Zumis",
     "effet": "",
     "montant": "D\u00e9g\u00e2t de foudre +3 (+1 si Ing\u00e9nieur)",
-    "icone": "i00689"
+    "icone": "i00689",
+    "access": "D2"
   },
   "49": {
     "nom": "Sac \u00e0 dos extensible",
     "desc": "Un sac \u00e0 dos ultra spacieux",
     "effet": "",
     "montant": "Retire tous les malus li\u00e9s \u00e0 l'inventaire",
-    "icone": "i00791"
+    "icone": "i00791",
+    "access": "A2"
   },
   "50": {
     "nom": "Pi\u00e8ce dor\u00e9e Alpaga",
     "desc": "Une des rares pi\u00e8ces dor\u00e9es cr\u00e9\u00e9 \u00e0 l'effigie d'un Alpaga",
     "effet": "",
     "montant": "Double l'or trouv\u00e9 par le porteur (ennemi, coffre)",
-    "icone": "i00807"
+    "icone": "i00807",
+    "access": "A3"
   },
   "51": {
     "nom": "Pi\u00e8ce argent\u00e9e Alpaga",
     "desc": "Une pi\u00e8ce argent\u00e9e un peu rare, cr\u00e9\u00e9 \u00e0 l'effigie d'un Alpaga",
     "effet": "",
     "montant": "Augmente de 50% l'or trouv\u00e9 par le porteur (ennemi, coffre)",
-    "icone": "i00808"
+    "icone": "i00808",
+    "access": "A2"
   },
   "52": {
     "nom": "Coeur crystalis\u00e9",
     "desc": "Un ancien artefact en forme de coeur forg\u00e9 par les Tuskars",
     "effet": "",
     "montant": "PV du porteur : +20",
-    "icone": "i00956"
+    "icone": "i00956",
+    "access": "A3"
   },
   "53": {
     "nom": "Pierre de s\u00e9curit\u00e9",
     "desc": "Une pierre permettant d'emp\u00eacher la destruction lors du craft",
     "effet": "",
     "montant": "D\u00e9g\u00e2t re\u00e7u -2",
-    "icone": "i01017"
+    "icone": "i01017",
+    "access": "A2"
   },
   "54": {
     "nom": "Boucle d'oreilles du Ma\u00eblstrom",
     "desc": "Une boucle d'oreilles forg\u00e9e par des habitants du Pic du Ma\u00eblstrom",
     "effet": "",
     "montant": "D\u00e9g\u00e2t de glace +3",
-    "icone": "k10159"
+    "icone": "k10159",
+    "access": "D2"
   },
   "55": {
     "nom": "Anneau de r\u00e9sistance magique",
     "desc": "R\u00e9duit les d\u00e9g\u00e2ts magiques re\u00e7us",
     "effet": "",
     "montant": "D\u00e9g\u00e2t magique re\u00e7u -2",
-    "icone": "A00019"
+    "icone": "A00019",
+    "access": "A1"
   },
   "56": {
     "nom": "Pendentif du Croc Brumeux",
     "desc": "Pendentif fabriqu\u00e9 sur la terre des Ursuns",
     "effet": "",
     "montant": "Force +2",
-    "icone": "A00045"
+    "icone": "A00045",
+    "access": "A1"
   },
   "57": {
     "nom": "Grimoire infernal",
@@ -508,7 +529,8 @@
     "desc": "Une poup\u00e9e tr\u00e8s r\u00e9aliste d'une douce tortue verte, tr\u00e8s mignon.",
     "effet": "",
     "montant": "Charisme face aux Torturrans/Anurans : +3",
-    "icone": "k30010"
+    "icone": "k30010",
+    "access": "A1"
   },
   "74": {
     "nom": "Lance Incandescente",
@@ -522,28 +544,32 @@
     "desc": "Un tonneau dans lequel r\u00e9side un Champigno\u00efde baga",
     "effet": "Capacit\u00e9",
     "montant": "1 fois par combat (Instantan\u00e9e) : Spore dopant : d\u00e9g\u00e2t +1D4+4 pendant 4 tours",
-    "icone": "k60038"
+    "icone": "k60038",
+    "access": "D4"
   },
   "76": {
     "nom": "Gourde miraculeuse",
     "desc": "Une gourde boostant tous les liquides qu'elle contient",
     "effet": "Capacit\u00e9",
     "montant": "2 fois par combat (Instantan\u00e9e) : soin 2D6+10",
-    "icone": "k60034"
+    "icone": "k60034",
+    "access": "A3"
   },
   "77": {
     "nom": "Sac d'Alpaga Dor\u00e9",
     "desc": "Sac \u00e0 dos \u00e0 l'effigie d'un Alpaga dor\u00e9. Tr\u00e8s mignon.",
     "effet": "Buff",
     "montant": "Renforce l'invocation Alpaga : PV +10, toutes stat +1, d\u00e9g\u00e2t+2",
-    "icone": "k60100"
+    "icone": "k60100",
+    "access": "D3"
   },
   "78": {
     "nom": "Viseur High Tech",
     "desc": "Un viseur con\u00e7u par les zumis pour am\u00e9liorer leurs performances",
     "effet": "",
     "montant": "D\u00e9g\u00e2t critique (D\u00e9 1,2) +50%. D\u00e9 3 : +25%",
-    "icone": "k10180"
+    "icone": "k10180",
+    "access": "D3"
   },
   "79": {
     "nom": "Robe du d\u00e9sert",
@@ -676,7 +702,8 @@
     "desc": "Une plume qui brille au soleil, rend son porteur chanceux",
     "effet": "",
     "montant": "Esquive +2, PV +5",
-    "icone": "I00251"
+    "icone": "I00251",
+    "access": "A3"
   },
   "98": {
     "nom": "Griffe du D\u00e9sert",
@@ -690,28 +717,32 @@
     "desc": "Une capuche con\u00e7ue pour mieux voyager dans les d\u00e9serts",
     "effet": "",
     "montant": "D\u00e9g\u00e2t -1 (0 malus dans les d\u00e9serts)",
-    "icone": "A10061"
+    "icone": "A10061",
+    "access": "A1"
   },
   "100": {
     "nom": "Tablette Antique",
     "desc": "Une tablette trouv\u00e9 dans le tombeau d'un ancien roi du d\u00e9sert",
     "effet": "",
     "montant": "D\u00e9g\u00e2t critique (D\u00e9 1,2 et 3) +25%",
-    "icone": "I00343"
+    "icone": "I00343",
+    "access": "D3"
   },
   "101": {
     "nom": "R\u00e9acteur Zumi",
     "desc": "Un engin capable de propulser son porteur, permet de retenter une esquive",
     "effet": "Capacit\u00e9",
     "montant": "2 fois par combat : Nouvelle esquive",
-    "icone": "k60077"
+    "icone": "k60077",
+    "access": "A4"
   },
   "102": {
     "nom": "Plaque R\u00e9fl\u00e9chissante",
     "desc": "Une plaque con\u00e7ue avec un mat\u00e9riau ultra r\u00e9fl\u00e9chissant",
     "effet": "Renvoi",
     "montant": "Blocage magique critique : renvoi le coup",
-    "icone": "I00238"
+    "icone": "I00238",
+    "access": "A3"
   },
   "103": {
     "nom": "Marteau de Delphes",
@@ -739,28 +770,32 @@
     "desc": "Un glyphe con\u00e7u pour am\u00e9liorer certaines armes",
     "effet": "",
     "montant": "D\u00e9g\u00e2t tranchant +2",
-    "icone": "i01611"
+    "icone": "i01611",
+    "access": "D2"
   },
   "107": {
     "nom": "Glyphe des Ursuns (2)",
     "desc": "Un glyphe con\u00e7u pour am\u00e9liorer certaines armes",
     "effet": "",
     "montant": "D\u00e9g\u00e2t contondant +2",
-    "icone": "i01667"
+    "icone": "i01667",
+    "access": "D2"
   },
   "108": {
     "nom": "Anneau curatif",
     "desc": "Un anneau du rem\u00e8de raffin\u00e9 par un joailler",
     "effet": "",
     "montant": "PV des soins effectu\u00e9s +6, AoE : +3",
-    "icone": "A000052"
+    "icone": "A000052",
+    "access": "D3"
   },
   "109": {
     "nom": "Crochet enchant\u00e9",
     "desc": "Un crochet d'une mante surcharg\u00e9e en magie",
     "effet": "",
     "montant": "Soin et D\u00e9g\u00e2t magique +2, AoE : +1",
-    "icone": "I002862"
+    "icone": "I002862",
+    "access": "D2"
   },
   "110": {
     "nom": "Masse clout\u00e9e",
@@ -1033,35 +1068,40 @@
     "desc": "Une ceinture renfor\u00e7ant son porteur",
     "effet": "",
     "montant": "PV +20 (+5 si Samoura\u00ef)",
-    "icone": "a30054"
+    "icone": "a30054",
+    "access": "A2"
   },
   "150": {
     "nom": "Gantelet de Lieutenant",
     "desc": "Un gantelet renfor\u00e7ant son porteur",
     "effet": "",
     "montant": "PV +10. D\u00e9g\u00e2t physique re\u00e7u -3",
-    "icone": "A40016"
+    "icone": "A40016",
+    "access": "A3"
   },
   "151": {
     "nom": "Bague de Glaciation",
     "desc": "Une bague unique capable de congeler presque n'importe quoi. Convertit les attaques physiques en glace.",
     "effet": "Element : Glace",
     "montant": "D\u00e9g\u00e2t +6 (glace)",
-    "icone": "i01311"
+    "icone": "i01311",
+    "access": "D4"
   },
   "152": {
     "nom": "Perle de Nihilit\u00e9",
     "desc": "Une perle pouvant annuler tous les effets magiques",
     "effet": "Debuff",
     "montant": "Nullifie la magie autour du porteur",
-    "icone": "i01490"
+    "icone": "i01490",
+    "access": "A3"
   },
   "153": {
     "nom": "Pendentif Ail\u00e9",
     "desc": "Un pendentif b\u00e9ni am\u00e9liorant fortement les soins re\u00e7us",
     "effet": "",
     "montant": "PV Soin re\u00e7u +33%",
-    "icone": "k10113"
+    "icone": "k10113",
+    "access": "A3"
   },
   "154": {
     "nom": "Ep\u00e9e des Plaines Dor\u00e9es",
@@ -1208,28 +1248,32 @@
     "desc": "Un charme augmentant l'exp\u00e9rience re\u00e7u",
     "effet": "",
     "montant": "Exp\u00e9rience re\u00e7u +10%",
-    "icone": "I00425"
+    "icone": "I00425",
+    "access": "A1"
   },
   "175": {
     "nom": "Amulette d'Exp\u00e9rience",
     "desc": "Une amulette augmentant l'exp\u00e9rience re\u00e7u",
     "effet": "",
     "montant": "Exp\u00e9rience re\u00e7u +20%",
-    "icone": "I00428"
+    "icone": "I00428",
+    "access": "A2"
   },
   "176": {
     "nom": "Bijou Iris",
     "desc": "Un bijou augmentant l'exp\u00e9rience re\u00e7u pour le groupe",
     "effet": "Groupe",
     "montant": "Exp\u00e9rience re\u00e7u +10%, porteur PV+5",
-    "icone": "i00541"
+    "icone": "i00541",
+    "access": "A3"
   },
   "177": {
     "nom": "Pierre de s\u00e9curit\u00e9 Sublime",
     "desc": "Une pierre garantissant la r\u00e9ussite lors du craft",
     "effet": "",
     "montant": "D\u00e9g\u00e2t re\u00e7u -4",
-    "icone": "I00529"
+    "icone": "I00529",
+    "access": "A4"
   },
   "178": {
     "nom": "B\u00e2ton Sadique",
@@ -1264,7 +1308,8 @@
     "desc": "Un ouvrage rare permettant d'am\u00e9liorer la puissance des familiers",
     "effet": "Am\u00e9lioration familier",
     "montant": "Familier : PV +10, d\u00e9g\u00e2t+4",
-    "icone": "I00134"
+    "icone": "I00134",
+    "access": "D3"
   },
   "183": {
     "nom": "Dague Aquatique",
@@ -1299,14 +1344,16 @@
     "desc": "Un brassard augmentant les pouvoirs de son porteur",
     "effet": "",
     "montant": "D\u00e9g\u00e2t AoE+4",
-    "icone": "a40045"
+    "icone": "a40045",
+    "access": "D3"
   },
   "188": {
     "nom": "Brassard du Combattant",
     "desc": "Un brassard augmentant la puissance du porteur. Appartient \u00e0 la panoplie du combattant",
     "effet": "",
     "montant": "D\u00e9g\u00e2t physique +2 (+2 si panoplie)",
-    "icone": "A40021"
+    "icone": "A40021",
+    "access": "D2"
   },
   "189": {
     "nom": "Tenue de Supporter",
@@ -1348,7 +1395,8 @@
     "desc": "Une cape poss\u00e9dant un oeil capable d'endormir les ennemis, tel un illusionniste",
     "effet": "Capacit\u00e9",
     "montant": "1 fois par combat : Utilise Oeil Hypnotique (chance blocage -3)",
-    "icone": "k60288"
+    "icone": "k60288",
+    "access": "D4"
   },
   "195": {
     "nom": "D\u00e9 Amplificateur",
@@ -1376,14 +1424,16 @@
     "desc": "Un collier incrust\u00e9 de crystaux d'Asbi, am\u00e9liore la survie de son porteur",
     "effet": "",
     "montant": "Esquive & Blocage +1",
-    "icone": "A00032"
+    "icone": "A00032",
+    "access": "A3"
   },
   "199": {
     "nom": "Anneau du Sorcier",
     "desc": "Un anneau accentuant l'effet (montant) des buffs (seulement les d\u00e9g\u00e2ts et d\u00e9g\u00e2ts re\u00e7us)",
     "effet": "",
     "montant": "Montant des buffs +2",
-    "icone": "A00008"
+    "icone": "A00008",
+    "access": "D2"
   },
   "200": {
     "nom": "Bouclier de l'Esprit",
@@ -1397,7 +1447,8 @@
     "desc": "Une bague am\u00e9liorant les soins re\u00e7us",
     "effet": "",
     "montant": "PV Soin re\u00e7u +25%",
-    "icone": "A00018"
+    "icone": "A00018",
+    "access": "A1"
   },
   "202": {
     "nom": "Poignard de Skleros",
@@ -1411,63 +1462,72 @@
     "desc": "Un noble couvre-chef repr\u00e9sentant les Plaines Fleuries",
     "effet": "",
     "montant": "D\u00e9g\u00e2t de nature +3, tranchant +2",
-    "icone": "k10613"
+    "icone": "k10613",
+    "access": "D3"
   },
   "204": {
     "nom": "Gemme du Chaos",
     "desc": "Une gemme renfor\u00e7ant le pouvoir du chaos",
     "effet": "",
     "montant": "D\u00e9g\u00e2t de t\u00e9n\u00e8bres +3, lumi\u00e8re +2",
-    "icone": "I00354b"
+    "icone": "I00354b",
+    "access": "D3"
   },
   "205": {
     "nom": "Glyphe du Chasseur",
     "desc": "Un glyphe con\u00e7u pour am\u00e9liorer 2 \u00e9l\u00e9ments",
     "effet": "",
     "montant": "D\u00e9g\u00e2t per\u00e7ant +3, nature +2",
-    "icone": "i01130"
+    "icone": "i01130",
+    "access": "D3"
   },
   "206": {
     "nom": "Glyphe du Danselame",
     "desc": "Un glyphe con\u00e7u pour am\u00e9liorer 2 \u00e9l\u00e9ments",
     "effet": "",
     "montant": "D\u00e9g\u00e2t de feu +3, tranchant +2",
-    "icone": "i01128"
+    "icone": "i01128",
+    "access": "D3"
   },
   "207": {
     "nom": "Glyphe du Templier",
     "desc": "Un glyphe con\u00e7u pour am\u00e9liorer 2 \u00e9l\u00e9ments",
     "effet": "",
     "montant": "D\u00e9g\u00e2t lumi\u00e8re +3, contondant +2",
-    "icone": "i01124"
+    "icone": "i01124",
+    "access": "D3"
   },
   "208": {
     "nom": "Glyphe du Magicien",
     "desc": "Un glyphe con\u00e7u pour am\u00e9liorer 2 \u00e9l\u00e9ments",
     "effet": "",
     "montant": "D\u00e9g\u00e2t de glace +3, foudre +2",
-    "icone": "i01137"
+    "icone": "i01137",
+    "access": "D3"
   },
   "209": {
     "nom": "Crystal du Forgeron",
     "desc": "Un ancien crystal ayant appartenu \u00e0 un grand forgeron",
     "effet": "",
     "montant": "D\u00e9g\u00e2t de feu +3, contondant +2",
-    "icone": "I00221"
+    "icone": "I00221",
+    "access": "D3"
   },
   "210": {
     "nom": "Crystal de Skleros",
     "desc": "Un crystal duquel \u00e9mane une puissante magie, il a \u00e9t\u00e9 trouv\u00e9 dans les abysses",
     "effet": "",
     "montant": "D\u00e9g\u00e2t de glace +3,  t\u00e9n\u00e8bres +2",
-    "icone": "I00235"
+    "icone": "I00235",
+    "access": "D3"
   },
   "211": {
     "nom": "Puce de vis\u00e9e",
     "desc": "Une puce \u00e9lectronique de l'institut Silus renforc\u00e9 pour les tireurs",
     "effet": "",
     "montant": "D\u00e9g\u00e2t de foudre +3,  per\u00e7ant +2",
-    "icone": "i01714"
+    "icone": "i01714",
+    "access": "D3"
   },
   "212": {
     "nom": "Robe de l'Hiver",
@@ -1558,21 +1618,24 @@
     "desc": "Un brassard port\u00e9 par un grand h\u00e9ros ma\u00eetrisant plusieurs techniques. Appartient \u00e0 la Panoplie du \"H\u00e9ros\".",
     "effet": "",
     "montant": "Force +1, Intelligence +1",
-    "icone": "a40052"
+    "icone": "a40052",
+    "access": "A1"
   },
   "225": {
     "nom": "Pantoufles Discr\u00e8tes",
     "desc": "Des pantoufles permettant d'\u00eatre bien plus discret et furtif",
     "effet": "",
     "montant": "En invisibilit\u00e9 : chance d'\u00eatre touch\u00e9 -3",
-    "icone": "A50008"
+    "icone": "A50008",
+    "access": "A3"
   },
   "226": {
     "nom": "Bottes de Guerre",
     "desc": "Bottes robustes permettant de mieux encaisser les coups, mais ralentissant son porteur",
     "effet": "",
     "montant": "D\u00e9g\u00e2t re\u00e7u -3, Dext\u00e9rit\u00e9 -2",
-    "icone": "A50030"
+    "icone": "A50030",
+    "access": "A3"
   },
   "227": {
     "nom": "Grimoire des bourbes",
@@ -1593,70 +1656,80 @@
     "desc": "Un flacon scell\u00e9 contenant des crystaux d'\u00e9nergies. L'aura qui en \u00e9mane renforce son porteur.",
     "effet": "",
     "montant": "Intelligence +2",
-    "icone": "I00085"
+    "icone": "I00085",
+    "access": "A1"
   },
   "230": {
     "nom": "Puissance de B\u00e9louga",
     "desc": "Un artefact ancien gard\u00e9 \u00e0 B\u00e9louga, on dit qu'il contient la puissance des baleines.",
     "effet": "",
     "montant": "D\u00e9g\u00e2t AoE +3",
-    "icone": "I00344"
+    "icone": "I00344",
+    "access": "D3"
   },
   "231": {
     "nom": "M\u00e9daille Versatile",
     "desc": "M\u00e9daille destin\u00e9 au champion du Tournoi Versatile, conf\u00e9rant de la puissance \u00e0 son porteur",
     "effet": "",
     "montant": "D\u00e9g\u00e2t +2, D\u00e9g\u00e2t re\u00e7u -2",
-    "icone": "I00390"
+    "icone": "I00390",
+    "access": "D4"
   },
   "232": {
     "nom": "Noyau charg\u00e9 de Stella",
     "desc": "Ce noyau a \u00e9t\u00e9 en contact avec plusieurs minerais de Stella, il d\u00e9r\u00e8gle les appareils de mesure.",
     "effet": "Intelligence -1",
     "montant": "D\u00e9g\u00e2t sur faiblesse +6",
-    "icone": "I00224"
+    "icone": "I00224",
+    "access": "D3"
   },
   "233": {
     "nom": "Sang Fossilis\u00e9",
     "desc": "Du sang d'un d\u00e9mon sup\u00e9rieur extr\u00eamement r\u00e9sistant qui a durci, il est utilis\u00e9 comme une relique.",
     "effet": "Stress Accentu\u00e9",
     "montant": "PV +30",
-    "icone": "I00211"
+    "icone": "I00211",
+    "access": "A1"
   },
   "234": {
     "nom": "Coeur Fossilis\u00e9",
     "desc": "Un coeur d'un d\u00e9mon sup\u00e9rieur vigoureux qui a durci, il est utilis\u00e9 comme une relique.",
     "effet": "Stress Accentu\u00e9",
     "montant": "Toutes Stats +1",
-    "icone": "I00271"
+    "icone": "I00271",
+    "access": "A1"
   },
   "235": {
     "nom": "Toxine Noire",
     "desc": "Une toxine qui peut se r\u00e9pandre dans le corps des victimes du porteur",
     "effet": "Stress Accentu\u00e9",
     "montant": "D\u00e9g\u00e2t +2, D\u00e9g\u00e2t sur Faiblesse +5",
-    "icone": "I00396"
+    "icone": "I00396",
+    "access": "D4"
   },
   "236": {
     "nom": "Charme d'Exp\u00e9rience Noir",
     "desc": "Un charme augmentant l'exp\u00e9rience re\u00e7u",
     "effet": "Stress Accentu\u00e9",
     "montant": "Exp\u00e9rience re\u00e7u +40%",
-    "icone": "I00427"
+    "icone": "I00427",
+    "access": "A4"
   },
   "237": {
     "nom": "Pierre de s\u00e9curit\u00e9 Noir",
     "desc": "Une pierre maudite garantissant la r\u00e9ussite lors du craft",
     "effet": "Stress Accentu\u00e9",
     "montant": "D\u00e9g\u00e2t re\u00e7u -5",
-    "icone": "i01555"
+    "icone": "i01555",
+    "access": "A4"
   },
   "238": {
     "nom": "Orbe D\u00e9moniaque",
     "desc": "Invoque un D\u00e9mon : 35 PV, Force : 15, Dext\u00e9 : 12, Intel : 15, Charisme : 12, Esprit : 12. Sort : Griffure 1D10+6 (Force), Jet de T\u00e9n\u00e8bres 1D10+6 (Intel)",
     "effet": "Stress Accentu\u00e9 / Capacit\u00e9",
     "montant": "2 fois par combat (0 jet) : Invoque un familier d\u00e9mon ",
-    "icone": "i01461"
+    "icone": "i01461",
+    "access": "D4"
   },
   "239": {
     "nom": "Faucille tranche-r\u00eave",
@@ -1670,7 +1743,8 @@
     "desc": "Un bijou b\u00e9ni par les dieux, son effet est double : gain de savoir et diminution de stress",
     "effet": "",
     "montant": "R\u00e9duit le stress g\u00e9n\u00e9r\u00e9 du porteur. XP du groupe +10%",
-    "icone": "i00542"
+    "icone": "i00542",
+    "access": "A4"
   },
   "241": {
     "nom": "Plastron du D\u00e9mon",
@@ -1684,7 +1758,8 @@
     "desc": "Une bougie qui diminue le stress, du moins, tant qu'elle est allum\u00e9e.",
     "effet": "",
     "montant": "Stress Diminu\u00e9",
-    "icone": "I00347"
+    "icone": "I00347",
+    "access": "A1"
   },
   "243": {
     "nom": "Dague Heldentod",
@@ -1698,7 +1773,8 @@
     "desc": "Dernier vestige de l'Arbre Yggdrasil issu de la Mandragore. Cet artefact augmente consid\u00e9rablement les soins re\u00e7us.",
     "effet": "",
     "montant": "PV Soin re\u00e7u +50%",
-    "icone": "I00185"
+    "icone": "I00185",
+    "access": "A4"
   },
   "245": {
     "nom": "Katana taill\u00e9",
@@ -1740,21 +1816,24 @@
     "desc": "Un lapin trop chou et adorable, bienveillant et gentil. Le lapin agit ind\u00e9pendamment de son porteur.",
     "effet": "Capacit\u00e9",
     "montant": "3 fois par s\u00e9ance : le Lapin influence un D\u00e9 (\u00b15)",
-    "icone": "k10145"
+    "icone": "k10145",
+    "access": "A4"
   },
   "251": {
     "nom": "Pierre de Chance",
     "desc": "Une pierre pouvant porter chance \u00e0 son porteur. Un miracle peut se produire dans les extr\u00eames.",
     "effet": "",
     "montant": "2 fois par s\u00e9ance : Relance d'un D\u00e9 possible (si identique : Amplification, micracle si D\u00e9 1 & 20)",
-    "icone": "i01472"
+    "icone": "i01472",
+    "access": "A3"
   },
   "252": {
     "nom": "Lapin chou violet",
     "desc": "Un lapin trop chou mais qui est espi\u00e8gle, rus\u00e9, malin et farceur. Le lapin agit ind\u00e9pendamment de son porteur.",
     "effet": "Capacit\u00e9",
     "montant": "3 fois par s\u00e9ance : le Lapin influence un D\u00e9 (\u00b15)",
-    "icone": "k10146"
+    "icone": "k10146",
+    "access": "A4"
   },
   "253": {
     "nom": "Griffe en Acier renforc\u00e9",
@@ -1789,7 +1868,8 @@
     "desc": "Des lunettes assez anciennes aux propri\u00e9t\u00e9s inconnues",
     "effet": "Capacit\u00e9",
     "montant": "2 fois par combat (Instantan\u00e9e) : Dext\u00e9rit\u00e9 +3 pendant 3 tours",
-    "icone": "k19016"
+    "icone": "k19016",
+    "access": "D4"
   },
   "258": {
     "nom": "Robe de Lucius",
@@ -1803,35 +1883,40 @@
     "desc": "Ce bouquin ne contient rien d'int\u00e9ressant, si ce n'est quelques recettes de cuisine. Mais son \u00e9paisseur et sa mati\u00e8re le rendent ultra r\u00e9sistant.",
     "effet": "",
     "montant": "Blocage physique +2, magique +1",
-    "icone": "I00136"
+    "icone": "I00136",
+    "access": "A4"
   },
   "260": {
     "nom": "Tiare du Savoir",
     "desc": "Une tiare magique qui am\u00e9liore la concentration de son porteur et le guide.",
     "effet": "",
     "montant": "Intelligence +1, Esprit +1",
-    "icone": "A10017"
+    "icone": "A10017",
+    "access": "A1"
   },
   "261": {
     "nom": "Chaussures d'agilit\u00e9",
     "desc": "Des chaussures offrant agilit\u00e9 et abilit\u00e9 \u00e0 son porteur, tout devient fluide.",
     "effet": "",
     "montant": "Dext\u00e9rit\u00e9 +1, Esprit +1",
-    "icone": "A50022"
+    "icone": "A50022",
+    "access": "A1"
   },
   "262": {
     "nom": "Pelote d'entrave",
     "desc": "Pelote fabriqu\u00e9e par des Ezelins d'une autre \u00e9poque. Permet de forcer l'ennemi \u00e0 retenter son esquive ou son blocage. Utilisable hors combat pour d\u00e9placer la cible.",
     "effet": "",
     "montant": "2 fois par combat (Instantan\u00e9e) : force un ennemi \u00e0 re-esquiver ou re-bloquer (-1 si attaque du porteur)",
-    "icone": "i00794"
+    "icone": "i00794",
+    "access": "D4"
   },
   "263": {
     "nom": "Gantelet Noireflammes",
     "desc": "Un gantelet ayant appartenu \u00e0 l'un des plus grands forgerons du Pic de Noireflammes. Appartient \u00e0 la Panoplie Noireflammes (2 pi\u00e8ces)",
     "effet": "Panoplie",
     "montant": "D\u00e9g\u00e2t +2, (+2 si Panoplie)",
-    "icone": "A40036"
+    "icone": "A40036",
+    "access": "D4"
   },
   "264": {
     "nom": "Griffe de Puissance",
@@ -1859,7 +1944,8 @@
     "desc": "Un chapeau \u00e0 l'effigie d'un Ursun blanc et d'un Ursun noir, repr\u00e9sentant le bon et le mauvais. Il aurait le pouvoir d'apaiser le groupe lorsqu'il est utilis\u00e9 par un Ursun.",
     "effet": "Capacit\u00e9 Groupe",
     "montant": "3 fois par s\u00e9ance : Diminue le stress et (si Ursun) baisse l'augmentation (3 tours)",
-    "icone": "monokuma"
+    "icone": "monokuma",
+    "access": "A4"
   },
   "268": {
     "nom": "Katana Entaille-cerisier",
@@ -1873,7 +1959,8 @@
     "desc": "Un artefact ancien permettant de voir au-del\u00e0 des illusions et des mensonges",
     "effet": "Capacit\u00e9",
     "montant": "2 fois par combat (Instantan\u00e9e) : R\u00e9duit le stress g\u00e9n\u00e9r\u00e9 par les ennemis (3 tours)",
-    "icone": "k10233"
+    "icone": "k10233",
+    "access": "A4"
   },
   "270": {
     "nom": "Luth du Charmeur",
@@ -1887,14 +1974,16 @@
     "desc": "Une fl\u00fbte faite de p\u00e9tales et de tiges de fleurs de lune, ceux qui l\u2019entendent suivront aveugl\u00e9ment le joueur",
     "effet": "Capacit\u00e9",
     "montant": "1 fois par combat : Contr\u00f4le de l'Esprit AoE",
-    "icone": "I00154"
+    "icone": "I00154",
+    "access": "D4"
   },
   "272": {
     "nom": "Oreillette-micro",
     "desc": "Une oreillette avec des ailes d'anges permettant d'enregistrer sa voix afin de l'amplier avec des appareils.",
     "effet": "",
     "montant": "Dur\u00e9e des sorts +1 tour",
-    "icone": "k10682"
+    "icone": "k10682",
+    "access": "D3"
   },
   "273": {
     "nom": "Tenue d'Idole",
@@ -1908,35 +1997,40 @@
     "desc": "Une ceinture port\u00e9e par les grands nobles du Royaume d'Amur",
     "effet": "",
     "montant": "D\u00e9g\u00e2t re\u00e7us -2, Dext\u00e9rit\u00e9 +1",
-    "icone": "A30011"
+    "icone": "A30011",
+    "access": "A2"
   },
   "275": {
     "nom": "Anneau de r\u00e9sistance mentale",
     "desc": "Cet anneau con\u00e7u par des moines Ursuns augmente la r\u00e9sistance d'esprit de son porteur.",
     "effet": "",
     "montant": "R\u00e9sistance d'esprit +3",
-    "icone": "A00020"
+    "icone": "A00020",
+    "access": "A2"
   },
   "276": {
     "nom": "Brassard de r\u00e9sistance",
     "desc": "Ce brassard con\u00e7u par des moines Ursuns augmente la r\u00e9sistance d'esprit de son porteur.",
     "effet": "",
     "montant": "R\u00e9sistance d'esprit +2, d\u00e9g\u00e2t re\u00e7u- 1",
-    "icone": "A40024"
+    "icone": "A40024",
+    "access": "A2"
   },
   "277": {
     "nom": "Mitaine amplificatrice",
     "desc": "Cette mitaine a \u00e9t\u00e9 con\u00e7ue avec amour et permet \u00e0 son porteur d'amplifier les effets (montants) des buffs (seulement les d\u00e9g\u00e2ts et d\u00e9g\u00e2ts re\u00e7us)",
     "effet": "",
     "montant": "Montant des buffs +2, d\u00e9g\u00e2t re\u00e7u -1",
-    "icone": "A40010"
+    "icone": "A40010",
+    "access": "D2"
   },
   "278": {
     "nom": "Puce amplificatrice",
     "desc": "Cette puce a \u00e9t\u00e9 cr\u00e9\u00e9e par un magicien zumi qui en avait marre de faire des sorts de soutien faible.",
     "effet": "",
     "montant": "Montant des buffs +2, d\u00e9g\u00e2t +1",
-    "icone": "i00688"
+    "icone": "i00688",
+    "access": "D2"
   },
   "279": {
     "nom": "Hache Cruelle",
@@ -1957,21 +2051,24 @@
     "desc": "Une gemme augmentant les d\u00e9g\u00e2ts inflig\u00e9s, mais diminuant la chance de r\u00e9ussir ses attaques. Appartient \u00e0 la Panoplie \"Puissance\".",
     "effet": "R\u00e9ussite -1",
     "montant": "D\u00e9g\u00e2t +4 (+1 si panoplie)",
-    "icone": "i01146"
+    "icone": "i01146",
+    "access": "D4"
   },
   "282": {
     "nom": "Crystal de Volesang",
     "desc": "Un crystal issu de l'antique taureau pr\u00e9cieux, h\u00e9raut de guerre : Volesang. Un esprit sacr\u00e9 invoqu\u00e9 par la Chelona",
     "effet": "",
     "montant": "Dur\u00e9e des malus +1 tour, montant d\u00e9g\u00e2t malus +1",
-    "icone": "I00220b"
+    "icone": "I00220b",
+    "access": "D4"
   },
   "283": {
     "nom": "Brassard de Nihilit\u00e9",
     "desc": "Un brassard \u00e9quip\u00e9 de la Perle de Nihilit\u00e9. Un m\u00e9canisme permet de changer le rayon d'effet (crans 1m et 5m). Capacit\u00e9 Zone Antimagie : d\u00e9g\u00e2t magique subi = 0. Et dans la zone [2 crans] chaque tour : (intel,esprit)/2, les lanceurs de buffs/malus magique doivent tenter de les maintenir (jet/2); pendant 3 tours (annulable)",
     "effet": "Capacit\u00e9/ Intel,Esprit -1",
     "montant": "Blocage magique +2, 2 fois par combat (Instantan\u00e9e) : Zone Antimagie",
-    "icone": "a40061"
+    "icone": "a40061",
+    "access": "A4"
   },
   "284": {
     "nom": "Dague Euphorique",
@@ -1985,14 +2082,16 @@
     "desc": "Un m\u00e9gaphone permettant d'amplifier la voix et de provoquer les ennemis.",
     "effet": "Capacit\u00e9",
     "montant": "3 fois par combat (Instantan\u00e9e) : Permet de provoquer les ennemis (1 chance sur 2 d'\u00eatre cibl\u00e9)",
-    "icone": "I00420"
+    "icone": "I00420",
+    "access": "D3"
   },
   "286": {
     "nom": "Ceinture de Volesang",
     "desc": "Une ceinture fabriqu\u00e9e avec la carapace de roc pr\u00e9cieuse qui recouvrait Volesang. Capacit\u00e9 : renvoi une partie des d\u00e9g\u00e2ts (1/3 sans armure), mais d\u00e9g\u00e2t re\u00e7u total (sauf si critique : 2/3)",
     "effet": "Capacit\u00e9",
     "montant": "D\u00e9g\u00e2t re\u00e7u -2, 3 fois par combat (Esprit) : D\u00e9g\u00e2t miroir",
-    "icone": "a30061"
+    "icone": "a30061",
+    "access": "A4"
   },
   "287": {
     "nom": "Fusil d'Ogre",
@@ -2027,28 +2126,32 @@
     "desc": "On raconte que cette perle aurait le pouvoir de d\u00e9clencher une \u00e9clipse. Ceux qui la regarde trop longtemps peuvent finir aveugle.",
     "effet": "",
     "montant": "Si coup critique (1, 2) : r\u00e9ussite cible -2 (1 tour)",
-    "icone": "I00232"
+    "icone": "I00232",
+    "access": "A4"
   },
   "292": {
     "nom": "Croc sombre",
     "desc": "Un croc appartenant \u00e0 une cr\u00e9ature immense et sombre.",
     "effet": "",
     "montant": "D\u00e9g\u00e2t de t\u00e9n\u00e8bres +3, per\u00e7ant +2",
-    "icone": "I00263b"
+    "icone": "I00263b",
+    "access": "D3"
   },
   "293": {
     "nom": "Statuette de Pr\u00e9vention",
     "desc": "Une statue qui prie pour le salut, elle permet \u00e0 son porteur de venir en aide \u00e0 lui-m\u00eame ou aux autres.",
     "effet": "Capacit\u00e9",
     "montant": "2 fois par combat (Instantan\u00e9e Esprit) : retire un malus. D\u00e9g\u00e2t re\u00e7u -1D4 (min 2) pour 3 tours",
-    "icone": "I00408"
+    "icone": "I00408",
+    "access": "A3"
   },
   "294": {
     "nom": "Parchemin de l'\u00e9pine",
     "desc": "Permet \u00e0 son porteur de lanceur de g\u00e9n\u00e9rer un bouclier d'\u00e9pines, permettant de mieux r\u00e9sister et de blesser l'ennemi.",
     "effet": "Capacit\u00e9",
     "montant": "2 fois par combat (Instantan\u00e9e Esprit) : D\u00e9g\u00e2t re\u00e7u -4, d\u00e9g\u00e2t d'\u00e9pines +4 (3 tours)",
-    "icone": "I00312"
+    "icone": "I00312",
+    "access": "A3"
   },
   "295": {
     "nom": "Poignard Quartz d'Automne",
@@ -2153,28 +2256,32 @@
     "desc": "Un glyphe rare con\u00e7u pour am\u00e9liorer certaines armes",
     "effet": "",
     "montant": "D\u00e9g\u00e2t tranchant +3, contondant +3",
-    "icone": "i01607"
+    "icone": "i01607",
+    "access": "D3"
   },
   "310": {
     "nom": "Glyphe du Sage",
     "desc": "Un glyphe con\u00e7u pour am\u00e9liorer 2 \u00e9l\u00e9ments",
     "effet": "",
     "montant": "D\u00e9g\u00e2t de glace +3, contondant +2",
-    "icone": "i01136"
+    "icone": "i01136",
+    "access": "D3"
   },
   "311": {
     "nom": "Glyphe du Samoura\u00ef",
     "desc": "Un glyphe con\u00e7u pour am\u00e9liorer 2 \u00e9l\u00e9ments",
     "effet": "",
     "montant": "D\u00e9g\u00e2t de tranchant +3, foudre +2",
-    "icone": "i01129"
+    "icone": "i01129",
+    "access": "D3"
   },
   "312": {
     "nom": "Glyphe du Shaman",
     "desc": "Un glyphe con\u00e7u pour am\u00e9liorer 2 \u00e9l\u00e9ments",
     "effet": "",
     "montant": "D\u00e9g\u00e2t de nature +3, lumi\u00e8re +2",
-    "icone": "i01135"
+    "icone": "i01135",
+    "access": "D3"
   },
   "313": {
     "nom": "B\u00e2ton Chromatique",
@@ -2188,14 +2295,16 @@
     "desc": "Une Sph\u00e8re pourpre ayant le pouvoir de d\u00e9tecter les \u00e9lus d'un \"\u00e9v\u00e8nement\". Certains disent qu'elle vient d'un autre monde. Am\u00e9liore tous les alli\u00e9s.",
     "effet": "Groupe",
     "montant": "Exp\u00e9rience re\u00e7u +20%, porteur +10 PV",
-    "icone": "I00348b"
+    "icone": "I00348b",
+    "access": "A4"
   },
   "315": {
     "nom": "Sph\u00e8re Opaque",
     "desc": "Une Sph\u00e8re myst\u00e9rieuse qui semble rapprocher les gens. Un petit point semble indiquer une \"direction\". Certains disent qu'elle vient d'un autre monde. Am\u00e9liore tous les alli\u00e9s.",
     "effet": "Groupe",
     "montant": "Exp\u00e9rience re\u00e7u +10%, porteur +5 PV",
-    "icone": "I00348"
+    "icone": "I00348",
+    "access": "A2"
   },
   "316": {
     "nom": "Ep\u00e9e Knowledge",
@@ -2223,7 +2332,8 @@
     "desc": "Une bague compos\u00e9e de fleurs apaisantes. Ces fleurs lib\u00e8rent un parfum agr\u00e9able de lavande, tous ceux qui la sente seront d\u00e9tendus.",
     "effet": "Capacit\u00e9",
     "montant": "2 fois par combat (Instantan\u00e9e Charisme) : Apaise les ennemis (blocage -1, r\u00e9sistance esprit -2) sur 3 tours",
-    "icone": "A00003b"
+    "icone": "A00003b",
+    "access": "D2"
   },
   "320": {
     "nom": "Masse Pulv\u00e9risante",
@@ -2272,27 +2382,69 @@
     "desc": "Un joyau rouge mal\u00e9fique contenant l'\u00e2me d'une ancienne guerri\u00e8re d'il y a plusieurs si\u00e8cles : Sekhmet. Une force mal\u00e9fique en \u00e9mane.",
     "effet": "Conversion Lumi\u00e8re en T\u00e9n\u00e8bres",
     "montant": "Force +1, Intelligence +1",
-    "icone": "i01082b"
+    "icone": "i01082b",
+    "access": "D2"
   },
   "327": {
     "nom": "Graine Sacr\u00e9e",
     "desc": "Cette graine provient d'un marais sp\u00e9cial. Il est dit qu'il conf\u00e8re \u00e0 son porteur une protection.",
     "effet": "",
     "montant": "D\u00e9g\u00e2t re\u00e7u -2, d\u00e9g\u00e2t nature +3",
-    "icone": "I00160"
+    "icone": "I00160",
+    "access": "A3"
   },
   "328": {
     "nom": "Insigne de l'Ordre du Temple",
     "desc": "Ancien insigne en or pur, il aurait appartenu aux anc\u00eatres de la Curie M\u00e9t\u00e9role : l'Ordre des Chevaliers du Temple, les meilleurs templiers d'Aven.",
     "effet": "(Clerc, Sage, Chev, Templ, Cors)",
     "montant": " D\u00e9g\u00e2t & Soin +1, pour chaque classe poss\u00e9d\u00e9e : +2 (AoE +1)",
-    "icone": "i01667"
+    "icone": "i01667",
+    "access": "D4"
   },
   "329": {
     "nom": "Anneau Ouragan",
     "desc": "Un anneau portant la magie du Port Ouragan. Il a le pouvoir de soigner miraculeusement son porteur.",
     "effet": "",
     "montant": "Si coup critique (1,2) : Soigne 1D6+6",
-    "icone": "A00019"
+    "icone": "A00019",
+    "access": "D4"
+  },
+  "330": {
+    "nom": "Super Chapeau Champi",
+    "desc": "Une version am\u00e9lior\u00e9e du Chapeau de Champigno\u00efde. Il a appartenu \u00e0 un grand champigno\u00efde.",
+    "effet": "",
+    "montant": "Soin et D\u00e9g\u00e2t magique +3, AoE : +2",
+    "icone": "A10028",
+    "access": "D3"
+  },
+  "331": {
+    "nom": "Robe de D\u00e9mone du Nord",
+    "desc": "Une robe cousue sp\u00e9cialement pour la \"g\u00e9n\u00e9rale de l'arm\u00e9e de d\u00e9mons du nord\" par le Roi Lucius",
+    "effet": "Am\u00e9lioration familier",
+    "montant": "D\u00e9g\u00e2t -4, Familier : d\u00e9g\u00e2t+2, r\u00e9ussite sort+1",
+    "icone": "k20180"
+  },
+  "332": {
+    "nom": "Bouclier Zuminator",
+    "desc": "Un bouclier \u00e0 l'effigie de Zuminator, le Zumi du conte de super-heros.",
+    "effet": "Si Zumi : PV+10",
+    "montant": "D\u00e9g\u00e2t -4. Blocage physique critique : renvoi le coup",
+    "icone": "W73002"
+  },
+  "333": {
+    "nom": "Serre-t\u00eate d'Acteur",
+    "desc": "Un joli serre-t\u00eate utilis\u00e9 par les acteurs dans leur tournage, \u00e9l\u00e9gant.",
+    "effet": "",
+    "montant": "Dext\u00e9rit\u00e9 +1, Charisme +1",
+    "icone": "k10298",
+    "access": "A1"
+  },
+  "334": {
+    "nom": "Bandeau du Rageux",
+    "desc": "Un bandeau \u00e0 l'effigie d'un perroquet, ce qui ne repr\u00e9sente pas du tout le Rageux, un aigle.",
+    "effet": "Am\u00e9lioration familier",
+    "montant": "Maintient l'Aigle en vie malgr\u00e9 la distance",
+    "icone": "bandeau",
+    "access": "A4"
   }
 }

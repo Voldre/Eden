@@ -792,10 +792,10 @@
     "classe": ["Sage"]
   },
   "95": {
-    "nom": "Marteau d'inspiration",
+    "nom": "Marteau d'Inspiration",
     "desc": "Fracasse l'ennemi avec un grand coup de marteau",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "1D10+3",
+    "montant": "1D10+4",
     "icone": "E0538",
     "stat": "Force",
     "classe": ["Sage"]
