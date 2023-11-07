@@ -1,22 +1,19 @@
 // JSON Initialisation
 var xhReq = new XMLHttpRequest();
-var eqptJSON = {};
-var enemyJSON = {};
+var cardJSON = {};
 var persosJSON = {};
-var allSkills = [];
+var playerJSON = [];
 
 console.log(window.location.href);
 if (window.location.href.includes("http")) {
   xhReq.open("GET", "./JDRskills.json" + "?" + new Date().getTime(), false);
   xhReq.send(null);
 
-  enemyJSON = getData("enemy");
-
-  eqptJSON = getData("eqpt");
+  cardJSON = getData("card");
 
   persosJSON = getData("persos");
 
-  allSkills = getData("combatS");
+  playerJSON = getData("player");
 }
 
 function getData(filename) {
@@ -25,19 +22,157 @@ function getData(filename) {
   return JSON.parse(xhReq.responseText);
 }
 
-const charactersByPlayer = {
-  Florian: [2, 8, 10, 20, 22],
-  Jérémy: [3, 9, 12, 19, 21, 25],
-  Victorine: [4, 5, 11, 17, 18, 23],
-  Yves: [6, 7],
-  Clément: [13, 14],
-  Rachel: [15, 24, 26],
-  Hugo: [16],
-  Cyrille: [27],
-};
+const charactersList = document.querySelector(".charactersList");
+const persosE = [...charactersList.children];
 
-Object.keys(charactersByPlayer).forEach((player) => {
+// Table Initialisation
+
+// prettier-ignore
+const classes = [ "Guerrier", "Chevalier", "Templier", "Chev Dragon", "Voleur", "Assassin", "Danselame", "Samouraï", "Chasseur", "Ingénieur", "Corsaire", "Juge", "Clerc", "Barde", "Shaman", "Sage", "Magicien", "Illusionniste", "Démoniste", "Luminary",];
+// prettier-ignore
+const iconsClasses = [ "01", "02", "03", "18", "04", "05", "06", "16", "07", "08", "09", "59", "10", "11", "12", "17", "13", "14", "15", "19",];
+
+//  LOADING
+const selectPerso = document.querySelector("#selectPlayer");
+var selectedPerso = selectPerso.value;
+// var selectedID = selectPerso.selectedIndex;
+
+window.addEventListener("load", () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has("joueur")) {
+    selectPerso.value = urlParams.get("joueur");
+    // loadFiche(urlParams.get('perso'));
+    selectedPerso = selectPerso.value;
+    // selectedID = selectPerso.selectedIndex;
+    loadPlayer(selectedPerso);
+  }
+});
+
+Object.keys(playerJSON).forEach((player) => {
+  console.log(player);
   var option = document.createElement("option");
   option.value = player;
+  option.innerText = player;
   document.querySelector("#selectPlayer").append(option);
 });
+
+document.querySelector("#selectPlayer").addEventListener("change", (e) => {
+  console.log(e.target.value);
+  loadPlayer(e.target.value);
+});
+
+function loadPlayer(player) {
+  charactersList.id = player;
+
+  const joueurData = playerJSON[player];
+
+  if (!joueurData) return;
+
+  console.log(joueurData);
+  document.querySelector(".alpagaCoin").innerText = joueurData.alpagaCoin;
+  document.querySelector(".alpagaCoinSpent").innerText = " (" + joueurData.alpagaCoinSpent + ")";
+
+  const persosData = joueurData.persos.map((indexPerso) => {
+    return persosJSON[indexPerso - 1]; // Error, index -1
+  });
+
+  if (!persosData) return;
+
+  persosE.forEach((e) => e.classList.add("hide"));
+
+  persosData.forEach((perso, index) => {
+    loadPerso(perso, index);
+  });
+
+  loadCards(joueurData);
+  countCards(joueurData);
+}
+
+function loadPerso(perso, index) {
+  // console.log(perso, index);
+  const persoE = persosE[index];
+
+  persoE.querySelector("#nom").value = perso.nom;
+  persoE.querySelector("#niv").value = perso.niv;
+  persoE.querySelector(".persoPic").src = perso.pp;
+  persoE.querySelector(".persoPic").addEventListener("click", () => {
+    const indexPerso = Object.entries(persosJSON).find((p) => p[1] === perso)[0];
+    window.location.href = "jdr_quest.html?perso=" + (parseInt(indexPerso) + 1);
+  });
+
+  // Classes du perso
+  var classePID = classes.indexOf(perso.classeP);
+  var classeSID = classes.indexOf(perso.classeS);
+
+  persoE.querySelector(".iconClasses").children[0].src =
+    "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" + iconsClasses[classePID] + ".png";
+  persoE.querySelector(".iconClasses").children[1].src =
+    "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" + iconsClasses[classeSID] + ".png";
+
+  persoE.classList.remove("hide");
+}
+
+function loadCards(joueurData) {
+  // const cardsData = joueurData.cards.map((cardId) => cardJSON[cardId]);
+
+  const rarityClass = ["common", "rare", "epic"];
+
+  cardJSON.forEach((card) => {
+    const cardE = document.createElement("div");
+    cardE.className = "card";
+    cardE.classList.add(rarityClass[card.value - 1]);
+    const nameCardE = document.createElement("h4");
+    nameCardE.innerText = card.name;
+    const descCardE = document.createElement("p");
+    descCardE.innerText = card.description;
+
+    const imgCardE = document.createElement("img");
+
+    const imgEndPoint = "images/";
+
+    switch (card.kind) {
+      case "map": {
+        imgCardE.src = imgEndPoint + "loadingframe/Loading_" + card.kindId + ".png";
+        break;
+      }
+      case "boss": {
+        imgCardE.src = imgEndPoint + "monsters/" + card.kindId + ".png";
+        break;
+      }
+      case "composant": {
+        imgCardE.src = imgEndPoint + "items/" + card.kindId + ".png";
+        break;
+      }
+      case "anecdote": {
+        imgCardE.src = imgEndPoint + card.kindId + ".png";
+        break;
+      }
+      default:
+        console.log("Erreur, type non reconnu : " + card.kind);
+    }
+
+    cardE.appendChild(imgCardE);
+    console.log(joueurData);
+    if (joueurData.cards.includes(card.id)) {
+      cardE.appendChild(nameCardE);
+      cardE.appendChild(descCardE);
+    }
+    document.querySelector("#" + card.kind)?.append(cardE);
+  });
+}
+
+function countCards(joueurData) {
+  const kinds = ["map", "boss", "composant", "anecdote"];
+
+  kinds.forEach((kind) => {
+    const countJoueurCardsByKind = joueurData.cards
+      .map((cardId) => cardJSON.filter((c) => c.id === cardId && c.kind === kind).length)
+      .reduce((partialSum, a) => partialSum + a, 0);
+    console.log(kind, countJoueurCardsByKind);
+
+    const countCardsByKind = cardJSON.filter((c) => c.kind === kind).length;
+
+    document.querySelector("#" + kind + "Count").innerText =
+      "(" + countJoueurCardsByKind + "/" + countCardsByKind + ")";
+  });
+}
