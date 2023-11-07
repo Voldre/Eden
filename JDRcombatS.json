@@ -15,8 +15,8 @@
     "type": "buff",
     "buffElem": "degat",
     "montant": "1D6",
-    "montantFixe": 6,
-    "duree": 3,
+    "montantFixe": 4,
+    "duree": 4,
     "icone": "E0024"
   },
   {
@@ -26,8 +26,8 @@
     "type": "buff",
     "buffElem": "degat",
     "montant": "1D6",
-    "montantFixe": 6,
-    "duree": 3,
+    "montantFixe": 4,
+    "duree": 4,
     "icone": "E0008"
   },
   {
@@ -38,7 +38,7 @@
     "buffElem": "degat",
     "montant": "1D4",
     "montantFixe": 4,
-    "duree": 4,
+    "duree": 5,
     "icone": "E0014"
   },
   {
@@ -64,26 +64,21 @@
     "icone": "E0286"
   },
   {
-    "nom": "---",
+    "nom": "Percée du Chevalier",
     "classe": "Chevalier",
     "statUsed": "force",
-    "type": "buff",
-    "buffElem": "armure",
-    "montant": "1D4",
-    "montantFixe": 2,
-    "duree": 4,
-    "icone": "E0029"
+    "type": "attaque",
+    "montant": "Dégât +2D6+1D4",
+    "icone": "E0290"
   },
   {
-    "nom": "---",
+    "nom": "Lumière de Guérison",
     "classe": "Templier",
-    "statUsed": "force",
-    "type": "buff",
-    "buffElem": "armure",
-    "montant": "1D4",
-    "montantFixe": 2,
-    "duree": 4,
-    "icone": "E0029"
+    "statUsed": "intel",
+    "type": "soin",
+    "montant": "1D8",
+    "montantFixe": 4,
+    "icone": "E0307"
   },
   {
     "nom": "---",
@@ -95,5 +90,149 @@
     "montantFixe": 2,
     "duree": 4,
     "icone": "E0029"
+  },
+  {
+    "nom": "Attaque Rapide",
+    "classe": "Voleur",
+    "statUsed": "dexté",
+    "type": "attaque",
+    "montant": "Dégât +1D8 +1D6 +1D4",
+    "icone": "E0047"
+  },
+  {
+    "nom": "Contrôle de l'Energie",
+    "classe": "Assassin",
+    "statUsed": "esprit",
+    "type": "soin",
+    "montant": "1D6",
+    "montantFixe": 3,
+    "icone": "E0334"
+  },
+  {
+    "nom": "Lames Dansantes",
+    "classe": "Danselame",
+    "statUsed": "dexté",
+    "type": "attaque",
+    "montant": "Dégât +3D6",
+    "icone": "E0062"
+  },
+  {
+    "nom": "Foi du Temple",
+    "classe": "Samouraï",
+    "statUsed": "esprit",
+    "type": "buff",
+    "buffElem": "armure",
+    "montant": "1D4",
+    "montantFixe": 2,
+    "duree": 4,
+    "icone": "E0483"
+  },
+  {
+    "nom": "Triple Tir",
+    "classe": "Chasseur",
+    "statUsed": "dexté",
+    "type": "attaque",
+    "montant": "Dégât +1D8 +1D6 +1D4",
+    "icone": "E0068"
+  },
+  {
+    "nom": "Robotisation",
+    "classe": "Ingénieur",
+    "statUsed": "esprit",
+    "type": "buff",
+    "buffElem": "armure",
+    "montant": "1D4",
+    "montantFixe": 2,
+    "duree": 4,
+    "icone": "E0083"
+  },
+  {
+    "nom": "Aura du Pourfendeur",
+    "classe": "Juge",
+    "statUsed": "esprit",
+    "type": "buff",
+    "buffElem": "degat",
+    "montant": "1D6",
+    "montantFixe": 4,
+    "duree": 4,
+    "icone": "E0879"
+  },
+  {
+    "nom": "Grâce de la Sagesse",
+    "classe": "Clerc",
+    "statUsed": "esprit",
+    "type": "buff",
+    "buffElem": ["intel", "esprit"],
+    "montant": "",
+    "montantFixe": 2,
+    "duree": 4,
+    "icone": "E0095"
+  },
+  {
+    "nom": "Hymne & Symphonie",
+    "classe": "Barde",
+    "statUsed": "esprit",
+    "type": "buff",
+    "buffElem": "degat",
+    "montant": "1D6",
+    "montantFixe": 4,
+    "duree": 4,
+    "icone": "E0105"
+  },
+  {
+    "nom": "Bouclier d'épines",
+    "classe": "Shaman",
+    "statUsed": "esprit",
+    "type": "buff",
+    "buffElem": "armure",
+    "montant": "1D4",
+    "montantFixe": 2,
+    "duree": 4,
+    "icone": "E0110"
+  },
+  {
+    "nom": "Marteau d'Inspiration",
+    "classe": "Sage",
+    "statUsed": "intel",
+    "type": "attaque",
+    "montant": "Dégât +1D10",
+    "montantFixe": 4,
+    "icone": "E0538"
+  },
+  {
+    "nom": "Magie Extrême",
+    "classe": "Magicien",
+    "statUsed": "esprit",
+    "type": "buff",
+    "buffElem": "degat",
+    "montant": "1D6",
+    "montantFixe": 6,
+    "duree": 4,
+    "icone": "E0430"
+  },
+  {
+    "nom": "Stalactites Glaciales",
+    "classe": "Illusionniste",
+    "statUsed": "intel",
+    "type": "attaque",
+    "montant": "Dégât +2D6+1D4",
+    "icone": "E0124"
+  },
+  {
+    "nom": "Hommage",
+    "classe": "Démoniste",
+    "statUsed": "esprit",
+    "type": "soin",
+    "montant": "1D8",
+    "montantFixe": 4,
+    "icone": "E0137"
+  },
+  {
+    "nom": "Coupure Noire",
+    "classe": "Luminary",
+    "statUsed": "force",
+    "type": "attaque",
+    "montant": "Dégât +2D6+1D4",
+    "icone": "E0603"
   }
 ]

@@ -452,6 +452,14 @@ dialog::backdrop {
   z-index: -1;
 }
 
+.loading {
+  user-select: none;
+  pointer-events: none;
+  background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/hd/b6e0b072897469.5bf6e79950d23.gif") !important;
+  background-size: cover;
+  opacity: 0.8;
+}
+
 #mapName {
   position: absolute;
   top: 0px;
@@ -464,7 +472,7 @@ dialog::backdrop {
 #actions {
   position: absolute;
   width: 75%;
-  top: 13%;
+  top: 15%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 0px;
@@ -482,6 +490,7 @@ dialog::backdrop {
 #actions li:hover {
   background-color: rgba(36, 36, 106, 0.8);
 }
+
 #pnj {
   max-width: min(800px, 50%);
   max-height: min(200px, 70%);
@@ -496,6 +505,72 @@ dialog::backdrop {
   position: absolute;
   bottom: -5px;
   right: 0%;
+}
+
+/* JDR Profil */
+
+.charactersList > div {
+  border: 1.5px goldenrod solid;
+  margin: 5px;
+  max-height: 240px;
+  overflow: hidden;
+}
+
+.charactersList input {
+  user-select: none;
+  pointer-events: none;
+  max-width: 120px;
+}
+.charactersList > div:hover {
+  background-color: rgba(36, 36, 106, 0.8);
+  cursor: pointer;
+  filter: brightness(110%);
+}
+.persoPic {
+  max-width: 170px;
+  max-height: 250px;
+}
+.alpagaCoinSpent {
+  color: gainsboro;
+  font-size: 13px;
+}
+
+.card {
+  overflow: auto;
+  max-height: 150px;
+  width: 170px;
+  border: 1px black solid;
+  border-radius: 5px;
+  background-color: #333;
+  padding: 0px 5px;
+  margin: 2px;
+}
+.card img {
+  height: 40px;
+  width: 40px;
+}
+.card h4,
+.card p {
+  margin: 0px;
+}
+
+#map {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  justify-content: space-around;
+}
+#map .card {
+  width: 120px;
+}
+
+.common {
+  border: 1px green solid;
+}
+.rare {
+  border: 1px blue solid;
+}
+.epic {
+  border: 1px purple solid;
 }
 
 /* Toast Notification */

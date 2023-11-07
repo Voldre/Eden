@@ -1,0 +1,79 @@
+{
+  "1": {
+    "id": "M007",
+    "nom": "Jeune Enfant",
+    "race": "Humain",
+    "desc": "Un jeune garçon qui cherche à jouer et s'amuser.",
+    "lang": "Parle de façon familière voire vulgaire."
+  },
+  "2": {
+    "id": "M011",
+    "nom": "Torturran Herboriste",
+    "race": "Torturran",
+    "desc": "Un Torturran en recherche d'herbe médicinale.",
+    "lang": "Parle de façon courtoise et noble."
+  },
+  "3": {
+    "id": "M015",
+    "nom": "Drakai Démoniste",
+    "race": "Drakai",
+    "desc": "Un Drakai pratiquant la magie noire. Réalisant des rituels sombres.",
+    "lang": "Parle un peu mal, utilise des mots simples."
+  },
+  "4": {
+    "id": "M037",
+    "nom": "Anuran Clerc",
+    "race": "Anuran",
+    "desc": "Un Anuran prêt à aider les autres avec ses pouvoirs guerisseurs.",
+    "lang": "Parle avec beaucoup d'éloquence et est blagueur."
+  },
+  "5": {
+    "id": "M051",
+    "nom": "Zumi Guerrier",
+    "race": "Zumi",
+    "desc": "Un Zumi dévoué à défendre le peuple, amical et inventif.",
+    "lang": "Parle de façon amicale et simple."
+  },
+  "6": {
+    "id": "M125",
+    "nom": "Garde de la Ville",
+    "race": "Humain",
+    "desc": "Un garde dévoué à défendre le peuple.",
+    "lang": "Parle de façon professionnelle et sérieuse."
+  },
+  "7": {
+    "id": "M126",
+    "nom": "Garde de la Curie Métérole",
+    "race": "Humain",
+    "desc": "Un garde puissant et doué en magie de lumière, qui travaille pour l'église (la Curie Métérole), il travaille soit pour une unité défensive, soit d'expédition soit offensive. Son chef lui donne des instructions et son but est d'aider le peuple.",
+    "lang": "Parle de façon professionnelle et sérieuse."
+  },
+  "8": {
+    "id": "M127",
+    "nom": "Garde Heldentod",
+    "race": "Humain",
+    "desc": "Un garde qui travaille pour un empire nommé Heldentod, c'est un empire belliqueux qui recherche le pouvoir et la suprêmatie. Ils sont généralement peu commode et feront tout ce qu'ils peuvent pour atteindre leur objectif.",
+    "lang": "Parle de façon hautaine, directif et franc."
+  },
+  "9": {
+    "id": "M014",
+    "nom": "Ogre Solitaire",
+    "race": "Ogre",
+    "desc": "Un ogre pas commode et pas très gentil. Il parle mal, il s'exprime mal, et est parfois vulgaire",
+    "lang": "Parle mal, utilise des mots vulgaires et simples, fait des phrases courtes."
+  },
+  "10": {
+    "id": "M048",
+    "nom": "Zumi Ingénieur",
+    "race": "Zumi",
+    "desc": "Un Zumi ingénieur et très créatif. Il réalise de nombreuses inventions High Tech et adore la technologie.",
+    "lang": "Parle avec des mots savants, utilise des mots compliqués."
+  },
+  "11": {
+    "id": "M048b",
+    "nom": "Moymoy",
+    "race": "Zumi Androïd",
+    "desc": "Un Zumi Androïd créé de toute pièce. Il voyage avec Malvis, une jeune femme, et il la suit partout. Il est très intelligent et découvre le monde pour aider les gens. Moymoy parle comme un robot.",
+    "lang": "Parle comme un robot avec des mots techniques, utilise des mots compliqués."
+  }
+}

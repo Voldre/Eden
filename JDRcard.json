@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "value": 1,
+    "kind": "map",
+    "name": "Colline Tranquille",
+    "description": "La Colline Tranquille est ...",
+    "kindId": 3
+  },
+  {
+    "id": 2,
+    "value": 2,
+    "kind": "map",
+    "name": "Colline Tranquille",
+    "description": "La Colline Tranquille est ...",
+    "kindId": 3
+  },
+  {
+    "id": 3,
+    "value": 3,
+    "kind": "map",
+    "name": "Colline Tranquille",
+    "description": "La Colline Tranquille est ...",
+    "kindId": 3
+  },
+  {
+    "id": 101,
+    "value": 3,
+    "kind": "boss",
+    "name": "Baram - La Chimère Volcanique",
+    "description": "Baram est une Chimère Volcanique invoquée par ...",
+    "kindId": "m072"
+  },
+  {
+    "id": 201,
+    "value": 1,
+    "kind": "composant",
+    "name": "Acier Volcanique",
+    "description": "Ce minerai très dur est difficile à traiter à cause de son incroyable résistance à la chaleur...",
+    "kindId": "I00209"
+  },
+  {
+    "id": 301,
+    "value": 2,
+    "kind": "anecdote",
+    "name": "Kibo le criminel",
+    "description": "Kibo a été inculpé pour vol et blessures sur autruis aux Monts Arides. Comment est-ce possible venant d'un tel justicier ?!",
+    "kindId": "monsters/kibo"
+  },
+  {
+    "id": 302,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Le légendaire bouclier Zuminator",
+    "description": "Zuminator aurait laissé en ce monde le symbole de sa puissance et de sa justice : son bouclier !",
+    "kindId": "items/W73002"
+  },
+  {
+    "id": 303,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Cosmos le Remonteur de Cascade",
+    "description": "Cosmos a réussi l'exploit : remonter une cascade tout en étant inconscient ! Un pouvoir mystique entoure ce Torturran...",
+    "kindId": "items/i01579"
+  },
+  {
+    "id": 401,
+    "value": 1,
+    "kind": "stuff",
+    "name": "Marteau, Epee, Lance, etc...",
+    "description": "Description de l'arme, la les classe(s)...",
+    "kindId": "?"
+  }
+]
