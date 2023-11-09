@@ -1,10 +1,10 @@
 {
-  "Florian": { "persos": [2, 8, 10, 20, 22], "alpagaCoin": 0, "alpagaCoinSpent": 0, "cards": [] },
-  "Jérémy": { "persos": [3, 9, 12, 19, 21, 25], "alpagaCoin": 0, "alpagaCoinSpent": 0, "cards": [] },
-  "Victorine": { "persos": [4, 5, 11, 17, 18, 23], "alpagaCoin": 0, "alpagaCoinSpent": 0, "cards": [201, 301] },
+  "Florian": { "persos": [2, 8, 10, 20, 22], "alpagaCoin": 0, "alpagaCoinSpent": 0, "cards": [201, 301] },
+  "J\u00e9r\u00e9my": { "persos": [3, 9, 12, 19, 21, 25], "alpagaCoin": 0, "alpagaCoinSpent": 0, "cards": [] },
+  "Victorine": { "persos": [4, 5, 11, 17, 18, 23], "alpagaCoin": 15, "alpagaCoinSpent": 0, "cards": [302] },
   "Yves": { "persos": [6, 7], "alpagaCoin": 0, "alpagaCoinSpent": 0, "cards": [] },
-  "Clément": { "persos": [13, 14], "alpagaCoin": 0, "alpagaCoinSpent": 0, "cards": [] },
+  "Cl\u00e9ment": { "persos": [13, 14], "alpagaCoin": 0, "alpagaCoinSpent": 0, "cards": [] },
   "Rachel": { "persos": [15, 24, 26], "alpagaCoin": 0, "alpagaCoinSpent": 0, "cards": [] },
   "Hugo": { "persos": [16], "alpagaCoin": 0, "alpagaCoinSpent": 0, "cards": [] },
-  "Cyrille": { "persos": [27] }
+  "Cyrille": { "persos": [27, 28], "alpagaCoin": 0, "alpagaCoinSpent": 0, "cards": [] }
 }

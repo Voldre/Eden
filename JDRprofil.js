@@ -35,6 +35,7 @@ const iconsClasses = [ "01", "02", "03", "18", "04", "05", "06", "16", "07", "08
 //  LOADING
 const selectPerso = document.querySelector("#selectPlayer");
 var selectedPerso = selectPerso.value;
+var indexPerso;
 // var selectedID = selectPerso.selectedIndex;
 
 window.addEventListener("load", () => {
@@ -72,8 +73,8 @@ function loadPlayer(player) {
   document.querySelector(".alpagaCoin").innerText = joueurData.alpagaCoin;
   document.querySelector(".alpagaCoinSpent").innerText = " (" + joueurData.alpagaCoinSpent + ")";
 
-  const persosData = joueurData.persos.map((indexPerso) => {
-    return persosJSON[indexPerso - 1]; // Error, index -1
+  const persosData = joueurData.persos.map((idPerso) => {
+    return persosJSON[idPerso - 1]; // Error, index -1
   });
 
   if (!persosData) return;
@@ -96,8 +97,8 @@ function loadPerso(perso, index) {
   persoE.querySelector("#niv").value = perso.niv;
   persoE.querySelector(".persoPic").src = perso.pp;
   persoE.querySelector(".persoPic").addEventListener("click", () => {
-    const indexPerso = Object.entries(persosJSON).find((p) => p[1] === perso)[0];
-    window.location.href = "jdr_quest.html?perso=" + (parseInt(indexPerso) + 1);
+    document.querySelector("#worldmap").classList.add("active");
+    indexPerso = Object.entries(persosJSON).find((p) => p[1] === perso)[0];
   });
 
   // Classes du perso
@@ -112,8 +113,25 @@ function loadPerso(perso, index) {
   persoE.classList.remove("hide");
 }
 
+document.addEventListener("click", (e) => {
+  if (e.target.dataset.map || e.target.parentElement.dataset.map) {
+    window.location.href =
+      "jdr_quest.html?perso=" +
+      (parseInt(indexPerso) + 1) +
+      "&map=" +
+      (e.target.dataset.map || e.target.parentElement.dataset.map);
+    return;
+  }
+  if (e.target.id !== "worldmap01" && e.target.className !== "persoPic")
+    if ([...document.querySelector("#worldmap").classList].includes("active"))
+      document.querySelector("#worldmap").classList.remove("active");
+});
+
 function loadCards(joueurData) {
-  // const cardsData = joueurData.cards.map((cardId) => cardJSON[cardId]);
+  const kinds = ["map", "boss", "composant", "anecdote"];
+
+  // Reset
+  kinds.forEach((kind) => (document.querySelector("#" + kind).innerText = ""));
 
   const rarityClass = ["common", "rare", "epic"];
 

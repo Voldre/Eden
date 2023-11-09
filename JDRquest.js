@@ -53,7 +53,7 @@ window.addEventListener("load", async () => {
   const pnjData = pnjJSON[randomPNJ];
 
   // 10 pour le moment en desc
-  const mapID = Math.round(Math.random() * 7 + 3);
+  const mapID = urlParams.get("map") || Math.round(Math.random() * 7 + 3);
   const mapData = mapsJSON[mapID.toString()];
 
   document.querySelector(".game").style.backgroundImage = "url('./images/loadingframe/Loading_" + mapID + "B.jpg')";
@@ -204,7 +204,7 @@ function initializeActions(actions, enemyData, pnjEnemy = { nom: null }, mapID) 
     var actionURL;
     if (id == 0) {
       enemy = enemyData["nom"];
-      actionURL = "jdr_combat.html?perso=" + indexPerso + "&enemy=" + enemy;
+      actionURL = "jdr_combat.html?perso=" + indexPerso + "&enemy=" + enemy + "&map=" + mapID;
     } else if (id == 1) {
       // @TODO : Créer la HomePage
       const indexPlayer = Object.entries(playerJSON)
