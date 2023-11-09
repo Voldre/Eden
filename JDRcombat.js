@@ -5,6 +5,7 @@ var enemyJSON = {};
 var persosJSON = {};
 var allSkills = [];
 var playerJSON = {};
+var cardJSON = {};
 
 console.log(window.location.href);
 if (window.location.href.includes("http")) {
@@ -20,6 +21,8 @@ if (window.location.href.includes("http")) {
   allSkills = getData("combatS");
 
   playerJSON = getData("player");
+
+  cardJSON = getData("card");
 }
 
 function getData(filename) {
@@ -100,6 +103,9 @@ var enemy = {};
 
 var turn = 0;
 var ingame = false;
+var indexPlayer;
+var joueurData;
+var selectedEnemy;
 
 // console.log('Master JSON', masterJSON);
 console.log("Enemy JSON", enemyJSON);
@@ -120,7 +126,41 @@ const selectPerso = document.querySelector("#selectPerso");
 
 // Load perso if URL parameter
 window.addEventListener("load", () => {
-  // getCookie(loadJDRcombat)
+  const urlParams = new URLSearchParams(window.location.search);
+
+  if (urlParams.has("perso")) {
+    const indexPerso = urlParams.get("perso");
+
+    indexPlayer = Object.entries(playerJSON)
+      .map((player) => {
+        if (player[1].persos.includes(parseInt(indexPerso))) {
+          return player[0];
+        }
+      })
+      .filter((e) => e != undefined)[0];
+
+    if (!cookieCheck()) return;
+
+    joueurData = playerJSON[indexPlayer];
+    console.log(joueurData);
+    selectPerso.value = urlParams.get("perso") - 1;
+    // loadFiche(urlParams.get('perso'));
+    // selectedPerso = selectPerso.value;
+    var selectedID = selectPerso.selectedIndex + 1;
+  }
+  loadFiche(selectedID);
+  if (urlParams.has("enemy")) {
+    selectedEnemy = Object.values(enemyJSON).find((e) => e.nom == urlParams.get("enemy"));
+  } else {
+    selectedEnemy = chooseEnemy();
+    // Math.round(Math.random()*110)
+  }
+  loadEnemy(selectedEnemy);
+
+  newturn();
+});
+
+function cookieCheck() {
   let name = "loadJDRcombat=";
   let decodedCookie = decodeURIComponent(document.cookie);
   let ca = decodedCookie.split(";");
@@ -137,29 +177,15 @@ window.addEventListener("load", () => {
 
   if (cookieAllow !== "true") {
     toastNotification("Erreur : Lancez un combat à partir d'une quête", 6000);
-    endRediction();
+    endRediction(indexPlayer);
+    return false;
   } else {
     console.log("Allowed");
     // Remove permission for next attempt
     document.cookie = "loadJDRcombat=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    return true;
   }
-  const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.has("perso")) {
-    selectPerso.value = urlParams.get("perso") - 1;
-    // loadFiche(urlParams.get('perso'));
-    // selectedPerso = selectPerso.value;
-    var selectedID = selectPerso.selectedIndex + 1;
-  }
-  loadFiche(selectedID);
-  if (urlParams.has("enemy")) {
-    const selectedEnemy = Object.values(enemyJSON).find((e) => e.nom == urlParams.get("enemy"));
-    loadEnemy(selectedEnemy);
-  } else {
-    loadEnemy(chooseEnemy());
-    // Math.round(Math.random()*110)
-  }
-  newturn();
-});
+}
 
 selectPerso.addEventListener("change", (e) => {
   var indexPerso = e.target.selectedIndex;
@@ -553,39 +579,125 @@ function newturn() {
 }
 
 function isEnded() {
-  if (document.querySelector("#epv").value <= 0) {
-    toastNotification("Victoire !");
-    document.querySelector("#instruction").innerText = "Victoire !";
-    updateDesc("Vous avez vaincu " + enemy.nom);
-    ingame = false;
-  } else if (document.querySelector("#pv").value <= 0) {
-    toastNotification("Défaite");
-    document.querySelector("#instruction").innerText = "Défaite";
-    updateDesc("Vous avez perdu contre " + enemy.nom);
-    ingame = false;
+  if (ingame) {
+    if (document.querySelector("#epv").value <= 0) {
+      toastNotification("Victoire !");
+      document.querySelector("#instruction").innerText = "Victoire !";
+      updateDesc("Vous avez vaincu " + enemy.nom);
+      ingame = false;
+
+      // Victory
+      if (joueurData) {
+        victory();
+        toastNotification("Sauvegarde effectuée, redirection ...", 6000);
+      } else {
+        toastNotification("Pas de joueur détecté", 6000);
+      }
+    } else if (document.querySelector("#pv").value <= 0) {
+      toastNotification("Défaite");
+      document.querySelector("#instruction").innerText = "Défaite";
+      updateDesc("Vous avez perdu contre " + enemy.nom);
+      ingame = false;
+    }
   }
 
   if (!ingame) {
-    endRediction();
+    endRediction(indexPlayer);
   }
 }
 
-function endRediction() {
+function victory() {
+  var enemyRarity;
+  if (selectedEnemy.pvmax >= 200) {
+    enemyRarity = Math.trunc(selectedEnemy.pvmax / 100) + 1;
+  } else if (selectedEnemy.pvmax >= 125) {
+    enemyRarity = 2;
+  } else {
+    enemyRarity = 1;
+  }
+
+  const cardRarity = Math.min(enemyRarity, 3);
+
+  var newJoueurData = { ...joueurData };
+  var winCards = [];
+
+  // Map card
   const urlParams = new URLSearchParams(window.location.search);
-  const indexPerso = urlParams.get("perso");
+  if (urlParams.get("map")) {
+    const mapCard = cardJSON.find(
+      (card) => card.kindId === parseInt(urlParams.get("map")) && card.value === cardRarity
+    );
+    newJoueurData.cards = addCard(newJoueurData.cards, mapCard);
+    winCards.push(mapCard);
+  }
+  // Boss card
+  if (cardRarity == 3) {
+    const bossCard = cardJSON.find(
+      (card) => card.kind == "boss" && card.kindId.toLowerCase() === selectedEnemy.visuel3D.toLowerCase()
+    );
+    newJoueurData.cards = addCard(newJoueurData.cards, bossCard);
+    winCards.push(bossCard);
+  }
 
-  const indexPlayer = Object.entries(playerJSON)
-    .map((player) => {
-      if (player[1].persos.includes(parseInt(indexPerso))) {
-        return player[0];
-      }
-    })
-    .filter((e) => e != undefined)[0];
+  // Compo card
 
+  // Coins
+  newJoueurData.alpagaCoin = addCoins(newJoueurData.alpagaCoin, winCards, enemyRarity);
+
+  // Show rewards (cards)
+  showCardsAndCoins(joueurData, winCards, newJoueurData.alpagaCoin);
+
+  // Update player data
+
+  var newPlayer = {};
+  newPlayer[indexPlayer] = newJoueurData;
+  console.log(newPlayer);
+
+  const newPersoEncoded = JSON.stringify(newPlayer).replaceAll("+", "%2B").replaceAll(";", "%3B");
+  // encodeURIComponent(JSON.stringify(newPerso))
+  const cookiePerso = "playerJSON=" + newPersoEncoded + "; SameSite=Strict";
+
+  document.cookie = cookiePerso;
+  saveWithPHP("player");
+  console.log("saveFiche() done : JDRsaveFile.php executed");
+}
+
+function addCard(joueurDataCards, card) {
+  if (card && !joueurDataCards.includes(card.id)) joueurDataCards.push(card.id);
+  return joueurDataCards;
+}
+function addCoins(alpagaCoin, winCards, enemyRarity) {
+  const cardsValue = winCards?.map((card) => card.value)?.reduce((acc, value) => acc + value) || enemyRarity;
+  return alpagaCoin + cardsValue + Math.max(enemyRarity - 3, 0);
+}
+function showCardsAndCoins(joueurData, winCards, newCoins) {
+  console.log("Earned : " + (newCoins - joueurData.alpagaCoin).toString() + ", New sold : " + newCoins.toString());
+  console.log(winCards.map((card) => card.name));
+  winCards.forEach((card) => {
+    if (!joueurData.cards.includes(card.id)) {
+      console.log(card.name + " is a new Card !");
+    }
+  });
+}
+
+function endRediction(indexPlayer) {
   setTimeout(() => {
     window.location.href = "jdr_profil.html?joueur=" + indexPlayer;
   }, 6000);
   return;
+}
+
+function saveWithPHP(nameJSON) {
+  // eslint-disable-next-line no-undef
+  $.ajax({
+    url: "JDRsaveFile.php",
+    type: "post",
+    data: { name: nameJSON },
+    /*
+    success: function (data) {
+      $("body").html(data);
+    },*/
+  });
 }
 
 // Dice
@@ -672,13 +784,9 @@ function resetDices() {
 }
 
 // Skills and stats buttons
-const skillsButton = [...document.querySelectorAll(".skillCombat")].map((skillE) => {
-  if (skillE) {
-    skillE.children[0];
-  }
-});
-const statsButton = ["bforce", "bdexté", "bintel"]; //,"bcharisme","besprit"];
+const skillsButton = [...document.querySelectorAll(".skillCombat")].map((skillE) => skillE.children[0]);
 
+const statsButton = ["bforce", "bdexté", "bintel"]; //,"bcharisme","besprit"];
 statsButton.forEach((buttonStat) => {
   var statName = buttonStat.slice(1);
   document.querySelector("#" + buttonStat).addEventListener("click", () => {
@@ -710,7 +818,7 @@ function turnExecution(persoSkill, skillE = null) {
   setTimeout(function () {
     newturn();
     // Add 05/11/2023 : Can't use same skill 2 times
-    skillE.querySelector(".skillName").disabled = true;
+    if (skillE) skillE.querySelector(".skillName").disabled = true;
   }, 6000);
 }
 
@@ -889,7 +997,7 @@ function unlockInputs(bool) {
     document.querySelector("#" + buttonStat).disabled = !bool;
   });
   skillsButton.forEach((buttonSkill) => {
-    if (buttonSkill) buttonSkill.disabled = !bool;
+    buttonSkill.disabled = !bool;
   });
 }
 
