@@ -535,6 +535,13 @@ dialog::backdrop {
   font-size: 13px;
 }
 
+#worldmap {
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  z-index: 5;
+}
+
 .card {
   overflow: auto;
   max-height: 150px;
@@ -560,6 +567,7 @@ dialog::backdrop {
   justify-content: space-around;
 }
 #map .card {
+  margin: auto;
   width: 120px;
 }
 
