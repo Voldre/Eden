@@ -530,9 +530,21 @@ dialog::backdrop {
   max-width: 170px;
   max-height: 250px;
 }
+
+.entries {
+  position: relative;
+  bottom: 0%;
+  right: 0%;
+  background-color: #333;
+  color: wheat;
+}
+
+.alpagaCoin {
+  font-size: 20px;
+}
 .alpagaCoinSpent {
   color: gainsboro;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 #worldmap {

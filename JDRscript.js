@@ -742,7 +742,6 @@ dialog.addEventListener("click", (e) => {
     dialog.close();
   }
 });
-// dialog.show() // Opens a non-modal dialog
 
 // Toasts
 // const params = new URLSearchParams(window.location.search);
