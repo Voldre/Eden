@@ -65,11 +65,12 @@ document.querySelector("#selectPlayer").addEventListener("change", (e) => {
 function loadPlayer(player) {
   charactersList.id = player;
 
-  const joueurData = playerJSON[player];
+  if (!playerJSON[player]) return;
 
-  if (!joueurData) return;
+  const joueurData = updateDay(playerJSON[player], player);
 
   console.log(joueurData);
+
   document.querySelector(".alpagaCoin").innerText = joueurData.alpagaCoin;
   document.querySelector(".alpagaCoinSpent").innerText = " (" + joueurData.alpagaCoinSpent + ")";
 
@@ -82,23 +83,64 @@ function loadPlayer(player) {
   persosE.forEach((e) => e.classList.add("hide"));
 
   persosData.forEach((perso, index) => {
-    loadPerso(perso, index);
+    loadPerso(perso, index, joueurData);
   });
 
   loadCards(joueurData);
   countCards(joueurData);
+
+  toastNotification("Chargement réussi de " + player);
 }
 
-function loadPerso(perso, index) {
+function updateDay(joueurData, indexPlayer) {
+  const today = new Date().toLocaleString().split(" ")[0];
+
+  if (joueurData.date === today) return joueurData;
+
+  joueurData.date = today;
+  joueurData.entries.map(() => 3);
+
+  joueurData.alpagaCoin += 5;
+
+  var newPlayer = {};
+  newPlayer[indexPlayer] = joueurData;
+  // console.log(joueurData);
+
+  const newPersoEncoded = JSON.stringify(newPlayer).replaceAll("+", "%2B").replaceAll(";", "%3B");
+  const cookiePerso = "playerJSON=" + newPersoEncoded + "; SameSite=Strict";
+  document.cookie = cookiePerso;
+
+  // eslint-disable-next-line no-undef
+  $.ajax({
+    url: "JDRsaveFile.php",
+    type: "post",
+    data: { name: "player" },
+  });
+
+  console.log("saveFiche() done : JDRsaveFile.php executed");
+
+  toastNotification("Cadeau de Connexion Quotidienne : 5 Pièces Alpaga !", 6000);
+
+  return joueurData;
+}
+
+function loadPerso(perso, index, joueurData) {
   // console.log(perso, index);
   const persoE = persosE[index];
+
+  // Entrées du perso
+  persoE.querySelector(".entries").innerText = joueurData.entries[index] + "/3 ";
 
   persoE.querySelector("#nom").value = perso.nom;
   persoE.querySelector("#niv").value = perso.niv;
   persoE.querySelector(".persoPic").src = perso.pp;
-  persoE.querySelector(".persoPic").addEventListener("click", () => {
-    document.querySelector("#worldmap").classList.add("active");
-    indexPerso = Object.entries(persosJSON).find((p) => p[1] === perso)[0];
+  persoE.addEventListener("click", () => {
+    if (joueurData.entries[index] === 2) {
+      toastNotification("Erreur : Le personnage ne peut plus aller combattre, revenez demain !");
+    } else {
+      document.querySelector("#worldmap").classList.add("active");
+      indexPerso = Object.entries(persosJSON).find((p) => p[1] === perso)[0];
+    }
   });
 
   // Classes du perso
@@ -194,3 +236,69 @@ function countCards(joueurData) {
       "(" + countJoueurCardsByKind + "/" + countCardsByKind + ")";
   });
 }
+
+// Modal (Dialog) des informations de bases des labels
+
+var labelsDescription = {
+  alpagaCoin:
+    "Les pièces d'Alpaga peuvent être échangées contre de l'expérience ou de l'or.<br/>1 XP (1 perso) = 5 Pièces Alpaga<br/>1 Or (1 perso) = 2 Pièces Alpaga.",
+  map: "Les cartes de maps & donjons peuvent être obtenues sur leurs zones spécifiques. Elles donnent des informations sur la zone en question.",
+  boss: "Les cartes de Boss peuvent être obtenues n'importe où mais que sur des ennemis de niveau Boss (>= 200 PV). Elles donnent quelques informations sur eux et représentent une belle collection à avoir.",
+  composant:
+    "Les cartes composants peuvent être obtenues n'importe où. Elles représentent un composant de mine, de ferme ou d'invocation (créatures).",
+  anecdote:
+    "Les cartes anecdotes peuvent être obtenues dans des endroits et face à des ennemis étant en lien avec l'anecdote. Elles font références à des moments cultes vécus pendant le JDR !",
+};
+
+const dialog = document.querySelector("dialog");
+document.querySelectorAll("label").forEach((label) => {
+  if (!labelsDescription[label.htmlFor]) return; // Si le label n'a pas de description
+
+  label.addEventListener("click", () => {
+    dialog.innerText = "";
+    var text = document.createElement("p");
+    text.innerHTML = labelsDescription[label.htmlFor]; // description
+    dialog.append(text);
+    // Bouton de fermeture
+    var closeE = document.createElement("button");
+    closeE.id = "close";
+    closeE.innerText = "Fermer";
+    closeE.addEventListener("click", () => {
+      dialog.close();
+    });
+    dialog.append(closeE);
+
+    // Ouverture en "modal"
+    dialog.showModal();
+  });
+});
+
+// Allow user to close Modal (Dialogue) by clicking outside
+dialog.addEventListener("click", (e) => {
+  const dialogDimensions = dialog.getBoundingClientRect();
+  if (
+    e.clientX < dialogDimensions.left ||
+    e.clientX > dialogDimensions.right ||
+    e.clientY < dialogDimensions.top ||
+    e.clientY > dialogDimensions.bottom
+  ) {
+    dialog.close();
+  }
+});
+
+// Toasts
+
+function toastNotification(text, duration = 3000) {
+  var x = document.getElementById("toast");
+  if (!x.classList.contains("show")) {
+    x.classList.add("show");
+    x.innerText = text;
+    // if(lastElement){ x.append(lastElement)}
+    setTimeout(function () {
+      x.classList.remove("show");
+    }, duration);
+  }
+}
+document.getElementById("toast").addEventListener("click", () => {
+  document.getElementById("toast").classList.remove("show");
+});

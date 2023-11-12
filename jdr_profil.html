@@ -37,15 +37,21 @@
           </select>
         </li>
         <li>
-          <span class="alpagaCoin"></span> <span class="alpagaCoinSpent"></span>
-          <img
-            src="images/alpagaCoin.png"
-            style="display: inline; width: 30px; height: 30px; margin: 0px"
-            alt="Coin :"
-          />
+          <label for="alpagaCoin"
+            ><span class="alpagaCoin"></span> <span class="alpagaCoinSpent"></span>
+            <img
+              src="images/alpagaCoin.png"
+              style="display: inline; width: 30px; height: 30px; margin: 0px"
+              alt="Coin :"
+            />
+          </label>
         </li>
       </ul>
     </nav>
+    <dialog>
+      <span>Les pièces Alpaga peuvent être échangézs contre de l'expérience ou de l'or.</span>
+      <button id="close">Fermer</button>
+    </dialog>
     <div id="toast"></div>
     <div id="worldmap" class="continent">
       <div data-map="1" class="point" style="top: 26.5%; left: 64.9%"><p class="name">Aven</p></div>
@@ -95,6 +101,8 @@
           <label for="niv">Niv</label>
           <input style="width: 50px" type="number" id="niv" name="niv" readonly />
         </div>
+        <p class="entries"></p>
+
         <div class="iconClasses">
           <img src="" style="width: 60px; height: 33px" alt="" /><img src="" style="width: 60px; height: 33px" alt="" />
         </div>
@@ -107,6 +115,8 @@
           <label for="niv">Niv</label>
           <input style="width: 50px" type="number" id="niv" name="niv" readonly />
         </div>
+        <p class="entries"></p>
+
         <div class="iconClasses">
           <img src="" style="width: 60px; height: 33px" alt="" /><img src="" style="width: 60px; height: 33px" alt="" />
         </div>
@@ -119,6 +129,8 @@
           <label for="niv">Niv</label>
           <input style="width: 50px" type="number" id="niv" name="niv" readonly />
         </div>
+        <p class="entries"></p>
+
         <div class="iconClasses">
           <img src="" style="width: 60px; height: 33px" alt="" /><img src="" style="width: 60px; height: 33px" alt="" />
         </div>
@@ -131,6 +143,8 @@
           <label for="niv">Niv</label>
           <input style="width: 50px" type="number" id="niv" name="niv" readonly />
         </div>
+        <p class="entries"></p>
+
         <div class="iconClasses">
           <img src="" style="width: 60px; height: 33px" alt="" /><img src="" style="width: 60px; height: 33px" alt="" />
         </div>
@@ -143,6 +157,7 @@
           <label for="niv">Niv</label>
           <input style="width: 50px" type="number" id="niv" name="niv" readonly />
         </div>
+        <p class="entries"></p>
         <div class="iconClasses">
           <img src="" style="width: 60px; height: 33px" alt="" /><img src="" style="width: 60px; height: 33px" alt="" />
         </div>
@@ -155,6 +170,8 @@
           <label for="niv">Niv</label>
           <input style="width: 50px" type="number" id="niv" name="niv" readonly />
         </div>
+        <p class="entries"></p>
+
         <div class="iconClasses">
           <img src="" style="width: 60px; height: 33px" alt="" /><img src="" style="width: 60px; height: 33px" alt="" />
         </div>
@@ -164,13 +181,21 @@
     <h2 style="margin-bottom: 0px">Cartes à collectionner</h2>
 
     <div class="flexContainer" style="flex-direction: column">
-      <h3>Maps & Donjons <span id="mapCount"></span></h3>
+      <h3>
+        <label for="map">Maps & Donjons <span id="mapCount"></span></label>
+      </h3>
       <div id="map"></div>
-      <h3>Boss <span id="bossCount"></span></h3>
+      <h3>
+        <label for="boss">Boss <span id="bossCount"></span></label>
+      </h3>
       <div class="flexContainer" id="boss"></div>
-      <h3>Composants <span id="composantCount"></span></h3>
+      <h3>
+        <label for="composant">Composants <span id="composantCount"></span></label>
+      </h3>
       <div class="flexContainer" id="composant"></div>
-      <h3>Anecdotes de Personnages <span id="anecdoteCount"></span></h3>
+      <h3>
+        <label for="anecdote">Anecdotes de Personnages <span id="anecdoteCount"></span></label>
+      </h3>
       <div class="flexContainer" id="anecdote"></div>
     </div>
   </body>

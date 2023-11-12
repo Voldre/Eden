@@ -47,7 +47,7 @@ window.addEventListener("load", async () => {
 
   const indexPerso = urlParams.get("perso") - 1;
   const persoData = persosJSON[indexPerso];
-  const enemyData = chooseEnemy();
+  const enemyData = chooseEnemy(urlParams.get("map"));
   const randomPNJ = Math.floor(Math.random() * Object.entries(pnjJSON).length + 1);
   console.log(randomPNJ);
   const pnjData = pnjJSON[randomPNJ];
@@ -144,52 +144,30 @@ function writeMessage(persoData, pnjData, mapData, enemyData) {
   return `Tu incarnes un personnage dans l'univers de Eden Eternal.  ${pnjDesc}.\n ${mapDesc}.\n ${enemyDesc}.\n ${persoDesc}.\n`;
 }
 
-function chooseEnemy(category = null) {
+function chooseEnemy(mapId = null, category = null) {
   // prettier-ignore
   const forbidden = ["71","74","80","82","85","90","101","104","109","113"];
+
+  var enemyListId = Object.keys(enemyJSON).filter((eID) => !forbidden.includes(eID));
 
   // prettier-ignore
   const boss = ["24","29","45","46","50","54","56","57","59","61","62","67","70","71","74","75","76","77","80","82","84","85","86","89","90","101","106","109","111","113","114"];
 
-  var enemyList = [];
-
-  if (!category) {
-    enemyList = { ...enemyJSON };
-    forbidden.forEach((enemyF) => {
-      delete enemyList[enemyF];
-    });
-  } else if (category == "boss") {
-    enemyList = { ...enemyJSON };
-    enemyList = Object.keys(enemyList).filter((enemy) => boss.includes(enemy));
-
-    forbidden.forEach((enemyF) => {
-      enemyList = enemyList.filter((enemy) => enemy != enemyF);
-    });
+  if (category === "boss") {
+    enemyListId.filter((eID) => boss.includes(eID));
+  } else if (category === "mob") {
+    enemyListId.filter((eID) => !boss.includes(eID));
   }
 
-  var randomEnemy = Math.floor(Math.random() * Object.keys(enemyList).length);
-  // console.log(randomEnemy,enemyList)
-  if (!category) {
-    // console.log(enemyList[randomEnemy])
-    // console.log(Object.entries(enemyJSON).find(e => e[1] == enemyList[randomEnemy])[0]);
-
-    // Reset index
-    enemyList = format(enemyList);
+  if (mapId) {
+    enemyListId.filter((eID) => mapsJSON.mapId.mobs.includes(eID));
   }
 
-  console.log(enemyList, randomEnemy);
-  return enemyList[randomEnemy];
-}
+  const randomId = Math.floor(Math.random() * enemyListId.length);
 
-function format(object) {
-  var items = {};
+  const enemyData = enemyJSON[enemyListId[randomId]];
 
-  var i = 0;
-  for (var index in object) {
-    items[i] = object[index];
-    i++;
-  }
-  return items;
+  return enemyData;
 }
 
 function initializeActions(actions, enemyData, pnjEnemy = { nom: null }, mapID) {

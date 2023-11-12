@@ -2446,5 +2446,26 @@
     "montant": "Maintient l'Aigle en vie malgr\u00e9 la distance",
     "icone": "bandeau",
     "access": "A4"
+  },
+  "335": {
+    "nom": "Crochet de Gimu",
+    "desc": "Un crochet appartenant \u00e0 Gimu - l'Oeil du Cylcone. Ce crochet est tellement surcharg\u00e9 en magie que sa texture est difforme.",
+    "effet": "",
+    "montant": "Soin et D\u00e9g\u00e2t magique +4, AoE : +2",
+    "icone": "I002863"
+  },
+  "336": {
+    "nom": "Dague Toxique",
+    "desc": "Une dague cr\u00e9\u00e9e \u00e0 partir de cr\u00e9atures toxiques. \u00catre plant\u00e9 par cette dague peut rapidement \u00eatre fatal.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +5, si coup critique (1, 2) : prochains d\u00e9g\u00e2ts re\u00e7us +4 (1 tour)",
+    "icone": "W14604"
+  },
+  "337": {
+    "nom": "Hache Verd\u00e2tre",
+    "desc": "Une hache compos\u00e9e de r\u00e9sidus d'insectes, d'arbres et de plantes magiques.",
+    "effet": "D\u00e9g\u00e2t de Nature +3",
+    "montant": "D\u00e9g\u00e2t +10",
+    "icone": "W23707"
   }
 }

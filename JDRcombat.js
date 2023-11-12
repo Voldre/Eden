@@ -598,6 +598,14 @@ function isEnded() {
       document.querySelector("#instruction").innerText = "Défaite";
       updateDesc("Vous avez perdu contre " + enemy.nom);
       ingame = false;
+
+      // Defeat
+      if (joueurData) {
+        savePlayer(joueurData);
+        toastNotification("Sauvegarde effectuée, redirection ...", 6000);
+      } else {
+        toastNotification("Pas de joueur détecté", 6000);
+      }
     }
   }
 
@@ -649,6 +657,20 @@ function victory() {
 
   // Update player data
 
+  savePlayer(newJoueurData);
+}
+
+function savePlayer(newJoueurData) {
+  const urlParams = new URLSearchParams(window.location.search);
+
+  if (!urlParams.has("perso")) return;
+
+  const indexPerso = urlParams.get("perso");
+
+  const persoIDforPlayer = joueurData.persos.indexOf(parseInt(indexPerso));
+
+  newJoueurData.entries[persoIDforPlayer] -= 1;
+
   var newPlayer = {};
   newPlayer[indexPlayer] = newJoueurData;
   console.log(newPlayer);
@@ -667,7 +689,8 @@ function addCard(joueurDataCards, card) {
   return joueurDataCards;
 }
 function addCoins(alpagaCoin, winCards, enemyRarity) {
-  const cardsValue = winCards?.map((card) => card.value)?.reduce((acc, value) => acc + value) || enemyRarity;
+  const cardsValue =
+    winCards?.map((card) => (card ? card.value : 0))?.reduce((acc, value) => acc + value) || enemyRarity;
   return alpagaCoin + cardsValue + Math.max(enemyRarity - 3, 0);
 }
 function showCardsAndCoins(joueurData, winCards, newCoins) {
@@ -1089,7 +1112,6 @@ dialog.addEventListener("click", (e) => {
 // dialog.show() // Opens a non-modal dialog
 
 // Toasts
-// const params = new URLSearchParams(window.location.search);
 
 function toastNotification(text, duration = 3000) {
   var x = document.getElementById("toast");

@@ -543,7 +543,7 @@
     "nom": "Rituel de Mana",
     "desc": "Augmente l'Esprit de tous les alli\u00e9s",
     "effet": "Buff AoE",
-    "montant": "Esprit +3 pendant 1D4 +2 tours",
+    "montant": "Esprit +2 pendant 1D4 +2 tours",
     "icone": "E0128",
     "stat": "Esprit",
     "classe": ["Illusionniste"]

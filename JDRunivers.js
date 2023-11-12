@@ -142,7 +142,7 @@ const occurrences = skillsJSONStat.reduce(function (acc, curr) {
   return acc[curr] ? ++acc[curr] : (acc[curr] = 1), acc;
 }, {});
 
-document.querySelector(".statsBySkills").innerText = JSON.stringify(occurrences);
+document.querySelector(".statsBySkills").innerText = JSON.stringify(occurrences).replaceAll(",", ", ");
 
 // Nb skills by effect
 var skillsJSONEffect = Object.values(skillsJSON).map((skill) => skill.effet);
