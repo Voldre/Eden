@@ -1,0 +1,1570 @@
+[
+  {
+    "id": 49,
+    "value": 1,
+    "kind": "map",
+    "name": "Vestiges du Belliqueux",
+    "description": "",
+    "kindId": 17
+  },
+  {
+    "id": 50,
+    "value": 2,
+    "kind": "map",
+    "name": "Vestiges du Belliqueux",
+    "description": "",
+    "kindId": 17
+  },
+  {
+    "id": 51,
+    "value": 3,
+    "kind": "map",
+    "name": "Vestiges du Belliqueux",
+    "description": "",
+    "kindId": 17
+  },
+  {
+    "id": 52,
+    "value": 1,
+    "kind": "map",
+    "name": "Ruines d'Amur",
+    "description": "",
+    "kindId": 18
+  },
+  {
+    "id": 53,
+    "value": 2,
+    "kind": "map",
+    "name": "Ruines d'Amur",
+    "description": "",
+    "kindId": 18
+  },
+  {
+    "id": 54,
+    "value": 3,
+    "kind": "map",
+    "name": "Ruines d'Amur",
+    "description": "",
+    "kindId": 18
+  },
+  {
+    "id": 91,
+    "value": 1,
+    "kind": "map",
+    "name": "Île du Cerisier",
+    "description": "",
+    "kindId": 31
+  },
+  {
+    "id": 92,
+    "value": 2,
+    "kind": "map",
+    "name": "Île du Cerisier",
+    "description": "",
+    "kindId": 31
+  },
+  {
+    "id": 93,
+    "value": 3,
+    "kind": "map",
+    "name": "Île du Cerisier",
+    "description": "",
+    "kindId": 31
+  },
+  {
+    "id": 100,
+    "value": 1,
+    "kind": "map",
+    "name": "Royaume Dévasté",
+    "description": "",
+    "kindId": 34
+  },
+  {
+    "id": 101,
+    "value": 2,
+    "kind": "map",
+    "name": "Royaume Dévasté",
+    "description": "",
+    "kindId": 34
+  },
+  {
+    "id": 102,
+    "value": 3,
+    "kind": "map",
+    "name": "Royaume Dévasté",
+    "description": "",
+    "kindId": 34
+  },
+  {
+    "id": 103,
+    "value": 1,
+    "kind": "map",
+    "name": "Palais Heldentod",
+    "description": "",
+    "kindId": 35
+  },
+  {
+    "id": 104,
+    "value": 2,
+    "kind": "map",
+    "name": "Palais Heldentod",
+    "description": "",
+    "kindId": 35
+  },
+  {
+    "id": 105,
+    "value": 3,
+    "kind": "map",
+    "name": "Palais Heldentod",
+    "description": "",
+    "kindId": 35
+  },
+  {
+    "id": 109,
+    "value": 1,
+    "kind": "map",
+    "name": "Marina d'Edouard",
+    "description": "",
+    "kindId": 37
+  },
+  {
+    "id": 110,
+    "value": 2,
+    "kind": "map",
+    "name": "Marina d'Edouard",
+    "description": "",
+    "kindId": 37
+  },
+  {
+    "id": 111,
+    "value": 3,
+    "kind": "map",
+    "name": "Marina d'Edouard",
+    "description": "",
+    "kindId": 37
+  },
+  {
+    "id": 112,
+    "value": 1,
+    "kind": "map",
+    "name": "Royaume Durango",
+    "description": "",
+    "kindId": 38
+  },
+  {
+    "id": 113,
+    "value": 2,
+    "kind": "map",
+    "name": "Royaume Durango",
+    "description": "",
+    "kindId": 38
+  },
+  {
+    "id": 114,
+    "value": 3,
+    "kind": "map",
+    "name": "Royaume Durango",
+    "description": "",
+    "kindId": 38
+  },
+  {
+    "id": 169,
+    "value": 1,
+    "kind": "map",
+    "name": "(Île chez les Zumis) Viroona Vale",
+    "description": "",
+    "kindId": 57
+  },
+  {
+    "id": 170,
+    "value": 2,
+    "kind": "map",
+    "name": "(Île chez les Zumis) Viroona Vale",
+    "description": "",
+    "kindId": 57
+  },
+  {
+    "id": 171,
+    "value": 3,
+    "kind": "map",
+    "name": "(Île chez les Zumis) Viroona Vale",
+    "description": "",
+    "kindId": 57
+  },
+  {
+    "id": 172,
+    "value": 1,
+    "kind": "map",
+    "name": "Côte d'Aristère",
+    "description": "",
+    "kindId": 58
+  },
+  {
+    "id": 173,
+    "value": 2,
+    "kind": "map",
+    "name": "Côte d'Aristère",
+    "description": "",
+    "kindId": 58
+  },
+  {
+    "id": 174,
+    "value": 3,
+    "kind": "map",
+    "name": "Côte d'Aristère",
+    "description": "",
+    "kindId": 58
+  },
+  {
+    "id": 175,
+    "value": 1,
+    "kind": "map",
+    "name": "Steppes d'Aristère",
+    "description": "",
+    "kindId": 59
+  },
+  {
+    "id": 176,
+    "value": 2,
+    "kind": "map",
+    "name": "Steppes d'Aristère",
+    "description": "",
+    "kindId": 59
+  },
+  {
+    "id": 177,
+    "value": 3,
+    "kind": "map",
+    "name": "Steppes d'Aristère",
+    "description": "",
+    "kindId": 59
+  },
+  {
+    "id": 289,
+    "value": 1,
+    "kind": "map",
+    "name": "Île du Mariage",
+    "description": "",
+    "kindId": 97
+  },
+  {
+    "id": 290,
+    "value": 2,
+    "kind": "map",
+    "name": "Île du Mariage",
+    "description": "",
+    "kindId": 97
+  },
+  {
+    "id": 291,
+    "value": 3,
+    "kind": "map",
+    "name": "Île du Mariage",
+    "description": "",
+    "kindId": 97
+  },
+  {
+    "id": 292,
+    "value": 1,
+    "kind": "map",
+    "name": "Temple enchanté - Passé",
+    "description": "",
+    "kindId": 98
+  },
+  {
+    "id": 293,
+    "value": 2,
+    "kind": "map",
+    "name": "Temple enchanté - Passé",
+    "description": "",
+    "kindId": 98
+  },
+  {
+    "id": 294,
+    "value": 3,
+    "kind": "map",
+    "name": "Temple enchanté - Passé",
+    "description": "",
+    "kindId": 98
+  },
+  {
+    "id": 298,
+    "value": 1,
+    "kind": "map",
+    "name": "Mine d'Andrew",
+    "description": "",
+    "kindId": 100
+  },
+  {
+    "id": 299,
+    "value": 2,
+    "kind": "map",
+    "name": "Mine d'Andrew",
+    "description": "",
+    "kindId": 100
+  },
+  {
+    "id": 300,
+    "value": 3,
+    "kind": "map",
+    "name": "Mine d'Andrew",
+    "description": "",
+    "kindId": 100
+  },
+  {
+    "id": 301,
+    "value": 1,
+    "kind": "map",
+    "name": "Carrière d'Angor",
+    "description": "",
+    "kindId": 101
+  },
+  {
+    "id": 302,
+    "value": 2,
+    "kind": "map",
+    "name": "Carrière d'Angor",
+    "description": "",
+    "kindId": 101
+  },
+  {
+    "id": 303,
+    "value": 3,
+    "kind": "map",
+    "name": "Carrière d'Angor",
+    "description": "",
+    "kindId": 101
+  },
+  {
+    "id": 304,
+    "value": 1,
+    "kind": "map",
+    "name": "Fort Verdure",
+    "description": "",
+    "kindId": 102
+  },
+  {
+    "id": 305,
+    "value": 2,
+    "kind": "map",
+    "name": "Fort Verdure",
+    "description": "",
+    "kindId": 102
+  },
+  {
+    "id": 306,
+    "value": 3,
+    "kind": "map",
+    "name": "Fort Verdure",
+    "description": "",
+    "kindId": 102
+  },
+  {
+    "id": 307,
+    "value": 1,
+    "kind": "map",
+    "name": "Canal Tassos",
+    "description": "",
+    "kindId": 103
+  },
+  {
+    "id": 308,
+    "value": 2,
+    "kind": "map",
+    "name": "Canal Tassos",
+    "description": "",
+    "kindId": 103
+  },
+  {
+    "id": 309,
+    "value": 3,
+    "kind": "map",
+    "name": "Canal Tassos",
+    "description": "",
+    "kindId": 103
+  },
+  {
+    "id": 310,
+    "value": 1,
+    "kind": "map",
+    "name": "Caverne de Schiste",
+    "description": "",
+    "kindId": 104
+  },
+  {
+    "id": 311,
+    "value": 2,
+    "kind": "map",
+    "name": "Caverne de Schiste",
+    "description": "",
+    "kindId": 104
+  },
+  {
+    "id": 312,
+    "value": 3,
+    "kind": "map",
+    "name": "Caverne de Schiste",
+    "description": "",
+    "kindId": 104
+  },
+  {
+    "id": 313,
+    "value": 1,
+    "kind": "map",
+    "name": "Eroda",
+    "description": "",
+    "kindId": 105
+  },
+  {
+    "id": 314,
+    "value": 2,
+    "kind": "map",
+    "name": "Eroda",
+    "description": "",
+    "kindId": 105
+  },
+  {
+    "id": 315,
+    "value": 3,
+    "kind": "map",
+    "name": "Eroda",
+    "description": "",
+    "kindId": 105
+  },
+  {
+    "id": 316,
+    "value": 1,
+    "kind": "map",
+    "name": "Morticora",
+    "description": "",
+    "kindId": 106
+  },
+  {
+    "id": 317,
+    "value": 2,
+    "kind": "map",
+    "name": "Morticora",
+    "description": "",
+    "kindId": 106
+  },
+  {
+    "id": 318,
+    "value": 3,
+    "kind": "map",
+    "name": "Morticora",
+    "description": "",
+    "kindId": 106
+  },
+  {
+    "id": 319,
+    "value": 1,
+    "kind": "map",
+    "name": "Racine Branda",
+    "description": "",
+    "kindId": 107
+  },
+  {
+    "id": 320,
+    "value": 2,
+    "kind": "map",
+    "name": "Racine Branda",
+    "description": "",
+    "kindId": 107
+  },
+  {
+    "id": 321,
+    "value": 3,
+    "kind": "map",
+    "name": "Racine Branda",
+    "description": "",
+    "kindId": 107
+  },
+  {
+    "id": 322,
+    "value": 1,
+    "kind": "map",
+    "name": "Palais des Malices",
+    "description": "",
+    "kindId": 108
+  },
+  {
+    "id": 323,
+    "value": 2,
+    "kind": "map",
+    "name": "Palais des Malices",
+    "description": "",
+    "kindId": 108
+  },
+  {
+    "id": 324,
+    "value": 3,
+    "kind": "map",
+    "name": "Palais des Malices",
+    "description": "",
+    "kindId": 108
+  },
+  {
+    "id": 325,
+    "value": 1,
+    "kind": "map",
+    "name": "Pourriture",
+    "description": "",
+    "kindId": 109
+  },
+  {
+    "id": 326,
+    "value": 2,
+    "kind": "map",
+    "name": "Pourriture",
+    "description": "",
+    "kindId": 109
+  },
+  {
+    "id": 327,
+    "value": 3,
+    "kind": "map",
+    "name": "Pourriture",
+    "description": "",
+    "kindId": 109
+  },
+  {
+    "id": 328,
+    "value": 1,
+    "kind": "map",
+    "name": "Abîme de Baram",
+    "description": "",
+    "kindId": 110
+  },
+  {
+    "id": 329,
+    "value": 2,
+    "kind": "map",
+    "name": "Abîme de Baram",
+    "description": "",
+    "kindId": 110
+  },
+  {
+    "id": 330,
+    "value": 3,
+    "kind": "map",
+    "name": "Abîme de Baram",
+    "description": "",
+    "kindId": 110
+  },
+  {
+    "id": 331,
+    "value": 1,
+    "kind": "map",
+    "name": "Coeur de Baltaroï",
+    "description": "",
+    "kindId": 111
+  },
+  {
+    "id": 332,
+    "value": 2,
+    "kind": "map",
+    "name": "Coeur de Baltaroï",
+    "description": "",
+    "kindId": 111
+  },
+  {
+    "id": 333,
+    "value": 3,
+    "kind": "map",
+    "name": "Coeur de Baltaroï",
+    "description": "",
+    "kindId": 111
+  },
+  {
+    "id": 334,
+    "value": 1,
+    "kind": "map",
+    "name": "Rêve du Maire",
+    "description": "",
+    "kindId": 112
+  },
+  {
+    "id": 335,
+    "value": 2,
+    "kind": "map",
+    "name": "Rêve du Maire",
+    "description": "",
+    "kindId": 112
+  },
+  {
+    "id": 336,
+    "value": 3,
+    "kind": "map",
+    "name": "Rêve du Maire",
+    "description": "",
+    "kindId": 112
+  },
+  {
+    "id": 337,
+    "value": 1,
+    "kind": "map",
+    "name": "Fléau",
+    "description": "",
+    "kindId": 113
+  },
+  {
+    "id": 338,
+    "value": 2,
+    "kind": "map",
+    "name": "Fléau",
+    "description": "",
+    "kindId": 113
+  },
+  {
+    "id": 339,
+    "value": 3,
+    "kind": "map",
+    "name": "Fléau",
+    "description": "",
+    "kindId": 113
+  },
+  {
+    "id": 340,
+    "value": 1,
+    "kind": "map",
+    "name": "Chambre de Baïra",
+    "description": "",
+    "kindId": 114
+  },
+  {
+    "id": 341,
+    "value": 2,
+    "kind": "map",
+    "name": "Chambre de Baïra",
+    "description": "",
+    "kindId": 114
+  },
+  {
+    "id": 342,
+    "value": 3,
+    "kind": "map",
+    "name": "Chambre de Baïra",
+    "description": "",
+    "kindId": 114
+  },
+  {
+    "id": 343,
+    "value": 1,
+    "kind": "map",
+    "name": "Crypticône",
+    "description": "",
+    "kindId": 115
+  },
+  {
+    "id": 344,
+    "value": 2,
+    "kind": "map",
+    "name": "Crypticône",
+    "description": "",
+    "kindId": 115
+  },
+  {
+    "id": 345,
+    "value": 3,
+    "kind": "map",
+    "name": "Crypticône",
+    "description": "",
+    "kindId": 115
+  },
+  {
+    "id": 346,
+    "value": 1,
+    "kind": "map",
+    "name": "Temple de Delphes",
+    "description": "",
+    "kindId": 116
+  },
+  {
+    "id": 347,
+    "value": 2,
+    "kind": "map",
+    "name": "Temple de Delphes",
+    "description": "",
+    "kindId": 116
+  },
+  {
+    "id": 348,
+    "value": 3,
+    "kind": "map",
+    "name": "Temple de Delphes",
+    "description": "",
+    "kindId": 116
+  },
+  {
+    "id": 349,
+    "value": 1,
+    "kind": "map",
+    "name": "Veine Tordue",
+    "description": "",
+    "kindId": 117
+  },
+  {
+    "id": 350,
+    "value": 2,
+    "kind": "map",
+    "name": "Veine Tordue",
+    "description": "",
+    "kindId": 117
+  },
+  {
+    "id": 351,
+    "value": 3,
+    "kind": "map",
+    "name": "Veine Tordue",
+    "description": "",
+    "kindId": 117
+  },
+  {
+    "id": 352,
+    "value": 1,
+    "kind": "map",
+    "name": "Autel du Culte de Mara",
+    "description": "",
+    "kindId": 118
+  },
+  {
+    "id": 353,
+    "value": 2,
+    "kind": "map",
+    "name": "Autel du Culte de Mara",
+    "description": "",
+    "kindId": 118
+  },
+  {
+    "id": 354,
+    "value": 3,
+    "kind": "map",
+    "name": "Autel du Culte de Mara",
+    "description": "",
+    "kindId": 118
+  },
+  {
+    "id": 355,
+    "value": 1,
+    "kind": "map",
+    "name": "Chute des Âmes en Peine",
+    "description": "",
+    "kindId": 119
+  },
+  {
+    "id": 356,
+    "value": 2,
+    "kind": "map",
+    "name": "Chute des Âmes en Peine",
+    "description": "",
+    "kindId": 119
+  },
+  {
+    "id": 357,
+    "value": 3,
+    "kind": "map",
+    "name": "Chute des Âmes en Peine",
+    "description": "",
+    "kindId": 119
+  },
+  {
+    "id": 358,
+    "value": 1,
+    "kind": "map",
+    "name": "Vortek",
+    "description": "",
+    "kindId": 120
+  },
+  {
+    "id": 359,
+    "value": 2,
+    "kind": "map",
+    "name": "Vortek",
+    "description": "",
+    "kindId": 120
+  },
+  {
+    "id": 360,
+    "value": 3,
+    "kind": "map",
+    "name": "Vortek",
+    "description": "",
+    "kindId": 120
+  },
+  {
+    "id": 361,
+    "value": 1,
+    "kind": "map",
+    "name": "Arsenal Fédéral",
+    "description": "",
+    "kindId": 121
+  },
+  {
+    "id": 362,
+    "value": 2,
+    "kind": "map",
+    "name": "Arsenal Fédéral",
+    "description": "",
+    "kindId": 121
+  },
+  {
+    "id": 363,
+    "value": 3,
+    "kind": "map",
+    "name": "Arsenal Fédéral",
+    "description": "",
+    "kindId": 121
+  },
+  {
+    "id": 364,
+    "value": 1,
+    "kind": "map",
+    "name": "Sturmfrau",
+    "description": "",
+    "kindId": 122
+  },
+  {
+    "id": 365,
+    "value": 2,
+    "kind": "map",
+    "name": "Sturmfrau",
+    "description": "",
+    "kindId": 122
+  },
+  {
+    "id": 366,
+    "value": 3,
+    "kind": "map",
+    "name": "Sturmfrau",
+    "description": "",
+    "kindId": 122
+  },
+  {
+    "id": 367,
+    "value": 1,
+    "kind": "map",
+    "name": "Abysse Glacée de Skleros",
+    "description": "",
+    "kindId": 123
+  },
+  {
+    "id": 368,
+    "value": 2,
+    "kind": "map",
+    "name": "Abysse Glacée de Skleros",
+    "description": "",
+    "kindId": 123
+  },
+  {
+    "id": 369,
+    "value": 3,
+    "kind": "map",
+    "name": "Abysse Glacée de Skleros",
+    "description": "",
+    "kindId": 123
+  },
+  {
+    "id": 370,
+    "value": 1,
+    "kind": "map",
+    "name": "Cratère des Géants",
+    "description": "",
+    "kindId": 124
+  },
+  {
+    "id": 371,
+    "value": 2,
+    "kind": "map",
+    "name": "Cratère des Géants",
+    "description": "",
+    "kindId": 124
+  },
+  {
+    "id": 372,
+    "value": 3,
+    "kind": "map",
+    "name": "Cratère des Géants",
+    "description": "",
+    "kindId": 124
+  },
+  {
+    "id": 373,
+    "value": 1,
+    "kind": "map",
+    "name": "Antre des échos",
+    "description": "",
+    "kindId": 125
+  },
+  {
+    "id": 374,
+    "value": 2,
+    "kind": "map",
+    "name": "Antre des échos",
+    "description": "",
+    "kindId": 125
+  },
+  {
+    "id": 375,
+    "value": 3,
+    "kind": "map",
+    "name": "Antre des échos",
+    "description": "",
+    "kindId": 125
+  },
+  {
+    "id": 379,
+    "value": 1,
+    "kind": "map",
+    "name": "Grotte de la Marée Noire",
+    "description": "",
+    "kindId": 127
+  },
+  {
+    "id": 380,
+    "value": 2,
+    "kind": "map",
+    "name": "Grotte de la Marée Noire",
+    "description": "",
+    "kindId": 127
+  },
+  {
+    "id": 381,
+    "value": 3,
+    "kind": "map",
+    "name": "Grotte de la Marée Noire",
+    "description": "",
+    "kindId": 127
+  },
+  {
+    "id": 601,
+    "value": 1,
+    "kind": "map",
+    "name": "Base des Vilrequins",
+    "description": "",
+    "kindId": 201
+  },
+  {
+    "id": 602,
+    "value": 2,
+    "kind": "map",
+    "name": "Base des Vilrequins",
+    "description": "",
+    "kindId": 201
+  },
+  {
+    "id": 603,
+    "value": 3,
+    "kind": "map",
+    "name": "Base des Vilrequins",
+    "description": "",
+    "kindId": 201
+  },
+  {
+    "id": 604,
+    "value": 1,
+    "kind": "map",
+    "name": "Salle Ulta",
+    "description": "",
+    "kindId": 202
+  },
+  {
+    "id": 605,
+    "value": 2,
+    "kind": "map",
+    "name": "Salle Ulta",
+    "description": "",
+    "kindId": 202
+  },
+  {
+    "id": 606,
+    "value": 3,
+    "kind": "map",
+    "name": "Salle Ulta",
+    "description": "",
+    "kindId": 202
+  },
+  {
+    "id": 607,
+    "value": 1,
+    "kind": "map",
+    "name": "Crocvenin",
+    "description": "",
+    "kindId": 203
+  },
+  {
+    "id": 608,
+    "value": 2,
+    "kind": "map",
+    "name": "Crocvenin",
+    "description": "",
+    "kindId": 203
+  },
+  {
+    "id": 609,
+    "value": 3,
+    "kind": "map",
+    "name": "Crocvenin",
+    "description": "",
+    "kindId": 203
+  },
+  {
+    "id": 610,
+    "value": 1,
+    "kind": "map",
+    "name": "Écarlate",
+    "description": "",
+    "kindId": 204
+  },
+  {
+    "id": 611,
+    "value": 2,
+    "kind": "map",
+    "name": "Écarlate",
+    "description": "",
+    "kindId": 204
+  },
+  {
+    "id": 612,
+    "value": 3,
+    "kind": "map",
+    "name": "Écarlate",
+    "description": "",
+    "kindId": 204
+  },
+  {
+    "id": 613,
+    "value": 1,
+    "kind": "map",
+    "name": "Siècle",
+    "description": "",
+    "kindId": 205
+  },
+  {
+    "id": 614,
+    "value": 2,
+    "kind": "map",
+    "name": "Siècle",
+    "description": "",
+    "kindId": 205
+  },
+  {
+    "id": 615,
+    "value": 3,
+    "kind": "map",
+    "name": "Siècle",
+    "description": "",
+    "kindId": 205
+  },
+  {
+    "id": 616,
+    "value": 1,
+    "kind": "map",
+    "name": "Manoir",
+    "description": "",
+    "kindId": 206
+  },
+  {
+    "id": 617,
+    "value": 2,
+    "kind": "map",
+    "name": "Manoir",
+    "description": "",
+    "kindId": 206
+  },
+  {
+    "id": 618,
+    "value": 3,
+    "kind": "map",
+    "name": "Manoir",
+    "description": "",
+    "kindId": 206
+  },
+  {
+    "id": 619,
+    "value": 1,
+    "kind": "map",
+    "name": "Frontière de Basel",
+    "description": "",
+    "kindId": 207
+  },
+  {
+    "id": 620,
+    "value": 2,
+    "kind": "map",
+    "name": "Frontière de Basel",
+    "description": "",
+    "kindId": 207
+  },
+  {
+    "id": 621,
+    "value": 3,
+    "kind": "map",
+    "name": "Frontière de Basel",
+    "description": "",
+    "kindId": 207
+  },
+  {
+    "id": 622,
+    "value": 1,
+    "kind": "map",
+    "name": "Prison Ossuaire",
+    "description": "",
+    "kindId": 208
+  },
+  {
+    "id": 623,
+    "value": 2,
+    "kind": "map",
+    "name": "Prison Ossuaire",
+    "description": "",
+    "kindId": 208
+  },
+  {
+    "id": 624,
+    "value": 3,
+    "kind": "map",
+    "name": "Prison Ossuaire",
+    "description": "",
+    "kindId": 208
+  },
+  {
+    "id": 625,
+    "value": 1,
+    "kind": "map",
+    "name": "Guillotine",
+    "description": "",
+    "kindId": 209
+  },
+  {
+    "id": 626,
+    "value": 2,
+    "kind": "map",
+    "name": "Guillotine",
+    "description": "",
+    "kindId": 209
+  },
+  {
+    "id": 627,
+    "value": 3,
+    "kind": "map",
+    "name": "Guillotine",
+    "description": "",
+    "kindId": 209
+  },
+  {
+    "id": 628,
+    "value": 1,
+    "kind": "map",
+    "name": "Temple Spirenfer",
+    "description": "",
+    "kindId": 210
+  },
+  {
+    "id": 629,
+    "value": 2,
+    "kind": "map",
+    "name": "Temple Spirenfer",
+    "description": "",
+    "kindId": 210
+  },
+  {
+    "id": 630,
+    "value": 3,
+    "kind": "map",
+    "name": "Temple Spirenfer",
+    "description": "",
+    "kindId": 210
+  },
+  {
+    "id": 631,
+    "value": 1,
+    "kind": "map",
+    "name": "Temple de la Rose",
+    "description": "",
+    "kindId": 211
+  },
+  {
+    "id": 632,
+    "value": 2,
+    "kind": "map",
+    "name": "Temple de la Rose",
+    "description": "",
+    "kindId": 211
+  },
+  {
+    "id": 633,
+    "value": 3,
+    "kind": "map",
+    "name": "Temple de la Rose",
+    "description": "",
+    "kindId": 211
+  },
+  {
+    "id": 634,
+    "value": 1,
+    "kind": "map",
+    "name": "Labo Vingot",
+    "description": "",
+    "kindId": 212
+  },
+  {
+    "id": 635,
+    "value": 2,
+    "kind": "map",
+    "name": "Labo Vingot",
+    "description": "",
+    "kindId": 212
+  },
+  {
+    "id": 636,
+    "value": 3,
+    "kind": "map",
+    "name": "Labo Vingot",
+    "description": "",
+    "kindId": 212
+  },
+  {
+    "id": 637,
+    "value": 1,
+    "kind": "map",
+    "name": "Cap Hurlant",
+    "description": "",
+    "kindId": 213
+  },
+  {
+    "id": 638,
+    "value": 2,
+    "kind": "map",
+    "name": "Cap Hurlant",
+    "description": "",
+    "kindId": 213
+  },
+  {
+    "id": 639,
+    "value": 3,
+    "kind": "map",
+    "name": "Cap Hurlant",
+    "description": "",
+    "kindId": 213
+  },
+  {
+    "id": 640,
+    "value": 1,
+    "kind": "map",
+    "name": "Abysse de Siècle",
+    "description": "",
+    "kindId": 214
+  },
+  {
+    "id": 641,
+    "value": 2,
+    "kind": "map",
+    "name": "Abysse de Siècle",
+    "description": "",
+    "kindId": 214
+  },
+  {
+    "id": 642,
+    "value": 3,
+    "kind": "map",
+    "name": "Abysse de Siècle",
+    "description": "",
+    "kindId": 214
+  },
+  {
+    "id": 643,
+    "value": 1,
+    "kind": "map",
+    "name": "Grotte Non Répertoriée",
+    "description": "",
+    "kindId": 215
+  },
+  {
+    "id": 644,
+    "value": 2,
+    "kind": "map",
+    "name": "Grotte Non Répertoriée",
+    "description": "",
+    "kindId": 215
+  },
+  {
+    "id": 645,
+    "value": 3,
+    "kind": "map",
+    "name": "Grotte Non Répertoriée",
+    "description": "",
+    "kindId": 215
+  },
+  {
+    "id": 646,
+    "value": 1,
+    "kind": "map",
+    "name": "Dimension Dévastée",
+    "description": "",
+    "kindId": 216
+  },
+  {
+    "id": 647,
+    "value": 2,
+    "kind": "map",
+    "name": "Dimension Dévastée",
+    "description": "",
+    "kindId": 216
+  },
+  {
+    "id": 648,
+    "value": 3,
+    "kind": "map",
+    "name": "Dimension Dévastée",
+    "description": "",
+    "kindId": 216
+  },
+  {
+    "id": 649,
+    "value": 1,
+    "kind": "map",
+    "name": "Cratère Météoritique",
+    "description": "",
+    "kindId": 217
+  },
+  {
+    "id": 650,
+    "value": 2,
+    "kind": "map",
+    "name": "Cratère Météoritique",
+    "description": "",
+    "kindId": 217
+  },
+  {
+    "id": 651,
+    "value": 3,
+    "kind": "map",
+    "name": "Cratère Météoritique",
+    "description": "",
+    "kindId": 217
+  },
+  {
+    "id": 652,
+    "value": 1,
+    "kind": "map",
+    "name": "Tour Kahlo",
+    "description": "",
+    "kindId": 218
+  },
+  {
+    "id": 653,
+    "value": 2,
+    "kind": "map",
+    "name": "Tour Kahlo",
+    "description": "",
+    "kindId": 218
+  },
+  {
+    "id": 654,
+    "value": 3,
+    "kind": "map",
+    "name": "Tour Kahlo",
+    "description": "",
+    "kindId": 218
+  },
+  {
+    "id": 655,
+    "value": 1,
+    "kind": "map",
+    "name": "Iyernafalo",
+    "description": "",
+    "kindId": 219
+  },
+  {
+    "id": 656,
+    "value": 2,
+    "kind": "map",
+    "name": "Iyernafalo",
+    "description": "",
+    "kindId": 219
+  },
+  {
+    "id": 657,
+    "value": 3,
+    "kind": "map",
+    "name": "Iyernafalo",
+    "description": "",
+    "kindId": 219
+  },
+  {
+    "id": 658,
+    "value": 1,
+    "kind": "map",
+    "name": "Terre sacrée de Kamodo",
+    "description": "",
+    "kindId": 220
+  },
+  {
+    "id": 659,
+    "value": 2,
+    "kind": "map",
+    "name": "Terre sacrée de Kamodo",
+    "description": "",
+    "kindId": 220
+  },
+  {
+    "id": 660,
+    "value": 3,
+    "kind": "map",
+    "name": "Terre sacrée de Kamodo",
+    "description": "",
+    "kindId": 220
+  },
+  {
+    "id": 661,
+    "value": 1,
+    "kind": "map",
+    "name": "Temple aquatique",
+    "description": "",
+    "kindId": 221
+  },
+  {
+    "id": 662,
+    "value": 2,
+    "kind": "map",
+    "name": "Temple aquatique",
+    "description": "",
+    "kindId": 221
+  },
+  {
+    "id": 663,
+    "value": 3,
+    "kind": "map",
+    "name": "Temple aquatique",
+    "description": "",
+    "kindId": 221
+  },
+  {
+    "id": 664,
+    "value": 1,
+    "kind": "map",
+    "name": "Labo Antigravité",
+    "description": "",
+    "kindId": 222
+  },
+  {
+    "id": 665,
+    "value": 2,
+    "kind": "map",
+    "name": "Labo Antigravité",
+    "description": "",
+    "kindId": 222
+  },
+  {
+    "id": 666,
+    "value": 3,
+    "kind": "map",
+    "name": "Labo Antigravité",
+    "description": "",
+    "kindId": 222
+  },
+  {
+    "id": 667,
+    "value": 1,
+    "kind": "map",
+    "name": "Grey Lynn",
+    "description": "",
+    "kindId": 223
+  },
+  {
+    "id": 668,
+    "value": 2,
+    "kind": "map",
+    "name": "Grey Lynn",
+    "description": "",
+    "kindId": 223
+  },
+  {
+    "id": 669,
+    "value": 3,
+    "kind": "map",
+    "name": "Grey Lynn",
+    "description": "",
+    "kindId": 223
+  },
+  {
+    "id": 673,
+    "value": 1,
+    "kind": "map",
+    "name": "Vallée Batelo",
+    "description": "",
+    "kindId": 225
+  },
+  {
+    "id": 674,
+    "value": 2,
+    "kind": "map",
+    "name": "Vallée Batelo",
+    "description": "",
+    "kindId": 225
+  },
+  {
+    "id": 675,
+    "value": 3,
+    "kind": "map",
+    "name": "Vallée Batelo",
+    "description": "",
+    "kindId": 225
+  },
+  {
+    "id": 676,
+    "value": 1,
+    "kind": "map",
+    "name": "Temple enchanté",
+    "description": "",
+    "kindId": 226
+  },
+  {
+    "id": 677,
+    "value": 2,
+    "kind": "map",
+    "name": "Temple enchanté",
+    "description": "",
+    "kindId": 226
+  },
+  {
+    "id": 678,
+    "value": 3,
+    "kind": "map",
+    "name": "Temple enchanté",
+    "description": "",
+    "kindId": 226
+  },
+  {
+    "id": 1000,
+    "value": 3,
+    "kind": "boss",
+    "name": "Champignoïde Mutant",
+    "description": "Un grand champignoïde translucide, créé par des expériences de Rumbledore, ce grand fou !",
+    "kindId": "m072"
+  },
+  {
+    "id": 2983,
+    "value": 1,
+    "kind": "map",
+    "name": "Arène d'Aven 3v3",
+    "description": "",
+    "kindId": 995
+  },
+  {
+    "id": 2984,
+    "value": 2,
+    "kind": "map",
+    "name": "Arène d'Aven 3v3",
+    "description": "",
+    "kindId": 995
+  },
+  {
+    "id": 2985,
+    "value": 3,
+    "kind": "map",
+    "name": "Arène d'Aven 3v3",
+    "description": "",
+    "kindId": 995
+  }
+]

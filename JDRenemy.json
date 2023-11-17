@@ -3,12 +3,7 @@
     "visuel3D": "m075",
     "nom": "Sanglier Dentranchante",
     "pvmax": "70",
-    "skills": [
-      "Charge : fonce : 2D6+4 : force",
-      "Morsure : mord : 1D10+4 : force",
-      "",
-      ""
-    ],
+    "skills": ["Charge : fonce : 2D6+4 : force", "Morsure : mord : 1D10+4 : force", "", ""],
     "stats": "15,11,9,9,12",
     "desc": "Sanglier brun vivant \u00e0 la Colline Tranquille",
     "infos": "Faible au feu",
@@ -63,12 +58,7 @@
     "visuel3D": "m025",
     "nom": "Champigno\u00efde Baga",
     "pvmax": "55",
-    "skills": [
-      "Coup de boule : 1D10+4 : force",
-      "Spore : 1D6+4 AoE nature : intelligence",
-      "",
-      ""
-    ],
+    "skills": ["Coup de boule : 1D10+4 : force", "Spore : 1D6+4 AoE nature : intelligence", "", ""],
     "stats": "14,9,14,10,13",
     "desc": "Petit champigno\u00efde rouge du Mont Calcaire",
     "infos": "Faible au feu et \u00e0 la glace",
@@ -93,12 +83,7 @@
     "visuel3D": "m083",
     "nom": "Crabe carapace de fer",
     "pvmax": "65",
-    "skills": [
-      "Coup de pince : 1D10 + 1D6 +5 : force",
-      "Coup de carapace : 1D10+5 zone : force",
-      "",
-      ""
-    ],
+    "skills": ["Coup de pince : 1D10 + 1D6 +5 : force", "Coup de carapace : 1D10+5 zone : force", "", ""],
     "stats": "17,9,9,12,14",
     "desc": "Gros crabe vivant \u00e0 la Baie Belouga",
     "infos": "Faible au contondant et glace",
@@ -347,7 +332,7 @@
   "24": {
     "visuel3D": "m087",
     "nom": "Champigno\u00efde Mutant",
-    "pvmax": "110",
+    "pvmax": "150",
     "skills": [
       "Attaque foudroyante : AoE 2D6 + 5 : intelligence",
       "Spore explosif (mono) : 2D8 +6 : intelligence",
@@ -438,12 +423,7 @@
     "visuel3D": "m096",
     "nom": "Floraison f\u00e9tide",
     "pvmax": "70",
-    "skills": [
-      "Poison : AoE 1D8 +5 : intelligence",
-      "Claque : 1D0+6 : force",
-      "",
-      ""
-    ],
+    "skills": ["Poison : AoE 1D8 +5 : intelligence", "Claque : 1D0+6 : force", "", ""],
     "stats": "14,11,15,8,8",
     "desc": "Petite floraison verd\u00e2tre avec un chapeau",
     "infos": "Faible au feu et per\u00e7ant",
@@ -617,7 +597,7 @@
   "42": {
     "visuel3D": "m311",
     "nom": "Chevalier de la Curie (Lassar)",
-    "pvmax": "90",
+    "pvmax": "130",
     "skills": [
       "Perc\u00e9e du Chevalier : 1D8 + 1D6 + 1D4 +6 : Dext\u00e9rit\u00e9",
       "Vivacit\u00e9 Accrue : Esquive+3, Dext\u00e9rit\u00e9+3 \u00e0 la cible pendant 4 tours : Esprit",
@@ -677,7 +657,7 @@
   "46": {
     "visuel3D": "voldre",
     "nom": "Voldre",
-    "pvmax": "230",
+    "pvmax": "240",
     "skills": [
       "Coupe Asura : 1D10 + (1D10)+12 : force",
       "Eclair Unique : 1D10 + (1D10) +16 : force",
@@ -737,7 +717,7 @@
   "50": {
     "visuel3D": "m317",
     "nom": "Nemelio",
-    "pvmax": "200",
+    "pvmax": "225",
     "skills": [
       "Euphorie : +1D4 (min 2) par coup. Buff pendant 4 tours (max 5) : esprit",
       "Lumi\u00e8re de Gu\u00e9rison : 2D10 +5, 1/4 de rejouer : intelligence",
@@ -797,7 +777,7 @@
   "54": {
     "visuel3D": "m048",
     "nom": "Zumi M\u00e9canique - Douvone",
-    "pvmax": "180",
+    "pvmax": "205",
     "skills": [
       "Robotisation : D\u00e9g\u00e2ts re\u00e7u  -2D4-2 (5 tours) : Esprit / R\u00e9paration Armure : 3D6+15 : Esprit",
       "Lavage de Cerveau : Blocage et r\u00e9ussite des sorts : -2 sur 4 tours : Esprit",
@@ -915,7 +895,7 @@
     "drop": "Arc du Dresseur, rare : Veste des Hautes-terres"
   },
   "62": {
-    "visuel3D": "m312",
+    "visuel3D": "m312b",
     "nom": "Rubis - Chevali\u00e8re Dragonne",
     "pvmax": "280",
     "skills": [
@@ -1111,12 +1091,12 @@
   },
   "75": {
     "visuel3D": "m311",
-    "nom": "Chevalier de la Curie (Lassar) v2 (Nv 6)",
-    "pvmax": "170",
+    "nom": "Chevalier de la Curie (Lassar) v2 (Nv 7)",
+    "pvmax": "200",
     "skills": [
-      "Perc\u00e9e du Chevalier : 1D8 + 1D6 + 1D4 +12 : Dext\u00e9rit\u00e9",
+      "Perc\u00e9e du Chevalier : 1D8 + 1D6 + 1D4 +13 : Dext\u00e9rit\u00e9",
       "Vivacit\u00e9 Accrue : Esquive+3, Dext\u00e9rit\u00e9+3 \u00e0 la cible pendant 4 tours : Esprit",
-      "Perce-Armure : 1D10+10 + d\u00e9g\u00e2t physique re\u00e7u +5 (3 tours) : force",
+      "Perce-Armure : 1D10+12 + d\u00e9g\u00e2t physique re\u00e7u +5 (3 tours) : force",
       "Silence : Aucun sort magique pendant 3 tours : Esprit"
     ],
     "stats": "13,16,9,13,16",
@@ -1247,7 +1227,7 @@
   "84": {
     "visuel3D": "m102",
     "nom": "Ver Cuirass\u00e9 - Jimmy",
-    "pvmax": "150",
+    "pvmax": "200",
     "skills": [
       "Morsure : 2D10+12 : force",
       "S\u00e9isme acide : 1D10+12 AoE : force",
@@ -1262,11 +1242,11 @@
   "85": {
     "visuel3D": "m015",
     "nom": "Draigos - Drakai aux bouquins",
-    "pvmax": "160",
+    "pvmax": "200",
     "skills": [
       "Parasite Obscur : 6 DGT 4 tours : intel",
-      "Fl\u00e8che des ombres : 2D6+8+6, et si parasite : soin 3D6+6 : intel",
-      "Bombe Incendiaire : 2D10+4+11, Temp\u00eate Glace : 2D6+6+6 AoE : intel",
+      "Fl\u00e8che des ombres : 2D6+8+5, et si parasite : soin 3D6+6 : intel",
+      "Bombe Incendiaire : 2D10+4+10, Temp\u00eate Glace : 2D6+6+6 AoE : intel",
       "Pacte : Panopticor. 50 PV, Force : 10, Dext\u00e9 : 15, Intel : 16, Charisme : 11, Esprit : 13. Sort : Jet de T\u00e9n\u00e8bres 2D6+2 (Intel), Coup tentacule 2D10 (Dext\u00e9) : Esprit"
     ],
     "stats": "9,11,18,13,15",
@@ -1753,5 +1733,140 @@
     "desc": "Homme de l'ombre qui ma\u00eetrise les illusions et frappe violemment.",
     "infos": "Faible \u00e0 la lumi\u00e8re et au contondant",
     "drop": "rare : Chaussures d'agilit\u00e9 OU Gilet des Dunes Eternelles, tr\u00e8s rare : Dague \u00e9cailles noires"
+  },
+  "118": {
+    "visuel3D": "m042b",
+    "nom": "Ochak - Primat de la Chelona",
+    "pvmax": "270",
+    "skills": [
+      "Zone noire : 2D10+12 (bloc m-2) AoE stat -2 (-3 parasite) pendant 3 tours : Intelligence",
+      "Eclair en Furie : 4D6 +18 (bloc m-2) : Intelligence",
+      "Aura Bouclier Protec (+ Ctrl mentale) : Blocage +3 pendant 4 tours : esprit",
+      "Esprit Descell\u00e9 : Invoque 1 Fant\u00f4me L\u00e9thargique (2 si d\u00e9 < 6) : Esprit"
+    ],
+    "stats": "13,7,17,10,17",
+    "desc": "Torturran riche qui est Primat (Cardinal) de la Chelona, il a travaill\u00e9 \u00e0 l'Ordre des Chevaliers de la rose, capable de desceller",
+    "infos": "Faible au contondant et \u00e0 la lumi\u00e8re",
+    "drop": "50 po, cape du sorcier, rare : Collier d'Asbi B\u00e2ton de Stella"
+  },
+  "119": {
+    "visuel3D": "m215",
+    "nom": "Gimu - l'Oeil du Cyclone",
+    "pvmax": "300",
+    "skills": [
+      "Crochet Cyclique : 3D6+20 : Dext\u00e9rit\u00e9",
+      "Cyclone Extra : 1D10 +16 AoE (bloc m-2) : Dext\u00e9rit\u00e9",
+      "Oeil affaibilissant : Force & Intel -2 sur 3 tours : Esprit",
+      "Passif (Oeil d'Oubli) : si ennemi \u00e0 port\u00e9 fait sort \u00e9chec critique : Oubli la classe sur 3 tours"
+    ],
+    "stats": "13,17,11,10,16",
+    "desc": "BOSS : Mante cyclope surcharg\u00e9 en magie et capable d'invoquer une temp\u00eate autour de lui",
+    "infos": "Faible au per\u00e7ant et \u00e0 la foudre",
+    "drop": "rare : Crochet de Gimu, Hache Verd\u00e2tre"
+  },
+  "120": {
+    "visuel3D": "m128b",
+    "nom": "Invidia",
+    "pvmax": "220",
+    "skills": [
+      "Triple Tir : 1D8+1D6+1D4+18 : Dext\u00e9rit\u00e9",
+      "Blessure Douloureuse : 1D10 +13, et 0 soin sur 4 tours : Dext\u00e9rit\u00e9",
+      "S\u00e9r\u00e9nit\u00e9 : Dext\u00e9+2 Esquive+2, D\u00e9g\u00e2t subi -1D6-6 pendant 4 tours : Esprit",
+      "Passif (Pr\u00e9cision): Esquive/Blocage cible 22"
+    ],
+    "stats": "11,16,11,10,16",
+    "desc": "Lieutenant d'unit\u00e9 d'exp\u00e9dition pour la Curie. Yandere et follement amoureuse de Lassar.",
+    "infos": "Faible au tranchant et \u00e0 la foudre",
+    "drop": "80po, rare : Arc de pr\u00e9cision, Glyphe du Chasseur"
+  },
+  "121": {
+    "visuel3D": "m041",
+    "nom": "Anuran Shaman",
+    "pvmax": "105",
+    "skills": [
+      "Totem Gracieux : 1D6 +9 pendant 6 tours (tous les 2 tours) : Intelligence",
+      "Affaib All AoE : +3 d\u00e9g\u00e2t subis AoE pendant 3 tours : Esprit",
+      "\u00c9clair en Furie : 2D6+8 : Intelligence",
+      "Pr\u00e9vention : D\u00e9g\u00e2t -1D6-4 pour 4 tours, -1 malus : Intelligence"
+    ],
+    "stats": "7,13,16,10,15",
+    "desc": "Vieux Anuran \u00e0 la peau bleue, dur \u00e0 cuir",
+    "infos": "Faible au tranchant et \u00e0 la glace",
+    "drop": "30 po, Tunique de Delphes, rare : Sceptre du Shaman"
+  },
+  "122": {
+    "visuel3D": "m039",
+    "nom": "Anuran Danselame",
+    "pvmax": "180",
+    "skills": [
+      "Lames Dansantes : 3D6 + 15 : Dext\u00e9rit\u00e9",
+      "Danse de l'oiseau de feu : 2D6+11 : Dext\u00e9rit\u00e9",
+      "Charme tape-\u00e0-l-oeil : R\u00e9ussite/Esq -3 sur 3 tours : Charisme",
+      "Passif : Esquive+2"
+    ],
+    "stats": "11,17,9,15,11",
+    "desc": "Belle femme Anuran qui est com\u00e9dienne dans des sc\u00e8nes de th\u00e9\u00e2tres.",
+    "infos": "Faible \u00e0 la glace et \u00e0 la foudre",
+    "drop": "40po, Dague de Valence, rare : Serre-t\u00eate d'Acteur"
+  },
+  "123": {
+    "visuel3D": "kibo",
+    "nom": "Kibo",
+    "pvmax": "205",
+    "skills": [
+      "Euphorie : +1D4+1 (min 3) par coup. Buff pendant 4 tours (max 5) : esprit",
+      "Attaque Cyclone/Charge (Provoc) :  1D10 +10/15  (+4, 1/2 vis\u00e9 3 t) : Force/Charisme",
+      "Mur de Titan x Robot : D\u00e9g\u00e2t re\u00e7us -1D6-10 : Esprit",
+      "Passif : D\u00e9g\u00e2ts re\u00e7us -10 (-5 si < 50 PV)"
+    ],
+    "stats": "16,10,11,15,17",
+    "desc": "Double mal\u00e9fique (Doppelg\u00e4nger) de Kibo. Tout aussi costaud et r\u00e9sistant, mais pas gentil !",
+    "infos": "Faible \u00e0 la foudre et aux t\u00e9n\u00e8bres",
+    "drop": "40po, Masse Pulv\u00e9risante, rare : Bouclier Zuminator"
+  },
+  "124": {
+    "visuel3D": "m190",
+    "nom": "L\u00e9zard \u00e0 collerette",
+    "pvmax": "95",
+    "skills": [
+      "Coup de griffe: 1D10+12 (force-2, 3 tours) : Dext\u00e9rit\u00e9",
+      "Crachat : 1D10+8 AoE : Intelligence",
+      "Vivacit\u00e9 Accrue : Esquive +2, Dext\u00e9 +2 : Esprit",
+      ""
+    ],
+    "stats": "7,15,15,9,15",
+    "desc": "L\u00e9zard rouge\u00e2tre \u00e0 collerette qui vit essentiellement dans les marais et les zones humides, sauvage.",
+    "infos": "Faible au tranchant et au feu",
+    "drop": "Queue de L\u00e9zard, \u00e9caille de l\u00e9zard"
+  },
+  "125": {
+    "visuel3D": "m193",
+    "nom": "Rampant de Crystal",
+    "pvmax": "110",
+    "skills": [
+      "D\u00e9gagement d'\u00e9nergie : (1 tour incant) 2D6 AoE+12 (malus esprit -2, 3 tours) : Intelligence",
+      "Charge glac\u00e9e : 2D10 +10 : Force",
+      "Crystal vivifiant : 2D10 +15 PV (Soin aux crystaux) : Intelligence",
+      "Passif : d\u00e9g\u00e2t re\u00e7u -5 (ou -10)"
+    ],
+    "stats": "16,9,16,11,11",
+    "desc": "Limace surplomb\u00e9es de magnifiques cristaux bleu violac\u00e9e et vivant \u00e0 la For\u00eat de Crystal",
+    "infos": "Faible au per\u00e7ant et \u00e0 la nature",
+    "drop": "crystal de r\u00e9sistance, crystal d'asbi, rare : Noyau abyssal"
+  },
+  "126": {
+    "visuel3D": "m087b",
+    "nom": "Champigno\u00efde Mutant Crystal",
+    "pvmax": "230",
+    "skills": [
+      "Attaque foudroyante : AoE 3D6 + 10 : Intelligence",
+      "Spore explosif : 4D6 +16 : Intelligence",
+      "Spore mutant crystal : Invoque un mini champi crystal (40 PV, charge 1D10+6 (D\u00e9 <15), explose \u00e0 la mort 2D10+10 AoE) : Esprit",
+      "Passif : d\u00e9g\u00e2t re\u00e7u -5 (ou -10)"
+    ],
+    "stats": "16,9,16,11,11",
+    "desc": "Un grand champigno\u00efde surplomb\u00e9 de crystaux bleu violac\u00e9, cr\u00e9\u00e9 par des exp\u00e9riences",
+    "infos": "Faible au contondant et \u00e0 la nature",
+    "drop": "Germe de champignon X3, Rare : Super Chapeau Champi, Fragment de Crystal d'Eden"
   }
 }

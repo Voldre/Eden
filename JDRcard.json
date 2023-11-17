@@ -3,36 +3,1116 @@
     "id": 1,
     "value": 1,
     "kind": "map",
-    "name": "Colline Tranquille",
-    "description": "La Colline Tranquille est ...",
-    "kindId": 3
+    "name": "Aven",
+    "description": "",
+    "kindId": 1
   },
   {
     "id": 2,
     "value": 2,
     "kind": "map",
-    "name": "Colline Tranquille",
-    "description": "La Colline Tranquille est ...",
-    "kindId": 3
+    "name": "Aven",
+    "description": "",
+    "kindId": 1
   },
   {
     "id": 3,
     "value": 3,
     "kind": "map",
-    "name": "Colline Tranquille",
-    "description": "La Colline Tranquille est ...",
+    "name": "Aven",
+    "description": "",
+    "kindId": 1
+  },
+  {
+    "id": 4,
+    "value": 1,
+    "kind": "map",
+    "name": "Monts Calcaires",
+    "description": "",
+    "kindId": 2
+  },
+  {
+    "id": 5,
+    "value": 2,
+    "kind": "map",
+    "name": "Monts Calcaires",
+    "description": "",
+    "kindId": 2
+  },
+  {
+    "id": 6,
+    "value": 3,
+    "kind": "map",
+    "name": "Monts Calcaires",
+    "description": "",
+    "kindId": 2
+  },
+  {
+    "id": 7,
+    "value": 1,
+    "kind": "map",
+    "name": "Colline tranquille",
+    "description": "",
     "kindId": 3
   },
   {
-    "id": 101,
+    "id": 8,
+    "value": 2,
+    "kind": "map",
+    "name": "Colline tranquille",
+    "description": "",
+    "kindId": 3
+  },
+  {
+    "id": 9,
+    "value": 3,
+    "kind": "map",
+    "name": "Colline tranquille",
+    "description": "",
+    "kindId": 3
+  },
+  {
+    "id": 10,
+    "value": 1,
+    "kind": "map",
+    "name": "Forêt Arc-en-Ciel",
+    "description": "",
+    "kindId": 4
+  },
+  {
+    "id": 11,
+    "value": 2,
+    "kind": "map",
+    "name": "Forêt Arc-en-Ciel",
+    "description": "",
+    "kindId": 4
+  },
+  {
+    "id": 12,
+    "value": 3,
+    "kind": "map",
+    "name": "Forêt Arc-en-Ciel",
+    "description": "",
+    "kindId": 4
+  },
+  {
+    "id": 13,
+    "value": 1,
+    "kind": "map",
+    "name": "Monts Arides",
+    "description": "",
+    "kindId": 5
+  },
+  {
+    "id": 14,
+    "value": 2,
+    "kind": "map",
+    "name": "Monts Arides",
+    "description": "",
+    "kindId": 5
+  },
+  {
+    "id": 15,
+    "value": 3,
+    "kind": "map",
+    "name": "Monts Arides",
+    "description": "",
+    "kindId": 5
+  },
+  {
+    "id": 16,
+    "value": 1,
+    "kind": "map",
+    "name": "Baie Bélouga",
+    "description": "",
+    "kindId": 6
+  },
+  {
+    "id": 17,
+    "value": 2,
+    "kind": "map",
+    "name": "Baie Bélouga",
+    "description": "",
+    "kindId": 6
+  },
+  {
+    "id": 18,
+    "value": 3,
+    "kind": "map",
+    "name": "Baie Bélouga",
+    "description": "",
+    "kindId": 6
+  },
+  {
+    "id": 19,
+    "value": 1,
+    "kind": "map",
+    "name": "Bourbes",
+    "description": "",
+    "kindId": 7
+  },
+  {
+    "id": 20,
+    "value": 2,
+    "kind": "map",
+    "name": "Bourbes",
+    "description": "",
+    "kindId": 7
+  },
+  {
+    "id": 21,
+    "value": 3,
+    "kind": "map",
+    "name": "Bourbes",
+    "description": "",
+    "kindId": 7
+  },
+  {
+    "id": 22,
+    "value": 1,
+    "kind": "map",
+    "name": "Vallée des Rois",
+    "description": "",
+    "kindId": 8
+  },
+  {
+    "id": 23,
+    "value": 2,
+    "kind": "map",
+    "name": "Vallée des Rois",
+    "description": "",
+    "kindId": 8
+  },
+  {
+    "id": 24,
+    "value": 3,
+    "kind": "map",
+    "name": "Vallée des Rois",
+    "description": "",
+    "kindId": 8
+  },
+  {
+    "id": 25,
+    "value": 1,
+    "kind": "map",
+    "name": "Volcan Avila",
+    "description": "",
+    "kindId": 9
+  },
+  {
+    "id": 26,
+    "value": 2,
+    "kind": "map",
+    "name": "Volcan Avila",
+    "description": "",
+    "kindId": 9
+  },
+  {
+    "id": 27,
+    "value": 3,
+    "kind": "map",
+    "name": "Volcan Avila",
+    "description": "",
+    "kindId": 9
+  },
+  {
+    "id": 28,
+    "value": 1,
+    "kind": "map",
+    "name": "Plaines Dorées",
+    "description": "",
+    "kindId": 10
+  },
+  {
+    "id": 29,
+    "value": 2,
+    "kind": "map",
+    "name": "Plaines Dorées",
+    "description": "",
+    "kindId": 10
+  },
+  {
+    "id": 30,
+    "value": 3,
+    "kind": "map",
+    "name": "Plaines Dorées",
+    "description": "",
+    "kindId": 10
+  },
+  {
+    "id": 31,
+    "value": 1,
+    "kind": "map",
+    "name": "Terres des Dunes Éternelles",
+    "description": "",
+    "kindId": 11
+  },
+  {
+    "id": 32,
+    "value": 2,
+    "kind": "map",
+    "name": "Terres des Dunes Éternelles",
+    "description": "",
+    "kindId": 11
+  },
+  {
+    "id": 33,
+    "value": 3,
+    "kind": "map",
+    "name": "Terres des Dunes Éternelles",
+    "description": "",
+    "kindId": 11
+  },
+  {
+    "id": 34,
+    "value": 1,
+    "kind": "map",
+    "name": "Forêt de Delphes",
+    "description": "",
+    "kindId": 12
+  },
+  {
+    "id": 35,
+    "value": 2,
+    "kind": "map",
+    "name": "Forêt de Delphes",
+    "description": "",
+    "kindId": 12
+  },
+  {
+    "id": 36,
+    "value": 3,
+    "kind": "map",
+    "name": "Forêt de Delphes",
+    "description": "",
+    "kindId": 12
+  },
+  {
+    "id": 37,
+    "value": 1,
+    "kind": "map",
+    "name": "Pic de Noireflammes",
+    "description": "",
+    "kindId": 13
+  },
+  {
+    "id": 38,
+    "value": 2,
+    "kind": "map",
+    "name": "Pic de Noireflammes",
+    "description": "",
+    "kindId": 13
+  },
+  {
+    "id": 39,
+    "value": 3,
+    "kind": "map",
+    "name": "Pic de Noireflammes",
+    "description": "",
+    "kindId": 13
+  },
+  {
+    "id": 40,
+    "value": 1,
+    "kind": "map",
+    "name": "Marais Décrépits",
+    "description": "",
+    "kindId": 14
+  },
+  {
+    "id": 41,
+    "value": 2,
+    "kind": "map",
+    "name": "Marais Décrépits",
+    "description": "",
+    "kindId": 14
+  },
+  {
+    "id": 42,
+    "value": 3,
+    "kind": "map",
+    "name": "Marais Décrépits",
+    "description": "",
+    "kindId": 14
+  },
+  {
+    "id": 43,
+    "value": 1,
+    "kind": "map",
+    "name": "Hautes-terres",
+    "description": "",
+    "kindId": 15
+  },
+  {
+    "id": 44,
+    "value": 2,
+    "kind": "map",
+    "name": "Hautes-terres",
+    "description": "",
+    "kindId": 15
+  },
+  {
+    "id": 45,
+    "value": 3,
+    "kind": "map",
+    "name": "Hautes-terres",
+    "description": "",
+    "kindId": 15
+  },
+  {
+    "id": 46,
+    "value": 1,
+    "kind": "map",
+    "name": "Crocs Brumeux",
+    "description": "",
+    "kindId": 16
+  },
+  {
+    "id": 47,
+    "value": 2,
+    "kind": "map",
+    "name": "Crocs Brumeux",
+    "description": "",
+    "kindId": 16
+  },
+  {
+    "id": 48,
+    "value": 3,
+    "kind": "map",
+    "name": "Crocs Brumeux",
+    "description": "",
+    "kindId": 16
+  },
+  {
+    "id": 55,
+    "value": 1,
+    "kind": "map",
+    "name": "Vallée Férégal",
+    "description": "",
+    "kindId": 19
+  },
+  {
+    "id": 56,
+    "value": 2,
+    "kind": "map",
+    "name": "Vallée Férégal",
+    "description": "",
+    "kindId": 19
+  },
+  {
+    "id": 57,
+    "value": 3,
+    "kind": "map",
+    "name": "Vallée Férégal",
+    "description": "",
+    "kindId": 19
+  },
+  {
+    "id": 58,
+    "value": 1,
+    "kind": "map",
+    "name": "Désert du Couchant",
+    "description": "",
+    "kindId": 20
+  },
+  {
+    "id": 59,
+    "value": 2,
+    "kind": "map",
+    "name": "Désert du Couchant",
+    "description": "",
+    "kindId": 20
+  },
+  {
+    "id": 60,
+    "value": 3,
+    "kind": "map",
+    "name": "Désert du Couchant",
+    "description": "",
+    "kindId": 20
+  },
+  {
+    "id": 61,
+    "value": 1,
+    "kind": "map",
+    "name": "Jungle Céleste",
+    "description": "",
+    "kindId": 21
+  },
+  {
+    "id": 62,
+    "value": 2,
+    "kind": "map",
+    "name": "Jungle Céleste",
+    "description": "",
+    "kindId": 21
+  },
+  {
+    "id": 63,
+    "value": 3,
+    "kind": "map",
+    "name": "Jungle Céleste",
+    "description": "",
+    "kindId": 21
+  },
+  {
+    "id": 64,
+    "value": 1,
+    "kind": "map",
+    "name": "Forêt Ensorcelée",
+    "description": "",
+    "kindId": 22
+  },
+  {
+    "id": 65,
+    "value": 2,
+    "kind": "map",
+    "name": "Forêt Ensorcelée",
+    "description": "",
+    "kindId": 22
+  },
+  {
+    "id": 66,
+    "value": 3,
+    "kind": "map",
+    "name": "Forêt Ensorcelée",
+    "description": "",
+    "kindId": 22
+  },
+  {
+    "id": 67,
+    "value": 1,
+    "kind": "map",
+    "name": "Crète Diamantée",
+    "description": "",
+    "kindId": 23
+  },
+  {
+    "id": 68,
+    "value": 2,
+    "kind": "map",
+    "name": "Crète Diamantée",
+    "description": "",
+    "kindId": 23
+  },
+  {
+    "id": 69,
+    "value": 3,
+    "kind": "map",
+    "name": "Crète Diamantée",
+    "description": "",
+    "kindId": 23
+  },
+  {
+    "id": 70,
+    "value": 1,
+    "kind": "map",
+    "name": "Pic du Maëlstrom",
+    "description": "",
+    "kindId": 24
+  },
+  {
+    "id": 71,
+    "value": 2,
+    "kind": "map",
+    "name": "Pic du Maëlstrom",
+    "description": "",
+    "kindId": 24
+  },
+  {
+    "id": 72,
+    "value": 3,
+    "kind": "map",
+    "name": "Pic du Maëlstrom",
+    "description": "",
+    "kindId": 24
+  },
+  {
+    "id": 73,
+    "value": 1,
+    "kind": "map",
+    "name": "Vallée de la Mort",
+    "description": "",
+    "kindId": 25
+  },
+  {
+    "id": 74,
+    "value": 2,
+    "kind": "map",
+    "name": "Vallée de la Mort",
+    "description": "",
+    "kindId": 25
+  },
+  {
+    "id": 75,
+    "value": 3,
+    "kind": "map",
+    "name": "Vallée de la Mort",
+    "description": "",
+    "kindId": 25
+  },
+  {
+    "id": 76,
+    "value": 1,
+    "kind": "map",
+    "name": "Plaines Fleuries",
+    "description": "",
+    "kindId": 26
+  },
+  {
+    "id": 77,
+    "value": 2,
+    "kind": "map",
+    "name": "Plaines Fleuries",
+    "description": "",
+    "kindId": 26
+  },
+  {
+    "id": 78,
+    "value": 3,
+    "kind": "map",
+    "name": "Plaines Fleuries",
+    "description": "",
+    "kindId": 26
+  },
+  {
+    "id": 79,
+    "value": 1,
+    "kind": "map",
+    "name": "Falaise des Grands Vents",
+    "description": "",
+    "kindId": 27
+  },
+  {
+    "id": 80,
+    "value": 2,
+    "kind": "map",
+    "name": "Falaise des Grands Vents",
+    "description": "",
+    "kindId": 27
+  },
+  {
+    "id": 81,
+    "value": 3,
+    "kind": "map",
+    "name": "Falaise des Grands Vents",
+    "description": "",
+    "kindId": 27
+  },
+  {
+    "id": 82,
+    "value": 1,
+    "kind": "map",
+    "name": "Lagune Enchantée",
+    "description": "",
+    "kindId": 28
+  },
+  {
+    "id": 83,
+    "value": 2,
+    "kind": "map",
+    "name": "Lagune Enchantée",
+    "description": "",
+    "kindId": 28
+  },
+  {
+    "id": 84,
+    "value": 3,
+    "kind": "map",
+    "name": "Lagune Enchantée",
+    "description": "",
+    "kindId": 28
+  },
+  {
+    "id": 85,
+    "value": 1,
+    "kind": "map",
+    "name": "Côte de Hurlevent",
+    "description": "",
+    "kindId": 29
+  },
+  {
+    "id": 86,
+    "value": 2,
+    "kind": "map",
+    "name": "Côte de Hurlevent",
+    "description": "",
+    "kindId": 29
+  },
+  {
+    "id": 87,
+    "value": 3,
+    "kind": "map",
+    "name": "Côte de Hurlevent",
+    "description": "",
+    "kindId": 29
+  },
+  {
+    "id": 88,
+    "value": 1,
+    "kind": "map",
+    "name": "Jungle du Dieu Serpent",
+    "description": "",
+    "kindId": 30
+  },
+  {
+    "id": 89,
+    "value": 2,
+    "kind": "map",
+    "name": "Jungle du Dieu Serpent",
+    "description": "",
+    "kindId": 30
+  },
+  {
+    "id": 90,
+    "value": 3,
+    "kind": "map",
+    "name": "Jungle du Dieu Serpent",
+    "description": "",
+    "kindId": 30
+  },
+  {
+    "id": 94,
+    "value": 1,
+    "kind": "map",
+    "name": "Vallée de Vulcain",
+    "description": "",
+    "kindId": 32
+  },
+  {
+    "id": 95,
+    "value": 2,
+    "kind": "map",
+    "name": "Vallée de Vulcain",
+    "description": "",
+    "kindId": 32
+  },
+  {
+    "id": 96,
+    "value": 3,
+    "kind": "map",
+    "name": "Vallée de Vulcain",
+    "description": "",
+    "kindId": 32
+  },
+  {
+    "id": 97,
+    "value": 1,
+    "kind": "map",
+    "name": "Plaines du Levant",
+    "description": "",
+    "kindId": 33
+  },
+  {
+    "id": 98,
+    "value": 2,
+    "kind": "map",
+    "name": "Plaines du Levant",
+    "description": "",
+    "kindId": 33
+  },
+  {
+    "id": 99,
+    "value": 3,
+    "kind": "map",
+    "name": "Plaines du Levant",
+    "description": "",
+    "kindId": 33
+  },
+  {
+    "id": 106,
+    "value": 1,
+    "kind": "map",
+    "name": "Plaines d'Elos",
+    "description": "",
+    "kindId": 36
+  },
+  {
+    "id": 107,
+    "value": 2,
+    "kind": "map",
+    "name": "Plaines d'Elos",
+    "description": "",
+    "kindId": 36
+  },
+  {
+    "id": 108,
+    "value": 3,
+    "kind": "map",
+    "name": "Plaines d'Elos",
+    "description": "",
+    "kindId": 36
+  },
+  {
+    "id": 151,
+    "value": 1,
+    "kind": "map",
+    "name": "Dôme Céleste",
+    "description": "",
+    "kindId": 51
+  },
+  {
+    "id": 152,
+    "value": 2,
+    "kind": "map",
+    "name": "Dôme Céleste",
+    "description": "",
+    "kindId": 51
+  },
+  {
+    "id": 153,
+    "value": 3,
+    "kind": "map",
+    "name": "Dôme Céleste",
+    "description": "",
+    "kindId": 51
+  },
+  {
+    "id": 154,
+    "value": 1,
+    "kind": "map",
+    "name": "Hauteurs Feudegivre",
+    "description": "",
+    "kindId": 52
+  },
+  {
+    "id": 155,
+    "value": 2,
+    "kind": "map",
+    "name": "Hauteurs Feudegivre",
+    "description": "",
+    "kindId": 52
+  },
+  {
+    "id": 156,
+    "value": 3,
+    "kind": "map",
+    "name": "Hauteurs Feudegivre",
+    "description": "",
+    "kindId": 52
+  },
+  {
+    "id": 157,
+    "value": 1,
+    "kind": "map",
+    "name": "Meeryasha",
+    "description": "",
+    "kindId": 53
+  },
+  {
+    "id": 158,
+    "value": 2,
+    "kind": "map",
+    "name": "Meeryasha",
+    "description": "",
+    "kindId": 53
+  },
+  {
+    "id": 159,
+    "value": 3,
+    "kind": "map",
+    "name": "Meeryasha",
+    "description": "",
+    "kindId": 53
+  },
+  {
+    "id": 160,
+    "value": 1,
+    "kind": "map",
+    "name": "Jungle Mayland",
+    "description": "",
+    "kindId": 54
+  },
+  {
+    "id": 161,
+    "value": 2,
+    "kind": "map",
+    "name": "Jungle Mayland",
+    "description": "",
+    "kindId": 54
+  },
+  {
+    "id": 162,
+    "value": 3,
+    "kind": "map",
+    "name": "Jungle Mayland",
+    "description": "",
+    "kindId": 54
+  },
+  {
+    "id": 163,
+    "value": 1,
+    "kind": "map",
+    "name": "Bassin Shaxia",
+    "description": "",
+    "kindId": 55
+  },
+  {
+    "id": 164,
+    "value": 2,
+    "kind": "map",
+    "name": "Bassin Shaxia",
+    "description": "",
+    "kindId": 55
+  },
+  {
+    "id": 165,
+    "value": 3,
+    "kind": "map",
+    "name": "Bassin Shaxia",
+    "description": "",
+    "kindId": 55
+  },
+  {
+    "id": 1001,
     "value": 3,
     "kind": "boss",
     "name": "Baram - La Chimère Volcanique",
-    "description": "Baram est une Chimère Volcanique invoquée par ...",
+    "description": "Baram est une Chimère Volcanique invoquée par Ochak, cet esprit a été créé à l'époque de la Grande Guerre.",
     "kindId": "m072"
   },
   {
-    "id": 201,
+    "id": 1002,
+    "value": 3,
+    "kind": "boss",
+    "name": "Lassar - Chevalier Lieutenant",
+    "description": "Chevalier de la Curie Métérole. Il est lieutenant d'une unité d'expédition, très gentil, un peu naïf, mais ouvert d'esprit. Il aime donner un coup de main.",
+    "kindId": "m311"
+  },
+  {
+    "id": 1003,
+    "value": 3,
+    "kind": "boss",
+    "name": "Marma - Templier Capitaine",
+    "description": "Un Templier de la Curie Métérole, il est chef d'une unité défensive et est quelqu'un de gentil et social. Il (essaye) de faire les choses sérieusement.",
+    "kindId": "m156"
+  },
+  {
+    "id": 1004,
+    "value": 3,
+    "kind": "boss",
+    "name": "Voldre",
+    "description": "Zumi à la peau bleue et aux yeux orangé perçant, fier et très social. Il aide les gens ambitieux.",
+    "kindId": "voldre"
+  },
+  {
+    "id": 1005,
+    "value": 3,
+    "kind": "boss",
+    "name": "Nemelio",
+    "description": "Un Ezelin Templier déchu de la Curie Métérole, reconvertit en bandit.",
+    "kindId": "m317"
+  },
+  {
+    "id": 1006,
+    "value": 3,
+    "kind": "boss",
+    "name": "Douvone - Zumi Mécanique",
+    "description": "Zumi mécanique en acier renforcé gris/noir, créé il y a plusieurs siècles par le plus grand ingénieur au monde : Basile.",
+    "kindId": "m048"
+  },
+  {
+    "id": 1007,
+    "value": 3,
+    "kind": "boss",
+    "name": "Oberon - Le Massacreur Sadique",
+    "description": "Un tyrannosaure ancestral doté d'un corps conçu pour la guerre et les meurtres. Sa cruauté n'égale que sa force.",
+    "kindId": "m081"
+  },
+  {
+    "id": 1008,
+    "value": 3,
+    "kind": "boss",
+    "name": "Ursina - Samouraï Commandant",
+    "description": "Femme Ursun à la peau brune, grande Samouraï robuste et très courageuse et droite.",
+    "kindId": "m056"
+  },
+  {
+    "id": 1009,
+    "value": 3,
+    "kind": "boss",
+    "name": "Etincellia",
+    "description": "Une Ezelin de génie, déterminée et ambitieuse, elle a un sale caractère et un sacré talent.",
+    "kindId": "etincellia"
+  },
+  {
+    "id": 1010,
+    "value": 3,
+    "kind": "boss",
+    "name": "Kasar - Braconnier",
+    "description": "Braconnier quarantenaire barbu avec des cicatrices, à la recherche de bêtes rares et onéreuses.",
+    "kindId": "m308"
+  },
+  {
+    "id": 1011,
+    "value": 3,
+    "kind": "boss",
+    "name": "Frédéric - Officier Heldentod",
+    "description": "Guerrier grand et robuste se battant pour l'empire Heldentod, décoré par le grand maréchal de l'Empire, vicieux.",
+    "kindId": "m205"
+  },
+  {
+    "id": 1012,
+    "value": 3,
+    "kind": "boss",
+    "name": "McDougal - Héraut Heldentod",
+    "description": "Ogre officier de l'Empire Heldentod dont les fonctions étaient la transmission des messages et les proclamations solennelles. Il est connu pour son soutien ravageur.",
+    "kindId": "m060"
+  },
+  {
+    "id": 1013,
+    "value": 3,
+    "kind": "boss",
+    "name": "Rubis",
+    "description": "Héritière de l'empire Heldentod, connue pour sa détermination et sa prestance. Elle est très stratège mais froide et parfois sans pitié.",
+    "kindId": "m312b"
+  },
+  {
+    "id": 1014,
+    "value": 3,
+    "kind": "boss",
+    "name": "Adonis",
+    "description": "Anuran juge connu pour être un tueur en série, sa cause est encore mystérieuse. Il peut cependant se montrer très social.",
+    "kindId": "m315"
+  },
+  {
+    "id": 1015,
+    "value": 3,
+    "kind": "boss",
+    "name": "Ecorce Terrestre - Pionnier de Gaia",
+    "description": "Une tortue verte antique montée d'un arbre gigantesque. Elle est redoutable et très résistante à toute sorte d'attaques.",
+    "kindId": "m077"
+  },
+  {
+    "id": 1016,
+    "value": 3,
+    "kind": "boss",
+    "name": "Rumbledore",
+    "description": "Très grand magicien vivant aux bourbes, aussi doué que les plus Grands Sages d'Aven. Sa curiosité et son envie de connaissances est sans limite.",
+    "kindId": "m118"
+  },
+  {
+    "id": 1017,
+    "value": 3,
+    "kind": "boss",
+    "name": "Mandragore - Graine de l'Yggdrasil",
+    "description": "Créature racine géante au bulbe marron et aux fleurs violettes. Une créature ancestrale du passé.",
+    "kindId": "m032"
+  },
+  {
+    "id": 1018,
+    "value": 3,
+    "kind": "boss",
+    "name": "Ver Cuirassé - Jimmy",
+    "description": "Un Ver Alpha vivant dans une grotte, leader des insectes et territorial, à une carapace empoisonnée verdâtre.",
+    "kindId": "m102"
+  },
+  {
+    "id": 1019,
+    "value": 3,
+    "kind": "boss",
+    "name": "Draigos - Drakai aux bouquins",
+    "description": "Draigos, lâche tacticien hors pair et érudit qui ne se laisse pas marcher dessus.",
+    "kindId": "m015"
+  },
+  {
+    "id": 1020,
+    "value": 3,
+    "kind": "boss",
+    "name": "Tank Ursun",
+    "description": "Grand ursun noir capable d'encaisser de nombreux coups, il fait parti des hauts placés des Ursuns Belliqueux.",
+    "kindId": "m052"
+  },
+  {
+    "id": 1021,
+    "value": 3,
+    "kind": "boss",
+    "name": "Lucius - Roi Déchu",
+    "description": "Ezelin aux cheveux argentés et aux yeux bleux. Roi ayant vécu il y a plus 300 ans, expert en magie noire et occulte : ses nouveaux objectifs sont ultra ambitieux.",
+    "kindId": "m347"
+  },
+  {
+    "id": 1022,
+    "value": 3,
+    "kind": "boss",
+    "name": "Volesang - Héraut de Guerre",
+    "description": "Grand taureau ancestral à carapace de roc rougeâtre. Des crystaux violets parsèment son corps. Ces crystaux amènent la douleur.",
+    "kindId": "m197"
+  },
+  {
+    "id": 1023,
+    "value": 3,
+    "kind": "boss",
+    "name": "Gaazor - Ogre Chef Shaman",
+    "description": "Gaazor est un ogre à la peau noire bleuté, recouvert d'une grande cape. Il a finit en prison pour vente d'esclaves à l'Empire Heldentod, mais réussira peut-être à sortir...",
+    "kindId": "m228"
+  },
+  {
+    "id": 1024,
+    "value": 3,
+    "kind": "boss",
+    "name": "Zéphyr - Sage Cardinal",
+    "description": "Grand sage de la Curie Métérole : Commandant (U Def) et Cardinal. Mec pas très carré mais sympa.",
+    "kindId": "m249"
+  },
+  {
+    "id": 1025,
+    "value": 3,
+    "kind": "boss",
+    "name": "Dragon Terrestre",
+    "description": "Grand dragon terrestre gris brun à la peau écailleuse et rocheuse, réveillé suite à une éclipse, il possède de petites ailes.",
+    "kindId": "m021"
+  },
+  {
+    "id": 1026,
+    "value": 3,
+    "kind": "boss",
+    "name": "Dragon Fourrure Mythique",
+    "description": "Un dragon fourrure qui sommeillait près de l'Empire Dulong à Maëlstrom, c'est une version mythique de ses semblables d'Elos",
+    "kindId": "m369"
+  },
+  {
+    "id": 1027,
+    "value": 3,
+    "kind": "boss",
+    "name": "Kibo",
+    "description": "Double maléfique (Doppelgänger) de Kibo. Tout aussi costaud et résistant, mais pas gentil !",
+    "kindId": "kibo"
+  },
+  {
+    "id": 1028,
+    "value": 3,
+    "kind": "boss",
+    "name": "Invidia - Yandere",
+    "description": "Lieutenant d'unité d'expédition pour la Curie. Yandere et follement amoureuse de Lassar.",
+    "kindId": "m128b"
+  },
+  {
+    "id": 1029,
+    "value": 3,
+    "kind": "boss",
+    "name": "Champignoïde Mutant Crystal",
+    "description": "Un grand champignoïde surplombé de crystaux bleu violacé, créé par des expériences.",
+    "kindId": "m087b"
+  },
+  {
+    "id": 1030,
+    "value": 3,
+    "kind": "boss",
+    "name": "Ochak - Primat de la Chelona",
+    "description": "Torturran riche qui est Primat (Cardinal) de la Chelona, il a travaillé à l'Ordre des Chevaliers de la rose, il est capable de desceller.",
+    "kindId": "m042b"
+  },
+  {
+    "id": 1031,
+    "value": 3,
+    "kind": "boss",
+    "name": "Gimu - l'Oeil du Cyclone",
+    "description": "Mante cyclope surchargée en magie et capable d'invoquer une tempête autour de lui. Bête destructrice.",
+    "kindId": "m215"
+  },
+  {
+    "id": 1201,
     "value": 1,
     "kind": "composant",
     "name": "Acier Volcanique",
@@ -40,7 +1120,7 @@
     "kindId": "I00209"
   },
   {
-    "id": 301,
+    "id": 1501,
     "value": 2,
     "kind": "anecdote",
     "name": "Kibo le criminel",
@@ -48,7 +1128,7 @@
     "kindId": "monsters/kibo"
   },
   {
-    "id": 302,
+    "id": 1502,
     "value": 3,
     "kind": "anecdote",
     "name": "Le légendaire bouclier Zuminator",
@@ -56,7 +1136,7 @@
     "kindId": "items/W73002"
   },
   {
-    "id": 303,
+    "id": 1503,
     "value": 3,
     "kind": "anecdote",
     "name": "Cosmos le Remonteur de Cascade",
@@ -64,7 +1144,7 @@
     "kindId": "items/i01579"
   },
   {
-    "id": 401,
+    "id": 2001,
     "value": 1,
     "kind": "stuff",
     "name": "Marteau, Epee, Lance, etc...",
