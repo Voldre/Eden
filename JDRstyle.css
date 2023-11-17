@@ -438,6 +438,19 @@ dialog::backdrop {
   transform: rotate(720def);
 }
 
+#cards {
+  display: grid;
+  grid-template-columns: 45% 45%;
+  padding-left: 5px;
+  justify-content: space-between;
+}
+#cards img {
+  margin: auto;
+  height: 80px;
+  width: 80px;
+  display: block;
+}
+
 /* JDR Quest */
 
 .game {
@@ -453,8 +466,6 @@ dialog::backdrop {
 }
 
 .loading {
-  user-select: none;
-  pointer-events: none;
   background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/hd/b6e0b072897469.5bf6e79950d23.gif") !important;
   background-size: cover;
   opacity: 0.8;
@@ -533,10 +544,13 @@ dialog::backdrop {
 
 .entries {
   position: relative;
-  bottom: 0%;
-  right: 0%;
+  top: 88%;
+  left: 36%;
   background-color: #333;
   color: wheat;
+  display: inline;
+  font-size: 20px;
+  padding: 5px;
 }
 
 .alpagaCoin {
@@ -557,7 +571,7 @@ dialog::backdrop {
 .card {
   overflow: auto;
   max-height: 150px;
-  width: 170px;
+  width: 165px;
   border: 1px black solid;
   border-radius: 5px;
   background-color: #333;
@@ -649,5 +663,19 @@ dialog::backdrop {
   }
   .notInMobile {
     display: none;
+  }
+
+  #boss,
+  #composant,
+  #anecdote {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-content: space-around;
+  }
+
+  #boss .card,
+  #composant .card,
+  #anecdote .card {
+    width: auto !important;
   }
 }

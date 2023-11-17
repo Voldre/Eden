@@ -146,7 +146,7 @@ window.addEventListener("load", () => {
     selectPerso.value = urlParams.get("perso") - 1;
     // loadFiche(urlParams.get('perso'));
     // selectedPerso = selectPerso.value;
-    var selectedID = selectPerso.selectedIndex + 1;
+    var selectedID = selectPerso.selectedIndex;
   }
   loadFiche(selectedID);
   if (urlParams.has("enemy")) {
@@ -281,6 +281,10 @@ function Perso(persoData) {
     return Object.values(eqptJSON).find((eqpt) => eqpt.nom.toLowerCase().trim() == eqptName.toLowerCase().trim());
   });
 
+  if (!stuffs[0]) {
+    toastNotification("Erreur : Le personnage n'est pas apte à se battre.", 8000);
+    stop();
+  }
   // stuffs = stuffs.filter((s) => s != undefined);
 
   var montantBouclier, montantArmure, montantArme1, montantArme2, montantAccessDegat, montantAccessArmure;
@@ -450,7 +454,7 @@ function chooseEnemy(category = null) {
   // console.log(forbidden.map(f => enemyJSON[f]))
 
   // prettier-ignore
-  const boss = ["24","29","45","46","50","54","56","57","59","61","62","67","70","71","74","75","76","77","80","82","84","85","86","89","90","101","106","109","111","113","114","115","116","117","118","121","122"];
+  const boss = ["24","29","45","46","50","54","56","57","59","61","62","67","70","71","74","75","76","77","80","82","84","85","89","90","101","106","109","111","113","114","115","116","117","118","121","122"];
 
   var enemyList = [];
 
@@ -633,21 +637,28 @@ function victory() {
   const urlParams = new URLSearchParams(window.location.search);
   if (urlParams.get("map")) {
     const mapCard = cardJSON.find(
-      (card) => card.kindId === parseInt(urlParams.get("map")) && card.value === cardRarity
+      (card) => card.kind === "map" && card.kindId === parseInt(urlParams.get("map")) && card.value === cardRarity
     );
     newJoueurData.cards = addCard(newJoueurData.cards, mapCard);
-    winCards.push(mapCard);
+    mapCard ? winCards.push(mapCard) : null;
   }
   // Boss card
   if (cardRarity == 3) {
     const bossCard = cardJSON.find(
-      (card) => card.kind == "boss" && card.kindId.toLowerCase() === selectedEnemy.visuel3D.toLowerCase()
+      (card) => card.kind === "boss" && card.kindId.toLowerCase() === selectedEnemy.visuel3D.toLowerCase()
     );
     newJoueurData.cards = addCard(newJoueurData.cards, bossCard);
-    winCards.push(bossCard);
+    bossCard ? winCards.push(bossCard) : null;
   }
 
   // Compo card
+  const cardsCompo = cardJSON.filter((card) => card.kind === "composant");
+  const compoCardID = Math.floor(Math.random() * cardsCompo.length);
+  const compoCard = cardsCompo[compoCardID];
+  newJoueurData.cards = addCard(newJoueurData.cards, compoCard);
+  compoCard ? winCards.push(compoCard) : null;
+
+  // Anecdote card
 
   // Coins
   newJoueurData.alpagaCoin = addCoins(newJoueurData.alpagaCoin, winCards, enemyRarity);
@@ -693,14 +704,63 @@ function addCoins(alpagaCoin, winCards, enemyRarity) {
     winCards?.map((card) => (card ? card.value : 0))?.reduce((acc, value) => acc + value) || enemyRarity;
   return alpagaCoin + cardsValue + Math.max(enemyRarity - 3, 0);
 }
+
 function showCardsAndCoins(joueurData, winCards, newCoins) {
   console.log("Earned : " + (newCoins - joueurData.alpagaCoin).toString() + ", New sold : " + newCoins.toString());
-  console.log(winCards.map((card) => card.name));
+  console.log(winCards.map((card) => card?.name));
   winCards.forEach((card) => {
     if (!joueurData.cards.includes(card.id)) {
       console.log(card.name + " is a new Card !");
     }
   });
+
+  const dialog = document.querySelector("dialog");
+  document.querySelector("#coins").innerText = (newCoins - joueurData.alpagaCoin).toString();
+
+  const cardsE = document.querySelector("#cards");
+
+  winCards.forEach((card) => {
+    const li = document.createElement("li");
+    li.innerText = card.name;
+
+    if (!joueurData.cards.includes(card.id)) {
+      li.style.color = "gold";
+      // li.innerText += " (New !)";
+    }
+
+    const div = document.createElement("div");
+    const imgCardE = document.createElement("img");
+
+    const imgEndPoint = "images/";
+
+    switch (card.kind) {
+      case "map": {
+        imgCardE.src = imgEndPoint + "loadingframe/Loading_" + card.kindId + ".png";
+        break;
+      }
+      case "boss": {
+        imgCardE.src = imgEndPoint + "monsters/" + card.kindId + ".png";
+        break;
+      }
+      case "composant": {
+        imgCardE.src = imgEndPoint + "items/" + card.kindId + ".png";
+        break;
+      }
+      case "anecdote": {
+        imgCardE.src = imgEndPoint + card.kindId + ".png";
+        break;
+      }
+      default:
+        console.log("Erreur, type non reconnu : " + card.kind);
+    }
+
+    div.append(li);
+    div.append(imgCardE);
+    cardsE.append(div);
+  });
+
+  // Ouverture en "modal"
+  dialog.showModal();
 }
 
 function endRediction(indexPlayer) {
@@ -974,10 +1034,10 @@ function hit(user, amount) {
 }
 
 function heal(user, amount) {
-  user.pv = parseInt(user.pv) + amount;
+  user.pv = Math.min(user.pvmax, parseInt(user.pv) + amount);
 
   // min() permet de gérer si les PV soignés sont > aux PV max
-  document.querySelector("#pv").value = Math.min(user.pvmax, user.pv);
+  document.querySelector("#pv").value = user.pv;
 }
 
 function buff(userSkill, amount) {
@@ -996,15 +1056,19 @@ function buff(userSkill, amount) {
     buffE.querySelector(".montant").innerText = amount;
     buffE.querySelector(".icone").src = "http://voldre.free.fr/Eden/images/skillIcon/" + userSkill.icone + ".png";
 
-    buffE.querySelector(".icone").title = userSkill.buffElem;
+    buffE.querySelector(".icone").title = userSkill.buffElem.toString();
 
     buffE.id = userSkill.nom;
 
     if (userSkill.buffElem.includes("/tour")) {
       userSkill.buffElem = userSkill.buffElem.replace("/tour", "");
     }
-    perso[userSkill.buffElem] += amount;
-    document.querySelector("#" + userSkill.buffElem).value = perso[userSkill.buffElem];
+
+    userSkill.buffElem.forEach((bE) => {
+      perso[bE] = parseInt(perso[bE]) + amount;
+      document.querySelector("#" + bE).value = perso[bE];
+    });
+
     return false;
   });
 }
@@ -1027,7 +1091,7 @@ function unlockInputs(bool) {
 function updateBuff() {
   [...document.querySelectorAll(".buff")].forEach((buffE) => {
     var dureeE = buffE.querySelector(".duree");
-    var buffElem = buffE.querySelector(".icone").title.replace("/tour", "");
+    var buffElem = buffE.querySelector(".icone").title.split(",");
 
     if (dureeE.children[0].innerText == "") return;
 
@@ -1036,18 +1100,24 @@ function updateBuff() {
 
       // If buff per turn (ex : Euphorie), apply buff
       if (buffE.querySelector(".icone").title.includes("/tour")) {
+        buffElem = buffElem[0].replace("/tour", "");
         perso[buffElem] += parseInt(buffE.querySelector(".montant").innerText);
         document.querySelector("#" + buffElem).value = perso[buffElem];
       }
+      // Else, if last turn
     } else {
       if (buffE.querySelector(".icone").title.includes("/tour")) {
         // If buff each turn, we remove the whole buff (amount * duration)
+        buffElem = buffElem[0].replace("/tour", "");
         perso[buffElem] -=
           parseInt(buffE.querySelector(".montant").innerText) * (parseInt(dureeE.children[1].innerText) + 1);
+        document.querySelector("#" + buffElem).value = perso[buffElem];
       } else {
-        perso[buffElem] -= parseInt(buffE.querySelector(".montant").innerText);
+        buffElem.forEach((bE) => {
+          perso[bE] -= parseInt(buffE.querySelector(".montant").innerText);
+          document.querySelector("#" + bE).value = perso[bE];
+        });
       }
-      document.querySelector("#" + buffElem).value = perso[buffElem];
 
       dureeE.children[0].innerText = "";
       dureeE.children[1].innerText = "";

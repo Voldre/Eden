@@ -98,7 +98,7 @@ function updateDay(joueurData, indexPlayer) {
   if (joueurData.date === today) return joueurData;
 
   joueurData.date = today;
-  joueurData.entries.map(() => 3);
+  joueurData.entries = joueurData.entries.map(() => 3);
 
   joueurData.alpagaCoin += 5;
 
@@ -135,7 +135,7 @@ function loadPerso(perso, index, joueurData) {
   persoE.querySelector("#niv").value = perso.niv;
   persoE.querySelector(".persoPic").src = perso.pp;
   persoE.addEventListener("click", () => {
-    if (joueurData.entries[index] === 2) {
+    if (joueurData.entries[index] <= 0) {
       toastNotification("Erreur : Le personnage ne peut plus aller combattre, revenez demain !");
     } else {
       document.querySelector("#worldmap").classList.add("active");
@@ -156,7 +156,7 @@ function loadPerso(perso, index, joueurData) {
 }
 
 document.addEventListener("click", (e) => {
-  if (e.target.dataset.map || e.target.parentElement.dataset.map) {
+  if (e.target.dataset.map || (e.target.parentElement && e.target.parentElement.dataset.map)) {
     window.location.href =
       "jdr_quest.html?perso=" +
       (parseInt(indexPerso) + 1) +

@@ -2467,5 +2467,26 @@
     "effet": "D\u00e9g\u00e2t de Nature +3",
     "montant": "D\u00e9g\u00e2t +10",
     "icone": "W23707"
+  },
+  "338": {
+    "nom": "Gemme de p\u00e9tale",
+    "desc": "Une petite gemme en forme de p\u00e9tale de cerisier, fortifie son porteur",
+    "effet": "",
+    "montant": "PV +15, Blocage (physique/magique) +1",
+    "icone": "I00364"
+  },
+  "339": {
+    "nom": "Pierre Loukoum",
+    "desc": "Une pierre au go\u00fbt aigre et sucr\u00e9e qui ravive les papilles, le su\u00e7oter renforce son porteur. Attention de ne pas l'avaler !",
+    "effet": "",
+    "montant": "2 fois par combat (Instantan\u00e9e) : PV+5 et r\u00e9ussite des sorts +1 sur 3 tours",
+    "icone": "I00218"
+  },
+  "340": {
+    "nom": "Pierre Algue Gel\u00e9e",
+    "desc": "Une pierre en forme d'algue b\u00e9nie par les Torturrans, il semble avoir \u00e9t\u00e9 crystalis\u00e9 il y a tr\u00e8s longtemps",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t de nature +3, glace +3",
+    "icone": "I00212"
   }
 }

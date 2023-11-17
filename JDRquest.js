@@ -43,10 +43,31 @@ window.addEventListener("load", async () => {
     document.querySelector("body").innerHTML =
       "Erreur : vous devez saisir dans l'URL un numéro de personnage (jdr_quest?perso=4) par exemple.";
     stop();
+    document.querySelector(".loading").remove();
+    return;
   }
 
-  const indexPerso = urlParams.get("perso") - 1;
-  const persoData = persosJSON[indexPerso];
+  const indexPerso = urlParams.get("perso");
+  const indexPlayer = Object.entries(playerJSON)
+    .map((player) => {
+      if (player[1].persos.includes(parseInt(indexPerso))) {
+        return player[0];
+      }
+    })
+    .filter((e) => e != undefined)[0];
+  const joueurData = playerJSON[indexPlayer];
+
+  console.log(joueurData, indexPerso);
+  if (!joueurData || joueurData.entries[joueurData.persos.indexOf(parseInt(indexPerso))] <= 0) {
+    document.querySelector("#response").innerText =
+      "Erreur : Le personnage a déjà fait ses 3 entrées, veuillez en choisir un autre !";
+    console.log("Erreur : Le personnage a déjà fait ses 3 entrées, veuillez en choisir un autre !");
+    stop();
+    document.querySelector(".loading").remove();
+    return;
+  }
+
+  const persoData = persosJSON[(parseInt(indexPerso) - 1).toString()];
   const enemyData = chooseEnemy(urlParams.get("map"));
   const randomPNJ = Math.floor(Math.random() * Object.entries(pnjJSON).length + 1);
   console.log(randomPNJ);
@@ -146,23 +167,25 @@ function writeMessage(persoData, pnjData, mapData, enemyData) {
 
 function chooseEnemy(mapId = null, category = null) {
   // prettier-ignore
-  const forbidden = ["71","74","80","82","85","90","101","104","109","113"];
+  const forbidden = ["71","82","101","104","109","118","119"];
 
   var enemyListId = Object.keys(enemyJSON).filter((eID) => !forbidden.includes(eID));
 
   // prettier-ignore
-  const boss = ["24","29","45","46","50","54","56","57","59","61","62","67","70","71","74","75","76","77","80","82","84","85","86","89","90","101","106","109","111","113","114"];
+  const boss = ["24","29","45","46","50","54","56","57","59","61","62","67","70","71","74","75","76","77","80","82","84","85","86","89","90","101","106","109","111","113","114","118","119"];
 
   if (category === "boss") {
-    enemyListId.filter((eID) => boss.includes(eID));
+    enemyListId = enemyListId.filter((eID) => boss.includes(eID));
   } else if (category === "mob") {
-    enemyListId.filter((eID) => !boss.includes(eID));
+    enemyListId = enemyListId.filter((eID) => !boss.includes(eID));
   }
 
   if (mapId) {
-    enemyListId.filter((eID) => mapsJSON.mapId.mobs.includes(eID));
+    console.log(mapId);
+    console.log(enemyListId);
+    enemyListId = enemyListId.filter((eID) => mapsJSON[mapId].mobs.includes(parseInt(eID)));
   }
-
+  console.log(enemyListId);
   const randomId = Math.floor(Math.random() * enemyListId.length);
 
   const enemyData = enemyJSON[enemyListId[randomId]];
@@ -173,6 +196,13 @@ function chooseEnemy(mapId = null, category = null) {
 function initializeActions(actions, enemyData, pnjEnemy = { nom: null }, mapID) {
   const urlParams = new URLSearchParams(window.location.search);
   const indexPerso = urlParams.get("perso");
+  const indexPlayer = Object.entries(playerJSON)
+    .map((player) => {
+      if (player[1].persos.includes(parseInt(indexPerso))) {
+        return player[0];
+      }
+    })
+    .filter((e) => e != undefined)[0];
 
   Object.entries(actions).forEach(([id, action]) => {
     const liElem = document.createElement("li");
@@ -185,14 +215,6 @@ function initializeActions(actions, enemyData, pnjEnemy = { nom: null }, mapID) 
       actionURL = "jdr_combat.html?perso=" + indexPerso + "&enemy=" + enemy + "&map=" + mapID;
     } else if (id == 1) {
       // @TODO : Créer la HomePage
-      const indexPlayer = Object.entries(playerJSON)
-        .map((player) => {
-          if (player[1].persos.includes(parseInt(indexPerso))) {
-            return player[0];
-          }
-        })
-        .filter((e) => e != undefined)[0];
-
       actionURL = "jdr_profil.html?joueur=" + indexPlayer;
       console.log(actionURL);
     } else if (id == 2) {
