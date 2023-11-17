@@ -651,7 +651,7 @@
     "nom": "Gr\u00e2ce de la Sagesse",
     "desc": "Augmente l'intelligence et l'esprit de la cible",
     "effet": "Buff",
-    "montant": "Intelligence et Esprit +2 pendant 3 tours",
+    "montant": "Intelligence et Esprit +2 pendant 4 tours",
     "icone": "E0095",
     "stat": "Esprit",
     "classe": ["Clerc"]
@@ -1036,9 +1036,9 @@
   },
   "122": {
     "nom": "Eclair charg\u00e9",
-    "desc": "2 tours d'incantation (1 d\u00e9 par tour) : Un coup d'\u00e9clair concentr\u00e9 en magie qui foudroie la cible",
+    "desc": "2 tours d'incantation (1 d\u00e9 par tour) : Un coup d'\u00e9clair concentr\u00e9 en magie qui foudroie la cible. Chance de blocage/esquive -2.",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "2D10 +15",
+    "montant": "2D10 +12",
     "icone": "E0724",
     "stat": "Intelligence",
     "classe": ["Magicien"]
@@ -1141,5 +1141,14 @@
     "icone": "e0497",
     "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Voleur"]
+  },
+  "134": {
+    "nom": "Hymne Inspirant",
+    "desc": "Encourage ses camarades, augmentant ainsi leur chance de r\u00e9ussir leur sort. Sort complexe \u00e0 ex\u00e9cuter.",
+    "effet": "Buff AoE",
+    "montant": "R\u00e9ussite des sorts +1 sur 3 tours (r\u00e9ussite -3)",
+    "icone": "e0559",
+    "stat": "Charisme",
+    "classe": ["Barde"]
   }
 }

@@ -22,11 +22,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <nav style="margin-left:10px;" class="hidexxxx">
+    <nav style="margin-left:10px;" class="hide">
         <ul class="menu">
         <!-- <li><a href="">Présentation</a></li> -->
             <li><a href="jdr_univers.html">Infos JDR</a></li>
-            <li><a href="univers.php">L'Univers</a></li>
+            <li><a href="jdr_profil.html">Profil</a></li>
                 <!--  # Races # Classes -->
             <!-- <li><a href="jdr.html">Fiches de persos</a></li> -->
             <li><a href="jdr.html">Fiches de persos</a></li>
@@ -41,6 +41,13 @@
             </li>
         </ul>
     </nav>
+    <dialog>
+        <p>Vous avez obtenu <span id="coins"></span> Pièces Alpaga 
+            <img src="images/alpagaCoin.png" style="display: inline; width: 30px; height: 30px; margin: 0px" /> ! 
+        </p>
+        <p>Vous avez obtenu les cartes suivantes :</p>
+        <ul id="cards"></ul>
+    </dialog>
     <div class="perso" id="" style="border: 1px gray solid;">
         <div id="toast"></div>
         <div class="flexContainer">
