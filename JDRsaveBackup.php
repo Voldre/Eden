@@ -7,7 +7,11 @@ print_r($_SESSION['login']);
 if(isset($_SESSION['login'])){
     $file = file_get_contents('JDRpersos.json', true);
     file_put_contents('JDRpersos_backup.json', $file);
-    echo "JDRpersos_backup.json saved";
+    echo "JDRpersos_backup.json saved, <br/>";
+    
+    $file2 = file_get_contents('JDRplayer.json', true);
+    file_put_contents('JDRplayer_backup.json', $file2);
+    echo "JDRplayer_backup.json saved";
 }else{
     echo "Not connected";
 }

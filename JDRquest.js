@@ -6,6 +6,8 @@ var pnjJSON = {};
 var mapsJSON = {};
 var playerJSON = {};
 
+var rarity;
+
 // Obsolete
 // const apiKey = "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";
 const apiUrl = "https://api.openai.com/v1/chat/completions";
@@ -40,7 +42,7 @@ function getData(filename, JDR = true) {
 window.addEventListener("load", async () => {
   const urlParams = new URLSearchParams(window.location.search);
   if (!urlParams.has("perso")) {
-    document.querySelector("body").innerHTML =
+    document.querySelector("#response").innerHTML =
       "Erreur : vous devez saisir dans l'URL un numéro de personnage (jdr_quest?perso=4) par exemple.";
     stop();
     document.querySelector(".loading").remove();
@@ -69,6 +71,10 @@ window.addEventListener("load", async () => {
 
   const persoData = persosJSON[(parseInt(indexPerso) - 1).toString()];
   const enemyData = chooseEnemy(urlParams.get("map"));
+
+  // Upgrade enemy to Elite if the rarity selected randomly is "2" and the enemy is "common"
+  const isElite = rarity === 2 && enemyData.pvmax < 120;
+
   const randomPNJ = Math.floor(Math.random() * Object.entries(pnjJSON).length + 1);
   console.log(randomPNJ);
   const pnjData = pnjJSON[randomPNJ];
@@ -90,13 +96,14 @@ window.addEventListener("load", async () => {
     actions = ["Accepter la Quête", "Refuser la Quête"];
   }
 
-  initializeActions(actions, enemyData, pnjEnemy, mapID);
+  initializeActions(actions, enemyData, isElite, pnjEnemy, mapID);
 
   document.querySelector("#pnj").src = "./images/PNJ/" + pnjData["id"] + ".png";
   document.querySelector("#persoName").innerText = persoData["nom"];
   document.querySelector("#perso").src = persoData["pp"].replace("http://voldre.free.fr/Eden", ".");
 
   document.querySelector("#enemy").src = "./images/monsters/" + enemyData.visuel3D + ".png";
+  document.querySelector("#enemy").title = enemyData.nom;
 
   // CHAT GPT PROMPT
 
@@ -181,19 +188,35 @@ function chooseEnemy(mapId = null, category = null) {
   }
 
   if (mapId) {
-    console.log(mapId);
-    console.log(enemyListId);
+    if (!mapsJSON[mapId].mobs) {
+      document.querySelector("#response").innerHTML =
+        "Erreur : Aucun n'ennemi n'existe pour le moment sur cette carte, désolé !";
+      stop();
+      document.querySelector(".loading").remove();
+      return;
+    }
     enemyListId = enemyListId.filter((eID) => mapsJSON[mapId].mobs.includes(parseInt(eID)));
+
+    // If map choosed for fight, filter by rarity !
+    rarity = Math.floor(Math.random() * 3) + 1;
+    if (rarity <= 2) {
+      // Handle ennemy rarity 1 & 2 (Common & Rare)
+      enemyListId = enemyListId.filter((eID) => enemyJSON[eID].pvmax < 200);
+    } else {
+      if (enemyListId.filter((eID) => enemyJSON[eID].pvmax >= 200).length === 0) {
+        rarity = 2;
+      } else {
+        enemyListId = enemyListId.filter((eID) => enemyJSON[eID].pvmax >= 200);
+      }
+    }
   }
-  console.log(enemyListId);
+
   const randomId = Math.floor(Math.random() * enemyListId.length);
-
   const enemyData = enemyJSON[enemyListId[randomId]];
-
   return enemyData;
 }
 
-function initializeActions(actions, enemyData, pnjEnemy = { nom: null }, mapID) {
+function initializeActions(actions, enemyData, isElite, pnjEnemy = { nom: null }, mapID) {
   const urlParams = new URLSearchParams(window.location.search);
   const indexPerso = urlParams.get("perso");
   const indexPlayer = Object.entries(playerJSON)
@@ -212,7 +235,8 @@ function initializeActions(actions, enemyData, pnjEnemy = { nom: null }, mapID) 
     var actionURL;
     if (id == 0) {
       enemy = enemyData["nom"];
-      actionURL = "jdr_combat.html?perso=" + indexPerso + "&enemy=" + enemy + "&map=" + mapID;
+      actionURL =
+        "jdr_combat.html?perso=" + indexPerso + "&enemy=" + enemy + "&map=" + mapID + (isElite ? "&isElite" : "");
     } else if (id == 1) {
       // @TODO : Créer la HomePage
       actionURL = "jdr_profil.html?joueur=" + indexPlayer;
@@ -220,7 +244,8 @@ function initializeActions(actions, enemyData, pnjEnemy = { nom: null }, mapID) 
     } else if (id == 2) {
       // Change enemy
       enemy = pnjEnemy["nom"];
-      actionURL = "jdr_combat.html?perso=" + indexPerso + "&enemy=" + enemy + "&map=" + mapID;
+      actionURL =
+        "jdr_combat.html?perso=" + indexPerso + "&enemy=" + enemy + "&map=" + mapID + (isElite ? "&isElite" : "");
     }
 
     liElem.addEventListener("click", () => {

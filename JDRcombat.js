@@ -155,7 +155,7 @@ window.addEventListener("load", () => {
     selectedEnemy = chooseEnemy();
     // Math.round(Math.random()*110)
   }
-  loadEnemy(selectedEnemy);
+  loadEnemy(selectedEnemy, urlParams.has("isElite"));
 
   newturn();
 });
@@ -254,6 +254,7 @@ function loadSkills(c1, c2) {
         ", " +
         listSkills[id].duree +
         " tours";
+      skillE.querySelector(".montant").innerText = skillE.querySelector(".montant").innerText.replaceAll(",", ", ");
     } else {
       if (!listSkills[id].montantFixe) {
         skillE.querySelector(".montant").innerText = listSkills[id].type + " : " + listSkills[id].montant;
@@ -355,7 +356,7 @@ function Perso(persoData) {
   this.classeS = persoData.classeS;
 }
 
-function loadEnemy(enemyData) {
+function loadEnemy(enemyData, isElite = false) {
   ingame = true;
   turn = 0;
 
@@ -366,6 +367,14 @@ function loadEnemy(enemyData) {
   if (!enemyData) return;
 
   enemy = new Enemy(enemyData);
+
+  // Apply "isElite" only if not an elite or a boss
+  if (isElite && enemy.pvmax < 120) {
+    enemy.nom += " (ELITE)";
+    // Value clipped between min and max
+    enemy.pvmax = enemy.pv = Math.max(130, Math.min(enemy.pvmax * 1.5, 180));
+    enemy.degat = Math.max(27, Math.min(Math.round(enemy.degat * 1.1) + 5, 42));
+  }
 
   document.querySelector("#enom").value = enemy.nom;
 
@@ -619,26 +628,32 @@ function isEnded() {
 }
 
 function victory() {
+  const urlParams = new URLSearchParams(window.location.search);
+
+  console.log(selectedEnemy);
   var enemyRarity;
   if (selectedEnemy.pvmax >= 200) {
     enemyRarity = Math.trunc(selectedEnemy.pvmax / 100) + 1;
-  } else if (selectedEnemy.pvmax >= 125) {
+  } else if (selectedEnemy.pvmax >= 120) {
     enemyRarity = 2;
   } else {
     enemyRarity = 1;
+    // Handle enemy with "elite mode"
+    enemyRarity += urlParams.has("isElite");
   }
 
   const cardRarity = Math.min(enemyRarity, 3);
+
+  const mapID = parseInt(urlParams.get("map"));
+
+  const enemyID = parseInt(Object.entries(enemyJSON).find((e) => e[1] === selectedEnemy)[0]);
 
   var newJoueurData = { ...joueurData };
   var winCards = [];
 
   // Map card
-  const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.get("map")) {
-    const mapCard = cardJSON.find(
-      (card) => card.kind === "map" && card.kindId === parseInt(urlParams.get("map")) && card.value === cardRarity
-    );
+  if (mapID) {
+    const mapCard = cardJSON.find((card) => card.kind === "map" && card.kindId === mapID && card.value === cardRarity);
     newJoueurData.cards = addCard(newJoueurData.cards, mapCard);
     mapCard ? winCards.push(mapCard) : null;
   }
@@ -658,8 +673,20 @@ function victory() {
   newJoueurData.cards = addCard(newJoueurData.cards, compoCard);
   compoCard ? winCards.push(compoCard) : null;
 
-  // Anecdote card
+  // Anecdote card (50% chance to get)
+  if (Math.random() * 2 <= 1) {
+    const cardsAnecdote = cardJSON.filter((card) => card.kind === "anecdote");
+    const anecdoteCardsList = cardsAnecdote.filter(
+      (card) => (mapID && card.maps?.includes(mapID)) || card.enemies?.includes(enemyID)
+    );
 
+    // Choose 1 between all possibilities
+    const randomAnecdoteCardID = Math.floor(Math.random() * anecdoteCardsList.length);
+    const anecdoteCard = anecdoteCardsList[randomAnecdoteCardID];
+
+    newJoueurData.cards = addCard(newJoueurData.cards, anecdoteCard);
+    anecdoteCard ? winCards.push(anecdoteCard) : null;
+  }
   // Coins
   newJoueurData.alpagaCoin = addCoins(newJoueurData.alpagaCoin, winCards, enemyRarity);
 
@@ -681,6 +708,9 @@ function savePlayer(newJoueurData) {
   const persoIDforPlayer = joueurData.persos.indexOf(parseInt(indexPerso));
 
   newJoueurData.entries[persoIDforPlayer] -= 1;
+
+  // Last control before save : if entries are negative, don't save !
+  if (newJoueurData.entries[persoIDforPlayer] <= -1) return;
 
   var newPlayer = {};
   newPlayer[indexPlayer] = newJoueurData;
@@ -1015,7 +1045,7 @@ function executeAction(user, userSkill) {
   if (userResult == "fail") {
     updateDesc("Echec");
   } else if (userResult == "crit fail") {
-    hit(user, Math.trunc(user.degat / 2) + (user.armure || 0));
+    hit(user, Math.trunc(user.degat / 2) + (user.armure / 2 || 0));
     updateDesc("Echec critique");
   }
 }
@@ -1060,11 +1090,8 @@ function buff(userSkill, amount) {
 
     buffE.id = userSkill.nom;
 
-    if (userSkill.buffElem.includes("/tour")) {
-      userSkill.buffElem = userSkill.buffElem.replace("/tour", "");
-    }
-
     userSkill.buffElem.forEach((bE) => {
+      bE = bE.replace("/tour", "");
       perso[bE] = parseInt(perso[bE]) + amount;
       document.querySelector("#" + bE).value = perso[bE];
     });

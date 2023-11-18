@@ -744,126 +744,6 @@
     "kindId": 36
   },
   {
-    "id": 151,
-    "value": 1,
-    "kind": "map",
-    "name": "Dôme Céleste",
-    "description": "",
-    "kindId": 51
-  },
-  {
-    "id": 152,
-    "value": 2,
-    "kind": "map",
-    "name": "Dôme Céleste",
-    "description": "",
-    "kindId": 51
-  },
-  {
-    "id": 153,
-    "value": 3,
-    "kind": "map",
-    "name": "Dôme Céleste",
-    "description": "",
-    "kindId": 51
-  },
-  {
-    "id": 154,
-    "value": 1,
-    "kind": "map",
-    "name": "Hauteurs Feudegivre",
-    "description": "",
-    "kindId": 52
-  },
-  {
-    "id": 155,
-    "value": 2,
-    "kind": "map",
-    "name": "Hauteurs Feudegivre",
-    "description": "",
-    "kindId": 52
-  },
-  {
-    "id": 156,
-    "value": 3,
-    "kind": "map",
-    "name": "Hauteurs Feudegivre",
-    "description": "",
-    "kindId": 52
-  },
-  {
-    "id": 157,
-    "value": 1,
-    "kind": "map",
-    "name": "Meeryasha",
-    "description": "",
-    "kindId": 53
-  },
-  {
-    "id": 158,
-    "value": 2,
-    "kind": "map",
-    "name": "Meeryasha",
-    "description": "",
-    "kindId": 53
-  },
-  {
-    "id": 159,
-    "value": 3,
-    "kind": "map",
-    "name": "Meeryasha",
-    "description": "",
-    "kindId": 53
-  },
-  {
-    "id": 160,
-    "value": 1,
-    "kind": "map",
-    "name": "Jungle Mayland",
-    "description": "",
-    "kindId": 54
-  },
-  {
-    "id": 161,
-    "value": 2,
-    "kind": "map",
-    "name": "Jungle Mayland",
-    "description": "",
-    "kindId": 54
-  },
-  {
-    "id": 162,
-    "value": 3,
-    "kind": "map",
-    "name": "Jungle Mayland",
-    "description": "",
-    "kindId": 54
-  },
-  {
-    "id": 163,
-    "value": 1,
-    "kind": "map",
-    "name": "Bassin Shaxia",
-    "description": "",
-    "kindId": 55
-  },
-  {
-    "id": 164,
-    "value": 2,
-    "kind": "map",
-    "name": "Bassin Shaxia",
-    "description": "",
-    "kindId": 55
-  },
-  {
-    "id": 165,
-    "value": 3,
-    "kind": "map",
-    "name": "Bassin Shaxia",
-    "description": "",
-    "kindId": 55
-  },
-  {
     "id": 1001,
     "value": 3,
     "kind": "boss",
@@ -884,7 +764,7 @@
     "value": 3,
     "kind": "boss",
     "name": "Marma - Templier Capitaine",
-    "description": "Un Templier de la Curie Métérole, il est chef d'une unité défensive et est quelqu'un de gentil et social. Il (essaye) de faire les choses sérieusement.",
+    "description": "Un Templier de la Curie Métérole, il est chef d'une unité défensive et c'est quelqu'un de gentil et social. Il (essaye) de faire les choses sérieusement.",
     "kindId": "m156"
   },
   {
@@ -909,7 +789,7 @@
     "kind": "boss",
     "name": "Douvone - Zumi Mécanique",
     "description": "Zumi mécanique en acier renforcé gris/noir, créé il y a plusieurs siècles par le plus grand ingénieur au monde : Basile.",
-    "kindId": "m048"
+    "kindId": "m048b"
   },
   {
     "id": 1007,
@@ -1115,36 +995,738 @@
     "id": 1201,
     "value": 1,
     "kind": "composant",
+    "name": "Crystal de Lazurite",
+    "description": "Un crystal utile pour fabriquer certaines armures. Très présent au Mont Calcaire.",
+    "kindId": "I00208"
+  },
+  {
+    "id": 1202,
+    "value": 1,
+    "kind": "composant",
     "name": "Acier Volcanique",
     "description": "Ce minerai très dur est difficile à traiter à cause de son incroyable résistance à la chaleur...",
     "kindId": "I00209"
   },
   {
-    "id": 1501,
+    "id": 1203,
+    "value": 1,
+    "kind": "composant",
+    "name": "Acier d'obsidienne",
+    "description": "Un acier ultra résistant, les Tuskars sont les experts quand il s'agit de les remanier.",
+    "kindId": "I00213"
+  },
+  {
+    "id": 1204,
+    "value": 1,
+    "kind": "composant",
+    "name": "Crystal d'Asbi",
+    "description": "Ce minerai est issu du continent des Zumis, c'est une source d'énergie quasi inépuisable qui alimente la plupart des technologies.",
+    "kindId": "I00401"
+  },
+  {
+    "id": 1205,
     "value": 2,
+    "kind": "composant",
+    "name": "Crystal d'Asbi raffiné",
+    "description": "Les crystaux raffinées ont une puissance bien supérieure aux crystaux normaux, ils peuvent se recharger de manière autonome, une vraie batterie.",
+    "kindId": "I00401"
+  },
+  {
+    "id": 1206,
+    "value": 2,
+    "kind": "composant",
+    "name": "Minerai Arc-en-Ciel",
+    "description": "Ce minerai exclusif au Pic de Noireflamme renferme une résistance hors norme, il est très précieux.",
+    "kindId": "I00224"
+  },
+  {
+    "id": 1207,
+    "value": 2,
+    "kind": "composant",
+    "name": "Minerai de Stella",
+    "description": "L'Empire Heldentod a le monopole dessus. Ce minerai est extrêmement coupant, même de bonnes armures ne sont que du beurre face à lui.",
+    "kindId": "I00234"
+  },
+  {
+    "id": 1208,
+    "value": 2,
+    "kind": "composant",
+    "name": "Quartz d'Automne",
+    "description": "Ce Quartz est issu de sources chaudes riches en minéraux et en souffre, la magie autour de lui s'intensifie.",
+    "kindId": "I00204"
+  },
+  {
+    "id": 1209,
+    "value": 2,
+    "kind": "composant",
+    "name": "Fourrure Polaire",
+    "description": "Cette fourrure n'a d'égale à sa douceur que sa légerté et sa résistance. Très utile pour fabriquer des armures.",
+    "kindId": "I00241"
+  },
+  {
+    "id": 1210,
+    "value": 1,
+    "kind": "composant",
+    "name": "Germe de Champignoïde",
+    "description": "Des petits germes de champignoïdes, utile pour certaines potions",
+    "kindId": "I00012"
+  },
+  {
+    "id": 1211,
+    "value": 1,
+    "kind": "composant",
+    "name": "Epine de Cactus",
+    "description": "Une épine de monstres cactus, elle peut servir pour fabriquer des potions.",
+    "kindId": "I00290"
+  },
+  {
+    "id": 1212,
+    "value": 1,
+    "kind": "composant",
+    "name": "Fleur de Pavot",
+    "description": "Respirer cette fleur pendant trop longtemps peut causer des hallucinations et des crises de somnambulisme.",
+    "kindId": "I00155"
+  },
+  {
+    "id": 1213,
+    "value": 1,
+    "kind": "composant",
+    "name": "Fleur Lunaire",
+    "description": "Ces fleurs émettent une lueur jaunes, leurs pétales blancs sont magnifiques sous le clair de lune.",
+    "kindId": "I00153"
+  },
+  {
+    "id": 1214,
+    "value": 1,
+    "kind": "composant",
+    "name": "Vigne Pourpre",
+    "description": "Si vous ouvrez cette vigne, un fluide vert visqueux s'en échappe.",
+    "kindId": "I00185"
+  },
+  {
+    "id": 1215,
+    "value": 2,
+    "kind": "composant",
+    "name": "Jus de larve de reine insecte",
+    "description": "Ce jus a été récupéré dans un oeuf d'insecte un peu particulier, utile pour des potions ...?",
+    "kindId": "I00042"
+  },
+  {
+    "id": 1216,
+    "value": 1,
+    "kind": "composant",
+    "name": "Potion de Soin",
+    "description": "Utile pour se soigner en urgence.",
+    "kindId": "I00044"
+  },
+  {
+    "id": 1217,
+    "value": 1,
+    "kind": "composant",
+    "name": "Potion d'encaissement",
+    "description": "Permet de mieux résister aux coups des ennemis",
+    "kindId": "I00048"
+  },
+  {
+    "id": 1218,
+    "value": 1,
+    "kind": "composant",
+    "name": "Potion de concentration",
+    "description": "Permet d'avoir un esprit qui résiste mieux",
+    "kindId": "I00051"
+  },
+  {
+    "id": 1219,
+    "value": 1,
+    "kind": "composant",
+    "name": "Potion Paillettes",
+    "description": "Cette potion magnifique a une seule propriété : elle permet de générer des paillettes autour de soi par magie !",
+    "kindId": "I00058"
+  },
+  {
+    "id": 1220,
+    "value": 1,
+    "kind": "composant",
+    "name": "Concoction Anuran",
+    "description": "Cette concoction permet à celui qui la consomme de se transformer en Anuran !",
+    "kindId": "I00110"
+  },
+  {
+    "id": 1221,
+    "value": 1,
+    "kind": "composant",
+    "name": "Ecaille d'Ankylosaure",
+    "description": "Ces écailles sont très maléables et souples, elles agissent comme de la maille, utile pour forger.",
+    "kindId": "I00282"
+  },
+  {
+    "id": 1232,
+    "value": 1,
+    "kind": "composant",
+    "name": "Poudre de Griffon Cendré",
+    "description": "Cette poudre est l'un des ingrédients les plus utilisées dans la coction de bombes !",
+    "kindId": "I00369"
+  },
+  {
+    "id": 1233,
+    "value": 1,
+    "kind": "composant",
+    "name": "Bombe Impacte",
+    "description": "Cette bombe inflige pas mal de dégâts à l'impacte, utile pour percer des armures.",
+    "kindId": "I00385"
+  },
+  {
+    "id": 1501,
+    "value": 3,
     "kind": "anecdote",
-    "name": "Kibo le criminel",
-    "description": "Kibo a été inculpé pour vol et blessures sur autruis aux Monts Arides. Comment est-ce possible venant d'un tel justicier ?!",
-    "kindId": "monsters/kibo"
+    "name": "Cosmos le Remonteur de Cascade",
+    "description": "Cosmos a réussi l'exploit : remonter une cascade tout en étant inconscient ! Un pouvoir mystique entoure ce Torturran...",
+    "maps": [22],
+    "enemies": [],
+    "kindId": "items/i01579",
+    "group": 1
   },
   {
     "id": 1502,
     "value": 3,
     "kind": "anecdote",
-    "name": "Le légendaire bouclier Zuminator",
-    "description": "Zuminator aurait laissé en ce monde le symbole de sa puissance et de sa justice : son bouclier !",
-    "kindId": "items/W73002"
+    "name": "Erida et les cheveux",
+    "description": "Erida s'est teinté les cheveux pour cacher ses origines nobles, mais on dirait qu'avec Malvis ça ne suffira pas...",
+    "maps": [10, 26],
+    "enemies": [],
+    "kindId": "items/I00499",
+    "group": 1
   },
   {
     "id": 1503,
     "value": 3,
     "kind": "anecdote",
-    "name": "Cosmos le Remonteur de Cascade",
-    "description": "Cosmos a réussi l'exploit : remonter une cascade tout en étant inconscient ! Un pouvoir mystique entoure ce Torturran...",
-    "kindId": "items/i01579"
+    "name": "L'Alpaga Propulseur",
+    "description": "L'invocation Alpaga a une capacité secrète, la \"méga\" charge qui permet de propulser un ennemi à une dizaine de mètres. La Chelona s'en souvient...",
+    "maps": [6],
+    "enemies": [8],
+    "kindId": "skillIcon/VicAlpaga",
+    "group": 1
   },
   {
-    "id": 2001,
+    "id": 1504,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Draigos et les explications",
+    "description": "Draigos a un mode AFK, il est comme déconnecté. Ainsi, tout ce que vous lui direz sera traduit par \"Bla bleu bli bla bleu blou !\"",
+    "maps": [6],
+    "enemies": [85],
+    "kindId": "skillIcon/E0231",
+    "group": 1
+  },
+  {
+    "id": 1505,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Aradia et la Divination",
+    "description": "Aradia est capable de prédire l'avenir grâce à son petit stand. On raconte que ça parle souvent d'une fille avec un Alpaga vert...",
+    "maps": [10],
+    "enemies": [45, 70],
+    "kindId": "skillIcon/E0430",
+    "group": 2
+  },
+  {
+    "id": 1506,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Nyx et la Foreuse",
+    "description": "Nyx dans une vie antérieure était experte en technologie, surtout en foureuse. Cela lui a permis de transpercer un Ursun !",
+    "maps": [8],
+    "enemies": [89],
+    "kindId": "items/k30003",
+    "group": 2
+  },
+  {
+    "id": 1507,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Draigos et la bouffe",
+    "description": "Lorsque Draigos participe à un concours de bouffe, il a une technique ancestrale pour gagner, à vous de deviner ...",
+    "maps": [6],
+    "enemies": [],
+    "kindId": "items/k10034",
+    "group": 1
+  },
+  {
+    "id": 1508,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Erida et Draigos ont eu quelques petits problèmes avec les pirates de la Baie Bélouga, heureusement l'alcool et la chance leur a souris !",
+    "description": "",
+    "maps": [6],
+    "enemies": [17],
+    "kindId": "monsters/m124",
+    "group": 1
+  },
+  {
+    "id": 1509,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Eivor et Nemelio",
+    "description": "Eivor est un petit voyou Zumi qui a profité de ses camarades pour libérer un criminel : Nemelio, le salaud !",
+    "maps": [15],
+    "enemies": [50],
+    "kindId": "items/I00103",
+    "group": 2
+  },
+  {
+    "id": 1510,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Cosmos et la bouffe",
+    "description": "Cosmos lorsqu'il participe à un concours de bouffe sait gérer, tellement qu'il continu même après avoir gagné, attention aux spectateurs...",
+    "maps": [10],
+    "enemies": [],
+    "kindId": "skillIcon/E0989",
+    "group": 1
+  },
+  {
+    "id": 1511,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Erida et ... Framboise ?",
+    "description": "Erida connaît bien Malvis, sa camarade de longue date et son fidèle Alpaga Vert Framboise ! Enfin je crois...",
+    "maps": [15],
+    "enemies": [],
+    "kindId": "items/i00632",
+    "group": 1
+  },
+  {
+    "id": 1512,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Nyx et les concerts",
+    "description": "Nyx l'Idole réalise de super prestation avec des réflexes de folies, que dire de plus que... Love love ! <3",
+    "maps": [10],
+    "enemies": [],
+    "kindId": "skillIcon/E0718",
+    "group": 2
+  },
+  {
+    "id": 1513,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Cosmos et Kyle",
+    "description": "Kyle est le meilleur ami de Cosmos, ils se sont rencontrés à l'Académie Osrage, ce sont des amis buveurs !",
+    "maps": [14],
+    "enemies": [],
+    "kindId": "monsters/m066",
+    "group": 1
+  },
+  {
+    "id": 1514,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Aradia et les concerts",
+    "description": "Quand Aradia participe à un concert, elle aime façonner les paroles à son image : \"Générale de l'armée démon, je suis là !\"",
+    "maps": [10],
+    "enemies": [],
+    "kindId": "skillIcon/E1046",
+    "group": 2
+  },
+  {
+    "id": 1515,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Malvis et Moymoy",
+    "description": "Moymoy est le super Zumi Androïd qu'ils ont récupérés au Continent du Sud-Ouest. Il a des facultés bien pratique, comme donner des leçons à Malvis !",
+    "maps": [20],
+    "enemies": [54],
+    "kindId": "monsters/m048b",
+    "group": 1
+  },
+  {
+    "id": 1516,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Cosmos le Tuskar",
+    "description": "Lorsque Cosmos a rejoint le groupe, c'était un Tuskar ! En chair et en os ! Oui oui !",
+    "maps": [10],
+    "enemies": [],
+    "kindId": "monsters/m070",
+    "group": 1
+  },
+  {
+    "id": 1517,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Aradia la Magie Noire",
+    "description": "Aradia adore la magie noire ! Et sa nouvelle méga robe récupérée dans une ruine, c'est le luxe ! Mouahah !",
+    "maps": [8],
+    "enemies": [90],
+    "kindId": "skillIcon/E0224",
+    "group": 2
+  },
+  {
+    "id": 1518,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Nyx et les Bourbes",
+    "description": "Lorsque Nyx a découvert le syphon au centre des bourbes, elle n'a pas pu résister à la tentation de le toucher ! Grosse erreur...",
+    "maps": [7],
+    "enemies": [74],
+    "kindId": "otherIcon/ac002",
+    "group": 2
+  },
+  {
+    "id": 1519,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Aradia et les enfants",
+    "description": "Aradia a l'habitude de former son armée, son armée d'enfants démons ! Ensemble ils chassent pour conquérir les bonbons !",
+    "maps": [10, 1],
+    "enemies": [],
+    "kindId": "skillIcon/E0487",
+    "group": 2
+  },
+  {
+    "id": 1520,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Draigos et la forge",
+    "description": "Lorsque Draigos essaye d'allumer une forge, il la fait flamber ! Par le pouvoir des flammes ! Brûle !",
+    "maps": [5],
+    "enemies": [],
+    "kindId": "skillIcon/E0423",
+    "group": 1
+  },
+  {
+    "id": 1521,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Nyx et Rumbledore",
+    "description": "Lorsque Nyx est tombée, Rumbledore lui a offert ses superbes pantoufles en guise de soutien. Est-il un fan secret ? UwU",
+    "maps": [7],
+    "enemies": [74],
+    "kindId": "items/A50008",
+    "group": 2
+  },
+  {
+    "id": 1522,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Kryèri et les bâtons",
+    "description": "Kryèri a perdu son bâton face à la Curie à cause d'une ruine, puis face à Eivor car il lui a volé, et... Attention, comme on dit jamais 2 sans 3 !",
+    "maps": [15],
+    "enemies": [86],
+    "kindId": "skillIcon/E0644",
+    "group": 2
+  },
+  {
+    "id": 1523,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Kryèri et la vantardise",
+    "description": "Kryèri aime se vanter et montrer aux autres (et au MJ) qu'il est plus doué, mais parfois ça lui retombe dessus ! CHEH !",
+    "maps": [7],
+    "enemies": [],
+    "kindId": "skillIcon/E0660",
+    "group": 2
+  },
+  {
+    "id": 1524,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Kryèri et la Curie",
+    "description": "Kryèri avait pour mission de rattraper Eivor, résultat : il a bu avec et s'est fait arnaquer. Félicia sa cheffe n'a pas aimé !",
+    "maps": [14],
+    "enemies": [],
+    "kindId": "skillIcon/E0656",
+    "group": 2
+  },
+  {
+    "id": 1525,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Rad Ed et les prénoms",
+    "description": "Rad Ed est curieuse et veut connaître les gens, alors il faut qu'elle demande à tout le monde leur nom, au cas où, on sait jamais faut pas l'oublier !",
+    "maps": [8, 9],
+    "enemies": [],
+    "kindId": "items/k30010",
+    "group": 2
+  },
+  {
+    "id": 1526,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Kibo et la Défense",
+    "description": "Kibo est un justicier protecteur : \"Allez venez me frappez ! Provocation ! Frappez-moi ! Oui ! Enfin pas trop quand même hein... stop !",
+    "maps": [8, 9],
+    "enemies": [112],
+    "kindId": "skillIcon/E0143",
+    "group": 2
+  },
+  {
+    "id": 1527,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Nyx et Heldentod",
+    "description": "Nyx vient d'Heldentod mais déteste son Empire, malheureusement avec Rubis ce n'est pas la joie, et ça ne risque pas de s'améliorer...",
+    "maps": [32],
+    "enemies": [62],
+    "kindId": "otherIcon/group038",
+    "group": 2
+  },
+  {
+    "id": 1528,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Rad ed et Morris",
+    "description": "Rad Ed s'était fait un ami Zumi, Morris, il était très gentil mais très naïf, il aura fini par mourir à cause de Rad Ed dans l'ignorance totale...",
+    "maps": [8],
+    "enemies": [88, 89],
+    "kindId": "otherIcon/group015",
+    "group": 2
+  },
+  {
+    "id": 1529,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Kibo le détective",
+    "description": "Kibo a entendu parler d'un criminel corsaire en tenue verte, c'est Steve l'ami de Malvis qui a été sa cible. Monsieur l'agent c'est lui ! C'est un menteur ! Enfin je ... je crois ?!",
+    "maps": [10],
+    "enemies": [],
+    "kindId": "otherIcon/group016",
+    "group": 2
+  },
+  {
+    "id": 1530,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "War et les compétences",
+    "description": "War est un homme qui aime taper, mais à cause de son intelligence il ne semble connaître que 3 sorts : Coupe ASURAAAA !! PURGATOOIRE !! FRENESIE !! Et les autres ? Quelles autres ?",
+    "maps": [59, 1],
+    "enemies": [],
+    "kindId": "skillIcon/E0779",
+    "group": 2
+  },
+  {
+    "id": 1531,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Rad Ed et la malchance",
+    "description": "Rad Ed est une assassin douée, mais la chance ne semble pas beaucoup lui sourire... Peut-être qu'il faudrait rendre à Ein la griffe de son frère ?!",
+    "maps": [59, 1],
+    "enemies": [],
+    "kindId": "skillIcon/normal08",
+    "group": 2
+  },
+  {
+    "id": 1532,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Kibo et l'argent",
+    "description": "Kibo est une personne fiable et courageuse, mais pas très organisée et économe, son argent part vite dans l'alcool et... toujours plus d'armures !",
+    "maps": [4, 5],
+    "enemies": [],
+    "kindId": "items/I00011",
+    "group": 2
+  },
+  {
+    "id": 1533,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Estia et War",
+    "description": "Au début Estia portait une haute estime pour War, ce grand samouraï puissant ! Et puis petit à petit, la réalité à fait surface...",
+    "maps": [1, 59],
+    "enemies": [],
+    "kindId": "skillIcon/normal10",
+    "group": 2
+  },
+  {
+    "id": 1534,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Rad Ed et Ein",
+    "description": "Rad Ed est fan du grand Ursun Ein qui lui a sauvé la vie face à la Chelona, son rêve est de devenir comme lui, mais quand est-il vraiment ?",
+    "maps": [16, 59],
+    "enemies": [],
+    "kindId": "otherIcon/group021",
+    "group": 2
+  },
+  {
+    "id": 1535,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Kibo le criminel",
+    "description": "Kibo a été inculpé pour vol et blessures sur autrui aux Monts Arides. Comment est-ce possible venant d'un tel justicier ?!",
+    "maps": [3, 4],
+    "enemies": [123],
+    "kindId": "monsters/kibo",
+    "group": 2
+  },
+  {
+    "id": 1536,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Estia et Lucius",
+    "description": "Estia la peureuse a été la seule à pouvoir faire face à Lucius, le courage l'a envahit et elle a reussit à porter un coup ! Mais les représailles de Lucius et Aradia n'ont pas tardées.",
+    "maps": [23],
+    "enemies": [90],
+    "kindId": "skillIcon/E0767",
+    "group": 2
+  },
+  {
+    "id": 1537,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Azora et Estia",
+    "description": "Lorsque Estia se fait dessus, Azora a une solution pour l'aider à aller mieux : un bon coup de Febreze !",
+    "maps": [23, 59],
+    "enemies": [],
+    "kindId": "skillIcon/E0098",
+    "group": 2
+  },
+  {
+    "id": 1538,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Le légendaire bouclier Zuminator",
+    "description": "Zuminator aurait laissé en ce monde le symbole de sa puissance et de sa justice : son bouclier !",
+    "maps": [],
+    "enemies": [],
+    "kindId": "items/W73002",
+    "group": 2
+  },
+  {
+    "id": 1539,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Cosmos le Piquet",
+    "description": "Cosmos a une position favorite : faire le piquet, exactement comme son Totem. Cela lui permet de canalyser son... Non en faite ça ne sert à rien.",
+    "maps": [22, 24],
+    "enemies": [],
+    "kindId": "skillIcon/E0240",
+    "group": 1
+  },
+  {
+    "id": 1540,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Erida et Pedro",
+    "description": "Erida devait épouser Pedro, un noble digne d'une ordure. Ce dernier a cependant mis la main sur une flûte envoûtante mystérieuse. Ce dernier a été tué mais Adonis le tueur l'a reprise.",
+    "maps": [],
+    "enemies": [],
+    "kindId": "items/I00154",
+    "group": 1
+  },
+  {
+    "id": 1541,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Malvis la cible",
+    "description": "Malvis est officiellement la cible d'une personne de la Curie, les coups dans le dos ne manquent pas. Il semblerait que le symptôme du héros continu !",
+    "maps": [12],
+    "enemies": [120],
+    "kindId": "items/E0193",
+    "group": 1
+  },
+  {
+    "id": 1542,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Malvis et le Loukoum",
+    "description": "Le Crystal de Volesang est un Loukoum, je cite, Malvis. Malheureusement on dirait bien que ce dernier ne présente pas les mêmes bienfaits gustatifs... !",
+    "maps": [1],
+    "enemies": [111],
+    "kindId": "items/I00220b",
+    "group": 1
+  },
+  {
+    "id": 1543,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Cosmos le Piquet",
+    "description": "Cosmos a une position favorite : faire le piquet, exactement comme son Totem. Cela lui permet de canalyser son... Non en faite ça ne sert à rien.",
+    "maps": [22, 24],
+    "enemies": [],
+    "kindId": "skillIcon/E0240",
+    "group": 1
+  },
+  {
+    "id": 15000,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "",
+    "description": "",
+    "maps": [],
+    "enemies": [],
+    "kindId": "items/",
+    "group": 0
+  },
+  {
+    "id": 1600,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Le grand retour",
+    "description": "Il semble que le destin en a décidé autrement ce jour là... Ce qui devait être un entraînement a été la naissance d'une nouvelle histoire, celle du Roi Lucius et de son groupe !",
+    "maps": [23],
+    "enemies": [90],
+    "kindId": "monsters/m347",
+    "group": 3
+  },
+  {
+    "id": 1601,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Sekhmet et Aradia",
+    "description": "Sekhmet et Aradia s'amusent ensemble à passer le balais pour ramener de l'argent à Lucius. Quelles jolies soubrettes !",
+    "maps": [6],
+    "enemies": [],
+    "kindId": "items/k20026",
+    "group": 3
+  },
+  {
+    "id": 1602,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Lutta et Sekhmet",
+    "description": "Entre Lutta et Sekhmet, c'est le grand amour. Les belles paroles fusent, l'entraide est maître mots, rien ne peut les séparer. <3",
+    "maps": [5, 6],
+    "enemies": [],
+    "kindId": "skillIcon/E0781",
+    "group": 3
+  },
+  {
+    "id": 1603,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Poisseux et Lucius",
+    "description": "A chaque fois que le groupe est dans la m****, Lucius arrive en héros et remotive les troupes, tout particulière Poisseux qui se sent Chanceux !",
+    "maps": [5, 59],
+    "enemies": [],
+    "kindId": "skillIcon/E0867",
+    "group": 3
+  },
+  {
+    "id": 1604,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Création de la Veyda",
+    "description": "Pour concrétiser le projet de Lucius, la guilde Veyda a été fondée, et pour l'inauguration le groupe a tenu un joli petit stand.",
+    "maps": [1],
+    "enemies": [],
+    "kindId": "otherIcon/ac005",
+    "group": 3
+  },
+  {
+    "id": 15000,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "",
+    "description": "",
+    "maps": [],
+    "enemies": [],
+    "kindId": "items/",
+    "group": 0
+  },
+  {
+    "id": 3401,
     "value": 1,
     "kind": "stuff",
     "name": "Marteau, Epee, Lance, etc...",
