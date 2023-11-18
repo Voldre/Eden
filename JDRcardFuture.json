@@ -168,6 +168,126 @@
     "kindId": 38
   },
   {
+    "id": 151,
+    "value": 1,
+    "kind": "map",
+    "name": "Dôme Céleste",
+    "description": "",
+    "kindId": 51
+  },
+  {
+    "id": 152,
+    "value": 2,
+    "kind": "map",
+    "name": "Dôme Céleste",
+    "description": "",
+    "kindId": 51
+  },
+  {
+    "id": 153,
+    "value": 3,
+    "kind": "map",
+    "name": "Dôme Céleste",
+    "description": "",
+    "kindId": 51
+  },
+  {
+    "id": 154,
+    "value": 1,
+    "kind": "map",
+    "name": "Hauteurs Feudegivre",
+    "description": "",
+    "kindId": 52
+  },
+  {
+    "id": 155,
+    "value": 2,
+    "kind": "map",
+    "name": "Hauteurs Feudegivre",
+    "description": "",
+    "kindId": 52
+  },
+  {
+    "id": 156,
+    "value": 3,
+    "kind": "map",
+    "name": "Hauteurs Feudegivre",
+    "description": "",
+    "kindId": 52
+  },
+  {
+    "id": 157,
+    "value": 1,
+    "kind": "map",
+    "name": "Meeryasha",
+    "description": "",
+    "kindId": 53
+  },
+  {
+    "id": 158,
+    "value": 2,
+    "kind": "map",
+    "name": "Meeryasha",
+    "description": "",
+    "kindId": 53
+  },
+  {
+    "id": 159,
+    "value": 3,
+    "kind": "map",
+    "name": "Meeryasha",
+    "description": "",
+    "kindId": 53
+  },
+  {
+    "id": 160,
+    "value": 1,
+    "kind": "map",
+    "name": "Jungle Mayland",
+    "description": "",
+    "kindId": 54
+  },
+  {
+    "id": 161,
+    "value": 2,
+    "kind": "map",
+    "name": "Jungle Mayland",
+    "description": "",
+    "kindId": 54
+  },
+  {
+    "id": 162,
+    "value": 3,
+    "kind": "map",
+    "name": "Jungle Mayland",
+    "description": "",
+    "kindId": 54
+  },
+  {
+    "id": 163,
+    "value": 1,
+    "kind": "map",
+    "name": "Bassin Shaxia",
+    "description": "",
+    "kindId": 55
+  },
+  {
+    "id": 164,
+    "value": 2,
+    "kind": "map",
+    "name": "Bassin Shaxia",
+    "description": "",
+    "kindId": 55
+  },
+  {
+    "id": 165,
+    "value": 3,
+    "kind": "map",
+    "name": "Bassin Shaxia",
+    "description": "",
+    "kindId": 55
+  },
+  {
     "id": 169,
     "value": 1,
     "kind": "map",

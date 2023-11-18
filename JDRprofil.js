@@ -40,17 +40,61 @@ var indexPerso;
 
 window.addEventListener("load", () => {
   const urlParams = new URLSearchParams(window.location.search);
+
   if (urlParams.has("joueur")) {
     selectPerso.value = urlParams.get("joueur");
-    // loadFiche(urlParams.get('perso'));
     selectedPerso = selectPerso.value;
     // selectedID = selectPerso.selectedIndex;
     loadPlayer(selectedPerso);
+  } else {
+    // Default page with all players information
+    document.querySelector("#allCards").classList.add("hide");
+    const playersE = document.createElement("div");
+    playersE.classList.add("flexContainer");
+    playersE.classList.add("charactersList");
+    playersE.id = "playersE";
+
+    Object.entries(playerJSON).forEach((player) => {
+      const playerE = document.createElement("div");
+      playerE.addEventListener("click", () => {
+        window.location.href = "jdr_profil.html?joueur=" + player[0];
+      });
+      const playerNameE = document.createElement("h3");
+      playerNameE.innerText = player[0];
+
+      const playerData = player[1];
+
+      const playerCoinE = document.createElement("p");
+      playerCoinE.innerText = playerData["alpagaCoin"] + " (" + playerData["alpagaCoinSpent"] + ") ";
+
+      const playerCoinPicE = document.createElement("img");
+      playerCoinPicE.src = "images/alpagaCoin.png";
+      playerCoinPicE.className = "alpagaCoinPic";
+      playerCoinPicE.alt = " pièces";
+      playerCoinE.append(playerCoinPicE);
+
+      const playerCardsE = document.createElement("p");
+      playerCardsE.innerText = "Nombre de cartes : " + playerData["cards"].length;
+      const playerEntriesE = document.createElement("p");
+      playerEntriesE.innerText =
+        "Entrées restantes : " +
+        Math.round(
+          (playerData["entries"].reduce((acc, cur) => acc + cur / 3, 0) / playerData["entries"].length) * 100
+        ) +
+        "%";
+
+      playerE.append(playerNameE);
+      playerE.append(playerCoinE);
+      playerE.append(playerCardsE);
+      playerE.append(playerEntriesE);
+      playersE.append(playerE);
+      document.querySelector("body").append(playersE);
+    });
   }
 });
 
 Object.keys(playerJSON).forEach((player) => {
-  console.log(player);
+  // console.log(player);
   var option = document.createElement("option");
   option.value = player;
   option.innerText = player;
@@ -58,7 +102,8 @@ Object.keys(playerJSON).forEach((player) => {
 });
 
 document.querySelector("#selectPlayer").addEventListener("change", (e) => {
-  console.log(e.target.value);
+  document.querySelector("#allCards").classList.remove("hide");
+  document.querySelector("#playersE")?.remove();
   loadPlayer(e.target.value);
 });
 
@@ -173,7 +218,11 @@ function loadCards(joueurData) {
   const kinds = ["map", "boss", "composant", "anecdote"];
 
   // Reset
-  kinds.forEach((kind) => (document.querySelector("#" + kind).innerText = ""));
+  kinds.forEach((kind) => {
+    if (kind === "anecdote") {
+      [...document.querySelector("#" + kind).querySelectorAll("div")].forEach((e) => (e.innerText = ""));
+    } else document.querySelector("#" + kind).innerText = "";
+  });
 
   const rarityClass = ["common", "rare", "epic"];
 
@@ -212,12 +261,15 @@ function loadCards(joueurData) {
     }
 
     cardE.appendChild(imgCardE);
-    console.log(joueurData);
     if (joueurData.cards.includes(card.id)) {
       cardE.appendChild(nameCardE);
       cardE.appendChild(descCardE);
     }
-    document.querySelector("#" + card.kind)?.append(cardE);
+    if (card.kind === "anecdote") {
+      document.querySelector("#g" + card.group)?.append(cardE);
+    } else {
+      document.querySelector("#" + card.kind)?.append(cardE);
+    }
   });
 }
 
@@ -228,7 +280,6 @@ function countCards(joueurData) {
     const countJoueurCardsByKind = joueurData.cards
       .map((cardId) => cardJSON.filter((c) => c.id === cardId && c.kind === kind).length)
       .reduce((partialSum, a) => partialSum + a, 0);
-    console.log(kind, countJoueurCardsByKind);
 
     const countCardsByKind = cardJSON.filter((c) => c.kind === kind).length;
 
