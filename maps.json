@@ -60,7 +60,7 @@
     "map_z": null,
     "map_r": null,
     "bgm": 11,
-    "mobs": [4, 11, 16, 33, 42, 115]
+    "mobs": [4, 11, 16, 33, 75, 115]
   },
   "6": {
     "name": "Baie Bélouga",
@@ -73,7 +73,7 @@
     "map_z": null,
     "map_r": null,
     "bgm": 13,
-    "mobs": [7, 17, 18, 27, 28]
+    "mobs": [7, 17, 18, 27, 28, 70]
   },
   "7": {
     "name": "Bourbes",
@@ -125,7 +125,7 @@
     "map_z": null,
     "map_r": null,
     "bgm": 7,
-    "mobs": [41, 42, 43, 64, 18, 45, 127]
+    "mobs": [41, 43, 64, 18, 70, 127]
   },
   "11": {
     "name": "Terres des Dunes Éternelles",

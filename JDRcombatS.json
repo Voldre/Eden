@@ -59,12 +59,12 @@
     "type": "buff",
     "buffElem": ["degat/tour"],
     "montant": "1D4",
-    "montantFixe": 1,
+    "montantFixe": 0,
     "duree": 4,
     "icone": "E0286"
   },
   {
-    "nom": "Percée du Chevalier",
+    "nom": "Percée du Chev.",
     "classe": "Chevalier",
     "statUsed": "force",
     "type": "attaque",
@@ -72,7 +72,7 @@
     "icone": "E0290"
   },
   {
-    "nom": "Lumière de Guérison",
+    "nom": "Lumière Guérison",
     "classe": "Templier",
     "statUsed": "intel",
     "type": "soin",
@@ -85,7 +85,7 @@
     "classe": "Chev Dragon",
     "statUsed": "esprit",
     "type": "buff",
-    "buffElem": ["force,intel,charisme,esprit,armure"],
+    "buffElem": ["force", "intel", "charisme", "esprit", "armure"],
     "montant": "",
     "montantFixe": 2,
     "duree": 3,
@@ -100,7 +100,7 @@
     "icone": "E0047"
   },
   {
-    "nom": "Contrôle de l'Energie",
+    "nom": "Contrôle Energie",
     "classe": "Assassin",
     "statUsed": "esprit",
     "type": "soin",
@@ -147,7 +147,7 @@
     "icone": "E0083"
   },
   {
-    "nom": "Aura du Pourfendeur",
+    "nom": "Aura Pourfendeur",
     "classe": "Juge",
     "statUsed": "esprit",
     "type": "buff",
@@ -158,7 +158,7 @@
     "icone": "E0879"
   },
   {
-    "nom": "Grâce de la Sagesse",
+    "nom": "Grâce de Sagesse",
     "classe": "Clerc",
     "statUsed": "esprit",
     "type": "buff",
@@ -169,7 +169,7 @@
     "icone": "E0095"
   },
   {
-    "nom": "Hymne & Symphonie",
+    "nom": "Hymne Symphonie",
     "classe": "Barde",
     "statUsed": "esprit",
     "type": "buff",
@@ -180,7 +180,7 @@
     "icone": "E0105"
   },
   {
-    "nom": "Bouclier d'épines",
+    "nom": "Bouclier épines",
     "classe": "Shaman",
     "statUsed": "esprit",
     "type": "buff",
@@ -191,7 +191,7 @@
     "icone": "E0110"
   },
   {
-    "nom": "Marteau d'Inspiration",
+    "nom": "Marteau Fracas",
     "classe": "Sage",
     "statUsed": "intel",
     "type": "attaque",
@@ -211,7 +211,7 @@
     "icone": "E0430"
   },
   {
-    "nom": "Stalactites Glaciales",
+    "nom": "Stalactites",
     "classe": "Illusionniste",
     "statUsed": "intel",
     "type": "attaque",

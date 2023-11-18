@@ -409,11 +409,17 @@ dialog::backdrop {
   margin: 0px 5px;
   width: 25%;
 }
-
+#enom {
+  width: 175px;
+}
 .statName {
   font-size: 20px;
   width: 75px;
   text-align: center;
+}
+.skillCombat .icone {
+  width: 40px;
+  height: 40px;
 }
 .dice {
   background-image: url("./images/Dice20.png");
@@ -525,6 +531,7 @@ dialog::backdrop {
   margin: 5px;
   max-height: 240px;
   overflow: hidden;
+  padding: 0px 5px;
 }
 
 .charactersList input {
@@ -532,7 +539,8 @@ dialog::backdrop {
   pointer-events: none;
   max-width: 120px;
 }
-.charactersList > div:hover {
+.charactersList > div:hover,
+#playersE > div:hover {
   background-color: rgba(36, 36, 106, 0.8);
   cursor: pointer;
   filter: brightness(110%);
@@ -556,9 +564,21 @@ dialog::backdrop {
 .alpagaCoin {
   font-size: 20px;
 }
+.alpagaCoinPic {
+  display: inline;
+  width: 30px;
+  height: 30px;
+  margin: 0px;
+  vertical-align: bottom;
+}
 .alpagaCoinSpent {
   color: gainsboro;
   font-size: 16px;
+}
+
+.charactersList .alpagaCoinPic {
+  width: 24px;
+  height: 24px;
 }
 
 #worldmap {
@@ -605,6 +625,12 @@ dialog::backdrop {
 }
 .epic {
   border: 1px purple solid;
+}
+
+#g1,
+#g2,
+#g3 {
+  margin-bottom: 5px;
 }
 
 /* Toast Notification */

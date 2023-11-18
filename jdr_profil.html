@@ -32,18 +32,14 @@
           <a href="3D.php">Designs 3D</a>
         </li>
         <li>
-          <select name="selectPlayer" id="selectPlayer">
+          <select name="selectPlayer" id="selectPlayer" class="hide">
             <option value="">---</option>
           </select>
         </li>
         <li>
           <label for="alpagaCoin"
             ><span class="alpagaCoin"></span> <span class="alpagaCoinSpent"></span>
-            <img
-              src="images/alpagaCoin.png"
-              style="display: inline; width: 30px; height: 30px; margin: 0px"
-              alt="Coin :"
-            />
+            <img src="images/alpagaCoin.png" class="alpagaCoinPic" alt=" pièces" />
           </label>
         </li>
       </ul>
@@ -53,7 +49,7 @@
       <button id="close">Fermer</button>
     </dialog>
     <div id="toast"></div>
-    <div id="worldmap" class="continent">
+    <div id="worldmap" class="continent" style="left: 52%; min-width: 675px">
       <div data-map="1" class="point" style="top: 26.5%; left: 64.9%"><p class="name">Aven</p></div>
       <div data-map="2" class="point" style="top: 10.6%; left: 69.2%"><p class="name">Monts Calcaires</p></div>
       <div data-map="3" class="point" style="top: 17.6%; left: 73.3%"><p class="name">Colline tranquille</p></div>
@@ -72,8 +68,8 @@
       <div data-map="14" class="point" style="top: 45.6%; left: 46.4%"><p class="name">Marais Décrépits</p></div>
       <div data-map="15" class="point" style="top: 53.9%; left: 45.5%"><p class="name">Hautes-terres</p></div>
       <div data-map="16" class="point" style="top: 39.3%; left: 75%"><p class="name">Crocs Brumeux</p></div>
-      <div data-map="17" class="point" style="top: 58%; left: 71%"><p class="name">Vestiges du Belliqueux</p></div>
-      <div data-map="18" class="point" style="top: 46%; left: 66%"><p class="name">Ruines d'Amur</p></div>
+      <!-- <div data-map="17" class="point" style="top: 58%; left: 71%"><p class="name">Vestiges du Belliqueux</p></div> -->
+      <!-- <div data-map="18" class="point" style="top: 46%; left: 66%"><p class="name">Ruines d'Amur</p></div> -->
       <div data-map="22" class="point" style="top: 30.1%; left: 30.7%"><p class="name">Forêt Ensorcelée</p></div>
       <div data-map="23" class="point" style="top: 35.6%; left: 21.3%"><p class="name">Crète Diamantée</p></div>
       <div data-map="24" class="point" style="top: 24.6%; left: 24.8%"><p class="name">Pic du Maëlstrom</p></div>
@@ -84,13 +80,12 @@
       </div>
       <div data-map="32" class="point" style="top: 47.8%; left: 33.1%"><p class="name">Vallée de Vulcain</p></div>
       <div data-map="33" class="point" style="top: 48%; left: 23%"><p class="name">Plaines du Levant</p></div>
-      <div data-map="34" class="point" style="top: 55.7%; left: 23%"><p class="name">Royaume Dévasté</p></div>
+      <!-- <div data-map="34" class="point" style="top: 55.7%; left: 23%"><p class="name">Royaume Dévasté</p></div> -->
       <div data-map="36" class="point" style="top: 55.1%; left: 55.4%"><p class="name">Plaines d'Elos</p></div>
-      <div data-map="37" class="point" style="top: 64.4%; left: 57.1%"><p class="name">Marina d'Edouard</p></div>
-      <div data-map="38" class="point" style="top: 60.5%; left: 49.4%"><p class="name">Royaume Durango</p></div>
+      <!-- <div data-map="37" class="point" style="top: 64.4%; left: 57.1%"><p class="name">Marina d'Edouard</p></div> -->
+      <!-- <div data-map="38" class="point" style="top: 60.5%; left: 49.4%"><p class="name">Royaume Durango</p></div> -->
       <div data-map="58" class="point" style="top: 22%; left: 13.5%"><p class="name">Côte d'Aristère</p></div>
       <div data-map="59" class="point" style="top: 42.5%; left: 16.5%"><p class="name">Steppes d'Aristère</p></div>
-      <div data-map="97" class="point" style="top: 25.5%; left: 75.9%"><p class="name">Île du Mariage</p></div>
       <img id="worldmap01" src="images/mapworld01-YVES.png" />
     </div>
     <div class="flexContainer charactersList">
@@ -178,9 +173,9 @@
         <img class="persoPic" src="" alt="--" />
       </div>
     </div>
-    <h2 style="margin-bottom: 0px">Cartes à collectionner</h2>
 
-    <div class="flexContainer" style="flex-direction: column">
+    <h2 style="margin-bottom: 0px">Cartes à collectionner</h2>
+    <div id="allCards" class="flexContainer" style="flex-direction: column">
       <h3>
         <label for="map">Maps & Donjons <span id="mapCount"></span></label>
       </h3>
@@ -196,7 +191,13 @@
       <h3>
         <label for="anecdote">Anecdotes de Personnages <span id="anecdoteCount"></span></label>
       </h3>
-      <div class="flexContainer" id="anecdote"></div>
+      <div class="flexContainer" id="anecdote">
+        <div id="g1"><h5>Groupe 1</h5></div>
+
+        <div id="g2"><h5>Groupe 2</h5></div>
+
+        <div id="g3"><h5>Groupe 3</h5></div>
+      </div>
     </div>
   </body>
 </html>
