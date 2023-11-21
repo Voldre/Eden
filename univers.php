@@ -160,6 +160,9 @@ if(isset($_GET["data"])){
         echo "<img class='pictures' style='width:300px;' src='images/".$img."' />";
         echo "<img class='pictures' style='width:300px;' src='images/loadingframe/Loading_".$_GET["map"].".png' />";
         echo "<img class='pictures' style='width:300px;' src='images/loadingframe/Loading_".$_GET["map"]."B.jpg' />";
+        if($_GET["map"] == "20" || $_GET["map"] == "30"){
+            echo "<img class='pictures' style='width:300px;' src='images/loadingframe/Loading_".$_GET["map"]."C.jpg' />";
+        }
         echo "</div></a></div>";
         
         echo "<div>";

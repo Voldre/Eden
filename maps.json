@@ -173,7 +173,7 @@
     "map_z": null,
     "map_r": null,
     "bgm": 35,
-    "mobs": [47, 48, 24, 79, 71]
+    "mobs": [47, 48, 24, 79, 71, 129]
   },
   "15": {
     "name": "Hautes-terres",
@@ -265,7 +265,7 @@
     "map_z": null,
     "map_r": null,
     "bgm": 36,
-    "mobs": [81, 49, 112, 61, 69]
+    "mobs": [81, 49, 112, 61, 69, 67]
   },
   "23": {
     "name": "Crète Diamantée",
@@ -313,7 +313,7 @@
     "map_z": null,
     "map_r": null,
     "bgm": 34,
-    "mobs": [34, 35, 36, 63, 81, 117]
+    "mobs": [34, 36, 81, 117, 128, 67]
   },
   "27": {
     "name": "Falaise des Grands Vents",
@@ -360,7 +360,8 @@
     "map_y": null,
     "map_z": null,
     "map_r": null,
-    "bgm": 15
+    "bgm": 15,
+    "mobs": [124, 128, 129, 130]
   },
   "31": {
     "name": "Île du Cerisier",
@@ -464,8 +465,8 @@
   },
   "51": {
     "name": "Dôme Céleste",
-    "wmap_x": 13,
-    "wmap_y": 57,
+    "wmap_x": 14.4,
+    "wmap_y": 56.2,
     "wmap": 2,
     "map_x": null,
     "map_y": null,
@@ -475,8 +476,8 @@
   },
   "52": {
     "name": "Hauteurs Feudegivre",
-    "wmap_x": 18,
-    "wmap_y": 68,
+    "wmap_x": 17,
+    "wmap_y": 67.5,
     "wmap": 2,
     "map_x": null,
     "map_y": null,

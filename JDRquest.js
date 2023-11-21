@@ -75,6 +75,10 @@ window.addEventListener("load", async () => {
   // Upgrade enemy to Elite if the rarity selected randomly is "2" and the enemy is "common"
   const isElite = rarity === 2 && enemyData.pvmax < 120;
 
+  document.querySelector("#rarity").innerText = isElite ? "ELITE" : "";
+
+  if (rarity === 3) document.querySelector("#rarity").innerText = "BOSS";
+
   const randomPNJ = Math.floor(Math.random() * Object.entries(pnjJSON).length + 1);
   console.log(randomPNJ);
   const pnjData = pnjJSON[randomPNJ];
