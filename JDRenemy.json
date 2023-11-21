@@ -1859,9 +1859,9 @@
     "nom": "Champigno\u00efde Mutant Crystal",
     "pvmax": "230",
     "skills": [
-      "Attaque foudroyante : AoE 3D6 + 10 : Intelligence",
+      "Attaque foudroyante : AoE 3D6 + 10 (+3/champi) : Intelligence",
       "Spore explosif : 4D6 +16 : Intelligence",
-      "Spore mutant crystal : Invoque un mini champi crystal (40 PV, charge 1D10+6 (D\u00e9 <15), explose \u00e0 la mort 2D10+10 AoE) : Esprit",
+      "Spore mutant crystal (+2/champi) : Invoque un mini champi crystal (40 PV, charge 1D10+6 (D\u00e9 <15), explose \u00e0 la mort 2D10+10 AoE) : Esprit",
       "Passif : d\u00e9g\u00e2t re\u00e7u -5 (ou -10)"
     ],
     "stats": "16,9,16,11,11",
@@ -1883,5 +1883,50 @@
     "desc": "Garde officiel de la Curie M\u00e9t\u00e9role, il est missionn\u00e9 de maintenir l'ordre dans tout Ezur. Connaisseur en magie de lumi\u00e8re.",
     "infos": "Faible \u00e0 la nature et aux t\u00e9n\u00e8bres",
     "drop": "30po, Masse de Lumi\u00e8re, rare : Calice de la Curie M\u00e9t\u00e9role"
+  },
+  "128": {
+    "visuel3D": "m022",
+    "nom": "Tyrannosaure mycolique",
+    "pvmax": "110",
+    "skills": [
+      "Morsure : 2D10+12 : force",
+      "S\u00e9isme acide : 1D10+10 AoE : force",
+      "Souffle mycolique: force/intel -3 (3 tours): esprit",
+      "Poison : 1D4+5 sur 3 tours : intel"
+    ],
+    "stats": "16,9,15,10,15",
+    "desc": "Un puissant tyrannosaure venimeux (acide mycolique) qui vit \u00e0 la Jungle du Dieu Serpent.",
+    "infos": "Faible au feu et au tranchant",
+    "drop": "Peau de tyrannosaure, tr\u00e8s rare : Hache Verd\u00e2tre"
+  },
+  "129": {
+    "visuel3D": "m087c",
+    "nom": "Champigno\u00efde D\u00e9vorant",
+    "pvmax": "110",
+    "skills": [
+      "Stalactite : 1D10 + 1D6 + 1D4 +12 : intelligence",
+      "Attaque foudroyante : AoE 2D6 + 8 : intelligence",
+      "D\u00e9voreur : 2D6+8 (d\u00e9g\u00e2ts/soign\u00e9s) : intelligence",
+      "Poison : 1D4+4 sur 3 tours : intel"
+    ],
+    "stats": "7,13,17,10,12",
+    "desc": "Ces champigno\u00efdes sont ensorcel\u00e9es de magies tr\u00e8s \u00e9tranges, de dr\u00f4le de choses \u00e9manent d'eux.",
+    "infos": "Faible \u00e0 la lumi\u00e8re et \u00e0 la glace",
+    "drop": "Germe de champigno\u00efde rare, Chapeau de champigno\u00efde, tr\u00e8s rare : Super chapeau"
+  },
+  "130": {
+    "visuel3D": "m105",
+    "nom": "Fourmilion Toxique",
+    "pvmax": "110",
+    "skills": [
+      "Vague terrestre : 1D10 +12 AoE : force",
+      "Morsure : 2D10 +13 : force",
+      "Crachat corrosif : 1D6+5 pendant 3 tours : intelligence",
+      "Passif : nature/foudre -10 d\u00e9g\u00e2ts"
+    ],
+    "stats": "16,11,15,9,11",
+    "desc": "Fourmilion violet/rouge avec un dos pulpeux verd\u00e2tre",
+    "infos": "Faible au per\u00e7ant et \u00e0 la lumi\u00e8re",
+    "drop": "Mucus de fourmilion, crochet enchant\u00e9"
   }
 }
