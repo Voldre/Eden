@@ -549,7 +549,14 @@ dialog::backdrop {
   max-width: 170px;
   max-height: 250px;
 }
-
+.connectionPoint {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  float: right;
+  margin: 1px;
+}
 .entries {
   position: relative;
   top: 88%;
@@ -703,5 +710,11 @@ dialog::backdrop {
   #composant .card,
   #anecdote .card {
     width: auto !important;
+  }
+
+  .charactersList > div {
+    border: 1.25px goldenrod solid;
+    margin: 3px;
+    padding: 0px 4px;
   }
 }

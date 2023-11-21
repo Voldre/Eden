@@ -2,6 +2,7 @@
 var xhReq = new XMLHttpRequest();
 var cardJSON = {};
 var persosJSON = {};
+var eqptJSON = {};
 var playerJSON = [];
 
 console.log(window.location.href);
@@ -10,7 +11,7 @@ if (window.location.href.includes("http")) {
   xhReq.send(null);
 
   cardJSON = getData("card");
-
+  eqptJSON = getData("eqpt");
   persosJSON = getData("persos");
 
   playerJSON = getData("player");
@@ -59,10 +60,20 @@ window.addEventListener("load", () => {
       playerE.addEventListener("click", () => {
         window.location.href = "jdr_profil.html?joueur=" + player[0];
       });
+
       const playerNameE = document.createElement("h3");
       playerNameE.innerText = player[0];
 
       const playerData = player[1];
+
+      const playerConnectedE = document.createElement("div");
+      playerConnectedE.className = "connectionPoint";
+      const today = new Date().toLocaleString().split(" ")[0];
+      if (playerData.date === today) {
+        playerConnectedE.style.backgroundColor = "green";
+      } else {
+        playerConnectedE.style.backgroundColor = "grey";
+      }
 
       const playerCoinE = document.createElement("p");
       playerCoinE.innerText = playerData["alpagaCoin"] + " (" + playerData["alpagaCoinSpent"] + ") ";
@@ -75,20 +86,31 @@ window.addEventListener("load", () => {
 
       const playerCardsE = document.createElement("p");
       playerCardsE.innerText = "Nombre de cartes : " + playerData["cards"].length;
+      playerCardsE.style.fontSize = "13.5px";
       const playerEntriesE = document.createElement("p");
-      playerEntriesE.innerText =
-        "Entrées restantes : " +
-        Math.round(
-          (playerData["entries"].reduce((acc, cur) => acc + cur / 3, 0) / playerData["entries"].length) * 100
-        ) +
-        "%";
 
+      const entriesToday =
+        playerData.date === today
+          ? Math.round(
+              (playerData["entries"].reduce((acc, cur) => acc + cur / 3, 0) / playerData["entries"].length) * 100
+            )
+          : 100;
+      playerEntriesE.innerText = "Entrées restantes : " + entriesToday + "%";
+      playerEntriesE.style.fontSize = "13px";
+
+      playerE.append(playerConnectedE);
       playerE.append(playerNameE);
       playerE.append(playerCoinE);
       playerE.append(playerCardsE);
       playerE.append(playerEntriesE);
       playersE.append(playerE);
       document.querySelector("body").append(playersE);
+    });
+
+    // Display all persos stats in combat
+    Object.values(persosJSON).forEach((p) => {
+      const persoP = new PersoSimplified(p);
+      persoP.degat != "-" ? console.log(persoP) : null;
     });
   }
 });
@@ -177,7 +199,11 @@ function loadPerso(perso, index, joueurData) {
   persoE.querySelector(".entries").innerText = joueurData.entries[index] + "/3 ";
 
   persoE.querySelector("#nom").value = perso.nom;
-  persoE.querySelector("#niv").value = perso.niv;
+
+  const persoCombat = new PersoSimplified(perso);
+  persoE.querySelector("#degat").value = persoCombat.degat;
+  persoE.querySelector("#armure").value = persoCombat.armure;
+
   persoE.querySelector(".persoPic").src = perso.pp;
   persoE.addEventListener("click", () => {
     if (joueurData.entries[index] <= 0) {
@@ -292,7 +318,7 @@ function countCards(joueurData) {
 
 var labelsDescription = {
   alpagaCoin:
-    "Les pièces d'Alpaga peuvent être échangées contre de l'expérience ou de l'or.<br/>1 XP (1 perso) = 5 Pièces Alpaga<br/>1 Or (1 perso) = 2 Pièces Alpaga.",
+    "Les pièces d'Alpaga peuvent être échangées contre de l'expérience ou de l'or.<br/>1 XP (1 perso) = 8 Pièces Alpaga<br/>1 Or (1 perso) = 3 Pièces Alpaga.<br/> > Ce taux est diminué pour ceux qui ont moins de persos et/ou de moins haut niveau.<br/><br/>Attention : Pour échanger les pièces, il faut que la situation soit cohérente (roleplay), exemple : une interlude, le personnage a quitté le groupe pendant un moment, etc... Et même dans ces conditions, la quantité d'XP/Or donné est limité (ex : on ne peut pas obtenir 3 niveaux d'un coup).",
   map: "Les cartes de maps & donjons peuvent être obtenues sur leurs zones spécifiques. Elles donnent des informations sur la zone en question.",
   boss: "Les cartes de Boss peuvent être obtenues n'importe où mais que sur des ennemis de niveau Boss (>= 200 PV). Elles donnent quelques informations sur eux et représentent une belle collection à avoir.",
   composant:
@@ -323,6 +349,79 @@ document.querySelectorAll("label").forEach((label) => {
     dialog.showModal();
   });
 });
+
+function PersoSimplified(persoData) {
+  // Calcul des dégâts fixes et de l'armure
+  var stuffs = JSON.parse(persoData.eqpts).map((eqptName) => {
+    return Object.values(eqptJSON).find((eqpt) => eqpt.nom.toLowerCase().trim() == eqptName.toLowerCase().trim());
+  });
+
+  if (!stuffs[0]) {
+    this.degat = "-";
+    this.armure = "-";
+    return;
+  }
+
+  this.nom = persoData.nom;
+  this.niv = persoData.niv;
+
+  var montantBouclier, montantArmure, montantArme1, montantArme2, montantAccessDegat, montantAccessArmure;
+
+  montantAccessDegat = stuffs
+    .map((stuff) => {
+      if (!stuff) return 0;
+      if (!!stuff.access && stuff.access[0] == "D") {
+        return parseInt(stuff.access[1]);
+      }
+      return 0;
+    })
+    .reduce((a, b) => a + b);
+
+  montantAccessArmure = stuffs
+    .map((stuff) => {
+      if (!stuff) return 0;
+      if (!!stuff.access && stuff.access[0] == "A") {
+        return parseInt(stuff.access[1]);
+      }
+      return 0;
+    })
+    .reduce((a, b) => a + b);
+
+  stuffs[1] = stuffs[1] || { nom: "", montant: "Dégât +0" };
+  if (stuffs[1].nom.includes("Bouclier")) {
+    montantBouclier = stuffs[1].montant.split("Dégât -")[1].split(",")[0].split(" ")[0];
+    stuffs[1] = { montant: "Dégât +0" };
+  } else {
+    montantBouclier = 0;
+  }
+
+  montantArme1 = stuffs[0].montant.split("Dégât +")[1].split(",")[0].split(" ")[0];
+  montantArme2 = stuffs[1].montant.split("Dégât +")[1].split(",")[0].split(" ")[0];
+
+  // Bonus de dégât par niveauu (20/11/23 : Fixe à 2 en +, exponentiel par niveau)
+  this.degat = Math.round(
+    (2 + parseInt(montantArme1) + parseInt(montantArme2)) * Math.pow(1.1, this.niv) + montantAccessDegat
+  );
+
+  montantArmure = stuffs[3].montant.split("Dégât -")[1].split(",")[0].split(" ")[0];
+
+  // Bonus d'armure par niveau (20/11/23 : Fixe à 2 en +, exponentiel par niveau)
+  this.armure = Math.round(
+    (2 + parseInt(montantBouclier) + parseInt(montantArmure)) * Math.pow(1.1, this.niv) + montantAccessArmure
+  );
+
+  // 21/11/23 : Si l'armure actuelle est trop haute, je la diminue !
+  // Car l'armure dans le jeu c'est vraiment trop cheat !
+  this.armure -= Math.max(Math.floor((this.armure - 15) / 5), -1);
+  // et un peu pareil pour les dégâts, mais moins violent :
+  this.degat -= Math.max(Math.floor((this.degat - 25) / 6), 0);
+
+  // Réduction si la personne a du soin
+  const classSoins = ["Clerc", "Barde", "Shaman", "Sage", "Templier"];
+  if (classSoins.includes(persoData.classeP) || classSoins.includes(persoData.classeS)) {
+    this.armure -= 1;
+  }
+}
 
 // Allow user to close Modal (Dialogue) by clicking outside
 dialog.addEventListener("click", (e) => {

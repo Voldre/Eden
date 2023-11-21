@@ -5,7 +5,7 @@
     "statUsed": "intel",
     "type": "soin",
     "montant": "1D10",
-    "montantFixe": 6,
+    "montantFixe": 4,
     "icone": "E0018"
   },
   {
@@ -224,7 +224,7 @@
     "statUsed": "esprit",
     "type": "soin",
     "montant": "1D8",
-    "montantFixe": 4,
+    "montantFixe": 3,
     "icone": "E0137"
   },
   {

@@ -325,18 +325,29 @@ function Perso(persoData) {
   montantArme1 = stuffs[0].montant.split("Dégât +")[1].split(",")[0].split(" ")[0];
   montantArme2 = stuffs[1].montant.split("Dégât +")[1].split(",")[0].split(" ")[0];
 
-  // Bonus de dégât par niveau
+  // Bonus de dégât par niveauu (20/11/23 : Fixe à 2 en +, exponentiel par niveau)
   this.degat = Math.round(
-    (parseInt(montantArme1) + parseInt(montantArme2)) * Math.pow(1.1, this.niv) + montantAccessDegat
+    (2 + parseInt(montantArme1) + parseInt(montantArme2)) * Math.pow(1.1, this.niv) + montantAccessDegat
   );
 
   montantArmure = stuffs[3].montant.split("Dégât -")[1].split(",")[0].split(" ")[0];
 
-  // Bonus d'armure par niveau
+  // Bonus d'armure par niveau (20/11/23 : Fixe à 2 en +, exponentiel par niveau)
   this.armure = Math.round(
-    (parseInt(montantBouclier) + parseInt(montantArmure)) * Math.pow(1.1, this.niv) + montantAccessArmure
+    (2 + parseInt(montantBouclier) + parseInt(montantArmure)) * Math.pow(1.1, this.niv) + montantAccessArmure
   );
 
+  // 21/11/23 : Si l'armure actuelle est trop haute, je la diminue !
+  // Car l'armure dans le jeu c'est vraiment trop cheat !
+  this.armure -= Math.max(Math.floor((this.armure - 15) / 5), -1);
+  // et un peu pareil pour les dégâts, mais moins violent :
+  this.degat -= Math.max(Math.floor((this.degat - 25) / 6), 0);
+
+  // Réduction si la personne a du soin
+  const classSoins = ["Clerc", "Barde", "Shaman", "Sage", "Templier"];
+  if (classSoins.includes(persoData.classeP) || classSoins.includes(persoData.classeS)) {
+    this.armure -= 1;
+  }
   // ---
 
   this.force = persoData.force + persoData.forceB.replace(/[^\d.+-]/g, "");
@@ -690,12 +701,11 @@ function victory() {
   // Coins
   newJoueurData.alpagaCoin = addCoins(newJoueurData.alpagaCoin, winCards, enemyRarity);
 
+  // Update player data
+  savePlayer(newJoueurData);
+
   // Show rewards (cards)
   showCardsAndCoins(joueurData, winCards, newJoueurData.alpagaCoin);
-
-  // Update player data
-
-  savePlayer(newJoueurData);
 }
 
 function savePlayer(newJoueurData) {
@@ -710,7 +720,10 @@ function savePlayer(newJoueurData) {
   newJoueurData.entries[persoIDforPlayer] -= 1;
 
   // Last control before save : if entries are negative, don't save !
-  if (newJoueurData.entries[persoIDforPlayer] <= -1) return;
+  if (newJoueurData.entries[persoIDforPlayer] <= -1) {
+    toastNotification("Erreur : Le personnage a déjà consommé toutes ses entrées.");
+    return;
+  }
 
   var newPlayer = {};
   newPlayer[indexPlayer] = newJoueurData;
@@ -722,7 +735,7 @@ function savePlayer(newJoueurData) {
 
   document.cookie = cookiePerso;
   saveWithPHP("player");
-  console.log("saveFiche() done : JDRsaveFile.php executed");
+  console.log("savePlayer() done : JDRsaveFile.php executed");
 }
 
 function addCard(joueurDataCards, card) {
@@ -844,8 +857,8 @@ function rollDice(user, type, statName) {
     console.log(success);
   }
 
-  // Result
-  var diceValue = Math.round(Math.random() * 19 + 1);
+  // Result (correction 20/11/23 : change round to floor to have nice repartition)
+  var diceValue = Math.floor(Math.random() * 20 + 1);
 
   if (diceValue > success) {
     result = "fail";
@@ -1045,7 +1058,7 @@ function executeAction(user, userSkill) {
   if (userResult == "fail") {
     updateDesc("Echec");
   } else if (userResult == "crit fail") {
-    hit(user, Math.trunc(user.degat / 2) + (user.armure / 2 || 0));
+    hit(user, Math.trunc(user.degat / 2) + Math.trunc(user.armure / 2 || 0));
     updateDesc("Echec critique");
   }
 }
@@ -1064,7 +1077,8 @@ function hit(user, amount) {
 }
 
 function heal(user, amount) {
-  user.pv = Math.min(user.pvmax, parseInt(user.pv) + amount);
+  // 20/11/23 : Reduce the heal by 1 point (because too cheat)
+  user.pv = Math.min(user.pvmax, parseInt(user.pv) + amount - 1);
 
   // min() permet de gérer si les PV soignés sont > aux PV max
   document.querySelector("#pv").value = user.pv;

@@ -292,7 +292,8 @@
     "desc": "Un cache oeil qui vous permet de mieux viser !",
     "effet": "",
     "montant": "Dext\u00e9rit\u00e9 +2 (Charisme +1 si Corsaire)",
-    "icone": "k10200"
+    "icone": "k10200",
+    "access": "A0"
   },
   "42": {
     "nom": "Chapeau de capitaine",
@@ -1774,7 +1775,7 @@
     "effet": "",
     "montant": "PV Soin re\u00e7u +50%",
     "icone": "I00185",
-    "access": "A4"
+    "access": "A3"
   },
   "245": {
     "nom": "Katana taill\u00e9",
@@ -2391,7 +2392,7 @@
     "effet": "",
     "montant": "D\u00e9g\u00e2t re\u00e7u -2, d\u00e9g\u00e2t nature +3",
     "icone": "I00160",
-    "access": "A3"
+    "access": "A2"
   },
   "328": {
     "nom": "Insigne de l'Ordre du Temple",
