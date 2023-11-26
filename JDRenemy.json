@@ -901,7 +901,7 @@
     "skills": [
       "Mode Draconique : Embras\u00e9 : Force+2, D\u00e9moniaque : Charisme+2, Cach\u00e9 : Esprit+2 : Esprit",
       "Terreur du Dragon AoE : R\u00e9ussite des sorts : -2 sur 3 tours AoE (+ mode Cf. DK) : Charisme",
-      "Pouvoir du Dragon  / Atk Cyclone : 3D6+16 (2D6+13) (feu, t\u00e9n\u00e8bres,physique) : Force",
+      "Pouvoir du Dragon  / Atk Cyclone : 3D6+16 (un peu -) (feu, t\u00e9n\u00e8bres,physique) : Force",
       "Revers d'\u00e9caille : 5 tentatives par combat (<10 : 66%, >=10 : 33%) (+ mode Cf. DK) : Esprit"
     ],
     "stats": "15,11,7,15,15",
@@ -1928,5 +1928,20 @@
     "desc": "Fourmilion violet/rouge avec un dos pulpeux verd\u00e2tre",
     "infos": "Faible au per\u00e7ant et \u00e0 la lumi\u00e8re",
     "drop": "Mucus de fourmilion, crochet enchant\u00e9"
+  },
+  "131": {
+    "visuel3D": "m473b",
+    "nom": "Botassius - G\u00e9n\u00e9ral D\u00e9fensif",
+    "pvmax": "300",
+    "skills": [
+      "Lumi\u00e8re de Gu\u00e9rison : 2D10+12 (1/4 rejouer) : Intelligence",
+      "Vague Foudroyante : 3D6+16 (un peu -), Blocage-2 AoE 3 tours : Force",
+      "Lumi\u00e8re Sacr\u00e9e : 3D6+18 / Euphorie : +1D4 (min 2) par coup sur 4 tours : esprit",
+      "Passif : Blocage +2 (Def Acier), D\u00e9g\u00e2t re\u00e7u -15 (-5 si < 50 PV)"
+    ],
+    "stats": "17,9,17,14,15",
+    "desc": "Botassius, grand g\u00e9n\u00e9ral de division d\u00e9fensive de la Curie, surnomm\u00e9 le Gardien de Lumi\u00e8re. On raconte qu'il n'est jamais tomb\u00e9.",
+    "infos": "Faible \u00e0 la foudre et aux t\u00e9n\u00e8bres",
+    "drop": "rare : Insigne de l'Ordre du Temple, Bouclier Solaire"
   }
 }

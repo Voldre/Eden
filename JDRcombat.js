@@ -6,6 +6,7 @@ var persosJSON = {};
 var allSkills = [];
 var playerJSON = {};
 var cardJSON = {};
+var logsJSON = {};
 
 console.log(window.location.href);
 if (window.location.href.includes("http")) {
@@ -23,6 +24,8 @@ if (window.location.href.includes("http")) {
   playerJSON = getData("player");
 
   cardJSON = getData("card");
+
+  logsJSON = getData("combatLogs");
 }
 
 function getData(filename) {
@@ -237,7 +240,7 @@ function loadFiche(indexPerso) {
 
 function loadSkills(c1, c2) {
   Object.entries([...document.querySelectorAll(".skillCombat")]).forEach(([id, skillE]) => {
-    var listSkills = allSkills.filter((skill) => skill.classe.includes(c1) || skill.classe.includes(c2));
+    const listSkills = allSkills.filter((skill) => skill.classe.includes(c1) || skill.classe.includes(c2));
     if (!listSkills[id]) return;
     skillE.querySelector(".skillName").value = listSkills[id].nom;
     skillE.querySelector(".skillStat").innerText = listSkills[id].statUsed;
@@ -266,7 +269,9 @@ function loadSkills(c1, c2) {
     skillE.querySelector(".icone").src = "http://voldre.free.fr/Eden/images/skillIcon/" + listSkills[id].icone + ".png";
 
     skillE.addEventListener("click", () => {
-      turnExecution(listSkills[id], skillE);
+      // Bug fix Victorine 26/11/2023 : check if button disabled
+      // Because the Event Listener is the whole skill Element, not only the button
+      if (!skillE.querySelector(".skillName").disabled) turnExecution(listSkills[id], skillE);
     });
   });
 }
@@ -275,7 +280,8 @@ function Perso(persoData) {
   this.nom = persoData.nom;
 
   this.niv = persoData.niv;
-  this.pvmax = this.pv = persoData.pvmax;
+  // 25/11/23 Suite à hugo qui fait PvMax/Pv, j'introduis le fait de prendre le max des 2... xD
+  this.pvmax = this.pv = Math.max(persoData.pvmax, persoData.pv);
 
   // Calcul des dégâts fixes et de l'armure
   var stuffs = JSON.parse(persoData.eqpts).map((eqptName) => {
@@ -348,7 +354,17 @@ function Perso(persoData) {
   if (classSoins.includes(persoData.classeP) || classSoins.includes(persoData.classeS)) {
     this.armure -= 1;
   }
-  // ---
+
+  // 25/11 Bonus if less skills than 4
+  const nbSkills = allSkills.filter(
+    (skill) => skill.classe.includes(perso.classeP) || skill.classe.includes(perso.classeS)
+  ).length;
+  if (nbSkills < 4) {
+    this.degat += 1;
+    this.armure += 1;
+  }
+
+  // ----
 
   this.force = persoData.force + persoData.forceB.replace(/[^\d.+-]/g, "");
   this.dexté = persoData.dexté + persoData.dextéB.replace(/[^\d.+-]/g, "");
@@ -590,6 +606,8 @@ function dicesConversion(skill) {
 // FIGHT
 
 function newturn() {
+  // Correcting inExecution
+  inExecution = false;
   isEnded();
 
   turn++;
@@ -602,7 +620,7 @@ function newturn() {
   updateBuff();
 }
 
-function isEnded() {
+async function isEnded() {
   if (ingame) {
     if (document.querySelector("#epv").value <= 0) {
       toastNotification("Victoire !");
@@ -612,7 +630,7 @@ function isEnded() {
 
       // Victory
       if (joueurData) {
-        victory();
+        await victory();
         toastNotification("Sauvegarde effectuée, redirection ...", 6000);
       } else {
         toastNotification("Pas de joueur détecté", 6000);
@@ -625,7 +643,26 @@ function isEnded() {
 
       // Defeat
       if (joueurData) {
-        savePlayer(joueurData);
+        const urlParams = new URLSearchParams(window.location.search);
+
+        console.log(selectedEnemy);
+        var enemyRarity;
+        if (selectedEnemy.pvmax >= 200) {
+          enemyRarity = Math.trunc(selectedEnemy.pvmax / 100) + 1;
+        } else if (selectedEnemy.pvmax >= 120) {
+          enemyRarity = 2;
+        } else {
+          enemyRarity = 1;
+          // Handle enemy with "elite mode"
+          enemyRarity += urlParams.has("isElite");
+        }
+
+        const cardRarity = Math.min(enemyRarity, 3);
+
+        const mapID = parseInt(urlParams.get("map"));
+        await saveLog(indexPlayer, 0, null, mapID, cardRarity, selectedEnemy);
+
+        await savePlayer(joueurData);
         toastNotification("Sauvegarde effectuée, redirection ...", 6000);
       } else {
         toastNotification("Pas de joueur détecté", 6000);
@@ -638,7 +675,7 @@ function isEnded() {
   }
 }
 
-function victory() {
+async function victory() {
   const urlParams = new URLSearchParams(window.location.search);
 
   console.log(selectedEnemy);
@@ -701,14 +738,52 @@ function victory() {
   // Coins
   newJoueurData.alpagaCoin = addCoins(newJoueurData.alpagaCoin, winCards, enemyRarity);
 
+  // Save fight in log
+  const earnedCoins = newJoueurData.alpagaCoin - joueurData.alpagaCoin;
+  await saveLog(indexPlayer, earnedCoins, winCards, mapID, cardRarity, selectedEnemy);
   // Update player data
-  savePlayer(newJoueurData);
+  await savePlayer(newJoueurData);
 
   // Show rewards (cards)
   showCardsAndCoins(joueurData, winCards, newJoueurData.alpagaCoin);
 }
 
-function savePlayer(newJoueurData) {
+async function saveLog(indexPlayer, earnedCoins, winCards, mapID, cardRarity, selectedEnemy) {
+  const urlParams = new URLSearchParams(window.location.search);
+
+  if (!urlParams.has("perso")) return;
+
+  const indexPerso = urlParams.get("perso");
+  const nomPerso = persosJSON[indexPerso - 1].nom;
+
+  const logID = parseInt(Object.keys(logsJSON).reverse()[0]) + 1 || 1;
+
+  const newLog = {};
+  newLog[logID] = {
+    date: new Date().toLocaleString(),
+    joueur: indexPlayer,
+    perso: nomPerso,
+    map: mapID,
+    cardRarity: cardRarity,
+    enemy: selectedEnemy.nom,
+    earnedCoins: earnedCoins,
+    winCards: winCards?.map((w) => [w.id, w.name]) || [],
+    turn: parseInt(document.querySelector("#turn").innerText),
+    pv: perso.pv,
+    epv: enemy.pv,
+  };
+
+  console.log(newLog);
+
+  const newLogEncoded = JSON.stringify(newLog).replaceAll("+", "%2B").replaceAll(";", "%3B");
+  const cookiePerso = "combatLogsJSON=" + newLogEncoded + "; SameSite=Strict";
+
+  document.cookie = cookiePerso;
+  await saveWithPHP("combatLogs");
+  console.log("saveLog() done : JDRsaveFile.php executed");
+}
+
+async function savePlayer(newJoueurData) {
   const urlParams = new URLSearchParams(window.location.search);
 
   if (!urlParams.has("perso")) return;
@@ -734,7 +809,7 @@ function savePlayer(newJoueurData) {
   const cookiePerso = "playerJSON=" + newPersoEncoded + "; SameSite=Strict";
 
   document.cookie = cookiePerso;
-  saveWithPHP("player");
+  await saveWithPHP("player");
   console.log("savePlayer() done : JDRsaveFile.php executed");
 }
 
@@ -813,12 +888,13 @@ function endRediction(indexPlayer) {
   return;
 }
 
-function saveWithPHP(nameJSON) {
+async function saveWithPHP(nameJSON) {
   // eslint-disable-next-line no-undef
   $.ajax({
     url: "JDRsaveFile.php",
     type: "post",
     data: { name: nameJSON },
+    async: true,
     /*
     success: function (data) {
       $("body").html(data);
@@ -850,7 +926,8 @@ function rollDice(user, type, statName) {
   console.log(stat, type);
   if (type == "attaque" || type == "skill" || type == "soin" || type == "buff") {
     section.querySelector(".statName").innerText = statName;
-    success = stat;
+    // 24/11/23 : Max success is 18 (because user can have 19,20, ... !)
+    success = Math.min(stat, 18);
   } else {
     section.querySelector(".statName").innerText = statName + "/2";
     success = Math.ceil(stat / 2);
@@ -925,8 +1002,12 @@ statsButton.forEach((buttonStat) => {
 });
 
 // *** Turn execution ***
-
+let inExecution = false;
 function turnExecution(persoSkill, skillE = null) {
+  // Bug fix Victorine 26/11/2023 : If already clicked (in execution), then cancel
+  if (inExecution) return;
+  inExecution = true;
+
   if (!ingame) {
     toastNotification("Le combat est terminé");
     return;
@@ -944,7 +1025,17 @@ function turnExecution(persoSkill, skillE = null) {
   setTimeout(function () {
     newturn();
     // Add 05/11/2023 : Can't use same skill 2 times
-    if (skillE) skillE.querySelector(".skillName").disabled = true;
+    if (skillE) {
+      skillE.querySelector(".skillName").disabled = true;
+      // 25/11/2023 : Can't use heal 2 times
+      if (skillE.querySelector(".montant").innerText.includes("soin")) {
+        Object.values([...document.querySelectorAll(".skillCombat")]).forEach((sE) => {
+          if (sE.querySelector(".montant").innerText.includes("soin")) {
+            sE.querySelector(".skillName").disabled = true;
+          }
+        });
+      }
+    }
   }, 6000);
 }
 

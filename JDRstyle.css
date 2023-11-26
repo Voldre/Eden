@@ -530,6 +530,7 @@ dialog::backdrop {
   border: 1.5px goldenrod solid;
   margin: 5px;
   max-height: 240px;
+  max-width: 50%;
   overflow: hidden;
   padding: 0px 5px;
 }
