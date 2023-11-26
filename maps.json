@@ -9,7 +9,7 @@
     "map_z": null,
     "map_r": null,
     "bgm": 2,
-    "mobs": [127, 57, 75, 114]
+    "mobs": [127, 57, 75, 114, 131]
   },
   "2": {
     "name": "Monts Calcaires",
@@ -384,7 +384,7 @@
     "map_z": null,
     "map_r": null,
     "bgm": 41,
-    "mobs": [78, 76, 77, 107, 108]
+    "mobs": [62, 78, 76, 77, 107, 108]
   },
   "33": {
     "name": "Plaines du Levant",
