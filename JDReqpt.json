@@ -2453,7 +2453,8 @@
     "desc": "Un crochet appartenant \u00e0 Gimu - l'Oeil du Cylcone. Ce crochet est tellement surcharg\u00e9 en magie que sa texture est difforme.",
     "effet": "",
     "montant": "Soin et D\u00e9g\u00e2t magique +4, AoE : +2",
-    "icone": "I002863"
+    "icone": "I002863",
+    "access": "D4"
   },
   "336": {
     "nom": "Dague Toxique",
@@ -2474,20 +2475,30 @@
     "desc": "Une petite gemme en forme de p\u00e9tale de cerisier, fortifie son porteur",
     "effet": "",
     "montant": "PV +15, Blocage (physique/magique) +1",
-    "icone": "I00364"
+    "icone": "I00364",
+    "access": "A2"
   },
   "339": {
     "nom": "Pierre Loukoum",
     "desc": "Une pierre au go\u00fbt aigre et sucr\u00e9e qui ravive les papilles, le su\u00e7oter renforce son porteur. Attention de ne pas l'avaler !",
     "effet": "",
     "montant": "2 fois par combat (Instantan\u00e9e) : PV+5 et r\u00e9ussite des sorts +1 sur 3 tours",
-    "icone": "I00218"
+    "icone": "I00218",
+    "access": "D2"
   },
   "340": {
     "nom": "Pierre Algue Gel\u00e9e",
     "desc": "Une pierre en forme d'algue b\u00e9nie par les Torturrans, il semble avoir \u00e9t\u00e9 crystalis\u00e9 il y a tr\u00e8s longtemps",
     "effet": "",
     "montant": "D\u00e9g\u00e2t de nature +3, glace +3",
-    "icone": "I00212"
+    "icone": "I00212",
+    "access": "D3"
+  },
+  "341": {
+    "nom": "Bouclier Solaire",
+    "desc": "Un bouclier de lumi\u00e8re avec une d\u00e9fense incomparable, il a \u00e9t\u00e9 cr\u00e9\u00e9 pour l'un des plus grands templiers qui existe.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -6, d\u00e9g\u00e2ts lumi\u00e8res +3",
+    "icone": "W71303"
   }
 }

@@ -75,7 +75,7 @@ window.addEventListener("load", async () => {
   // Upgrade enemy to Elite if the rarity selected randomly is "2" and the enemy is "common"
   const isElite = rarity === 2 && enemyData.pvmax < 120;
 
-  document.querySelector("#rarity").innerText = isElite ? "ELITE" : "";
+  if (rarity === 2) document.querySelector("#rarity").innerText = "ELITE";
 
   if (rarity === 3) document.querySelector("#rarity").innerText = "BOSS";
 

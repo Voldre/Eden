@@ -1,754 +1,106 @@
 [
-  {
-    "id": 1,
-    "value": 1,
-    "kind": "map",
-    "name": "Aven",
-    "description": "",
-    "kindId": 1
-  },
-  {
-    "id": 2,
-    "value": 2,
-    "kind": "map",
-    "name": "Aven",
-    "description": "",
-    "kindId": 1
-  },
-  {
-    "id": 3,
-    "value": 3,
-    "kind": "map",
-    "name": "Aven",
-    "description": "",
-    "kindId": 1
-  },
-  {
-    "id": 4,
-    "value": 1,
-    "kind": "map",
-    "name": "Monts Calcaires",
-    "description": "",
-    "kindId": 2
-  },
-  {
-    "id": 5,
-    "value": 2,
-    "kind": "map",
-    "name": "Monts Calcaires",
-    "description": "",
-    "kindId": 2
-  },
-  {
-    "id": 6,
-    "value": 3,
-    "kind": "map",
-    "name": "Monts Calcaires",
-    "description": "",
-    "kindId": 2
-  },
-  {
-    "id": 7,
-    "value": 1,
-    "kind": "map",
-    "name": "Colline tranquille",
-    "description": "",
-    "kindId": 3
-  },
-  {
-    "id": 8,
-    "value": 2,
-    "kind": "map",
-    "name": "Colline tranquille",
-    "description": "",
-    "kindId": 3
-  },
-  {
-    "id": 9,
-    "value": 3,
-    "kind": "map",
-    "name": "Colline tranquille",
-    "description": "",
-    "kindId": 3
-  },
-  {
-    "id": 10,
-    "value": 1,
-    "kind": "map",
-    "name": "Forêt Arc-en-Ciel",
-    "description": "",
-    "kindId": 4
-  },
-  {
-    "id": 11,
-    "value": 2,
-    "kind": "map",
-    "name": "Forêt Arc-en-Ciel",
-    "description": "",
-    "kindId": 4
-  },
-  {
-    "id": 12,
-    "value": 3,
-    "kind": "map",
-    "name": "Forêt Arc-en-Ciel",
-    "description": "",
-    "kindId": 4
-  },
-  {
-    "id": 13,
-    "value": 1,
-    "kind": "map",
-    "name": "Monts Arides",
-    "description": "",
-    "kindId": 5
-  },
-  {
-    "id": 14,
-    "value": 2,
-    "kind": "map",
-    "name": "Monts Arides",
-    "description": "",
-    "kindId": 5
-  },
-  {
-    "id": 15,
-    "value": 3,
-    "kind": "map",
-    "name": "Monts Arides",
-    "description": "",
-    "kindId": 5
-  },
-  {
-    "id": 16,
-    "value": 1,
-    "kind": "map",
-    "name": "Baie Bélouga",
-    "description": "",
-    "kindId": 6
-  },
-  {
-    "id": 17,
-    "value": 2,
-    "kind": "map",
-    "name": "Baie Bélouga",
-    "description": "",
-    "kindId": 6
-  },
-  {
-    "id": 18,
-    "value": 3,
-    "kind": "map",
-    "name": "Baie Bélouga",
-    "description": "",
-    "kindId": 6
-  },
-  {
-    "id": 19,
-    "value": 1,
-    "kind": "map",
-    "name": "Bourbes",
-    "description": "",
-    "kindId": 7
-  },
-  {
-    "id": 20,
-    "value": 2,
-    "kind": "map",
-    "name": "Bourbes",
-    "description": "",
-    "kindId": 7
-  },
-  {
-    "id": 21,
-    "value": 3,
-    "kind": "map",
-    "name": "Bourbes",
-    "description": "",
-    "kindId": 7
-  },
-  {
-    "id": 22,
-    "value": 1,
-    "kind": "map",
-    "name": "Vallée des Rois",
-    "description": "",
-    "kindId": 8
-  },
-  {
-    "id": 23,
-    "value": 2,
-    "kind": "map",
-    "name": "Vallée des Rois",
-    "description": "",
-    "kindId": 8
-  },
-  {
-    "id": 24,
-    "value": 3,
-    "kind": "map",
-    "name": "Vallée des Rois",
-    "description": "",
-    "kindId": 8
-  },
-  {
-    "id": 25,
-    "value": 1,
-    "kind": "map",
-    "name": "Volcan Avila",
-    "description": "",
-    "kindId": 9
-  },
-  {
-    "id": 26,
-    "value": 2,
-    "kind": "map",
-    "name": "Volcan Avila",
-    "description": "",
-    "kindId": 9
-  },
-  {
-    "id": 27,
-    "value": 3,
-    "kind": "map",
-    "name": "Volcan Avila",
-    "description": "",
-    "kindId": 9
-  },
-  {
-    "id": 28,
-    "value": 1,
-    "kind": "map",
-    "name": "Plaines Dorées",
-    "description": "",
-    "kindId": 10
-  },
-  {
-    "id": 29,
-    "value": 2,
-    "kind": "map",
-    "name": "Plaines Dorées",
-    "description": "",
-    "kindId": 10
-  },
-  {
-    "id": 30,
-    "value": 3,
-    "kind": "map",
-    "name": "Plaines Dorées",
-    "description": "",
-    "kindId": 10
-  },
-  {
-    "id": 31,
-    "value": 1,
-    "kind": "map",
-    "name": "Terres des Dunes Éternelles",
-    "description": "",
-    "kindId": 11
-  },
-  {
-    "id": 32,
-    "value": 2,
-    "kind": "map",
-    "name": "Terres des Dunes Éternelles",
-    "description": "",
-    "kindId": 11
-  },
-  {
-    "id": 33,
-    "value": 3,
-    "kind": "map",
-    "name": "Terres des Dunes Éternelles",
-    "description": "",
-    "kindId": 11
-  },
-  {
-    "id": 34,
-    "value": 1,
-    "kind": "map",
-    "name": "Forêt de Delphes",
-    "description": "",
-    "kindId": 12
-  },
-  {
-    "id": 35,
-    "value": 2,
-    "kind": "map",
-    "name": "Forêt de Delphes",
-    "description": "",
-    "kindId": 12
-  },
-  {
-    "id": 36,
-    "value": 3,
-    "kind": "map",
-    "name": "Forêt de Delphes",
-    "description": "",
-    "kindId": 12
-  },
-  {
-    "id": 37,
-    "value": 1,
-    "kind": "map",
-    "name": "Pic de Noireflammes",
-    "description": "",
-    "kindId": 13
-  },
-  {
-    "id": 38,
-    "value": 2,
-    "kind": "map",
-    "name": "Pic de Noireflammes",
-    "description": "",
-    "kindId": 13
-  },
-  {
-    "id": 39,
-    "value": 3,
-    "kind": "map",
-    "name": "Pic de Noireflammes",
-    "description": "",
-    "kindId": 13
-  },
-  {
-    "id": 40,
-    "value": 1,
-    "kind": "map",
-    "name": "Marais Décrépits",
-    "description": "",
-    "kindId": 14
-  },
-  {
-    "id": 41,
-    "value": 2,
-    "kind": "map",
-    "name": "Marais Décrépits",
-    "description": "",
-    "kindId": 14
-  },
-  {
-    "id": 42,
-    "value": 3,
-    "kind": "map",
-    "name": "Marais Décrépits",
-    "description": "",
-    "kindId": 14
-  },
-  {
-    "id": 43,
-    "value": 1,
-    "kind": "map",
-    "name": "Hautes-terres",
-    "description": "",
-    "kindId": 15
-  },
-  {
-    "id": 44,
-    "value": 2,
-    "kind": "map",
-    "name": "Hautes-terres",
-    "description": "",
-    "kindId": 15
-  },
-  {
-    "id": 45,
-    "value": 3,
-    "kind": "map",
-    "name": "Hautes-terres",
-    "description": "",
-    "kindId": 15
-  },
-  {
-    "id": 46,
-    "value": 1,
-    "kind": "map",
-    "name": "Crocs Brumeux",
-    "description": "",
-    "kindId": 16
-  },
-  {
-    "id": 47,
-    "value": 2,
-    "kind": "map",
-    "name": "Crocs Brumeux",
-    "description": "",
-    "kindId": 16
-  },
-  {
-    "id": 48,
-    "value": 3,
-    "kind": "map",
-    "name": "Crocs Brumeux",
-    "description": "",
-    "kindId": 16
-  },
-  {
-    "id": 55,
-    "value": 1,
-    "kind": "map",
-    "name": "Vallée Férégal",
-    "description": "",
-    "kindId": 19
-  },
-  {
-    "id": 56,
-    "value": 2,
-    "kind": "map",
-    "name": "Vallée Férégal",
-    "description": "",
-    "kindId": 19
-  },
-  {
-    "id": 57,
-    "value": 3,
-    "kind": "map",
-    "name": "Vallée Férégal",
-    "description": "",
-    "kindId": 19
-  },
-  {
-    "id": 58,
-    "value": 1,
-    "kind": "map",
-    "name": "Désert du Couchant",
-    "description": "",
-    "kindId": 20
-  },
-  {
-    "id": 59,
-    "value": 2,
-    "kind": "map",
-    "name": "Désert du Couchant",
-    "description": "",
-    "kindId": 20
-  },
-  {
-    "id": 60,
-    "value": 3,
-    "kind": "map",
-    "name": "Désert du Couchant",
-    "description": "",
-    "kindId": 20
-  },
-  {
-    "id": 61,
-    "value": 1,
-    "kind": "map",
-    "name": "Jungle Céleste",
-    "description": "",
-    "kindId": 21
-  },
-  {
-    "id": 62,
-    "value": 2,
-    "kind": "map",
-    "name": "Jungle Céleste",
-    "description": "",
-    "kindId": 21
-  },
-  {
-    "id": 63,
-    "value": 3,
-    "kind": "map",
-    "name": "Jungle Céleste",
-    "description": "",
-    "kindId": 21
-  },
-  {
-    "id": 64,
-    "value": 1,
-    "kind": "map",
-    "name": "Forêt Ensorcelée",
-    "description": "",
-    "kindId": 22
-  },
-  {
-    "id": 65,
-    "value": 2,
-    "kind": "map",
-    "name": "Forêt Ensorcelée",
-    "description": "",
-    "kindId": 22
-  },
-  {
-    "id": 66,
-    "value": 3,
-    "kind": "map",
-    "name": "Forêt Ensorcelée",
-    "description": "",
-    "kindId": 22
-  },
-  {
-    "id": 67,
-    "value": 1,
-    "kind": "map",
-    "name": "Crète Diamantée",
-    "description": "",
-    "kindId": 23
-  },
-  {
-    "id": 68,
-    "value": 2,
-    "kind": "map",
-    "name": "Crète Diamantée",
-    "description": "",
-    "kindId": 23
-  },
-  {
-    "id": 69,
-    "value": 3,
-    "kind": "map",
-    "name": "Crète Diamantée",
-    "description": "",
-    "kindId": 23
-  },
-  {
-    "id": 70,
-    "value": 1,
-    "kind": "map",
-    "name": "Pic du Maëlstrom",
-    "description": "",
-    "kindId": 24
-  },
-  {
-    "id": 71,
-    "value": 2,
-    "kind": "map",
-    "name": "Pic du Maëlstrom",
-    "description": "",
-    "kindId": 24
-  },
-  {
-    "id": 72,
-    "value": 3,
-    "kind": "map",
-    "name": "Pic du Maëlstrom",
-    "description": "",
-    "kindId": 24
-  },
-  {
-    "id": 73,
-    "value": 1,
-    "kind": "map",
-    "name": "Vallée de la Mort",
-    "description": "",
-    "kindId": 25
-  },
-  {
-    "id": 74,
-    "value": 2,
-    "kind": "map",
-    "name": "Vallée de la Mort",
-    "description": "",
-    "kindId": 25
-  },
-  {
-    "id": 75,
-    "value": 3,
-    "kind": "map",
-    "name": "Vallée de la Mort",
-    "description": "",
-    "kindId": 25
-  },
-  {
-    "id": 76,
-    "value": 1,
-    "kind": "map",
-    "name": "Plaines Fleuries",
-    "description": "",
-    "kindId": 26
-  },
-  {
-    "id": 77,
-    "value": 2,
-    "kind": "map",
-    "name": "Plaines Fleuries",
-    "description": "",
-    "kindId": 26
-  },
-  {
-    "id": 78,
-    "value": 3,
-    "kind": "map",
-    "name": "Plaines Fleuries",
-    "description": "",
-    "kindId": 26
-  },
-  {
-    "id": 79,
-    "value": 1,
-    "kind": "map",
-    "name": "Falaise des Grands Vents",
-    "description": "",
-    "kindId": 27
-  },
-  {
-    "id": 80,
-    "value": 2,
-    "kind": "map",
-    "name": "Falaise des Grands Vents",
-    "description": "",
-    "kindId": 27
-  },
-  {
-    "id": 81,
-    "value": 3,
-    "kind": "map",
-    "name": "Falaise des Grands Vents",
-    "description": "",
-    "kindId": 27
-  },
-  {
-    "id": 82,
-    "value": 1,
-    "kind": "map",
-    "name": "Lagune Enchantée",
-    "description": "",
-    "kindId": 28
-  },
-  {
-    "id": 83,
-    "value": 2,
-    "kind": "map",
-    "name": "Lagune Enchantée",
-    "description": "",
-    "kindId": 28
-  },
-  {
-    "id": 84,
-    "value": 3,
-    "kind": "map",
-    "name": "Lagune Enchantée",
-    "description": "",
-    "kindId": 28
-  },
-  {
-    "id": 85,
-    "value": 1,
-    "kind": "map",
-    "name": "Côte de Hurlevent",
-    "description": "",
-    "kindId": 29
-  },
-  {
-    "id": 86,
-    "value": 2,
-    "kind": "map",
-    "name": "Côte de Hurlevent",
-    "description": "",
-    "kindId": 29
-  },
-  {
-    "id": 87,
-    "value": 3,
-    "kind": "map",
-    "name": "Côte de Hurlevent",
-    "description": "",
-    "kindId": 29
-  },
-  {
-    "id": 88,
-    "value": 1,
-    "kind": "map",
-    "name": "Jungle du Dieu Serpent",
-    "description": "",
-    "kindId": 30
-  },
-  {
-    "id": 89,
-    "value": 2,
-    "kind": "map",
-    "name": "Jungle du Dieu Serpent",
-    "description": "",
-    "kindId": 30
-  },
-  {
-    "id": 90,
-    "value": 3,
-    "kind": "map",
-    "name": "Jungle du Dieu Serpent",
-    "description": "",
-    "kindId": 30
-  },
-  {
-    "id": 94,
-    "value": 1,
-    "kind": "map",
-    "name": "Vallée de Vulcain",
-    "description": "",
-    "kindId": 32
-  },
-  {
-    "id": 95,
-    "value": 2,
-    "kind": "map",
-    "name": "Vallée de Vulcain",
-    "description": "",
-    "kindId": 32
-  },
-  {
-    "id": 96,
-    "value": 3,
-    "kind": "map",
-    "name": "Vallée de Vulcain",
-    "description": "",
-    "kindId": 32
-  },
-  {
-    "id": 97,
-    "value": 1,
-    "kind": "map",
-    "name": "Plaines du Levant",
-    "description": "",
-    "kindId": 33
-  },
-  {
-    "id": 98,
-    "value": 2,
-    "kind": "map",
-    "name": "Plaines du Levant",
-    "description": "",
-    "kindId": 33
-  },
-  {
-    "id": 99,
-    "value": 3,
-    "kind": "map",
-    "name": "Plaines du Levant",
-    "description": "",
-    "kindId": 33
-  },
-  {
-    "id": 106,
-    "value": 1,
-    "kind": "map",
-    "name": "Plaines d'Elos",
-    "description": "",
-    "kindId": 36
-  },
-  {
-    "id": 107,
-    "value": 2,
-    "kind": "map",
-    "name": "Plaines d'Elos",
-    "description": "",
-    "kindId": 36
-  },
-  {
-    "id": 108,
-    "value": 3,
-    "kind": "map",
-    "name": "Plaines d'Elos",
-    "description": "",
-    "kindId": 36
-  },
+  { "id": 1, "value": 1, "kind": "map", "name": "Aven", "description": "", "kindId": 1 },
+  { "id": 2, "value": 2, "kind": "map", "name": "Aven", "description": "", "kindId": 1 },
+  { "id": 3, "value": 3, "kind": "map", "name": "Aven", "description": "", "kindId": 1 },
+  { "id": 4, "value": 1, "kind": "map", "name": "Monts Calcaires", "description": "", "kindId": 2 },
+  { "id": 5, "value": 2, "kind": "map", "name": "Monts Calcaires", "description": "", "kindId": 2 },
+  { "id": 6, "value": 3, "kind": "map", "name": "Monts Calcaires", "description": "", "kindId": 2 },
+  { "id": 7, "value": 1, "kind": "map", "name": "Colline tranquille", "description": "", "kindId": 3 },
+  { "id": 8, "value": 2, "kind": "map", "name": "Colline tranquille", "description": "", "kindId": 3 },
+  { "id": 9, "value": 3, "kind": "map", "name": "Colline tranquille", "description": "", "kindId": 3 },
+  { "id": 10, "value": 1, "kind": "map", "name": "For\u00eat Arc-en-Ciel", "description": "", "kindId": 4 },
+  { "id": 11, "value": 2, "kind": "map", "name": "For\u00eat Arc-en-Ciel", "description": "", "kindId": 4 },
+  { "id": 12, "value": 3, "kind": "map", "name": "For\u00eat Arc-en-Ciel", "description": "", "kindId": 4 },
+  { "id": 13, "value": 1, "kind": "map", "name": "Monts Arides", "description": "", "kindId": 5 },
+  { "id": 14, "value": 2, "kind": "map", "name": "Monts Arides", "description": "", "kindId": 5 },
+  { "id": 15, "value": 3, "kind": "map", "name": "Monts Arides", "description": "", "kindId": 5 },
+  { "id": 16, "value": 1, "kind": "map", "name": "Baie B\u00e9louga", "description": "", "kindId": 6 },
+  { "id": 17, "value": 2, "kind": "map", "name": "Baie B\u00e9louga", "description": "", "kindId": 6 },
+  { "id": 18, "value": 3, "kind": "map", "name": "Baie B\u00e9louga", "description": "", "kindId": 6 },
+  { "id": 19, "value": 1, "kind": "map", "name": "Bourbes", "description": "", "kindId": 7 },
+  { "id": 20, "value": 2, "kind": "map", "name": "Bourbes", "description": "", "kindId": 7 },
+  { "id": 21, "value": 3, "kind": "map", "name": "Bourbes", "description": "", "kindId": 7 },
+  { "id": 22, "value": 1, "kind": "map", "name": "Vall\u00e9e des Rois", "description": "", "kindId": 8 },
+  { "id": 23, "value": 2, "kind": "map", "name": "Vall\u00e9e des Rois", "description": "", "kindId": 8 },
+  { "id": 24, "value": 3, "kind": "map", "name": "Vall\u00e9e des Rois", "description": "", "kindId": 8 },
+  { "id": 25, "value": 1, "kind": "map", "name": "Volcan Avila", "description": "", "kindId": 9 },
+  { "id": 26, "value": 2, "kind": "map", "name": "Volcan Avila", "description": "", "kindId": 9 },
+  { "id": 27, "value": 3, "kind": "map", "name": "Volcan Avila", "description": "", "kindId": 9 },
+  { "id": 28, "value": 1, "kind": "map", "name": "Plaines Dor\u00e9es", "description": "", "kindId": 10 },
+  { "id": 29, "value": 2, "kind": "map", "name": "Plaines Dor\u00e9es", "description": "", "kindId": 10 },
+  { "id": 30, "value": 3, "kind": "map", "name": "Plaines Dor\u00e9es", "description": "", "kindId": 10 },
+  { "id": 31, "value": 1, "kind": "map", "name": "Terres des Dunes \u00c9ternelles", "description": "", "kindId": 11 },
+  { "id": 32, "value": 2, "kind": "map", "name": "Terres des Dunes \u00c9ternelles", "description": "", "kindId": 11 },
+  { "id": 33, "value": 3, "kind": "map", "name": "Terres des Dunes \u00c9ternelles", "description": "", "kindId": 11 },
+  { "id": 34, "value": 1, "kind": "map", "name": "For\u00eat de Delphes", "description": "", "kindId": 12 },
+  { "id": 35, "value": 2, "kind": "map", "name": "For\u00eat de Delphes", "description": "", "kindId": 12 },
+  { "id": 36, "value": 3, "kind": "map", "name": "For\u00eat de Delphes", "description": "", "kindId": 12 },
+  { "id": 37, "value": 1, "kind": "map", "name": "Pic de Noireflammes", "description": "", "kindId": 13 },
+  { "id": 38, "value": 2, "kind": "map", "name": "Pic de Noireflammes", "description": "", "kindId": 13 },
+  { "id": 39, "value": 3, "kind": "map", "name": "Pic de Noireflammes", "description": "", "kindId": 13 },
+  { "id": 40, "value": 1, "kind": "map", "name": "Marais D\u00e9cr\u00e9pits", "description": "", "kindId": 14 },
+  { "id": 41, "value": 2, "kind": "map", "name": "Marais D\u00e9cr\u00e9pits", "description": "", "kindId": 14 },
+  { "id": 42, "value": 3, "kind": "map", "name": "Marais D\u00e9cr\u00e9pits", "description": "", "kindId": 14 },
+  { "id": 43, "value": 1, "kind": "map", "name": "Hautes-terres", "description": "", "kindId": 15 },
+  { "id": 44, "value": 2, "kind": "map", "name": "Hautes-terres", "description": "", "kindId": 15 },
+  { "id": 45, "value": 3, "kind": "map", "name": "Hautes-terres", "description": "", "kindId": 15 },
+  { "id": 46, "value": 1, "kind": "map", "name": "Crocs Brumeux", "description": "", "kindId": 16 },
+  { "id": 47, "value": 2, "kind": "map", "name": "Crocs Brumeux", "description": "", "kindId": 16 },
+  { "id": 48, "value": 3, "kind": "map", "name": "Crocs Brumeux", "description": "", "kindId": 16 },
+  { "id": 55, "value": 1, "kind": "map", "name": "Vall\u00e9e F\u00e9r\u00e9gal", "description": "", "kindId": 19 },
+  { "id": 56, "value": 2, "kind": "map", "name": "Vall\u00e9e F\u00e9r\u00e9gal", "description": "", "kindId": 19 },
+  { "id": 57, "value": 3, "kind": "map", "name": "Vall\u00e9e F\u00e9r\u00e9gal", "description": "", "kindId": 19 },
+  { "id": 58, "value": 1, "kind": "map", "name": "D\u00e9sert du Couchant", "description": "", "kindId": 20 },
+  { "id": 59, "value": 2, "kind": "map", "name": "D\u00e9sert du Couchant", "description": "", "kindId": 20 },
+  { "id": 60, "value": 3, "kind": "map", "name": "D\u00e9sert du Couchant", "description": "", "kindId": 20 },
+  { "id": 61, "value": 1, "kind": "map", "name": "Jungle C\u00e9leste", "description": "", "kindId": 21 },
+  { "id": 62, "value": 2, "kind": "map", "name": "Jungle C\u00e9leste", "description": "", "kindId": 21 },
+  { "id": 63, "value": 3, "kind": "map", "name": "Jungle C\u00e9leste", "description": "", "kindId": 21 },
+  { "id": 64, "value": 1, "kind": "map", "name": "For\u00eat Ensorcel\u00e9e", "description": "", "kindId": 22 },
+  { "id": 65, "value": 2, "kind": "map", "name": "For\u00eat Ensorcel\u00e9e", "description": "", "kindId": 22 },
+  { "id": 66, "value": 3, "kind": "map", "name": "For\u00eat Ensorcel\u00e9e", "description": "", "kindId": 22 },
+  { "id": 67, "value": 1, "kind": "map", "name": "Cr\u00e8te Diamant\u00e9e", "description": "", "kindId": 23 },
+  { "id": 68, "value": 2, "kind": "map", "name": "Cr\u00e8te Diamant\u00e9e", "description": "", "kindId": 23 },
+  { "id": 69, "value": 3, "kind": "map", "name": "Cr\u00e8te Diamant\u00e9e", "description": "", "kindId": 23 },
+  { "id": 70, "value": 1, "kind": "map", "name": "Pic du Ma\u00eblstrom", "description": "", "kindId": 24 },
+  { "id": 71, "value": 2, "kind": "map", "name": "Pic du Ma\u00eblstrom", "description": "", "kindId": 24 },
+  { "id": 72, "value": 3, "kind": "map", "name": "Pic du Ma\u00eblstrom", "description": "", "kindId": 24 },
+  { "id": 73, "value": 1, "kind": "map", "name": "Vall\u00e9e de la Mort", "description": "", "kindId": 25 },
+  { "id": 74, "value": 2, "kind": "map", "name": "Vall\u00e9e de la Mort", "description": "", "kindId": 25 },
+  { "id": 75, "value": 3, "kind": "map", "name": "Vall\u00e9e de la Mort", "description": "", "kindId": 25 },
+  { "id": 76, "value": 1, "kind": "map", "name": "Plaines Fleuries", "description": "", "kindId": 26 },
+  { "id": 77, "value": 2, "kind": "map", "name": "Plaines Fleuries", "description": "", "kindId": 26 },
+  { "id": 78, "value": 3, "kind": "map", "name": "Plaines Fleuries", "description": "", "kindId": 26 },
+  { "id": 79, "value": 1, "kind": "map", "name": "Falaise des Grands Vents", "description": "", "kindId": 27 },
+  { "id": 80, "value": 2, "kind": "map", "name": "Falaise des Grands Vents", "description": "", "kindId": 27 },
+  { "id": 81, "value": 3, "kind": "map", "name": "Falaise des Grands Vents", "description": "", "kindId": 27 },
+  { "id": 82, "value": 1, "kind": "map", "name": "Lagune Enchant\u00e9e", "description": "", "kindId": 28 },
+  { "id": 83, "value": 2, "kind": "map", "name": "Lagune Enchant\u00e9e", "description": "", "kindId": 28 },
+  { "id": 84, "value": 3, "kind": "map", "name": "Lagune Enchant\u00e9e", "description": "", "kindId": 28 },
+  { "id": 85, "value": 1, "kind": "map", "name": "C\u00f4te de Hurlevent", "description": "", "kindId": 29 },
+  { "id": 86, "value": 2, "kind": "map", "name": "C\u00f4te de Hurlevent", "description": "", "kindId": 29 },
+  { "id": 87, "value": 3, "kind": "map", "name": "C\u00f4te de Hurlevent", "description": "", "kindId": 29 },
+  { "id": 88, "value": 1, "kind": "map", "name": "Jungle du Dieu Serpent", "description": "", "kindId": 30 },
+  { "id": 89, "value": 2, "kind": "map", "name": "Jungle du Dieu Serpent", "description": "", "kindId": 30 },
+  { "id": 90, "value": 3, "kind": "map", "name": "Jungle du Dieu Serpent", "description": "", "kindId": 30 },
+  { "id": 94, "value": 1, "kind": "map", "name": "Vall\u00e9e de Vulcain", "description": "", "kindId": 32 },
+  { "id": 95, "value": 2, "kind": "map", "name": "Vall\u00e9e de Vulcain", "description": "", "kindId": 32 },
+  { "id": 96, "value": 3, "kind": "map", "name": "Vall\u00e9e de Vulcain", "description": "", "kindId": 32 },
+  { "id": 97, "value": 1, "kind": "map", "name": "Plaines du Levant", "description": "", "kindId": 33 },
+  { "id": 98, "value": 2, "kind": "map", "name": "Plaines du Levant", "description": "", "kindId": 33 },
+  { "id": 99, "value": 3, "kind": "map", "name": "Plaines du Levant", "description": "", "kindId": 33 },
+  { "id": 106, "value": 1, "kind": "map", "name": "Plaines d'Elos", "description": "", "kindId": 36 },
+  { "id": 107, "value": 2, "kind": "map", "name": "Plaines d'Elos", "description": "", "kindId": 36 },
+  { "id": 108, "value": 3, "kind": "map", "name": "Plaines d'Elos", "description": "", "kindId": 36 },
+  { "id": 175, "value": 1, "kind": "map", "name": "Steppes d'Arist\u00e8re", "description": "", "kindId": 59 },
+  { "id": 176, "value": 2, "kind": "map", "name": "Steppes d'Arist\u00e8re", "description": "", "kindId": 59 },
+  { "id": 177, "value": 3, "kind": "map", "name": "Steppes d'Arist\u00e8re", "description": "", "kindId": 59 },
   {
     "id": 1001,
     "value": 3,
     "kind": "boss",
-    "name": "Baram - La Chimère Volcanique",
-    "description": "Baram est une Chimère Volcanique invoquée par Ochak, cet esprit a été créé à l'époque de la Grande Guerre.",
+    "name": "Baram - La Chim\u00e8re Volcanique",
+    "description": "Baram est une Chim\u00e8re Volcanique invoqu\u00e9e par Ochak, cet esprit a \u00e9t\u00e9 cr\u00e9\u00e9 \u00e0 l'\u00e9poque de la Grande Guerre.",
     "kindId": "m072"
   },
   {
@@ -756,7 +108,7 @@
     "value": 3,
     "kind": "boss",
     "name": "Lassar - Chevalier Lieutenant",
-    "description": "Chevalier de la Curie Métérole. Il est lieutenant d'une unité d'expédition, très gentil, un peu naïf, mais ouvert d'esprit. Il aime donner un coup de main.",
+    "description": "Chevalier de la Curie M\u00e9t\u00e9role. Il est lieutenant d'une unit\u00e9 d'exp\u00e9dition, tr\u00e8s gentil, un peu na\u00eff, mais ouvert d'esprit. Il aime donner un coup de main.",
     "kindId": "m311"
   },
   {
@@ -764,7 +116,7 @@
     "value": 3,
     "kind": "boss",
     "name": "Marma - Templier Capitaine",
-    "description": "Un Templier de la Curie Métérole, il est chef d'une unité défensive et c'est quelqu'un de gentil et social. Il (essaye) de faire les choses sérieusement.",
+    "description": "Un Templier de la Curie M\u00e9t\u00e9role, il est chef d'une unit\u00e9 d\u00e9fensive et c'est quelqu'un de gentil et social. Il (essaye) de faire les choses s\u00e9rieusement.",
     "kindId": "m156"
   },
   {
@@ -772,7 +124,7 @@
     "value": 3,
     "kind": "boss",
     "name": "Voldre",
-    "description": "Zumi à la peau bleue et aux yeux orangé perçant, fier et très social. Il aide les gens ambitieux.",
+    "description": "Zumi \u00e0 la peau bleue et aux yeux orang\u00e9 per\u00e7ant, fier et tr\u00e8s social. Il aide les gens ambitieux.",
     "kindId": "voldre"
   },
   {
@@ -780,15 +132,15 @@
     "value": 3,
     "kind": "boss",
     "name": "Nemelio",
-    "description": "Un Ezelin Templier déchu de la Curie Métérole, reconvertit en bandit.",
+    "description": "Un Ezelin Templier d\u00e9chu de la Curie M\u00e9t\u00e9role, reconvertit en bandit.",
     "kindId": "m317"
   },
   {
     "id": 1006,
     "value": 3,
     "kind": "boss",
-    "name": "Douvone - Zumi Mécanique",
-    "description": "Zumi mécanique en acier renforcé gris/noir, créé il y a plusieurs siècles par le plus grand ingénieur au monde : Basile.",
+    "name": "Douvone - Zumi M\u00e9canique",
+    "description": "Zumi m\u00e9canique en acier renforc\u00e9 gris/noir, cr\u00e9\u00e9 il y a plusieurs si\u00e8cles par le plus grand ing\u00e9nieur au monde : Basile.",
     "kindId": "m048b"
   },
   {
@@ -796,15 +148,15 @@
     "value": 3,
     "kind": "boss",
     "name": "Oberon - Le Massacreur Sadique",
-    "description": "Un tyrannosaure ancestral doté d'un corps conçu pour la guerre et les meurtres. Sa cruauté n'égale que sa force.",
+    "description": "Un tyrannosaure ancestral dot\u00e9 d'un corps con\u00e7u pour la guerre et les meurtres. Sa cruaut\u00e9 n'\u00e9gale que sa force.",
     "kindId": "m081"
   },
   {
     "id": 1008,
     "value": 3,
     "kind": "boss",
-    "name": "Ursina - Samouraï Commandant",
-    "description": "Femme Ursun à la peau brune, grande Samouraï robuste et très courageuse et droite.",
+    "name": "Ursina - Samoura\u00ef Commandant",
+    "description": "Femme Ursun \u00e0 la peau brune, grande Samoura\u00ef robuste et tr\u00e8s courageuse et droite.",
     "kindId": "m056"
   },
   {
@@ -812,7 +164,7 @@
     "value": 3,
     "kind": "boss",
     "name": "Etincellia",
-    "description": "Une Ezelin de génie, déterminée et ambitieuse, elle a un sale caractère et un sacré talent.",
+    "description": "Une Ezelin de g\u00e9nie, d\u00e9termin\u00e9e et ambitieuse, elle a un sale caract\u00e8re et un sacr\u00e9 talent.",
     "kindId": "etincellia"
   },
   {
@@ -820,23 +172,23 @@
     "value": 3,
     "kind": "boss",
     "name": "Kasar - Braconnier",
-    "description": "Braconnier quarantenaire barbu avec des cicatrices, à la recherche de bêtes rares et onéreuses.",
+    "description": "Braconnier quarantenaire barbu avec des cicatrices, \u00e0 la recherche de b\u00eates rares et on\u00e9reuses.",
     "kindId": "m308"
   },
   {
     "id": 1011,
     "value": 3,
     "kind": "boss",
-    "name": "Frédéric - Officier Heldentod",
-    "description": "Guerrier grand et robuste se battant pour l'empire Heldentod, décoré par le grand maréchal de l'Empire, vicieux.",
+    "name": "Fr\u00e9d\u00e9ric - Officier Heldentod",
+    "description": "Guerrier grand et robuste se battant pour l'empire Heldentod, d\u00e9cor\u00e9 par le grand mar\u00e9chal de l'Empire, vicieux.",
     "kindId": "m205"
   },
   {
     "id": 1012,
     "value": 3,
     "kind": "boss",
-    "name": "McDougal - Héraut Heldentod",
-    "description": "Ogre officier de l'Empire Heldentod dont les fonctions étaient la transmission des messages et les proclamations solennelles. Il est connu pour son soutien ravageur.",
+    "name": "McDougal - H\u00e9raut Heldentod",
+    "description": "Ogre officier de l'Empire Heldentod dont les fonctions \u00e9taient la transmission des messages et les proclamations solennelles. Il est connu pour son soutien ravageur.",
     "kindId": "m060"
   },
   {
@@ -844,7 +196,7 @@
     "value": 3,
     "kind": "boss",
     "name": "Rubis",
-    "description": "Héritière de l'empire Heldentod, connue pour sa détermination et sa prestance. Elle est très stratège mais froide et parfois sans pitié.",
+    "description": "H\u00e9riti\u00e8re de l'empire Heldentod, connue pour sa d\u00e9termination et sa prestance. Elle est tr\u00e8s strat\u00e8ge mais froide et parfois sans piti\u00e9.",
     "kindId": "m312b"
   },
   {
@@ -852,7 +204,7 @@
     "value": 3,
     "kind": "boss",
     "name": "Adonis",
-    "description": "Anuran juge connu pour être un tueur en série, sa cause est encore mystérieuse. Il peut cependant se montrer très social.",
+    "description": "Anuran juge connu pour \u00eatre un tueur en s\u00e9rie, sa cause est encore myst\u00e9rieuse. Il peut cependant se montrer tr\u00e8s social.",
     "kindId": "m315"
   },
   {
@@ -860,7 +212,7 @@
     "value": 3,
     "kind": "boss",
     "name": "Ecorce Terrestre - Pionnier de Gaia",
-    "description": "Une tortue verte antique montée d'un arbre gigantesque. Elle est redoutable et très résistante à toute sorte d'attaques.",
+    "description": "Une tortue verte antique mont\u00e9e d'un arbre gigantesque. Elle est redoutable et tr\u00e8s r\u00e9sistante \u00e0 toute sorte d'attaques.",
     "kindId": "m077"
   },
   {
@@ -868,7 +220,7 @@
     "value": 3,
     "kind": "boss",
     "name": "Rumbledore",
-    "description": "Très grand magicien vivant aux bourbes, aussi doué que les plus Grands Sages d'Aven. Sa curiosité et son envie de connaissances est sans limite.",
+    "description": "Tr\u00e8s grand magicien vivant aux bourbes, aussi dou\u00e9 que les plus Grands Sages d'Aven. Sa curiosit\u00e9 et son envie de connaissances est sans limite.",
     "kindId": "m118"
   },
   {
@@ -876,15 +228,15 @@
     "value": 3,
     "kind": "boss",
     "name": "Mandragore - Graine de l'Yggdrasil",
-    "description": "Créature racine géante au bulbe marron et aux fleurs violettes. Une créature ancestrale du passé.",
+    "description": "Cr\u00e9ature racine g\u00e9ante au bulbe marron et aux fleurs violettes. Une cr\u00e9ature ancestrale du pass\u00e9.",
     "kindId": "m032"
   },
   {
     "id": 1018,
     "value": 3,
     "kind": "boss",
-    "name": "Ver Cuirassé - Jimmy",
-    "description": "Un Ver Alpha vivant dans une grotte, leader des insectes et territorial, à une carapace empoisonnée verdâtre.",
+    "name": "Ver Cuirass\u00e9 - Jimmy",
+    "description": "Un Ver Alpha vivant dans une grotte, leader des insectes et territorial, \u00e0 une carapace empoisonn\u00e9e verd\u00e2tre.",
     "kindId": "m102"
   },
   {
@@ -892,7 +244,7 @@
     "value": 3,
     "kind": "boss",
     "name": "Draigos - Drakai aux bouquins",
-    "description": "Draigos, lâche tacticien hors pair et érudit qui ne se laisse pas marcher dessus.",
+    "description": "Draigos, l\u00e2che tacticien hors pair et \u00e9rudit qui ne se laisse pas marcher dessus.",
     "kindId": "m015"
   },
   {
@@ -900,23 +252,23 @@
     "value": 3,
     "kind": "boss",
     "name": "Tank Ursun",
-    "description": "Grand ursun noir capable d'encaisser de nombreux coups, il fait parti des hauts placés des Ursuns Belliqueux.",
+    "description": "Grand ursun noir capable d'encaisser de nombreux coups, il fait parti des hauts plac\u00e9s des Ursuns Belliqueux.",
     "kindId": "m052"
   },
   {
     "id": 1021,
     "value": 3,
     "kind": "boss",
-    "name": "Lucius - Roi Déchu",
-    "description": "Ezelin aux cheveux argentés et aux yeux bleux. Roi ayant vécu il y a plus 300 ans, expert en magie noire et occulte : ses nouveaux objectifs sont ultra ambitieux.",
+    "name": "Lucius - Roi D\u00e9chu",
+    "description": "Ezelin aux cheveux argent\u00e9s et aux yeux bleux. Roi ayant v\u00e9cu il y a plus 300 ans, expert en magie noire et occulte : ses nouveaux objectifs sont ultra ambitieux.",
     "kindId": "m347"
   },
   {
     "id": 1022,
     "value": 3,
     "kind": "boss",
-    "name": "Volesang - Héraut de Guerre",
-    "description": "Grand taureau ancestral à carapace de roc rougeâtre. Des crystaux violets parsèment son corps. Ces crystaux amènent la douleur.",
+    "name": "Volesang - H\u00e9raut de Guerre",
+    "description": "Grand taureau ancestral \u00e0 carapace de roc rouge\u00e2tre. Des crystaux violets pars\u00e8ment son corps. Ces crystaux am\u00e8nent la douleur.",
     "kindId": "m197"
   },
   {
@@ -924,15 +276,15 @@
     "value": 3,
     "kind": "boss",
     "name": "Gaazor - Ogre Chef Shaman",
-    "description": "Gaazor est un ogre à la peau noire bleuté, recouvert d'une grande cape. Il a finit en prison pour vente d'esclaves à l'Empire Heldentod, mais réussira peut-être à sortir...",
+    "description": "Gaazor est un ogre \u00e0 la peau noire bleut\u00e9, recouvert d'une grande cape. Il a finit en prison pour vente d'esclaves \u00e0 l'Empire Heldentod, mais r\u00e9ussira peut-\u00eatre \u00e0 sortir...",
     "kindId": "m228"
   },
   {
     "id": 1024,
     "value": 3,
     "kind": "boss",
-    "name": "Zéphyr - Sage Cardinal",
-    "description": "Grand sage de la Curie Métérole : Commandant (U Def) et Cardinal. Mec pas très carré mais sympa.",
+    "name": "Z\u00e9phyr - Sage Cardinal",
+    "description": "Grand sage de la Curie M\u00e9t\u00e9role : Commandant (U Def) et Cardinal. Mec pas tr\u00e8s carr\u00e9 mais sympa.",
     "kindId": "m249"
   },
   {
@@ -940,7 +292,7 @@
     "value": 3,
     "kind": "boss",
     "name": "Dragon Terrestre",
-    "description": "Grand dragon terrestre gris brun à la peau écailleuse et rocheuse, réveillé suite à une éclipse, il possède de petites ailes.",
+    "description": "Grand dragon terrestre gris brun \u00e0 la peau \u00e9cailleuse et rocheuse, r\u00e9veill\u00e9 suite \u00e0 une \u00e9clipse, il poss\u00e8de de petites ailes.",
     "kindId": "m021"
   },
   {
@@ -948,7 +300,7 @@
     "value": 3,
     "kind": "boss",
     "name": "Dragon Fourrure Mythique",
-    "description": "Un dragon fourrure qui sommeillait près de l'Empire Dulong à Maëlstrom, c'est une version mythique de ses semblables d'Elos",
+    "description": "Un dragon fourrure qui sommeillait pr\u00e8s de l'Empire Dulong \u00e0 Ma\u00eblstrom, c'est une version mythique de ses semblables d'Elos",
     "kindId": "m369"
   },
   {
@@ -956,7 +308,7 @@
     "value": 3,
     "kind": "boss",
     "name": "Kibo",
-    "description": "Double maléfique (Doppelgänger) de Kibo. Tout aussi costaud et résistant, mais pas gentil !",
+    "description": "Double mal\u00e9fique (Doppelg\u00e4nger) de Kibo. Tout aussi costaud et r\u00e9sistant, mais pas gentil !",
     "kindId": "kibo"
   },
   {
@@ -964,15 +316,15 @@
     "value": 3,
     "kind": "boss",
     "name": "Invidia - Yandere",
-    "description": "Lieutenant d'unité d'expédition pour la Curie. Yandere et follement amoureuse de Lassar.",
+    "description": "Lieutenant d'unit\u00e9 d'exp\u00e9dition pour la Curie. Yandere et follement amoureuse de Lassar.",
     "kindId": "m128b"
   },
   {
     "id": 1029,
     "value": 3,
     "kind": "boss",
-    "name": "Champignoïde Mutant Crystal",
-    "description": "Un grand champignoïde surplombé de crystaux bleu violacé, créé par des expériences.",
+    "name": "Champigno\u00efde Mutant Crystal",
+    "description": "Un grand champigno\u00efde surplomb\u00e9 de crystaux bleu violac\u00e9, cr\u00e9\u00e9 par des exp\u00e9riences.",
     "kindId": "m087b"
   },
   {
@@ -980,7 +332,7 @@
     "value": 3,
     "kind": "boss",
     "name": "Ochak - Primat de la Chelona",
-    "description": "Torturran riche qui est Primat (Cardinal) de la Chelona, il a travaillé à l'Ordre des Chevaliers de la rose, il est capable de desceller.",
+    "description": "Torturran riche qui est Primat (Cardinal) de la Chelona, il a travaill\u00e9 \u00e0 l'Ordre des Chevaliers de la rose, il est capable de desceller.",
     "kindId": "m042b"
   },
   {
@@ -988,15 +340,23 @@
     "value": 3,
     "kind": "boss",
     "name": "Gimu - l'Oeil du Cyclone",
-    "description": "Mante cyclope surchargée en magie et capable d'invoquer une tempête autour de lui. Bête destructrice.",
+    "description": "Mante cyclope surcharg\u00e9e en magie et capable d'invoquer une temp\u00eate autour de lui. B\u00eate destructrice.",
     "kindId": "m215"
+  },
+  {
+    "id": 1032,
+    "value": 3,
+    "kind": "boss",
+    "name": "Botassius - Gardien de Lumière",
+    "description": "Grand g\u00e9n\u00e9ral de division d\u00e9fensive de la Curie. On raconte qu'il n'est jamais tomb\u00e9 lors d'un combat. Sa dévotion et son courage l'immunise contre bien des altérations.",
+    "kindId": "m473b"
   },
   {
     "id": 1201,
     "value": 1,
     "kind": "composant",
     "name": "Crystal de Lazurite",
-    "description": "Un crystal utile pour fabriquer certaines armures. Très présent au Mont Calcaire.",
+    "description": "Un crystal utile pour fabriquer certaines armures. Tr\u00e8s pr\u00e9sent au Mont Calcaire.",
     "kindId": "I00208"
   },
   {
@@ -1004,7 +364,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Acier Volcanique",
-    "description": "Ce minerai très dur est difficile à traiter à cause de son incroyable résistance à la chaleur...",
+    "description": "Ce minerai tr\u00e8s dur est difficile \u00e0 traiter \u00e0 cause de son incroyable r\u00e9sistance \u00e0 la chaleur...",
     "kindId": "I00209"
   },
   {
@@ -1012,7 +372,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Acier d'obsidienne",
-    "description": "Un acier ultra résistant, les Tuskars sont les experts quand il s'agit de les remanier.",
+    "description": "Un acier ultra r\u00e9sistant, les Tuskars sont les experts quand il s'agit de les remanier.",
     "kindId": "I00213"
   },
   {
@@ -1020,15 +380,15 @@
     "value": 1,
     "kind": "composant",
     "name": "Crystal d'Asbi",
-    "description": "Ce minerai est issu du continent des Zumis, c'est une source d'énergie quasi inépuisable qui alimente la plupart des technologies.",
+    "description": "Ce minerai est issu du continent des Zumis, c'est une source d'\u00e9nergie quasi in\u00e9puisable qui alimente la plupart des technologies.",
     "kindId": "I00401"
   },
   {
     "id": 1205,
     "value": 2,
     "kind": "composant",
-    "name": "Crystal d'Asbi raffiné",
-    "description": "Les crystaux raffinées ont une puissance bien supérieure aux crystaux normaux, ils peuvent se recharger de manière autonome, une vraie batterie.",
+    "name": "Crystal d'Asbi raffin\u00e9",
+    "description": "Les crystaux raffin\u00e9es ont une puissance bien sup\u00e9rieure aux crystaux normaux, ils peuvent se recharger de mani\u00e8re autonome, une vraie batterie.",
     "kindId": "I00401"
   },
   {
@@ -1036,7 +396,7 @@
     "value": 2,
     "kind": "composant",
     "name": "Minerai Arc-en-Ciel",
-    "description": "Ce minerai exclusif au Pic de Noireflamme renferme une résistance hors norme, il est très précieux.",
+    "description": "Ce minerai exclusif au Pic de Noireflamme renferme une r\u00e9sistance hors norme, il est tr\u00e8s pr\u00e9cieux.",
     "kindId": "I00224"
   },
   {
@@ -1044,7 +404,7 @@
     "value": 2,
     "kind": "composant",
     "name": "Minerai de Stella",
-    "description": "L'Empire Heldentod a le monopole dessus. Ce minerai est extrêmement coupant, même de bonnes armures ne sont que du beurre face à lui.",
+    "description": "L'Empire Heldentod a le monopole dessus. Ce minerai est extr\u00eamement coupant, m\u00eame de bonnes armures ne sont que du beurre face \u00e0 lui.",
     "kindId": "I00234"
   },
   {
@@ -1052,7 +412,7 @@
     "value": 2,
     "kind": "composant",
     "name": "Quartz d'Automne",
-    "description": "Ce Quartz est issu de sources chaudes riches en minéraux et en souffre, la magie autour de lui s'intensifie.",
+    "description": "Ce Quartz est issu de sources chaudes riches en min\u00e9raux et en souffre, la magie autour de lui s'intensifie.",
     "kindId": "I00204"
   },
   {
@@ -1060,23 +420,23 @@
     "value": 2,
     "kind": "composant",
     "name": "Fourrure Polaire",
-    "description": "Cette fourrure n'a d'égale à sa douceur que sa légerté et sa résistance. Très utile pour fabriquer des armures.",
+    "description": "Cette fourrure n'a d'\u00e9gale \u00e0 sa douceur que sa l\u00e9gert\u00e9 et sa r\u00e9sistance. Tr\u00e8s utile pour fabriquer des armures.",
     "kindId": "I00241"
   },
   {
     "id": 1210,
     "value": 1,
     "kind": "composant",
-    "name": "Germe de Champignoïde",
-    "description": "Des petits germes de champignoïdes, utile pour certaines potions",
-    "kindId": "I00012"
+    "name": "Germe de Champigno\u00efde",
+    "description": "Des petits germes de champigno\u00efdes, utile pour certaines potions.",
+    "kindId": "I00170"
   },
   {
     "id": 1211,
     "value": 1,
     "kind": "composant",
     "name": "Epine de Cactus",
-    "description": "Une épine de monstres cactus, elle peut servir pour fabriquer des potions.",
+    "description": "Une \u00e9pine de monstres cactus, elle peut servir pour fabriquer des potions.",
     "kindId": "I00290"
   },
   {
@@ -1092,7 +452,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Fleur Lunaire",
-    "description": "Ces fleurs émettent une lueur jaunes, leurs pétales blancs sont magnifiques sous le clair de lune.",
+    "description": "Ces fleurs \u00e9mettent une lueur jaunes, leurs p\u00e9tales blancs sont magnifiques sous le clair de lune.",
     "kindId": "I00153"
   },
   {
@@ -1100,7 +460,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Vigne Pourpre",
-    "description": "Si vous ouvrez cette vigne, un fluide vert visqueux s'en échappe.",
+    "description": "Si vous ouvrez cette vigne, un fluide vert visqueux s'en \u00e9chappe.",
     "kindId": "I00185"
   },
   {
@@ -1108,7 +468,7 @@
     "value": 2,
     "kind": "composant",
     "name": "Jus de larve de reine insecte",
-    "description": "Ce jus a été récupéré dans un oeuf d'insecte un peu particulier, utile pour des potions ...?",
+    "description": "Ce jus a \u00e9t\u00e9 r\u00e9cup\u00e9r\u00e9 dans un oeuf d'insecte un peu particulier, utile pour des potions ...?",
     "kindId": "I00042"
   },
   {
@@ -1124,7 +484,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Potion d'encaissement",
-    "description": "Permet de mieux résister aux coups des ennemis",
+    "description": "Permet de mieux r\u00e9sister aux coups des ennemis",
     "kindId": "I00048"
   },
   {
@@ -1132,7 +492,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Potion de concentration",
-    "description": "Permet d'avoir un esprit qui résiste mieux",
+    "description": "Permet d'avoir un esprit qui r\u00e9siste mieux",
     "kindId": "I00051"
   },
   {
@@ -1140,7 +500,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Potion de puissance",
-    "description": "Améliore les capacités physiques de celui qui la boit.",
+    "description": "Am\u00e9liore les capacit\u00e9s physiques de celui qui la boit.",
     "kindId": "I00046"
   },
   {
@@ -1148,7 +508,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Potion de confusion",
-    "description": "Réduit la réussite de celui qui est touché.",
+    "description": "R\u00e9duit la r\u00e9ussite de celui qui est touch\u00e9.",
     "kindId": "i00718"
   },
   {
@@ -1156,7 +516,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Potion Paillettes",
-    "description": "Cette potion magnifique a une seule propriété : elle permet de générer des paillettes autour de soi par magie !",
+    "description": "Cette potion magnifique a une seule propri\u00e9t\u00e9 : elle permet de g\u00e9n\u00e9rer des paillettes autour de soi par magie !",
     "kindId": "I00058"
   },
   {
@@ -1164,23 +524,215 @@
     "value": 1,
     "kind": "composant",
     "name": "Concoction Anuran",
-    "description": "Cette concoction permet à celui qui la consomme de se transformer en Anuran !",
+    "description": "Cette concoction permet \u00e0 celui qui la consomme de se transformer en Anuran !",
     "kindId": "I00110"
   },
   {
+    "id": 1222,
+    "value": 1,
+    "kind": "composant",
+    "name": "Raisin profond",
+    "description": "Ce raisin pousse dans des zones soumis à la magie, il permet de produire les meilleurs vins.",
+    "kindId": "I00157"
+  },
+  {
+    "id": 1227,
+    "value": 1,
+    "kind": "composant",
+    "name": "Fruit Volta",
+    "description": "Ce fruit très acide absorbe et conserve l'énergie. Son jus a déjà gravement brûlé plusieurs personnes.",
+    "kindId": "I00158"
+  },
+  {
+    "id": 1228,
+    "value": 1,
+    "kind": "composant",
+    "name": "Fruit-flamme",
+    "description": "Ce fruit est très résistant à la chaleur. Il pousse dans les forêts sinistrées par les incendies.",
+    "kindId": "I00156"
+  },
+  {
+    "id": 1229,
+    "value": 1,
+    "kind": "composant",
+    "name": "Germe de Champigno\u00efde de Crystal",
+    "description": "Ces germes sont issus d'un champignoïde bien particulier, il permet de concocter de rares potions.",
+    "kindId": "I00172"
+  },
+  {
+    "id": 1229,
+    "value": 2,
+    "kind": "composant",
+    "name": "Germe de Champigno\u00efde de Crystal",
+    "description": "Ces germes sont issus d'un champignoïde bien particulier, il permet de concocter de rares potions.",
+    "kindId": "I00172"
+  },
+  {
+    "id": 1235,
+    "value": 1,
+    "kind": "composant",
+    "name": "Herbe d'eau",
+    "description": "Cette herbe stocke beaucoup d'eau dans ses racines et fleurit dans les marais.",
+    "kindId": "I00177"
+  },
+  {
+    "id": 1236,
+    "value": 2,
+    "kind": "composant",
+    "name": "Herbe-miracle",
+    "description": "Découverte par de vieux sages, cette herbe vivace peut géurir beaucoup de blessures.",
+    "kindId": "I00179"
+  },
+  {
+    "id": 1237,
+    "value": 1,
+    "kind": "composant",
+    "name": "Herbe Céleste",
+    "description": "Son iridescence crée un faible halo au soleil. Les poètes ont appelé sa couleur Paradisienne.",
+    "kindId": "I00178"
+  },
+  {
+    "id": 1238,
+    "value": 2,
+    "kind": "composant",
+    "name": "Potion de Soin Amélioré",
+    "description": "Utile pour se soigner en cas d'extrême urgence.",
+    "kindId": "I00044"
+  },
+  {
+    "id": 1239,
+    "value": 1,
+    "kind": "composant",
+    "name": "Fruit Âmambre",
+    "description": "Ce fruti à la chair tendre à une couleur ambrée, très sucré. On raconte qu'il à le goût d'un mélange entre des myrtilles et des poires.",
+    "kindId": "I00166"
+  },
+  {
+    "id": 1240,
+    "value": 1,
+    "kind": "composant",
+    "name": "Epine ensanglantée",
+    "description": "Cette épine à la couleur du sang séché, on raconte qu'elle attaque les voyageurs la nuit.",
+    "kindId": "I00185"
+  },
+  {
+    "id": 1245,
+    "value": 1,
+    "kind": "composant",
+    "name": "Coton Nuage",
+    "description": "Ce coton est très commun et vraiment tout doux.",
+    "kindId": "I00199"
+  },
+  {
+    "id": 1246,
+    "value": 1,
+    "kind": "composant",
+    "name": "Coton de Neige",
+    "description": "Au moindre souffe, ce coton s'envole en dansant comme des flocons de neige, tient chaud.",
+    "kindId": "I00201"
+  },
+  {
+    "id": 1247,
+    "value": 1,
+    "kind": "composant",
+    "name": "Coton Cuivré",
+    "description": "Ce coton infusé de minerai pousse dans les sols riches en minéraux. Bien traité, il fait un tisu résistant.",
+    "kindId": "I00200"
+  },
+  {
+    "id": 1248,
+    "value": 1,
+    "kind": "composant",
+    "name": "Soie d'Or",
+    "description": "Soie spéciale tissée par un rare ver à soie, elle est très solide.",
+    "kindId": "I00202"
+  },
+  {
+    "id": 1249,
+    "value": 1,
+    "kind": "composant",
+    "name": "Coton Etoilé",
+    "description": "Ce coton fleurit dans les sols riches en quartz. Les petits cristaux dans ses fibres attirent l'oeil.",
+    "kindId": "I00205"
+  },
+  {
+    "id": 1250,
+    "value": 2,
+    "kind": "composant",
+    "name": "Coton Elyséen",
+    "description": "Son odeur rappelle l'air des grandes prairies et son toucher est semblable à celui d'une patte de chat.",
+    "kindId": "I00203"
+  },
+  {
     "id": 1251,
+    "value": 3,
+    "kind": "composant",
+    "name": "Coton Royal",
+    "description": "Ce coton est extrêmement rare, seules les meilleurs Ezelins sont capables de le manier.",
+    "kindId": "I00200b"
+  },
+  {
+    "id": 1255,
     "value": 1,
     "kind": "composant",
     "name": "Ecaille d'Ankylosaure",
-    "description": "Ces écailles sont très maléables et souples, elles agissent comme de la maille, utile pour forger.",
+    "description": "Ces \u00e9cailles sont tr\u00e8s mal\u00e9ables et souples, elles agissent comme de la maille, utile pour forger.",
     "kindId": "I00282"
+  },
+  {
+    "id": 1256,
+    "value": 1,
+    "kind": "composant",
+    "name": "Crystal liquide",
+    "description": "Un résidu liquide issu de crystaux, ce liquide a des propriétés bien particulière.",
+    "kindId": "I00033"
+  },
+  {
+    "id": 1257,
+    "value": 1,
+    "kind": "composant",
+    "name": "Roche sombre",
+    "description": "Cette roche provient de sombre caverne.",
+    "kindId": "I00206"
+  },
+  {
+    "id": 1258,
+    "value": 1,
+    "kind": "composant",
+    "name": "Peau de ver",
+    "description": "Cette peau difforme peut servir pour préparer quelques potions.",
+    "kindId": "I00296"
+  },
+  {
+    "id": 1259,
+    "value": 1,
+    "kind": "composant",
+    "name": "Peau de Smilodon",
+    "description": "Cette peau peut servir à créer des armures légères.",
+    "kindId": "I00242"
+  },
+  {
+    "id": 1260,
+    "value": 1,
+    "kind": "composant",
+    "name": "Peau de Smilodon",
+    "description": "Cette peau peut servir à créer des armures légères.",
+    "kindId": "I00242"
+  },
+  {
+    "id": 1261,
+    "value": 1,
+    "kind": "composant",
+    "name": "Peau de Tortue",
+    "description": "La peau de tortue est toute flasque.",
+    "kindId": "I00246"
   },
   {
     "id": 1281,
     "value": 1,
     "kind": "composant",
-    "name": "Poudre de Griffon Cendré",
-    "description": "Cette poudre est l'un des ingrédients les plus utilisées dans la coction de bombes !",
+    "name": "Poudre de Griffon Cendr\u00e9",
+    "description": "Cette poudre est l'un des ingr\u00e9dients les plus utilis\u00e9es dans la coction de bombes !",
     "kindId": "I00369"
   },
   {
@@ -1188,15 +740,31 @@
     "value": 1,
     "kind": "composant",
     "name": "Bombe Impacte",
-    "description": "Cette bombe inflige pas mal de dégâts à l'impacte, utile pour percer des armures.",
+    "description": "Cette bombe inflige pas mal de d\u00e9g\u00e2ts \u00e0 l'impacte, utile pour percer des armures.",
     "kindId": "I00385"
+  },
+  {
+    "id": 1283,
+    "value": 2,
+    "kind": "composant",
+    "name": "Poudre de Feu-follet",
+    "description": "Cette poudre peut servir pour des potions, elle est capable de briser des illusions.",
+    "kindId": "i00650"
+  },
+  {
+    "id": 1283,
+    "value": 2,
+    "kind": "composant",
+    "name": "Roche Ténèbreuse",
+    "description": "Cette roche provient des plus obscures et ténèbreuses grottes.",
+    "kindId": "i01062"
   },
   {
     "id": 1501,
     "value": 3,
     "kind": "anecdote",
     "name": "Cosmos le Remonteur de Cascade",
-    "description": "Cosmos a réussi l'exploit : remonter une cascade tout en étant inconscient ! Un pouvoir mystique entoure ce Torturran...",
+    "description": "Cosmos a r\u00e9ussi l'exploit : remonter une cascade tout en \u00e9tant inconscient ! Un pouvoir mystique entoure ce Torturran...",
     "maps": [22],
     "enemies": [],
     "kindId": "items/i01579",
@@ -1207,7 +775,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Erida et les cheveux",
-    "description": "Erida s'est teinté les cheveux pour cacher ses origines nobles, mais on dirait qu'avec Malvis ça ne suffira pas...",
+    "description": "Erida s'est teint\u00e9 les cheveux pour cacher ses origines nobles, mais on dirait qu'avec Malvis \u00e7a ne suffira pas...",
     "maps": [10, 26],
     "enemies": [],
     "kindId": "items/I00499",
@@ -1218,7 +786,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "L'Alpaga Propulseur",
-    "description": "L'invocation Alpaga a une capacité secrète, la \"méga\" charge qui permet de propulser un ennemi à une dizaine de mètres. La Chelona s'en souvient...",
+    "description": "L'invocation Alpaga a une capacit\u00e9 secr\u00e8te, la \"m\u00e9ga\" charge qui permet de propulser un ennemi \u00e0 une dizaine de m\u00e8tres. La Chelona s'en souvient...",
     "maps": [6],
     "enemies": [8],
     "kindId": "skillIcon/VicAlpaga",
@@ -1229,7 +797,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Draigos et les explications",
-    "description": "Draigos a un mode AFK, il est comme déconnecté. Ainsi, tout ce que vous lui direz sera traduit par \"Bla bleu bli bla bleu blou !\"",
+    "description": "Draigos a un mode AFK, il est comme d\u00e9connect\u00e9. Ainsi, tout ce que vous lui direz sera traduit par \"Bla bleu bli bla bleu blou !\"",
     "maps": [6],
     "enemies": [85],
     "kindId": "skillIcon/E0231",
@@ -1240,7 +808,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Aradia et la Divination",
-    "description": "Aradia est capable de prédire l'avenir grâce à son petit stand. On raconte que ça parle souvent d'une fille avec un Alpaga vert...",
+    "description": "Aradia est capable de pr\u00e9dire l'avenir gr\u00e2ce \u00e0 son petit stand. On raconte que \u00e7a parle souvent d'une fille avec un Alpaga vert...",
     "maps": [10],
     "enemies": [45, 70],
     "kindId": "skillIcon/E0430",
@@ -1251,7 +819,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Nyx et la Foreuse",
-    "description": "Nyx dans une vie antérieure était experte en technologie, surtout en foureuse. Cela lui a permis de transpercer un Ursun !",
+    "description": "Nyx dans une vie ant\u00e9rieure \u00e9tait experte en technologie, surtout en foureuse. Cela lui a permis de transpercer un Ursun !",
     "maps": [8],
     "enemies": [89],
     "kindId": "items/k30003",
@@ -1262,7 +830,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Draigos et la bouffe",
-    "description": "Lorsque Draigos participe à un concours de bouffe, il a une technique ancestrale pour gagner, à vous de deviner ...",
+    "description": "Lorsque Draigos participe \u00e0 un concours de bouffe, il a une technique ancestrale pour gagner, \u00e0 vous de deviner ...",
     "maps": [6],
     "enemies": [],
     "kindId": "items/k10034",
@@ -1272,8 +840,8 @@
     "id": 1508,
     "value": 3,
     "kind": "anecdote",
-    "name": "Erida et Draigos ont eu quelques petits problèmes avec les pirates de la Baie Bélouga, heureusement l'alcool et la chance leur a souris !",
-    "description": "",
+    "name": "Les pirates de la Baie",
+    "description": "Erida et Draigos ont eu quelques petits probl\u00e8mes avec les pirates de la Baie B\u00e9louga, heureusement l'alcool et la chance leur a souris !",
     "maps": [6],
     "enemies": [17],
     "kindId": "monsters/m124",
@@ -1284,7 +852,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Eivor et Nemelio",
-    "description": "Eivor est un petit voyou Zumi qui a profité de ses camarades pour libérer un criminel : Nemelio, le salaud !",
+    "description": "Eivor est un petit voyou Zumi qui a profit\u00e9 de ses camarades pour lib\u00e9rer un criminel : Nemelio, le salaud !",
     "maps": [15],
     "enemies": [50],
     "kindId": "items/I00103",
@@ -1295,7 +863,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Cosmos et la bouffe",
-    "description": "Cosmos lorsqu'il participe à un concours de bouffe sait gérer, tellement qu'il continu même après avoir gagné, attention aux spectateurs...",
+    "description": "Cosmos lorsqu'il participe \u00e0 un concours de bouffe sait g\u00e9rer, tellement qu'il continu m\u00eame apr\u00e8s avoir gagn\u00e9, attention aux spectateurs...",
     "maps": [10],
     "enemies": [],
     "kindId": "skillIcon/E0989",
@@ -1306,7 +874,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Erida et ... Framboise ?",
-    "description": "Erida connaît bien Malvis, sa camarade de longue date et son fidèle Alpaga Vert Framboise ! Enfin je crois...",
+    "description": "Erida conna\u00eet bien Malvis, sa camarade de longue date et son fid\u00e8le Alpaga Vert Framboise ! Enfin je crois...",
     "maps": [15],
     "enemies": [],
     "kindId": "items/i00632",
@@ -1317,7 +885,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Nyx et les concerts",
-    "description": "Nyx l'Idole réalise de super prestation avec des réflexes de folies, que dire de plus que... Love love ! <3",
+    "description": "Nyx l'Idole r\u00e9alise de super prestation avec des r\u00e9flexes de folies, que dire de plus que... Love love ! <3",
     "maps": [10],
     "enemies": [],
     "kindId": "skillIcon/E0718",
@@ -1328,7 +896,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Cosmos et Kyle",
-    "description": "Kyle est le meilleur ami de Cosmos, ils se sont rencontrés à l'Académie Osrage, ce sont des amis buveurs !",
+    "description": "Kyle est le meilleur ami de Cosmos, ils se sont rencontr\u00e9s \u00e0 l'Acad\u00e9mie Osrage, ce sont des amis buveurs !",
     "maps": [14],
     "enemies": [],
     "kindId": "monsters/m066",
@@ -1339,7 +907,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Aradia et les concerts",
-    "description": "Quand Aradia participe à un concert, elle aime façonner les paroles à son image : \"Générale de l'armée démon, je suis là !\"",
+    "description": "Quand Aradia participe \u00e0 un concert, elle aime fa\u00e7onner les paroles \u00e0 son image : \"G\u00e9n\u00e9rale de l'arm\u00e9e d\u00e9mon, je suis l\u00e0 !\"",
     "maps": [10],
     "enemies": [],
     "kindId": "skillIcon/E1046",
@@ -1350,7 +918,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Malvis et Moymoy",
-    "description": "Moymoy est le super Zumi Androïd qu'ils ont récupérés au Continent du Sud-Ouest. Il a des facultés bien pratique, comme donner des leçons à Malvis !",
+    "description": "Moymoy est le super Zumi Andro\u00efd qu'ils ont r\u00e9cup\u00e9r\u00e9s au Continent du Sud-Ouest. Il a des facult\u00e9s bien pratique, comme donner des le\u00e7ons \u00e0 Malvis !",
     "maps": [20],
     "enemies": [54],
     "kindId": "monsters/m048b",
@@ -1361,8 +929,8 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Cosmos le Tuskar",
-    "description": "Lorsque Cosmos a rejoint le groupe, c'était un Tuskar ! En chair et en os ! Oui oui !",
-    "maps": [10],
+    "description": "Lorsque Cosmos a rejoint le groupe, c'\u00e9tait un Tuskar ! En chair et en os ! Oui oui !",
+    "maps": [10, 11],
     "enemies": [],
     "kindId": "monsters/m070",
     "group": 1
@@ -1372,7 +940,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Aradia la Magie Noire",
-    "description": "Aradia adore la magie noire ! Et sa nouvelle méga robe récupérée dans une ruine, c'est le luxe ! Mouahah !",
+    "description": "Aradia adore la magie noire ! Et sa nouvelle m\u00e9ga robe r\u00e9cup\u00e9r\u00e9e dans une ruine, c'est le luxe ! Mouahah !",
     "maps": [8],
     "enemies": [90],
     "kindId": "skillIcon/E0224",
@@ -1383,7 +951,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Nyx et les Bourbes",
-    "description": "Lorsque Nyx a découvert le syphon au centre des bourbes, elle n'a pas pu résister à la tentation de le toucher ! Grosse erreur...",
+    "description": "Lorsque Nyx a d\u00e9couvert le syphon au centre des bourbes, elle n'a pas pu r\u00e9sister \u00e0 la tentation de le toucher ! Grosse erreur...",
     "maps": [7],
     "enemies": [74],
     "kindId": "otherIcon/ac002",
@@ -1394,7 +962,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Aradia et les enfants",
-    "description": "Aradia a l'habitude de former son armée, son armée d'enfants démons ! Ensemble ils chassent pour conquérir les bonbons !",
+    "description": "Aradia a l'habitude de former son arm\u00e9e, son arm\u00e9e d'enfants d\u00e9mons ! Ensemble ils chassent pour conqu\u00e9rir les bonbons !",
     "maps": [10, 1],
     "enemies": [],
     "kindId": "skillIcon/E0487",
@@ -1405,7 +973,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Draigos et la forge",
-    "description": "Lorsque Draigos essaye d'allumer une forge, il la fait flamber ! Par le pouvoir des flammes ! Brûle !",
+    "description": "Lorsque Draigos essaye d'allumer une forge, il la fait flamber ! Par le pouvoir des flammes ! Br\u00fble !",
     "maps": [5],
     "enemies": [],
     "kindId": "skillIcon/E0423",
@@ -1416,7 +984,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Nyx et Rumbledore",
-    "description": "Lorsque Nyx est tombée, Rumbledore lui a offert ses superbes pantoufles en guise de soutien. Est-il un fan secret ? UwU",
+    "description": "Lorsque Nyx est tomb\u00e9e, Rumbledore lui a offert ses superbes pantoufles en guise de soutien. Est-il un fan secret ? UwU",
     "maps": [7],
     "enemies": [74],
     "kindId": "items/A50008",
@@ -1426,8 +994,8 @@
     "id": 1522,
     "value": 3,
     "kind": "anecdote",
-    "name": "Kryèri et les bâtons",
-    "description": "Kryèri a perdu son bâton face à la Curie à cause d'une ruine, puis face à Eivor car il lui a volé, et... Attention, comme on dit jamais 2 sans 3 !",
+    "name": "Kry\u00e8ri et les b\u00e2tons",
+    "description": "Kry\u00e8ri a perdu son b\u00e2ton face \u00e0 la Curie \u00e0 cause d'une ruine, puis face \u00e0 Eivor car il lui a vol\u00e9, et... Attention, comme on dit jamais 2 sans 3 !",
     "maps": [15],
     "enemies": [86],
     "kindId": "skillIcon/E0644",
@@ -1437,8 +1005,8 @@
     "id": 1523,
     "value": 3,
     "kind": "anecdote",
-    "name": "Kryèri et la vantardise",
-    "description": "Kryèri aime se vanter et montrer aux autres (et au MJ) qu'il est plus doué, mais parfois ça lui retombe dessus ! CHEH !",
+    "name": "Kry\u00e8ri et la vantardise",
+    "description": "Kry\u00e8ri aime se vanter et montrer aux autres (et au MJ) qu'il est plus dou\u00e9, mais parfois \u00e7a lui retombe dessus ! CHEH !",
     "maps": [7],
     "enemies": [],
     "kindId": "skillIcon/E0660",
@@ -1448,8 +1016,8 @@
     "id": 1524,
     "value": 3,
     "kind": "anecdote",
-    "name": "Kryèri et la Curie",
-    "description": "Kryèri avait pour mission de rattraper Eivor, résultat : il a bu avec et s'est fait arnaquer. Félicia sa cheffe n'a pas aimé !",
+    "name": "Kry\u00e8ri et la Curie",
+    "description": "Kry\u00e8ri avait pour mission de rattraper Eivor, r\u00e9sultat : il a bu avec et s'est fait arnaquer. F\u00e9licia sa cheffe n'a pas aim\u00e9 !",
     "maps": [14],
     "enemies": [],
     "kindId": "skillIcon/E0656",
@@ -1459,8 +1027,8 @@
     "id": 1525,
     "value": 3,
     "kind": "anecdote",
-    "name": "Rad Ed et les prénoms",
-    "description": "Rad Ed est curieuse et veut connaître les gens, alors il faut qu'elle demande à tout le monde leur nom, au cas où, on sait jamais faut pas l'oublier !",
+    "name": "Rad Ed et les pr\u00e9noms",
+    "description": "Rad Ed est curieuse et veut conna\u00eetre les gens, alors il faut qu'elle demande \u00e0 tout le monde leur nom, au cas o\u00f9, on sait jamais faut pas l'oublier !",
     "maps": [8, 9],
     "enemies": [],
     "kindId": "items/k30010",
@@ -1470,8 +1038,8 @@
     "id": 1526,
     "value": 3,
     "kind": "anecdote",
-    "name": "Kibo et la Défense",
-    "description": "Kibo est un justicier protecteur : \"Allez venez me frappez ! Provocation ! Frappez-moi ! Oui ! Enfin pas trop quand même hein... stop !",
+    "name": "Kibo et la D\u00e9fense",
+    "description": "Kibo est un justicier protecteur : \"Allez venez me frappez ! Provocation ! Frappez-moi ! Oui ! Enfin pas trop quand m\u00eame hein... stop !",
     "maps": [8, 9],
     "enemies": [112],
     "kindId": "skillIcon/E0143",
@@ -1482,8 +1050,8 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Nyx et Heldentod",
-    "description": "Nyx vient d'Heldentod mais déteste son Empire, malheureusement avec Rubis ce n'est pas la joie, et ça ne risque pas de s'améliorer...",
-    "maps": [32],
+    "description": "Nyx vient d'Heldentod mais d\u00e9teste son Empire, malheureusement avec Rubis ce n'est pas la joie, et \u00e7a ne risque pas de s'am\u00e9liorer...",
+    "maps": [11, 32],
     "enemies": [62],
     "kindId": "otherIcon/group038",
     "group": 2
@@ -1493,7 +1061,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Rad ed et Morris",
-    "description": "Rad Ed s'était fait un ami Zumi, Morris, il était très gentil mais très naïf, il aura fini par mourir à cause de Rad Ed dans l'ignorance totale...",
+    "description": "Rad Ed s'\u00e9tait fait un ami Zumi, Morris, il \u00e9tait tr\u00e8s gentil mais tr\u00e8s na\u00eff, il aura fini par mourir \u00e0 cause de Rad Ed dans l'ignorance totale...",
     "maps": [8],
     "enemies": [88, 89],
     "kindId": "otherIcon/group015",
@@ -1503,8 +1071,8 @@
     "id": 1529,
     "value": 3,
     "kind": "anecdote",
-    "name": "Kibo le détective",
-    "description": "Kibo a entendu parler d'un criminel corsaire en tenue verte, c'est Steve l'ami de Malvis qui a été sa cible. Monsieur l'agent c'est lui ! C'est un menteur ! Enfin je ... je crois ?!",
+    "name": "Kibo le d\u00e9tective",
+    "description": "Kibo a entendu parler d'un criminel corsaire en tenue verte, c'est Steve l'ami de Malvis qui a \u00e9t\u00e9 sa cible. Monsieur l'agent c'est lui ! C'est un menteur ! Enfin je ... je crois ?!",
     "maps": [10],
     "enemies": [],
     "kindId": "otherIcon/group016",
@@ -1514,9 +1082,9 @@
     "id": 1530,
     "value": 3,
     "kind": "anecdote",
-    "name": "War et les compétences",
-    "description": "War est un homme qui aime taper, mais à cause de son intelligence il ne semble connaître que 3 sorts : Coupe ASURAAAA !! PURGATOOIRE !! FRENESIE !! Et les autres ? Quelles autres ?",
-    "maps": [59, 1],
+    "name": "War et les comp\u00e9tences",
+    "description": "War est un homme qui aime taper, mais \u00e0 cause de son intelligence il ne semble conna\u00eetre que 3 sorts : Coupe ASURAAAA !! PURGATOOIRE !! FRENESIE !! Et les autres ? Quelles autres ?",
+    "maps": [59, 13],
     "enemies": [],
     "kindId": "skillIcon/E0779",
     "group": 2
@@ -1526,7 +1094,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Rad Ed et la malchance",
-    "description": "Rad Ed est une assassin douée, mais la chance ne semble pas beaucoup lui sourire... Peut-être qu'il faudrait rendre à Ein la griffe de son frère ?!",
+    "description": "Rad Ed est une assassin dou\u00e9e, mais la chance ne semble pas beaucoup lui sourire... Peut-\u00eatre qu'il faudrait rendre \u00e0 Ein la griffe de son fr\u00e8re ?!",
     "maps": [59, 1],
     "enemies": [],
     "kindId": "skillIcon/normal08",
@@ -1537,7 +1105,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Kibo et l'argent",
-    "description": "Kibo est une personne fiable et courageuse, mais pas très organisée et économe, son argent part vite dans l'alcool et... toujours plus d'armures !",
+    "description": "Kibo est une personne fiable et courageuse, mais pas tr\u00e8s organis\u00e9e et \u00e9conome, son argent part vite dans l'alcool et... toujours plus d'armures !",
     "maps": [4, 5],
     "enemies": [],
     "kindId": "items/I00011",
@@ -1548,7 +1116,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Estia et War",
-    "description": "Au début Estia portait une haute estime pour War, ce grand samouraï puissant ! Et puis petit à petit, la réalité à fait surface...",
+    "description": "Au d\u00e9but Estia portait une haute estime pour War, ce grand samoura\u00ef puissant ! Et puis petit \u00e0 petit, la r\u00e9alit\u00e9 \u00e0 fait surface...",
     "maps": [1, 59],
     "enemies": [],
     "kindId": "skillIcon/normal10",
@@ -1559,7 +1127,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Rad Ed et Ein",
-    "description": "Rad Ed est fan du grand Ursun Ein qui lui a sauvé la vie face à la Chelona, son rêve est de devenir comme lui, mais quand est-il vraiment ?",
+    "description": "Rad Ed est fan du grand Ursun Ein qui lui a sauv\u00e9 la vie face \u00e0 la Chelona, son r\u00eave est de devenir comme lui, mais quand est-il vraiment ?",
     "maps": [16, 59],
     "enemies": [],
     "kindId": "otherIcon/group021",
@@ -1570,7 +1138,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Kibo le criminel",
-    "description": "Kibo a été inculpé pour vol et blessures sur autrui aux Monts Arides. Comment est-ce possible venant d'un tel justicier ?!",
+    "description": "Kibo a \u00e9t\u00e9 inculp\u00e9 pour vol et blessures sur autrui aux Monts Arides. Comment est-ce possible venant d'un tel justicier ?!",
     "maps": [4, 5],
     "enemies": [123],
     "kindId": "monsters/kibo",
@@ -1581,7 +1149,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Estia et Lucius",
-    "description": "Estia la peureuse a été la seule à pouvoir faire face à Lucius, le courage l'a envahit et elle a reussit à porter un coup ! Mais les représailles de Lucius et Aradia n'ont pas tardées.",
+    "description": "Estia la peureuse a \u00e9t\u00e9 la seule \u00e0 pouvoir faire face \u00e0 Lucius, le courage l'a envahit et elle a reussit \u00e0 porter un coup ! Mais les repr\u00e9sailles de Lucius et Aradia n'ont pas tard\u00e9es.",
     "maps": [23],
     "enemies": [90],
     "kindId": "skillIcon/E0767",
@@ -1592,7 +1160,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Azora et Estia",
-    "description": "Lorsque Estia se fait dessus, Azora a une solution pour l'aider à aller mieux : un bon coup de Febreze !",
+    "description": "Lorsque Estia se fait dessus, Azora a une solution pour l'aider \u00e0 aller mieux : un bon coup de Febreze !",
     "maps": [23, 59],
     "enemies": [],
     "kindId": "skillIcon/E0098",
@@ -1602,8 +1170,8 @@
     "id": 1538,
     "value": 3,
     "kind": "anecdote",
-    "name": "Le légendaire bouclier Zuminator",
-    "description": "Zuminator aurait laissé en ce monde le symbole de sa puissance et de sa justice : son bouclier !",
+    "name": "Le l\u00e9gendaire bouclier Zuminator",
+    "description": "Zuminator aurait laiss\u00e9 en ce monde le symbole de sa puissance et de sa justice : son bouclier !",
     "maps": [],
     "enemies": [],
     "kindId": "items/W73002",
@@ -1614,8 +1182,8 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Erida et la politique",
-    "description": "Après l'accident avec Pedro et Adonis à Fira, Erida a réussi à faire preuve de diplomatie et à su enquêter sur les affaires louches qui menaçaient les Von Ryner.",
-    "maps": [22, 24],
+    "description": "Apr\u00e8s l'accident avec Pedro et Adonis \u00e0 Fira, Erida a r\u00e9ussi \u00e0 faire preuve de diplomatie et \u00e0 su enqu\u00eater sur les affaires louches qui mena\u00e7aient les Von Ryner.",
+    "maps": [24, 26],
     "enemies": [],
     "kindId": "skillIcon/normal09",
     "group": 1
@@ -1625,8 +1193,8 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Erida et Pedro",
-    "description": "Erida devait épouser Pedro, un noble digne d'une ordure. Ce dernier a cependant mis la main sur une flûte envoûtante mystérieuse. Ce dernier a été tué mais Adonis le tueur l'a reprise.",
-    "maps": [],
+    "description": "Erida devait \u00e9pouser Pedro, un noble digne d'une ordure. Ce dernier a cependant mis la main sur une fl\u00fbte envo\u00fbtante myst\u00e9rieuse. Ce dernier a \u00e9t\u00e9 tu\u00e9 mais Adonis le tueur l'a reprise.",
+    "maps": [26],
     "enemies": [],
     "kindId": "items/I00154",
     "group": 1
@@ -1636,7 +1204,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Malvis la cible",
-    "description": "Malvis est officiellement la cible d'une personne de la Curie, les coups dans le dos ne manquent pas. Il semblerait que le symptôme du héros continu !",
+    "description": "Malvis est officiellement la cible d'une personne de la Curie, les coups dans le dos ne manquent pas. Il semblerait que le sympt\u00f4me du h\u00e9ros continu !",
     "maps": [12],
     "enemies": [120],
     "kindId": "items/E0193",
@@ -1647,8 +1215,8 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Malvis et le Loukoum",
-    "description": "Le Crystal de Volesang est un Loukoum, je cite, Malvis. Malheureusement on dirait bien que ce dernier ne présente pas les mêmes bienfaits gustatifs... !",
-    "maps": [1],
+    "description": "Le Crystal de Volesang est un Loukoum, je cite, Malvis. Malheureusement on dirait bien que ce dernier ne pr\u00e9sente pas les m\u00eames bienfaits gustatifs... !",
+    "maps": [1, 12],
     "enemies": [111],
     "kindId": "items/I00220b",
     "group": 1
@@ -1658,10 +1226,153 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Cosmos le Piquet",
-    "description": "Cosmos a une position favorite : faire le piquet, exactement comme son Totem. Cela lui permet de canalyser son... Non en faite ça ne sert à rien.",
+    "description": "Cosmos a une position favorite : faire le piquet, exactement comme son Totem. Cela lui permet de canalyser son... Non en faite \u00e7a ne sert \u00e0 rien.",
     "maps": [22, 24],
     "enemies": [],
     "kindId": "skillIcon/E0240",
+    "group": 1
+  },
+  {
+    "id": 1544,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Malvis aka Erida",
+    "description": "Lorsque Malvis se met en porte-à-faux avec la Curie, elle a une fâcheuse tendance à se faire passer pour quelqu'un d'autre... Erida !",
+    "maps": [15, 29],
+    "enemies": [],
+    "kindId": "skillIcon/j637",
+    "group": 1
+  },
+  {
+    "id": 1545,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Cosmos le protecteur",
+    "description": "Cosmos a sû protéger les plsu démunis quand il le fallait, un vrai templier !",
+    "maps": [28],
+    "enemies": [],
+    "kindId": "skillIcon/E0935",
+    "group": 1
+  },
+  {
+    "id": 1546,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Ainz le guide",
+    "description": "Ainz a un don pour être un guide touristique, malheureusement cela ne lui donne pas un rond.",
+    "maps": [],
+    "enemies": [],
+    "kindId": "items/i01434",
+    "group": 1
+  },
+  {
+    "id": 1547,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "L'arrivée de Beren",
+    "description": "Beren a fait une arrivée épique en se téléportant alors qu'il était ligoté.",
+    "maps": [59],
+    "enemies": [],
+    "kindId": "skillIcon/E0136",
+    "group": 2
+  },
+  {
+    "id": 1548,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "La chute de Kibo",
+    "description": "Kibo est un tank hors du commun, pourtant cela ne l'a pas sauvé d'un KO époustouflant !",
+    "maps": [59],
+    "enemies": [],
+    "kindId": "skillIcon/E0932",
+    "group": 2
+  },
+  {
+    "id": 1549,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Rad Ed et Estia",
+    "description": "Les deux filles ont parcourues des kilomètres pour rattraper l'Anuran se faisant passer pour Kibo. Quel talent !",
+    "maps": [3, 4],
+    "enemies": [123],
+    "kindId": "skillIcon/E0232",
+    "group": 2
+  },
+  {
+    "id": 1550,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Ara... Araqui ?",
+    "description": "Il semblerait que le groupe ait oublié qui est Aradia après l'accident de Lucius. En effet, personne n'a prévenu de ce qu'il s'est passé...",
+    "maps": [23],
+    "enemies": [],
+    "kindId": "skillIcon/E0432",
+    "group": 2
+  },
+  {
+    "id": 1551,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Kibo et Botassius",
+    "description": "Kibo rencontre Botassius, Général de division défensive, son amour de la protection lui a permis de bien progresser avec lui.",
+    "maps": [1],
+    "enemies": [],
+    "kindId": "skillIcon/E0306",
+    "group": 2
+  },
+  {
+    "id": 1552,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Rad Ed et Nyx",
+    "description": "Nyx manque à Rad Ed, elle est très triste depuis qu'elle est partie, elles sont comme des soeurs.",
+    "maps": [15, 32],
+    "enemies": [],
+    "kindId": "skillIcon/E0241",
+    "group": 2
+  },
+  {
+    "id": 1553,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Kibo et Vimira",
+    "description": "Kibo est tombé amoureux de cette belle lieutenant de la Curie : Vimira ! Et elle n'est pas indifférente...",
+    "maps": [5],
+    "enemies": [],
+    "kindId": "skillIcon/E0233",
+    "group": 2
+  },
+  {
+    "id": 1554,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "War la chandelle",
+    "description": "War tient la chandelle dans les couples en mangeant du pop-corn, normal quoi !",
+    "maps": [5, 10],
+    "enemies": [],
+    "kindId": "items/I00347",
+    "group": 2
+  },
+  {
+    "id": 1555,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Azora et les dégâts",
+    "description": "Azora est celle qui soigne le mieux le groupe, mais c'est aussi celle qui leur inflige le plus de dégâts !",
+    "maps": [2],
+    "enemies": [],
+    "kindId": "skillIcon/E0548",
+    "group": 2
+  },
+  {
+    "id": 1556,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Malvis et le Wagon",
+    "description": "Malvis en tentant de suivre la Chelona à faillit se bouffer un wagon, les mines, c'est dangereux !",
+    "maps": [13],
+    "enemies": [],
+    "kindId": "items/i01189",
     "group": 1
   },
   {
@@ -1680,7 +1391,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Le grand retour",
-    "description": "Il semble que le destin en a décidé autrement ce jour là... Ce qui devait être un entraînement a été la naissance d'une nouvelle histoire, celle du Roi Lucius et de son groupe !",
+    "description": "Il semble que le destin en a d\u00e9cid\u00e9 autrement ce jour l\u00e0... Ce qui devait \u00eatre un entra\u00eenement a \u00e9t\u00e9 la naissance d'une nouvelle histoire, celle du Roi Lucius et de son groupe !",
     "maps": [23],
     "enemies": [90],
     "kindId": "monsters/m347",
@@ -1691,7 +1402,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Sekhmet et Aradia",
-    "description": "Sekhmet et Aradia s'amusent ensemble à passer le balais pour ramener de l'argent à Lucius. Quelles jolies soubrettes !",
+    "description": "Sekhmet et Aradia s'amusent ensemble \u00e0 passer le balais pour ramener de l'argent \u00e0 Lucius. Quelles jolies soubrettes !",
     "maps": [6],
     "enemies": [],
     "kindId": "items/k20026",
@@ -1702,7 +1413,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Lutta et Sekhmet",
-    "description": "Entre Lutta et Sekhmet, c'est le grand amour. Les belles paroles fusent, l'entraide est maître mots, rien ne peut les séparer. <3",
+    "description": "Entre Lutta et Sekhmet, c'est le grand amour. Les belles paroles fusent, l'entraide est ma\u00eetre mots, rien ne peut les s\u00e9parer. <3",
     "maps": [5, 6],
     "enemies": [],
     "kindId": "skillIcon/E0781",
@@ -1713,7 +1424,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Poisseux et Lucius",
-    "description": "A chaque fois que le groupe est dans la m****, Lucius arrive en héros et remotive les troupes, tout particulière Poisseux qui se sent Chanceux !",
+    "description": "A chaque fois que le groupe est dans la m****, Lucius arrive en h\u00e9ros et remotive les troupes, tout particuli\u00e8re Poisseux qui se sent Chanceux !",
     "maps": [5, 59],
     "enemies": [],
     "kindId": "skillIcon/E0867",
@@ -1723,8 +1434,8 @@
     "id": 1604,
     "value": 3,
     "kind": "anecdote",
-    "name": "Création de la Veyda",
-    "description": "Pour concrétiser le projet de Lucius, la guilde Veyda a été fondée, et pour l'inauguration le groupe a tenu un joli petit stand.",
+    "name": "Cr\u00e9ation de la Veyda",
+    "description": "Pour concr\u00e9tiser le projet de Lucius, la guilde Veyda a \u00e9t\u00e9 fond\u00e9e, et pour l'inauguration le groupe a tenu un joli petit stand.",
     "maps": [1],
     "enemies": [],
     "kindId": "otherIcon/ac005",

@@ -5,6 +5,8 @@ var skillsJSON = {};
 var eqptJSON = {};
 var masterJSON = {};
 var enemyJSON = {};
+var cardJSON = [];
+
 console.log(window.location.href);
 
 if (window.location.href.includes("http")) {
@@ -14,6 +16,7 @@ if (window.location.href.includes("http")) {
 
   eqptJSON = getData("eqpt");
 
+  cardJSON = getData("card");
   //   persosJSON = getData("persos");
 
   masterJSON = getData("master");
@@ -439,6 +442,43 @@ document.querySelector("#createEnemy").addEventListener("click", () => {
   saveWithPHP("enemy");
   enemyJSON[enemyID] = newEnemy[enemyID];
   toastNotification("Ennemi créé");
+});
+
+// Create card & Save
+
+document.querySelector("#createCard").addEventListener("click", () => {
+  var addCard = document.querySelector(".addCard");
+
+  var newCard;
+  if (addCard.children[4 + 1].value === "anecdote") {
+    newCard = {
+      id: 0,
+      value: parseInt(addCard.children[6 + 1].value),
+      kind: addCard.children[4 + 1].value,
+      name: addCard.children[0 + 1].value,
+      description: addCard.children[2 + 1].value,
+      maps: addCard.children[10 + 1].value,
+      enemies: addCard.children[12 + 1].value,
+      kindId: addCard.children[8 + 1].value,
+      group: addCard.children[14 + 1].value,
+    };
+  } else {
+    newCard = {
+      id: 0,
+      value: parseInt(addCard.children[6 + 1].value),
+      kind: addCard.children[4 + 1].value,
+      name: addCard.children[0 + 1].value,
+      description: addCard.children[2 + 1].value,
+      kindId: addCard.children[8 + 1].value,
+    };
+  }
+  console.log(newCard);
+
+  document.cookie = "cardJSON=" + encodeURIComponent(JSON.stringify(newCard));
+
+  saveWithPHP("card");
+  cardJSON.push(newCard);
+  toastNotification("Carte créée");
 });
 
 // Global Save

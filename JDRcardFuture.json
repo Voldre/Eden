@@ -336,30 +336,6 @@
     "kindId": 58
   },
   {
-    "id": 175,
-    "value": 1,
-    "kind": "map",
-    "name": "Steppes d'Aristère",
-    "description": "",
-    "kindId": 59
-  },
-  {
-    "id": 176,
-    "value": 2,
-    "kind": "map",
-    "name": "Steppes d'Aristère",
-    "description": "",
-    "kindId": 59
-  },
-  {
-    "id": 177,
-    "value": 3,
-    "kind": "map",
-    "name": "Steppes d'Aristère",
-    "description": "",
-    "kindId": 59
-  },
-  {
     "id": 289,
     "value": 1,
     "kind": "map",

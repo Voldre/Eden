@@ -162,7 +162,7 @@
     "classe": "Clerc",
     "statUsed": "esprit",
     "type": "buff",
-    "buffElem": ["intel", "esprit"],
+    "buffElem": ["intel", "esprit", "degat", "armure"],
     "montant": "",
     "montantFixe": 2,
     "duree": 4,
@@ -228,11 +228,12 @@
     "icone": "E0137"
   },
   {
-    "nom": "Coupure Noire",
+    "nom": "Portail Ténèbres",
     "classe": "Luminary",
-    "statUsed": "force",
+    "statUsed": "intel",
     "type": "attaque",
-    "montant": "Dégât +2D6+1D4",
-    "icone": "E0603"
+    "montant": "Dégât +1D10",
+    "montantFixe": 4,
+    "icone": "E0609"
   }
 ]

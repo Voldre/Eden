@@ -1,8 +1,11 @@
 // JSON Initialisation
 var xhReq = new XMLHttpRequest();
-var cardJSON = {};
+var cardJSON = [];
 var persosJSON = {};
 var eqptJSON = {};
+var enemyJSON = {};
+var mapsJSON = {};
+var allSkills = [];
 var playerJSON = [];
 
 console.log(window.location.href);
@@ -12,13 +15,21 @@ if (window.location.href.includes("http")) {
 
   cardJSON = getData("card");
   eqptJSON = getData("eqpt");
+  enemyJSON = getData("enemy");
   persosJSON = getData("persos");
 
+  mapsJSON = getData("maps", false);
+
+  allSkills = getData("combatS");
   playerJSON = getData("player");
 }
 
-function getData(filename) {
-  xhReq.open("GET", "./JDR" + filename + ".json" + "?" + new Date().getTime(), false);
+function getData(filename, JDR = true) {
+  if (JDR) {
+    xhReq.open("GET", "./JDR" + filename + ".json" + "?" + new Date().getTime(), false);
+  } else {
+    xhReq.open("GET", "./" + filename + ".json" + "?" + new Date().getTime(), false);
+  }
   xhReq.send(null);
   return JSON.parse(xhReq.responseText);
 }
@@ -87,6 +98,29 @@ window.addEventListener("load", () => {
       const playerCardsE = document.createElement("p");
       playerCardsE.innerText = "Nombre de cartes : " + playerData["cards"].length;
       playerCardsE.style.fontSize = "13.5px";
+
+      const playerCardsEP = document.createElement("p");
+      playerCardsEP.style.fontSize = "13.5px";
+      const playerCards = playerData.cards
+        .map((pC) => cardJSON.find((c) => c.id === parseInt(pC)))
+        .filter((p) => p != undefined);
+      console.log(playerCards);
+
+      const pBossP = Math.round(
+        (100 * playerCards?.filter((p) => p.kind === "boss").length) / cardJSON.filter((p) => p.kind === "boss").length
+      );
+      const pMapsP = Math.round(
+        (100 * playerCards?.filter((p) => p.kind === "map").length) / cardJSON.filter((p) => p.kind === "map").length
+      );
+      const pAnecdoteP = Math.round(
+        (100 * playerCards?.filter((p) => p.kind === "anecdote").length) /
+          cardJSON.filter((p) => p.kind === "anecdote").length
+      );
+      const pTotalP = Math.round((100 * playerCards?.length) / cardJSON.length);
+
+      playerCardsEP.innerHTML =
+        "Boss " + pBossP + "%, Anecdotes " + pAnecdoteP + "%<br/>Maps " + pMapsP + "%, Total " + pTotalP + "%";
+
       const playerEntriesE = document.createElement("p");
 
       const entriesToday =
@@ -102,6 +136,7 @@ window.addEventListener("load", () => {
       playerE.append(playerNameE);
       playerE.append(playerCoinE);
       playerE.append(playerCardsE);
+      playerE.append(playerCardsEP);
       playerE.append(playerEntriesE);
       playersE.append(playerE);
       document.querySelector("body").append(playersE);
@@ -112,6 +147,25 @@ window.addEventListener("load", () => {
       const persoP = new PersoSimplified(p);
       persoP.degat != "-" ? console.log(persoP) : null;
     });
+
+    // Display nb anecdote by map
+    const anecdoteByMap = Object.entries(mapsJSON).map((m) => [
+      m[1].name,
+      cardJSON.filter((c) => c.kind === "anecdote").filter((c) => c.maps.includes(parseInt(m[0]))).length,
+    ]);
+    console.log("Anecdotes par map", anecdoteByMap);
+
+    // Display nb anecdote by map
+    const enemiesOnMap = Object.entries(mapsJSON)
+      .filter((m) => m[1].mobs !== undefined)
+      .map((m) => [
+        m[1].name,
+        m[1].mobs.map((e) => [Object.values(enemyJSON[e.toString()])[1], Object.values(enemyJSON[e.toString()])[2]]),
+      ]);
+    console.log("Ennemis par map", enemiesOnMap);
+
+    const bossByMap = enemiesOnMap.map((map_e) => [map_e[0], map_e[1].filter((e) => e[1] >= 200).length]);
+    console.log("Nb boss par map", bossByMap);
   }
 });
 
@@ -420,6 +474,15 @@ function PersoSimplified(persoData) {
   const classSoins = ["Clerc", "Barde", "Shaman", "Sage", "Templier"];
   if (classSoins.includes(persoData.classeP) || classSoins.includes(persoData.classeS)) {
     this.armure -= 1;
+  }
+
+  // 25/11 Bonus if less skills than 4
+  const nbSkills = allSkills.filter(
+    (skill) => skill.classe.includes(persoData.classeP) || skill.classe.includes(persoData.classeS)
+  ).length;
+  if (nbSkills < 4) {
+    this.degat += 1;
+    this.armure += 1;
   }
 }
 

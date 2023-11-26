@@ -1,0 +1,1042 @@
+{
+  "1": {
+    "date": "24/11/2023 20:37:11",
+    "joueur": "Cyrille",
+    "perso": "Beren nolatary",
+    "map": 5,
+    "cardRarity": 1,
+    "enemy": "Ancien Garde",
+    "earnedCoins": 6,
+    "winCards": [
+      [13, "Monts Arides"],
+      [1250, "Coton Elys\u00e9en"],
+      [1535, "Kibo le criminel"]
+    ]
+  },
+  "2": {
+    "date": "24/11/2023 20:40:22",
+    "joueur": "Cyrille",
+    "perso": "Beren nolatary",
+    "map": 4,
+    "cardRarity": 1,
+    "enemy": "Lutin Runique",
+    "earnedCoins": 0,
+    "winCards": []
+  },
+  "3": {
+    "date": "24/11/2023 20:50:29",
+    "joueur": "Cl\u00e9ment",
+    "perso": "Borak",
+    "map": 10,
+    "cardRarity": 1,
+    "enemy": "Garde de la Curie",
+    "earnedCoins": 3,
+    "winCards": [
+      [28, "Plaines Dor\u00e9es"],
+      [1229, "Germe de Champigno\u00efde de Crystal"]
+    ]
+  },
+  "4": {
+    "date": "25/11/2023 00:32:47",
+    "joueur": "Victorine",
+    "perso": "Estia Ryujin",
+    "map": 59,
+    "cardRarity": 2,
+    "enemy": "Ogre Corsaire",
+    "earnedCoins": 6,
+    "winCards": [
+      [176, "Steppes d'Arist\u00e8re"],
+      [1210, "Germe de Champigno\u00efde"],
+      [1526, "Kibo et la D\u00e9fense"]
+    ],
+    "turn": 19,
+    "pv": 4,
+    "epv": -8
+  },
+  "5": {
+    "date": "25/11/2023 00:37:42",
+    "joueur": "Victorine",
+    "perso": "Malvis",
+    "map": 4,
+    "cardRarity": 3,
+    "enemy": "Kibo",
+    "earnedCoins": 10,
+    "winCards": [
+      [12, "For\u00eat Arc-en-Ciel"],
+      [1027, "Kibo"],
+      [1212, "Fleur de Pavot"],
+      [1549, "Rad Ed et Estia"]
+    ],
+    "turn": 12,
+    "pv": 39,
+    "epv": -27
+  },
+  "6": {
+    "date": "25/11/2023 00:39:33",
+    "joueur": "Victorine",
+    "perso": "Malvis",
+    "map": 11,
+    "cardRarity": 3,
+    "enemy": "Draigos - Drakai aux bouquins",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 10,
+    "pv": 0,
+    "epv": 8
+  },
+  "7": {
+    "date": "25/11/2023 00:41:28",
+    "joueur": "Victorine",
+    "perso": "Malvis",
+    "map": 11,
+    "cardRarity": 3,
+    "enemy": "Draigos - Drakai aux bouquins",
+    "earnedCoins": 10,
+    "winCards": [
+      [33, "Terres des Dunes \u00c9ternelles"],
+      [1019, "Draigos - Drakai aux bouquins"],
+      [1256, "Crystal liquide"],
+      [1516, "Cosmos le Tuskar"]
+    ],
+    "turn": 8,
+    "pv": 24,
+    "epv": -37
+  },
+  "8": {
+    "date": "25/11/2023 00:56:05",
+    "joueur": "Rachel",
+    "perso": "Le Poisseux",
+    "map": 6,
+    "cardRarity": 2,
+    "enemy": "Pirate aggressif",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 7,
+    "pv": -9,
+    "epv": 10
+  },
+  "9": {
+    "date": "25/11/2023 01:00:34",
+    "joueur": "Rachel",
+    "perso": "Le Poisseux",
+    "map": 6,
+    "cardRarity": 2,
+    "enemy": "Pirate aggressif",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 11,
+    "pv": -12,
+    "epv": 48
+  },
+  "10": {
+    "date": "25/11/2023 09:07:13",
+    "joueur": "Hugo",
+    "perso": "Kibo",
+    "map": 5,
+    "cardRarity": 3,
+    "enemy": "Dragon Terrestre",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 26,
+    "pv": -19,
+    "epv": 224
+  },
+  "11": {
+    "date": "25/11/2023 01:07:20",
+    "joueur": "Rachel",
+    "perso": "Le Poisseux",
+    "map": 5,
+    "cardRarity": 2,
+    "enemy": "Ancien Garde",
+    "earnedCoins": 3,
+    "winCards": [
+      [14, "Monts Arides"],
+      [1258, "Peau de ver"]
+    ],
+    "turn": 6,
+    "pv": 47,
+    "epv": -8
+  },
+  "12": {
+    "date": "25/11/2023 01:11:17",
+    "joueur": "Rachel",
+    "perso": "Rad Ed",
+    "map": 1,
+    "cardRarity": 3,
+    "enemy": "Ursina",
+    "earnedCoins": 8,
+    "winCards": [
+      [3, "Aven"],
+      [1008, "Ursina - Samoura\u00ef Commandant"],
+      [1207, "Minerai de Stella"]
+    ],
+    "turn": 15,
+    "pv": 45,
+    "epv": -29
+  },
+  "13": {
+    "date": "25/11/2023 01:15:35",
+    "joueur": "Rachel",
+    "perso": "Rad Ed",
+    "map": 5,
+    "cardRarity": 3,
+    "enemy": "Chevalier de la Curie (Lassar) v2 (Nv 7)",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 14,
+    "pv": -15,
+    "epv": 69
+  },
+  "14": {
+    "date": "25/11/2023 01:18:31",
+    "joueur": "Rachel",
+    "perso": "Rad Ed",
+    "map": 6,
+    "cardRarity": 3,
+    "enemy": "Templier Marma - V2 (Nv7)",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 6,
+    "pv": -5,
+    "epv": 183
+  },
+  "15": {
+    "date": "25/11/2023 01:22:28",
+    "joueur": "Rachel",
+    "perso": "Roco Bonnaro",
+    "map": 13,
+    "cardRarity": 2,
+    "enemy": "Griffon Cendr\u00e9",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 11,
+    "pv": -5,
+    "epv": 51
+  },
+  "16": {
+    "date": "25/11/2023 01:29:04",
+    "joueur": "Rachel",
+    "perso": "Roco Bonnaro",
+    "map": 6,
+    "cardRarity": 3,
+    "enemy": "Templier Marma - V2 (Nv7)",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 12,
+    "pv": -5,
+    "epv": 82
+  },
+  "17": {
+    "date": "25/11/2023 01:32:15",
+    "joueur": "Rachel",
+    "perso": "Roco Bonnaro",
+    "map": 26,
+    "cardRarity": 3,
+    "enemy": "Adonis - Tueur Juge",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 7,
+    "pv": -1,
+    "epv": 157
+  },
+  "18": {
+    "date": "25/11/2023 01:36:38",
+    "joueur": "Victorine",
+    "perso": "Nyx",
+    "map": 26,
+    "cardRarity": 3,
+    "enemy": "Adonis - Tueur Juge",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 18,
+    "pv": -10,
+    "epv": 91
+  },
+  "19": {
+    "date": "25/11/2023 01:40:07",
+    "joueur": "Victorine",
+    "perso": "Nyx",
+    "map": 26,
+    "cardRarity": 3,
+    "enemy": "Adonis - Tueur Juge",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 29,
+    "pv": -13,
+    "epv": 65
+  },
+  "20": {
+    "date": "25/11/2023 01:41:50",
+    "joueur": "Victorine",
+    "perso": "Estia Ryujin",
+    "map": 59,
+    "cardRarity": 2,
+    "enemy": "Ogre Corsaire",
+    "earnedCoins": 3,
+    "winCards": [
+      [176, "Steppes d'Arist\u00e8re"],
+      [1210, "Germe de Champigno\u00efde"]
+    ],
+    "turn": 12,
+    "pv": 92,
+    "epv": -14
+  },
+  "21": {
+    "date": "25/11/2023 01:45:15",
+    "joueur": "Victorine",
+    "perso": "Lutta",
+    "map": 23,
+    "cardRarity": 2,
+    "enemy": "Fleur Envahissante",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 14,
+    "pv": -22,
+    "epv": 8
+  },
+  "22": {
+    "date": "25/11/2023 01:46:44",
+    "joueur": "Victorine",
+    "perso": "Lutta",
+    "map": 23,
+    "cardRarity": 1,
+    "enemy": "Fleur Envahissante",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 10,
+    "pv": -2,
+    "epv": 26
+  },
+  "23": {
+    "date": "25/11/2023 01:50:39",
+    "joueur": "Victorine",
+    "perso": "Lutta",
+    "map": 23,
+    "cardRarity": 2,
+    "enemy": "Fleur Envahissante",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 11,
+    "pv": -2,
+    "epv": 116
+  },
+  "24": {
+    "date": "25/11/2023 01:52:55",
+    "joueur": "Victorine",
+    "perso": "Estia Ryujin",
+    "map": 23,
+    "cardRarity": 2,
+    "enemy": "Insecte D\u00e9form\u00e9",
+    "earnedCoins": 6,
+    "winCards": [
+      [68, "Cr\u00e8te Diamant\u00e9e"],
+      [1249, "Coton Etoil\u00e9"],
+      [1600, "Le grand retour"]
+    ],
+    "turn": 19,
+    "pv": 9,
+    "epv": -20
+  },
+  "25": {
+    "date": "25/11/2023 06:01:18",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Erida",
+    "map": 2,
+    "cardRarity": 3,
+    "enemy": "Zumi M\u00e9canique - Douvone",
+    "earnedCoins": 10,
+    "winCards": [
+      [6, "Monts Calcaires"],
+      [1006, "Douvone - Zumi M\u00e9canique"],
+      [1257, "Roche sombre"],
+      [1515, "Malvis et Moymoy"]
+    ],
+    "turn": 13,
+    "pv": 92,
+    "epv": -8
+  },
+  "26": {
+    "date": "25/11/2023 06:03:53",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Azora",
+    "map": 59,
+    "cardRarity": 1,
+    "enemy": "Ogre des glaces",
+    "earnedCoins": 5,
+    "winCards": [
+      [175, "Steppes d'Arist\u00e8re"],
+      [1235, "Herbe d'eau"],
+      [1534, "Rad Ed et Ein"]
+    ],
+    "turn": 15,
+    "pv": 19,
+    "epv": -7
+  },
+  "27": {
+    "date": "25/11/2023 06:05:58",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Aradia",
+    "map": 59,
+    "cardRarity": 2,
+    "enemy": "Ogre des glaces",
+    "earnedCoins": 3,
+    "winCards": [
+      [176, "Steppes d'Arist\u00e8re"],
+      [1248, "Soie d'Or"]
+    ],
+    "turn": 17,
+    "pv": 32,
+    "epv": -8
+  },
+  "28": {
+    "date": "25/11/2023 06:13:31",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Aradia",
+    "map": 22,
+    "cardRarity": 3,
+    "enemy": "Kasar - Braconnier",
+    "earnedCoins": 9,
+    "winCards": [
+      [66, "For\u00eat Ensorcel\u00e9e"],
+      [1010, "Kasar - Braconnier"],
+      [1251, "Coton Royal"]
+    ],
+    "turn": 28,
+    "pv": 72,
+    "epv": -13
+  },
+  "29": {
+    "date": "25/11/2023 10:34:25",
+    "joueur": "Victorine",
+    "perso": "Eivor",
+    "map": 32,
+    "cardRarity": 3,
+    "enemy": "Rubis - Chevali\u00e8re Dragonne",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 5,
+    "pv": -10,
+    "epv": 215
+  },
+  "30": {
+    "date": "25/11/2023 10:37:43",
+    "joueur": "Victorine",
+    "perso": "Eivor",
+    "map": 6,
+    "cardRarity": 2,
+    "enemy": "Crabe carapace de fer",
+    "earnedCoins": 3,
+    "winCards": [
+      [17, "Baie B\u00e9louga"],
+      [1202, "Acier Volcanique"]
+    ],
+    "turn": 7,
+    "pv": 42,
+    "epv": -29
+  },
+  "31": {
+    "date": "25/11/2023 10:40:38",
+    "joueur": "Victorine",
+    "perso": "Eivor",
+    "map": 6,
+    "cardRarity": 2,
+    "enemy": "Voleur avide",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 11,
+    "pv": -2,
+    "epv": 3
+  },
+  "32": {
+    "date": "25/11/2023 12:46:10",
+    "joueur": "Florian",
+    "perso": "Cosmos",
+    "map": 4,
+    "cardRarity": 3,
+    "enemy": "Mandragore - Graine de l'Yggdrasil",
+    "earnedCoins": 10,
+    "winCards": [
+      [12, "For\u00eat Arc-en-Ciel"],
+      [1017, "Mandragore - Graine de l'Yggdrasil"],
+      [1245, "Coton Nuage"],
+      [1549, "Rad Ed et Estia"]
+    ],
+    "turn": 33,
+    "pv": 136,
+    "epv": -16
+  },
+  "33": {
+    "date": "25/11/2023 12:56:29",
+    "joueur": "Florian",
+    "perso": "Cosmos",
+    "map": 32,
+    "cardRarity": 3,
+    "enemy": "Rubis - Chevali\u00e8re Dragonne",
+    "earnedCoins": 10,
+    "winCards": [
+      [96, "Vall\u00e9e de Vulcain"],
+      [1013, "Rubis"],
+      [1221, "Potion Paillettes"],
+      [1552, "Rad Ed et Nyx"]
+    ],
+    "turn": 29,
+    "pv": 107,
+    "epv": -11
+  },
+  "34": {
+    "date": "25/11/2023 13:09:53",
+    "joueur": "Florian",
+    "perso": "Cosmos",
+    "map": 5,
+    "cardRarity": 3,
+    "enemy": "Dragon Terrestre",
+    "earnedCoins": 8,
+    "winCards": [
+      [15, "Monts Arides"],
+      [1025, "Dragon Terrestre"],
+      [1221, "Potion Paillettes"]
+    ],
+    "turn": 39,
+    "pv": 117,
+    "epv": -20
+  },
+  "35": {
+    "date": "25/11/2023 13:10:33",
+    "joueur": "Florian",
+    "perso": "War",
+    "map": 7,
+    "cardRarity": 2,
+    "enemy": "Tortue terrestre",
+    "earnedCoins": 3,
+    "winCards": [
+      [20, "Bourbes"],
+      [1261, "Peau de Tortue"]
+    ],
+    "turn": 3,
+    "pv": 79,
+    "epv": -21
+  },
+  "36": {
+    "date": "25/11/2023 13:11:25",
+    "joueur": "Florian",
+    "perso": "War",
+    "map": 23,
+    "cardRarity": 2,
+    "enemy": "Poisson Abyssal",
+    "earnedCoins": 6,
+    "winCards": [
+      [68, "Cr\u00e8te Diamant\u00e9e"],
+      [1221, "Potion Paillettes"],
+      [1537, "Azora et Estia"]
+    ],
+    "turn": 3,
+    "pv": 104,
+    "epv": -16
+  },
+  "37": {
+    "date": "25/11/2023 13:12:39",
+    "joueur": "Florian",
+    "perso": "War",
+    "map": 22,
+    "cardRarity": 2,
+    "enemy": "Mante Cyclope",
+    "earnedCoins": 3,
+    "winCards": [
+      [65, "For\u00eat Ensorcel\u00e9e"],
+      [1240, "Epine ensanglant\u00e9e"]
+    ],
+    "turn": 1,
+    "pv": 126,
+    "epv": -33
+  },
+  "38": {
+    "date": "25/11/2023 13:14:40",
+    "joueur": "Florian",
+    "perso": "Sekhmet",
+    "map": 13,
+    "cardRarity": 2,
+    "enemy": "Crabe Volcanique",
+    "earnedCoins": 6,
+    "winCards": [
+      [38, "Pic de Noireflammes"],
+      [1221, "Potion Paillettes"],
+      [1530, "War et les comp\u00e9tences"]
+    ],
+    "turn": 16,
+    "pv": 42,
+    "epv": -16
+  },
+  "39": {
+    "date": "25/11/2023 13:17:11",
+    "joueur": "Florian",
+    "perso": "Sekhmet",
+    "map": 12,
+    "cardRarity": 2,
+    "enemy": "Assassin Ursun",
+    "earnedCoins": 3,
+    "winCards": [
+      [35, "For\u00eat de Delphes"],
+      [1239, "Fruit \u00c2mambre"]
+    ],
+    "turn": 22,
+    "pv": 46,
+    "epv": -23
+  },
+  "40": {
+    "date": "25/11/2023 13:18:02",
+    "joueur": "Florian",
+    "perso": "Sekhmet",
+    "map": 14,
+    "cardRarity": 1,
+    "enemy": "Mante Fatalame",
+    "earnedCoins": 7,
+    "winCards": [
+      [40, "Marais D\u00e9cr\u00e9pits"],
+      [1251, "Coton Royal"],
+      [1513, "Cosmos et Kyle"]
+    ],
+    "turn": 2,
+    "pv": 94,
+    "epv": -30
+  },
+  "41": {
+    "date": "25/11/2023 13:19:02",
+    "joueur": "Florian",
+    "perso": "Draigos",
+    "map": 15,
+    "cardRarity": 1,
+    "enemy": "Garde Tyrolien",
+    "earnedCoins": 5,
+    "winCards": [
+      [43, "Hautes-terres"],
+      [1260, "Peau de Smilodon"],
+      [1552, "Rad Ed et Nyx"]
+    ],
+    "turn": 6,
+    "pv": 26,
+    "epv": -14
+  },
+  "42": {
+    "date": "25/11/2023 13:20:20",
+    "joueur": "Florian",
+    "perso": "Draigos",
+    "map": 22,
+    "cardRarity": 1,
+    "enemy": "Lutin pr\u00e9historique",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 8,
+    "pv": 0,
+    "epv": 35
+  },
+  "43": {
+    "date": "25/11/2023 13:21:11",
+    "joueur": "Florian",
+    "perso": "Draigos",
+    "map": 22,
+    "cardRarity": 1,
+    "enemy": "Mante Cyclope",
+    "earnedCoins": 5,
+    "winCards": [
+      [64, "For\u00eat Ensorcel\u00e9e"],
+      [1239, "Fruit \u00c2mambre"],
+      [1543, "Cosmos le Piquet"]
+    ],
+    "turn": 9,
+    "pv": 35,
+    "epv": -15
+  },
+  "44": {
+    "date": "25/11/2023 13:37:54",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Erida",
+    "map": 23,
+    "cardRarity": 3,
+    "enemy": "Lucius - Roi D\u00e9chu",
+    "earnedCoins": 11,
+    "winCards": [
+      [69, "Cr\u00e8te Diamant\u00e9e"],
+      [1021, "Lucius - Roi D\u00e9chu"],
+      [1209, "Fourrure Polaire"],
+      [1600, "Le grand retour"]
+    ],
+    "turn": 15,
+    "pv": 41,
+    "epv": -16
+  },
+  "45": {
+    "date": "25/11/2023 13:41:25",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Erida",
+    "map": 24,
+    "cardRarity": 3,
+    "enemy": "Etincellia",
+    "earnedCoins": 7,
+    "winCards": [
+      [72, "Pic du Ma\u00eblstrom"],
+      [1009, "Etincellia"],
+      [1202, "Acier Volcanique"]
+    ],
+    "turn": 17,
+    "pv": 77,
+    "epv": -5
+  },
+  "46": {
+    "date": "25/11/2023 13:46:00",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Aradia",
+    "map": 32,
+    "cardRarity": 3,
+    "enemy": "Fr\u00e9d\u00e9ric - Officier Heldentod",
+    "earnedCoins": 7,
+    "winCards": [
+      [96, "Vall\u00e9e de Vulcain"],
+      [1011, "Fr\u00e9d\u00e9ric - Officier Heldentod"],
+      [1247, "Coton Cuivr\u00e9"]
+    ],
+    "turn": 36,
+    "pv": 89,
+    "epv": -13
+  },
+  "47": {
+    "date": "25/11/2023 14:16:47",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Azora",
+    "map": 10,
+    "cardRarity": 1,
+    "enemy": "Epineur ac\u00e9r\u00e9",
+    "earnedCoins": 3,
+    "winCards": [
+      [28, "Plaines Dor\u00e9es"],
+      [1205, "Crystal d'Asbi raffin\u00e9"]
+    ],
+    "turn": 10,
+    "pv": 78,
+    "epv": -7
+  },
+  "48": {
+    "date": "25/11/2023 14:20:45",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Azora",
+    "map": 7,
+    "cardRarity": 1,
+    "enemy": "Ing\u00e9nieur Zumi",
+    "earnedCoins": 2,
+    "winCards": [
+      [19, "Bourbes"],
+      [1221, "Potion Paillettes"]
+    ],
+    "turn": 5,
+    "pv": 36,
+    "epv": -5
+  },
+  "49": {
+    "date": "25/11/2023 14:34:12",
+    "joueur": "Victorine",
+    "perso": "Eivor",
+    "map": 6,
+    "cardRarity": 2,
+    "enemy": "Crabe carapace de fer",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 9,
+    "pv": -1,
+    "epv": 30
+  },
+  "50": {
+    "date": "25/11/2023 14:37:02",
+    "joueur": "Victorine",
+    "perso": "Lutta",
+    "map": 23,
+    "cardRarity": 1,
+    "enemy": "Fleur Envahissante",
+    "earnedCoins": 5,
+    "winCards": [
+      [67, "Cr\u00e8te Diamant\u00e9e"],
+      [1281, "Poudre de Griffon Cendr\u00e9"],
+      [1537, "Azora et Estia"]
+    ],
+    "turn": 7,
+    "pv": 50,
+    "epv": -7
+  },
+  "51": {
+    "date": "26/11/2023 06:11:08",
+    "joueur": "Hugo",
+    "perso": "Kibo",
+    "map": 24,
+    "cardRarity": 1,
+    "enemy": "Scarab\u00e9e des Glaces",
+    "earnedCoins": 2,
+    "winCards": [
+      [70, "Pic du Ma\u00eblstrom"],
+      [1261, "Peau de Tortue"]
+    ],
+    "turn": 10,
+    "pv": 107,
+    "epv": -20
+  },
+  "52": {
+    "date": "26/11/2023 06:19:03",
+    "joueur": "Hugo",
+    "perso": "Kibo",
+    "map": 10,
+    "cardRarity": 1,
+    "enemy": "Garde de la Curie",
+    "earnedCoins": 2,
+    "winCards": [
+      [28, "Plaines Dor\u00e9es"],
+      [1255, "Ecaille d'Ankylosaure"]
+    ],
+    "turn": 12,
+    "pv": 74,
+    "epv": -14
+  },
+  "53": {
+    "date": "26/11/2023 06:25:02",
+    "joueur": "Hugo",
+    "perso": "Kibo",
+    "map": 7,
+    "cardRarity": 3,
+    "enemy": "Rumbledore (le vrai)",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 10,
+    "pv": -2,
+    "epv": 208
+  },
+  "54": {
+    "date": "26/11/2023 08:09:16",
+    "joueur": "Rachel",
+    "perso": "Rad Ed",
+    "map": 59,
+    "cardRarity": 2,
+    "enemy": "Ogre des glaces",
+    "earnedCoins": 4,
+    "winCards": [
+      [176, "Steppes d'Arist\u00e8re"],
+      [1236, "Herbe-miracle"]
+    ],
+    "turn": 7,
+    "pv": 66,
+    "epv": -6
+  },
+  "55": {
+    "date": "26/11/2023 00:10:29",
+    "joueur": "Victorine",
+    "perso": "Malvis",
+    "map": 26,
+    "cardRarity": 3,
+    "enemy": "Adonis - Tueur Juge",
+    "earnedCoins": 11,
+    "winCards": [
+      [78, "Plaines Fleuries"],
+      [1014, "Adonis"],
+      [1205, "Crystal d'Asbi raffin\u00e9"],
+      [1539, "Erida et la politique"]
+    ],
+    "turn": 9,
+    "pv": 75,
+    "epv": -36
+  },
+  "56": {
+    "date": "26/11/2023 00:13:33",
+    "joueur": "Victorine",
+    "perso": "Malvis",
+    "map": 13,
+    "cardRarity": 3,
+    "enemy": "Oberon le Massacreur Sadique",
+    "earnedCoins": 10,
+    "winCards": [
+      [39, "Pic de Noireflammes"],
+      [1007, "Oberon - Le Massacreur Sadique"],
+      [1221, "Potion Paillettes"],
+      [1530, "War et les comp\u00e9tences"]
+    ],
+    "turn": 12,
+    "pv": 86,
+    "epv": -28
+  },
+  "57": {
+    "date": "26/11/2023 08:33:50",
+    "joueur": "Rachel",
+    "perso": "Rad Ed",
+    "map": 5,
+    "cardRarity": 2,
+    "enemy": "Assassin Zumi",
+    "earnedCoins": 4,
+    "winCards": [
+      [14, "Monts Arides"],
+      [1205, "Crystal d'Asbi raffin\u00e9"]
+    ],
+    "turn": 7,
+    "pv": 26,
+    "epv": -10
+  },
+  "58": {
+    "date": "26/11/2023 00:37:20",
+    "joueur": "Victorine",
+    "perso": "Estia Ryujin",
+    "map": 59,
+    "cardRarity": 2,
+    "enemy": "Ogre Corsaire",
+    "earnedCoins": 3,
+    "winCards": [
+      [176, "Steppes d'Arist\u00e8re"],
+      [1203, "Acier d'obsidienne"]
+    ],
+    "turn": 18,
+    "pv": 62,
+    "epv": 0
+  },
+  "59": {
+    "date": "26/11/2023 00:41:30",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Aradia",
+    "map": 12,
+    "cardRarity": 3,
+    "enemy": "Invidia",
+    "earnedCoins": 7,
+    "winCards": [
+      [36, "For\u00eat de Delphes"],
+      [1028, "Invidia - Yandere"],
+      [1258, "Peau de ver"]
+    ],
+    "turn": 21,
+    "pv": 37,
+    "epv": -25
+  },
+  "60": {
+    "date": "26/11/2023 01:03:55",
+    "joueur": "Victorine",
+    "perso": "Estia Ryujin",
+    "map": 5,
+    "cardRarity": 2,
+    "enemy": "Ing\u00e9nieur Zumi",
+    "earnedCoins": 6,
+    "winCards": [
+      [14, "Monts Arides"],
+      [1217, "Potion d'encaissement"],
+      [1553, "Kibo et Vimira"]
+    ],
+    "turn": 19,
+    "pv": 56,
+    "epv": -9
+  },
+  "61": {
+    "date": "26/11/2023 00:47:31",
+    "joueur": "Victorine",
+    "perso": "Nyx",
+    "map": 59,
+    "cardRarity": 3,
+    "enemy": "Ogre Chef Shaman",
+    "earnedCoins": 10,
+    "winCards": [
+      [177, "Steppes d'Arist\u00e8re"],
+      [1023, "Gaazor - Ogre Chef Shaman"],
+      [1281, "Poudre de Griffon Cendr\u00e9"],
+      [1548, "La chute de Kibo"]
+    ],
+    "turn": 58,
+    "pv": 68,
+    "epv": -30
+  },
+  "62": {
+    "date": "26/11/2023 00:51:25",
+    "joueur": "Victorine",
+    "perso": "Nyx",
+    "map": 6,
+    "cardRarity": 2,
+    "enemy": "Pirate aggressif",
+    "earnedCoins": 7,
+    "winCards": [
+      [17, "Baie B\u00e9louga"],
+      [1236, "Herbe-miracle"],
+      [1601, "Sekhmet et Aradia"]
+    ],
+    "turn": 24,
+    "pv": 42,
+    "epv": -17
+  },
+  "65": {
+    "date": "26/11/2023 00:55:50",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Erida",
+    "map": 4,
+    "cardRarity": 3,
+    "enemy": "Mandragore - Graine de l'Yggdrasil",
+    "earnedCoins": 7,
+    "winCards": [
+      [12, "For\u00eat Arc-en-Ciel"],
+      [1017, "Mandragore - Graine de l'Yggdrasil"],
+      [1256, "Crystal liquide"]
+    ],
+    "turn": 13,
+    "pv": 105,
+    "epv": -8
+  },
+  "66": {
+    "date": "26/11/2023 00:57:33",
+    "joueur": "Victorine",
+    "perso": "Eivor",
+    "map": 6,
+    "cardRarity": 2,
+    "enemy": "Pirate aggressif",
+    "earnedCoins": 6,
+    "winCards": [
+      [17, "Baie B\u00e9louga"],
+      [1202, "Acier Volcanique"],
+      [1504, "Draigos et les explications"]
+    ],
+    "turn": 12,
+    "pv": 22,
+    "epv": -26
+  },
+  "67": {
+    "date": "26/11/2023 00:58:45",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Azora",
+    "map": 8,
+    "cardRarity": 1,
+    "enemy": "Ver Carapace Acide",
+    "earnedCoins": 6,
+    "winCards": [
+      [22, "Vall\u00e9e des Rois"],
+      [1283, "Poudre de Feu-follet"],
+      [1525, "Rad Ed et les pr\u00e9noms"]
+    ],
+    "turn": 9,
+    "pv": 90,
+    "epv": -9
+  },
+  "68": {
+    "date": "26/11/2023 00:59:42",
+    "joueur": "Victorine",
+    "perso": "Nyx",
+    "map": 12,
+    "cardRarity": 2,
+    "enemy": "Ogre Solitaire",
+    "earnedCoins": 6,
+    "winCards": [
+      [35, "For\u00eat de Delphes"],
+      [1257, "Roche sombre"],
+      [1542, "Malvis et le Loukoum"]
+    ],
+    "turn": 7,
+    "pv": 73,
+    "epv": -9
+  },
+  "69": {
+    "date": "26/11/2023 01:01:34",
+    "joueur": "Victorine",
+    "perso": "Eivor",
+    "map": 5,
+    "cardRarity": 2,
+    "enemy": "Assassin Zumi",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 8,
+    "pv": -1,
+    "epv": 42
+  }
+}
