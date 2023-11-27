@@ -39,66 +39,6 @@ const classes = [ "Guerrier", "Chevalier", "Templier", "Chev Dragon", "Voleur", 
 // prettier-ignore
 const iconsClasses = [ "01", "02", "03", "18", "04", "05", "06", "16", "07", "08", "09", "59", "10", "11", "12", "17", "13", "14", "15", "19",];
 
-// ALL SKILLS
-
-// la (les) classe(s), nom, stat utilisée (skillStat), montant [montant,stat,durée], icone,
-
-// Buff : montant, stat (ou carac), durée
-// Soin (ou atk) (++ type action "soin" ou "attaque")
-//
-
-/*
-var skillSoin = {};
-skillSoin["nom"] = "Guérison";
-skillSoin["classe"] = "Clerc,Barde,Shaman,Sage";
-skillSoin["statUsed"] = "intel";
-skillSoin["type"] = "soin";
-skillSoin["montant"] = "1D10";
-skillSoin["montantFixe"] = 6;
-skillSoin["icone"] = "E0018";
-var buffDPSMag = {};
-buffDPSMag["nom"] = "Magic Boost";
-buffDPSMag["classe"] = "Magicien,Illusionniste,Démoniste,Luminary";
-buffDPSMag["statUsed"] = "intel";
-buffDPSMag["type"] = "buff";
-buffDPSMag["buffElem"] = "degat";
-buffDPSMag["montant"] = "1D6";
-buffDPSMag["montantFixe"] = 6;
-buffDPSMag["duree"] = 3;
-buffDPSMag["icone"] = "E0024";
-var buffDPSCac = {};
-buffDPSCac["nom"] = "Encouragement";
-buffDPSCac["classe"] = "Voleur,Assassin,Danselame,Samouraï";
-buffDPSCac["statUsed"] = "esprit";
-buffDPSCac["type"] = "buff";
-buffDPSCac["buffElem"] = "degat";
-buffDPSCac["montant"] = "1D6";
-buffDPSCac["montantFixe"] = 6;
-buffDPSCac["duree"] = 3;
-buffDPSCac["icone"] = "E0008";
-var buffDPSDist = {};
-buffDPSDist["nom"] = "Instinct Sauvage";
-buffDPSDist["classe"] = "Chasseur,Ingénieur,Corsaire,Juge";
-buffDPSDist["statUsed"] = "esprit";
-buffDPSDist["type"] = "buff";
-buffDPSDist["buffElem"] = "degat";
-buffDPSDist["montant"] = "1D4";
-buffDPSDist["montantFixe"] = 4;
-buffDPSDist["duree"] = 4;
-buffDPSDist["icone"] = "E0014";
-var buffDPSTank = {};
-buffDPSTank["nom"] = "Mur de Titan";
-buffDPSTank["classe"] = "Guerrier,Chevalier,Templier,Chev Dragon";
-buffDPSTank["statUsed"] = "force";
-buffDPSTank["type"] = "buff";
-buffDPSTank["buffElem"] = "armure";
-buffDPSTank["montant"] = "1D4";
-buffDPSTank["montantFixe"] = 2;
-buffDPSTank["duree"] = 4;
-buffDPSTank["icone"] = "E0029";
-var allSkills = [skillSoin, buffDPSMag, buffDPSCac, buffDPSDist, buffDPSTank];
-*/
-
 console.log(allSkills);
 
 var perso = {};
@@ -109,6 +49,8 @@ var ingame = false;
 var indexPlayer;
 var joueurData;
 var selectedEnemy;
+var currentPersoEntries;
+const turnToCheck = 6 + Math.floor(Math.random() * 3);
 
 // console.log('Master JSON', masterJSON);
 console.log("Enemy JSON", enemyJSON);
@@ -146,6 +88,11 @@ window.addEventListener("load", () => {
 
     joueurData = playerJSON[indexPlayer];
     console.log(joueurData);
+
+    // Update to get current perso entries
+    const persoIDforPlayer = joueurData.persos.indexOf(parseInt(indexPerso));
+    currentPersoEntries = joueurData.entries[persoIDforPlayer];
+
     selectPerso.value = urlParams.get("perso") - 1;
     // loadFiche(urlParams.get('perso'));
     // selectedPerso = selectPerso.value;
@@ -357,7 +304,7 @@ function Perso(persoData) {
 
   // 25/11 Bonus if less skills than 4
   const nbSkills = allSkills.filter(
-    (skill) => skill.classe.includes(perso.classeP) || skill.classe.includes(perso.classeS)
+    (skill) => skill.classe.includes(persoData.classeP) || skill.classe.includes(persoData.classeS)
   ).length;
   if (nbSkills < 4) {
     this.degat += 1;
@@ -486,7 +433,7 @@ console.log(enemyGenerated);
 
 function chooseEnemy(category = null) {
   // prettier-ignore
-  const forbidden = ["71","82","85","101","104","109","118","121"];
+  const forbidden = ["82","85","101","104","109"];
   // console.log(forbidden.map(f => enemyJSON[f]))
 
   // prettier-ignore
@@ -612,12 +559,38 @@ function newturn() {
 
   turn++;
   document.querySelector("#turn").innerText = turn;
+
+  // Update 26/11/23 : Pour éviter la triche de "j'enregistre que si j'ai gagné"
+  // J'ai décidé de consommer l'entrée du personnage (en sauvegardant) à partir de 6 à 8 tours de combat
+  // 6-8 tours représente un engagement "Je réalise le combat jusqu'au bout"
+  if (turn === turnToCheck) {
+    const urlParams = new URLSearchParams(window.location.search);
+
+    if (!urlParams.has("perso")) return;
+
+    var enemyRarity;
+    if (selectedEnemy.pvmax >= 200) {
+      enemyRarity = Math.trunc(selectedEnemy.pvmax / 100) + 1;
+    } else if (selectedEnemy.pvmax >= 120) {
+      enemyRarity = 2;
+    } else {
+      enemyRarity = 1;
+      // Handle enemy with "elite mode"
+      enemyRarity += urlParams.has("isElite");
+    }
+
+    const cardRarity = Math.min(enemyRarity, 3);
+    const mapID = parseInt(urlParams.get("map"));
+    saveLog(indexPlayer, 0, null, mapID, cardRarity, selectedEnemy);
+    savePlayer(joueurData);
+  }
+
   toastNotification("Tour n°" + turn + ", choisissez une action");
   document.querySelector("#instruction").innerText = "Choisissez une action";
 
-  unlockInputs(true);
-
   updateBuff();
+
+  unlockInputs(true);
 }
 
 async function isEnded() {
@@ -784,17 +757,18 @@ async function saveLog(indexPlayer, earnedCoins, winCards, mapID, cardRarity, se
 }
 
 async function savePlayer(newJoueurData) {
+  // Last control before save : if entries are negative, don't save !
   const urlParams = new URLSearchParams(window.location.search);
-
   if (!urlParams.has("perso")) return;
 
   const indexPerso = urlParams.get("perso");
 
   const persoIDforPlayer = joueurData.persos.indexOf(parseInt(indexPerso));
 
-  newJoueurData.entries[persoIDforPlayer] -= 1;
+  // Glitch Bug fixes : Victorine 27/11/23 "Infini combat si tu gagnes avant T6-8 !"
+  // En effet, l'entrée n'était pas décomptée/consommée si tu finissais avant, mtn dès la save je la compte
+  if (currentPersoEntries === newJoueurData.entries[persoIDforPlayer]) newJoueurData.entries[persoIDforPlayer] -= 1;
 
-  // Last control before save : if entries are negative, don't save !
   if (newJoueurData.entries[persoIDforPlayer] <= -1) {
     toastNotification("Erreur : Le personnage a déjà consommé toutes ses entrées.");
     return;
@@ -1005,6 +979,7 @@ statsButton.forEach((buttonStat) => {
 let inExecution = false;
 function turnExecution(persoSkill, skillE = null) {
   // Bug fix Victorine 26/11/2023 : If already clicked (in execution), then cancel
+  // Because if not, can spam x skills and kill enemy in 1 turn !
   if (inExecution) return;
   inExecution = true;
 
@@ -1027,7 +1002,7 @@ function turnExecution(persoSkill, skillE = null) {
     // Add 05/11/2023 : Can't use same skill 2 times
     if (skillE) {
       skillE.querySelector(".skillName").disabled = true;
-      // 25/11/2023 : Can't use heal 2 times
+      // 25/11/2023 : Can't use heal 2 times (too cheat)
       if (skillE.querySelector(".montant").innerText.includes("soin")) {
         Object.values([...document.querySelectorAll(".skillCombat")]).forEach((sE) => {
           if (sE.querySelector(".montant").innerText.includes("soin")) {
@@ -1069,12 +1044,6 @@ function enemyTurn(enemy) {
     statName = Object.keys(stats)[1];
   }
 
-  // if(randValue < enemy.force){
-  //   statName = "force";
-  // }else if(randValue < enemy.force + enemy.dexté){
-  //   statName = "dexté";
-  // }else{ statName = "intel"; }
-
   executeAction(enemy, {
     type: "attaque",
     montant: "Dégât +1D10",
@@ -1105,7 +1074,6 @@ function executeAction(user, userSkill) {
     console.log(montant);
   } else if (userResult == "success") {
     montant = dicesConversion(userSkill.montant) + (userSkill.montantFixe || 0);
-    // console.log(montant);
   }
 
   console.log("montant : ", montant);
@@ -1130,9 +1098,15 @@ function executeAction(user, userSkill) {
     }
   } else if (type == "soin") {
     if (userResult == "crit success") {
+      // Update 26/11/23 : Nerf du heal qui est trop cheat
+      // "Heal autant que ton montant de dégâts, ce n'est pas normal"
+      // 0 de dégâts transformé en heal, ce n'est pas normal non plus
+      // Test d'une première version où 2/3 dégâts == Heal
+      // heal(user, (user.degat * 4) / 5 + montant);
       heal(user, user.degat + montant);
       updateDesc("Soin critique !");
     } else if (userResult == "success") {
+      // heal(user, (user.degat * 4) / 5 + montant);
       heal(user, user.degat + montant);
       updateDesc("Soin !");
     }
@@ -1168,7 +1142,8 @@ function hit(user, amount) {
 }
 
 function heal(user, amount) {
-  // 20/11/23 : Reduce the heal by 1 point (because too cheat)
+  // Bug Fixes Victorine 20/11/23 : Take min between "max HP and healed HP" x)
+  // ++ Reduce the heal by 1 point (because too cheat)
   user.pv = Math.min(user.pvmax, parseInt(user.pv) + amount - 1);
 
   // min() permet de gérer si les PV soignés sont > aux PV max
@@ -1177,7 +1152,8 @@ function heal(user, amount) {
 
 function buff(userSkill, amount) {
   [...document.querySelectorAll(".buff")].every((buffE) => {
-    if (buffE.id == userSkill.nom) {
+    // Second security check to don't update Euphorie, which increase each turn
+    if (buffE.id === userSkill.nom && buffE.id !== "Euphorie") {
       // if already applied, update buff time
       buffE.querySelector(".duree").children[0].innerText = userSkill.duree + 1; // +1 car tour actuel à ne pas compter !
       buffE.querySelector(".duree").children[1].innerText = userSkill.duree;
@@ -1215,8 +1191,18 @@ function unlockInputs(bool) {
   statsButton.forEach((buttonStat) => {
     document.querySelector("#" + buttonStat).disabled = !bool;
   });
+
   skillsButton.forEach((buttonSkill) => {
     buttonSkill.disabled = !bool;
+
+    // Bug Fix 27/11/23 (Grâce aux logs <3, et à la triche de Sekhmet # Battu Ochak Oo)
+    if (buttonSkill.value === "Euphorie") {
+      [...document.querySelectorAll(".buff")].forEach((buffE) => {
+        if (buffE.id === "Euphorie") {
+          buttonSkill.disabled = true;
+        }
+      });
+    }
   });
 }
 

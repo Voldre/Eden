@@ -221,6 +221,10 @@ function updateDay(joueurData, indexPlayer) {
   joueurData.date = today;
   joueurData.entries = joueurData.entries.map(() => 3);
 
+  // Exception Hugo qui n'a qu'un/deux personnage(s) (26/11/23)
+  if (joueurData.entries.length === 1) joueurData.entries = joueurData.entries.map(() => 6);
+  if (joueurData.entries.length === 2) joueurData.entries = joueurData.entries.map(() => 4);
+
   joueurData.alpagaCoin += 5;
 
   var newPlayer = {};
