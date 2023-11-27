@@ -839,8 +839,8 @@
     "nom": "Scarab\u00e9e des Glaces",
     "pvmax": "100",
     "skills": [
-      "Coup de croc : 1D10 +10 : force",
-      "Temp\u00eate de Glace : 1D8 AoE+8 (malus dext\u00e9 3) : intelligence",
+      "Coup de croc : 1D10 +13 : force",
+      "Temp\u00eate de Glace : 1D8+10 AoE (malus dext\u00e9 3) : intelligence",
       "D\u00e9fense d'Acier : Blocage +4 pendant 1D4+1 tours : esprit",
       ""
     ],
@@ -1111,7 +1111,7 @@
     "skills": [
       "Euphorie : +1D4+1 (min 3) par coup. Buff pendant 4-5 tours (max 5) : esprit",
       "Perc\u00e9e du Guerrier : 1D6 + 1D6 + 1D4 +12 : force",
-      "Perce-Armure : 1D10+10 + d\u00e9g\u00e2t physique re\u00e7u +5 (3 tours) : force",
+      "Perce-Armure : 1D10+14 + d\u00e9g\u00e2t physique re\u00e7u +5 (3 tours) : force",
       "Attaque tournoyante : 2D8 +8 : force"
     ],
     "stats": "17,11,13,13,15",
@@ -1124,7 +1124,7 @@
     "nom": "McDougal - H\u00e9raut Heldentod",
     "pvmax": "220",
     "skills": [
-      "Marteau Insolent : 1D10 +10 AoE, et -1 de blocage et d'esquive pour 3 tours : force",
+      "Marteau Insolent : 1D10 +12 AoE, et -1 de blocage et d'esquive pour 3 tours : force",
       "Marteau de Scellement : 1D10+15 de glace, retire un buff : force",
       "Aura Bouclier : Blocage +3 AoE sur 3 tours : Esprit",
       "Aura Ami Marteau : Soin 2D10 +16. Prochain d\u00e9g\u00e2t +1D6+8 : esprit"
@@ -1139,8 +1139,8 @@
     "nom": "Garde Heldentod",
     "pvmax": "95",
     "skills": [
-      "Charge : 1D10 +14 : force",
-      "Coup de Lance/Epee : 1D10 +11 : force",
+      "Charge : 1D10 +11 : force",
+      "Coup de Lance/Epee : 1D10 +10 : force",
       "D\u00e9fense : d\u00e9g\u00e2t re\u00e7u -6 pendant 3 tours : esprit",
       "Cri de guerre : d\u00e9g\u00e2t +5 a tlm pendant 4 tours : esprit"
     ],
@@ -1305,9 +1305,9 @@
     "pvmax": "200",
     "skills": [
       "Mur de Titan : D\u00e9g\u00e2t -4 -1D4 pendant 4 tours : force",
-      "Provocation :D\u00e9g\u00e2t 1D6, et 1D4 fois plus de chance d'\u00eatre vis\u00e9 pendant 4 tours : Charisme",
+      "Provocation :D\u00e9g\u00e2t 1D6+8, et 1D4 fois plus de chance d'\u00eatre vis\u00e9 pendant 4 tours : Charisme",
       "Euphorie : +1D4 (min 2) par coup (max 5). Buff pendant 4 tours : esprit, (Passif : D\u00e9g\u00e2t re\u00e7u -5)",
-      "Charge (Atk Cyclone) : 1D10+10 (5) : force."
+      "Charge (Atk Cyclone) : 1D10+15 (8) : force."
     ],
     "stats": "17,9,5,14,16",
     "desc": "Grand ursun noir capable d'encaisser de nombreux coups",
@@ -1874,8 +1874,8 @@
     "nom": "Garde de la Curie",
     "pvmax": "110",
     "skills": [
-      "Charge : 1D10 +14 : force",
-      "Lumi\u00e8re Sacr\u00e9 : 1D10+12 : Intelligence",
+      "Charge : 1D10 +9 : force",
+      "Lumi\u00e8re Sacr\u00e9 : 1D10+11 : Intelligence",
       "Gu\u00e9rison : Soin 2D6 +10 : Intelligence",
       "D\u00e9fense : d\u00e9g\u00e2t re\u00e7u -5 pendant 3 tours : esprit"
     ],
