@@ -178,7 +178,7 @@ function writeMessage(persoData, pnjData, mapData, enemyData) {
 
 function chooseEnemy(mapId = null, category = null) {
   // prettier-ignore
-  const forbidden = ["71","82","101","104","109","118","119"];
+  const forbidden = ["82","85","101","104","109"];
 
   var enemyListId = Object.keys(enemyJSON).filter((eID) => !forbidden.includes(eID));
 
