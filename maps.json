@@ -21,7 +21,7 @@
     "map_z": null,
     "map_r": null,
     "bgm": 7,
-    "mobs": [5, 12, 10]
+    "mobs": [5, 12, 10, 132]
   },
   "3": {
     "name": "Colline tranquille",
@@ -34,7 +34,7 @@
     "map_z": null,
     "map_r": null,
     "bgm": 10,
-    "mobs": [1, 2, 3, 7, 127]
+    "mobs": [1, 2, 3, 7, 127, 133]
   },
   "4": {
     "name": "Forêt Arc-en-Ciel",
@@ -561,7 +561,8 @@
     "map_y": null,
     "map_z": null,
     "map_r": null,
-    "bgm": 34
+    "bgm": 34,
+    "mobs": [17, 40, 120, 134, 135]
   },
   "98": {
     "name": "Temple enchanté - Passé",

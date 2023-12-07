@@ -75,10 +75,18 @@ window.addEventListener("load", async () => {
   // Upgrade enemy to Elite if the rarity selected randomly is "2" and the enemy is "common"
   const isElite = rarity === 2 && enemyData.pvmax < 120;
 
-  if (rarity === 2) document.querySelector("#rarity").innerText = "ELITE";
-
-  if (rarity === 3) document.querySelector("#rarity").innerText = "BOSS";
-
+  if (rarity === 1) {
+    document.querySelector("#rarity").src = "images/uiiconPNG/combat_mob.png";
+    document.querySelector("#rarity").alt = "Monstre Commun";
+  }
+  if (rarity === 2) {
+    document.querySelector("#rarity").src = "images/uiiconPNG/combat_elite.png";
+    document.querySelector("#rarity").alt = "Elite";
+  }
+  if (rarity === 3) {
+    document.querySelector("#rarity").src = "images/uiiconPNG/combat_boss.png";
+    document.querySelector("#rarity").alt = "Boss";
+  }
   const randomPNJ = Math.floor(Math.random() * Object.entries(pnjJSON).length + 1);
   console.log(randomPNJ);
   const pnjData = pnjJSON[randomPNJ];
@@ -144,6 +152,7 @@ window.addEventListener("load", async () => {
     .catch((error) => {
       document.querySelector("#response").innerText = "Erreur lors de la requête à l'API :" + error.toString();
       console.error("Erreur lors de la requête à l'API :", error);
+      document.querySelector(".game").classList.remove("loading");
     });
 });
 
@@ -156,7 +165,9 @@ function getChatGPTKey() {
     error: function (error) {
       console.log(error);
 
-      alert("Echec de la récupération de la clé de l'API ChatGPT :" + JSON.stringify(error));
+      document.querySelector("#response").innerHTML =
+        "Echec de la récupération de la clé de l'API ChatGPT :" + JSON.stringify(error);
+      document.querySelector(".game").classList.remove("loading");
     },
   });
 }

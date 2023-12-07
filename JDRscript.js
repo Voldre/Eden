@@ -39,6 +39,8 @@ const classes = [ "Guerrier", "Chevalier", "Templier", "Chev Dragon", "Voleur", 
 // prettier-ignore
 const iconsClasses = [ "01", "02", "03", "18", "04", "05", "06", "16", "07", "08", "09", "59", "10", "11", "12", "17", "13", "14", "15", "19",];
 // prettier-ignore
+const iconsEveil = [ "J009", "J011", "J013", "j043", "J015", "J017", "J019", "j039", "J021", "J023", "J025", "j087", "J027", "J029", "J031", "j041", "J033", "J035", "J037", "j045"];
+// prettier-ignore
 const races = [ "Humain", "Ezelin", "Ursun", "Zumi", "Anuran", "Torturran", "Drakai", "Tuskar", "Ogre",];
 // prettier-ignore
 const poids = [ "Moyen", "Léger", "Lourd", "Léger", "Moyen", "Moyen", "Léger", "Lourd", "Lourd",];
@@ -104,8 +106,10 @@ function defineAwaken(classe) {
   awakenSkillE.querySelector(".nom").innerText = "Eveil du " + classe;
   awakenSkillE.querySelector(".effet").innerText = "Inactif";
   awakenSkillE.querySelector(".montant").innerText = nbUse + " fois par combat : Eveil des compétences : Durée 3 tours";
+
+  var classeID = classes.indexOf(classe);
   awakenSkillE.querySelector(".icone").src =
-    "http://voldre.free.fr/Eden/images/skillIcon/E00" + iconsClasses[Math.round(Math.random() * 18 + 1)] + ".png";
+    "http://voldre.free.fr/Eden/images/skillIcon/" + iconsEveil[classeID] + ".png";
   awakenSkillE.querySelector(".desc").innerText =
     "Eveil de la classe du " + classe + ", la majorité de ses compétences sont altérées et améliorées !";
 }
@@ -297,7 +301,8 @@ function insertSkill(skillElement, skillName, awakenClass = false) {
 
     skillElement.children[1].innerText = selectedSkill.effet + " / " + selectedSkill.stat;
     skillElement.children[2].innerText = selectedAwakenSkill?.montant || selectedSkill.montant;
-    skillElement.children[3].src = "http://voldre.free.fr/Eden/images/skillIcon/" + selectedSkill.icone + ".png";
+    skillElement.children[3].children[0].src =
+      "http://voldre.free.fr/Eden/images/skillIcon/" + selectedSkill.icone + ".png";
     skillElement.children[3].title = selectedAwakenSkill?.desc || selectedSkill.desc;
     skillElement.children[4].innerText = selectedAwakenSkill?.desc || selectedSkill.desc;
 
@@ -703,7 +708,7 @@ var labelsDescription = {
   stress:
     "Stress max : 200%. Chaque 50% de stress, les stats diminue de 1 (donc 4 maxi).<br/>Le stress accentué augmente de 50%, la réduction diminue de 33% (1/3).",
   infoEQPT:
-    "Changer d'arme en combat se fait en début de tour (action instantanée). <br/>Porter une armure non adapté (magique, léger, lourd) n'est pas possible. <br/>Le montant fixe total (hors %) des accessoires est limité : +2 par stat, +3 blocage/esquive, pour les soins et dégâts (infligés, reçus) : 6",
+    "Changer d'arme en combat se fait en début de tour (action instantanée). <br/>Porter une armure non adapté (magique, léger, lourd) n'est pas possible. Sauf si gros malus.<br/>Le montant fixe total (hors %) des accessoires est limité : +2 par stat, +3 blocage/esquive, +3 montants buffs (2 si euphorie), pour les soins et dégâts (infligés, reçus) : 6 (+2 si bonus dégât élémentaire)",
   //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."
 };
 
