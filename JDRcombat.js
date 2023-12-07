@@ -52,6 +52,10 @@ var selectedEnemy;
 var currentPersoEntries;
 const turnToCheck = 6 + Math.floor(Math.random() * 3);
 
+var indexPerso;
+var nomPerso;
+var logID;
+
 // console.log('Master JSON', masterJSON);
 console.log("Enemy JSON", enemyJSON);
 
@@ -74,7 +78,10 @@ window.addEventListener("load", () => {
   const urlParams = new URLSearchParams(window.location.search);
 
   if (urlParams.has("perso")) {
-    const indexPerso = urlParams.get("perso");
+    indexPerso = urlParams.get("perso");
+    nomPerso = persosJSON[indexPerso - 1].nom;
+
+    logID = parseInt(Object.keys(logsJSON).reverse()[0]) + 1 || 1;
 
     indexPlayer = Object.entries(playerJSON)
       .map((player) => {
@@ -93,11 +100,18 @@ window.addEventListener("load", () => {
     const persoIDforPlayer = joueurData.persos.indexOf(parseInt(indexPerso));
     currentPersoEntries = joueurData.entries[persoIDforPlayer];
 
+    // 29/11/23 : Add check of entries at the beginning of the fight (here)
+    if (currentPersoEntries <= 0) {
+      toastNotification("Erreur : Le personnage a déjà consommé toutes ses entrées.", 6000);
+      endRediction();
+      return;
+    }
     selectPerso.value = urlParams.get("perso") - 1;
     // loadFiche(urlParams.get('perso'));
     // selectedPerso = selectPerso.value;
     var selectedID = selectPerso.selectedIndex;
   }
+
   loadFiche(selectedID);
   if (urlParams.has("enemy")) {
     selectedEnemy = Object.values(enemyJSON).find((e) => e.nom == urlParams.get("enemy"));
@@ -127,7 +141,7 @@ function cookieCheck() {
 
   if (cookieAllow !== "true") {
     toastNotification("Erreur : Lancez un combat à partir d'une quête", 6000);
-    endRediction(indexPlayer);
+    endRediction();
     return false;
   } else {
     console.log("Allowed");
@@ -137,15 +151,15 @@ function cookieCheck() {
   }
 }
 
-selectPerso.addEventListener("change", (e) => {
-  var indexPerso = e.target.selectedIndex;
-  loadFiche(indexPerso);
-  loadEnemy(chooseEnemy());
+// selectPerso.addEventListener("change", (e) => {
+//   var indexPerso = e.target.selectedIndex;
+//   loadFiche(indexPerso);
+//   loadEnemy(chooseEnemy());
 
-  toastNotification("Chargement réussi de " + e.target.value);
+//   toastNotification("Chargement réussi de " + e.target.value);
 
-  newturn();
-});
+//   newturn();
+// });
 
 function loadFiche(indexPerso) {
   document.querySelector(".perso").id = indexPerso;
@@ -168,8 +182,11 @@ function loadFiche(indexPerso) {
 
   document.querySelector("#pp").src = persoData.pp;
   document.querySelector("#force").value = perso.force;
+  document.querySelector("#resForce").innerText = "Bloc +" + perso.forceRes;
   document.querySelector("#dexté").value = perso.dexté;
+  document.querySelector("#resDexté").innerText = "Esq +" + perso.dextéRes;
   document.querySelector("#intel").value = perso.intel;
+  document.querySelector("#resIntel").innerText = "Bloc +" + perso.intelRes;
   document.querySelector("#charisme").value = perso.charisme;
   document.querySelector("#esprit").value = perso.esprit;
 
@@ -241,7 +258,15 @@ function Perso(persoData) {
   }
   // stuffs = stuffs.filter((s) => s != undefined);
 
-  var montantBouclier, montantArmure, montantArme1, montantArme2, montantAccessDegat, montantAccessArmure;
+  var montantBouclier,
+    montantArmure,
+    montantArme1,
+    montantArme2,
+    montantAccessDegat,
+    montantAccessArmure,
+    montantBlocP,
+    montantEsq,
+    montantBlocM;
 
   // Add 05/11/2023 : Accessories effects (+ Damage or + Armor), according to access specificites
   // console.log(stuffs);
@@ -286,8 +311,11 @@ function Perso(persoData) {
   montantArmure = stuffs[3].montant.split("Dégât -")[1].split(",")[0].split(" ")[0];
 
   // Bonus d'armure par niveau (20/11/23 : Fixe à 2 en +, exponentiel par niveau)
+  // 02/12/23 : l'exponentiel du bouclier est réduit, car sinon trop cheat
   this.armure = Math.round(
-    (2 + parseInt(montantBouclier) + parseInt(montantArmure)) * Math.pow(1.1, this.niv) + montantAccessArmure
+    (2 + parseInt(montantArmure)) * Math.pow(1.1, this.niv) +
+      parseInt(montantBouclier) * Math.pow(1.05, this.niv) +
+      montantAccessArmure
   );
 
   // 21/11/23 : Si l'armure actuelle est trop haute, je la diminue !
@@ -311,11 +339,61 @@ function Perso(persoData) {
     this.armure += 1;
   }
 
-  // ----
+  // 03/12 Add Bloc/Esq (resistance) bonus according to stuff
+  montantBlocP = stuffs
+    .map((stuff) => {
+      if (!stuff) return 0;
+      let value = "0";
+      [stuff.effet || "", stuff.montant || ""].forEach((text) => {
+        if (text.includes("Blocage") && !text.includes("Blocage magique")) {
+          if (text.includes("Blocage physique")) {
+            value = text.split("Blocage physique +")[1][0];
+          } else {
+            value = text.split("Blocage +")[1][0];
+          }
+        }
+      });
+      return parseInt(value);
+    })
+    .reduce((a, b) => a + b);
+
+  montantEsq = stuffs
+    .map((stuff) => {
+      if (!stuff) return 0;
+      let value = 0;
+
+      [stuff.effet || "", stuff.montant || ""].forEach((text) => {
+        if (text.includes("Esquive +")) {
+          value = parseInt(text.split("Esquive +")[1][0]);
+        }
+      });
+      return value;
+    })
+    .reduce((a, b) => a + b);
+
+  montantBlocM = stuffs
+    .map((stuff) => {
+      if (!stuff) return 0;
+      let value = "0";
+      [stuff.effet || "", stuff.montant || ""].forEach((text) => {
+        if (text.includes("Blocage") && !text.includes("Blocage physique")) {
+          if (text.includes("Blocage magique")) {
+            value = text.split("Blocage magique +")[1][0];
+          } else {
+            value = text.split("Blocage +")[1][0];
+          }
+        }
+      });
+      return parseInt(value);
+    })
+    .reduce((a, b) => a + b);
 
   this.force = persoData.force + persoData.forceB.replace(/[^\d.+-]/g, "");
+  this.forceRes = montantBlocP;
   this.dexté = persoData.dexté + persoData.dextéB.replace(/[^\d.+-]/g, "");
+  this.dextéRes = montantEsq;
   this.intel = persoData.intel + persoData.intelB.replace(/[^\d.+-]/g, "");
+  this.intelRes = montantBlocM;
   this.charisme = persoData.charisme + persoData.charismeB.replace(/[^\d.+-]/g, "");
   this.esprit = persoData.esprit + persoData.espritB.replace(/[^\d.+-]/g, "");
 
@@ -563,7 +641,10 @@ function newturn() {
   // Update 26/11/23 : Pour éviter la triche de "j'enregistre que si j'ai gagné"
   // J'ai décidé de consommer l'entrée du personnage (en sauvegardant) à partir de 6 à 8 tours de combat
   // 6-8 tours représente un engagement "Je réalise le combat jusqu'au bout"
-  if (turn === turnToCheck) {
+
+  // Bug Fix 28/11/23 : Ajout condition "ingame". Car si on a déjà gagné (isEnded => victory() / defeat), on a déjà
+  // log toutes les informations (avec winCards + earnedcoins), donc pas besoin de re-log !
+  if (turn === turnToCheck && ingame) {
     const urlParams = new URLSearchParams(window.location.search);
 
     if (!urlParams.has("perso")) return;
@@ -581,7 +662,7 @@ function newturn() {
 
     const cardRarity = Math.min(enemyRarity, 3);
     const mapID = parseInt(urlParams.get("map"));
-    saveLog(indexPlayer, 0, null, mapID, cardRarity, selectedEnemy);
+    saveLog(0, null, mapID, cardRarity, selectedEnemy);
     savePlayer(joueurData);
   }
 
@@ -595,7 +676,7 @@ function newturn() {
 
 async function isEnded() {
   if (ingame) {
-    if (document.querySelector("#epv").value <= 0) {
+    if (enemy.pv <= 0) {
       toastNotification("Victoire !");
       document.querySelector("#instruction").innerText = "Victoire !";
       updateDesc("Vous avez vaincu " + enemy.nom);
@@ -608,7 +689,7 @@ async function isEnded() {
       } else {
         toastNotification("Pas de joueur détecté", 6000);
       }
-    } else if (document.querySelector("#pv").value <= 0) {
+    } else if (perso.pv <= 0) {
       toastNotification("Défaite");
       document.querySelector("#instruction").innerText = "Défaite";
       updateDesc("Vous avez perdu contre " + enemy.nom);
@@ -633,7 +714,7 @@ async function isEnded() {
         const cardRarity = Math.min(enemyRarity, 3);
 
         const mapID = parseInt(urlParams.get("map"));
-        await saveLog(indexPlayer, 0, null, mapID, cardRarity, selectedEnemy);
+        await saveLog(0, null, mapID, cardRarity, selectedEnemy);
 
         await savePlayer(joueurData);
         toastNotification("Sauvegarde effectuée, redirection ...", 6000);
@@ -644,7 +725,7 @@ async function isEnded() {
   }
 
   if (!ingame) {
-    endRediction(indexPlayer);
+    endRediction();
   }
 }
 
@@ -713,7 +794,7 @@ async function victory() {
 
   // Save fight in log
   const earnedCoins = newJoueurData.alpagaCoin - joueurData.alpagaCoin;
-  await saveLog(indexPlayer, earnedCoins, winCards, mapID, cardRarity, selectedEnemy);
+  await saveLog(earnedCoins, winCards, mapID, cardRarity, selectedEnemy);
   // Update player data
   await savePlayer(newJoueurData);
 
@@ -721,16 +802,7 @@ async function victory() {
   showCardsAndCoins(joueurData, winCards, newJoueurData.alpagaCoin);
 }
 
-async function saveLog(indexPlayer, earnedCoins, winCards, mapID, cardRarity, selectedEnemy) {
-  const urlParams = new URLSearchParams(window.location.search);
-
-  if (!urlParams.has("perso")) return;
-
-  const indexPerso = urlParams.get("perso");
-  const nomPerso = persosJSON[indexPerso - 1].nom;
-
-  const logID = parseInt(Object.keys(logsJSON).reverse()[0]) + 1 || 1;
-
+async function saveLog(earnedCoins, winCards, mapID, cardRarity, selectedEnemy) {
   const newLog = {};
   newLog[logID] = {
     date: new Date().toLocaleString(),
@@ -746,23 +818,18 @@ async function saveLog(indexPlayer, earnedCoins, winCards, mapID, cardRarity, se
     epv: enemy.pv,
   };
 
-  console.log(newLog);
+  // console.log(newLog);
 
   const newLogEncoded = JSON.stringify(newLog).replaceAll("+", "%2B").replaceAll(";", "%3B");
   const cookiePerso = "combatLogsJSON=" + newLogEncoded + "; SameSite=Strict";
 
   document.cookie = cookiePerso;
   await saveWithPHP("combatLogs");
-  console.log("saveLog() done : JDRsaveFile.php executed");
+  // console.log("saveLog() done : JDRsaveFile.php executed");
 }
 
 async function savePlayer(newJoueurData) {
   // Last control before save : if entries are negative, don't save !
-  const urlParams = new URLSearchParams(window.location.search);
-  if (!urlParams.has("perso")) return;
-
-  const indexPerso = urlParams.get("perso");
-
   const persoIDforPlayer = joueurData.persos.indexOf(parseInt(indexPerso));
 
   // Glitch Bug fixes : Victorine 27/11/23 "Infini combat si tu gagnes avant T6-8 !"
@@ -770,7 +837,7 @@ async function savePlayer(newJoueurData) {
   if (currentPersoEntries === newJoueurData.entries[persoIDforPlayer]) newJoueurData.entries[persoIDforPlayer] -= 1;
 
   if (newJoueurData.entries[persoIDforPlayer] <= -1) {
-    toastNotification("Erreur : Le personnage a déjà consommé toutes ses entrées.");
+    toastNotification("Erreur : Le personnage a déjà consommé toutes ses entrées.", 6000);
     return;
   }
 
@@ -855,14 +922,14 @@ function showCardsAndCoins(joueurData, winCards, newCoins) {
   dialog.showModal();
 }
 
-function endRediction(indexPlayer) {
+function endRediction() {
   setTimeout(() => {
     window.location.href = "jdr_profil.html?joueur=" + indexPlayer;
-  }, 6000);
+  }, 5000);
   return;
 }
 
-async function saveWithPHP(nameJSON) {
+function saveWithPHP(nameJSON) {
   // eslint-disable-next-line no-undef
   $.ajax({
     url: "JDRsaveFile.php",
@@ -897,15 +964,15 @@ function rollDice(user, type, statName) {
   var success;
 
   // Stat name section + Success amount
-  console.log(stat, type);
   if (type == "attaque" || type == "skill" || type == "soin" || type == "buff") {
     section.querySelector(".statName").innerText = statName;
     // 24/11/23 : Max success is 18 (because user can have 19,20, ... !)
     success = Math.min(stat, 18);
   } else {
+    // Defense
     section.querySelector(".statName").innerText = statName + "/2";
-    success = Math.ceil(stat / 2);
-    console.log(success);
+    success = Math.ceil(stat / 2) + (user[statName + "Res"] || 0);
+    console.log("Defense " + statName + " : " + success);
   }
 
   // Result (correction 20/11/23 : change round to floor to have nice repartition)
@@ -1103,11 +1170,11 @@ function executeAction(user, userSkill) {
       // 0 de dégâts transformé en heal, ce n'est pas normal non plus
       // Test d'une première version où 2/3 dégâts == Heal
       // heal(user, (user.degat * 4) / 5 + montant);
-      heal(user, user.degat + montant);
+      heal(user, Math.floor(user.degat * 0.9) + montant);
       updateDesc("Soin critique !");
     } else if (userResult == "success") {
-      // heal(user, (user.degat * 4) / 5 + montant);
-      heal(user, user.degat + montant);
+      // heal(user, Math.floor((user.degat * 4) / 5) + montant);
+      heal(user, Math.floor(user.degat * 0.9) + montant);
       updateDesc("Soin !");
     }
   } else if (type == "buff") {

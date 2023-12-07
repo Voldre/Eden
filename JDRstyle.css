@@ -111,7 +111,7 @@ dialog::backdrop {
   width: 60px;
 }
 
-.skill > .icone,
+.skill > .buffTurn,
 .equipements div > .icone,
 .awakenSkill > .icone {
   grid-area: ico;
@@ -152,6 +152,7 @@ dialog::backdrop {
   max-width: 123%;
 }
 
+.buffTurn,
 .icone {
   width: 60px;
   height: 60px;
@@ -417,6 +418,13 @@ dialog::backdrop {
   width: 75px;
   text-align: center;
 }
+.resStat {
+  position: relative;
+  line-height: 0;
+  top: 6px;
+  font-size: 12px;
+}
+
 .skillCombat .icone {
   width: 40px;
   height: 40px;

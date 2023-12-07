@@ -1150,5 +1150,14 @@
     "icone": "e0559",
     "stat": "Charisme",
     "classe": ["Barde"]
+  },
+  "135": {
+    "nom": "D\u00e9doublement",
+    "desc": "Cr\u00e9e un double de soi, avec les m\u00eames stats et buffs. Ses d\u00e9g\u00e2ts inflig\u00e9s sont divis\u00e9s par 2. Ses d\u00e9g\u00e2ts re\u00e7us touchent le porteur et sont aussi divis\u00e9s par 2.",
+    "effet": "Invocation",
+    "montant": "Invoque un double de soi pendant 2 tours.",
+    "icone": "e1042",
+    "stat": "Esprit",
+    "classe": ["Illusionniste"]
   }
 }

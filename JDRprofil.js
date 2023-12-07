@@ -79,8 +79,14 @@ window.addEventListener("load", () => {
 
       const playerConnectedE = document.createElement("div");
       playerConnectedE.className = "connectionPoint";
-      const today = new Date().toLocaleString().split(" ")[0];
-      if (playerData.date === today) {
+
+      const jDateSplit = playerData.date.split("/");
+      const joueurDate = formatDate(jDateSplit);
+      const today = formatDate(new Date().toLocaleString().split(" ")[0].split("/"));
+
+      console.log(jDateSplit, new Date().toLocaleString().split(" ")[0].split("/"));
+      console.log(joueurDate, today);
+      if (joueurDate >= today) {
         playerConnectedE.style.backgroundColor = "green";
       } else {
         playerConnectedE.style.backgroundColor = "grey";
@@ -124,7 +130,7 @@ window.addEventListener("load", () => {
       const playerEntriesE = document.createElement("p");
 
       const entriesToday =
-        playerData.date === today
+        joueurDate >= today
           ? Math.round(
               (playerData["entries"].reduce((acc, cur) => acc + cur / 3, 0) / playerData["entries"].length) * 100
             )
@@ -147,6 +153,36 @@ window.addEventListener("load", () => {
       const persoP = new PersoSimplified(p);
       persoP.degat != "-" ? console.log(persoP) : null;
     });
+
+    // Display all persos by classes (if perso really exist)
+    const rawClassLists = Object.values(persosJSON)
+      .filter((p) => parseInt(p.niv) < 15)
+      .map((p) => [p.classeP, p.classeS]);
+    const allClassLists = [].concat(...rawClassLists);
+    const counter = {};
+
+    allClassLists.forEach((ele) => {
+      if (counter[ele]) {
+        counter[ele] += 1;
+      } else {
+        counter[ele] = 1;
+      }
+    });
+    console.log("Persos par classes :", counter);
+
+    const newCounter = {};
+    // prettier-ignore
+    const classes = [ "Guerrier", "Chevalier", "Templier", "Chev Dragon", "Voleur", "Assassin", "Danselame", "Samouraï", "Chasseur", "Ingénieur", "Corsaire", "Juge", "Clerc", "Barde", "Shaman", "Sage", "Magicien", "Illusionniste", "Démoniste", "Luminary",];
+    classes.forEach((c) => {
+      const persosC = Object.values(persosJSON)
+        .filter((p) => parseInt(p.niv) < 15)
+        .filter((p) => p.classeP === c || p.classeS === c);
+      persosC.forEach((pC) => {
+        if (!newCounter[c]) newCounter[c] = [];
+        newCounter[c].push(pC.nom);
+      });
+    });
+    console.log(newCounter);
 
     // Display nb anecdote by map
     const anecdoteByMap = Object.entries(mapsJSON).map((m) => [
@@ -214,11 +250,16 @@ function loadPlayer(player) {
 }
 
 function updateDay(joueurData, indexPlayer) {
-  const today = new Date().toLocaleString().split(" ")[0];
+  const jDateSplit = joueurData.date.split("/");
+  const joueurDate = formatDate(jDateSplit);
+  const today = formatDate(new Date().toLocaleString().split(" ")[0].split("/"));
 
-  if (joueurData.date === today) return joueurData;
+  // Bug Fix 29/11/23, different UTC (local time) can generate date in future
+  // In this case, UTC+X can go on page, and put date to Day+1, and UTC+0 can go back and put date to Day
+  // This switch always trigger the updateDay. Thank you Hugo and Rachel !
+  if (joueurDate >= today) return joueurData;
 
-  joueurData.date = today;
+  joueurData.date = today.toLocaleString().split(" ")[0];
   joueurData.entries = joueurData.entries.map(() => 3);
 
   // Exception Hugo qui n'a qu'un/deux personnage(s) (26/11/23)
@@ -247,6 +288,9 @@ function updateDay(joueurData, indexPlayer) {
   toastNotification("Cadeau de Connexion Quotidienne : 5 Pièces Alpaga !", 6000);
 
   return joueurData;
+}
+function formatDate(splitDate) {
+  return new Date(splitDate[2], parseInt(splitDate[1]) - 1, splitDate[0]);
 }
 
 function loadPerso(perso, index, joueurData) {
@@ -464,8 +508,11 @@ function PersoSimplified(persoData) {
   montantArmure = stuffs[3].montant.split("Dégât -")[1].split(",")[0].split(" ")[0];
 
   // Bonus d'armure par niveau (20/11/23 : Fixe à 2 en +, exponentiel par niveau)
+  // 02/12/23 : l'exponentiel du bouclier est réduit, car sinon trop cheat
   this.armure = Math.round(
-    (2 + parseInt(montantBouclier) + parseInt(montantArmure)) * Math.pow(1.1, this.niv) + montantAccessArmure
+    (2 + parseInt(montantArmure)) * Math.pow(1.1, this.niv) +
+      parseInt(montantBouclier) * Math.pow(1.05, this.niv) +
+      montantAccessArmure
   );
 
   // 21/11/23 : Si l'armure actuelle est trop haute, je la diminue !
