@@ -95,6 +95,9 @@
   { "id": 175, "value": 1, "kind": "map", "name": "Steppes d'Arist\u00e8re", "description": "", "kindId": 59 },
   { "id": 176, "value": 2, "kind": "map", "name": "Steppes d'Arist\u00e8re", "description": "", "kindId": 59 },
   { "id": 177, "value": 3, "kind": "map", "name": "Steppes d'Arist\u00e8re", "description": "", "kindId": 59 },
+  { "id": 289, "value": 1, "kind": "map", "name": "Île du Mariage", "description": "", "kindId": 97 },
+  { "id": 290, "value": 2, "kind": "map", "name": "Île du Mariage", "description": "", "kindId": 97 },
+  { "id": 291, "value": 3, "kind": "map", "name": "Île du Mariage", "description": "", "kindId": 97 },
   {
     "id": 1001,
     "value": 3,
@@ -352,6 +355,38 @@
     "kindId": "m473b"
   },
   {
+    "id": 1034,
+    "value": 3,
+    "kind": "boss",
+    "name": "Mori Mori - Roi Champi",
+    "description": "Grand champigno\u00efde vivant dans la Carri\u00e8re Angor. Un vrai champigno\u00efde Alpha.",
+    "kindId": "m025"
+  },
+  {
+    "id": 1035,
+    "value": 3,
+    "kind": "boss",
+    "name": "Ash - L'Associal",
+    "description": "Gar\u00e7on travestie en fille pour \u00e9chapper \u00e0 sa famille. Associal au point de ne jamais sortir de sa tente. Sa seule compagnie est une grand-m\u00e8re.",
+    "kindId": "m361"
+  },
+  {
+    "id": 1036,
+    "value": 3,
+    "kind": "boss",
+    "name": "Grand Garde Tyrolien",
+    "description": "Grande Armure vivante en forme de d\u00e9mon en acier rouge\u00e2tre noir en l\u00e9vitation.",
+    "kindId": "m442"
+  },
+  {
+    "id": 1037,
+    "value": 3,
+    "kind": "boss",
+    "name": "Pachirou",
+    "description": "Zumi Commandante de 5 unit\u00e9s offensives, bras droit de Diana, elle est explosive, dynamique et ... chaotique !",
+    "kindId": "m314b"
+  },
+  {
     "id": 1201,
     "value": 1,
     "kind": "composant",
@@ -528,7 +563,16 @@
     "kindId": "I00110"
   },
   {
-    "id": 1222,
+    "id": 1223,
+    "value": 1,
+    "kind": "composant",
+    "name": "Complément Vitaminé",
+    "description": "Ce complément peut renforcer l'utlisateur sur le moyen terme (ex : 1 séance) en PV/défense, etc...",
+    "kindId": "I00024"
+  },
+
+  {
+    "id": 1226,
     "value": 1,
     "kind": "composant",
     "name": "Raisin profond",
@@ -752,13 +796,78 @@
     "kindId": "i00650"
   },
   {
-    "id": 1283,
+    "id": 1284,
     "value": 2,
     "kind": "composant",
     "name": "Roche Ténèbreuse",
     "description": "Cette roche provient des plus obscures et ténèbreuses grottes.",
     "kindId": "i01062"
   },
+  {
+    "id": 1300,
+    "value": 1,
+    "kind": "composant",
+    "name": "Pot d'Invocation",
+    "description": "Ce pot peut contenir des esprits scellés, il peut être utilisé pour invoquer celui qui est contenu à l'intérieur.",
+    "kindId": "I00019"
+  },
+  {
+    "id": 1301,
+    "value": 1,
+    "kind": "composant",
+    "name": "Energie Agitée",
+    "description": "Ce composant d'invocation peut être utilisé pour certaine potion, il est issu d'âme ordinaire.",
+    "kindId": "I00336"
+  },
+  {
+    "id": 1302,
+    "value": 1,
+    "kind": "composant",
+    "name": "Pensée Terrifiée",
+    "description": "La peur d'un monstre s'est cristallisée dans cet orbe puissant. Il sent le fer fondu. Peut être utilisé pour créer des équipements.",
+    "kindId": "I00415"
+  },
+  {
+    "id": 1304,
+    "value": 2,
+    "kind": "composant",
+    "name": "Pensée Avide",
+    "description": "La convoitise sans fin des monstres devient une énergie puissante après leur mort. Les gens appellent cela la pensée gourmande.",
+    "kindId": "I00339"
+  },
+  {
+    "id": 1350,
+    "value": 2,
+    "kind": "composant",
+    "name": "Parchemin de Puissance",
+    "description": "Ce parchemin relativement rare est utilisé pour améliorer la qualité des armes.",
+    "kindId": "I00327"
+  },
+  {
+    "id": 1351,
+    "value": 2,
+    "kind": "composant",
+    "name": "Fragment de Crystal d'Eden",
+    "description": "Réunir trois de ces fragments permet de reconstituer un Crystal d'Eden, servant à la loterie d'Ezur.",
+    "kindId": "i00889"
+  },
+  {
+    "id": 1352,
+    "value": 2,
+    "kind": "composant",
+    "name": "Crystal d'Eden",
+    "description": "Ce crystal peut être utilisé comme ticket à la loterie spéciale d'Ezur : l'Autel de Crystal, dans lequel on peut gagner des armes, armures, objets et autres bizarreries.",
+    "kindId": "I00446"
+  },
+  {
+    "id": 1353,
+    "value": 3,
+    "kind": "composant",
+    "name": "Crystal d'Eden Doré",
+    "description": "Ce crystal est une version améliorée du ticket de loterie, très rare, il donne accès à des cadeaux exceptionnels, uniques.",
+    "kindId": "I00448"
+  },
+
   {
     "id": 1501,
     "value": 3,
@@ -996,7 +1105,7 @@
     "kind": "anecdote",
     "name": "Kry\u00e8ri et les b\u00e2tons",
     "description": "Kry\u00e8ri a perdu son b\u00e2ton face \u00e0 la Curie \u00e0 cause d'une ruine, puis face \u00e0 Eivor car il lui a vol\u00e9, et... Attention, comme on dit jamais 2 sans 3 !",
-    "maps": [15],
+    "maps": [14, 15],
     "enemies": [86],
     "kindId": "skillIcon/E0644",
     "group": 2
@@ -1106,7 +1215,7 @@
     "kind": "anecdote",
     "name": "Kibo et l'argent",
     "description": "Kibo est une personne fiable et courageuse, mais pas tr\u00e8s organis\u00e9e et \u00e9conome, son argent part vite dans l'alcool et... toujours plus d'armures !",
-    "maps": [4, 5],
+    "maps": [4, 8],
     "enemies": [],
     "kindId": "items/I00011",
     "group": 2
@@ -1172,7 +1281,7 @@
     "kind": "anecdote",
     "name": "Le l\u00e9gendaire bouclier Zuminator",
     "description": "Zuminator aurait laiss\u00e9 en ce monde le symbole de sa puissance et de sa justice : son bouclier !",
-    "maps": [],
+    "maps": [1],
     "enemies": [],
     "kindId": "items/W73002",
     "group": 2
@@ -1260,7 +1369,7 @@
     "kind": "anecdote",
     "name": "Ainz le guide",
     "description": "Ainz a un don pour être un guide touristique, malheureusement cela ne lui donne pas un rond.",
-    "maps": [],
+    "maps": [28],
     "enemies": [],
     "kindId": "items/i01434",
     "group": 1
@@ -1376,6 +1485,94 @@
     "group": 1
   },
   {
+    "id": 1557,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Cosmos et la pêche",
+    "description": "Comme à la cascade, Cosmos a montré ses talents de nage en pleine mer, sautant d'un bâteau au milieu de nul part. Apparemment il était en manque de poisson.",
+    "maps": [29],
+    "enemies": [],
+    "kindId": "otherIcon/group002",
+    "group": 1
+  },
+  {
+    "id": 1558,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Erida et les Pirates (2)",
+    "description": "Erida a pu prendre sa revanche sur l'histoire des pirates de la Baie Bélouga, en effet cela s'est mieux passé à la Falaise des Grands Vents, même si Malvis a faillit tout faire foirer...",
+    "maps": [27],
+    "enemies": [],
+    "kindId": "otherIcon/group005",
+    "group": 1
+  },
+  {
+    "id": 1559,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Malvis et Ochak",
+    "description": "Lorsque Malvis discerne de grosses ombres au loin, elle décide de foncer dans le tas et d'attaquer, et comme de par hasard, il s'agit de la Chelona : Ochak et 2 esprits sacrés ! Et voici son éclair en furie !",
+    "maps": [27],
+    "enemies": [],
+    "kindId": "uiiconPNG/pic_034",
+    "group": 1
+  },
+  {
+    "id": 1560,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Cosmos et la course",
+    "description": "Après la natation, Cosmos s'est mis à la course. Surtout quand Ochak et un Esprit Sacré lui court après pour lui voler son âme... !",
+    "maps": [27],
+    "enemies": [],
+    "kindId": "skillIcon/E0028",
+    "group": 1
+  },
+  {
+    "id": 1561,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Erida et Adonis",
+    "description": "Lorsque Erida a rencontré Adonis, elle a eu la mauvaise surprise de se retrouver menacé d'une arme sous sa gorge. Depuis elle lui voue une haine sans précédent.",
+    "maps": [22],
+    "enemies": [],
+    "kindId": "skillIcon/E0159",
+    "group": 1
+  },
+  {
+    "id": 1562,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Kibo et les Résumés",
+    "description": "Kibo (Hugo) lorsqu'il entend la musique du résumé, se met dans un état d'apaisement absolu... C'est un vrai petit remède naturel.",
+    "maps": [3, 4],
+    "enemies": [],
+    "kindId": "eden-eternal",
+    "group": 2
+  },
+  {
+    "id": 1563,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Malvis et Invidia",
+    "description": "La jalousie d'Invidia a atteint son paroxysme lorsque Malvis est venue gâcher son mariage avec Lassar en trouant sa robe. Heureusement que le soutien n'était pas loin...",
+    "maps": [97],
+    "enemies": [],
+    "kindId": "skillIcon/E0890",
+    "group": 1
+  },
+  {
+    "id": 1564,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Kratos et la douleur",
+    "description": "Kratos est un grand ursun guerrier qui adore... la douleur, un vrai masochiste. Malheureusement certains l'empêchent de se blesser.",
+    "maps": [97],
+    "enemies": [],
+    "kindId": "skillIcon/E0905",
+    "group": 1
+  },
+  {
     "id": 15000,
     "value": 3,
     "kind": "anecdoteIII",
@@ -1385,6 +1582,17 @@
     "enemies": [],
     "kindId": "items/",
     "group": 0
+  },
+  {
+    "id": 15000,
+    "value": 3,
+    "kind": "anecdoteIII",
+    "name": "Sceau de Dualité",
+    "description": "Ce sceau a été utilisé par Milo, le frère de Malvis, pour sceller son âme à l'intérieur de Brocoli, c'est une relique des Sages.",
+    "maps": [58],
+    "enemies": [],
+    "kindId": "items/i01356",
+    "group": 1
   },
   {
     "id": 1600,
@@ -1424,7 +1632,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Poisseux et Lucius",
-    "description": "A chaque fois que le groupe est dans la m****, Lucius arrive en h\u00e9ros et remotive les troupes, tout particuli\u00e8re Poisseux qui se sent Chanceux !",
+    "description": "A chaque fois que le groupe est dans la m****, Lucius arrive en h\u00e9ros et remotive les troupes, tout particuli\u00e8rement Poisseux qui se sent Chanceux !",
     "maps": [5, 59],
     "enemies": [],
     "kindId": "skillIcon/E0867",

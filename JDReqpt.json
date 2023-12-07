@@ -134,8 +134,8 @@
   },
   "20": {
     "nom": "Sakura",
-    "desc": "Un b\u00e2ton myst\u00e9rieux inconnu",
-    "effet": "",
+    "desc": "Un b\u00e2ton myst\u00e9rieux inconnu. On raconte que tout ceux qui le touche finissent par dispara\u00eetre... !",
+    "effet": "(???)",
     "montant": "D\u00e9g\u00e2t +6",
     "icone": "W27301"
   },
@@ -693,9 +693,9 @@
   },
   "96": {
     "nom": "Ep\u00e9e d'Asbi raffin\u00e9e",
-    "desc": "Ep\u00e9e compos\u00e9e d'un alliage d'Acier et de Cristal d'Asbi de tr\u00e8s haute qualit\u00e9e",
-    "effet": "r\u00e9ussite des sorts +1",
-    "montant": "D\u00e9g\u00e2t +5",
+    "desc": "Ep\u00e9e compos\u00e9e d'un alliage d'Acier et de Cristaux d'Asbis de tr\u00e8s haute qualit\u00e9e",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +5, r\u00e9ussite des sorts +1",
     "icone": "W10107"
   },
   "97": {
@@ -704,7 +704,7 @@
     "effet": "",
     "montant": "Esquive +2, PV +5",
     "icone": "I00251",
-    "access": "A3"
+    "access": "A0"
   },
   "98": {
     "nom": "Griffe du D\u00e9sert",
@@ -983,7 +983,7 @@
   "136": {
     "nom": "Arc Arc-en-Ciel",
     "desc": "Un Arc forg\u00e9 avec un composant tr\u00e8s pr\u00e9cieux : le Minerai Arc-en-Ciel",
-    "effet": "Blocage+1",
+    "effet": "Blocage +1",
     "montant": "D\u00e9g\u00e2t +9",
     "icone": "W50502"
   },
@@ -1395,7 +1395,7 @@
     "nom": "Cape Hypnotique",
     "desc": "Une cape poss\u00e9dant un oeil capable d'endormir les ennemis, tel un illusionniste",
     "effet": "Capacit\u00e9",
-    "montant": "1 fois par combat : Utilise Oeil Hypnotique (chance blocage -3)",
+    "montant": "1 fois par combat : Utilise Oeil Hypnotique (chance blocage : -3)",
     "icone": "k60288",
     "access": "D4"
   },
@@ -1424,9 +1424,9 @@
     "nom": "Collier d'Asbi",
     "desc": "Un collier incrust\u00e9 de crystaux d'Asbi, am\u00e9liore la survie de son porteur",
     "effet": "",
-    "montant": "Esquive & Blocage +1",
+    "montant": "Esquive +1 & Blocage +1",
     "icone": "A00032",
-    "access": "A3"
+    "access": "A0"
   },
   "199": {
     "nom": "Anneau du Sorcier",
@@ -1883,7 +1883,7 @@
     "nom": "Bouquin Pare-balle",
     "desc": "Ce bouquin ne contient rien d'int\u00e9ressant, si ce n'est quelques recettes de cuisine. Mais son \u00e9paisseur et sa mati\u00e8re le rendent ultra r\u00e9sistant.",
     "effet": "",
-    "montant": "Blocage physique +2, magique +1",
+    "montant": "Blocage physique +2, Blocage magique +1",
     "icone": "I00136",
     "access": "A4"
   },
@@ -2069,7 +2069,7 @@
     "effet": "Capacit\u00e9/ Intel,Esprit -1",
     "montant": "Blocage magique +2, 2 fois par combat (Instantan\u00e9e) : Zone Antimagie",
     "icone": "a40061",
-    "access": "A4"
+    "access": "A2"
   },
   "284": {
     "nom": "Dague Euphorique",
@@ -2082,7 +2082,7 @@
     "nom": "Appel Mondial",
     "desc": "Un m\u00e9gaphone permettant d'amplifier la voix et de provoquer les ennemis.",
     "effet": "Capacit\u00e9",
-    "montant": "3 fois par combat (Instantan\u00e9e) : Permet de provoquer les ennemis (1 chance sur 2 d'\u00eatre cibl\u00e9)",
+    "montant": "4 fois par combat (Instantan\u00e9e) : Permet de provoquer les ennemis (75% chance d'\u00eatre cibl\u00e9)",
     "icone": "I00420",
     "access": "D3"
   },
@@ -2317,14 +2317,14 @@
   "317": {
     "nom": "Manteau Polaire",
     "desc": "Un manteau cousu avec une fourrure d'une cr\u00e9ature mythique, tr\u00e8s utile dans des climats hostiles.",
-    "effet": "Blocage +1",
+    "effet": "Esquive +1 & Blocage +1",
     "montant": "D\u00e9g\u00e2t -5 (0 malus froid), d\u00e9g\u00e2t de glace +2",
     "icone": "A20059b"
   },
   "318": {
     "nom": "Manteau Fourrure",
     "desc": "Un manteau cousu avec une \u00e9paisse fourrure, malgr\u00e9 sa r\u00e9sistance elle reste tr\u00e8s l\u00e9g\u00e8re et permet \u00e0 son porteur d'\u00eatre plus agile.",
-    "effet": "Esquive & Blocage +1",
+    "effet": "Esquive +1 & Blocage +1",
     "montant": "D\u00e9g\u00e2t -4",
     "icone": "A20057"
   },
@@ -2368,7 +2368,7 @@
     "nom": "Arc Divin",
     "desc": "Un arc con\u00e7u par une magie divine de l'\u00e9glise, elle enchante vos coups physiques en d\u00e9g\u00e2t de lumi\u00e8re",
     "effet": "Element : Lumi\u00e8re",
-    "montant": "D\u00e9g\u00e2t +10 (lumi\u00e8re)",
+    "montant": "D\u00e9g\u00e2t +11 (lumi\u00e8re)",
     "icone": "W54001"
   },
   "325": {
@@ -2474,9 +2474,9 @@
     "nom": "Gemme de p\u00e9tale",
     "desc": "Une petite gemme en forme de p\u00e9tale de cerisier, fortifie son porteur",
     "effet": "",
-    "montant": "PV +15, Blocage (physique/magique) +1",
+    "montant": "PV +15, Blocage +1",
     "icone": "I00364",
-    "access": "A2"
+    "access": "A0"
   },
   "339": {
     "nom": "Pierre Loukoum",
@@ -2495,10 +2495,108 @@
     "access": "D3"
   },
   "341": {
+    "nom": "Gunner",
+    "desc": "Le Gunner est une arme \u00e9volutive, son nom signifie \"le pistoleur\", en r\u00e9f\u00e9rence \u00e0 ... :)",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +6",
+    "icone": "W51901"
+  },
+  "342": {
+    "nom": "Gunner AV",
+    "desc": "Un Gunner renforc\u00e9 par de l'Acier Volcanique",
+    "effet": "D\u00e9g\u00e2t de feu +2",
+    "montant": "D\u00e9g\u00e2t +7",
+    "icone": "W51902"
+  },
+  "343": {
+    "nom": "Gunner de l'Esprit",
+    "desc": "Un Gunner qui am\u00e9liore les capacit\u00e9s de concentration de son porteur",
+    "effet": "Esprit +1",
+    "montant": "D\u00e9g\u00e2t +8",
+    "icone": "W51900"
+  },
+  "344": {
+    "nom": "Gunner de parade",
+    "desc": "Un Gunner am\u00e9lior\u00e9 militairement pour aider son porteur \u00e0 r\u00e9sister face aux attaques.",
+    "effet": "Blocage +2",
+    "montant": "D\u00e9g\u00e2t +8",
+    "icone": "W51903"
+  },
+  "345": {
+    "nom": "Gunner Pulv\u00e9risant",
+    "desc": "Un Gunner con\u00e7u pour pulv\u00e9riser tout sur son passage",
+    "effet": "Blocage cible -2",
+    "montant": "D\u00e9g\u00e2t +10",
+    "icone": "W51904"
+  },
+  "346": {
+    "nom": "Gunner Asbi",
+    "desc": "Un Gunner renforc\u00e9 par des Crystaux d'Asbis raffin\u00e9s, il est redoutable.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +10, r\u00e9ussite des sorts +1",
+    "icone": "W51900c"
+  },
+  "347": {
     "nom": "Bouclier Solaire",
     "desc": "Un bouclier de lumi\u00e8re avec une d\u00e9fense incomparable, il a \u00e9t\u00e9 cr\u00e9\u00e9 pour l'un des plus grands templiers qui existe.",
     "effet": "",
     "montant": "D\u00e9g\u00e2t re\u00e7u -6, d\u00e9g\u00e2ts lumi\u00e8res +3",
     "icone": "W71303"
+  },
+  "348": {
+    "nom": "Plastron de Delphes",
+    "desc": "Un plastron cr\u00e9\u00e9 par des anciens habitants de Delphes, ses propri\u00e9t\u00e9s curatives sont tr\u00e8s myst\u00e9rieuses.",
+    "effet": "PV Soin re\u00e7u +5",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -5",
+    "icone": "A20108"
+  },
+  "349": {
+    "nom": "Veste de T\u00e9nacit\u00e9",
+    "desc": "Un plastron cr\u00e9\u00e9 par des anciens habitants de Delphes, ses propri\u00e9t\u00e9s curatives sont tr\u00e8s myst\u00e9rieuses.",
+    "effet": "PV +10",
+    "montant": "D\u00e9g\u00e2t -5, r\u00e9siste \u00e0 un coup fatal (laissant 1 PV)",
+    "icone": "A20068"
+  },
+  "350": {
+    "nom": "Cha\u00eene du destin",
+    "desc": "Cette cha\u00eene maudite conf\u00e8re al\u00e9atoirement un bonus ou un malus \u00e0 son porteur. De plus, une fois \u00e9quip\u00e9, il ne peut plus \u00eatre retir\u00e9",
+    "effet": "Lien Eternel",
+    "montant": "Par combat : Jet 1D6 : D\u00e9g\u00e2t/Soin \u00b16,4,2 (-6 \u00e0 +6) AoE/2",
+    "icone": "A00039"
+  },
+  "351": {
+    "nom": "Plastron du partage",
+    "desc": "Ce plastron r\u00e9sistant et maudit force son porteur \u00e0 aider un camarade en subissant la moiti\u00e9 de ses d\u00e9g\u00e2ts \u00e0 sa place.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t -7, partage des d\u00e9g\u00e2ts de moiti\u00e9",
+    "icone": "a20109b"
+  },
+  "352": {
+    "nom": "Pierre de F\u00e9r\u00e9gal",
+    "desc": "Cette pierre est issu de la Vall\u00e9e F\u00e9r\u00e9gal des Zumis. Elle est insuffl\u00e9 de l'\u00e9nergie des crystaux d'Asbi. Appartient \u00e0 la panoplie d'Asbi.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -2 (+1 par objet d'Asbi)",
+    "icone": "i01009"
+  },
+  "353": {
+    "nom": "Griffe de Monstre",
+    "desc": "Une griffe \u00e0 l'effigie d'un monstre, elle peut impressionner l'ennemi et attirer son attention.",
+    "effet": "Charisme +1",
+    "montant": "D\u00e9g\u00e2t +4",
+    "icone": "W31604"
+  },
+  "354": {
+    "nom": "Griffe de D\u00e9mon",
+    "desc": "Une griffe \u00e0 l'effigie d'un d\u00e9mon elle frappe violemment et peut effrayer ceux qui la voit.",
+    "effet": "Charisme +1",
+    "montant": "D\u00e9g\u00e2t +6",
+    "icone": "W31606"
+  },
+  "355": {
+    "nom": "Bouclier du Sorcier",
+    "desc": "Un bouclier pouvant amplifier la magie de son porteur",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t -4, montant des buffs +1",
+    "icone": "W70304"
   }
 }

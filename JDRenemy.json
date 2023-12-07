@@ -824,8 +824,8 @@
     "nom": "Ursina",
     "pvmax": "260",
     "skills": [
-      "Coupe Asura : 1D10 + (1D10)+9 : force",
-      "Purgatoire : 1D8+10 (+5 asura) + (+1D8) : esprit",
+      "Coupe Asura : 1D10 + (1D10)+15 : force",
+      "Purgatoire : 1D8+15+5 (asura) (+1D8) : esprit",
       "Foi du temple : Esprit+3, D\u00e9g\u00e2t subi -1D6-6 pendant 4 tours : esprit",
       "Euphorie : +1D4 (min 2) par coup. Buff pendant 4 tours (max 5) : esprit"
     ],
@@ -1084,7 +1084,7 @@
       "M\u00e9ga Magie Extr\u00eame : Prochain d\u00e9g\u00e2t magique +2D6 +10 : Esprit",
       "M\u00e9ga Bombe Incendiaire : 3D10 +15 : Intelligence"
     ],
-    "stats": "7,13,17,13,16",
+    "stats": "7,11,18,13,16",
     "desc": "Tr\u00e8s grand magicien des bourbes, aussi dou\u00e9 que les plus Grands Sages d'Aven (de la curie)",
     "infos": "Faible au per\u00e7ant et \u00e0 la nature",
     "drop": "On verra si \u00e7a arrive"
@@ -1324,7 +1324,7 @@
       "Griffure Noire : 2D6 +10, et -2 blocage/esquive pour 3 tours AoE : Esprit",
       "Pelote d'entrave : 4 tentatives (Instantan\u00e9e) : Mono/AoE force \u00e0 re-esquiver ou re-bloquer (r\u00e9ussite -2 si lui) : Esprit"
     ],
-    "stats": "16,7,13,12,17",
+    "stats": "17,7,13,13,17",
     "desc": "Ezelin au cheveux argent\u00e9 et aux yeux bleux. Roi ayant v\u00e9cu il y a 300 ans, expert en magie noire.",
     "infos": "Faible au per\u00e7ant et \u00e0 la lumi\u00e8re",
     "drop": "Bijou Iris, Bottes de Guerre, rare : Brassard du Combattant (ou du Pouvoir)"
@@ -1943,5 +1943,80 @@
     "desc": "Botassius, grand g\u00e9n\u00e9ral de division d\u00e9fensive de la Curie, surnomm\u00e9 le Gardien de Lumi\u00e8re. On raconte qu'il n'est jamais tomb\u00e9.",
     "infos": "Faible \u00e0 la foudre et aux t\u00e9n\u00e8bres",
     "drop": "rare : Insigne de l'Ordre du Temple, Bouclier Solaire"
+  },
+  "132": {
+    "visuel3D": "m025",
+    "nom": "Mori Mori - Roi Champi",
+    "pvmax": "210",
+    "skills": [
+      "Coup Destructeur : 3D6+12 : Force",
+      "Gaz de spores : 1D10+12 (-1 r\u00e9ussite) 3 tours : Intel",
+      "Silence AoE : 0 magie sur 3 tours : Intel",
+      "Invocation Champi Baga X2 ? : Esprit"
+    ],
+    "stats": "17,11,15,11,15",
+    "desc": "Grand champigno\u00efde vivant dans la Carri\u00e8re Angor. Un vrai champigno\u00efde Alpha.",
+    "infos": "Faible au feu et \u00e0 la glace",
+    "drop": "Germes, rare : Super chapeau champi"
+  },
+  "133": {
+    "visuel3D": "m361",
+    "nom": "Ash - L'Associal",
+    "pvmax": "200",
+    "skills": [
+      "Bombe Incendiaire : 2D6+14 : Intelligence",
+      "Temp\u00eate de Glace : 2D6+10 : Intelligence",
+      "Totem Gracieux / Chant Associal : soin 2D6+18 : Intelligence",
+      "(Vrai sort / Passif d'associal)"
+    ],
+    "stats": "7,11,18,14,16",
+    "desc": "Gar\u00e7on travesti en fille pour \u00e9chapper \u00e0 sa famille. Associal au point de ne jamais sortir de sa tente. Sa seule compagnie est une grand-m\u00e8re.",
+    "infos": "Faible au contondant et \u00e0 la lumi\u00e8re",
+    "drop": "Sakura, Robe Etoil\u00e9e"
+  },
+  "134": {
+    "visuel3D": "m058",
+    "nom": "Samoura\u00ef Ogre",
+    "pvmax": "160",
+    "skills": [
+      "Coupe Asura : 1D10 + (1D6)+10 : force",
+      "Eclair Unique : 1D10 + (1D6) +14 : force",
+      "Fr\u00e9n\u00e9sie Ogres : Chaque tour (4 max) : D\u00e9g\u00e2t (+) / PV (-) 1D6+6 : Esprit",
+      "Passif : Si PV < 50 : d\u00e9g\u00e2ts +5"
+    ],
+    "stats": "17,13,9,12,15",
+    "desc": "Ogre recouvert d'une armure et toujours pr\u00eat \u00e0 se battre, comme un certain War",
+    "infos": "Faible \u00e0 la glace et la nature",
+    "drop": "30 po, Plastron d'Ogre, rare : Katana Br\u00fblant"
+  },
+  "135": {
+    "visuel3D": "m314b",
+    "nom": "Pachirou",
+    "pvmax": "230",
+    "skills": [
+      "Artillerie Lourde : 3D10+15 : Dext\u00e9rit\u00e9",
+      "Explosif Visqueux : 2D6+15, diminue de 2 dext\u00e9 & esquive pour 3 tours : Dext\u00e9rit\u00e9",
+      "Robotisation : D\u00e9g\u00e2ts 1D4+6 et buff Armure +1D6 sur 4 tours : Esprit",
+      "Passif : PV < 100 : Blocage/Esq critique : contre-attaque bombe 2D6+10"
+    ],
+    "stats": "11,19,11,13,16",
+    "desc": "Zumi \u00e0 la peau brune orang\u00e9e, Commandante de 5 unit\u00e9s offensives, fan d'explosive, dynamique et chaotique.",
+    "infos": "Faible au per\u00e7ant et aux t\u00e9n\u00e8bres",
+    "drop": "50 po, Puce de vis\u00e9e, rare : Fusil du Bourrin"
+  },
+  "136": {
+    "visuel3D": "vimess",
+    "nom": "Vimess",
+    "pvmax": "250",
+    "skills": [
+      "Invoc Ph\u00e9nix (Torch) : 40 PV (revie 1 fois), Stats 15, ATK 2D10+10, explosion AoE \u00e0 la mort (2D10+15, soin Vimess)",
+      "Pluie de Fl\u00e8ches (/Douloureuse) : 3D10+15 (/1D) AoE (sinon +6), (0 heal 3 tours) : Dext\u00e9rit\u00e9",
+      "Saut d'esquive : 5 tentatives : tir 2D6+12, buff esprit +2",
+      "Passif : Esquive +2, esquive/blocage cible -2"
+    ],
+    "stats": "13,19,11,15,16",
+    "desc": "Ezelin m\u00e9tisse aux cheveux verts, originaires du sud du continent. G\u00e9n\u00e9ral de Division d'Exp\u00e9dition tr\u00e8s cultiv\u00e9 qui voyage avec Torch.",
+    "infos": "Faible au tranchant et aux t\u00e9n\u00e8bres",
+    "drop": "50 po, rare : Veste de T\u00e9nacit\u00e9, Chaussures d'agilit\u00e9, ..."
   }
 }

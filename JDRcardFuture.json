@@ -336,30 +336,6 @@
     "kindId": 58
   },
   {
-    "id": 289,
-    "value": 1,
-    "kind": "map",
-    "name": "Île du Mariage",
-    "description": "",
-    "kindId": 97
-  },
-  {
-    "id": 290,
-    "value": 2,
-    "kind": "map",
-    "name": "Île du Mariage",
-    "description": "",
-    "kindId": 97
-  },
-  {
-    "id": 291,
-    "value": 3,
-    "kind": "map",
-    "name": "Île du Mariage",
-    "description": "",
-    "kindId": 97
-  },
-  {
     "id": 292,
     "value": 1,
     "kind": "map",
