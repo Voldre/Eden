@@ -189,7 +189,7 @@ window.addEventListener("load", () => {
       m[1].name,
       cardJSON.filter((c) => c.kind === "anecdote").filter((c) => c.maps.includes(parseInt(m[0]))).length,
     ]);
-    console.log("Anecdotes par map", anecdoteByMap);
+    console.log("Anecdotes par map (FAIRE INDEX+1 car Aven === 1 pas 0)", anecdoteByMap);
 
     // Display nb anecdote by map
     const enemiesOnMap = Object.entries(mapsJSON)
@@ -202,6 +202,11 @@ window.addEventListener("load", () => {
 
     const bossByMap = enemiesOnMap.map((map_e) => [map_e[0], map_e[1].filter((e) => e[1] >= 200).length]);
     console.log("Nb boss par map", bossByMap);
+
+    console.log(
+      "Formule pour calculer le nb d'anecdotes d'un joueur sur une map :",
+      "playerJSON['Victorine'].cards.map(c => cardJSON.find(cj => cj.id==c)).filter(cf => cf.kind == 'anecdote' && cf.maps.includes(XXX))"
+    );
   }
 });
 
