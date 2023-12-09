@@ -32,6 +32,8 @@ function getData(filename) {
 console.log("Skills JSON", skillsJSON);
 console.log("Persos JSON", persosJSON);
 
+const buttonBuffs = document.querySelector("#buttonBuffs");
+
 // Table Initialisation
 
 // prettier-ignore
@@ -226,7 +228,8 @@ const competences = document.querySelector(".skills");
   });
   // Click on skill element
   competence.addEventListener("click", (e) => {
-    if (!e.target.classList.contains("nom")) {
+    console.log(e);
+    if (!e.target.classList.contains("nom") && !e.target.classList.contains("buffTurn")) {
       // If click on select element, don't show/hide the desc ?
       competence.children[4].classList.toggle("hide");
     }
@@ -299,12 +302,16 @@ function insertSkill(skillElement, skillName, awakenClass = false) {
       selectedAwakenSkill = Object.values(skillsAwakenJSON).find((skill) => skill.nom == skillName);
     }
 
+    const skillDesc = selectedAwakenSkill?.desc || selectedSkill.desc;
+    const skillMontant = selectedAwakenSkill?.montant || selectedSkill.montant;
+
     skillElement.children[1].innerText = selectedSkill.effet + " / " + selectedSkill.stat;
-    skillElement.children[2].innerText = selectedAwakenSkill?.montant || selectedSkill.montant;
+    skillElement.children[2].innerText = skillMontant;
+    insertBuffInteraction(skillElement.children[3], skillName, selectedSkill, skillMontant);
     skillElement.children[3].children[0].src =
       "http://voldre.free.fr/Eden/images/skillIcon/" + selectedSkill.icone + ".png";
-    skillElement.children[3].title = selectedAwakenSkill?.desc || selectedSkill.desc;
-    skillElement.children[4].innerText = selectedAwakenSkill?.desc || selectedSkill.desc;
+    skillElement.children[3].title = skillDesc;
+    skillElement.children[4].innerText = skillDesc;
 
     // Update 29/07/2023, case de PV pour familiers
     if (skillElement.children.length >= 6) {
@@ -318,6 +325,121 @@ function insertSkill(skillElement, skillName, awakenClass = false) {
     }
   }
 }
+
+function insertBuffInteraction(buffTurnE, skillName, selectedSkill, skillMontant) {
+  const skillEffet = selectedSkill.effet;
+  if (skillEffet.includes("Buff") || skillEffet.includes("Malus") || skillEffet.includes("Transformation")) {
+    buffTurnE.addEventListener("click", () => {
+      if (buffTurnE.children[1]) {
+        if (buffTurnE.children[1].innerText === "0") {
+          buffTurnE.children[2]?.remove();
+          buffTurnE.children[1].remove();
+        } else {
+          // Don't update, remove skill before
+          return;
+        }
+      }
+      dialog.innerText = "";
+      dialog.style.width = "60%";
+
+      const globalE = document.createElement("p");
+      globalE.className = "dialogBuff";
+
+      const name = document.createElement("p");
+      name.innerText = skillName;
+      globalE.append(name);
+
+      const inputs = document.createElement("div");
+      inputs.style.display = "flex";
+      inputs.style.alignItems = "center";
+
+      const turnText = document.createElement("p");
+      turnText.innerText = "Tours ";
+      inputs.append(turnText);
+
+      const turnE = document.createElement("input");
+      turnE.type = "number";
+      turnE.min = 1;
+      turnE.max = 6;
+      turnE.value = 3;
+      inputs.append(turnE);
+
+      const amountText = document.createElement("p");
+      const amountE = document.createElement("input");
+      console.log(skillMontant);
+      if (skillMontant.includes("1D")) {
+        amountText.innerText = "Montants ";
+        inputs.append(amountText);
+
+        amountE.type = "number";
+        amountE.min = 1;
+        amountE.max = 6;
+        amountE.value = 2;
+        inputs.append(amountE);
+      }
+      globalE.append(inputs);
+
+      const confirmE = document.createElement("button");
+      confirmE.innerText = "Confirmer";
+      confirmE.addEventListener("click", () => {
+        const turnOfBuffE = document.createElement("p");
+        const amountOfBuffE = document.createElement("p");
+        turnOfBuffE.innerText = turnE.value;
+        amountOfBuffE.innerText = skillMontant.includes("1D") ? amountE.value : "";
+        buffTurnE.append(turnOfBuffE);
+        buffTurnE.append(amountOfBuffE);
+        dialog.close();
+      });
+      globalE.append(confirmE);
+
+      // Bouton de fermeture
+      const closeE = document.createElement("button");
+      closeE.id = "close";
+      closeE.innerText = "Fermer";
+      closeE.addEventListener("click", () => {
+        dialog.close();
+      });
+      globalE.append(closeE);
+
+      dialog.append(globalE);
+      // Ouverture en "modal"
+      dialog.showModal();
+
+      buttonBuffs.className = "";
+    });
+  }
+}
+
+buttonBuffs.addEventListener("click", () => {
+  let buffExist = false;
+  [...document.querySelectorAll(".buffTurn")].forEach((buffE) => {
+    if (buffE.children.length > 1) {
+      const turnLeftElement = buffE.children[1];
+      if (turnLeftElement.innerText === "1") {
+        buffE.children[2]?.remove();
+        buffE.children[1].remove();
+      } else {
+        buffExist = true;
+        turnLeftElement.innerText = parseInt(turnLeftElement.innerText) - 1;
+      }
+    }
+  });
+  buttonBuffs.className = buffExist ? "" : "hide";
+});
+
+[...document.querySelectorAll(".buffTurn")].forEach((buffE) => {
+  buffE.addEventListener("click", () => {
+    if (buffE.children.length > 1) {
+      const turnLeftElement = buffE.children[1];
+      if (turnLeftElement.innerText === "1") {
+        buffE.children[2]?.remove();
+        buffE.children[1].remove();
+      } else {
+        turnLeftElement.innerText = parseInt(turnLeftElement.innerText) - 1;
+      }
+    }
+  });
+});
 
 // EQUIPEMENTS
 const equipements = document.querySelector(".equipements");
@@ -718,6 +840,7 @@ document.querySelectorAll("label").forEach((label) => {
 
   label.addEventListener("click", () => {
     dialog.innerText = "";
+    dialog.style.width = "97%";
     var text = document.createElement("p");
     text.innerHTML = labelsDescription[label.htmlFor]; // description
     dialog.append(text);

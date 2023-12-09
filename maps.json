@@ -399,8 +399,8 @@
   },
   "34": {
     "name": "Royaume Dévasté",
-    "wmap_x": 55.7,
-    "wmap_y": 23,
+    "wmap_x": 61.7,
+    "wmap_y": 27,
     "wmap": 0,
     "map_x": null,
     "map_y": null,
@@ -410,14 +410,14 @@
   },
   "35": {
     "name": "Palais Heldentod",
-    "wmap_x": 0,
-    "wmap_y": 0,
-    "wmap": 5,
+    "wmap_x": 55.7,
+    "wmap_y": 23,
+    "wmap": 0,
     "map_x": -50,
     "map_y": -97,
     "map_z": -15,
     "map_r": -0.5,
-    "bgm": 43
+    "bgm": 42
   },
   "36": {
     "name": "Plaines d'Elos",
@@ -562,7 +562,7 @@
     "map_z": null,
     "map_r": null,
     "bgm": 34,
-    "mobs": [17, 40, 120, 134, 135]
+    "mobs": [138, 40, 120, 134, 135]
   },
   "98": {
     "name": "Temple enchanté - Passé",

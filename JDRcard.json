@@ -248,7 +248,7 @@
     "kind": "boss",
     "name": "Draigos - Drakai aux bouquins",
     "description": "Draigos, l\u00e2che tacticien hors pair et \u00e9rudit qui ne se laisse pas marcher dessus.",
-    "kindId": "m015"
+    "kindId": "draigos"
   },
   {
     "id": 1020,
@@ -804,6 +804,54 @@
     "kindId": "i01062"
   },
   {
+    "id": 1285,
+    "value": 1,
+    "kind": "composant",
+    "name": "Bombe Gluante",
+    "description": "Cette bombe est particulièrement utile pour ralentir et entraver ses victimes.",
+    "kindId": "I00386b"
+  },
+  {
+    "id": 1286,
+    "value": 2,
+    "kind": "composant",
+    "name": "Bombe Brouilleuse",
+    "description": "Une bombe particulière qui émet des ondes électromagnétiques venant perturber les appareils technologiques aux alentours.",
+    "kindId": "I00386c"
+  },
+  {
+    "id": 1287,
+    "value": 1,
+    "kind": "composant",
+    "name": "Bombe Eblouissante",
+    "description": "Une bombe émettant une lumière très flashy et vive. Très utile pour s'enfuir, la Curie en possède.",
+    "kindId": "I00387"
+  },
+  {
+    "id": 1288,
+    "value": 1,
+    "kind": "composant",
+    "name": "Bombe Glacée",
+    "description": "Cette bombe utilisant des minerais d'énergies gelés est très pratique pour glacer certaines surfaces ou objets.",
+    "kindId": "I00386"
+  },
+  {
+    "id": 1289,
+    "value": 2,
+    "kind": "composant",
+    "name": "Bombe Surdosée",
+    "description": "Une bombe avec une surdose d'explosif : à manier avec précaution pour éviter qu'elle explose entre les mains !",
+    "kindId": "I00385b"
+  },
+  {
+    "id": 1290,
+    "value": 3,
+    "kind": "composantXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    "name": "Bombe Noire",
+    "description": "Une bombe très spéciale conçue dans les laboratoires de la Veyda",
+    "kindId": "I00385c"
+  },
+  {
     "id": 1300,
     "value": 1,
     "kind": "composant",
@@ -1138,7 +1186,7 @@
     "kind": "anecdote",
     "name": "Rad Ed et les pr\u00e9noms",
     "description": "Rad Ed est curieuse et veut conna\u00eetre les gens, alors il faut qu'elle demande \u00e0 tout le monde leur nom, au cas o\u00f9, on sait jamais faut pas l'oublier !",
-    "maps": [8, 9],
+    "maps": [8],
     "enemies": [],
     "kindId": "items/k30010",
     "group": 2
@@ -1149,7 +1197,7 @@
     "kind": "anecdote",
     "name": "Kibo et la D\u00e9fense",
     "description": "Kibo est un justicier protecteur : \"Allez venez me frappez ! Provocation ! Frappez-moi ! Oui ! Enfin pas trop quand m\u00eame hein... stop !",
-    "maps": [8, 9],
+    "maps": [8],
     "enemies": [112],
     "kindId": "skillIcon/E0143",
     "group": 2
@@ -1160,7 +1208,7 @@
     "kind": "anecdote",
     "name": "Nyx et Heldentod",
     "description": "Nyx vient d'Heldentod mais d\u00e9teste son Empire, malheureusement avec Rubis ce n'est pas la joie, et \u00e7a ne risque pas de s'am\u00e9liorer...",
-    "maps": [11, 32],
+    "maps": [13, 32],
     "enemies": [62],
     "kindId": "otherIcon/group038",
     "group": 2
@@ -1457,7 +1505,7 @@
     "kind": "anecdote",
     "name": "War la chandelle",
     "description": "War tient la chandelle dans les couples en mangeant du pop-corn, normal quoi !",
-    "maps": [5, 10],
+    "maps": [5],
     "enemies": [],
     "kindId": "items/I00347",
     "group": 2
@@ -1545,7 +1593,7 @@
     "kind": "anecdote",
     "name": "Kibo et les Résumés",
     "description": "Kibo (Hugo) lorsqu'il entend la musique du résumé, se met dans un état d'apaisement absolu... C'est un vrai petit remède naturel.",
-    "maps": [3, 4],
+    "maps": [3, 8],
     "enemies": [],
     "kindId": "eden-eternal",
     "group": 2
@@ -1573,6 +1621,39 @@
     "group": 1
   },
   {
+    "id": 1565,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Draigos et les Drakaïs",
+    "description": "Le groupe a rencontré 2 drakaïs : Poupou et Moumou, Draigos a pu montrer ses talents de magiciens au petit Moumou.",
+    "maps": [9],
+    "enemies": [],
+    "kindId": "skillIcon/E0828",
+    "group": 1
+  },
+  {
+    "id": 1566,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Fiore dei San Didero",
+    "description": "Le groupe a pu rencontrer au Volcan Avila une personne très atypique et douée : une noble déchue de l'Empire de Valence : Fiorei !",
+    "maps": [9],
+    "enemies": [],
+    "kindId": "monsters/fiore",
+    "group": 1
+  },
+  {
+    "id": 1567,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "La disparition de Draigos",
+    "description": "Draigos a mystérieusement disparu aux Terres des Dunes Eternelles, on raconte que son bâton maléfique en serait responsable...",
+    "maps": [11],
+    "enemies": [],
+    "kindId": "skillIcon/E0216",
+    "group": 1
+  },
+  {
     "id": 15000,
     "value": 3,
     "kind": "anecdoteIII",
@@ -1586,7 +1667,7 @@
   {
     "id": 15000,
     "value": 3,
-    "kind": "anecdoteIII",
+    "kind": "anecdoteXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
     "name": "Sceau de Dualité",
     "description": "Ce sceau a été utilisé par Milo, le frère de Malvis, pour sceller son âme à l'intérieur de Brocoli, c'est une relique des Sages.",
     "maps": [58],
@@ -1647,6 +1728,17 @@
     "maps": [1],
     "enemies": [],
     "kindId": "otherIcon/ac005",
+    "group": 3
+  },
+  {
+    "id": 1605,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Le pillage de la banque",
+    "description": "Le groupe a décidé sous l'impulsion de Lutta d'aller piller une banque, malheureusement tout ne s'est pas déroulé comme prévu. Peut-être qu'il leur manquait juste... une personne ?",
+    "maps": [5],
+    "enemies": [],
+    "kindId": "otherIcon/group009",
     "group": 3
   },
   {
