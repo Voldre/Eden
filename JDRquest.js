@@ -79,7 +79,7 @@ window.addEventListener("load", async () => {
     document.querySelector("#rarity").src = "images/uiiconPNG/combat_mob.png";
     document.querySelector("#rarity").alt = "Monstre Commun";
   }
-  if (rarity === 2) {
+  if (rarity === 2 || enemyData.pvmax < 200) {
     document.querySelector("#rarity").src = "images/uiiconPNG/combat_elite.png";
     document.querySelector("#rarity").alt = "Elite";
   }

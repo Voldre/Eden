@@ -1240,7 +1240,7 @@
     "drop": "Peau de ver cuirass\u00e9, Bouclier d'\u00e9pines, rare : Corne de ver"
   },
   "85": {
-    "visuel3D": "m015",
+    "visuel3D": "draigos",
     "nom": "Draigos - Drakai aux bouquins",
     "pvmax": "200",
     "skills": [
@@ -2018,5 +2018,35 @@
     "desc": "Ezelin m\u00e9tisse aux cheveux verts, originaires du sud du continent. G\u00e9n\u00e9ral de Division d'Exp\u00e9dition tr\u00e8s cultiv\u00e9 qui voyage avec Torch.",
     "infos": "Faible au tranchant et aux t\u00e9n\u00e8bres",
     "drop": "50 po, rare : Veste de T\u00e9nacit\u00e9, Chaussures d'agilit\u00e9, ..."
+  },
+  "137": {
+    "visuel3D": "m123",
+    "nom": "Voleur Robuste",
+    "pvmax": "100",
+    "skills": [
+      "Tranch\u00e9es aggressives : 4D6 +12 : force",
+      "Embuscade : 2D10 +16 (X2 si discret) : dext\u00e9rit\u00e9",
+      "Int\u00e9gration : Buff Aoe : Esquive +3 pendant 1D4+2 tours : esprit",
+      "Passif esquive+2"
+    ],
+    "stats": "12,15,11,11,14",
+    "desc": "Voleur de haut niveau ne pr\u00eatant sa confiance qu'\u00e0 lui-m\u00eame, avide et cupide",
+    "infos": "Faible \u00e0 la glace et au tranchant",
+    "drop": "rare : Dague \u00e9cailles noires"
+  },
+  "138": {
+    "visuel3D": "m124",
+    "nom": "Pirate Malicieux",
+    "pvmax": "100",
+    "skills": [
+      "Coup de flingue : 2D10 +18 : dext\u00e9rit\u00e9",
+      "Esquive facile (saut esq) : (5 fois max) : dext\u00e9rit\u00e9",
+      "Torche de feu : 2D10+14 AoE : intelligence",
+      "Passif renfort pirate possible"
+    ],
+    "stats": "11,16,16,11,12",
+    "desc": "Pirate malicieux et manipulateur travaillant dans des ports clandestins.",
+    "infos": "Faible \u00e0 la foudre et au contondant",
+    "drop": "30po, rare : Cache oeil de pirate"
   }
 }
