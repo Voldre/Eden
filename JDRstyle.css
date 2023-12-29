@@ -455,6 +455,10 @@ dialog::backdrop {
 #enom {
   width: 175px;
 }
+.lifebar {
+  height: 2px;
+  background-color: red;
+}
 .statName {
   font-size: 20px;
   width: 75px;

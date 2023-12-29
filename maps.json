@@ -230,7 +230,7 @@
     "map_z": null,
     "map_r": null,
     "bgm": 31,
-    "mobs": [5, 11, 16, 33, 55, 88]
+    "mobs": [5, 11, 16, 33, 55, 84, 88]
   },
   "20": {
     "name": "Désert du Couchant",
@@ -337,7 +337,7 @@
     "map_z": null,
     "map_r": null,
     "bgm": 33,
-    "mobs": [105, 121, 122, 124]
+    "mobs": [105, 121, 122, 124, 67, 118]
   },
   "29": {
     "name": "Côte de Hurlevent",
@@ -409,7 +409,7 @@
     "bgm": 43
   },
   "35": {
-    "name": "Palais Heldentod",
+    "name": "Capitale Heldentod",
     "wmap_x": 55.7,
     "wmap_y": 23,
     "wmap": 0,

@@ -144,7 +144,7 @@
     "kind": "boss",
     "name": "Douvone - Zumi M\u00e9canique",
     "description": "Zumi m\u00e9canique en acier renforc\u00e9 gris/noir, cr\u00e9\u00e9 il y a plusieurs si\u00e8cles par le plus grand ing\u00e9nieur au monde : Basile.",
-    "kindId": "m048b"
+    "kindId": "m048c"
   },
   {
     "id": 1007,
@@ -729,7 +729,7 @@
     "kind": "composant",
     "name": "Crystal liquide",
     "description": "Un résidu liquide issu de crystaux, ce liquide a des propriétés bien particulière.",
-    "kindId": "I00033"
+    "kindId": "I00299"
   },
   {
     "id": 1257,
@@ -852,6 +852,22 @@
     "kindId": "I00385c"
   },
   {
+    "id": 1291,
+    "value": 1,
+    "kind": "composant",
+    "name": "Piège à ours",
+    "description": "Ce piège est conçu pour immobiliser une cible à un endroit, utile pour la chasse et pour la fuite.",
+    "kindId": "i01435"
+  },
+  {
+    "id": 1292,
+    "value": 2,
+    "kind": "composant",
+    "name": "Mine Anti-Personnel",
+    "description": "Cette mine conçue par les meilleurs ingénieurs détonnes à la présence d'une personne, très violente.",
+    "kindId": "i01436"
+  },
+  {
     "id": 1300,
     "value": 1,
     "kind": "composant",
@@ -882,6 +898,14 @@
     "name": "Pensée Avide",
     "description": "La convoitise sans fin des monstres devient une énergie puissante après leur mort. Les gens appellent cela la pensée gourmande.",
     "kindId": "I00339"
+  },
+  {
+    "id": 1349,
+    "value": 2,
+    "kind": "composant",
+    "name": "Parchemin de Garde",
+    "description": "Ce parchemin relativement rare est utilisé pour améliorer la qualité des armures.",
+    "kindId": "I00324"
   },
   {
     "id": 1350,
@@ -915,7 +939,134 @@
     "description": "Ce crystal est une version améliorée du ticket de loterie, très rare, il donne accès à des cadeaux exceptionnels, uniques.",
     "kindId": "I00448"
   },
-
+  {
+    "id": 1354,
+    "value": 1,
+    "kind": "composant",
+    "name": "Potion Flambante",
+    "description": "Une potion conçue pour intensifier les magies de flammes.",
+    "kindId": "I00075"
+  },
+  {
+    "id": 1355,
+    "value": 1,
+    "kind": "composant",
+    "name": "Potion Glacée",
+    "description": "Une potion améliorant les capacités de glaces.",
+    "kindId": "I00076"
+  },
+  {
+    "id": 1356,
+    "value": 1,
+    "kind": "composant",
+    "name": "Potion Foudroyante",
+    "description": "Cette potion amplifie les magies électriques.",
+    "kindId": "I00077"
+  },
+  {
+    "id": 1357,
+    "value": 1,
+    "kind": "composant",
+    "name": "Potion Naturelle",
+    "description": "Cette potion connecte son utilisateur à la nature.",
+    "kindId": "I00078"
+  },
+  {
+    "id": 1358,
+    "value": 1,
+    "kind": "composant",
+    "name": "Potion Eblouissante",
+    "description": "Une potion conçue pour accentuer la lumière.",
+    "kindId": "I00079"
+  },
+  {
+    "id": 1359,
+    "value": 1,
+    "kind": "composant",
+    "name": "Potion Ténèbreuse",
+    "description": "Une potion imprégnée de magie noire intense.",
+    "kindId": "I00080"
+  },
+  {
+    "id": 1360,
+    "value": 1,
+    "kind": "composant",
+    "name": "Potion Fracas",
+    "description": "Une potion qui amplifie le contondant.",
+    "kindId": "I00082"
+  },
+  {
+    "id": 1361,
+    "value": 1,
+    "kind": "composant",
+    "name": "Potion Coupante",
+    "description": "Une potion qui améliore les tranches.",
+    "kindId": "I00081"
+  },
+  {
+    "id": 1362,
+    "value": 1,
+    "kind": "composant",
+    "name": "Potion Perforante",
+    "description": "Une potion qui accentue la percée.",
+    "kindId": "I00083"
+  },
+  {
+    "id": 1363,
+    "value": 1,
+    "kind": "composant",
+    "name": "Blé brillant",
+    "description": "Un blé aux lueurs dorées poussant dans des plaines très ensoleillées.",
+    "kindId": "I00180"
+  },
+  {
+    "id": 1364,
+    "value": 2,
+    "kind": "composant",
+    "name": "Blé luisant",
+    "description": "Ce blé aux teintes bleutées poussent dans des zones gorgées de magies.",
+    "kindId": "I00181"
+  },
+  {
+    "id": 1365,
+    "value": 3,
+    "kind": "composant",
+    "name": "Blé cramoisie",
+    "description": "Ce blé pousse dans des sols riches en minéraux, comme sur le territoire Heldentod.",
+    "kindId": "I00182"
+  },
+  {
+    "id": 1366,
+    "value": 1,
+    "kind": "composant",
+    "name": "Chair de Crabe",
+    "description": "Une chair fraiche issue d'un crabe géant.",
+    "kindId": "I00272"
+  },
+  {
+    "id": 1367,
+    "value": 1,
+    "kind": "composant",
+    "name": "Alerte : Quête Guilde",
+    "description": "Ce parchemin est remis aux guildes pour résoudre des quêtes locales.",
+    "kindId": "I00303"
+  },
+  {
+    "id": 1368,
+    "value": 2,
+    "kind": "composant",
+    "name": "Alerte : Quête de la Curie",
+    "description": "Ce parchemin confié par la Curie Métérole est confiée aux mercenaires.",
+    "kindId": "I00305"
+  },
+  {
+    "id": 1369,
+    "value": 1,
+    "kind": "composant",
+    "name": "Ciseau d'Ezur",
+    "description": "Ces ciseaux sont utilisées pour sertir des gemmes dans les équipements.",
+    "kindId": "I00424"
+  },
   {
     "id": 1501,
     "value": 3,
@@ -1404,22 +1555,22 @@
     "id": 1545,
     "value": 3,
     "kind": "anecdote",
-    "name": "Cosmos le protecteur",
-    "description": "Cosmos a sû protéger les plsu démunis quand il le fallait, un vrai templier !",
-    "maps": [28],
+    "name": "Brocoli le sauveur",
+    "description": "Brocoli à sauvé Malvis en \"ingérant\" le Crystal de Volesang, son système digestif est si efficace qu'il l'a traité et l'a rejeté dans ses déjections !",
+    "maps": [7],
     "enemies": [],
-    "kindId": "skillIcon/E0935",
+    "kindId": "items/poop2",
     "group": 1
   },
   {
     "id": 1546,
     "value": 3,
     "kind": "anecdote",
-    "name": "Ainz le guide",
-    "description": "Ainz a un don pour être un guide touristique, malheureusement cela ne lui donne pas un rond.",
-    "maps": [28],
+    "name": "Erida et Sophia",
+    "description": "Erida a retrouvée sa mentor Sophia à l'Académie Osrage, elle donne des cours de barde et danselame aux jeunes Anurans, Torturrans et Drakais de l'académie, en espérant créer de nouvelles stars.",
+    "maps": [14],
     "enemies": [],
-    "kindId": "items/i01434",
+    "kindId": "monsters/sophia",
     "group": 1
   },
   {
@@ -1516,7 +1667,7 @@
     "kind": "anecdote",
     "name": "Azora et les dégâts",
     "description": "Azora est celle qui soigne le mieux le groupe, mais c'est aussi celle qui leur inflige le plus de dégâts !",
-    "maps": [2],
+    "maps": [4, 59],
     "enemies": [],
     "kindId": "skillIcon/E0548",
     "group": 2
@@ -1535,12 +1686,12 @@
   {
     "id": 1557,
     "value": 3,
-    "kind": "anecdote",
-    "name": "Cosmos et la pêche",
-    "description": "Comme à la cascade, Cosmos a montré ses talents de nage en pleine mer, sautant d'un bâteau au milieu de nul part. Apparemment il était en manque de poisson.",
-    "maps": [29],
+    "kind": "anecdoteXXXXXX",
+    "name": "",
+    "description": "bouffer un wagon, les mines, c'est dangereux !",
+    "maps": [],
     "enemies": [],
-    "kindId": "otherIcon/group002",
+    "kindId": "items/i01189",
     "group": 1
   },
   {
@@ -1593,9 +1744,9 @@
     "kind": "anecdote",
     "name": "Kibo et les Résumés",
     "description": "Kibo (Hugo) lorsqu'il entend la musique du résumé, se met dans un état d'apaisement absolu... C'est un vrai petit remède naturel.",
-    "maps": [3, 8],
+    "maps": [8, 32],
     "enemies": [],
-    "kindId": "eden-eternal",
+    "kindId": "uiiconPNG/prefer18",
     "group": 2
   },
   {
@@ -1654,6 +1805,182 @@
     "group": 1
   },
   {
+    "id": 1568,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Ça va être facile",
+    "description": "Le groupe a tendance à se porter malheur lorsque cette phrase est utilisée. Depuis elle a été bannie.",
+    "maps": [4],
+    "enemies": [],
+    "kindId": "uiiconPNG/pic_031",
+    "group": 1
+  },
+  {
+    "id": 1569,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Pas l'ennemi attendu",
+    "description": "Lorsque le groupe cherche quelqu'un, il tombe sur une autre personne (Ochak > Invidia, Pedro > Adonis, ...), rien à faire.",
+    "maps": [12, 26],
+    "enemies": [],
+    "kindId": "skillIcon/E0449",
+    "group": 1
+  },
+  {
+    "id": 1570,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Malvis et Brocoli",
+    "description": "Malvis et Brocoli, c'est l'amour entre son maître et son fidèle destrier.",
+    "maps": [15],
+    "enemies": [],
+    "kindId": "loadingframe/alpaga5",
+    "group": 1
+  },
+  {
+    "id": 1571,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Kibo et War",
+    "description": "Quand Kibo et War doivent s'allier et trouver une stratégie (ex: aller à Heldentod), les idées ne volent pas très haut...",
+    "maps": [32],
+    "enemies": [],
+    "kindId": "skillIcon/E0284",
+    "group": 2
+  },
+  {
+    "id": 1572,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Le groupe et l'Empereur",
+    "description": "Le groupe a été convié à une audience avec l'Empereur Heldentod en personne. La pression était à son comble, mais heureusement tout s'est bien passé...?",
+    "maps": [35],
+    "enemies": [],
+    "kindId": "otherIcon/function018",
+    "group": 2
+  },
+  {
+    "id": 1573,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Le groupe et les dirigeables",
+    "description": "Le groupe a pu monter à bord de nombreux dirigeables Zumis ! L'Aircraft Turbo 2000, l'Aile Tourbillonnante 1000, la Baudruche Céleste A200, ... Les connaissez-vous tous ?",
+    "maps": [19, 20, 21],
+    "enemies": [],
+    "kindId": "otherIcon/group017",
+    "group": 1
+  },
+  {
+    "id": 1574,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Les mines Zumis",
+    "description": "Pendant une petite excursion en mine Zumis, le groupe est tombé sur un immense ver terrifiant ! Alors que la mine était en train de s'effondrer Malvis est resté pour en faire du hachis parmentier !",
+    "maps": [19],
+    "enemies": [],
+    "kindId": "items/I00472",
+    "group": 1
+  },
+  {
+    "id": 1575,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "La technologie Zumi",
+    "description": "Le groupe a pu mettre la main sur des matériaux zumis de hautes qualités, très utile à la technologie : les Crystaux d'Asbis raffinées ! L'essence même de Moymoy.",
+    "maps": [20],
+    "enemies": [],
+    "kindId": "otherIcon/ac003",
+    "group": 1
+  },
+  {
+    "id": 1576,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "L'invention qui créa l'inventeur",
+    "description": "Le groupe a pu découvrir un évènement fascinant : une invention (un zumi androïd) qui a créé son inventeur (un ingénieur Zumi).",
+    "maps": [20],
+    "enemies": [],
+    "kindId": "monsters/m048c",
+    "group": 1
+  },
+  {
+    "id": 1577,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Les énigmes Zumis",
+    "description": "Les Zumis sont très ingénieux, alors pour déjouer leurs sécurités il faut faire preuve de discernement, la réflexion est de mise.",
+    "maps": [20],
+    "enemies": [],
+    "kindId": "uiiconPNG/enigmezumi",
+    "group": 1
+  },
+  {
+    "id": 1578,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Cosmos le protecteur",
+    "description": "Cosmos a sû protéger les plsu démunis quand il le fallait, un vrai templier !",
+    "maps": [28],
+    "enemies": [],
+    "kindId": "skillIcon/E0935",
+    "group": 1
+  },
+  {
+    "id": 1579,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Ainz le guide",
+    "description": "Ainz a un don pour être un guide touristique, malheureusement cela ne lui donne pas un rond.",
+    "maps": [28],
+    "enemies": [],
+    "kindId": "items/i01434",
+    "group": 1
+  },
+  {
+    "id": 1580,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Malvis et les tombes",
+    "description": "Malgré sa gentillesse, Malvis va parfois profaner des tombes pour s'assurer qu'un danger n'y soit pas. Cela part d'une bonne intention, mais quand même...",
+    "maps": [29],
+    "enemies": [],
+    "kindId": "items/k60184",
+    "group": 1
+  },
+  {
+    "id": 1581,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Le cauchemar de Cosmos",
+    "description": "Lors de l'épreuve de l'arbre Rando, les plus grandes peurs de chacuns se sont présentés à eux. Et la plus grande peur de Cosmos est... Malvis !",
+    "maps": [28],
+    "enemies": [],
+    "kindId": "monsters/malvis",
+    "group": 1
+  },
+  {
+    "id": 1582,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Cosmos et la pêche",
+    "description": "Comme à la cascade, Cosmos a montré ses talents de nage en pleine mer, sautant d'un bâteau au milieu de nul part. Apparemment il était en manque de poisson.",
+    "maps": [29],
+    "enemies": [],
+    "kindId": "otherIcon/group002",
+    "group": 1
+  },
+  {
+    "id": 1583,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Ainz et la magie",
+    "description": "Ainz est un expert en différente magie, ainsi ni la forêt de crystal ni les esprits ne l'effraye, ses performances ont été très utile au groupe.",
+    "maps": [29],
+    "enemies": [],
+    "kindId": "skillIcon/E0724",
+    "group": 1
+  },
+  {
     "id": 15000,
     "value": 3,
     "kind": "anecdoteIII",
@@ -1673,6 +2000,17 @@
     "maps": [58],
     "enemies": [],
     "kindId": "items/i01356",
+    "group": 1
+  },
+  {
+    "id": 15000,
+    "value": 3,
+    "kind": "anecdoteXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    "name": "Milo et Nathanaël (côte aristère)",
+    "description": ".",
+    "maps": [58],
+    "enemies": [],
+    "kindId": "items/",
     "group": 1
   },
   {
@@ -1739,6 +2077,17 @@
     "maps": [5],
     "enemies": [],
     "kindId": "otherIcon/group009",
+    "group": 3
+  },
+  {
+    "id": 1606,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Veyda et les enfants",
+    "description": "La Veyda est douée pour recruter de nouveaux membres, surtout les jeunes enfants afin de les endoctriner ! Ah ah ah!",
+    "maps": [1],
+    "enemies": [],
+    "kindId": "skillIcon/E0486",
     "group": 3
   },
   {

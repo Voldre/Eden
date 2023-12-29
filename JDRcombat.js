@@ -52,16 +52,24 @@ var selectedEnemy;
 var currentPersoEntries;
 const turnToCheck = 6 + Math.floor(Math.random() * 3);
 
+const MIN_COMMON = 15;
+const MAX_COMMON = 29;
+const MIN_ELITE = 26;
+// Average Elite = 32,5
+const MAX_ELITE = 39;
+const MIN_BOSS = 28;
+const MAX_BOSS = 52; // 49... + out of limite (+3)
+
 var indexPerso;
 var nomPerso;
 var logID;
 
-// console.log('Master JSON', masterJSON);
-console.log("Enemy JSON", enemyJSON);
+let mapID;
+let enemyRarity;
+let cardRarity;
 
 // Initialize persos list
 Object.entries(persosJSON).forEach(([id, perso]) => {
-  console.log(perso, id);
   if (!perso.nom) return;
   var option = document.createElement("option");
   option.value = id;
@@ -70,18 +78,20 @@ Object.entries(persosJSON).forEach(([id, perso]) => {
 });
 
 //  Actions Management
-
-const selectPerso = document.querySelector("#selectPerso");
+// const selectPerso = document.querySelector("#selectPerso");
 
 // Load perso if URL parameter
 window.addEventListener("load", () => {
   const urlParams = new URLSearchParams(window.location.search);
 
   if (urlParams.has("perso")) {
+    // Init parameters
+    mapID = parseInt(urlParams.get("map"));
+    logID = parseInt(Object.keys(logsJSON).reverse()[0]) + 1 || 1;
+
+    // Init Perso
     indexPerso = urlParams.get("perso");
     nomPerso = persosJSON[indexPerso - 1].nom;
-
-    logID = parseInt(Object.keys(logsJSON).reverse()[0]) + 1 || 1;
 
     indexPlayer = Object.entries(playerJSON)
       .map((player) => {
@@ -94,7 +104,6 @@ window.addEventListener("load", () => {
     if (!cookieCheck()) return;
 
     joueurData = playerJSON[indexPlayer];
-    console.log(joueurData);
 
     // Update to get current perso entries
     const persoIDforPlayer = joueurData.persos.indexOf(parseInt(indexPerso));
@@ -106,13 +115,35 @@ window.addEventListener("load", () => {
       endRediction();
       return;
     }
-    selectPerso.value = urlParams.get("perso") - 1;
-    // loadFiche(urlParams.get('perso'));
+
+    loadFiche(urlParams.get("perso") - 1);
+
+    // selectPerso.value = urlParams.get("perso") - 1;
     // selectedPerso = selectPerso.value;
-    var selectedID = selectPerso.selectedIndex;
+    // var selectedID = selectPerso.selectedIndex;
+  } else {
+    // Not in real fight
+    const enemyCombatData = Object.values(enemyJSON).map((e) => {
+      let enemyStats = new Enemy(e);
+      enemyStats.rarity = enemyStats.pvmax >= 200 ? "BOSS" : enemyStats.pvmax >= 120 ? "ELITE" : "COMMUN";
+      enemyStats.degatMin =
+        (enemyStats.rarity === "BOSS" && enemyStats.degat < MIN_BOSS) ||
+        (enemyStats.rarity === "COMMUN" && enemyStats.degat < MIN_COMMON);
+      enemyStats.degatMax =
+        (enemyStats.rarity === "BOSS" && enemyStats.degat > MAX_BOSS) ||
+        (enemyStats.rarity === "COMMUN" && enemyStats.degat > MAX_COMMON);
+
+      return enemyStats;
+    });
+    console.log(
+      "Stats & Degats de tous les ennemis :",
+      enemyCombatData,
+      "> JSON.stringify() > copy all (...) > JSON to Excel"
+    );
   }
 
-  loadFiche(selectedID);
+  // Init Enemy
+
   if (urlParams.has("enemy")) {
     selectedEnemy = Object.values(enemyJSON).find((e) => e.nom == urlParams.get("enemy"));
   } else {
@@ -121,6 +152,18 @@ window.addEventListener("load", () => {
   }
   loadEnemy(selectedEnemy, urlParams.has("isElite"));
 
+  if (selectedEnemy.pvmax >= 200) {
+    enemyRarity = Math.trunc(selectedEnemy.pvmax / 100) + 1;
+  } else if (selectedEnemy.pvmax >= 120) {
+    enemyRarity = 2;
+  } else {
+    enemyRarity = 1;
+    // Handle enemy with "elite mode"
+    enemyRarity += urlParams.has("isElite");
+  }
+  cardRarity = Math.min(enemyRarity, 3);
+
+  // First turn
   newturn();
 });
 
@@ -338,7 +381,11 @@ function Perso(persoData) {
     this.degat += 1;
     this.armure += 1;
   }
-
+  // 24/12 For Leyla and other
+  if (nbSkills < 3) {
+    this.degat += 1;
+    this.armure += 1;
+  }
   // 03/12 Add Bloc/Esq (resistance) bonus according to stuff
   montantBlocP = stuffs
     .map((stuff) => {
@@ -425,13 +472,14 @@ function loadEnemy(enemyData, isElite = false) {
     enemy.nom += " (ELITE)";
     // Value clipped between min and max
     enemy.pvmax = enemy.pv = Math.max(130, Math.min(enemy.pvmax * 1.5, 180));
-    enemy.degat = Math.max(27, Math.min(Math.round(enemy.degat * 1.1) + 5, 42));
+    enemy.degat = Math.max(MIN_ELITE, Math.min(Math.round(enemy.degat * 1.1) + 5, MAX_ELITE));
   }
 
   document.querySelector("#enom").value = enemy.nom;
 
   document.querySelector("#epv").value = enemy.pvmax;
   document.querySelector("#epvmax").value = enemy.pvmax;
+  document.querySelector(".lifebar").style.width = `${enemy.pvmax}px`;
 
   document.querySelector("#epp").src = "http://voldre.free.fr/Eden/images/monsters/" + enemyData.visuel3D + ".png";
   document.querySelector("#epp").alt = enemyData.visuel3D;
@@ -460,7 +508,8 @@ function Enemy(enemyData) {
     if (
       skill.toLowerCase().includes("passif") ||
       skill.toLowerCase().includes("esprit") ||
-      skill.toLowerCase().includes("soin")
+      skill.toLowerCase().includes("soin") ||
+      skill.toLowerCase().includes("buff")
     )
       return NaN;
 
@@ -504,10 +553,10 @@ function Enemy(enemyData) {
   // console.log(this.degat)
 }
 
-var enemyGenerated = Object.values(enemyJSON).map((enemy) => {
-  return new Enemy(enemy);
-});
-console.log(enemyGenerated);
+// var enemyGenerated = Object.values(enemyJSON).map((enemy) => {
+//   return new Enemy(enemy);
+// });
+// console.log(enemyGenerated);
 
 function chooseEnemy(category = null) {
   // prettier-ignore
@@ -534,16 +583,12 @@ function chooseEnemy(category = null) {
   }
 
   var randomEnemy = Math.floor(Math.random() * Object.keys(enemyList).length);
-  // console.log(randomEnemy,enemyList)
   if (!category) {
-    // console.log(enemyList[randomEnemy])
-    // console.log(Object.entries(enemyJSON).find(e => e[1] == enemyList[randomEnemy])[0]);
-
     // Reset index
     enemyList = format(enemyList);
   }
 
-  console.log(enemyList, randomEnemy);
+  // console.log(enemyList, randomEnemy);
   return enemyList[randomEnemy];
 }
 
@@ -570,7 +615,7 @@ function dicesAverageConversion(skill) {
     dices += 11;
   }
   if (skill.includes("3D10")) {
-    dices += 16;
+    dices += 16.5;
   }
   if (skill.includes("1D8")) {
     dices += 4.5;
@@ -585,7 +630,10 @@ function dicesAverageConversion(skill) {
     dices += 7;
   }
   if (skill.includes("3D6")) {
-    dices += 10;
+    dices += 10.5;
+  }
+  if (skill.includes("4D6")) {
+    dices += 14;
   }
   if (skill.includes("1D4")) {
     dices += 2.5;
@@ -649,20 +697,7 @@ function newturn() {
 
     if (!urlParams.has("perso")) return;
 
-    var enemyRarity;
-    if (selectedEnemy.pvmax >= 200) {
-      enemyRarity = Math.trunc(selectedEnemy.pvmax / 100) + 1;
-    } else if (selectedEnemy.pvmax >= 120) {
-      enemyRarity = 2;
-    } else {
-      enemyRarity = 1;
-      // Handle enemy with "elite mode"
-      enemyRarity += urlParams.has("isElite");
-    }
-
-    const cardRarity = Math.min(enemyRarity, 3);
-    const mapID = parseInt(urlParams.get("map"));
-    saveLog(0, null, mapID, cardRarity, selectedEnemy);
+    saveLog(0, null);
     savePlayer(joueurData);
   }
 
@@ -697,24 +732,7 @@ async function isEnded() {
 
       // Defeat
       if (joueurData) {
-        const urlParams = new URLSearchParams(window.location.search);
-
-        console.log(selectedEnemy);
-        var enemyRarity;
-        if (selectedEnemy.pvmax >= 200) {
-          enemyRarity = Math.trunc(selectedEnemy.pvmax / 100) + 1;
-        } else if (selectedEnemy.pvmax >= 120) {
-          enemyRarity = 2;
-        } else {
-          enemyRarity = 1;
-          // Handle enemy with "elite mode"
-          enemyRarity += urlParams.has("isElite");
-        }
-
-        const cardRarity = Math.min(enemyRarity, 3);
-
-        const mapID = parseInt(urlParams.get("map"));
-        await saveLog(0, null, mapID, cardRarity, selectedEnemy);
+        await saveLog(0, null);
 
         await savePlayer(joueurData);
         toastNotification("Sauvegarde effectuée, redirection ...", 6000);
@@ -729,25 +747,8 @@ async function isEnded() {
   }
 }
 
+const newCards = [];
 async function victory() {
-  const urlParams = new URLSearchParams(window.location.search);
-
-  console.log(selectedEnemy);
-  var enemyRarity;
-  if (selectedEnemy.pvmax >= 200) {
-    enemyRarity = Math.trunc(selectedEnemy.pvmax / 100) + 1;
-  } else if (selectedEnemy.pvmax >= 120) {
-    enemyRarity = 2;
-  } else {
-    enemyRarity = 1;
-    // Handle enemy with "elite mode"
-    enemyRarity += urlParams.has("isElite");
-  }
-
-  const cardRarity = Math.min(enemyRarity, 3);
-
-  const mapID = parseInt(urlParams.get("map"));
-
   const enemyID = parseInt(Object.entries(enemyJSON).find((e) => e[1] === selectedEnemy)[0]);
 
   var newJoueurData = { ...joueurData };
@@ -790,19 +791,19 @@ async function victory() {
     anecdoteCard ? winCards.push(anecdoteCard) : null;
   }
   // Coins
-  newJoueurData.alpagaCoin = addCoins(newJoueurData.alpagaCoin, winCards, enemyRarity);
+  newJoueurData.alpagaCoin = addCoins(newJoueurData.alpagaCoin, winCards);
 
   // Save fight in log
   const earnedCoins = newJoueurData.alpagaCoin - joueurData.alpagaCoin;
-  await saveLog(earnedCoins, winCards, mapID, cardRarity, selectedEnemy);
+  await saveLog(earnedCoins, winCards);
   // Update player data
   await savePlayer(newJoueurData);
 
   // Show rewards (cards)
-  showCardsAndCoins(joueurData, winCards, newJoueurData.alpagaCoin);
+  showCardsAndCoins(winCards, earnedCoins);
 }
 
-async function saveLog(earnedCoins, winCards, mapID, cardRarity, selectedEnemy) {
+async function saveLog(earnedCoins, winCards) {
   const newLog = {};
   newLog[logID] = {
     date: new Date().toLocaleString(),
@@ -843,7 +844,7 @@ async function savePlayer(newJoueurData) {
 
   var newPlayer = {};
   newPlayer[indexPlayer] = newJoueurData;
-  console.log(newPlayer);
+  // console.log(newPlayer);
 
   const newPersoEncoded = JSON.stringify(newPlayer).replaceAll("+", "%2B").replaceAll(";", "%3B");
   // encodeURIComponent(JSON.stringify(newPerso))
@@ -855,26 +856,33 @@ async function savePlayer(newJoueurData) {
 }
 
 function addCard(joueurDataCards, card) {
-  if (card && !joueurDataCards.includes(card.id)) joueurDataCards.push(card.id);
+  if (card && !joueurDataCards.includes(card.id)) {
+    newCards.push(card.id);
+    joueurDataCards.push(card.id);
+  }
   return joueurDataCards;
 }
-function addCoins(alpagaCoin, winCards, enemyRarity) {
+function addCoins(alpagaCoin, winCards) {
   const cardsValue =
     winCards?.map((card) => (card ? card.value : 0))?.reduce((acc, value) => acc + value) || enemyRarity;
+  if (cardRarity === 2) {
+    // 13/12/23 : Add 1 alpaga Coin for Elite !
+    alpagaCoin += 1;
+  }
   return alpagaCoin + cardsValue + Math.max(enemyRarity - 3, 0);
 }
 
-function showCardsAndCoins(joueurData, winCards, newCoins) {
-  console.log("Earned : " + (newCoins - joueurData.alpagaCoin).toString() + ", New sold : " + newCoins.toString());
-  console.log(winCards.map((card) => card?.name));
-  winCards.forEach((card) => {
-    if (!joueurData.cards.includes(card.id)) {
-      console.log(card.name + " is a new Card !");
-    }
-  });
+function showCardsAndCoins(winCards, newCoins) {
+  // console.log("Earned : " + newCoins.toString() + ", New sold : " + (newCoins + joueurData.alpagaCoin).toString());
+  // console.log(winCards.map((card) => card?.name));
+  // winCards.forEach((card) => {
+  //   if (!oldJoueurData.cards.includes(card.id)) {
+  //     console.log(card.name + " is a new Card !");
+  //   }
+  // });
 
   const dialog = document.querySelector("dialog");
-  document.querySelector("#coins").innerText = (newCoins - joueurData.alpagaCoin).toString();
+  document.querySelector("#coins").innerText = newCoins.toString();
 
   const cardsE = document.querySelector("#cards");
 
@@ -882,7 +890,7 @@ function showCardsAndCoins(joueurData, winCards, newCoins) {
     const li = document.createElement("li");
     li.innerText = card.name;
 
-    if (!joueurData.cards.includes(card.id)) {
+    if (newCards.includes(card.id)) {
       li.style.color = "gold";
       // li.innerText += " (New !)";
     }
@@ -925,7 +933,7 @@ function showCardsAndCoins(joueurData, winCards, newCoins) {
 function endRediction() {
   setTimeout(() => {
     window.location.href = "jdr_profil.html?joueur=" + indexPlayer;
-  }, 5000);
+  }, 5500);
   return;
 }
 
@@ -972,7 +980,7 @@ function rollDice(user, type, statName) {
     // Defense
     section.querySelector(".statName").innerText = statName + "/2";
     success = Math.ceil(stat / 2) + (user[statName + "Res"] || 0);
-    console.log("Defense " + statName + " : " + success);
+    // console.log("Defense " + statName + " : " + success);
   }
 
   // Result (correction 20/11/23 : change round to floor to have nice repartition)
@@ -1119,7 +1127,7 @@ function enemyTurn(enemy) {
 }
 
 function executeAction(user, userSkill) {
-  console.log(userSkill);
+  // console.log(userSkill);
   var type = userSkill.type;
   var statName = userSkill.statUsed;
 
@@ -1138,12 +1146,11 @@ function executeAction(user, userSkill) {
   // Montant des dégâts
   if (userResult == "crit success") {
     montant = dicesAverageConversion(userSkill.montant) * 2 + (userSkill.montantFixe || 0);
-    console.log(montant);
   } else if (userResult == "success") {
     montant = dicesConversion(userSkill.montant) + (userSkill.montantFixe || 0);
   }
 
-  console.log("montant : ", montant);
+  // console.log("montant : ", montant);
 
   if (type == "attaque") {
     if (userResult == "crit success") {
@@ -1205,6 +1212,8 @@ function hit(user, amount) {
     document.querySelector("#pv").value = user.pv;
   } else {
     document.querySelector("#epv").value = user.pv;
+    // document.querySelector(".lifebar").style.width = `${Math.max(39 * (user.pv / user.pvmax), 0)}%`;
+    document.querySelector(".lifebar").style.width = `${Math.max(user.pv, 0)}px`;
   }
 }
 

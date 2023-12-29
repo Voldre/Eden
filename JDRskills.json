@@ -74,7 +74,7 @@
   "7": {
     "nom": "Coup Infernal",
     "desc": "D\u00e9g\u00e2ts de lumi\u00e8re sur 2m autour du lanceur",
-    "effet": "D\u00e9g\u00e2t Malus AoE",
+    "effet": "D\u00e9g\u00e2t AoE",
     "montant": "1D8+2",
     "icone": "E0303",
     "stat": "Intelligence",
@@ -102,7 +102,7 @@
     "nom": "Pouvoir du dragon",
     "desc": "Tranche la cible selon le mode choisi (feu, t\u00e9n\u00e8bres,physique)",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "1D8+3",
+    "montant": "1D8+4",
     "icone": "E0569",
     "stat": "Force/Intel",
     "classe": ["Chev Dragon"]
@@ -246,7 +246,7 @@
     "nom": "R\u00e9cup\u00e9ration de la b\u00eate",
     "desc": "Soigne votre Familier et le renforce",
     "effet": "Soin",
-    "montant": "2D6 + 10. D\u00e9g\u00e2t+5 pour 3 tours",
+    "montant": "2D6 +8. D\u00e9g\u00e2t+5 pour 3 tours",
     "icone": "E0260",
     "stat": "Esprit",
     "classe": ["Chasseur"]
@@ -309,7 +309,7 @@
     "nom": "S\u00e9isme",
     "desc": "Inflige des d\u00e9g\u00e2ts de terre \u00e0 la cible",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "1D8+2",
+    "montant": "1D10+2",
     "icone": "E0016",
     "stat": "Intelligence",
     "classe": ["Clerc", "Barde", "Shaman", "Sage"]
@@ -327,7 +327,7 @@
     "nom": "Punition Divine",
     "desc": "Inflige des d\u00e9g\u00e2ts de lumi\u00e8res \u00e0 la cible",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "1D8+2",
+    "montant": "1D10+2",
     "icone": "E0092",
     "stat": "Intelligence",
     "classe": ["Clerc", "Barde", "Shaman", "Sage"]
@@ -354,7 +354,7 @@
     "nom": "Hymne \u00e0 la Guerre",
     "desc": "Augmente les d\u00e9g\u00e2ts physiques inflig\u00e9s par le groupe",
     "effet": "Buff AoE",
-    "montant": "D\u00e9g\u00e2t physique 1D4+1 pendant 3 tours",
+    "montant": "D\u00e9g\u00e2t physique 1D4 (min 2) +1 pendant 3 tours",
     "icone": "E0105",
     "stat": "Esprit",
     "classe": ["Barde"]
@@ -480,7 +480,7 @@
     "nom": "Pri\u00e8re Divine",
     "desc": "Action Instantan\u00e9e. Soigne l'utilisateur et boost les prochains d\u00e9g\u00e2ts de lumi\u00e8res : oblig\u00e9 de faire de la lumi\u00e8re",
     "effet": "Buff et Soin",
-    "montant": "Soin 1D8 +5. Prochain d\u00e9g\u00e2t lumi\u00e8res +1D6 +2",
+    "montant": "Soin 1D8 +5. Prochain d\u00e9g\u00e2t lumi\u00e8res +1D6 +2 (1 tour max)",
     "icone": "E0610",
     "stat": "Esprit",
     "classe": ["Luminary"]
@@ -525,7 +525,7 @@
     "nom": "Symphonie D\u00e9moniaque",
     "desc": "Augmente les d\u00e9g\u00e2ts magiques inflig\u00e9s par le groupe",
     "effet": "Buff AoE",
-    "montant": "D\u00e9g\u00e2t magique 1D4+1 pendant 3 tours",
+    "montant": "D\u00e9g\u00e2t magique 1D4 (min 2) +1 pendant 3 tours",
     "icone": "E0103",
     "stat": "Esprit",
     "classe": ["Barde"]
@@ -579,7 +579,7 @@
     "nom": "Magie Extr\u00eame",
     "desc": "Renforce la prochaine attaque magique r\u00e9ussie du lanceur",
     "effet": "Buff",
-    "montant": "Prochain d\u00e9g\u00e2t magique +1D6 +4, r\u00e9ussite +1",
+    "montant": "Prochain d\u00e9g\u00e2t +1D6 +4, r\u00e9ussite +1 (3 tours max)",
     "icone": "E0430",
     "stat": "Esprit",
     "classe": ["Magicien"]
@@ -632,7 +632,7 @@
   "77": {
     "nom": "Hommage",
     "desc": "Sacrifie le familier. Soigne selon ses PV et renforce",
-    "effet": "Buff",
+    "effet": "Buff et Soin",
     "montant": "Soin de 2 \u00e0 25 PV, r\u00e9duit les d\u00e9g\u00e2ts re\u00e7us de 4 pendant 3 tours",
     "icone": "E0137",
     "stat": "Esprit",
@@ -759,7 +759,7 @@
     "nom": "Danse de la guerri\u00e8re",
     "desc": "Encha\u00eene des pas de danse pour infliger un prochain coup puissant",
     "effet": "Buff",
-    "montant": "Prochain d\u00e9g\u00e2t physique +1D6+4, r\u00e9ussite +1",
+    "montant": "Prochain d\u00e9g\u00e2t +1D6+4, r\u00e9ussite +1 (3 tours max)",
     "icone": "E0343",
     "stat": "Charisme",
     "classe": ["Danselame"]
@@ -804,7 +804,7 @@
     "nom": "Aura : Ami du Marteau",
     "desc": "Apporte du soutien \u00e0 la cible : PV et d\u00e9g\u00e2t",
     "effet": "Buff et Soin",
-    "montant": "Soin 1D10 +8. Prochain d\u00e9g\u00e2t +1D6+2",
+    "montant": "Soin 1D10 +6. Prochain d\u00e9g\u00e2t +1D6+2 (3 tours max)",
     "icone": "E0552",
     "stat": "Intelligence",
     "classe": ["Sage"]
@@ -876,7 +876,7 @@
     "nom": "R\u00e9paration Armure",
     "desc": "Permet \u00e0 l'ing\u00e9nieur de soigner et r\u00e9parer son armure",
     "effet": "Soin",
-    "montant": "2D6+10",
+    "montant": "2D6+9",
     "icone": "E0079",
     "stat": "Esprit",
     "classe": ["Ing\u00e9nieur"]
@@ -930,7 +930,7 @@
     "nom": "Terreur du Dragon",
     "desc": "L'utilisateur terrorise son adversaire et le destabilise.  Effets - Embras\u00e9 : Effet+1; D\u00e9moniaque : D\u00e9g\u00e2t 10 PV; Cach\u00e9 : Dur\u00e9e+1",
     "effet": "Malus",
-    "montant": "R\u00e9ussite des sorts : -2 sur 3 tours",
+    "montant": "R\u00e9ussite des sorts : -2 sur 3 tours  (+ effet mode)",
     "icone": "E1023",
     "stat": "Charisme",
     "classe": ["Chev Dragon"]
@@ -939,7 +939,7 @@
     "nom": "A la Charge ! ",
     "desc": "Renforce la prochaine attaque physique du lanceur, diminue la pr\u00e9cision",
     "effet": "Buff",
-    "montant": "Prochain d\u00e9g\u00e2t physique +1D8+6, r\u00e9ussite -1",
+    "montant": "Prochain d\u00e9g\u00e2t +1D6+6, r\u00e9ussite -1 (3 tours max)",
     "icone": "E0088",
     "stat": "Esprit",
     "classe": ["Corsaire"]
@@ -995,7 +995,7 @@
     "effet": "Buff Malus",
     "montant": "A chaque tour (4 max) : D\u00e9g\u00e2t (+) et PV (-) 1D6+6",
     "icone": "E0779",
-    "stat": "Esprit",
+    "stat": "Force",
     "classe": ["Samoura\u00ef"]
   },
   "118": {
@@ -1029,7 +1029,7 @@
     "nom": "Transe - Mode Tueur",
     "desc": "Met son lanceur dans un \u00e9tat de transe lui permettant de taper plus fort. Au tour 0 : Blocage +2",
     "effet": "Buff",
-    "montant": "D\u00e9g\u00e2t +1D4+2 pendant 3 tours",
+    "montant": "D\u00e9g\u00e2t +1D4 (min 2) +2 pendant 3 tours",
     "icone": "E0912",
     "stat": "Esprit",
     "classe": ["Assassin"]
@@ -1065,7 +1065,7 @@
     "nom": "Armure Draconique",
     "desc": "Le DK (Dragon Knight) rev\u00eate son corps d'\u00e9caille sur 4 tours. Effets - Embras\u00e9 : Epines+3; D\u00e9moniaque : D\u00e9g\u00e2t subi -2; Cach\u00e9 : Dur\u00e9e+1",
     "effet": "Buff",
-    "montant": "D\u00e9g\u00e2t subi -1D4 (min 2), 4 tours",
+    "montant": "D\u00e9g\u00e2t subi -1D4 (min 2), 4 tours  (+ effet mode)",
     "icone": "E1022",
     "stat": "Esprit",
     "classe": ["Chev Dragon"]
@@ -1138,7 +1138,7 @@
     "desc": "L'excitation du voleur monte. Il lance sa dague sur la bourse de l'ennemi pour tenter de subtiliser plus d'argent. Cumulable 3 fois par ennemi.",
     "effet": "D\u00e9g\u00e2t et Or+",
     "montant": "1D6+2, +33% d'or re\u00e7u sur l'ennemi",
-    "icone": "e0497",
+    "icone": "E0497",
     "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Voleur"]
   },
@@ -1147,7 +1147,7 @@
     "desc": "Encourage ses camarades, augmentant ainsi leur chance de r\u00e9ussir leur sort. Sort complexe \u00e0 ex\u00e9cuter.",
     "effet": "Buff AoE",
     "montant": "R\u00e9ussite des sorts +1 sur 3 tours (r\u00e9ussite -3)",
-    "icone": "e0559",
+    "icone": "E0559",
     "stat": "Charisme",
     "classe": ["Barde"]
   },
@@ -1156,8 +1156,26 @@
     "desc": "Cr\u00e9e un double de soi, avec les m\u00eames stats et buffs. Ses d\u00e9g\u00e2ts inflig\u00e9s sont divis\u00e9s par 2. Ses d\u00e9g\u00e2ts re\u00e7us touchent le porteur et sont aussi divis\u00e9s par 2.",
     "effet": "Invocation",
     "montant": "Invoque un double de soi pendant 2 tours.",
-    "icone": "e1042",
+    "icone": "E1042",
     "stat": "Esprit",
     "classe": ["Illusionniste"]
+  },
+  "136": {
+    "nom": "Aura du Samoura\u00ef",
+    "desc": "Le samoura\u00ef concentre toute son \u00e9nergie pour insuffler de la puissance \u00e0 tout ses camarades (dont lui-m\u00eame)",
+    "effet": "Buff AoE",
+    "montant": "(R\u00e9ussite -1) D\u00e9g\u00e2t +1D4+3 pendant 1 tour (lanceur inclus)",
+    "icone": "E0484",
+    "stat": "Esprit",
+    "classe": ["Samoura\u00ef"]
+  },
+  "137": {
+    "nom": "Instinct de Survie",
+    "desc": "Le sang de dragon bouillonne et enclenche le mode survie pour son porteur. Effets - Embras\u00e9 : D\u00e9g\u00e2ts +3; D\u00e9moniaque : Blocage+1; Cach\u00e9 : Soin PV+3",
+    "effet": "Buff et Soin",
+    "montant": "(Si PV <50%) Soin 1D4+2 pendant 3 tours (+ effet mode)",
+    "icone": "E0583",
+    "stat": "Esprit",
+    "classe": ["Chev Dragon"]
   }
 }
