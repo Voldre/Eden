@@ -79,7 +79,7 @@ window.addEventListener("load", async () => {
     document.querySelector("#rarity").src = "images/uiiconPNG/combat_mob.png";
     document.querySelector("#rarity").alt = "Monstre Commun";
   }
-  if (rarity === 2 || enemyData.pvmax < 200) {
+  if (rarity === 2 || (enemyData.pvmax >= 120 && enemyData.pvmax < 200)) {
     document.querySelector("#rarity").src = "images/uiiconPNG/combat_elite.png";
     document.querySelector("#rarity").alt = "Elite";
   }
@@ -189,7 +189,7 @@ function writeMessage(persoData, pnjData, mapData, enemyData) {
 
 function chooseEnemy(mapId = null, category = null) {
   // prettier-ignore
-  const forbidden = ["82","85","101","104","109"];
+  const forbidden = ["82","101","104","109"];
 
   var enemyListId = Object.keys(enemyJSON).filter((eID) => !forbidden.includes(eID));
 
