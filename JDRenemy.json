@@ -261,7 +261,7 @@
     "skills": [
       "Parasite Obscur : 7 d\u00e9g\u00e2ts *(3 tours) : intelligence",
       "Pacte : Invoque un Panopticor : esprit",
-      "Fl\u00e8ches des Ombres : 1D10+9 et si parasite : soin 1D10+6 : intelligence",
+      "Fl\u00e8ches des Ombres : 1D10+9 et si parasite : heal 1D10+6 : intelligence",
       "Attaque Cauchemardesque : 3D10+8 (mais tue panopticor) : intelligence"
     ],
     "stats": "9,13,16,8,14",
@@ -279,7 +279,7 @@
       "Cri de guerre : d\u00e9g\u00e2t +4 a tlm pendant 3 tours",
       ""
     ],
-    "stats": "16,9,8,13,14",
+    "stats": "16,12,8,13,14",
     "desc": "Ursun guerrier servant g\u00e9n\u00e9ralement une bonne cause",
     "infos": "Faible \u00e0 la foudre et au per\u00e7ant",
     "drop": "Plastron de garde, rare : Pendentif du Croc Brumeux"
@@ -409,10 +409,10 @@
     "nom": "Baram la Chim\u00e8re Volcanique",
     "pvmax": "230",
     "skills": [
-      "Feu propageur : 1D12 +11 AoE : Intelligence",
-      "Griffe de d\u00e9mon : 2D10 + 12 : Force",
+      "Feu propageur : 1D12 +12 AoE : Intelligence",
+      "Griffe de d\u00e9mon : 2D10 + 13 : Force",
       "Cri de Chim\u00e8re : d\u00e9g\u00e2t re\u00e7u +5 pendant 3 tours : Esprit",
-      "Rayon de feu : 1D12 + 1D10 +13 (+5 si besoin) : Intel"
+      "Rayon de feu : 1D12 + 1D10 +15 (+5 si besoin) : Intel"
     ],
     "stats": "16,13,15,14,14",
     "desc": "BOSS : Une chim\u00e8re antique cr\u00e9\u00e9 \u00e0 l'\u00e9poque de la Grande Guerre",
@@ -809,7 +809,7 @@
     "nom": "Oberon le Massacreur Sadique",
     "pvmax": "280",
     "skills": [
-      "Coup de Queue : 2D6 +10 AoE : Force",
+      "Coup de Queue : 2D6 +11 AoE : Force",
       "Griffe & Croc : 3D6+14 : Force",
       "Frisson de Guerre : Soin 2D8+14, d\u00e9g\u00e2t +10 pendant 4-5 tours : Esprit",
       "Blessure Fatale : \u00e9pines d\u00e9g\u00e2t 1D6+6 pour 4 tours : Esprit"
@@ -887,7 +887,7 @@
       "Triple Tir : 1D8+1D6+1D4+15 : Dext\u00e9rit\u00e9",
       "Blessure Douloureuse : 1D10 +12, et 0 soin sur 4 tours : Dext\u00e9rit\u00e9",
       "S\u00e9r\u00e9nit\u00e9 : Dext\u00e9+2 Esquive+2, D\u00e9g\u00e2t subi -1D6-6 pendant 4 tours : Esprit",
-      "Fl\u00e8che M\u00e9ga Eblouissante : 1D10 +10, r\u00e9ussite des sorts -2 (3 tours) AoE : Dext\u00e9rit\u00e9"
+      "Fl\u00e8che M\u00e9ga Eblouissante : 1D10 +14, r\u00e9ussite des sorts -2 (3 tours) AoE : Dext\u00e9rit\u00e9"
     ],
     "stats": "11,16,11,10,16",
     "desc": "Braconnier quarantenaire barbu avec des cicatrices, \u00e0 la recherche de b\u00eates rares et on\u00e9reuses",
@@ -899,12 +899,12 @@
     "nom": "Rubis - Chevali\u00e8re Dragonne",
     "pvmax": "280",
     "skills": [
-      "Mode Draconique : Embras\u00e9 : Force+2, D\u00e9moniaque : Charisme+2, Cach\u00e9 : Esprit+2 : Esprit",
+      "Mode Draconique : Embras\u00e9 : Force/Intel+2, D\u00e9moniaque : Charisme+2, Cach\u00e9 : Esprit+2 : Esprit",
       "Terreur du Dragon AoE : R\u00e9ussite des sorts : -2 sur 3 tours AoE (+ mode Cf. DK) : Charisme",
-      "Pouvoir du Dragon  / Atk Cyclone : 3D6+16 (un peu -) (feu, t\u00e9n\u00e8bres,physique) : Force",
+      "Pouvoir du Dragon  / Atk Cyclone : 3D6+17 (AoE-) (feu, t\u00e9n\u00e8bres,physique) : Force",
       "Revers d'\u00e9caille : 5 tentatives par combat (<10 : 66%, >=10 : 33%) (+ mode Cf. DK) : Esprit"
     ],
-    "stats": "15,11,7,15,15",
+    "stats": "15,13,7,15,16",
     "desc": "H\u00e9riti\u00e8re de l'empire Heldentod, connue pour sa d\u00e9termination et sa prestance. Elle est tr\u00e8s strat\u00e8ge mais froide et parfois sans piti\u00e9.",
     "infos": "Faible \u00e0 la nature et aux t\u00e9n\u00e8bres",
     "drop": "Ep\u00e9e de parade OU Gantelet de Lieutenant, tr\u00e8s rare : Brassard du Pouvoir"
@@ -1034,8 +1034,8 @@
     "nom": "Ecorce Terrestre - Pionnier de Gaia",
     "pvmax": "330",
     "skills": [
-      "Fracas Terrestre / Atk Foudroyante : 1D10+15 / 2D10+12 AoE : force/intel",
-      "Machoir Enorme : 3D6+18 : force",
+      "Fracas Terrestre / Atk Foudroyante : 1D10+16 / 2 D10+12 AoE : force/intel",
+      "Machoir Enorme : 3D6+19 : force",
       "M\u00e8re fondatrice : Soin 2D10+25 Invoque 2 lutins runique (PV/2) : esprit",
       "Passif quand 40% PV : D\u00e9g\u00e2t d'\u00e9pine 1D6+4"
     ],
@@ -1110,9 +1110,9 @@
     "pvmax": "250",
     "skills": [
       "Euphorie : +1D4+1 (min 3) par coup. Buff pendant 4-5 tours (max 5) : esprit",
-      "Perc\u00e9e du Guerrier : 1D6 + 1D6 + 1D4 +12 : force",
+      "Perc\u00e9e du Guerrier : 1D6 + 1D6 + 1D4 +14 : force",
       "Perce-Armure : 1D10+14 + d\u00e9g\u00e2t physique re\u00e7u +5 (3 tours) : force",
-      "Attaque tournoyante : 2D8 +8 : force"
+      "Attaque tournoyante : 2D8 +11 : force"
     ],
     "stats": "17,11,13,13,15",
     "desc": "Guerrier grand et robuste se battant pour l'empire Heldentod, d\u00e9cor\u00e9 par le grand mar\u00e9chal de l'Empire, vicieux.",
@@ -1125,7 +1125,7 @@
     "pvmax": "220",
     "skills": [
       "Marteau Insolent : 1D10 +12 AoE, et -1 de blocage et d'esquive pour 3 tours : force",
-      "Marteau de Scellement : 1D10+15 de glace, retire un buff : force",
+      "Marteau de Scellement : 1D10+15 de glace, retire un bu'ff : force",
       "Aura Bouclier : Blocage +3 AoE sur 3 tours : Esprit",
       "Aura Ami Marteau : Soin 2D10 +16. Prochain d\u00e9g\u00e2t +1D6+8 : esprit"
     ],
@@ -1152,7 +1152,7 @@
   "79": {
     "visuel3D": "m076",
     "nom": "Tortue pr\u00e9historique",
-    "pvmax": "125",
+    "pvmax": "140",
     "skills": [
       "Seisme : 2D8 +10 AoE : force",
       "Vase limitante : 2D6 +8 AoE (dext\u00e9-4 4 tours) : intelligence",
@@ -1276,7 +1276,7 @@
     "skills": [
       "Aura Bouclier Protec : Blocage +3 pendant 4 tours : esprit",
       "Aura Ami du Marteau : Soin 2D10 +12. Prochain d\u00e9g\u00e2t +2D6+4 : intel",
-      "Marteau du Scellement : 2D6+8 de glace, retire un buff : intel",
+      "Marteau du Scellement : 2D6+10 de glace, retire un bu'ff : intel",
       "Symphonie de guerre : D\u00e9g\u00e2t +1D6+2 AoE (3 tours) : esprit"
     ],
     "stats": "5,11,16,12,17",
@@ -1302,7 +1302,7 @@
   "89": {
     "visuel3D": "m052",
     "nom": "Tank Ursun",
-    "pvmax": "200",
+    "pvmax": "220",
     "skills": [
       "Mur de Titan : D\u00e9g\u00e2t -4 -1D4 pendant 4 tours : force",
       "Provocation :D\u00e9g\u00e2t 1D6+8, et 1D4 fois plus de chance d'\u00eatre vis\u00e9 pendant 4 tours : Charisme",
@@ -1636,7 +1636,7 @@
     "skills": [
       "Coup de Corne : 3D6+16 : force",
       "Fracas Terrestre : 1D10+15 AoE : force",
-      "Mort Pressante : 1D4+6 AoE sur 3 tours : intel",
+      "Mort Pressante : 1D4+6 AoE sur 3 tours : esprit",
       "Horreur de la Guerre : Soin 2D10+15 et renvoi les d\u00e9g\u00e2ts du prochain tour (50% 0 armure) : Esprit"
     ],
     "stats": "17,9,15,11,16",
@@ -1677,11 +1677,11 @@
   "114": {
     "visuel3D": "m249",
     "nom": "Z\u00e9phyr",
-    "pvmax": "200",
+    "pvmax": "210",
     "skills": [
       "Aura Bouclier Protec : Blocage +3 pendant 4 tours : esprit",
       "Aura Ami du Marteau : Soin 2D10 +15. Prochain d\u00e9g\u00e2t +2D6+6 : intel",
-      "Marteau du Scellement (Mono/AoE) : 2D6+10 / 5) AoE glace, retire un buff : intel",
+      "Marteau du Scellement (Mono/AoE) : 2D6+12 (jdrcombat +18) glace, retire un bu'ff : intel",
       "Symphonie de guerre : D\u00e9g\u00e2t +1D6+3 AoE (3 tours) : esprit"
     ],
     "stats": "5,11,16,12,17",
@@ -1754,7 +1754,7 @@
     "nom": "Gimu - l'Oeil du Cyclone",
     "pvmax": "300",
     "skills": [
-      "Crochet Cyclique : 3D6+20 : Dext\u00e9rit\u00e9",
+      "Crochet Cyclique : 3D6+19 : Dext\u00e9rit\u00e9",
       "Cyclone Extra : 1D10 +16 AoE (bloc m-2) : Dext\u00e9rit\u00e9",
       "Oeil affaibilissant : Force & Intel -2 sur 3 tours : Esprit",
       "Passif (Oeil d'Oubli) : si ennemi \u00e0 port\u00e9 fait sort \u00e9chec critique : Oubli la classe sur 3 tours"
@@ -1770,9 +1770,9 @@
     "pvmax": "220",
     "skills": [
       "Triple Tir : 1D8+1D6+1D4+18 : Dext\u00e9rit\u00e9",
-      "Blessure Douloureuse : 1D10 +13, et 0 soin sur 4 tours : Dext\u00e9rit\u00e9",
+      "Blessure Douloureuse : 1D10 +16, et 0 heal sur 4 tours : Dext\u00e9rit\u00e9",
       "S\u00e9r\u00e9nit\u00e9 : Dext\u00e9+2 Esquive+2, D\u00e9g\u00e2t subi -1D6-6 pendant 4 tours : Esprit",
-      "Passif (Pr\u00e9cision): Esquive/Blocage cible 22"
+      "Passif (Pr\u00e9cision): Esquive/Blocage cible +2"
     ],
     "stats": "11,16,11,10,16",
     "desc": "Lieutenant d'unit\u00e9 d'exp\u00e9dition pour la Curie. Yandere et follement amoureuse de Lassar.",
@@ -1812,16 +1812,16 @@
   "123": {
     "visuel3D": "kibo",
     "nom": "Kibo",
-    "pvmax": "205",
+    "pvmax": "250",
     "skills": [
       "Euphorie : +1D4+1 (min 3) par coup. Buff pendant 4 tours (max 5) : esprit",
-      "Attaque Cyclone/Charge (Provoc) :  1D10 +15  (+4, 1/2 vis\u00e9 3 t) : Force/Charisme",
+      "Attaque Cyclone/Charge (Provoc) :  1D10 +15 (pour jdrcombat +20)  (+4, 1/2 vis\u00e9 3 t) : Force/Charisme",
       "Mur de Titan x Robot : D\u00e9g\u00e2t re\u00e7us -1D6-10 : Esprit",
       "Passif : D\u00e9g\u00e2ts re\u00e7us -10 (-5 si < 50 PV)"
     ],
     "stats": "16,10,11,15,17",
     "desc": "Double mal\u00e9fique (Doppelg\u00e4nger) de Kibo. Tout aussi costaud et r\u00e9sistant, mais pas gentil !",
-    "infos": "Faible \u00e0 la foudre et aux t\u00e9n\u00e8bres",
+    "infos": "Faible \u00e0 la foudre et aux t\u00e9n\u00e8bres (avant 205 pv)",
     "drop": "40po, Masse Pulv\u00e9risante, rare : Bouclier Zuminator"
   },
   "124": {
@@ -1844,8 +1844,8 @@
     "nom": "Rampant de Crystal",
     "pvmax": "110",
     "skills": [
-      "D\u00e9gagement d'\u00e9nergie : (1 tour incant) 2D6 AoE+12 (malus esprit -2, 3 tours) : Intelligence",
-      "Charge glac\u00e9e : 2D10 +10 : Force",
+      "D\u00e9gagement d'\u00e9nergie : (1 tour incant) 2D6+12 AoE (malus esprit -2, 3 tours) : Intelligence",
+      "Charge glac\u00e9e : 2D10 +8 : Force",
       "Crystal vivifiant : 2D10 +15 PV (Soin aux crystaux) : Intelligence",
       "Passif : d\u00e9g\u00e2t re\u00e7u -5 (ou -10)"
     ],
@@ -1857,10 +1857,10 @@
   "126": {
     "visuel3D": "m087b",
     "nom": "Champigno\u00efde Mutant Crystal",
-    "pvmax": "230",
+    "pvmax": "250",
     "skills": [
       "Attaque foudroyante : AoE 3D6 + 10 (+3/champi) : Intelligence",
-      "Spore explosif : 4D6 +16 : Intelligence",
+      "Spore explosif : 4D6 +16 (jdrcombat +25) : Intelligence",
       "Spore mutant crystal (+2/champi) : Invoque un mini champi crystal (40 PV, charge 1D10+6 (D\u00e9 <15), explose \u00e0 la mort 2D10+10 AoE) : Esprit",
       "Passif : d\u00e9g\u00e2t re\u00e7u -5 (ou -10)"
     ],
@@ -1957,7 +1957,7 @@
     "stats": "17,11,15,11,15",
     "desc": "Grand champigno\u00efde vivant dans la Carri\u00e8re Angor. Un vrai champigno\u00efde Alpha.",
     "infos": "Faible au feu et \u00e0 la glace",
-    "drop": "Germes, rare : Super chapeau champi"
+    "drop": "Germes, rare : Super chapeau champi, Baga portatif"
   },
   "133": {
     "visuel3D": "m361",
@@ -2022,10 +2022,10 @@
   "137": {
     "visuel3D": "m123",
     "nom": "Voleur Robuste",
-    "pvmax": "100",
+    "pvmax": "155",
     "skills": [
-      "Tranch\u00e9es aggressives : 4D6 +12 : force",
-      "Embuscade : 2D10 +16 (X2 si discret) : dext\u00e9rit\u00e9",
+      "Tranch\u00e9es aggressives : 3D6 +12 : force",
+      "Embuscade : 2D10 +11 (X2 si discret) : dext\u00e9rit\u00e9",
       "Int\u00e9gration : Buff Aoe : Esquive +3 pendant 1D4+2 tours : esprit",
       "Passif esquive+2"
     ],
@@ -2037,16 +2037,166 @@
   "138": {
     "visuel3D": "m124",
     "nom": "Pirate Malicieux",
-    "pvmax": "100",
+    "pvmax": "145",
     "skills": [
-      "Coup de flingue : 2D10 +18 : dext\u00e9rit\u00e9",
+      "Coup de flingue : 2D10+13 : dext\u00e9rit\u00e9",
       "Esquive facile (saut esq) : (5 fois max) : dext\u00e9rit\u00e9",
-      "Torche de feu : 2D10+14 AoE : intelligence",
+      "Torche de feu : 1D10+15 AoE : intelligence",
       "Passif renfort pirate possible"
     ],
     "stats": "11,16,16,11,12",
     "desc": "Pirate malicieux et manipulateur travaillant dans des ports clandestins.",
     "infos": "Faible \u00e0 la foudre et au contondant",
     "drop": "30po, rare : Cache oeil de pirate"
+  },
+  "139": {
+    "visuel3D": "m292",
+    "nom": "Grizzli",
+    "pvmax": "110",
+    "skills": [
+      "Morsure : 2D10 +11 : force",
+      "Attaque tournoyante : 2D6+10 : dext\u00e9rit\u00e9",
+      "Passif : Armure +5",
+      "Cri de guerre : d\u00e9g\u00e2ts AoE +6 : Esprit"
+    ],
+    "stats": "17,15,9,9,14",
+    "desc": "Grizzli \u00e0 la peau violac\u00e9, animal tr\u00e8s sauvage et f\u00e9roce",
+    "infos": "Faible au feu et \u00e0 la foudre",
+    "drop": "Peau de grizzli"
+  },
+  "140": {
+    "visuel3D": "m136",
+    "nom": "Lieutenant Heldentod",
+    "pvmax": "170",
+    "skills": [
+      "Charge : 2D10 +16 : force",
+      "Attaque tournoyante : 2D8+10 : dext\u00e9rit\u00e9",
+      "Cri de guerre : d\u00e9g\u00e2ts AoE +1D4+6 : Esprit",
+      ""
+    ],
+    "stats": "17,15,9,9,14",
+    "desc": "Lieutenant de l'infanterie Heldentod, agressif et courageux, ils ne reculent jamais.",
+    "infos": "Faible au contondant et \u00e0 la foudre",
+    "drop": "rare: Cha\u00eene Heldentod"
+  },
+  "141": {
+    "visuel3D": "m138",
+    "nom": "Soldat d'\u00e9lite Heldentod",
+    "pvmax": "140",
+    "skills": [
+      "Charge : 2D10 +14 : force",
+      "Griffure Noire : 2D6 +10, et -1 blocage/esquive pour 3 tours AoE : Intel",
+      "Cicatrice de l'esprit : 2D6 +12, retire un buff : dext\u00e9rit\u00e9",
+      "Passif : si cri de guerre, passif d\u00e9g\u00e2ts boost +5"
+    ],
+    "stats": "17,11,15,9,15",
+    "desc": "Soldat d'\u00e9lite expert en d\u00e9g\u00e2t physique, assassin de l'infanterie Heldentod.",
+    "infos": "Faible \u00e0 la glace et \u00e0 la nature",
+    "drop": "40po, rare: Cotte Heldentod"
+  },
+  "142": {
+    "visuel3D": "m132",
+    "nom": "Magicienne Heldentod",
+    "pvmax": "100",
+    "skills": [
+      "Soin : 3D10+15 : intelligence",
+      "Bombe incendiaire : 2D10+7 (si elite fixe*2) : intelligence",
+      "Affaib Mental : +1D6+4 d\u00e9g\u00e2ts magique subis AoE sur 3 tours : Esprit",
+      "Passif : si PV <50 : Sort +1D10 (buff +2)"
+    ],
+    "stats": "11,7,17,9,15",
+    "desc": "Mage de l'Empire Heldentod. Experte en magie de soin et d\u00e9g\u00e2ts.",
+    "infos": "Faible au contondant et \u00e0 la nature",
+    "drop": "30po, rare : Robe Elementaire, Massse Heldentod"
+  },
+  "143": {
+    "visuel3D": "m218",
+    "nom": "Heldentod III",
+    "pvmax": "300",
+    "skills": [
+      "Attaque rapide : 3D6+20 (si PV bas +6, jdrcombat +75) : Force",
+      "Coup d\u00e9chirant : 2D6 +12 AoE (+6 d\u00e9g\u00e2ts re\u00e7us 3 tours) : Force",
+      "Mal\u00e9diction Folle : -1D4+5(+1 si pv<50%) d\u00e9g\u00e2ts/tours AoE (si remove malus, ce montant*(nb perso remove) sur le lanceur), 4 tours : Esprit",
+      "Passif : si coup critique retire un malus et le coup lanc\u00e9 est buff\u00e9 (1D10+6)"
+    ],
+    "stats": "19,11,15,11,15",
+    "desc": "Esprit violet bleut\u00e9 qui contient l'\u00e2me de l'empereur Heldentod III",
+    "infos": "Faible \u00e0 la lumi\u00e8re et au feu",
+    "drop": "50po, rare : Cha\u00eene du destin, Bracelet Maudit d'Heldentod III"
+  },
+  "144": {
+    "visuel3D": "m253",
+    "nom": "Squelette Heldentod",
+    "pvmax": "90",
+    "skills": [
+      "Attaque rapide / Triple Tir : 3D6+10 : Force/Dext\u00e9",
+      "Cri de guerre: 1D4+4 AoE d\u00e9g\u00e2ts : Esprit",
+      "Vent maudit : 2D6+8 (r\u00e9ussite -2 sur le tour) AoE : Intel",
+      "Passif : Peut effrayer et... ?"
+    ],
+    "stats": "13,15,15,11,15",
+    "desc": "Ancien soldat de l'Empire Heldentod de l'\u00e9poque d'Heldentod III",
+    "infos": "Faible \u00e0 la lumi\u00e8re et au contondant",
+    "drop": "20po, rare : Plastron de garde, Gantelet Heldentod"
+  },
+  "145": {
+    "visuel3D": "m289",
+    "nom": "Caldari - Empereur Insecte",
+    "pvmax": "260",
+    "skills": [
+      "Vague terrestre : 2D10 +16 AoE : force",
+      "Succion : 4D6+20 (soigne \u00e7a +6) : force",
+      "Crachat visqueux : 2D6+12 Dext\u00e9 -3 (3 tours) AoE : Intelligence",
+      "Passif : chaque \"-50 PV\" : Epine # Poison au cac : 2 d\u00e9g\u00e2ts"
+    ],
+    "stats": "17,11,16,11,13",
+    "desc": "Insecte l\u00e9zard avec une armure bleut\u00e9, ressemble \u00e0 un Draka\u00ef un peu mutant.",
+    "infos": "Faible au feu et au per\u00e7ant",
+    "drop": "Fibres toxiques, rare : Croc de Caldari"
+  },
+  "146": {
+    "visuel3D": "m350",
+    "nom": "Vidal - Sorcier Dragon",
+    "pvmax": "250",
+    "skills": [
+      "Pouvoir du Dragon / Temp\u00eate de Glace : 3D6+15 (AoE-) (feu, t\u00e9n\u00e8bres,glace) : Intel",
+      "Saut Dimensionnel : 3 tentatives par combat : remplace l'esquive (buff prochain d\u00e9g\u00e2t +5) : intel",
+      "Magie Extr\u00eame : Prochain d\u00e9g\u00e2t magique +2D6 +8 : Esprit",
+      "Revers d'\u00e9caille : 4 tentatives par combat (<10 : 66%, >=10 : 33%) (+Soin PV+15 #Mode Cach\u00e9) : Esprit"
+    ],
+    "stats": "15,7,17,11,16",
+    "desc": "Cheveux noir de jais, c'est un grand sorcier de la cour Heldentod, il a un potentiel magique \u00e9norme et est dou\u00e9 au combat.",
+    "infos": "Faible au tranchant et \u00e0 la nature",
+    "drop": "Grimoire Heldentod, rare : Bracelet Heldentod"
+  },
+  "147": {
+    "visuel3D": "m108b",
+    "nom": "Barnardo - Barde Elogieux",
+    "pvmax": "190",
+    "skills": [
+      "Gu\u00e9rison: Soin 2D10+25 (-1 malus?) / Bombe Vocale : 2D6+10 : Intelligence",
+      "Encouragement Musical : D\u00e9g\u00e2t subi -1D4-6 AoE, 0 dodo, +2 r\u00e9s esprit, 4 tours : Charisme",
+      "Symphonie de guerre : D\u00e9g\u00e2t +1D6+3 AoE (3 tours) : Charisme (jdrcombat +50)",
+      "Passif : Si PV < 50% : Effet de tous les buffs +2"
+    ],
+    "stats": "7,13,17,17,11",
+    "desc": "Barde tr\u00e8s comp\u00e9tent et \u00e9loquent qui travaille beaucoup avec l'h\u00e9ritier Vidal.",
+    "infos": "Faible au tranchant et aux t\u00e9n\u00e8bres",
+    "drop": "40po, Amulette d'Exp\u00e9rience, rare: Guitare de Puissance"
+  },
+  "148": {
+    "visuel3D": "m321",
+    "nom": "Femme Templier",
+    "pvmax": "190",
+    "skills": [
+      "Provocation Groupe : 1D10+10, provoc \u00e0 50% sur 3 tours : Charisme",
+      "Lumi\u00e8re de Gu\u00e9rison : 2D10 +12, 1/4 de rejouer : intelligence",
+      "Mur de Titan : D\u00e9g\u00e2t re\u00e7us -1D6-6 (4 tours) : Force",
+      "Passif : D\u00e9g\u00e2ts re\u00e7us -10 (-5 si < 50 PV)"
+    ],
+    "stats": "16,7,16,16,11",
+    "desc": "Femme tr\u00e8s \u00e9l\u00e9gante et belle, dou\u00e9e pour provoquer, encaisser et se soigner : prendre l'attention",
+    "infos": "Faible \u00e0 la foudre et aux t\u00e9n\u00e8bres",
+    "drop": "40po, rare : (appel mondial) Lunettes Bling-bling, tr\u00e8s rare : Plastron de Templier"
   }
 }

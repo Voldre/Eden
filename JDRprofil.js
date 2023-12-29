@@ -316,7 +316,9 @@ function loadPerso(perso, index, joueurData) {
     if (joueurData.entries[index] <= 0) {
       toastNotification("Erreur : Le personnage ne peut plus aller combattre, revenez demain !");
     } else {
-      document.querySelector("#worldmap").classList.add("active");
+      document.querySelector("#worldmap").classList.remove("hide");
+      document.querySelector(".continent").classList.add("active");
+      [...document.querySelectorAll(".mapMenu")][1].classList.add("activate");
       indexPerso = Object.entries(persosJSON).find((p) => p[1] === perso)[0];
     }
   });
@@ -333,6 +335,24 @@ function loadPerso(perso, index, joueurData) {
   persoE.classList.remove("hide");
 }
 
+// Update worldmap displayed (add 2 continents 23/12/2023)
+[...document.querySelectorAll(".mapMenu")].map((eMapMenu) => {
+  eMapMenu.addEventListener("click", (e) => {
+    // On new click, remove all activated menu
+    [...document.querySelectorAll(".mapMenu")].forEach((eMap) => eMap.classList.remove("activate"));
+    e.target.classList.add("activate");
+
+    // Detect which continent is displayed
+    [...document.querySelectorAll(".continent")].forEach((eContinent) => {
+      if (eContinent.dataset.worldmap === e.target.dataset.worldmap) {
+        eContinent.classList.add("active");
+      } else {
+        eContinent.classList.remove("active");
+      }
+    });
+  });
+});
+
 document.addEventListener("click", (e) => {
   if (e.target.dataset.map || (e.target.parentElement && e.target.parentElement.dataset.map)) {
     window.location.href =
@@ -342,9 +362,17 @@ document.addEventListener("click", (e) => {
       (e.target.dataset.map || e.target.parentElement.dataset.map);
     return;
   }
-  if (e.target.id !== "worldmap01" && e.target.className !== "persoPic")
-    if ([...document.querySelector("#worldmap").classList].includes("active"))
-      document.querySelector("#worldmap").classList.remove("active");
+  if (
+    e.target.className !== "worldmap-img" &&
+    e.target.className !== "persoPic" &&
+    !e.target.className.includes("mapMenu")
+  ) {
+    [...document.querySelectorAll(".continent")].forEach((eContinent) => {
+      if ([...eContinent.classList].includes("active")) eContinent.classList.remove("active");
+    });
+    document.querySelector("#worldmap").classList.add("hide");
+    [...document.querySelectorAll(".mapMenu")].forEach((eMap) => eMap.classList.remove("activate"));
+  }
 });
 
 function loadCards(joueurData) {
@@ -425,7 +453,7 @@ function countCards(joueurData) {
 
 var labelsDescription = {
   alpagaCoin:
-    "Les pièces d'Alpaga peuvent être échangées contre de l'expérience ou de l'or.<br/>1 XP (1 perso) = 8 Pièces Alpaga<br/>1 Or (1 perso) = 3 Pièces Alpaga.<br/> > Ce taux est diminué pour ceux qui ont moins de persos et/ou de moins haut niveau.<br/><br/>Attention : Pour échanger les pièces, il faut que la situation soit cohérente (roleplay), exemple : une interlude, le personnage a quitté le groupe pendant un moment, etc... Et même dans ces conditions, la quantité d'XP/Or donné est limité (ex : on ne peut pas obtenir 3 niveaux d'un coup).",
+    "Les pièces d'Alpaga peuvent être échangées contre de l'expérience ou de l'or.<br/>1 XP (1 perso) = 5 à 8 Pièces Alpaga<br/>1 Or (1 perso) = 2 à 3.33 Pièces Alpaga.<br/> > Ce taux varie selon le nombre de persos et/ou de leur niveau.<br/><br/>Attention : Pour échanger les pièces, il faut que la situation soit cohérente (roleplay), exemple : une interlude, le personnage a quitté le groupe pendant un moment, etc... Et même dans ces conditions, la quantité d'XP/Or donné est limité (ex : on ne peut pas obtenir 3 niveaux d'un coup). Sans aucun délai, les limites sont de 20 XP et 30 pièces (l'un ou l'autre, sinon moins).",
   map: "Les cartes de maps & donjons peuvent être obtenues sur leurs zones spécifiques. Elles donnent des informations sur la zone en question.",
   boss: "Les cartes de Boss peuvent être obtenues n'importe où mais que sur des ennemis de niveau Boss (>= 200 PV). Elles donnent quelques informations sur eux et représentent une belle collection à avoir.",
   composant:
@@ -537,6 +565,11 @@ function PersoSimplified(persoData) {
     (skill) => skill.classe.includes(persoData.classeP) || skill.classe.includes(persoData.classeS)
   ).length;
   if (nbSkills < 4) {
+    this.degat += 1;
+    this.armure += 1;
+  }
+  // 24/12 For Leyla and other
+  if (nbSkills < 3) {
     this.degat += 1;
     this.armure += 1;
   }
