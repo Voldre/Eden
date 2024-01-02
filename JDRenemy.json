@@ -775,7 +775,7 @@
     "drop": "Fruit de cactus, rare : \u00e9pines de cactus"
   },
   "54": {
-    "visuel3D": "m048b",
+    "visuel3D": "m048c",
     "nom": "Zumi M\u00e9canique - Douvone",
     "pvmax": "205",
     "skills": [
@@ -2112,15 +2112,15 @@
   "143": {
     "visuel3D": "m218",
     "nom": "Heldentod III",
-    "pvmax": "300",
+    "pvmax": "350",
     "skills": [
-      "Attaque rapide : 3D6+20 (si PV bas +6, jdrcombat +75) : Force",
+      "Attaque rapide : 3D6+20 (si PV bas +6, jdrcombat +70) : Force",
       "Coup d\u00e9chirant : 2D6 +12 AoE (+6 d\u00e9g\u00e2ts re\u00e7us 3 tours) : Force",
       "Mal\u00e9diction Folle : -1D4+5(+1 si pv<50%) d\u00e9g\u00e2ts/tours AoE (si remove malus, ce montant*(nb perso remove) sur le lanceur), 4 tours : Esprit",
       "Passif : si coup critique retire un malus et le coup lanc\u00e9 est buff\u00e9 (1D10+6)"
     ],
     "stats": "19,11,15,11,15",
-    "desc": "Esprit violet bleut\u00e9 qui contient l'\u00e2me de l'empereur Heldentod III",
+    "desc": "Esprit de pure magie noire violet bleut\u00e9 qui contient l'\u00e2me de l'empereur Heldentod III. Insufflé par le légendaire Prince du Fléau.",
     "infos": "Faible \u00e0 la lumi\u00e8re et au feu",
     "drop": "50po, rare : Cha\u00eene du destin, Bracelet Maudit d'Heldentod III"
   },
@@ -2191,12 +2191,27 @@
     "skills": [
       "Provocation Groupe : 1D10+10, provoc \u00e0 50% sur 3 tours : Charisme",
       "Lumi\u00e8re de Gu\u00e9rison : 2D10 +12, 1/4 de rejouer : intelligence",
-      "Mur de Titan : D\u00e9g\u00e2t re\u00e7us -1D6-6 (4 tours) : Force",
+      "Mur de Titan : D\u00e9g\u00e2t re\u00e7us -1D6-6 : Force",
       "Passif : D\u00e9g\u00e2ts re\u00e7us -10 (-5 si < 50 PV)"
     ],
     "stats": "16,7,16,16,11",
     "desc": "Femme tr\u00e8s \u00e9l\u00e9gante et belle, dou\u00e9e pour provoquer, encaisser et se soigner : prendre l'attention",
     "infos": "Faible \u00e0 la foudre et aux t\u00e9n\u00e8bres",
     "drop": "40po, rare : (appel mondial) Lunettes Bling-bling, tr\u00e8s rare : Plastron de Templier"
+  },
+  "149": {
+    "visuel3D": "m322b",
+    "nom": "Conrad - H\u00e9ritier et G\u00e9n\u00e9ral",
+    "pvmax": "270",
+    "skills": [
+      "Euphorie : +1D4+2 (min 4) par coup. Buff pendant 4-5 tours (max 5) : esprit",
+      "Perc\u00e9e du Guerrier : 1D6 + 1D6 + 1D4 +17 : force",
+      "Instinct de Survie : PV & D\u00e9g\u00e2t : +1D6+6 pendant 3 tours",
+      "Passif : Si coup critique : armure/2"
+    ],
+    "stats": "17,9,13,13,16",
+    "desc": "H\u00e9ritier le plus vieux de l'Empire Heldentod. Il est connu pour ses exploits militaires, son inventivit\u00e9, et ses strat\u00e9gies malicieuses.",
+    "infos": "Faible \u00e0 la nature et \u00e0 la lumi\u00e8re (MODE EMBRASE)",
+    "drop": "Gantelet Heldentod, rare : Grand Plastron Heldentod"
   }
 }

@@ -538,7 +538,11 @@ function PersoSimplified(persoData) {
     (2 + parseInt(montantArme1) + parseInt(montantArme2)) * Math.pow(1.1, this.niv) + montantAccessDegat
   );
 
-  montantArmure = stuffs[3].montant.split("Dégât -")[1].split(",")[0].split(" ")[0];
+  if (stuffs[3]?.montant.split("Dégât -")[1]) {
+    montantArmure = stuffs[3]?.montant.split("Dégât -")[1].split(",")[0].split(" ")[0] || 0;
+  } else {
+    montantArmure = 0;
+  }
 
   // Bonus d'armure par niveau (20/11/23 : Fixe à 2 en +, exponentiel par niveau)
   // 02/12/23 : l'exponentiel du bouclier est réduit, car sinon trop cheat

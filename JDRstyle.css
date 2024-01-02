@@ -6,7 +6,7 @@ body {
 }
 .topleft {
   display: inline-block;
-  width: 48%;
+  width: 49%;
   min-width: 100px;
   text-align: end;
   line-height: 2;
@@ -89,6 +89,14 @@ dialog::backdrop {
 .skillCombat {
   margin: 2px;
 }
+.skillCombat .montant {
+  font-size: 13px;
+}
+.skillCombat .icone {
+  width: 40px;
+  height: 40px;
+}
+
 .skill:hover,
 .equipements div:hover {
   background-color: rgba(96, 69, 216, 0.1);
@@ -459,6 +467,10 @@ dialog::backdrop {
   height: 2px;
   background-color: red;
 }
+.skillName {
+  padding: 1px;
+  height: 40px;
+}
 .statName {
   font-size: 20px;
   width: 75px;
@@ -471,10 +483,6 @@ dialog::backdrop {
   font-size: 12px;
 }
 
-.skillCombat .icone {
-  width: 40px;
-  height: 40px;
-}
 .dice {
   background-image: url("./images/Dice20.png");
   color: #333;
