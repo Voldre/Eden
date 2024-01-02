@@ -328,7 +328,13 @@ function insertSkill(skillElement, skillName, awakenClass = false) {
 
 function insertBuffInteraction(buffTurnE, skillName, selectedSkill, skillMontant) {
   const skillEffet = selectedSkill.effet;
-  if (skillEffet.includes("Buff") || skillEffet.includes("Malus") || skillEffet.includes("Transformation")) {
+  if (
+    skillEffet.includes("Provocation") ||
+    skillEffet.includes("Buff") ||
+    skillEffet.includes("Malus") ||
+    skillEffet.includes("Transformation")
+  ) {
+    buffTurnE.remove;
     buffTurnE.addEventListener("click", () => {
       if (buffTurnE.children[1]) {
         if (buffTurnE.children[1].innerText === "0") {
@@ -367,7 +373,9 @@ function insertBuffInteraction(buffTurnE, skillName, selectedSkill, skillMontant
       const amountText = document.createElement("p");
       const amountE = document.createElement("input");
       console.log(skillMontant);
-      if (skillMontant.includes("1D")) {
+
+      const hasAmount = skillMontant.includes("1D") || skillMontant.includes("effet mode");
+      if (hasAmount) {
         amountText.innerText = "Montants ";
         inputs.append(amountText);
 
@@ -385,7 +393,7 @@ function insertBuffInteraction(buffTurnE, skillName, selectedSkill, skillMontant
         const turnOfBuffE = document.createElement("p");
         const amountOfBuffE = document.createElement("p");
         turnOfBuffE.innerText = turnE.value;
-        amountOfBuffE.innerText = skillMontant.includes("1D") ? amountE.value : "";
+        amountOfBuffE.innerText = hasAmount ? amountE.value : "";
         buffTurnE.append(turnOfBuffE);
         buffTurnE.append(amountOfBuffE);
         dialog.close();

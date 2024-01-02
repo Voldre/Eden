@@ -338,7 +338,7 @@ function Perso(persoData) {
   stuffs[1] = stuffs[1] || { nom: "", montant: "Dégât +0" };
   if (stuffs[1].nom.includes("Bouclier")) {
     montantBouclier = stuffs[1].montant.split("Dégât -")[1].split(",")[0].split(" ")[0];
-    stuffs[1] = { montant: "Dégât +0" };
+    stuffs[1].montant = "Dégât +0";
   } else {
     montantBouclier = 0;
   }
@@ -792,6 +792,12 @@ async function victory() {
   }
   // Coins
   newJoueurData.alpagaCoin = addCoins(newJoueurData.alpagaCoin, winCards);
+
+  // Security 30/12 : Bug when update files, cookies of player are like "corrupted" and enemy data doesn't work well
+  if (!newJoueurData.alpagaCoin) {
+    toastNotification("Erreur : Données corrompues : Supprimez vos cookies.", 12000);
+    stop();
+  }
 
   // Save fight in log
   const earnedCoins = newJoueurData.alpagaCoin - joueurData.alpagaCoin;
