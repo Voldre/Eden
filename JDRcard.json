@@ -1981,6 +1981,39 @@
     "group": 1
   },
   {
+    "id": 1584,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Cosmos et les histoires",
+    "description": "Cosmos ne porte aucun intérêt aux histoires poignantes. L'histoire du Zumi Androïd qui recrée son créateur, blablabla... On s'en fiche ? Ah ! Par contre on gagne combien d'XP ???",
+    "maps": [20],
+    "enemies": [],
+    "kindId": "skillIcon/E0231",
+    "group": 1
+  },
+  {
+    "id": 1585,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Brocoli et la teinture",
+    "description": "Malvis vient de découvrir une lourde vérité... Brocoli n'est en réalité pas vert ! Il s'agit d'une teinture de haute qualité des Anurans ! Mais qu'est-il vraiment...",
+    "maps": [28],
+    "enemies": [],
+    "kindId": "items/I00490",
+    "group": 1
+  },
+  {
+    "id": 1586,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Ainz et Professeur Ru",
+    "description": "Professeur Ru est un expert en Démonologie. Il a prit Ainz sous son aile pour lui enseigner son savoir. C'est le cousin de Rumbledore et il s'estime supérieur à lui.",
+    "maps": [29],
+    "enemies": [],
+    "kindId": "monsters/m118b",
+    "group": 1
+  },
+  {
     "id": 15000,
     "value": 3,
     "kind": "anecdoteIII",
