@@ -89,6 +89,12 @@
   { "id": 97, "value": 1, "kind": "map", "name": "Plaines du Levant", "description": "", "kindId": 33 },
   { "id": 98, "value": 2, "kind": "map", "name": "Plaines du Levant", "description": "", "kindId": 33 },
   { "id": 99, "value": 3, "kind": "map", "name": "Plaines du Levant", "description": "", "kindId": 33 },
+  { "id": 100, "value": 1, "kind": "map", "name": "Royaume Dévasté", "description": "", "kindId": 34 },
+  { "id": 101, "value": 2, "kind": "map", "name": "Royaume Dévasté", "description": "", "kindId": 34 },
+  { "id": 102, "value": 3, "kind": "map", "name": "Royaume Dévasté", "description": "", "kindId": 34 },
+  { "id": 103, "value": 1, "kind": "map", "name": "Capitale Heldentod", "description": "", "kindId": 35 },
+  { "id": 104, "value": 2, "kind": "map", "name": "Capitale Heldentod", "description": "", "kindId": 35 },
+  { "id": 105, "value": 3, "kind": "map", "name": "Capitale Heldentod", "description": "", "kindId": 35 },
   { "id": 106, "value": 1, "kind": "map", "name": "Plaines d'Elos", "description": "", "kindId": 36 },
   { "id": 107, "value": 2, "kind": "map", "name": "Plaines d'Elos", "description": "", "kindId": 36 },
   { "id": 108, "value": 3, "kind": "map", "name": "Plaines d'Elos", "description": "", "kindId": 36 },
@@ -198,7 +204,7 @@
     "id": 1013,
     "value": 3,
     "kind": "boss",
-    "name": "Rubis",
+    "name": "Rubis - Héritière Favorite",
     "description": "H\u00e9riti\u00e8re de l'empire Heldentod, connue pour sa d\u00e9termination et sa prestance. Elle est tr\u00e8s strat\u00e8ge mais froide et parfois sans piti\u00e9.",
     "kindId": "m312b"
   },
@@ -206,7 +212,7 @@
     "id": 1014,
     "value": 3,
     "kind": "boss",
-    "name": "Adonis",
+    "name": "Adonis - Tueur en série",
     "description": "Anuran juge connu pour \u00eatre un tueur en s\u00e9rie, sa cause est encore myst\u00e9rieuse. Il peut cependant se montrer tr\u00e8s social.",
     "kindId": "m315"
   },
@@ -294,7 +300,7 @@
     "id": 1025,
     "value": 3,
     "kind": "boss",
-    "name": "Dragon Terrestre",
+    "name": "\"Clipse\" - Dragon Terrestre",
     "description": "Grand dragon terrestre gris brun \u00e0 la peau \u00e9cailleuse et rocheuse, r\u00e9veill\u00e9 suite \u00e0 une \u00e9clipse, il poss\u00e8de de petites ailes.",
     "kindId": "m021"
   },
@@ -382,9 +388,41 @@
     "id": 1037,
     "value": 3,
     "kind": "boss",
-    "name": "Pachirou",
+    "name": "Pachirou - Commandante Explosive",
     "description": "Zumi Commandante de 5 unit\u00e9s offensives, bras droit de Diana, elle est explosive, dynamique et ... chaotique !",
     "kindId": "m314b"
+  },
+  {
+    "id": 1038,
+    "value": 3,
+    "kind": "boss",
+    "name": "Caldari - Empereur Insecte",
+    "description": "Insecte l\u00e9zard avec une armure bleut\u00e9, on raconte qu'il s'agit d'un ancien Drakaï ayant succombé à un surplus de démonologie.",
+    "kindId": "m289"
+  },
+  {
+    "id": 1039,
+    "value": 3,
+    "kind": "boss",
+    "name": "Vidal - Sorcier Dragon",
+    "description": "Héritier de l'Empire aux cheveux noir de jais, il s'agit d'un des grands sorciers de la cour Heldentod, il a un potentiel magique \u00e9norme.",
+    "kindId": "m350"
+  },
+  {
+    "id": 1040,
+    "value": 3,
+    "kind": "boss",
+    "name": "Heldentod III - Le Tyran",
+    "description": "Esprit de pure magie noire violet bleut\u00e9 qui contient l'\u00e2me de l'empereur Heldentod III. Insufflé par le légendaire Prince du Fléau.",
+    "kindId": "m218"
+  },
+  {
+    "id": 1041,
+    "value": 3,
+    "kind": "boss",
+    "name": "Conrad - Commandant Malfaisant",
+    "description": "H\u00e9ritier le plus vieux de l'Empire Heldentod. Il est connu pour ses exploits militaires, son inventivit\u00e9, et ses strat\u00e9gies malicieuses.",
+    "kindId": "m322b"
   },
   {
     "id": 1201,
@@ -594,14 +632,6 @@
     "name": "Fruit-flamme",
     "description": "Ce fruit est très résistant à la chaleur. Il pousse dans les forêts sinistrées par les incendies.",
     "kindId": "I00156"
-  },
-  {
-    "id": 1229,
-    "value": 1,
-    "kind": "composant",
-    "name": "Germe de Champigno\u00efde de Crystal",
-    "description": "Ces germes sont issus d'un champignoïde bien particulier, il permet de concocter de rares potions.",
-    "kindId": "I00172"
   },
   {
     "id": 1229,
@@ -1066,6 +1096,38 @@
     "name": "Ciseau d'Ezur",
     "description": "Ces ciseaux sont utilisées pour sertir des gemmes dans les équipements.",
     "kindId": "I00424"
+  },
+  {
+    "id": 1370,
+    "value": 1,
+    "kind": "composant",
+    "name": "Orbe Noire",
+    "description": "Cette mystérieuse orbe noire donne l'impression d'être chargé en magie noire, pourtant elle n'est d'aucune utilitée et ça, Vidal le sait.",
+    "kindId": "I00361b"
+  },
+  {
+    "id": 1375,
+    "value": 1,
+    "kind": "composant",
+    "name": "Séquoia Ancien",
+    "description": "Ce Séquoia pousse dans des terres isolées, il est souvent vieux de plusieurs siècles, au point qu'il soit recouvert de poussière.",
+    "kindId": "I00192"
+  },
+  {
+    "id": 1376,
+    "value": 2,
+    "kind": "composant",
+    "name": "Bois Ecarlate",
+    "description": "On raconte que l'origine de la teinte de ce bois serait dû aux terrains sur lequel il pousse : des anciens champs de batailles.",
+    "kindId": "I00191"
+  },
+  {
+    "id": 1377,
+    "value": 3,
+    "kind": "composant",
+    "name": "Bois Gelé",
+    "description": "Ce bois extrêmement rare et résistant est très prisé, il parvient à pousser sur des terres glacées comme celles du Pic du Maëlstrom.",
+    "kindId": "I00192b"
   },
   {
     "id": 1501,
@@ -1843,7 +1905,7 @@
     "kind": "anecdote",
     "name": "Kibo et War",
     "description": "Quand Kibo et War doivent s'allier et trouver une stratégie (ex: aller à Heldentod), les idées ne volent pas très haut...",
-    "maps": [32],
+    "maps": [33],
     "enemies": [],
     "kindId": "skillIcon/E0284",
     "group": 2
@@ -2014,37 +2076,147 @@
     "group": 1
   },
   {
-    "id": 15000,
+    "id": 1587,
     "value": 3,
-    "kind": "anecdoteIII",
-    "name": "",
-    "description": "",
-    "maps": [],
+    "kind": "anecdote",
+    "name": "Nyx et le 1er Ministre",
+    "description": "Nyx a pu rencontrer en personne le 1er ministre avec qui elle a pu s'entretenir suite à ses concerts pour récupérer son argent en banque avant de quitter l'Empire, un \"bel\" échange.",
+    "maps": [33],
     "enemies": [],
-    "kindId": "items/",
-    "group": 0
+    "kindId": "items/i01165",
+    "group": 2
   },
   {
-    "id": 15000,
+    "id": 1588,
     "value": 3,
-    "kind": "anecdoteXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-    "name": "Sceau de Dualité",
-    "description": "Ce sceau a été utilisé par Milo, le frère de Malvis, pour sceller son âme à l'intérieur de Brocoli, c'est une relique des Sages.",
-    "maps": [58],
+    "kind": "anecdote",
+    "name": "La possession d'Heldentod III",
+    "description": "Le tyran Heldentod III a été capable de contrôler les habitants de l'Empire qui ont osés entrés dans son Temple, tout cela a cause de leur sang...",
+    "maps": [34],
     "enemies": [],
-    "kindId": "items/i01356",
-    "group": 1
+    "kindId": "skillIcon/E0441",
+    "group": 2
   },
   {
-    "id": 15000,
+    "id": 1589,
     "value": 3,
-    "kind": "anecdoteXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-    "name": "Milo et Nathanaël (côte aristère)",
-    "description": ".",
-    "maps": [58],
+    "kind": "anecdote",
+    "name": "Le Quartier des Plaisirs",
+    "description": "Entre les danses de Rad Ed, la soirée de Kibo et la rencontre de Tatiana, on peut dire que ce quartier est plutôt... Animé !",
+    "maps": [35],
     "enemies": [],
-    "kindId": "items/",
-    "group": 1
+    "kindId": "skillIcon/E0347",
+    "group": 2
+  },
+  {
+    "id": 1590,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Kibo et les plaisirs",
+    "description": "Kibo dans le quartier des plaisirs à tendance à vite s'emporter, pourtant cela ne lui ressemble pas, mais quand il entend parler de Vimira...",
+    "maps": [35],
+    "enemies": [],
+    "kindId": "skillIcon/E0233b",
+    "group": 2
+  },
+  {
+    "id": 1591,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Magie Noire de l'Empire",
+    "description": "A l'ère d'Heldentod III la magie noire était souveraine, priant le Prince du Fléau, la démonologie dominait les autres arts, tout cela jusqu'à la chute du Royaume... Ces infos sont gardées par les mages de la cour.",
+    "maps": [34],
+    "enemies": [],
+    "kindId": "items/I00139b",
+    "group": 2
+  },
+  {
+    "id": 1592,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Azora et Magnus",
+    "description": "Les concours de nourritures sont le sport national des ogres. Azora et Magnus le savent très bien, c'est pour ça qu'ils s'en donnent à coeur-joie ! Et grâce à ça, Azora tape bien dans l'oeil de Magnus.",
+    "maps": [35],
+    "enemies": [],
+    "kindId": "items/i01042",
+    "group": 2
+  },
+  {
+    "id": 1593,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Le Tournoi des Héritiers",
+    "description": "Lors du festival de fin d'année, dans le tournoi des héritiers, tout ne s'est pas passé comme prévu, les héritiers Rubis et Vidal se sont alliés !",
+    "maps": [35],
+    "enemies": [],
+    "kindId": "otherIcon/group032",
+    "group": 2
+  },
+  {
+    "id": 1594,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "War et Vidal",
+    "description": "Vidal n'aime pas beaucoup War, car il s'amuse à lui lancer le sort \"Silence\" tout le temps ! Et il ne peut plus faire sa grande magie, roh !",
+    "maps": [35],
+    "enemies": [],
+    "kindId": "skillIcon/E0035",
+    "group": 2
+  },
+  {
+    "id": 1595,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Rad Ed et Clipse",
+    "description": "Rad Ed prend grand soin de Clipse, elle tient à lui comme si c'était son enfant, il a besoin d'amour ! Qui sait comment Marcus le traiterait sinon ? ",
+    "maps": [35],
+    "enemies": [],
+    "kindId": "uiiconPNG/clipsenoel",
+    "group": 2
+  },
+  {
+    "id": 1596,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "La cérémonie des Héritiers",
+    "description": "Le groupe a pu rencontrer plein d'héritiers pendant la cérémonie, et de curieux évènements ont eu lieu pendant : Estia et Rubis ? Beren et Hans ? Vidal et sa magie ? Kibo et les Pizzas ?",
+    "maps": [35],
+    "enemies": [],
+    "kindId": "otherIcon/group019b",
+    "group": 2
+  },
+  {
+    "id": 1597,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Estia et les favoris",
+    "description": "Estia a pris la défense de Rubis et Vidal face à l'Empereur vis-à-vis des leur alliance au tournoi. Marcus était sous le choc, et cette bienveillance à l'égard de d'autres héritiers a surpris l'Empereur.",
+    "maps": [35],
+    "enemies": [],
+    "kindId": "skillIcon/E0153",
+    "group": 2
+  },
+  {
+    "id": 1598,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Les Chev. Dragons et la guillotine",
+    "description": "Heldentod III, sous les ordres de Conrad, a pris la Guillotine du Temple et l'a jetée sur le groupe. Les Chevaliers Dragons se sont unis pour la renvoyer ensemble : Revers d'écailles !",
+    "maps": [34],
+    "enemies": [],
+    "kindId": "loadingframe/Loading_210",
+    "group": 2
+  },
+  {
+    "id": 1599,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "La manipulation des Héritiers",
+    "description": "Conrad a manipulé Marcus pour vaincre Rubis, mais cela s'est retourné contre lui. Rubis et Vidal ont fait toute une comédie pour duper Conrad et le peuple, utilisant ainsi Marcus et le groupe pour parvenir à faire tomber Conrad. Terrifiant n'est-ce pas ?",
+    "maps": [34],
+    "enemies": [],
+    "kindId": "skillIcon/E0440",
+    "group": 2
   },
   {
     "id": 1600,
@@ -2106,7 +2278,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Le pillage de la banque",
-    "description": "Le groupe a décidé sous l'impulsion de Lutta d'aller piller une banque, malheureusement tout ne s'est pas déroulé comme prévu. Peut-être qu'il leur manquait juste... une personne ?",
+    "description": "Le groupe a décidé sous l'impulsion de Lutta d'aller piller une banque, malheureusement tout ne s'est pas déroulé comme prévu. Sekhmet s'est même laissé attrapé. Peut-être qu'il leur manquait juste... une personne ?",
     "maps": [5],
     "enemies": [],
     "kindId": "otherIcon/group009",
@@ -2122,6 +2294,39 @@
     "enemies": [],
     "kindId": "skillIcon/E0486",
     "group": 3
+  },
+  {
+    "id": 1607,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Cyritsu agent secret",
+    "description": "Quand Cyritsu joue à l'agent secret, il est discret et pas douteux : il montre son visage et propose ses services pour une pièce d'or ! Tout a fait normal...",
+    "maps": [5],
+    "enemies": [],
+    "kindId": "skillIcon/E0162",
+    "group": 3
+  },
+  {
+    "id": 15000,
+    "value": 3,
+    "kind": "anecdoteIII",
+    "name": "",
+    "description": "",
+    "maps": [],
+    "enemies": [],
+    "kindId": "items/",
+    "group": 0
+  },
+  {
+    "id": 1700,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Le bâton maudit",
+    "description": "Le Sakura est un bâton qui semble maudit, en effet tout ceux qui l'ont portés ont disparu : Ash l'associal et Kryèri l'ogresse de la Curie !",
+    "maps": [2, 3],
+    "enemies": [],
+    "kindId": "items/W27301",
+    "group": 1
   },
   {
     "id": 15000,

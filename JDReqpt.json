@@ -991,21 +991,21 @@
     "nom": "Arc du Dompteur",
     "desc": "Am\u00e9lioration de l'Arc du Dresseur, il a \u00e9t\u00e9 pris en main par un grand dompteur.",
     "effet": "Am\u00e9lioration familier",
-    "montant": "D\u00e9g\u00e2t +8, Familier : d\u00e9g\u00e2t+4, r\u00e9ussite sort+1",
+    "montant": "D\u00e9g\u00e2t +8, Familier : d\u00e9g\u00e2t/soin+4 (AoE/2), r\u00e9ussite sort+1",
     "icone": "W50503"
   },
   "138": {
     "nom": "Grimoire de la B\u00eate",
     "desc": "Un grimoire renfor\u00e7ant les liens avec votre Familier.",
     "effet": "Am\u00e9lioration familier",
-    "montant": "D\u00e9g\u00e2t +6, Familier : d\u00e9g\u00e2t+2, r\u00e9ussite sort+1",
+    "montant": "D\u00e9g\u00e2t +6, Familier : d\u00e9g\u00e2t/soin+2 (AoE/2), r\u00e9ussite sort+1",
     "icone": "W62907"
   },
   "139": {
     "nom": "Grimoire de l'Invocateur",
     "desc": "Am\u00e9lioration du Grimoire de la B\u00eate, il a \u00e9t\u00e9 pris en main par un grand invoncateur.",
     "effet": "Am\u00e9lioration familier",
-    "montant": "D\u00e9g\u00e2t +8, Familier : d\u00e9g\u00e2t+4, r\u00e9ussite sort+1",
+    "montant": "D\u00e9g\u00e2t +8, Familier : d\u00e9g\u00e2t/soin+4 (AoE/2), r\u00e9ussite sort+1",
     "icone": "W62903"
   },
   "140": {
@@ -1122,7 +1122,7 @@
     "nom": "Arc du Dresseur",
     "desc": "Arc renfor\u00e7ant les liens avec votre Familier.",
     "effet": "Am\u00e9lioration des Familiers",
-    "montant": "D\u00e9g\u00e2t +6, Familier : d\u00e9g\u00e2t+2, r\u00e9ussite sort+1",
+    "montant": "D\u00e9g\u00e2t +6, Familier : d\u00e9g\u00e2t/soin+2 (AoE/2), r\u00e9ussite sort+1",
     "icone": "W50303"
   },
   "157": {
@@ -1308,7 +1308,7 @@
     "nom": "Bible du Familier",
     "desc": "Un ouvrage rare permettant d'am\u00e9liorer la puissance des familiers",
     "effet": "Am\u00e9lioration familier",
-    "montant": "Familier : PV +10, d\u00e9g\u00e2t+4",
+    "montant": "Familier : PV +10, d\u00e9g\u00e2t/soin+4 (AoE/2)",
     "icone": "I00134",
     "access": "D3"
   },
@@ -2422,7 +2422,7 @@
     "nom": "Robe de D\u00e9mone du Nord",
     "desc": "Une robe cousue sp\u00e9cialement pour la \"g\u00e9n\u00e9rale de l'arm\u00e9e de d\u00e9mons du nord\" par le Roi Lucius",
     "effet": "Am\u00e9lioration familier",
-    "montant": "D\u00e9g\u00e2t -4, Familier : d\u00e9g\u00e2t+2, r\u00e9ussite sort+1",
+    "montant": "D\u00e9g\u00e2t -4, Familier : d\u00e9g\u00e2t/soin+2 (AoE/2), r\u00e9ussite sort+1",
     "icone": "k20180"
   },
   "332": {

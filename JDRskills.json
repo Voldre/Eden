@@ -21,7 +21,7 @@
     "nom": "Mur de Titan",
     "desc": "R\u00e9duit les d\u00e9g\u00e2ts subis par le lanceur",
     "effet": "Buff",
-    "montant": "D\u00e9g\u00e2t subi -1D4 -2 pendant 3 tours",
+    "montant": "D\u00e9g\u00e2t subi -1D4 (min 2) -2 pendant 3 tours",
     "icone": "E0029",
     "stat": "Force",
     "classe": ["Guerrier"]
@@ -226,7 +226,7 @@
   },
   "31": {
     "nom": "Invocation Aigle Chasseur",
-    "desc": "Invoque un Aigle chasseur : 25 PV, Force : 13, Dext\u00e9 : 15, Intel : 9, Charisme : 12, Esprit : 11. Sort : Coup de Bec 1D8+1 (Force), Vent coupant 1D8 (Dext\u00e9)",
+    "desc": "Invoque un Aigle chasseur : 25 PV, Force : 13, Dext\u00e9 : 15, Intel : 9, Charisme : 12, Esprit : 11. Sort : Coup de Bec 1D8+2 (Force), Vent coupant 1D8+1 (Dext\u00e9)",
     "effet": "Invocation",
     "montant": "Invocation jusqu'\u00e0 coupure magique",
     "icone": "E0264",
@@ -300,7 +300,7 @@
     "nom": "S\u00e9r\u00e9nit\u00e9",
     "desc": "R\u00e9duit les d\u00e9g\u00e2ts et augmente la dext\u00e9rit\u00e9",
     "effet": "Buff",
-    "montant": "Dext\u00e9+2, D\u00e9g\u00e2t subi -1D4 pendant 3 tours",
+    "montant": "Dext\u00e9+2, D\u00e9g\u00e2t subi -1D4 (min 2) pendant 3 tours",
     "icone": "E0091",
     "stat": "Esprit",
     "classe": ["Corsaire"]
@@ -370,11 +370,11 @@
   },
   "47": {
     "nom": "Totem Gracieux",
-    "desc": "Tous les deux tours (\u00e0 partir du 1er), soigne les alli\u00e9s aux alentours. Totem : 30 PV",
-    "effet": "Soin AoE",
-    "montant": "1D6 +2 pendant 1D4+3 tours (tous les 2 tours)",
+    "desc": "Invoque un familier Totem : 30 PV, Force : 9, Dext\u00e9 : 13, Intel : 14. - Mode Soin : Ne peut pas bouger / se protéger, 0 jet de dé. - Mode Soutien : peut bouger et bloquer, 2 sorts : 1) Renforcement : +2 Force ou +2 Intel sur la cible : 3 tours (intel) , 2) Eclair : 1D8 (intel)",
+    "effet": "Invocation",
+    "montant": "(jusqu'\u00e0 coupure magique), Mode Soin : Soin 3 PV par tour. - Mode Soutien : attaque/bloque",
     "icone": "E0115",
-    "stat": "Intelligence",
+    "stat": "Esprit",
     "classe": ["Shaman"]
   },
   "48": {
@@ -613,7 +613,7 @@
   },
   "75": {
     "nom": "Invocation d'Alpaga",
-    "desc": "Invoque un esprit Alpaga de t\u00e9n\u00e8bres, peut flotter. 30 PV, Force : 11, Dext\u00e9 : 13, Intel : 14, Charisme : 12, Esprit : 10. Sort : Crachat 1D8 (Intel), Charge 1D10 (Force)",
+    "desc": "Invoque un esprit Alpaga de t\u00e9n\u00e8bres, peut flotter. 30 PV, Force : 12, Dext\u00e9 : 13, Intel : 14, Charisme : 12, Esprit : 10. Sort : Crachat 1D8 (Intel), Charge 1D10 (Force)",
     "effet": "Invocation",
     "montant": "Invocation jusqu'\u00e0 coupure magique",
     "icone": "VicAlpaga",
@@ -687,7 +687,7 @@
     "nom": "Foi du Temple",
     "desc": "R\u00e9duit les d\u00e9g\u00e2ts re\u00e7us et augmente l'esprit",
     "effet": "Buff",
-    "montant": "Esprit+2, D\u00e9g\u00e2t subi -1D4 pendant 3 tours",
+    "montant": "Esprit+2, D\u00e9g\u00e2t subi -1D4 (min 2) pendant 3 tours",
     "icone": "E0483",
     "stat": "Esprit",
     "classe": ["Samoura\u00ef"]
@@ -774,11 +774,11 @@
     "classe": ["Chevalier"]
   },
   "93": {
-    "nom": "Aura du Sage",
-    "desc": "Immunise le groupe contre plusieurs Malus : l'immobilisation, la peur, la d\u00e9concentration",
+    "nom": "Aura : Enchantement Elementaire",
+    "desc": "Le sage utilise son expertise des gemmes et des enchantements pour renforcer la résistance et les dégâts du groupe sur un élément.",
     "effet": "Buff AoE",
-    "montant": "Immunise contre le stun, la peur, la d\u00e9concentration : 3 tours",
-    "icone": "E0540",
+    "montant": "Pour l'élément magique choisi : Dégât subi (-) et dégât infligé (+) : 1D4 (min 2) +1 pendant 3 tours",
+    "icone": "E0555",
     "stat": "Esprit",
     "classe": ["Sage"]
   },
