@@ -2054,8 +2054,8 @@
     "nom": "Grizzli",
     "pvmax": "110",
     "skills": [
-      "Morsure : 2D10 +11 : force",
-      "Attaque tournoyante : 2D6+10 : dext\u00e9rit\u00e9",
+      "Morsure : 2D6 +10 (+ 7 si énervé) : force",
+      "Attaque tournoyante : 2D6+8 (+ 5 si énervé) : dext\u00e9rit\u00e9",
       "Passif : Armure +5",
       "Cri de guerre : d\u00e9g\u00e2ts AoE +6 : Esprit"
     ],
@@ -2100,7 +2100,7 @@
     "pvmax": "100",
     "skills": [
       "Soin : 3D10+15 : intelligence",
-      "Bombe incendiaire : 2D10+7 (si elite fixe*2) : intelligence",
+      "Bombe incendiaire : 1D10+11 (si elite fixe*2) : intelligence",
       "Affaib Mental : +1D6+4 d\u00e9g\u00e2ts magique subis AoE sur 3 tours : Esprit",
       "Passif : si PV <50 : Sort +1D10 (buff +2)"
     ],
@@ -2150,7 +2150,7 @@
       "Passif : chaque \"-50 PV\" : Epine # Poison au cac : 2 d\u00e9g\u00e2ts"
     ],
     "stats": "17,11,16,11,13",
-    "desc": "Insecte l\u00e9zard avec une armure bleut\u00e9, ressemble \u00e0 un Draka\u00ef un peu mutant.",
+    "desc": "Insecte l\u00e9zard avec une armure bleut\u00e9, on raconte qu'il s'agit d'un ancien Drakaï ayant succombé à un surplus de démonologie.",
     "infos": "Faible au feu et au per\u00e7ant",
     "drop": "Fibres toxiques, rare : Croc de Caldari"
   },
@@ -2165,14 +2165,14 @@
       "Revers d'\u00e9caille : 4 tentatives par combat (<10 : 66%, >=10 : 33%) (+Soin PV+15 #Mode Cach\u00e9) : Esprit"
     ],
     "stats": "15,7,17,11,16",
-    "desc": "Cheveux noir de jais, c'est un grand sorcier de la cour Heldentod, il a un potentiel magique \u00e9norme et est dou\u00e9 au combat.",
+    "desc": "Héritier de l'Empire aux cheveux noir de jais, il s'agit d'un des grands sorciers de la cour Heldentod, il a un potentiel magique \u00e9norme.",
     "infos": "Faible au tranchant et \u00e0 la nature",
     "drop": "Grimoire Heldentod, rare : Bracelet Heldentod"
   },
   "147": {
     "visuel3D": "m108b",
     "nom": "Barnardo - Barde Elogieux",
-    "pvmax": "190",
+    "pvmax": "170",
     "skills": [
       "Gu\u00e9rison: Soin 2D10+25 (-1 malus?) / Bombe Vocale : 2D6+10 : Intelligence",
       "Encouragement Musical : D\u00e9g\u00e2t subi -1D4-6 AoE, 0 dodo, +2 r\u00e9s esprit, 4 tours : Charisme",
@@ -2205,8 +2205,8 @@
     "pvmax": "270",
     "skills": [
       "Euphorie : +1D4+2 (min 4) par coup. Buff pendant 4-5 tours (max 5) : esprit",
-      "Perc\u00e9e du Guerrier : 1D6 + 1D6 + 1D4 +17 : force",
-      "Instinct de Survie : PV & D\u00e9g\u00e2t : +1D6+6 pendant 3 tours",
+      "Perc\u00e9e du Guerrier : 1D6 + 1D6 + 1D4 +18 : force",
+      "Instinct de Survie : PV & D\u00e9g\u00e2t : +1D6+6 pendant 3 tours : esprit",
       "Passif : Si coup critique : armure/2"
     ],
     "stats": "17,9,13,13,16",

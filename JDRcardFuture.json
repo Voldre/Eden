@@ -1638,5 +1638,26 @@
     "name": "Arène d'Aven 3v3",
     "description": "",
     "kindId": 995
+  },
+  {
+    "id": 1589,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Le Temple Spirenfer",
+    "description": "La magie noire entoure le Royaume Dévasté et plus précisément le Temple Spirenfer, l'âme d'Heldentod III y réside.",
+    "maps": [34],
+    "enemies": [],
+    "kindId": "skillIcon/E0274",
+    "group": 2
+  },
+  {
+    "id": 1589,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Milo et Nathanaël",
+    "description": "Côte d'Aristère",
+    "enemies": [],
+    "kindId": "skillIcon/",
+    "group": 2
   }
 ]

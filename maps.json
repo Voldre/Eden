@@ -395,7 +395,8 @@
     "map_y": null,
     "map_z": null,
     "map_r": null,
-    "bgm": 42
+    "bgm": 42,
+    "mobs": [139, 78, 140, 142, 149]
   },
   "34": {
     "name": "Royaume Dévasté",
@@ -406,7 +407,8 @@
     "map_y": null,
     "map_z": null,
     "map_r": null,
-    "bgm": 43
+    "bgm": 43,
+    "mobs": [96, 142, 143, 144, 145]
   },
   "35": {
     "name": "Capitale Heldentod",
@@ -417,7 +419,8 @@
     "map_y": -97,
     "map_z": -15,
     "map_r": -0.5,
-    "bgm": 42
+    "bgm": 42,
+    "mobs": [62, 78, 141, 146, 147, 148]
   },
   "36": {
     "name": "Plaines d'Elos",
