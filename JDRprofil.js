@@ -556,7 +556,7 @@ function PersoSimplified(persoData) {
   // Car l'armure dans le jeu c'est vraiment trop cheat !
   this.armure -= Math.max(Math.floor((this.armure - 15) / 5), -1);
   // et un peu pareil pour les dégâts, mais moins violent :
-  this.degat -= Math.max(Math.floor((this.degat - 25) / 6), 0);
+  this.degat -= Math.max(Math.floor((this.degat - 25) / 5), 0);
 
   // Réduction si la personne a du soin
   const classSoins = ["Clerc", "Barde", "Shaman", "Sage", "Templier"];

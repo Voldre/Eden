@@ -316,9 +316,9 @@
   },
   "41": {
     "nom": "Gu\u00e9rison",
-    "desc": "Soigne la cible (+5 si classe de Clerc)",
+    "desc": "Soigne la cible",
     "effet": "Soin",
-    "montant": "2D6 +10 (+5)",
+    "montant": "2D6 +10 (+5 si Clerc)",
     "icone": "E0018",
     "stat": "Intelligence",
     "classe": ["Clerc", "Barde", "Shaman", "Sage"]
@@ -487,7 +487,7 @@
   },
   "61": {
     "nom": "Assaut du Chaos",
-    "desc": "Le Luminary d\u00e9charge autour de lui toute sa magie accumul\u00e9 (7-8 charges minimum), les effets diff\u00e8rent selon l'\u00e9quilibre : T\u00e9n\u00e8bres, Chaos (toute faiblesse), Lumi\u00e8re. L'ennemi en est ensuite affaibli",
+    "desc": "Le Luminary d\u00e9charge autour de lui toute sa magie accumul\u00e9 (7-8 charges minimum), les effets diff\u00e8rent selon l'\u00e9quilibre : T\u00e9n\u00e8bres, Chaos (toutes ses faiblesses), Lumi\u00e8re. L'ennemi en est ensuite affaibli.",
     "effet": "D\u00e9g\u00e2t Malus AoE",
     "montant": "1D8+3, d\u00e9g\u00e2t re\u00e7u de l'\u00e9l\u00e9ment +3 pendant 3 tours",
     "icone": "j674",
@@ -588,7 +588,7 @@
     "nom": "R\u00e9surrection",
     "desc": "(Utilisable m\u00eame vivant) prend 2 tours (1 d\u00e9 par tour) : Soigne/Ressuscite un joueur avec quelques PV ",
     "effet": "Soin",
-    "montant": "1 tour d'incantation : soigne de 2D10+17",
+    "montant": "1 tour d'incantation : soigne de 2D10+16",
     "icone": "E0020",
     "stat": "Intelligence",
     "classe": ["Clerc", "Barde", "Shaman", "Sage"]

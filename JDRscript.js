@@ -107,13 +107,16 @@ function defineAwaken(classe) {
   awakenSkillE.id = classe;
   awakenSkillE.querySelector(".nom").innerText = "Eveil du " + classe;
   awakenSkillE.querySelector(".effet").innerText = "Inactif";
-  awakenSkillE.querySelector(".montant").innerText = nbUse + " fois par combat : Eveil des compétences : Durée 3 tours";
+
+  nbTurns = nbUse === 1 ? "4" : "3";
+  awakenSkillE.querySelector(".montant").innerText =
+    nbUse + " fois par combat : Eveil des compétences : Durée " + nbTurns + " tours";
 
   var classeID = classes.indexOf(classe);
   awakenSkillE.querySelector(".icone").src =
     "http://voldre.free.fr/Eden/images/skillIcon/" + iconsEveil[classeID] + ".png";
   awakenSkillE.querySelector(".desc").innerText =
-    "Eveil de la classe du " + classe + ", la majorité de ses compétences sont altérées et améliorées !";
+    "Eveil de la classe du " + classe + ", ses compétences sont altérées et améliorées !";
 }
 
 // Click on awaken skill element
@@ -322,6 +325,24 @@ function insertSkill(skillElement, skillName, awakenClass = false) {
       var pvPetE = document.createElement("input");
       pvPetE.type = "number";
       skillElement.append(pvPetE);
+    }
+    // Update 05/01/2024, add inputs to handle charges (light/dark)
+    if (skillName === "Assaut du Chaos") {
+      var wrapperE = document.createElement("div");
+      wrapperE.style.width = "max-content";
+      var textE = document.createElement("span");
+      textE.innerText = "Lum/Ten";
+      var lumiereE = document.createElement("input");
+      lumiereE.style.width = "40px";
+      var tenebresE = document.createElement("input");
+      tenebresE.style.width = "40px";
+
+      lumiereE.type = "number";
+      tenebresE.type = "number";
+      wrapperE.append(textE);
+      wrapperE.append(lumiereE);
+      wrapperE.append(tenebresE);
+      skillElement.append(wrapperE);
     }
   }
 }

@@ -1106,6 +1106,14 @@
     "kindId": "I00361b"
   },
   {
+    "id": 1374,
+    "value": 1,
+    "kind": "composant",
+    "name": "Ecorce de Bois Sacré",
+    "description": "Ce bois est originaire de la Forêt de Delphe, il est considéré comme sacré par les Ursuns qui y vivent, utile pour différentes choses.",
+    "kindId": "I00186"
+  },
+  {
     "id": 1375,
     "value": 1,
     "kind": "composant",
@@ -1123,11 +1131,19 @@
   },
   {
     "id": 1377,
-    "value": 3,
+    "value": 2,
     "kind": "composant",
     "name": "Bois Gelé",
-    "description": "Ce bois extrêmement rare et résistant est très prisé, il parvient à pousser sur des terres glacées comme celles du Pic du Maëlstrom.",
+    "description": "Ce bois très rare et résistant est très prisé, il parvient à pousser sur des terres glacées comme celles du Pic du Maëlstrom.",
     "kindId": "I00192b"
+  },
+  {
+    "id": 1378,
+    "value": 3,
+    "kind": "composant",
+    "name": "Bois Crystalisé",
+    "description": "Ce bois unique en son genre se trouve dans la Forêt de Crystal de la Côte de Hurlevent, créé par le magicien Nezo. Il aurait des propriétés magiques très particulières.",
+    "kindId": "I00192c"
   },
   {
     "id": 1501,
