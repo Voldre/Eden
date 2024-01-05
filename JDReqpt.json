@@ -2288,7 +2288,7 @@
     "nom": "B\u00e2ton Chromatique",
     "desc": "Ce b\u00e2ton l\u00e9gendaire \u00e0 le pouvoir d'inverser les \u00e9l\u00e9ments (ex : nature/foudre). On raconte qu'il viendrait d'une autre dimension...",
     "effet": "Inversion Elementaire",
-    "montant": "D\u00e9g\u00e2t +9",
+    "montant": "D\u00e9g\u00e2t +10 (+1 Si Magicien)",
     "icone": "W62507"
   },
   "314": {
@@ -2552,10 +2552,11 @@
   },
   "349": {
     "nom": "Veste de T\u00e9nacit\u00e9",
-    "desc": "Un plastron cr\u00e9\u00e9 par des anciens habitants de Delphes, ses propri\u00e9t\u00e9s curatives sont tr\u00e8s myst\u00e9rieuses.",
+    "desc": "Cette tenue a été conçue pour la survie : elle vous permettra de résister à un coup fatal ! (1 fois par combat ou 2 si PV remonte > 66%)",
     "effet": "PV +10",
     "montant": "D\u00e9g\u00e2t -5, r\u00e9siste \u00e0 un coup fatal (laissant 1 PV)",
-    "icone": "A20068"
+    "icone": "A20068",
+    "access": "A3"
   },
   "350": {
     "nom": "Cha\u00eene du destin",
