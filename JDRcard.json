@@ -642,6 +642,30 @@
     "kindId": "I00172"
   },
   {
+    "id": 1232,
+    "value": 1,
+    "kind": "composant",
+    "name": "Tulipe Thérapeutique",
+    "description": "Cette Tulipe est l'élément le plus communément utilisé pour fabriquer des remèdes et potions de soins.",
+    "kindId": "I00150"
+  },
+  {
+    "id": 1233,
+    "value": 1,
+    "kind": "composant",
+    "name": "Plante des âmes",
+    "description": "Cette plante peut être utilisée pour faire des invocations et insuffler de la magie.",
+    "kindId": "I00145"
+  },
+  {
+    "id": 1234,
+    "value": 2,
+    "kind": "composant",
+    "name": "Fleur de l'Esprit",
+    "description": "Ces fleurs sont utiles pour concocter des potions pour fortifier ou affaiblir l'esprit.",
+    "kindId": "I00154"
+  },
+  {
     "id": 1235,
     "value": 1,
     "kind": "composant",
@@ -2342,6 +2366,17 @@
     "maps": [2, 3],
     "enemies": [],
     "kindId": "items/W27301",
+    "group": 1
+  },
+  {
+    "id": 1701,
+    "value": 3,
+    "kind": "anecdoteII",
+    "name": "Sceau de Dualité",
+    "description": "Ce sceau a été utilisé par Milo, le frère de Malvis, pour sceller son âme à l'intérieur de Brocoli, c'est une relique des Sages.",
+    "maps": [58],
+    "enemies": [],
+    "kindId": "items/i01356",
     "group": 1
   },
   {

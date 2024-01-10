@@ -1,4 +1,30 @@
 {
+  "0": {
+    "nom": "Charge du Guerrier",
+    "desc": "Fonce sur la cible et peut l'\u00e9tourdir (malus de r\u00e9ussite) si coup critique.",
+    "montant": "1D10+2, r\u00e9ussite cible -3 (1 tour)"
+  },
+  "1": {
+    "nom": "Attaque Cyclone",
+    "desc": "Tournoie et frappe les ennemis autour du personnage",
+    "montant": "1D10+3"
+  },
+  "2": {
+    "nom": "Provocation",
+    "desc": "Le lanceur provoque la cible ce qui augmente les chances d'\u00eatre vis\u00e9",
+    "montant": "D\u00e9g\u00e2t 1D10+1, et 90% de chance d'\u00eatre vis\u00e9 pendant 3 tours"
+  },
+  "9": {
+    "nom": "Revers d'\u00e9caille",
+    "desc": "Action Instantanée. Remplace l'esquive ou le blocage. Renvoi l'attaque re\u00e7u uniquement au lanceur (critique 100%, 66%, 33%). Effets - Embras\u00e9 : D\u00e9g\u00e2t renvoy\u00e9 +5; D\u00e9moniaque : prochaine r\u00e9ussite +1; Cach\u00e9 : Soin PV+10",
+    "effet": "Renvoi",
+    "montant": "1 fois par éveil : Action instantanée, renvoi (<10 : 66%, >=10 : 33%)"
+  },
+  "10": {
+    "nom": "Pouvoir du dragon",
+    "desc": "Tranche la cible selon le mode choisi (feu, t\u00e9n\u00e8bres,physique)",
+    "montant": "1D10+8"
+  },
   "11": {
     "nom": "Attaque Furieuse",
     "desc": "Tournoie et frappe les ennemis autour de soi (1m)",
@@ -19,6 +45,16 @@
     "nom": "Charme tape-\u00e0-l-oeil",
     "desc": "Lance un charme sur la cible pour r\u00e9duire sa concentration, efficace si sexe oppos\u00e9, sinon : r\u00e9ussite -3",
     "montant": " Esquive et r\u00e9ussite des sorts : -3 sur 3 tours, (Résistance esprit cible -2)"
+  },
+  "26": {
+    "nom": "Coupe Asura",
+    "desc": "Envoi une tranche sur plusieurs m\u00e8tres, peut toucher les ennemis larges 2 fois. Marque deux fois les ennemis",
+    "montant": "1D10+2 (double marque) + (1D8+1)"
+  },
+  "27": {
+    "nom": "Eclair unique",
+    "desc": "Tranche avec un coup d'\u00e9clair, un second \u00e9clair touche si l'ennemi \u00e0 subi la Coupe Asura",
+    "montant": "1D10+4 + (1D10 et malus : -2 Dextérité sur 3 tours)"
   },
   "29": {
     "nom": "Triple Tir",
@@ -124,11 +160,26 @@
     "effet": "Soin",
     "montant": "1 tour d'incantation : soigne de 3D10+20 (Blocage +2 pendant incantation)"
   },
+  "73": {
+    "nom": "Purgatoire",
+    "desc": "Envoi une tranche de flamme sur plusieurs m\u00e8tres, peut toucher les ennemis larges 2 fois. D\u00e9g\u00e2t+4 si l'ennemi \u00e0 subi la Coupe Asura",
+    "montant": "1D10+2 (+6) (+1D8+1)"
+  },
   "75": {
     "nom": "Invocation d'Alpaga",
     "desc": "Invoque un esprit Alpaga de t\u00e9n\u00e8bres, peut flotter. 30 PV, Force : 12, Dext\u00e9 : 13, Intel : 15, Charisme : 12, Esprit : 10. Sort : Crachat 1D8 (Intel), Charge 1D10 (Force), Aura Noire (Intel) : Maître phys > ten, dégât +4 (3t)",
     "effet": "Invocation",
     "montant": "Invocation jusqu'\u00e0 coupure magique, Apprend \"Aura Noire\" "
+  },
+  "83": {
+    "nom": "Foi du Temple",
+    "desc": "R\u00e9duit les d\u00e9g\u00e2ts re\u00e7us et augmente l'esprit",
+    "montant": "Esprit+2, D\u00e9g\u00e2t subi -1D4 (min 2) +2 pendant 4 tours"
+  },
+  "86": {
+    "nom": "Mode Draconique",
+    "desc": "Action Instantan\u00e9e. Vous permet de choisir votre mode parmis : \"Embras\u00e9\", \"D\u00e9moniaque\", \"Cach\u00e9\"",
+    "montant": "Pendant l'éveil uniquement (a activer) : Embras\u00e9 : Force/Intel+2, D\u00e9moniaque : Charisme+2, Cach\u00e9 : Esprit+2"
   },
   "88": {
     "nom": "Lame Dansante du Po\u00e8te",
@@ -140,10 +191,23 @@
     "desc": "Encha\u00eene des pas de danse pour infliger un prochain coup puissant",
     "montant": "Prochain d\u00e9g\u00e2t +1D10+5, r\u00e9ussite +2  (3 tours max)"
   },
+  "99": {
+    "nom": "D\u00e9fense d'Acier",
+    "desc": "Fortifie le corps du lanceur",
+    "montant": "Force +1, Blocage Physique +3 Blocage magique +2 pendant 1D4 (min 2) +1 tours"
+  },
   "101": {
     "nom": "Ombre Rapide",
     "desc": "Acc\u00e9l\u00e8re le corps du lanceur",
     "montant": "Dexté +1, Esquive +3 pendant 1D4 (min 2) +1 tours"
+  },
+  "110": {
+    "nom": "Terreur du Dragon",
+    "desc": "L'utilisateur terrorise son adversaire et le destabilise.  Effets - Embras\u00e9 : Effet+1; D\u00e9moniaque : D\u00e9g\u00e2t 10 PV; Cach\u00e9 : Dur\u00e9e+1",
+    "montant": "Ennemi -10 PV, r\u00e9ussite des sorts : -2 sur 3 tours  (+ effet mode)",
+    "icone": "E1023",
+    "stat": "Charisme",
+    "classe": ["Chev Dragon"]
   },
   "115": {
     "nom": "Destruction Noire",
@@ -154,6 +218,11 @@
     "nom": "Portail des t\u00e9n\u00e8bres",
     "desc": "Le lanceur fait un Dash en avant de quelques m\u00e8tres en tranchant sa cible, lui infligeant des d\u00e9g\u00e2ts de t\u00e9n\u00e8bres.",
     "montant": "1D10+3, Buff : Esquive +3 sur 2 tours"
+  },
+  "117": {
+    "nom": "Fr\u00e9n\u00e9sie des Ogres",
+    "desc": "Action Instantan\u00e9e. La loyaut\u00e9 envers les Ogres permet au lanceur de dilater ses veines, le mettant dans un \u00e9t\u00e9 fr\u00e9n\u00e9tique de Berserker.",
+    "montant": "A chaque tour (4 max) : D\u00e9g\u00e2t (+) et PV (-) 10 ou 15 (à choisir), Si 10 : réussite -1, si 15 : réussite -2"
   },
   "119": {
     "nom": "Encouragement Musical",
@@ -170,6 +239,16 @@
     "desc": "La cible \u00e9met une explosion qui peut entra\u00eener l'explosion d'un autre parasite obscur originel. L'explosion propage le parasite aux ennemis (max 4). Le parasite propagé est un originel (durée identique à celui du porteur). Le porteur qui a explosé ne peut plus exploser.",
     "montant": "1D8 + 2*(tours parasite restant)"
   },
+  "125": {
+    "nom": "Armure Draconique",
+    "desc": "Le DK (Dragon Knight) rev\u00eate son corps d'\u00e9caille sur 4 tours. Effets - Embras\u00e9 : Epines+3; D\u00e9moniaque : D\u00e9g\u00e2t subi -2; Cach\u00e9 : Dur\u00e9e+1",
+    "montant": "D\u00e9g\u00e2t subi -1D4 (min 2) -2, 4 tours  (+ effet mode)"
+  },
+  "126": {
+    "nom": "Dash Foudroyant",
+    "desc": "Le lanceur fait un Dash en avant de quelques m\u00e8tres en tranchant sa cible, lui infligeant des d\u00e9g\u00e2ts de foudre. Tel un Samoura\u00ef vif qui se replace.",
+    "montant": "1D10+3, Buff : Esquive +3 sur 2 tours"
+  },
   "132": {
     "nom": "Pi\u00e8ge d'Entrave",
     "desc": "Pose un pi\u00e8ge au sol pour entraver l'ennemi (d\u00e9g\u00e2t tranchant), l'emp\u00eachant de se d\u00e9placer. L'ennemi peut tenter de s'en \u00e9chapper (force).",
@@ -179,5 +258,15 @@
     "nom": "Hymne Inspirant",
     "desc": "Encourage ses camarades, augmentant ainsi leur chance de r\u00e9ussir leur sort. Sort complexe \u00e0 ex\u00e9cuter.",
     "montant": "R\u00e9ussite des sorts +1 sur 3 tours (Si critique (1,2,3) : Soin AoE 1D6+3 PV)"
+  },
+  "136": {
+    "nom": "Aura du Samoura\u00ef",
+    "desc": "Le samoura\u00ef concentre toute son \u00e9nergie pour insuffler de la puissance \u00e0 tout ses camarades (dont lui-m\u00eame)",
+    "montant": "(R\u00e9ussite -1) D\u00e9g\u00e2t +1D4+3 pendant 2 tours (lanceur inclus)"
+  },
+  "137": {
+    "nom": "Instinct de Survie",
+    "desc": "Le sang de dragon bouillonne et enclenche le mode survie pour son porteur. Effets - Embras\u00e9 : D\u00e9g\u00e2ts +2; D\u00e9moniaque : Blocage+1; Cach\u00e9 : Soin PV+3",
+    "montant": "(Si PV <50%) Soin et Dégât +1D4+2 pendant 3 tours (+ effet mode)"
   }
 }

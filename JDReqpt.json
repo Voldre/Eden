@@ -320,7 +320,7 @@
   "45": {
     "nom": "Cape de sorcier",
     "desc": "Une cape enchant\u00e9e par un puissant sorcier de la grande guerre. Prolonge la dur\u00e9e des sorts",
-    "effet": "Intelligence+1",
+    "effet": "Intelligence +1",
     "montant": "Dur\u00e9e des sorts +1 tour",
     "icone": "A60011",
     "access": "A2"
@@ -1011,7 +1011,7 @@
   "140": {
     "nom": "Masse clout\u00e9e am\u00e9lior\u00e9e",
     "desc": "Une masse clout\u00e9e renforc\u00e9e qui am\u00e9liore son porteur",
-    "effet": "Force+1",
+    "effet": "Force +1",
     "montant": "D\u00e9g\u00e2t +5",
     "icone": "W31806"
   },
@@ -1070,7 +1070,7 @@
     "effet": "",
     "montant": "PV +20 (+5 si Samoura\u00ef)",
     "icone": "a30054",
-    "access": "A2"
+    "access": "A1"
   },
   "150": {
     "nom": "Gantelet de Lieutenant",
@@ -1997,7 +1997,7 @@
     "nom": "Ceinture Pharaonique",
     "desc": "Une ceinture port\u00e9e par les grands nobles du Royaume d'Amur",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t re\u00e7us -2, Dext\u00e9rit\u00e9 +1",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -2, Intelligence +1",
     "icone": "A30011",
     "access": "A2"
   },
@@ -2474,7 +2474,7 @@
     "nom": "Gemme de p\u00e9tale",
     "desc": "Une petite gemme en forme de p\u00e9tale de cerisier, fortifie son porteur",
     "effet": "",
-    "montant": "PV +15, Blocage +1",
+    "montant": "PV +10, Blocage +1",
     "icone": "I00364",
     "access": "A0"
   },
@@ -2552,7 +2552,7 @@
   },
   "349": {
     "nom": "Veste de T\u00e9nacit\u00e9",
-    "desc": "Cette tenue a été conçue pour la survie : elle vous permettra de résister à un coup fatal ! (1 fois par combat ou 2 si PV remonte > 66%)",
+    "desc": "Cette tenue a \u00e9t\u00e9 con\u00e7ue pour la survie : elle vous permettra de r\u00e9sister \u00e0 un coup fatal ! (1 fois par combat ou 2 si PV remonte > 66%)",
     "effet": "PV +10",
     "montant": "D\u00e9g\u00e2t -5, r\u00e9siste \u00e0 un coup fatal (laissant 1 PV)",
     "icone": "A20068",
@@ -2562,7 +2562,7 @@
     "nom": "Cha\u00eene du destin",
     "desc": "Cette cha\u00eene maudite conf\u00e8re al\u00e9atoirement un bonus ou un malus \u00e0 son porteur. De plus, une fois \u00e9quip\u00e9, il ne peut plus \u00eatre retir\u00e9",
     "effet": "Lien Eternel",
-    "montant": "PV + 15, Par combat : Jet 1D6 : D\u00e9g\u00e2t/Soin \u00b16,4,2 (-6 \u00e0 +6) AoE/2",
+    "montant": "PV +15, Par combat : Jet 1D6 : D\u00e9g\u00e2t/Soin \u00b16,4,2 (-6 \u00e0 +6) AoE/2",
     "icone": "A00039",
     "access": "D2"
   },
@@ -2714,5 +2714,19 @@
     "effet": "",
     "montant": "D\u00e9g\u00e2t -5 (-1 si ing\u00e9nieur, et d\u00e9g\u00e2t +2) ",
     "icone": "A20048"
+  },
+  "371": {
+    "nom": "Gantelet Ecailleux",
+    "desc": "Un gantelet compos\u00e9 d'\u00e9cailles de plusieurs cr\u00e9atures. Il est \u00e9tonnament l\u00e9ger et r\u00e9sistant.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -3, Dext\u00e9rit\u00e9 +1",
+    "icone": "A40029"
+  },
+  "372": {
+    "nom": "Collier Lueur d'\u00e2me",
+    "desc": "Ce collier a \u00e9t\u00e9 cr\u00e9\u00e9 par des experts Draka\u00efs \u00e0 la Vall\u00e9e de la Mort",
+    "effet": "",
+    "montant": "Dur\u00e9e des malus +1 tour, Soin et D\u00e9g\u00e2t magique +1",
+    "icone": "A00044"
   }
 }
