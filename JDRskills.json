@@ -3,7 +3,7 @@
     "nom": "Charge du Guerrier",
     "desc": "Fonce sur la cible et peut l'\u00e9tourdir (malus de r\u00e9ussite) si coup critique.",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "1D10+2, si critique : r\u00e9ussite cible -2 (1 tour)",
+    "montant": "1D10+2, si critique : r\u00e9ussite cible -3 (1 tour)",
     "icone": "E0280",
     "stat": "Force",
     "classe": ["Guerrier", "Chevalier", "Templier", "Chev Dragon"]
@@ -370,7 +370,7 @@
   },
   "47": {
     "nom": "Totem Gracieux",
-    "desc": "Invoque un familier Totem : 30 PV, Force : 9, Dext\u00e9 : 13, Intel : 14. - Mode Soin : Ne peut pas bouger / se protéger, 0 jet de dé. - Mode Soutien : peut bouger et bloquer, 2 sorts : 1) Renforcement : +2 Force ou +2 Intel sur la cible : 3 tours (intel) , 2) Eclair : 1D8 (intel)",
+    "desc": "Invoque un familier Totem : 30 PV, Force : 9, Dext\u00e9 : 13, Intel : 14. - Mode Soin : Ne peut pas bouger / se prot\u00e9ger, 0 jet de d\u00e9. - Mode Soutien : peut bouger et bloquer, 2 sorts : 1) Renforcement : +2 Force ou +2 Intel sur la cible : 3 tours (intel) , 2) Eclair : 1D8 (intel)",
     "effet": "Invocation",
     "montant": "(jusqu'\u00e0 coupure magique), Mode Soin : Soin 3 PV par tour. - Mode Soutien : attaque/bloque",
     "icone": "E0115",
@@ -741,7 +741,7 @@
     "nom": "Fl\u00e8che Eblouissante",
     "desc": "Tir une fl\u00e8che qui lance un flash sur l'ennemi. Pr\u00e9cision des attaques -2",
     "effet": "D\u00e9g\u00e2t Malus",
-    "montant": "1D8+1, et r\u00e9ussite des attaques -2 (3 tours)",
+    "montant": "1D8+1, et r\u00e9ussite des sorts -2 (3 tours)",
     "icone": "E0072",
     "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Chasseur"]
@@ -775,9 +775,9 @@
   },
   "93": {
     "nom": "Aura : Enchantement Elementaire",
-    "desc": "Le sage utilise son expertise des gemmes et des enchantements pour renforcer la résistance et les dégâts du groupe sur un élément.",
+    "desc": "Le sage utilise son expertise des gemmes et des enchantements pour renforcer la r\u00e9sistance et les d\u00e9g\u00e2ts du groupe sur un \u00e9l\u00e9ment.",
     "effet": "Buff AoE",
-    "montant": "Pour l'élément magique choisi : Dégât subi (-) et dégât infligé (+) : 1D4 (min 2) +1 pendant 3 tours",
+    "montant": "Pour l'\u00e9l\u00e9ment magique choisi : D\u00e9g\u00e2t subi (-) et d\u00e9g\u00e2t inflig\u00e9 (+) : 1D4 (min 2) +1 pendant 3 tours",
     "icone": "E0555",
     "stat": "Esprit",
     "classe": ["Sage"]
@@ -993,7 +993,7 @@
     "nom": "Fr\u00e9n\u00e9sie des Ogres",
     "desc": "Action Instantan\u00e9e. La loyaut\u00e9 envers les Ogres permet au lanceur de dilater ses veines, le mettant dans un \u00e9t\u00e9 fr\u00e9n\u00e9tique de Berserker.",
     "effet": "Buff Malus",
-    "montant": "A chaque tour (4 max) : D\u00e9g\u00e2t (+) et PV (-) 1D6+6",
+    "montant": "A chaque tour (4 max) : D\u00e9g\u00e2t (+) et PV (-) 1D6+6, r\u00e9ussite des sorts -1",
     "icone": "E0779",
     "stat": "Force",
     "classe": ["Samoura\u00ef"]
@@ -1153,7 +1153,7 @@
   },
   "135": {
     "nom": "D\u00e9doublement",
-    "desc": "Cr\u00e9e un double de soi, avec les m\u00eames stats et buffs. Ses d\u00e9g\u00e2ts inflig\u00e9s sont divis\u00e9s par 2. Ses d\u00e9g\u00e2ts re\u00e7us touchent le porteur et sont aussi divis\u00e9s par 2.",
+    "desc": "Cr\u00e9e un double de soi avec les m\u00eames stats et buffs (\u00e0 l'invocation). Ses d\u00e9g\u00e2ts et montants inflig\u00e9s sont divis\u00e9s par 2. Ses d\u00e9g\u00e2ts re\u00e7us touchent le porteur et sont aussi divis\u00e9s par 2 (avec armure/2).",
     "effet": "Invocation",
     "montant": "Invoque un double de soi pendant 2 tours.",
     "icone": "E1042",
@@ -1177,5 +1177,14 @@
     "icone": "E0583",
     "stat": "Esprit",
     "classe": ["Chev Dragon"]
+  },
+  "138": {
+    "nom": "Ferveur du Guerrier",
+    "desc": "Lorsque la d\u00e9votion du Guerrier est totale (r\u00e9ussite 25%), il parvient \u00e0 se maintenir en vie au-del\u00e0 d'un coup fatal.",
+    "effet": "Soin",
+    "montant": "Avant de tomber KO (3 fois par combat) : succ\u00e8s 1D4 (5/20) : Ressuscite et soigne 1D10+5 PV",
+    "icone": "E0662",
+    "stat": "",
+    "classe": ["Guerrier"]
   }
 }

@@ -1756,7 +1756,7 @@
     "skills": [
       "Crochet Cyclique : 3D6+19 : Dext\u00e9rit\u00e9",
       "Cyclone Extra : 1D10 +16 AoE (bloc m-2) : Dext\u00e9rit\u00e9",
-      "Oeil affaibilissant : Force & Intel -2 sur 3 tours : Esprit",
+      "Oeil affaibilissant : Force & Intel -2 sur 3 tours AoE : Esprit",
       "Passif (Oeil d'Oubli) : si ennemi \u00e0 port\u00e9 fait sort \u00e9chec critique : Oubli la classe sur 3 tours"
     ],
     "stats": "13,17,11,10,16",
@@ -2009,10 +2009,10 @@
     "nom": "Vimess",
     "pvmax": "250",
     "skills": [
-      "Invoc Ph\u00e9nix (Torch) : 40 PV (revie 1 fois), Stats 15, ATK 2D10+10, explosion AoE \u00e0 la mort (2D10+15, soin Vimess)",
-      "Pluie de Fl\u00e8ches (/Douloureuse) : 3D10+15 (/1D) AoE (sinon +6), (0 heal 3 tours) : Dext\u00e9rit\u00e9",
-      "Saut d'esquive : 5 tentatives : tir 2D6+12, buff esprit +2",
-      "Passif : Esquive +2, esquive/blocage cible -2"
+      "Invoc Ph\u00e9nix (Torch) : 40 PV (revie 1 fois), Stats 15 (bloc 8) all, Charge 2D10+10 (phys), Tornade Feu (-1D) (mag), explosion AoE \u00e0 la mort (2D10+15, idem soin Vimess)",
+      "Pluie de Fl\u00e8ches (/Douloureuse) : 3D6+20 (/1D mais AoE, 0 heal 3 tours) (Flèche mono +6?) : Dext\u00e9rit\u00e9",
+      "Saut d'esquive (+blocage) : 5 tentatives : tir 2D6+12",
+      "Passif : Esquive +2, si PV < 100 : esq/bloc cible -1"
     ],
     "stats": "13,19,11,15,16",
     "desc": "Ezelin m\u00e9tisse aux cheveux verts, originaires du sud du continent. G\u00e9n\u00e9ral de Division d'Exp\u00e9dition tr\u00e8s cultiv\u00e9 qui voyage avec Torch.",
@@ -2054,8 +2054,8 @@
     "nom": "Grizzli",
     "pvmax": "110",
     "skills": [
-      "Morsure : 2D6 +10 (+ 7 si énervé) : force",
-      "Attaque tournoyante : 2D6+8 (+ 5 si énervé) : dext\u00e9rit\u00e9",
+      "Morsure : 2D6 +10 (+ 7 si \u00e9nerv\u00e9) : force",
+      "Attaque tournoyante : 2D6+8 (+ 5 si \u00e9nerv\u00e9) : dext\u00e9rit\u00e9",
       "Passif : Armure +5",
       "Cri de guerre : d\u00e9g\u00e2ts AoE +6 : Esprit"
     ],
@@ -2120,7 +2120,7 @@
       "Passif : si coup critique retire un malus et le coup lanc\u00e9 est buff\u00e9 (1D10+6)"
     ],
     "stats": "19,11,15,11,15",
-    "desc": "Esprit de pure magie noire violet bleut\u00e9 qui contient l'\u00e2me de l'empereur Heldentod III. Insufflé par le légendaire Prince du Fléau.",
+    "desc": "Esprit de pure magie noire violet bleut\u00e9 qui contient l'\u00e2me de l'empereur Heldentod III. Insuffl\u00e9 par le l\u00e9gendaire Prince du Fl\u00e9au.",
     "infos": "Faible \u00e0 la lumi\u00e8re et au feu",
     "drop": "50po, rare : Cha\u00eene du destin, Bracelet Maudit d'Heldentod III"
   },
@@ -2150,7 +2150,7 @@
       "Passif : chaque \"-50 PV\" : Epine # Poison au cac : 2 d\u00e9g\u00e2ts"
     ],
     "stats": "17,11,16,11,13",
-    "desc": "Insecte l\u00e9zard avec une armure bleut\u00e9, on raconte qu'il s'agit d'un ancien Drakaï ayant succombé à un surplus de démonologie.",
+    "desc": "Insecte l\u00e9zard avec une armure bleut\u00e9, on raconte qu'il s'agit d'un ancien Draka\u00ef ayant succomb\u00e9 \u00e0 un surplus de d\u00e9monologie.",
     "infos": "Faible au feu et au per\u00e7ant",
     "drop": "Fibres toxiques, rare : Croc de Caldari"
   },
@@ -2165,7 +2165,7 @@
       "Revers d'\u00e9caille : 4 tentatives par combat (<10 : 66%, >=10 : 33%) (+Soin PV+15 #Mode Cach\u00e9) : Esprit"
     ],
     "stats": "15,7,17,11,16",
-    "desc": "Héritier de l'Empire aux cheveux noir de jais, il s'agit d'un des grands sorciers de la cour Heldentod, il a un potentiel magique \u00e9norme.",
+    "desc": "H\u00e9ritier de l'Empire aux cheveux noir de jais, il s'agit d'un des grands sorciers de la cour Heldentod, il a un potentiel magique \u00e9norme.",
     "infos": "Faible au tranchant et \u00e0 la nature",
     "drop": "Grimoire Heldentod, rare : Bracelet Heldentod"
   },
@@ -2213,5 +2213,20 @@
     "desc": "H\u00e9ritier le plus vieux de l'Empire Heldentod. Il est connu pour ses exploits militaires, son inventivit\u00e9, et ses strat\u00e9gies malicieuses.",
     "infos": "Faible \u00e0 la nature et \u00e0 la lumi\u00e8re (MODE EMBRASE)",
     "drop": "Gantelet Heldentod, rare : Grand Plastron Heldentod"
+  },
+  "150": {
+    "visuel3D": "m076b",
+    "nom": "Tortue Maudite",
+    "pvmax": "170",
+    "skills": [
+      "Seisme : 2D10 +12 AoE : force",
+      "Cri d'agonie : 2D6 +10 AoE (force/intel-4 4 tours) : intelligence",
+      "Morsure : 3D6+18 : force",
+      "R\u00e9g\u00e9n\u00e9ration terrestre : 2D6+16 AoE : intelligence"
+    ],
+    "stats": "17,7,16,9,11",
+    "desc": "Grande tortue brune cramoisie de la Vall\u00e9e de la Mort",
+    "infos": "Faible au feu et \u00e0 la glace",
+    "drop": "Ecaille/Peau/Griffe rare de tortue"
   }
 }

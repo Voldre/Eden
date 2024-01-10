@@ -471,7 +471,7 @@ function loadEnemy(enemyData, isElite = false) {
   if (isElite && enemy.pvmax < 120) {
     enemy.nom += " (ELITE)";
     // Value clipped between min and max
-    enemy.pvmax = enemy.pv = Math.max(130, Math.min(enemy.pvmax * 1.5, 180));
+    enemy.pvmax = enemy.pv = Math.round(Math.max(130, Math.min(enemy.pvmax * 1.5, 180)));
     enemy.degat = Math.max(MIN_ELITE, Math.min(Math.round(enemy.degat * 1.1) + 5, MAX_ELITE));
   }
 
@@ -985,12 +985,13 @@ function rollDice(user, type, statName) {
   } else {
     // Defense
     section.querySelector(".statName").innerText = statName + "/2";
-    success = Math.ceil(stat / 2) + (user[statName + "Res"] || 0);
+    // 24/11/23 : Max success is 13 (because user can have more !)
+    success = Math.min(Math.ceil(stat / 2) + (user[statName + "Res"] || 0), 13);
     // console.log("Defense " + statName + " : " + success);
   }
 
   // Result (correction 20/11/23 : change round to floor to have nice repartition)
-  var diceValue = Math.floor(Math.random() * 20 + 1);
+  const diceValue = Math.floor(Math.random() * 20 + 1);
 
   if (diceValue > success) {
     result = "fail";
@@ -1203,7 +1204,12 @@ function executeAction(user, userSkill) {
   if (userResult == "fail") {
     updateDesc("Echec");
   } else if (userResult == "crit fail") {
-    hit(user, Math.trunc(user.degat / 2) + Math.trunc(user.armure / 2 || 0));
+    // Update 05/01/2024 : Pour les ennemis, sachant qu'ils n'ont pas d'armure, ils ont une
+    // réduction égale à 1/8 des dégâts.
+    // Exemple joueur (32 dégâts, 20 armures) : (32/2 = 16) + (20/2 =10) = 26, 26 - 20 (armure) = 6 sur un échec critique
+    // Si on a dégâts <= armures, alors on prend 0
+    // Exemple ennemi (40 dégâts) : (40/2 = 20) + (-40/8 = -5) = 15, 15 - 0 (armure) = 15 sur un échec critique
+    hit(user, Math.trunc(user.degat / 2) + Math.trunc(user.armure / 2 || -user.degat / 8));
     updateDesc("Echec critique");
   }
 }
