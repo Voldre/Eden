@@ -218,14 +218,14 @@
     "nom": "Guitare en bois",
     "desc": "Simple guitare en bois",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t +3",
+    "montant": "D\u00e9g\u00e2t +5",
     "icone": "W60801"
   },
   "32": {
     "nom": "Violon Magique",
     "desc": "Guitare cr\u00e9\u00e9 avec l'amour du vent",
     "effet": "Dext\u00e9rit\u00e9 +2",
-    "montant": "D\u00e9g\u00e2t +3",
+    "montant": "D\u00e9g\u00e2t +6",
     "icone": "W60904"
   },
   "33": {
@@ -2728,5 +2728,40 @@
     "effet": "",
     "montant": "Dur\u00e9e des malus +1 tour, Soin et D\u00e9g\u00e2t magique +1",
     "icone": "A00044"
+  },
+  "373": {
+    "nom": "B\u00e2ton Kif\u00e9peur",
+    "desc": "Un b\u00e2ton qui a tendance \u00e0 surprendre les ennemis !",
+    "effet": "Charisme +1",
+    "montant": "D\u00e9g\u00e2t +7",
+    "icone": "W60203"
+  },
+  "374": {
+    "nom": "B\u00e2ton Kif\u00e9tr\u00e9peur",
+    "desc": "Une am\u00e9lioration du b\u00e2ton Kif\u00e9peur. Seul les plus grands peuvent l'avoir, quelle prestance !",
+    "effet": "Charisme +2",
+    "montant": "D\u00e9g\u00e2t +8",
+    "icone": "W60703"
+  },
+  "375": {
+    "nom": "Hache Forte",
+    "desc": "Une hache qui donne de la force \u00e0 son porteur, huss !",
+    "effet": "Force +1",
+    "montant": "D\u00e9g\u00e2t +6",
+    "icone": "W20104"
+  },
+  "376": {
+    "nom": "Hache Puissante",
+    "desc": "Am\u00e9lioration de la hache forte, elle donne beaucoup de force \u00e0 son porteur, hussss !",
+    "effet": "Force +2",
+    "montant": "D\u00e9g\u00e2t +8",
+    "icone": "W20103"
+  },
+  "377": {
+    "nom": "Masse de Magie",
+    "desc": "Une masse con\u00e7ue pour renforcer la puissance magique.",
+    "effet": "Intelligence +1",
+    "montant": "D\u00e9g\u00e2t +3",
+    "icone": "W30103"
   }
 }

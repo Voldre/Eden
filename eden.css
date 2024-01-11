@@ -10,6 +10,10 @@ ul {
 }
 select {
   max-height: 26px;
+  cursor: url("images/layout/cursor-hover.png"), auto;
+}
+button {
+  cursor: url("images/layout/cursor-x.png"), auto;
 }
 
 input[type="text"],
@@ -225,6 +229,7 @@ li img,
   font-weight: 400;
   background: linear-gradient(to right, rgba(64, 64, 92, 0.61), rgba(141, 95, 141, 0.733));
   cursor: pointer;
+  cursor: url("images/layout/cursor-hover.png"), auto;
   width: 66%;
 }
 .activate {
@@ -319,6 +324,7 @@ li img,
 .slider {
   position: absolute;
   cursor: pointer;
+  cursor: url("images/layout/cursor-hover.png"), auto;
   top: 0;
   left: 0;
   right: 0;
@@ -431,6 +437,7 @@ input:checked + .slider:before {
 .hover-animation img.image-front:hover {
   opacity: 0;
   cursor: pointer;
+  cursor: url("images/layout/cursor-hover.png"), auto;
 }
 
 .img-block {

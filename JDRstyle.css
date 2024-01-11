@@ -85,6 +85,7 @@ dialog::backdrop {
   width: 100%;
   grid-template-areas: "nom nom eff ico" "mon mon mon ico" "desc desc desc desc";
   cursor: pointer;
+  cursor: url("images/layout/cursor-hover.png"), auto;
 }
 .skillCombat {
   margin: 2px;
@@ -115,6 +116,7 @@ dialog::backdrop {
 }
 .awakenSkill > .effet {
   cursor: pointer;
+  cursor: url("images/layout/cursor-hover.png"), auto;
   font-size: 15px;
   width: 60px;
 }
@@ -153,6 +155,7 @@ dialog::backdrop {
 
 #pp {
   cursor: pointer;
+  cursor: url("images/layout/cursor-hover.png"), auto;
   position: relative;
   top: 52%;
   left: 51%;
@@ -231,6 +234,7 @@ dialog::backdrop {
   height: auto;
   border: 2px gray solid;
   cursor: pointer;
+  cursor: url("images/layout/cursor-hover.png"), auto;
   filter: brightness(90%);
 }
 
@@ -606,6 +610,7 @@ dialog::backdrop {
 #playersE > div:hover {
   background-color: rgba(36, 36, 106, 0.8);
   cursor: pointer;
+  cursor: url("images/layout/cursor-hover.png"), auto;
   filter: brightness(110%);
 }
 .persoPic {
@@ -719,6 +724,7 @@ dialog::backdrop {
 
   user-select: none; /* all */
   cursor: pointer;
+  cursor: url("images/layout/cursor-hover.png"), auto;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
