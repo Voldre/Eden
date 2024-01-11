@@ -145,9 +145,9 @@
   },
   "22": {
     "nom": "Faiblesse Critique",
-    "desc": "Frappe efficacement l'ennemi, d\u00e9g\u00e2t doubl\u00e9 si coup critique (d\u00e9 : 1 ou 2)",
+    "desc": "Frappe efficacement l'ennemi, d\u00e9g\u00e2t doubl\u00e9 si coup critique (d\u00e9 : 1, 2 ou 3)",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "1D8+4 (X2) r\u00e9ussite-1",
+    "montant": "Réussite +1, 1D8+4 (X2)",
     "icone": "E0057",
     "stat": "Force",
     "classe": ["Assassin"]
@@ -174,7 +174,7 @@
     "nom": "Charme tape-\u00e0-l-oeil",
     "desc": "Lance un charme sur la cible pour r\u00e9duire sa concentration, efficace si sexe oppos\u00e9, sinon : r\u00e9ussite -5",
     "effet": "Malus",
-    "montant": "Esquive et r\u00e9ussite des sorts : -2 sur 3 tours",
+    "montant": "Esquive -2 et r\u00e9ussite des sorts -3 sur 3 tours",
     "icone": "E0067",
     "stat": "Charisme",
     "classe": ["Danselame"]
@@ -199,7 +199,7 @@
   },
   "28": {
     "nom": "Tir de Pr\u00e9cision",
-    "desc": "Chance de touch\u00e9 augment\u00e9, si coup critique (d\u00e9 : 1 ou 2) d\u00e9g\u00e2t X2",
+    "desc": "Chance de touch\u00e9 augment\u00e9, d\u00e9g\u00e2t doubl\u00e9 si coup critique (d\u00e9 : 1 ou 2)",
     "effet": "D\u00e9g\u00e2t",
     "montant": "R\u00e9ussite +2, 1D8+2 (X2)",
     "icone": "E0011",
@@ -273,7 +273,7 @@
     "nom": "Explosifs Visqueux",
     "desc": "Si robotis\u00e9 : La bombe explose (d\u00e9g\u00e2t de nature) et englue tout autour de la cible, attaquer peut d\u00e9faire la glue",
     "effet": "D\u00e9g\u00e2t Malus AoE",
-    "montant": "1D6+1, diminue de 2 l'esquive pour 3 tours",
+    "montant": "1D6+1, Esquive -2 pour 3 tours",
     "icone": "E0082",
     "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Ing\u00e9nieur"]
@@ -289,9 +289,9 @@
   },
   "38": {
     "nom": "Fl\u00e8che Terrorisante",
-    "desc": "Le tir effraye l'ennemi et le d\u00e9concentre (-2 sur ses sorts et sur l'esquive), r\u00e9duit la chance d'\u00eatre cibl\u00e9",
+    "desc": "Le tir effraye l'ennemi et le d\u00e9concentre, r\u00e9duit la chance d'\u00eatre cibl\u00e9",
     "effet": "D\u00e9g\u00e2t Malus",
-    "montant": "1D6+2 : Esquive et r\u00e9ussite des sorts : -2 (pendant 2 tours)",
+    "montant": "1D6+1 : Esquive -2 et r\u00e9ussite des sorts -3 (pendant 2 tours)",
     "icone": "E0090",
     "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Corsaire"]
@@ -307,7 +307,7 @@
   },
   "40": {
     "nom": "S\u00e9isme",
-    "desc": "Inflige des d\u00e9g\u00e2ts de terre \u00e0 la cible",
+    "desc": "Inflige des d\u00e9g\u00e2ts de nature \u00e0 la cible",
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D10+2",
     "icone": "E0016",
@@ -534,7 +534,7 @@
     "nom": "Danse de l'oiseau de feu",
     "desc": "Le lanceur danse autour des ennemis (sur quelques m\u00e8tres) et les br\u00fblent",
     "effet": "D\u00e9g\u00e2t AoE",
-    "montant": "1D8+1",
+    "montant": "1D8+2",
     "icone": "E0345",
     "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Danselame"]
@@ -568,9 +568,9 @@
   },
   "70": {
     "nom": "Menaces Mortelles",
-    "desc": "Peut apeurer les ennemis et diminuer leurs esprits",
+    "desc": "Effraye les ennemis pour leur faire perdre leurs moyens.",
     "effet": "Malus AoE",
-    "montant": "Prochaine r\u00e9ussite des sorts des ennemis : -3, dure 1 tour",
+    "montant": "Prochaine r\u00e9ussite des sorts : -3, esquive/blocage -1, dure 1 tour",
     "icone": "E0135",
     "stat": "Esprit",
     "classe": ["D\u00e9moniste"]
@@ -651,7 +651,7 @@
     "nom": "Gr\u00e2ce de la Sagesse",
     "desc": "Augmente l'intelligence et l'esprit de la cible",
     "effet": "Buff",
-    "montant": "Intelligence et Esprit +2 pendant 4 tours",
+    "montant": "Blocage +1 et Esprit +2 pendant 4 tours",
     "icone": "E0095",
     "stat": "Esprit",
     "classe": ["Clerc"]
@@ -741,7 +741,7 @@
     "nom": "Fl\u00e8che Eblouissante",
     "desc": "Tir une fl\u00e8che qui lance un flash sur l'ennemi. Pr\u00e9cision des attaques -2",
     "effet": "D\u00e9g\u00e2t Malus",
-    "montant": "1D8+1, et r\u00e9ussite des sorts -2 (3 tours)",
+    "montant": "1D8+1, et r\u00e9ussite des sorts -3 (3 tours)",
     "icone": "E0072",
     "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Chasseur"]
@@ -820,9 +820,9 @@
   },
   "98": {
     "nom": "Perforation",
-    "desc": "Tir une fl\u00e8che qui perfore l'armure de l'ennemi",
+    "desc": "Tir une fl\u00e8che qui perfore l'armure de l'ennemi et le déconcentre.",
     "effet": "D\u00e9g\u00e2t Malus",
-    "montant": "1D6+2 : Blocage -2 sur 3 tours",
+    "montant": "1D6+1 : Blocage -2 et -2 réussite des sorts (pendant 2 tours)",
     "icone": "E0012",
     "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Chasseur", "Ing\u00e9nieur", "Corsaire", "Juge"]
@@ -885,7 +885,7 @@
     "nom": "Lavage de Cerveau",
     "desc": "R\u00e9duit la concentration de l'ennemi (blocage, r\u00e9ussite), pendant 3 tours",
     "effet": "Malus",
-    "montant": "Blocage et r\u00e9ussite des sorts : -2 sur 3 tours",
+    "montant": "Blocage -2 et r\u00e9ussite des sorts -3 sur 3 tours",
     "icone": "E0078",
     "stat": "Esprit",
     "classe": ["Ing\u00e9nieur"]
@@ -930,7 +930,7 @@
     "nom": "Terreur du Dragon",
     "desc": "L'utilisateur terrorise son adversaire et le destabilise.  Effets - Embras\u00e9 : Effet+1; D\u00e9moniaque : D\u00e9g\u00e2t 10 PV; Cach\u00e9 : Dur\u00e9e+1",
     "effet": "Malus",
-    "montant": "R\u00e9ussite des sorts : -2 sur 3 tours  (+ effet mode)",
+    "montant": "R\u00e9ussite des sorts : -3 sur 3 tours  (+ effet mode)",
     "icone": "E1023",
     "stat": "Charisme",
     "classe": ["Chev Dragon"]
@@ -948,7 +948,7 @@
     "nom": "Griffures Noires",
     "desc": "Inflige des d\u00e9g\u00e2ts de t\u00e9n\u00e8bres avec ses griffes sur tous les ennemis et les affaiblis",
     "effet": "D\u00e9g\u00e2t Malus AoE",
-    "montant": "1D6, et -2 de blocage et d'esquive pour 3 tours",
+    "montant": "1D6, et -1 de blocage et d'esquive pour 3 tours",
     "icone": "E0767",
     "stat": "Force",
     "classe": ["Assassin"]
@@ -964,7 +964,7 @@
   },
   "114": {
     "nom": "Coup de Poing Irrit\u00e9",
-    "desc": "Frappe et inflige des d\u00e9g\u00e2ts de terre \u00e0 l'ennemi",
+    "desc": "Frappe et inflige des d\u00e9g\u00e2ts de nature \u00e0 l'ennemi",
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D8+4",
     "icone": "E0027",
@@ -1110,7 +1110,7 @@
     "nom": "Vague Foudroyante",
     "desc": "(MASSE OU MARTEAU REQUIS) Inflige des d\u00e9g\u00e2ts de contondant en fracassant le sol. Les ennemis touch\u00e9s sont destabilis\u00e9s.",
     "effet": "D\u00e9g\u00e2t Malus AoE",
-    "montant": "1D6, diminue de 2 le blocage pour 3 tours",
+    "montant": "1D6, Blocage -2 pour 3 tours",
     "icone": "E0310",
     "stat": "Force",
     "classe": ["Templier"]

@@ -118,9 +118,10 @@ function updateSkillsList(classe) {
     var iconeE = document.createElement("img");
     iconeE.classList.add("icone");
 
+    console.log(skill.classe);
     nomE.innerText = skill.nom;
     descE.innerText = skill.desc;
-    effetE.innerText = skill.effet + " / " + skill.stat + " / " + skill.classe; // Ajout Sanofi
+    effetE.innerText = skill.effet + " / " + skill.stat + " / " + skill.classe?.toString().replaceAll(",", ", "); // Ajout Sanofi
     montantE.innerText = skill.montant;
     iconeE.src = "http://voldre.free.fr/Eden/images/skillIcon/" + skill.icone + ".png";
 
@@ -187,7 +188,7 @@ console.log("Nb skills by class by stat", allListSkillsByClassByStats);
 
 const labelsDescription = {
   critique:
-    "Le Dé 1 est une réussite critique (dégâts et buffs au max), le Dé 2 un semi-critique (boosté). Pareil pour les échecs avec Dé 19 et Dé 20.",
+    "Le Dé 1 est une réussite critique (dégâts et buffs au max), le Dé 2 un semi-critique (boosté). Pareil pour les échecs avec Dé 19 et Dé 20.<br/> En cas de Dé 20 sur une attaque, le lanceur prend les dégâts divisés par 2 et sans armure.",
   invisible:
     "Quand un personnage est invisible : au 1er tour, -3 de chance de le toucher (sauf AoE : 0); aux tours suivants (2+) : Chance/2 (sauf AoE : -3).<br/>&nbsp; A l'inverse, un personnage invisible qui frappe réduit les chances d'esquive et blocage de -2. <br/>&nbsp; Seuls les sorts d'Esprit laisse invisible, les autres font sortir. Se prendre un coup fait sortir aussi.",
   endormi:

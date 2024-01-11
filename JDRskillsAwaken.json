@@ -204,7 +204,7 @@
   "110": {
     "nom": "Terreur du Dragon",
     "desc": "L'utilisateur terrorise son adversaire et le destabilise.  Effets - Embras\u00e9 : Effet+1; D\u00e9moniaque : D\u00e9g\u00e2t 10 PV; Cach\u00e9 : Dur\u00e9e+1",
-    "montant": "Ennemi -10 PV, r\u00e9ussite des sorts : -2 sur 3 tours  (+ effet mode)",
+    "montant": "Ennemi -10 PV, r\u00e9ussite des sorts : -3 sur 3 tours  (+ effet mode)",
     "icone": "E1023",
     "stat": "Charisme",
     "classe": ["Chev Dragon"]
