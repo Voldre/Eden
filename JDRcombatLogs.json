@@ -30861,5 +30861,3754 @@
     "turn": 26,
     "pv": -12,
     "epv": 83
+  },
+  "1936": {
+    "date": "06/01/2024 02:11:19",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Erida",
+    "map": 12,
+    "cardRarity": 3,
+    "enemy": "Nemelio",
+    "earnedCoins": 7,
+    "winCards": [
+      [36, "For\u00eat de Delphes"],
+      [1005, "Nemelio"],
+      [1239, "Fruit \u00c2mambre"]
+    ],
+    "turn": 14,
+    "pv": 101,
+    "epv": -22
+  },
+  "1937": {
+    "date": "06/01/2024 02:11:05",
+    "joueur": "Victorine",
+    "perso": "Eivor",
+    "map": 35,
+    "cardRarity": 1,
+    "enemy": "Garde Heldentod",
+    "earnedCoins": 4,
+    "winCards": [
+      [103, "Capitale Heldentod"],
+      [1365, "Bl\u00e9 cramoisie"]
+    ],
+    "turn": 5,
+    "pv": 98,
+    "epv": -4
+  },
+  "1938": {
+    "date": "06/01/2024 02:13:43",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Erida",
+    "map": 12,
+    "cardRarity": 3,
+    "enemy": "Nemelio",
+    "earnedCoins": 8,
+    "winCards": [
+      [36, "For\u00eat de Delphes"],
+      [1005, "Nemelio"],
+      [1289, "Bombe Surdos\u00e9e"]
+    ],
+    "turn": 13,
+    "pv": 82,
+    "epv": -10
+  },
+  "1939": {
+    "date": "06/01/2024 02:12:56",
+    "joueur": "Victorine",
+    "perso": "Malvis",
+    "map": 3,
+    "cardRarity": 3,
+    "enemy": "Ash - L'Associal",
+    "earnedCoins": 11,
+    "winCards": [
+      [9, "Colline tranquille"],
+      [1035, "Ash - L'Associal"],
+      [1351, "Fragment de Crystal d'Eden"],
+      [1549, "Rad Ed et Estia"]
+    ],
+    "turn": 8,
+    "pv": 23,
+    "epv": -15
+  },
+  "1940": {
+    "date": "06/01/2024 02:17:23",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Erida",
+    "map": 12,
+    "cardRarity": 3,
+    "enemy": "Nemelio",
+    "earnedCoins": 8,
+    "winCards": [
+      [36, "For\u00eat de Delphes"],
+      [1005, "Nemelio"],
+      [1292, "Mine Anti-Personnel"]
+    ],
+    "turn": 10,
+    "pv": 85,
+    "epv": -35
+  },
+  "1941": {
+    "date": "06/01/2024 02:17:11",
+    "joueur": "Victorine",
+    "perso": "Lutta",
+    "map": 34,
+    "cardRarity": 1,
+    "enemy": "DD Ogre mutant",
+    "earnedCoins": 2,
+    "winCards": [
+      [100, "Royaume D\u00e9vast\u00e9"],
+      [1355, "Potion Glac\u00e9e"]
+    ],
+    "turn": 7,
+    "pv": 52,
+    "epv": -4
+  },
+  "1942": {
+    "date": "06/01/2024 02:20:39",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Aradia",
+    "map": 6,
+    "cardRarity": 2,
+    "enemy": "Garde de ville",
+    "earnedCoins": 4,
+    "winCards": [
+      [17, "Baie B\u00e9louga"],
+      [1355, "Potion Glac\u00e9e"]
+    ],
+    "turn": 14,
+    "pv": 27,
+    "epv": -4
+  },
+  "1943": {
+    "date": "06/01/2024 02:19:58",
+    "joueur": "Victorine",
+    "perso": "Lutta",
+    "map": 34,
+    "cardRarity": 1,
+    "enemy": "DD Ogre mutant",
+    "earnedCoins": 6,
+    "winCards": [
+      [100, "Royaume D\u00e9vast\u00e9"],
+      [1209, "Fourrure Polaire"],
+      [1591, "Magie Noire de l'Empire"]
+    ],
+    "turn": 10,
+    "pv": 61,
+    "epv": -2
+  },
+  "1944": {
+    "date": "06/01/2024 02:21:44",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Aradia",
+    "map": 6,
+    "cardRarity": 1,
+    "enemy": "Shaman Tuskar",
+    "earnedCoins": 2,
+    "winCards": [
+      [16, "Baie B\u00e9louga"],
+      [1239, "Fruit \u00c2mambre"]
+    ],
+    "turn": 5,
+    "pv": 88,
+    "epv": -14
+  },
+  "1945": {
+    "date": "06/01/2024 02:22:24",
+    "joueur": "Victorine",
+    "perso": "Nyx",
+    "map": 34,
+    "cardRarity": 1,
+    "enemy": "DD Ogre mutant",
+    "earnedCoins": 5,
+    "winCards": [
+      [100, "Royaume D\u00e9vast\u00e9"],
+      [1361, "Potion Coupante"],
+      [1599, "La manipulation des H\u00e9ritiers"]
+    ],
+    "turn": 6,
+    "pv": 49,
+    "epv": -25
+  },
+  "1946": {
+    "date": "06/01/2024 02:23:45",
+    "joueur": "Victorine",
+    "perso": "Nyx",
+    "map": 34,
+    "cardRarity": 1,
+    "enemy": "DD Ogre mutant",
+    "earnedCoins": 6,
+    "winCards": [
+      [100, "Royaume D\u00e9vast\u00e9"],
+      [1352, "Crystal d'Eden"],
+      [1588, "La possession d'Heldentod III"]
+    ],
+    "turn": 9,
+    "pv": 44,
+    "epv": -33
+  },
+  "1947": {
+    "date": "06/01/2024 02:25:19",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Azora",
+    "map": 33,
+    "cardRarity": 2,
+    "enemy": "Magicien Clerc Anuran",
+    "earnedCoins": 7,
+    "winCards": [
+      [98, "Plaines du Levant"],
+      [1219, "Potion de puissance"],
+      [1571, "Kibo et War"]
+    ],
+    "turn": 12,
+    "pv": 59,
+    "epv": -9
+  },
+  "1948": {
+    "date": "06/01/2024 02:25:53",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Azora",
+    "map": 35,
+    "cardRarity": 1,
+    "enemy": "Drakai d\u00e9moniste",
+    "earnedCoins": 2,
+    "winCards": [
+      [103, "Capitale Heldentod"],
+      [1362, "Potion Perforante"]
+    ],
+    "turn": 3,
+    "pv": 91,
+    "epv": -4
+  },
+  "1949": {
+    "date": "06/01/2024 02:26:31",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Azora",
+    "map": 35,
+    "cardRarity": 1,
+    "enemy": "Magicien Clerc Anuran",
+    "earnedCoins": 5,
+    "winCards": [
+      [103, "Capitale Heldentod"],
+      [1210, "Germe de Champigno\u00efde"],
+      [1590, "Kibo et les plaisirs"]
+    ],
+    "turn": 4,
+    "pv": 101,
+    "epv": -27
+  },
+  "1950": {
+    "date": "06/01/2024 02:29:46",
+    "joueur": "Victorine",
+    "perso": "Estia Ryujin",
+    "map": 35,
+    "cardRarity": 2,
+    "enemy": "Garde Heldentod",
+    "earnedCoins": 4,
+    "winCards": [
+      [104, "Capitale Heldentod"],
+      [1374, "Ecorce de Bois Sacr\u00e9"]
+    ],
+    "turn": 22,
+    "pv": 68,
+    "epv": -24.5
+  },
+  "1951": {
+    "date": "06/01/2024 02:32:24",
+    "joueur": "Victorine",
+    "perso": "Estia Ryujin",
+    "map": 35,
+    "cardRarity": 2,
+    "enemy": "Garde Heldentod",
+    "earnedCoins": 7,
+    "winCards": [
+      [104, "Capitale Heldentod"],
+      [1221, "Potion Paillettes"],
+      [1589, "Le Quartier des Plaisirs"]
+    ],
+    "turn": 16,
+    "pv": 115,
+    "epv": -12.5
+  },
+  "1952": {
+    "date": "06/01/2024 02:38:01",
+    "joueur": "Victorine",
+    "perso": "Estia Ryujin",
+    "map": 5,
+    "cardRarity": 3,
+    "enemy": "Chevalier de la Curie (Lassar) v2 (Nv 7)",
+    "earnedCoins": 7,
+    "winCards": [
+      [15, "Monts Arides"],
+      [1002, "Lassar - Chevalier Lieutenant"],
+      [1239, "Fruit \u00c2mambre"]
+    ],
+    "turn": 22,
+    "pv": 84,
+    "epv": -17
+  },
+  "1953": {
+    "date": "06/01/2024 11:47:49",
+    "joueur": "Hugo",
+    "perso": "Kibo",
+    "map": 35,
+    "cardRarity": 1,
+    "enemy": "Garde Heldentod",
+    "earnedCoins": 5,
+    "winCards": [
+      [103, "Capitale Heldentod"],
+      [1222, "Concoction Anuran"],
+      [1590, "Kibo et les plaisirs"]
+    ],
+    "turn": 13,
+    "pv": 123,
+    "epv": -11
+  },
+  "1954": {
+    "date": "06/01/2024 11:51:26",
+    "joueur": "Hugo",
+    "perso": "Kibo",
+    "map": 34,
+    "cardRarity": 2,
+    "enemy": "DD Ogre mutant",
+    "earnedCoins": 6,
+    "winCards": [
+      [101, "Royaume D\u00e9vast\u00e9"],
+      [1353, "Crystal d'Eden Dor\u00e9"]
+    ],
+    "turn": 23,
+    "pv": 86,
+    "epv": -2
+  },
+  "1955": {
+    "date": "06/01/2024 11:52:48",
+    "joueur": "Hugo",
+    "perso": "Kibo",
+    "map": 33,
+    "cardRarity": 2,
+    "enemy": "Garde Heldentod",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 7,
+    "pv": 113,
+    "epv": 95.5
+  },
+  "1956": {
+    "date": "06/01/2024 14:18:00",
+    "joueur": "Rachel",
+    "perso": "Rad Ed",
+    "map": 7,
+    "cardRarity": 3,
+    "enemy": "Rumbledore (le vrai)",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 10,
+    "pv": -9,
+    "epv": 217
+  },
+  "1957": {
+    "date": "06/01/2024 15:39:41",
+    "joueur": "Rachel",
+    "perso": "Rad Ed",
+    "map": 7,
+    "cardRarity": 3,
+    "enemy": "Rumbledore (le vrai)",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 6,
+    "pv": 52,
+    "epv": 202
+  },
+  "1958": {
+    "date": "06/01/2024 18:15:40",
+    "joueur": "Rachel",
+    "perso": "Rad Ed",
+    "map": 34,
+    "cardRarity": 3,
+    "enemy": "Heldentod III",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 22,
+    "pv": -25,
+    "epv": 192
+  },
+  "1959": {
+    "date": "06/01/2024 18:17:11",
+    "joueur": "Rachel",
+    "perso": "Le Poisseux",
+    "map": 34,
+    "cardRarity": 1,
+    "enemy": "Magicienne Heldentod",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 6,
+    "pv": 53,
+    "epv": 48
+  },
+  "1960": {
+    "date": "06/01/2024 18:19:21",
+    "joueur": "Rachel",
+    "perso": "Le Poisseux",
+    "map": 33,
+    "cardRarity": 1,
+    "enemy": "Grizzli",
+    "earnedCoins": 2,
+    "winCards": [
+      [97, "Plaines du Levant"],
+      [1214, "Vigne Pourpre"]
+    ],
+    "turn": 6,
+    "pv": 64,
+    "epv": 0
+  },
+  "1961": {
+    "date": "06/01/2024 18:20:16",
+    "joueur": "Rachel",
+    "perso": "Le Poisseux",
+    "map": 12,
+    "cardRarity": 1,
+    "enemy": "Crabe Volcanique",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 7,
+    "pv": 73,
+    "epv": 11
+  },
+  "1962": {
+    "date": "06/01/2024 18:24:00",
+    "joueur": "Rachel",
+    "perso": "Roco Bonnaro",
+    "map": 20,
+    "cardRarity": 2,
+    "enemy": "Cactus sauteur",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 8,
+    "pv": 61,
+    "epv": 57
+  },
+  "1963": {
+    "date": "06/01/2024 18:27:02",
+    "joueur": "Rachel",
+    "perso": "Roco Bonnaro",
+    "map": 27,
+    "cardRarity": 2,
+    "enemy": "Poisson Abyssal",
+    "earnedCoins": 4,
+    "winCards": [
+      [80, "Falaise des Grands Vents"],
+      [1204, "Crystal d'Asbi"]
+    ],
+    "turn": 12,
+    "pv": 30,
+    "epv": -17
+  },
+  "1964": {
+    "date": "06/01/2024 21:23:59",
+    "joueur": "Hugo",
+    "perso": "Kibo",
+    "map": 11,
+    "cardRarity": 1,
+    "enemy": "Ver des sables",
+    "earnedCoins": 2,
+    "winCards": [
+      [31, "Terres des Dunes \u00c9ternelles"],
+      [1233, "Plante des \u00e2mes"]
+    ],
+    "turn": 7,
+    "pv": 128,
+    "epv": -11
+  },
+  "1965": {
+    "date": "06/01/2024 21:25:41",
+    "joueur": "Hugo",
+    "perso": "Kibo",
+    "map": 26,
+    "cardRarity": 1,
+    "enemy": "Lutin pr\u00e9historique",
+    "earnedCoins": 5,
+    "winCards": [
+      [76, "Plaines Fleuries"],
+      [1235, "Herbe d'eau"],
+      [1539, "Erida et la politique"]
+    ],
+    "turn": 9,
+    "pv": 115,
+    "epv": -4
+  },
+  "1966": {
+    "date": "06/01/2024 21:28:21",
+    "joueur": "Hugo",
+    "perso": "Kibo",
+    "map": 23,
+    "cardRarity": 1,
+    "enemy": "Poisson Abyssal",
+    "earnedCoins": 3,
+    "winCards": [
+      [67, "Cr\u00e8te Diamant\u00e9e"],
+      [1368, "Alerte : Qu\u00eate de la Curie"]
+    ],
+    "turn": 8,
+    "pv": 134,
+    "epv": -14
+  },
+  "1967": {
+    "date": "07/01/2024 00:04:04",
+    "joueur": "Victorine",
+    "perso": "Eivor",
+    "map": 35,
+    "cardRarity": 1,
+    "enemy": "Garde Heldentod",
+    "earnedCoins": 4,
+    "winCards": [
+      [103, "Capitale Heldentod"],
+      [1251, "Coton Royal"]
+    ],
+    "turn": 7,
+    "pv": 40,
+    "epv": -7
+  },
+  "1968": {
+    "date": "07/01/2024 00:05:43",
+    "joueur": "Victorine",
+    "perso": "Eivor",
+    "map": 35,
+    "cardRarity": 1,
+    "enemy": "Garde Heldentod",
+    "earnedCoins": 3,
+    "winCards": [
+      [103, "Capitale Heldentod"],
+      [1208, "Quartz d'Automne"]
+    ],
+    "turn": 5,
+    "pv": 81,
+    "epv": -6
+  },
+  "1969": {
+    "date": "07/01/2024 00:07:50",
+    "joueur": "Victorine",
+    "perso": "Eivor",
+    "map": 35,
+    "cardRarity": 1,
+    "enemy": "Garde Heldentod",
+    "earnedCoins": 4,
+    "winCards": [
+      [103, "Capitale Heldentod"],
+      [1353, "Crystal d'Eden Dor\u00e9"]
+    ],
+    "turn": 4,
+    "pv": 68,
+    "epv": -13
+  },
+  "1970": {
+    "date": "07/01/2024 00:09:30",
+    "joueur": "Victorine",
+    "perso": "Malvis",
+    "map": 3,
+    "cardRarity": 3,
+    "enemy": "Ash - L'Associal",
+    "earnedCoins": 10,
+    "winCards": [
+      [9, "Colline tranquille"],
+      [1035, "Ash - L'Associal"],
+      [1202, "Acier Volcanique"],
+      [1549, "Rad Ed et Estia"]
+    ],
+    "turn": 8,
+    "pv": 78,
+    "epv": -14
+  },
+  "1971": {
+    "date": "07/01/2024 00:11:11",
+    "joueur": "Victorine",
+    "perso": "Malvis",
+    "map": 3,
+    "cardRarity": 3,
+    "enemy": "Ash - L'Associal",
+    "earnedCoins": 12,
+    "winCards": [
+      [9, "Colline tranquille"],
+      [1035, "Ash - L'Associal"],
+      [1365, "Bl\u00e9 cramoisie"],
+      [1549, "Rad Ed et Estia"]
+    ],
+    "turn": 9,
+    "pv": 93,
+    "epv": -17
+  },
+  "1972": {
+    "date": "07/01/2024 00:12:49",
+    "joueur": "Victorine",
+    "perso": "Lutta",
+    "map": 34,
+    "cardRarity": 1,
+    "enemy": "DD Ogre mutant",
+    "earnedCoins": 3,
+    "winCards": [
+      [100, "Royaume D\u00e9vast\u00e9"],
+      [1376, "Bois Ecarlate"]
+    ],
+    "turn": 9,
+    "pv": 73,
+    "epv": -7
+  },
+  "1973": {
+    "date": "07/01/2024 00:14:58",
+    "joueur": "Victorine",
+    "perso": "Malvis",
+    "map": 3,
+    "cardRarity": 3,
+    "enemy": "Ash - L'Associal",
+    "earnedCoins": 10,
+    "winCards": [
+      [9, "Colline tranquille"],
+      [1035, "Ash - L'Associal"],
+      [1204, "Crystal d'Asbi"],
+      [1700, "Le b\u00e2ton maudit"]
+    ],
+    "turn": 6,
+    "pv": 81,
+    "epv": -25
+  },
+  "1974": {
+    "date": "07/01/2024 00:16:29",
+    "joueur": "Victorine",
+    "perso": "Lutta",
+    "map": 34,
+    "cardRarity": 1,
+    "enemy": "DD Ogre mutant",
+    "earnedCoins": 2,
+    "winCards": [
+      [100, "Royaume D\u00e9vast\u00e9"],
+      [1369, "Ciseau d'Ezur"]
+    ],
+    "turn": 9,
+    "pv": 98,
+    "epv": -8
+  },
+  "1975": {
+    "date": "07/01/2024 00:18:39",
+    "joueur": "Victorine",
+    "perso": "Lutta",
+    "map": 34,
+    "cardRarity": 1,
+    "enemy": "DD Ogre mutant",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 18,
+    "pv": -2,
+    "epv": 14
+  },
+  "1976": {
+    "date": "07/01/2024 00:20:14",
+    "joueur": "Victorine",
+    "perso": "Nyx",
+    "map": 34,
+    "cardRarity": 1,
+    "enemy": "DD Ogre mutant",
+    "earnedCoins": 3,
+    "winCards": [
+      [100, "Royaume D\u00e9vast\u00e9"],
+      [1364, "Bl\u00e9 luisant"]
+    ],
+    "turn": 4,
+    "pv": 72,
+    "epv": -9
+  },
+  "1977": {
+    "date": "07/01/2024 00:21:40",
+    "joueur": "Victorine",
+    "perso": "Nyx",
+    "map": 35,
+    "cardRarity": 1,
+    "enemy": "Garde Heldentod",
+    "earnedCoins": 7,
+    "winCards": [
+      [103, "Capitale Heldentod"],
+      [1378, "Bois Crystalis\u00e9"],
+      [1597, "Estia et les favoris"]
+    ],
+    "turn": 11,
+    "pv": 6,
+    "epv": -11
+  },
+  "1978": {
+    "date": "07/01/2024 00:22:27",
+    "joueur": "Victorine",
+    "perso": "Nyx",
+    "map": 35,
+    "cardRarity": 1,
+    "enemy": "Garde Heldentod",
+    "earnedCoins": 5,
+    "winCards": [
+      [103, "Capitale Heldentod"],
+      [1291, "Pi\u00e8ge \u00e0 ours"],
+      [1592, "Azora et Magnus"]
+    ],
+    "turn": 5,
+    "pv": 69,
+    "epv": -4
+  },
+  "1979": {
+    "date": "07/01/2024 00:27:25",
+    "joueur": "Victorine",
+    "perso": "Estia Ryujin",
+    "map": 35,
+    "cardRarity": 2,
+    "enemy": "Femme Templier",
+    "earnedCoins": 4,
+    "winCards": [
+      [104, "Capitale Heldentod"],
+      [1362, "Potion Perforante"]
+    ],
+    "turn": 31,
+    "pv": 79,
+    "epv": -20
+  },
+  "1980": {
+    "date": "07/01/2024 00:30:43",
+    "joueur": "Victorine",
+    "perso": "Estia Ryujin",
+    "map": 5,
+    "cardRarity": 3,
+    "enemy": "Chevalier de la Curie (Lassar) v2 (Nv 7)",
+    "earnedCoins": 7,
+    "winCards": [
+      [15, "Monts Arides"],
+      [1002, "Lassar - Chevalier Lieutenant"],
+      [1356, "Potion Foudroyante"]
+    ],
+    "turn": 27,
+    "pv": 119,
+    "epv": -13
+  },
+  "1981": {
+    "date": "07/01/2024 01:50:44",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Erida",
+    "map": 12,
+    "cardRarity": 3,
+    "enemy": "Nemelio",
+    "earnedCoins": 11,
+    "winCards": [
+      [36, "For\u00eat de Delphes"],
+      [1005, "Nemelio"],
+      [1250, "Coton Elys\u00e9en"],
+      [1541, "Malvis la cible"]
+    ],
+    "turn": 14,
+    "pv": 88,
+    "epv": -37
+  },
+  "1982": {
+    "date": "07/01/2024 01:53:23",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Erida",
+    "map": 12,
+    "cardRarity": 3,
+    "enemy": "Nemelio",
+    "earnedCoins": 10,
+    "winCards": [
+      [36, "For\u00eat de Delphes"],
+      [1005, "Nemelio"],
+      [1213, "Fleur Lunaire"],
+      [1541, "Malvis la cible"]
+    ],
+    "turn": 11,
+    "pv": 63,
+    "epv": 0
+  },
+  "1983": {
+    "date": "07/01/2024 01:55:03",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Erida",
+    "map": 12,
+    "cardRarity": 3,
+    "enemy": "Nemelio",
+    "earnedCoins": 10,
+    "winCards": [
+      [36, "For\u00eat de Delphes"],
+      [1005, "Nemelio"],
+      [1356, "Potion Foudroyante"],
+      [1509, "Eivor et Nemelio"]
+    ],
+    "turn": 9,
+    "pv": 68,
+    "epv": -3
+  },
+  "1984": {
+    "date": "07/01/2024 01:56:05",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Aradia",
+    "map": 10,
+    "cardRarity": 1,
+    "enemy": "Ogre Solitaire",
+    "earnedCoins": 3,
+    "winCards": [
+      [28, "Plaines Dor\u00e9es"],
+      [1208, "Quartz d'Automne"]
+    ],
+    "turn": 4,
+    "pv": 81,
+    "epv": -14
+  },
+  "1985": {
+    "date": "07/01/2024 01:58:03",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Aradia",
+    "map": 10,
+    "cardRarity": 1,
+    "enemy": "Ogre Solitaire",
+    "earnedCoins": 3,
+    "winCards": [
+      [28, "Plaines Dor\u00e9es"],
+      [1292, "Mine Anti-Personnel"]
+    ],
+    "turn": 12,
+    "pv": 58,
+    "epv": -16
+  },
+  "1986": {
+    "date": "07/01/2024 01:59:21",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Aradia",
+    "map": 10,
+    "cardRarity": 1,
+    "enemy": "Ogre Solitaire",
+    "earnedCoins": 2,
+    "winCards": [
+      [28, "Plaines Dor\u00e9es"],
+      [1301, "Energie Agit\u00e9e"]
+    ],
+    "turn": 8,
+    "pv": 51,
+    "epv": -22
+  },
+  "1987": {
+    "date": "07/01/2024 02:00:19",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Azora",
+    "map": 35,
+    "cardRarity": 1,
+    "enemy": "Ogre Solitaire",
+    "earnedCoins": 3,
+    "winCards": [
+      [103, "Capitale Heldentod"],
+      [1377, "Bois Gel\u00e9"]
+    ],
+    "turn": 6,
+    "pv": 51,
+    "epv": -12
+  },
+  "1988": {
+    "date": "07/01/2024 02:01:35",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Azora",
+    "map": 35,
+    "cardRarity": 1,
+    "enemy": "Magicien Clerc Anuran",
+    "earnedCoins": 6,
+    "winCards": [
+      [103, "Capitale Heldentod"],
+      [1236, "Herbe-miracle"],
+      [1589, "Le Quartier des Plaisirs"]
+    ],
+    "turn": 6,
+    "pv": 99,
+    "epv": -24
+  },
+  "1989": {
+    "date": "07/01/2024 02:02:56",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Azora",
+    "map": 35,
+    "cardRarity": 1,
+    "enemy": "Ogre Solitaire",
+    "earnedCoins": 5,
+    "winCards": [
+      [103, "Capitale Heldentod"],
+      [1258, "Peau de ver"],
+      [1595, "Rad Ed et Clipse"]
+    ],
+    "turn": 5,
+    "pv": 73,
+    "epv": -27
+  },
+  "1990": {
+    "date": "07/01/2024 02:21:27",
+    "joueur": "Victorine",
+    "perso": "Estia Ryujin",
+    "map": 35,
+    "cardRarity": 2,
+    "enemy": "Femme Templier",
+    "earnedCoins": 7,
+    "winCards": [
+      [104, "Capitale Heldentod"],
+      [1300, "Pot d'Invocation"],
+      [1590, "Kibo et les plaisirs"]
+    ],
+    "turn": 19,
+    "pv": 82,
+    "epv": -15
+  },
+  "1991": {
+    "date": "07/01/2024 11:42:02",
+    "joueur": "Hugo",
+    "perso": "Kibo",
+    "map": 6,
+    "cardRarity": 2,
+    "enemy": "Shaman Tuskar",
+    "earnedCoins": 7,
+    "winCards": [
+      [17, "Baie B\u00e9louga"],
+      [1291, "Pi\u00e8ge \u00e0 ours"],
+      [1504, "Draigos et les explications"]
+    ],
+    "turn": 12,
+    "pv": 111,
+    "epv": -35
+  },
+  "1992": {
+    "date": "07/01/2024 11:43:24",
+    "joueur": "Hugo",
+    "perso": "Kibo",
+    "map": 26,
+    "cardRarity": 1,
+    "enemy": "Capitaine de ville",
+    "earnedCoins": 2,
+    "winCards": [
+      [76, "Plaines Fleuries"],
+      [1369, "Ciseau d'Ezur"]
+    ],
+    "turn": 10,
+    "pv": 144,
+    "epv": -6
+  },
+  "1993": {
+    "date": "07/01/2024 13:30:04",
+    "joueur": "Florian",
+    "perso": "Kratos",
+    "map": 33,
+    "cardRarity": 1,
+    "enemy": "Magicienne Heldentod",
+    "earnedCoins": 5,
+    "winCards": [
+      [97, "Plaines du Levant"],
+      [1213, "Fleur Lunaire"],
+      [1571, "Kibo et War"]
+    ],
+    "turn": 12,
+    "pv": 115,
+    "epv": -22
+  },
+  "1994": {
+    "date": "07/01/2024 13:31:36",
+    "joueur": "Florian",
+    "perso": "Kratos",
+    "map": 10,
+    "cardRarity": 1,
+    "enemy": "Garde de la Curie",
+    "earnedCoins": 2,
+    "winCards": [
+      [28, "Plaines Dor\u00e9es"],
+      [1356, "Potion Foudroyante"]
+    ],
+    "turn": 12,
+    "pv": 86,
+    "epv": -10
+  },
+  "1995": {
+    "date": "07/01/2024 13:33:20",
+    "joueur": "Florian",
+    "perso": "Kratos",
+    "map": 1,
+    "cardRarity": 1,
+    "enemy": "Garde de la Curie",
+    "earnedCoins": 5,
+    "winCards": [
+      [1, "Aven"],
+      [1220, "Potion de confusion"],
+      [1538, "Le l\u00e9gendaire bouclier Zuminator"]
+    ],
+    "turn": 14,
+    "pv": 83,
+    "epv": -1
+  },
+  "1996": {
+    "date": "07/01/2024 13:35:08",
+    "joueur": "Florian",
+    "perso": "Sekhmet",
+    "map": 15,
+    "cardRarity": 1,
+    "enemy": "Ankylosaure",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 11,
+    "pv": -7,
+    "epv": 17
+  },
+  "1997": {
+    "date": "07/01/2024 13:36:11",
+    "joueur": "Florian",
+    "perso": "Sekhmet",
+    "map": 15,
+    "cardRarity": 1,
+    "enemy": "Garde Tyrolien",
+    "earnedCoins": 5,
+    "winCards": [
+      [43, "Hautes-terres"],
+      [1239, "Fruit \u00c2mambre"],
+      [1570, "Malvis et Brocoli"]
+    ],
+    "turn": 8,
+    "pv": 39,
+    "epv": -1
+  },
+  "1998": {
+    "date": "07/01/2024 13:38:20",
+    "joueur": "Florian",
+    "perso": "Sekhmet",
+    "map": 15,
+    "cardRarity": 1,
+    "enemy": "Ing\u00e9nieur Zumi",
+    "earnedCoins": 2,
+    "winCards": [
+      [43, "Hautes-terres"],
+      [1358, "Potion Eblouissante"]
+    ],
+    "turn": 7,
+    "pv": 89,
+    "epv": -14
+  },
+  "1999": {
+    "date": "07/01/2024 13:40:40",
+    "joueur": "Florian",
+    "perso": "War",
+    "map": 15,
+    "cardRarity": 3,
+    "enemy": "Voldre",
+    "earnedCoins": 10,
+    "winCards": [
+      [45, "Hautes-terres"],
+      [1004, "Voldre"],
+      [1374, "Ecorce de Bois Sacr\u00e9"],
+      [1522, "Kry\u00e8ri et les b\u00e2tons"]
+    ],
+    "turn": 11,
+    "pv": 73,
+    "epv": -37
+  },
+  "2000": {
+    "date": "07/01/2024 13:42:17",
+    "joueur": "Florian",
+    "perso": "War",
+    "map": 15,
+    "cardRarity": 3,
+    "enemy": "Voldre",
+    "earnedCoins": 10,
+    "winCards": [
+      [45, "Hautes-terres"],
+      [1004, "Voldre"],
+      [1288, "Bombe Glac\u00e9e"],
+      [1552, "Rad Ed et Nyx"]
+    ],
+    "turn": 9,
+    "pv": 62,
+    "epv": 0
+  },
+  "2001": {
+    "date": "07/01/2024 13:44:02",
+    "joueur": "Florian",
+    "perso": "War",
+    "map": 15,
+    "cardRarity": 3,
+    "enemy": "Grand Garde Tyrolien",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 9,
+    "pv": 0,
+    "epv": 5
+  },
+  "2002": {
+    "date": "07/01/2024 13:45:19",
+    "joueur": "Florian",
+    "perso": "Draigos",
+    "map": 15,
+    "cardRarity": 1,
+    "enemy": "Magicien Clerc Anuran",
+    "earnedCoins": 6,
+    "winCards": [
+      [43, "Hautes-terres"],
+      [1207, "Minerai de Stella"],
+      [1522, "Kry\u00e8ri et les b\u00e2tons"]
+    ],
+    "turn": 5,
+    "pv": 50,
+    "epv": -13
+  },
+  "2003": {
+    "date": "07/01/2024 13:47:10",
+    "joueur": "Florian",
+    "perso": "Draigos",
+    "map": 15,
+    "cardRarity": 1,
+    "enemy": "Magicien Clerc Anuran",
+    "earnedCoins": 2,
+    "winCards": [
+      [43, "Hautes-terres"],
+      [1375, "S\u00e9quoia Ancien"]
+    ],
+    "turn": 10,
+    "pv": 37,
+    "epv": -6
+  },
+  "2004": {
+    "date": "07/01/2024 13:48:59",
+    "joueur": "Florian",
+    "perso": "Draigos",
+    "map": 15,
+    "cardRarity": 1,
+    "enemy": "Garde Tyrolien",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 10,
+    "pv": -11,
+    "epv": 5
+  },
+  "2005": {
+    "date": "07/01/2024 13:51:51",
+    "joueur": "Florian",
+    "perso": "Cosmos",
+    "map": 20,
+    "cardRarity": 3,
+    "enemy": "Zumi M\u00e9canique - Douvone",
+    "earnedCoins": 7,
+    "winCards": [
+      [60, "D\u00e9sert du Couchant"],
+      [1006, "Douvone - Zumi M\u00e9canique"],
+      [1357, "Potion Naturelle"]
+    ],
+    "turn": 22,
+    "pv": 12,
+    "epv": -1
+  },
+  "2006": {
+    "date": "07/01/2024 13:55:02",
+    "joueur": "Florian",
+    "perso": "Cosmos",
+    "map": 20,
+    "cardRarity": 3,
+    "enemy": "Zumi M\u00e9canique - Douvone",
+    "earnedCoins": 8,
+    "winCards": [
+      [60, "D\u00e9sert du Couchant"],
+      [1006, "Douvone - Zumi M\u00e9canique"],
+      [1250, "Coton Elys\u00e9en"]
+    ],
+    "turn": 21,
+    "pv": 81,
+    "epv": -7
+  },
+  "2007": {
+    "date": "07/01/2024 13:57:21",
+    "joueur": "Florian",
+    "perso": "Cosmos",
+    "map": 20,
+    "cardRarity": 3,
+    "enemy": "Zumi M\u00e9canique - Douvone",
+    "earnedCoins": 7,
+    "winCards": [
+      [60, "D\u00e9sert du Couchant"],
+      [1006, "Douvone - Zumi M\u00e9canique"],
+      [1211, "Epine de Cactus"]
+    ],
+    "turn": 17,
+    "pv": 73,
+    "epv": -21
+  },
+  "2008": {
+    "date": "07/01/2024 17:11:42",
+    "joueur": "Hugo",
+    "perso": "Kibo",
+    "map": 11,
+    "cardRarity": 1,
+    "enemy": "Gardien d'Amur",
+    "earnedCoins": 2,
+    "winCards": [
+      [31, "Terres des Dunes \u00c9ternelles"],
+      [1363, "Bl\u00e9 brillant"]
+    ],
+    "turn": 10,
+    "pv": 118,
+    "epv": -22
+  },
+  "2009": {
+    "date": "07/01/2024 17:27:41",
+    "joueur": "Cyrille",
+    "perso": "Ainz von gaown",
+    "map": 6,
+    "cardRarity": 1,
+    "enemy": "Pirate aggressif",
+    "earnedCoins": 5,
+    "winCards": [
+      [16, "Baie B\u00e9louga"],
+      [1228, "Fruit-flamme"],
+      [1508, "Les pirates de la Baie"]
+    ],
+    "turn": 8,
+    "pv": 57,
+    "epv": -11
+  },
+  "2010": {
+    "date": "07/01/2024 17:30:25",
+    "joueur": "Cyrille",
+    "perso": "Ainz von gaown",
+    "map": 6,
+    "cardRarity": 2,
+    "enemy": "Crabe carapace de fer",
+    "earnedCoins": 8,
+    "winCards": [
+      [17, "Baie B\u00e9louga"],
+      [1234, "Fleur de l'Esprit"],
+      [1503, "L'Alpaga Propulseur"]
+    ],
+    "turn": 18,
+    "pv": 33,
+    "epv": -29
+  },
+  "2011": {
+    "date": "07/01/2024 17:31:10",
+    "joueur": "Cyrille",
+    "perso": "Ainz von gaown",
+    "map": 6,
+    "cardRarity": 1,
+    "enemy": "Voleur avide",
+    "earnedCoins": 6,
+    "winCards": [
+      [16, "Baie B\u00e9louga"],
+      [1286, "Bombe Brouilleuse"],
+      [1508, "Les pirates de la Baie"]
+    ],
+    "turn": 4,
+    "pv": 63,
+    "epv": -26
+  },
+  "2012": {
+    "date": "07/01/2024 17:34:16",
+    "joueur": "Cyrille",
+    "perso": "Beren nolatary",
+    "map": 6,
+    "cardRarity": 2,
+    "enemy": "Pirate aggressif",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 21,
+    "pv": -11,
+    "epv": 62
+  },
+  "2013": {
+    "date": "07/01/2024 17:37:13",
+    "joueur": "Cyrille",
+    "perso": "Beren nolatary",
+    "map": 6,
+    "cardRarity": 2,
+    "enemy": "Pirate aggressif",
+    "earnedCoins": 4,
+    "winCards": [
+      [17, "Baie B\u00e9louga"],
+      [1204, "Crystal d'Asbi"]
+    ],
+    "turn": 10,
+    "pv": 26,
+    "epv": -20
+  },
+  "2014": {
+    "date": "07/01/2024 23:46:17",
+    "joueur": "Hugo",
+    "perso": "Kibo",
+    "map": 27,
+    "cardRarity": 2,
+    "enemy": "Poisson Abyssal",
+    "earnedCoins": 5,
+    "winCards": [
+      [80, "Falaise des Grands Vents"],
+      [1209, "Fourrure Polaire"]
+    ],
+    "turn": 18,
+    "pv": 52,
+    "epv": -1
+  },
+  "2015": {
+    "date": "07/01/2024 23:47:47",
+    "joueur": "Hugo",
+    "perso": "Kibo",
+    "map": 4,
+    "cardRarity": 2,
+    "enemy": "Magicien Clerc Anuran",
+    "earnedCoins": 8,
+    "winCards": [
+      [11, "For\u00eat Arc-en-Ciel"],
+      [1215, "Jus de larve de reine insecte"],
+      [1568, "\u00c7a va \u00eatre facile"]
+    ],
+    "turn": 10,
+    "pv": 99,
+    "epv": -10
+  },
+  "2016": {
+    "date": "07/01/2024 23:49:09",
+    "joueur": "Hugo",
+    "perso": "Kibo",
+    "map": 3,
+    "cardRarity": 1,
+    "enemy": "Drakai d\u00e9moniste",
+    "earnedCoins": 2,
+    "winCards": [
+      [7, "Colline tranquille"],
+      [1288, "Bombe Glac\u00e9e"]
+    ],
+    "turn": 7,
+    "pv": 96,
+    "epv": -6
+  },
+  "2017": {
+    "date": "08/01/2024 00:02:22",
+    "joueur": "Victorine",
+    "perso": "Malvis",
+    "map": 5,
+    "cardRarity": 3,
+    "enemy": "Chevalier de la Curie (Lassar) v2 (Nv 7)",
+    "earnedCoins": 10,
+    "winCards": [
+      [15, "Monts Arides"],
+      [1002, "Lassar - Chevalier Lieutenant"],
+      [1285, "Bombe Gluante"],
+      [1602, "Lutta et Sekhmet"]
+    ],
+    "turn": 12,
+    "pv": 91,
+    "epv": -28
+  },
+  "2018": {
+    "date": "08/01/2024 00:03:29",
+    "joueur": "Victorine",
+    "perso": "Malvis",
+    "map": 5,
+    "cardRarity": 3,
+    "enemy": "Chevalier de la Curie (Lassar) v2 (Nv 7)",
+    "earnedCoins": 11,
+    "winCards": [
+      [15, "Monts Arides"],
+      [1002, "Lassar - Chevalier Lieutenant"],
+      [1304, "Pens\u00e9e Avide"],
+      [1554, "War la chandelle"]
+    ],
+    "turn": 7,
+    "pv": 102,
+    "epv": -4
+  },
+  "2019": {
+    "date": "08/01/2024 00:05:27",
+    "joueur": "Victorine",
+    "perso": "Malvis",
+    "map": 5,
+    "cardRarity": 3,
+    "enemy": "Chevalier de la Curie (Lassar) v2 (Nv 7)",
+    "earnedCoins": 10,
+    "winCards": [
+      [15, "Monts Arides"],
+      [1002, "Lassar - Chevalier Lieutenant"],
+      [1356, "Potion Foudroyante"],
+      [1554, "War la chandelle"]
+    ],
+    "turn": 9,
+    "pv": 98,
+    "epv": -7
+  },
+  "2020": {
+    "date": "08/01/2024 00:23:05",
+    "joueur": "Rachel",
+    "perso": "Rad Ed",
+    "map": 34,
+    "cardRarity": 3,
+    "enemy": "Caldari - Empereur Insecte",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 48,
+    "pv": -10,
+    "epv": 53
+  },
+  "2021": {
+    "date": "08/01/2024 00:18:41",
+    "joueur": "Victorine",
+    "perso": "Eivor",
+    "map": 34,
+    "cardRarity": 1,
+    "enemy": "DD Ogre mutant",
+    "earnedCoins": 6,
+    "winCards": [
+      [100, "Royaume D\u00e9vast\u00e9"],
+      [1284, "Roche T\u00e9n\u00e8breuse"],
+      [1588, "La possession d'Heldentod III"]
+    ],
+    "turn": 5,
+    "pv": 91,
+    "epv": -14
+  },
+  "2022": {
+    "date": "08/01/2024 00:19:40",
+    "joueur": "Victorine",
+    "perso": "Eivor",
+    "map": 34,
+    "cardRarity": 1,
+    "enemy": "DD Ogre mutant",
+    "earnedCoins": 2,
+    "winCards": [
+      [100, "Royaume D\u00e9vast\u00e9"],
+      [1256, "Crystal liquide"]
+    ],
+    "turn": 6,
+    "pv": 94,
+    "epv": -3
+  },
+  "2023": {
+    "date": "08/01/2024 00:20:45",
+    "joueur": "Victorine",
+    "perso": "Nyx",
+    "map": 35,
+    "cardRarity": 1,
+    "enemy": "Garde Heldentod",
+    "earnedCoins": 2,
+    "winCards": [
+      [103, "Capitale Heldentod"],
+      [1258, "Peau de ver"]
+    ],
+    "turn": 6,
+    "pv": 85,
+    "epv": -7
+  },
+  "2024": {
+    "date": "08/01/2024 01:27:04",
+    "joueur": "Victorine",
+    "perso": "Nyx",
+    "map": 34,
+    "cardRarity": 1,
+    "enemy": "DD Ogre mutant",
+    "earnedCoins": 6,
+    "winCards": [
+      [100, "Royaume D\u00e9vast\u00e9"],
+      [1289, "Bombe Surdos\u00e9e"],
+      [1591, "Magie Noire de l'Empire"]
+    ],
+    "turn": 4,
+    "pv": 73,
+    "epv": -9
+  },
+  "2025": {
+    "date": "08/01/2024 01:28:11",
+    "joueur": "Victorine",
+    "perso": "Nyx",
+    "map": 34,
+    "cardRarity": 1,
+    "enemy": "DD Ogre mutant",
+    "earnedCoins": 4,
+    "winCards": [
+      [100, "Royaume D\u00e9vast\u00e9"],
+      [1251, "Coton Royal"]
+    ],
+    "turn": 7,
+    "pv": 47,
+    "epv": -25
+  },
+  "2026": {
+    "date": "08/01/2024 01:30:06",
+    "joueur": "Victorine",
+    "perso": "Lutta",
+    "map": 34,
+    "cardRarity": 1,
+    "enemy": "DD Ogre mutant",
+    "earnedCoins": 6,
+    "winCards": [
+      [100, "Royaume D\u00e9vast\u00e9"],
+      [1250, "Coton Elys\u00e9en"],
+      [1599, "La manipulation des H\u00e9ritiers"]
+    ],
+    "turn": 13,
+    "pv": 83,
+    "epv": -11
+  },
+  "2027": {
+    "date": "08/01/2024 01:31:42",
+    "joueur": "Victorine",
+    "perso": "Lutta",
+    "map": 34,
+    "cardRarity": 1,
+    "enemy": "DD Ogre mutant",
+    "earnedCoins": 5,
+    "winCards": [
+      [100, "Royaume D\u00e9vast\u00e9"],
+      [1363, "Bl\u00e9 brillant"],
+      [1598, "Les Chev. Dragons et la guillotine"]
+    ],
+    "turn": 7,
+    "pv": 86,
+    "epv": -6
+  },
+  "2028": {
+    "date": "08/01/2024 01:32:38",
+    "joueur": "Victorine",
+    "perso": "Lutta",
+    "map": 35,
+    "cardRarity": 1,
+    "enemy": "Garde Heldentod",
+    "earnedCoins": 5,
+    "winCards": [
+      [103, "Capitale Heldentod"],
+      [1366, "Chair de Crabe"],
+      [1589, "Le Quartier des Plaisirs"]
+    ],
+    "turn": 5,
+    "pv": 57,
+    "epv": -8
+  },
+  "2029": {
+    "date": "08/01/2024 01:35:45",
+    "joueur": "Victorine",
+    "perso": "Estia Ryujin",
+    "map": 35,
+    "cardRarity": 2,
+    "enemy": "Femme Templier",
+    "earnedCoins": 8,
+    "winCards": [
+      [104, "Capitale Heldentod"],
+      [1234, "Fleur de l'Esprit"],
+      [1594, "War et Vidal"]
+    ],
+    "turn": 12,
+    "pv": 135,
+    "epv": -22
+  },
+  "2030": {
+    "date": "08/01/2024 01:39:57",
+    "joueur": "Victorine",
+    "perso": "Estia Ryujin",
+    "map": 5,
+    "cardRarity": 3,
+    "enemy": "Chevalier de la Curie (Lassar) v2 (Nv 7)",
+    "earnedCoins": 7,
+    "winCards": [
+      [15, "Monts Arides"],
+      [1002, "Lassar - Chevalier Lieutenant"],
+      [1260, "Peau de Smilodon"]
+    ],
+    "turn": 23,
+    "pv": 115,
+    "epv": -13
+  },
+  "2031": {
+    "date": "08/01/2024 01:43:07",
+    "joueur": "Victorine",
+    "perso": "Estia Ryujin",
+    "map": 5,
+    "cardRarity": 3,
+    "enemy": "Chevalier de la Curie (Lassar) v2 (Nv 7)",
+    "earnedCoins": 7,
+    "winCards": [
+      [15, "Monts Arides"],
+      [1002, "Lassar - Chevalier Lieutenant"],
+      [1359, "Potion T\u00e9n\u00e8breuse"]
+    ],
+    "turn": 22,
+    "pv": 104,
+    "epv": -16
+  },
+  "2032": {
+    "date": "08/01/2024 12:38:39",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Erida",
+    "map": 12,
+    "cardRarity": 3,
+    "enemy": "Nemelio",
+    "earnedCoins": 10,
+    "winCards": [
+      [36, "For\u00eat de Delphes"],
+      [1005, "Nemelio"],
+      [1300, "Pot d'Invocation"],
+      [1541, "Malvis la cible"]
+    ],
+    "turn": 7,
+    "pv": 78,
+    "epv": -31
+  },
+  "2033": {
+    "date": "08/01/2024 12:42:13",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Erida",
+    "map": 12,
+    "cardRarity": 3,
+    "enemy": "Nemelio",
+    "earnedCoins": 7,
+    "winCards": [
+      [36, "For\u00eat de Delphes"],
+      [1005, "Nemelio"],
+      [1222, "Concoction Anuran"]
+    ],
+    "turn": 20,
+    "pv": 61,
+    "epv": -32
+  },
+  "2034": {
+    "date": "08/01/2024 12:43:59",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Erida",
+    "map": 12,
+    "cardRarity": 3,
+    "enemy": "Nemelio",
+    "earnedCoins": 7,
+    "winCards": [
+      [36, "For\u00eat de Delphes"],
+      [1005, "Nemelio"],
+      [1222, "Concoction Anuran"]
+    ],
+    "turn": 12,
+    "pv": 90,
+    "epv": -23
+  },
+  "2035": {
+    "date": "08/01/2024 12:45:16",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Aradia",
+    "map": 5,
+    "cardRarity": 1,
+    "enemy": "Ver des sables",
+    "earnedCoins": 3,
+    "winCards": [
+      [13, "Monts Arides"],
+      [1350, "Parchemin de Puissance"]
+    ],
+    "turn": 6,
+    "pv": 67,
+    "epv": -5
+  },
+  "2036": {
+    "date": "08/01/2024 12:46:56",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Aradia",
+    "map": 5,
+    "cardRarity": 1,
+    "enemy": "Ogre Solitaire",
+    "earnedCoins": 2,
+    "winCards": [
+      [13, "Monts Arides"],
+      [1214, "Vigne Pourpre"]
+    ],
+    "turn": 13,
+    "pv": 29,
+    "epv": -6
+  },
+  "2037": {
+    "date": "08/01/2024 13:11:28",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Aradia",
+    "map": 5,
+    "cardRarity": 1,
+    "enemy": "Assassin Zumi",
+    "earnedCoins": 6,
+    "winCards": [
+      [13, "Monts Arides"],
+      [1284, "Roche T\u00e9n\u00e8breuse"],
+      [1554, "War la chandelle"]
+    ],
+    "turn": 6,
+    "pv": 75,
+    "epv": -19
+  },
+  "2038": {
+    "date": "08/01/2024 13:12:37",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Azora",
+    "map": 35,
+    "cardRarity": 1,
+    "enemy": "Magicien Clerc Anuran",
+    "earnedCoins": 5,
+    "winCards": [
+      [103, "Capitale Heldentod"],
+      [1357, "Potion Naturelle"],
+      [1594, "War et Vidal"]
+    ],
+    "turn": 8,
+    "pv": 97,
+    "epv": -20
+  },
+  "2039": {
+    "date": "08/01/2024 13:13:20",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Azora",
+    "map": 35,
+    "cardRarity": 1,
+    "enemy": "Magicien Clerc Anuran",
+    "earnedCoins": 5,
+    "winCards": [
+      [103, "Capitale Heldentod"],
+      [1256, "Crystal liquide"],
+      [1592, "Azora et Magnus"]
+    ],
+    "turn": 3,
+    "pv": 110,
+    "epv": -4
+  },
+  "2040": {
+    "date": "08/01/2024 13:14:11",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Azora",
+    "map": 35,
+    "cardRarity": 1,
+    "enemy": "Assassin Zumi",
+    "earnedCoins": 6,
+    "winCards": [
+      [103, "Capitale Heldentod"],
+      [1376, "Bois Ecarlate"],
+      [1597, "Estia et les favoris"]
+    ],
+    "turn": 4,
+    "pv": 84,
+    "epv": -19
+  },
+  "2041": {
+    "date": "08/01/2024 14:33:48",
+    "joueur": "Florian",
+    "perso": "Kratos",
+    "map": 15,
+    "cardRarity": 1,
+    "enemy": "Taureau Pr\u00e9cieux",
+    "earnedCoins": 2,
+    "winCards": [
+      [43, "Hautes-terres"],
+      [1232, "Tulipe Th\u00e9rapeutique"]
+    ],
+    "turn": 12,
+    "pv": 115,
+    "epv": -8
+  },
+  "2042": {
+    "date": "08/01/2024 14:34:53",
+    "joueur": "Florian",
+    "perso": "Kratos",
+    "map": 15,
+    "cardRarity": 1,
+    "enemy": "Taureau Pr\u00e9cieux",
+    "earnedCoins": 5,
+    "winCards": [
+      [43, "Hautes-terres"],
+      [1366, "Chair de Crabe"],
+      [1511, "Erida et ... Framboise ?"]
+    ],
+    "turn": 8,
+    "pv": 120,
+    "epv": -12
+  },
+  "2043": {
+    "date": "08/01/2024 14:36:50",
+    "joueur": "Florian",
+    "perso": "Kratos",
+    "map": 15,
+    "cardRarity": 1,
+    "enemy": "Corbeau Noir",
+    "earnedCoins": 5,
+    "winCards": [
+      [43, "Hautes-terres"],
+      [1259, "Peau de Smilodon"],
+      [1552, "Rad Ed et Nyx"]
+    ],
+    "turn": 9,
+    "pv": 103,
+    "epv": -5
+  },
+  "2044": {
+    "date": "08/01/2024 14:37:39",
+    "joueur": "Florian",
+    "perso": "Sekhmet",
+    "map": 15,
+    "cardRarity": 1,
+    "enemy": "Ing\u00e9nieur Zumi",
+    "earnedCoins": 5,
+    "winCards": [
+      [43, "Hautes-terres"],
+      [1227, "Fruit Volta"],
+      [1511, "Erida et ... Framboise ?"]
+    ],
+    "turn": 4,
+    "pv": 102,
+    "epv": -7
+  },
+  "2045": {
+    "date": "08/01/2024 14:42:46",
+    "joueur": "Florian",
+    "perso": "Sekhmet",
+    "map": 15,
+    "cardRarity": 1,
+    "enemy": "Taureau Pr\u00e9cieux",
+    "earnedCoins": 2,
+    "winCards": [
+      [43, "Hautes-terres"],
+      [1210, "Germe de Champigno\u00efde"]
+    ],
+    "turn": 8,
+    "pv": 90,
+    "epv": -16
+  },
+  "2046": {
+    "date": "08/01/2024 14:49:27",
+    "joueur": "Florian",
+    "perso": "Sekhmet",
+    "map": 15,
+    "cardRarity": 1,
+    "enemy": "Corbeau Noir",
+    "earnedCoins": 6,
+    "winCards": [
+      [43, "Hautes-terres"],
+      [1286, "Bombe Brouilleuse"],
+      [1511, "Erida et ... Framboise ?"]
+    ],
+    "turn": 5,
+    "pv": 99,
+    "epv": -17
+  },
+  "2047": {
+    "date": "08/01/2024 14:51:08",
+    "joueur": "Florian",
+    "perso": "War",
+    "map": 15,
+    "cardRarity": 3,
+    "enemy": "Grand Garde Tyrolien",
+    "earnedCoins": 8,
+    "winCards": [
+      [45, "Hautes-terres"],
+      [1036, "Grand Garde Tyrolien"],
+      [1234, "Fleur de l'Esprit"]
+    ],
+    "turn": 12,
+    "pv": 31,
+    "epv": -44
+  },
+  "2048": {
+    "date": "08/01/2024 14:53:38",
+    "joueur": "Florian",
+    "perso": "War",
+    "map": 15,
+    "cardRarity": 3,
+    "enemy": "Voldre",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 16,
+    "pv": -17,
+    "epv": 5
+  },
+  "2049": {
+    "date": "08/01/2024 14:55:41",
+    "joueur": "Florian",
+    "perso": "War",
+    "map": 15,
+    "cardRarity": 3,
+    "enemy": "Grand Garde Tyrolien",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 9,
+    "pv": -4,
+    "epv": 28
+  },
+  "2050": {
+    "date": "08/01/2024 14:56:30",
+    "joueur": "Florian",
+    "perso": "Draigos",
+    "map": 15,
+    "cardRarity": 1,
+    "enemy": "Ankylosaure",
+    "earnedCoins": 5,
+    "winCards": [
+      [43, "Hautes-terres"],
+      [1223, "Compl\u00e9ment Vitamin\u00e9"],
+      [1570, "Malvis et Brocoli"]
+    ],
+    "turn": 5,
+    "pv": 38,
+    "epv": -27
+  },
+  "2051": {
+    "date": "08/01/2024 14:57:14",
+    "joueur": "Florian",
+    "perso": "Draigos",
+    "map": 7,
+    "cardRarity": 1,
+    "enemy": "Magicien Clerc Anuran",
+    "earnedCoins": 6,
+    "winCards": [
+      [19, "Bourbes"],
+      [1206, "Minerai Arc-en-Ciel"],
+      [1523, "Kry\u00e8ri et la vantardise"]
+    ],
+    "turn": 5,
+    "pv": 52,
+    "epv": -30
+  },
+  "2052": {
+    "date": "08/01/2024 14:58:00",
+    "joueur": "Florian",
+    "perso": "Draigos",
+    "map": 7,
+    "cardRarity": 1,
+    "enemy": "Garde de la Curie",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 5,
+    "pv": -1,
+    "epv": 89
+  },
+  "2053": {
+    "date": "08/01/2024 14:59:35",
+    "joueur": "Florian",
+    "perso": "Cosmos",
+    "map": 20,
+    "cardRarity": 3,
+    "enemy": "Zumi M\u00e9canique - Douvone",
+    "earnedCoins": 10,
+    "winCards": [
+      [60, "D\u00e9sert du Couchant"],
+      [1006, "Douvone - Zumi M\u00e9canique"],
+      [1363, "Bl\u00e9 brillant"],
+      [1577, "Les \u00e9nigmes Zumis"]
+    ],
+    "turn": 11,
+    "pv": 58,
+    "epv": -12
+  },
+  "2054": {
+    "date": "08/01/2024 15:02:40",
+    "joueur": "Florian",
+    "perso": "Cosmos",
+    "map": 20,
+    "cardRarity": 3,
+    "enemy": "Zumi M\u00e9canique - Douvone",
+    "earnedCoins": 7,
+    "winCards": [
+      [60, "D\u00e9sert du Couchant"],
+      [1006, "Douvone - Zumi M\u00e9canique"],
+      [1217, "Potion d'encaissement"]
+    ],
+    "turn": 20,
+    "pv": 34,
+    "epv": 0
+  },
+  "2055": {
+    "date": "08/01/2024 15:04:05",
+    "joueur": "Florian",
+    "perso": "Cosmos",
+    "map": 20,
+    "cardRarity": 3,
+    "enemy": "Zumi M\u00e9canique - Douvone",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 11,
+    "pv": -19,
+    "epv": 46
+  },
+  "2056": {
+    "date": "09/01/2024 08:09:00",
+    "joueur": "Victorine",
+    "perso": "Malvis",
+    "map": 5,
+    "cardRarity": 3,
+    "enemy": "Chevalier de la Curie (Lassar) v2 (Nv 7)",
+    "earnedCoins": 9,
+    "winCards": [
+      [15, "Monts Arides"],
+      [1002, "Lassar - Chevalier Lieutenant"],
+      [1365, "Bl\u00e9 cramoisie"]
+    ],
+    "turn": 6,
+    "pv": 116,
+    "epv": -38
+  },
+  "2057": {
+    "date": "09/01/2024 08:10:45",
+    "joueur": "Victorine",
+    "perso": "Malvis",
+    "map": 5,
+    "cardRarity": 3,
+    "enemy": "Dragon Terrestre",
+    "earnedCoins": 8,
+    "winCards": [
+      [15, "Monts Arides"],
+      [1025, "\"Clipse\" - Dragon Terrestre"],
+      [1249, "Coton Etoil\u00e9"]
+    ],
+    "turn": 12,
+    "pv": 21,
+    "epv": -7
+  },
+  "2058": {
+    "date": "09/01/2024 08:15:06",
+    "joueur": "Victorine",
+    "perso": "Malvis",
+    "map": 5,
+    "cardRarity": 3,
+    "enemy": "Chevalier de la Curie (Lassar) v2 (Nv 7)",
+    "earnedCoins": 11,
+    "winCards": [
+      [15, "Monts Arides"],
+      [1002, "Lassar - Chevalier Lieutenant"],
+      [1283, "Poudre de Feu-follet"],
+      [1607, "Cyritsu agent secret"]
+    ],
+    "turn": 5,
+    "pv": 81,
+    "epv": -21
+  },
+  "2059": {
+    "date": "09/01/2024 10:24:32",
+    "joueur": "Victorine",
+    "perso": "Eivor",
+    "map": 7,
+    "cardRarity": 1,
+    "enemy": "Champigno\u00efde magique",
+    "earnedCoins": 2,
+    "winCards": [
+      [19, "Bourbes"],
+      [1217, "Potion d'encaissement"]
+    ],
+    "turn": 4,
+    "pv": 87,
+    "epv": -20
+  },
+  "2060": {
+    "date": "09/01/2024 10:25:40",
+    "joueur": "Victorine",
+    "perso": "Eivor",
+    "map": 7,
+    "cardRarity": 1,
+    "enemy": "Esprit de l'Abysse",
+    "earnedCoins": 5,
+    "winCards": [
+      [19, "Bourbes"],
+      [1259, "Peau de Smilodon"],
+      [1521, "Nyx et Rumbledore"]
+    ],
+    "turn": 6,
+    "pv": 92,
+    "epv": -8
+  },
+  "2061": {
+    "date": "09/01/2024 10:26:30",
+    "joueur": "Victorine",
+    "perso": "Eivor",
+    "map": 1,
+    "cardRarity": 1,
+    "enemy": "Garde de la Curie",
+    "earnedCoins": 6,
+    "winCards": [
+      [1, "Aven"],
+      [1304, "Pens\u00e9e Avide"],
+      [1551, "Kibo et Botassius"]
+    ],
+    "turn": 6,
+    "pv": 83,
+    "epv": -20
+  },
+  "2062": {
+    "date": "09/01/2024 12:04:01",
+    "joueur": "Victorine",
+    "perso": "Nyx",
+    "map": 1,
+    "cardRarity": 1,
+    "enemy": "Garde de la Curie",
+    "earnedCoins": 5,
+    "winCards": [
+      [1, "Aven"],
+      [1363, "Bl\u00e9 brillant"],
+      [1538, "Le l\u00e9gendaire bouclier Zuminator"]
+    ],
+    "turn": 5,
+    "pv": 66,
+    "epv": -33
+  },
+  "2063": {
+    "date": "09/01/2024 12:12:40",
+    "joueur": "Victorine",
+    "perso": "Nyx",
+    "map": 1,
+    "cardRarity": 1,
+    "enemy": "Garde de la Curie",
+    "earnedCoins": 5,
+    "winCards": [
+      [1, "Aven"],
+      [1221, "Potion Paillettes"],
+      [1531, "Rad Ed et la malchance"]
+    ],
+    "turn": 9,
+    "pv": 56,
+    "epv": -26
+  },
+  "2064": {
+    "date": "09/01/2024 12:18:39",
+    "joueur": "Victorine",
+    "perso": "Nyx",
+    "map": 1,
+    "cardRarity": 1,
+    "enemy": "Garde de la Curie",
+    "earnedCoins": 5,
+    "winCards": [
+      [1, "Aven"],
+      [1285, "Bombe Gluante"],
+      [1606, "Veyda et les enfants"]
+    ],
+    "turn": 8,
+    "pv": 60,
+    "epv": -7
+  },
+  "2065": {
+    "date": "09/01/2024 12:32:50",
+    "joueur": "Victorine",
+    "perso": "Lutta",
+    "map": 1,
+    "cardRarity": 1,
+    "enemy": "Garde de la Curie",
+    "earnedCoins": 2,
+    "winCards": [
+      [1, "Aven"],
+      [1282, "Bombe Impacte"]
+    ],
+    "turn": 10,
+    "pv": 77,
+    "epv": -13
+  },
+  "2066": {
+    "date": "09/01/2024 12:36:59",
+    "joueur": "Victorine",
+    "perso": "Estia Ryujin",
+    "map": 1,
+    "cardRarity": 3,
+    "enemy": "Chevalier de la Curie (Lassar) v2 (Nv 7)",
+    "earnedCoins": 11,
+    "winCards": [
+      [3, "Aven"],
+      [1002, "Lassar - Chevalier Lieutenant"],
+      [1349, "Parchemin de Garde"],
+      [1551, "Kibo et Botassius"]
+    ],
+    "turn": 29,
+    "pv": 51,
+    "epv": -3
+  },
+  "2067": {
+    "date": "09/01/2024 12:37:53",
+    "joueur": "Victorine",
+    "perso": "Lutta",
+    "map": 7,
+    "cardRarity": 1,
+    "enemy": "Tortue terrestre",
+    "earnedCoins": 5,
+    "winCards": [
+      [19, "Bourbes"],
+      [1218, "Potion de concentration"],
+      [1518, "Nyx et les Bourbes"]
+    ],
+    "turn": 4,
+    "pv": 79,
+    "epv": -1
+  },
+  "2068": {
+    "date": "09/01/2024 12:39:10",
+    "joueur": "Victorine",
+    "perso": "Lutta",
+    "map": 7,
+    "cardRarity": 1,
+    "enemy": "Champigno\u00efde magique",
+    "earnedCoins": 5,
+    "winCards": [
+      [19, "Bourbes"],
+      [1237, "Herbe C\u00e9leste"],
+      [1545, "Brocoli le sauveur"]
+    ],
+    "turn": 6,
+    "pv": 100,
+    "epv": -9
+  },
+  "2069": {
+    "date": "09/01/2024 12:56:24",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Erida",
+    "map": 12,
+    "cardRarity": 3,
+    "enemy": "Nemelio",
+    "earnedCoins": 9,
+    "winCards": [
+      [36, "For\u00eat de Delphes"],
+      [1005, "Nemelio"],
+      [1365, "Bl\u00e9 cramoisie"]
+    ],
+    "turn": 12,
+    "pv": 69,
+    "epv": -34
+  },
+  "2070": {
+    "date": "09/01/2024 12:58:41",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Erida",
+    "map": 12,
+    "cardRarity": 3,
+    "enemy": "Nemelio",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 12,
+    "pv": -2,
+    "epv": 29
+  },
+  "2071": {
+    "date": "09/01/2024 13:00:34",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Erida",
+    "map": 12,
+    "cardRarity": 3,
+    "enemy": "Nemelio",
+    "earnedCoins": 7,
+    "winCards": [
+      [36, "For\u00eat de Delphes"],
+      [1005, "Nemelio"],
+      [1219, "Potion de puissance"]
+    ],
+    "turn": 11,
+    "pv": 77,
+    "epv": -39
+  },
+  "2072": {
+    "date": "09/01/2024 13:01:25",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Aradia",
+    "map": 5,
+    "cardRarity": 1,
+    "enemy": "Garde de ville",
+    "earnedCoins": 6,
+    "winCards": [
+      [13, "Monts Arides"],
+      [1238, "Potion de Soin Am\u00e9lior\u00e9"],
+      [1553, "Kibo et Vimira"]
+    ],
+    "turn": 6,
+    "pv": 78,
+    "epv": -7
+  },
+  "2073": {
+    "date": "09/01/2024 13:04:00",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Aradia",
+    "map": 5,
+    "cardRarity": 1,
+    "enemy": "Ancien Garde",
+    "earnedCoins": 2,
+    "winCards": [
+      [13, "Monts Arides"],
+      [1370, "Orbe Noire"]
+    ],
+    "turn": 13,
+    "pv": 64,
+    "epv": -10
+  },
+  "2074": {
+    "date": "09/01/2024 13:04:46",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Aradia",
+    "map": 5,
+    "cardRarity": 1,
+    "enemy": "Ing\u00e9nieur Zumi",
+    "earnedCoins": 2,
+    "winCards": [
+      [13, "Monts Arides"],
+      [1255, "Ecaille d'Ankylosaure"]
+    ],
+    "turn": 5,
+    "pv": 86,
+    "epv": -20
+  },
+  "2075": {
+    "date": "09/01/2024 13:05:32",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Azora",
+    "map": 35,
+    "cardRarity": 1,
+    "enemy": "Ogre Solitaire",
+    "earnedCoins": 6,
+    "winCards": [
+      [103, "Capitale Heldentod"],
+      [1215, "Jus de larve de reine insecte"],
+      [1592, "Azora et Magnus"]
+    ],
+    "turn": 5,
+    "pv": 110,
+    "epv": -3
+  },
+  "2076": {
+    "date": "09/01/2024 13:06:51",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Azora",
+    "map": 35,
+    "cardRarity": 1,
+    "enemy": "Ing\u00e9nieur Zumi",
+    "earnedCoins": 5,
+    "winCards": [
+      [103, "Capitale Heldentod"],
+      [1219, "Potion de puissance"],
+      [1572, "Le groupe et l'Empereur"]
+    ],
+    "turn": 10,
+    "pv": 77,
+    "epv": -28
+  },
+  "2077": {
+    "date": "09/01/2024 13:07:51",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Azora",
+    "map": 35,
+    "cardRarity": 1,
+    "enemy": "Ing\u00e9nieur Zumi",
+    "earnedCoins": 5,
+    "winCards": [
+      [103, "Capitale Heldentod"],
+      [1261, "Peau de Tortue"],
+      [1592, "Azora et Magnus"]
+    ],
+    "turn": 3,
+    "pv": 110,
+    "epv": 0
+  },
+  "2078": {
+    "date": "09/01/2024 16:11:13",
+    "joueur": "Victorine",
+    "perso": "Estia Ryujin",
+    "map": 1,
+    "cardRarity": 3,
+    "enemy": "Chevalier de la Curie (Lassar) v2 (Nv 7)",
+    "earnedCoins": 10,
+    "winCards": [
+      [3, "Aven"],
+      [1002, "Lassar - Chevalier Lieutenant"],
+      [1233, "Plante des \u00e2mes"],
+      [1538, "Le l\u00e9gendaire bouclier Zuminator"]
+    ],
+    "turn": 25,
+    "pv": 104,
+    "epv": -14
+  },
+  "2079": {
+    "date": "09/01/2024 18:22:46",
+    "joueur": "Victorine",
+    "perso": "Estia Ryujin",
+    "map": 1,
+    "cardRarity": 3,
+    "enemy": "Chevalier de la Curie (Lassar) v2 (Nv 7)",
+    "earnedCoins": 7,
+    "winCards": [
+      [3, "Aven"],
+      [1002, "Lassar - Chevalier Lieutenant"],
+      [1370, "Orbe Noire"]
+    ],
+    "turn": 18,
+    "pv": 80,
+    "epv": -12
+  },
+  "2080": {
+    "date": "09/01/2024 19:58:40",
+    "joueur": "Hugo",
+    "perso": "Kibo",
+    "map": 13,
+    "cardRarity": 2,
+    "enemy": "Griffon Cendr\u00e9",
+    "earnedCoins": 7,
+    "winCards": [
+      [38, "Pic de Noireflammes"],
+      [1217, "Potion d'encaissement"],
+      [1530, "War et les comp\u00e9tences"]
+    ],
+    "turn": 17,
+    "pv": 56,
+    "epv": -8
+  },
+  "2081": {
+    "date": "09/01/2024 20:58:54",
+    "joueur": "Hugo",
+    "perso": "Kibo",
+    "map": 7,
+    "cardRarity": 2,
+    "enemy": "Esprit de Crystal",
+    "earnedCoins": 5,
+    "winCards": [
+      [20, "Bourbes"],
+      [1364, "Bl\u00e9 luisant"]
+    ],
+    "turn": 22,
+    "pv": 60,
+    "epv": -3
+  },
+  "2082": {
+    "date": "09/01/2024 21:02:18",
+    "joueur": "Hugo",
+    "perso": "Kibo",
+    "map": 1,
+    "cardRarity": 1,
+    "enemy": "Garde de la Curie",
+    "earnedCoins": 2,
+    "winCards": [
+      [1, "Aven"],
+      [1302, "Pens\u00e9e Terrifi\u00e9e"]
+    ],
+    "turn": 13,
+    "pv": 113,
+    "epv": -5
+  },
+  "2083": {
+    "date": "09/01/2024 21:03:16",
+    "joueur": "Hugo",
+    "perso": "Kibo",
+    "map": 32,
+    "cardRarity": 1,
+    "enemy": "Pangolin de Crystal",
+    "earnedCoins": 5,
+    "winCards": [
+      [94, "Vall\u00e9e de Vulcain"],
+      [1210, "Germe de Champigno\u00efde"],
+      [1562, "Kibo et les R\u00e9sum\u00e9s"]
+    ],
+    "turn": 6,
+    "pv": 125,
+    "epv": -13
+  },
+  "2084": {
+    "date": "10/01/2024 01:00:42",
+    "joueur": "Victorine",
+    "perso": "Eivor",
+    "map": 29,
+    "cardRarity": 1,
+    "enemy": "L\u00e9zard \u00e0 collerette",
+    "earnedCoins": 5,
+    "winCards": [
+      [85, "C\u00f4te de Hurlevent"],
+      [1202, "Acier Volcanique"],
+      [1582, "Cosmos et la p\u00eache"]
+    ],
+    "turn": 7,
+    "pv": 76,
+    "epv": -30
+  },
+  "2085": {
+    "date": "10/01/2024 01:01:46",
+    "joueur": "Victorine",
+    "perso": "Eivor",
+    "map": 29,
+    "cardRarity": 1,
+    "enemy": "L\u00e9zard \u00e0 collerette",
+    "earnedCoins": 3,
+    "winCards": [
+      [85, "C\u00f4te de Hurlevent"],
+      [1236, "Herbe-miracle"]
+    ],
+    "turn": 8,
+    "pv": 31,
+    "epv": -9
+  },
+  "2086": {
+    "date": "10/01/2024 01:02:34",
+    "joueur": "Victorine",
+    "perso": "Eivor",
+    "map": 29,
+    "cardRarity": 1,
+    "enemy": "L\u00e9zard \u00e0 collerette",
+    "earnedCoins": 3,
+    "winCards": [
+      [85, "C\u00f4te de Hurlevent"],
+      [1205, "Crystal d'Asbi raffin\u00e9"]
+    ],
+    "turn": 5,
+    "pv": 76,
+    "epv": -10
+  },
+  "2087": {
+    "date": "10/01/2024 01:05:06",
+    "joueur": "Victorine",
+    "perso": "Malvis",
+    "map": 1,
+    "cardRarity": 3,
+    "enemy": "Chevalier de la Curie (Lassar) v2 (Nv 7)",
+    "earnedCoins": 11,
+    "winCards": [
+      [3, "Aven"],
+      [1002, "Lassar - Chevalier Lieutenant"],
+      [1364, "Bl\u00e9 luisant"],
+      [1606, "Veyda et les enfants"]
+    ],
+    "turn": 12,
+    "pv": 85,
+    "epv": -60
+  },
+  "2088": {
+    "date": "10/01/2024 01:07:14",
+    "joueur": "Victorine",
+    "perso": "Malvis",
+    "map": 1,
+    "cardRarity": 3,
+    "enemy": "Chevalier de la Curie (Lassar) v2 (Nv 7)",
+    "earnedCoins": 10,
+    "winCards": [
+      [3, "Aven"],
+      [1002, "Lassar - Chevalier Lieutenant"],
+      [1239, "Fruit \u00c2mambre"],
+      [1542, "Malvis et le Loukoum"]
+    ],
+    "turn": 5,
+    "pv": 84,
+    "epv": -2
+  },
+  "2089": {
+    "date": "10/01/2024 01:09:46",
+    "joueur": "Victorine",
+    "perso": "Malvis",
+    "map": 7,
+    "cardRarity": 3,
+    "enemy": "Rumbledore (le vrai)",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 10,
+    "pv": -27,
+    "epv": 55
+  },
+  "2090": {
+    "date": "10/01/2024 11:18:52",
+    "joueur": "Hugo",
+    "perso": "Kibo",
+    "map": 22,
+    "cardRarity": 2,
+    "enemy": "Mante Cyclope",
+    "earnedCoins": 5,
+    "winCards": [
+      [65, "For\u00eat Ensorcel\u00e9e"],
+      [1283, "Poudre de Feu-follet"]
+    ],
+    "turn": 24,
+    "pv": 9,
+    "epv": -11
+  },
+  "2091": {
+    "date": "10/01/2024 11:20:56",
+    "joueur": "Hugo",
+    "perso": "Kibo",
+    "map": 14,
+    "cardRarity": 2,
+    "enemy": "Tortue pr\u00e9historique",
+    "earnedCoins": 8,
+    "winCards": [
+      [41, "Marais D\u00e9cr\u00e9pits"],
+      [1364, "Bl\u00e9 luisant"],
+      [1513, "Cosmos et Kyle"]
+    ],
+    "turn": 12,
+    "pv": 61,
+    "epv": 0
+  },
+  "2092": {
+    "date": "10/01/2024 12:42:49",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Erida",
+    "map": 12,
+    "cardRarity": 3,
+    "enemy": "Nemelio",
+    "earnedCoins": 11,
+    "winCards": [
+      [36, "For\u00eat de Delphes"],
+      [1005, "Nemelio"],
+      [1206, "Minerai Arc-en-Ciel"],
+      [1569, "Pas l'ennemi attendu"]
+    ],
+    "turn": 9,
+    "pv": 104,
+    "epv": -32
+  },
+  "2093": {
+    "date": "10/01/2024 12:46:09",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Erida",
+    "map": 12,
+    "cardRarity": 3,
+    "enemy": "Nemelio",
+    "earnedCoins": 11,
+    "winCards": [
+      [36, "For\u00eat de Delphes"],
+      [1005, "Nemelio"],
+      [1207, "Minerai de Stella"],
+      [1509, "Eivor et Nemelio"]
+    ],
+    "turn": 18,
+    "pv": 109,
+    "epv": -32
+  },
+  "2094": {
+    "date": "10/01/2024 12:49:35",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Erida",
+    "map": 12,
+    "cardRarity": 3,
+    "enemy": "Nemelio",
+    "earnedCoins": 7,
+    "winCards": [
+      [36, "For\u00eat de Delphes"],
+      [1005, "Nemelio"],
+      [1213, "Fleur Lunaire"]
+    ],
+    "turn": 14,
+    "pv": 99,
+    "epv": -23
+  },
+  "2095": {
+    "date": "10/01/2024 12:51:13",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Aradia",
+    "map": 5,
+    "cardRarity": 1,
+    "enemy": "Drakai d\u00e9moniste",
+    "earnedCoins": 6,
+    "winCards": [
+      [13, "Monts Arides"],
+      [1377, "Bois Gel\u00e9"],
+      [1603, "Poisseux et Lucius"]
+    ],
+    "turn": 10,
+    "pv": 70,
+    "epv": -4
+  },
+  "2096": {
+    "date": "10/01/2024 12:52:51",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Aradia",
+    "map": 5,
+    "cardRarity": 1,
+    "enemy": "Ing\u00e9nieur Zumi",
+    "earnedCoins": 3,
+    "winCards": [
+      [13, "Monts Arides"],
+      [1208, "Quartz d'Automne"]
+    ],
+    "turn": 10,
+    "pv": 69,
+    "epv": -1
+  },
+  "2097": {
+    "date": "10/01/2024 12:53:36",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Aradia",
+    "map": 5,
+    "cardRarity": 1,
+    "enemy": "Ancien Garde",
+    "earnedCoins": 5,
+    "winCards": [
+      [13, "Monts Arides"],
+      [1259, "Peau de Smilodon"],
+      [1602, "Lutta et Sekhmet"]
+    ],
+    "turn": 6,
+    "pv": 80,
+    "epv": -20
+  },
+  "2098": {
+    "date": "10/01/2024 12:55:01",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Azora",
+    "map": 35,
+    "cardRarity": 1,
+    "enemy": "Ogre Solitaire",
+    "earnedCoins": 5,
+    "winCards": [
+      [103, "Capitale Heldentod"],
+      [1369, "Ciseau d'Ezur"],
+      [1592, "Azora et Magnus"]
+    ],
+    "turn": 8,
+    "pv": 71,
+    "epv": -14
+  },
+  "2099": {
+    "date": "10/01/2024 12:56:58",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Azora",
+    "map": 35,
+    "cardRarity": 1,
+    "enemy": "Garde de ville",
+    "earnedCoins": 5,
+    "winCards": [
+      [103, "Capitale Heldentod"],
+      [1363, "Bl\u00e9 brillant"],
+      [1589, "Le Quartier des Plaisirs"]
+    ],
+    "turn": 7,
+    "pv": 95,
+    "epv": 0
+  },
+  "2100": {
+    "date": "10/01/2024 12:58:09",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Azora",
+    "map": 35,
+    "cardRarity": 1,
+    "enemy": "Garde Heldentod",
+    "earnedCoins": 2,
+    "winCards": [
+      [103, "Capitale Heldentod"],
+      [1220, "Potion de confusion"]
+    ],
+    "turn": 7,
+    "pv": 81,
+    "epv": -23
+  },
+  "2101": {
+    "date": "10/01/2024 17:17:23",
+    "joueur": "Florian",
+    "perso": "Kratos",
+    "map": 15,
+    "cardRarity": 1,
+    "enemy": "Corbeau Noir",
+    "earnedCoins": 2,
+    "winCards": [
+      [43, "Hautes-terres"],
+      [1369, "Ciseau d'Ezur"]
+    ],
+    "turn": 7,
+    "pv": 119,
+    "epv": -23
+  },
+  "2102": {
+    "date": "10/01/2024 17:19:27",
+    "joueur": "Florian",
+    "perso": "Kratos",
+    "map": 7,
+    "cardRarity": 2,
+    "enemy": "Esprit de l'Abysse",
+    "earnedCoins": 4,
+    "winCards": [
+      [20, "Bourbes"],
+      [1240, "Epine ensanglant\u00e9e"]
+    ],
+    "turn": 16,
+    "pv": 43,
+    "epv": -13
+  },
+  "2103": {
+    "date": "10/01/2024 17:21:24",
+    "joueur": "Florian",
+    "perso": "Kratos",
+    "map": 7,
+    "cardRarity": 2,
+    "enemy": "Floraison f\u00e9tide",
+    "earnedCoins": 7,
+    "winCards": [
+      [20, "Bourbes"],
+      [1355, "Potion Glac\u00e9e"],
+      [1518, "Nyx et les Bourbes"]
+    ],
+    "turn": 15,
+    "pv": 70,
+    "epv": -21
+  },
+  "2104": {
+    "date": "10/01/2024 17:22:43",
+    "joueur": "Florian",
+    "perso": "Sekhmet",
+    "map": 7,
+    "cardRarity": 1,
+    "enemy": "Tortue terrestre",
+    "earnedCoins": 2,
+    "winCards": [
+      [19, "Bourbes"],
+      [1369, "Ciseau d'Ezur"]
+    ],
+    "turn": 10,
+    "pv": 77,
+    "epv": -25
+  },
+  "2105": {
+    "date": "10/01/2024 17:24:18",
+    "joueur": "Florian",
+    "perso": "Sekhmet",
+    "map": 7,
+    "cardRarity": 2,
+    "enemy": "Champigno\u00efde magique",
+    "earnedCoins": 8,
+    "winCards": [
+      [20, "Bourbes"],
+      [1364, "Bl\u00e9 luisant"],
+      [1545, "Brocoli le sauveur"]
+    ],
+    "turn": 6,
+    "pv": 120,
+    "epv": -12
+  },
+  "2106": {
+    "date": "10/01/2024 17:25:17",
+    "joueur": "Florian",
+    "perso": "Sekhmet",
+    "map": 7,
+    "cardRarity": 2,
+    "enemy": "Champigno\u00efde Mutant",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 7,
+    "pv": 82,
+    "epv": 91
+  },
+  "2107": {
+    "date": "10/01/2024 17:28:07",
+    "joueur": "Florian",
+    "perso": "War",
+    "map": 9,
+    "cardRarity": 3,
+    "enemy": "Baram la Chim\u00e8re Volcanique",
+    "earnedCoins": 7,
+    "winCards": [
+      [27, "Volcan Avila"],
+      [1001, "Baram - La Chim\u00e8re Volcanique"],
+      [1221, "Potion Paillettes"]
+    ],
+    "turn": 11,
+    "pv": 2,
+    "epv": -2
+  },
+  "2108": {
+    "date": "10/01/2024 17:29:43",
+    "joueur": "Florian",
+    "perso": "War",
+    "map": 9,
+    "cardRarity": 3,
+    "enemy": "Baram la Chim\u00e8re Volcanique",
+    "earnedCoins": 11,
+    "winCards": [
+      [27, "Volcan Avila"],
+      [1001, "Baram - La Chim\u00e8re Volcanique"],
+      [1207, "Minerai de Stella"],
+      [1565, "Draigos et les Draka\u00efs"]
+    ],
+    "turn": 9,
+    "pv": 74,
+    "epv": -14
+  },
+  "2109": {
+    "date": "10/01/2024 17:31:32",
+    "joueur": "Florian",
+    "perso": "War",
+    "map": 9,
+    "cardRarity": 3,
+    "enemy": "Baram la Chim\u00e8re Volcanique",
+    "earnedCoins": 11,
+    "winCards": [
+      [27, "Volcan Avila"],
+      [1001, "Baram - La Chim\u00e8re Volcanique"],
+      [1284, "Roche T\u00e9n\u00e8breuse"],
+      [1565, "Draigos et les Draka\u00efs"]
+    ],
+    "turn": 14,
+    "pv": 22,
+    "epv": -18
+  },
+  "2110": {
+    "date": "10/01/2024 17:33:05",
+    "joueur": "Florian",
+    "perso": "Draigos",
+    "map": 7,
+    "cardRarity": 1,
+    "enemy": "Floraison f\u00e9tide",
+    "earnedCoins": 3,
+    "winCards": [
+      [19, "Bourbes"],
+      [1368, "Alerte : Qu\u00eate de la Curie"]
+    ],
+    "turn": 10,
+    "pv": 35,
+    "epv": -13
+  },
+  "2111": {
+    "date": "10/01/2024 17:34:16",
+    "joueur": "Florian",
+    "perso": "Draigos",
+    "map": 7,
+    "cardRarity": 1,
+    "enemy": "Tortue vaseuse",
+    "earnedCoins": 3,
+    "winCards": [
+      [19, "Bourbes"],
+      [1350, "Parchemin de Puissance"]
+    ],
+    "turn": 6,
+    "pv": 54,
+    "epv": -9
+  },
+  "2112": {
+    "date": "10/01/2024 17:36:13",
+    "joueur": "Florian",
+    "perso": "Draigos",
+    "map": 7,
+    "cardRarity": 1,
+    "enemy": "Tortue vaseuse",
+    "earnedCoins": 2,
+    "winCards": [
+      [19, "Bourbes"],
+      [1216, "Potion de Soin"]
+    ],
+    "turn": 9,
+    "pv": 51,
+    "epv": -18
+  },
+  "2113": {
+    "date": "10/01/2024 17:41:38",
+    "joueur": "Florian",
+    "perso": "Cosmos",
+    "map": 9,
+    "cardRarity": 3,
+    "enemy": "Baram la Chim\u00e8re Volcanique",
+    "earnedCoins": 10,
+    "winCards": [
+      [27, "Volcan Avila"],
+      [1001, "Baram - La Chim\u00e8re Volcanique"],
+      [1258, "Peau de ver"],
+      [1566, "Fiore dei San Didero"]
+    ],
+    "turn": 27,
+    "pv": 63,
+    "epv": -14
+  },
+  "2114": {
+    "date": "10/01/2024 17:58:02",
+    "joueur": "Florian",
+    "perso": "Cosmos",
+    "map": 9,
+    "cardRarity": 3,
+    "enemy": "Baram la Chim\u00e8re Volcanique",
+    "earnedCoins": 10,
+    "winCards": [
+      [27, "Volcan Avila"],
+      [1001, "Baram - La Chim\u00e8re Volcanique"],
+      [1363, "Bl\u00e9 brillant"],
+      [1566, "Fiore dei San Didero"]
+    ],
+    "turn": 24,
+    "pv": 67,
+    "epv": -8
+  },
+  "2115": {
+    "date": "10/01/2024 18:01:35",
+    "joueur": "Florian",
+    "perso": "Cosmos",
+    "map": 9,
+    "cardRarity": 3,
+    "enemy": "Baram la Chim\u00e8re Volcanique",
+    "earnedCoins": 7,
+    "winCards": [
+      [27, "Volcan Avila"],
+      [1001, "Baram - La Chim\u00e8re Volcanique"],
+      [1240, "Epine ensanglant\u00e9e"]
+    ],
+    "turn": 21,
+    "pv": 74,
+    "epv": -7
+  },
+  "2116": {
+    "date": "10/01/2024 19:59:56",
+    "joueur": "Victorine",
+    "perso": "Nyx",
+    "map": 29,
+    "cardRarity": 1,
+    "enemy": "L\u00e9zard \u00e0 collerette",
+    "earnedCoins": 2,
+    "winCards": [
+      [85, "C\u00f4te de Hurlevent"],
+      [1246, "Coton de Neige"]
+    ],
+    "turn": 9,
+    "pv": 44,
+    "epv": -26
+  },
+  "2117": {
+    "date": "10/01/2024 20:01:33",
+    "joueur": "Rachel",
+    "perso": "Roco Bonnaro",
+    "map": 10,
+    "cardRarity": 3,
+    "enemy": "Templier Marma - V2 (Nv7)",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 7,
+    "pv": -12,
+    "epv": 123
+  },
+  "2118": {
+    "date": "10/01/2024 20:01:57",
+    "joueur": "Victorine",
+    "perso": "Nyx",
+    "map": 7,
+    "cardRarity": 1,
+    "enemy": "Esprit de l'Abysse",
+    "earnedCoins": 6,
+    "winCards": [
+      [19, "Bourbes"],
+      [1236, "Herbe-miracle"],
+      [1521, "Nyx et Rumbledore"]
+    ],
+    "turn": 5,
+    "pv": 61,
+    "epv": -32
+  },
+  "2119": {
+    "date": "10/01/2024 20:03:48",
+    "joueur": "Victorine",
+    "perso": "Lutta",
+    "map": 29,
+    "cardRarity": 1,
+    "enemy": "Rapace \u00e0 Bec d'acier",
+    "earnedCoins": 5,
+    "winCards": [
+      [85, "C\u00f4te de Hurlevent"],
+      [1214, "Vigne Pourpre"],
+      [1544, "Malvis aka Erida"]
+    ],
+    "turn": 5,
+    "pv": 105,
+    "epv": -16
+  },
+  "2120": {
+    "date": "10/01/2024 20:05:13",
+    "joueur": "Victorine",
+    "perso": "Lutta",
+    "map": 29,
+    "cardRarity": 1,
+    "enemy": "Rapace \u00e0 Bec d'acier",
+    "earnedCoins": 5,
+    "winCards": [
+      [85, "C\u00f4te de Hurlevent"],
+      [1301, "Energie Agit\u00e9e"],
+      [1586, "Ainz et Professeur Ru"]
+    ],
+    "turn": 5,
+    "pv": 120,
+    "epv": -5
+  },
+  "2121": {
+    "date": "10/01/2024 20:07:45",
+    "joueur": "Rachel",
+    "perso": "Le Poisseux",
+    "map": 23,
+    "cardRarity": 2,
+    "enemy": "Fleur Envahissante",
+    "earnedCoins": 7,
+    "winCards": [
+      [68, "Cr\u00e8te Diamant\u00e9e"],
+      [1359, "Potion T\u00e9n\u00e8breuse"],
+      [1600, "Le grand retour"]
+    ],
+    "turn": 10,
+    "pv": 32,
+    "epv": -21
+  },
+  "2122": {
+    "date": "10/01/2024 20:09:07",
+    "joueur": "Victorine",
+    "perso": "Lutta",
+    "map": 11,
+    "cardRarity": 1,
+    "enemy": "Fourmilion du D\u00e9sert",
+    "earnedCoins": 6,
+    "winCards": [
+      [31, "Terres des Dunes \u00c9ternelles"],
+      [1234, "Fleur de l'Esprit"],
+      [1567, "La disparition de Draigos"]
+    ],
+    "turn": 7,
+    "pv": 66,
+    "epv": -8
+  },
+  "2123": {
+    "date": "10/01/2024 20:21:21",
+    "joueur": "Victorine",
+    "perso": "Estia Ryujin",
+    "map": 5,
+    "cardRarity": 3,
+    "enemy": "Chevalier de la Curie (Lassar) v2 (Nv 7)",
+    "earnedCoins": 10,
+    "winCards": [
+      [15, "Monts Arides"],
+      [1002, "Lassar - Chevalier Lieutenant"],
+      [1358, "Potion Eblouissante"],
+      [1603, "Poisseux et Lucius"]
+    ],
+    "turn": 14,
+    "pv": 107,
+    "epv": -10
+  },
+  "2124": {
+    "date": "10/01/2024 20:25:06",
+    "joueur": "Victorine",
+    "perso": "Estia Ryujin",
+    "map": 28,
+    "cardRarity": 2,
+    "enemy": "Cam\u00e9l\u00e9on Mar\u00e9cageux",
+    "earnedCoins": 4,
+    "winCards": [
+      [83, "Lagune Enchant\u00e9e"],
+      [1235, "Herbe d'eau"]
+    ],
+    "turn": 11,
+    "pv": 134,
+    "epv": -3
+  },
+  "2125": {
+    "date": "10/01/2024 21:44:10",
+    "joueur": "Victorine",
+    "perso": "Estia Ryujin",
+    "map": 1,
+    "cardRarity": 3,
+    "enemy": "Chevalier de la Curie (Lassar) v2 (Nv 7)",
+    "earnedCoins": 10,
+    "winCards": [
+      [3, "Aven"],
+      [1002, "Lassar - Chevalier Lieutenant"],
+      [1370, "Orbe Noire"],
+      [1551, "Kibo et Botassius"]
+    ],
+    "turn": 14,
+    "pv": 104,
+    "epv": -11
+  },
+  "2126": {
+    "date": "11/01/2024 01:03:37",
+    "joueur": "Victorine",
+    "perso": "Malvis",
+    "map": 1,
+    "cardRarity": 3,
+    "enemy": "Chevalier de la Curie (Lassar) v2 (Nv 7)",
+    "earnedCoins": 10,
+    "winCards": [
+      [3, "Aven"],
+      [1002, "Lassar - Chevalier Lieutenant"],
+      [1218, "Potion de concentration"],
+      [1531, "Rad Ed et la malchance"]
+    ],
+    "turn": 9,
+    "pv": 52,
+    "epv": -49
+  },
+  "2127": {
+    "date": "11/01/2024 01:04:38",
+    "joueur": "Victorine",
+    "perso": "Eivor",
+    "map": 33,
+    "cardRarity": 1,
+    "enemy": "Garde Heldentod",
+    "earnedCoins": 5,
+    "winCards": [
+      [97, "Plaines du Levant"],
+      [1359, "Potion T\u00e9n\u00e8breuse"],
+      [1587, "Nyx et le 1er Ministre"]
+    ],
+    "turn": 5,
+    "pv": 76,
+    "epv": -5
+  },
+  "2128": {
+    "date": "11/01/2024 01:05:50",
+    "joueur": "Victorine",
+    "perso": "Eivor",
+    "map": 33,
+    "cardRarity": 1,
+    "enemy": "Garde Heldentod",
+    "earnedCoins": 2,
+    "winCards": [
+      [97, "Plaines du Levant"],
+      [1223, "Compl\u00e9ment Vitamin\u00e9"]
+    ],
+    "turn": 7,
+    "pv": 58,
+    "epv": -28
+  },
+  "2129": {
+    "date": "11/01/2024 01:06:57",
+    "joueur": "Victorine",
+    "perso": "Eivor",
+    "map": 33,
+    "cardRarity": 1,
+    "enemy": "Magicienne Heldentod",
+    "earnedCoins": 5,
+    "winCards": [
+      [97, "Plaines du Levant"],
+      [1247, "Coton Cuivr\u00e9"],
+      [1571, "Kibo et War"]
+    ],
+    "turn": 4,
+    "pv": 74,
+    "epv": -10
+  },
+  "2130": {
+    "date": "11/01/2024 01:08:28",
+    "joueur": "Victorine",
+    "perso": "Malvis",
+    "map": 1,
+    "cardRarity": 3,
+    "enemy": "Chevalier de la Curie (Lassar) v2 (Nv 7)",
+    "earnedCoins": 7,
+    "winCards": [
+      [3, "Aven"],
+      [1002, "Lassar - Chevalier Lieutenant"],
+      [1211, "Epine de Cactus"]
+    ],
+    "turn": 11,
+    "pv": 65,
+    "epv": -28
+  },
+  "2131": {
+    "date": "11/01/2024 01:10:31",
+    "joueur": "Victorine",
+    "perso": "Malvis",
+    "map": 1,
+    "cardRarity": 3,
+    "enemy": "Chevalier de la Curie (Lassar) v2 (Nv 7)",
+    "earnedCoins": 12,
+    "winCards": [
+      [3, "Aven"],
+      [1002, "Lassar - Chevalier Lieutenant"],
+      [1251, "Coton Royal"],
+      [1606, "Veyda et les enfants"]
+    ],
+    "turn": 13,
+    "pv": 18,
+    "epv": -4
+  },
+  "2132": {
+    "date": "11/01/2024 01:11:57",
+    "joueur": "Victorine",
+    "perso": "Lutta",
+    "map": 33,
+    "cardRarity": 1,
+    "enemy": "Garde Heldentod",
+    "earnedCoins": 5,
+    "winCards": [
+      [97, "Plaines du Levant"],
+      [1202, "Acier Volcanique"],
+      [1571, "Kibo et War"]
+    ],
+    "turn": 8,
+    "pv": 92,
+    "epv": 0
+  },
+  "2133": {
+    "date": "11/01/2024 01:14:57",
+    "joueur": "Victorine",
+    "perso": "Lutta",
+    "map": 33,
+    "cardRarity": 1,
+    "enemy": "Garde Heldentod",
+    "earnedCoins": 5,
+    "winCards": [
+      [97, "Plaines du Levant"],
+      [1362, "Potion Perforante"],
+      [1587, "Nyx et le 1er Ministre"]
+    ],
+    "turn": 5,
+    "pv": 100,
+    "epv": -19
+  },
+  "2134": {
+    "date": "11/01/2024 01:16:18",
+    "joueur": "Victorine",
+    "perso": "Lutta",
+    "map": 33,
+    "cardRarity": 1,
+    "enemy": "Garde Heldentod",
+    "earnedCoins": 3,
+    "winCards": [
+      [97, "Plaines du Levant"],
+      [1351, "Fragment de Crystal d'Eden"]
+    ],
+    "turn": 9,
+    "pv": 67,
+    "epv": -8
+  },
+  "2135": {
+    "date": "11/01/2024 01:17:03",
+    "joueur": "Victorine",
+    "perso": "Nyx",
+    "map": 33,
+    "cardRarity": 1,
+    "enemy": "Garde Heldentod",
+    "earnedCoins": 2,
+    "winCards": [
+      [97, "Plaines du Levant"],
+      [1285, "Bombe Gluante"]
+    ],
+    "turn": 4,
+    "pv": 66,
+    "epv": -2
+  },
+  "2136": {
+    "date": "11/01/2024 01:18:09",
+    "joueur": "Victorine",
+    "perso": "Nyx",
+    "map": 33,
+    "cardRarity": 1,
+    "enemy": "Garde Heldentod",
+    "earnedCoins": 3,
+    "winCards": [
+      [97, "Plaines du Levant"],
+      [1304, "Pens\u00e9e Avide"]
+    ],
+    "turn": 8,
+    "pv": 57,
+    "epv": -14
+  },
+  "2137": {
+    "date": "11/01/2024 01:19:22",
+    "joueur": "Victorine",
+    "perso": "Nyx",
+    "map": 33,
+    "cardRarity": 1,
+    "enemy": "Garde Heldentod",
+    "earnedCoins": 5,
+    "winCards": [
+      [97, "Plaines du Levant"],
+      [1291, "Pi\u00e8ge \u00e0 ours"],
+      [1587, "Nyx et le 1er Ministre"]
+    ],
+    "turn": 5,
+    "pv": 73,
+    "epv": -24
+  },
+  "2138": {
+    "date": "11/01/2024 10:07:37",
+    "joueur": "Hugo",
+    "perso": "Kibo",
+    "map": 10,
+    "cardRarity": 1,
+    "enemy": "Epineur ac\u00e9r\u00e9",
+    "earnedCoins": 5,
+    "winCards": [
+      [28, "Plaines Dor\u00e9es"],
+      [1212, "Fleur de Pavot"],
+      [1502, "Erida et les cheveux"]
+    ],
+    "turn": 14,
+    "pv": 120,
+    "epv": -14
+  },
+  "2139": {
+    "date": "11/01/2024 11:43:23",
+    "joueur": "Hugo",
+    "perso": "Kibo",
+    "map": 20,
+    "cardRarity": 3,
+    "enemy": "Zumi M\u00e9canique - Douvone",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 24,
+    "pv": -6,
+    "epv": 76
+  },
+  "2140": {
+    "date": "11/01/2024 12:33:52",
+    "joueur": "Hugo",
+    "perso": "Kibo",
+    "map": 1,
+    "cardRarity": 3,
+    "enemy": "Ursina",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 34,
+    "pv": 0,
+    "epv": 92
+  },
+  "2141": {
+    "date": "11/01/2024 12:50:13",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Erida",
+    "map": 12,
+    "cardRarity": 3,
+    "enemy": "Nemelio",
+    "earnedCoins": 11,
+    "winCards": [
+      [36, "For\u00eat de Delphes"],
+      [1005, "Nemelio"],
+      [1364, "Bl\u00e9 luisant"],
+      [1542, "Malvis et le Loukoum"]
+    ],
+    "turn": 17,
+    "pv": 87,
+    "epv": -21
+  },
+  "2142": {
+    "date": "11/01/2024 12:51:53",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Erida",
+    "map": 12,
+    "cardRarity": 3,
+    "enemy": "Nemelio",
+    "earnedCoins": 8,
+    "winCards": [
+      [36, "For\u00eat de Delphes"],
+      [1005, "Nemelio"],
+      [1229, "Germe de Champigno\u00efde de Crystal"]
+    ],
+    "turn": 13,
+    "pv": 76,
+    "epv": -20
+  },
+  "2143": {
+    "date": "11/01/2024 12:52:49",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Erida",
+    "map": 12,
+    "cardRarity": 3,
+    "enemy": "Nemelio",
+    "earnedCoins": 8,
+    "winCards": [
+      [36, "For\u00eat de Delphes"],
+      [1005, "Nemelio"],
+      [1350, "Parchemin de Puissance"]
+    ],
+    "turn": 7,
+    "pv": 95,
+    "epv": 0
+  },
+  "2144": {
+    "date": "11/01/2024 12:54:12",
+    "joueur": "Florian",
+    "perso": "Kratos",
+    "map": 7,
+    "cardRarity": 2,
+    "enemy": "Floraison f\u00e9tide",
+    "earnedCoins": 4,
+    "winCards": [
+      [20, "Bourbes"],
+      [1369, "Ciseau d'Ezur"]
+    ],
+    "turn": 13,
+    "pv": 89,
+    "epv": -9
+  },
+  "2145": {
+    "date": "11/01/2024 12:54:41",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Aradia",
+    "map": 13,
+    "cardRarity": 1,
+    "enemy": "Ing\u00e9nieur Zumi",
+    "earnedCoins": 3,
+    "winCards": [
+      [37, "Pic de Noireflammes"],
+      [1349, "Parchemin de Garde"]
+    ],
+    "turn": 4,
+    "pv": 82,
+    "epv": -30
+  },
+  "2146": {
+    "date": "11/01/2024 12:55:23",
+    "joueur": "Florian",
+    "perso": "Kratos",
+    "map": 7,
+    "cardRarity": 1,
+    "enemy": "Tortue vaseuse",
+    "earnedCoins": 3,
+    "winCards": [
+      [19, "Bourbes"],
+      [1351, "Fragment de Crystal d'Eden"]
+    ],
+    "turn": 9,
+    "pv": 136,
+    "epv": -3
+  },
+  "2147": {
+    "date": "11/01/2024 12:57:18",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Azora",
+    "map": 35,
+    "cardRarity": 1,
+    "enemy": "Garde de ville",
+    "earnedCoins": 2,
+    "winCards": [
+      [103, "Capitale Heldentod"],
+      [1204, "Crystal d'Asbi"]
+    ],
+    "turn": 11,
+    "pv": 75,
+    "epv": -11
+  },
+  "2148": {
+    "date": "11/01/2024 12:57:50",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Azora",
+    "map": 35,
+    "cardRarity": 1,
+    "enemy": "Drakai d\u00e9moniste",
+    "earnedCoins": 5,
+    "winCards": [
+      [103, "Capitale Heldentod"],
+      [1370, "Orbe Noire"],
+      [1592, "Azora et Magnus"]
+    ],
+    "turn": 4,
+    "pv": 110,
+    "epv": -38
+  },
+  "2149": {
+    "date": "11/01/2024 12:58:36",
+    "joueur": "J\u00e9r\u00e9my",
+    "perso": "Azora",
+    "map": 35,
+    "cardRarity": 1,
+    "enemy": "Garde de ville",
+    "earnedCoins": 5,
+    "winCards": [
+      [103, "Capitale Heldentod"],
+      [1256, "Crystal liquide"],
+      [1594, "War et Vidal"]
+    ],
+    "turn": 5,
+    "pv": 83,
+    "epv": -10
+  },
+  "2150": {
+    "date": "11/01/2024 13:07:51",
+    "joueur": "Florian",
+    "perso": "Sekhmet",
+    "map": 7,
+    "cardRarity": 1,
+    "enemy": "Garde Heldentod",
+    "earnedCoins": 5,
+    "winCards": [
+      [19, "Bourbes"],
+      [1259, "Peau de Smilodon"],
+      [1523, "Kry\u00e8ri et la vantardise"]
+    ],
+    "turn": 10,
+    "pv": 76,
+    "epv": -12
+  },
+  "2151": {
+    "date": "11/01/2024 13:10:36",
+    "joueur": "Florian",
+    "perso": "Sekhmet",
+    "map": 7,
+    "cardRarity": 2,
+    "enemy": "Floraison f\u00e9tide",
+    "earnedCoins": 4,
+    "winCards": [
+      [20, "Bourbes"],
+      [1202, "Acier Volcanique"]
+    ],
+    "turn": 19,
+    "pv": 48,
+    "epv": 0
+  },
+  "2152": {
+    "date": "11/01/2024 13:11:54",
+    "joueur": "Florian",
+    "perso": "Sekhmet",
+    "map": 7,
+    "cardRarity": 1,
+    "enemy": "Tortue terrestre",
+    "earnedCoins": 3,
+    "winCards": [
+      [19, "Bourbes"],
+      [1238, "Potion de Soin Am\u00e9lior\u00e9"]
+    ],
+    "turn": 10,
+    "pv": 60,
+    "epv": -18
+  },
+  "2153": {
+    "date": "11/01/2024 13:12:58",
+    "joueur": "Florian",
+    "perso": "War",
+    "map": 9,
+    "cardRarity": 3,
+    "enemy": "Baram la Chim\u00e8re Volcanique",
+    "earnedCoins": 10,
+    "winCards": [
+      [27, "Volcan Avila"],
+      [1001, "Baram - La Chim\u00e8re Volcanique"],
+      [1216, "Potion de Soin"],
+      [1565, "Draigos et les Draka\u00efs"]
+    ],
+    "turn": 8,
+    "pv": 111,
+    "epv": -6
+  },
+  "2154": {
+    "date": "11/01/2024 13:15:09",
+    "joueur": "Florian",
+    "perso": "War",
+    "map": 9,
+    "cardRarity": 3,
+    "enemy": "Baram la Chim\u00e8re Volcanique",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 12,
+    "pv": -3,
+    "epv": 9
+  },
+  "2155": {
+    "date": "11/01/2024 13:16:30",
+    "joueur": "Florian",
+    "perso": "War",
+    "map": 9,
+    "cardRarity": 3,
+    "enemy": "Baram la Chim\u00e8re Volcanique",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 9,
+    "pv": -13,
+    "epv": 21
+  },
+  "2156": {
+    "date": "11/01/2024 13:17:51",
+    "joueur": "Florian",
+    "perso": "Draigos",
+    "map": 7,
+    "cardRarity": 1,
+    "enemy": "Tortue vaseuse",
+    "earnedCoins": 5,
+    "winCards": [
+      [19, "Bourbes"],
+      [1245, "Coton Nuage"],
+      [1521, "Nyx et Rumbledore"]
+    ],
+    "turn": 9,
+    "pv": 16,
+    "epv": -19
+  },
+  "2157": {
+    "date": "11/01/2024 13:20:11",
+    "joueur": "Florian",
+    "perso": "Draigos",
+    "map": 7,
+    "cardRarity": 1,
+    "enemy": "Esprit de l'Abysse",
+    "earnedCoins": 5,
+    "winCards": [
+      [19, "Bourbes"],
+      [1203, "Acier d'obsidienne"],
+      [1523, "Kry\u00e8ri et la vantardise"]
+    ],
+    "turn": 10,
+    "pv": 42,
+    "epv": -20
+  },
+  "2158": {
+    "date": "11/01/2024 13:21:22",
+    "joueur": "Florian",
+    "perso": "Draigos",
+    "map": 7,
+    "cardRarity": 1,
+    "enemy": "Esprit de l'Abysse",
+    "earnedCoins": 3,
+    "winCards": [
+      [19, "Bourbes"],
+      [1236, "Herbe-miracle"]
+    ],
+    "turn": 9,
+    "pv": 16,
+    "epv": -15
+  },
+  "2159": {
+    "date": "11/01/2024 13:23:15",
+    "joueur": "Florian",
+    "perso": "Cosmos",
+    "map": 20,
+    "cardRarity": 3,
+    "enemy": "Zumi M\u00e9canique - Douvone",
+    "earnedCoins": 9,
+    "winCards": [
+      [60, "D\u00e9sert du Couchant"],
+      [1006, "Douvone - Zumi M\u00e9canique"],
+      [1365, "Bl\u00e9 cramoisie"]
+    ],
+    "turn": 14,
+    "pv": 62,
+    "epv": -15
+  },
+  "2160": {
+    "date": "11/01/2024 13:25:59",
+    "joueur": "Florian",
+    "perso": "Cosmos",
+    "map": 20,
+    "cardRarity": 3,
+    "enemy": "Zumi M\u00e9canique - Douvone",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 15,
+    "pv": -3,
+    "epv": 72
+  },
+  "2161": {
+    "date": "11/01/2024 13:28:13",
+    "joueur": "Florian",
+    "perso": "Cosmos",
+    "map": 20,
+    "cardRarity": 3,
+    "enemy": "Zumi M\u00e9canique - Douvone",
+    "earnedCoins": 0,
+    "winCards": [],
+    "turn": 18,
+    "pv": -6,
+    "epv": 3
+  },
+  "2162": {
+    "date": "11/01/2024 14:05:13",
+    "joueur": "Victorine",
+    "perso": "Estia Ryujin",
+    "map": 1,
+    "cardRarity": 3,
+    "enemy": "Chevalier de la Curie (Lassar) v2 (Nv 7)",
+    "earnedCoins": 11,
+    "winCards": [
+      [3, "Aven"],
+      [1002, "Lassar - Chevalier Lieutenant"],
+      [1206, "Minerai Arc-en-Ciel"],
+      [1519, "Aradia et les enfants"]
+    ],
+    "turn": 19,
+    "pv": 86,
+    "epv": -12
+  },
+  "2163": {
+    "date": "11/01/2024 21:18:22",
+    "joueur": "Victorine",
+    "perso": "Estia Ryujin",
+    "map": 33,
+    "cardRarity": 1,
+    "enemy": "Garde Heldentod",
+    "earnedCoins": 2,
+    "winCards": [
+      [97, "Plaines du Levant"],
+      [1355, "Potion Glac\u00e9e"]
+    ],
+    "turn": 8,
+    "pv": 146,
+    "epv": 0
+  },
+  "2164": {
+    "date": "11/01/2024 21:19:23",
+    "joueur": "Victorine",
+    "perso": "Estia Ryujin",
+    "map": 33,
+    "cardRarity": 1,
+    "enemy": "Garde Heldentod",
+    "earnedCoins": 6,
+    "winCards": [
+      [97, "Plaines du Levant"],
+      [1352, "Crystal d'Eden"],
+      [1587, "Nyx et le 1er Ministre"]
+    ],
+    "turn": 5,
+    "pv": 122,
+    "epv": -3
   }
 }

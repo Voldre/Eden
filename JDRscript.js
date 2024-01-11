@@ -349,6 +349,8 @@ function insertSkill(skillElement, skillName, awakenClass = false) {
 
 function insertBuffInteraction(buffTurnE, skillName, selectedSkill, skillMontant) {
   const skillEffet = selectedSkill.effet;
+  buffTurnE.style.cursor = "pointer";
+
   if (
     skillEffet.includes("Provocation") ||
     skillEffet.includes("Buff") ||
@@ -356,6 +358,7 @@ function insertBuffInteraction(buffTurnE, skillName, selectedSkill, skillMontant
     skillEffet.includes("Transformation")
   ) {
     buffTurnE.remove;
+    buffTurnE.style.cursor = "url('images/layout/cursor-x.png'), auto";
     buffTurnE.addEventListener("click", () => {
       if (buffTurnE.children[1]) {
         if (buffTurnE.children[1].innerText === "0") {

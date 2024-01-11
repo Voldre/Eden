@@ -2380,6 +2380,39 @@
     "group": 1
   },
   {
+    "id": 1702,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Le départ de l'Empire",
+    "description": "Le groupe est parvenu à quitter l'Empire, chacun part suivre sa voie : Rad Ed va retrouver Zwei et vaincre les Ursuns Belliqueux. Kibo rejoint la Curie et sa douce Vimira. War va trouver un groupe pour attaquer l'Empire. Seuls Azora, Estia et Beren vont continuer à l'Empire.",
+    "maps": [33],
+    "enemies": [],
+    "kindId": "otherIcon/group017b",
+    "group": 2
+  },
+  {
+    "id": 1703,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Kibo et la lettre",
+    "description": "De retour à Aven, Kibo est parti retrouver sa douce Vimira. Et une fois retrouvée, il a pris son courage à deux mains et a décidé de lui lire sa lettre <3.",
+    "maps": [1],
+    "enemies": [],
+    "kindId": "otherIcon/ac028",
+    "group": 2
+  },
+  {
+    "id": 1704,
+    "value": 3,
+    "kind": "anecdoteII",
+    "name": "Rad Ed et Zwei",
+    "description": "Rad Ed a explosé Zwei et le peu d'égo qu'il avait. Ce sale menteur et traitre lâche !",
+    "maps": [16],
+    "enemies": [],
+    "kindId": "items/",
+    "group": 1
+  },
+  {
     "id": 15000,
     "value": 3,
     "kind": "anecdoteIII",
