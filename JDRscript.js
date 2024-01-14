@@ -344,6 +344,21 @@ function insertSkill(skillElement, skillName, awakenClass = false) {
       wrapperE.append(tenebresE);
       skillElement.append(wrapperE);
     }
+
+    // Update 14/01/2024, add inputs to handle number of hits
+    if (skillName === "Euphorie") {
+      var wrapperE = document.createElement("div");
+      wrapperE.style.width = "max-content";
+      var textE = document.createElement("span");
+      textE.innerText = "Coups";
+      var coupE = document.createElement("input");
+      coupE.style.width = "40px";
+      coupE.type = "number";
+      coupE.max = 5;
+      wrapperE.append(textE);
+      wrapperE.append(coupE);
+      skillElement.append(wrapperE);
+    }
   }
 }
 

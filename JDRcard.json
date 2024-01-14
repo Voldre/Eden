@@ -470,7 +470,7 @@
     "kind": "composant",
     "name": "Minerai Arc-en-Ciel",
     "description": "Ce minerai exclusif au Pic de Noireflamme renferme une r\u00e9sistance hors norme, il est tr\u00e8s pr\u00e9cieux.",
-    "kindId": "I00224"
+    "kindId": "I00213b"
   },
   {
     "id": 1207,
@@ -954,6 +954,14 @@
     "kindId": "I00339"
   },
   {
+    "id": 1305,
+    "value": 2,
+    "kind": "composant",
+    "name": "Poudre d'esprit",
+    "description": "Cette poudre est multifonction, elle peut servir pour fabriquer beaucoup d'objets différents liés à l'esprit.",
+    "kindId": "i00649"
+  },
+  {
     "id": 1349,
     "value": 2,
     "kind": "composant",
@@ -1168,6 +1176,62 @@
     "name": "Bois Crystalisé",
     "description": "Ce bois unique en son genre se trouve dans la Forêt de Crystal de la Côte de Hurlevent, créé par le magicien Nezo. Il aurait des propriétés magiques très particulières.",
     "kindId": "I00192c"
+  },
+  {
+    "id": 1385,
+    "value": 2,
+    "kind": "composant",
+    "name": "Alliage Violacée",
+    "description": "Ce minerai est présent généralement dans les zones concentrées en magie. Utile pour la fabrication d'armes et armures réceptives à la magie.",
+    "kindId": "I00215"
+  },
+  {
+    "id": 1386,
+    "value": 2,
+    "kind": "composant",
+    "name": "Minerai Glacial",
+    "description": "Un minerai très utile pour fabriquer des armes ou armures résistantes et efficace à la glace.",
+    "kindId": "I00214b"
+  },
+  {
+    "id": 1387,
+    "value": 3,
+    "kind": "composant",
+    "name": "Minerai Corail",
+    "description": "Malgré son aspect charmant de corail, ce minerai possède un sombre pouvoir capable de perturber la magie et l'énergie qui l'entoure.",
+    "kindId": "I00213c"
+  },
+  {
+    "id": 1390,
+    "value": 1,
+    "kind": "composant",
+    "name": "Diamant Rose",
+    "description": "Ce diamant trouvable dans les souterrains profonds peut servir à canalyser la lumière dans des objets.",
+    "kindId": "I00237"
+  },
+  {
+    "id": 1391,
+    "value": 1,
+    "kind": "composant",
+    "name": "Feldspath Carmin",
+    "description": "Cette pierre est utile pour créer des alliages, il peut totalement changé de couleur lorsqu'il est combiné à d'autres minerais.",
+    "kindId": "I00207"
+  },
+  {
+    "id": 1392,
+    "value": 2,
+    "kind": "composant",
+    "name": "Acier purifié",
+    "description": "Ce minerai d'acier a été épuré et purifié pour accentuer ses propriétés de résistance au maximum",
+    "kindId": "I00208b"
+  },
+  {
+    "id": 1393,
+    "value": 3,
+    "kind": "composant",
+    "name": "Amalgame Ténèbreux",
+    "description": "Cet amalgalme de matière ténébreuse est utile pour confectionner toutes sortes d'objet liés aux ténèbres.",
+    "kindId": "I00207b"
   },
   {
     "id": 1501,

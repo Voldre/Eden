@@ -2346,7 +2346,7 @@
   "321": {
     "nom": "B\u00e2ton de Stella",
     "desc": "Un b\u00e2ton Heldentod forg\u00e9 avec le minerai de Stella, perce efficacement l'ennemi.",
-    "effet": "Blocage magique cible -2",
+    "effet": "Blocage magique cible -3",
     "montant": "D\u00e9g\u00e2t +10",
     "icone": "W64504"
   },
@@ -2720,14 +2720,16 @@
     "desc": "Un gantelet compos\u00e9 d'\u00e9cailles de plusieurs cr\u00e9atures. Il est \u00e9tonnament l\u00e9ger et r\u00e9sistant.",
     "effet": "",
     "montant": "D\u00e9g\u00e2t re\u00e7u -3, Dext\u00e9rit\u00e9 +1",
-    "icone": "A40029"
+    "icone": "A40029",
+    "access": "A3"
   },
   "372": {
     "nom": "Collier Lueur d'\u00e2me",
     "desc": "Ce collier a \u00e9t\u00e9 cr\u00e9\u00e9 par des experts Draka\u00efs \u00e0 la Vall\u00e9e de la Mort",
     "effet": "",
     "montant": "Dur\u00e9e des malus +1 tour, Soin et D\u00e9g\u00e2t magique +1",
-    "icone": "A00044"
+    "icone": "A00044",
+    "access": "D2"
   },
   "373": {
     "nom": "B\u00e2ton Kif\u00e9peur",
@@ -2763,5 +2765,69 @@
     "effet": "Intelligence +1",
     "montant": "D\u00e9g\u00e2t +3",
     "icone": "W30103"
+  },
+  "378": {
+    "nom": "B\u00e2ton de l'Esprit",
+    "desc": "Un b\u00e2ton am\u00e9liorant l'esprit de son porteur.",
+    "effet": "Esprit +1",
+    "montant": "D\u00e9g\u00e2t +7",
+    "icone": "W60102"
+  },
+  "379": {
+    "nom": "Rapi\u00e8re Arc-en-Ciel",
+    "desc": "Une rapi\u00e8re forg\u00e9e avec un composant tr\u00e8s pr\u00e9cieux : le Minerai Arc-en-Ciel",
+    "effet": "Blocage +1",
+    "montant": "D\u00e9g\u00e2t +5",
+    "icone": "W11807"
+  },
+  "380": {
+    "nom": "B\u00e2ton Arc-en-Ciel",
+    "desc": "Un b\u00e2ton serti d'un composant tr\u00e8s pr\u00e9cieux : le Minerai Arc-en-Ciel",
+    "effet": "Blocage +1",
+    "montant": "D\u00e9g\u00e2t +10",
+    "icone": "W64501b"
+  },
+  "381": {
+    "nom": "Ep\u00e9e Colossale Perturbante",
+    "desc": "Cette \u00e9p\u00e9e colossale \u00e0 le pouvoir de perturber son adversaire.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +10, Si coup critique (1,2) : Force/Intel -2 (1 tour)",
+    "icone": "W21005"
+  },
+  "382": {
+    "nom": "Ep\u00e9e Colossale Arc-en-Ciel",
+    "desc": "Une \u00e9p\u00e9e colossale forg\u00e9e avec un composant tr\u00e8s pr\u00e9cieux : le Minerai Arc-en-Ciel",
+    "effet": "Blocage +2",
+    "montant": "D\u00e9g\u00e2t +9",
+    "icone": "W21207"
+  },
+  "383": {
+    "nom": "Pistolet suspect",
+    "desc": "Ce pistolet a \u00e9t\u00e9 con\u00e7u par des ing\u00e9nieurs, c'est un pur prototype, mais que va-t-il faire ?",
+    "effet": "Inconnu ?",
+    "montant": "D\u00e9g\u00e2t +9",
+    "icone": "W54105"
+  },
+  "384": {
+    "nom": "Anneau du Bagarreur",
+    "desc": "Cet anneau conf\u00e8re accentue l'attaque de son porteur",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +2, PV+5",
+    "icone": "A00006",
+    "access": "D2"
+  },
+  "385": {
+    "nom": "Grimoire Gravitationnel",
+    "desc": "Ce grimoire poss\u00e8de un pouvoir unique, il est capable de ralentir sa cible en augmentant la gravit\u00e9.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +9, Si coup critique (1,2) : Dext\u00e9 -4 (1 tour)",
+    "icone": "W64803"
+  },
+  "386": {
+    "nom": "Hache de la Terreur",
+    "desc": "Cette hache peut compl\u00e8tement p\u00e9trifier de peur ses adversaires.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +10, Si coup critique (1,2) : Esprit -4 (1 tour)",
+    "icone": "W20606"
   }
 }
