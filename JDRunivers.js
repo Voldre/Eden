@@ -194,7 +194,7 @@ const labelsDescription = {
   endormi:
     "Réussir à endormir dépend de l'état de l'ennemi (réussite décroissante (calme : Esprit, éveillé : Esprit*0.75, énervé : Esprit*0.5)). Ceci est similaire pour l'hypnose<br/> Un personnage endormi (ou Hypnotisé) se réveil avec une réussite à :  Tour 1 : Esprit*0.5, Tour 2 : Esprit*0.75, Tour 3+ : Esprit.<br/>Se faire frapper permet de : sortir de l'endormissement et offre 1 tentative de reprise d'esprit.<br/>L'endormissement et l'hypnose ne sont pas des malus pouvant être retiré par un sort (ex : Prévention). Le 1er tour est forcément perdu par la cible.<br/>L'hypnotisé doit agir en même temps que l'hypnotiseur.",
   protege:
-    "Un personnage peut protéger un autre et dans une seule direction. Pour cela, il aura un malus de blocage selon la situation (2 ou +).<br/> Si un second ennemi attaque dans une autre direction, la protection est impossible.<br/> Sur un échec critique, c'est la personne protégée qui prend le coup. Dé 19 : bloquage/2, Dé 20 : 0 blocage.",
+    "Un personnage peut protéger un autre et dans une seule direction. Pour cela, il aura un malus de blocage selon la situation (2 ou +).<br/> Si un second ennemi attaque dans une autre direction, la protection est impossible.<br/> Sur un échec critique, c'est la personne protégée qui prend le coup. Dé 19 ou Dé 20 : 0 blocage.",
   incanter:
     "Un personnage peut incanter un sort sur plusieurs tours. Pendant ce temps, le personnage ne peut plus esquiver ni se déplacer.<br/> Sur un échec critique de blocage (voire une réussite critique de l'ennemi, selon le contexte), l'incantation est annulée.",
   //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."

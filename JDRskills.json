@@ -37,7 +37,7 @@
   },
   "3": {
     "nom": "Euphorie",
-    "desc": "Pendant 3 tours, chaque coup re\u00e7u augmente les prochains d\u00e9g\u00e2ts inflig\u00e9s, cumulables 5 fois.",
+    "desc": "Pendant 3 tours, chaque coup re\u00e7u augmente les prochains d\u00e9g\u00e2ts inflig\u00e9s, cumulables 5 fois. Si montant des buffs + x, valeur /2",
     "effet": "Buff",
     "montant": "+1D4 (min 2) par coup. Buff pendant 4 tours",
     "icone": "E0286",
@@ -281,7 +281,7 @@
   "37": {
     "nom": "Saut d'esquive",
     "desc": "Fait bondir en arri\u00e8re et tir sur l'ennemi. Remplace l'esquive par une attaque (elle-m\u00eame blocable/esquivable avec malus).",
-    "effet": "D\u00e9g\u00e2t",
+    "effet": "Esquive D\u00e9g\u00e2t",
     "montant": "3 tentatives par combat : remplace l'esquive par un tir 1D6",
     "icone": "E0087",
     "stat": "Dext\u00e9rit\u00e9",
@@ -381,7 +381,7 @@
     "nom": "Puma Noir",
     "desc": "Action Instantan\u00e9e (max 3 fois par combat). Vous transforme en Puma Noir. Impossible de jeter des sorts magiques (Intel/Esprit). Nouveaux sorts : Saignement : 1D8 puis 3 pendant 3 tours (Force). Triple Griffe : 3D6 (Dext\u00e9rit\u00e9)",
     "effet": "Transformation",
-    "montant": "D\u00e9g\u00e2t +5 (+1/niveau, max 6), 0 d\u00e9g\u00e2t/effet d'arme. Force+3, Dext\u00e9+3 pendant 1D4 (min 2) +1 tours (annulable)",
+    "montant": "D\u00e9g\u00e2t +4 (+1/niveau, max 8), 0 d\u00e9g\u00e2t/effet d'arme. Force+3, Dext\u00e9+3 pendant 1D4 (min 2) +1 tours (annulable)",
     "icone": "E0271",
     "stat": "Esprit",
     "classe": ["Shaman"]
@@ -407,7 +407,7 @@
   "51": {
     "nom": "Saut Dimensionnel",
     "desc": "T\u00e9l\u00e9porte le joueur jusqu'\u00e0 5m l\u00e0 o\u00f9 il regarde",
-    "effet": "T\u00e9l\u00e9portation",
+    "effet": "Esquive",
     "montant": "3 tentatives par combat : remplace l'esquive par la t\u00e9l\u00e9portation",
     "icone": "E0025",
     "stat": "Intelligence",
@@ -560,7 +560,7 @@
   "69": {
     "nom": "Fl\u00e8che des Ombres",
     "desc": "D\u00e9g\u00e2ts de t\u00e9n\u00e8bres, si l'ennemi subi un parasite : soigne l'utilisateur",
-    "effet": "D\u00e9g\u00e2t + Soin",
+    "effet": "D\u00e9g\u00e2t et Soin",
     "montant": "D\u00e9g\u00e2t 1D8+3 et si parasite : soin 1D6+2",
     "icone": "E0132",
     "stat": "Intelligence",
@@ -1117,9 +1117,9 @@
   },
   "131": {
     "nom": "Robot Destructeur",
-    "desc": "Invoque un Robot Nano Autodestructeur. Explose sur courte port\u00e9e. Peut \u00eatre surcharg\u00e9 : Feu = +1D4, Foudre = Port\u00e9e +,  Glace = Dext\u00e9-2 (3t),  Nature = Force/Int -2 (2t),  Lumi\u00e8re = R\u00e9uss -2 (1t),  T\u00e9n\u00e8bres = Aspire",
+    "desc": "Invoque un Robot Nano Autodestructeur. Explose sur courte port\u00e9e. Peut \u00eatre surcharg\u00e9 : Feu = +3, Foudre = Port\u00e9e +,  Glace = Dext\u00e9-2 (3t),  Nature = Force/Int -2 (2t),  Lumi\u00e8re = R\u00e9uss -2 (1t),  T\u00e9n\u00e8bres = Aspire",
     "effet": "D\u00e9g\u00e2t Malus AoE",
-    "montant": "1D6+2",
+    "montant": "1D6+2 (+1/niveau, 0 d\u00e9g\u00e2t/effet d'arme)",
     "icone": "robot",
     "stat": "Intelligence",
     "classe": ["Ing\u00e9nieur"]
@@ -1128,7 +1128,7 @@
     "nom": "Pi\u00e8ge d'Entrave",
     "desc": "Pose un pi\u00e8ge au sol pour entraver l'ennemi (d\u00e9g\u00e2t tranchant), l'emp\u00eachant de se d\u00e9placer. L'ennemi peut tenter de s'en \u00e9chapper (force).",
     "effet": "D\u00e9g\u00e2t Malus",
-    "montant": "1D10+3 (0 d\u00e9g\u00e2t d'arme), entrave 3 tours (annulable)",
+    "montant": "1D10+2 (+1/niveau, 0 d\u00e9g\u00e2t/effet d'arme), entrave 3 tours (annulable)",
     "icone": "E0179",
     "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Chasseur", "Juge"]
@@ -1153,7 +1153,7 @@
   },
   "135": {
     "nom": "D\u00e9doublement",
-    "desc": "Cr\u00e9e un double de soi avec les m\u00eames stats et buffs (\u00e0 l'invocation). Ses d\u00e9g\u00e2ts et montants inflig\u00e9s sont divis\u00e9s par 2. Ses d\u00e9g\u00e2ts re\u00e7us touchent le porteur et sont aussi divis\u00e9s par 2 (avec armure/2).",
+    "desc": "Cr\u00e9e un double de soi avec les m\u00eames stats et buffs (\u00e0 l'invocation). Ses d\u00e9g\u00e2ts/soins et ses montants (invocation/buff/malus), ou (cas échéant) la durée de sorts, sont divis\u00e9s par 2. Ses d\u00e9g\u00e2ts re\u00e7us touchent le porteur et sont aussi divis\u00e9s par 2 (avec armure/2).",
     "effet": "Invocation",
     "montant": "Invoque un double de soi pendant 2 tours.",
     "icone": "E1042",
