@@ -110,8 +110,8 @@
     "date": "14/01/2024"
   },
   "Hugo": {
-    "persos": [16],
-    "entries": [3],
+    "persos": [16, 32],
+    "entries": [4, 4],
     "alpagaCoin": 1,
     "alpagaCoinSpent": 1339,
     "cards": [
