@@ -118,10 +118,25 @@ function updateSkillsList(classe) {
     var iconeE = document.createElement("img");
     iconeE.classList.add("icone");
 
-    console.log(skill.classe);
     nomE.innerText = skill.nom;
     descE.innerText = skill.desc;
-    effetE.innerText = skill.effet + " / " + skill.stat + " / " + skill.classe?.toString().replaceAll(",", ", "); // Ajout Sanofi
+
+    const skillRange = skill.effet.split("AoE ")[1] ?? null; // en bas [0] + "AoE"
+    const effetDesc = skillRange ? skill.effet.split(" AoE")[0] : skill.effet;
+    effetE.innerText = effetDesc;
+    if (skillRange) {
+      const skillRangeIconE = document.createElement("span");
+      skillRangeIconE.className = "skillRangeIcon";
+      skillRangeIconE.style.backgroundImage = `url(http://voldre.free.fr/Eden/images/layout/${skillRange}.png)`;
+      effetE.append(skillRangeIconE);
+
+      const skillStatE = document.createElement("span");
+      skillStatE.innerText = " / " + skill.stat + " / " + skill.classe?.toString().replaceAll(",", ", ");
+      effetE.append(skillStatE);
+    } else {
+      effetE.innerText += " / " + skill.stat + " / " + skill.classe?.toString().replaceAll(",", ", "); // Ajout Sanofi
+    }
+
     montantE.innerText = skill.montant;
     iconeE.src = "http://voldre.free.fr/Eden/images/skillIcon/" + skill.icone + ".png";
 
@@ -186,9 +201,39 @@ console.log("Nb skills by class by stat", allListSkillsByClassByStats);
 
 // ---
 
+function aoeDesc() {
+  const aoeDescInfo = {
+    range: ["L", "R"],
+    type: ["-", "+"],
+    rangeName: ["Ligne de", "Rond de"],
+    typeName: ["Courte portée", "Longue portée"],
+    typeMalus: ["Esquivable Malus 4 si proche, 2 si éloigné", "Esquivable seulement de loin, Malus 3-4"],
+  };
+  let description = "Il existe 4 types d'Attaques de Zone (AoE) :<br/>";
+  for (i = 0; i < 4; i++) {
+    const rangeI = Math.floor(i / 2);
+    const typeI = i % 2;
+    description +=
+      "<br/><img class='skillRangeIcon' src='http://voldre.free.fr/Eden/images/layout/" +
+      aoeDescInfo.range[rangeI] +
+      aoeDescInfo.type[typeI] +
+      ".png'/> Attaque en " +
+      aoeDescInfo.rangeName[rangeI] +
+      " " +
+      aoeDescInfo.typeName[typeI] +
+      " : <br/>" +
+      aoeDescInfo.typeMalus[typeI] +
+      ".<br/>";
+  }
+  return description;
+}
+
 const labelsDescription = {
   critique:
     "Le Dé 1 est une réussite critique (dégâts et buffs au max), le Dé 2 un semi-critique (boosté). Pareil pour les échecs avec Dé 19 et Dé 20.<br/> En cas de Dé 20 sur une attaque, le lanceur prend les dégâts divisés par 2 et sans armure.",
+  aoe: aoeDesc() + "<br/>Concernant l'esquive, tout sort mono-cible peut être esquivé, sauf les sorts d'esprits.",
+  bloquage:
+    "Toutes les attaques peuvent être bloquées (physiquement (force) ou magiquement (intelligence))<br/>Bloquer plusieurs fois de suite donne des malus (Blocage -1 par coup), si le coup suivant est une attaque mono-cible, blocage -1 sur le coup. Cumule max : -4 blocage.<br/><br/>Même avec malus et autres effets, un Dé à 1 ou 2 génèrera tout le temps une réussite de blocage.",
   invisible:
     "Quand un personnage est invisible : au 1er tour, -3 de chance de le toucher (sauf AoE : 0); aux tours suivants (2+) : Chance/2 (sauf AoE : -3).<br/>&nbsp; A l'inverse, un personnage invisible qui frappe réduit les chances d'esquive et blocage de -2. <br/>&nbsp; Seuls les sorts d'Esprit laisse invisible, les autres font sortir. Se prendre un coup fait sortir aussi.",
   endormi:

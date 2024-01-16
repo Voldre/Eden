@@ -11,7 +11,7 @@
   "1": {
     "nom": "Attaque Cyclone",
     "desc": "Tournoie et frappe les ennemis autour du personnage",
-    "effet": "D\u00e9g\u00e2t AoE",
+    "effet": "D\u00e9g\u00e2t AoE R-",
     "montant": "1D6+2",
     "icone": "E0005",
     "stat": "Force",
@@ -57,7 +57,7 @@
     "nom": "Vivacit\u00e9 Accrue",
     "desc": "Boost l'esquive et la dext\u00e9rit\u00e9 du lanceur",
     "effet": "Buff",
-    "montant": "Esquive+1, Dext\u00e9rit\u00e9+2 pendant 4 tours",
+    "montant": "Esquive+2, Dext\u00e9rit\u00e9+2 pendant 4 tours",
     "icone": "E0294",
     "stat": "Esprit",
     "classe": ["Chevalier"]
@@ -74,7 +74,7 @@
   "7": {
     "nom": "Coup Infernal",
     "desc": "D\u00e9g\u00e2ts de lumi\u00e8re sur 2m autour du lanceur",
-    "effet": "D\u00e9g\u00e2t AoE",
+    "effet": "D\u00e9g\u00e2t AoE R-",
     "montant": "1D8+2",
     "icone": "E0303",
     "stat": "Intelligence",
@@ -110,7 +110,7 @@
   "11": {
     "nom": "Attaque Furieuse",
     "desc": "Tournoie et frappe les ennemis autour de soi (1m)",
-    "effet": "D\u00e9g\u00e2t AoE",
+    "effet": "D\u00e9g\u00e2t AoE R-",
     "montant": "1D6+3",
     "icone": "E0010",
     "stat": "Dext\u00e9rit\u00e9",
@@ -182,7 +182,7 @@
   "26": {
     "nom": "Coupe Asura",
     "desc": "Envoi une tranche sur plusieurs m\u00e8tres, peut toucher les ennemis larges 2 fois",
-    "effet": "D\u00e9g\u00e2t AoE",
+    "effet": "D\u00e9g\u00e2t AoE L-",
     "montant": "1D8+1 + (1D8+1)",
     "icone": "E0481",
     "stat": "Force",
@@ -263,7 +263,7 @@
   "35": {
     "nom": "Bombe \u00e0 Huile",
     "desc": "Si robotis\u00e9 : Inflige une explosion sur plusieurs m\u00e8tres autour de la cible.",
-    "effet": "D\u00e9g\u00e2t AoE",
+    "effet": "D\u00e9g\u00e2t AoE R+",
     "montant": "1D8+2",
     "icone": "E0080",
     "stat": "Dext\u00e9rit\u00e9",
@@ -272,7 +272,7 @@
   "36": {
     "nom": "Explosifs Visqueux",
     "desc": "Si robotis\u00e9 : La bombe explose (d\u00e9g\u00e2t de nature) et englue tout autour de la cible, attaquer peut d\u00e9faire la glue",
-    "effet": "D\u00e9g\u00e2t Malus AoE",
+    "effet": "D\u00e9g\u00e2t Malus AoE R+",
     "montant": "1D6+1, Esquive -2 pour 3 tours",
     "icone": "E0082",
     "stat": "Dext\u00e9rit\u00e9",
@@ -397,8 +397,8 @@
   },
   "50": {
     "nom": "Attaque Foudroyante",
-    "desc": "Attaque de foudre autour de soi (3m)",
-    "effet": "D\u00e9g\u00e2t AoE",
+    "desc": "Attaque de foudre autour de soi (2m)",
+    "effet": "D\u00e9g\u00e2t AoE R-",
     "montant": "1D6+3",
     "icone": "E0022",
     "stat": "Intelligence",
@@ -416,7 +416,7 @@
   "52": {
     "nom": "Temp\u00eate de Glace",
     "desc": "Tourbillon de glace dans la zone choisie, ralenti un peu",
-    "effet": "D\u00e9g\u00e2t AoE",
+    "effet": "D\u00e9g\u00e2t AoE R+",
     "montant": "1D8+2, Dext\u00e9-1 (1 tour)",
     "icone": "E0118",
     "stat": "Intelligence",
@@ -461,7 +461,7 @@
   "58": {
     "nom": "Destruction de l'aurore",
     "desc": "Envoie un rayon de lumi\u00e8re jusqu'\u00e0 4m devant.",
-    "effet": "D\u00e9g\u00e2t AoE",
+    "effet": "D\u00e9g\u00e2t AoE L+",
     "montant": "1D6+2",
     "icone": "E0604",
     "stat": "Intelligence",
@@ -488,7 +488,7 @@
   "61": {
     "nom": "Assaut du Chaos",
     "desc": "Le Luminary d\u00e9charge autour de lui toute sa magie accumul\u00e9 (7-8 charges minimum), les effets diff\u00e8rent selon l'\u00e9quilibre : T\u00e9n\u00e8bres, Chaos (toutes ses faiblesses), Lumi\u00e8re. L'ennemi en est ensuite affaibli.",
-    "effet": "D\u00e9g\u00e2t Malus AoE",
+    "effet": "D\u00e9g\u00e2t Malus AoE R+",
     "montant": "1D8+3, d\u00e9g\u00e2t re\u00e7u de l'\u00e9l\u00e9ment +3 pendant 3 tours",
     "icone": "j674",
     "stat": "Intelligence",
@@ -532,9 +532,9 @@
   },
   "66": {
     "nom": "Danse de l'oiseau de feu",
-    "desc": "Le lanceur danse autour des ennemis (sur quelques m\u00e8tres) et les br\u00fblent",
-    "effet": "D\u00e9g\u00e2t AoE",
-    "montant": "1D8+2",
+    "desc": "Le lanceur danse autour des ennemis (sur quelques m\u00e8tres) et inflige des dégâts de feu",
+    "effet": "D\u00e9g\u00e2t AoE R-",
+    "montant": "1D8+3",
     "icone": "E0345",
     "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Danselame"]
@@ -596,7 +596,7 @@
   "73": {
     "nom": "Purgatoire",
     "desc": "Envoi une tranche de flamme sur plusieurs m\u00e8tres, peut toucher les ennemis larges 2 fois. D\u00e9g\u00e2t+4 si l'ennemi \u00e0 subi la Coupe Asura",
-    "effet": "D\u00e9g\u00e2t AoE",
+    "effet": "D\u00e9g\u00e2t AoE L-",
     "montant": "1D8+1 (+4) (+1D8+1)",
     "icone": "E0462",
     "stat": "Esprit",
@@ -651,15 +651,15 @@
     "nom": "Gr\u00e2ce de la Sagesse",
     "desc": "Augmente l'intelligence et l'esprit de la cible",
     "effet": "Buff",
-    "montant": "Blocage +1 et Esprit +2 pendant 4 tours",
+    "montant": "Blocage +2 et Esprit +2 pendant 4 tours",
     "icone": "E0095",
     "stat": "Esprit",
     "classe": ["Clerc"]
   },
   "80": {
     "nom": "Ch\u00e2timent Sacr\u00e9",
-    "desc": "Un rayon de lumi\u00e8res de 3m d'envergure s'abat sur les ennemis",
-    "effet": "D\u00e9g\u00e2t AoE",
+    "desc": "Un rayon de lumi\u00e8res de 4m d'envergure s'abat sur les ennemis",
+    "effet": "D\u00e9g\u00e2t AoE R+",
     "montant": "1D8+1",
     "icone": "E0093",
     "stat": "Intelligence",
@@ -812,7 +812,7 @@
   "97": {
     "nom": "\u00c2me encha\u00een\u00e9e",
     "desc": "Lance une tranche en face de soi et ralentit les ennemis",
-    "effet": "D\u00e9g\u00e2t Malus AoE",
+    "effet": "D\u00e9g\u00e2t Malus AoE L+",
     "montant": "1D6 et Dext\u00e9rit\u00e9 -2 sur 3 tours",
     "icone": "E0860",
     "stat": "Dext\u00e9rit\u00e9",
@@ -831,7 +831,7 @@
     "nom": "D\u00e9fense d'Acier",
     "desc": "Fortifie le corps du lanceur",
     "effet": "Buff",
-    "montant": "Blocage +2 pendant 1D4 (min 2) +1 tours",
+    "montant": "Blocage +2 pendant 1D4 (min 2) +2 tours",
     "icone": "E0031",
     "stat": "Esprit",
     "classe": ["Guerrier", "Chevalier", "Templier", "Chev Dragon"]
@@ -849,7 +849,7 @@
     "nom": "Ombre Rapide",
     "desc": "Acc\u00e9l\u00e8re le corps du lanceur",
     "effet": "Buff",
-    "montant": "Esquive +2 pendant 1D4 (min 2) +1 tours",
+    "montant": "Esquive +2 pendant 1D4 (min 2) +2 tours",
     "icone": "E0009",
     "stat": "Esprit",
     "classe": ["Voleur", "Assassin", "Danselame", "Samoura\u00ef"]
@@ -912,7 +912,7 @@
     "nom": "Aura du Pourfendeur",
     "desc": "Le juge se pr\u00e9pare \u00e0 pourfendre ses ennemis : les d\u00e9g\u00e2ts physiques deviennent t\u00e9n\u00e8breux",
     "effet": "Buff",
-    "montant": "D\u00e9g\u00e2t t\u00e9n\u00e8bres +1D4+2 pendant 3 tours",
+    "montant": "D\u00e9g\u00e2t t\u00e9n\u00e8bres +1D4 (min 2) +2 pendant 3 tours",
     "icone": "E0879",
     "stat": "Esprit",
     "classe": ["Juge"]
@@ -947,7 +947,7 @@
   "112": {
     "nom": "Griffures Noires",
     "desc": "Inflige des d\u00e9g\u00e2ts de t\u00e9n\u00e8bres avec ses griffes sur tous les ennemis et les affaiblis",
-    "effet": "D\u00e9g\u00e2t Malus AoE",
+    "effet": "D\u00e9g\u00e2t Malus AoE R-",
     "montant": "1D6, et -1 de blocage et d'esquive pour 3 tours",
     "icone": "E0767",
     "stat": "Force",
@@ -974,7 +974,7 @@
   "115": {
     "nom": "Destruction Noire",
     "desc": "Envoi une grande tranche de t\u00e9n\u00e8bres jusqu'\u00e0 4m devant.",
-    "effet": "D\u00e9g\u00e2t AoE",
+    "effet": "D\u00e9g\u00e2t AoE L+",
     "montant": "1D6+3",
     "icone": "E0628",
     "stat": "Intelligence",
@@ -1001,7 +1001,7 @@
   "118": {
     "nom": "Explosion Glaciale",
     "desc": "L'utilisateur canalyse sa magie pendant 3 tours (1 d\u00e9 par tour) : 2 d'incantation, + 1 de rel\u00e2che) et la balance \u00e0 toute puissance sur ses adversaires en face (chance blocage/2)",
-    "effet": "D\u00e9g\u00e2t AoE",
+    "effet": "D\u00e9g\u00e2t AoE R+",
     "montant": "4D6 +18",
     "icone": "E0837",
     "stat": "Intelligence",
@@ -1046,7 +1046,7 @@
   "123": {
     "nom": "Temp\u00eate du Shaman",
     "desc": "Le Shaman se concentre pour lancer une temp\u00eate de nature sur les ennemis. ",
-    "effet": "D\u00e9g\u00e2t AoE",
+    "effet": "D\u00e9g\u00e2t AoE R+",
     "montant": "1D8+1",
     "icone": "E0977",
     "stat": "Intelligence",
@@ -1055,7 +1055,7 @@
   "124": {
     "nom": "Infection Pullulante",
     "desc": "La cible \u00e9met une explosion qui peut entra\u00eener l'explosion d'un autre parasite obscur originel. L'explosion propage le parasite aux ennemis. Le parasite ne blesse plus mais peut soigner via Fl\u00e8che des Ombres (3 tours).",
-    "effet": "D\u00e9g\u00e2t Malus AoE",
+    "effet": "D\u00e9g\u00e2t Malus AoE R-",
     "montant": "1D8 + 2*(tours parasite restant)",
     "icone": "E0743",
     "stat": "Intelligence",
@@ -1082,7 +1082,7 @@
   "127": {
     "nom": "Protection Absolue",
     "desc": "Action Instantan\u00e9e. L'ing\u00e9nieur canalyse toute son \u00e9nergie autour de son armure, for\u00e7ant les attaques des ennemis \u00e0 venir vers lui. M\u00eame les attaques de zones (AoE) ne visent que le lanceur.",
-    "effet": "Buff",
+    "effet": "Blocage",
     "montant": "1 fois par combat : Mono : Blocage, AoE : Blocage -3, d\u00e9g\u00e2t * 2.5 (-10) sur 1 tour",
     "icone": "j058",
     "stat": "Esprit",
@@ -1100,7 +1100,7 @@
   "129": {
     "nom": "Temp\u00eate Infernale",
     "desc": "Tournoi et inflige des d\u00e9g\u00e2ts de zone. Les ennemis touch\u00e9s sont provoqu\u00e9s au tour suivant.",
-    "effet": "D\u00e9g\u00e2t Malus AoE",
+    "effet": "D\u00e9g\u00e2t Malus AoE R-",
     "montant": "1D6+3, 25% de chance d'\u00eatre cibl\u00e9 (1 tour)",
     "icone": "E0034",
     "stat": "Dext\u00e9rit\u00e9",
@@ -1109,7 +1109,7 @@
   "130": {
     "nom": "Vague Foudroyante",
     "desc": "(MASSE OU MARTEAU REQUIS) Inflige des d\u00e9g\u00e2ts de contondant en fracassant le sol. Les ennemis touch\u00e9s sont destabilis\u00e9s.",
-    "effet": "D\u00e9g\u00e2t Malus AoE",
+    "effet": "D\u00e9g\u00e2t Malus AoE R-",
     "montant": "1D6, Blocage -2 pour 3 tours",
     "icone": "E0310",
     "stat": "Force",
@@ -1118,7 +1118,7 @@
   "131": {
     "nom": "Robot Destructeur",
     "desc": "Invoque un Robot Nano Autodestructeur. Explose sur courte port\u00e9e. Peut \u00eatre surcharg\u00e9 : Feu = +3, Foudre = Port\u00e9e +,  Glace = Dext\u00e9-2 (3t),  Nature = Force/Int -2 (2t),  Lumi\u00e8re = R\u00e9uss -2 (1t),  T\u00e9n\u00e8bres = Aspire",
-    "effet": "D\u00e9g\u00e2t Malus AoE",
+    "effet": "D\u00e9g\u00e2t Malus AoE R-",
     "montant": "1D6+2 (+1/niveau, 0 d\u00e9g\u00e2t/effet d'arme)",
     "icone": "robot",
     "stat": "Intelligence",
