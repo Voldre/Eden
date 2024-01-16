@@ -114,6 +114,17 @@ dialog::backdrop {
   margin: auto;
   text-align: center;
 }
+.skillRangeIcon {
+  width: 23px;
+  height: 24px;
+  display: inline-block;
+  background-size: cover;
+  background-position: center;
+  margin-top: -10px;
+  position: relative;
+  bottom: -5px;
+}
+
 .awakenSkill > .effet {
   cursor: pointer;
   cursor: url("images/layout/cursor-hover.png"), auto;
@@ -280,6 +291,11 @@ dialog::backdrop {
 .race img {
   width: 200px;
   height: 200px;
+}
+.informations {
+  display: flex;
+  justify-content: space-around;
+  padding: 1px;
 }
 .classeslist div {
   border: 1px gray solid;
@@ -744,6 +760,13 @@ dialog::backdrop {
 @media (max-width: 700px) {
   .flexContainer {
     display: flex;
+  }
+  .informations {
+    display: grid;
+    justify-content: space-around;
+    padding: 1px;
+    grid-template-columns: 20% 20% 20% 20%;
+    margin-left: 5px;
   }
   .classeslist div {
     width: 22vw;

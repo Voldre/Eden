@@ -308,7 +308,23 @@ function insertSkill(skillElement, skillName, awakenClass = false) {
     const skillDesc = selectedAwakenSkill?.desc || selectedSkill.desc;
     const skillMontant = selectedAwakenSkill?.montant || selectedSkill.montant;
 
-    skillElement.children[1].innerText = selectedSkill.effet + " / " + selectedSkill.stat;
+    const skillRange = selectedSkill.effet.split("AoE ")[1] ?? null; // en bas [0] + "AoE"
+    const selectedSkillEffet = skillRange ? selectedSkill.effet.split(" AoE")[0] : selectedSkill.effet;
+    skillElement.children[1].innerText = selectedSkillEffet;
+
+    if (skillRange) {
+      const skillRangeIconE = document.createElement("span");
+      skillRangeIconE.className = "skillRangeIcon";
+      skillRangeIconE.style.backgroundImage = `url(http://voldre.free.fr/Eden/images/layout/${skillRange}.png)`;
+      skillElement.children[1].append(skillRangeIconE);
+
+      const skillStatE = document.createElement("span");
+      skillStatE.innerText = "/ " + selectedSkill.stat;
+      skillElement.children[1].append(skillStatE);
+    } else {
+      skillElement.children[1].innerText += " / " + selectedSkill.stat;
+    }
+
     skillElement.children[2].innerText = skillMontant;
     insertBuffInteraction(skillElement.children[3], skillName, selectedSkill, skillMontant);
     skillElement.children[3].children[0].src =
