@@ -353,9 +353,25 @@ dialog::backdrop {
   border: 2px black solid;
   margin: 5px;
 }
+
+.malus {
+  display: flex;
+  margin-bottom: 6px;
+  overflow: auto;
+}
+.malus div {
+  display: flex;
+  height: max-content;
+  width: 50%;
+  margin: 0px 1px;
+}
+.malus .commentaire {
+  width: 100%;
+}
+.malus input[type="number"],
 .infoPersos input[type="number"],
 .infoEnnemi input[type="number"] {
-  width: 30px;
+  width: 29px;
 }
 
 .infoPersos .commentaire,

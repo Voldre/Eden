@@ -919,9 +919,9 @@
   },
   "109": {
     "nom": "Spirale Glaciale",
-    "desc": "Una aura de glace entoure et prot\u00e8ge, puis vient frapper l'ennemi",
+    "desc": "Una aura de glace entoure et prot\u00e8ge, puis vient frapper l'ennemi. L'utilisateur choisi quand il lance son attaque (au 2eme ou 3eme tour).",
     "effet": "D\u00e9g\u00e2t Buff",
-    "montant": "Blocage+2 pendant 2 tours, puis \u00e0 la fin d\u00e9g\u00e2t glace +1D6+2",
+    "montant": "Blocage+2 pendant 2-3 tours, puis \u00e0 la fin d\u00e9g\u00e2t glace +1D4+2",
     "icone": "E0757",
     "stat": "Esprit",
     "classe": ["Chevalier"]
