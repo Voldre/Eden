@@ -1234,6 +1234,14 @@
     "kindId": "I00207b"
   },
   {
+    "id": 1401,
+    "value": 2,
+    "kind": "composant",
+    "name": "Bombe Fracas",
+    "description": "Cette bombe a été conçue tout spécialement pour réduire la défense de ses victimes.",
+    "kindId": "i00598"
+  },
+  {
     "id": 1501,
     "value": 3,
     "kind": "anecdote",
@@ -2475,6 +2483,116 @@
     "enemies": [],
     "kindId": "items/",
     "group": 1
+  },
+  {
+    "id": 1710,
+    "value": 3,
+    "kind": "anecdoteII",
+    "name": "Malvis dépouillée",
+    "description": "Pour avoir des informations Malvis est prête à payer cher, très cher, elle en fini complètement dépouillée !",
+    "maps": [58],
+    "enemies": [],
+    "kindId": "items/I00367",
+    "group": 1
+  },
+  {
+    "id": 1711,
+    "value": 3,
+    "kind": "anecdoteII",
+    "name": "Erida et Kratos",
+    "description": "Pour faire diversion, Kratos et Erida ont décidés de faire une scène de ménage, une bonne vieille dispute de couple pleine de jalousie ! A croire qu'ils se connaissent depuis longtemps !",
+    "maps": [58],
+    "enemies": [],
+    "kindId": "skillIcon/E0493",
+    "group": 1
+  },
+  {
+    "id": 1750,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Skroutch Scrounch ?",
+    "description": "Skrounch ? Shkrouk ? Skroutch ? Shkroutch ? Le bruit d'un os... Hein ? Oh et puis zut.",
+    "maps": [6],
+    "enemies": [],
+    "kindId": "items/I00256",
+    "group": 3
+  },
+  {
+    "id": 1751,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Lucius et Maya",
+    "description": "Maya a été recueilli au début de leur aventure aux Steppes d'Aristère, une enfant ogresse ayant perdue sa tribu. Mais des rumeurs cours comme quoi Lucius aurait... un penchant... pour elle ?",
+    "maps": [6],
+    "enemies": [],
+    "kindId": "skillIcon/j644",
+    "group": 3
+  },
+  {
+    "id": 1752,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Lutta et Shkrouk",
+    "description": "Lutta et Shkrouk, c'est une petite histoire mignonne, entre insulte de Lutta et dodo dans le sac de Shkrouk.",
+    "maps": [6],
+    "enemies": [],
+    "kindId": "items/i01257",
+    "group": 3
+  },
+  {
+    "id": 1753,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Leyla et Lucius",
+    "description": "La petite nouvelle, Leyla, a eu une arrivée des plus surprenantes : tout droit sortie de la chambre de Lucius ! Mais que s'est-il passé... ;)",
+    "maps": [6],
+    "enemies": [],
+    "kindId": "skillIcon/E0344",
+    "group": 3
+  },
+  {
+    "id": 1754,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Cyritsu et les vols",
+    "description": "Cyritsu est connu pour voler aux pauvres pour donner aux riches, mais la définition de riche laisse peut-être à désirer... Petite pensée au Drakaï qui passait par là...",
+    "maps": [7],
+    "enemies": [],
+    "kindId": "skillIcon/E0497",
+    "group": 3
+  },
+  {
+    "id": 1755,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "La Veyda et les soins",
+    "description": "Se soigner n'est pas facile pour le groupe. En effet la plupart des soigneurs préfèrent tanker et frapper ! On peut citer l'un d'eux, Shkrouk, je cite : \"Le soin c'est pour les pédales !\"",
+    "maps": [4],
+    "enemies": [],
+    "kindId": "skillIcon/E1014",
+    "group": 3
+  },
+  {
+    "id": 1756,
+    "value": 3,
+    "kind": "anecdoteIII",
+    "name": "Leyla et les donations",
+    "description": "Leyla tout récemment ...",
+    "maps": [],
+    "enemies": [],
+    "kindId": "items/",
+    "group": 3
+  },
+  {
+    "id": 1756,
+    "value": 3,
+    "kind": "anecdoteIII",
+    "name": "Rad Ed qui vol avec Rageux ?",
+    "description": "",
+    "maps": [4],
+    "enemies": [],
+    "kindId": "items/",
+    "group": 3
   },
   {
     "id": 15000,
