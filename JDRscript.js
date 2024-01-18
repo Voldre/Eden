@@ -436,7 +436,7 @@ function insertBuffInteraction(buffTurnE, skillName, selectedSkill, skillMontant
 
         amountE.type = "number";
         amountE.min = 1;
-        amountE.max = 6;
+        amountE.max = 10;
         amountE.value = 2;
         inputs.append(amountE);
       }
@@ -487,7 +487,22 @@ buttonBuffs.addEventListener("click", () => {
       }
     }
   });
+  [...document.querySelector(".malus").children].forEach((buffE) => {
+    const turnLeftElement = buffE.children[0];
+    const turnLeft = Math.max(0, parseInt(turnLeftElement.value) - 1);
+    console.log(turnLeft);
+    turnLeftElement.value = turnLeft;
+    if (turnLeft >= 1) {
+      buffExist = true;
+    }
+  });
   buttonBuffs.className = buffExist ? "" : "hide";
+});
+
+[...document.querySelector(".malus").children].forEach((buffE) => {
+  buffE.children[0].addEventListener("change", (e) => {
+    if (e.target.value > 0) buttonBuffs.className = "";
+  });
 });
 
 [...document.querySelectorAll(".buffTurn")].forEach((buffE) => {
