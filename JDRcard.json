@@ -813,16 +813,16 @@
     "id": 1260,
     "value": 1,
     "kind": "composant",
-    "name": "Peau de Smilodon",
-    "description": "Cette peau peut servir à créer des armures légères.",
-    "kindId": "I00242"
+    "name": "Peau de lézard",
+    "description": "Cette peau peut servir à créer des armures légères ou lourde.",
+    "kindId": "I00243"
   },
   {
     "id": 1261,
     "value": 1,
     "kind": "composant",
     "name": "Peau de Tortue",
-    "description": "La peau de tortue est toute flasque.",
+    "description": "La peau de tortue est toute flasque. Peut être utilisé pour créer des armures magiques.",
     "kindId": "I00246"
   },
   {
