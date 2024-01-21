@@ -1934,9 +1934,9 @@
     "nom": "Botassius - G\u00e9n\u00e9ral D\u00e9fensif",
     "pvmax": "300",
     "skills": [
-      "Lumi\u00e8re de Gu\u00e9rison : 2D10+12 (1/4 rejouer) : Intelligence",
+      "Lumi\u00e8re de Gu\u00e9rison : 2D10+12 (1/4 rejouer + si crit) : Intelligence",
       "Vague Foudroyante : 3D6+16 (un peu -), Blocage-2 AoE 3 tours : Force",
-      "Lumi\u00e8re Sacr\u00e9e : 3D6+18 / Euphorie : +1D4 (min 2) par coup sur 4 tours : esprit",
+      "Lumi\u00e8re Sacr\u00e9e : 3D6+18 / Euphorie : +1D4 (min 2) +1 par coup sur 4 tours : esprit",
       "Passif : Blocage +2 (Def Acier), D\u00e9g\u00e2t re\u00e7u -15 (-5 si < 50 PV)"
     ],
     "stats": "17,9,17,14,15",
@@ -2006,11 +2006,11 @@
   },
   "136": {
     "visuel3D": "vimess",
-    "nom": "Vimess",
+    "nom": "Vimess - G\u00e9n\u00e9ral d'Expédition",
     "pvmax": "250",
     "skills": [
       "Invoc Ph\u00e9nix (Torch) : 40 PV (revie 1 fois), Stats 15 (bloc 8) all, Charge 2D10+10 (phys), Tornade Feu (-1D) (mag), explosion AoE \u00e0 la mort (2D10+15, idem soin Vimess)",
-      "Pluie de Fl\u00e8ches (/Douloureuse) : 3D6+20 (/1D mais AoE, 0 heal 3 tours) (Flèche mono +6?) : Dext\u00e9rit\u00e9",
+      "Pluie de Fl\u00e8ches (/Douloureuse) : 3D6+20 (/1D mais AoE, 0 heal 3 tours) (Fl\u00e8che mono +6?) : Dext\u00e9rit\u00e9",
       "Saut d'esquive (+blocage) : 5 tentatives : tir 2D6+12",
       "Passif : Esquive +2, si PV < 100 : esq/bloc cible -1"
     ],
@@ -2228,5 +2228,35 @@
     "desc": "Grande tortue brune cramoisie de la Vall\u00e9e de la Mort",
     "infos": "Faible au feu et \u00e0 la glace",
     "drop": "Ecaille/Peau/Griffe rare de tortue"
+  },
+  "151": {
+    "visuel3D": "m241",
+    "nom": "Grambo - N\u00b07 Hydra",
+    "pvmax": "210",
+    "skills": [
+      "Coup de flingue : 2D10+13 : dext\u00e9rit\u00e9",
+      "Torche de feu : 1D10+15 AoE : intelligence",
+      "Saut d'esquive : 4 tentatives : tir 2D6+10 : dext\u00e9rit\u00e9",
+      "Scellement : Aucun sort physique, pendant 4 tours : Esprit"
+    ],
+    "stats": "6,17,15,10,16",
+    "desc": "Anuran Juge se battant au pistolet et 7eme t\u00eate de l'Hydra",
+    "infos": "Faible au per\u00e7ant et \u00e0 la lumi\u00e8re",
+    "drop": "50po, veste des hautes terres, rare: Fusil d'Asbi"
+  },
+  "152": {
+    "visuel3D": "m069b",
+    "nom": "Snoko - N\u00b03 Hydra",
+    "pvmax": "250",
+    "skills": [
+      "Atk Solo (-6) / Faiblesse Critique : 3D6 +14 (Crit X1.5), r\u00e9ussite -1 : Force",
+      "Griffure Noire : 2D6 +8, et -2 blocage/esquive pour 3 tours AoE : Esprit",
+      "Contr\u00f4le Energie RES : D\u00e9g\u00e2t re\u00e7u -1D6 -8, res esprit +3 sur 4 tours : Esprit",
+      "Passif \"Transe - Mode Tueur\": D\u00e9g\u00e2t +1D4 (min 2) +2, pour chaque 50 PV !"
+    ],
+    "stats": "17,9,9,12,17",
+    "desc": "Tuskar assassin tr\u00e8s bagarreur et puissant, 3eme t\u00eate de l'Hydra",
+    "infos": "Faible \u00e0 la glace et \u00e0 la foudre",
+    "drop": "75po, Anneau du Bagarreur, rare : Griffe de Puissance"
   }
 }

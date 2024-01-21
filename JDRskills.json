@@ -408,7 +408,7 @@
     "nom": "Saut Dimensionnel",
     "desc": "T\u00e9l\u00e9porte le joueur jusqu'\u00e0 5m l\u00e0 o\u00f9 il regarde",
     "effet": "Esquive",
-    "montant": "3 tentatives par combat : remplace l'esquive par la t\u00e9l\u00e9portation",
+    "montant": "3 tentatives par combat : remplace l'esquive (ou le blocage, avec malus AoE (-2,-4)) par la t\u00e9l\u00e9portation",
     "icone": "E0025",
     "stat": "Intelligence",
     "classe": ["Magicien", "Illusionniste", "D\u00e9moniste", "Luminary"]
@@ -921,7 +921,7 @@
     "nom": "Spirale Glaciale",
     "desc": "Una aura de glace entoure et prot\u00e8ge, puis vient frapper l'ennemi. L'utilisateur choisi quand il lance son attaque (au 2eme ou 3eme tour).",
     "effet": "D\u00e9g\u00e2t Buff",
-    "montant": "Blocage+2 pendant 2-3 tours, puis \u00e0 la fin d\u00e9g\u00e2t glace +1D4+2",
+    "montant": "Blocage+2 pendant 2-3 tours, puis \u00e0 la fin d\u00e9g\u00e2t glace +1D6+1",
     "icone": "E0757",
     "stat": "Esprit",
     "classe": ["Chevalier"]
