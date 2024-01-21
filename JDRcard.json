@@ -244,7 +244,7 @@
     "id": 1018,
     "value": 3,
     "kind": "boss",
-    "name": "Ver Cuirass\u00e9 - Jimmy",
+    "name": "Jimmy - Ver Cuirass\u00e9",
     "description": "Un Ver Alpha vivant dans une grotte, leader des insectes et territorial, \u00e0 une carapace empoisonn\u00e9e verd\u00e2tre.",
     "kindId": "m102"
   },
@@ -260,7 +260,7 @@
     "id": 1020,
     "value": 3,
     "kind": "boss",
-    "name": "Tank Ursun",
+    "name": "Burma - Tank Ursun",
     "description": "Grand ursun noir capable d'encaisser de nombreux coups, il fait parti des hauts plac\u00e9s des Ursuns Belliqueux.",
     "kindId": "m052"
   },
