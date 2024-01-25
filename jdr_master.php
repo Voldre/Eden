@@ -11,7 +11,9 @@ session_start();
         <link rel="stylesheet" href="JDRstyle.css">
         <!--<script src="jquery-3.6.0.min.js"></script>-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="JDRmaster.js" defer></script>
+        
+        <script type="module" src="JDRmaster.js" defer></script>
+        
         <title>Eden JDR</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">

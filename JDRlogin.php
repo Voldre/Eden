@@ -1,10 +1,8 @@
 <?php
-
 session_start();
 
 print_r($_POST);
-echo  password_hash($_POST['mdp'], PASSWORD_BCRYPT)."<br/>";
-echo  password_hash($_POST['mdp'], PASSWORD_BCRYPT);
+echo  "<br/>".password_hash($_POST['mdp'], PASSWORD_BCRYPT);
 if(isset($_POST['login'])){
     if(!isset($_POST['username']) || !isset($_POST['mdp'])){
         exit('Mot de passe et login nécessaire');
@@ -25,5 +23,5 @@ if(isset($_POST['login'])){
 
 ?>
 
-<meta http-equiv="refresh" content="5; URL=./jdr.html">
+<meta http-equiv="refresh" content="3; URL=./jdr.html">
 

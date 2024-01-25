@@ -1,48 +1,11 @@
-// JSON Initialisation
-var xhReq = new XMLHttpRequest();
+import { skillsJSON, eqptJSON, masterJSON, enemyJSON } from "./JDRstore";
+import { callPHP } from "./utils";
 
-var skillsJSON = {};
-var eqptJSON = {};
-var masterJSON = {};
-var enemyJSON = {};
-// var cardJSON = [];
+// load notes
+document.querySelector(".notes").value = masterJSON.notes;
 
-console.log(window.location.href);
-
-if (window.location.href.includes("http")) {
-  enemyJSON = getData("enemy");
-
-  skillsJSON = getData("skills");
-
-  eqptJSON = getData("eqpt");
-
-  // cardJSON = getData("card");
-
-  masterJSON = getData("master");
-
-  // load notes
-  document.querySelector(".notes").value = masterJSON.notes;
-}
-
-function getData(filename) {
-  xhReq.open("GET", "./JDR" + filename + ".json" + "?" + new Date().getTime(), false);
-  xhReq.send(null);
-  return JSON.parse(xhReq.responseText);
-}
-
-// console.log('Master JSON', masterJSON);
 console.log("Enemy JSON", enemyJSON);
 
-/*
-$.ajax({
-    url: "JDRlogin.php",
-
-    type: "post", 
-    success: function(data) {
-      $('body').html(data);
-    }
-})
-*/
 if (window.location.href.includes("html")) {
   console.log("Page must not be read in .html, use .php instead");
   stop();
@@ -277,30 +240,20 @@ document.querySelector("#allowSave").addEventListener("click", () => {
   masterJSON.notes = document.querySelector(".notes").value;
 
   document.cookie = "masterJSON=" + encodeURIComponent(JSON.stringify(masterJSON));
-  saveWithPHP("master"); // Save it to JSON
+  callPHP({ action: "saveFile", name: "master" });
   toastNotification("Autorisation modifiée");
 });
 
 document.querySelector("#save").addEventListener("click", () => {
   masterJSON.notes = document.querySelector(".notes").value;
   document.cookie = "masterJSON=" + encodeURIComponent(JSON.stringify(masterJSON));
-  saveWithPHP("master"); // Save it to JSON
+  callPHP({ action: "saveFile", name: "master" });
   toastNotification("Données sauvegardées");
 });
 
 document.querySelector("#saveBackup").addEventListener("click", () => {
-  // eslint-disable-next-line no-undef
-  $.ajax({
-    url: "JDRsaveBackup.php",
-    type: "post",
-    // /*
-    success: function (data) {
-      // eslint-disable-next-line no-undef
-      $("body").html(data);
-    },
-    // */
-  });
-  toastNotification("JDRpersos_backup.json sauvegardés");
+  callPHP({ action: "saveBackup" });
+  toastNotification("JDRpersos_backup.json et JDRplayer sauvegardés");
 });
 
 // Add new enemy (4th)
@@ -333,6 +286,8 @@ document.querySelector("#newEnemy").addEventListener("click", () => {
 
 document.querySelector("#updatePInfo").addEventListener("click", () => {
   updateSlots();
+
+  var xhReq = new XMLHttpRequest();
 
   const pInfo = document.querySelector("#pInfo");
   xhReq.open("GET", "./JDRpersos.json" + "?" + new Date().getTime(), false);
@@ -386,7 +341,7 @@ document.querySelector("#createSkill").addEventListener("click", () => {
 
   document.cookie = "skillsJSON=" + encodeURIComponent(JSON.stringify(newSkill));
 
-  saveWithPHP("skills");
+  callPHP({ action: "saveFile", name: "skills" });
   skillsJSON[skillID] = newSkill[skillID];
   toastNotification("Compétence créé");
 });
@@ -408,7 +363,7 @@ document.querySelector("#createEqpt").addEventListener("click", () => {
 
   document.cookie = "eqptJSON=" + encodeURIComponent(JSON.stringify(newEqpt));
 
-  saveWithPHP("eqpt");
+  callPHP({ action: "saveFile", name: "eqpt" });
   eqptJSON[eqptID] = newEqpt[eqptID];
   toastNotification("Equipement créé");
 });
@@ -438,26 +393,10 @@ document.querySelector("#createEnemy").addEventListener("click", () => {
 
   document.cookie = "enemyJSON=" + encodeURIComponent(JSON.stringify(newEnemy));
 
-  saveWithPHP("enemy");
+  callPHP({ action: "saveFile", name: "enemy" });
   enemyJSON[enemyID] = newEnemy[enemyID];
   toastNotification("Ennemi créé");
 });
-
-// Global Save
-
-function saveWithPHP(nameJSON) {
-  // eslint-disable-next-line no-undef
-  $.ajax({
-    url: "JDRsaveFile.php",
-    type: "post",
-    data: { name: nameJSON },
-    /*
-        success: function(data) {
-          $('body').html(data);
-        }
-        */
-  });
-}
 
 function toastNotification(text, duration = 3000) {
   var x = document.getElementById("toast");

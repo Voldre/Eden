@@ -1,34 +1,5 @@
-// JSON Initialisation
-var xhReq = new XMLHttpRequest();
-
-console.log(window.location.href);
-if (window.location.href.includes("http")) {
-  var skillsJSON = {};
-  var skillsAwakenJSON = {};
-  var eqptJSON = {};
-  var persosJSON = {};
-  var galeryJSON = {};
-  var masterJSON = {};
-
-  skillsJSON = getData("skills");
-
-  skillsAwakenJSON = getData("skillsAwaken");
-
-  eqptJSON = getData("eqpt");
-
-  persosJSON = getData("persos");
-
-  galeryJSON = getData("galery");
-
-  masterJSON = getData("master");
-}
-
-function getData(filename) {
-  xhReq.open("GET", "./JDR" + filename + ".json" + "?" + new Date().getTime(), false);
-  xhReq.send(null);
-  return JSON.parse(xhReq.responseText);
-}
-
+import { skillsJSON, skillsAwakenJSON, eqptJSON, persosJSON, galeryJSON, masterJSON } from "./JDRstore";
+import { callPHP } from "./utils";
 console.log("Skills JSON", skillsJSON);
 console.log("Persos JSON", persosJSON);
 
@@ -108,7 +79,7 @@ function defineAwaken(classe) {
   awakenSkillE.querySelector(".nom").innerText = "Eveil du " + classe;
   awakenSkillE.querySelector(".effet").innerText = "Inactif";
 
-  nbTurns = nbUse === 1 ? "4" : "3";
+  const nbTurns = nbUse === 1 ? "4" : "3";
   awakenSkillE.querySelector(".montant").innerText =
     nbUse + " fois par combat : Eveil des compétences : Durée " + nbTurns + " tours";
 
@@ -423,7 +394,6 @@ function insertBuffInteraction(buffTurnE, skillName, selectedSkill, skillMontant
       turnE.min = 1;
       turnE.max = 6;
       turnE.value = 3;
-      inputs.append(turnE);
 
       const amountText = document.createElement("p");
       const amountE = document.createElement("input");
@@ -443,6 +413,10 @@ function insertBuffInteraction(buffTurnE, skillName, selectedSkill, skillMontant
       globalE.append(inputs);
 
       const confirmE = document.createElement("button");
+      turnE.addEventListener("change", (e) => {
+        confirmE.disabled = e.target.value < 1;
+      });
+      inputs.append(turnE);
       confirmE.innerText = "Confirmer";
       confirmE.addEventListener("click", () => {
         const turnOfBuffE = document.createElement("p");
@@ -698,6 +672,8 @@ document.querySelector("#download").addEventListener("click", () => {
 });
 
 function download(data, filename, type) {
+  var xhReq = new XMLHttpRequest();
+
   xhReq.open("POST", "http://voldre.free.fr/Eden/" + filename, true);
   xhReq.send(data);
 
@@ -785,9 +761,7 @@ document.querySelector("#save").addEventListener("click", () => {
   document.cookie = cookiePerso;
   if (cookiePerso.length < 4000) {
     document.cookie = cookiePerso;
-    console.log("saveFiche() done : JDRsaveFile.php executed");
-
-    saveWithPHP("persos");
+    callPHP({ action: "saveFile", name: "persos" });
     toastNotification("Sauvegarde effectuée");
   } else {
     toastNotification("ECHEC : Plus de place disponible sur la fiche !", 10000);
@@ -804,8 +778,6 @@ function savePerso() {
   [...equipements.children].forEach((equipement) => {
     eqptsData.push(equipement.children[0].value); // Nom
   });
-
-  persosJSON = persosJSON || {};
 
   persosJSON[document.querySelector(".perso").id] = {
     nom: document.querySelector("#nom").value,
@@ -860,24 +832,7 @@ function savePerso() {
 
 // Global Save
 
-function saveWithPHP(nameJSON) {
-  // eslint-disable-next-line no-undef
-  $.ajax({
-    url: "JDRsaveFile.php",
-    type: "post",
-    data: { name: nameJSON },
-    /*
-    success: function (data) {
-      $("body").html(data);
-    },*/
-  });
-}
-
-// eslint-disable-next-line no-undef
-$.ajax({
-  url: "JDRgalery.php",
-  type: "post",
-});
+callPHP({ action: "jdrGalerie" });
 
 // Show/Hide other pages of Eden
 var buttonIframe = document.querySelector("#buttonIframe");

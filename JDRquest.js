@@ -1,42 +1,9 @@
-// JSON Initialisation
-var xhReq = new XMLHttpRequest();
-var enemyJSON = {};
-var persosJSON = {};
-var pnjJSON = {};
-var mapsJSON = {};
-var playerJSON = {};
+import { playerJSON, mapsJSON, pnjJSON, persosJSON, enemyJSON } from "./JDRstore";
 
-var rarity;
-
-// Obsolete
 // const apiKey = "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";
 const apiUrl = "https://api.openai.com/v1/chat/completions";
 
-console.log(window.location.href);
-if (window.location.href.includes("voldre.free.fr")) {
-  xhReq.open("GET", "./JDRskills.json" + "?" + new Date().getTime(), false);
-  xhReq.send(null);
-
-  enemyJSON = getData("enemy");
-
-  playerJSON = getData("player");
-
-  persosJSON = getData("persos");
-
-  mapsJSON = getData("maps", false);
-
-  pnjJSON = getData("pnj");
-}
-
-function getData(filename, JDR = true) {
-  if (JDR) {
-    xhReq.open("GET", "./JDR" + filename + ".json" + "?" + new Date().getTime(), false);
-  } else {
-    xhReq.open("GET", "./" + filename + ".json" + "?" + new Date().getTime(), false);
-  }
-  xhReq.send(null);
-  return JSON.parse(xhReq.responseText);
-}
+var rarity;
 
 // Load perso if URL parameter
 window.addEventListener("load", async () => {
@@ -88,7 +55,7 @@ window.addEventListener("load", async () => {
     document.querySelector("#rarity").alt = "Boss";
   }
   const randomPNJ = Math.floor(Math.random() * Object.entries(pnjJSON).length + 1);
-  console.log(randomPNJ);
+  console.log("randomPNJ :", randomPNJ);
   const pnjData = pnjJSON[randomPNJ];
 
   // 10 pour le moment en desc
@@ -145,13 +112,17 @@ window.addEventListener("load", async () => {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
+      if (data.error) {
+        throw new Error("ChatGPT code : " + data.error.code);
+        // document.querySelector("#response").innerHTML = "Erreur ChatGPT. Motif : " + data.error.code;
+      }
       const response = data.choices[0].message.content;
       document.querySelector("#response").innerHTML = response.replaceAll("\n", "<br/>");
       document.querySelector(".game").classList.remove("loading");
     })
     .catch((error) => {
-      document.querySelector("#response").innerText = "Erreur lors de la requête à l'API :" + error.toString();
-      console.error("Erreur lors de la requête à l'API :", error);
+      document.querySelector("#response").innerText = "Erreur lors de la requête à l'API. " + error.toString();
+      console.error("Erreur lors de la requête à l'API. ", error);
       document.querySelector(".game").classList.remove("loading");
     });
 });
@@ -159,9 +130,9 @@ window.addEventListener("load", async () => {
 function getChatGPTKey() {
   // eslint-disable-next-line no-undef
   return $.ajax({
-    url: "JDRlogin_chatgpt.php",
-    type: "POST",
-    data: {},
+    url: "jdr_backend.php",
+    type: "post",
+    data: { action: "chatGpt" },
     error: function (error) {
       console.log(error);
 
@@ -253,9 +224,7 @@ function initializeActions(actions, enemyData, isElite, pnjEnemy = { nom: null }
       actionURL =
         "jdr_combat.html?perso=" + indexPerso + "&enemy=" + enemy + "&map=" + mapID + (isElite ? "&isElite" : "");
     } else if (id == 1) {
-      // @TODO : Créer la HomePage
       actionURL = "jdr_profil.html?joueur=" + indexPlayer;
-      console.log(actionURL);
     } else if (id == 2) {
       // Change enemy
       enemy = pnjEnemy["nom"];

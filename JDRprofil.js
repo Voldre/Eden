@@ -1,38 +1,5 @@
-// JSON Initialisation
-var xhReq = new XMLHttpRequest();
-var cardJSON = [];
-var persosJSON = {};
-var eqptJSON = {};
-var enemyJSON = {};
-var mapsJSON = {};
-var allSkills = [];
-var playerJSON = [];
-
-console.log(window.location.href);
-if (window.location.href.includes("http")) {
-  xhReq.open("GET", "./JDRskills.json" + "?" + new Date().getTime(), false);
-  xhReq.send(null);
-
-  cardJSON = getData("card");
-  eqptJSON = getData("eqpt");
-  enemyJSON = getData("enemy");
-  persosJSON = getData("persos");
-
-  mapsJSON = getData("maps", false);
-
-  allSkills = getData("combatS");
-  playerJSON = getData("player");
-}
-
-function getData(filename, JDR = true) {
-  if (JDR) {
-    xhReq.open("GET", "./JDR" + filename + ".json" + "?" + new Date().getTime(), false);
-  } else {
-    xhReq.open("GET", "./" + filename + ".json" + "?" + new Date().getTime(), false);
-  }
-  xhReq.send(null);
-  return JSON.parse(xhReq.responseText);
-}
+import { cardJSON, persosJSON, eqptJSON, enemyJSON, mapsJSON, allSkills, playerJSON } from "./JDRstore";
+import { callPHP } from "./utils";
 
 const charactersList = document.querySelector(".charactersList");
 const persosE = [...charactersList.children];
@@ -281,13 +248,7 @@ function updateDay(joueurData, indexPlayer) {
   document.cookie = cookiePerso;
 
   // eslint-disable-next-line no-undef
-  $.ajax({
-    url: "JDRsaveFile.php",
-    type: "post",
-    data: { name: "player" },
-  });
-
-  console.log("saveFiche() done : JDRsaveFile.php executed");
+  callPHP({ action: "saveFile", name: "player" });
 
   toastNotification("Cadeau de Connexion Quotidienne : 5 Pièces Alpaga !", 6000);
 
