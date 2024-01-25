@@ -1,19 +1,4 @@
-// JSON Initialisation
-var xhReq = new XMLHttpRequest();
-
-console.log(window.location.href);
-if (window.location.href.includes("http")) {
-  xhReq.open("GET", "./JDRskills.json" + "?" + new Date().getTime(), false);
-  xhReq.send(null);
-  var skillsJSON = JSON.parse(xhReq.responseText);
-
-  // xhReq.open("GET", "./JDRpersos.json", false);
-  // xhReq.send(null);
-  // var persosJSON = JSON.parse(xhReq.responseText);
-} else {
-  // eslint-disable-next-line no-redeclare
-  var skillsJSON = {};
-}
+import { skillsJSON } from "./JDRstore";
 
 // prettier-ignore
 const classes = [ "Guerrier", "Chevalier", "Templier", "Chev Dragon", "Voleur", "Assassin", "Danselame", "Samouraï", "Chasseur", "Ingénieur", "Corsaire", "Juge", "Clerc", "Barde", "Shaman", "Sage", "Magicien", "Illusionniste", "Démoniste", "Luminary",];
@@ -210,7 +195,7 @@ function aoeDesc() {
     typeMalus: ["Esquivable Malus 4 si proche, 2 si éloigné", "Esquivable seulement de loin, Malus 3-4"],
   };
   let description = "Il existe 4 types d'Attaques de Zone (AoE) :<br/>";
-  for (i = 0; i < 4; i++) {
+  for (var i = 0; i < 4; i++) {
     const rangeI = Math.floor(i / 2);
     const typeI = i % 2;
     description +=

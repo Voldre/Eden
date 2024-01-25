@@ -1,38 +1,5 @@
-// JSON Initialisation
-var xhReq = new XMLHttpRequest();
-var eqptJSON = {};
-var enemyJSON = {};
-var persosJSON = {};
-var allSkills = [];
-var playerJSON = {};
-var cardJSON = {};
-var logsJSON = {};
-
-console.log(window.location.href);
-if (window.location.href.includes("http")) {
-  xhReq.open("GET", "./JDRskills.json" + "?" + new Date().getTime(), false);
-  xhReq.send(null);
-
-  enemyJSON = getData("enemy");
-
-  eqptJSON = getData("eqpt");
-
-  persosJSON = getData("persos");
-
-  allSkills = getData("combatS");
-
-  playerJSON = getData("player");
-
-  cardJSON = getData("card");
-
-  logsJSON = getData("combatLogs");
-}
-
-function getData(filename) {
-  xhReq.open("GET", "./JDR" + filename + ".json" + "?" + new Date().getTime(), false);
-  xhReq.send(null);
-  return JSON.parse(xhReq.responseText);
-}
+import { cardJSON, persosJSON, eqptJSON, enemyJSON, allSkills, playerJSON, logsJSON } from "./JDRstore";
+import { callPHP } from "./utils";
 
 // prettier-ignore
 const classes = [ "Guerrier", "Chevalier", "Templier", "Chev Dragon", "Voleur", "Assassin", "Danselame", "Samouraï", "Chasseur", "Ingénieur", "Corsaire", "Juge", "Clerc", "Barde", "Shaman", "Sage", "Magicien", "Illusionniste", "Démoniste", "Luminary",];
@@ -635,6 +602,9 @@ function dicesAverageConversion(skill) {
   if (skill.includes("4D6")) {
     dices += 14;
   }
+  if (skill.includes("5D6")) {
+    dices += 17.5;
+  }
   if (skill.includes("1D4")) {
     dices += 2.5;
   }
@@ -831,8 +801,8 @@ async function saveLog(earnedCoins, winCards) {
   const cookiePerso = "combatLogsJSON=" + newLogEncoded + "; SameSite=Strict";
 
   document.cookie = cookiePerso;
-  await saveWithPHP("combatLogs");
-  // console.log("saveLog() done : JDRsaveFile.php executed");
+  // console.log("saveFile done : combatLogs, jdr_backend.php executed");
+  await callPHP({ action: "saveFile", name: "combatLogs" });
 }
 
 async function savePlayer(newJoueurData) {
@@ -857,8 +827,7 @@ async function savePlayer(newJoueurData) {
   const cookiePerso = "playerJSON=" + newPersoEncoded + "; SameSite=Strict";
 
   document.cookie = cookiePerso;
-  await saveWithPHP("player");
-  console.log("savePlayer() done : JDRsaveFile.php executed");
+  await callPHP({ action: "saveFile", name: "player" });
 }
 
 function addCard(joueurDataCards, card) {
@@ -941,20 +910,6 @@ function endRediction() {
     window.location.href = "jdr_profil.html?joueur=" + indexPlayer;
   }, 5500);
   return;
-}
-
-function saveWithPHP(nameJSON) {
-  // eslint-disable-next-line no-undef
-  $.ajax({
-    url: "JDRsaveFile.php",
-    type: "post",
-    data: { name: nameJSON },
-    async: true,
-    /*
-    success: function (data) {
-      $("body").html(data);
-    },*/
-  });
 }
 
 // Dice
