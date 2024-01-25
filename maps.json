@@ -553,7 +553,7 @@
     "map_z": null,
     "map_r": null,
     "bgm": 53,
-    "mobs": [72, 112, 113]
+    "mobs": [72, 112, 113, 134]
   },
   "97": {
     "name": "Île du Mariage",
