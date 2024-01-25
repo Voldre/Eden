@@ -826,7 +826,7 @@
     "skills": [
       "Coupe Asura : 2D10+15 (+1D6) : force",
       "Purgatoire : 2D8+15 (+5 asura) (+1D) : esprit",
-      "Foi du temple éveillé : Blocage+2, Esprit+3, D\u00e9g\u00e2t subi -1D6-6 pendant 4 tours : esprit",
+      "Foi du temple \u00e9veill\u00e9 : Blocage+2, Esprit+3, D\u00e9g\u00e2t subi -1D6-6 pendant 4 tours : esprit",
       "Euphorie : +1D4 (min 2)+2 par coup. Buff pendant 4 tours (max 5) : esprit"
     ],
     "stats": "17,13,8,14,15",
@@ -902,7 +902,7 @@
       "Mode Draconique : Embras\u00e9 : Force/Intel+2, D\u00e9moniaque : Charisme+2, Cach\u00e9 : Esprit+2 : Esprit",
       "Terreur du Dragon AoE : R\u00e9ussite des sorts : -2 sur 3 tours AoE (+ mode Cf. DK) : Charisme",
       "Pouvoir du Dragon / Atk Cyclone : 3D6+17 (+'3) (AoE-5) (feu, t\u00e9n\u00e8bres,physique) : Force",
-      "Revers d'\u00e9caille éveillé : 5 tentatives par combat (<10 : 66%, >=10 : 33%) (+ mode Cf. DK) : Esprit"
+      "Revers d'\u00e9caille \u00e9veill\u00e9 : 5 tentatives par combat (<10 : 66%, >=10 : 33%) (+ mode Cf. DK) : Esprit"
     ],
     "stats": "15,13,7,15,16",
     "desc": "H\u00e9riti\u00e8re de l'empire Heldentod, connue pour sa d\u00e9termination et sa prestance. Elle est tr\u00e8s strat\u00e8ge mais froide et parfois sans piti\u00e9.",
@@ -977,7 +977,7 @@
       "\u00c2me Enchain\u00e9e : 2D6+16 et dext\u00e9-3 (AoE) sur 3 tours : Dext\u00e9rit\u00e9",
       "Scellement Douloureux : Aucun sort physique, 0 SOIN pendant 3-4 tours : Esprit",
       "Verdict Final : 3D6 +18 (crit X1.5) : Force",
-      "Furtivit\u00e9 / Aura du Pourfendeur : DGT T\u00e9n\u00e8b +1D6+8 pendant 4 tours : Esprit - - - 2 fois : Oeil Hypnotique (res esprit -3), + la flûte"
+      "Furtivit\u00e9 / Aura du Pourfendeur : DGT T\u00e9n\u00e8b +1D6+8 pendant 4 tours : Esprit - - - 2 fois : Oeil Hypnotique (res esprit -3), + la fl\u00fbte"
     ],
     "stats": "16,16,9,12,16",
     "desc": "Anuran vert tr\u00e8s social et tr\u00e8s tueur",
@@ -1740,7 +1740,7 @@
     "pvmax": "270",
     "skills": [
       "Zone noire : 2D10+12 (bloc m-2) AoE stat -2 (stat-3 parasite) pendant 3 tours : Intelligence",
-      "Eclair en Furie : 4D6 +18 (bloc m-2) et réussite -5 sur 1 tour : Intelligence",
+      "Eclair en Furie : 4D6 +18 (bloc m-2) et r\u00e9ussite -5 sur 1 tour : Intelligence",
       "Aura Bouclier Protec (+ Ctrl mentale) : Blocage +3 pendant 4 tours : esprit",
       "Esprit Descell\u00e9 : Invoque 1 Fant\u00f4me L\u00e9thargique (2 si d\u00e9 < 7) : Esprit"
     ],
@@ -1755,7 +1755,7 @@
     "pvmax": "300",
     "skills": [
       "Crochet Cyclique : 3D6+19 : Dext\u00e9rit\u00e9",
-      "Cyclone Extra : 1D10 +16 AoE (bloc m-2) : Dext\u00e9rit\u00e9",
+      "Cyclone Extra : 1D10 +17 AoE (bloc m-2) : Dext\u00e9rit\u00e9",
       "Oeil affaibilissant : Force & Intel -2 sur 3 tours AoE : Esprit",
       "Passif (Oeil d'Oubli) : si ennemi \u00e0 port\u00e9 fait sort \u00e9chec critique : Oubli la classe sur 3 tours"
     ],
@@ -1934,10 +1934,10 @@
     "nom": "Botassius - G\u00e9n\u00e9ral D\u00e9fensif",
     "pvmax": "300",
     "skills": [
-      "Lumi\u00e8re de Gu\u00e9rison : 2D10+15 (1/3 rejouer + si crit) : Intelligence",
+      "Lumi\u00e8re de Gu\u00e9rison : 2D10+15 (1/3 rejouer) : Intelligence",
       "Vague Foudroyante : 3D6+15, Blocage-3 AoE 3 tours : Force",
-      "Lumi\u00e8re Sacr\u00e9e : 3D6+20 / Euphorie : +1D4 (min 2) +2 par coup sur 4 tours : esprit",
-      "Passif : Blocage +2 (Def Acier), D\u00e9g\u00e2t re\u00e7u -15 (-5 si < 100 PV)"
+      "Lumi\u00e8re Sacr\u00e9e : 3D6+20 / Euphorie : +1D4 (min 2) +2 par coup sur 5 tours : esprit",
+      "Passif : Blocage +2 (Def Acier), Armure -15, Ferveur Guerrier : si KO (2 fois) succ\u00e8s 1D2 (10/20) : Soigne 3D10+20 PV (D\u00e9g\u00e2t/Armure +5 perma)"
     ],
     "stats": "17,9,17,14,15",
     "desc": "Botassius, grand g\u00e9n\u00e9ral de division d\u00e9fensive de la Curie, surnomm\u00e9 le Gardien de Lumi\u00e8re. On raconte qu'il n'est jamais tomb\u00e9.",
@@ -1996,7 +1996,7 @@
     "skills": [
       "Artillerie Lourde : 3D10+15 : Dext\u00e9rit\u00e9",
       "Explosif Visqueux : 2D6+15, diminue de 2 dext\u00e9 & esquive pour 3 tours : Dext\u00e9rit\u00e9",
-      "Robotisation éveillé : InD\u00e9g\u00e2ts 1D4+6 et buff Armure +1D6 sur 4 tours : Esprit",
+      "Robotisation \u00e9veill\u00e9 : D\u00e9g\u00e2ts 1D4+6 et buff Armure +1D6 sur 4 tours : Esprit",
       "Passif : PV < 110 : Blocage/Esq critique : contre-attaque bombe 2D6+10"
     ],
     "stats": "11,19,11,13,16",
@@ -2006,10 +2006,10 @@
   },
   "136": {
     "visuel3D": "vimess",
-    "nom": "Vimess - G\u00e9n\u00e9ral d'Expédition",
+    "nom": "Vimess - G\u00e9n\u00e9ral d'Exp\u00e9dition",
     "pvmax": "250",
     "skills": [
-      "Invoc Ph\u00e9nix (Torch) : 40 PV (revie 1 fois), Stats 15 (bloc 8) all, Charge 2D10+12 (phys), Tornade Feu (-1D) (mag), explosion AoE \u00e0 la mort (2D10+20, idem soin Vimess)",
+      "Invoc Ph\u00e9nix (Torch) : 40 PV (revie 1 fois), Stats 15 (bloc 8) all, Charge 2D10+12 (phys), Tornade Feu AoE (-1D) (mag), explosion AoE \u00e0 la mort (2D10+20, idem soin Vimess)",
       "Pluie de Fl\u00e8ches (/Douloureuse) : 3D6+21 AoE (/ -7 et 0 heal 3 tours) (Mono +6) : Dext\u00e9rit\u00e9",
       "Saut d'esquive (& blocage) : 5 tentatives : tir 2D6+12 (jdrcombat +40)",
       "Passif : Esquive +2, si PV < 125 : esq/bloc cible -2"
@@ -2258,5 +2258,20 @@
     "desc": "Tuskar assassin tr\u00e8s bagarreur et puissant, 3eme t\u00eate de l'Hydra",
     "infos": "Faible \u00e0 la glace et \u00e0 la foudre",
     "drop": "75po, Anneau du Bagarreur, rare : Griffe de Puissance"
+  },
+  "153": {
+    "visuel3D": "m302",
+    "nom": "Diana - G\u00e9n\u00e9rale Offensive",
+    "pvmax": "270",
+    "skills": [
+      "Faiblesse Critique : 5D6 +20 (AoE +5, Mono : Crit (1,2) *1.5, (3 : *1.25)) : Force",
+      "Dash (Cicatrice) de l'esprit : 4D6+16 : -1 buff, se replace : Force",
+      "Transe - Tueuse X : Mono -> AoE, bloc/esq +2 : 4 tours : Esprit",
+      "Passif : Si PV < 120 : Absorbe 1/3 en PV. (+ Furtivit\u00e9 fuite dext\u00e9/dmg)"
+    ],
+    "stats": "19,13,11,13,17",
+    "desc": "Humaine Assassin - La Tigresse Pourpre froide et franche de la Curie M\u00e9t\u00e9role, la l\u00e9gendaire G\u00e9nr\u00e9ale de Division Offensive.",
+    "infos": "Faible au feu et aux t\u00e9n\u00e8bres",
+    "drop": "A VOIR"
   }
 }
