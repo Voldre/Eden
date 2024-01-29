@@ -147,7 +147,7 @@
     "nom": "Faiblesse Critique",
     "desc": "Frappe efficacement l'ennemi, d\u00e9g\u00e2t doubl\u00e9 si coup critique (d\u00e9 : 1, 2 ou 3)",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "Réussite +1, 1D8+4 (X2)",
+    "montant": "R\u00e9ussite +1, 1D8+4 (X2)",
     "icone": "E0057",
     "stat": "Force",
     "classe": ["Assassin"]
@@ -426,7 +426,7 @@
     "nom": "Affaiblissement Mental",
     "desc": "R\u00e9duit la resistance de l'ennemi aux \u00e9l\u00e9ments",
     "effet": "Malus",
-    "montant": "D\u00e9g\u00e2t magique re\u00e7u +1D4 +2 pendant 3 tours",
+    "montant": "D\u00e9g\u00e2t magique re\u00e7u +1D4 +4 pendant 3 tours",
     "icone": "E0120",
     "stat": "Esprit",
     "classe": ["Magicien"]
@@ -478,7 +478,7 @@
   },
   "60": {
     "nom": "Pri\u00e8re Divine",
-    "desc": "Action Instantan\u00e9e. Soigne l'utilisateur et boost les prochains d\u00e9g\u00e2ts de lumi\u00e8res : oblig\u00e9 de faire de la lumi\u00e8re. (Utilisable tous les 3 tours max si réussi)",
+    "desc": "Action Instantan\u00e9e. Soigne l'utilisateur et boost les prochains d\u00e9g\u00e2ts de lumi\u00e8res : oblig\u00e9 de faire de la lumi\u00e8re. (Utilisable tous les 3 tours max si r\u00e9ussi)",
     "effet": "Buff et Soin",
     "montant": "Soin 1D8 +5. Prochain d\u00e9g\u00e2t lumi\u00e8re +1D6 +2 (1 tour max)",
     "icone": "E0610",
@@ -532,7 +532,7 @@
   },
   "66": {
     "nom": "Danse de l'oiseau de feu",
-    "desc": "Le lanceur danse autour des ennemis (sur quelques m\u00e8tres) et inflige des dégâts de feu",
+    "desc": "Le lanceur danse autour des ennemis (sur quelques m\u00e8tres) et inflige des d\u00e9g\u00e2ts de feu",
     "effet": "D\u00e9g\u00e2t AoE R-",
     "montant": "1D8+3",
     "icone": "E0345",
@@ -820,9 +820,9 @@
   },
   "98": {
     "nom": "Perforation",
-    "desc": "Tir une fl\u00e8che qui perfore l'armure de l'ennemi et le déconcentre.",
+    "desc": "Tir une fl\u00e8che qui perfore l'armure de l'ennemi et le d\u00e9concentre.",
     "effet": "D\u00e9g\u00e2t Malus",
-    "montant": "1D6+1 : Blocage -2 et -2 réussite des sorts (pendant 2 tours)",
+    "montant": "1D6+1 : Blocage -2 et r\u00e9ussite des sorts -2 (pendant 2 tours)",
     "icone": "E0012",
     "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Chasseur", "Ing\u00e9nieur", "Corsaire", "Juge"]
@@ -936,7 +936,7 @@
     "classe": ["Chev Dragon"]
   },
   "111": {
-    "nom": "A la Charge ! ",
+    "nom": "A la Charge !",
     "desc": "Renforce la prochaine attaque physique du lanceur, diminue la pr\u00e9cision",
     "effet": "Buff",
     "montant": "Prochain d\u00e9g\u00e2t +1D6+6, r\u00e9ussite -1 (3 tours max)",
@@ -1036,7 +1036,7 @@
   },
   "122": {
     "nom": "Eclair charg\u00e9",
-    "desc": "2 tours d'incantation (1 d\u00e9 par tour) : Un coup d'\u00e9clair concentr\u00e9 en magie qui foudroie la cible. Chance de blocage/esquive -2.",
+    "desc": "2 tours d'incantation (1 d\u00e9 par tour : Un coup d'\u00e9clair concentr\u00e9 en magie qui foudroie la cible. Chance de blocage/esquive -2.",
     "effet": "D\u00e9g\u00e2t",
     "montant": "2D10 +12",
     "icone": "E0724",
@@ -1054,7 +1054,7 @@
   },
   "124": {
     "nom": "Infection Pullulante",
-    "desc": "La cible \u00e9met une explosion (qui blesse lui et les autres) qui peut entra\u00eener l'explosion d'un autre parasite obscur originel (qui blesse les autres). L'explosion propage le parasite aux ennemis. Le parasite ne blesse plus mais peut soigner via Fl\u00e8che des Ombres (3 tours si la cible n'était pas parasité).",
+    "desc": "La cible \u00e9met une explosion (qui blesse lui et les autres) qui peut entra\u00eener l'explosion d'un autre parasite obscur originel (qui blesse les autres). L'explosion propage le parasite aux ennemis. Le parasite ne blesse plus mais peut soigner via Fl\u00e8che des Ombres (3 tours si la cible n'\u00e9tait pas parasit\u00e9).",
     "effet": "D\u00e9g\u00e2t Malus AoE R-",
     "montant": "1D8 + 2*(tours parasite restant)",
     "icone": "E0743",
@@ -1153,7 +1153,7 @@
   },
   "135": {
     "nom": "D\u00e9doublement",
-    "desc": "Cr\u00e9e un double de soi avec les m\u00eames stats et buffs (\u00e0 l'invocation). Ses d\u00e9g\u00e2ts/soins et ses montants (invocation/buff/malus), ou (cas échéant) la durée de sorts, sont divis\u00e9s par 2. Ses d\u00e9g\u00e2ts re\u00e7us touchent le porteur et sont aussi divis\u00e9s par 2 (avec armure/2).",
+    "desc": "Cr\u00e9e un double de soi avec les m\u00eames stats et buffs (\u00e0 l'invocation). Ses d\u00e9g\u00e2ts/soins et ses montants (invocation/buff/malus), ou (cas \u00e9ch\u00e9ant) la dur\u00e9e de sorts, sont divis\u00e9s par 2. Ses d\u00e9g\u00e2ts re\u00e7us touchent le porteur et sont aussi divis\u00e9s par 2 (avec armure/2).",
     "effet": "Invocation",
     "montant": "Invoque un double de soi pendant 2 tours.",
     "icone": "E1042",
@@ -1175,7 +1175,7 @@
     "effet": "Buff et Soin",
     "montant": "(Si PV <50%) Soin 1D4+2 pendant 3 tours (+ effet mode)",
     "icone": "E0583",
-    "stat": "Esprit",
+    "stat": "Force",
     "classe": ["Chev Dragon"]
   },
   "138": {
@@ -1186,5 +1186,14 @@
     "icone": "E0662",
     "stat": "",
     "classe": ["Guerrier"]
+  },
+  "139": {
+    "nom": "Pluie de Fl\u00e8ches",
+    "desc": "Tire une salve de fl\u00e8ches dans les airs et touche sur un grand rayon aux alentours.",
+    "effet": "D\u00e9g\u00e2t AoE R+",
+    "montant": "1D8+2",
+    "icone": "E0085",
+    "stat": "Dext\u00e9rit\u00e9",
+    "classe": ["Corsaire"]
   }
 }
