@@ -44,7 +44,7 @@
   "25": {
     "nom": "Charme tape-\u00e0-l-oeil",
     "desc": "Lance un charme sur la cible pour r\u00e9duire sa concentration, efficace si sexe oppos\u00e9, sinon : r\u00e9ussite -3",
-    "montant": " Esquive et r\u00e9ussite des sorts : -3 sur 3 tours, (Résistance esprit cible -2)"
+    "montant": " Esquive et r\u00e9ussite des sorts : -3 sur 3 tours, (Sur le coup : Résistance esprit cible -2)"
   },
   "26": {
     "nom": "Coupe Asura",
@@ -56,12 +56,41 @@
     "desc": "Tranche avec un coup d'\u00e9clair, un second \u00e9clair touche si l'ennemi \u00e0 subi la Coupe Asura",
     "montant": "1D10+4 + (1D10 et malus : -2 Dextérité sur 3 tours)"
   },
+  "28": {
+    "nom": "Tir de Pr\u00e9cision",
+    "desc": "Chance de touch\u00e9 augment\u00e9, d\u00e9g\u00e2t doubl\u00e9 si coup critique (d\u00e9 : 1 ou 2)",
+    "montant": "R\u00e9ussite +2, 1D10+4 (X2)"
+  },
   "29": {
     "nom": "Triple Tir",
     "desc": "Lance quatre tirs sur la cible",
     "montant": "1D8 + 2D6 + 1D4"
   },
-
+  "31": {
+    "nom": "Invocation Aigle Chasseur",
+    "desc": "Invoque un Aigle chasseur : 30 PV, Force : 13, Dext\u00e9 : 15, Intel : 9, Charisme : 12, Esprit : 11. Sort : Coup de Bec 1D8+3 (Force), Vent coupant AoE 1D6+2 (Dext\u00e9)",
+    "montant": "Invocation jusqu'\u00e0 coupure magique"
+  },
+  "32": {
+    "nom": "Blessure Douloureuse",
+    "desc": "Blesse l'ennemi et l'emp\u00eache de se soigner pendant 3 tours, l'effet n'est pas annulable.",
+    "montant": "1D8+2 (Non annulable)"
+  },
+  "37": {
+    "nom": "Saut d'esquive",
+    "desc": "Fait bondir en arri\u00e8re et tir sur l'ennemi. Remplace l'esquive par une attaque (elle-m\u00eame blocable/esquivable avec malus).",
+    "montant": "1 fois par éveil : remplace l'esquive par un tir 2D6"
+  },
+  "38": {
+    "nom": "Fl\u00e8che Terrorisante",
+    "desc": "Le tir effraye l'ennemi et le d\u00e9concentre, r\u00e9duit la chance d'\u00eatre cibl\u00e9",
+    "montant": "1D6+3 : Esquive -3 et r\u00e9ussite des sorts -3 (pendant 2 tours)"
+  },
+  "39": {
+    "nom": "S\u00e9r\u00e9nit\u00e9",
+    "desc": "R\u00e9duit les d\u00e9g\u00e2ts et augmente la dext\u00e9rit\u00e9",
+    "montant": "Dext\u00e9+2, D\u00e9g\u00e2t subi -1D4 (min 2) +2 pendant 4 tours"
+  },
   "40": {
     "nom": "S\u00e9isme",
     "desc": "Inflige des d\u00e9g\u00e2ts de terre \u00e0 la cible",
@@ -83,7 +112,7 @@
     "montant": "D\u00e9g\u00e2t subi -1D4 (min 2) -3 pour 3 tours, -2 malus"
   },
   "44": {
-    "nom": "Bombe Vocale X",
+    "nom": "Bombe Vocale",
     "desc": "Inflige à la fois des d\u00e9g\u00e2ts de feu ET de glace \u00e0 la cible",
     "montant": "1D10+6 (Element Feu et Glace)"
   },
@@ -91,6 +120,12 @@
     "nom": "Hymne \u00e0 la Guerre",
     "desc": "Augmente les d\u00e9g\u00e2ts physiques inflig\u00e9s par le groupe",
     "montant": "D\u00e9g\u00e2t physique 1D4 (min 2) +3 pendant 4 tours"
+  },
+  "47": {
+    "nom": "Totem Gracieux",
+    "desc": "Invoque un familier Totem : 30 PV, Force : 9, Dext\u00e9 : 13, Intel : 14. - Mode Soin : Ne peut pas bouger / se prot\u00e9ger, 0 jet de d\u00e9. - Mode Soutien : peut bouger et bloquer, 2 sorts : 1) Renforcement : +3 Force ou +3 Intel sur la cible : 3 tours (intel) , 2) Eclair : 1D8+2 (intel)",
+    "effet": "Invocation",
+    "montant": "(jusqu'\u00e0 coupure magique), Mode Soin : Soin 4 PV par tour. - Mode Soutien : attaque/bloque"
   },
   "49": {
     "nom": "Bombe Incendiaire",
@@ -167,8 +202,7 @@
   },
   "75": {
     "nom": "Invocation d'Alpaga",
-    "desc": "Invoque un esprit Alpaga de t\u00e9n\u00e8bres, peut flotter. 30 PV, Force : 12, Dext\u00e9 : 13, Intel : 15, Charisme : 12, Esprit : 10. Sort : Crachat 1D8 (Intel), Charge 1D10 (Force), Aura Noire (Intel) : Maître phys > ten, dégât +4 (3t)",
-    "effet": "Invocation",
+    "desc": "Invoque un esprit Alpaga de t\u00e9n\u00e8bres, peut flotter. 30 PV, Force : 12, Dext\u00e9 : 13, Intel : 15, Charisme : 12, Esprit : 10. Sort : Crachat 1D8+3 (Intel), Charge 1D10+2 (Force), Aura Noire (Intel) : Maître phys > ten, dégât +4 (3t)",
     "montant": "Invocation jusqu'\u00e0 coupure magique, Apprend \"Aura Noire\" "
   },
   "83": {
@@ -191,6 +225,12 @@
     "desc": "Encha\u00eene des pas de danse pour infliger un prochain coup puissant",
     "montant": "Prochain d\u00e9g\u00e2t +1D10+5, r\u00e9ussite +2  (3 tours max)"
   },
+  "98": {
+    "nom": "Perforation",
+    "desc": "Tir une fl\u00e8che qui perfore l'armure de l'ennemi et le déconcentre.",
+    "effet": "D\u00e9g\u00e2t Malus",
+    "montant": "1D6+3 : Blocage -3 et réussite des sorts -2 (pendant 2 tours)"
+  },
   "99": {
     "nom": "D\u00e9fense d'Acier",
     "desc": "Fortifie le corps du lanceur",
@@ -204,10 +244,12 @@
   "110": {
     "nom": "Terreur du Dragon",
     "desc": "L'utilisateur terrorise son adversaire et le destabilise.  Effets - Embras\u00e9 : Effet+1; D\u00e9moniaque : D\u00e9g\u00e2t 10 PV; Cach\u00e9 : Dur\u00e9e+1",
-    "montant": "Ennemi -10 PV, r\u00e9ussite des sorts : -3 sur 3 tours  (+ effet mode)",
-    "icone": "E1023",
-    "stat": "Charisme",
-    "classe": ["Chev Dragon"]
+    "montant": "Ennemi -10 PV, r\u00e9ussite des sorts : -3 sur 3 tours  (+ effet mode)"
+  },
+  "111": {
+    "nom": "A la Charge !",
+    "desc": "Renforce fortement la prochaine attaque physique du lanceur",
+    "montant": "Prochain d\u00e9g\u00e2t +1D10+7 (3 tours max)"
   },
   "115": {
     "nom": "Destruction Noire",
@@ -223,6 +265,11 @@
     "nom": "Fr\u00e9n\u00e9sie des Ogres",
     "desc": "Action Instantan\u00e9e. La loyaut\u00e9 envers les Ogres permet au lanceur de dilater ses veines, le mettant dans un \u00e9t\u00e9 fr\u00e9n\u00e9tique de Berserker.",
     "montant": "A chaque tour (4 max) : D\u00e9g\u00e2t (+) et PV (-) 10 ou 15 (à choisir), Si 10 : réussite -1, si 15 : réussite -2"
+  },
+  "118": {
+    "nom": "Explosion Glaciale",
+    "desc": "L'utilisateur canalyse sa magie pendant 2 tours (1 d\u00e9 par tour) et la balance \u00e0 toute puissance sur ses adversaires en face (chance blocage/2)",
+    "montant": "3D6 +15 (Blocage +2 pendant l'incantation)"
   },
   "119": {
     "nom": "Encouragement Musical",
@@ -268,5 +315,10 @@
     "nom": "Instinct de Survie",
     "desc": "Le sang de dragon bouillonne et enclenche le mode survie pour son porteur. Effets - Embras\u00e9 : D\u00e9g\u00e2ts +2; D\u00e9moniaque : Blocage+1; Cach\u00e9 : Soin PV+3",
     "montant": "(Si PV <50%) Soin et Dégât +1D4+2 pendant 3 tours (+ effet mode)"
+  },
+  "139": {
+    "nom": "Pluie de Fl\u00e8ches",
+    "desc": "Tire une salve de fl\u00e8ches dans les airs et touche sur un grand rayon aux alentours.",
+    "montant": "1D8+5"
   }
 }
