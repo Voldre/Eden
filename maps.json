@@ -196,8 +196,7 @@
     "map_y": null,
     "map_z": null,
     "map_r": null,
-    "bgm": 33,
-    "mobs": [153]
+    "bgm": 33
   },
   "17": {
     "name": "Vestiges du Belliqueux",

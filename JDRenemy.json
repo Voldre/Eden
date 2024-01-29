@@ -2251,7 +2251,7 @@
     "skills": [
       "Solo (-6) / Faiblesse Critique : 3D6 +14 (Crit X1.5) : Force",
       "Griffure Noire : 2D6 +9, et -2 blocage/esquive pour 3 tours AoE : Esprit",
-      "Contr\u00f4le Energie RES (A REVOIR?) : D\u00e9g\u00e2t re\u00e7u -1D6 -8, res esprit +3 sur 4 tours : Esprit",
+      "Contr\u00f4le Energie RES : -1 buff, d\u00e9g\u00e2t re\u00e7u -1D6 -8, res esprit +3 sur 4 tours : Esprit",
       "Passif \"Transe - Mode Tueur\": D\u00e9g\u00e2t +1D4 (min 2) +2, pour chaque 50 PV !"
     ],
     "stats": "17,9,9,12,17",

@@ -1,4 +1,5 @@
 import { skillsJSON } from "./JDRstore";
+import { initDialog } from "./utils";
 
 // prettier-ignore
 const classes = [ "Guerrier", "Chevalier", "Templier", "Chev Dragon", "Voleur", "Assassin", "Danselame", "Samouraï", "Chasseur", "Ingénieur", "Corsaire", "Juge", "Clerc", "Barde", "Shaman", "Sage", "Magicien", "Illusionniste", "Démoniste", "Luminary",];
@@ -230,39 +231,4 @@ const labelsDescription = {
   //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."
 };
 
-const dialog = document.querySelector("dialog");
-document.querySelectorAll("label").forEach((label) => {
-  if (!labelsDescription[label.htmlFor]) return; // Si le label n'a pas de description
-
-  label.addEventListener("click", () => {
-    dialog.innerText = "";
-    const text = document.createElement("p");
-    text.innerHTML = labelsDescription[label.htmlFor]; // description
-    dialog.append(text);
-    // Bouton de fermeture
-    var closeE = document.createElement("button");
-    closeE.id = "close";
-    closeE.innerText = "Fermer";
-    closeE.addEventListener("click", () => {
-      dialog.close();
-    });
-    dialog.append(closeE);
-
-    // Ouverture en "modal"
-    dialog.showModal();
-  });
-});
-
-// Allow user to close Modal (Dialogue) by clicking outside
-dialog.addEventListener("click", (e) => {
-  const dialogDimensions = dialog.getBoundingClientRect();
-  if (
-    e.clientX < dialogDimensions.left ||
-    e.clientX > dialogDimensions.right ||
-    e.clientY < dialogDimensions.top ||
-    e.clientY > dialogDimensions.bottom
-  ) {
-    dialog.close();
-  }
-});
-// dialog.show() // Opens a non-modal dialog
+initDialog(labelsDescription);

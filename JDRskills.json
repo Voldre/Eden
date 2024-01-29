@@ -478,9 +478,9 @@
   },
   "60": {
     "nom": "Pri\u00e8re Divine",
-    "desc": "Action Instantan\u00e9e. Soigne l'utilisateur et boost les prochains d\u00e9g\u00e2ts de lumi\u00e8res : oblig\u00e9 de faire de la lumi\u00e8re",
+    "desc": "Action Instantan\u00e9e. Soigne l'utilisateur et boost les prochains d\u00e9g\u00e2ts de lumi\u00e8res : oblig\u00e9 de faire de la lumi\u00e8re. (Utilisable tous les 3 tours max si réussi)",
     "effet": "Buff et Soin",
-    "montant": "Soin 1D8 +5. Prochain d\u00e9g\u00e2t lumi\u00e8res +1D6 +2 (1 tour max)",
+    "montant": "Soin 1D8 +5. Prochain d\u00e9g\u00e2t lumi\u00e8re +1D6 +2 (1 tour max)",
     "icone": "E0610",
     "stat": "Esprit",
     "classe": ["Luminary"]
@@ -550,7 +550,7 @@
   },
   "68": {
     "nom": "Parasite Obscur",
-    "desc": "Inflige des d\u00e9g\u00e2ts de t\u00e9n\u00e8bres pendant 4 tours (en comptant le tour actuel)",
+    "desc": "Inflige des d\u00e9g\u00e2ts de t\u00e9n\u00e8bres pendant 4 tours",
     "effet": "D\u00e9g\u00e2t Malus",
     "montant": "D\u00e9g\u00e2t d'arme puis 3 d\u00e9g\u00e2ts chaque tour (4 tours)",
     "icone": "E0133",
@@ -561,7 +561,7 @@
     "nom": "Fl\u00e8che des Ombres",
     "desc": "D\u00e9g\u00e2ts de t\u00e9n\u00e8bres, si l'ennemi subi un parasite : soigne l'utilisateur",
     "effet": "D\u00e9g\u00e2t et Soin",
-    "montant": "D\u00e9g\u00e2t 1D8+3 et si parasite : soin 1D6+2",
+    "montant": "D\u00e9g\u00e2t 1D8+3 et si parasite : soin 1D6+1 (+2 si actif)",
     "icone": "E0132",
     "stat": "Intelligence",
     "classe": ["D\u00e9moniste"]
@@ -1054,7 +1054,7 @@
   },
   "124": {
     "nom": "Infection Pullulante",
-    "desc": "La cible \u00e9met une explosion qui peut entra\u00eener l'explosion d'un autre parasite obscur originel. L'explosion propage le parasite aux ennemis. Le parasite ne blesse plus mais peut soigner via Fl\u00e8che des Ombres (3 tours).",
+    "desc": "La cible \u00e9met une explosion (qui blesse lui et les autres) qui peut entra\u00eener l'explosion d'un autre parasite obscur originel (qui blesse les autres). L'explosion propage le parasite aux ennemis. Le parasite ne blesse plus mais peut soigner via Fl\u00e8che des Ombres (3 tours si la cible n'était pas parasité).",
     "effet": "D\u00e9g\u00e2t Malus AoE R-",
     "montant": "1D8 + 2*(tours parasite restant)",
     "icone": "E0743",
