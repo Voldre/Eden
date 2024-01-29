@@ -1,5 +1,5 @@
 import { cardJSON, persosJSON, eqptJSON, enemyJSON, mapsJSON, allSkills, playerJSON } from "./JDRstore";
-import { callPHP } from "./utils";
+import { Perso, callPHP, initDialog, toastNotification } from "./utils";
 
 const charactersList = document.querySelector(".charactersList");
 const persosE = [...charactersList.children];
@@ -116,8 +116,8 @@ window.addEventListener("load", () => {
 
     // Display all persos stats in combat
     Object.values(persosJSON).forEach((p) => {
-      const persoP = new PersoSimplified(p);
-      persoP.degat != "-" ? console.log(persoP) : null;
+      const persoP = new Perso(p, false);
+      persoP.degat != "-" && console.log(persoP);
     });
 
     // Display all persos by classes (if perso really exist)
@@ -267,7 +267,7 @@ function loadPerso(perso, index, joueurData) {
 
   persoE.querySelector("#nom").value = perso.nom;
 
-  const persoCombat = new PersoSimplified(perso);
+  const persoCombat = new Perso(perso, false);
   persoE.querySelector("#degat").value = persoCombat.degat;
   persoE.querySelector("#armure").value = persoCombat.armure;
 
@@ -411,9 +411,9 @@ function countCards(joueurData) {
 
 // Modal (Dialog) des informations de bases des labels
 
-var labelsDescription = {
+const labelsDescription = {
   alpagaCoin:
-    "Les pièces d'Alpaga peuvent être échangées contre de l'expérience ou de l'or.<br/>1 XP (1 perso) = 4 à 10+ Pièces Alpaga<br/>1 Or (1 perso) = 2 à 4+ Pièces Alpaga.<br/> > Ce taux varie selon le nombre de persos, leur niveau, leur sort (soin/armure).<br/><br/>Attention : Pour échanger les pièces, il faut que la situation soit cohérente (roleplay), exemple : une interlude, le personnage a quitté le groupe pendant un moment, etc... Et même dans ces conditions, la quantité d'XP/Or donné est limité (ex : on ne peut pas obtenir 3 niveaux d'un coup), voici des exemples :<br/>- Sans aucun délai, les limites sont de 20 XP et 30 pièces (l'un ou l'autre, sinon moins).<br/>- Selon les séances loupées : 10 + 30 * (nombre de séances) en XP / pièces. Maximum : 200-250.",
+    "Les pièces d'Alpaga peuvent être échangées contre de l'expérience ou de l'or.<br/>1 XP (1 perso) = 4 à 10+ Pièces Alpaga<br/>1 Or (1 perso) = 2 à 4+ Pièces Alpaga.<br/> > Ce taux varie selon le nombre de persos, leur niveau, leur sort (soin/armure).<br/><br/>Attention : Pour échanger les pièces, il faut que la situation soit cohérente (roleplay), exemple : une interlude, le personnage a quitté le groupe pendant un moment, etc... Et même dans ces conditions, la quantité d'XP/Or donné est limité (ex : on ne peut pas obtenir 3 niveaux d'un coup), voici des exemples :<br/>- Sans aucun délai, les limites sont de 20 XP et 30 pièces (l'un ou l'autre, sinon moins).<br/>- Selon les séances loupées : 10 + 30 * (nombre de séances) en XP / pièces. Maximum : 200 / 300.",
   map: "Les cartes de maps & donjons peuvent être obtenues sur leurs zones spécifiques. Elles donnent des informations sur la zone en question.",
   boss: "Les cartes de Boss peuvent être obtenues n'importe où mais que sur des ennemis de niveau Boss (>= 200 PV). Elles donnent quelques informations sur eux et représentent une belle collection à avoir.",
   composant:
@@ -422,28 +422,7 @@ var labelsDescription = {
     "Les cartes anecdotes peuvent être obtenues dans des endroits et face à des ennemis étant en lien avec l'anecdote. Elles font références à des moments cultes vécus pendant le JDR !",
 };
 
-const dialog = document.querySelector("dialog");
-document.querySelectorAll("label").forEach((label) => {
-  if (!labelsDescription[label.htmlFor]) return; // Si le label n'a pas de description
-
-  label.addEventListener("click", () => {
-    dialog.innerText = "";
-    var text = document.createElement("p");
-    text.innerHTML = labelsDescription[label.htmlFor]; // description
-    dialog.append(text);
-    // Bouton de fermeture
-    var closeE = document.createElement("button");
-    closeE.id = "close";
-    closeE.innerText = "Fermer";
-    closeE.addEventListener("click", () => {
-      dialog.close();
-    });
-    dialog.append(closeE);
-
-    // Ouverture en "modal"
-    dialog.showModal();
-  });
-});
+initDialog(labelsDescription);
 
 function PersoSimplified(persoData) {
   // Calcul des dégâts fixes et de l'armure
@@ -538,33 +517,3 @@ function PersoSimplified(persoData) {
     this.armure += 1;
   }
 }
-
-// Allow user to close Modal (Dialogue) by clicking outside
-dialog.addEventListener("click", (e) => {
-  const dialogDimensions = dialog.getBoundingClientRect();
-  if (
-    e.clientX < dialogDimensions.left ||
-    e.clientX > dialogDimensions.right ||
-    e.clientY < dialogDimensions.top ||
-    e.clientY > dialogDimensions.bottom
-  ) {
-    dialog.close();
-  }
-});
-
-// Toasts
-
-function toastNotification(text, duration = 3000) {
-  var x = document.getElementById("toast");
-  if (!x.classList.contains("show")) {
-    x.classList.add("show");
-    x.innerText = text;
-    // if(lastElement){ x.append(lastElement)}
-    setTimeout(function () {
-      x.classList.remove("show");
-    }, duration);
-  }
-}
-document.getElementById("toast").addEventListener("click", () => {
-  document.getElementById("toast").classList.remove("show");
-});

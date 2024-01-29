@@ -1,5 +1,5 @@
 import { skillsJSON, eqptJSON, masterJSON, enemyJSON } from "./JDRstore";
-import { callPHP } from "./utils";
+import { callPHP, toastNotification } from "./utils";
 
 // load notes
 document.querySelector(".notes").value = masterJSON.notes;
@@ -396,19 +396,4 @@ document.querySelector("#createEnemy").addEventListener("click", () => {
   callPHP({ action: "saveFile", name: "enemy" });
   enemyJSON[enemyID] = newEnemy[enemyID];
   toastNotification("Ennemi créé");
-});
-
-function toastNotification(text, duration = 3000) {
-  var x = document.getElementById("toast");
-  if (!x.classList.contains("show")) {
-    x.classList.add("show");
-    x.innerText = text;
-    // if(lastElement){ x.append(lastElement)}
-    setTimeout(function () {
-      x.classList.remove("show");
-    }, duration);
-  }
-}
-document.getElementById("toast").addEventListener("click", () => {
-  document.getElementById("toast").classList.remove("show");
 });

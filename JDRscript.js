@@ -1,5 +1,6 @@
 import { skillsJSON, skillsAwakenJSON, eqptJSON, persosJSON, galeryJSON, masterJSON } from "./JDRstore";
-import { callPHP } from "./utils";
+import { callPHP, toastNotification, initDialog } from "./utils";
+
 console.log("Skills JSON", skillsJSON);
 console.log("Persos JSON", persosJSON);
 
@@ -352,6 +353,8 @@ function insertSkill(skillElement, skillName, awakenClass = false) {
 function insertBuffInteraction(buffTurnE, skillName, selectedSkill, skillMontant) {
   const skillEffet = selectedSkill.effet;
   buffTurnE.style.cursor = "pointer";
+
+  const dialog = document.querySelector("dialog");
 
   if (
     skillEffet.includes("Provocation") ||
@@ -725,7 +728,7 @@ document.querySelector("#galerie").addEventListener("click", () => {
 
 // Fill galery
 galeryJSON.forEach((pic) => {
-  if (pic.includes(".jpg") || pic.includes(".png")) {
+  if (pic.includes(".jpg") || pic.includes(".png") || pic.includes(".webp")) {
     var imgE = document.createElement("img");
     imgE.src = "./images/jdrgalerie/" + pic;
     document.querySelector(".galerie").append(imgE);
@@ -827,7 +830,6 @@ function savePerso() {
   const cookiePerso = "persosJSON=" + newPersoEncoded + "; SameSite=Strict";
 
   return cookiePerso;
-  // alert('Fiche sauvegardé sous forme de cookie avec succès')
 }
 
 // Global Save
@@ -845,9 +847,7 @@ buttonIframe.addEventListener("click", () => {
   document.querySelector("iframe").classList.toggle("hide");
 });
 
-// Modal (Dialog) des informations de bases des labels
-
-var labelsDescription = {
+const labelsDescription = {
   force:
     "Permet d'utiliser des attaques lourdes, de pousser, de soulever.<br/>Si la stat est à 1 ou 2 : Impossible de tenir une arme. <br/>Permet de bloquer des coups physiques (Dé/2)<br/><br/> Un blocage à 20 inflige 5 dégâts de plus. <br/>Les stats sont limitées à 17, et 17 (+1) avec buff/stuff.<br/>Le blocage est limité à 13.",
   dexté:
@@ -867,57 +867,4 @@ var labelsDescription = {
   //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."
 };
 
-const dialog = document.querySelector("dialog");
-document.querySelectorAll("label").forEach((label) => {
-  if (!labelsDescription[label.htmlFor]) return; // Si le label n'a pas de description
-
-  label.addEventListener("click", () => {
-    dialog.innerText = "";
-    dialog.style.width = "97%";
-    var text = document.createElement("p");
-    text.innerHTML = labelsDescription[label.htmlFor]; // description
-    dialog.append(text);
-    // Bouton de fermeture
-    var closeE = document.createElement("button");
-    closeE.id = "close";
-    closeE.innerText = "Fermer";
-    closeE.addEventListener("click", () => {
-      dialog.close();
-    });
-    dialog.append(closeE);
-
-    // Ouverture en "modal"
-    dialog.showModal();
-  });
-});
-
-// Allow user to close Modal (Dialogue) by clicking outside
-dialog.addEventListener("click", (e) => {
-  const dialogDimensions = dialog.getBoundingClientRect();
-  if (
-    e.clientX < dialogDimensions.left ||
-    e.clientX > dialogDimensions.right ||
-    e.clientY < dialogDimensions.top ||
-    e.clientY > dialogDimensions.bottom
-  ) {
-    dialog.close();
-  }
-});
-
-// Toasts
-// const params = new URLSearchParams(window.location.search);
-
-function toastNotification(text, duration = 3000) {
-  var x = document.getElementById("toast");
-  if (!x.classList.contains("show")) {
-    x.classList.add("show");
-    x.innerText = text;
-    // if(lastElement){ x.append(lastElement)}
-    setTimeout(function () {
-      x.classList.remove("show");
-    }, duration);
-  }
-}
-document.getElementById("toast").addEventListener("click", () => {
-  document.getElementById("toast").classList.remove("show");
-});
+initDialog(labelsDescription);
