@@ -44,7 +44,7 @@
   "25": {
     "nom": "Charme tape-\u00e0-l-oeil",
     "desc": "Lance un charme sur la cible pour r\u00e9duire sa concentration, efficace si sexe oppos\u00e9, sinon : r\u00e9ussite -3",
-    "montant": " Esquive et r\u00e9ussite des sorts : -3 sur 3 tours, (Sur le coup : Résistance esprit cible -2)"
+    "montant": " Esquive et r\u00e9ussite des sorts : -3 sur 3 tours, (Sur le coup : Résistance esprit cible -3)"
   },
   "26": {
     "nom": "Coupe Asura",
@@ -59,7 +59,7 @@
   "28": {
     "nom": "Tir de Pr\u00e9cision",
     "desc": "Chance de touch\u00e9 augment\u00e9, d\u00e9g\u00e2t doubl\u00e9 si coup critique (d\u00e9 : 1 ou 2)",
-    "montant": "R\u00e9ussite +2, 1D10+4 (X2)"
+    "montant": "R\u00e9ussite +2, 1D10+5 (X2)"
   },
   "29": {
     "nom": "Triple Tir",
@@ -202,7 +202,7 @@
   },
   "75": {
     "nom": "Invocation d'Alpaga",
-    "desc": "Invoque un esprit Alpaga de t\u00e9n\u00e8bres, peut flotter. 30 PV, Force : 12, Dext\u00e9 : 13, Intel : 15, Charisme : 12, Esprit : 10. Sort : Crachat 1D8+3 (Intel), Charge 1D10+2 (Force), Aura Noire (Intel) : Maître phys > ten, dégât +4 (3t)",
+    "desc": "Invoque un esprit Alpaga de t\u00e9n\u00e8bres, peut flotter. 30 PV, Force : 12, Dext\u00e9 : 13, Intel : 15, Charisme : 12, Esprit : 10. Sort : Crachat 1D8+3 (Intel), Charge 1D10+2 (Force), Aura Noire (Intel) : Maître phys > ten, dégât +3 (3t)",
     "montant": "Invocation jusqu'\u00e0 coupure magique, Apprend \"Aura Noire\" "
   },
   "83": {
@@ -249,7 +249,7 @@
   "111": {
     "nom": "A la Charge !",
     "desc": "Renforce fortement la prochaine attaque physique du lanceur",
-    "montant": "Prochain d\u00e9g\u00e2t +1D10+7 (3 tours max)"
+    "montant": "Prochain d\u00e9g\u00e2t +1D8+8 (3 tours max)"
   },
   "115": {
     "nom": "Destruction Noire",
@@ -278,8 +278,8 @@
   },
   "120": {
     "nom": "Brisure Vibrante",
-    "desc": "1 tour d'incantation. Identifie et frappe sur la/les faiblesse(s) physiques de la cible gr\u00e2ce \u00e0 la fr\u00e9quence vibratoire (ondes)",
-    "montant": "3D6 +10"
+    "desc": "1 tour d'incantation (1 seul dé). Identifie et frappe sur la/les faiblesse(s) physiques de la cible gr\u00e2ce \u00e0 la fr\u00e9quence vibratoire (ondes)",
+    "montant": "3D6 +12 (Blocage +2 pendant l'incantation)"
   },
   "124": {
     "nom": "Infection Pullulante",

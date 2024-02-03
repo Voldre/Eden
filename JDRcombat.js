@@ -85,6 +85,13 @@ window.addEventListener("load", () => {
 
     loadFiche(urlParams.get("perso") - 1);
 
+    // 30/01/24 : Short security to handle abberation (like Nyx with more than 1 billion damage)
+    if (perso.degat > 75 || perso.armure > 50 || perso.pvmax > 275) {
+      toastNotification("Erreur : Le personnage a des statistiques hors-norme.", 6000);
+      endRediction();
+      return;
+    }
+
     // selectPerso.value = urlParams.get("perso") - 1;
     // selectedPerso = selectPerso.value;
     // var selectedID = selectPerso.selectedIndex;
@@ -769,7 +776,7 @@ function rollDice(user, type, statName) {
     // Defense
     section.querySelector(".statName").innerText = statName + "/2";
     // 24/11/23 : Max success is 13 (because user can have more !)
-    success = Math.min(Math.ceil(stat / 2) + (user[statName + "Res"] || 0), 13);
+    success = Math.min(Math.ceil(stat / 2) + (user[statName + "Res"] ?? 0), 13);
     // console.log("Defense " + statName + " : " + success);
   }
 
