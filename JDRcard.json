@@ -1234,6 +1234,46 @@
     "kindId": "I00207b"
   },
   {
+    "id": 1394,
+    "value": 1,
+    "kind": "composant",
+    "name": "Ambre Crépusculaire",
+    "description": "Formée à partir de sève d'ancien arbre, cette pierre à la belle couleur rouille. En regardant dedans on peut y voir un coucher de soleil.",
+    "kindId": "I00219c"
+  },
+  {
+    "id": 1395,
+    "value": 1,
+    "kind": "composant",
+    "name": "Minerai de Jade",
+    "description": "La jade a la particularité de ralentir le métabolisme et détendre. Entre vos mains, vous avez un sentiment d'apaisement.",
+    "kindId": "I00219f"
+  },
+  {
+    "id": 1396,
+    "value": 2,
+    "kind": "composant",
+    "name": "Minerai Zircon",
+    "description": "Ce minerai pâle est extrêmement lourd et résistant, il peut servir à confectionner à la confection d'arme et armure très solide.",
+    "kindId": "I00219b"
+  },
+  {
+    "id": 1397,
+    "value": 2,
+    "kind": "composant",
+    "name": "Crystal Durable",
+    "description": "Ce crystal précieux est capable de prolonger la durée d'un effet dans le temps. Très utilisé dans les magies et les technologies.",
+    "kindId": "I00219e"
+  },
+  {
+    "id": 1398,
+    "value": 3,
+    "kind": "composant",
+    "name": "Minerai de Sang",
+    "description": "On raconte que ce minerai aurait la capacité d'absorber le sang de ses victimes afin de se régénérer... De par sa rareté, beaucoup de fogerons pensent que son existence n'est qu'une légende.",
+    "kindId": "I00219d"
+  },
+  {
     "id": 1401,
     "value": 2,
     "kind": "composant",

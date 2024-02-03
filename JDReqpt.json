@@ -2537,11 +2537,11 @@
     "icone": "W51900c"
   },
   "347": {
-    "nom": "Bouclier Solaire",
-    "desc": "Un bouclier de lumi\u00e8re avec une d\u00e9fense incomparable, il a \u00e9t\u00e9 cr\u00e9\u00e9 pour l'un des plus grands templiers qui existe.",
+    "nom": "Gunner du Savoir",
+    "desc": "Un Gunner qui am\u00e9liore les capacit\u00e9s magique de son porteur",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t re\u00e7u -6, d\u00e9g\u00e2ts lumi\u00e8res +3",
-    "icone": "W71303"
+    "montant": "D\u00e9g\u00e2t +8, Intel & Esprit +1",
+    "icone": "W51903b"
   },
   "348": {
     "nom": "Plastron de Delphes",
@@ -2829,5 +2829,12 @@
     "effet": "",
     "montant": "D\u00e9g\u00e2t +10, Si coup critique (1,2) : Esprit -4 (1 tour)",
     "icone": "W20606"
+  },
+  "387": {
+    "nom": "Bouclier Solaire",
+    "desc": "Un bouclier de lumi\u00e8re avec une d\u00e9fense incomparable, il a \u00e9t\u00e9 cr\u00e9\u00e9 pour l'un des plus grands templiers qui existe.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -6, d\u00e9g\u00e2ts lumi\u00e8res +3",
+    "icone": "W71303"
   }
 }

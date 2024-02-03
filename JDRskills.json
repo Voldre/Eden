@@ -426,7 +426,7 @@
     "nom": "Affaiblissement Mental",
     "desc": "R\u00e9duit la resistance de l'ennemi aux \u00e9l\u00e9ments",
     "effet": "Malus",
-    "montant": "D\u00e9g\u00e2t magique re\u00e7u +1D4 +4 pendant 3 tours",
+    "montant": "D\u00e9g\u00e2t magique re\u00e7u +1D4 (min 2) +3 pendant 3 tours",
     "icone": "E0120",
     "stat": "Esprit",
     "classe": ["Magicien"]

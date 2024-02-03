@@ -54,17 +54,30 @@ document.querySelectorAll('[id^="classe"]').forEach((classeElem, i) => {
 const iconClassesEs = [...document.querySelector(".iconClasses").children];
 iconClassesEs.forEach((icClasseE) => {
   icClasseE.addEventListener("click", (e) => {
-    if (document.querySelector("#niv").value < 10) return;
-
     iconClassesEs.forEach((e) => e.classList.remove("awaken"));
     const classe = document.querySelector("#" + e.target.className).value;
     e.target.classList.add("awaken");
+
     defineAwaken(classe);
   });
 });
-function defineAwaken(classe) {
+
+function defineAwaken(classe = "undefined") {
+  document.querySelector(".awakenSkill").classList.add("hide");
+
+  const stuffsName = [...document.querySelector(".equipements").children].map((eqpt) =>
+    eqpt.children[0].value.toLowerCase()
+  );
+  if (
+    classe === "undefined" ||
+    classe === "" ||
+    (document.querySelector("#niv").value < 10 && !stuffsName.includes("pistolet suspect"))
+  )
+    return;
+
+  document.querySelector(".awakenSkill").classList.remove("hide");
+
   const niv = document.querySelector("#niv").value;
-  if (niv < 10) return;
 
   var nbUse;
   if (niv >= 15) {
@@ -157,11 +170,7 @@ document.querySelector("#xp").addEventListener("change", (e) => {
     document.querySelector(".equipements").lastElementChild.classList.add("hide");
   }
   // Nouveauté 18/10/23 : Compétence éveillés
-  if (niv >= 10) {
-    document.querySelector(".awakenSkill").classList.remove("hide");
-  } else {
-    document.querySelector(".awakenSkill").classList.add("hide");
-  }
+  defineAwaken();
 });
 
 // Nouveauté 15/08 : Calcul automatique du montant des stats
@@ -395,8 +404,14 @@ function insertBuffInteraction(buffTurnE, skillName, selectedSkill, skillMontant
       const turnE = document.createElement("input");
       turnE.type = "number";
       turnE.min = 1;
-      turnE.max = 6;
+      turnE.max = 9;
       turnE.value = 3;
+
+      const confirmE = document.createElement("button");
+      turnE.addEventListener("change", (e) => {
+        confirmE.disabled = e.target.value < 1;
+      });
+      inputs.append(turnE);
 
       const amountText = document.createElement("p");
       const amountE = document.createElement("input");
@@ -409,17 +424,12 @@ function insertBuffInteraction(buffTurnE, skillName, selectedSkill, skillMontant
 
         amountE.type = "number";
         amountE.min = 1;
-        amountE.max = 10;
+        amountE.max = 20;
         amountE.value = 2;
         inputs.append(amountE);
       }
       globalE.append(inputs);
 
-      const confirmE = document.createElement("button");
-      turnE.addEventListener("change", (e) => {
-        confirmE.disabled = e.target.value < 1;
-      });
-      inputs.append(turnE);
       confirmE.innerText = "Confirmer";
       confirmE.addEventListener("click", () => {
         const turnOfBuffE = document.createElement("p");
@@ -606,8 +616,11 @@ function loadFiche(indexPerso) {
   // Classes du perso
   var classePID = classes.indexOf(persoData.classeP);
   var classeSID = classes.indexOf(persoData.classeS);
+
+  document.querySelector(".iconClasses").children[0].id = persoData.classeP;
   document.querySelector(".iconClasses").children[0].src =
     "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" + iconsClasses[classePID] + ".png";
+  document.querySelector(".iconClasses").children[1].id = persoData.classeS;
   document.querySelector(".iconClasses").children[1].src =
     "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" + iconsClasses[classeSID] + ".png";
   updateSkillsList();
@@ -636,11 +649,9 @@ function loadFiche(indexPerso) {
     document.querySelector(".equipements").lastElementChild.classList.add("hide");
   }
   // Nouveauté 18/10/23 : Compétence éveillés
-  if (persoData.niv >= 10) {
-    document.querySelector(".awakenSkill").classList.remove("hide");
-  } else {
-    document.querySelector(".awakenSkill").classList.add("hide");
-  }
+  [...document.querySelector(".iconClasses").children].forEach((e) => e.classList.remove("awaken"));
+
+  defineAwaken(persoData.awaken);
 
   // Skills du perso
   JSON.parse(persoData.skills).forEach((skill, index) => {
@@ -648,8 +659,6 @@ function loadFiche(indexPerso) {
     competence.children[0].value = skill;
     insertSkill(competence, skill);
   });
-
-  defineAwaken(persoData.awaken);
 
   // Equipements du perso
   JSON.parse(persoData.eqpts).forEach((eqpt, index) => {
