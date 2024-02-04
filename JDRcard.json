@@ -104,6 +104,9 @@
   { "id": 289, "value": 1, "kind": "map", "name": "Île du Mariage", "description": "", "kindId": 97 },
   { "id": 290, "value": 2, "kind": "map", "name": "Île du Mariage", "description": "", "kindId": 97 },
   { "id": 291, "value": 3, "kind": "map", "name": "Île du Mariage", "description": "", "kindId": 97 },
+  { "id": 501, "value": 1, "kind": "map", "name": "Ville de Guilde - Veyda", "description": "", "kindId": 501 },
+  { "id": 502, "value": 2, "kind": "map", "name": "Ville de Guilde - Veyda", "description": "", "kindId": 501 },
+  { "id": 503, "value": 3, "kind": "map", "name": "Ville de Guilde - Veyda", "description": "", "kindId": 501 },
   {
     "id": 1001,
     "value": 3,
@@ -423,6 +426,30 @@
     "name": "Conrad - Commandant Malfaisant",
     "description": "H\u00e9ritier le plus vieux de l'Empire Heldentod. Il est connu pour ses exploits militaires, son inventivit\u00e9, et ses strat\u00e9gies malicieuses.",
     "kindId": "m322b"
+  },
+  {
+    "id": 1042,
+    "value": 3,
+    "kind": "boss",
+    "name": "Grambo - N°7 Hydra",
+    "description": "Anuran Corsaire se battant au pistolet et 7eme t\u00eate de l'Hydra.",
+    "kindId": "m241"
+  },
+  {
+    "id": 1046,
+    "value": 3,
+    "kind": "bossIII",
+    "name": "Snoko - N°3 Hydra",
+    "description": "Tuskar assassin tr\u00e8s bagarreur et puissant, 3eme t\u00eate de l'Hydra.",
+    "kindId": "m069b"
+  },
+  {
+    "id": 1047,
+    "value": 3,
+    "kind": "boss",
+    "name": "Charles - N°2 Hydra",
+    "description": "Bras droit d'Akala ? Chevalier Draka\u00ef tr\u00e8s tr\u00e8s noble, \"Noblesse Oblize\", \u00e9l\u00e9gant, juste, courtois et d\u00e9vastateur.",
+    "kindId": "m063"
   },
   {
     "id": 1201,
@@ -2441,7 +2468,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Veyda et les enfants",
-    "description": "La Veyda est douée pour recruter de nouveaux membres, surtout les jeunes enfants afin de les endoctriner ! Ah ah ah!",
+    "description": "La Veyda est douée pour recruter de nouveaux membres, surtout les jeunes enfants comme Keiko l'orphelin, afin de les endoctriner ! Ah ah ah!",
     "maps": [1],
     "enemies": [],
     "kindId": "skillIcon/E0486",
@@ -2615,23 +2642,111 @@
   {
     "id": 1756,
     "value": 3,
-    "kind": "anecdoteIII",
+    "kind": "anecdote",
     "name": "Leyla et les donations",
-    "description": "Leyla tout récemment ...",
-    "maps": [],
+    "description": "Leyla juste après avoir rejoint la Veyda a mis son poing sur la table : 400 pièces de donation. \"Il nous faut une mine et une forge !\"",
+    "maps": [501],
     "enemies": [],
-    "kindId": "items/",
+    "kindId": "items/i00653",
     "group": 3
   },
   {
-    "id": 1756,
+    "id": 1757,
     "value": 3,
-    "kind": "anecdoteIII",
-    "name": "Rad Ed qui vol avec Rageux ?",
-    "description": "",
-    "maps": [4],
+    "kind": "anecdote",
+    "name": "Poisseux et Rageux",
+    "description": "Entre Poisseux et Rageux, c'est une relation complexe. Les deux ont besoins de l'autre, mais en même temps, ils ne s'entendent pas ! Les fientes et le lance-pierre high-tech en sont la preuve !",
+    "maps": [501],
     "enemies": [],
-    "kindId": "items/",
+    "kindId": "items/W52903",
+    "group": 3
+  },
+  {
+    "id": 1758,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Grégos et Aradia",
+    "description": "Grégos le Drakaï démoniste (nom écrit dans la Veyda), semble avoir une drôle d'attirance pour Aradia (ou son grimoire...), cela leur donne une relation très étrange. Qu'est-ce que ces grimoires ont de spécial...",
+    "maps": [501],
+    "enemies": [],
+    "kindId": "items/W61603",
+    "group": 3
+  },
+  {
+    "id": 1759,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Lutta et Hydra",
+    "description": "La seule fois où Lutta a été chef, il a rencontré ses pires ennemis qui leur ont déclarés la guerre : la guilde Hydra ! Imbus d'eux-même, et ça lui a cassé les couilles ! Maintenant il veut manger des cuisses de grenoilles.",
+    "maps": [9],
+    "enemies": [],
+    "kindId": "skillIcon/normal06",
+    "group": 3
+  },
+  {
+    "id": 1760,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Shkrouk et Gaazor",
+    "description": "Révélation : Shkrouk est le frère de Gaazor, le chef Ogre lié à l'esclavagisme ! Leur fraternité d'ogre est très forte et complice : ça rigole des tapettes et des os qui Shkrouk ! OAH OAH OAH ! Mais là, en prison Gaazor s'ennuie...",
+    "maps": [1],
+    "enemies": [],
+    "kindId": "monsters/m228",
+    "group": 3
+  },
+  {
+    "id": 1761,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Veyda et la Tour des Cieux",
+    "description": "La Veyda a pu participer à la Tour des Cieux (catégorie sans tapette/soin), et ils se sont hisser jusqu'aux 15e étage !",
+    "maps": [1],
+    "enemies": [],
+    "kindId": "otherIcon/group081",
+    "group": 3
+  },
+  {
+    "id": 1762,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Draigos et les explosions",
+    "description": "Draigos est capable de retourner une situation grâce à l'explosion glaciale, il l'a prouvé face à Grambo et face au Tank Ursun. Il a bloqué physiquement sa charge pour mieux toucher... Ses amis ! EXPLOSION ! Hein ? Fallait pas viser là ?!",
+    "maps": [1],
+    "enemies": [],
+    "kindId": "skillIcon/E0726",
+    "group": 3
+  },
+  {
+    "id": 1763,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Shkrouk et les Potions",
+    "description": "Shkrouk est un expert en potion ! Il sait faire du chewing-gum et des eaux de vies... Ou des potions de confusions ?",
+    "maps": [501],
+    "enemies": [],
+    "kindId": "items/i00718",
+    "group": 3
+  },
+  {
+    "id": 1764,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Poisseux le Chanceux",
+    "description": "Face à la tête n°2 de l'Hydra : Charles, le groupe réussit de nouveau l'impossible : le faire tomber ! Poisseux a été exceptionnel avec l'éveil ! Tout a été esquivé et calculé ! On peut l'appeler \"Le Chanceux\" !",
+    "maps": [501],
+    "enemies": [],
+    "kindId": "items/W54105",
+    "group": 3
+  },
+  {
+    "id": 1765,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Ernis et Maya",
+    "description": "Ernis a accompagné Maya à Aven pour qu'elle découvre la capitale. Il a fait preuve de bonté en faisant un peu de baby-sitting et cela a beaucoup plu à Maya. Il a même pu croiser un vieil ami.",
+    "maps": [1],
+    "enemies": [],
+    "kindId": "items/k10138",
     "group": 3
   },
   {

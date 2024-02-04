@@ -229,6 +229,8 @@ const labelsDescription = {
   incanter:
     "Un personnage peut incanter un sort sur plusieurs tours. Pendant ce temps, le personnage ne peut plus esquiver ni se déplacer.<br/> Sur un échec critique de blocage (voire une réussite critique de l'ennemi, selon le contexte), l'incantation est annulée.",
   //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."
+  "coup-allié":
+    "Lorsqu'on décide de se prendre un coup par un allié (joueur, familier), comme pour un blocage sur un dé 20 : le joueur prend les dégâts divisés par 2 et sans armure.",
 };
 
 initDialog(labelsDescription);

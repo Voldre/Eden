@@ -162,9 +162,15 @@ function loadEnemy(indexEnemy, indexElement) {
     "http://voldre.free.fr/Eden/images/monsters/" + enemyData.visuel3D + ".png";
   ennemiElement.querySelector(".icon").alt = enemyData.visuel3D.toLowerCase();
   ennemiElement.querySelector("#pv").value = enemyData.pvmax;
-
+  if (enemyData.pvmax >= 200) ennemiElement.querySelector("#boss_icon").classList.remove("hide");
+  else ennemiElement.querySelector("#boss_icon").classList.add("hide");
   var nbP = document.querySelector("#nbP").value; // new functionality 28/08/2023
-  ennemiElement.querySelector("#pvmax").value = Math.round(enemyData.pvmax * (1 + (nbP - 3) * 0.33));
+  ennemiElement.querySelector("#pvmax").value =
+    nbP !== "3"
+      ? Math.round(enemyData.pvmax * (1 + (nbP - 3) * 0.33))
+      : parseInt(enemyData.pvmax) >= 200
+      ? parseInt(enemyData.pvmax) + 100
+      : enemyData.pvmax;
 
   // Stats
   ennemiElement.querySelector("#force").value = enemyData.stats.split(",")[0];

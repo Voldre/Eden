@@ -299,7 +299,7 @@
   "132": {
     "nom": "Pi\u00e8ge d'Entrave",
     "desc": "Pose un pi\u00e8ge au sol pour entraver l'ennemi (d\u00e9g\u00e2t tranchant), l'emp\u00eachant de se d\u00e9placer. L'ennemi peut tenter de s'en \u00e9chapper (force).",
-    "montant": "1D10+8 (0 d\u00e9g\u00e2t d'arme), entrave 3 tours (annulable) et Blocage -2"
+    "montant": "1D10+5 (+1/niveau, 0 d\u00e9g\u00e2t/effet d'arme), entrave 3 tours (annulable) , pendant l'entrave Blocage -2"
   },
   "134": {
     "nom": "Hymne Inspirant",

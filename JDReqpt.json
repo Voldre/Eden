@@ -2021,7 +2021,7 @@
     "nom": "Mitaine amplificatrice",
     "desc": "Cette mitaine a \u00e9t\u00e9 con\u00e7ue avec amour et permet \u00e0 son porteur d'amplifier les effets (montants) des buffs (seulement les d\u00e9g\u00e2ts et d\u00e9g\u00e2ts re\u00e7us)",
     "effet": "",
-    "montant": "Montant des buffs +2, d\u00e9g\u00e2t re\u00e7u -1",
+    "montant": "Montant des buffs +1, d\u00e9g\u00e2t re\u00e7u -1",
     "icone": "A40010",
     "access": "D2"
   },
@@ -2029,7 +2029,7 @@
     "nom": "Puce amplificatrice",
     "desc": "Cette puce a \u00e9t\u00e9 cr\u00e9\u00e9e par un magicien zumi qui en avait marre de faire des sorts de soutien faible.",
     "effet": "",
-    "montant": "Montant des buffs +2, d\u00e9g\u00e2t +1",
+    "montant": "Montant des buffs +1, d\u00e9g\u00e2t +1",
     "icone": "i00688",
     "access": "D2"
   },
@@ -2599,8 +2599,9 @@
     "nom": "Bouclier du Sorcier",
     "desc": "Un bouclier pouvant amplifier la magie de son porteur",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t -4, montant des buffs +1",
-    "icone": "W70304"
+    "montant": "D\u00e9g\u00e2t -3, montant des buffs +1",
+    "icone": "W70304",
+    "access": "A1"
   },
   "356": {
     "nom": "Cha\u00eene Heldentod",
@@ -2696,8 +2697,8 @@
   "368": {
     "nom": "Guitare de Puissance",
     "desc": "Une guitare octroyant \u00e0 son porteur et ses alli\u00e9s une puissance sup\u00e9rieure.",
-    "effet": "Montant des buffs +2",
-    "montant": "D\u00e9g\u00e2t +8, PV+10 ",
+    "effet": "Montant des buffs +1",
+    "montant": "D\u00e9g\u00e2t +10, PV +10",
     "icone": "W62806"
   },
   "369": {
@@ -2834,7 +2835,21 @@
     "nom": "Bouclier Solaire",
     "desc": "Un bouclier de lumi\u00e8re avec une d\u00e9fense incomparable, il a \u00e9t\u00e9 cr\u00e9\u00e9 pour l'un des plus grands templiers qui existe.",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t re\u00e7u -6, d\u00e9g\u00e2ts lumi\u00e8res +3",
+    "montant": "D\u00e9g\u00e2t -5, d\u00e9g\u00e2t lumi\u00e8re +3",
     "icone": "W71303"
+  },
+  "388": {
+    "nom": "Ceinture Anti-magie",
+    "desc": "Cette ceinture aux apparences ordinaire est en r\u00e9alit\u00e9 capable de bloquer certaines attaques magiques.",
+    "effet": "",
+    "montant": "PV +5, Blocage magique +2",
+    "icone": "A30019"
+  },
+  "389": {
+    "nom": "Anneau de Vie",
+    "desc": "Une des am\u00e9liorations de l'anneau du rem\u00e8de, orient\u00e9 vitalit\u00e9.",
+    "effet": "",
+    "montant": "PV +15, PV des soins effectu\u00e9s +4, AoE : +2",
+    "icone": "A00005b"
   }
 }
