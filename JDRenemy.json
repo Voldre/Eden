@@ -972,12 +972,12 @@
   "67": {
     "visuel3D": "m315",
     "nom": "Adonis - Tueur Juge",
-    "pvmax": "240",
+    "pvmax": "260",
     "skills": [
-      "\u00c2me Enchain\u00e9e : 2D6+16 et dext\u00e9-3 (AoE) sur 3 tours : Dext\u00e9rit\u00e9",
-      "Scellement Douloureux : Aucun sort physique, 0 SOIN pendant 3-4 tours : Esprit",
-      "Verdict Final : 3D6 +18 (crit X1.5) : Force",
-      "Furtivit\u00e9 / Aura du Pourfendeur : DGT T\u00e9n\u00e8b +1D6+8 pendant 4 tours : Esprit - - - 2 fois : Oeil Hypnotique (res esprit -3), + la fl\u00fbte"
+      "\u00c2me Enchain\u00e9e : 2D6+18 et dext\u00e9-3 (AoE) sur 4 tours : Dext\u00e9rit\u00e9",
+      "Scellement Douloureux : Aucun sort physique, 0 SOIN pendant 4 tours : Esprit",
+      "Verdict Final : 3D6 +18 (crit (1,2,3) X1.5) : Force",
+      "Furtivit\u00e9 / Aura du Pourfendeur : DGT T\u00e9n\u00e8b +2D6+6 pendant 4 tours : Esprit - - - 2 fois : Oeil Hypnotique (res esprit -3), + la fl\u00fbte"
     ],
     "stats": "16,16,9,12,16",
     "desc": "Anuran vert tr\u00e8s social et tr\u00e8s tueur",
@@ -1739,9 +1739,9 @@
     "nom": "Ochak - Primat de la Chelona",
     "pvmax": "270",
     "skills": [
-      "Zone noire : 2D10+12 (bloc m-2) AoE stat -2 (stat-3 parasite) pendant 3 tours : Intelligence",
-      "Eclair en Furie : 4D6 +18 (bloc m-2) et r\u00e9ussite -5 sur 1 tour : Intelligence",
-      "Aura Bouclier Protec (+ Ctrl mentale) : Blocage +3 pendant 4 tours : esprit",
+      "Zone noire : 2D10+13 (bloc m-2) AoE stat -2 (stat-3 si parasite) pendant 3 tours : Intelligence",
+      "Eclair en Furie : 4D6 +19 (bloc m-2) et r\u00e9ussite -5 sur 1 tour : Intelligence",
+      "Aura Bouclier Protec (+ Ctrl mentale) : Blocage +3, Malus-1 pendant 4 tours : esprit",
       "Esprit Descell\u00e9 : Invoque 1 Fant\u00f4me L\u00e9thargique (2 si d\u00e9 < 7) : Esprit"
     ],
     "stats": "13,7,17,10,17",
@@ -2009,7 +2009,7 @@
     "nom": "Vimess - G\u00e9n\u00e9ral d'Exp\u00e9dition",
     "pvmax": "250",
     "skills": [
-      "Invoc Ph\u00e9nix (Torch) : 40 PV (revie 1 fois), Stats 15 (bloc 8) all, Charge 2D10+12 (phys), Tornade Feu AoE (-1D) (mag), explosion AoE \u00e0 la mort (2D10+20, idem soin Vimess)",
+      "Invoc Ph\u00e9nix (Torch) : 40 PV (revie 1 fois), Stats 15 (bloc 8), Charge 2D10+12 FOR, Tornade Feu AoE (-1D) INT, Prév -4 Dégât & -1 malus, explosion AoE \u00e0 la mort (2D10+20, idem soin Vimess)",
       "Pluie de Fl\u00e8ches (/Douloureuse) : 3D6+21 AoE (/ -7 et 0 heal 3 tours) (Mono +6) : Dext\u00e9rit\u00e9",
       "Saut d'esquive (& blocage) : 5 tentatives : tir 2D6+12 (jdrcombat +40)",
       "Passif : Esquive +2, si PV < 125 : esq/bloc cible -2"
@@ -2240,7 +2240,7 @@
       "Scellement : Aucun sort physique, pendant 4 tours : Esprit"
     ],
     "stats": "6,17,15,10,16",
-    "desc": "Anuran Juge se battant au pistolet et 7eme t\u00eate de l'Hydra",
+    "desc": "Anuran Corsaire se battant au pistolet et 7eme t\u00eate de l'Hydra",
     "infos": "Faible au per\u00e7ant et \u00e0 la lumi\u00e8re",
     "drop": "50po, veste des hautes terres, rare: Fusil d'Asbi"
   },
@@ -2266,7 +2266,7 @@
     "skills": [
       "Faiblesse Critique : 5D6 +20 Crit (1,2) : AoE +5, Mono : *1.5, (3 : *1.25) : Force (jdrcombat +20)",
       "Dash (Cicatrice) de l'esprit : 4D6 +16 : -1 buff, se replace : Force",
-      "Transe - Tueuse X : Mono -> AoE, bloc/esq +2 : 4 tours : Esprit",
+      "Transe - Tueuse X : Atk Mono -> AoE, bloc/esq +2, -1 malus : 4 tours : Esprit",
       "Passif : Si PV < 120 : Absorbe 1/3 en PV. (+ Furtivit\u00e9 fuite dext\u00e9/dmg)"
     ],
     "stats": "19,13,11,13,17",
@@ -2281,11 +2281,11 @@
     "skills": [
       "Silence AoE : Aucun sort magique pendant 3 tours : Esprit",
       "Perc\u00e9e du Chevalier (Atk Cyclone) : 4D6 +20 (-5) : force",
-      "Spirale Glaciale : Blocage +3 sur 2-3 tours, rel\u00e2chement : 2D6+6 : Esprit",
+      "Spirale Glaciale : Blocage +3 sur 2-3 tours, rel\u00e2chement : 2D6+6 : Esp'rit (jdrcombat +27)",
       "Passif : Esquive+2, Armure +10. Si PV < 100 : Dur\u00e9e des sorts +1"
     ],
     "stats": "17,15,9,14,17",
-    "desc": "Bras droit d'Akala, chevalier Draka\u00ef tr\u00e8s tr\u00e8s noble, \"Noblesse Oblize\", \u00e9l\u00e9gant et d\u00e9vastateur",
+    "desc": "Bras droit d'Akala, chevalier Draka\u00ef tr\u00e8s tr\u00e8s noble, \"Noblesse Oblize\", \u00e9l\u00e9gant, juste et d\u00e9vastateur.",
     "infos": "Faible au feu et \u00e0 la nature",
     "drop": "Anneau du Bagarreur, rare : Plastron Ecailleux"
   },
@@ -2294,9 +2294,9 @@
     "nom": "Akala - T\u00eate de l'Hydra",
     "pvmax": "300",
     "skills": [
-      "Coupure Noire/Blanche : 4D6+20 : Force/Intel",
-      "Assaut du Chaos Eveill\u00e9 (7 charges) : 4D6+22 (chance blocage/2) : Intel",
-      "Revers d'\u00e9caille : 3 tentatives sur double restant  (<10 : 66%, >=10 : 33%) (+Soin PV+15 #Cach\u00e9) : Esprit",
+      "Destruction/Coupure Noir/Blanc : AoE 3D6+20 (+ 1D Mono) (Chaque \"-100 PV\" : -5), Force/Intel",
+      "Assaut du Chaos HYDRA (7 têtes/charges) : 3D6+22 (chance blocage/2) : Intel",
+      "Terreur du Dragon : Réussite -3 (4 tours). Revers d'\u00e9caille : 2 tentatives par double (<10 : 66%, >=10 : 33%) (Soin 15 PV #Cach\u00e9) : Esprit",
       "Passif : Tous les 100 PV : D\u00e9doublement Eveill\u00e9. Si PV < 100 et critique : +1 Double (1 fois)"
     ],
     "stats": "17,11,17,13,16",

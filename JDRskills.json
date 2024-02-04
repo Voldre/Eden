@@ -21,7 +21,7 @@
     "nom": "Mur de Titan",
     "desc": "R\u00e9duit les d\u00e9g\u00e2ts subis par le lanceur",
     "effet": "Buff",
-    "montant": "D\u00e9g\u00e2t subi -1D4 (min 2) -2 pendant 3 tours",
+    "montant": "D\u00e9g\u00e2t subi -1D4 -2 pendant 3 tours",
     "icone": "E0029",
     "stat": "Force",
     "classe": ["Guerrier"]
@@ -381,7 +381,7 @@
     "nom": "Puma Noir",
     "desc": "Action Instantan\u00e9e (max 3 fois par combat). Vous transforme en Puma Noir. Impossible de jeter des sorts magiques (Intel/Esprit). Nouveaux sorts : Saignement : 1D8 puis 3 pendant 3 tours (Force). Triple Griffe : 3D6 (Dext\u00e9rit\u00e9)",
     "effet": "Transformation",
-    "montant": "D\u00e9g\u00e2t +4 (+1/niveau, max 8), 0 d\u00e9g\u00e2t/effet d'arme. Force+3, Dext\u00e9+3 pendant 1D4 (min 2) +1 tours (annulable)",
+    "montant": "D\u00e9g\u00e2t +4 (+1/niveau, max 8), 0 d\u00e9g\u00e2t/effet d'arme. Force+2, Dext\u00e9+2 pendant 1D4 (min 2) +1 tours (annulable)",
     "icone": "E0271",
     "stat": "Esprit",
     "classe": ["Shaman"]

@@ -112,7 +112,7 @@
     "map_z": null,
     "map_r": null,
     "bgm": 12,
-    "mobs": [14, 29, 31, 32, 38]
+    "mobs": [14, 29, 31, 32, 38, 151]
   },
   "10": {
     "name": "Plaines Dorées",
@@ -1316,15 +1316,16 @@
     "bgm": null
   },
   "501": {
-    "name": "Ville de Guilde - Forêt",
-    "wmap_x": 0,
-    "wmap_y": 0,
-    "wmap": 5,
+    "name": "Ville de Guilde - Veyda",
+    "wmap_x": 20.5,
+    "wmap_y": 61,
+    "wmap": 0,
     "map_x": null,
     "map_y": null,
     "map_z": null,
     "map_r": null,
-    "bgm": null
+    "bgm": 3,
+    "mobs": [81, 88, 151, 154]
   },
   "502": {
     "name": "Ville de Guilde - Montagne",
@@ -1335,7 +1336,7 @@
     "map_y": null,
     "map_z": null,
     "map_r": null,
-    "bgm": null
+    "bgm": 4
   },
   "503": {
     "name": "Donjon Gris",
