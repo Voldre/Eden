@@ -38,9 +38,11 @@ export class Perso {
     this.pvmax = this.pv = Math.max(persoData.pvmax, persoData.pv);
 
     // Calcul des dégâts fixes et de l'armure
-    var stuffs = JSON.parse(persoData.eqpts).map((eqptName) => {
+    const stuffs = JSON.parse(persoData.eqpts).map((eqptName) => {
       return Object.values(eqptJSON).find((eqpt) => eqpt.nom.toLowerCase().trim() == eqptName.toLowerCase().trim());
     });
+
+    console.log(stuffs[1]);
 
     if (!stuffs[0]) {
       if (inFight) {
@@ -87,8 +89,9 @@ export class Perso {
 
     console.log("Access effets (D, A) : ", montantAccessDegat, montantAccessArmure);
 
-    stuffs[1] = stuffs[1] || { nom: "", montant: "Dégât +0" };
+    stuffs[1] = { ...(stuffs[1] || { nom: "", montant: "Dégât +0" }) };
     if (stuffs[1].nom.includes("Bouclier")) {
+      console.log(stuffs[1]);
       montantBouclier = stuffs[1].montant.split("Dégât -")[1].split(",")[0].split(" ")[0];
       stuffs[1].montant = "Dégât +0";
     } else {
@@ -187,14 +190,23 @@ export class Perso {
       })
       .reduce((a, b) => a + b);
 
-    this.force = persoData.force + persoData.forceB.replace(/[^\d.+-]/g, "");
+    const statsB = [persoData.forceB, persoData.dextéB, persoData.intelB, persoData.charismeB, persoData.espritB].map(
+      (statB) => {
+        const statBWithRegex = statB.replace(/[^\d.+-]/g, "");
+        if (!!statB.match(/^[-+]\d+|\d*$/)[0]) return statBWithRegex;
+        else return "";
+      }
+    );
+    console.log([persoData.forceB, persoData.dextéB, persoData.intelB, persoData.charismeB, persoData.espritB], statsB);
+
+    this.force = persoData.force + statsB[0];
     this.forceRes = montantBlocP;
-    this.dexté = persoData.dexté + persoData.dextéB.replace(/[^\d.+-]/g, "");
+    this.dexté = persoData.dexté + statsB[1];
     this.dextéRes = montantEsq;
-    this.intel = persoData.intel + persoData.intelB.replace(/[^\d.+-]/g, "");
+    this.intel = persoData.intel + statsB[2];
     this.intelRes = montantBlocM;
-    this.charisme = persoData.charisme + persoData.charismeB.replace(/[^\d.+-]/g, "");
-    this.esprit = persoData.esprit + persoData.espritB.replace(/[^\d.+-]/g, "");
+    this.charisme = persoData.charisme + statsB[3];
+    this.esprit = persoData.esprit + statsB[4];
 
     this.force = eval(this.force).toString().slice(0, 2);
     this.dexté = eval(this.dexté).toString().slice(0, 2);

@@ -870,9 +870,9 @@ const labelsDescription = {
   niv: "Augmente automatiquement tous les 100 points d'expériences du Niveau 1 à 5, puis tous les 150.<br/> Tous les niveaux paire (2,4,6,8), vous obtenez une compétence.<br/> Au Niveau 5 vous avez +1 en Esprit.<br/> Au Niveau 10, c'est +1 où vous voulez.",
   pv: "Statistique des PV, augmente de 5 par niveau.",
   stress:
-    "Stress max : 200%. Chaque 50% de stress, les stats diminue de 1 (donc 4 maxi).<br/>Le stress accentué augmente de 50%, la réduction diminue de 33% (1/3).",
+    'Fatigue/Stress max : 200%. Chaque 50%, les stats diminue de 1 (4 max).<br/> La fatigue s\'accumule au fur et à mesures des combats (sauf tour des cieux). Le stress uniquement dans les zones dédiées.<br/><br/>Le stress "accentué" augmente de 50%, la "réduction" diminue de 33%.',
   infoEQPT:
-    "Changer d'arme en combat se fait en début de tour (action instantanée). <br/>Porter une armure non adapté (magique, léger, lourd) n'est pas possible. Sauf si gros malus.<br/>Le montant fixe total (hors %) des accessoires est limité : +2 par stat, +3 blocage/esquive, +3 montants buffs (2 si euphorie), pour les soins et dégâts (infligés, reçus) : 6 (+2 si bonus dégât élémentaire)",
+    "Changer d'arme en combat se fait en début de tour (action instantanée). <br/><br/>Porter une armure non adapté (magique, léger, lourd) n'est pas possible. Sauf si gros malus (malus de stats, ...).<br/><br/>Le montant fixe total de l'ensemble des stuffs est limité : +2 de montant des buffs et +1 durée des buffs.<br/><br/>Le montant fixe total (hors %) des accessoires est limité : +2 par stat, +3 blocage/esquive, pour les soins (infligé, reçu) : 6, pour les dégâts infligés : 6 (+2 si bonus élémentaire) et dégâts reçu : 5",
   //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."
 };
 
