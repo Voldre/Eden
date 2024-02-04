@@ -37,9 +37,9 @@
   },
   "3": {
     "nom": "Euphorie",
-    "desc": "Pendant 3 tours, chaque coup re\u00e7u augmente les prochains d\u00e9g\u00e2ts inflig\u00e9s, cumulables 5 fois. Si montant des buffs + x, valeur /2",
+    "desc": "Chaque coup re\u00e7u augmente les prochains d\u00e9g\u00e2ts inflig\u00e9s, cumulables 5 fois (+x cumule par montant des buffs).",
     "effet": "Buff",
-    "montant": "+1D4 (min 2) par coup. Buff pendant 4 tours",
+    "montant": "+2 par coup reçu, cumulable 5 fois pendant 4 tours",
     "icone": "E0286",
     "stat": "Esprit",
     "classe": ["Guerrier"]
