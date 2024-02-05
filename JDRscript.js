@@ -612,6 +612,7 @@ function loadFiche(indexPerso) {
   document.querySelector("#espritB").value = persoData.espritB;
 
   document.querySelector(".notes").value = persoData.notes;
+  document.querySelector(".sticky").value = persoData.sticky ?? "";
 
   // Classes du perso
   var classePID = classes.indexOf(persoData.classeP);
@@ -826,6 +827,7 @@ function savePerso() {
     personnalite: document.querySelector(".personnalité").value,
     background: document.querySelector(".background").value,
     notes: document.querySelector(".notes").value,
+    sticky: document.querySelector(".sticky").value,
   };
 
   console.log(persosJSON);
