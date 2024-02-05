@@ -152,7 +152,7 @@ $_SESSION['maplist'] = json_decode(file_get_contents("maps.json"),true);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Never forget the viewport ! -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=5.0, minimum-scale=0.86">
  
 </head>
 

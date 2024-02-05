@@ -1,8 +1,11 @@
 body {
-  position: relative;
-  min-height: 100%;
+  position: absolute;
+  height: 100vw;
+  min-height: 100vw;
+  max-height: 100vw;
   top: 0px;
   z-index: 0;
+  overflow-x: hidden;
 }
 .topleft {
   display: inline-block;
@@ -260,6 +263,21 @@ dialog::backdrop {
   left: 25px;
 }
 
+.sticky-wrapper {
+  position: fixed;
+  bottom: 0;
+  width: 99%;
+  border-top: 1px gray solid;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  font-size: 14.5px;
+  background-color: rgb(36, 35, 35);
+}
+.sticky {
+  width: 100%;
+}
 .inventaire,
 .personnalité,
 .background,
