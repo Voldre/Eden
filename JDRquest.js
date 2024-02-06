@@ -5,6 +5,8 @@ const apiUrl = "https://api.openai.com/v1/chat/completions";
 
 var rarity;
 
+let indexPerso, indexPlayer, pnjEnemy, mapID;
+
 // Load perso if URL parameter
 window.addEventListener("load", async () => {
   const urlParams = new URLSearchParams(window.location.search);
@@ -16,8 +18,8 @@ window.addEventListener("load", async () => {
     return;
   }
 
-  const indexPerso = urlParams.get("perso");
-  const indexPlayer = Object.entries(playerJSON)
+  indexPerso = urlParams.get("perso");
+  indexPlayer = Object.entries(playerJSON)
     .map((player) => {
       if (player[1].persos.includes(parseInt(indexPerso))) {
         return player[0];
@@ -25,8 +27,8 @@ window.addEventListener("load", async () => {
     })
     .filter((e) => e != undefined)[0];
   const joueurData = playerJSON[indexPlayer];
-
   console.log(joueurData, indexPerso);
+
   if (!joueurData || joueurData.entries[joueurData.persos.indexOf(parseInt(indexPerso))] <= 0) {
     document.querySelector("#response").innerText =
       "Erreur : Le personnage a déjà fait ses 3 entrées, veuillez en choisir un autre !";
@@ -39,50 +41,27 @@ window.addEventListener("load", async () => {
   const persoData = persosJSON[(parseInt(indexPerso) - 1).toString()];
   const enemyData = chooseEnemy(urlParams.get("map"));
 
-  // Upgrade enemy to Elite if the rarity selected randomly is "2" and the enemy is "common"
-  const isElite = rarity === 2 && enemyData.pvmax < 120;
+  initializeEnemy(enemyData, rarity);
 
-  if (rarity === 1) {
-    document.querySelector("#rarity").src = "images/uiiconPNG/combat_mob.png";
-    document.querySelector("#rarity").alt = "Monstre Commun";
-  }
-  if (rarity === 2 || (enemyData.pvmax >= 120 && enemyData.pvmax < 200)) {
-    document.querySelector("#rarity").src = "images/uiiconPNG/combat_elite.png";
-    document.querySelector("#rarity").alt = "Elite";
-  }
-  if (rarity === 3) {
-    document.querySelector("#rarity").src = "images/uiiconPNG/combat_boss.png";
-    document.querySelector("#rarity").alt = "Boss";
-  }
   const randomPNJ = Math.floor(Math.random() * Object.entries(pnjJSON).length + 1);
   console.log("randomPNJ :", randomPNJ);
   const pnjData = pnjJSON[randomPNJ];
 
+  pnjEnemy = Object.values(enemyJSON).find((e) => e.visuel3D.toLowerCase() == pnjData["id"].toLowerCase());
+
   // 10 pour le moment en desc
-  const mapID = urlParams.get("map") || Math.round(Math.random() * 7 + 3);
+  mapID = urlParams.get("map") || Math.round(Math.random() * 7 + 3);
   const mapData = mapsJSON[mapID.toString()];
 
   document.querySelector(".game").style.backgroundImage = "url('./images/loadingframe/Loading_" + mapID + "B.jpg')";
 
   document.querySelector("#mapName").innerText = mapData["name"];
 
-  const pnjEnemy = Object.values(enemyJSON).find((e) => e.visuel3D.toLowerCase() == pnjData["id"].toLowerCase());
-
-  var actions;
-  if (pnjEnemy) {
-    actions = ["Accepter la Quête", "Refuser la Quête", "Refuser et combattre"];
-  } else {
-    actions = ["Accepter la Quête", "Refuser la Quête"];
-  }
-
-  initializeActions(actions, enemyData, isElite, pnjEnemy, mapID);
+  initializeActions(enemyData, pnjEnemy, mapID);
 
   document.querySelector("#pnj").src = "./images/PNJ/" + pnjData["id"] + ".png";
   document.querySelector("#persoName").innerText = persoData["nom"];
   document.querySelector("#perso").src = persoData["pp"].replace("http://voldre.free.fr/Eden", ".");
-
-  document.querySelector("#enemy").src = "./images/monsters/" + enemyData.visuel3D + ".png";
-  document.querySelector("#enemy").title = enemyData.nom;
 
   // CHAT GPT PROMPT
 
@@ -185,6 +164,7 @@ function chooseEnemy(mapId = null, category = null) {
 
     // If map choosed for fight, filter by rarity !
     rarity = Math.floor(Math.random() * 3) + 1;
+
     if (rarity <= 2) {
       // Handle ennemy rarity 1 & 2 (Common & Rare)
       enemyListId = enemyListId.filter((eID) => enemyJSON[eID].pvmax < 200);
@@ -202,16 +182,34 @@ function chooseEnemy(mapId = null, category = null) {
   return enemyData;
 }
 
-function initializeActions(actions, enemyData, isElite, pnjEnemy = { nom: null }, mapID) {
-  const urlParams = new URLSearchParams(window.location.search);
-  const indexPerso = urlParams.get("perso");
-  const indexPlayer = Object.entries(playerJSON)
-    .map((player) => {
-      if (player[1].persos.includes(parseInt(indexPerso))) {
-        return player[0];
-      }
-    })
-    .filter((e) => e != undefined)[0];
+function initializeEnemy(enemyData, rarity) {
+  if (rarity === 1) {
+    document.querySelector("#rarity").src = "images/uiiconPNG/combat_mob.png";
+    document.querySelector("#rarity").alt = "Monstre Commun";
+  }
+  if (rarity === 2) {
+    // || (enemyData.pvmax >= 120 && enemyData.pvmax < 200)) {
+    document.querySelector("#rarity").src = "images/uiiconPNG/combat_elite.png";
+    document.querySelector("#rarity").alt = "Elite";
+  }
+  if (rarity === 3) {
+    document.querySelector("#rarity").src = "images/uiiconPNG/combat_boss.png";
+    document.querySelector("#rarity").alt = "Boss";
+  }
+
+  document.querySelector("#enemy").src = "./images/monsters/" + enemyData.visuel3D + ".png";
+  document.querySelector("#enemy").title = enemyData.nom;
+}
+
+function initializeActions(enemyData, pnjEnemy = { nom: null }, mapID) {
+  document.querySelector("#actions").innerHTML = "";
+
+  // Upgrade enemy to Elite if the rarity selected randomly is "2" and the enemy is "common"
+  const isElite = rarity === 2 && enemyData.pvmax < 120;
+
+  const actions = pnjEnemy
+    ? ["Accepter la Quête", "Refuser la Quête", "Refuser et combattre"]
+    : ["Accepter la Quête", "Refuser la Quête"];
 
   Object.entries(actions).forEach(([id, action]) => {
     const liElem = document.createElement("li");
@@ -239,6 +237,14 @@ function initializeActions(actions, enemyData, isElite, pnjEnemy = { nom: null }
     document.querySelector("#actions").append(liElem);
   });
 }
+
+document.querySelector(".enemy-wrapper").addEventListener("click", () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const enemyData = chooseEnemy(urlParams.get("map"));
+
+  initializeEnemy(enemyData, rarity);
+  initializeActions(enemyData, pnjEnemy, mapID);
+});
 
 function setCookie(cname, cvalue, exdays) {
   const d = new Date();

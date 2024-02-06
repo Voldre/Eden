@@ -1533,7 +1533,7 @@
   "212": {
     "nom": "Robe de l'Hiver",
     "desc": "Une robe con\u00e7ue par une chanteuse talentueuse",
-    "effet": "Soin +1",
+    "effet": "Soin +2",
     "montant": "D\u00e9g\u00e2t -3",
     "icone": "k21049"
   },
@@ -2460,7 +2460,7 @@
     "nom": "Dague Toxique",
     "desc": "Une dague cr\u00e9\u00e9e \u00e0 partir de cr\u00e9atures toxiques. \u00catre plant\u00e9 par cette dague peut rapidement \u00eatre fatal.",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t +5, si coup critique (1, 2) : prochains d\u00e9g\u00e2ts re\u00e7us +4 (1 tour)",
+    "montant": "D\u00e9g\u00e2t +5, si coup critique (1,2,3) : prochains d\u00e9g\u00e2ts re\u00e7us +5 (1 tour)",
     "icone": "W14604"
   },
   "337": {
@@ -2792,7 +2792,7 @@
     "nom": "Ep\u00e9e Colossale Perturbante",
     "desc": "Cette \u00e9p\u00e9e colossale \u00e0 le pouvoir de perturber son adversaire.",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t +10, Si coup critique (1,2) : Force/Intel -2 (1 tour)",
+    "montant": "D\u00e9g\u00e2t +10, Si coup critique (1,2,3) : Force/Intel -2 (2 tours)",
     "icone": "W21005"
   },
   "382": {
@@ -2821,14 +2821,14 @@
     "nom": "Grimoire Gravitationnel",
     "desc": "Ce grimoire poss\u00e8de un pouvoir unique, il est capable de ralentir sa cible en augmentant la gravit\u00e9.",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t +9, Si coup critique (1,2) : Dext\u00e9 -4 (1 tour)",
+    "montant": "D\u00e9g\u00e2t +9, Si coup critique (1,2,3) : Dext\u00e9 -4 (2 tours)",
     "icone": "W64803"
   },
   "386": {
     "nom": "Hache de la Terreur",
     "desc": "Cette hache peut compl\u00e8tement p\u00e9trifier de peur ses adversaires.",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t +10, Si coup critique (1,2) : Esprit -4 (1 tour)",
+    "montant": "D\u00e9g\u00e2t +10, Si coup critique (1,2,3) : Esprit -4 (2 tours)",
     "icone": "W20606"
   },
   "387": {
@@ -2850,6 +2850,14 @@
     "desc": "Une des am\u00e9liorations de l'anneau du rem\u00e8de, orient\u00e9 vitalit\u00e9.",
     "effet": "",
     "montant": "PV +15, PV des soins effectu\u00e9s +4, AoE : +2",
-    "icone": "A00005b"
+    "icone": "A00005b",
+    "access": "D2"
+  },
+  "390": {
+    "nom": "Griffe D\u00e9chirante",
+    "desc": "Cette griffe peut fragmenter et d\u00e9chiqueter la force de ses victimes.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +5, Si coup critique (1,2,3) : Force -3 (2 tours)",
+    "icone": "W31903"
   }
 }
