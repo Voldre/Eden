@@ -640,6 +640,12 @@ dialog::backdrop {
   right: 0%;
 }
 
+.enemy-wrapper:hover {
+  cursor: pointer;
+  cursor: url("images/layout/cursor-x.png"), auto;
+  filter: brightness(110%);
+}
+
 /* JDR Profil */
 
 .charactersList > div {

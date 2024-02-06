@@ -1009,7 +1009,7 @@
   },
   "119": {
     "nom": "Encouragement Musical",
-    "desc": "1 tour d'incantation. R\u00e9duit les d\u00e9g\u00e2ts subis, immunise \u00e0 l'endormissement et augmente la r\u00e9sistance mentale (Blocage Esprit/2)",
+    "desc": "1 tour d'incantation (montant des buffs /2). R\u00e9duit les d\u00e9g\u00e2ts subis, immunise \u00e0 l'endormissement et augmente la r\u00e9sistance mentale (Blocage Esprit/2)",
     "effet": "Buff AoE",
     "montant": "D\u00e9g\u00e2t subi -1D4-2, 0 dodo, +2 r\u00e9s esprit, pour 4 tours",
     "icone": "E0406",
