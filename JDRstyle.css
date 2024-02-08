@@ -278,6 +278,31 @@ dialog::backdrop {
 .sticky {
   width: 100%;
 }
+
+.equipements-synthese {
+  display: flex;
+  border: 1px solid gray;
+}
+.equipements-synthese:hover {
+  background-color: rgba(36, 36, 106, 0.8);
+  cursor: pointer;
+  cursor: url("images/layout/cursor-hover.png"), auto;
+}
+.synthese {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 0px 5px;
+  align-items: center;
+  align-self: center;
+}
+.synthese:not(:last-child) {
+  border-right: 1px solid gray;
+}
+.synthese p {
+  margin: 1px;
+}
+
 .inventaire,
 .personnalité,
 .background,
@@ -639,7 +664,11 @@ dialog::backdrop {
   bottom: -5px;
   right: 0%;
 }
-
+.enemy-wrapper {
+  width: fit-content;
+  height: fit-content;
+  float: right;
+}
 .enemy-wrapper:hover {
   cursor: pointer;
   cursor: url("images/layout/cursor-x.png"), auto;

@@ -105,11 +105,7 @@ document.querySelector("#filtre").addEventListener("change", (e) => {
 
 [...document.querySelectorAll(".ennemi")].forEach((selectEnnemi, i) => {
   // Fill Select elements
-  var option = document.createElement("option");
-  option.value = "";
-  selectEnnemi.append(option);
-
-  Object.values(enemyJSON).forEach((enemy) => {
+  [{ nom: "" }, ...Object.values(enemyJSON)].forEach((enemy) => {
     var option = document.createElement("option");
     option.value = enemy.nom;
     option.innerText = enemy.nom;
@@ -208,11 +204,7 @@ Object.values(eqptJSON).forEach((eqpt) => {
   montantE.innerText = eqpt.montant;
   iconeE.src = "http://voldre.free.fr/Eden/images/items/" + eqpt.icone + ".png";
 
-  eqptE.append(nomE);
-  eqptE.append(descE);
-  eqptE.append(effetE);
-  eqptE.append(montantE);
-  eqptE.append(iconeE);
+  eqptE.append(nomE, descE, effetE, montantE, iconeE);
   document.querySelector(".equipements").append(eqptE);
 });
 

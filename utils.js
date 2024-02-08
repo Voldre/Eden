@@ -22,7 +22,6 @@ export const toastNotification = (text, duration = 3000) => {
   if (!toaster.classList.contains("show")) {
     toaster.classList.add("show");
     toaster.innerText = text;
-    // if(lastElement){ x.append(lastElement)}
     setTimeout(function () {
       toaster.classList.remove("show");
     }, duration);
@@ -92,28 +91,24 @@ export class Perso {
     stuffs[1] = { ...(stuffs[1] || { nom: "", montant: "Dégât +0" }) };
     if (stuffs[1].nom.includes("Bouclier")) {
       console.log(stuffs[1]);
-      montantBouclier = stuffs[1].montant.split("Dégât -")[1].split(",")[0].split(" ")[0];
+      montantBouclier = parseEqptValue("Dégât -", stuffs[1]);
       stuffs[1].montant = "Dégât +0";
     } else {
       montantBouclier = 0;
     }
 
-    montantArme1 = stuffs[0].montant.split("Dégât +")[1].split(",")[0].split(" ")[0];
-    montantArme2 = stuffs[1].montant.split("Dégât +")[1].split(",")[0].split(" ")[0];
+    montantArme1 = parseEqptValue("Dégât +", stuffs[0]);
+    montantArme2 = parseEqptValue("Dégât +", stuffs[1]);
 
     // Bonus de dégât par niveauu (20/11/23 : Fixe à 2 en +, exponentiel par niveau)
-    this.degat = Math.round(
-      (2 + parseInt(montantArme1) + parseInt(montantArme2)) * Math.pow(1.1, this.niv) + montantAccessDegat
-    );
+    this.degat = Math.round((2 + montantArme1 + montantArme2) * Math.pow(1.1, this.niv) + montantAccessDegat);
 
-    montantArmure = stuffs[3].montant.split("Dégât -")[1].split(",")[0].split(" ")[0];
+    montantArmure = parseEqptValue("Dégât -", stuffs[3]);
 
     // Bonus d'armure par niveau (20/11/23 : Fixe à 2 en +, exponentiel par niveau)
     // 02/12/23 : l'exponentiel du bouclier est réduit, car sinon trop cheat
     this.armure = Math.round(
-      (2 + parseInt(montantArmure)) * Math.pow(1.1, this.niv) +
-        parseInt(montantBouclier) * Math.pow(1.05, this.niv) +
-        montantAccessArmure
+      (2 + montantArmure) * Math.pow(1.1, this.niv) + montantBouclier * Math.pow(1.05, this.niv) + montantAccessArmure
     );
 
     // 21/11/23 : Si l'armure actuelle est trop haute, je la diminue !
@@ -197,7 +192,6 @@ export class Perso {
         else return "";
       }
     );
-    console.log([persoData.forceB, persoData.dextéB, persoData.intelB, persoData.charismeB, persoData.espritB], statsB);
 
     this.force = persoData.force + statsB[0];
     this.forceRes = montantBlocP;
@@ -257,4 +251,16 @@ export const initDialog = (labelsDescription) => {
     }
   });
   // dialog.show() // Opens a non-modal dialog
+};
+
+export const parseEqptValue = (text, eqpt) => {
+  const regex = text.toLowerCase();
+  if (!eqpt) return 0;
+  const eqptValue = [eqpt.montant, eqpt.effet].map((eqptText) => {
+    const hasValue = eqptText?.toLowerCase().split(regex)[1];
+    if (!hasValue) return "0";
+    return eqptText.toLowerCase().split(regex)[1].split(",")[0].split(" ")[0];
+  });
+  // if (regex.includes("glace")) console.log(`(${regex})`, eqpt, eqptValue);
+  return parseInt(eqptValue[0]) + parseInt(eqptValue[1]);
 };

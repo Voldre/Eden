@@ -1,5 +1,5 @@
 import { skillsJSON, skillsAwakenJSON, eqptJSON, persosJSON, galeryJSON, masterJSON } from "./JDRstore";
-import { callPHP, toastNotification, initDialog } from "./utils";
+import { callPHP, toastNotification, initDialog, parseEqptValue } from "./utils";
 
 console.log("Skills JSON", skillsJSON);
 console.log("Persos JSON", persosJSON);
@@ -19,6 +19,26 @@ const races = [ "Humain", "Ezelin", "Ursun", "Zumi", "Anuran", "Torturran", "Dra
 // prettier-ignore
 const poids = [ "Moyen", "Léger", "Lourd", "Léger", "Moyen", "Moyen", "Léger", "Lourd", "Lourd",];
 
+const elements = ["contondant", "tranchant", "perçant", "feu", "glace", "foudre", "nature", "lumière", "ténèbres"];
+
+const elementsCategories = elements.map((element) => {
+  // Remove all accents (é,è,ç)
+  const labelElement = element.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  // Dégât xxx + || Dégât de xxx + ... ?
+  return { regex: [` ${element} +`], label: labelElement, img: true };
+});
+
+const synthesisCategories = [
+  { regex: ["Dégât +"], label: "DGT", img: false },
+  { regex: ["Faiblesse +"], label: "F", img: false },
+  { regex: ["Soin +"], label: "S", img: false },
+  { regex: ["Dégât physique +"], label: "P", img: false },
+  ...elementsCategories.slice(0, 3),
+  { regex: ["Dégât magique +"], label: "M", img: false },
+  ...elementsCategories.slice(3),
+  { regex: ["Dégât -", "Dégât reçu -"], label: "ARM", img: false },
+];
+
 // RACES
 document.querySelector("#race").addEventListener("change", (e) => {
   document.querySelector(".poids").innerText = poids[races.indexOf(e.target.value)];
@@ -26,12 +46,8 @@ document.querySelector("#race").addEventListener("change", (e) => {
 
 // CLASSES
 document.querySelectorAll('[id^="classe"]').forEach((classeElem, i) => {
-  var option = document.createElement("option");
-  option.value = "";
-  classeElem.append(option);
-
-  classes.forEach((classe) => {
-    option = document.createElement("option");
+  ["", ...classes].forEach((classe) => {
+    const option = document.createElement("option");
     option.value = classe;
     option.innerText = classe;
     classeElem.append(option);
@@ -41,6 +57,7 @@ document.querySelectorAll('[id^="classe"]').forEach((classeElem, i) => {
     var selectedClasseID = classes.indexOf(e.target.value);
     if (selectedClasseID == -1) {
       console.log(e.target.value + " is not a class (in the list)");
+      document.querySelector(".iconClasses").children[i].src = "";
     } else {
       document.querySelector(".iconClasses").children[i].src =
         "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" + iconsClasses[selectedClasseID] + ".png";
@@ -65,9 +82,7 @@ iconClassesEs.forEach((icClasseE) => {
 function defineAwaken(classe = "undefined") {
   document.querySelector(".awakenSkill").classList.add("hide");
 
-  const stuffsName = [...document.querySelector(".equipements").children].map((eqpt) =>
-    eqpt.children[0].value.toLowerCase()
-  );
+  const stuffsName = [...equipementsE.children].map((eqpt) => eqpt.children[0].value.toLowerCase());
   if (
     classe === "undefined" ||
     classe === "" ||
@@ -159,15 +174,15 @@ document.querySelector("#xp").addEventListener("change", (e) => {
 
   // Nouveauté 27/05/23 : 4eme accessoire au niveau 4
   if (niv >= 4) {
-    document.querySelector(".equipements").lastElementChild.previousElementSibling.classList.remove("hide");
+    equipementsE.lastElementChild.previousElementSibling.classList.remove("hide");
   } else {
-    document.querySelector(".equipements").lastElementChild.previousElementSibling.classList.add("hide");
+    equipementsE.lastElementChild.previousElementSibling.classList.add("hide");
   }
   // Nouveauté 12/06/23 : 5eme accessoire au niveau 8
   if (niv >= 8) {
-    document.querySelector(".equipements").lastElementChild.classList.remove("hide");
+    equipementsE.lastElementChild.classList.remove("hide");
   } else {
-    document.querySelector(".equipements").lastElementChild.classList.add("hide");
+    equipementsE.lastElementChild.classList.add("hide");
   }
   // Nouveauté 18/10/23 : Compétence éveillés
   defineAwaken();
@@ -297,11 +312,11 @@ function insertSkill(skillElement, skillName, awakenClass = false) {
       const skillRangeIconE = document.createElement("span");
       skillRangeIconE.className = "skillRangeIcon";
       skillRangeIconE.style.backgroundImage = `url(http://voldre.free.fr/Eden/images/layout/${skillRange}.png)`;
-      skillElement.children[1].append(skillRangeIconE);
 
       const skillStatE = document.createElement("span");
       skillStatE.innerText = "/ " + selectedSkill.stat;
-      skillElement.children[1].append(skillStatE);
+
+      skillElement.children[1].append(skillRangeIconE, skillStatE);
     } else {
       skillElement.children[1].innerText += " / " + selectedSkill.stat;
     }
@@ -336,9 +351,7 @@ function insertSkill(skillElement, skillName, awakenClass = false) {
 
       lumiereE.type = "number";
       tenebresE.type = "number";
-      wrapperE.append(textE);
-      wrapperE.append(lumiereE);
-      wrapperE.append(tenebresE);
+      wrapperE.append(textE, lumiereE, tenebresE);
       skillElement.append(wrapperE);
     }
 
@@ -352,8 +365,7 @@ function insertSkill(skillElement, skillName, awakenClass = false) {
       coupE.style.width = "40px";
       coupE.type = "number";
       coupE.max = 5;
-      wrapperE.append(textE);
-      wrapperE.append(coupE);
+      wrapperE.append(textE, coupE);
       skillElement.append(wrapperE);
     }
   }
@@ -436,8 +448,7 @@ function insertBuffInteraction(buffTurnE, skillName, selectedSkill, skillMontant
         const amountOfBuffE = document.createElement("p");
         turnOfBuffE.innerText = turnE.value;
         amountOfBuffE.innerText = hasAmount ? amountE.value : "";
-        buffTurnE.append(turnOfBuffE);
-        buffTurnE.append(amountOfBuffE);
+        buffTurnE.append(turnOfBuffE, amountOfBuffE);
         dialog.close();
       });
       globalE.append(confirmE);
@@ -507,19 +518,28 @@ buttonBuffs.addEventListener("click", () => {
 });
 
 // EQUIPEMENTS
-const equipements = document.querySelector(".equipements");
+const equipementsE = document.querySelector(".equipements");
 
-[...equipements.children].forEach((equipement) => {
+[...equipementsE.children].forEach((equipementE) => {
   // Selected eqpt
-  equipement.children[0].addEventListener("change", (e) => {
-    insertEqpt(equipement, e.target.value);
+  equipementE.children[0].addEventListener("change", (e) => {
+    insertEqpt(equipementE, e.target.value);
+
+    const indexPerso = document.querySelector(".perso").id;
+    const persoData = persosJSON[indexPerso];
+
+    const persoEqptsName = JSON.parse(persoData.eqpts);
+    const persoEqpts = persoEqptsName.map((eqptName) =>
+      Object.values(eqptJSON).find((eqpt) => eqpt.nom.toLowerCase().trim() == eqptName.toLowerCase().trim())
+    );
+    createEquipmentSynthesis(persoEqpts);
   });
 
   // Click on eqpt element
-  equipement.addEventListener("click", (e) => {
+  equipementE.addEventListener("click", (e) => {
     if (!e.target.classList.contains("nom")) {
       // If click on select element, don't show/hide the desc ?
-      equipement.children[4].classList.toggle("hide");
+      equipementE.children[4].classList.toggle("hide");
     }
   });
 });
@@ -577,6 +597,8 @@ function loadFiche(indexPerso) {
   const persoData = persosJSON[indexPerso];
 
   if (!persoData) return;
+
+  console.log(`N° de ${persoData.nom} : ${indexPerso + 1}`);
 
   document.querySelector("#nom").value = persoData.nom;
   document.querySelector(".topleft").children[0].title = "Perso n°" + (parseInt(indexPerso) + 1);
@@ -639,15 +661,15 @@ function loadFiche(indexPerso) {
 
   // Nouveauté 27/05 : 4eme accessoire si le perso est au moins niveau 4
   if (persoData.niv >= 4) {
-    document.querySelector(".equipements").lastElementChild.previousElementSibling.classList.remove("hide");
+    equipementsE.lastElementChild.previousElementSibling.classList.remove("hide");
   } else {
-    document.querySelector(".equipements").lastElementChild.previousElementSibling.classList.add("hide");
+    equipementsE.lastElementChild.previousElementSibling.classList.add("hide");
   }
   // Nouveauté 12/06 : 5eme accessoire au niveau 8
   if (persoData.niv >= 8) {
-    document.querySelector(".equipements").lastElementChild.classList.remove("hide");
+    equipementsE.lastElementChild.classList.remove("hide");
   } else {
-    document.querySelector(".equipements").lastElementChild.classList.add("hide");
+    equipementsE.lastElementChild.classList.add("hide");
   }
   // Nouveauté 18/10/23 : Compétence éveillés
   [...document.querySelector(".iconClasses").children].forEach((e) => e.classList.remove("awaken"));
@@ -662,20 +684,73 @@ function loadFiche(indexPerso) {
   });
 
   // Equipements du perso
-  JSON.parse(persoData.eqpts).forEach((eqpt, index) => {
-    var equipement = [...document.querySelector(".equipements").children][index];
-    equipement.children[0].value = eqpt;
-    insertEqpt(equipement, eqpt);
+  const persoEqptsName = JSON.parse(persoData.eqpts);
+  persoEqptsName.forEach((eqpt, index) => {
+    const eqptE = [...equipementsE.children][index];
+    eqptE.children[0].value = eqpt;
+    insertEqpt(eqptE, eqpt);
   });
 
+  const persoEqpts = persoEqptsName.map((eqptName) =>
+    Object.values(eqptJSON).find((eqpt) => eqpt.nom.toLowerCase().trim() == eqptName.toLowerCase().trim())
+  );
+  createEquipmentSynthesis(persoEqpts);
   // Inventaire du perso
-  (document.querySelector(".inventaire").value = persoData.inventaire),
-    (document.querySelector(".poids").innerText = poids[races.indexOf(persoData.race)]);
+  document.querySelector(".inventaire").value = persoData.inventaire;
+
+  document.querySelector(".poids").innerText = poids[races.indexOf(persoData.race)];
 
   document.querySelector("#argent").value = persoData.argent;
 
-  (document.querySelector(".personnalité").value = persoData.personnalite),
-    (document.querySelector(".background").value = persoData.background);
+  document.querySelector(".personnalité").value = persoData.personnalite;
+  document.querySelector(".background").value = persoData.background;
+}
+
+// SYNTHESE DES EQUIPEMENTS
+
+function createEquipmentSynthesis(persoEqpts) {
+  const eqptSynthesisE = document.querySelector(".equipements-synthese");
+  eqptSynthesisE.innerHTML = "";
+
+  synthesisCategories.forEach((category) => {
+    const eqptsValueList = persoEqpts.map((eqpt) => {
+      if (!eqpt) return 0;
+      // For each regex, parse Eqpt, and do the sum of each regex (.reduce)
+      const result = category.regex.map((reg) => parseEqptValue(reg, eqpt)).reduce((total, item) => total + item);
+      // console.log({ label: category.label, eqpt, result });
+      return result;
+    });
+
+    const eqptsValue = eqptsValueList.reduce((total, item) => total + item, 0);
+
+    if (!eqptsValue || eqptsValue === 0) return;
+
+    let categoryValue;
+    if (category.label === "DGT" && eqptsValueList[2]) {
+      categoryValue = `${eqptsValue - eqptsValueList[2]} | ${eqptsValue - eqptsValueList[0] - eqptsValueList[1]}`;
+    } else {
+      categoryValue = eqptsValue;
+    }
+
+    const synthesisCategoryE = document.createElement("div");
+    synthesisCategoryE.className = "synthese";
+
+    const categoryValueE = document.createElement("p");
+    categoryValueE.innerText = categoryValue;
+
+    let categoryHeaderE;
+    if (category.img) {
+      categoryHeaderE = document.createElement("img");
+      categoryHeaderE.src = encodeURI(`images/layout/${category.label}.png`);
+      categoryHeaderE.title = category.label;
+    } else {
+      categoryHeaderE = document.createElement("p");
+      categoryHeaderE.innerText = category.label;
+    }
+
+    synthesisCategoryE.append(categoryHeaderE, categoryValueE);
+    eqptSynthesisE.append(synthesisCategoryE);
+  });
 }
 
 //  DOWNLOAD as FILE
@@ -788,7 +863,7 @@ function savePerso() {
   });
 
   var eqptsData = [];
-  [...equipements.children].forEach((equipement) => {
+  [...equipementsE.children].forEach((equipement) => {
     eqptsData.push(equipement.children[0].value); // Nom
   });
 
@@ -858,6 +933,23 @@ buttonIframe.addEventListener("click", () => {
   document.querySelector("iframe").classList.toggle("hide");
 });
 
+function syntheseDesc() {
+  let description =
+    "La synthèse résume les montants de dégâts et d'armures issus des équipements.<br/> Attention, cela ne prend pas en compte les montants conditionnels (si panoplie, classe), voici la légende :<br/>";
+  synthesisCategories.forEach((category) => {
+    if (category.img) {
+      description +=
+        "<br/><img src='http://voldre.free.fr/Eden/images/layout/" +
+        category.label +
+        ".png'/> = Dégât de " +
+        category.label;
+    } else {
+      description += `<br/>${category.label} : ${category.regex[0].replace("+", "").replace("Soin", "Soin effectué")}`;
+    }
+  });
+  return description;
+}
+
 const labelsDescription = {
   force:
     "Permet d'utiliser des attaques lourdes, de pousser, de soulever.<br/>Si la stat est à 1 ou 2 : Impossible de tenir une arme. <br/>Permet de bloquer des coups physiques (Dé/2)<br/><br/> Un blocage à 20 inflige 5 dégâts de plus. <br/>Les stats sont limitées à 17, et 17 (+1) avec buff/stuff.<br/>Le blocage est limité à 13.",
@@ -876,6 +968,7 @@ const labelsDescription = {
   infoEQPT:
     "Changer d'arme en combat se fait en début de tour (action instantanée). <br/><br/>Porter une armure non adapté (magique, léger, lourd) n'est pas possible. Sauf si gros malus (malus de stats, ...).<br/><br/>Le montant fixe total de l'ensemble des stuffs est limité : +2 de montant des buffs et +1 durée des buffs.<br/><br/>Le montant fixe total (hors %) des accessoires est limité : +2 par stat, +3 blocage/esquive, pour les soins (infligé, reçu) : 6, pour les dégâts infligés : 6 (+2 si bonus élémentaire) et dégâts reçu : 5",
   //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."
+  synthese: syntheseDesc(),
 };
 
 initDialog(labelsDescription);

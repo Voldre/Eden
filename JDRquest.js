@@ -207,7 +207,7 @@ function initializeActions(enemyData, pnjEnemy = { nom: null }, mapID) {
   // Upgrade enemy to Elite if the rarity selected randomly is "2" and the enemy is "common"
   const isElite = rarity === 2 && enemyData.pvmax < 120;
 
-  const actions = pnjEnemy
+  const actions = pnjEnemy.nom
     ? ["Accepter la Quête", "Refuser la Quête", "Refuser et combattre"]
     : ["Accepter la Quête", "Refuser la Quête"];
 
