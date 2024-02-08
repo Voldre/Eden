@@ -264,3 +264,17 @@ export const parseEqptValue = (text, eqpt) => {
   // if (regex.includes("glace")) console.log(`(${regex})`, eqpt, eqptValue);
   return parseInt(eqptValue[0]) + parseInt(eqptValue[1]);
 };
+
+export const isTextInText = (mainText, subText) => {
+  const mainTextFormated = mainText
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+  const subTextFormated = subText
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+  return mainTextFormated.includes(subTextFormated);
+};
