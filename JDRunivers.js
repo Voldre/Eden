@@ -41,8 +41,7 @@ classes.forEach((classe, i) => {
   var iconeE = document.createElement("img");
   iconeE.src = "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" + iconsClasses[i] + ".png";
 
-  classeE.append(nomE);
-  classeE.append(iconeE);
+  classeE.append(nomE, iconeE);
 
   document.querySelector(".classeslist").append(classeE);
 });
@@ -114,11 +113,11 @@ function updateSkillsList(classe) {
       const skillRangeIconE = document.createElement("span");
       skillRangeIconE.className = "skillRangeIcon";
       skillRangeIconE.style.backgroundImage = `url(http://voldre.free.fr/Eden/images/layout/${skillRange}.png)`;
-      effetE.append(skillRangeIconE);
 
       const skillStatE = document.createElement("span");
       skillStatE.innerText = " / " + skill.stat + " / " + skill.classe?.toString().replaceAll(",", ", ");
-      effetE.append(skillStatE);
+
+      effetE.append(skillRangeIconE, skillStatE);
     } else {
       effetE.innerText += " / " + skill.stat + " / " + skill.classe?.toString().replaceAll(",", ", "); // Ajout Sanofi
     }
@@ -126,11 +125,7 @@ function updateSkillsList(classe) {
     montantE.innerText = skill.montant;
     iconeE.src = "http://voldre.free.fr/Eden/images/skillIcon/" + skill.icone + ".png";
 
-    skillE.append(nomE);
-    skillE.append(descE);
-    skillE.append(effetE);
-    skillE.append(montantE);
-    skillE.append(iconeE);
+    skillE.append(nomE, descE, effetE, montantE, iconeE);
 
     document.querySelector(".skillslist").append(skillE);
   });

@@ -167,7 +167,7 @@
     "nom": "Anneau du rem\u00e8de",
     "desc": "Anneau am\u00e9liorant l'effet des soins",
     "effet": "Buff",
-    "montant": "PV des soins effectu\u00e9s +4, AoE : +2",
+    "montant": "Soin +4, AoE : +2",
     "icone": "A00005",
     "access": "D2"
   },
@@ -246,7 +246,7 @@
     "nom": "Chapeau de champigno\u00efde",
     "desc": "Chapeau ayant appartenu \u00e0 un champigno\u00efde",
     "effet": "",
-    "montant": "Soin et D\u00e9g\u00e2t magique +1",
+    "montant": "Soin +1 et D\u00e9g\u00e2t magique +1",
     "icone": "A10025"
   },
   "36": {
@@ -786,7 +786,7 @@
     "nom": "Anneau curatif",
     "desc": "Un anneau du rem\u00e8de raffin\u00e9 par un joailler",
     "effet": "",
-    "montant": "PV des soins effectu\u00e9s +6, AoE : +3",
+    "montant": "Soin +6, AoE : +3",
     "icone": "A000052",
     "access": "D3"
   },
@@ -794,7 +794,7 @@
     "nom": "Crochet enchant\u00e9",
     "desc": "Un crochet d'une mante surcharg\u00e9e en magie",
     "effet": "",
-    "montant": "Soin et D\u00e9g\u00e2t magique +2, AoE : +1",
+    "montant": "Soin +2 et D\u00e9g\u00e2t magique +2, AoE : +1",
     "icone": "I002862",
     "access": "D2"
   },
@@ -1149,28 +1149,28 @@
   "160": {
     "nom": "Katana de Delphes",
     "desc": "Katana fabriqu\u00e9 avec un bois et un acier sacr\u00e9",
-    "effet": "D\u00e9g\u00e2t nature+2",
+    "effet": "D\u00e9g\u00e2t nature +2",
     "montant": "D\u00e9g\u00e2t +7",
     "icone": "W21404"
   },
   "161": {
     "nom": "Katana Eclair Pourpre",
     "desc": "Un katana grav\u00e9 d'un \u00e9clair pourpre ressemblant \u00e0 une fleur de ceriser",
-    "effet": "D\u00e9g\u00e2t foudre+2",
+    "effet": "D\u00e9g\u00e2t foudre +2",
     "montant": "D\u00e9g\u00e2t +8",
     "icone": "W21503"
   },
   "162": {
     "nom": "Katana Br\u00fblant",
     "desc": "Les veines de ce Katana ressemblent \u00e0 des flammes.",
-    "effet": "D\u00e9g\u00e2t de feu+2",
+    "effet": "D\u00e9g\u00e2t de feu +2",
     "montant": "D\u00e9g\u00e2t +9",
     "icone": "W21302"
   },
   "163": {
     "nom": "Destruction Sacr\u00e9e",
     "desc": "Une \u00e9p\u00e9e d\u00e9tenant un pouvoir de destruction",
-    "effet": "D\u00e9g\u00e2t lumi\u00e8re+2",
+    "effet": "D\u00e9g\u00e2t lumi\u00e8re +2",
     "montant": "D\u00e9g\u00e2t +11",
     "icone": "W21105"
   },
@@ -2013,7 +2013,7 @@
     "nom": "Brassard de r\u00e9sistance",
     "desc": "Ce brassard con\u00e7u par des moines Ursuns augmente la r\u00e9sistance d'esprit de son porteur.",
     "effet": "",
-    "montant": "R\u00e9sistance d'esprit +2, d\u00e9g\u00e2t re\u00e7u- 1",
+    "montant": "R\u00e9sistance d'esprit +2, d\u00e9g\u00e2t re\u00e7u -1",
     "icone": "A40024",
     "access": "A2"
   },
@@ -2150,7 +2150,7 @@
     "nom": "Parchemin de l'\u00e9pine",
     "desc": "Permet \u00e0 son porteur de lanceur de g\u00e9n\u00e9rer un bouclier d'\u00e9pines, permettant de mieux r\u00e9sister et de blesser l'ennemi.",
     "effet": "Capacit\u00e9",
-    "montant": "2 fois par combat (Instantan\u00e9e Esprit) : D\u00e9g\u00e2t re\u00e7u -4, d\u00e9g\u00e2t d'\u00e9pines +4 (3 tours)",
+    "montant": "2 fois par combat (Instantan\u00e9e Esprit) : D\u00e9g\u00e2t re\u00e7u : -4, d\u00e9g\u00e2t d'\u00e9pines +4 (3 tours)",
     "icone": "I00312",
     "access": "A3"
   },
@@ -2200,7 +2200,7 @@
     "nom": "Marteau du Sage",
     "desc": "Un marteau con\u00e7u pour aider les sages.",
     "effet": "Intelligence +1",
-    "montant": "D\u00e9g\u00e2t +6, Soin PV +2 (AoE 1) (+1 si sage)",
+    "montant": "D\u00e9g\u00e2t +6, Soin +2 (AoE 1) (+1 si sage)",
     "icone": "W40908"
   },
   "302": {
@@ -2398,7 +2398,7 @@
     "nom": "Insigne de l'Ordre du Temple",
     "desc": "Ancien insigne en or pur, il aurait appartenu aux anc\u00eatres de la Curie M\u00e9t\u00e9role : l'Ordre des Chevaliers du Temple, les meilleurs templiers d'Aven.",
     "effet": "(Clerc, Sage, Chev, Templ, Cors)",
-    "montant": " D\u00e9g\u00e2t & Soin +1, pour chaque classe poss\u00e9d\u00e9e : +2 (AoE +1)",
+    "montant": " D\u00e9g\u00e2t +1 & Soin +1, pour chaque classe poss\u00e9d\u00e9e : +2 (AoE +1)",
     "icone": "i01667",
     "access": "D4"
   },
@@ -2414,7 +2414,7 @@
     "nom": "Super Chapeau Champi",
     "desc": "Une version am\u00e9lior\u00e9e du Chapeau de Champigno\u00efde. Il a appartenu \u00e0 un grand champigno\u00efde.",
     "effet": "",
-    "montant": "Soin et D\u00e9g\u00e2t magique +3, AoE : +2",
+    "montant": "Soin +3 et D\u00e9g\u00e2t magique +3, AoE : +2",
     "icone": "A10028",
     "access": "D3"
   },
@@ -2452,7 +2452,7 @@
     "nom": "Crochet de Gimu",
     "desc": "Un crochet appartenant \u00e0 Gimu - l'Oeil du Cylcone. Ce crochet est tellement surcharg\u00e9 en magie que sa texture est difforme.",
     "effet": "",
-    "montant": "Soin et D\u00e9g\u00e2t magique +4, AoE : +2",
+    "montant": "Soin +4 et D\u00e9g\u00e2t magique +4, AoE : +2",
     "icone": "I002863",
     "access": "D4"
   },
@@ -2547,7 +2547,7 @@
     "nom": "Plastron de Delphes",
     "desc": "Un plastron cr\u00e9\u00e9 par des anciens habitants de Delphes, ses propri\u00e9t\u00e9s curatives sont tr\u00e8s myst\u00e9rieuses.",
     "effet": "PV Soin re\u00e7u +4",
-    "montant": "D\u00e9g\u00e2t re\u00e7u -5",
+    "montant": "D\u00e9g\u00e2t -5",
     "icone": "A20108"
   },
   "349": {
@@ -2728,7 +2728,7 @@
     "nom": "Collier Lueur d'\u00e2me",
     "desc": "Ce collier a \u00e9t\u00e9 cr\u00e9\u00e9 par des experts Draka\u00efs \u00e0 la Vall\u00e9e de la Mort",
     "effet": "",
-    "montant": "Dur\u00e9e des malus +1 tour, Soin et D\u00e9g\u00e2t magique +1",
+    "montant": "Dur\u00e9e des malus +1 tour, Soin +2 et D\u00e9g\u00e2t magique +2",
     "icone": "A00044",
     "access": "D2"
   },
@@ -2849,7 +2849,7 @@
     "nom": "Anneau de Vie",
     "desc": "Une des am\u00e9liorations de l'anneau du rem\u00e8de, orient\u00e9 vitalit\u00e9.",
     "effet": "",
-    "montant": "PV +15, PV des soins effectu\u00e9s +4, AoE : +2",
+    "montant": "PV +15, Soin +4, AoE : +2",
     "icone": "A00005b",
     "access": "D2"
   },
