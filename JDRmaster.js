@@ -1,5 +1,5 @@
 import { skillsJSON, eqptJSON, masterJSON, enemyJSON } from "./JDRstore";
-import { callPHP, toastNotification } from "./utils";
+import { callPHP, isTextInText, toastNotification } from "./utils";
 
 // load notes
 document.querySelector(".notes").value = masterJSON.notes;
@@ -93,9 +93,7 @@ console.log(elementsCount);
 // console.log("Pour trouver des ennemis par nom  : Object.values(enemyJSON).filter(enemy => enemy.nom.includes('rsun')");
 document.querySelector("#filtre").addEventListener("change", (e) => {
   document.querySelector("#filteredEnemys").innerHTML = null;
-  var enemiesList = Object.values(enemyJSON).filter((enemy) =>
-    enemy.nom.toLowerCase().includes(e.target.value.toLowerCase())
-  );
+  var enemiesList = Object.values(enemyJSON).filter((enemy) => isTextInText(enemy.nom, e.target.value));
   enemiesList.forEach((enemy) => {
     var liElem = document.createElement("li");
     liElem.innerText = enemy.nom + " - " + enemy.visuel3D;
@@ -182,6 +180,8 @@ function loadEnemy(indexEnemy, indexElement) {
   });
 }
 
+// EQPTS
+const equipementsE = document.querySelector(".equipements");
 // eqpts list
 Object.values(eqptJSON).forEach((eqpt) => {
   var eqptE = document.createElement("div");
@@ -205,19 +205,53 @@ Object.values(eqptJSON).forEach((eqpt) => {
   iconeE.src = "http://voldre.free.fr/Eden/images/items/" + eqpt.icone + ".png";
 
   eqptE.append(nomE, descE, effetE, montantE, iconeE);
-  document.querySelector(".equipements").append(eqptE);
+  equipementsE.append(eqptE);
 });
 
 // Show/Hide eqpts
-var buttonEqpt = document.querySelector("#buttonEqpt");
+const buttonEqpt = document.querySelector("#buttonEqpt");
 buttonEqpt.addEventListener("click", () => {
   if (buttonEqpt.innerText == "Afficher") {
     buttonEqpt.innerText = "Masquer";
   } else {
     buttonEqpt.innerText = "Afficher";
   }
-  document.querySelector(".equipements").classList.toggle("hide");
+  equipementsE.classList.toggle("hide");
 });
+
+// Filter eqpts by name (08/02/2024)
+
+const eqptNameFilter = document.querySelector("#eqptNameFilter");
+const eqptEffectFilter = document.querySelector("#eqptEffectFilter");
+eqptNameFilter.addEventListener("blur", () => {
+  eqptFilter();
+});
+eqptEffectFilter.addEventListener("blur", () => {
+  eqptFilter();
+});
+
+const eqptFilter = () => {
+  const filterName = eqptNameFilter.value;
+  const filterEffect = eqptEffectFilter.value;
+
+  let nbEqptsDisplayed = 0;
+
+  [...equipementsE.children].forEach((eqptE) => {
+    const eqptName = eqptE.querySelector(".nom").innerText;
+    const eqptEffect = eqptE.querySelector(".effet").innerText;
+    const eqptMontant = eqptE.querySelector(".montant").innerText;
+
+    if (
+      isTextInText(eqptName, filterName) &&
+      (isTextInText(eqptEffect, filterEffect) || isTextInText(eqptMontant, filterEffect))
+    ) {
+      eqptE.classList.remove("hide");
+      nbEqptsDisplayed++;
+    } else eqptE.classList.add("hide");
+  });
+
+  document.querySelector("#nbEqptFiltered").innerText = `(${nbEqptsDisplayed})`;
+};
 
 // ALL SAVES
 
