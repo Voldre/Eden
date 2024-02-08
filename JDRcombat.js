@@ -731,8 +731,7 @@ function showCardsAndCoins(winCards, newCoins) {
         console.log("Erreur, type non reconnu : " + card.kind);
     }
 
-    div.append(li);
-    div.append(imgCardE);
+    div.append(li, imgCardE);
     cardsE.append(div);
   });
 

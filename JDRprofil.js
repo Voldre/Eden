@@ -104,12 +104,7 @@ window.addEventListener("load", () => {
       playerEntriesE.innerText = "Entrées restantes : " + entriesToday + "%";
       playerEntriesE.style.fontSize = "13px";
 
-      playerE.append(playerConnectedE);
-      playerE.append(playerNameE);
-      playerE.append(playerCoinE);
-      playerE.append(playerCardsE);
-      playerE.append(playerCardsEP);
-      playerE.append(playerEntriesE);
+      playerE.append(playerConnectedE, playerNameE, playerCoinE, playerCardsE, playerCardsEP, playerEntriesE);
       playersE.append(playerE);
       document.querySelector("body").append(playersE);
     });
