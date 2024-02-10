@@ -137,53 +137,11 @@ export class Perso {
       this.armure += 1;
     }
     // 03/12 Add Bloc/Esq (resistance) bonus according to stuff
-    montantBlocP = stuffs
-      .map((stuff) => {
-        if (!stuff) return 0;
-        let value = "0";
-        [stuff.effet || "", stuff.montant || ""].forEach((text) => {
-          if (text.includes("Blocage") && !text.includes("Blocage magique")) {
-            if (text.includes("Blocage physique")) {
-              value = text.split("Blocage physique +")[1][0];
-            } else {
-              value = text.split("Blocage +")[1][0];
-            }
-          }
-        });
-        return parseInt(value);
-      })
-      .reduce((a, b) => a + b);
+    montantBlocP = parseEqptsByRegex(["Blocage +", "Blocage physique +"], stuffs).reduce((a, b) => a + b);
 
-    montantEsq = stuffs
-      .map((stuff) => {
-        if (!stuff) return 0;
-        let value = 0;
+    montantEsq = parseEqptsByRegex(["Esquive +"], stuffs).reduce((a, b) => a + b);
 
-        [stuff.effet || "", stuff.montant || ""].forEach((text) => {
-          if (text.includes("Esquive +")) {
-            value = parseInt(text.split("Esquive +")[1][0]);
-          }
-        });
-        return value;
-      })
-      .reduce((a, b) => a + b);
-
-    montantBlocM = stuffs
-      .map((stuff) => {
-        if (!stuff) return 0;
-        let value = "0";
-        [stuff.effet || "", stuff.montant || ""].forEach((text) => {
-          if (text.includes("Blocage") && !text.includes("Blocage physique")) {
-            if (text.includes("Blocage magique")) {
-              value = text.split("Blocage magique +")[1][0];
-            } else {
-              value = text.split("Blocage +")[1][0];
-            }
-          }
-        });
-        return parseInt(value);
-      })
-      .reduce((a, b) => a + b);
+    montantBlocM = parseEqptsByRegex(["Blocage +", "Blocage magique +"], stuffs).reduce((a, b) => a + b);
 
     const statsB = [persoData.forceB, persoData.dextéB, persoData.intelB, persoData.charismeB, persoData.espritB].map(
       (statB) => {
@@ -253,16 +211,28 @@ export const initDialog = (labelsDescription) => {
   // dialog.show() // Opens a non-modal dialog
 };
 
+// text : string, eqpt : eqpt
 export const parseEqptValue = (text, eqpt) => {
   const regex = text.toLowerCase();
   if (!eqpt) return 0;
   const eqptValue = [eqpt.montant, eqpt.effet].map((eqptText) => {
     const hasValue = eqptText?.toLowerCase().split(regex)[1];
     if (!hasValue) return "0";
-    return eqptText.toLowerCase().split(regex)[1].split(",")[0].split(" ")[0];
+    return hasValue.split(",")[0].split(" ")[0];
   });
   // if (regex.includes("glace")) console.log(`(${regex})`, eqpt, eqptValue);
   return parseInt(eqptValue[0]) + parseInt(eqptValue[1]);
+};
+
+// text : string[], eqpts : eqpt[]
+export const parseEqptsByRegex = (texts, eqpts) => {
+  return eqpts.map((eqpt) => {
+    if (!eqpt) return 0;
+    // For each regex, parse Eqpt, and do the sum of each regex (.reduce)
+    const result = texts.map((reg) => parseEqptValue(reg, eqpt)).reduce((total, item) => total + item);
+    // console.log({ label: category.label, eqpt, result });
+    return result;
+  });
 };
 
 export const isTextInText = (mainText, subText) => {
