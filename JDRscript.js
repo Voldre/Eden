@@ -1,5 +1,5 @@
 import { skillsJSON, skillsAwakenJSON, eqptJSON, persosJSON, galeryJSON, masterJSON } from "./JDRstore";
-import { callPHP, toastNotification, initDialog, parseEqptValue } from "./utils";
+import { callPHP, toastNotification, initDialog, parseEqptValue, parseEqptsByRegex } from "./utils";
 
 console.log("Skills JSON", skillsJSON);
 console.log("Persos JSON", persosJSON);
@@ -143,7 +143,7 @@ document.querySelector("#awakenButton").addEventListener("click", (e) => {
   const persoData = persosJSON[indexPerso];
 
   JSON.parse(persoData.skills).forEach((skill, index) => {
-    var competence = [...document.querySelector(".skills").children][index];
+    var competence = [...competencesE.children][index];
     competence.children[0].value = skill;
     insertSkill(competence, skill, awakenClass);
   });
@@ -164,13 +164,7 @@ document.querySelector("#xp").addEventListener("change", (e) => {
   updateSkillsSlots();
 
   // Nouveauté 15/08 : Calcul automatique du montant des stats
-  var sommeStats =
-    parseInt(document.querySelector("#force").value) +
-    parseInt(document.querySelector("#dexté").value) +
-    parseInt(document.querySelector("#intel").value) +
-    parseInt(document.querySelector("#charisme").value) +
-    parseInt(document.querySelector("#esprit").value);
-  statsVerification(sommeStats, niv);
+  statsVerification(niv);
 
   // Nouveauté 27/05/23 : 4eme accessoire au niveau 4
   if (niv >= 4) {
@@ -189,23 +183,26 @@ document.querySelector("#xp").addEventListener("change", (e) => {
 });
 
 // Nouveauté 15/08 : Calcul automatique du montant des stats
-function statsVerification(sommeStats, niv) {
+function statsVerification(niv) {
+  const sommeStats = statsValue(false).reduce((a, b) => a + b);
   var statsRequired = 61 + Math.trunc(parseInt(niv) / 5);
-  if (sommeStats != statsRequired) {
+  if (sommeStats !== statsRequired) {
     document.querySelector("#errorStat").innerText =
       " - Attention, vos points de stats ne sont pas bon : " + sommeStats + ", attendu : " + statsRequired;
   } else {
     document.querySelector("#errorStat").innerText = "";
   }
 }
-document.querySelector(".stats").addEventListener("change", () => {
-  var sommeStats =
-    parseInt(document.querySelector("#force").value) +
-    parseInt(document.querySelector("#dexté").value) +
-    parseInt(document.querySelector("#intel").value) +
-    parseInt(document.querySelector("#charisme").value) +
-    parseInt(document.querySelector("#esprit").value);
-  statsVerification(sommeStats, document.querySelector("#niv").value);
+document.querySelector(".stats").addEventListener("change", (e) => {
+  if (parseInt(e.target.value) > parseInt(e.target.max)) e.target.value = e.target.max;
+
+  statsVerification(document.querySelector("#niv").value);
+
+  const eqptsName = [...equipementsE.children].map((competenceE) => competenceE.children[0].value);
+  const persoEqpts = eqptsName.map((eqptName) =>
+    Object.values(eqptJSON).find((eqpt) => eqpt.nom.toLowerCase().trim() == eqptName.toLowerCase().trim())
+  );
+  getAllRes(persoEqpts);
 });
 
 // STRESS
@@ -218,9 +215,9 @@ document.querySelector("#stress").addEventListener("change", (e) => {
 });
 
 // COMPETENCES
-const competences = document.querySelector(".skills");
+const competencesE = document.querySelector(".skills");
 
-[...competences.children].forEach((competence) => {
+[...competencesE.children].forEach((competence) => {
   // Selected skill
   competence.children[0].addEventListener("change", (e) => {
     insertSkill(competence, e.target.value);
@@ -237,7 +234,7 @@ const competences = document.querySelector(".skills");
 
 function updateSkillsSlots() {
   // Display skils slots
-  [...competences.children].forEach((competence, i) => {
+  [...competencesE.children].forEach((competence, i) => {
     var niv = document.querySelector("#niv").value || 1;
     var SlotsAvailable = Math.trunc(niv / 2) + 3; // Update 17/05/23, 3 au lieu de 2, car 4 skills sur ~ 12-13 possibles
     if (i > SlotsAvailable) {
@@ -249,7 +246,7 @@ function updateSkillsSlots() {
 }
 function updateSkillsList() {
   // Depending on classes
-  [...competences.children].forEach((competence) => {
+  [...competencesE.children].forEach((competence) => {
     // Skills list
     var selectedOption = competence.children[0].value;
     removeOptions(competence.children[0]);
@@ -525,13 +522,11 @@ const equipementsE = document.querySelector(".equipements");
   equipementE.children[0].addEventListener("change", (e) => {
     insertEqpt(equipementE, e.target.value);
 
-    const indexPerso = document.querySelector(".perso").id;
-    const persoData = persosJSON[indexPerso];
-
-    const persoEqptsName = JSON.parse(persoData.eqpts);
-    const persoEqpts = persoEqptsName.map((eqptName) =>
+    const eqptsName = [...equipementsE.children].map((competenceE) => competenceE.children[0].value);
+    const persoEqpts = eqptsName.map((eqptName) =>
       Object.values(eqptJSON).find((eqpt) => eqpt.nom.toLowerCase().trim() == eqptName.toLowerCase().trim())
     );
+    getAllRes(persoEqpts);
     createEquipmentSynthesis(persoEqpts);
   });
 
@@ -651,13 +646,7 @@ function loadFiche(indexPerso) {
   updateSkillsSlots();
 
   // Nouveauté 15/08 : Calcul automatique du montant des stats
-  var sommeStats =
-    parseInt(persoData.force) +
-    parseInt(persoData.dexté) +
-    parseInt(persoData.intel) +
-    parseInt(persoData.charisme) +
-    parseInt(persoData.esprit);
-  statsVerification(sommeStats, persoData.niv);
+  statsVerification(persoData.niv);
 
   // Nouveauté 27/05 : 4eme accessoire si le perso est au moins niveau 4
   if (persoData.niv >= 4) {
@@ -678,7 +667,7 @@ function loadFiche(indexPerso) {
 
   // Skills du perso
   JSON.parse(persoData.skills).forEach((skill, index) => {
-    var competence = [...document.querySelector(".skills").children][index];
+    var competence = [...competencesE.children][index];
     competence.children[0].value = skill;
     insertSkill(competence, skill);
   });
@@ -694,7 +683,9 @@ function loadFiche(indexPerso) {
   const persoEqpts = persoEqptsName.map((eqptName) =>
     Object.values(eqptJSON).find((eqpt) => eqpt.nom.toLowerCase().trim() == eqptName.toLowerCase().trim())
   );
+  getAllRes(persoEqpts);
   createEquipmentSynthesis(persoEqpts);
+
   // Inventaire du perso
   document.querySelector(".inventaire").value = persoData.inventaire;
 
@@ -706,20 +697,39 @@ function loadFiche(indexPerso) {
   document.querySelector(".background").value = persoData.background;
 }
 
+function statsValue(resistance) {
+  return ["force", "dexté", "intel", "charisme", "esprit"].map((stat) => {
+    const statMain = document.querySelector("#" + stat).value;
+    const statBWithRegex = document.querySelector("#" + stat + "B").value.replace(/[^\d.+-]/g, "");
+    return resistance
+      ? !!statBWithRegex?.match(/^[-+]\d+|\d*$/)[0]
+        ? Math.ceil((parseInt(statMain) + parseInt(statBWithRegex.replace("+", "").replace("-", ""))) / 2)
+        : Math.ceil(parseInt(statMain) / 2)
+      : parseInt(statMain);
+  });
+}
 // SYNTHESE DES EQUIPEMENTS
+
+function getAllRes(persoEqpts) {
+  const resAmount = statsValue(true);
+
+  const montantBlocP = parseEqptsByRegex(["Blocage +", "Blocage physique +"], persoEqpts).reduce((a, b) => a + b);
+  const montantEsq = parseEqptsByRegex(["Esquive +"], persoEqpts).reduce((a, b) => a + b);
+  const montantBlocM = parseEqptsByRegex(["Blocage +", "Blocage magique +"], persoEqpts).reduce((a, b) => a + b);
+  const montantRes = parseEqptsByRegex(["Résistance d'esprit +"], persoEqpts).reduce((a, b) => a + b);
+
+  document.querySelector("#resForce").innerText = `Bloc ${resAmount[0]} ${montantBlocP ? `+ ${montantBlocP}` : ""}`;
+  document.querySelector("#resDexté").innerText = `Esq ${resAmount[1]} ${montantEsq ? `+ ${montantEsq}` : ""}`;
+  document.querySelector("#resIntel").innerText = `Bloc ${resAmount[2]} ${montantBlocM ? `+ ${montantBlocM}` : ""}`;
+  document.querySelector("#resEsprit").innerText = `Res ${resAmount[4]} ${montantRes ? `+ ${montantRes}` : ""}`;
+}
 
 function createEquipmentSynthesis(persoEqpts) {
   const eqptSynthesisE = document.querySelector(".equipements-synthese");
   eqptSynthesisE.innerHTML = "";
 
   synthesisCategories.forEach((category) => {
-    const eqptsValueList = persoEqpts.map((eqpt) => {
-      if (!eqpt) return 0;
-      // For each regex, parse Eqpt, and do the sum of each regex (.reduce)
-      const result = category.regex.map((reg) => parseEqptValue(reg, eqpt)).reduce((total, item) => total + item);
-      // console.log({ label: category.label, eqpt, result });
-      return result;
-    });
+    const eqptsValueList = parseEqptsByRegex(category.regex, persoEqpts);
 
     const eqptsValue = eqptsValueList.reduce((total, item) => total + item, 0);
 
@@ -857,15 +867,9 @@ document.querySelector("#save").addEventListener("click", () => {
 });
 
 function savePerso() {
-  var skillsData = [];
-  document.querySelectorAll(".skill").forEach((competence) => {
-    skillsData.push(competence.children[0].value); // Nom
-  });
+  const skillsName = [...competencesE.children].map((competenceE) => competenceE.children[0].value);
 
-  var eqptsData = [];
-  [...equipementsE.children].forEach((equipement) => {
-    eqptsData.push(equipement.children[0].value); // Nom
-  });
+  const eqptsName = [...equipementsE.children].map((competenceE) => competenceE.children[0].value);
 
   persosJSON[document.querySelector(".perso").id] = {
     nom: document.querySelector("#nom").value,
@@ -895,8 +899,8 @@ function savePerso() {
     charismeB: document.querySelector("#charismeB").value,
     espritB: document.querySelector("#espritB").value,
 
-    skills: JSON.stringify(skillsData),
-    eqpts: JSON.stringify(eqptsData),
+    skills: JSON.stringify(skillsName),
+    eqpts: JSON.stringify(eqptsName),
     inventaire: document.querySelector(".inventaire").value,
     argent: document.querySelector("#argent").value,
     personnalite: document.querySelector(".personnalité").value,
@@ -907,7 +911,7 @@ function savePerso() {
 
   console.log(persosJSON);
 
-  var newPerso = {};
+  const newPerso = {};
   newPerso[document.querySelector(".perso").id] = persosJSON[document.querySelector(".perso").id];
   console.log(newPerso);
 

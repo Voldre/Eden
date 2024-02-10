@@ -297,7 +297,8 @@
     "argent": "372",
     "personnalite": "Jovial joyeux prend peu de chose au s\u00e9rieux un peu folle folle. Tr\u00e8s curieuse.\nVeut faire plaisir et sourire les gens. Toujours souriante et enjou\u00e9e.\nDes fois a vouloir \u00eatre un peu trop parfaite. Et prend un peu mal de ne pas \u00eatre connu \nCheveux rose et yeux bleu.\n\nChanteuse connue ",
     "background": "Nyx est une jeune fille de 23 ans qui a commenc\u00e9 la musique \u00e0 l'\u00e2ge de 5 ans pour remonter le moral des troupes qui partez en guerre \u00e0 l'\u00e9poque. Fan de musique et de chant elle a pris des cours dans son empire Heldentod et puis \u00e0 l'\u00e2ge de 15 ans d\u00e9cide de visiter le monde pour s'am\u00e9liorer.\nA 18 commence les concerts dans les bar un peu partout pour voire les gens sourire et se d\u00e9tendre.\nConnu comme chanteuse professionnelle \u00e0 20 ans un peu partout, s'amuse \u00e0 faire des apparitions non pr\u00e9vus dans certains festivals.\nTop 2-3 chanteuse s\u00fbr.",
-    "notes": "Sofia acad\u00e9mie marais Osrage\nHector acad\u00e9mie marais \nBalder chef de ville vall\u00e9e des rois\nLaura installation pour spectacle \nTitouan fan pour le festival \nFaible au contondant et au feu"
+    "notes": "Sofia acad\u00e9mie marais Osrage\nHector acad\u00e9mie marais \nBalder chef de ville vall\u00e9e des rois\nLaura installation pour spectacle \nTitouan fan pour le festival \nFaible au contondant et au feu",
+    "sticky": ""
   },
   "11": {
     "nom": "Xiuhxin",
@@ -306,7 +307,7 @@
     "classeS": "Sage",
     "xp": "1150",
     "niv": "10",
-    "awaken": "undefined",
+    "awaken": "",
     "pv": "105",
     "pvmax": "105",
     "stress": "1",
@@ -324,10 +325,11 @@
     "skills": "[\"Coup Infernal\",\"Vague Foudroyante\",\"Aura : Ami du Marteau\",\"Marteau du Scellement\",\"Aura : Enchantement Elementaire\",\"Aura : Bouclier protecteur\",\"D\u00e9fense d'Acier\",\"R\u00e9surrection\"]",
     "eqpts": "[\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\"]",
     "inventaire": "",
-    "argent": "50",
+    "argent": "",
     "personnalite": "",
     "background": "",
-    "notes": ""
+    "notes": "",
+    "sticky": ""
   },
   "12": {
     "nom": "Kry\u00e8ri",
@@ -336,7 +338,7 @@
     "classeS": "Luminary",
     "xp": "301",
     "niv": "4",
-    "awaken": "",
+    "awaken": "Luminary",
     "pv": "90",
     "pvmax": "90",
     "stress": "271",
@@ -350,14 +352,15 @@
     "dext\u00e9B": "",
     "intelB": "",
     "charismeB": "",
-    "espritB": "15",
+    "espritB": "+2",
     "skills": "[\"Gu\u00e9rison\",\"Coupure Noire\",\"Sacrifice d'Ombre Noire\",\"Pri\u00e8re Divine\",\"Ch\u00e2timent Sacr\u00e9\",\"Saut Dimensionnel\",\"\",\"\"]",
     "eqpts": "[\"Grimoire de l'apprenti\",\"\",\"\",\"Tunique de Delphes\",\"Noyau abyssal\",\"Anneau du rem\u00e8de\",\"\",\"\",\"\"]",
     "inventaire": "Carapace de tortue\nFusil de guerre",
     "argent": "28",
     "personnalite": "Femme avare et cupide, peut d\u00e9sob\u00e9ir aux principes de la Curie pour sa propre cause (corruption, gain d'argent, ...).\nEst aussi assez rancuni\u00e8re.\n\nCependant, est capable d'aider et de prendre des bonnes d\u00e9cisions, mais pas au prix de sa personne.\nA dans ses principes le fait de ne pas vouloir devenir redevable, et de refuser trop de charit\u00e9.",
     "background": "Ogresse Clerc travaillant pour la Curie M\u00e9t\u00e9role.\nA \u00e9t\u00e9 form\u00e9 par son tuteur et sa famille qui a envie de faire de lui un grand clerc de la Curie.\nCependant, les autres de la Curie ne l'accepte pas enti\u00e8rement, de part sa personnalit\u00e9 et son comportement anormal. Kry\u00e8ri est donc un peu \u00e0 part de la Curie.",
-    "notes": "Faible au tranchant \u00e0 la nature"
+    "notes": "Faible au tranchant \u00e0 la nature",
+    "sticky": ""
   },
   "15": {
     "nom": "Kibo",
@@ -507,7 +510,8 @@
     "argent": "66",
     "personnalite": "Jeune fille tr\u00e8s inventive et intelligente. Elle manipule beaucoup pour cacher ses v\u00e9ritables intentions, elle veut cr\u00e9er la plus grosse explosion que Ezur n'ai jamais vu. Car elle trouve les couleurs d'une explosion belle. C'est un tableau en mouvement, une sculpture de quelque seconde.",
     "background": "Jeune fille qui a quitt\u00e9 le domicile familiale \u00e0 10 ans pour aller sur le continent zumi. Tr\u00e8s dou\u00e9e et int\u00e9ress\u00e9e par tout les inventions, elle se formera aupr\u00e8s d'ing\u00e9nieurs zumi tres dou\u00e9. Elle s'am\u00e9liora puis lors d'une invention avec des camarades, celle-ci explosera. \nElle sera fascin\u00e9 par l'explosion et commencera \u00e0 en cr\u00e9er en secret des petites, puis une grosse avant de quitter le continent zumi. Personne ne l'a soup\u00e7onnera, car elle aura toujours montrer un c\u00f4t\u00e9 calme et gentille. \nElle commencera \u00e0 cr\u00e9er de bug \"obsolescence programmer\" sur les machines qu'elle cr\u00e9er ou repart pour que les gens reviennent. \nElle finira par s'installer au mont Aride et travailler avec Romy et son \u00e9quipe d'ing\u00e9nieur. ",
-    "notes": "Liste des bombes :   Bombe = Action Instantan\u00e9e\nBombe Impacte (1D10+6)\nBombe Gluante (1D6+4, Esquive -2 pour 3 tours) \nBombe Brouilleuse (Techno perturb\u00e9, Esprit -3 pour 4 tours) \nBombe Eblouissante (1D6+3, et r\u00e9ussite des sorts -2 pour 3 tours) \nBombe Glac\u00e9e (1D10+3 glace, Dext\u00e9rit\u00e9 -2 pour 3 tours)\nBombe Surdos\u00e9es (2D10+10)\n"
+    "notes": "Liste des bombes :   Bombe = Action Instantan\u00e9e\nBombe Impacte (1D10+6)\nBombe Gluante (1D6+4, Esquive -2 pour 3 tours) \nBombe Brouilleuse (Techno perturb\u00e9, Esprit -3 pour 4 tours) \nBombe Eblouissante (1D6+3, et r\u00e9ussite des sorts -2 pour 3 tours) \nBombe Glac\u00e9e (1D10+3 glace, Dext\u00e9rit\u00e9 -2 pour 3 tours)\nBombe Surdos\u00e9es (2D10+10)\n",
+    "sticky": ""
   },
   "18": {
     "nom": "Epsilon",
@@ -657,7 +661,8 @@
     "argent": "45 ",
     "personnalite": "Lutta est un zumi emo, aka Satsouk\u00e9\nFou avec des envies meurtri\u00e8res.\nEn full t\u00e9n\u00e8bres, il attaque tout ce qui bouge jusqu'\u00e0 voir le sang couler comme une rivi\u00e8re.\nEn lumi\u00e8re, cr\u00e8me gentillesse.\nPetite voix qui appara\u00eet qui peut lui ordonner de tuer",
     "background": "Lutta est un zumi emo, qui est n\u00e9 sur l'\u00eele sombre\nN'a jamais connu la magie de lumi\u00e8re \u00e0 cause de l'ile, ce qui lui a permis de d\u00e9velopp\u00e9 une certaine r\u00e9sistance vis-\u00e0-vis de sa folie de Luminary. Car il est en folie constante en temps que Luminary.\nFou avec des envies meurtri\u00e8res, il a r\u00e9ussi \u00e0 quitter l'\u00eele sombre. Lutta a tuer quelques personnes au hasard.\nIl sera emprisonn\u00e9, puis lib\u00e9rer par Lucius qu'il considera comme son sauveur et ma\u00eetre.",
-    "notes": "Badge Azule\nVeyda\n"
+    "notes": "Badge Azule\nVeyda\n",
+    "sticky": ""
   },
   "23": {
     "nom": "Roco Bonnaro",
@@ -952,13 +957,13 @@
     "charismeB": "",
     "espritB": "+1",
     "skills": "[\"Attaque Cyclone\",\"Puma Noir\",\"Euphorie\",\"Coup de Poing Irrit\u00e9\",\"Pr\u00e9vention\",\"Totem Gracieux\",\"Mur de Titan\",\"\"]",
-    "eqpts": "[\"Masse de l'esprit\",\"Bouclier du sorcier\",\"\",\"Plastron d'ogre \",\"Cha\u00eene Heldentod\",\"Pierre de s\u00e9curit\u00e9 \",\"Ceinture anti-magie\",\"\ud83d\ude01\ud83d\ude01\ud83d\ude01 Deg +12 en puma. Tank : - 11 sans puma,-7 avec \ud83d\ude01\ud83d\ude01\ud83d\ude01\",\"\"]",
-    "inventaire": "1 eau de vie\n1 puissance\n1 encaissement \nListe de questions du journaliste adress\u00e9 \u00e0 Gaazor \n\nCoton nuage\n1 \u00e9pines de cactus \nUne p\u00e2querette",
+    "eqpts": "[\"Masse de l'esprit\",\"Bouclier du sorcier\",\"\",\"Plastron d'ogre \",\"Cha\u00eene Heldentod\",\"Pierre de s\u00e9curit\u00e9 \",\"Ceinture anti-magie\",\"\",\"\"]",
+    "inventaire": "1 eau de vie\n1 puissance\n1 encaissement \n\nCoton nuage\n1 \u00e9pines de cactus \nUne p\u00e2querette",
     "argent": "41 pi\u00e8ces, 10x plus que Kibo",
     "personnalite": "Shkrouk est sanglant, bourrin, n'h\u00e9sitant pas \u00e0 foncer dans la m\u00eal\u00e9e et se battre comme une b\u00eate... Pour \u00eatre honn\u00eate, c'est sans doute le moins intelligent des grand shamans. Et pourtant c'est un m\u00e9lomane, un vrai c\u0153ur d'artichaud, un romantique des temps modernes, un Don Juan en devenir. Il aime les plantes aussi bien pour leur propri\u00e9t\u00e9s que pour leur beaut\u00e9 esth\u00e9tique. Il aime profond\u00e9ment les choses mignonnes, et il est fan des zumis, ces petites boules de poils... Ils sont trop mims ! UwU",
     "background": "Issu d'une famille d'esclavagistes de p\u00e8re en fils, Shkrouk a \u00e9t\u00e9 \u00e9lev\u00e9 dans une tribu d'orcs, o\u00f9 il apprit le subtile art du shamanisme et du concoctage de potions. Son clan \u00e9tait \u00e9trangement li\u00e9 \u00e0 l'empire Heldentod. En effet, sa tribu capturait les imprudents promeneurs des Steppes d'Artist\u00e8re pour les r\u00e9duire en esclavage et les envoyer \u00e0 l'empire. \n\nAyant d\u00e9cid\u00e9 de travailler \u00e0 l'empire Heldentod en tant que superviseur minier pendant quelques ann\u00e9es, il est finalement retourn\u00e9 sur le vieux continent pour revoir son vieux clan. Malheureusement, \u00e0 son retour, rien n'\u00e9tait comme avant. La grotte dans laquelle son clan logeait auparavant a \u00e9t\u00e9 pill\u00e9e, saccag\u00e9e, jonch\u00e9e de cadavre des membres de sa famille. Et pourtant, il trouva une insolente potion de soin en plein milieu de la sc\u00e8ne. Parmi les cadavres cependant, il n'y trouva pas le corps de son fr\u00e8re a\u00een\u00e9. Il se mit en qu\u00eate de le retrouver et se venger pour son clan",
     "notes": "Potions possibles :\n-Soin (2D10 + 6) (existe en am\u00e9lior\u00e9)\n-Encaissement (deg -6 pdt 3t)\n-Concentration (res esprit pdt 4 t): poudre de feu follet\n-Puissance (+5 deg pdt 3t)\n-Confusion (r\u00e9u -2 pdt 3t)\n-Potions \u00e9l\u00e9mentaires (deg elem +7 pdt 4t)\n-Paillette !\n\nIngr\u00e9dients utiles :\nHerbe (d'eau / celeste / miracle), Champigno\u00efde, \u00e9pine des cactus, pavot, larve (peau + jus)",
-    "sticky": "Cadeau pour toi \ud83d\ude18 en compensation de ces petits nerfs"
+    "sticky": " Deg +12 en puma. Tank : - 10 sans puma,-7 avec "
   },
   "32": {
     "nom": "Coracx / Belamis",
