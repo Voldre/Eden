@@ -94,7 +94,7 @@
   "40": {
     "nom": "S\u00e9isme",
     "desc": "Inflige des d\u00e9g\u00e2ts de terre \u00e0 la cible",
-    "montant": "1D12+4 (si faiblesse : esquive/blocage -2)"
+    "montant": "1D10+5 (si faiblesse : esquive/blocage -2 sur 1 tour)"
   },
   "41": {
     "nom": "Gu\u00e9rison",
@@ -104,7 +104,7 @@
   "42": {
     "nom": "Punition Divine",
     "desc": "Inflige des d\u00e9g\u00e2ts de lumi\u00e8res \u00e0 la cible",
-    "montant": "1D12+4 (si faiblesse : réussite -2)"
+    "montant": "1D10+5 (si faiblesse : réussite -3 sur 1 tour)"
   },
   "43": {
     "nom": "Pr\u00e9vention",
@@ -225,6 +225,26 @@
     "desc": "Encha\u00eene des pas de danse pour infliger un prochain coup puissant",
     "montant": "Prochain d\u00e9g\u00e2t +1D10+5, r\u00e9ussite +2  (3 tours max)"
   },
+  "93": {
+    "nom": "Aura : Enchantement Elementaire",
+    "desc": "Le sage utilise son expertise des gemmes et des enchantements pour renforcer la r\u00e9sistance et les d\u00e9g\u00e2ts du groupe sur un \u00e9l\u00e9ment.",
+    "montant": "Pour l'\u00e9l\u00e9ment magique choisi : D\u00e9g\u00e2t subi (-) et d\u00e9g\u00e2t inflig\u00e9 (+) : 1D4 (min 2) +3 pendant 3 tours"
+  },
+  "94": {
+    "nom": "Aura : Bouclier protecteur",
+    "desc": "Augmente le blocage (physique/magique) de tout le groupe",
+    "montant": "Blocage +3 pendant 3 tours"
+  },
+  "95": {
+    "nom": "Marteau d'Inspiration",
+    "desc": "Fracasse l'ennemi avec un grand coup de marteau",
+    "montant": "1D10+9"
+  },
+  "96": {
+    "nom": "Aura : Ami du Marteau",
+    "desc": "Apporte du soutien \u00e0 la cible : PV et d\u00e9g\u00e2t",
+    "montant": "Soin 1D10 +8. Prochain d\u00e9g\u00e2t +1D6+4 (3 tours max)"
+  },
   "98": {
     "nom": "Perforation",
     "desc": "Tir une fl\u00e8che qui perfore l'armure de l'ennemi et le déconcentre.",
@@ -240,6 +260,11 @@
     "nom": "Ombre Rapide",
     "desc": "Acc\u00e9l\u00e8re le corps du lanceur",
     "montant": "Dexté +1, Esquive +3 pendant 1D4 (min 2) +1 tours"
+  },
+  "106": {
+    "nom": "Marteau du Scellement",
+    "desc": "Frappe puissante sur l'ennemi avec de la glace pour tenter de le sceller",
+    "montant": "1D8+3 de glace, retire tous les buffs"
   },
   "110": {
     "nom": "Terreur du Dragon",
