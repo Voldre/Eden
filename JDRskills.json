@@ -642,7 +642,7 @@
     "nom": "Vent Purificateur",
     "desc": "\u00d4te un effet n\u00e9gatif au hasard aux membres \u00e0 proximit\u00e9, soigne un peu",
     "effet": "Buff et Soin AoE",
-    "montant": "Soin 1D6+6",
+    "montant": "Soin 1D6+6 (-1 malus)",
     "icone": "E0098",
     "stat": "Intelligence",
     "classe": ["Clerc"]

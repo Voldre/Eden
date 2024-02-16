@@ -1,4 +1,4 @@
-import { cardJSON, persosJSON, enemyJSON, allSkills, playerJSON, logsJSON } from "./JDRstore";
+import { cardJSON, persosJSON, enemyJSON, allSkills, playerJSON } from "./JDRstore";
 import { callPHP, initDialog, Perso, toastNotification } from "./utils";
 
 // prettier-ignore
@@ -54,7 +54,6 @@ window.addEventListener("load", () => {
   if (urlParams.has("perso")) {
     // Init parameters
     mapID = parseInt(urlParams.get("map"));
-    logID = parseInt(Object.keys(logsJSON).reverse()[0]) + 1 || 1;
 
     // Init Perso
     indexPerso = urlParams.get("perso");
@@ -615,6 +614,10 @@ async function victory() {
 }
 
 async function saveLog(earnedCoins, winCards) {
+  const logsJSON = getData("combatLogs");
+
+  if (logID === undefined) logID = parseInt(Object.keys(logsJSON).reverse()[0]) + 1 || 1;
+
   const newLog = {};
   newLog[logID] = {
     date: new Date().toLocaleString(),
