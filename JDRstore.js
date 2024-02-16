@@ -17,9 +17,6 @@ export var logsJSON = [];
 
 console.log(window.location.href);
 if (window.location.href.includes("http")) {
-  xhReq.open("GET", "./JDRskills.json" + "?" + new Date().getTime(), false);
-  xhReq.send(null);
-
   cardJSON = getData("card");
   eqptJSON = getData("eqpt");
   pnjJSON = getData("pnj");
@@ -41,7 +38,7 @@ if (window.location.href.includes("http")) {
   logsJSON = getData("combatLogs");
 }
 
-function getData(filename, JDR = true) {
+export function getData(filename, JDR = true) {
   if (JDR) {
     xhReq.open("GET", "./JDR" + filename + ".json" + "?" + new Date().getTime(), false);
   } else {

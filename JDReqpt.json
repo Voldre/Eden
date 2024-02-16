@@ -175,7 +175,7 @@
     "nom": "Anneau de r\u00e9sistance",
     "desc": "R\u00e9duit les d\u00e9g\u00e2ts physiques re\u00e7us",
     "effet": "Buff",
-    "montant": "D\u00e9g\u00e2t physique re\u00e7u -2",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -2, Blocage physique +1",
     "icone": "A00017",
     "access": "A1"
   },
@@ -401,7 +401,7 @@
     "nom": "Anneau de r\u00e9sistance magique",
     "desc": "R\u00e9duit les d\u00e9g\u00e2ts magiques re\u00e7us",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t magique re\u00e7u -2",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -2, Blocage magique +1",
     "icone": "A00019",
     "access": "A1"
   },
@@ -632,7 +632,7 @@
     "nom": "Plastron de Templier",
     "desc": "Plastron cr\u00e9\u00e9 pour les hauts templiers de la Curie M\u00e9t\u00e9role",
     "effet": "Intelligence +1",
-    "montant": "D\u00e9g\u00e2t -6 (PV+5 pour les Templiers)",
+    "montant": "D\u00e9g\u00e2t -6 (PV +5 pour les Templiers)",
     "icone": "k20475"
   },
   "88": {
@@ -1076,9 +1076,9 @@
     "nom": "Gantelet de Lieutenant",
     "desc": "Un gantelet renfor\u00e7ant son porteur",
     "effet": "",
-    "montant": "PV +10. D\u00e9g\u00e2t physique re\u00e7u -3",
+    "montant": "PV +10. D\u00e9g\u00e2t re\u00e7u -2",
     "icone": "A40016",
-    "access": "A3"
+    "access": "A2"
   },
   "151": {
     "nom": "Bague de Glaciation",
@@ -1264,7 +1264,7 @@
     "nom": "Bijou Iris",
     "desc": "Un bijou augmentant l'exp\u00e9rience re\u00e7u pour le groupe",
     "effet": "Groupe",
-    "montant": "Exp\u00e9rience re\u00e7u +10%, porteur PV+5",
+    "montant": "Exp\u00e9rience re\u00e7u +10%, porteur PV +5",
     "icone": "i00541",
     "access": "A3"
   },
@@ -1418,7 +1418,8 @@
     "desc": "Une guitare \u00e0 l'effigie d'un papillon, produit des notes m\u00e9lodieuses. Amplifie les effets (montants) des buffs (seulement les d\u00e9g\u00e2ts et d\u00e9g\u00e2ts re\u00e7us)",
     "effet": "Montant des buffs +2",
     "montant": "D\u00e9g\u00e2t +6",
-    "icone": "W61003"
+    "icone": "W61003",
+    "access": "D1"
   },
   "198": {
     "nom": "Collier d'Asbi",
@@ -1751,7 +1752,7 @@
     "nom": "Plastron du D\u00e9mon",
     "desc": "Un plastron d'un d\u00e9mon sup\u00e9rieur, sa r\u00e9sistance est sans faille",
     "effet": "Stress Accentu\u00e9",
-    "montant": "D\u00e9g\u00e2t -7, PV+5",
+    "montant": "D\u00e9g\u00e2t -7, PV +5",
     "icone": "a20126"
   },
   "242": {
@@ -1824,7 +1825,7 @@
     "nom": "Pierre de Chance",
     "desc": "Une pierre pouvant porter chance \u00e0 son porteur. Un miracle peut se produire dans les extr\u00eames.",
     "effet": "",
-    "montant": "2 fois par s\u00e9ance : Relance d'un D\u00e9 possible (si identique : Amplification, micracle si D\u00e9 1 & 20)",
+    "montant": "2 fois par s\u00e9ance : Relance d'un D\u00e9 possible (si identique : Amplification, miracle si D\u00e9 1 & 20)",
     "icone": "i01472",
     "access": "A3"
   },
@@ -2428,7 +2429,7 @@
   "332": {
     "nom": "Bouclier Zuminator",
     "desc": "Un bouclier \u00e0 l'effigie de Zuminator, le Zumi du conte de super-heros.",
-    "effet": "Si Zumi : PV+10",
+    "effet": "Si Zumi : PV +10",
     "montant": "D\u00e9g\u00e2t -4. Blocage physique critique : renvoi le coup",
     "icone": "W73002"
   },
@@ -2482,7 +2483,7 @@
     "nom": "Pierre Loukoum",
     "desc": "Une pierre au go\u00fbt aigre et sucr\u00e9e qui ravive les papilles, le su\u00e7oter renforce son porteur. Attention de ne pas l'avaler !",
     "effet": "",
-    "montant": "2 fois par combat (Instantan\u00e9e) : PV+5 et r\u00e9ussite des sorts +1 sur 3 tours",
+    "montant": "2 fois par combat (Instantan\u00e9e) : PV +5 et r\u00e9ussite des sorts +1 sur 3 tours",
     "icone": "I00218",
     "access": "D2"
   },
@@ -2813,7 +2814,7 @@
     "nom": "Anneau du Bagarreur",
     "desc": "Cet anneau conf\u00e8re accentue l'attaque de son porteur",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t +2, PV+5",
+    "montant": "D\u00e9g\u00e2t +2, PV +5",
     "icone": "A00006",
     "access": "D2"
   },
@@ -2859,5 +2860,103 @@
     "effet": "",
     "montant": "D\u00e9g\u00e2t +5, Si coup critique (1,2,3) : Force -3 (2 tours)",
     "icone": "W31903"
+  },
+  "391": {
+    "nom": "Anneau protecteur",
+    "desc": "Cet anneau est grav\u00e9 d'un embl\u00e8me permettant de prot\u00e9ger son porteur.",
+    "effet": "",
+    "montant": "Blocage physique +2",
+    "icone": "A00013"
+  },
+  "392": {
+    "nom": "Masse isolante",
+    "desc": "Cette masse peut absorber la magie qui l'entoure pour prot\u00e9ger son porteur.",
+    "effet": "Blocage magique +1",
+    "montant": "D\u00e9g\u00e2t +4",
+    "icone": "W32401"
+  },
+  "393": {
+    "nom": "Griffe de finesse",
+    "desc": "Cette griffe a appartenu \u00e0 un grand aventurier de petite taille. Utile pour \u00eatre rapide et agile !",
+    "effet": "Esquive +1",
+    "montant": "D\u00e9g\u00e2t +5",
+    "icone": "W31503"
+  },
+  "394": {
+    "nom": "Marteau Isolant",
+    "desc": "Ce marteau peut absorber la magie qui l'entoure pour prot\u00e9ger son porteur.",
+    "effet": "Blocage magique +2",
+    "montant": "D\u00e9g\u00e2t +10",
+    "icone": "W40304"
+  },
+  "395": {
+    "nom": "Guitare massive",
+    "desc": "Cette guitare est utile pour faire du Heavy Metal (et pour mieux bloquer) car elle est massive !",
+    "effet": "Blocage physique +2",
+    "montant": "D\u00e9g\u00e2t +9",
+    "icone": "W63802"
+  },
+  "396": {
+    "nom": "Lunettes Zumis",
+    "desc": "Ces lunettes sont tr\u00e8s pris\u00e9es par les Zumis, c'est un peu leur marque de fabrique.",
+    "effet": "",
+    "montant": "Dext\u00e9rit\u00e9 +1, Esprit +1 (+1 si Zumi)",
+    "icone": "k10106"
+  },
+  "397": {
+    "nom": "Lunettes d'Intello",
+    "desc": "Ces lunettes vous feront passer pour un intello fragile, m\u00eame si vous \u00eates une grosse brute compl\u00e8tement stupide.",
+    "effet": "",
+    "montant": "Intelligence +1, Chance d'\u00eatre vis\u00e9e -25%",
+    "icone": "k10029"
+  },
+  "398": {
+    "nom": "Oreilles de Lapin",
+    "desc": "Ces oreilles vous rendront trop Kawaii, plus personne ne voudra vous attaquer (si affect\u00e9).",
+    "effet": "",
+    "montant": "Charisme +1, Chance d'\u00eatre vis\u00e9e -25%",
+    "icone": "k10657"
+  },
+  "399": {
+    "nom": "Tenue de Ranger",
+    "desc": "Cette tenue est adapt\u00e9e pour les combattants chevron\u00e9s (Voleur, Assassin, Chasseur, Corsaire)",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t -5, D\u00e9g\u00e2t +1 (+1 par classe cit\u00e9e)",
+    "icone": "k20820"
+  },
+  "400": {
+    "nom": "Robe Fleurie",
+    "desc": "Cette robe de tr\u00e8s haute couture va \u00e0 merveille \u00e0 tous les utilisateurs de magie.",
+    "effet": "Esprit +1",
+    "montant": "D\u00e9g\u00e2t -4, D\u00e9g\u00e2t magique +2",
+    "icone": "k20882"
+  },
+  "401": {
+    "nom": "Tenue de Soubrette",
+    "desc": "Cette tenue tr\u00e8s mignonne \u00e0 le m\u00e9rite de faire h\u00e9siter certains adversaires.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t -3, Chance d'\u00eatre vis\u00e9e -33%",
+    "icone": "k20026"
+  },
+  "402": {
+    "nom": "Robe de G\u00e9n\u00e9rale du Nord",
+    "desc": "Am\u00e9lioration de la \"Robe de d\u00e9mone du Nord\", elle repr\u00e9sente mieux la hauteur de sa personne !",
+    "effet": "Am\u00e9lioration familier",
+    "montant": "D\u00e9g\u00e2t -4, Familier : d\u00e9g\u00e2t/soin+4 (AoE/2), r\u00e9ussite sort+1",
+    "icone": "k20926"
+  },
+  "403": {
+    "nom": "Tenue d'\u00e9coli\u00e8re",
+    "desc": "Une tenue excellente pour apprendre de nouvelles choses !",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t -3, Exp\u00e9rience re\u00e7u +20%",
+    "icone": "k20104"
+  },
+  "404": {
+    "nom": "Tenue d'\u00e9colier",
+    "desc": "Une tenue excellente pour apprendre de nouvelles choses !",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t -3, Exp\u00e9rience re\u00e7u +20%",
+    "icone": "k20100"
   }
 }

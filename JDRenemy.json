@@ -1319,7 +1319,7 @@
     "nom": "Lucius - Roi D\u00e9chu",
     "pvmax": "255",
     "skills": [
-      "Soin Inverseur : Transforme les soins ennemis en d\u00e9g\u00e2t (AoE) 4 tours : Esprit",
+      "Soin Inverseur : Transforme les soins reçus par les ennemis en d\u00e9g\u00e2t (AoE) 4 tours : Esprit",
       "Solo (-5) / Faiblesse Critique : 3D6 +17 (Crit X1.5), r\u00e9ussite-1 : Force",
       "Griffure Noire : 2D6 +12, et -2 blocage/esquive pour 3 tours AoE : Esprit",
       "Pelote d'entrave : 4 tentatives (Instantan\u00e9e) : Mono/AoE force \u00e0 re-esquiver ou re-bloquer (r\u00e9ussite -2 si lui) : Esprit"
@@ -2009,7 +2009,7 @@
     "nom": "Vimess - G\u00e9n\u00e9ral d'Exp\u00e9dition",
     "pvmax": "250",
     "skills": [
-      "Invoc Ph\u00e9nix (Torch) : 40 PV (revie 1 fois), Stats 15 (bloc 8), Charge 2D10+12 FOR, Tornade Feu AoE (-1D) INT, Prév -4 Dégât & -1 malus, explosion AoE \u00e0 la mort (2D10+20, idem soin Vimess)",
+      "Invoc Ph\u00e9nix (Torch) : 40 PV (revie 1 fois), Stats 15 (bloc 8), Charge 2D10+12 FOR, Tornade Feu AoE (-1D) INT, Pr\u00e9v -4 D\u00e9g\u00e2t & -1 malus, explosion AoE \u00e0 la mort (2D10+20, idem soin Vimess)",
       "Pluie de Fl\u00e8ches (/Douloureuse) : 3D6+21 AoE (/ -7 et 0 heal 3 tours) (Mono +6) : Dext\u00e9rit\u00e9",
       "Saut d'esquive (& blocage) : 5 tentatives : tir 2D6+12 (jdrcombat +40)",
       "Passif : Esquive +2, si PV < 125 : esq/bloc cible -2"
@@ -2295,13 +2295,58 @@
     "pvmax": "300",
     "skills": [
       "Destruction/Coupure Noir/Blanc : AoE 3D6+20 (+ 1D Mono) (Chaque \"-100 PV\" : -5), Force/Intel",
-      "Assaut du Chaos HYDRA (7 têtes/charges) : 3D6+22 (chance blocage/2) : Intel",
-      "Terreur du Dragon : Réussite -3 (4 tours). Revers d'\u00e9caille : 2 tentatives par double (<10 : 66%, >=10 : 33%) (Soin 15 PV #Cach\u00e9) : Esprit",
+      "Assaut du Chaos HYDRA (7 t\u00eates/charges) : 3D6+22 (chance blocage/2) : Intel",
+      "Terreur du Dragon : R\u00e9ussite -3 (4 tours). Revers d'\u00e9caille : 2 tentatives par double (<10 : 66%, >=10 : 33%) (Soin 15 PV #Cach\u00e9) : Esprit",
       "Passif : Tous les 100 PV : D\u00e9doublement Eveill\u00e9. Si PV < 100 et critique : +1 Double (1 fois)"
     ],
     "stats": "17,11,17,13,16",
     "desc": "Homme DK Luminary chef de la guilde Hydra, ind\u00e9pendant de l'Empire Heldentod, il veut atteindre les sommets.",
     "infos": "Faible au contondant et \u00e0 la foudre",
     "drop": "Plastron Draconique, rare : Gemme du Chaos, Bijou Iris"
+  },
+  "156": {
+    "visuel3D": "m012b",
+    "nom": "Romarin - N\u00b06 Hydra",
+    "pvmax": "200",
+    "skills": [
+      "Ch\u00e2timent Sacr\u00e9 / Vent purificateur : 2D6+12 (-1 malus) : Intel",
+      "Gu\u00e9rison / R\u00e9surrection : 2D10+18 (*2) : Intel",
+      "Gr\u00e2ce de la Sagesse : Blocage +3, Esprit +3, 4 tours : Esprit",
+      "B\u00e9n\u00e9diction de la Lumi\u00e8re : -1 sur le D\u00e9, pendant 4 tours : Esprit"
+    ],
+    "stats": "7,13,17,12,17",
+    "desc": "Zumi Clerc \u00e0 la peau verte, sp\u00e9cialis\u00e9 en soin et 6eme t\u00eate de l'Hydra. R\u00e9serv\u00e9 mais pers\u00e9v\u00e9rant.",
+    "infos": "Faible au per\u00e7ant et aux t\u00e9n\u00e8bres",
+    "drop": "Masse du rem\u00e8de, Anneau curatif, tr\u00e8s rare : Pierre de F\u00e9r\u00e9gal"
+  },
+  "157": {
+    "visuel3D": "m158",
+    "nom": "Samael - N\u00b05 Hydra",
+    "pvmax": "230",
+    "skills": [
+      "Panopticor Eveill\u00e9 : 40 PV, Force : 9, Dext\u00e9 : 15, Intel : 16. Sort : Parasite obscur : 8 (+3/t *4) (Intel), Coup tentac : 2D6+10 (Force) : Esprit",
+      "Hommage : Soin 2-40PV, D\u00e9g\u00e2t (+) Armure (+) 6 (3 tours) : Esprit",
+      "Parasite obscur : 12 + 5/t *4.  -- Saut Dimensionnel : 3 tentatives : Intel",
+      "Fl\u00e8che des Ombres : 2D10+ 15 si para, (heal 2D6+8+'4 si para) : Intel"
+    ],
+    "stats": "7,13,17,12,17",
+    "desc": "Humain d\u00e9moniste sous de sombres habits. Il a souvent des propos bizarres et sombres (chuunibyou), 5eme t\u00eate de l'Hydra.",
+    "infos": "Faible \u00e0 la nature et aux t\u00e9n\u00e8bres",
+    "drop": "Pendentif Occulte, B\u00e2ton Sadique, Noyau abyssal"
+  },
+  "158": {
+    "visuel3D": "m217",
+    "nom": "Bazuda - Grand sorcier",
+    "pvmax": "300",
+    "skills": [
+      "Temp\u00eate de Glace : 3D10 +13 : Intelligence",
+      "Magie Extr\u00eame + : Prochain d\u00e9g\u00e2t magique +2D6 +10 : Esprit",
+      "Attaque foudroyante : 2D10 +16, Si crit(1,2,3) ou bloc(20) : STUN 1 tour : Intelligence",
+      "Rage renvoi : AoE Bloc/Esq -2, si touché renvoi 50% dégâts."
+    ],
+    "stats": "7,11,18,11,17",
+    "desc": "Grand caribou bleu, esprit gardant la For\u00eat Ensorcel\u00e9e",
+    "infos": "Faible au tranchant et au feu",
+    "drop": "Fourrure, rare: Manteau fourrure, Esprit de Bazuda, ((M\u00e9lodies Maudites)),"
   }
 }
