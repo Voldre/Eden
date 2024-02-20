@@ -2958,5 +2958,12 @@
     "effet": "",
     "montant": "D\u00e9g\u00e2t -3, Exp\u00e9rience re\u00e7u +20%",
     "icone": "k20100"
+  },
+  "405": {
+    "nom": "Griffe Royale",
+    "desc": "Cette griffe antique aurait appartenu au 1er Grand Roi Ursun il y a plus de 400 ans. Son pouvoir est d\u00e9mentiel.",
+    "effet": "Action +",
+    "montant": "D\u00e9g\u00e2t +5, Si Blocage/Esquive critique : Coup d'opportunit\u00e9",
+    "icone": "W35106"
   }
 }

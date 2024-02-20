@@ -396,6 +396,11 @@ dialog::backdrop {
   border: 2px black solid;
   margin: 5px;
 }
+.infoEnnemi .icon {
+  margin-top: -30px;
+  top: 33px;
+  position: relative;
+}
 
 .malus {
   display: flex;
@@ -420,6 +425,13 @@ dialog::backdrop {
 .infoPersos .commentaire,
 .infoEnnemi .commentaire {
   width: 85%;
+}
+.enemyDesc {
+  overflow: hidden;
+}
+.enemyDesc:hover {
+  max-height: 200px;
+  background-color: rgba(36, 36, 106, 0.5);
 }
 .buffs {
   display: grid;

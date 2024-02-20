@@ -148,7 +148,7 @@ window.addEventListener("load", () => {
     // Display nb anecdote by map
     const anecdoteByMap = Object.entries(mapsJSON).map((m) => [
       m[1].name,
-      cardJSON.filter((c) => c.kind === "anecdote").filter((c) => c.maps.includes(parseInt(m[0]))).length,
+      cardJSON.filter((c) => c.kind === "anecdote" && c.maps.includes(parseInt(m[0]))).length,
     ]);
     console.log("Anecdotes par map (FAIRE INDEX+1 car Aven === 1 pas 0)", anecdoteByMap);
 
