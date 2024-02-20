@@ -149,7 +149,7 @@
     "map_z": null,
     "map_r": null,
     "bgm": 17,
-    "mobs": [25, 52, 40, 20, 50, 120]
+    "mobs": [25, 52, 40, 20, 50, 120, 159]
   },
   "13": {
     "name": "Pic de Noireflammes",
@@ -265,7 +265,7 @@
     "map_z": null,
     "map_r": null,
     "bgm": 36,
-    "mobs": [81, 49, 112, 61, 69, 67]
+    "mobs": [81, 49, 112, 61, 69, 67, 158]
   },
   "23": {
     "name": "Crète Diamantée",

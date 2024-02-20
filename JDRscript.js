@@ -701,9 +701,16 @@ function statsValue(resistance) {
   return ["force", "dexté", "intel", "charisme", "esprit"].map((stat) => {
     const statMain = document.querySelector("#" + stat).value;
     const statBWithRegex = document.querySelector("#" + stat + "B").value.replace(/[^\d.+-]/g, "");
+
+    const statsBValue = !!statBWithRegex?.match(/^[-+]\d+|\d*$/)[0]
+      ? parseInt(statBWithRegex.replace("+", "").replace("-", ""))
+      : 0;
+
     return resistance
-      ? !!statBWithRegex?.match(/^[-+]\d+|\d*$/)[0]
-        ? Math.ceil((parseInt(statMain) + parseInt(statBWithRegex.replace("+", "").replace("-", ""))) / 2)
+      ? statsBValue !== 0
+        ? statBWithRegex.includes("+")
+          ? Math.ceil((parseInt(statMain) + statsBValue) / 2)
+          : Math.ceil((parseInt(statMain) - statsBValue) / 2)
         : Math.ceil(parseInt(statMain) / 2)
       : parseInt(statMain);
   });

@@ -1,4 +1,4 @@
-import { cardJSON, persosJSON, enemyJSON, allSkills, playerJSON } from "./JDRstore";
+import { cardJSON, persosJSON, enemyJSON, allSkills, playerJSON, getData } from "./JDRstore";
 import { callPHP, initDialog, Perso, toastNotification } from "./utils";
 
 // prettier-ignore
@@ -582,9 +582,8 @@ async function victory() {
 
   // Anecdote card (50% chance to get)
   if (Math.random() * 2 <= 1) {
-    const cardsAnecdote = cardJSON.filter((card) => card.kind === "anecdote");
-    const anecdoteCardsList = cardsAnecdote.filter(
-      (card) => (mapID && card.maps?.includes(mapID)) || card.enemies?.includes(enemyID)
+    const anecdoteCardsList = cardJSON.filter(
+      (card) => card.kind === "anecdote" && ((mapID && card.maps?.includes(mapID)) || card.enemies?.includes(enemyID))
     );
 
     // Choose 1 between all possibilities

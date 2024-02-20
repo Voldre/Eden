@@ -21,7 +21,7 @@
     "nom": "Mur de Titan",
     "desc": "R\u00e9duit les d\u00e9g\u00e2ts subis par le lanceur",
     "effet": "Buff",
-    "montant": "D\u00e9g\u00e2t subi -1D4 -2 pendant 3 tours",
+    "montant": "D\u00e9g\u00e2t subi -1D4 (min 2) -2 pendant 3 tours",
     "icone": "E0029",
     "stat": "Force",
     "classe": ["Guerrier"]
@@ -91,7 +91,7 @@
   },
   "9": {
     "nom": "Revers d'\u00e9caille",
-    "desc": "Si r\u00e9ussi : consomme le tour du joueur. Remplace l'esquive ou le blocage. Renvoi l'attaque re\u00e7u uniquement au lanceur (critique 100%, 66%, 33%). Effets - Embras\u00e9 : D\u00e9g\u00e2t renvoy\u00e9 +5; D\u00e9moniaque : prochaine r\u00e9ussite +1; Cach\u00e9 : Soin PV+10",
+    "desc": "Si r\u00e9ussi : consomme le tour du joueur. Remplace l'esquive ou le blocage. Renvoi l'attaque re\u00e7u uniquement au lanceur, non contrable (critique 100%, 66%, 33%). Effets - Embras\u00e9 : D\u00e9g\u00e2t renvoy\u00e9 +5; D\u00e9moniaque : prochaine r\u00e9ussite +1; Cach\u00e9 : Soin PV+10",
     "effet": "Renvoi",
     "montant": "3 tentatives par combat (<10 : 66%, >=10 : 33%)",
     "icone": "E0566",
@@ -282,7 +282,7 @@
     "nom": "Saut d'esquive",
     "desc": "Fait bondir en arri\u00e8re et tir sur l'ennemi. Remplace l'esquive par une attaque (elle-m\u00eame blocable/esquivable avec malus).",
     "effet": "Esquive D\u00e9g\u00e2t",
-    "montant": "3 tentatives par combat : remplace l'esquive par un tir 1D6",
+    "montant": "3 tentatives par combat : remplace l'esquive par un tir 1D6 (blocable)",
     "icone": "E0087",
     "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Corsaire"]
@@ -586,9 +586,9 @@
   },
   "72": {
     "nom": "R\u00e9surrection",
-    "desc": "(Utilisable m\u00eame vivant) prend 2 tours (1 d\u00e9 par tour) : Soigne/Ressuscite un joueur avec quelques PV ",
+    "desc": "(Utilisable m\u00eame vivant) prend 2 tours : Soigne/Ressuscite un joueur avec quelques PV ",
     "effet": "Soin",
-    "montant": "1 tour d'incantation : soigne de 2D10+16",
+    "montant": "Incantation 2 tours (1 dé/tour) : soigne de 2D10+16",
     "icone": "E0020",
     "stat": "Intelligence",
     "classe": ["Clerc", "Barde", "Shaman", "Sage"]
@@ -1000,27 +1000,27 @@
   },
   "118": {
     "nom": "Explosion Glaciale",
-    "desc": "L'utilisateur canalyse sa magie pendant 3 tours (1 d\u00e9 par tour) : 2 d'incantation, + 1 de rel\u00e2che) et la balance \u00e0 toute puissance sur ses adversaires en face (chance blocage/2)",
+    "desc": "L'utilisateur canalyse sa magie pendant 3 tours puis la balance \u00e0 toute puissance sur ses adversaires en face (chance blocage/2)",
     "effet": "D\u00e9g\u00e2t AoE R+",
-    "montant": "4D6 +18",
+    "montant": "Incantation 3 tours (1 dé/tour) : 4D6 +18",
     "icone": "E0837",
     "stat": "Intelligence",
     "classe": ["Magicien"]
   },
   "119": {
     "nom": "Encouragement Musical",
-    "desc": "1 tour d'incantation (montant des buffs /2). R\u00e9duit les d\u00e9g\u00e2ts subis, immunise \u00e0 l'endormissement et augmente la r\u00e9sistance mentale (Blocage Esprit/2)",
+    "desc": "(effet montant des buffs /2). Incante et r\u00e9duit les d\u00e9g\u00e2ts subis, immunise \u00e0 l'endormissement et augmente la r\u00e9sistance mentale (Blocage Esprit/2)",
     "effet": "Buff AoE",
-    "montant": "D\u00e9g\u00e2t subi -1D4-2, 0 dodo, +2 r\u00e9s esprit, pour 4 tours",
+    "montant": "Incantation 2 tours (1 dé) : subi -1D4-2, 0 dodo, +2 r\u00e9s esprit, pour 4 tours",
     "icone": "E0406",
     "stat": "Charisme",
     "classe": ["Barde"]
   },
   "120": {
     "nom": "Brisure Vibrante",
-    "desc": "1 tour d'incantation. Identifie et frappe sur la/les faiblesse(s) physiques de la cible gr\u00e2ce \u00e0 la fr\u00e9quence vibratoire (ondes)",
+    "desc": "Identifie et frappe sur la/les faiblesse(s) physiques de la cible gr\u00e2ce \u00e0 la fr\u00e9quence vibratoire (ondes)",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "2D6 +8",
+    "montant": "Incantation 2 tours (1 dé) : 2D6 +8",
     "icone": "E0714",
     "stat": "Intelligence",
     "classe": ["Barde"]
@@ -1036,8 +1036,8 @@
   },
   "122": {
     "nom": "Eclair charg\u00e9",
-    "desc": "2 tours d'incantation (1 d\u00e9 par tour : Un coup d'\u00e9clair concentr\u00e9 en magie qui foudroie la cible. Chance de blocage/esquive -2.",
-    "effet": "D\u00e9g\u00e2t",
+    "desc": "Un coup d'\u00e9clair concentr\u00e9 en magie qui foudroie la cible. Chance de blocage/esquive -2.",
+    "effet": "Incantation 2 tours (1 dé/tour) :D\u00e9g\u00e2t",
     "montant": "2D10 +12",
     "icone": "E0724",
     "stat": "Intelligence",
@@ -1126,7 +1126,7 @@
   },
   "132": {
     "nom": "Pi\u00e8ge d'Entrave",
-    "desc": "Pose un pi\u00e8ge au sol pour entraver l'ennemi (d\u00e9g\u00e2t tranchant), l'emp\u00eachant de se d\u00e9placer. L'ennemi peut tenter de s'en \u00e9chapper (force).",
+    "desc": "Pose un pi\u00e8ge au sol pour entraver l'ennemi (d\u00e9g\u00e2t tranchant), l'emp\u00eachant de se d\u00e9placer, Esquive-5. L'ennemi peut tenter de s'en \u00e9chapper (force).",
     "effet": "D\u00e9g\u00e2t Malus",
     "montant": "1D10+2 (+1/niveau, 0 d\u00e9g\u00e2t/effet d'arme), entrave 3 tours (annulable)",
     "icone": "E0179",
