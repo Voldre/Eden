@@ -117,6 +117,17 @@ document.querySelector("#filtre").addEventListener("change", (e) => {
     toastNotification("Chargement de l'ennemi réussi : " + e.target.value);
   });
 });
+[...document.querySelectorAll(".enemyDesc")].forEach((descE) => {
+  descE.addEventListener("click", () => {
+    if (descE.style.maxHeight === "10px") {
+      descE.style.backgroundColor = "";
+      descE.style.maxHeight = "200px";
+    } else {
+      descE.style.backgroundColor = "rgba(36, 36, 106, 0.5)";
+      descE.style.maxHeight = "10px";
+    }
+  });
+});
 
 function loadEnemy(indexEnemy, indexElement) {
   updateSlots();

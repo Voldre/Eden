@@ -452,12 +452,29 @@
     "kindId": "m063"
   },
   {
+    "id": 1049,
+    "value": 3,
+    "kind": "boss",
+    "name": "Bazuda - Grand sorcier",
+    "description": "Grand caribou bleu, esprit gardant la For\u00eat Ensorcel\u00e9e, expert en magie de glace.",
+    "kindId": "m217"
+  },
+  {
+    "id": 1050,
+    "value": 3,
+    "kind": "boss",
+    "name": "Monra - Champion Belliqueux",
+    "description": "Grand Ursun à la peau rouge violacé et chef haut placé des Ursuns Belliqueux. Très puissant avec son nouvel équipement...",
+    "kindId": "m055b"
+  },
+  {
     "id": 1201,
     "value": 1,
     "kind": "composant",
     "name": "Crystal de Lazurite",
     "description": "Un crystal utile pour fabriquer certaines armures. Tr\u00e8s pr\u00e9sent au Mont Calcaire.",
-    "kindId": "I00208"
+    "kindId": "I00208",
+    "maps": [2, 3, 4]
   },
   {
     "id": 1202,
@@ -465,7 +482,8 @@
     "kind": "composant",
     "name": "Acier Volcanique",
     "description": "Ce minerai tr\u00e8s dur est difficile \u00e0 traiter \u00e0 cause de son incroyable r\u00e9sistance \u00e0 la chaleur...",
-    "kindId": "I00209"
+    "kindId": "I00209",
+    "maps": [5, 9, 11]
   },
   {
     "id": 1203,
@@ -473,7 +491,8 @@
     "kind": "composant",
     "name": "Acier d'obsidienne",
     "description": "Un acier ultra r\u00e9sistant, les Tuskars sont les experts quand il s'agit de les remanier.",
-    "kindId": "I00213"
+    "kindId": "I00213",
+    "maps": [9]
   },
   {
     "id": 1204,
@@ -481,7 +500,8 @@
     "kind": "composant",
     "name": "Crystal d'Asbi",
     "description": "Ce minerai est issu du continent des Zumis, c'est une source d'\u00e9nergie quasi in\u00e9puisable qui alimente la plupart des technologies.",
-    "kindId": "I00401"
+    "kindId": "I00401",
+    "maps": [19, 20, 21]
   },
   {
     "id": 1205,
@@ -489,7 +509,8 @@
     "kind": "composant",
     "name": "Crystal d'Asbi raffin\u00e9",
     "description": "Les crystaux raffin\u00e9es ont une puissance bien sup\u00e9rieure aux crystaux normaux, ils peuvent se recharger de mani\u00e8re autonome, une vraie batterie.",
-    "kindId": "I00401"
+    "kindId": "I00401",
+    "maps": [19, 20, 21]
   },
   {
     "id": 1206,
@@ -497,7 +518,8 @@
     "kind": "composant",
     "name": "Minerai Arc-en-Ciel",
     "description": "Ce minerai exclusif au Pic de Noireflamme renferme une r\u00e9sistance hors norme, il est tr\u00e8s pr\u00e9cieux.",
-    "kindId": "I00213b"
+    "kindId": "I00213b",
+    "maps": [13]
   },
   {
     "id": 1207,
@@ -505,7 +527,8 @@
     "kind": "composant",
     "name": "Minerai de Stella",
     "description": "L'Empire Heldentod a le monopole dessus. Ce minerai est extr\u00eamement coupant, m\u00eame de bonnes armures ne sont que du beurre face \u00e0 lui.",
-    "kindId": "I00234"
+    "kindId": "I00234",
+    "maps": [13]
   },
   {
     "id": 1208,
@@ -513,7 +536,8 @@
     "kind": "composant",
     "name": "Quartz d'Automne",
     "description": "Ce Quartz est issu de sources chaudes riches en min\u00e9raux et en souffre, la magie autour de lui s'intensifie.",
-    "kindId": "I00204"
+    "kindId": "I00204",
+    "maps": [32]
   },
   {
     "id": 1209,
@@ -521,7 +545,8 @@
     "kind": "composant",
     "name": "Fourrure Polaire",
     "description": "Cette fourrure n'a d'\u00e9gale \u00e0 sa douceur que sa l\u00e9gert\u00e9 et sa r\u00e9sistance. Tr\u00e8s utile pour fabriquer des armures.",
-    "kindId": "I00241"
+    "kindId": "I00241",
+    "maps": [24]
   },
   {
     "id": 1210,
@@ -529,7 +554,8 @@
     "kind": "composant",
     "name": "Germe de Champigno\u00efde",
     "description": "Des petits germes de champigno\u00efdes, utile pour certaines potions.",
-    "kindId": "I00170"
+    "kindId": "I00170",
+    "maps": [2, 7, 14]
   },
   {
     "id": 1211,
@@ -537,7 +563,8 @@
     "kind": "composant",
     "name": "Epine de Cactus",
     "description": "Une \u00e9pine de monstres cactus, elle peut servir pour fabriquer des potions.",
-    "kindId": "I00290"
+    "kindId": "I00290",
+    "maps": [5, 11, 20]
   },
   {
     "id": 1212,
@@ -545,7 +572,8 @@
     "kind": "composant",
     "name": "Fleur de Pavot",
     "description": "Respirer cette fleur pendant trop longtemps peut causer des hallucinations et des crises de somnambulisme.",
-    "kindId": "I00155"
+    "kindId": "I00155",
+    "maps": [4, 22, 26]
   },
   {
     "id": 1213,
@@ -553,7 +581,8 @@
     "kind": "composant",
     "name": "Fleur Lunaire",
     "description": "Ces fleurs \u00e9mettent une lueur jaunes, leurs p\u00e9tales blancs sont magnifiques sous le clair de lune.",
-    "kindId": "I00153"
+    "kindId": "I00153",
+    "maps": [8, 10, 15]
   },
   {
     "id": 1214,
@@ -561,7 +590,8 @@
     "kind": "composant",
     "name": "Vigne Pourpre",
     "description": "Si vous ouvrez cette vigne, un fluide vert visqueux s'en \u00e9chappe.",
-    "kindId": "I00185"
+    "kindId": "I00185",
+    "maps": [6, 8, 14]
   },
   {
     "id": 1215,
@@ -569,7 +599,8 @@
     "kind": "composant",
     "name": "Jus de larve de reine insecte",
     "description": "Ce jus a \u00e9t\u00e9 r\u00e9cup\u00e9r\u00e9 dans un oeuf d'insecte un peu particulier, utile pour des potions ...?",
-    "kindId": "I00042"
+    "kindId": "I00042",
+    "maps": [8]
   },
   {
     "id": 1216,
@@ -642,7 +673,8 @@
     "kind": "composant",
     "name": "Raisin profond",
     "description": "Ce raisin pousse dans des zones soumis à la magie, il permet de produire les meilleurs vins.",
-    "kindId": "I00157"
+    "kindId": "I00157",
+    "maps": [7, 22, 28]
   },
   {
     "id": 1227,
@@ -650,7 +682,8 @@
     "kind": "composant",
     "name": "Fruit Volta",
     "description": "Ce fruit très acide absorbe et conserve l'énergie. Son jus a déjà gravement brûlé plusieurs personnes.",
-    "kindId": "I00158"
+    "kindId": "I00158",
+    "maps": [9, 12, 13]
   },
   {
     "id": 1228,
@@ -658,7 +691,8 @@
     "kind": "composant",
     "name": "Fruit-flamme",
     "description": "Ce fruit est très résistant à la chaleur. Il pousse dans les forêts sinistrées par les incendies.",
-    "kindId": "I00156"
+    "kindId": "I00156",
+    "maps": [6, 9, 11]
   },
   {
     "id": 1229,
@@ -666,7 +700,8 @@
     "kind": "composant",
     "name": "Germe de Champigno\u00efde de Crystal",
     "description": "Ces germes sont issus d'un champignoïde bien particulier, il permet de concocter de rares potions.",
-    "kindId": "I00172"
+    "kindId": "I00172",
+    "maps": [23, 29]
   },
   {
     "id": 1232,
@@ -674,7 +709,8 @@
     "kind": "composant",
     "name": "Tulipe Thérapeutique",
     "description": "Cette Tulipe est l'élément le plus communément utilisé pour fabriquer des remèdes et potions de soins.",
-    "kindId": "I00150"
+    "kindId": "I00150",
+    "maps": [3, 4, 6, 10, 12, 15]
   },
   {
     "id": 1233,
@@ -682,7 +718,8 @@
     "kind": "composant",
     "name": "Plante des âmes",
     "description": "Cette plante peut être utilisée pour faire des invocations et insuffler de la magie.",
-    "kindId": "I00145"
+    "kindId": "I00145",
+    "maps": [4, 7, 14]
   },
   {
     "id": 1234,
@@ -690,7 +727,8 @@
     "kind": "composant",
     "name": "Fleur de l'Esprit",
     "description": "Ces fleurs sont utiles pour concocter des potions pour fortifier ou affaiblir l'esprit.",
-    "kindId": "I00154"
+    "kindId": "I00154",
+    "maps": [14, 22, 29]
   },
   {
     "id": 1235,
@@ -698,7 +736,8 @@
     "kind": "composant",
     "name": "Herbe d'eau",
     "description": "Cette herbe stocke beaucoup d'eau dans ses racines et fleurit dans les marais.",
-    "kindId": "I00177"
+    "kindId": "I00177",
+    "maps": [7, 14, 28]
   },
   {
     "id": 1236,
@@ -706,7 +745,8 @@
     "kind": "composant",
     "name": "Herbe-miracle",
     "description": "Découverte par de vieux sages, cette herbe vivace peut géurir beaucoup de blessures.",
-    "kindId": "I00179"
+    "kindId": "I00179",
+    "maps": [12, 14, 21]
   },
   {
     "id": 1237,
@@ -714,7 +754,8 @@
     "kind": "composant",
     "name": "Herbe Céleste",
     "description": "Son iridescence crée un faible halo au soleil. Les poètes ont appelé sa couleur Paradisienne.",
-    "kindId": "I00178"
+    "kindId": "I00178",
+    "maps": [10, 21, 26]
   },
   {
     "id": 1238,
@@ -729,8 +770,9 @@
     "value": 1,
     "kind": "composant",
     "name": "Fruit Âmambre",
-    "description": "Ce fruti à la chair tendre à une couleur ambrée, très sucré. On raconte qu'il à le goût d'un mélange entre des myrtilles et des poires.",
-    "kindId": "I00166"
+    "description": "Ce fruit à la chair tendre à une couleur ambrée, très sucré. On raconte qu'il à le goût d'un mélange entre des myrtilles et des poires.",
+    "kindId": "I00166",
+    "maps": [10, 26, 27]
   },
   {
     "id": 1240,
@@ -738,7 +780,8 @@
     "kind": "composant",
     "name": "Epine ensanglantée",
     "description": "Cette épine à la couleur du sang séché, on raconte qu'elle attaque les voyageurs la nuit.",
-    "kindId": "I00185"
+    "kindId": "I00185",
+    "maps": [25, 30]
   },
   {
     "id": 1245,
@@ -746,7 +789,8 @@
     "kind": "composant",
     "name": "Coton Nuage",
     "description": "Ce coton est très commun et vraiment tout doux.",
-    "kindId": "I00199"
+    "kindId": "I00199",
+    "maps": [3, 4, 6, 8]
   },
   {
     "id": 1246,
@@ -754,7 +798,8 @@
     "kind": "composant",
     "name": "Coton de Neige",
     "description": "Au moindre souffe, ce coton s'envole en dansant comme des flocons de neige, tient chaud.",
-    "kindId": "I00201"
+    "kindId": "I00201",
+    "maps": [10, 16, 19, 24]
   },
   {
     "id": 1247,
@@ -762,7 +807,8 @@
     "kind": "composant",
     "name": "Coton Cuivré",
     "description": "Ce coton infusé de minerai pousse dans les sols riches en minéraux. Bien traité, il fait un tisu résistant.",
-    "kindId": "I00200"
+    "kindId": "I00200",
+    "maps": [5, 9, 11]
   },
   {
     "id": 1248,
@@ -770,7 +816,8 @@
     "kind": "composant",
     "name": "Soie d'Or",
     "description": "Soie spéciale tissée par un rare ver à soie, elle est très solide.",
-    "kindId": "I00202"
+    "kindId": "I00202",
+    "maps": [8, 14, 21]
   },
   {
     "id": 1249,
@@ -778,7 +825,8 @@
     "kind": "composant",
     "name": "Coton Etoilé",
     "description": "Ce coton fleurit dans les sols riches en quartz. Les petits cristaux dans ses fibres attirent l'oeil.",
-    "kindId": "I00205"
+    "kindId": "I00205",
+    "maps": [23, 29, 32]
   },
   {
     "id": 1250,
@@ -786,7 +834,8 @@
     "kind": "composant",
     "name": "Coton Elyséen",
     "description": "Son odeur rappelle l'air des grandes prairies et son toucher est semblable à celui d'une patte de chat.",
-    "kindId": "I00203"
+    "kindId": "I00203",
+    "maps": [15, 26, 27]
   },
   {
     "id": 1251,
@@ -794,7 +843,8 @@
     "kind": "composant",
     "name": "Coton Royal",
     "description": "Ce coton est extrêmement rare, seules les meilleurs Ezelins sont capables de le manier.",
-    "kindId": "I00200b"
+    "kindId": "I00200b",
+    "maps": [35]
   },
   {
     "id": 1255,
@@ -802,7 +852,8 @@
     "kind": "composant",
     "name": "Ecaille d'Ankylosaure",
     "description": "Ces \u00e9cailles sont tr\u00e8s mal\u00e9ables et souples, elles agissent comme de la maille, utile pour forger.",
-    "kindId": "I00282"
+    "kindId": "I00282",
+    "maps": [15]
   },
   {
     "id": 1256,
@@ -810,7 +861,8 @@
     "kind": "composant",
     "name": "Crystal liquide",
     "description": "Un résidu liquide issu de crystaux, ce liquide a des propriétés bien particulière.",
-    "kindId": "I00299"
+    "kindId": "I00299",
+    "maps": [28, 29]
   },
   {
     "id": 1257,
@@ -818,7 +870,8 @@
     "kind": "composant",
     "name": "Roche sombre",
     "description": "Cette roche provient de sombre caverne.",
-    "kindId": "I00206"
+    "kindId": "I00206",
+    "maps": [5, 9, 25]
   },
   {
     "id": 1258,
@@ -826,7 +879,8 @@
     "kind": "composant",
     "name": "Peau de ver",
     "description": "Cette peau difforme peut servir pour préparer quelques potions.",
-    "kindId": "I00296"
+    "kindId": "I00296",
+    "maps": [8, 14, 19]
   },
   {
     "id": 1259,
@@ -834,7 +888,8 @@
     "kind": "composant",
     "name": "Peau de Smilodon",
     "description": "Cette peau peut servir à créer des armures légères.",
-    "kindId": "I00242"
+    "kindId": "I00242",
+    "maps": [5, 9, 16]
   },
   {
     "id": 1260,
@@ -842,7 +897,8 @@
     "kind": "composant",
     "name": "Peau de lézard",
     "description": "Cette peau peut servir à créer des armures légères ou lourde.",
-    "kindId": "I00243"
+    "kindId": "I00243",
+    "maps": [27, 28, 29]
   },
   {
     "id": 1261,
@@ -850,7 +906,8 @@
     "kind": "composant",
     "name": "Peau de Tortue",
     "description": "La peau de tortue est toute flasque. Peut être utilisé pour créer des armures magiques.",
-    "kindId": "I00246"
+    "kindId": "I00246",
+    "maps": [4, 6, 14]
   },
   {
     "id": 1281,
@@ -858,7 +915,8 @@
     "kind": "composant",
     "name": "Poudre de Griffon Cendr\u00e9",
     "description": "Cette poudre est l'un des ingr\u00e9dients les plus utilis\u00e9es dans la coction de bombes !",
-    "kindId": "I00369"
+    "kindId": "I00369",
+    "maps": [12, 13, 20]
   },
   {
     "id": 1282,
@@ -874,7 +932,8 @@
     "kind": "composant",
     "name": "Poudre de Feu-follet",
     "description": "Cette poudre peut servir pour des potions, elle est capable de briser des illusions.",
-    "kindId": "i00650"
+    "kindId": "i00650",
+    "maps": [7, 16]
   },
   {
     "id": 1284,
@@ -882,7 +941,8 @@
     "kind": "composant",
     "name": "Roche Ténèbreuse",
     "description": "Cette roche provient des plus obscures et ténèbreuses grottes.",
-    "kindId": "i01062"
+    "kindId": "i01062",
+    "maps": [13, 22]
   },
   {
     "id": 1285,
@@ -1106,7 +1166,8 @@
     "kind": "composant",
     "name": "Blé brillant",
     "description": "Un blé aux lueurs dorées poussant dans des plaines très ensoleillées.",
-    "kindId": "I00180"
+    "kindId": "I00180",
+    "maps": [10, 15, 36]
   },
   {
     "id": 1364,
@@ -1114,7 +1175,8 @@
     "kind": "composant",
     "name": "Blé luisant",
     "description": "Ce blé aux teintes bleutées poussent dans des zones gorgées de magies.",
-    "kindId": "I00181"
+    "kindId": "I00181",
+    "maps": [14, 22, 23, 27]
   },
   {
     "id": 1365,
@@ -1122,7 +1184,8 @@
     "kind": "composant",
     "name": "Blé cramoisie",
     "description": "Ce blé pousse dans des sols riches en minéraux, comme sur le territoire Heldentod.",
-    "kindId": "I00182"
+    "kindId": "I00182",
+    "maps": [32, 35]
   },
   {
     "id": 1366,
@@ -1130,7 +1193,8 @@
     "kind": "composant",
     "name": "Chair de Crabe",
     "description": "Une chair fraiche issue d'un crabe géant.",
-    "kindId": "I00272"
+    "kindId": "I00272",
+    "maps": [4, 6, 27]
   },
   {
     "id": 1367,
@@ -1158,11 +1222,38 @@
   },
   {
     "id": 1370,
-    "value": 1,
+    "value": 0,
     "kind": "composant",
     "name": "Orbe Noire",
     "description": "Cette mystérieuse orbe noire donne l'impression d'être chargé en magie noire, pourtant elle n'est d'aucune utilitée et ça, Vidal le sait.",
     "kindId": "I00361b"
+  },
+  {
+    "id": 1371,
+    "value": 2,
+    "kind": "composant",
+    "name": "Rose empoisonnée",
+    "description": "Ne vous fiez pas à son apparence, cette rose sécrète une substance très nocive qui peut être mortelle !",
+    "kindId": "I00151",
+    "maps": [10, 25]
+  },
+  {
+    "id": 1372,
+    "value": 2,
+    "kind": "composant",
+    "name": "Trèfle de Lutin",
+    "description": "Ce trèfle peut servir d'aromate, mais aussi à enchanter des objets pour leur conférer un pouvoir lié à la chance.",
+    "kindId": "k10053",
+    "maps": [25]
+  },
+  {
+    "id": 1373,
+    "value": 1,
+    "kind": "composant",
+    "name": "Bois mort",
+    "description": "Ce bois flétri semble mort, d'où son nom, mais il est en réalité bien vivant, il pousse dans des zones pauvres.",
+    "kindId": "I00187",
+    "maps": [25]
   },
   {
     "id": 1374,
@@ -1170,7 +1261,8 @@
     "kind": "composant",
     "name": "Ecorce de Bois Sacré",
     "description": "Ce bois est originaire de la Forêt de Delphe, il est considéré comme sacré par les Ursuns qui y vivent, utile pour différentes choses.",
-    "kindId": "I00186"
+    "kindId": "I00186",
+    "maps": [12]
   },
   {
     "id": 1375,
@@ -1178,7 +1270,8 @@
     "kind": "composant",
     "name": "Séquoia Ancien",
     "description": "Ce Séquoia pousse dans des terres isolées, il est souvent vieux de plusieurs siècles, au point qu'il soit recouvert de poussière.",
-    "kindId": "I00192"
+    "kindId": "I00192",
+    "maps": [58, 59, 16]
   },
   {
     "id": 1376,
@@ -1186,7 +1279,8 @@
     "kind": "composant",
     "name": "Bois Ecarlate",
     "description": "On raconte que l'origine de la teinte de ce bois serait dû aux terrains sur lequel il pousse : des anciens champs de batailles.",
-    "kindId": "I00191"
+    "kindId": "I00191",
+    "maps": [13, 35, 59]
   },
   {
     "id": 1377,
@@ -1194,7 +1288,8 @@
     "kind": "composant",
     "name": "Bois Gelé",
     "description": "Ce bois très rare et résistant est très prisé, il parvient à pousser sur des terres glacées comme celles du Pic du Maëlstrom.",
-    "kindId": "I00192b"
+    "kindId": "I00192b",
+    "maps": [24]
   },
   {
     "id": 1378,
@@ -1202,7 +1297,8 @@
     "kind": "composant",
     "name": "Bois Crystalisé",
     "description": "Ce bois unique en son genre se trouve dans la Forêt de Crystal de la Côte de Hurlevent, créé par le magicien Nezo. Il aurait des propriétés magiques très particulières.",
-    "kindId": "I00192c"
+    "kindId": "I00192c",
+    "maps": [29]
   },
   {
     "id": 1385,
@@ -1210,7 +1306,8 @@
     "kind": "composant",
     "name": "Alliage Violacée",
     "description": "Ce minerai est présent généralement dans les zones concentrées en magie. Utile pour la fabrication d'armes et armures réceptives à la magie.",
-    "kindId": "I00215"
+    "kindId": "I00215",
+    "maps": [22, 23, 29]
   },
   {
     "id": 1386,
@@ -1218,7 +1315,8 @@
     "kind": "composant",
     "name": "Minerai Glacial",
     "description": "Un minerai très utile pour fabriquer des armes ou armures résistantes et efficace à la glace.",
-    "kindId": "I00214b"
+    "kindId": "I00214b",
+    "maps": [24, 27]
   },
   {
     "id": 1387,
@@ -1226,7 +1324,8 @@
     "kind": "composant",
     "name": "Minerai Corail",
     "description": "Malgré son aspect charmant de corail, ce minerai possède un sombre pouvoir capable de perturber la magie et l'énergie qui l'entoure.",
-    "kindId": "I00213c"
+    "kindId": "I00213c",
+    "maps": [25]
   },
   {
     "id": 1390,
@@ -1234,7 +1333,8 @@
     "kind": "composant",
     "name": "Diamant Rose",
     "description": "Ce diamant trouvable dans les souterrains profonds peut servir à canalyser la lumière dans des objets.",
-    "kindId": "I00237"
+    "kindId": "I00237",
+    "maps": [11, 12, 21]
   },
   {
     "id": 1391,
@@ -1242,7 +1342,8 @@
     "kind": "composant",
     "name": "Feldspath Carmin",
     "description": "Cette pierre est utile pour créer des alliages, il peut totalement changé de couleur lorsqu'il est combiné à d'autres minerais.",
-    "kindId": "I00207"
+    "kindId": "I00207",
+    "maps": [1, 5, 9]
   },
   {
     "id": 1392,
@@ -1250,7 +1351,8 @@
     "kind": "composant",
     "name": "Acier purifié",
     "description": "Ce minerai d'acier a été épuré et purifié pour accentuer ses propriétés de résistance au maximum",
-    "kindId": "I00208b"
+    "kindId": "I00208b",
+    "maps": [15, 26, 36]
   },
   {
     "id": 1393,
@@ -1258,7 +1360,8 @@
     "kind": "composant",
     "name": "Amalgame Ténèbreux",
     "description": "Cet amalgalme de matière ténébreuse est utile pour confectionner toutes sortes d'objet liés aux ténèbres.",
-    "kindId": "I00207b"
+    "kindId": "I00207b",
+    "maps": [25, 34]
   },
   {
     "id": 1394,
@@ -1266,7 +1369,8 @@
     "kind": "composant",
     "name": "Ambre Crépusculaire",
     "description": "Formée à partir de sève d'ancien arbre, cette pierre à la belle couleur rouille. En regardant dedans on peut y voir un coucher de soleil.",
-    "kindId": "I00219c"
+    "kindId": "I00219c",
+    "maps": [12, 14, 28]
   },
   {
     "id": 1395,
@@ -1274,7 +1378,8 @@
     "kind": "composant",
     "name": "Minerai de Jade",
     "description": "La jade a la particularité de ralentir le métabolisme et détendre. Entre vos mains, vous avez un sentiment d'apaisement.",
-    "kindId": "I00219f"
+    "kindId": "I00219f",
+    "maps": [23, 26, 28]
   },
   {
     "id": 1396,
@@ -1282,7 +1387,8 @@
     "kind": "composant",
     "name": "Minerai Zircon",
     "description": "Ce minerai pâle est extrêmement lourd et résistant, il peut servir à confectionner à la confection d'arme et armure très solide.",
-    "kindId": "I00219b"
+    "kindId": "I00219b",
+    "maps": [8, 16, 20]
   },
   {
     "id": 1397,
@@ -1290,7 +1396,8 @@
     "kind": "composant",
     "name": "Crystal Durable",
     "description": "Ce crystal précieux est capable de prolonger la durée d'un effet dans le temps. Très utilisé dans les magies et les technologies.",
-    "kindId": "I00219e"
+    "kindId": "I00219e",
+    "maps": [23, 29]
   },
   {
     "id": 1398,
@@ -1298,7 +1405,8 @@
     "kind": "composant",
     "name": "Minerai de Sang",
     "description": "On raconte que ce minerai aurait la capacité d'absorber le sang de ses victimes afin de se régénérer... De par sa rareté, beaucoup de fogerons pensent que son existence n'est qu'une légende.",
-    "kindId": "I00219d"
+    "kindId": "I00219d",
+    "maps": []
   },
   {
     "id": 1401,
@@ -1307,6 +1415,22 @@
     "name": "Bombe Fracas",
     "description": "Cette bombe a été conçue tout spécialement pour réduire la défense de ses victimes.",
     "kindId": "i00598"
+  },
+  {
+    "id": 1402,
+    "value": 0,
+    "kind": "composant",
+    "name": "Paquerette",
+    "description": "Une simple paquerette sans valeur particulière.",
+    "kindId": "I00146b"
+  },
+  {
+    "id": 1403,
+    "value": 0,
+    "kind": "composant",
+    "name": "Poils d'Alpaga",
+    "description": "Ces poils appartiennent à un super Avocalpaga (ou pas...), mais à quoi cela peut bien servir ?",
+    "kindId": "I002864"
   },
   {
     "id": 1501,
@@ -2747,6 +2871,116 @@
     "maps": [1],
     "enemies": [],
     "kindId": "items/k10138",
+    "group": 3
+  },
+  {
+    "id": 1766,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "La puissance d'Akala",
+    "description": "Akala, la tête n°1 de l'Hydra a défié Lucius en duel, et finalement un compromis a été trouvé : résoudre une quête pour eux. Et lorsque celle-ci devint trop complexe, Akala a fait une intervention très destructrice de magie du chaos.",
+    "maps": [22],
+    "enemies": [],
+    "kindId": "skillIcon/j671",
+    "group": 3
+  },
+  {
+    "id": 1767,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Petit déjeuner à l'Hydra",
+    "description": "Le groupe à eu l'occasion de prendre un petit déjeuner à l'Hydra avant leur quête. Ils ont pu rencontrer des personnes qui ne mangent pas de viande au petit déjeuner ! Romarin !",
+    "maps": [11],
+    "enemies": [],
+    "kindId": "items/i01393",
+    "group": 3
+  },
+  {
+    "id": 1768,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Sekhmet et le Crystal",
+    "description": "Sekhmet a revu le jour grâce à son crystal frontal qui contenait son âme. Et dans ce meme laboratoire il semblerait y en avoir eu d'autres... Où sont-ils passés ?",
+    "maps": [22],
+    "enemies": [],
+    "kindId": "skillIcon/E0214b",
+    "group": 3
+  },
+  {
+    "id": 1769,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Journal Hebdo d'Aven",
+    "description": "Shkrouk à pu témoigner auprès des journalistes d'Aven pour réhausser la Veyda et plaider pour son frère Gaazor, le journal de cette semaine donne plein d'infos croustillantes !",
+    "maps": [501],
+    "enemies": [],
+    "kindId": "items/I00307",
+    "group": 3
+  },
+  {
+    "id": 1770,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Le retour de Nyx",
+    "description": "Nyx a entendu dire qu'Aradia était à la Veyda et a décidé de les rejoindres ! Et pour amener à la Veyda de l'amour, elle a investit beaucoup d'argents dans une scène et elle compte bien faire plein de concerts !",
+    "maps": [501],
+    "enemies": [],
+    "kindId": "skillIcon/E0814",
+    "group": 3
+  },
+  {
+    "id": 1771,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Les mélomanes",
+    "description": "Pour faire de la pub sur le prochain concert de la Veyda (cagnotte \"Sauver Gaazor\", le groupe s'est mis à la musique : Nyx la chanteuse, Ernis le danseur, Draigos le piquet et Shkrouk le producteur au percussion.",
+    "maps": [10],
+    "enemies": [],
+    "kindId": "skillIcon/J551",
+    "group": 3
+  },
+  {
+    "id": 1772,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Farming à Noireflamme",
+    "description": "Le groupe à pu farmer de la poudre de Griffon Cendrée au Pic de Noireflamme, Draigos à pu voir son grimoire réagir, et le groupe à rencontré une membre de la guilde Destri : Yushi, avec son fidèle Smido !",
+    "maps": [13],
+    "enemies": [],
+    "kindId": "monsters/m073",
+    "group": 3
+  },
+  {
+    "id": 1773,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Leyla enprisonnée",
+    "description": "Leyla, en tentant d'en apprendre plus sur les secousses au sud de la Forêt de Delphe s'est faite attrapée par les coupables. Sans pouvoir se défendre, elle a été emprisonnées. Et Nyx suivra un peu après...",
+    "maps": [12],
+    "enemies": [],
+    "kindId": "skillIcon/j638",
+    "group": 3
+  },
+  {
+    "id": 1774,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Nyx et la Foreuse (2)",
+    "description": "Nyx a de nouveau croisée à Delphe une foreuse, sauf que cette fois ça ne semble pas s'être passée aussi bien... Son excitation l'a peut-être rendue confuse.",
+    "maps": [12],
+    "enemies": [],
+    "kindId": "items/k30003b",
+    "group": 3
+  },
+  {
+    "id": 1775,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Lucius et la Pelote",
+    "description": "Lucius, pour lutter face à la foreuse, à sorti son arme secrète : la Pelote d'Entrave (aka Burma), qui lui a permis d'entraver les 2 Ursuns belliqueux sur la foreuse, mais il ne s'en est pas sorti indemne...",
+    "maps": [12],
+    "enemies": [],
+    "kindId": "items/i00794b",
     "group": 3
   },
   {
