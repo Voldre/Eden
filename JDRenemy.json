@@ -667,7 +667,7 @@
     "stats": "17,13,9,12,15",
     "desc": "Zumi \u00e0 la peau bleue et aux yeux orang\u00e9 per\u00e7ant, fier et tr\u00e8s social. Il aide les gens ambitieux.",
     "infos": "Faible \u00e0 la glace et au contondant",
-    "drop": "A voir !"
+    "drop": "Anneau de résistance, Puce électronique Silus, rare : Griffe de finesse"
   },
   "47": {
     "visuel3D": "m201",
@@ -855,7 +855,7 @@
     "pvmax": "240",
     "skills": [
       "Coupure Noire/Blanche : 3D6  +18 : force",
-      "Pri\u00e8re Divine/Sacrifice Ombres : Soin 2D6 +24 (DGT/2, all tours). Next Lumi\u00e8re 1D6+4 / All T\u00e9n\u00e8bres 1D6+6 (Force,Int+1) : esprit",
+      "Pri\u00e8re Divine/Sacrifice Ombres : Soin 2D6 +24 (DGT/2 +5, 1 seule fois). Next Lumi\u00e8re 1D6+4 / All T\u00e9n\u00e8bres 1D6+6 (Force,Int+2) : esprit",
       "Saut Dimensionnel : 5 tentatives : remplace l'esquive/blocage par la t\u00e9l\u00e9portation : intel",
       "Destruct de l'aurore/noire : 2D6 +15 : intel"
     ],
@@ -2387,7 +2387,7 @@
       "Lames Dansantes X : 3D6+18 (+1D mono) AoE : Dext\u00e9rit\u00e9",
       "Danse du Po\u00e8te : D\u00e9g\u00e2t +1D6+4, Dext\u00e9rit\u00e9+2 AoE sur 3 tours : Esprit",
       "Concentration : Esquive +2, Res Esprit +1 pendant 5 tours (durée des malus (ou effet) : /2) : Esprit",
-      "Passif : Si esquive critique : l'ennemi le plus se prend l'attaque, dégât +5 prochain coup"
+      "Passif : Si esquive critique : l'ennemi le plus proche se prend l'attaque, dégât +5 prochain coup"
     ],
     "stats": "11,17,11,14,17",
     "desc": "Jeune homme humain mais petit, Fira est \u00e0 la fois ma\u00eetre d'art et chef de la Symbardy ! C'est un musicien dou\u00e9 d'une technique brillante et un artiste extr\u00eamement habile.",
