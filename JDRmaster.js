@@ -11,7 +11,7 @@ if (window.location.href.includes("html")) {
   stop();
 }
 
-var allSlots = [document.querySelectorAll(".infoEnnemi")];
+var allSlots;
 function updateSlots() {
   var enemiesList = [...document.querySelectorAll(".infoEnnemi")].filter(
     (infoE) => infoE.querySelector(".ennemi").value != ""
@@ -23,29 +23,41 @@ function updateSlots() {
 // Next turn
 var allTurnE = [...document.querySelectorAll(".nextTurn")];
 
-allTurnE.forEach((turnE) => {
-  turnE.addEventListener("click", () => {
-    var mainE = turnE.closest(".perso") || turnE.closest(".infoEnnemi");
-
-    var slotID = allSlots.indexOf(mainE);
-
-    if (allSlots.length == slotID + 1) {
-      // If all done, new turn
-      document.querySelector("#tour").value = parseInt(document.querySelector("#tour").value) + 1;
-      slotID = -1;
-    }
-
-    // Turn of character done
-    [...mainE.querySelector("#buffs").querySelectorAll('input[type="number"]')].forEach((buffTurnE) => {
-      if (buffTurnE.value > 0) {
-        buffTurnE.value -= 1;
-      }
-    });
-
-    turnE.classList.add("hide");
-    allSlots[slotID + 1].querySelector(".nextTurn").classList.remove("hide");
-  });
+allTurnE.forEach((turnE) => turnE.addEventListener("click", () => nextTurn()));
+document.addEventListener("keydown", (e) => {
+  if (e.key === "²") nextTurn();
 });
+
+function nextTurn() {
+  const currentTurnE = document.querySelector("#currentTurnE");
+  const mainE = currentTurnE.closest(".perso") || currentTurnE.closest(".infoEnnemi");
+
+  if (!allSlots) {
+    toastNotification("Impossible de passer le tour");
+    return;
+  }
+
+  let slotID = allSlots.indexOf(mainE);
+
+  if (allSlots.length === slotID + 1) {
+    // If all done, new turn
+    document.querySelector("#tour").value = parseInt(document.querySelector("#tour").value) + 1;
+    slotID = -1;
+  }
+
+  // Turn of character done
+  [...mainE.querySelector("#buffs").querySelectorAll('input[type="number"]')].forEach((buffTurnE) => {
+    if (buffTurnE.value > 0) {
+      buffTurnE.value -= 1;
+    }
+  });
+
+  currentTurnE.classList.add("hide");
+  currentTurnE.id = null;
+  const nextTurnE = allSlots[slotID + 1].querySelector(".nextTurn");
+  nextTurnE.classList.remove("hide");
+  nextTurnE.id = "currentTurnE";
+}
 
 // Disable the possibility of launching many audio simultaneously
 
