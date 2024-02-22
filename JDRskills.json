@@ -442,9 +442,9 @@
   },
   "55": {
     "nom": "Contr\u00f4le de l'Esprit",
-    "desc": "La cible est charm\u00e9e et attaque les ennemis",
-    "effet": "Hypnose",
-    "montant": "Dur\u00e9e 1D4, l'ennemi peut l'annuler",
+    "desc": "La cible est hypnotisée et contrainte à respecter les ordres du lanceur (attaquer les ennemis, soi-même, ...)",
+    "effet": "Status",
+    "montant": "Inflige le status \"Hypnose\" pendant 1D4 tours",
     "icone": "E0129",
     "stat": "Esprit",
     "classe": ["Illusionniste"]
@@ -452,8 +452,8 @@
   "56": {
     "nom": "Oeil Hypnotique",
     "desc": "Les ennemis dans la zone cibl\u00e9e s'endorment",
-    "effet": "Endormissement AoE",
-    "montant": "Prend fin si r\u00e9veill\u00e9 ou au bout de 3 tours.",
+    "effet": "Status AoE",
+    "montant": "Inflige le status \"Endormissement\" pendant 3 tours",
     "icone": "E0125",
     "stat": "Intelligence",
     "classe": ["Illusionniste"]
@@ -1127,8 +1127,8 @@
   "132": {
     "nom": "Pi\u00e8ge d'Entrave",
     "desc": "Pose un pi\u00e8ge au sol pour entraver l'ennemi (d\u00e9g\u00e2t tranchant), l'emp\u00eachant de se d\u00e9placer, Esquive-5. L'ennemi peut tenter de s'en \u00e9chapper (force).",
-    "effet": "D\u00e9g\u00e2t Malus",
-    "montant": "1D10+2 (+1/niveau, 0 d\u00e9g\u00e2t/effet d'arme), entrave 3 tours (annulable)",
+    "effet": "D\u00e9g\u00e2t Status",
+    "montant": "1D10+2 (+1/niveau, 0 d\u00e9g\u00e2t/effet d'arme). Inflige le status \"Entrave\" pendant 3 tours",
     "icone": "E0179",
     "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Chasseur", "Juge"]
