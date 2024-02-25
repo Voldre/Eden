@@ -41,10 +41,11 @@ dialog {
   background-color: rgba(26, 25, 25, 0.99);
   position: fixed;
   width: 98%;
-  top: 30%;
   border: 2px wheat solid;
   border-radius: 1rem;
   color: wheat;
+  top: 50%;
+  transform: translate(0, -50%);
 }
 
 dialog::backdrop {
@@ -320,18 +321,18 @@ dialog::backdrop {
 
 /* JDR Univers */
 
-.race {
+#races .race {
   display: block;
   padding: 10px 0px;
   width: 100%;
 }
-.race h4 {
+#races .race h4 {
   border-top: 1px gray dashed;
   text-decoration: underline;
   font-size: 17px;
   margin-bottom: 2px;
 }
-.race img {
+#races .race img {
   width: 200px;
   height: 200px;
 }
@@ -384,6 +385,7 @@ dialog::backdrop {
 /* JDR Master */
 .combat {
   display: grid;
+  margin-left: -1%;
   width: 100%;
   grid-template-columns: 32vw 32vw 32vw;
 }
@@ -400,6 +402,16 @@ dialog::backdrop {
   margin-top: -30px;
   top: 33px;
   position: relative;
+}
+.visuel {
+  margin: 0px;
+  display: contents;
+  color: goldenrod;
+  cursor: pointer;
+  cursor: url("images/layout/cursor-x.png"), auto;
+}
+.visuel:hover {
+  filter: brightness(110%);
 }
 
 .malus {

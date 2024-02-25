@@ -14,6 +14,7 @@ export var skillsJSON = [];
 export var skillsAwakenJSON = [];
 export var masterJSON = [];
 export var logsJSON = [];
+export var enemyGenericJSON = {};
 
 console.log(window.location.href);
 if (window.location.href.includes("http")) {
@@ -36,6 +37,8 @@ if (window.location.href.includes("http")) {
   masterJSON = getData("master");
 
   logsJSON = getData("combatLogs");
+
+  enemyGenericJSON = getData("enemyG");
 }
 
 export function getData(filename, JDR = true) {
