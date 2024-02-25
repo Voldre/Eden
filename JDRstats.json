@@ -1,0 +1,271 @@
+[
+  {
+    "classes": [
+      {
+        "Classe": "Guerrier",
+        "Force": 8,
+        "Dextérité": 5,
+        "Intelligence": 3,
+        "Charisme": 7,
+        "Esprit": 7,
+        "PV": 60
+      },
+      {
+        "Classe": "Chevalier",
+        "Force": 7,
+        "Dextérité": 6,
+        "Intelligence": 3,
+        "Charisme": 7,
+        "Esprit": 7,
+        "PV": 50
+      },
+      {
+        "Classe": "Templier",
+        "Force": 7,
+        "Dextérité": 5,
+        "Intelligence": 6,
+        "Charisme": 6,
+        "Esprit": 6,
+        "PV": 60
+      },
+      {
+        "Classe": "Chevalier Dragon",
+        "Force": 7,
+        "Dextérité": 4,
+        "Intelligence": 4,
+        "Charisme": 7,
+        "Esprit": 7,
+        "PV": 55
+      },
+      {
+        "Classe": "Voleur",
+        "Force": 6,
+        "Dextérité": 8,
+        "Intelligence": 3,
+        "Charisme": 6,
+        "Esprit": 7,
+        "PV": 40
+      },
+      {
+        "Classe": "Assassin",
+        "Force": 9,
+        "Dextérité": 7,
+        "Intelligence": 3,
+        "Charisme": 5,
+        "Esprit": 6,
+        "PV": 50
+      },
+      {
+        "Classe": "Danselame",
+        "Force": 5,
+        "Dextérité": 7,
+        "Intelligence": 4,
+        "Charisme": 8,
+        "Esprit": 6,
+        "PV": 40
+      },
+      {
+        "Classe": "Samouraï",
+        "Force": 9,
+        "Dextérité": 6,
+        "Intelligence": 3,
+        "Charisme": 5,
+        "Esprit": 7,
+        "PV": 55
+      },
+      {
+        "Classe": "Chasseur",
+        "Force": 5,
+        "Dextérité": 8,
+        "Intelligence": 4,
+        "Charisme": 6,
+        "Esprit": 7,
+        "PV": 45
+      },
+      {
+        "Classe": "Ingénieur",
+        "Force": 5,
+        "Dextérité": 7,
+        "Intelligence": 5,
+        "Charisme": 5,
+        "Esprit": 7,
+        "PV": 50
+      },
+      {
+        "Classe": "Corsaire",
+        "Force": 5,
+        "Dextérité": 8,
+        "Intelligence": 4,
+        "Charisme": 7,
+        "Esprit": 6,
+        "PV": 45
+      },
+      {
+        "Classe": "Juge",
+        "Force": 7,
+        "Dextérité": 7,
+        "Intelligence": 4,
+        "Charisme": 6,
+        "Esprit": 6,
+        "PV": 50
+      },
+      {
+        "Classe": "Clerc",
+        "Force": 3,
+        "Dextérité": 4,
+        "Intelligence": 9,
+        "Charisme": 7,
+        "Esprit": 7,
+        "PV": 35
+      },
+      {
+        "Classe": "Barde",
+        "Force": 3,
+        "Dextérité": 5,
+        "Intelligence": 7,
+        "Charisme": 8,
+        "Esprit": 7,
+        "PV": 35
+      },
+      {
+        "Classe": "Shaman",
+        "Force": 4,
+        "Dextérité": 4,
+        "Intelligence": 8,
+        "Charisme": 6,
+        "Esprit": 8,
+        "PV": 40
+      },
+      {
+        "Classe": "Sage",
+        "Force": 6,
+        "Dextérité": 3,
+        "Intelligence": 7,
+        "Charisme": 6,
+        "Esprit": 8,
+        "PV": 40
+      },
+      {
+        "Classe": "Magicien",
+        "Force": 3,
+        "Dextérité": 4,
+        "Intelligence": 9,
+        "Charisme": 6,
+        "Esprit": 8,
+        "PV": 35
+      },
+      {
+        "Classe": "Illusionniste",
+        "Force": 3,
+        "Dextérité": 5,
+        "Intelligence": 7,
+        "Charisme": 6,
+        "Esprit": 9,
+        "PV": 35
+      },
+      {
+        "Classe": "Démoniste",
+        "Force": 3,
+        "Dextérité": 5,
+        "Intelligence": 8,
+        "Charisme": 6,
+        "Esprit": 8,
+        "PV": 35
+      },
+      {
+        "Classe": "Luminary",
+        "Force": 6,
+        "Dextérité": 4,
+        "Intelligence": 8,
+        "Charisme": 5,
+        "Esprit": 7,
+        "PV": 45
+      }
+    ]
+  },
+  {
+    "races": [
+      {
+        "Classe": "Humain",
+        "Force": 0,
+        "Dextérité": 0,
+        "Intelligence": 0,
+        "Charisme": 0,
+        "Esprit": 1,
+        "PV": 0
+      },
+      {
+        "Classe": "Ezelin",
+        "Force": -1,
+        "Dextérité": 1,
+        "Intelligence": 0,
+        "Charisme": 1,
+        "Esprit": 0,
+        "PV": -5
+      },
+      {
+        "Classe": "Ursun",
+        "Force": 1,
+        "Dextérité": -1,
+        "Intelligence": 0,
+        "Charisme": 0,
+        "Esprit": 1,
+        "PV": 5
+      },
+      {
+        "Classe": "Zumi",
+        "Force": -1,
+        "Dextérité": 1,
+        "Intelligence": 0,
+        "Charisme": 0,
+        "Esprit": 1,
+        "PV": -5
+      },
+      {
+        "Classe": "Anuran",
+        "Force": 0,
+        "Dextérité": 0,
+        "Intelligence": 1,
+        "Charisme": 1,
+        "Esprit": -1,
+        "PV": 0
+      },
+      {
+        "Classe": "Torturran",
+        "Force": 0,
+        "Dextérité": -1,
+        "Intelligence": 1,
+        "Charisme": 0,
+        "Esprit": 1,
+        "PV": 5
+      },
+      {
+        "Classe": "Drakai",
+        "Force": 0,
+        "Dextérité": 1,
+        "Intelligence": 1,
+        "Charisme": -1,
+        "Esprit": 0,
+        "PV": 0
+      },
+      {
+        "Classe": "Tuskar",
+        "Force": 1,
+        "Dextérité": 1,
+        "Intelligence": -1,
+        "Charisme": 0,
+        "Esprit": 0,
+        "PV": 5
+      },
+      {
+        "Classe": "Ogre",
+        "Force": 2,
+        "Dextérité": 0,
+        "Intelligence": -1,
+        "Charisme": 0,
+        "Esprit": 0,
+        "PV": 0
+      }
+    ]
+  }
+]

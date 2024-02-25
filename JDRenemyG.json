@@ -1,0 +1,507 @@
+{
+  "classes": [
+    {
+      "classe": "Guerrier",
+      "sorts": [
+        {
+          "nom": "Charge du Guerrier",
+          "stat": "Force",
+          "montantFixe": "3D6",
+          "montantVariable": 6,
+          "type": "Degat Malus",
+          "portee": "Mono",
+          "effet": "Si critique, réussite-",
+          "montantEffet": 3,
+          "duree": 1
+        },
+        {
+          "nom": "Attaque Cyclone",
+          "stat": "Force",
+          "montantFixe": "2D6",
+          "montantVariable": 5,
+          "type": "Degat",
+          "portee": "AoE",
+          "effet": "",
+          "montantEffet": 0,
+          "duree": 0
+        },
+        {
+          "nom": "Euphorie",
+          "stat": "Esprit",
+          "montantFixe": "",
+          "montantVariable": 0,
+          "type": "Buff",
+          "portee": "AoE",
+          "effet": "Par coup, dégât +1D4 (min 2) +",
+          "montantEffet": 0,
+          "duree": 4
+        },
+        {
+          "nom": "Mur de Titan",
+          "stat": "Force",
+          "montantFixe": "1D4 (min 2)",
+          "montantVariable": 0,
+          "type": "Armure",
+          "portee": "AoE",
+          "effet": "",
+          "montantEffet": 2,
+          "duree": 4
+        }
+      ]
+    },
+    {
+      "classe": "Chevalier",
+      "sorts": [
+        {
+          "nom": "Percée du Chevalier",
+          "stat": "Dextérité",
+          "montantFixe": "3D6",
+          "montantVariable": 8,
+          "type": "Degat",
+          "portee": "Mono",
+          "effet": "",
+          "montantEffet": 0,
+          "duree": 0
+        },
+        {
+          "nom": "Attaque Cyclone",
+          "stat": "Force",
+          "montantFixe": "2D6",
+          "montantVariable": 5,
+          "type": "Degat",
+          "portee": "AoE",
+          "effet": "",
+          "montantEffet": 0,
+          "duree": 0
+        },
+        {
+          "nom": "Silence",
+          "stat": "Esprit",
+          "montantFixe": "",
+          "montantVariable": 0,
+          "type": "Malus",
+          "portee": "Mono",
+          "effet": "Aucun sort magique",
+          "montantEffet": 0,
+          "duree": 3
+        },
+        {
+          "nom": "Vivacité Accrue",
+          "stat": "Esprit",
+          "montantFixe": "",
+          "montantVariable": 0,
+          "type": "Buff",
+          "portee": "Mono",
+          "effet": "Dextérité et Esquive +",
+          "montantEffet": 2,
+          "duree": 4
+        }
+      ]
+    },
+    {
+      "classe": "Templier",
+      "sorts": [
+        {
+          "nom": "Lumière Sacrée / Charge",
+          "stat": "Intel/Force",
+          "montantFixe": "3D6",
+          "montantVariable": 7,
+          "type": "Degat",
+          "portee": "Mono",
+          "effet": "",
+          "montantEffet": 0,
+          "duree": 0
+        },
+        {
+          "nom": "Coup Infernal / Vague Foudroyante",
+          "stat": "Intel/Force",
+          "montantFixe": "2D6 (+5 si Coup Infernal)",
+          "montantVariable": 2,
+          "type": "Degat Malus",
+          "portee": "AoE",
+          "effet": "Blocage -",
+          "montantEffet": 2,
+          "duree": 3
+        },
+        {
+          "nom": "Lumière de Guérison",
+          "stat": "Intelligence",
+          "montantFixe": "2D6",
+          "montantVariable": 10,
+          "type": "Soin",
+          "portee": "Mono",
+          "effet": "(1/4 de rejouer)",
+          "montantEffet": 0,
+          "duree": 0
+        },
+        {
+          "nom": "Défense d'Acier",
+          "stat": "Esprit",
+          "montantFixe": "",
+          "montantVariable": 0,
+          "type": "Buff",
+          "portee": "Mono",
+          "effet": "Blocage +",
+          "montantEffet": 2,
+          "duree": 5
+        }
+      ]
+    },
+    {
+      "classe": "Chevalier Dragon TODO",
+      "sorts": [
+        {
+          "nom": "Lumière Sacrée / Charge",
+          "stat": "Intel/Force",
+          "montantFixe": "3D6",
+          "montantVariable": 7,
+          "type": "Degat",
+          "portee": "Mono",
+          "effet": "",
+          "montantEffet": 0,
+          "duree": 0
+        },
+        {
+          "nom": "Coup Infernal / Vague Foudroyante",
+          "stat": "Intel/Force",
+          "montantFixe": "2D6 (+5 si Coup Infernal)",
+          "montantVariable": 2,
+          "type": "Degat Malus",
+          "portee": "AoE",
+          "effet": "Blocage -",
+          "montantEffet": 2,
+          "duree": 3
+        },
+        {
+          "nom": "=",
+          "stat": "Intelligence",
+          "montantFixe": "d",
+          "montantVariable": 10,
+          "type": "Soin",
+          "portee": "Mono",
+          "effet": "",
+          "montantEffet": 0,
+          "duree": 0
+        },
+        {
+          "nom": "Défense d'Acier",
+          "stat": "Esprit",
+          "montantFixe": "",
+          "montantVariable": 0,
+          "type": "Buff",
+          "portee": "Mono",
+          "effet": "Blocage +",
+          "montantEffet": 2,
+          "duree": 5
+        }
+      ]
+    },
+    {
+      "classe": "Voleur",
+      "sorts": [
+        {
+          "nom": "Attaque Furieuse",
+          "stat": "Dextérité",
+          "montantFixe": "3D6",
+          "montantVariable": 8,
+          "type": "Degat",
+          "portee": "Mono",
+          "effet": "",
+          "montantEffet": 0,
+          "duree": 0
+        },
+        {
+          "nom": "Attaque Furieuse",
+          "stat": "Dextérité",
+          "montantFixe": "2D6",
+          "montantVariable": 6,
+          "type": "Degat",
+          "portee": "AoE",
+          "effet": "",
+          "montantEffet": 0,
+          "duree": 0
+        },
+        {
+          "nom": "Intégration",
+          "stat": "Esprit",
+          "montantFixe": "",
+          "montantVariable": 0,
+          "type": "Buff",
+          "portee": "AoE",
+          "effet": "Esquive +",
+          "montantEffet": 2,
+          "duree": 3
+        },
+        {
+          "nom": "Furtivité > Embuscade",
+          "stat": "Esprit > Dextérité",
+          "montantFixe": "2D6 (total X2)",
+          "montantVariable": 8,
+          "type": "Degat",
+          "portee": "Mono",
+          "effet": "Dextérité +",
+          "montantEffet": 1,
+          "duree": 3
+        }
+      ]
+    },
+    {
+      "classe": "Assassin",
+      "sorts": [
+        {
+          "nom": "Faiblesse Critique / Cicatrice de l'Esprit",
+          "stat": "Force",
+          "montantFixe": "3D6 (Crit X1.5) (ou -1 buff)",
+          "montantVariable": 2,
+          "type": "Degat",
+          "portee": "Mono",
+          "effet": "",
+          "montantEffet": 0,
+          "duree": 0
+        },
+        {
+          "nom": "Attaque Furieuse / Griffure Noire",
+          "stat": "Dextérité/Force",
+          "montantFixe": "2D6 (+5 si Attaque Furieuse)",
+          "montantVariable": 2,
+          "type": "Degat Malus",
+          "portee": "AoE",
+          "effet": "Blocage et Esquive -",
+          "montantEffet": 1,
+          "duree": 3
+        },
+        {
+          "nom": "Transe - Mode Tueur",
+          "stat": "Esprit",
+          "montantFixe": "",
+          "montantVariable": 0,
+          "type": "Buff",
+          "portee": "Mono",
+          "effet": "Dégât +1D6 (min 2) +",
+          "montantEffet": 2,
+          "duree": 3
+        },
+        {
+          "nom": "Contrôle de l'Energie",
+          "stat": "Esprit",
+          "montantFixe": "2D6",
+          "montantVariable": 8,
+          "type": "Soin Buff",
+          "portee": "Mono",
+          "effet": "Dexté -2 et Résistance d'esprit +",
+          "montantEffet": 4,
+          "duree": 3
+        }
+      ]
+    },
+    {
+      "classe": "Danselame",
+      "sorts": [
+        {
+          "nom": "Lames Dansantes",
+          "stat": "Dextérité",
+          "montantFixe": "3D6",
+          "montantVariable": 9,
+          "type": "Degat",
+          "portee": "Mono",
+          "effet": "",
+          "montantEffet": 0,
+          "duree": 0
+        },
+        {
+          "nom": "Attaque Furieuse / Danse de l'oiseau de feu",
+          "stat": "Dextérité",
+          "montantFixe": "2D6",
+          "montantVariable": 6,
+          "type": "Degat",
+          "portee": "AoE",
+          "effet": "",
+          "montantEffet": 0,
+          "duree": 0
+        },
+        {
+          "nom": "Charme tape-à-l'oeil",
+          "stat": "Charisme",
+          "montantFixe": "",
+          "montantVariable": 0,
+          "type": "Malus",
+          "portee": "Mono",
+          "effet": "Esquive et réussite des sorts -",
+          "montantEffet": 2,
+          "duree": 3
+        },
+        {
+          "nom": "Ombre Rapide",
+          "stat": "Esprit",
+          "montantFixe": "",
+          "montantVariable": 0,
+          "type": "Buff",
+          "portee": "Mono",
+          "effet": "Esquive +",
+          "montantEffet": 2,
+          "duree": 5
+        }
+      ]
+    },
+    {
+      "classe": "Samouraï",
+      "sorts": [
+        {
+          "nom": "Coupe Asura / Purgatoire",
+          "stat": "Force",
+          "montantFixe": "2D6 (+4 Purga si Asura)",
+          "montantVariable": 4,
+          "type": "Degat",
+          "portee": "AoE",
+          "effet": "(Effet Asura 3t)",
+          "montantEffet": 0,
+          "duree": 0
+        },
+        {
+          "nom": "Eclair unique",
+          "stat": "Force",
+          "montantFixe": "3D6 (+6 si Asura)",
+          "montantVariable": 6,
+          "type": "Degat",
+          "portee": "Mono",
+          "effet": "",
+          "montantEffet": 0,
+          "duree": 0
+        },
+        {
+          "nom": "Foi du Temple",
+          "stat": "Esprit",
+          "montantFixe": "",
+          "montantVariable": 0,
+          "type": "Buff",
+          "portee": "Mono",
+          "effet": "Esprit +2 et Dégât subi -1D4 (min) -",
+          "montantEffet": 0,
+          "duree": 3
+        },
+        {
+          "nom": "Aura du Samouraï",
+          "stat": "Esprit",
+          "montantFixe": "",
+          "montantVariable": 0,
+          "type": "Buff",
+          "portee": "AoE",
+          "effet": "(lanceur inclus) Dégât +1D4 +",
+          "montantEffet": 3,
+          "duree": 1
+        }
+      ]
+    }
+  ],
+  "races": [
+    { "race": "Humain" },
+    { "race": "Ezelin" },
+    { "race": "Ursun" },
+    { "race": "Zumi" },
+    { "race": "Anuran" },
+    { "race": "Torturran" },
+    { "race": "Drakai" },
+    { "race": "Tuskar" },
+    { "race": "Ogre" }
+  ],
+  "rangs": [
+    {
+      "rang": "Soldat",
+      "pv": 0,
+      "stat": 0,
+      "montantVariable": { "Mono": 0, "AoE": 0 },
+      "montantEffet": { "Mono": 0, "AoE": 0 },
+      "duree": 0
+    },
+    {
+      "rang": "Lieutenant",
+      "pv": 40,
+      "stat": 0,
+      "montantVariable": { "Mono": 5, "AoE": 5 },
+      "montantEffet": { "Mono": 1, "AoE": 0 },
+      "duree": 0
+    },
+    {
+      "rang": "Capitaine",
+      "pv": 80,
+      "stat": 1,
+      "montantVariable": { "Mono": 10, "AoE": 9 },
+      "montantEffet": { "Mono": 2, "AoE": 1 },
+      "duree": 0
+    },
+    {
+      "rang": "Commandant",
+      "pv": 120,
+      "stat": 1,
+      "montantVariable": { "Mono": 15, "AoE": 14 },
+      "montantEffet": { "Mono": 3, "AoE": 2 },
+      "duree": 1
+    },
+    {
+      "rang": "Général",
+      "pv": 160,
+      "stat": 2,
+      "montantVariable": { "Mono": 20, "AoE": 18 },
+      "montantEffet": { "Mono": 4, "AoE": 2 },
+      "duree": 1
+    }
+  ],
+  "guildes": [
+    {
+      "guilde": "Hydra",
+      "pv": 0,
+      "montantVariable": { "Mono": 5, "AoE": 2 },
+      "montantEffet": { "Mono": 0, "AoE": 0 },
+      "duree": 0
+    },
+    {
+      "guilde": "Symbardy",
+      "pv": 0,
+      "montantVariable": { "Mono": 0, "AoE": 0 },
+      "montantEffet": { "Mono": 2, "AoE": 1 },
+      "duree": 0
+    },
+    {
+      "guilde": "Expedita",
+      "pv": 20,
+      "montantVariable": { "Mono": 0, "AoE": 0 },
+      "montantEffet": { "Mono": 1, "AoE": 0 },
+      "duree": 0
+    },
+    {
+      "guilde": "Al-hara",
+      "pv": 0,
+      "montantVariable": { "Mono": 0, "AoE": 0 },
+      "montantEffet": { "Mono": 1, "AoE": 0 },
+      "duree": 1
+    },
+    {
+      "guilde": "Destri",
+      "pv": 20,
+      "montantVariable": { "Mono": 2, "AoE": 1 },
+      "montantEffet": { "Mono": 0, "AoE": 0 },
+      "duree": 0
+    },
+    {
+      "guilde": "Beholder",
+      "pv": 0,
+      "montantVariable": { "Mono": 2, "AoE": 1 },
+      "montantEffet": { "Mono": 1, "AoE": 0 },
+      "duree": 0
+    },
+    {
+      "guilde": "Légion Saphir",
+      "pv": 20,
+      "montantVariable": { "Mono": 1, "AoE": 0 },
+      "montantEffet": { "Mono": 1, "AoE": 0 },
+      "duree": 0
+    },
+    {
+      "guilde": "??? (Alius)",
+      "pv": 40,
+      "montantVariable": { "Mono": 5, "AoE": 2 },
+      "montantEffet": { "Mono": 2, "AoE": 1 },
+      "duree": 1
+    }
+  ]
+}
