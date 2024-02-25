@@ -68,7 +68,7 @@ buttonRace.addEventListener("click", () => {
   } else {
     buttonRace.innerText = "Afficher";
   }
-  document.querySelector("#race").classList.toggle("hide");
+  document.querySelector("#races").classList.toggle("hide");
 });
 // Show/Hide elements
 const buttonElem = document.querySelector("#buttonElem");

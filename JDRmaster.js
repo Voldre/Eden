@@ -1,4 +1,4 @@
-import { skillsJSON, eqptJSON, masterJSON, enemyJSON } from "./JDRstore";
+import { skillsJSON, eqptJSON, masterJSON, enemyJSON, enemyGenericJSON } from "./JDRstore";
 import { callPHP, isTextInText, toastNotification } from "./utils";
 
 // load notes
@@ -154,7 +154,7 @@ function loadEnemy(indexEnemy, indexElement) {
     ennemiElement.querySelector("#desc").innerText = "";
     ennemiElement.querySelector("#infos").innerText = "";
     ennemiElement.querySelector("#drop").innerText = "";
-    ennemiElement.querySelector("#visuel").innerText = "";
+    ennemiElement.querySelector(".visuel").innerText = "Switch...";
     ennemiElement.querySelector(".icon").src = "";
     ennemiElement.querySelector("#pv").value = "";
     ennemiElement.querySelector("#pvmax").value = "";
@@ -174,7 +174,7 @@ function loadEnemy(indexEnemy, indexElement) {
   ennemiElement.querySelector("#desc").innerText = "Desc : " + enemyData.desc;
   ennemiElement.querySelector("#infos").innerText = "Infos / BP : " + enemyData.infos;
   ennemiElement.querySelector("#drop").innerText = "Drop : " + enemyData.drop;
-  ennemiElement.querySelector("#visuel").innerText = enemyData.visuel3D;
+  ennemiElement.querySelector(".visuel").innerText = enemyData.visuel3D;
   ennemiElement.querySelector(".icon").src =
     "http://voldre.free.fr/Eden/images/monsters/" + enemyData.visuel3D + ".png";
   ennemiElement.querySelector(".icon").alt = enemyData.visuel3D.toLowerCase();
@@ -276,41 +276,6 @@ const eqptFilter = () => {
   document.querySelector("#nbEqptFiltered").innerText = `(${nbEqptsDisplayed})`;
 };
 
-// ALL SAVES
-
-// Allow save for users
-function toggleButton() {
-  if (masterJSON.allow == true) {
-    document.querySelector("#allowSave").style = "border: 3px solid green";
-  } else {
-    document.querySelector("#allowSave").style = "border: 3px solid red";
-  }
-}
-
-toggleButton();
-document.querySelector("#allowSave").addEventListener("click", () => {
-  masterJSON.allow = !masterJSON.allow;
-  toggleButton();
-
-  masterJSON.notes = document.querySelector(".notes").value;
-
-  document.cookie = "masterJSON=" + encodeURIComponent(JSON.stringify(masterJSON));
-  callPHP({ action: "saveFile", name: "master" });
-  toastNotification("Autorisation modifiée");
-});
-
-document.querySelector("#save").addEventListener("click", () => {
-  masterJSON.notes = document.querySelector(".notes").value;
-  document.cookie = "masterJSON=" + encodeURIComponent(JSON.stringify(masterJSON));
-  callPHP({ action: "saveFile", name: "master" });
-  toastNotification("Données sauvegardées");
-});
-
-document.querySelector("#saveBackup").addEventListener("click", () => {
-  callPHP({ action: "saveBackup" });
-  toastNotification("JDRpersos_backup.json et JDRplayer sauvegardés");
-});
-
 // Add new enemy (4th)
 
 document.querySelector("#newEnemy").addEventListener("click", () => {
@@ -375,6 +340,89 @@ document.querySelector("#nbP").addEventListener("change", (e) => {
   } else {
     document.querySelector("#variation").innerText = "-" + (3 - nbP) * 33 + "%";
   }
+});
+
+// Add new kind of enemy : Generic Enemy !
+
+const genericElements = [...document.querySelectorAll(".generic")];
+[...document.querySelectorAll(".visuel")].forEach((visuelE) => {
+  // On click, toggle hidden type
+  visuelE.addEventListener("click", (e) => {
+    const enemyTypeE = e.target.closest(".infoEnnemi").querySelector(".enemyType");
+    [...enemyTypeE.children].map((child) => child.classList.toggle("hide"));
+  });
+});
+
+genericElements.forEach((genericE) => {
+  const selectElements = [...genericE.children];
+  selectElements.forEach((selectE) => {
+    const propName = selectE.className;
+    console.log(propName, enemyGenericJSON, enemyGenericJSON[propName + "s"]);
+    addOptions(enemyGenericJSON[propName + "s"], propName, selectE);
+
+    selectE.addEventListener("change", () => handleGenericSelectChange(selectElements));
+  });
+});
+
+function handleGenericSelectChange(selectElements) {
+  const v = {};
+  let emptyValue = false;
+  selectElements.forEach((selectE) => {
+    v[selectE.className] = selectE.value;
+    if (selectE.value === "") emptyValue = true;
+  });
+  console.log(v);
+
+  if (emptyValue) return;
+}
+
+function addOptions(data, propName, selectE) {
+  var option = document.createElement("option");
+  option.value = "";
+  option.innerText = "";
+  selectE.append(option);
+  console.log(data);
+  Object.values(data).forEach((e) => {
+    var option = document.createElement("option");
+    option.value = e[propName];
+    option.innerText = e[propName];
+    selectE.append(option);
+  });
+}
+
+// ALL SAVES
+
+// Allow save for users
+function toggleButton() {
+  if (masterJSON.allow == true) {
+    document.querySelector("#allowSave").style = "border: 3px solid green";
+  } else {
+    document.querySelector("#allowSave").style = "border: 3px solid red";
+  }
+}
+
+toggleButton();
+document.querySelector("#allowSave").addEventListener("click", () => {
+  masterJSON.allow = !masterJSON.allow;
+  toggleButton();
+
+  masterJSON.notes = document.querySelector(".notes").value;
+
+  document.cookie = "masterJSON=" + encodeURIComponent(JSON.stringify(masterJSON));
+  callPHP({ action: "saveFile", name: "master" });
+  toastNotification("Autorisation modifiée");
+});
+
+document.querySelector("#save").addEventListener("click", () => {
+  masterJSON.notes = document.querySelector(".notes").value;
+  document.cookie = "masterJSON=" + encodeURIComponent(JSON.stringify(masterJSON));
+  callPHP({ action: "saveFile", name: "master" });
+  toastNotification("Données sauvegardées");
+});
+
+document.querySelector("#saveBackup").addEventListener("click", () => {
+  callPHP({ action: "saveBackup" });
+  toastNotification("JDRpersos_backup.json et JDRplayer sauvegardés");
 });
 
 // Create skill & Save

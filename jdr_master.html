@@ -17,9 +17,19 @@
     <div class="combat">
         <!-- mettre 2 ennemis sur une même ligne ? -->
         <div class="infoEnnemi" id="e0">
-            <select name="ennemi" class="ennemi"></select>
-            <img class="icon" src="" alt="">
-            <a id="visuel" href="#">Visuel</a>
+            <div class="enemyType" >
+                <div class="classic">
+                <select name="ennemi" class="ennemi"></select>
+                <img class="icon" src="" alt="">
+                </div>
+                <div class="generic hide">
+                <select name="classe" class="classe"></select>
+                <select name="race" class="race"></select>
+                <select name="rang" class="rang"></select>
+                <select name="guilde" class="guilde"></select>
+                </div>
+            </div>
+            <p class="visuel">Switch...</p>
             <br/>
             <input style='width: 38px;' type='number' id="pv" name="pv"></input>
             <input style='width: 38px;' type='number' id="pvmax" name="pvmax"></input>
@@ -74,9 +84,19 @@
             </div>
         </div>
         <div class="infoEnnemi notInMobile" id="e1">
-            <select name="ennemi" class="ennemi"></select>
-            <img class="icon" src="" alt="">
-            <a id="visuel" href="#">Visuel</a>
+            <div class="enemyType" >
+                <div class="classic">
+                <select name="ennemi" class="ennemi"></select>
+                <img class="icon" src="" alt="">
+                </div>
+                <div class="generic hide">
+                <select name="classe" class="classe"></select>
+                <select name="race" class="race"></select>
+                <select name="rang" class="rang"></select>
+                <select name="guilde" class="guilde"></select>
+                </div>
+            </div>
+            <p class="visuel">Switch...</p>
             <br/>
             <input style='width: 38px;' type='number' id="pv" name="pv"></input>
             <input style='width: 38px;' type='number' id="pvmax" name="pvmax"></input>
@@ -132,9 +152,19 @@
         </div>
         
         <div class="infoEnnemi notInMobile" id="e2">
-            <select name="ennemi" class="ennemi"></select>
-            <img class="icon" src="" alt="">
-            <a id="visuel" href="#">Visuel</a>
+            <div class="enemyType" >
+                <div class="classic">
+                <select name="ennemi" class="ennemi"></select>
+                <img class="icon" src="" alt="">
+                </div>
+                <div class="generic hide">
+                <select name="classe" class="classe"></select>
+                <select name="race" class="race"></select>
+                <select name="rang" class="rang"></select>
+                <select name="guilde" class="guilde"></select>
+                </div>
+            </div>
+            <p class="visuel">Switch...</p>
             <br/>
             <input style='width: 38px;' type='number' id="pv" name="pv"></input>
             <input style='width: 38px;' type='number' id="pvmax" name="pvmax"></input>
@@ -189,9 +219,19 @@
             </div>
         </div>
         <div class="infoEnnemi" id="e3" style="display:none">
-            <select name="ennemi" class="ennemi"></select>
-            <img class="icon" src="" alt="">
-            <a id="visuel" href="#">Visuel</a>
+            <div class="enemyType" >
+                <div class="classic">
+                <select name="ennemi" class="ennemi"></select>
+                <img class="icon" src="" alt="">
+                </div>
+                <div class="generic hide">
+                <select name="classe" class="classe"></select>
+                <select name="race" class="race"></select>
+                <select name="rang" class="rang"></select>
+                <select name="guilde" class="guilde"></select>
+                </div>
+            </div>
+            <p class="visuel">Switch...</p>
             <br/>
             <input style='width: 38px;' type='number' id="pv" name="pv"></input>
             <input style='width: 38px;' type='number' id="pvmax" name="pvmax"></input>
@@ -596,7 +636,7 @@
                     </audio>
                 </div>
                 <div>
-                    <p id="bgm040">T4</p>
+                    <p id="bgm040">T4 - Combat Cool (Marma/Voldre)</p>
                     <audio loop controls="">
                         <source src="bgm/bgm040.ogg" type="audio/ogg">
                     </audio>
@@ -722,7 +762,7 @@
                     </audio>
                 </div>
                 <div>
-                    <p id="bgm061">Labo Antigravité</p>
+                    <p id="bgm061">Labo Antigravité (+ Etincellia)</p>
                     <audio loop controls="">
                         <source src="bgm/bgm061.ogg" type="audio/ogg">
                     </audio>
@@ -788,7 +828,7 @@
                     </audio>
                 </div>
                 <div>
-                    <p id="best">Best Team (Overlord NPC Battle)</p>
+                    <p id="best">Best Team - Curie (Overlord NPC Battle)</p>
                     <audio loop controls="">
                         <source src="bgm/Best Team - Overlord NPC Battle.mp3" type="audio/mp3">
                     </audio>
@@ -860,7 +900,7 @@
                     </audio>
                 </div>
                 <div>
-                    <p id="DD3">DD - Combat in the Ruins</p>
+                    <p id="DD3">DD - Combat in the Ruins (+Adonis)</p>
                     <audio loop controls="">
                         <source src="bgm/DD - Combat in the Ruins.mp3" type="audio/mp3">
                     </audio>

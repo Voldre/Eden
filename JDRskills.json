@@ -1072,7 +1072,7 @@
   },
   "126": {
     "nom": "Dash Foudroyant",
-    "desc": "Le lanceur fait un Dash en avant de quelques m\u00e8tres en tranchant sa cible, lui infligeant des d\u00e9g\u00e2ts de foudre. Tel un Samoura\u00ef vif qui se replace.",
+    "desc": "Le lanceur fait un Dash en avant de quelques m\u00e8tres en tranchant sa cible, lui infligeant des d\u00e9g\u00e2ts de foudre. Tel un combattant vif qui se replace.",
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D10+3",
     "icone": "E0675",
