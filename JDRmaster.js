@@ -1,4 +1,4 @@
-import { skillsJSON, eqptJSON, masterJSON, enemyJSON, enemyGenericJSON } from "./JDRstore";
+import { skillsJSON, eqptJSON, masterJSON, enemyJSON, enemyGenericJSON, statsJSON } from "./JDRstore";
 import { callPHP, isTextInText, toastNotification } from "./utils";
 
 // load notes
@@ -113,19 +113,19 @@ document.querySelector("#filtre").addEventListener("change", (e) => {
   });
 });
 
-[...document.querySelectorAll(".ennemi")].forEach((selectEnnemi, i) => {
+[...document.querySelectorAll(".ennemi")].forEach((selectEnnemiE) => {
   // Fill Select elements
   [{ nom: "" }, ...Object.values(enemyJSON)].forEach((enemy) => {
     var option = document.createElement("option");
     option.value = enemy.nom;
     option.innerText = enemy.nom;
-    selectEnnemi.append(option);
+    selectEnnemiE.append(option);
   });
 
   // Change enemy selected
 
-  selectEnnemi.addEventListener("change", (e) => {
-    loadEnemy(e.target.selectedIndex, i);
+  selectEnnemiE.addEventListener("change", (e) => {
+    loadEnemy(e.target.selectedIndex, selectEnnemiE.closest(".infoEnnemi"));
     toastNotification("Chargement de l'ennemi réussi : " + e.target.value);
   });
 });
@@ -141,12 +141,10 @@ document.querySelector("#filtre").addEventListener("change", (e) => {
   });
 });
 
-function loadEnemy(indexEnemy, indexElement) {
+function loadEnemy(indexEnemy, ennemiElement, genericEnemy = null) {
   updateSlots();
 
-  var ennemiElement = [...document.querySelectorAll(".infoEnnemi")][indexElement];
-
-  var enemyData = enemyJSON[indexEnemy];
+  const enemyData = genericEnemy || enemyJSON[indexEnemy];
 
   if (!enemyData) {
     console.log(indexEnemy + " is not an enemy (in the list)");
@@ -171,12 +169,15 @@ function loadEnemy(indexEnemy, indexElement) {
   }
 
   // ennemiElement.querySelector('#nom').innerText = enemyData.nom;
-  ennemiElement.querySelector("#desc").innerText = "Desc : " + enemyData.desc;
-  ennemiElement.querySelector("#infos").innerText = "Infos / BP : " + enemyData.infos;
-  ennemiElement.querySelector("#drop").innerText = "Drop : " + enemyData.drop;
+  if (enemyData.desc !== "" && enemyData.infos !== "" && enemyData.drop !== "") {
+    ennemiElement.querySelector("#desc").innerText = "Desc : " + enemyData.desc;
+    ennemiElement.querySelector("#infos").innerText = "Infos / BP : " + enemyData.infos;
+    ennemiElement.querySelector("#drop").innerText = "Drop : " + enemyData.drop;
+  }
   ennemiElement.querySelector(".visuel").innerText = enemyData.visuel3D;
-  ennemiElement.querySelector(".icon").src =
-    "http://voldre.free.fr/Eden/images/monsters/" + enemyData.visuel3D + ".png";
+  if (enemyData.visuel3D !== "Switch...")
+    ennemiElement.querySelector(".icon").src =
+      "http://voldre.free.fr/Eden/images/monsters/" + enemyData.visuel3D + ".png";
   ennemiElement.querySelector(".icon").alt = enemyData.visuel3D.toLowerCase();
   ennemiElement.querySelector("#pv").value = enemyData.pvmax;
   if (enemyData.pvmax >= 200) ennemiElement.querySelector("#boss_icon").classList.remove("hide");
@@ -357,7 +358,6 @@ genericElements.forEach((genericE) => {
   const selectElements = [...genericE.children];
   selectElements.forEach((selectE) => {
     const propName = selectE.className;
-    console.log(propName, enemyGenericJSON, enemyGenericJSON[propName + "s"]);
     addOptions(enemyGenericJSON[propName + "s"], propName, selectE);
 
     selectE.addEventListener("change", () => handleGenericSelectChange(selectElements));
@@ -371,9 +371,57 @@ function handleGenericSelectChange(selectElements) {
     v[selectE.className] = selectE.value;
     if (selectE.value === "") emptyValue = true;
   });
-  console.log(v);
 
   if (emptyValue) return;
+
+  const stats = statsJSON.classes.find((e) => e.Classe === v["classe"]);
+  const raceStats = statsJSON.races.find((e) => e.Race === v["race"]);
+
+  const classe = enemyGenericJSON.classes.find((e) => e.classe === v["classe"]);
+  const rang = enemyGenericJSON.rangs.find((e) => e.rang === v["rang"]);
+  const guilde = enemyGenericJSON.guildes.find((e) => e.guilde === v["guilde"]);
+
+  const skills = classe.sorts.map((s) => {
+    const bonusMontantVar =
+      s.portee === "Mono"
+        ? rang.montantVariable["Mono"] + guilde.montantVariable["Mono"]
+        : s.portee === "AoE"
+        ? rang.montantVariable["AoE"] + guilde.montantVariable["AoE"]
+        : 0;
+    const montantVarTot = s.montantVariable + bonusMontantVar;
+
+    const bonusMontantEffet =
+      s.portee === "Mono"
+        ? rang.montantEffet["Mono"] + guilde.montantEffet["Mono"]
+        : s.portee === "AoE"
+        ? rang.montantEffet["AoE"] + guilde.montantEffet["AoE"]
+        : 0;
+    const montantEffetTot = s.montantEffet + bonusMontantEffet;
+
+    const duree = s.duree + rang.duree + guilde.duree;
+
+    return `${s.nom} : ${s.type} ${s.montantFixe}${montantVarTot ? ` +${montantVarTot}` : ""}, ${s.effet}${
+      s.montantEffet ? montantEffetTot : ""
+    }${s.duree ? ` sur ${duree} tours` : ""}`;
+  });
+
+  const statsName = ["Force", "Dextérité", "Intelligence", "Charisme", "Esprit"];
+  const statsValues = statsName.map((statName) => stats[statName] * 2 + raceStats[statName] + rang["stat"]);
+
+  const enemyData = {
+    visuel3D: "Switch...",
+    nom: "",
+    pvmax: stats["PV"] + raceStats["PV"] + rang["pv"] + guilde["pv"],
+    skills: skills,
+    stats: statsValues.join(","),
+    desc: "",
+    infos: "",
+    drop: "",
+  };
+
+  console.log(enemyData);
+
+  loadEnemy(0, selectElements[0].closest(".infoEnnemi"), enemyData);
 }
 
 function addOptions(data, propName, selectE) {
