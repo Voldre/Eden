@@ -667,7 +667,7 @@
     "stats": "17,13,9,12,15",
     "desc": "Zumi \u00e0 la peau bleue et aux yeux orang\u00e9 per\u00e7ant, fier et tr\u00e8s social. Il aide les gens ambitieux.",
     "infos": "Faible \u00e0 la glace et au contondant",
-    "drop": "Anneau de résistance, Puce électronique Silus, rare : Griffe de finesse"
+    "drop": "Anneau de r\u00e9sistance, Puce \u00e9lectronique Silus, rare : Griffe de finesse"
   },
   "47": {
     "visuel3D": "m201",
@@ -1319,7 +1319,7 @@
     "nom": "Lucius - Roi D\u00e9chu",
     "pvmax": "255",
     "skills": [
-      "Soin Inverseur : Transforme les soins re\u00e7us par les ennemis en d\u00e9g\u00e2t (AoE) 4 tours : Esprit",
+      "Soin Inverseur : Transforme les soins re\u00e7us par les ennemis en d\u00e9g\u00e2t (AoE) 4 tours (non annulable) : Esprit",
       "Solo (-5) / Faiblesse Critique : 3D6 +17 (Crit X1.5), r\u00e9ussite-1 : Force",
       "Griffure Noire : 2D6 +12, et -2 blocage/esquive pour 3 tours AoE : Esprit",
       "Pelote d'entrave : 4 tentatives (Instantan\u00e9e) : Mono/AoE force \u00e0 re-esquiver ou re-bloquer (r\u00e9ussite -2 si lui) : Esprit"
@@ -2386,12 +2386,27 @@
     "skills": [
       "Lames Dansantes X : 3D6+18 (+1D mono) AoE : Dext\u00e9rit\u00e9",
       "Danse du Po\u00e8te : D\u00e9g\u00e2t +1D6+4, Dext\u00e9rit\u00e9+2 AoE sur 3 tours : Esprit",
-      "Concentration : Esquive +2, Res Esprit +1 pendant 5 tours (durée des malus (ou effet) : /2) : Esprit",
-      "Passif : Si esquive critique : l'ennemi le plus proche se prend l'attaque, dégât +5 prochain coup"
+      "Concentration : Esquive +2, Res Esprit +1 pendant 5 tours (dur\u00e9e des malus (ou effet) : /2) : Esprit",
+      "Passif : Si esquive critique : l'ennemi le plus proche se prend l'attaque, d\u00e9g\u00e2t +5 prochain coup"
     ],
     "stats": "11,17,11,14,17",
     "desc": "Jeune homme humain mais petit, Fira est \u00e0 la fois ma\u00eetre d'art et chef de la Symbardy ! C'est un musicien dou\u00e9 d'une technique brillante et un artiste extr\u00eamement habile.",
     "infos": "Faible \u00e0 la foudre et \u00e0 la nature",
     "drop": "Glyphe du Danselame, rare : Chaussures d'agilit\u00e9, Gantelet Ecailleux"
+  },
+  "162": {
+    "visuel3D": "m047e",
+    "nom": "Zack - Foreur Fourbe",
+    "pvmax": "230",
+    "skills": [
+      "Furtivit\u00e9 : Invisible, bonus ESQ +2 (Prochain coup +1D6) // Int\u00e9gration : ESQ +3  AoE, sur 3 tours : Esprit",
+      "Embuscade rapide : 3D6 +16 (X1.5 si fufu) : Dext\u00e9rit\u00e9",
+      "Embuscade tournoyante : 2D6 +14 (X1.5 si fufu) : Dext\u00e9rit\u00e9",
+      "Si invisible : chance touch\u00e9 -3. Passif : Si esquive critique : passe en Furtif automatiquement"
+    ],
+    "stats": "15,18,11,10,15",
+    "desc": "Zumi pr\u00eat \u00e0 tout pour gagner sa croute, il est malicieux et ne manque pas de coups foireux.",
+    "infos": "Faible au per\u00e7ant et \u00e0 la lumi\u00e8re",
+    "drop": "rare : Dague Aquatique, tr\u00e8s rare : Chaussures anti-bruit"
   }
 }
