@@ -2547,7 +2547,7 @@
   "348": {
     "nom": "Plastron de Delphes",
     "desc": "Un plastron cr\u00e9\u00e9 par des anciens habitants de Delphes, ses propri\u00e9t\u00e9s curatives sont tr\u00e8s myst\u00e9rieuses.",
-    "effet": "PV Soin re\u00e7u +4",
+    "effet": "PV Soin re\u00e7u +3",
     "montant": "D\u00e9g\u00e2t -5",
     "icone": "A20108"
   },
@@ -2965,5 +2965,12 @@
     "effet": "Action +",
     "montant": "D\u00e9g\u00e2t +5, Si Blocage/Esquive critique : Coup d'opportunit\u00e9",
     "icone": "W35106"
+  },
+  "406": {
+    "nom": "Chaussures anti-bruit",
+    "desc": "Ces chaussures ont \u00e9t\u00e9 con\u00e7ues pour r\u00e9duire le bruit de son porteur !",
+    "effet": "Dext\u00e9rit\u00e9 +1",
+    "montant": "En invisibilit\u00e9 : chance d'\u00eatre touch\u00e9 -3",
+    "icone": "A50013"
   }
 }

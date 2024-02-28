@@ -1,52 +1,39 @@
 // JSON Initialisation
 var xhReq = new XMLHttpRequest();
 
-export var cardJSON = [];
-export var persosJSON = {};
-export var eqptJSON = {};
-export var pnjJSON = {};
-export var enemyJSON = {};
-export var mapsJSON = {};
-export var allSkills = [];
-export var playerJSON = [];
-export var galeryJSON = [];
-export var skillsJSON = [];
-export var skillsAwakenJSON = [];
-export var masterJSON = [];
-export var logsJSON = [];
-export var enemyGenericJSON = {};
-
 console.log(window.location.href);
-if (window.location.href.includes("http")) {
-  cardJSON = getData("card");
-  eqptJSON = getData("eqpt");
-  pnjJSON = getData("pnj");
 
-  enemyJSON = getData("enemy");
-  persosJSON = getData("persos");
+export const cardJSON = getData("card");
+export const eqptJSON = getData("eqpt");
+export const pnjJSON = getData("pnj");
 
-  mapsJSON = getData("maps", false);
+export const enemyJSON = getData("enemy");
+export const persosJSON = getData("persos");
 
-  allSkills = getData("combatS");
-  playerJSON = getData("player");
-  galeryJSON = getData("galery");
+export const mapsJSON = getData("maps", false);
 
-  skillsJSON = getData("skills");
-  skillsAwakenJSON = getData("skillsAwaken");
+export const allSkills = getData("combatS");
+export const playerJSON = getData("player");
+export const galeryJSON = getData("galery");
 
-  masterJSON = getData("master");
+export const skillsJSON = getData("skills");
+export const skillsAwakenJSON = getData("skillsAwaken");
 
-  logsJSON = getData("combatLogs");
+export const masterJSON = getData("master");
+export const logsJSON = getData("combatLogs");
 
-  enemyGenericJSON = getData("enemyG");
-}
+export const enemyGenericJSON = getData("enemyG");
+export const statsJSON = getData("stats");
 
 export function getData(filename, JDR = true) {
-  if (JDR) {
-    xhReq.open("GET", "./JDR" + filename + ".json" + "?" + new Date().getTime(), false);
-  } else {
-    xhReq.open("GET", "./" + filename + ".json" + "?" + new Date().getTime(), false);
+  if (window.location.href.includes("http")) {
+    if (JDR) {
+      xhReq.open("GET", "./JDR" + filename + ".json" + "?" + new Date().getTime(), false);
+    } else {
+      xhReq.open("GET", "./" + filename + ".json" + "?" + new Date().getTime(), false);
+    }
+    xhReq.send(null);
+    return JSON.parse(xhReq.responseText);
   }
-  xhReq.send(null);
-  return JSON.parse(xhReq.responseText);
+  return [];
 }

@@ -739,9 +739,9 @@
   },
   "89": {
     "nom": "Fl\u00e8che Eblouissante",
-    "desc": "Tir une fl\u00e8che qui lance un flash sur l'ennemi. Pr\u00e9cision des attaques -2",
+    "desc": "Tir une fl\u00e8che qui lance un flash sur l'ennemi.",
     "effet": "D\u00e9g\u00e2t Malus",
-    "montant": "1D8+1, et r\u00e9ussite des sorts -3 (3 tours)",
+    "montant": "1D8+2, et r\u00e9ussite des sorts -3 (3 tours)",
     "icone": "E0072",
     "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Chasseur"]
@@ -1072,7 +1072,6 @@
   },
   "126": {
     "nom": "Dash Foudroyant",
-    "desc": "Le lanceur fait un Dash en avant de quelques m\u00e8tres en tranchant sa cible, lui infligeant des d\u00e9g\u00e2ts de foudre. Tel un combattant vif qui se replace.",
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D10+3",
     "icone": "E0675",

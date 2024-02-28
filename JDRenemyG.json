@@ -33,7 +33,7 @@
           "type": "Buff",
           "portee": "AoE",
           "effet": "Par coup, dégât +1D4 (min 2) +",
-          "montantEffet": 0,
+          "montantEffet": 1,
           "duree": 4
         },
         {
@@ -200,7 +200,7 @@
       "classe": "Voleur",
       "sorts": [
         {
-          "nom": "Attaque Furieuse",
+          "nom": "Attaque rapide",
           "stat": "Dextérité",
           "montantFixe": "3D6",
           "montantVariable": 8,
@@ -389,6 +389,55 @@
           "effet": "(lanceur inclus) Dégât +1D4 +",
           "montantEffet": 3,
           "duree": 1
+        }
+      ]
+    },
+    {
+      "classe": "Chasseur",
+      "sorts": [
+        {
+          "nom": "Triple Tir / Blessure Douloureuse",
+          "stat": "Dextérité",
+          "montantFixe": "3D6 (1D10)",
+          "montantVariable": 8,
+          "type": "Degat",
+          "portee": "Mono",
+          "effet": "(0 soin)",
+          "montantEffet": 0,
+          "duree": 3
+        },
+        {
+          "nom": "Invocation du Tigre/Aigle",
+          "stat": "Esprit",
+          "montantFixe": "PV 40, Dégât Mono 1D6 + AoE (/2?)",
+          "montantVariable": 4,
+          "type": "Degat (Invocation)",
+          "portee": "AoE",
+          "effet": "Stat à 14+",
+          "montantEffet": 0,
+          "duree": 0
+        },
+        {
+          "nom": "Perforation",
+          "stat": "Dextérité",
+          "montantFixe": "2D6",
+          "montantVariable": 6,
+          "type": "Dégât Malus",
+          "portee": "Mono",
+          "effet": "Blocage et réussite des sorts -",
+          "montantEffet": 2,
+          "duree": 3
+        },
+        {
+          "nom": "Piège d'entrave",
+          "stat": "Dextérité",
+          "montantFixe": "2D6",
+          "montantVariable": 2,
+          "type": "Degat Status",
+          "portee": "Mono",
+          "effet": "Entravé",
+          "montantEffet": 0,
+          "duree": 3
         }
       ]
     }
