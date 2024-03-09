@@ -236,15 +236,15 @@ export const parseEqptsByRegex = (texts, eqpts) => {
 };
 
 export const isTextInText = (mainText, subText) => {
-  const mainTextFormated = mainText
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .trim();
-  const subTextFormated = subText
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .trim();
-  return mainTextFormated.includes(subTextFormated);
+  const mainTextUnformated = unformatText(mainText);
+  const subTextUnformated = unformatText(subText);
+  return mainTextUnformated.includes(subTextUnformated);
 };
+
+// Remove accents, upper case and spaces
+export const unformatText = (text) =>
+  text
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
