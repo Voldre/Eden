@@ -387,16 +387,24 @@ dialog::backdrop {
   display: grid;
   margin-left: -1%;
   width: 100%;
-  grid-template-columns: 32vw 32vw 32vw;
 }
 .infoPersos {
   width: 99vw;
   display: grid;
   grid-template-columns: 20vw 20vw 20vw 20vw 20vw;
 }
+.ennemis {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  overflow: auto;
+}
 .infoEnnemi {
   border: 2px black solid;
   margin: 5px;
+  min-width: 300px;
+  width: 100%;
 }
 .infoEnnemi .icon {
   margin-top: -30px;
