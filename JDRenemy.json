@@ -977,12 +977,12 @@
       "\u00c2me Enchain\u00e9e : 2D6+18 et dext\u00e9-3 (AoE) sur 4 tours : Dext\u00e9rit\u00e9",
       "Scellement Douloureux : Aucun sort physique, 0 SOIN pendant 4 tours : Esprit",
       "Verdict Final : 3D6 +18 (crit (1,2,3) X1.5) : Force",
-      "Furtivit\u00e9 / Aura du Pourfendeur : DGT T\u00e9n\u00e8b +2D6+6 pendant 4 tours : Esprit - - - 2 fois : Oeil Hypnotique (res esprit -3), + la fl\u00fbte"
+      "Furtivit\u00e9 / Aura du Pourfendeur : DGT T\u00e9n\u00e8b +2D6+6 pendant 4 tours : Esprit - - - 2 fois : Oeil Hypnotique (res -3), idem Flûte : Contrôle esprit AoE, (res -2)"
     ],
     "stats": "16,16,9,12,16",
-    "desc": "Anuran vert tr\u00e8s social et tr\u00e8s tueur",
+    "desc": "Anuran bleu tr\u00e8s social et tr\u00e8s tueur, il cherche à condamner... ?",
     "infos": "Faible au tranchant et \u00e0 la foudre",
-    "drop": "50 po, Cape Hypnotique, rare : Faucille d\u00e9moniaque "
+    "drop": "50 po, Cape Hypnotique, Flûte des Fleurs de Lune, rare : Faucille d\u00e9moniaque "
   },
   "68": {
     "visuel3D": "m200",
@@ -2260,7 +2260,7 @@
     "drop": "75po, Anneau du Bagarreur, rare : Griffe de Puissance"
   },
   "153": {
-    "visuel3D": "m302",
+    "visuel3D": "diana",
     "nom": "Diana - G\u00e9n\u00e9rale Offensive",
     "pvmax": "270",
     "skills": [
@@ -2321,10 +2321,10 @@
   },
   "157": {
     "visuel3D": "m158",
-    "nom": "Samael - N\u00b05 Hydra",
+    "nom": "Samael - N\u00b05 Hydra (Beholder ?)",
     "pvmax": "230",
     "skills": [
-      "Panopticor Eveill\u00e9 : 40 PV, Force : 9, Dext\u00e9 : 15, Intel : 16. Sort : Parasite obscur : 8 (+3/t *4) (Intel), Coup tentac : 2D6+10 (Force) : Esprit",
+      "Panopticor Eveill\u00e9 : 40 PV, Force/Intel : 15/16. Sort : Parasite obscur : 8 (+4/t *4) (Intel), Coup tentac : 2D6+10 (Force) : Esprit",
       "Hommage : Soin 2-40PV, D\u00e9g\u00e2t (+) Armure (+) 6 (3 tours) : Esprit",
       "Parasite obscur : 12 + 5/t *4.  -- Saut Dimensionnel : 3 tentatives : Intel",
       "Fl\u00e8che des Ombres : 2D10+ 15 si para, (heal 2D6+6+'6 si para) : Intel"
@@ -2400,7 +2400,7 @@
     "pvmax": "230",
     "skills": [
       "Furtivit\u00e9 : Invisible, bonus ESQ +2 (Prochain coup +1D6) // Int\u00e9gration : ESQ +3  AoE, sur 3 tours : Esprit",
-      "Embuscade rapide : 3D6 +16 (X1.5 si fufu) : Dext\u00e9rit\u00e9",
+      "Embuscade rapide : 3D6 +16 (X1.5 si fufu) : Dext\u00e9rit\u00e9 (jdrcombat +30)",
       "Embuscade tournoyante : 2D6 +14 (X1.5 si fufu) : Dext\u00e9rit\u00e9",
       "Si invisible : chance touch\u00e9 -3. Passif : Si esquive critique : passe en Furtif automatiquement"
     ],
@@ -2408,5 +2408,20 @@
     "desc": "Zumi pr\u00eat \u00e0 tout pour gagner sa croute, il est malicieux et ne manque pas de coups foireux.",
     "infos": "Faible au per\u00e7ant et \u00e0 la lumi\u00e8re",
     "drop": "rare : Dague Aquatique, tr\u00e8s rare : Chaussures anti-bruit"
+  },
+  "163": {
+    "visuel3D": "willow",
+    "nom": "Willow - N°4 Hydra",
+    "pvmax": "230",
+    "skills": [
+      "Dédoublement Eveillé : Invoque un double sur 2(+1) tours : Esprit",
+      "Rituel de Mana : Esprit/Res +3 AoE sur 1D4 +2 tours // Menace Mortelle : Réussite des sorts : -3, esquive/blocage -2 AoE sur 1(+1) tour : Esprit",
+      "Parasite obscur : 12 + 4/t *5 // Flèche des Ombres : 2D10+ 12, si para : heal 2D6+6+4 si actif : Intel",
+      "Voile du Blizzard (Intel +1) / Saut Dimensionnel (3 fois) // Passif : Tous les effets +1 tour ! # Invisible into dédoublement, mais double invisi 100%"
+    ],
+    "stats": "7,11,17,11,19",
+    "desc": "Ezelin trop cute aux cheveux violets, un peu enfantine en apparence mais très déterminée et douée. A un passif avec la Beholder",
+    "infos": "Faible au tranchant et au feu // Gameplay Akala \"Je joue 2 fois!\"",
+    "drop": "rare : Robe étoilée renforcée, très rare : Bâton Quartz d'Automne"
   }
 }

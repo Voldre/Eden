@@ -214,7 +214,7 @@
           "nom": "Attaque Furieuse",
           "stat": "Dextérité",
           "montantFixe": "2D6",
-          "montantVariable": 6,
+          "montantVariable": 7,
           "type": "Degat",
           "portee": "AoE",
           "effet": "",
@@ -260,9 +260,9 @@
           "duree": 0
         },
         {
-          "nom": "Attaque Furieuse / Griffure Noire",
+          "nom": "Griffure Noire (Atk Furieuse)",
           "stat": "Dextérité/Force",
-          "montantFixe": "2D6 (+5 si Attaque Furieuse)",
+          "montantFixe": "2D6 (+5)",
           "montantVariable": 2,
           "type": "Degat Malus",
           "portee": "AoE",
@@ -540,7 +540,7 @@
     },
     {
       "guilde": "Légion Saphir",
-      "pv": 20,
+      "pv": 30,
       "montantVariable": { "Mono": 1, "AoE": 0 },
       "montantEffet": { "Mono": 1, "AoE": 0 },
       "duree": 0
