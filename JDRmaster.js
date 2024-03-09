@@ -1,5 +1,5 @@
 import { skillsJSON, eqptJSON, masterJSON, enemyJSON, enemyGenericJSON, statsJSON, persosJSON } from "./JDRstore";
-import { callPHP, isTextInText, toastNotification } from "./utils";
+import { callPHP, isTextInText, toastNotification, unformatText } from "./utils";
 
 // load notes
 document.querySelector(".notes").value = masterJSON.notes;
@@ -98,20 +98,9 @@ const enemyWeakness = Object.values(enemyJSON).map((enemy) => enemy.infos);
 const elementsCount = {};
 
 elements.forEach((element) => {
-  const fullText = JSON.stringify(enemyWeakness)
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .trim();
+  const fullText = unformatText(JSON.stringify(enemyWeakness));
   // The g in the regular expression (meaning "g"lobal) says to search the whole string rather than just find the first occurrence
-  const regex = new RegExp(
-    element
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .toLowerCase()
-      .trim(),
-    "g"
-  ); // Regex for the element in global
+  const regex = new RegExp(unformatText(element), "g"); // Regex for the element in global
   const count = (fullText.match(regex) || []).length;
   elementsCount[element] = count;
 });
