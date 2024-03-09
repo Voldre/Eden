@@ -1,10 +1,17 @@
-import { skillsJSON, eqptJSON, masterJSON, enemyJSON, enemyGenericJSON, statsJSON } from "./JDRstore";
+import { skillsJSON, eqptJSON, masterJSON, enemyJSON, enemyGenericJSON, statsJSON, persosJSON } from "./JDRstore";
 import { callPHP, isTextInText, toastNotification } from "./utils";
 
 // load notes
 document.querySelector(".notes").value = masterJSON.notes;
 
 console.log("Enemy JSON", enemyJSON);
+
+console.log(
+  "Persos JSON",
+  Object.entries(persosJSON).map((perso) => {
+    return { "n°": parseInt(perso[0]) + 1, p: perso[1].nom };
+  })
+);
 
 if (window.location.href.includes("html")) {
   console.log("Page must not be read in .html, use .php instead");
@@ -14,7 +21,7 @@ if (window.location.href.includes("html")) {
 var allSlots;
 function updateSlots() {
   var enemiesList = [...document.querySelectorAll(".infoEnnemi")].filter(
-    (infoE) => infoE.querySelector(".ennemi").value != ""
+    (infoE) => infoE.querySelector("#pvmax").value != ""
   );
   var persosList = [...document.querySelectorAll(".perso")].filter((persoE) => persoE.children[0].value != "");
   allSlots = [...enemiesList, ...persosList] || [document.querySelectorAll(".infoEnnemi")];
@@ -84,18 +91,28 @@ document.addEventListener(
 );
 
 // prettier-ignore
-const elements = ["ontond", "ranch", "perç", "perc", "feu", "lace", "oudre", "ature", "énèbre", "umière",];
+const elements = ["ontond", "ranch", "perç", "feu", "lace", "oudre", "ature", "énèbre", "umière",];
 
-var enemyWeakness = Object.values(enemyJSON).map((enemy) => enemy.infos);
+const enemyWeakness = Object.values(enemyJSON).map((enemy) => enemy.infos);
 
-var elementsCount = {};
+const elementsCount = {};
 
 elements.forEach((element) => {
+  const fullText = JSON.stringify(enemyWeakness)
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
   // The g in the regular expression (meaning "g"lobal) says to search the whole string rather than just find the first occurrence
-  var fullText = JSON.stringify(enemyWeakness);
-  var regex = new RegExp(element, "g"); // Regex for the element in global
-  var count = (fullText.match(regex) || []).length;
-  // var count = (temp.match(/is/g) || []).length;
+  const regex = new RegExp(
+    element
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .trim(),
+    "g"
+  ); // Regex for the element in global
+  const count = (fullText.match(regex) || []).length;
   elementsCount[element] = count;
 });
 console.log("Enemies Weaknesses :");
@@ -130,20 +147,20 @@ document.querySelector("#filtre").addEventListener("change", (e) => {
   });
 });
 [...document.querySelectorAll(".enemyDesc")].forEach((descE) => {
-  descE.addEventListener("click", () => {
-    if (descE.style.maxHeight === "10px") {
-      descE.style.backgroundColor = "";
-      descE.style.maxHeight = "200px";
-    } else {
-      descE.style.backgroundColor = "rgba(36, 36, 106, 0.5)";
-      descE.style.maxHeight = "10px";
-    }
-  });
+  descE.addEventListener("click", () => toggleDesc(descE));
 });
 
-function loadEnemy(indexEnemy, ennemiElement, genericEnemy = null) {
-  updateSlots();
+function toggleDesc(descE) {
+  if (descE.style.maxHeight === "10px") {
+    descE.style.backgroundColor = "";
+    descE.style.maxHeight = "200px";
+  } else {
+    descE.style.backgroundColor = "rgba(36, 36, 106, 0.5)";
+    descE.style.maxHeight = "10px";
+  }
+}
 
+function loadEnemy(indexEnemy, ennemiElement, genericEnemy = null) {
   const enemyData = genericEnemy || enemyJSON[indexEnemy];
 
   if (!enemyData) {
@@ -202,6 +219,8 @@ function loadEnemy(indexEnemy, ennemiElement, genericEnemy = null) {
     var competence = [...ennemiElement.querySelectorAll(".competence")][index];
     competence.innerText = skill;
   });
+
+  updateSlots();
 }
 
 // EQPTS
@@ -280,26 +299,43 @@ const eqptFilter = () => {
 // Add new enemy (4th)
 
 document.querySelector("#newEnemy").addEventListener("click", () => {
-  var allEnemies = [...document.querySelectorAll(".infoEnnemi")];
+  const allEnemies = [...document.querySelectorAll(".infoEnnemi")];
 
-  if (allEnemies[2].checkVisibility() == false) {
-    // Mobile view
-    if (allEnemies[3].style.display == "none") {
-      allEnemies[3].style.display = "block";
-      document.querySelector(".combat").style.gridTemplateColumns = "50vw 50vw";
-    } else {
-      allEnemies[3].style.display = "none";
-      document.querySelector(".combat").style.gridTemplateColumns = "99vw";
-    }
+  const lastEnemy = allEnemies[allEnemies.length - 1];
+  if (allEnemies.length > 5) {
+    lastEnemy.remove();
   } else {
-    // Desktop view
-    if (allEnemies[3].style.display == "none") {
-      allEnemies[3].style.display = "block";
-      document.querySelector(".combat").style.gridTemplateColumns = "25vw 25vw 25vw 25vw";
-    } else {
-      allEnemies[3].style.display = "none";
-      document.querySelector(".combat").style.gridTemplateColumns = "33vw 33vw 33vw";
-    }
+    const newEnemyE = lastEnemy.cloneNode(true);
+    newEnemyE.id = "e" + allEnemies.length;
+
+    // Add event listeners
+    // Classic enemy on select
+    newEnemyE.querySelector(".ennemi").addEventListener("change", (e) => {
+      loadEnemy(e.target.selectedIndex, newEnemyE);
+      toastNotification("Chargement de l'ennemi réussi : " + e.target.value);
+    });
+
+    // Next turn button
+    newEnemyE.querySelector(".nextTurn").addEventListener("click", () => nextTurn());
+
+    // hide desc
+    const descE = newEnemyE.querySelector(".enemyDesc");
+    descE.addEventListener("click", () => toggleDesc(descE));
+
+    // Switch kind of enemy with visual text
+    newEnemyE.querySelector(".visuel").addEventListener("click", (e) => {
+      const enemyTypeE = e.target.closest(".infoEnnemi").querySelector(".enemyType");
+      [...enemyTypeE.children].map((child) => child.classList.toggle("hide"));
+    });
+
+    // Generic enemy on selects
+    const genericE = newEnemyE.querySelector(".generic");
+    const selectElements = [...genericE.children];
+    selectElements.forEach((selectE) => {
+      selectE.addEventListener("change", () => handleGenericSelectChange(selectElements));
+    });
+
+    document.querySelector(".ennemis").append(newEnemyE);
   }
 });
 
@@ -400,9 +436,9 @@ function handleGenericSelectChange(selectElements) {
 
     const duree = s.duree + rang.duree + guilde.duree;
 
-    return `${s.nom} : ${s.type} ${s.montantFixe}${montantVarTot ? ` +${montantVarTot}` : ""}, ${s.effet}${
+    return `${s.nom} : ${s.type} ${s.montantFixe}${s.montantFixe ? ` +${montantVarTot}` : ""}, ${s.effet}${
       s.montantEffet ? montantEffetTot : ""
-    }${s.duree ? ` sur ${duree} tours` : ""}`;
+    }${s.duree ? ` sur ${duree} tours` : ""} ${s.portee} : ${s.stat}`;
   });
 
   const statsName = ["Force", "Dextérité", "Intelligence", "Charisme", "Esprit"];
@@ -411,15 +447,13 @@ function handleGenericSelectChange(selectElements) {
   const enemyData = {
     visuel3D: "Switch...",
     nom: "",
-    pvmax: stats["PV"] + raceStats["PV"] + rang["pv"] + guilde["pv"],
+    pvmax: stats["PV"] * 2 + raceStats["PV"] + rang["pv"] + guilde["pv"],
     skills: skills,
     stats: statsValues.join(","),
     desc: "",
     infos: "",
     drop: "",
   };
-
-  console.log(enemyData);
 
   loadEnemy(0, selectElements[0].closest(".infoEnnemi"), enemyData);
 }
@@ -429,7 +463,6 @@ function addOptions(data, propName, selectE) {
   option.value = "";
   option.innerText = "";
   selectE.append(option);
-  console.log(data);
   Object.values(data).forEach((e) => {
     var option = document.createElement("option");
     option.value = e[propName];

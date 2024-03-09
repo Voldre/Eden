@@ -7,7 +7,7 @@
         <button id="allowSave" class="hide">Autoriser la Save</button>
         <button id="save">Save les notes</button>
         <button id="saveBackup">Save les persos en backup</button>
-        <button id="newEnemy">Ajout 4eme ennemi</button>
+        <button id="newEnemy">Ajout ennemi</button>
     </div>
     <div class="playersInfo notInMobile">
         <input type="text" id="pList" style="width:125px"></input><button name="updatePInfo" id="updatePInfo">Update</button>  &nbsp; Nb P : <input type="number" name="nbP" id="nbP" value="3" style="width:10px"></input>, PV et DGT : <span id="variation"></span>
@@ -15,277 +15,208 @@
     </div>
     <br/>
     <div class="combat">
-        <!-- mettre 2 ennemis sur une même ligne ? -->
-        <div class="infoEnnemi" id="e0">
-            <div class="enemyType" >
-                <div class="classic">
-                <select name="ennemi" class="ennemi"></select>
-                <img class="icon" src="" alt="">
+        <div class="ennemis">
+            <div class="infoEnnemi" id="e0">
+                <div class="enemyType" >
+                    <div class="classic">
+                    <select name="ennemi" class="ennemi"></select>
+                    <img class="icon" src="" alt="">
+                    </div>
+                    <div class="generic hide">
+                    <select name="classe" class="classe"></select>
+                    <select name="race" class="race"></select>
+                    <select name="rang" class="rang"></select>
+                    <select name="guilde" class="guilde"></select>
+                    </div>
                 </div>
-                <div class="generic hide">
-                <select name="classe" class="classe"></select>
-                <select name="race" class="race"></select>
-                <select name="rang" class="rang"></select>
-                <select name="guilde" class="guilde"></select>
-                </div>
-            </div>
-            <p class="visuel">Switch...</p>
-            <br/>
-            <input style='width: 38px;' type='number' id="pv" name="pv"></input>
-            <input style='width: 38px;' type='number' id="pvmax" name="pvmax"></input>
-            <label for="pv">PV/Max</label><img src="images/uiiconPNG/combat_boss.png" id="boss_icon" class="hide icon" style="float:right" />
-            <br/>
-            <p class="competence"></p>
-            <p class="competence"></p>
-            <p class="competence"></p>
-            <p class="competence"></p>
-            <div class="stats">
-                <div class="stat" ><label for="force">Force</label>
-                    <input type='number' min="1" max="17" id="force" name="force"></input>
-                    <input type='number' min="-10" max="10" class="statB"></input>
-                </div>
-                <div class="stat" ><label for="dexté">Dextérité</label>
-                    <input type='number' min="1" max="17" id="dexté" name="dexté"></input>
-                    <input type='number' min="-10" max="10" class="statB"></input>
-                </div>
-                <div class="stat" ><label for="intel">Intelligence</label>
-                    <input type='number' min="1" max="17" id="intel" name="intel"></input>
-                    <input type='number' min="-10" max="10" class="statB"></input>
-                </div>
-                <div class="stat" ><label for="charisme">Charisme</label>
-                    <input type='number' min="1" max="17" id="charisme" name="charisme"></input>
-                    <input type='number' min="-10" max="10" class="statB"></input>
-                </div>
-                <div class="stat" ><label for="esprit">Esprit</label>
-                    <input type='number' min="1" max="17" id="esprit" name="esprit"></input>
-                    <input type='number' min="-10" max="10" class="statB"></input>
-                </div>
-            </div>
-            <p id="infos"></p>
-            <input type="text" class="commentaire" placeholder="est étourdi, attiré par, enragé, ... prépare une ataque..."></input>
-            <button name="nextTurn" class="nextTurn" id="currentTurnE">+</button>
-            <br/>
-            <div id="buffs">
-                <input type="number"/>
-                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                <p class="visuel">Switch...</p>
                 <br/>
-                <input type="number"/>
-                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                <input style='width: 38px;' type='number' id="pv" name="pv"></input>
+                <input style='width: 38px;' type='number' id="pvmax" name="pvmax"></input>
+                <label for="pv">PV/Max</label><img src="images/uiiconPNG/combat_boss.png" id="boss_icon" class="hide icon" style="float:right" />
                 <br/>
-                <input type="number"/>
-                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                <p class="competence"></p>
+                <p class="competence"></p>
+                <p class="competence"></p>
+                <p class="competence"></p>
+                <div class="stats">
+                    <div class="stat" ><label for="force">Force</label>
+                        <input type='number' min="1" max="17" id="force" name="force"></input>
+                        <input type='number' min="-10" max="10" class="statB"></input>
+                    </div>
+                    <div class="stat" ><label for="dexté">Dextérité</label>
+                        <input type='number' min="1" max="17" id="dexté" name="dexté"></input>
+                        <input type='number' min="-10" max="10" class="statB"></input>
+                    </div>
+                    <div class="stat" ><label for="intel">Intelligence</label>
+                        <input type='number' min="1" max="17" id="intel" name="intel"></input>
+                        <input type='number' min="-10" max="10" class="statB"></input>
+                    </div>
+                    <div class="stat" ><label for="charisme">Charisme</label>
+                        <input type='number' min="1" max="17" id="charisme" name="charisme"></input>
+                        <input type='number' min="-10" max="10" class="statB"></input>
+                    </div>
+                    <div class="stat" ><label for="esprit">Esprit</label>
+                        <input type='number' min="1" max="17" id="esprit" name="esprit"></input>
+                        <input type='number' min="-10" max="10" class="statB"></input>
+                    </div>
+                </div>
+                <p id="infos"></p>
+                <input type="text" class="commentaire" placeholder="est étourdi, attiré par, enragé, ... prépare une ataque..."></input>
+                <button name="nextTurn" class="nextTurn" id="currentTurnE">+</button>
                 <br/>
-                <input type="number"/>
-                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
-            </div>
-            <div class="enemyDesc">
-            <p id="drop"></p>
-            <p id="desc"></p>
-            </div>
-        </div>
-        <div class="infoEnnemi notInMobile" id="e1">
-            <div class="enemyType" >
-                <div class="classic">
-                <select name="ennemi" class="ennemi"></select>
-                <img class="icon" src="" alt="">
+                <div id="buffs">
+                    <input type="number"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                    <br/>
+                    <input type="number"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                    <br/>
+                    <input type="number"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                    <br/>
+                    <input type="number"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
                 </div>
-                <div class="generic hide">
-                <select name="classe" class="classe"></select>
-                <select name="race" class="race"></select>
-                <select name="rang" class="rang"></select>
-                <select name="guilde" class="guilde"></select>
+                <div class="enemyDesc">
+                <p id="drop"></p>
+                <p id="desc"></p>
                 </div>
             </div>
-            <p class="visuel">Switch...</p>
-            <br/>
-            <input style='width: 38px;' type='number' id="pv" name="pv"></input>
-            <input style='width: 38px;' type='number' id="pvmax" name="pvmax"></input>
-            <label for="pv">PV/Max</label><img src="images/uiiconPNG/combat_boss.png" id="boss_icon" class="hide icon" style="float:right" />
-            <br/>
-            <p class="competence"></p>
-            <p class="competence"></p>
-            <p class="competence"></p>
-            <p class="competence"></p>
-            <div class="stats">
-                <div class="stat" ><label for="force">Force</label>
-                    <input type='number' min="1" max="17" id="force" name="force"></input>
-                    <input type='number' min="-10" max="10" class="statB"></input>
+            <div class="infoEnnemi notInMobile" id="e1">
+                <div class="enemyType" >
+                    <div class="classic">
+                    <select name="ennemi" class="ennemi"></select>
+                    <img class="icon" src="" alt="">
+                    </div>
+                    <div class="generic hide">
+                    <select name="classe" class="classe"></select>
+                    <select name="race" class="race"></select>
+                    <select name="rang" class="rang"></select>
+                    <select name="guilde" class="guilde"></select>
+                    </div>
                 </div>
-                <div class="stat" ><label for="dexté">Dextérité</label>
-                    <input type='number' min="1" max="17" id="dexté" name="dexté"></input>
-                    <input type='number' min="-10" max="10" class="statB"></input>
-                </div>
-                <div class="stat" ><label for="intel">Intelligence</label>
-                    <input type='number' min="1" max="17" id="intel" name="intel"></input>
-                    <input type='number' min="-10" max="10" class="statB"></input>
-                </div>
-                <div class="stat" ><label for="charisme">Charisme</label>
-                    <input type='number' min="1" max="17" id="charisme" name="charisme"></input>
-                    <input type='number' min="-10" max="10" class="statB"></input>
-                </div>
-                <div class="stat" ><label for="esprit">Esprit</label>
-                    <input type='number' min="1" max="17" id="esprit" name="esprit"></input>
-                    <input type='number' min="-10" max="10" class="statB"></input>
-                </div>
-            </div>
-            <p id="infos"></p>
-            <input type="text" class="commentaire" placeholder="est étourdi, attiré par, enragé, ... prépare une ataque..."></input>
-            <button name="nextTurn" class="nextTurn hide">+</button>
-            <br/>
-            <div id="buffs">
-                <input type="number"/>
-                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                <p class="visuel">Switch...</p>
                 <br/>
-                <input type="number"/>
-                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                <input style='width: 38px;' type='number' id="pv" name="pv"></input>
+                <input style='width: 38px;' type='number' id="pvmax" name="pvmax"></input>
+                <label for="pv">PV/Max</label><img src="images/uiiconPNG/combat_boss.png" id="boss_icon" class="hide icon" style="float:right" />
                 <br/>
-                <input type="number"/>
-                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                <p class="competence"></p>
+                <p class="competence"></p>
+                <p class="competence"></p>
+                <p class="competence"></p>
+                <div class="stats">
+                    <div class="stat" ><label for="force">Force</label>
+                        <input type='number' min="1" max="17" id="force" name="force"></input>
+                        <input type='number' min="-10" max="10" class="statB"></input>
+                    </div>
+                    <div class="stat" ><label for="dexté">Dextérité</label>
+                        <input type='number' min="1" max="17" id="dexté" name="dexté"></input>
+                        <input type='number' min="-10" max="10" class="statB"></input>
+                    </div>
+                    <div class="stat" ><label for="intel">Intelligence</label>
+                        <input type='number' min="1" max="17" id="intel" name="intel"></input>
+                        <input type='number' min="-10" max="10" class="statB"></input>
+                    </div>
+                    <div class="stat" ><label for="charisme">Charisme</label>
+                        <input type='number' min="1" max="17" id="charisme" name="charisme"></input>
+                        <input type='number' min="-10" max="10" class="statB"></input>
+                    </div>
+                    <div class="stat" ><label for="esprit">Esprit</label>
+                        <input type='number' min="1" max="17" id="esprit" name="esprit"></input>
+                        <input type='number' min="-10" max="10" class="statB"></input>
+                    </div>
+                </div>
+                <p id="infos"></p>
+                <input type="text" class="commentaire" placeholder="est étourdi, attiré par, enragé, ... prépare une ataque..."></input>
+                <button name="nextTurn" class="nextTurn hide">+</button>
                 <br/>
-                <input type="number"/>
-                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
-            </div>
-            <div class="enemyDesc">
-            <p id="drop"></p>
-            <p id="desc"></p>
-            </div>
-        </div>
-        
-        <div class="infoEnnemi notInMobile" id="e2">
-            <div class="enemyType" >
-                <div class="classic">
-                <select name="ennemi" class="ennemi"></select>
-                <img class="icon" src="" alt="">
+                <div id="buffs">
+                    <input type="number"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                    <br/>
+                    <input type="number"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                    <br/>
+                    <input type="number"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                    <br/>
+                    <input type="number"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
                 </div>
-                <div class="generic hide">
-                <select name="classe" class="classe"></select>
-                <select name="race" class="race"></select>
-                <select name="rang" class="rang"></select>
-                <select name="guilde" class="guilde"></select>
+                <div class="enemyDesc">
+                <p id="drop"></p>
+                <p id="desc"></p>
                 </div>
             </div>
-            <p class="visuel">Switch...</p>
-            <br/>
-            <input style='width: 38px;' type='number' id="pv" name="pv"></input>
-            <input style='width: 38px;' type='number' id="pvmax" name="pvmax"></input>
-            <label for="pv">PV/Max</label><img src="images/uiiconPNG/combat_boss.png" id="boss_icon" class="hide icon" style="float:right" />
-            <br/>
-            <p class="competence"></p>
-            <p class="competence"></p>
-            <p class="competence"></p>
-            <p class="competence"></p>
-            <div class="stats">
-                <div class="stat" ><label for="force">Force</label>
-                    <input type='number' min="1" max="17" id="force" name="force"></input>
-                    <input type='number' min="-10" max="10" class="statB"></input>
+            <div class="infoEnnemi notInMobile" id="e2">
+                <div class="enemyType" >
+                    <div class="classic">
+                    <select name="ennemi" class="ennemi"></select>
+                    <img class="icon" src="" alt="">
+                    </div>
+                    <div class="generic hide">
+                    <select name="classe" class="classe"></select>
+                    <select name="race" class="race"></select>
+                    <select name="rang" class="rang"></select>
+                    <select name="guilde" class="guilde"></select>
+                    </div>
                 </div>
-                <div class="stat" ><label for="dexté">Dextérité</label>
-                    <input type='number' min="1" max="17" id="dexté" name="dexté"></input>
-                    <input type='number' min="-10" max="10" class="statB"></input>
-                </div>
-                <div class="stat" ><label for="intel">Intelligence</label>
-                    <input type='number' min="1" max="17" id="intel" name="intel"></input>
-                    <input type='number' min="-10" max="10" class="statB"></input>
-                </div>
-                <div class="stat" ><label for="charisme">Charisme</label>
-                    <input type='number' min="1" max="17" id="charisme" name="charisme"></input>
-                    <input type='number' min="-10" max="10" class="statB"></input>
-                </div>
-                <div class="stat" ><label for="esprit">Esprit</label>
-                    <input type='number' min="1" max="17" id="esprit" name="esprit"></input>
-                    <input type='number' min="-10" max="10" class="statB"></input>
-                </div>
-            </div>
-            <p id="infos"></p>
-            <input type="text" class="commentaire" placeholder="est étourdi, attiré par, enragé, ... prépare une ataque..."></input>
-            <button name="nextTurn" class="nextTurn hide">+</button>
-            <br/>
-            <div id="buffs">
-                <input type="number"/>
-                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                <p class="visuel">Switch...</p>
                 <br/>
-                <input type="number"/>
-                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                <input style='width: 38px;' type='number' id="pv" name="pv"></input>
+                <input style='width: 38px;' type='number' id="pvmax" name="pvmax"></input>
+                <label for="pv">PV/Max</label><img src="images/uiiconPNG/combat_boss.png" id="boss_icon" class="hide icon" style="float:right" />
                 <br/>
-                <input type="number"/>
-                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                <p class="competence"></p>
+                <p class="competence"></p>
+                <p class="competence"></p>
+                <p class="competence"></p>
+                <div class="stats">
+                    <div class="stat" ><label for="force">Force</label>
+                        <input type='number' min="1" max="17" id="force" name="force"></input>
+                        <input type='number' min="-10" max="10" class="statB"></input>
+                    </div>
+                    <div class="stat" ><label for="dexté">Dextérité</label>
+                        <input type='number' min="1" max="17" id="dexté" name="dexté"></input>
+                        <input type='number' min="-10" max="10" class="statB"></input>
+                    </div>
+                    <div class="stat" ><label for="intel">Intelligence</label>
+                        <input type='number' min="1" max="17" id="intel" name="intel"></input>
+                        <input type='number' min="-10" max="10" class="statB"></input>
+                    </div>
+                    <div class="stat" ><label for="charisme">Charisme</label>
+                        <input type='number' min="1" max="17" id="charisme" name="charisme"></input>
+                        <input type='number' min="-10" max="10" class="statB"></input>
+                    </div>
+                    <div class="stat" ><label for="esprit">Esprit</label>
+                        <input type='number' min="1" max="17" id="esprit" name="esprit"></input>
+                        <input type='number' min="-10" max="10" class="statB"></input>
+                    </div>
+                </div>
+                <p id="infos"></p>
+                <input type="text" class="commentaire" placeholder="est étourdi, attiré par, enragé, ... prépare une ataque..."></input>
+                <button name="nextTurn" class="nextTurn hide">+</button>
                 <br/>
-                <input type="number"/>
-                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
-            </div>
-            <div class="enemyDesc">
-            <p id="drop"></p>
-            <p id="desc"></p>
-            </div>
-        </div>
-        <div class="infoEnnemi" id="e3" style="display:none">
-            <div class="enemyType" >
-                <div class="classic">
-                <select name="ennemi" class="ennemi"></select>
-                <img class="icon" src="" alt="">
+                <div id="buffs">
+                    <input type="number"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                    <br/>
+                    <input type="number"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                    <br/>
+                    <input type="number"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                    <br/>
+                    <input type="number"/>
+                    <input type="text" class="buff" placeholder="effet / montant / durée"></input>
                 </div>
-                <div class="generic hide">
-                <select name="classe" class="classe"></select>
-                <select name="race" class="race"></select>
-                <select name="rang" class="rang"></select>
-                <select name="guilde" class="guilde"></select>
+                <div class="enemyDesc">
+                <p id="drop"></p>
+                <p id="desc"></p>
                 </div>
-            </div>
-            <p class="visuel">Switch...</p>
-            <br/>
-            <input style='width: 38px;' type='number' id="pv" name="pv"></input>
-            <input style='width: 38px;' type='number' id="pvmax" name="pvmax"></input>
-            <label for="pv">PV/Max</label><img src="images/uiiconPNG/combat_boss.png" id="boss_icon" class="hide icon" style="float:right" />
-            <br/>
-            <p class="competence"></p>
-            <p class="competence"></p>
-
-            <p class="competence"></p>
-            <p class="competence"></p>
-            
-            <div class="stats">
-                <div class="stat" ><label for="force">Force</label>
-                    <input type='number' min="1" max="17" id="force" name="force"></input>
-                    <input type='number' min="-10" max="10" class="statB"></input>
-                </div>
-                <div class="stat" ><label for="dexté">Dextérité</label>
-                    <input type='number' min="1" max="17" id="dexté" name="dexté"></input>
-                    <input type='number' min="-10" max="10" class="statB"></input>
-                </div>
-                <div class="stat" ><label for="intel">Intelligence</label>
-                    <input type='number' min="1" max="17" id="intel" name="intel"></input>
-                    <input type='number' min="-10" max="10" class="statB"></input>
-                </div>
-                <div class="stat" ><label for="charisme">Charisme</label>
-                    <input type='number' min="1" max="17" id="charisme" name="charisme"></input>
-                    <input type='number' min="-10" max="10" class="statB"></input>
-                </div>
-                <div class="stat" ><label for="esprit">Esprit</label>
-                    <input type='number' min="1" max="17" id="esprit" name="esprit"></input>
-                    <input type='number' min="-10" max="10" class="statB"></input>
-                </div>
-            </div>
-            <p id="infos"></p>
-            <input type="text" class="commentaire" placeholder="est étourdi, attiré par, enragé, ... prépare une ataque..."></input>
-            <button name="nextTurn" class="nextTurn hide">+</button>
-            <br/>
-            <div id="buffs">
-                <input type="number"/>
-                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
-                <br/>
-                <input type="number"/>
-                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
-                <br/>
-                <input type="number"/>
-                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
-                <br/>
-                <input type="number"/>
-                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
-            </div>
-            <div class="enemyDesc">
-            <p id="drop"></p>
-            <p id="desc"></p>
-            </div>
+            </div>    
         </div>
         <div class="infoPersos">
             <div class="perso" id="p0">
@@ -837,6 +768,12 @@
                     <p id="best">Best Team - Curie (Overlord NPC Battle)</p>
                     <audio loop controls="">
                         <source src="bgm/Best Team - Overlord NPC Battle.mp3" type="audio/mp3">
+                    </audio>
+                </div>
+                <div>
+                    <p id="divine">Force Divine (Mael - SDS)</p>
+                    <audio loop controls="">
+                        <source src="bgm/Force Divine (Mael - SDS).mp3" type="audio/mp3">
                     </audio>
                 </div>
                 <div>

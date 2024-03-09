@@ -444,7 +444,7 @@
   "61": {
     "nom": "Tunique de Delphes",
     "desc": "Une tunique cr\u00e9\u00e9e par les locaux de la For\u00eat de Delphes",
-    "effet": "PV Soin re\u00e7u +4",
+    "effet": "PV Soin re\u00e7u +3",
     "montant": "D\u00e9g\u00e2t -3",
     "icone": "A20028"
   },
@@ -1455,8 +1455,8 @@
   "202": {
     "nom": "Poignard de Skleros",
     "desc": "Un poignard fait de glace extr\u00eamement solide. D\u00e9g\u00e2t physique chang\u00e9 en d\u00e9g\u00e2t de glace. Le porteur peut subir des engelures.",
-    "effet": "Echec critique : -10 PV",
-    "montant": "D\u00e9g\u00e2t +7 (Element : Glace)",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +7 (Element : Glace), si \u00e9chec critique : -15 PV",
     "icone": "W11302"
   },
   "203": {
@@ -1648,7 +1648,7 @@
   },
   "228": {
     "nom": "Ep\u00e9e du H\u00e9ros",
-    "desc": "Une \u00e9p\u00e9e port\u00e9e par un grand h\u00e9ros ma\u00eetrisant plusieurs techniques. Appartient \u00e0 la Panoplie du \"H\u00e9ros\".",
+    "desc": "Une \u00e9p\u00e9e port\u00e9e par un grand h\u00e9ros du passé, des rumeurs disent qu'il s'agit du premier Chevalier du Chaos. Appartient \u00e0 la Panoplie du \"H\u00e9ros\".",
     "effet": "Force +1, Intel +1",
     "montant": "D\u00e9g\u00e2t +4 (+2 si panoplie)",
     "icone": "W10604"
@@ -2972,5 +2972,54 @@
     "effet": "Dext\u00e9rit\u00e9 +1",
     "montant": "En invisibilit\u00e9 : chance d'\u00eatre touch\u00e9 -3",
     "icone": "A50013"
+  },
+  "407": {
+    "nom": "Bague Enchant\u00e9e",
+    "desc": "Cette bague assez rudimentaire peut \u00eatre tr\u00e8s utile pour beaucoup de personnes.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +2, Esprit +1",
+    "icone": "A00004"
+  },
+  "408": {
+    "nom": "Robe \u00e9toil\u00e9e renforc\u00e9e",
+    "desc": "Une version am\u00e9lior\u00e9e de la robe \u00e9toil\u00e9e, con\u00e7ue pour des magiciens de haut niveau",
+    "effet": "Intelligence +1",
+    "montant": "D\u00e9g\u00e2t -3, PV +10",
+    "icone": "A20032b"
+  },
+  "409": {
+    "nom": "Gants du Sniper",
+    "desc": "Gants con\u00e7us pour am\u00e9liorer les tirs",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t per\u00e7ant +3, Dext\u00e9rit\u00e9 +1",
+    "icone": "A40017"
+  },
+  "410": {
+    "nom": "Brassard sacr\u00e9",
+    "desc": "Les templiers et clercs sont tr\u00e8s friants de ce brassard extr\u00eamement utile !",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t lumi\u00e8re +2, d\u00e9g\u00e2t re\u00e7u -2",
+    "icone": "A40033"
+  },
+  "411": {
+    "nom": "Pendentif du risque",
+    "desc": "Ce pendentif sombre g\u00e9n\u00e8re de l'adrenaline chez son porteur lorsque sa vie est en danger, utile mais risqu\u00e9 !",
+    "effet": "",
+    "montant": "Si PV <33%, D\u00e9g\u00e2t +4 et Soin +3",
+    "icone": "A00046d"
+  },
+  "412": {
+    "nom": "Cape de fuite",
+    "desc": "Cette cape est tr\u00e8s  utile lorsque la situation tourne mal, elle vous aidera \u00e0 survivre !",
+    "effet": "",
+    "montant": "Si PV < 33%, Esquive et Dext\u00e9rit\u00e9 +2",
+    "icone": "A60015"
+  },
+  "413": {
+    "nom": "Cotte du Survivant",
+    "desc": "Cette cotte de maille est r\u00e9put\u00e9e pour avoir sauv\u00e9 la vie \u00e0 un bon nombre de h\u00e9ros.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t -4, Blocage +1 (+1 si PV < 33%)",
+    "icone": "A20073"
   }
 }

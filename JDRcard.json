@@ -468,6 +468,14 @@
     "kindId": "m055b"
   },
   {
+    "id": 1051,
+    "value": 3,
+    "kind": "boss",
+    "name": "Zack - Foreur Fourbe",
+    "description": "Zumi pr\u00eat \u00e0 tout pour gagner sa croute, il est malicieux et ne manque pas de coups foireux.",
+    "kindId": "m047e"
+  },
+  {
     "id": 1201,
     "value": 1,
     "kind": "composant",
@@ -1431,6 +1439,38 @@
     "name": "Poils d'Alpaga",
     "description": "Ces poils appartiennent à un super Avocalpaga (ou pas...), mais à quoi cela peut bien servir ?",
     "kindId": "I002864"
+  },
+  {
+    "id": 1404,
+    "value": 1,
+    "kind": "composant",
+    "name": "Bois de Cerisier",
+    "description": "Ce bois est souvent utilisé pour créer des instruments, certains de ces arbres sont de très grandes qualités.",
+    "kindId": "I00191b"
+  },
+  {
+    "id": 1405,
+    "value": 1,
+    "kind": "composant",
+    "name": "Poudre de Ficus",
+    "description": "Cette poudre est issue d'un ficus, un arbustre aux propriétés curatives : utile pour supprimer des effets néfastes.",
+    "kindId": "i00588"
+  },
+  {
+    "id": 1406,
+    "value": 2,
+    "kind": "composant",
+    "name": "Poudre étoilée",
+    "description": "Cette poudre est issue d'ancienne météorite birllante tombée sur Ezur. Utile pour accentuer les effets.",
+    "kindId": "i00589"
+  },
+  {
+    "id": 1407,
+    "value": 2,
+    "kind": "composant",
+    "name": "Soie de tisseuse",
+    "description": "Cette soie très douce et résistante est issue d'araignée tisseuse, cela en fait une matière assez rare.",
+    "kindId": "I00289b"
   },
   {
     "id": 1501,
@@ -2981,6 +3021,61 @@
     "maps": [12],
     "enemies": [],
     "kindId": "items/i00794b",
+    "group": 3
+  },
+  {
+    "id": 1776,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Shkrouk l'effrayant",
+    "description": "Shkrouk a fait preuve d'un charisme hors-norme lui permettant de forcer les Zumis foreurs à juste se barrer et à ne pas chercher des noises, quel homme !",
+    "maps": [12],
+    "enemies": [],
+    "kindId": "skillIcon/E0143",
+    "group": 3
+  },
+  {
+    "id": 1777,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Intervention de Rad Ed",
+    "description": "Rad Ed cherchant à vaincre les Belliqueux à pu donner un coup de main et il le fallait. Les soins de Nyx ne suffisaient pas, Draigos est tombé deux fois, Leyla s'est refaite capturée, ... !",
+    "maps": [12],
+    "enemies": [],
+    "kindId": "skillIcon/E0844",
+    "group": 3
+  },
+  {
+    "id": 1778,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Lucius mode sérieux",
+    "description": "Alors que Leyla est en danger, Lucius accepte de se faire blesser... Pour mieux blesser l'ennemi ! Il utilise son sang pour perforer ses ennemis et le soin inverseur pour les condamner !",
+    "maps": [12],
+    "enemies": [],
+    "kindId": "skillIcon/E0830",
+    "group": 3
+  },
+  {
+    "id": 1779,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "La Veyda et la Symbardy",
+    "description": "Afin d'organiser correctement le concert pour la cagnotte de Gaazor, Nyx pense à demander de l'aide à une guilde : la Symbardy, les experts du divertissement et des évènements. Dont le beau Crimson en fait parti ;)",
+    "maps": [26],
+    "enemies": [],
+    "kindId": "skillIcon/E0712",
+    "group": 3
+  },
+  {
+    "id": 1780,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Shkrouk et Kibo",
+    "description": "Les deux grands esprits se rencontrent enfin grâce à leur point commun : Gaazor. Ils sont chez le Magistrat Xander pour plaider la cause de Gaazor. Hors, Kibo était sensé représentation la partie accusatrice, et pourtant...",
+    "maps": [1],
+    "enemies": [],
+    "kindId": "skillIcon/J513",
     "group": 3
   },
   {

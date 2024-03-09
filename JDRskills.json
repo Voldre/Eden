@@ -1152,7 +1152,7 @@
   },
   "135": {
     "nom": "D\u00e9doublement",
-    "desc": "Cr\u00e9e un double de soi avec les m\u00eames stats et buffs (\u00e0 l'invocation). Ses d\u00e9g\u00e2ts/soins et ses montants (invocation/buff/malus), ou (cas \u00e9ch\u00e9ant) la dur\u00e9e de sorts, sont divis\u00e9s par 2. Ses d\u00e9g\u00e2ts re\u00e7us touchent le porteur et sont aussi divis\u00e9s par 2 (avec armure/2).",
+    "desc": "Cr\u00e9e un double de soi avec les m\u00eames stats et buffs (\u00e0 l'invocation). La durée des sorts lancées sont divisées par 2, ou, cas échéant, ses d\u00e9g\u00e2ts/soins et ses montants (invocation/buff/malus), sont divis\u00e9s par 2. Ses d\u00e9g\u00e2ts re\u00e7us touchent le porteur et sont aussi divis\u00e9s par 2 (avec armure/2).",
     "effet": "Invocation",
     "montant": "Invoque un double de soi pendant 2 tours.",
     "icone": "E1042",
@@ -1172,7 +1172,7 @@
     "nom": "Instinct de Survie",
     "desc": "Le sang de dragon bouillonne et enclenche le mode survie pour son porteur. Effets - Embras\u00e9 : D\u00e9g\u00e2ts +3; D\u00e9moniaque : Blocage+1; Cach\u00e9 : Soin PV+3",
     "effet": "Buff et Soin",
-    "montant": "(Si PV <50%) Soin 1D4+2 pendant 3 tours (+ effet mode)",
+    "montant": "(Si PV <50%) Soin 1D4+2 (bonus des montants /2) pendant 3 tours (+ effet mode)",
     "icone": "E0583",
     "stat": "Force",
     "classe": ["Chev Dragon"]
