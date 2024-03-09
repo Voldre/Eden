@@ -1,5 +1,5 @@
 import { skillsJSON, skillsAwakenJSON, eqptJSON, persosJSON, galeryJSON, masterJSON } from "./JDRstore";
-import { callPHP, toastNotification, initDialog, parseEqptValue, parseEqptsByRegex } from "./utils";
+import { callPHP, toastNotification, initDialog, parseEqptsByRegex, unformatText } from "./utils";
 
 console.log("Skills JSON", skillsJSON);
 console.log("Persos JSON", persosJSON);
@@ -23,7 +23,7 @@ const elements = ["contondant", "tranchant", "perçant", "feu", "glace", "foudre
 
 const elementsCategories = elements.map((element) => {
   // Remove all accents (é,è,ç)
-  const labelElement = element.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  const labelElement = unformatText(element);
   // Dégât xxx + || Dégât de xxx + ... ?
   return { regex: [` ${element} +`], label: labelElement, img: true };
 });
@@ -521,10 +521,9 @@ const equipementsE = document.querySelector(".equipements");
   // Selected eqpt
   equipementE.children[0].addEventListener("change", (e) => {
     insertEqpt(equipementE, e.target.value);
-
-    const eqptsName = [...equipementsE.children].map((competenceE) => competenceE.children[0].value);
+    const eqptsName = [...equipementsE.children].map((equipementE) => equipementE.children[0].value);
     const persoEqpts = eqptsName.map((eqptName) =>
-      Object.values(eqptJSON).find((eqpt) => eqpt.nom.toLowerCase().trim() == eqptName.toLowerCase().trim())
+      Object.values(eqptJSON).find((eqpt) => unformatText(eqpt.nom) == unformatText(eqptName))
     );
     getAllRes(persoEqpts);
     createEquipmentSynthesis(persoEqpts);
@@ -541,9 +540,7 @@ const equipementsE = document.querySelector(".equipements");
 
 function insertEqpt(eqptElement, eqptName) {
   // Best update 18/08/2023 (finally !) : "la casse maj/min" the case (upper/lower) now doesn't matter !
-  var selectedEqpt = Object.values(eqptJSON).find(
-    (eqpt) => eqpt.nom.toLowerCase().trim() == eqptName.toLowerCase().trim()
-  );
+  var selectedEqpt = Object.values(eqptJSON).find((eqpt) => unformatText(eqpt.nom) == unformatText(eqptName));
   if (!selectedEqpt) {
     if (eqptName != "") {
       console.log(eqptName + " is not an eqpt (in the list)");
