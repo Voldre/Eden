@@ -439,6 +439,9 @@ function dicesAverageConversion(skill) {
   if (skill.includes("5D6")) {
     dices += 17.5;
   }
+  if (skill.includes("6D6")) {
+    dices += 21;
+  }
   if (skill.includes("1D4")) {
     dices += 2.5;
   }
@@ -473,6 +476,15 @@ function dicesConversion(skill) {
   }
   if (skill.includes("3D6")) {
     dices += Math.floor(Math.random() * 6 + 1) * 2 + Math.floor(Math.random() * 6 + 1);
+  }
+  if (skill.includes("4D6")) {
+    dices += Math.floor(Math.random() * 6 + 1) * 3 + Math.floor(Math.random() * 6 + 1);
+  }
+  if (skill.includes("5D6")) {
+    dices += Math.floor(Math.random() * 6 + 1) * 4 + Math.floor(Math.random() * 6 + 1);
+  }
+  if (skill.includes("6D6")) {
+    dices += Math.floor(Math.random() * 6 + 1) * 5 + Math.floor(Math.random() * 6 + 1);
   }
   if (skill.includes("1D4")) {
     dices += Math.floor(Math.random() * 4 + 1);
