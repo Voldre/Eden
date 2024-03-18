@@ -501,13 +501,11 @@ dialog::backdrop {
   width: 54vw;
 }
 .musique {
-  max-width: 545px;
   height: 110px;
   overflow-y: auto;
-  width: 54vw;
   border: 1px black solid;
-  margin: 2px;
-  margin-left: 10px;
+  margin: 2.5px;
+  gap: 2px;
 }
 .musique div {
   display: flex;
@@ -518,7 +516,7 @@ dialog::backdrop {
 }
 .musique div p {
   margin: auto;
-  max-width: 21vw;
+  max-width: 23vw;
 }
 
 .button-container {

@@ -466,6 +466,18 @@
     "map_r": -0.5,
     "bgm": 46
   },
+  "46": {
+    "name": "Mont Gowen",
+    "wmap_x": 47.5,
+    "wmap_y": 53,
+    "wmap": 0,
+    "map_x": -20,
+    "map_y": -60,
+    "map_z": 0,
+    "map_r": -0.5,
+    "bgm": 56,
+    "mobs": [73, 98, 139, 164]
+  },
   "51": {
     "name": "Dôme Céleste",
     "wmap_x": 14.4,

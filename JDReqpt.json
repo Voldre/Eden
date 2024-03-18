@@ -465,7 +465,7 @@
   "64": {
     "nom": "Hache D\u00e9fensive",
     "desc": "Une hache d\u00e9fendant son porteur",
-    "effet": "D\u00e9g\u00e2t re\u00e7u -1",
+    "effet": "D\u00e9g\u00e2t re\u00e7u -2",
     "montant": "D\u00e9g\u00e2t +5",
     "icone": "W20501"
   },
@@ -1177,7 +1177,7 @@
   "164": {
     "nom": "Katana Lame Noire",
     "desc": "Un Katana ancien forg\u00e9 \u00e0 partir du mat\u00e9riau le plus noir qui existe. Appartient \u00e0 la Panoplie Noireflammes (2 pi\u00e8ces)",
-    "effet": "",
+    "effet": "Element : T\u00e9n\u00e8bres",
     "montant": "D\u00e9g\u00e2t +10, (si panoplie : conversion Physique => T\u00e9n\u00e8bres)",
     "icone": "W21506"
   },
@@ -1395,7 +1395,7 @@
     "nom": "Cape Hypnotique",
     "desc": "Une cape poss\u00e9dant un oeil capable d'endormir les ennemis, tel un illusionniste",
     "effet": "Capacit\u00e9",
-    "montant": "1 fois par combat : Utilise Oeil Hypnotique (chance blocage : -3)",
+    "montant": "2 fois par combat : Oeil Hypnotique (res esprit -3)",
     "icone": "k60288",
     "access": "D4"
   },
@@ -1455,8 +1455,8 @@
   "202": {
     "nom": "Poignard de Skleros",
     "desc": "Un poignard fait de glace extr\u00eamement solide. D\u00e9g\u00e2t physique chang\u00e9 en d\u00e9g\u00e2t de glace. Le porteur peut subir des engelures.",
-    "effet": "",
-    "montant": "D\u00e9g\u00e2t +7 (Element : Glace), si \u00e9chec critique : -15 PV",
+    "effet": "Element : Glace",
+    "montant": "D\u00e9g\u00e2t +7, si \u00e9chec critique : -15 PV",
     "icone": "W11302"
   },
   "203": {
@@ -1542,7 +1542,7 @@
     "nom": "Tenue du Juge",
     "desc": "La rumeur raconte que cette tenue aurait appartenu au tout premier Juge Eveill\u00e9 de l'histoire",
     "effet": "D\u00e9g\u00e2t t\u00e9n\u00e8bres +2",
-    "montant": "D\u00e9g\u00e2t -5 (-6 si Juge)",
+    "montant": "D\u00e9g\u00e2t -5 (+1 si Juge)",
     "icone": "k21023"
   },
   "214": {
@@ -1643,12 +1643,12 @@
     "nom": "Grimoire des bourbes",
     "desc": "Un grimoire cr\u00e9\u00e9 par un puissant Magicien Anuran vivant aux Bourbes au temps de la grande guerre. On raconte qu'il aurait scell\u00e9 son \u00e2me \u00e0 l'int\u00e9rieur.",
     "effet": "Esprit +2",
-    "montant": "D\u00e9g\u00e2t +9",
+    "montant": "D\u00e9g\u00e2t +10",
     "icone": "W62402"
   },
   "228": {
     "nom": "Ep\u00e9e du H\u00e9ros",
-    "desc": "Une \u00e9p\u00e9e port\u00e9e par un grand h\u00e9ros du passé, des rumeurs disent qu'il s'agit du premier Chevalier du Chaos. Appartient \u00e0 la Panoplie du \"H\u00e9ros\".",
+    "desc": "Une \u00e9p\u00e9e port\u00e9e par un grand h\u00e9ros du pass\u00e9, des rumeurs disent qu'il s'agit du premier Chevalier du Chaos. Appartient \u00e0 la Panoplie du \"H\u00e9ros\".",
     "effet": "Force +1, Intel +1",
     "montant": "D\u00e9g\u00e2t +4 (+2 si panoplie)",
     "icone": "W10604"
@@ -1975,7 +1975,7 @@
     "nom": "Fl\u00fbte des Fleurs de Lune",
     "desc": "Une fl\u00fbte faite de p\u00e9tales et de tiges de fleurs de lune, ceux qui l\u2019entendent suivront aveugl\u00e9ment le joueur",
     "effet": "Capacit\u00e9",
-    "montant": "1 fois par combat : Contr\u00f4le de l'Esprit AoE",
+    "montant": "1 fois par combat : Contr\u00f4le de l'Esprit AoE (res esprit -2)",
     "icone": "I00154",
     "access": "D4"
   },
@@ -2159,7 +2159,7 @@
     "nom": "Poignard Quartz d'Automne",
     "desc": "Un poignard forg\u00e9 \u00e0 la m\u00e9thode Heldentod avec du Quartz d'Automne",
     "effet": "Dur\u00e9e des sorts +1",
-    "montant": "D\u00e9g\u00e2t +5",
+    "montant": "D\u00e9g\u00e2t +4",
     "icone": "W11306"
   },
   "296": {
@@ -2223,7 +2223,7 @@
     "desc": "Une cotte de maille, flexible et solide \u00e0 la fois, permet \u00e0 son porteur de mieux bloquer.",
     "effet": "Blocage +1",
     "montant": "D\u00e9g\u00e2t -4",
-    "icone": "A20076"
+    "icone": "A20073"
   },
   "305": {
     "nom": "Robe Elementaire",
@@ -2466,9 +2466,9 @@
   },
   "337": {
     "nom": "Hache Verd\u00e2tre",
-    "desc": "Une hache compos\u00e9e de r\u00e9sidus d'insectes, d'arbres et de plantes magiques.",
-    "effet": "D\u00e9g\u00e2t de Nature +3",
-    "montant": "D\u00e9g\u00e2t +10",
+    "desc": "Une hache compos\u00e9e de r\u00e9sidus d'insectes, d'arbres et de plantes magiques. Ces r\u00e9sidus impr\u00e8gnent les attaques physiques ex\u00e9cut\u00e9es.",
+    "effet": "Element : Nature",
+    "montant": "D\u00e9g\u00e2t +9, d\u00e9g\u00e2t de nature +3",
     "icone": "W23707"
   },
   "338": {
@@ -2822,7 +2822,7 @@
     "nom": "Grimoire Gravitationnel",
     "desc": "Ce grimoire poss\u00e8de un pouvoir unique, il est capable de ralentir sa cible en augmentant la gravit\u00e9.",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t +9, Si coup critique (1,2,3) : Dext\u00e9 -4 (2 tours)",
+    "montant": "D\u00e9g\u00e2t +10, Si coup critique (1,2,3) : Dext\u00e9 -4 (2 tours)",
     "icone": "W64803"
   },
   "386": {
@@ -3020,6 +3020,132 @@
     "desc": "Cette cotte de maille est r\u00e9put\u00e9e pour avoir sauv\u00e9 la vie \u00e0 un bon nombre de h\u00e9ros.",
     "effet": "",
     "montant": "D\u00e9g\u00e2t -4, Blocage +1 (+1 si PV < 33%)",
-    "icone": "A20073"
+    "icone": "A20076"
+  },
+  "414": {
+    "nom": "Dague de Molman",
+    "desc": "Dague ayant appartenu au d\u00e9funt Roi de Braider Molman, sa puissance n'est plus \u00e0 d\u00e9montrer",
+    "effet": "Dext\u00e9rit\u00e9 +1",
+    "montant": "D\u00e9g\u00e2t +6",
+    "icone": "W16802"
+  },
+  "415": {
+    "nom": "Rapi\u00e8re de Braider",
+    "desc": "Cette rapi\u00e8re a \u00e9t\u00e9 forg\u00e9e par les meilleures forgerons de Braider, tr\u00e8s pratique en combat ",
+    "effet": "D\u00e9g\u00e2t critique +5",
+    "montant": "D\u00e9g\u00e2t +5",
+    "icone": "W16701"
+  },
+  "416": {
+    "nom": "Veste de Braider",
+    "desc": "Cette veste tr\u00e8s l\u00e9g\u00e8re a \u00e9t\u00e9 con\u00e7ue pour les soldats de Braider souvent en d\u00e9placement.",
+    "effet": "Dext\u00e9rit\u00e9 +1",
+    "montant": "D\u00e9g\u00e2t -5",
+    "icone": "A20055"
+  },
+  "417": {
+    "nom": "Hache Protectrice",
+    "desc": "Am\u00e9lioration de la hache d\u00e9fensive, capable de mieux prot\u00e9ger son porteur",
+    "effet": "D\u00e9g\u00e2t re\u00e7u -3",
+    "montant": "D\u00e9g\u00e2t +8",
+    "icone": "W20503"
+  },
+  "418": {
+    "nom": "Gravit\u00e9?",
+    "desc": "Permet d'accentuer ou de diminuer la gravit\u00e9 sur une zone de 3m, hauteur de saut max 1.5m. Multiplicateur de poids *2 /2.",
+    "effet": "Capacit\u00e9",
+    "montant": "2 fois par combat (Instantan\u00e9e jet de d\u00e9) : Dext\u00e9rit\u00e9 \u00b14 pendant 3 tours",
+    "icone": "?"
+  },
+  "419": {
+    "nom": "Griffe sanglante",
+    "desc": "Cette griffe puise son \u00e9nergie du sang qui coule en combat.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +4 (+3 Si PV <33%)",
+    "icone": "W31406"
+  },
+  "420": {
+    "nom": "B\u00e2ton Brasier",
+    "desc": "Ce b\u00e2ton \u00e0 la capacit\u00e9 de changer la Glace en Feu !",
+    "effet": "Element : Glace > Feu",
+    "montant": "D\u00e9g\u00e2t +9, d\u00e9g\u00e2t de feu +3",
+    "icone": "W60501b"
+  },
+  "421": {
+    "nom": "B\u00e2ton Gemme Sombre",
+    "desc": "Ce b\u00e2ton est incrust\u00e9 d'une gemme sombre emplie de m\u00e9chancet\u00e9, elle convertit la Foudre en T\u00e9n\u00e8bres",
+    "effet": "Element : Foudre > T\u00e9n\u00e8bres",
+    "montant": "D\u00e9g\u00e2t +9, d\u00e9g\u00e2t de t\u00e9n\u00e8bres +3",
+    "icone": "W60501"
+  },
+  "422": {
+    "nom": "Masse de Plasma",
+    "desc": "Cette masse est un g\u00e9n\u00e9rateur d'\u00e9lectricit\u00e9 tr\u00e8s particulier qui se base sur les photons.",
+    "effet": "Element : Lumi\u00e8re > Foudre",
+    "montant": "D\u00e9g\u00e2t +4, d\u00e9g\u00e2t de foudre +2",
+    "icone": "W34605b"
+  },
+  "423": {
+    "nom": "Thunder Gun",
+    "desc": "Ce pistolet est charg\u00e9 \u00e0 bloc en \u00e9lectricit\u00e9, m\u00eame vos balles normales seront \u00e9lectris\u00e9es !",
+    "effet": "Element : Foudre",
+    "montant": "D\u00e9g\u00e2t +10",
+    "icone": "W54108b"
+  },
+  "424": {
+    "nom": "Marteau Sacr\u00e9",
+    "desc": "Ce marteau est id\u00e9ale pour les adeptes du combat de la magie : r\u00e9veillez votre esprit de paladin !",
+    "effet": "D\u00e9g\u00e2t lumi\u00e8re +3",
+    "montant": "D\u00e9g\u00e2t +8 (+1 si Templier)",
+    "icone": "W41201"
+  },
+  "425": {
+    "nom": "Pic du Ma\u00eblstrom",
+    "desc": "Cette lance est l'incarnation m\u00eame de la puissance du Pic du Ma\u00eblstrom, elle donne des frissons rien qu'en la regardant.",
+    "effet": "Element : Glace",
+    "montant": "D\u00e9g\u00e2t +10, d\u00e9g\u00e2t de glace +2",
+    "icone": "W53207"
+  },
+  "426": {
+    "nom": "Lance Divine",
+    "desc": "Cette lance a \u00e9t\u00e9 con\u00e7u par les Chevalier Templiers, elle convertit les coups physiques en lumi\u00e8re.",
+    "effet": "Element : Lumi\u00e8re",
+    "montant": "D\u00e9g\u00e2t +10",
+    "icone": "W53102"
+  },
+  "427": {
+    "nom": "Ep\u00e9e Gemme Noire",
+    "desc": "Cette \u00e9p\u00e9e a \u00e9t\u00e9 taill\u00e9e dans une gemme sombre, elle inspire la peur et la haine.",
+    "effet": "Element : T\u00e9n\u00e8bres",
+    "montant": "D\u00e9g\u00e2t +9, d\u00e9g\u00e2t de t\u00e9n\u00e8bres +2",
+    "icone": "W25607"
+  },
+  "428": {
+    "nom": "Hache Embras\u00e9e",
+    "desc": "Une hache con\u00e7ue avec de l'acier  volcanique de tr\u00e8s haute qualit\u00e9, tr\u00e8s pratique pour couper facilement.",
+    "effet": "Element : Feu",
+    "montant": "D\u00e9g\u00e2t +9, d\u00e9g\u00e2t de feu +2",
+    "icone": "W20102"
+  },
+  "429": {
+    "nom": "Bouclier du Survivant",
+    "desc": "Ce bouclier a sauv\u00e9 de nombreux innocents d'une mort certaine.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t -3 (-3 si PV < 33%)",
+    "icone": "W70206d"
+  },
+  "430": {
+    "nom": "Lance Quartz d'Automne",
+    "desc": "Une lance fabriqu\u00e9e \u00e0 la m\u00e9thode Heldentod, forg\u00e9 \u00e0 partir d'un Quartz d'Automne",
+    "effet": "Dur\u00e9e des sorts +1",
+    "montant": "D\u00e9g\u00e2t +9",
+    "icone": "W54305"
+  },
+  "431": {
+    "nom": "Bouclier Quartz d'Automne",
+    "desc": "Un bouclier forg\u00e9 \u00e0 la m\u00e9thode Heldentod, il est serti d'un Quartz d'Automne",
+    "effet": "Dur\u00e9e des sorts +1",
+    "montant": "D\u00e9g\u00e2t -3",
+    "icone": "W70508"
   }
 }

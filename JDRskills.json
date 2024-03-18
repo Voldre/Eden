@@ -1100,7 +1100,7 @@
     "nom": "Temp\u00eate Infernale",
     "desc": "Tournoi et inflige des d\u00e9g\u00e2ts de zone. Les ennemis touch\u00e9s sont provoqu\u00e9s au tour suivant.",
     "effet": "D\u00e9g\u00e2t Malus AoE R-",
-    "montant": "1D6+3, 25% de chance d'\u00eatre cibl\u00e9 (1 tour)",
+    "montant": "1D6+1, 50% de chance d'\u00eatre cibl\u00e9 (1 tour)",
     "icone": "E0034",
     "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Chevalier"]
