@@ -98,6 +98,9 @@
   { "id": 106, "value": 1, "kind": "map", "name": "Plaines d'Elos", "description": "", "kindId": 36 },
   { "id": 107, "value": 2, "kind": "map", "name": "Plaines d'Elos", "description": "", "kindId": 36 },
   { "id": 108, "value": 3, "kind": "map", "name": "Plaines d'Elos", "description": "", "kindId": 36 },
+  { "id": 136, "value": 1, "kind": "map", "name": "Mont Gowen", "description": "", "kindId": 46 },
+  { "id": 137, "value": 2, "kind": "map", "name": "Mont Gowen", "description": "", "kindId": 46 },
+  { "id": 138, "value": 3, "kind": "map", "name": "Mont Gowen", "description": "", "kindId": 46 },
   { "id": 175, "value": 1, "kind": "map", "name": "Steppes d'Arist\u00e8re", "description": "", "kindId": 59 },
   { "id": 176, "value": 2, "kind": "map", "name": "Steppes d'Arist\u00e8re", "description": "", "kindId": 59 },
   { "id": 177, "value": 3, "kind": "map", "name": "Steppes d'Arist\u00e8re", "description": "", "kindId": 59 },
@@ -168,7 +171,7 @@
     "value": 3,
     "kind": "boss",
     "name": "Ursina - Samoura\u00ef Commandant",
-    "description": "Femme Ursun \u00e0 la peau brune, grande Samoura\u00ef robuste et tr\u00e8s courageuse et droite.",
+    "description": "Femme Ursun \u00e0 la peau bleuté, grande Samoura\u00ef robuste, tr\u00e8s courageuse et droite.",
     "kindId": "m056"
   },
   {
@@ -272,7 +275,7 @@
     "value": 3,
     "kind": "boss",
     "name": "Lucius - Roi D\u00e9chu",
-    "description": "Ezelin aux cheveux argent\u00e9s et aux yeux bleux. Roi ayant v\u00e9cu il y a plus 300 ans, expert en magie noire et occulte : ses nouveaux objectifs sont ultra ambitieux.",
+    "description": "Ezelin aux cheveux argent\u00e9s et aux yeux bleux. Roi ayant v\u00e9cu il y a 400 ans, expert en magie noire et occulte : ses nouveaux objectifs sont ultra ambitieux.",
     "kindId": "m347"
   },
   {
@@ -288,7 +291,7 @@
     "value": 3,
     "kind": "boss",
     "name": "Gaazor - Ogre Chef Shaman",
-    "description": "Gaazor est un ogre \u00e0 la peau noire bleut\u00e9, recouvert d'une grande cape. Il a finit en prison pour vente d'esclaves \u00e0 l'Empire Heldentod, mais r\u00e9ussira peut-\u00eatre \u00e0 sortir...",
+    "description": "Gaazor est un ogre \u00e0 la peau noire bleut\u00e9, recouvert d'une grande cape. Il a finit en prison pour vente d'esclaves \u00e0 l'Empire Heldentod. Mais r\u00e9ussira peut-\u00eatre qu'il réussira à sortir...",
     "kindId": "m228"
   },
   {
@@ -474,6 +477,14 @@
     "name": "Zack - Foreur Fourbe",
     "description": "Zumi pr\u00eat \u00e0 tout pour gagner sa croute, il est malicieux et ne manque pas de coups foireux.",
     "kindId": "m047e"
+  },
+  {
+    "id": 1052,
+    "value": 3,
+    "kind": "boss",
+    "name": "Molman - Roi oubli\u00e9",
+    "description": "Le Roi Molman \u00e9tait un des souverains du Royaume de Braider il y a de cela plusieurs si\u00e8cles avant leur union avec Valence, sa d\u00e9faite face \u00e0 Heldentod a condamn\u00e9e sa lign\u00e9e.",
+    "kindId": "m009b"
   },
   {
     "id": 1201,
@@ -1349,7 +1360,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Feldspath Carmin",
-    "description": "Cette pierre est utile pour créer des alliages, il peut totalement changé de couleur lorsqu'il est combiné à d'autres minerais.",
+    "description": "Ce minerai est utile pour créer des alliages, il peut totalement changé de couleur lorsqu'il est combiné à d'autres minerais.",
     "kindId": "I00207",
     "maps": [1, 5, 9]
   },
@@ -3076,6 +3087,83 @@
     "maps": [1],
     "enemies": [],
     "kindId": "skillIcon/J513",
+    "group": 3
+  },
+  {
+    "id": 1781,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Crimson et Nyx",
+    "description": "Crimson est un vrai tombeur, mais Nyx ne veut pas tomber sous son charme alors qu'il fait tout pour elle : concert, quizz, et même plus... ;).",
+    "maps": [26],
+    "enemies": [160],
+    "kindId": "monsters/crimson",
+    "group": 3
+  },
+  {
+    "id": 1782,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Concert à la Veyda",
+    "description": "Le concert pour la cagnotte \"Sauver Gaazor\" a été bien animée : entre Plotodo qui pète un câble sur des nobles racistes, une voleuse Anuran, la chanson de Crimson, le questionnaire, le lutin abandonné (non sérieux il est à qui ?) et surtout l'incendie ! On peut dire que c'était le feu !",
+    "maps": [501],
+    "enemies": [160],
+    "kindId": "skillIcon/E0708",
+    "group": 3
+  },
+  {
+    "id": 1783,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Draigos et Groseille",
+    "description": "Groseille, l'Alpaga rose de Luna, jeune fille de la Symbardy, devient complètement fou lorsqu'il entend de la musique. Son chaos aura mis au tapis Draigos, Aradia et Willow ! Sans oublier la moto qui a provoqué un incendie...",
+    "maps": [501],
+    "enemies": [],
+    "kindId": "uiiconPNG/alpagalove",
+    "group": 3
+  },
+  {
+    "id": 1784,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Grotte mystérieuse",
+    "description": "Sur le territoire de Valence dans le Mont Gowen, une ancienne grotte du Royaume de Braider fait surface. Deux guildes sur le coup : la Veyda et la Légion Saphir : comment cela va se passer ? Que cache cette grotte ?",
+    "maps": [46],
+    "enemies": [],
+    "kindId": "uiiconPNG/pic_080b",
+    "group": 3
+  },
+  {
+    "id": 1785,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Ernis l'Escort Boy",
+    "description": "Ernis à par le passé eu un autre métier, celui d'Escort, cela lui a donné beaucoup de choses, beaucoup de richesses et d'ennemis...",
+    "maps": [46],
+    "enemies": [],
+    "kindId": "skillIcon/E0170",
+    "group": 3
+  },
+  {
+    "id": 1786,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Rageux le perturbateur",
+    "description": "Rageux aide très souvent Poisseux et le groupe en combat, il est très doué pour déranger les ennemis et apporter des informations sur ce qui se passe aux alentours, un bon allié !",
+    "maps": [46],
+    "enemies": [],
+    "kindId": "skillIcon/E0265",
+    "group": 3
+  },
+  {
+    "id": 1787,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "La rencontre avec la mort...",
+    "description": "Derrière la malédiction du Roi Molman se trouve un être que tout le monde redoute... Le Prince du Fléau, un être transcendant le temps, que beaucoup considère comme une légende, car la plupart des gens qui l'ont rencontré ne sont plus. Heureusement que le groupe a été épargné...",
+    "maps": [46],
+    "enemies": [165],
+    "kindId": "uiiconPNG/pic_044b",
     "group": 3
   },
   {
