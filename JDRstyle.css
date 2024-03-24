@@ -383,6 +383,12 @@ dialog::backdrop {
 }
 
 /* JDR Master */
+#logout {
+  position: fixed;
+  top: 20px;
+  cursor: pointer;
+}
+
 .combat {
   display: grid;
   margin-left: -1%;
@@ -780,6 +786,7 @@ dialog::backdrop {
   position: absolute;
   transform: translateX(-50%);
   left: 50%;
+  margin: 0px;
   z-index: 5;
 }
 

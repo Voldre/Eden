@@ -830,7 +830,7 @@
       "Euphorie : +1D4 (min 2)+2 par coup. Buff pendant 4 tours (max 5) : esprit"
     ],
     "stats": "17,13,8,14,15",
-    "desc": "Ursun \u00e0 la peau bleuté, grande Samoura\u00ef robuste, tr\u00e8s courageuse et droite",
+    "desc": "Ursun \u00e0 la peau bleut\u00e9, grande Samoura\u00ef robuste, tr\u00e8s courageuse et droite",
     "infos": "Faible \u00e0 la nature et aux t\u00e9n\u00e8bres",
     "drop": "A voir ! Katana --"
   },
@@ -1740,7 +1740,7 @@
     "pvmax": "270",
     "skills": [
       "Zone noire : 2D10+13 (bloc m-2) AoE stat -2 (stat-3 si parasite) pendant 3 tours : Intelligence",
-      "Eclair en Furie : 4D6 +19 (bloc m-2) et r\u00e9ussite -5 sur 1 tour : Intelligence // Coup Physique : 3D6+12",
+      "Eclair en Furie : 4D6 +19 (bloc m-2) et r\u00e9ussite -5 sur 1 tour : Intelligence",
       "Aura Bouclier Protec (+ Ctrl mentale) : Blocage +3, Malus-1 pendant 4 tours : esprit",
       "Esprit Descell\u00e9 : Invoque 1 Fant\u00f4me L\u00e9thargique (2 si d\u00e9 < 7) : Esprit"
     ],
@@ -1772,7 +1772,7 @@
       "Triple Tir : 1D8+1D6+1D4+18 : Dext\u00e9rit\u00e9",
       "Blessure Douloureuse : 1D10 +16, et 0 heal sur 4 tours : Dext\u00e9rit\u00e9",
       "S\u00e9r\u00e9nit\u00e9 : Dext\u00e9+2 Esquive+2, D\u00e9g\u00e2t subi -1D6-6 pendant 4 tours : Esprit",
-      "Passif (Pr\u00e9cision): Esquive/Blocage cible -2"
+      "Passif (Pr\u00e9cision): Esquive/Blocage cible +2"
     ],
     "stats": "11,16,11,10,16",
     "desc": "Lieutenant d'unit\u00e9 d'exp\u00e9dition pour la Curie. Yandere et follement amoureuse de Lassar.",
@@ -1815,8 +1815,8 @@
     "pvmax": "250",
     "skills": [
       "Euphorie : +1D4+1 (min 3) par coup. Buff pendant 4 tours (max 5) : esprit",
-      "Attaque Cyclone/(Provoc) :  1D10 +15 (+5, 1/2 vis\u00e9 3 t) : Force/Charisme (jdrcombat +20)",
-      "Mur de Titan x Robot : D\u00e9g\u00e2t re\u00e7us -1D6-10, 3 tours : Esprit",
+      "Attaque Cyclone/(Provoc) :  1D10 +15 (pour jdrcombat +20)  (+5, 1/2 vis\u00e9 3 t) : Force/Charisme",
+      "Mur de Titan x Robot : D\u00e9g\u00e2t re\u00e7us -1D6-10 : Esprit",
       "Passif : D\u00e9g\u00e2ts re\u00e7us -10 (-5 si < 50 PV)"
     ],
     "stats": "16,10,11,15,17",
@@ -2191,7 +2191,7 @@
     "skills": [
       "Provocation Groupe : 1D10+10, provoc \u00e0 50% sur 3 tours : Charisme",
       "Lumi\u00e8re de Gu\u00e9rison : 2D10 +12, 1/4 de rejouer : intelligence",
-      "Mur de Titan : D\u00e9g\u00e2t re\u00e7us -1D6-6 : Force",
+      "Mur de Titan : D\u00e9g\u00e2t re\u00e7us -1D6-6 (3 tours) : Force",
       "Passif : D\u00e9g\u00e2ts re\u00e7us -10 (-5 si < 50 PV)"
     ],
     "stats": "16,7,16,16,11",
@@ -2264,10 +2264,10 @@
     "nom": "Diana - G\u00e9n\u00e9rale Offensive",
     "pvmax": "270",
     "skills": [
-      "Faiblesse Critique : 5D6 +20 Crit (1,2) : AoE +5, Mono : *1.5, (3 : *1.25) : Force (jdrcombat +20)",
+      "Faiblesse Critique : 5D6 +20 Crit (1,2 : *1.5,  3 : *1.25) : Force (jdrcombat +20)",
       "Dash (Cicatrice) de l'esprit : 4D6 +16 : -1 buff, se replace : Force",
       "Transe - Tueuse X : Atk Mono -> AoE, bloc/esq +2, -1 malus : 4 tours : Esprit",
-      "Passif : Si PV < 120 : Absorbe 1/3 en PV. (+ Furtivit\u00e9 fuite dext\u00e9/dmg)"
+      "Passif : Si PV < 120 : Absorbe 1/3 en PV. (+ Furtivit\u00e9 fuite dext\u00e9)"
     ],
     "stats": "19,13,11,13,17",
     "desc": "Humaine Assassin - La Tigresse Pourpre froide et franche de la Curie M\u00e9t\u00e9role, la l\u00e9gendaire G\u00e9nr\u00e9ale de Division Offensive.",
@@ -2447,7 +2447,7 @@
       "Rayon Noir : 6D6 +45 (+10 si para) : Intelligence // Coup Physique : 3D6+20",
       "Zone de calamit\u00e9 : 4D6+30 (+5 si para) et -2 r\u00e9ussites sur 3 tours : Intelligence",
       "Parasite Inviolable : 2D6+8 pendant 4 tours -2 stats, non annulable : Intel/Esprit",
-      "Bouclier Noir : Armure 2D6+10 pendant 4 tours : Esprit (même si silence)"
+      "Bouclier Noir : Armure 2D6+10 pendant 4 tours : Esprit (m\u00eame si silence)"
     ],
     "stats": "15,13,20,11,19",
     "desc": "Le l\u00e9gendaire Prince du Fl\u00e9au dans sa forme humaine. Et encore, ce n'est pas le pire...",
@@ -2459,7 +2459,7 @@
     "nom": "Azra\u00ebl - Elu d'Al-hara",
     "pvmax": "330",
     "skills": [
-      "Contr\u00f4le de l'Esprit / Dodo AoE : (Mono -3 res esprit, Dodo -3) dur\u00e9e 3 tours : Esprit (même si silence)",
+      "Contr\u00f4le de l'Esprit / Dodo AoE : (Mono -3 res esprit, Dodo -3) dur\u00e9e 3 tours : Esprit (m\u00eame si silence)",
       "D\u00e9triplement : Invoque 2 doubles pendant 2 tours : Esprit",
       "M\u00e9t\u00e9ore / Stalactites Glaciales : 4D6+20 (+10 mono) : Intelligence // Coup Physique : 3D6+12",
       "Voile du Blizzard // Saut dimensionnel : 5 tentatives. Passif : \"Rituel mana h24\" r\u00e9sistance d'esprit naturelle : 18"
@@ -2468,5 +2468,80 @@
     "desc": "Illusionniste d\u00f4t\u00e9 de l'oeil de l'\u00eatre divin Al-hara, lui conf\u00e9rant des pouvoirs hors du commun.",
     "infos": "Faible au per\u00e7ant et \u00e0 la glace",
     "drop": "B\u00e2ton Arc-en-Ciel ?"
+  },
+  "167": {
+    "visuel3D": "m053b",
+    "nom": "Bonoss - Ursun Luminary (Veyda)",
+    "pvmax": "155",
+    "skills": [
+      "Coupure blanche : 3D6 +10 : Force",
+      "Destruction Noire : 2D6 +9 : Intelligence",
+      "Pri\u00e8re Divine : Soin 1D8 +5. Prochain d\u00e9g\u00e2t lumi\u00e8re +1D6 +2 (1 tour max) : Esprit",
+      "Assaut du Chaos : 7 charges : 3D6+10, d\u00e9g\u00e2t re\u00e7u de l'\u00e9l\u00e9ment +3 pendant 3 tours : Intelligence"
+    ],
+    "stats": "13,7,16,10,15",
+    "desc": "Ursun mineur de la Veyda devenu forgeron",
+    "infos": "",
+    "drop": ""
+  },
+  "168": {
+    "visuel3D": "m043",
+    "nom": "Plotodo - Torturran Juge (Veyda)",
+    "pvmax": "190",
+    "skills": [
+      "\u00c2me Enchain\u00e9e : 2D6+8 et Dext\u00e9-3 sur 3 tours : Dext\u00e9rit\u00e9",
+      "Scellement : Aucun sort physique pendant 3 tours : Esprit",
+      "Verdict Final : 2D6 +12 (S Crit (1,2,3) X1.5) : Force",
+      "Aura du Pourfendeur : DGT +1D6+3 pendant 4 tours : Esprit"
+    ],
+    "stats": "15,14,8,10,15",
+    "desc": "Torturran pas tr\u00e8s commode qui se bat pour une \"paix\", c'est aussi un commer\u00e7ant un peu agressif...",
+    "infos": "",
+    "drop": ""
+  },
+  "169": {
+    "visuel3D": "m065",
+    "nom": "Josh - Drakai Guerrier (Veyda)",
+    "pvmax": "180",
+    "skills": [
+      "Perce-Armure : 2D6+10, d\u00e9g\u00e2t physique re\u00e7u +3 (3 tours) : force",
+      "Mur de Titan : D\u00e9g\u00e2t subi -1D4 -4 pendant 3 tours : Force",
+      "D\u00e9fense d'Acier : Blocage +2 pendant 1D4 (min 2) +2 tours : Esprit",
+      "Provocation : 1D6+10 : 75% de chance d'\u00eatre vis\u00e9 (3 tours) : Charisme"
+    ],
+    "stats": "16,11,7,14,14",
+    "desc": "Le plus \u00e9cailleux des grands guerriers, Josh est tr\u00e8s investi \u00e0 la mine, au point qu'on ne le revoit parfois pas en ressortir !",
+    "infos": "",
+    "drop": ""
+  },
+  "170": {
+    "visuel3D": "m066",
+    "nom": "Ruro - Drakai Shaman (Veyda)",
+    "pvmax": "145",
+    "skills": [
+      "Punition Divine : 2D6+11 : Intelligence",
+      "Totem Gracieux : Mode Soin : Soin 4 PV par tour. - Mode Soutien : attaque/bloque ((Invoque un familier Totem : 30 PV, Force : 9, Dext\u00e9 : 13, Intel : 14. - Mode Soin : Ne peut pas bouger / se prot\u00e9ger, 0 jet de d\u00e9. - Mode Soutien : peut bouger et bloquer, 2 sorts : 1) Renforcement : +2 Force ou +2 Intel sur la cible : 3 tours (intel) , 2) Eclair : 1D8 (intel))) : Esprit",
+      "R\u00e9surrection : Incantation 2 tours (1 d\u00e9/tour) : soigne de 2D10+18 (utilisable sur un vivant) : Intelligence",
+      "Bouclier d'\u00e9pines : D\u00e9g\u00e2t subi (-) et d\u00e9g\u00e2t d'\u00e9pines (+) 1D4 (min 2)+1 pendant 4 tours : Intelligence"
+    ],
+    "stats": "8,9,17,11,16",
+    "desc": "Drakai Alchimiste qui est tr\u00e8s peu pr\u00e9cautionneux, le laboratoire vie parfois des jours sombres...",
+    "infos": "",
+    "drop": ""
+  },
+  "171": {
+    "visuel3D": "m038b",
+    "nom": "Plouka - Lieutenant Offensif",
+    "pvmax": "210",
+    "skills": [
+      "Faiblesse Critique / Cicatrice de l'Esprit : Degat 3D6 (Crit X1.5) (ou -1 buff) +12, Mono : Force",
+      "Griffure Noire (Atk Furieuse) : Degat Malus 2D6 (+5) +11, Blocage et Esquive -2 sur 3 tours AoE : Dext\u00e9rit\u00e9/Force",
+      "Transe - Mode Tueur : Buff , D\u00e9g\u00e2t +1D6 (min 2) +5 sur 3 tours Mono : Esprit",
+      "Contr\u00f4le de l'Energie : Soin Buff 2D6 +18, Dext\u00e9 -2 et R\u00e9sistance d'esprit +3 sur 3 tours Mono : Esprit"
+    ],
+    "stats": "18,15,8,12,14",
+    "desc": "Anuran Lieutenant \u00e0 la peau rouge, dr\u00f4le, social et b\u00eate. Premier chef de Kibo !",
+    "infos": "Faible aux t\u00e9n\u00e8bres et \u00e0 la foudre",
+    "drop": "Griffe de l'Esprit, Anneau du Bagarreur OU Bague Enchant\u00e9e"
   }
 }

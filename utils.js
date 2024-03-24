@@ -38,7 +38,7 @@ export class Perso {
 
     // Calcul des dégâts fixes et de l'armure
     const stuffs = JSON.parse(persoData.eqpts).map((eqptName) => {
-      return Object.values(eqptJSON).find((eqpt) => eqpt.nom.toLowerCase().trim() == eqptName.toLowerCase().trim());
+      return Object.values(eqptJSON).find((eqpt) => unformatText(eqpt.nom) == unformatText(eqptName));
     });
 
     console.log(stuffs[1]);

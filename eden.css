@@ -251,6 +251,7 @@ li img,
   min-width: 700px;
   position: relative;
   text-align: center;
+  left: 2%;
   display: none;
 }
 

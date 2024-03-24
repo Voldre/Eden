@@ -3,6 +3,7 @@ import { playerJSON, mapsJSON, pnjJSON, persosJSON, enemyJSON } from "./JDRstore
 // const apiKey = "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";
 const apiUrl = "https://api.openai.com/v1/chat/completions";
 
+const responseElement = document.querySelector("#response");
 var rarity;
 
 let indexPerso, indexPlayer, pnjEnemy, mapID;
@@ -11,7 +12,7 @@ let indexPerso, indexPlayer, pnjEnemy, mapID;
 window.addEventListener("load", async () => {
   const urlParams = new URLSearchParams(window.location.search);
   if (!urlParams.has("perso")) {
-    document.querySelector("#response").innerHTML =
+    responseElement.innerHTML =
       "Erreur : vous devez saisir dans l'URL un numéro de personnage (jdr_quest?perso=4) par exemple.";
     stop();
     document.querySelector(".loading").remove();
@@ -30,8 +31,7 @@ window.addEventListener("load", async () => {
   console.log(joueurData, indexPerso);
 
   if (!joueurData || joueurData.entries[joueurData.persos.indexOf(parseInt(indexPerso))] <= 0) {
-    document.querySelector("#response").innerText =
-      "Erreur : Le personnage a déjà fait ses 3 entrées, veuillez en choisir un autre !";
+    responseElement.innerText = "Erreur : Le personnage a déjà fait ses 3 entrées, veuillez en choisir un autre !";
     console.log("Erreur : Le personnage a déjà fait ses 3 entrées, veuillez en choisir un autre !");
     stop();
     document.querySelector(".loading").remove();
@@ -73,37 +73,43 @@ window.addEventListener("load", async () => {
 
   const message = writeMessage(persoData, pnjData, mapData, enemyData);
   const apiKey = await getChatGPTKey();
-  fetch(apiUrl, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify({
-      model: "gpt-3.5-turbo",
-      messages: [
-        { role: "system", content: instruction },
-        { role: "user", content: message },
-      ],
-      max_tokens: 350,
-    }),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      if (data.error) {
-        throw new Error("ChatGPT code : " + data.error.code);
-        // document.querySelector("#response").innerHTML = "Erreur ChatGPT. Motif : " + data.error.code;
-      }
-      const response = data.choices[0].message.content;
-      document.querySelector("#response").innerHTML = response.replaceAll("\n", "<br/>");
-      document.querySelector(".game").classList.remove("loading");
+
+  // Update 20/03/24 : Trigger Chat GPT request only on click
+  document.querySelector("#fetch_gpt").addEventListener("click", () => {
+    responseElement.innerText = "Chargement...";
+    document.querySelector(".game").classList.add("loading");
+    fetch(apiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        model: "gpt-3.5-turbo",
+        messages: [
+          { role: "system", content: instruction },
+          { role: "user", content: message },
+        ],
+        max_tokens: 350,
+      }),
     })
-    .catch((error) => {
-      document.querySelector("#response").innerText = "Erreur lors de la requête à l'API. " + error.toString();
-      console.error("Erreur lors de la requête à l'API. ", error);
-      document.querySelector(".game").classList.remove("loading");
-    });
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        if (data.error) {
+          throw new Error("ChatGPT code : " + data.error.code);
+          // responseElement.innerHTML = "Erreur ChatGPT. Motif : " + data.error.code;
+        }
+        const response = data.choices[0].message.content;
+        responseElement.innerHTML = response.replaceAll("\n", "<br/>");
+        document.querySelector(".game").classList.remove("loading");
+      })
+      .catch((error) => {
+        responseElement.innerText = "Erreur lors de la requête à l'API. " + error.toString();
+        console.error("Erreur lors de la requête à l'API. ", error);
+        document.querySelector(".game").classList.remove("loading");
+      });
+  });
 });
 
 function getChatGPTKey() {
@@ -115,8 +121,7 @@ function getChatGPTKey() {
     error: function (error) {
       console.log(error);
 
-      document.querySelector("#response").innerHTML =
-        "Echec de la récupération de la clé de l'API ChatGPT :" + JSON.stringify(error);
+      responseElement.innerHTML = "Echec de la récupération de la clé de l'API ChatGPT :" + JSON.stringify(error);
       document.querySelector(".game").classList.remove("loading");
     },
   });
@@ -154,8 +159,7 @@ function chooseEnemy(mapId = null, category = null) {
 
   if (mapId) {
     if (!mapsJSON[mapId].mobs) {
-      document.querySelector("#response").innerHTML =
-        "Erreur : Aucun n'ennemi n'existe pour le moment sur cette carte, désolé !";
+      responseElement.innerHTML = "Erreur : Aucun n'ennemi n'existe pour le moment sur cette carte, désolé !";
       stop();
       document.querySelector(".loading").remove();
       return;

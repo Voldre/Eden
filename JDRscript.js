@@ -200,7 +200,7 @@ document.querySelector(".stats").addEventListener("change", (e) => {
 
   const eqptsName = [...equipementsE.children].map((competenceE) => competenceE.children[0].value);
   const persoEqpts = eqptsName.map((eqptName) =>
-    Object.values(eqptJSON).find((eqpt) => eqpt.nom.toLowerCase().trim() == eqptName.toLowerCase().trim())
+    Object.values(eqptJSON).find((eqpt) => unformatText(eqpt.nom) == unformatText(eqptName))
   );
   getAllRes(persoEqpts);
 });
@@ -378,7 +378,8 @@ function insertBuffInteraction(buffTurnE, skillName, selectedSkill, skillMontant
     skillEffet.includes("Provocation") ||
     skillEffet.includes("Buff") ||
     skillEffet.includes("Malus") ||
-    skillEffet.includes("Transformation")
+    skillEffet.includes("Transformation") ||
+    skillEffet.includes("Status")
   ) {
     buffTurnE.remove;
     buffTurnE.style.cursor = "url('images/layout/cursor-x.png'), auto";
@@ -678,7 +679,7 @@ function loadFiche(indexPerso) {
   });
 
   const persoEqpts = persoEqptsName.map((eqptName) =>
-    Object.values(eqptJSON).find((eqpt) => eqpt.nom.toLowerCase().trim() == eqptName.toLowerCase().trim())
+    Object.values(eqptJSON).find((eqpt) => unformatText(eqpt.nom) == unformatText(eqptName))
   );
   getAllRes(persoEqpts);
   createEquipmentSynthesis(persoEqpts);

@@ -39,11 +39,11 @@
         {
           "nom": "Mur de Titan",
           "stat": "Force",
-          "montantFixe": "1D4 (min 2)",
+          "montantFixe": "",
           "montantVariable": 0,
           "type": "Armure",
-          "portee": "AoE",
-          "effet": "",
+          "portee": "Mono",
+          "effet": "1D4 (min 2) +",
           "montantEffet": 2,
           "duree": 4
         }
@@ -289,7 +289,7 @@
           "type": "Soin Buff",
           "portee": "Mono",
           "effet": "Dexté -2 et Résistance d'esprit +",
-          "montantEffet": 4,
+          "montantEffet": 3,
           "duree": 3
         }
       ]
@@ -375,8 +375,8 @@
           "montantVariable": 0,
           "type": "Buff",
           "portee": "Mono",
-          "effet": "Esprit +2 et Dégât subi -1D4 (min) -",
-          "montantEffet": 0,
+          "effet": "Esprit +2 et Armure +1D4 (min 2) +",
+          "montantEffet": 1,
           "duree": 3
         },
         {
@@ -396,7 +396,7 @@
       "classe": "Chasseur",
       "sorts": [
         {
-          "nom": "Triple Tir / Blessure Douloureuse",
+          "nom": "Triple Tir (Blessure Douloureuse)",
           "stat": "Dextérité",
           "montantFixe": "3D6 (1D10)",
           "montantVariable": 8,
@@ -440,6 +440,55 @@
           "duree": 3
         }
       ]
+    },
+    {
+      "classe": "Ingénieur",
+      "sorts": [
+        {
+          "nom": "Artillerie Lourde (Blessure Douloureuse)",
+          "stat": "Dextérité",
+          "montantFixe": "2D10 (1D10)",
+          "montantVariable": 8,
+          "type": "Degat",
+          "portee": "Mono",
+          "effet": "(0 soin)",
+          "montantEffet": 0,
+          "duree": 3
+        },
+        {
+          "nom": "Réparation Armure / Robotisation",
+          "stat": "Esprit",
+          "montantFixe": "Soin 2D6",
+          "montantVariable": 10,
+          "type": "Buff",
+          "portee": "Mono",
+          "effet": "Armure +1D4 (min 2) +",
+          "montantEffet": 1,
+          "duree": 4
+        },
+        {
+          "nom": "Bombe à Huile (Explosifs Visqueux)",
+          "stat": "Dextérité",
+          "montantFixe": "2D6 (1D6)",
+          "montantVariable": 8,
+          "type": "Dégât",
+          "portee": "AoE",
+          "effet": "(Esquive -",
+          "montantEffet": 2,
+          "duree": 3
+        },
+        {
+          "nom": "Lavage de Cerveau",
+          "stat": "Esprit",
+          "montantFixe": "",
+          "montantVariable": 0,
+          "type": "Malus",
+          "portee": "Mono",
+          "effet": "Blocage et réussite des sorts -",
+          "montantEffet": 2,
+          "duree": 3
+        }
+      ]
     }
   ],
   "races": [
@@ -456,9 +505,9 @@
   "rangs": [
     {
       "rang": "Soldat",
-      "pv": 0,
+      "pv": 10,
       "stat": 0,
-      "montantVariable": { "Mono": 0, "AoE": 0 },
+      "montantVariable": { "Mono": 1, "AoE": 0 },
       "montantEffet": { "Mono": 0, "AoE": 0 },
       "duree": 0
     },
@@ -499,7 +548,7 @@
     {
       "guilde": "Hydra",
       "pv": 0,
-      "montantVariable": { "Mono": 5, "AoE": 2 },
+      "montantVariable": { "Mono": 4, "AoE": 2 },
       "montantEffet": { "Mono": 0, "AoE": 0 },
       "duree": 0
     },
