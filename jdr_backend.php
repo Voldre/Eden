@@ -58,5 +58,9 @@ session_start();
                 echo "Not connected";
             }
         }
+
+        if($_POST['action'] === 'logout'){
+            session_destroy();
+        }
     }
 ?>

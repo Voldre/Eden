@@ -983,7 +983,7 @@
   "136": {
     "nom": "Arc Arc-en-Ciel",
     "desc": "Un Arc forg\u00e9 avec un composant tr\u00e8s pr\u00e9cieux : le Minerai Arc-en-Ciel",
-    "effet": "Blocage +1",
+    "effet": "Blocage +2",
     "montant": "D\u00e9g\u00e2t +9",
     "icone": "W50502"
   },
@@ -2149,7 +2149,7 @@
   },
   "294": {
     "nom": "Parchemin de l'\u00e9pine",
-    "desc": "Permet \u00e0 son porteur de lanceur de g\u00e9n\u00e9rer un bouclier d'\u00e9pines, permettant de mieux r\u00e9sister et de blesser l'ennemi.",
+    "desc": "Permet \u00e0 son porteur de g\u00e9n\u00e9rer un bouclier d'\u00e9pines sur une cible, permettant de mieux r\u00e9sister et de blesser l'ennemi.",
     "effet": "Capacit\u00e9",
     "montant": "2 fois par combat (Instantan\u00e9e Esprit) : D\u00e9g\u00e2t re\u00e7u : -4, d\u00e9g\u00e2t d'\u00e9pines +4 (3 tours)",
     "icone": "I00312",

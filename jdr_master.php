@@ -1,5 +1,11 @@
 <?php 
 session_start();
+
+if(isset($_GET['logout'])){
+    session_destroy();
+    echo "window.location.href = http://voldre.free.fr/Eden/jdr_master.php";
+    // header("Location: http://http://voldre.free.fr/Eden/jdr_master.php", true, 301);  
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,6 +46,74 @@ session_start();
         <input type="password" name="mdp" required />
         <input type="submit" name="login" value="Connexion" />
         </form>
+        <br/>
+        <!-- For player -->
+        <div id="toast"></div>
+        <div class="infoEnnemi" id="e0">
+            <div class="enemyType" >
+                <div class="classic">
+                <select name="ennemi" class="ennemi"></select>
+                <img class="icon" style="width: 45px; height: 45px;" src="" alt="">
+                </div>
+            </div>
+            <p class="visuel"></p>
+            <br/>
+            <input style='width: 38px;' type='number' id="pv" name="pv"></input>
+            <input style='width: 38px;' type='number' id="pvmax" name="pvmax"></input>
+            <label for="pv">PV/Max</label><img src="images/uiiconPNG/combat_boss.png" id="boss_icon" class="hide icon" style="float:right" />
+            <br/>
+            <p class="competence"></p>
+            <p class="competence"></p>
+            <p class="competence"></p>
+            <p class="competence"></p>
+            <div class="stats">
+                <div class="stat" ><label for="force">Force</label>
+                    <input type='number' min="1" max="17" id="force" name="force"></input>
+                    <input type='number' min="-10" max="10" class="statB"></input>
+                </div>
+                <div class="stat" ><label for="dexté">Dextérité</label>
+                    <input type='number' min="1" max="17" id="dexté" name="dexté"></input>
+                    <input type='number' min="-10" max="10" class="statB"></input>
+                </div>
+                <div class="stat" ><label for="intel">Intelligence</label>
+                    <input type='number' min="1" max="17" id="intel" name="intel"></input>
+                    <input type='number' min="-10" max="10" class="statB"></input>
+                </div>
+                <div class="stat" ><label for="charisme">Charisme</label>
+                    <input type='number' min="1" max="17" id="charisme" name="charisme"></input>
+                    <input type='number' min="-10" max="10" class="statB"></input>
+                </div>
+                <div class="stat" ><label for="esprit">Esprit</label>
+                    <input type='number' min="1" max="17" id="esprit" name="esprit"></input>
+                    <input type='number' min="-10" max="10" class="statB"></input>
+                </div>
+            </div>
+            <p id="infos" class="hide"></p>
+            <input type="text" class="commentaire" placeholder="est étourdi, attiré par, enragé, ... prépare une ataque..."></input>
+            <button name="nextTurn" class="nextTurn" style="float: none;" id="pnjTurnE">+</button>
+            <br/>
+            <div id="buffs">
+                <input type="number"/>
+                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                <br/>
+                <input type="number"/>
+                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                <br/>
+                <input type="number"/>
+                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+                <br/>
+                <input type="number"/>
+                <input type="text" class="buff" placeholder="effet / montant / durée"></input>
+            </div>
+            <div class="enemyDesc">
+            <p id="drop" class="hide"></p>
+            <p id="desc"></p>
+            </div>
+        </div>
+        <div class="playersInfo hide">
+            <input type="text" id="pList" style="width:125px"></input><button name="updatePInfo" id="updatePInfo">Update</button>  &nbsp; Nb P : <input type="number" name="nbP" id="nbP" value="3" style="width:10px"></input>, PV et DGT : <span id="variation"></span>
+            <ul id="pInfo"></ul>
+        </div>
         <?php }else{ 
             // <!-- <p>connected</p> -->
             include 'jdr_master.html';

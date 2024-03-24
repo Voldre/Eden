@@ -422,7 +422,7 @@ initDialog(labelsDescription);
 function PersoSimplified(persoData) {
   // Calcul des dégâts fixes et de l'armure
   var stuffs = JSON.parse(persoData.eqpts).map((eqptName) => {
-    return Object.values(eqptJSON).find((eqpt) => eqpt.nom.toLowerCase().trim() == eqptName.toLowerCase().trim());
+    return Object.values(eqptJSON).find((eqpt) => unformatText(eqpt.nom) == unformatText(eqptName));
   });
 
   if (!stuffs[0]) {
