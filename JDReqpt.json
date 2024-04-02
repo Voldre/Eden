@@ -445,7 +445,7 @@
     "nom": "Tunique de Delphes",
     "desc": "Une tunique cr\u00e9\u00e9e par les locaux de la For\u00eat de Delphes",
     "effet": "PV Soin re\u00e7u +3",
-    "montant": "D\u00e9g\u00e2t -3",
+    "montant": "D\u00e9g\u00e2t -3 (+1 si Shaman)",
     "icone": "A20028"
   },
   "62": {
@@ -725,7 +725,7 @@
     "nom": "Tablette Antique",
     "desc": "Une tablette trouv\u00e9 dans le tombeau d'un ancien roi du d\u00e9sert",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t critique (D\u00e9 1,2 et 3) +25%",
+    "montant": "D\u00e9g\u00e2t critique (D\u00e9 1,2 et 3) +25% (33% si Illusionniste)",
     "icone": "I00343",
     "access": "D3"
   },
@@ -1220,7 +1220,7 @@
     "nom": "Sceptre du Shaman",
     "desc": "Sceptre en forme de serpent ayant appartenu \u00e0 un grand shaman",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t +7 (+3 si Shaman)",
+    "montant": "D\u00e9g\u00e2t +8 (+3 si Shaman)",
     "icone": "W62608"
   },
   "171": {
@@ -1556,7 +1556,7 @@
     "nom": "Tenue Militaire",
     "desc": "Une tenue de dirigeant de guerre, strat\u00e8ge",
     "effet": "Force +1 Charisme +1",
-    "montant": "D\u00e9g\u00e2t -4",
+    "montant": "D\u00e9g\u00e2t -4 (+1 si Chevalier)",
     "icone": "k20280"
   },
   "216": {
@@ -1999,7 +1999,7 @@
     "nom": "Ceinture Pharaonique",
     "desc": "Une ceinture port\u00e9e par les grands nobles du Royaume d'Amur",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t re\u00e7u -2, Intelligence +1",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -2, Intelligence +1 (+1 si Illusionniste)",
     "icone": "A30011",
     "access": "A2"
   },
@@ -2031,7 +2031,7 @@
     "nom": "Puce amplificatrice",
     "desc": "Cette puce a \u00e9t\u00e9 cr\u00e9\u00e9e par un magicien zumi qui en avait marre de faire des sorts de soutien faible.",
     "effet": "",
-    "montant": "Montant des buffs +1, d\u00e9g\u00e2t +1",
+    "montant": "Montant des buffs +1, d\u00e9g\u00e2t +1 (+1 Si Ingénieur)",
     "icone": "i00688",
     "access": "D2"
   },
@@ -2342,7 +2342,7 @@
     "nom": "Masse Pulv\u00e9risante",
     "desc": "Une masse capable de pulv\u00e9riser la d\u00e9fense de sa cible.",
     "effet": "Blocage cible -1",
-    "montant": "D\u00e9g\u00e2t +5",
+    "montant": "D\u00e9g\u00e2t +5 (+1 Si Guerrier)",
     "icone": "W33501"
   },
   "321": {
@@ -2759,7 +2759,7 @@
     "nom": "Hache Puissante",
     "desc": "Am\u00e9lioration de la hache forte, elle donne beaucoup de force \u00e0 son porteur, hussss !",
     "effet": "Force +2",
-    "montant": "D\u00e9g\u00e2t +8",
+    "montant": "D\u00e9g\u00e2t +8 (+1 Si Guerrier)",
     "icone": "W20103"
   },
   "377": {
@@ -2992,14 +2992,14 @@
     "nom": "Gants du Sniper",
     "desc": "Gants con\u00e7us pour am\u00e9liorer les tirs",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t per\u00e7ant +3, Dext\u00e9rit\u00e9 +1",
+    "montant": "D\u00e9g\u00e2t per\u00e7ant +3, Dext\u00e9rit\u00e9 +1 (+1 si Chasseur)",
     "icone": "A40017"
   },
   "410": {
     "nom": "Brassard sacr\u00e9",
     "desc": "Les templiers et clercs sont tr\u00e8s friants de ce brassard extr\u00eamement utile !",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t lumi\u00e8re +2, d\u00e9g\u00e2t re\u00e7u -2",
+    "montant": "D\u00e9g\u00e2t lumi\u00e8re +2, d\u00e9g\u00e2t re\u00e7u -2 (-1 si Templier)",
     "icone": "A40033"
   },
   "411": {
@@ -3118,7 +3118,7 @@
     "nom": "Ep\u00e9e Gemme Noire",
     "desc": "Cette \u00e9p\u00e9e a \u00e9t\u00e9 taill\u00e9e dans une gemme sombre, elle inspire la peur et la haine.",
     "effet": "Element : T\u00e9n\u00e8bres",
-    "montant": "D\u00e9g\u00e2t +9, d\u00e9g\u00e2t de t\u00e9n\u00e8bres +2",
+    "montant": "D\u00e9g\u00e2t +9 , d\u00e9g\u00e2t de t\u00e9n\u00e8bres +2 (Dégât +1 si Luminary) ",
     "icone": "W25607"
   },
   "428": {
@@ -3277,9 +3277,30 @@
   },
   "450": {
     "nom": "Bague Corail",
-    "desc": "Cette bague très jolie est sertie d'un Minerai Corail capable de perturber la magie et l'énergie qui l'entoure.",
-    "effet": "Capacité",
-    "montant": "2 fois par combat (Instantanée Esprit) : Perturbe les ennemis (blocage -1, résistance esprit -2) sur 3 tours",
+    "desc": "Cette bague tr\u00e8s jolie est sertie d'un Minerai Corail capable de perturber la magie et l'\u00e9nergie qui l'entoure.",
+    "effet": "Capacit\u00e9",
+    "montant": "2 fois par combat (Instantan\u00e9e Esprit) : Perturbe les ennemis (blocage -1, r\u00e9sistance esprit -2) sur 3 tours",
     "icone": "k10115b"
+  },
+  "451": {
+    "nom": "Chapeau du barde",
+    "desc": "",
+    "effet": "",
+    "montant": "Dext\u00e9rit\u00e9 +1, Intelligence +1 (Charisme +1 si Barde)",
+    "icone": "A10058"
+  },
+  "452": {
+    "nom": "Poignard porte-bonheur",
+    "desc": "Un poignard tr\u00e8s utile en cas d'urgence ! Seuls les plus cruels savent s'en servir correctement !",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +2 (+1 si Voleur, Assassin, Juge)",
+    "icone": "k10261"
+  },
+  "453": {
+    "nom": "Tenue de Vagabond",
+    "desc": "Une tenue idéale pour voyager et se déplacer avec style",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t -5, Esquive +1 (+1 si Voleur ou Danselame)",
+    "icone": "k20664"
   }
 }

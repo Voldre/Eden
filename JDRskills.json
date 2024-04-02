@@ -1182,7 +1182,7 @@
     "nom": "Ferveur du Guerrier",
     "desc": "Lorsque la d\u00e9votion du Guerrier est totale (r\u00e9ussite 25%), il parvient \u00e0 se maintenir en vie au-del\u00e0 d'un coup fatal.",
     "effet": "Soin",
-    "montant": "Avant de tomber KO (3 fois par combat) : succ\u00e8s 1D4 (5/20) : Ressuscite et soigne 1D10+5 PV",
+    "montant": "Avant de tomber KO (3 fois par combat) : succ\u00e8s 1D4 (5/20) : Soigne 1D10+5 PV (buffs préservés)",
     "icone": "E0662",
     "stat": "",
     "classe": ["Guerrier"]

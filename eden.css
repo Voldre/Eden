@@ -249,9 +249,8 @@ li img,
 }
 .continent {
   min-width: 700px;
-  position: relative;
   text-align: center;
-  left: 2%;
+  position: relative;
   display: none;
 }
 
@@ -515,5 +514,11 @@ Brightness on mouseover and onclick */
   }
   .container ul .mapMenu {
     min-width: auto;
+  }
+
+  .continent {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
   }
 }
