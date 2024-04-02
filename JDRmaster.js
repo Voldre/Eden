@@ -62,11 +62,10 @@ function loadEnemy(indexEnemy, ennemiElement, genericEnemy = null) {
   }
 
   // ennemiElement.querySelector('#nom').innerText = enemyData.nom;
-  if (enemyData.desc !== "" && enemyData.infos !== "" && enemyData.drop !== "") {
-    ennemiElement.querySelector("#desc").innerText = "Desc : " + enemyData.desc;
-    ennemiElement.querySelector("#infos").innerText = "Infos / BP : " + enemyData.infos;
-    ennemiElement.querySelector("#drop").innerText = "Drop : " + enemyData.drop;
-  }
+  ennemiElement.querySelector("#desc").innerText = enemyData.desc && "Desc : " + enemyData.desc;
+  ennemiElement.querySelector("#infos").innerText = enemyData.infos && "Infos / BP : " + enemyData.infos;
+  ennemiElement.querySelector("#drop").innerText = enemyData.drop && "Drop : " + enemyData.drop;
+
   ennemiElement.querySelector(".visuel").innerText = enemyData.visuel3D;
   if (enemyData.visuel3D !== "Switch...")
     ennemiElement.querySelector(".icon").src =
@@ -79,7 +78,7 @@ function loadEnemy(indexEnemy, ennemiElement, genericEnemy = null) {
   ennemiElement.querySelector("#pvmax").value =
     nbP !== "3"
       ? Math.round(enemyData.pvmax * (1 + (nbP - 3) * 0.33))
-      : parseInt(enemyData.pvmax) >= 200
+      : parseInt(enemyData.pvmax) >= 200 && logged
       ? parseInt(enemyData.pvmax) + 100
       : enemyData.pvmax;
 
@@ -93,7 +92,7 @@ function loadEnemy(indexEnemy, ennemiElement, genericEnemy = null) {
   // Skills de l'ennemi
   enemyData.skills.forEach((skill, index) => {
     var competence = [...ennemiElement.querySelectorAll(".competence")][index];
-    competence.innerText = skill;
+    competence.innerHTML = skill;
   });
 
   if (logged) updateSlots();
@@ -599,3 +598,14 @@ if (logged) {
 
   document.querySelector("#logout").addEventListener("click", () => callPHP({ action: "logout" }));
 }
+
+// Show/Hide other pages of Eden
+const buttonIframe = document.querySelector("#buttonIframe");
+buttonIframe?.addEventListener("click", () => {
+  if (buttonIframe.innerText == "Afficher le site") {
+    buttonIframe.innerText = "Masquer le site";
+  } else {
+    buttonIframe.innerText = "Afficher le site";
+  }
+  document.querySelector("iframe").classList.toggle("hide");
+});

@@ -1047,7 +1047,7 @@
     "nom": "Masse Zumi",
     "desc": "Une masse con\u00e7ue par les Zumis, efficace pour les attaques de zone",
     "effet": "D\u00e9g\u00e2t AoE+2",
-    "montant": "D\u00e9g\u00e2t +5",
+    "montant": "D\u00e9g\u00e2t +4",
     "icone": "W33602"
   },
   "146": {
@@ -1651,7 +1651,8 @@
     "desc": "Une \u00e9p\u00e9e port\u00e9e par un grand h\u00e9ros du pass\u00e9, des rumeurs disent qu'il s'agit du premier Chevalier du Chaos. Appartient \u00e0 la Panoplie du \"H\u00e9ros\".",
     "effet": "Force +1, Intel +1",
     "montant": "D\u00e9g\u00e2t +4 (+2 si panoplie)",
-    "icone": "W10604"
+    "icone": "W10604",
+    "access": "D4"
   },
   "229": {
     "nom": "Flacon secret de Rumbledore",
@@ -1673,7 +1674,7 @@
     "nom": "M\u00e9daille Versatile",
     "desc": "M\u00e9daille destin\u00e9 au champion du Tournoi Versatile, conf\u00e9rant de la puissance \u00e0 son porteur",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t +2, D\u00e9g\u00e2t re\u00e7u -2",
+    "montant": "D\u00e9g\u00e2t +3, D\u00e9g\u00e2t re\u00e7u -2",
     "icone": "I00390",
     "access": "D4"
   },
@@ -1906,9 +1907,9 @@
   },
   "262": {
     "nom": "Pelote d'entrave",
-    "desc": "Pelote fabriqu\u00e9e par des Ezelins d'une autre \u00e9poque. Permet de forcer l'ennemi \u00e0 retenter son esquive ou son blocage. Utilisable hors combat pour d\u00e9placer la cible.",
+    "desc": "Pelote fabriqu\u00e9e par des Ezelins d'une autre \u00e9poque. Oblige l'ennemi \u00e0 retenter son esquive ou son blocage. Utilisable hors combat pour d\u00e9placer la cible.",
     "effet": "",
-    "montant": "2 fois par combat (Instantan\u00e9e) : force un ennemi \u00e0 re-esquiver ou re-bloquer (-1 si attaque du porteur)",
+    "montant": "2 fois par combat (Instantan\u00e9e) : oblige un ennemi \u00e0 re-esquiver ou re-bloquer (-1 si attaque du porteur)",
     "icone": "i00794",
     "access": "D4"
   },
@@ -2541,7 +2542,7 @@
     "nom": "Gunner du Savoir",
     "desc": "Un Gunner qui am\u00e9liore les capacit\u00e9s magique de son porteur",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t +8, Intel & Esprit +1",
+    "montant": "D\u00e9g\u00e2t +8, Intelligence +1 et Esprit +1",
     "icone": "W51903b"
   },
   "348": {
@@ -2676,7 +2677,7 @@
     "nom": "Plastron Draconique",
     "desc": "Un plastron d\u00e9di\u00e9 aux Chevaliers Dragons, seuls les plus nobles et puissants se le voit octroy\u00e9.",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t -6 (Force/Intel +1 pour les Chev D.)",
+    "montant": "D\u00e9g\u00e2t -6 (Force +1, Intel +1 pour les Chev D.)",
     "icone": "A20081"
   },
   "366": {
@@ -2765,7 +2766,7 @@
     "nom": "Masse de Magie",
     "desc": "Une masse con\u00e7ue pour renforcer la puissance magique.",
     "effet": "Intelligence +1",
-    "montant": "D\u00e9g\u00e2t +3",
+    "montant": "D\u00e9g\u00e2t +4",
     "icone": "W30103"
   },
   "378": {
@@ -3147,5 +3148,138 @@
     "effet": "Dur\u00e9e des sorts +1",
     "montant": "D\u00e9g\u00e2t -3",
     "icone": "W70508"
+  },
+  "432": {
+    "nom": "Faucille Sanguinaire",
+    "desc": "Une faucille forg\u00e9 dans un Minerai de Sang, tr\u00e8s rare et difficile \u00e0 manipuler. Cette faucille est d'une qualit\u00e9 extr\u00eame.",
+    "effet": "Force -1, Esprit -2",
+    "montant": "D\u00e9g\u00e2t +12, si critique (1,2) : Soin PV = d\u00e9g\u00e2ts/2",
+    "icone": "W55502"
+  },
+  "433": {
+    "nom": "Rapi\u00e8re de la Curie",
+    "desc": "Cette rapi\u00e8re est con\u00e7ue pour les meilleures troupes de la Curie M\u00e9t\u00e9role",
+    "effet": "D\u00e9g\u00e2t de lumi\u00e8re +2",
+    "montant": "D\u00e9g\u00e2t +5",
+    "icone": "W11802"
+  },
+  "434": {
+    "nom": "B\u00e2ton de la Curie",
+    "desc": "B\u00e2ton con\u00e7u pour les meilleures troupes de la Curie M\u00e9t\u00e9role",
+    "effet": "D\u00e9g\u00e2t de lumi\u00e8re +3",
+    "montant": "D\u00e9g\u00e2t +9",
+    "icone": "W60601"
+  },
+  "435": {
+    "nom": "Grimoire Sacr\u00e9 de la Curie",
+    "desc": "Un grimoire confi\u00e9 seulement aux plus dignes membres de la Curie M\u00e9t\u00e9role.",
+    "effet": "D\u00e9g\u00e2t de lumi\u00e8re +3",
+    "montant": "D\u00e9g\u00e2t +10, Soin +3",
+    "icone": "W64806"
+  },
+  "436": {
+    "nom": "Couronne de Richesse",
+    "desc": "Une ancienne couronne amenant prosp\u00e9rit\u00e9 \u00e0 son porteur.",
+    "effet": "Or trouv\u00e9 +50%",
+    "montant": "Stats +1, d\u00e9g\u00e2t re\u00e7u -2",
+    "icone": "A10022"
+  },
+  "437": {
+    "nom": "Mitre de l'Ev\u00eaque",
+    "desc": "Cette toque est d\u00e9di\u00e9e aux \u00e9v\u00eaques de la Curie M\u00e9t\u00e9role, cela leur apporte tout ce dont ils ont besoins.",
+    "effet": "Soin +2",
+    "montant": "Intelligence +1, Esprit +1, (Charisme +1 si Clerc/Sage)",
+    "icone": "A10011"
+  },
+  "438": {
+    "nom": "Veste parfaite",
+    "desc": "Cette veste est parfaite pour tout style d'aventurier. Tr\u00e8s utile !",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t -4, Toutes stats +1",
+    "icone": "A20043"
+  },
+  "439": {
+    "nom": "Boucles d'oreilles b\u00e9nites",
+    "desc": "Fabriqu\u00e9es par un ancien humain ma\u00eetre d'art de la joaillerie, ces bijoux sont \u00e0 la fois magnifique et extr\u00eamement utile.",
+    "effet": "",
+    "montant": "Toutes stats +1",
+    "icone": "k10158"
+  },
+  "440": {
+    "nom": "Pendentif du sang",
+    "desc": "Ce pendentif est incrust\u00e9 d'une pierre de sang extr\u00eamement rare, poss\u00e9dant une capacit\u00e9 hors du commun qui peut sauver la vie de son porteur.",
+    "effet": "",
+    "montant": "PV +15, si critique (1,2) : Soin PV = d\u00e9g\u00e2ts/3",
+    "icone": "k10160"
+  },
+  "441": {
+    "nom": "Robe de la Curie",
+    "desc": "Une robe con\u00e7ue pour les membres de l'\u00e9glise de la Curie M\u00e9t\u00e9role",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t -3, Soin +2 et D\u00e9g\u00e2t magique +2 (AoE : +1)",
+    "icone": "A20020"
+  },
+  "442": {
+    "nom": "Anneau de la Curie",
+    "desc": "Cet anneau est b\u00e9ni par toute l'\u00e9glise de la Curie M\u00e9t\u00e9role, elle apporte puissance \u00e0 quiconque la porte.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +2, D\u00e9g\u00e2t re\u00e7u -2",
+    "icone": "A00006b"
+  },
+  "443": {
+    "nom": "Casque de concentration",
+    "desc": "En plus de prot\u00e9ger son porteur, ce casque lui permet de mieux se concentrer",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -2, Force +1, Esprit +1",
+    "icone": "A10090"
+  },
+  "444": {
+    "nom": "Tenue de G\u00e9n\u00e9ral",
+    "desc": "Cette tenue est con\u00e7ue pour les hauts grad\u00e9s du corps militaire",
+    "effet": "Force +2 Charisme +1",
+    "montant": "D\u00e9g\u00e2t -5",
+    "icone": "k20976"
+  },
+  "445": {
+    "nom": "Hache du Bul'tik",
+    "desc": "Une ancienne vieille hache appartenant aux Draka\u00efs envahisseur de la Grande Guerre. L'agonie de ses victimes est encore perceptible.",
+    "effet": "Esprit -4",
+    "montant": "D\u00e9g\u00e2t +15",
+    "icone": "W27203b"
+  },
+  "446": {
+    "nom": "Ecusson de la Curie - Bronze",
+    "desc": "Cet \u00e9cusson en bronze repr\u00e9sente un titre honorifique de la Curie M\u00e9t\u00e9role, il est r\u00e9serv\u00e9 aux braves.",
+    "effet": "",
+    "montant": "R\u00e9sistance d'esprit +2, d\u00e9g\u00e2t re\u00e7u -2",
+    "icone": "i00871"
+  },
+  "447": {
+    "nom": "Ecusson de la Curie - Argent",
+    "desc": "Cet \u00e9cusson en argent repr\u00e9sente un grand titre honorifique de la Curie M\u00e9t\u00e9role, il est r\u00e9serv\u00e9 aux plus d\u00e9vou\u00e9s.",
+    "effet": "Charisme +1",
+    "montant": "R\u00e9sistance d'esprit +3, PV +10",
+    "icone": "i00870"
+  },
+  "448": {
+    "nom": "Ecusson de la Curie - Or",
+    "desc": "Cet \u00e9cusson est l'une des plus hautes distinctions que la Curie M\u00e9t\u00e9role peut offrir, il est r\u00e9serv\u00e9 aux h\u00e9ros de la nation.",
+    "effet": "Charisme +2",
+    "montant": "R\u00e9sistance d'esprit +2, Esprit +2",
+    "icone": "i00869"
+  },
+  "449": {
+    "nom": "Doudoune",
+    "desc": "Une doudoune con\u00e7ue pour mieux voyager dans les contr\u00e9es glac\u00e9es",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t -3 (0 malus dans les zones froides)",
+    "icone": "A20014"
+  },
+  "450": {
+    "nom": "Bague Corail",
+    "desc": "Cette bague très jolie est sertie d'un Minerai Corail capable de perturber la magie et l'énergie qui l'entoure.",
+    "effet": "Capacité",
+    "montant": "2 fois par combat (Instantanée Esprit) : Perturbe les ennemis (blocage -1, résistance esprit -2) sur 3 tours",
+    "icone": "k10115b"
   }
 }

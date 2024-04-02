@@ -380,6 +380,9 @@ function loadCards(joueurData) {
     if (joueurData.cards.includes(card.id)) {
       cardE.appendChild(nameCardE);
       cardE.appendChild(descCardE);
+    } else {
+      // Card to hide if not obtained
+      if (card.id === 1055) return;
     }
     if (card.kind === "anecdote") {
       document.querySelector("#g" + card.group)?.append(cardE);

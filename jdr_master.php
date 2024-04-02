@@ -114,6 +114,11 @@ if(isset($_GET['logout'])){
             <input type="text" id="pList" style="width:125px"></input><button name="updatePInfo" id="updatePInfo">Update</button>  &nbsp; Nb P : <input type="number" name="nbP" id="nbP" value="3" style="width:10px"></input>, PV et DGT : <span id="variation"></span>
             <ul id="pInfo"></ul>
         </div>
+        <footer style="margin-bottom:60px">
+            <br/>
+            <button id="buttonIframe" style="z-index: 10;  position: absolute;">Afficher le site</button>
+            <iframe class="hide" src="http://voldre.free.fr/Eden/univers.php?data=worldmap" style="width: 100vw; height: 92vh;border-top: 4px double wheat; margin-left: -8px;" frameborder="0"></iframe>
+        </footer>
         <?php }else{ 
             // <!-- <p>connected</p> -->
             include 'jdr_master.html';

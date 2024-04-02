@@ -160,7 +160,7 @@
   "61": {
     "nom": "Assaut du Chaos",
     "desc": "(7-8 charges minimum) Les effets diff\u00e8rent selon l'\u00e9quilibre, faiblesse de l'ennemi : T\u00e9n\u00e8bres, Chaos (toutes ses faiblesses), Lumi\u00e8re.",
-    "montant": "1D8+6, d\u00e9g\u00e2t re\u00e7u de l'\u00e9l\u00e9ment +5 pendant 3 tours"
+    "montant": "1D10+6, d\u00e9g\u00e2t re\u00e7u de l'\u00e9l\u00e9ment +5 pendant 3 tours"
   },
   "62": {
     "nom": "Sacrifice d'Ombre Noire",

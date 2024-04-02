@@ -148,13 +148,24 @@
       ]
     },
     {
-      "classe": "Chevalier Dragon TODO",
+      "classe": "Chevalier Dragon",
       "sorts": [
         {
-          "nom": "Lumière Sacrée / Charge",
-          "stat": "Intel/Force",
+          "nom": "Revers d'écaille / Mode Draconique ",
+          "stat": "Esprit",
+          "montantFixe": "",
+          "montantVariable": 0,
+          "type": "Renvoi / Buff",
+          "portee": "Mono",
+          "effet": "3 tentatives par combat (<10 : 66%, >=10 : 33%) // Embrasé:  Force/intel, Démoniaque : Charisme, Caché : Esprit +",
+          "montantEffet": 1,
+          "duree": 0
+        },
+        {
+          "nom": "Pouvoir du Dragon",
+          "stat": "Force/Intel",
           "montantFixe": "3D6",
-          "montantVariable": 7,
+          "montantVariable": 6,
           "type": "Degat",
           "portee": "Mono",
           "effet": "",
@@ -162,37 +173,26 @@
           "duree": 0
         },
         {
-          "nom": "Coup Infernal / Vague Foudroyante",
-          "stat": "Intel/Force",
-          "montantFixe": "2D6 (+5 si Coup Infernal)",
-          "montantVariable": 2,
-          "type": "Degat Malus",
-          "portee": "AoE",
-          "effet": "Blocage -",
+          "nom": "Terreur du Dragon",
+          "stat": "Esprit",
+          "montantFixe": "",
+          "montantVariable": 0,
+          "type": "Malus",
+          "portee": "Mono",
+          "effet": "(Embrasé Effet +1, Démoniaque -10 PV, Caché Durée +1) Résistance d'esprit et réussite des sorts -",
           "montantEffet": 2,
           "duree": 3
         },
         {
-          "nom": "=",
-          "stat": "Intelligence",
-          "montantFixe": "d",
-          "montantVariable": 10,
-          "type": "Soin",
-          "portee": "Mono",
-          "effet": "",
-          "montantEffet": 0,
-          "duree": 0
-        },
-        {
-          "nom": "Défense d'Acier",
+          "nom": "Armure Draconique",
           "stat": "Esprit",
           "montantFixe": "",
           "montantVariable": 0,
-          "type": "Buff",
+          "type": "Armure",
           "portee": "Mono",
-          "effet": "Blocage +",
-          "montantEffet": 2,
-          "duree": 5
+          "effet": "(Embrasé Epines+3, Démoniaque Armure+2, Caché Durée +1) 1D4 (min 2) +",
+          "montantEffet": 1,
+          "duree": 3
         }
       ]
     },
@@ -409,7 +409,7 @@
         {
           "nom": "Invocation du Tigre/Aigle",
           "stat": "Esprit",
-          "montantFixe": "PV 40, Dégât Mono 1D6 + AoE (/2?)",
+          "montantFixe": "PV 40, Dégât Mono 1D6 + AoE (-10)",
           "montantVariable": 4,
           "type": "Degat (Invocation)",
           "portee": "AoE",
@@ -484,8 +484,106 @@
           "montantVariable": 0,
           "type": "Malus",
           "portee": "Mono",
-          "effet": "Blocage et réussite des sorts -",
+          "effet": "Résistance d'esprit et réussite des sorts (-1) -",
           "montantEffet": 2,
+          "duree": 3
+        }
+      ]
+    },
+    {
+      "classe": "Corsaire",
+      "sorts": [
+        {
+          "nom": "Pluie de Flèches",
+          "stat": "Dextérité",
+          "montantFixe": "2D6",
+          "montantVariable": 7,
+          "type": "Degat",
+          "portee": "AoE",
+          "effet": "",
+          "montantEffet": 0,
+          "duree": 0
+        },
+        {
+          "nom": "A la Charge !",
+          "stat": "Esprit",
+          "montantFixe": "",
+          "montantVariable": 0,
+          "type": "Buff",
+          "portee": "Mono",
+          "effet": "Prochain coup : Réussite +2 et Dégât +1D6 (min 3) +",
+          "montantEffet": 4,
+          "duree": 0
+        },
+        {
+          "nom": "Perforation / Flèche Terrorisante",
+          "stat": "Dextérité",
+          "montantFixe": "2D6",
+          "montantVariable": 6,
+          "type": "Dégât Malus",
+          "portee": "Mono",
+          "effet": "Blocage (ou Esquive) et réussite des sorts -",
+          "montantEffet": 2,
+          "duree": 3
+        },
+        {
+          "nom": "Saut d'Esquive",
+          "stat": "Dextérité",
+          "montantFixe": "1D6",
+          "montantVariable": 2,
+          "type": "Esquive Dégât",
+          "portee": "Mono",
+          "effet": "(3 tentatives : Remplace l'esquive)",
+          "montantEffet": 0,
+          "duree": 0
+        }
+      ]
+    },
+    {
+      "classe": "Juge",
+      "sorts": [
+        {
+          "nom": "Âme Enchaînée / Entrave Mentale",
+          "stat": "Dextérité/Esprit",
+          "montantFixe": "2D6",
+          "montantVariable": 4,
+          "type": "Degat Malus",
+          "portee": "AoE",
+          "effet": "Dextérité ou Résistance d'Esprit -",
+          "montantEffet": 2,
+          "duree": 3
+        },
+        {
+          "nom": "Verdict Final (Blessure Douloureuse)",
+          "stat": "Force",
+          "montantFixe": "3D6 (Crit X1.5) (1D10+5)",
+          "montantVariable": 3,
+          "type": "Degat",
+          "portee": "Mono",
+          "effet": "(0 soin)",
+          "montantEffet": 0,
+          "duree": 3
+        },
+        {
+          "nom": "Aura du Pourfendeur",
+          "stat": "Esprit",
+          "montantFixe": "",
+          "montantVariable": 0,
+          "type": "Buff",
+          "portee": "Mono",
+          "effet": "Dégât +1D6 (min 2) +",
+          "montantEffet": 2,
+          "duree": 3
+        },
+        {
+          "nom": "Scellement",
+          "stat": "Esprit",
+          "montantFixe": "",
+          "montantVariable": 0,
+          "type": "Malus",
+          "portee": "Mono",
+          "effet": "Aucun sort physique",
+          "montantEffet": 0,
           "duree": 3
         }
       ]

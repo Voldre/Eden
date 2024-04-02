@@ -9,7 +9,7 @@
     "map_z": null,
     "map_r": null,
     "bgm": 2,
-    "mobs": [127, 57, 75, 114, 131]
+    "mobs": [127, 57, 75, 114, 131, 153]
   },
   "2": {
     "name": "Monts Calcaires",
@@ -289,7 +289,7 @@
     "map_z": null,
     "map_r": null,
     "bgm": 35,
-    "mobs": [58, 72, 59, 116]
+    "mobs": [58, 72, 59, 116, 172, 173]
   },
   "25": {
     "name": "Vallée de la Mort",

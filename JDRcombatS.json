@@ -147,6 +147,14 @@
     "icone": "E0083"
   },
   {
+    "nom": "Pluie de Flèches",
+    "classe": "Corsaire",
+    "statUsed": "dexté",
+    "type": "attaque",
+    "montant": "Dégât +2D6 +1D4",
+    "icone": "E0085"
+  },
+  {
     "nom": "Aura Pourfendeur",
     "classe": "Juge",
     "statUsed": "esprit",

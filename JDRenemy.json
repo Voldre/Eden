@@ -972,12 +972,12 @@
   "67": {
     "visuel3D": "m315",
     "nom": "Adonis - Tueur Juge",
-    "pvmax": "260",
+    "pvmax": "240",
     "skills": [
-      "\u00c2me Enchain\u00e9e : 2D6+18 et dext\u00e9-3 (AoE) sur 4 tours : Dext\u00e9rit\u00e9",
-      "Scellement Douloureux : Aucun sort physique, 0 SOIN pendant 4 tours : Esprit",
-      "Verdict Final : 3D6 +18 (crit (1,2,3) X1.5) : Force",
-      "Furtivit\u00e9 / Aura du Pourfendeur : DGT T\u00e9n\u00e8b +2D6+6 pendant 4 tours : Esprit - - - 2 fois : Oeil Hypnotique (res -3), idem Fl\u00fbte : Contr\u00f4le esprit AoE, (res -2)"
+      "\u00c2me Enchain\u00e9e : 2D6+16 et dext\u00e9-3 (AoE) sur 3 tours : Dext\u00e9rit\u00e9",
+      "Scellement Douloureux : Aucun sort physique, 0 SOIN pendant 3-4 tours : Esprit",
+      "Verdict Final : 3D6 +18 (crit (1,2) X1.5) : Force",
+      "Furtivit\u00e9 / Aura du Pourfendeur : DGT T\u00e9n\u00e8b +1D6+8 pendant 4 tours : Esprit <br/> 2 fois : Oeil Hypnotique (res -3), idem Fl\u00fbte : Contr\u00f4le esprit AoE, (res -2)"
     ],
     "stats": "16,16,9,12,16",
     "desc": "Anuran bleu tr\u00e8s social et tr\u00e8s tueur, il cherche \u00e0 condamner... ?",
@@ -1034,15 +1034,15 @@
     "nom": "Ecorce Terrestre - Pionnier de Gaia",
     "pvmax": "330",
     "skills": [
-      "Fracas Terrestre / Atk Foudroyante : 1D10+16 / 2 D10+12 AoE : force/intel",
-      "Machoir Enorme : 3D6+19 : force",
-      "M\u00e8re fondatrice : Soin 2D10+25 Invoque 2 lutins runique (PV/2) : esprit",
-      "Armure +5. Passif quand 40% PV : D\u00e9g\u00e2t d'\u00e9pine 1D6+4"
+      "Fracas Terrestre / Atk Foudroyante : 2D10 +14 / +4 AoE : force/intel",
+      "Machoir Enorme : 4D6+22 : force",
+      "M\u00e8re fondatrice : Soin 2D10+25 Invoque 2 lutins préhistorique (PV/2) : esprit",
+      "Passif : Armure +5, quand 33% PV : Si Blocage critique => Fracas terrestre auto"
     ],
     "stats": "17,9,15,11,16",
     "desc": "BOSS : Une tortue verte antique mont\u00e9e d'un arbre gigantesque. Elle est redoutable et tr\u00e8s r\u00e9sistante",
     "infos": "Faible au feu et au per\u00e7ant",
-    "drop": "Pierre Algue, rare : Ep\u00e9e Verdoyante, tr\u00e8s rare : Plastron Ecailleux"
+    "drop": "Ep\u00e9e Verdoyante / Hache Verdâtre, rare : Plastron Ecailleux"
   },
   "72": {
     "visuel3D": "m059",
@@ -1737,12 +1737,12 @@
   "118": {
     "visuel3D": "m042b",
     "nom": "Ochak - Primat de la Chelona",
-    "pvmax": "270",
+    "pvmax": "280",
     "skills": [
-      "Zone noire : 2D10+13 (bloc m-2) AoE stat -2 (stat-3 si parasite) pendant 3 tours : Intelligence",
+      "Zone noire : 2D10+14 (bloc m-2) AoE stat -2 (stat-3 si parasite) pendant 3 tours : Intelligence",
       "Eclair en Furie : 4D6 +19 (bloc m-2) et r\u00e9ussite -5 sur 1 tour : Intelligence",
-      "Aura Bouclier Protec (+ Ctrl mentale) : Blocage +3, Malus-1 pendant 4 tours : esprit",
-      "Esprit Descell\u00e9 : Invoque 1 Fant\u00f4me L\u00e9thargique (2 si d\u00e9 < 7) : Esprit"
+      "Aura Bouclier Protec (+ Ctrl mentale) : Blocage +3 et -1 Malus pendant 4 tours : esprit",
+      "Esprit Descell\u00e9 : Invoque 1 Fant\u00f4me L\u00e9thargique (2 si d\u00e9 <= 7, si crit : Esprit de la Vengeance) : Esprit"
     ],
     "stats": "13,7,17,10,17",
     "desc": "Torturran riche qui est Primat (Cardinal) de la Chelona, il a travaill\u00e9 \u00e0 l'Ordre des Chevaliers de la rose, capable de desceller",
@@ -1935,7 +1935,7 @@
     "pvmax": "300",
     "skills": [
       "Lumi\u00e8re de Gu\u00e9rison : 2D10+15 (1/3 rejouer) : Intelligence",
-      "Vague Foudroyante : 3D6+15, Blocage-3 AoE 3 tours : Force",
+      "Vague Foudroyante : 3D6+16, Blocage-3 AoE 3 tours : Force",
       "Lumi\u00e8re Sacr\u00e9e : 3D6+20 / Euphorie : +1D4 (min 2) +2 par coup sur 5 tours : esprit",
       "Passif : Blocage +2 (Def Acier), Armure -15, Ferveur Guerrier : si KO (2 fois) succ\u00e8s 1D2 (10/20) : Soigne 3D10+20 PV (D\u00e9g\u00e2t/Armure +5 perma)"
     ],
@@ -2219,15 +2219,15 @@
     "nom": "Tortue Maudite",
     "pvmax": "170",
     "skills": [
-      "Seisme : 2D10 +12 AoE : force",
-      "Cri d'agonie : 2D6 +10 AoE (force/intel-4 4 tours) : intelligence",
+      "Seisme : 3D6 +12 AoE : force",
+      "Cri d'agonie : 2D6 +12 AoE (force/intel -4 4 tours) : intelligence",
       "Morsure : 3D6+18 : force",
-      "R\u00e9g\u00e9n\u00e9ration terrestre : 2D6+16 AoE : intelligence"
+      "R\u00e9g\u00e9n\u00e9ration terrestre : 2D6+18 AoE : intelligence"
     ],
     "stats": "17,7,16,9,11",
     "desc": "Grande tortue brune cramoisie de la Vall\u00e9e de la Mort",
     "infos": "Faible au feu et \u00e0 la glace",
-    "drop": "Ecaille/Peau/Griffe rare de tortue"
+    "drop": "Ecaille/Peau/Griffe rare de tortue, très rare : Plastron écailleux"
   },
   "151": {
     "visuel3D": "m241",
@@ -2267,10 +2267,10 @@
       "Faiblesse Critique : 5D6 +20 Crit (1,2 : *1.5,  3 : *1.25) : Force (jdrcombat +20)",
       "Dash (Cicatrice) de l'esprit : 4D6 +16 : -1 buff, se replace : Force",
       "Transe - Tueuse X : Atk Mono -> AoE, bloc/esq +2, -1 malus : 4 tours : Esprit",
-      "Passif : Si PV < 120 : Absorbe 1/3 en PV. (+ Furtivit\u00e9 fuite dext\u00e9)"
+      "Passif : Si PV < 120 : Absorbe 1/3 des d\u00e9g\u00e2ts (apr\u00e8s armure) en PV. (+ Furtivit\u00e9 fuite dext\u00e9)"
     ],
     "stats": "19,13,11,13,17",
-    "desc": "Humaine Assassin - La Tigresse Pourpre froide et franche de la Curie M\u00e9t\u00e9role, la l\u00e9gendaire G\u00e9nr\u00e9ale de Division Offensive.",
+    "desc": "La Tigresse Pourpre froide et franche de la Curie M\u00e9t\u00e9role, la l\u00e9gendaire G\u00e9nr\u00e9ale de Division Offensive.",
     "infos": "Faible au feu et aux t\u00e9n\u00e8bres",
     "drop": "A VOIR"
   },
@@ -2460,9 +2460,9 @@
     "pvmax": "330",
     "skills": [
       "Contr\u00f4le de l'Esprit / Dodo AoE : (Mono -3 res esprit, Dodo -3) dur\u00e9e 3 tours : Esprit (m\u00eame si silence)",
-      "D\u00e9triplement : Invoque 2 doubles pendant 2 tours : Esprit",
-      "M\u00e9t\u00e9ore / Stalactites Glaciales : 4D6+20 (+10 mono) : Intelligence // Coup Physique : 3D6+12",
-      "Voile du Blizzard // Saut dimensionnel : 5 tentatives. Passif : \"Rituel mana h24\" r\u00e9sistance d'esprit naturelle : 18"
+      "D\u00e9triplement : Invoque 2 doubles pendant 2 tours (d\u00e9g\u00e2ts/2) : Esprit",
+      "M\u00e9t\u00e9ore / Stalactites Glaciales : 4D6+20 (+10 mono) (+10 si PV<150) : Intelligence // Coup Physique : 3D6+12",
+      "Voile du Blizzard (bloc/esq+2) // Saut dimensionnel : 5 tentatives. Passif : \"Rituel mana h24\" r\u00e9sistance d'esprit naturelle : 18"
     ],
     "stats": "11,15,18,13,18",
     "desc": "Illusionniste d\u00f4t\u00e9 de l'oeil de l'\u00eatre divin Al-hara, lui conf\u00e9rant des pouvoirs hors du commun.",
@@ -2470,6 +2470,21 @@
     "drop": "B\u00e2ton Arc-en-Ciel ?"
   },
   "167": {
+    "visuel3D": "vassago",
+    "nom": "Vassago - G\u00e9n\u00e9ral D\u00e9chu",
+    "pvmax": "350",
+    "skills": [
+      "Verdict Final : 5D6 +25 Crit (1,2 : *1.5; 3,4 : *1.25) : Force // Entrave Mentale : 4D6+20 et -3 Res Esprit sur 3 tours : Esprit",
+      "Aura du Sanguinaire : D\u00e9g\u00e2t +1D6+9 (Absorbe +5 PV), Bloc/Esq +2 sur 5 tours : Esprit",
+      "Scellement AoE : Aucun sort physique pendant 3 tours (Absorbe +5 PV) : Espr'it, (jdrcombat +45)",
+      "Passif : Absorbe 1/3 des d\u00e9g\u00e2ts (apr\u00e8s armure) en PV. Si \"0 soin\" : Heal/2"
+    ],
+    "stats": "17,13,11,13,19",
+    "desc": "Juge et Ancien G\u00e9n\u00e9ral de Division Offensive de la Curie M\u00e9t\u00e9role, formateur de Diana. Il consid\u00e8re que la Curie n'est pas fiable/juste. Il a r\u00e9ussi \u00e0 \u00eatre en possession d'une magie hors norme...",
+    "infos": "Faible au contondant et au feu",
+    "drop": "Minerai de Sang, rare : Faucille Sanguinaire"
+  },
+  "168": {
     "visuel3D": "m053b",
     "nom": "Bonoss - Ursun Luminary (Veyda)",
     "pvmax": "155",
@@ -2481,21 +2496,6 @@
     ],
     "stats": "13,7,16,10,15",
     "desc": "Ursun mineur de la Veyda devenu forgeron",
-    "infos": "",
-    "drop": ""
-  },
-  "168": {
-    "visuel3D": "m043",
-    "nom": "Plotodo - Torturran Juge (Veyda)",
-    "pvmax": "190",
-    "skills": [
-      "\u00c2me Enchain\u00e9e : 2D6+8 et Dext\u00e9-3 sur 3 tours : Dext\u00e9rit\u00e9",
-      "Scellement : Aucun sort physique pendant 3 tours : Esprit",
-      "Verdict Final : 2D6 +12 (S Crit (1,2,3) X1.5) : Force",
-      "Aura du Pourfendeur : DGT +1D6+3 pendant 4 tours : Esprit"
-    ],
-    "stats": "15,14,8,10,15",
-    "desc": "Torturran pas tr\u00e8s commode qui se bat pour une \"paix\", c'est aussi un commer\u00e7ant un peu agressif...",
     "infos": "",
     "drop": ""
   },
@@ -2530,12 +2530,27 @@
     "drop": ""
   },
   "171": {
+    "visuel3D": "m043",
+    "nom": "Plotodo - Torturran Juge (Veyda)",
+    "pvmax": "190",
+    "skills": [
+      "\u00c2me Enchain\u00e9e : 2D6+11 et Dext\u00e9-3 sur 3 tours : Dext\u00e9rit\u00e9",
+      "Scellement : Aucun sort physique pendant 3 tours : Esprit",
+      "Verdict Final : 3D6 +13 (S Crit (1,2,3) X1.5) : Force",
+      "Aura du Pourfendeur : DGT +1D6+4 pendant 4 tours : Esprit"
+    ],
+    "stats": "16,14,8,10,15",
+    "desc": "Torturran pas tr\u00e8s commode qui se bat pour une \"paix\", c'est aussi un commer\u00e7ant un peu agressif...",
+    "infos": "",
+    "drop": ""
+  },
+  "172": {
     "visuel3D": "m038b",
     "nom": "Plouka - Lieutenant Offensif",
     "pvmax": "210",
     "skills": [
-      "Faiblesse Critique / Cicatrice de l'Esprit : Degat 3D6 (Crit X1.5) (ou -1 buff) +12, Mono : Force",
-      "Griffure Noire (Atk Furieuse) : Degat Malus 2D6 (+5) +11, Blocage et Esquive -2 sur 3 tours AoE : Dext\u00e9rit\u00e9/Force",
+      "Faiblesse Critique / Cicatrice : Degat 3D6+13 (Crit X1.5) (ou -1 bu'ff), Mono : Force (jdrcombat +18)",
+      "Griffure Noire (Atk Furieuse) : Degat Malus 2D6+11 (+5), Blocage et Esquive -2 sur 3 tours AoE : Dext\u00e9rit\u00e9/Force",
       "Transe - Mode Tueur : Buff , D\u00e9g\u00e2t +1D6 (min 2) +5 sur 3 tours Mono : Esprit",
       "Contr\u00f4le de l'Energie : Soin Buff 2D6 +18, Dext\u00e9 -2 et R\u00e9sistance d'esprit +3 sur 3 tours Mono : Esprit"
     ],
@@ -2543,5 +2558,95 @@
     "desc": "Anuran Lieutenant \u00e0 la peau rouge, dr\u00f4le, social et b\u00eate. Premier chef de Kibo !",
     "infos": "Faible aux t\u00e9n\u00e8bres et \u00e0 la foudre",
     "drop": "Griffe de l'Esprit, Anneau du Bagarreur OU Bague Enchant\u00e9e"
+  },
+  "173": {
+    "visuel3D": "m230b",
+    "nom": "Y\u00e9ti - Monstre imaginaire des glaces",
+    "pvmax": "330",
+    "skills": [
+      "TODO : 6D6 +45 (+10 si para) : Intelligence // Coup Physique : 3D6+20",
+      "TODO AoE : 4D6+30 (+5 si para) et -2 r\u00e9ussites sur 3 tours : Intelligence",
+      "",
+      ""
+    ],
+    "stats": "19,13,13,11,13",
+    "desc": "Un incroyable Y\u00e9ti des glaces : 6m de long et 3m de large ! Plein de poils et de dents pointus ! Rien que le regarder donne des vrais frissons !",
+    "infos": "",
+    "drop": ""
+  },
+  "174": {
+    "visuel3D": "m012d",
+    "nom": "Spike - Zumi Assassin (Veyda)",
+    "pvmax": "165",
+    "skills": [
+      "Cicatrice de l'Esprit : Degat 3D6 +7 (-1 buff) : Force",
+      "Griffure Noire : Degat Malus 2D6 +7, Blocage et Esquive -1 sur 3 tours AoE : Force",
+      "Transe - Mode Tueur : Buff D\u00e9g\u00e2t +1D6 (min 2) +4 sur 3 tours Mono : Esprit",
+      "Contr\u00f4le de l'Energie : Soin 2D6 +15, Dext\u00e9 -2 et R\u00e9sistance d'esprit +3 sur 3 tours (Mono) : Esprit"
+    ],
+    "stats": "16,15,7,10,14",
+    "desc": "Zumi brun fan d'ing\u00e9nierie, c'est un vrai rat de laboratoire. Toujours motiv\u00e9 pour aider.",
+    "infos": "",
+    "drop": ""
+  },
+  "175": {
+    "visuel3D": "lucius",
+    "nom": "Lucius - Chef de la Veyda",
+    "pvmax": "290",
+    "skills": [
+      "Soin Inverseur : Transforme tous les soins re\u00e7us en d\u00e9g\u00e2t (AoE) 4 tours (non annulable) : Esprit",
+      "Faiblesse Critique : 4D6 +18 Crit (1,2 : *1.5, 3 : *1.25) : Force<br/>Cicatrice : 4D6+20 (-1 bonus) : Force -1",
+      "Griffure Noire : 3D6 +12, et -2 blocage/esquive pour 3 tours AoE : Force",
+      "Pelote d'entrave : 4 tentatives (Instantan\u00e9e) : Mono/AoE force \u00e0 re-esquiver ou re-bloquer (r\u00e9ussite -1) : Esprit <br/> Passif : Si Blocage/Esquive critique : Coup d'opportunit\u00e9"
+    ],
+    "stats": "18,8,14,14,17",
+    "desc": "Lucius, ancien Roi D\u00e9chu du pass\u00e9, il a fond\u00e9 la Veyda pour assouvir ses nouvelles ambitions de conqu\u00eates du monde. Avec cette fois plus de pr\u00e9paration.",
+    "infos": "Faible au per\u00e7ant et \u00e0 la lumi\u00e8re",
+    "drop": "Bijou Iris, Pelote d'entrave, Griffe royale"
+  },
+  "176": {
+    "visuel3D": "m216e",
+    "nom": "Esprit de la Vengeance",
+    "pvmax": "150",
+    "skills": [
+      "Tempête Noire : 2D6+15 (+5 parasite) AoE : intelligence",
+      "Flèche des ombres sanglantes : 3D6+15, soin 1D10+5 (+5 parasite) : intelligence",
+      "Voile du blizzard : Dur\u00e9e 3 tours invisi sauf annulation, Intel+2, D\u00e9g\u00e2t+5 : intelligence",
+      "Parasite : 6 DGT chaque tour (5 tours) : intelligence"
+    ],
+    "stats": "7,13,17,9,13",
+    "desc": "Fant\u00f4me noir aux reflets rougeâtres tr\u00e8s hostile et en recherche de vengeance.",
+    "infos": "Faible \u00e0 la lumi\u00e8re et \u00e0 la nature",
+    "drop": "Extrait fantomatique, rare : Noyau abyssal"
+  },
+  "177": {
+    "visuel3D": "m289d",
+    "nom": "Bourreau du Grand Bul’tik",
+    "pvmax": "180",
+    "skills": [
+      "Vague terrestre : 2D10 +14 AoE : force",
+      "Succion : 3D6+16 (soin 3/4) : force",
+      "Hache énergivore : 3D6+20 et Réussite -3 (4 tours) : Intelligence",
+      "Appel du Bul'tik : 3 tours d'incantation : Réveil un autre Bourreau du Grand Bul'tik : Intelligence"
+    ],
+    "stats": "16,11,17,11,16",
+    "desc": "Insecte l\u00e9zard avec une armure bleut\u00e9, on raconte qu'il s'agit d'un ancien Draka\u00ef de la Grande Guerre ayant succomb\u00e9 \u00e0 un surplus de d\u00e9monologie.",
+    "infos": "Faible au feu et au contondant",
+    "drop": "rare : Collier Lueur d'âme, très rare : Hache du Bul'tik"
+  },
+  "178": {
+    "visuel3D": "m315",
+    "nom": "Adonis 2 - Juge déterminé",
+    "pvmax": "270",
+    "skills": [
+      "\u00c2me Enchain\u00e9e / Entrave Mentale : 3D6+18 (+5 si PV<100) et dext\u00e9-3  / res espr -3 (AoE) sur 3 tours : Dext\u00e9rit\u00e9/Espr'it",
+      "Scellement Douloureux : Aucun sort physique, 0 SOIN pendant 4-5 tours : Esprit",
+      "Verdict Final : 4D6 +20 (crit (1,2,3) X1.5) : Force",
+      "Furtivit\u00e9 / Aura du Pourfendeur : DGT T\u00e9n\u00e8b +2D6+8 pendant 4-5 tours : Esprit <br/> 2 fois : Oeil Hypnotique (res -3), idem Fl\u00fbte : Contr\u00f4le esprit AoE, (res -2) <br/> Bague Corail (blocage -2, résistance esprit -3) AoE sur 3 tours"
+    ],
+    "stats": "17,17,9,12,17",
+    "desc": "Adonis a perfectionné sa technique de meurtre, cet anuran bleu n'hésite pas à utiliser son charme et sa sociabilité pour condamner ses ennemis.",
+    "infos": "Faible au tranchant et \u00e0 la foudre",
+    "drop": "50 po, Cape Hypnotique, Fl\u00fbte des Fleurs de Lune, Bague Corail, rare : Faucille d\u00e9moniaque"
   }
 }
