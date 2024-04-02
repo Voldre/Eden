@@ -39,7 +39,7 @@
     "nom": "Euphorie",
     "desc": "Chaque coup re\u00e7u augmente les prochains d\u00e9g\u00e2ts inflig\u00e9s, cumulables 5 fois (+x cumule par montant des buffs).",
     "effet": "Buff",
-    "montant": "+2 par coup reçu, cumulable 5 fois pendant 4 tours",
+    "montant": "+2 par coup re\u00e7u, cumulable 5 fois pendant 4 tours",
     "icone": "E0286",
     "stat": "Esprit",
     "classe": ["Guerrier"]
@@ -370,7 +370,7 @@
   },
   "47": {
     "nom": "Totem Gracieux",
-    "desc": "Invoque un familier Totem : 30 PV, Force : 9, Dext\u00e9 : 13, Intel : 14. - Mode Soin : Ne peut pas bouger / se prot\u00e9ger, 0 jet de d\u00e9. - Mode Soutien : peut bouger et bloquer, 2 sorts : 1) Renforcement : +2 Force ou +2 Intel sur la cible : 3 tours (intel) , 2) Eclair : 1D8 (intel)",
+    "desc": "Invoque un familier Totem : 30 PV, Force : 9, Dext\u00e9 : 13, Intel/Esprit : 14. - Mode Soin : Ne peut pas bouger / se prot\u00e9ger, 0 jet de d\u00e9. - Mode Soutien : peut bouger et bloquer, 2 sorts : 1) Renforcement : +2 Force ou +2 Intel sur la cible : 3 tours (intel) , 2) Eclair : 1D8 (intel)",
     "effet": "Invocation",
     "montant": "(jusqu'\u00e0 coupure magique), Mode Soin : Soin 3 PV par tour. - Mode Soutien : attaque/bloque",
     "icone": "E0115",
@@ -442,7 +442,7 @@
   },
   "55": {
     "nom": "Contr\u00f4le de l'Esprit",
-    "desc": "La cible est hypnotisée et contrainte à respecter les ordres du lanceur (attaquer les ennemis, soi-même, ...)",
+    "desc": "La cible est hypnotis\u00e9e et contrainte \u00e0 respecter les ordres du lanceur (attaquer les ennemis, soi-m\u00eame, ...)",
     "effet": "Status",
     "montant": "Inflige le status \"Hypnose\" pendant 1D4 tours",
     "icone": "E0129",
@@ -489,7 +489,7 @@
     "nom": "Assaut du Chaos",
     "desc": "Le Luminary d\u00e9charge autour de lui toute sa magie accumul\u00e9 (7-8 charges minimum), les effets diff\u00e8rent selon l'\u00e9quilibre : T\u00e9n\u00e8bres, Chaos (toutes ses faiblesses), Lumi\u00e8re. L'ennemi en est ensuite affaibli.",
     "effet": "D\u00e9g\u00e2t Malus AoE R+",
-    "montant": "1D8+3, d\u00e9g\u00e2t re\u00e7u de l'\u00e9l\u00e9ment +3 pendant 3 tours",
+    "montant": "1D10+3, d\u00e9g\u00e2t re\u00e7u de l'\u00e9l\u00e9ment +3 pendant 3 tours",
     "icone": "j674",
     "stat": "Intelligence",
     "classe": ["Luminary"]
@@ -570,7 +570,7 @@
     "nom": "Menaces Mortelles",
     "desc": "Effraye les ennemis pour leur faire perdre leurs moyens.",
     "effet": "Malus AoE",
-    "montant": "Prochaine r\u00e9ussite des sorts : -3, esquive/blocage -1, dure 1 tour",
+    "montant": "Prochaine r\u00e9ussite des sorts : -3, esquive/blocage/résistance -1, dure 1 tour",
     "icone": "E0135",
     "stat": "Esprit",
     "classe": ["D\u00e9moniste"]
@@ -588,7 +588,7 @@
     "nom": "R\u00e9surrection",
     "desc": "(Utilisable m\u00eame vivant) prend 2 tours : Soigne/Ressuscite un joueur avec quelques PV ",
     "effet": "Soin",
-    "montant": "Incantation 2 tours (1 dé/tour) : soigne de 2D10+16",
+    "montant": "Incantation 2 tours (1 d\u00e9/tour) : soigne de 2D10+16",
     "icone": "E0020",
     "stat": "Intelligence",
     "classe": ["Clerc", "Barde", "Shaman", "Sage"]
@@ -649,7 +649,7 @@
   },
   "79": {
     "nom": "Gr\u00e2ce de la Sagesse",
-    "desc": "Augmente l'intelligence et l'esprit de la cible",
+    "desc": "Augmente le blocage et l'esprit de la cible",
     "effet": "Buff",
     "montant": "Blocage +2 et Esprit +2 pendant 4 tours",
     "icone": "E0095",
@@ -883,9 +883,9 @@
   },
   "105": {
     "nom": "Lavage de Cerveau",
-    "desc": "R\u00e9duit la concentration de l'ennemi (blocage, r\u00e9ussite), pendant 3 tours",
+    "desc": "R\u00e9duit la concentration de l'ennemi (r\u00e9sistance d'esprit, r\u00e9ussite), pendant 3 tours",
     "effet": "Malus",
-    "montant": "Blocage -2 et r\u00e9ussite des sorts -3 sur 3 tours",
+    "montant": "R\u00e9sistance d'Esprit -2 et r\u00e9ussite des sorts -3 sur 3 tours",
     "icone": "E0078",
     "stat": "Esprit",
     "classe": ["Ing\u00e9nieur"]
@@ -930,7 +930,7 @@
     "nom": "Terreur du Dragon",
     "desc": "L'utilisateur terrorise son adversaire et le destabilise.  Effets - Embras\u00e9 : Effet+1; D\u00e9moniaque : D\u00e9g\u00e2t 10 PV; Cach\u00e9 : Dur\u00e9e+1",
     "effet": "Malus",
-    "montant": "R\u00e9ussite des sorts : -3 sur 3 tours  (+ effet mode)",
+    "montant": "Résistance d'Esprit et R\u00e9ussite des sorts : -2 sur 3 tours  (+ effet mode)",
     "icone": "E1023",
     "stat": "Charisme",
     "classe": ["Chev Dragon"]
@@ -1002,7 +1002,7 @@
     "nom": "Explosion Glaciale",
     "desc": "L'utilisateur canalyse sa magie pendant 3 tours puis la balance \u00e0 toute puissance sur ses adversaires en face (chance blocage/2)",
     "effet": "D\u00e9g\u00e2t AoE R+",
-    "montant": "Incantation 3 tours (1 dé/tour) : 4D6 +18",
+    "montant": "Incantation 3 tours (1 d\u00e9/tour) : 4D6 +18",
     "icone": "E0837",
     "stat": "Intelligence",
     "classe": ["Magicien"]
@@ -1011,7 +1011,7 @@
     "nom": "Encouragement Musical",
     "desc": "(effet montant des buffs /2). Incante et r\u00e9duit les d\u00e9g\u00e2ts subis, immunise \u00e0 l'endormissement et augmente la r\u00e9sistance mentale (Blocage Esprit/2)",
     "effet": "Buff AoE",
-    "montant": "Incantation 2 tours (1 dé) : subi -1D4-2, 0 dodo, +2 r\u00e9s esprit, pour 4 tours",
+    "montant": "Incantation 2 tours (1 d\u00e9) : subi -1D4-2, 0 dodo, +2 r\u00e9s esprit, pour 4 tours",
     "icone": "E0406",
     "stat": "Charisme",
     "classe": ["Barde"]
@@ -1020,7 +1020,7 @@
     "nom": "Brisure Vibrante",
     "desc": "Identifie et frappe sur la/les faiblesse(s) physiques de la cible gr\u00e2ce \u00e0 la fr\u00e9quence vibratoire (ondes)",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "Incantation 2 tours (1 dé) : 2D6 +8",
+    "montant": "Incantation 2 tours (1 d\u00e9) : 2D6 +8",
     "icone": "E0714",
     "stat": "Intelligence",
     "classe": ["Barde"]
@@ -1037,7 +1037,7 @@
   "122": {
     "nom": "Eclair charg\u00e9",
     "desc": "Un coup d'\u00e9clair concentr\u00e9 en magie qui foudroie la cible. Chance de blocage/esquive -2.",
-    "effet": "Incantation 2 tours (1 dé/tour) :D\u00e9g\u00e2t",
+    "effet": "Incantation 2 tours (1 d\u00e9/tour) :D\u00e9g\u00e2t",
     "montant": "2D10 +12",
     "icone": "E0724",
     "stat": "Intelligence",
@@ -1065,13 +1065,14 @@
     "nom": "Armure Draconique",
     "desc": "Le DK (Dragon Knight) rev\u00eate son corps d'\u00e9caille sur 4 tours. Effets - Embras\u00e9 : Epines+3; D\u00e9moniaque : D\u00e9g\u00e2t subi -2; Cach\u00e9 : Dur\u00e9e+1",
     "effet": "Buff",
-    "montant": "D\u00e9g\u00e2t subi -1D4 (min 2), 4 tours  (+ effet mode)",
+    "montant": "D\u00e9g\u00e2t subi -1D4 (min 2) pendant 3 tours  (+ effet mode)",
     "icone": "E1022",
     "stat": "Esprit",
     "classe": ["Chev Dragon"]
   },
   "126": {
     "nom": "Dash Foudroyant",
+    "desc": "Le lanceur fait un Dash en avant de quelques m\u00e8tres en tranchant sa cible, lui infligeant des d\u00e9g\u00e2ts de foudre. Tel un combattant vif qui se replace.",
     "effet": "D\u00e9g\u00e2t",
     "montant": "1D10+3",
     "icone": "E0675",
@@ -1152,7 +1153,7 @@
   },
   "135": {
     "nom": "D\u00e9doublement",
-    "desc": "Cr\u00e9e un double de soi avec les m\u00eames stats et buffs (\u00e0 l'invocation). La durée des sorts lancées sont divisées par 2, ou, cas échéant, ses d\u00e9g\u00e2ts/soins et ses montants (invocation/buff/malus), sont divis\u00e9s par 2. Ses d\u00e9g\u00e2ts re\u00e7us touchent le porteur et sont aussi divis\u00e9s par 2 (avec armure/2).",
+    "desc": "Cr\u00e9e un double de soi avec les m\u00eames stats et buffs (\u00e0 l'invocation). La dur\u00e9e des sorts lanc\u00e9es sont divis\u00e9es par 2, ou, cas \u00e9ch\u00e9ant, ses d\u00e9g\u00e2ts/soins et ses montants (invocation/buff/malus), sont divis\u00e9s par 2. Ses d\u00e9g\u00e2ts re\u00e7us touchent le porteur et sont aussi divis\u00e9s par 2 (avec armure/2).",
     "effet": "Invocation",
     "montant": "Invoque un double de soi pendant 2 tours.",
     "icone": "E1042",
@@ -1194,5 +1195,14 @@
     "icone": "E0085",
     "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Corsaire"]
+  },
+  "140": {
+    "nom": "Entrave Mentale",
+    "desc": "Le juge utilise la peur comme arme pour entraver mentalement ses proies autour de lui.",
+    "effet": "D\u00e9g\u00e2t Malus AoE R-",
+    "montant": "1D6+1, R\u00e9sistance d'Esprit -2 pour 3 tours",
+    "icone": "E0889",
+    "stat": "Esprit",
+    "classe": ["Juge"]
   }
 }

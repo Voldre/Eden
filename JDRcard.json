@@ -487,6 +487,30 @@
     "kindId": "m009b"
   },
   {
+    "id": 1053,
+    "value": 3,
+    "kind": "boss",
+    "name": "Plouka - Lieutenant Offensif",
+    "description": "Anuran Lieutenant \u00e0 la peau rouge, dr\u00f4le, social et b\u00eate. Premier chef de Kibo !",
+    "kindId": "m038b"
+  },
+  {
+    "id": 1054,
+    "value": 3,
+    "kind": "boss",
+    "name": "Diana - G\u00e9n\u00e9rale Offensive",
+    "description": "Diana, la Tigresse Pourpre froide et franche de la Curie M\u00e9t\u00e9role, la l\u00e9gendaire G\u00e9nr\u00e9ale de Division Offensive.",
+    "kindId": "diana"
+  },
+  {
+    "id": 1055,
+    "value": 3,
+    "kind": "boss",
+    "name": "Yéti - Monstre imaginaire des glaces",
+    "description": "Un incroyable Yéti des glaces : 6m de long et 3m de large ! Plein de poils et de dents pointus ! Rien que le regarder donne des vrais frissons !",
+    "kindId": "m230b"
+  },
+  {
     "id": 1201,
     "value": 1,
     "kind": "composant",
@@ -3083,7 +3107,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Shkrouk et Kibo",
-    "description": "Les deux grands esprits se rencontrent enfin grâce à leur point commun : Gaazor. Ils sont chez le Magistrat Xander pour plaider la cause de Gaazor. Hors, Kibo était sensé représentation la partie accusatrice, et pourtant...",
+    "description": "Les deux grands esprits se rencontrent enfin grâce à leur point commun : Gaazor. Ils sont chez le Magistrat Xander pour plaider la cause de Gaazor. Hors, Kibo était censé représenter la partie accusatrice, et pourtant...",
     "maps": [1],
     "enemies": [],
     "kindId": "skillIcon/J513",
@@ -3165,6 +3189,94 @@
     "enemies": [165],
     "kindId": "uiiconPNG/pic_044b",
     "group": 3
+  },
+  {
+    "id": 1788,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Roco le cadavre des neiges",
+    "description": "Roco est tombé dans la neige, inerte, sans personne sur qui compté, il est resté là longtemps... conservé par le froid. Il aurait presque pu être enterré.",
+    "maps": [24],
+    "enemies": [],
+    "kindId": "skillIcon/E0731",
+    "group": 1
+  },
+  {
+    "id": 1789,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Malvis dépouillée par Adonis",
+    "description": "Malvis a été dépouillé par Adonis en pleine tempête de neige. Un coup de cape hypnotique et hop : plus de manteau, plus de badge. Heureusement un \"gentil\" pirate a pu l'aider.",
+    "maps": [24],
+    "enemies": [],
+    "kindId": "skillIcon/j602",
+    "group": 1
+  },
+  {
+    "id": 1790,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Kibo le fidèle soldat",
+    "description": "Kibo respecte beaucoup la hiérarchie ! Capitaine Plouka, enfin lieutenant ! Et surtout Mister Botassius ! Il ferait tout pour être digne et honorer ses confrères ! Surtout le défunt Fred...",
+    "maps": [24],
+    "enemies": [],
+    "kindId": "skillIcon/E0153",
+    "group": 1
+  },
+  {
+    "id": 1791,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Kratos et Kibo",
+    "description": "Kratos rencontre enfin son idole : Kibo ! Il ne peut plus se séparer de lui ! A tel point qu'il deviendrait presque son ombre ! Son double ! Mais que va-t-il se passer à l'avenir...",
+    "maps": [24],
+    "enemies": [],
+    "kindId": "skillIcon/j705",
+    "group": 1
+  },
+  {
+    "id": 1792,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Erida cherchant Aradia",
+    "description": "Erida a entendu Kibo lui parler de sa cousine : elle aurait succombé à ses démons ! Elle s'est faite possédée ! Mais où est-elle à présent...",
+    "maps": [1],
+    "enemies": [],
+    "kindId": "skillIcon/E0450",
+    "group": 1
+  },
+  {
+    "id": 1793,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Vimira la cheffe",
+    "description": "Jordan, nouveau lieutenant d'unité offensive, devait gérer la crise des Monts Arides, mais Vimira en a décidé autrement : fini les hésitations, on passe à l'action : rassurer la population, investiguer et protéger. \"Et surtout, RESTEZ PRUDENTS !\"",
+    "maps": [5],
+    "enemies": [],
+    "kindId": "skillIcon/E0770",
+    "group": 1
+  },
+  {
+    "id": 1794,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Kibo et le Yéti",
+    "description": "Pendant le Purgatoire Blanc, Kibo a mené un exposé sur la mission du Pic du Maëlstrom avec l'équipe et Plouka, et a mentionné une menace hors-norme : un Yéti immense qui a bien faillit térasser leur groupe ! Mais qui est-il ... ?!",
+    "maps": [1, 24],
+    "enemies": [],
+    "kindId": "monsters/m230b",
+    "group": 1
+  },
+  {
+    "id": 1795,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Combat interminable",
+    "description": "A la fin du Purgatoire Blanc, Zéphyr a décidé d'organiser un combat contre le groupe avec une invité d'honneur : Diana ! Mais malgré sa puissance le combat a été interminable ! Il y a eu beaucoup de blocage et de soins des deux côtés !",
+    "maps": [1],
+    "enemies": [],
+    "kindId": "skillIcon/J567",
+    "group": 1
   },
   {
     "id": 15000,

@@ -211,7 +211,7 @@ function aoeDesc() {
 
 const labelsDescription = {
   critique:
-    "Le Dé 1 est une réussite critique (dégâts et buffs au max), le Dé 2 un semi-critique (boosté). Pareil pour les échecs avec Dé 19 et Dé 20.<br/> En cas de Dé 20 sur une attaque, le lanceur prend les dégâts divisés par 2 et sans armure.",
+    "Le Dé 1 est une réussite critique (dégâts et buffs au max), le Dé 2 un semi-critique (boosté). Pareil pour les échecs avec Dé 19 et Dé 20.<br/> En cas de Dé 20 sur une attaque, selon la portée : <br/> &nbsp; - Attaque mono : le lanceur prend les dégâts,<br/> &nbsp; - Attaque AoE : les alliés dans la zone prennent les dégâts (ou soi-même si aucun allié)<br/> Le montant des dégâts est divisés par 2 et ne compte pas l'armure.<br/> Pour les buffs, l'effet est inversé en malus et le montant est égal à la compétence, mais la durée divisée par 2.",
   aoe: aoeDesc() + "<br/>Concernant l'esquive, tout sort mono-cible peut être esquivé, sauf les sorts d'esprits.",
   bloquage:
     "Toutes les attaques peuvent être bloquées (physiquement (force) ou magiquement (intelligence))<br/>Bloquer plusieurs fois de suite donne des malus (Blocage -1 par coup), si le coup suivant est une attaque mono-cible, blocage -1 sur le coup.<br/>Cumule max : -4 blocage.<br/><br/>Même avec malus et autres effets, un Dé à 1 ou 2 génèrera tout le temps une réussite de blocage.",
