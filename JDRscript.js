@@ -153,8 +153,11 @@ document.querySelector("#awakenButton").addEventListener("click", (e) => {
 document.querySelector("#xp").addEventListener("change", (e) => {
   var xp = parseInt(e.target.value);
   var niv;
+  // Update 02/04/24 : From lvl 10 to 15 : 200 xp instead of 150
   // Update 12/06/23 : From lvl 5 to 10 : 150 xp instead of 100
-  if (xp >= 400) {
+  if (xp >= 1150) {
+    niv = Math.trunc((xp - 1150) / 200) + 10;
+  } else if (xp >= 400) {
     niv = Math.trunc((xp - 400) / 150) + 5;
   } else {
     niv = Math.trunc(xp / 100) + 1;
@@ -224,7 +227,6 @@ const competencesE = document.querySelector(".skills");
   });
   // Click on skill element
   competence.addEventListener("click", (e) => {
-    console.log(e);
     if (!e.target.classList.contains("nom") && !e.target.classList.contains("buffTurn")) {
       // If click on select element, don't show/hide the desc ?
       competence.children[4].classList.toggle("hide");
@@ -970,7 +972,7 @@ const labelsDescription = {
     "Permet d'intéragir avec les autres personnes dans différents contexte :<br/> éloquence, persuasion, négociation, menace, distraction, ... <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff/stuff.",
   esprit:
     "Permet d'utiliser des buffs, des débuffs et des invocations.<br/> Permet aussi de résister (Dé/2) à des envoûtements (contrôle d'esprit, peur) <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff/stuff.<br/>La résistance est limitée à 13.",
-  niv: "Augmente automatiquement tous les 100 points d'expériences du Niveau 1 à 5, puis tous les 150.<br/> Tous les niveaux paire (2,4,6,8), vous obtenez une compétence.<br/> Au Niveau 5 vous avez +1 en Esprit.<br/> Au Niveau 10, c'est +1 où vous voulez.",
+  niv: "Augmente automatiquement tous les 100 points d'expériences du Niveau 1 à 5, puis tous les 150 de 6 à 10, puis 200.<br/> Tous les niveaux paire (2,4,6,8), vous obtenez une compétence.<br/> Au Niveau 5 vous avez +1 en Esprit.<br/> Au Niveau 10 et 15, c'est +1 où vous voulez.",
   pv: "Statistique des PV, augmente de 5 par niveau.",
   stress:
     'Fatigue/Stress max : 200%. Chaque 50%, les stats diminue de 1 (4 max).<br/> La fatigue s\'accumule au fur et à mesures des combats (sauf tour des cieux). Le stress uniquement dans les zones dédiées.<br/><br/>Le stress "accentué" augmente de 50%, la "réduction" diminue de 33%.',

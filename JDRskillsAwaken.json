@@ -2,7 +2,7 @@
   "0": {
     "nom": "Charge du Guerrier",
     "desc": "Fonce sur la cible et peut l'\u00e9tourdir (malus de r\u00e9ussite) si coup critique.",
-    "montant": "1D10+2, r\u00e9ussite cible -3 (1 tour)"
+    "montant": "1D10+3, r\u00e9ussite cible -3 (1 tour)"
   },
   "1": {
     "nom": "Attaque Cyclone",
@@ -12,12 +12,15 @@
   "2": {
     "nom": "Provocation",
     "desc": "Le lanceur provoque la cible ce qui augmente les chances d'\u00eatre vis\u00e9",
-    "montant": "D\u00e9g\u00e2t 1D10+1, et 90% de chance d'\u00eatre vis\u00e9 pendant 3 tours"
+    "montant": "D\u00e9g\u00e2t 1D10+2, et 90% de chance d'\u00eatre vis\u00e9 pendant 3 tours"
+  },
+  "3": {
+    "nom": "Euphorie",
+    "montant": "+4 par coup re\u00e7u, cumulable 5 fois pendant 4 tours"
   },
   "9": {
     "nom": "Revers d'\u00e9caille",
     "desc": "Action Instantanée. Remplace l'esquive ou le blocage. Renvoi l'attaque re\u00e7u uniquement au lanceur (critique 100%, 66%, 33%). Effets - Embras\u00e9 : D\u00e9g\u00e2t renvoy\u00e9 +5; D\u00e9moniaque : prochaine r\u00e9ussite +1; Cach\u00e9 : Soin PV+10",
-    "effet": "Renvoi",
     "montant": "1 fois par éveil : Action instantanée, renvoi (<10 : 66%, >=10 : 33%)"
   },
   "10": {
@@ -28,7 +31,6 @@
   "11": {
     "nom": "Attaque Furieuse",
     "desc": "Tournoie et frappe les ennemis autour de soi (1m)",
-    "effet": "D\u00e9g\u00e2t AoE",
     "montant": "1D10+4"
   },
   "21": {
@@ -44,7 +46,7 @@
   "25": {
     "nom": "Charme tape-\u00e0-l-oeil",
     "desc": "Lance un charme sur la cible pour r\u00e9duire sa concentration, efficace si sexe oppos\u00e9, sinon : r\u00e9ussite -3",
-    "montant": " Esquive et r\u00e9ussite des sorts : -3 sur 3 tours, (Sur le coup : Résistance esprit cible -3)"
+    "montant": "Esquive et r\u00e9ussite des sorts : -3 sur 3 tours, (Sur le coup : Résistance cible -3)"
   },
   "26": {
     "nom": "Coupe Asura",
@@ -75,6 +77,21 @@
     "nom": "Blessure Douloureuse",
     "desc": "Blesse l'ennemi et l'emp\u00eache de se soigner pendant 3 tours, l'effet n'est pas annulable.",
     "montant": "1D8+2 (Non annulable)"
+  },
+  "34": {
+    "nom": "Robotisation",
+    "desc": "Vous transforme en Guerrier M\u00e9ca capable d'utiliser des attaques technologiques",
+    "montant": "Action Instantan\u00e9e. R\u00e9duit les d\u00e9g\u00e2ts re\u00e7u de 1D4 (min 2) +1, dure 4 tours"
+  },
+  "35": {
+    "nom": "Bombe \u00e0 Huile",
+    "desc": "Si robotis\u00e9 : Inflige une explosion sur plusieurs m\u00e8tres autour de la cible.",
+    "montant": "1D8+5"
+  },
+  "36": {
+    "nom": "Explosifs Visqueux",
+    "desc": "Si robotis\u00e9 : La bombe explose (d\u00e9g\u00e2t de nature) et englue tout autour de la cible, attaquer peut d\u00e9faire la glue",
+    "montant": "1D6+1, Esquive -3 pour 3 tours"
   },
   "37": {
     "nom": "Saut d'esquive",
@@ -124,8 +141,12 @@
   "47": {
     "nom": "Totem Gracieux",
     "desc": "Invoque un familier Totem : 30 PV, Force : 9, Dext\u00e9 : 13, Intel : 14. - Mode Soin : Ne peut pas bouger / se prot\u00e9ger, 0 jet de d\u00e9. - Mode Soutien : peut bouger et bloquer, 2 sorts : 1) Renforcement : +3 Force ou +3 Intel sur la cible : 3 tours (intel) , 2) Eclair : 1D8+2 (intel)",
-    "effet": "Invocation",
     "montant": "(jusqu'\u00e0 coupure magique), Mode Soin : Soin 4 PV par tour. - Mode Soutien : attaque/bloque"
+  },
+  "48": {
+    "nom": "Puma Noir",
+    "desc": "Action Instantan\u00e9e (1 tentative offerte en éveil). Vous transforme en Puma Noir. Impossible de jeter des sorts magiques (Intel/Esprit). Nouveaux sorts : Saignement : 1D8 puis 3 pendant 3 tours (Force). Triple Griffe : 3D6 (Dext\u00e9rit\u00e9)",
+    "montant": "D\u00e9g\u00e2t +15, 0 d\u00e9g\u00e2t/effet d'arme. Force+3, Dext\u00e9+3 pendant 1D4 (min 2) +1 tours (annulable)"
   },
   "49": {
     "nom": "Bombe Incendiaire",
@@ -141,6 +162,10 @@
     "nom": "Saut Dimensionnel",
     "desc": "T\u00e9l\u00e9porte le joueur jusqu'\u00e0 5m l\u00e0 o\u00f9 il regarde",
     "montant": "1 fois par éveil : remplace l'esquive par la t\u00e9l\u00e9portation, prochain dégât +1D6"
+  },
+  "57": {
+    "nom": "Mur de Titan",
+    "montant": "D\u00e9g\u00e2t subi -1D4 (min 2) -4 pendant 3 tours"
   },
   "58": {
     "nom": "Destruction de l'aurore",
@@ -170,7 +195,6 @@
   "63": {
     "nom": "Coupure de lumi\u00e8re",
     "desc": "Tranche l'ennemi avec des \u00e9clats de la lumi\u00e8re",
-    "effet": "D\u00e9g\u00e2t",
     "montant": "1D10+4 (Donne 3 charges de lumière)"
   },
   "64": {
@@ -186,13 +210,11 @@
   "66": {
     "nom": "Danse de l'oiseau de feu",
     "desc": "Le lanceur danse autour des ennemis (sur quelques m\u00e8tres) et les br\u00fblent",
-    "effet": "D\u00e9g\u00e2t AoE",
     "montant": "1D10+3 (+5 si charmé)"
   },
   "72": {
     "nom": "R\u00e9surrection",
     "desc": "(Utilisable m\u00eame vivant) prend 2 tours (1 d\u00e9 par tour) : Soigne/Ressuscite un joueur avec quelques PV ",
-    "effet": "Soin",
     "montant": "1 tour d'incantation : soigne de 3D10+20 (Blocage +2 pendant incantation)"
   },
   "73": {
@@ -219,6 +241,11 @@
     "nom": "Lame Dansante du Po\u00e8te",
     "desc": "Envoi des lames de vent (d\u00e9g\u00e2ts de nature si Po\u00e8me du Vent actif) et tranche 3 fois l'ennemi choisi",
     "montant": "3D6 (+3 si Po\u00e8me du Vent) (Blocage/Esquive cible -2)"
+  },
+  "89": {
+    "nom": "Fl\u00e8che Eblouissante",
+    "desc": "Tir une fl\u00e8che qui lance un flash sur l'ennemi.",
+    "montant": "1D8+4, et r\u00e9ussite des sorts -4 (3 tours)"
   },
   "91": {
     "nom": "Danse de la guerri\u00e8re",
@@ -248,23 +275,42 @@
   "98": {
     "nom": "Perforation",
     "desc": "Tir une fl\u00e8che qui perfore l'armure de l'ennemi et le déconcentre.",
-    "effet": "D\u00e9g\u00e2t Malus",
     "montant": "1D6+3 : Blocage -3 et réussite des sorts -2 (pendant 2 tours)"
   },
   "99": {
     "nom": "D\u00e9fense d'Acier",
     "desc": "Fortifie le corps du lanceur",
-    "montant": "Force +1, Blocage Physique +3 Blocage magique +2 pendant 1D4 (min 2) +1 tours"
+    "montant": "Force +1, Blocage Physique +3 Blocage magique +2 pendant 1D4 (min 2) +2 tours"
   },
   "101": {
     "nom": "Ombre Rapide",
     "desc": "Acc\u00e9l\u00e8re le corps du lanceur",
-    "montant": "Dexté +1, Esquive +3 pendant 1D4 (min 2) +1 tours"
+    "montant": "Dexté +1, Esquive +3 pendant 1D4 (min 2) +2 tours"
+  },
+  "103": {
+    "nom": "Artillerie Lourde",
+    "effet": "D\u00e9g\u00e2t",
+    "montant": "1D10+9"
+  },
+  "104": {
+    "nom": "R\u00e9paration Armure",
+    "desc": "Permet \u00e0 l'ing\u00e9nieur de soigner et r\u00e9parer son armure",
+    "montant": "3D6+11"
+  },
+  "105": {
+    "nom": "Lavage de Cerveau",
+    "desc": "R\u00e9duit la concentration de l'ennemi (r\u00e9sistance d'esprit, r\u00e9ussite), pendant 3 tours",
+    "montant": "R\u00e9sistance d'Esprit et r\u00e9ussite des sorts -3 sur 3 tours (Sur le coup : Résistance cible -3)"
   },
   "106": {
     "nom": "Marteau du Scellement",
     "desc": "Frappe puissante sur l'ennemi avec de la glace pour tenter de le sceller",
     "montant": "1D8+3 de glace, retire tous les buffs"
+  },
+  "107": {
+    "nom": "Balle \u00e9lectrique",
+    "desc": "Une balle charg\u00e9e en foudre pour blesser l'ennemi",
+    "montant": "1D10+9 de foudre"
   },
   "110": {
     "nom": "Terreur du Dragon",
@@ -275,6 +321,19 @@
     "nom": "A la Charge !",
     "desc": "Renforce fortement la prochaine attaque physique du lanceur",
     "montant": "Prochain d\u00e9g\u00e2t +1D8+8 (3 tours max)"
+  },
+  "112": {
+    "nom": "Griffures Noires",
+    "effet": "D\u00e9g\u00e2t Malus AoE R-",
+    "montant": "1D6, et -2 de blocage et d'esquive pour 3 tours"
+  },
+  "113": {
+    "nom": "Provocation de Groupe",
+    "montant": "D\u00e9g\u00e2t 1D6+2, et 75% de chance d'\u00eatre cibl\u00e9 pendant 3 tours"
+  },
+  "114": {
+    "nom": "Coup de Poing Irrit\u00e9",
+    "montant": "1D10+8"
   },
   "115": {
     "nom": "Destruction Noire",
@@ -289,7 +348,7 @@
   "117": {
     "nom": "Fr\u00e9n\u00e9sie des Ogres",
     "desc": "Action Instantan\u00e9e. La loyaut\u00e9 envers les Ogres permet au lanceur de dilater ses veines, le mettant dans un \u00e9t\u00e9 fr\u00e9n\u00e9tique de Berserker.",
-    "montant": "A chaque tour (4 max) : D\u00e9g\u00e2t (+) et PV (-) 10 ou 15 (à choisir), Si 10 : réussite -1, si 15 : réussite -2"
+    "montant": "A chaque tour (4 max) : D\u00e9g\u00e2t (+) et PV (-) 10 ou 15 (à choisir), Si 15 : réussite -1"
   },
   "118": {
     "nom": "Explosion Glaciale",
@@ -321,6 +380,21 @@
     "desc": "Le lanceur fait un Dash en avant de quelques m\u00e8tres en tranchant sa cible, lui infligeant des d\u00e9g\u00e2ts de foudre. Tel un Samoura\u00ef vif qui se replace.",
     "montant": "1D10+3, Buff : Esquive +3 sur 2 tours"
   },
+  "127": {
+    "nom": "Protection Absolue",
+    "desc": "Action Instantan\u00e9e. L'ing\u00e9nieur canalyse toute son \u00e9nergie autour de son armure, for\u00e7ant les attaques des ennemis \u00e0 venir vers lui. M\u00eame les attaques de zones (AoE) ne visent que le lanceur.",
+    "montant": "1 fois par combat : Mono : Blocage +1, AoE : Blocage -2, d\u00e9g\u00e2t * 2.5 (-20) sur 1 tour"
+  },
+  "130": {
+    "nom": "Vague Foudroyante",
+    "desc": "(MASSE OU MARTEAU REQUIS) Inflige des d\u00e9g\u00e2ts de contondant en fracassant le sol. Les ennemis touch\u00e9s sont destabilis\u00e9s.",
+    "montant": "1D6, Blocage -3 pour 3 tours"
+  },
+  "131": {
+    "nom": "Robot Destructeur",
+    "desc": "Invoque un Robot Nano Autodestructeur. Explose sur courte port\u00e9e. Peut \u00eatre surcharg\u00e9 : Feu = +5, Foudre = Port\u00e9e ++,  Glace = Dext\u00e9-4 (3t),  Nature = Force/Int -3 (2t),  Lumi\u00e8re = R\u00e9uss -3 (1t),  T\u00e9n\u00e8bres = Aspire et entrave (1t)",
+    "montant": "1D6+4 (+1/niveau, 0 d\u00e9g\u00e2t/effet d'arme)"
+  },
   "132": {
     "nom": "Pi\u00e8ge d'Entrave",
     "desc": "Pose un pi\u00e8ge au sol pour entraver l'ennemi (d\u00e9g\u00e2t tranchant), l'emp\u00eachant de se d\u00e9placer. L'ennemi peut tenter de s'en \u00e9chapper (force).",
@@ -340,6 +414,11 @@
     "nom": "Instinct de Survie",
     "desc": "Le sang de dragon bouillonne et enclenche le mode survie pour son porteur. Effets - Embras\u00e9 : D\u00e9g\u00e2ts +2; D\u00e9moniaque : Blocage+1; Cach\u00e9 : Soin PV+3",
     "montant": "(Si PV <50%) Soin et Dégât +1D4+2 pendant 3 tours (+ effet mode)"
+  },
+  "138": {
+    "nom": "Ferveur du Guerrier",
+    "desc": "Lorsque la d\u00e9votion du Guerrier est totale (r\u00e9ussite 66%), il parvient \u00e0 se maintenir en vie au-del\u00e0 d'un coup fatal.",
+    "montant": "Avant de tomber KO (1 fois max) : 4 chance sur 6 (13.333/20) de survivre, soigne 2D10+10 PV (buffs préservés)"
   },
   "139": {
     "nom": "Pluie de Fl\u00e8ches",
