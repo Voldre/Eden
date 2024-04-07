@@ -553,7 +553,8 @@
     "map_y": null,
     "map_z": null,
     "map_r": null,
-    "bgm": 28
+    "bgm": 28,
+    "mobs": [17, 138, 61]
   },
   "59": {
     "name": "Steppes d'Aristère",

@@ -41,8 +41,6 @@ export class Perso {
       return Object.values(eqptJSON).find((eqpt) => unformatText(eqpt.nom) == unformatText(eqptName));
     });
 
-    console.log(stuffs[1]);
-
     if (!stuffs[0]) {
       if (inFight) {
         toastNotification("Erreur : Le personnage n'est pas apte à se battre.", 8000);
@@ -53,20 +51,10 @@ export class Perso {
         return;
       }
     }
-    // stuffs = stuffs.filter((s) => s != undefined);
-    var montantBouclier,
-      montantArmure,
-      montantArme1,
-      montantArme2,
-      montantAccessDegat,
-      montantAccessArmure,
-      montantBlocP,
-      montantEsq,
-      montantBlocM;
-
-    // Add 05/11/2023 : Accessories effects (+ Damage or + Armor), according to access specificites
     // console.log(stuffs);
-    montantAccessDegat = stuffs
+
+    // Add 05/11/2023 : Accessories effects (Damage or Armor), according to access specificites
+    const montantAccessDegat = stuffs
       .map((stuff) => {
         if (!stuff) return 0;
         if (!!stuff.access && stuff.access[0] == "D") {
@@ -76,7 +64,7 @@ export class Perso {
       })
       .reduce((a, b) => a + b);
 
-    montantAccessArmure = stuffs
+    const montantAccessArmure = stuffs
       .map((stuff) => {
         if (!stuff) return 0;
         if (!!stuff.access && stuff.access[0] == "A") {
@@ -86,31 +74,45 @@ export class Perso {
       })
       .reduce((a, b) => a + b);
 
-    console.log("Access effets (D, A) : ", montantAccessDegat, montantAccessArmure);
+    console.log("Access effets (" + persoData.nom + ") (Dégât, Armure) : ", montantAccessDegat, montantAccessArmure);
 
-    stuffs[1] = { ...(stuffs[1] || { nom: "", montant: "Dégât +0" }) };
-    if (stuffs[1].nom.includes("Bouclier")) {
-      console.log(stuffs[1]);
-      montantBouclier = parseEqptValue("Dégât -", stuffs[1]);
-      stuffs[1].montant = "Dégât +0";
-    } else {
-      montantBouclier = 0;
-    }
+    // Récupération de tous les points de dégâts et armures naturels (valeur + bonus conditionnels)
+    const stuffsDamages = parseEqptsByRegex(["Dégât +"], stuffs, persoData);
+    const stuffsArmor = parseEqptsByRegex(["Dégât -", "Dégât reçu -"], stuffs, persoData);
 
-    montantArme1 = parseEqptValue("Dégât +", stuffs[0]);
-    montantArme2 = parseEqptValue("Dégât +", stuffs[1]);
+    const montantBouclier = stuffsArmor[1];
+    const montantArmure = stuffsArmor[3];
+    const montantArme1 = stuffsDamages[0];
+    const montantArme2 = stuffsDamages[1];
 
-    // Bonus de dégât par niveauu (20/11/23 : Fixe à 2 en +, exponentiel par niveau)
-    this.degat = Math.round((2 + montantArme1 + montantArme2) * Math.pow(1.1, this.niv) + montantAccessDegat);
+    const montantAccessDegatNat = stuffsDamages.slice(3).reduce((a, b) => a + b);
+    const montantAccessArmureNat = stuffsArmor.reduce((a, b) => a + b) - montantBouclier - montantArmure;
 
-    montantArmure = parseEqptValue("Dégât -", stuffs[3]);
+    console.log(
+      "stuffs nat damages/armor",
+      stuffsDamages,
+      stuffsArmor,
+      "access :",
+      montantAccessDegatNat,
+      montantAccessArmureNat
+    );
+
+    // Bonus de dégât par niveau (20/11/23 : Fixe à 2 en +, exponentiel par niveau)
+    this.degat = Math.round(
+      (2 + montantArme1 + montantArme2) * Math.pow(1.1, this.niv) + montantAccessDegat + montantAccessDegatNat
+    );
 
     // Bonus d'armure par niveau (20/11/23 : Fixe à 2 en +, exponentiel par niveau)
     // 02/12/23 : l'exponentiel du bouclier est réduit, car sinon trop cheat
     this.armure = Math.round(
-      (2 + montantArmure) * Math.pow(1.1, this.niv) + montantBouclier * Math.pow(1.05, this.niv) + montantAccessArmure
+      (2 + montantArmure) * Math.pow(1.1, this.niv) +
+        montantBouclier * Math.pow(1.05, this.niv) +
+        montantAccessArmure +
+        montantAccessArmureNat
     );
 
+    // *** Dégression des montants et équilibrage ! ***
+    //
     // 21/11/23 : Si l'armure actuelle est trop haute, je la diminue !
     // Car l'armure dans le jeu c'est vraiment trop cheat !
     this.armure -= Math.max(Math.floor((this.armure - 15) / 5), -1);
@@ -122,6 +124,7 @@ export class Perso {
     if (classSoins.includes(persoData.classeP) || classSoins.includes(persoData.classeS)) {
       this.armure -= 1;
     }
+    // ****
 
     // 25/11 Bonus if less skills than 4
     const nbSkills = allSkills.filter(
@@ -136,12 +139,18 @@ export class Perso {
       this.degat += 1;
       this.armure += 1;
     }
+    // **
+
     // 03/12 Add Bloc/Esq (resistance) bonus according to stuff
-    montantBlocP = parseEqptsByRegex(["Blocage +", "Blocage physique +"], stuffs).reduce((a, b) => a + b);
+    const montantBlocP = parseEqptsByRegex(["Blocage +", "Blocage physique +"], stuffs, persoData).reduce(
+      (a, b) => a + b
+    );
 
-    montantEsq = parseEqptsByRegex(["Esquive +"], stuffs).reduce((a, b) => a + b);
+    const montantEsq = parseEqptsByRegex(["Esquive +"], stuffs, persoData).reduce((a, b) => a + b);
 
-    montantBlocM = parseEqptsByRegex(["Blocage +", "Blocage magique +"], stuffs).reduce((a, b) => a + b);
+    const montantBlocM = parseEqptsByRegex(["Blocage +", "Blocage magique +"], stuffs, persoData).reduce(
+      (a, b) => a + b
+    );
 
     const statsB = [persoData.forceB, persoData.dextéB, persoData.intelB, persoData.charismeB, persoData.espritB].map(
       (statB) => {
@@ -213,10 +222,10 @@ export const initDialog = (labelsDescription) => {
 
 // text : string, eqpt : eqpt
 export const parseEqptValue = (text, eqpt) => {
-  const regex = text.toLowerCase();
+  const regex = unformatText(text);
   if (!eqpt) return 0;
   const eqptValue = [eqpt.montant, eqpt.effet].map((eqptText) => {
-    const hasValue = eqptText?.toLowerCase().split(regex)[1];
+    const hasValue = unformatText(eqptText).split(regex)[1];
     if (!hasValue) return "0";
     return hasValue.split(",")[0].split(" ")[0];
   });
@@ -224,15 +233,68 @@ export const parseEqptValue = (text, eqpt) => {
   return parseInt(eqptValue[0]) + parseInt(eqptValue[1]);
 };
 
-// text : string[], eqpts : eqpt[]
-export const parseEqptsByRegex = (texts, eqpts) => {
+// text : string[], eqpts : eqpt[], persoData : Perso
+export const parseEqptsByRegex = (texts, eqpts, persoData) => {
   return eqpts.map((eqpt) => {
     if (!eqpt) return 0;
     // For each regex, parse Eqpt, and do the sum of each regex (.reduce)
     const result = texts.map((reg) => parseEqptValue(reg, eqpt)).reduce((total, item) => total + item);
-    // console.log({ label: category.label, eqpt, result });
-    return result;
+
+    // Handle condition bonus
+    const bonus = parseEqptBonus(eqpt, texts, eqpts, persoData);
+    // console.log("in parseEqptsByRegex : (result,bonus)", result, bonus);
+    return result + bonus;
   });
+};
+
+export const parseEqptBonus = (eqpt, texts, eqpts, persoData) => {
+  // Check if bonus is corresponding to text and get the value
+  const parseEqptBonus = texts
+    .map((text) => {
+      if (!eqpt.condition) return 0;
+      const hasValue = unformatText(eqpt.condition.bonus)?.split(unformatText(text))[1];
+      if (!hasValue) return 0;
+      return parseInt(hasValue.split(",")[0].split(" ")[0]);
+    })
+    .reduce((total, item) => total + item);
+
+  let bonus = 0;
+  if (parseEqptBonus !== 0) {
+    switch (eqpt.condition.type) {
+      case "classe":
+        // Check if the Primary or Secondary class are included in the class condition list
+        const nbValidClass = [persoData.classeP, persoData.classeS].filter((pClasse) =>
+          eqpt.condition.value.includes(pClasse)
+        ).length;
+        bonus = nbValidClass * parseEqptBonus;
+        break;
+      case "race":
+        bonus = persoData.race === eqpt.condition.value && parseEqptBonus;
+        break;
+      case "panoplie":
+        // Get eqptsName, excepted the selected eqpt (that can match panoplie, ex : Heldentod)
+        const eqptsName = eqpts.map((eq) => eq && eq != eqpt && unformatText(eq.nom));
+        const nbEqptsInPanop = eqptsName.filter(
+          (eqptName) => eqptName && eqptName.includes(unformatText(eqpt.condition.value))
+        ).length;
+        bonus = nbEqptsInPanop * parseEqptBonus;
+        break;
+      // There are 2 problems with PV condition effect :
+      // 1) persoData.pv is read, so you need to save and refresh to see the synthesis updated
+      // 2) If currently the perso met the condition, in the mini-game (jdr combat), the bonus will always be triggered, because "persoData" is low HP
+      // This is why I didn't take into account this kind of data, "versatile data" like HP must not be used, for the moment !
+      // case "PV":
+      //   bonus = persoData.pv < Math.round(persoData.pvmax / parseInt(eqpt.condition.value)) && parseEqptBonus;
+      // break;
+      default:
+        break;
+    }
+  }
+  // if (eqpt.condition) console.log(JSON.stringify(eqpt.condition), texts);
+  if (bonus)
+    console.log(`Bonus déclenché (${texts[0]}${bonus}) pour ${persoData.nom} sur `, JSON.stringify(eqpt.condition));
+
+  return bonus;
 };
 
 export const isTextInText = (mainText, subText) => {
@@ -243,7 +305,7 @@ export const isTextInText = (mainText, subText) => {
 
 // Remove accents, upper case and spaces
 export const unformatText = (text) =>
-  text
+  (text ?? "")
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()

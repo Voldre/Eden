@@ -517,7 +517,7 @@ Brightness on mouseover and onclick */
   }
 
   .continent {
-    left: 50%;
+    left: 51%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
   }
