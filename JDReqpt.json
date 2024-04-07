@@ -74,6 +74,7 @@
     "desc": "Ep\u00e9e sp\u00e9cialis\u00e9 pour les chevaliers",
     "effet": "",
     "montant": "D\u00e9g\u00e2t +4 (+1 si Chevalier)",
+    "condition": { "type": "classe", "value": ["Chevalier"], "bonus": "D\u00e9g\u00e2t +1" },
     "icone": "W11402"
   },
   "12": {
@@ -167,7 +168,7 @@
     "nom": "Anneau du rem\u00e8de",
     "desc": "Anneau am\u00e9liorant l'effet des soins",
     "effet": "Buff",
-    "montant": "Soin +4, AoE : +2",
+    "montant": "Soin +4, (AoE/2)",
     "icone": "A00005",
     "access": "D2"
   },
@@ -177,7 +178,7 @@
     "effet": "Buff",
     "montant": "D\u00e9g\u00e2t re\u00e7u -2, Blocage physique +1",
     "icone": "A00017",
-    "access": "A1"
+    "access": "A0"
   },
   "26": {
     "nom": "Marteau de guerre",
@@ -292,6 +293,7 @@
     "desc": "Un cache oeil qui vous permet de mieux viser !",
     "effet": "",
     "montant": "Dext\u00e9rit\u00e9 +2 (Charisme +1 si Corsaire)",
+    "condition": { "type": "classe", "value": ["Corsaire"], "bonus": "Charisme +1" },
     "icone": "k10200",
     "access": "A0"
   },
@@ -346,8 +348,9 @@
     "desc": "Une puce de l'Institut Silus fond\u00e9 par les Zumis",
     "effet": "",
     "montant": "D\u00e9g\u00e2t de foudre +3 (+1 si Ing\u00e9nieur)",
+    "condition": { "type": "classe", "value": ["Ing\u00e9nieur"], "bonus": "D\u00e9g\u00e2t de foudre +1" },
     "icone": "i00689",
-    "access": "D2"
+    "access": "D3"
   },
   "49": {
     "nom": "Sac \u00e0 dos extensible",
@@ -377,9 +380,9 @@
     "nom": "Coeur crystalis\u00e9",
     "desc": "Un ancien artefact en forme de coeur forg\u00e9 par les Tuskars",
     "effet": "",
-    "montant": "PV du porteur : +20",
+    "montant": "PV +25",
     "icone": "i00956",
-    "access": "A3"
+    "access": "A1"
   },
   "53": {
     "nom": "Pierre de s\u00e9curit\u00e9",
@@ -387,7 +390,7 @@
     "effet": "",
     "montant": "D\u00e9g\u00e2t re\u00e7u -2",
     "icone": "i01017",
-    "access": "A2"
+    "access": "A0"
   },
   "54": {
     "nom": "Boucle d'oreilles du Ma\u00eblstrom",
@@ -403,7 +406,7 @@
     "effet": "",
     "montant": "D\u00e9g\u00e2t re\u00e7u -2, Blocage magique +1",
     "icone": "A00019",
-    "access": "A1"
+    "access": "A0"
   },
   "56": {
     "nom": "Pendentif du Croc Brumeux",
@@ -446,6 +449,7 @@
     "desc": "Une tunique cr\u00e9\u00e9e par les locaux de la For\u00eat de Delphes",
     "effet": "PV Soin re\u00e7u +3",
     "montant": "D\u00e9g\u00e2t -3 (+1 si Shaman)",
+    "condition": { "type": "classe", "value": ["Shaman"], "bonus": "D\u00e9g\u00e2t re\u00e7u -1" },
     "icone": "A20028"
   },
   "62": {
@@ -467,7 +471,8 @@
     "desc": "Une hache d\u00e9fendant son porteur",
     "effet": "D\u00e9g\u00e2t re\u00e7u -2",
     "montant": "D\u00e9g\u00e2t +5",
-    "icone": "W20501"
+    "icone": "W20501",
+    "access": "A2"
   },
   "65": {
     "nom": "Croc de Smilodon",
@@ -689,6 +694,7 @@
     "desc": "Un livre form\u00e9 de grimoires d\u00e9moniaques reli\u00e9s ensemble",
     "effet": "Intelligence +1",
     "montant": "D\u00e9g\u00e2t +10 (+1 si D\u00e9moniste)",
+    "condition": { "type": "classe", "value": ["D\u00e9moniste"], "bonus": "D\u00e9g\u00e2t +1" },
     "icone": "W64808"
   },
   "96": {
@@ -719,7 +725,7 @@
     "effet": "",
     "montant": "D\u00e9g\u00e2t -1 (0 malus dans les d\u00e9serts)",
     "icone": "A10061",
-    "access": "A1"
+    "access": "A0"
   },
   "100": {
     "nom": "Tablette Antique",
@@ -786,7 +792,7 @@
     "nom": "Anneau curatif",
     "desc": "Un anneau du rem\u00e8de raffin\u00e9 par un joailler",
     "effet": "",
-    "montant": "Soin +6, AoE : +3",
+    "montant": "Soin +6, (AoE/2)",
     "icone": "A000052",
     "access": "D3"
   },
@@ -794,7 +800,7 @@
     "nom": "Crochet enchant\u00e9",
     "desc": "Un crochet d'une mante surcharg\u00e9e en magie",
     "effet": "",
-    "montant": "Soin +2 et D\u00e9g\u00e2t magique +2, AoE : +1",
+    "montant": "Soin +2 et D\u00e9g\u00e2t magique +2, (AoE/2)",
     "icone": "I002862",
     "access": "D2"
   },
@@ -1078,15 +1084,15 @@
     "effet": "",
     "montant": "PV +10. D\u00e9g\u00e2t re\u00e7u -2",
     "icone": "A40016",
-    "access": "A2"
+    "access": "A0"
   },
   "151": {
     "nom": "Bague de Glaciation",
     "desc": "Une bague unique capable de congeler presque n'importe quoi. Convertit les attaques physiques en glace.",
     "effet": "Element : Glace",
-    "montant": "D\u00e9g\u00e2t +6 (glace)",
+    "montant": "D\u00e9g\u00e2t +5 (glace)",
     "icone": "i01311",
-    "access": "D4"
+    "access": "D0"
   },
   "152": {
     "nom": "Perle de Nihilit\u00e9",
@@ -1221,6 +1227,7 @@
     "desc": "Sceptre en forme de serpent ayant appartenu \u00e0 un grand shaman",
     "effet": "",
     "montant": "D\u00e9g\u00e2t +8 (+3 si Shaman)",
+    "condition": { "type": "classe", "value": ["Shaman"], "bonus": "D\u00e9g\u00e2t +3" },
     "icone": "W62608"
   },
   "171": {
@@ -1274,7 +1281,7 @@
     "effet": "",
     "montant": "D\u00e9g\u00e2t re\u00e7u -4",
     "icone": "I00529",
-    "access": "A4"
+    "access": "A0"
   },
   "178": {
     "nom": "B\u00e2ton Sadique",
@@ -1353,6 +1360,7 @@
     "desc": "Un brassard augmentant la puissance du porteur. Appartient \u00e0 la panoplie du combattant",
     "effet": "",
     "montant": "D\u00e9g\u00e2t physique +2 (+2 si panoplie)",
+    "condition": { "type": "panoplie", "value": "Veste du Combattant", "bonus": "D\u00e9g\u00e2t +2" },
     "icone": "A40021",
     "access": "D2"
   },
@@ -1419,7 +1427,7 @@
     "effet": "Montant des buffs +2",
     "montant": "D\u00e9g\u00e2t +6",
     "icone": "W61003",
-    "access": "D1"
+    "access": "D2"
   },
   "198": {
     "nom": "Collier d'Asbi",
@@ -1543,6 +1551,7 @@
     "desc": "La rumeur raconte que cette tenue aurait appartenu au tout premier Juge Eveill\u00e9 de l'histoire",
     "effet": "D\u00e9g\u00e2t t\u00e9n\u00e8bres +2",
     "montant": "D\u00e9g\u00e2t -5 (+1 si Juge)",
+    "condition": { "type": "classe", "value": ["Juge"], "bonus": "D\u00e9g\u00e2t re\u00e7u -1" },
     "icone": "k21023"
   },
   "214": {
@@ -1557,6 +1566,7 @@
     "desc": "Une tenue de dirigeant de guerre, strat\u00e8ge",
     "effet": "Force +1 Charisme +1",
     "montant": "D\u00e9g\u00e2t -4 (+1 si Chevalier)",
+    "condition": { "type": "classe", "value": ["Chevalier"], "bonus": "D\u00e9g\u00e2t re\u00e7u -1" },
     "icone": "k20280"
   },
   "216": {
@@ -1621,7 +1631,7 @@
     "effet": "",
     "montant": "Force +1, Intelligence +1",
     "icone": "a40052",
-    "access": "A1"
+    "access": "A0"
   },
   "225": {
     "nom": "Pantoufles Discr\u00e8tes",
@@ -1637,7 +1647,7 @@
     "effet": "",
     "montant": "D\u00e9g\u00e2t re\u00e7u -3, Dext\u00e9rit\u00e9 -2",
     "icone": "A50030",
-    "access": "A3"
+    "access": "A0"
   },
   "227": {
     "nom": "Grimoire des bourbes",
@@ -1651,8 +1661,8 @@
     "desc": "Une \u00e9p\u00e9e port\u00e9e par un grand h\u00e9ros du pass\u00e9, des rumeurs disent qu'il s'agit du premier Chevalier du Chaos. Appartient \u00e0 la Panoplie du \"H\u00e9ros\".",
     "effet": "Force +1, Intel +1",
     "montant": "D\u00e9g\u00e2t +4 (+2 si panoplie)",
-    "icone": "W10604",
-    "access": "D4"
+    "condition": { "type": "panoplie", "value": "Brassard du H\u00e9ros", "bonus": "D\u00e9g\u00e2t +2" },
+    "icone": "W10604"
   },
   "229": {
     "nom": "Flacon secret de Rumbledore",
@@ -1676,7 +1686,7 @@
     "effet": "",
     "montant": "D\u00e9g\u00e2t +3, D\u00e9g\u00e2t re\u00e7u -2",
     "icone": "I00390",
-    "access": "D4"
+    "access": "D0"
   },
   "232": {
     "nom": "Noyau charg\u00e9 de Stella",
@@ -1708,7 +1718,7 @@
     "effet": "Stress Accentu\u00e9",
     "montant": "D\u00e9g\u00e2t +2, D\u00e9g\u00e2t sur Faiblesse +5",
     "icone": "I00396",
-    "access": "D4"
+    "access": "D2"
   },
   "236": {
     "nom": "Charme d'Exp\u00e9rience Noir",
@@ -1724,7 +1734,7 @@
     "effet": "Stress Accentu\u00e9",
     "montant": "D\u00e9g\u00e2t re\u00e7u -5",
     "icone": "i01555",
-    "access": "A4"
+    "access": "A0"
   },
   "238": {
     "nom": "Orbe D\u00e9moniaque",
@@ -1872,7 +1882,7 @@
     "effet": "Capacit\u00e9",
     "montant": "2 fois par combat (Instantan\u00e9e) : Dext\u00e9rit\u00e9 +3 pendant 3 tours",
     "icone": "k19016",
-    "access": "D4"
+    "access": "D2"
   },
   "258": {
     "nom": "Robe de Lucius",
@@ -1887,7 +1897,7 @@
     "effet": "",
     "montant": "Blocage physique +2, Blocage magique +1",
     "icone": "I00136",
-    "access": "A4"
+    "access": "A0"
   },
   "260": {
     "nom": "Tiare du Savoir",
@@ -1895,7 +1905,7 @@
     "effet": "",
     "montant": "Intelligence +1, Esprit +1",
     "icone": "A10017",
-    "access": "A1"
+    "access": "A0"
   },
   "261": {
     "nom": "Chaussures d'agilit\u00e9",
@@ -1918,14 +1928,16 @@
     "desc": "Un gantelet ayant appartenu \u00e0 l'un des plus grands forgerons du Pic de Noireflammes. Appartient \u00e0 la Panoplie Noireflammes (2 pi\u00e8ces)",
     "effet": "Panoplie",
     "montant": "D\u00e9g\u00e2t +2, (+2 si Panoplie)",
+    "condition": { "type": "panoplie", "value": "Katana Lame Noire", "bonus": "D\u00e9g\u00e2t +2" },
     "icone": "A40036",
-    "access": "D4"
+    "access": "D0"
   },
   "264": {
     "nom": "Griffe de Puissance",
     "desc": "Une griffe faite par les Ursuns et offerte aux plus valeureux assassins. Appartient \u00e0 la Panoplie \"Puissance\".",
     "effet": "Force +1",
     "montant": "D\u00e9g\u00e2t +5 (+1 si panoplie)",
+    "condition": { "type": "panoplie", "value": "Gemme de Puissance", "bonus": "D\u00e9g\u00e2t +1" },
     "icone": "W33801"
   },
   "265": {
@@ -1940,6 +1952,7 @@
     "desc": "Une lance forg\u00e9e avec le minerai de Stella, perce efficacement l'ennemi.",
     "effet": "Blocage physique cible -3",
     "montant": "D\u00e9g\u00e2t +10 (+1 si Chev. Dragon)",
+    "condition": { "type": "classe", "value": ["Chev Dragon"], "bonus": "D\u00e9g\u00e2t +1" },
     "icone": "W11007"
   },
   "267": {
@@ -2000,8 +2013,9 @@
     "desc": "Une ceinture port\u00e9e par les grands nobles du Royaume d'Amur",
     "effet": "",
     "montant": "D\u00e9g\u00e2t re\u00e7u -2, Intelligence +1 (+1 si Illusionniste)",
+    "condition": { "type": "classe", "value": ["Illusionniste"], "bonus": "Intelligence +1" },
     "icone": "A30011",
-    "access": "A2"
+    "access": "A0"
   },
   "275": {
     "nom": "Anneau de r\u00e9sistance mentale",
@@ -2017,7 +2031,7 @@
     "effet": "",
     "montant": "R\u00e9sistance d'esprit +2, d\u00e9g\u00e2t re\u00e7u -1",
     "icone": "A40024",
-    "access": "A2"
+    "access": "A1"
   },
   "277": {
     "nom": "Mitaine amplificatrice",
@@ -2025,15 +2039,16 @@
     "effet": "",
     "montant": "Montant des buffs +1, d\u00e9g\u00e2t re\u00e7u -1",
     "icone": "A40010",
-    "access": "D2"
+    "access": "D1"
   },
   "278": {
     "nom": "Puce amplificatrice",
     "desc": "Cette puce a \u00e9t\u00e9 cr\u00e9\u00e9e par un magicien zumi qui en avait marre de faire des sorts de soutien faible.",
     "effet": "",
-    "montant": "Montant des buffs +1, d\u00e9g\u00e2t +1 (+1 Si Ingénieur)",
+    "montant": "Montant des buffs +1, d\u00e9g\u00e2t +1 (+1 Si Ing\u00e9nieur)",
+    "condition": { "type": "classe", "value": ["Ing\u00e9nieur"], "bonus": "D\u00e9g\u00e2t +1" },
     "icone": "i00688",
-    "access": "D2"
+    "access": "D1"
   },
   "279": {
     "nom": "Hache Cruelle",
@@ -2054,8 +2069,9 @@
     "desc": "Une gemme augmentant les d\u00e9g\u00e2ts inflig\u00e9s, mais diminuant la chance de r\u00e9ussir ses attaques. Appartient \u00e0 la Panoplie \"Puissance\".",
     "effet": "R\u00e9ussite -1",
     "montant": "D\u00e9g\u00e2t +4 (+1 si panoplie)",
+    "condition": { "type": "panoplie", "value": "Griffe de Puissance", "bonus": "D\u00e9g\u00e2t +1" },
     "icone": "i01146",
-    "access": "D4"
+    "access": "D0"
   },
   "282": {
     "nom": "Crystal de Volesang",
@@ -2094,7 +2110,7 @@
     "effet": "Capacit\u00e9",
     "montant": "D\u00e9g\u00e2t re\u00e7u -2, 3 fois par combat (Esprit) : D\u00e9g\u00e2t miroir",
     "icone": "a30061",
-    "access": "A4"
+    "access": "A2"
   },
   "287": {
     "nom": "Fusil d'Ogre",
@@ -2122,6 +2138,7 @@
     "desc": "Une veste augmentant la r\u00e9sistance du porteur. Appartient \u00e0 la panoplie du combattant.",
     "effet": "",
     "montant": "D\u00e9g\u00e2t -4 (+2 si panoplie)",
+    "condition": { "type": "panoplie", "value": "Brassard du Combattant", "bonus": "D\u00e9g\u00e2t re\u00e7u -2" },
     "icone": "A20039"
   },
   "291": {
@@ -2130,7 +2147,7 @@
     "effet": "",
     "montant": "Si coup critique (1, 2) : r\u00e9ussite cible -2 (1 tour)",
     "icone": "I00232",
-    "access": "A4"
+    "access": "D3"
   },
   "292": {
     "nom": "Croc sombre",
@@ -2202,7 +2219,8 @@
     "nom": "Marteau du Sage",
     "desc": "Un marteau con\u00e7u pour aider les sages.",
     "effet": "Intelligence +1",
-    "montant": "D\u00e9g\u00e2t +6, Soin +2 (AoE 1) (+1 si sage)",
+    "montant": "D\u00e9g\u00e2t +6, Soin +2 (AoE/2) (+1 si sage)",
+    "condition": { "type": "classe", "value": ["Sage"], "bonus": "D\u00e9g\u00e2t +1, Soin +1" },
     "icone": "W40908"
   },
   "302": {
@@ -2238,6 +2256,7 @@
     "desc": "Une veste renfor\u00e7ant l'esprit de son porteur. Appartient \u00e0 la Panoplie de l'Esprit (tout objet \"de l'esprit\" en fait partie)",
     "effet": "Esprit +1",
     "montant": "D\u00e9g\u00e2t -4, (si panoplie : r\u00e9sistance esprit +2)",
+    "condition": { "type": "panoplie", "value": "Esprit", "bonus": "R\u00e9sistance d'esprit +2" },
     "icone": "A20064"
   },
   "307": {
@@ -2251,7 +2270,8 @@
     "nom": "Masse Grav\u00e9e",
     "desc": "Une masse grav\u00e9e d'un glyphe. Plus il serait en contact avec des glyphes, plus il se renforcerait.",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t +4 (+1 par glyphe \u00e9quip\u00e9e, max 3)",
+    "montant": "D\u00e9g\u00e2t +4 (+1 par glyphe \u00e9quip\u00e9e)",
+    "condition": { "type": "panoplie", "value": "Glyphe", "bonus": "D\u00e9g\u00e2t +1" },
     "icone": "W34704"
   },
   "309": {
@@ -2291,6 +2311,7 @@
     "desc": "Ce b\u00e2ton l\u00e9gendaire \u00e0 le pouvoir d'inverser les \u00e9l\u00e9ments (ex : nature/foudre). On raconte qu'il viendrait d'une autre dimension...",
     "effet": "Inversion Elementaire",
     "montant": "D\u00e9g\u00e2t +10 (+1 Si Magicien)",
+    "condition": { "type": "classe", "value": ["Magicien"], "bonus": "D\u00e9g\u00e2t +1" },
     "icone": "W62507"
   },
   "314": {
@@ -2311,9 +2332,10 @@
   },
   "316": {
     "nom": "Ep\u00e9e Knowledge",
-    "desc": "Une \u00e9p\u00e9e capable d'extraire de ses ennemis une chose incroyable : la connaissance ! Appartient \u00e0 la Panoplie du Savoir (tout objet donnant de l'XP).",
+    "desc": "Une \u00e9p\u00e9e capable d'extraire de ses ennemis une chose incroyable : la connaissance ! Appartient \u00e0 la Panoplie de l'Exp\u00e9rience (tout objet donnant de l'XP).",
     "effet": "XP re\u00e7u +10%",
     "montant": "D\u00e9g\u00e2t +4 (+2 si panoplie)",
+    "condition": { "type": "panoplie", "value": "Ecolier, Bijou, Experience", "bonus": "D\u00e9g\u00e2t +2" },
     "icone": "W10108"
   },
   "317": {
@@ -2343,6 +2365,7 @@
     "desc": "Une masse capable de pulv\u00e9riser la d\u00e9fense de sa cible.",
     "effet": "Blocage cible -1",
     "montant": "D\u00e9g\u00e2t +5 (+1 Si Guerrier)",
+    "condition": { "type": "classe", "value": ["Guerrier"], "bonus": "D\u00e9g\u00e2t +1" },
     "icone": "W33501"
   },
   "321": {
@@ -2386,7 +2409,7 @@
     "effet": "Conversion Lumi\u00e8re en T\u00e9n\u00e8bres",
     "montant": "Force +1, Intelligence +1",
     "icone": "i01082b",
-    "access": "D2"
+    "access": "D1"
   },
   "327": {
     "nom": "Graine Sacr\u00e9e",
@@ -2394,15 +2417,20 @@
     "effet": "",
     "montant": "D\u00e9g\u00e2t re\u00e7u -2, d\u00e9g\u00e2t nature +3",
     "icone": "I00160",
-    "access": "A2"
+    "access": "D2"
   },
   "328": {
     "nom": "Insigne de l'Ordre du Temple",
     "desc": "Ancien insigne en or pur, il aurait appartenu aux anc\u00eatres de la Curie M\u00e9t\u00e9role : l'Ordre des Chevaliers du Temple, les meilleurs templiers d'Aven.",
     "effet": "(Clerc, Sage, Chev, Templ, Cors)",
-    "montant": " D\u00e9g\u00e2t +1 & Soin +1, pour chaque classe poss\u00e9d\u00e9e : +2 (AoE +1)",
+    "montant": " D\u00e9g\u00e2t +1 & Soin +1, pour chaque classe poss\u00e9d\u00e9e : +2 (AoE/2)",
+    "condition": {
+      "type": "classe",
+      "value": ["Clerc", "Sage", "Chevalier", "Templier", "Corsaire"],
+      "bonus": "D\u00e9g\u00e2t +2, Soin +2"
+    },
     "icone": "i01667",
-    "access": "D4"
+    "access": "D0"
   },
   "329": {
     "nom": "Anneau Ouragan",
@@ -2410,13 +2438,13 @@
     "effet": "",
     "montant": "Si coup critique (1,2) : Soigne 1D6+6",
     "icone": "A00019",
-    "access": "D4"
+    "access": "D3"
   },
   "330": {
     "nom": "Super Chapeau Champi",
     "desc": "Une version am\u00e9lior\u00e9e du Chapeau de Champigno\u00efde. Il a appartenu \u00e0 un grand champigno\u00efde.",
     "effet": "",
-    "montant": "Soin +3 et D\u00e9g\u00e2t magique +3, AoE : +2",
+    "montant": "Soin +3 et D\u00e9g\u00e2t magique +3, (AoE/2)",
     "icone": "A10028",
     "access": "D3"
   },
@@ -2454,7 +2482,7 @@
     "nom": "Crochet de Gimu",
     "desc": "Un crochet appartenant \u00e0 Gimu - l'Oeil du Cylcone. Ce crochet est tellement surcharg\u00e9 en magie que sa texture est difforme.",
     "effet": "",
-    "montant": "Soin +4 et D\u00e9g\u00e2t magique +4, AoE : +2",
+    "montant": "Soin +4 et D\u00e9g\u00e2t magique +4, (AoE/2)",
     "icone": "I002863",
     "access": "D4"
   },
@@ -2558,7 +2586,7 @@
     "effet": "PV +10",
     "montant": "D\u00e9g\u00e2t -5, r\u00e9siste \u00e0 un coup fatal (laissant 1 PV)",
     "icone": "A20068",
-    "access": "A3"
+    "access": "A2"
   },
   "350": {
     "nom": "Cha\u00eene du destin",
@@ -2580,8 +2608,9 @@
     "desc": "Cette pierre est issu de la Vall\u00e9e F\u00e9r\u00e9gal des Zumis. Elle est insuffl\u00e9 de l'\u00e9nergie des crystaux d'Asbi. Appartient \u00e0 la panoplie d'Asbi.",
     "effet": "",
     "montant": "D\u00e9g\u00e2t re\u00e7u -2 (+1 par objet d'Asbi)",
+    "condition": { "type": "panoplie", "value": "Asbi", "bonus": "D\u00e9g\u00e2t re\u00e7u -1" },
     "icone": "i01009",
-    "access": "D3"
+    "access": "D0"
   },
   "353": {
     "nom": "Griffe de Monstre",
@@ -2603,7 +2632,7 @@
     "effet": "",
     "montant": "D\u00e9g\u00e2t -3, montant des buffs +1",
     "icone": "W70304",
-    "access": "A1"
+    "access": "D1"
   },
   "356": {
     "nom": "Cha\u00eene Heldentod",
@@ -2632,6 +2661,7 @@
     "desc": "Un grimoire contenant des savoirs d'Heldentod. Tr\u00e8s utile pour les unit\u00e9s de l'Empire",
     "effet": "PV +10",
     "montant": "D\u00e9g\u00e2t +8 (+1 par objet Heldentod)",
+    "condition": { "type": "panoplie", "value": "Heldentod", "bonus": "D\u00e9g\u00e2t +1" },
     "icone": "W61402"
   },
   "360": {
@@ -2639,8 +2669,9 @@
     "desc": "Un gantelet d\u00e9di\u00e9 \u00e0 l'arm\u00e9e Heldentod, sa manufacture est sp\u00e9calis\u00e9e pour infliger de lourds d\u00e9g\u00e2ts.",
     "effet": "",
     "montant": "D\u00e9g\u00e2t re\u00e7u -2, d\u00e9g\u00e2t +1 (+1 par objet Heldentod)",
+    "condition": { "type": "panoplie", "value": "Heldentod", "bonus": "D\u00e9g\u00e2t +1" },
     "icone": "A40015",
-    "access": "A3"
+    "access": "A0"
   },
   "361": {
     "nom": "Bracelet Maudit d'Heldentod III",
@@ -2671,6 +2702,7 @@
     "desc": "Une lance con\u00e7ue pour l'art martial d'Heldentod. Tr\u00e8s utile pour les unit\u00e9s de l'Empire",
     "effet": "PV +10",
     "montant": "D\u00e9g\u00e2t +8 (+1 par objet Heldentod)",
+    "condition": { "type": "panoplie", "value": "Heldentod", "bonus": "D\u00e9g\u00e2t +1" },
     "icone": "W54308"
   },
   "365": {
@@ -2694,7 +2726,7 @@
     "effet": "",
     "montant": "Am\u00e9liore la raret\u00e9 des butins",
     "icone": "I00426",
-    "access": "A1"
+    "access": "A2"
   },
   "368": {
     "nom": "Guitare de Puissance",
@@ -2715,7 +2747,8 @@
     "nom": "Veste d'Ing\u00e9nieur",
     "desc": "Cette veste a \u00e9t\u00e9 optimis\u00e9e pour que les ing\u00e9nieurs agissent \u00e0 leur plein potentiel.",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t -5 (-1 si ing\u00e9nieur, et d\u00e9g\u00e2t +2) ",
+    "montant": "D\u00e9g\u00e2t -5 (Si ing\u00e9nieur : d\u00e9g\u00e2ts +3) ",
+    "condition": { "type": "classe", "value": ["Ing\u00e9nieur"], "bonus": "D\u00e9g\u00e2t +3" },
     "icone": "A20048"
   },
   "371": {
@@ -2724,7 +2757,7 @@
     "effet": "",
     "montant": "D\u00e9g\u00e2t re\u00e7u -3, Dext\u00e9rit\u00e9 +1",
     "icone": "A40029",
-    "access": "A3"
+    "access": "A0"
   },
   "372": {
     "nom": "Collier Lueur d'\u00e2me",
@@ -2732,7 +2765,7 @@
     "effet": "",
     "montant": "Dur\u00e9e des malus +1 tour, Soin +2 et D\u00e9g\u00e2t magique +2",
     "icone": "A00044",
-    "access": "D2"
+    "access": "D3"
   },
   "373": {
     "nom": "B\u00e2ton Kif\u00e9peur",
@@ -2760,6 +2793,7 @@
     "desc": "Am\u00e9lioration de la hache forte, elle donne beaucoup de force \u00e0 son porteur, hussss !",
     "effet": "Force +2",
     "montant": "D\u00e9g\u00e2t +8 (+1 Si Guerrier)",
+    "condition": { "type": "classe", "value": ["Guerrier"], "bonus": "D\u00e9g\u00e2t +1" },
     "icone": "W20103"
   },
   "377": {
@@ -2817,7 +2851,7 @@
     "effet": "",
     "montant": "D\u00e9g\u00e2t +2, PV +5",
     "icone": "A00006",
-    "access": "D2"
+    "access": "D0"
   },
   "385": {
     "nom": "Grimoire Gravitationnel",
@@ -2845,13 +2879,14 @@
     "desc": "Cette ceinture aux apparences ordinaire est en r\u00e9alit\u00e9 capable de bloquer certaines attaques magiques.",
     "effet": "",
     "montant": "PV +5, Blocage magique +2",
-    "icone": "A30019"
+    "icone": "A30019",
+    "access": "A0"
   },
   "389": {
     "nom": "Anneau de Vie",
     "desc": "Une des am\u00e9liorations de l'anneau du rem\u00e8de, orient\u00e9 vitalit\u00e9.",
     "effet": "",
-    "montant": "PV +15, Soin +4, AoE : +2",
+    "montant": "PV +15, Soin +4, (AoE/2)",
     "icone": "A00005b",
     "access": "D2"
   },
@@ -2867,7 +2902,8 @@
     "desc": "Cet anneau est grav\u00e9 d'un embl\u00e8me permettant de prot\u00e9ger son porteur.",
     "effet": "",
     "montant": "Blocage physique +2",
-    "icone": "A00013"
+    "icone": "A00013",
+    "access": "A0"
   },
   "392": {
     "nom": "Masse isolante",
@@ -2902,27 +2938,36 @@
     "desc": "Ces lunettes sont tr\u00e8s pris\u00e9es par les Zumis, c'est un peu leur marque de fabrique.",
     "effet": "",
     "montant": "Dext\u00e9rit\u00e9 +1, Esprit +1 (+1 si Zumi)",
-    "icone": "k10106"
+    "condition": { "type": "race", "value": "Zumi", "bonus": "Esprit +1" },
+    "icone": "k10106",
+    "access": "A1"
   },
   "397": {
     "nom": "Lunettes d'Intello",
     "desc": "Ces lunettes vous feront passer pour un intello fragile, m\u00eame si vous \u00eates une grosse brute compl\u00e8tement stupide.",
     "effet": "",
     "montant": "Intelligence +1, Chance d'\u00eatre vis\u00e9e -25%",
-    "icone": "k10029"
+    "icone": "k10029",
+    "access": "A1"
   },
   "398": {
     "nom": "Oreilles de Lapin",
     "desc": "Ces oreilles vous rendront trop Kawaii, plus personne ne voudra vous attaquer (si affect\u00e9).",
     "effet": "",
     "montant": "Charisme +1, Chance d'\u00eatre vis\u00e9e -25%",
-    "icone": "k10657"
+    "icone": "k10657",
+    "access": "A1"
   },
   "399": {
     "nom": "Tenue de Ranger",
     "desc": "Cette tenue est adapt\u00e9e pour les combattants chevron\u00e9s (Voleur, Assassin, Chasseur, Corsaire)",
     "effet": "",
     "montant": "D\u00e9g\u00e2t -5, D\u00e9g\u00e2t +1 (+1 par classe cit\u00e9e)",
+    "condition": {
+      "type": "classe",
+      "value": ["Voleur", "Assassin", "Chasseur", "Corsaire"],
+      "bonus": "D\u00e9g\u00e2t +1"
+    },
     "icone": "k20820"
   },
   "400": {
@@ -2972,14 +3017,16 @@
     "desc": "Ces chaussures ont \u00e9t\u00e9 con\u00e7ues pour r\u00e9duire le bruit de son porteur !",
     "effet": "Dext\u00e9rit\u00e9 +1",
     "montant": "En invisibilit\u00e9 : chance d'\u00eatre touch\u00e9 -3",
-    "icone": "A50013"
+    "icone": "A50013",
+    "access": "A2"
   },
   "407": {
     "nom": "Bague Enchant\u00e9e",
     "desc": "Cette bague assez rudimentaire peut \u00eatre tr\u00e8s utile pour beaucoup de personnes.",
     "effet": "",
     "montant": "D\u00e9g\u00e2t +2, Esprit +1",
-    "icone": "A00004"
+    "icone": "A00004",
+    "access": "A0"
   },
   "408": {
     "nom": "Robe \u00e9toil\u00e9e renforc\u00e9e",
@@ -2993,35 +3040,45 @@
     "desc": "Gants con\u00e7us pour am\u00e9liorer les tirs",
     "effet": "",
     "montant": "D\u00e9g\u00e2t per\u00e7ant +3, Dext\u00e9rit\u00e9 +1 (+1 si Chasseur)",
-    "icone": "A40017"
+    "condition": { "type": "classe", "value": ["Chasseur"], "bonus": "Dext\u00e9rit\u00e9 +1" },
+    "icone": "A40017",
+    "access": "D2"
   },
   "410": {
     "nom": "Brassard sacr\u00e9",
     "desc": "Les templiers et clercs sont tr\u00e8s friants de ce brassard extr\u00eamement utile !",
     "effet": "",
     "montant": "D\u00e9g\u00e2t lumi\u00e8re +2, d\u00e9g\u00e2t re\u00e7u -2 (-1 si Templier)",
-    "icone": "A40033"
+    "condition": { "type": "classe", "value": ["Templier"], "bonus": "D\u00e9g\u00e2t re\u00e7u -1" },
+    "icone": "A40033",
+    "access": "D1"
   },
   "411": {
     "nom": "Pendentif du risque",
     "desc": "Ce pendentif sombre g\u00e9n\u00e8re de l'adrenaline chez son porteur lorsque sa vie est en danger, utile mais risqu\u00e9 !",
     "effet": "",
-    "montant": "Si PV <33%, D\u00e9g\u00e2t +4 et Soin +3",
-    "icone": "A00046d"
+    "montant": "Si PV <33%, D\u00e9g\u00e2ts : +4 et Soin : +3",
+    "condition": { "type": "PV", "value": "3", "bonus": "D\u00e9g\u00e2t +4, Soin +3" },
+    "icone": "A00046d",
+    "access": "D2"
   },
   "412": {
     "nom": "Cape de fuite",
     "desc": "Cette cape est tr\u00e8s  utile lorsque la situation tourne mal, elle vous aidera \u00e0 survivre !",
     "effet": "",
     "montant": "Si PV < 33%, Esquive et Dext\u00e9rit\u00e9 +2",
-    "icone": "A60015"
+    "condition": { "type": "PV", "value": "3", "bonus": "Esquive +2, Dext\u00e9rit\u00e9 +2" },
+    "icone": "A60015",
+    "access": "A1"
   },
   "413": {
     "nom": "Cotte du Survivant",
     "desc": "Cette cotte de maille est r\u00e9put\u00e9e pour avoir sauv\u00e9 la vie \u00e0 un bon nombre de h\u00e9ros.",
     "effet": "",
     "montant": "D\u00e9g\u00e2t -4, Blocage +1 (+1 si PV < 33%)",
-    "icone": "A20076"
+    "condition": { "type": "PV", "value": "3", "bonus": "Blocage +1" },
+    "icone": "A20076",
+    "access": "A1"
   },
   "414": {
     "nom": "Dague de Molman",
@@ -3063,6 +3120,7 @@
     "desc": "Cette griffe puise son \u00e9nergie du sang qui coule en combat.",
     "effet": "",
     "montant": "D\u00e9g\u00e2t +4 (+3 Si PV <33%)",
+    "condition": { "type": "PV", "value": "3", "bonus": "D\u00e9g\u00e2t +3" },
     "icone": "W31406"
   },
   "420": {
@@ -3098,6 +3156,7 @@
     "desc": "Ce marteau est id\u00e9ale pour les adeptes du combat de la magie : r\u00e9veillez votre esprit de paladin !",
     "effet": "D\u00e9g\u00e2t lumi\u00e8re +3",
     "montant": "D\u00e9g\u00e2t +8 (+1 si Templier)",
+    "condition": { "type": "classe", "value": ["Templier"], "bonus": "D\u00e9g\u00e2t +1" },
     "icone": "W41201"
   },
   "425": {
@@ -3118,7 +3177,8 @@
     "nom": "Ep\u00e9e Gemme Noire",
     "desc": "Cette \u00e9p\u00e9e a \u00e9t\u00e9 taill\u00e9e dans une gemme sombre, elle inspire la peur et la haine.",
     "effet": "Element : T\u00e9n\u00e8bres",
-    "montant": "D\u00e9g\u00e2t +9 , d\u00e9g\u00e2t de t\u00e9n\u00e8bres +2 (Dégât +1 si Luminary) ",
+    "montant": "D\u00e9g\u00e2t +9 , d\u00e9g\u00e2t de t\u00e9n\u00e8bres +2 (D\u00e9g\u00e2t +1 si Luminary) ",
+    "condition": { "type": "classe", "value": ["Luminary"], "bonus": "D\u00e9g\u00e2t +1" },
     "icone": "W25607"
   },
   "428": {
@@ -3133,7 +3193,9 @@
     "desc": "Ce bouclier a sauv\u00e9 de nombreux innocents d'une mort certaine.",
     "effet": "",
     "montant": "D\u00e9g\u00e2t -3 (-3 si PV < 33%)",
-    "icone": "W70206d"
+    "condition": { "type": "PV", "value": "3", "bonus": "D\u00e9g\u00e2t re\u00e7u -3" },
+    "icone": "W70206d",
+    "access": "A1"
   },
   "430": {
     "nom": "Lance Quartz d'Automne",
@@ -3147,7 +3209,8 @@
     "desc": "Un bouclier forg\u00e9 \u00e0 la m\u00e9thode Heldentod, il est serti d'un Quartz d'Automne",
     "effet": "Dur\u00e9e des sorts +1",
     "montant": "D\u00e9g\u00e2t -3",
-    "icone": "W70508"
+    "icone": "W70508",
+    "access": "D1"
   },
   "432": {
     "nom": "Faucille Sanguinaire",
@@ -3181,7 +3244,7 @@
     "nom": "Couronne de Richesse",
     "desc": "Une ancienne couronne amenant prosp\u00e9rit\u00e9 \u00e0 son porteur.",
     "effet": "Or trouv\u00e9 +50%",
-    "montant": "Stats +1, d\u00e9g\u00e2t re\u00e7u -2",
+    "montant": "Stats +1, d\u00e9g\u00e2t re\u00e7u -1",
     "icone": "A10022"
   },
   "437": {
@@ -3189,6 +3252,7 @@
     "desc": "Cette toque est d\u00e9di\u00e9e aux \u00e9v\u00eaques de la Curie M\u00e9t\u00e9role, cela leur apporte tout ce dont ils ont besoins.",
     "effet": "Soin +2",
     "montant": "Intelligence +1, Esprit +1, (Charisme +1 si Clerc/Sage)",
+    "condition": { "type": "classe", "value": ["Clerc", "Sage"], "bonus": "Charisme +1" },
     "icone": "A10011"
   },
   "438": {
@@ -3210,13 +3274,14 @@
     "desc": "Ce pendentif est incrust\u00e9 d'une pierre de sang extr\u00eamement rare, poss\u00e9dant une capacit\u00e9 hors du commun qui peut sauver la vie de son porteur.",
     "effet": "",
     "montant": "PV +15, si critique (1,2) : Soin PV = d\u00e9g\u00e2ts/3",
-    "icone": "k10160"
+    "icone": "k10160",
+    "access": "D2"
   },
   "441": {
     "nom": "Robe de la Curie",
     "desc": "Une robe con\u00e7ue pour les membres de l'\u00e9glise de la Curie M\u00e9t\u00e9role",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t -3, Soin +2 et D\u00e9g\u00e2t magique +2 (AoE : +1)",
+    "montant": "D\u00e9g\u00e2t -3, Soin +2 et D\u00e9g\u00e2t magique +2 (AoE/2)",
     "icone": "A20020"
   },
   "442": {
@@ -3224,14 +3289,16 @@
     "desc": "Cet anneau est b\u00e9ni par toute l'\u00e9glise de la Curie M\u00e9t\u00e9role, elle apporte puissance \u00e0 quiconque la porte.",
     "effet": "",
     "montant": "D\u00e9g\u00e2t +2, D\u00e9g\u00e2t re\u00e7u -2",
-    "icone": "A00006b"
+    "icone": "A00006b",
+    "access": "A0"
   },
   "443": {
     "nom": "Casque de concentration",
     "desc": "En plus de prot\u00e9ger son porteur, ce casque lui permet de mieux se concentrer",
     "effet": "",
     "montant": "D\u00e9g\u00e2t re\u00e7u -2, Force +1, Esprit +1",
-    "icone": "A10090"
+    "icone": "A10090",
+    "access": "A0"
   },
   "444": {
     "nom": "Tenue de G\u00e9n\u00e9ral",
@@ -3252,21 +3319,24 @@
     "desc": "Cet \u00e9cusson en bronze repr\u00e9sente un titre honorifique de la Curie M\u00e9t\u00e9role, il est r\u00e9serv\u00e9 aux braves.",
     "effet": "",
     "montant": "R\u00e9sistance d'esprit +2, d\u00e9g\u00e2t re\u00e7u -2",
-    "icone": "i00871"
+    "icone": "i00871",
+    "access": "A0"
   },
   "447": {
     "nom": "Ecusson de la Curie - Argent",
     "desc": "Cet \u00e9cusson en argent repr\u00e9sente un grand titre honorifique de la Curie M\u00e9t\u00e9role, il est r\u00e9serv\u00e9 aux plus d\u00e9vou\u00e9s.",
     "effet": "Charisme +1",
     "montant": "R\u00e9sistance d'esprit +3, PV +10",
-    "icone": "i00870"
+    "icone": "i00870",
+    "access": "A1"
   },
   "448": {
     "nom": "Ecusson de la Curie - Or",
     "desc": "Cet \u00e9cusson est l'une des plus hautes distinctions que la Curie M\u00e9t\u00e9role peut offrir, il est r\u00e9serv\u00e9 aux h\u00e9ros de la nation.",
     "effet": "Charisme +2",
     "montant": "R\u00e9sistance d'esprit +2, Esprit +2",
-    "icone": "i00869"
+    "icone": "i00869",
+    "access": "A1"
   },
   "449": {
     "nom": "Doudoune",
@@ -3280,27 +3350,41 @@
     "desc": "Cette bague tr\u00e8s jolie est sertie d'un Minerai Corail capable de perturber la magie et l'\u00e9nergie qui l'entoure.",
     "effet": "Capacit\u00e9",
     "montant": "2 fois par combat (Instantan\u00e9e Esprit) : Perturbe les ennemis (blocage -1, r\u00e9sistance esprit -2) sur 3 tours",
-    "icone": "k10115b"
+    "icone": "k10115b",
+    "access": "D2"
   },
   "451": {
     "nom": "Chapeau du barde",
     "desc": "",
     "effet": "",
     "montant": "Dext\u00e9rit\u00e9 +1, Intelligence +1 (Charisme +1 si Barde)",
-    "icone": "A10058"
+    "condition": { "type": "classe", "value": ["Barde"], "bonus": "Charisme +1" },
+    "icone": "A10058",
+    "access": "A0"
   },
   "452": {
     "nom": "Poignard porte-bonheur",
     "desc": "Un poignard tr\u00e8s utile en cas d'urgence ! Seuls les plus cruels savent s'en servir correctement !",
     "effet": "",
     "montant": "D\u00e9g\u00e2t +2 (+1 si Voleur, Assassin, Juge)",
-    "icone": "k10261"
+    "condition": { "type": "classe", "value": ["Voleur", "Assassin", "Juge"], "bonus": "D\u00e9g\u00e2t +1" },
+    "icone": "k10261",
+    "access": "D0"
   },
   "453": {
     "nom": "Tenue de Vagabond",
-    "desc": "Une tenue idéale pour voyager et se déplacer avec style",
+    "desc": "Une tenue id\u00e9ale pour voyager et se d\u00e9placer avec style",
     "effet": "",
     "montant": "D\u00e9g\u00e2t -5, Esquive +1 (+1 si Voleur ou Danselame)",
+    "condition": { "type": "classe", "value": ["Voleur", "Danselame"], "bonus": "Esquive +1" },
     "icone": "k20664"
+  },
+  "454": {
+    "nom": "Tr\u00e8fle du risque",
+    "desc": "Ce tr\u00e8fle permet d'amplifier les effets du hasard... Que choisira le destin ?",
+    "effet": "Amplification",
+    "montant": "Dégât +2, Si PV < 33% : Critique \u00e0 1, 2, 3 et 20, 19, 18",
+    "icone": "k10052",
+    "access": "D0"
   }
 }

@@ -101,6 +101,9 @@
   { "id": 136, "value": 1, "kind": "map", "name": "Mont Gowen", "description": "", "kindId": 46 },
   { "id": 137, "value": 2, "kind": "map", "name": "Mont Gowen", "description": "", "kindId": 46 },
   { "id": 138, "value": 3, "kind": "map", "name": "Mont Gowen", "description": "", "kindId": 46 },
+  { "id": 172, "value": 1, "kind": "map", "name": "Côte d'Arist\u00e8re", "description": "", "kindId": 58 },
+  { "id": 173, "value": 2, "kind": "map", "name": "Côte d'Arist\u00e8re", "description": "", "kindId": 58 },
+  { "id": 174, "value": 3, "kind": "map", "name": "Côte d'Arist\u00e8re", "description": "", "kindId": 58 },
   { "id": 175, "value": 1, "kind": "map", "name": "Steppes d'Arist\u00e8re", "description": "", "kindId": 59 },
   { "id": 176, "value": 2, "kind": "map", "name": "Steppes d'Arist\u00e8re", "description": "", "kindId": 59 },
   { "id": 177, "value": 3, "kind": "map", "name": "Steppes d'Arist\u00e8re", "description": "", "kindId": 59 },
@@ -1030,7 +1033,7 @@
   {
     "id": 1290,
     "value": 3,
-    "kind": "composantXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    "kind": "composantX",
     "name": "Bombe Noire",
     "description": "Une bombe très spéciale conçue dans les laboratoires de la Veyda",
     "kindId": "I00385c"
@@ -2124,17 +2127,6 @@
     "group": 1
   },
   {
-    "id": 1557,
-    "value": 3,
-    "kind": "anecdoteXXXXXX",
-    "name": "",
-    "description": "bouffer un wagon, les mines, c'est dangereux !",
-    "maps": [],
-    "enemies": [],
-    "kindId": "items/i01189",
-    "group": 1
-  },
-  {
     "id": 1558,
     "value": 3,
     "kind": "anecdote",
@@ -2687,7 +2679,7 @@
   {
     "id": 15000,
     "value": 3,
-    "kind": "anecdoteIII",
+    "kind": "anecdoteII",
     "name": "",
     "description": "",
     "maps": [],
@@ -2709,7 +2701,7 @@
   {
     "id": 1701,
     "value": 3,
-    "kind": "anecdoteII",
+    "kind": "anecdote",
     "name": "Sceau de Dualité",
     "description": "Ce sceau a été utilisé par Milo, le frère de Malvis, pour sceller son âme à l'intérieur de Brocoli, c'est une relique des Sages.",
     "maps": [58],
@@ -2753,7 +2745,7 @@
   {
     "id": 1710,
     "value": 3,
-    "kind": "anecdoteII",
+    "kind": "anecdote",
     "name": "Malvis dépouillée",
     "description": "Pour avoir des informations Malvis est prête à payer cher, très cher, elle en fini complètement dépouillée !",
     "maps": [58],
@@ -2764,7 +2756,7 @@
   {
     "id": 1711,
     "value": 3,
-    "kind": "anecdoteII",
+    "kind": "anecdote",
     "name": "Erida et Kratos",
     "description": "Pour faire diversion, Kratos et Erida ont décidés de faire une scène de ménage, une bonne vieille dispute de couple pleine de jalousie ! A croire qu'ils se connaissent depuis longtemps !",
     "maps": [58],
@@ -3281,7 +3273,7 @@
   {
     "id": 15000,
     "value": 3,
-    "kind": "anecdoteIII",
+    "kind": "anecdoteII",
     "name": "",
     "description": "",
     "maps": [],

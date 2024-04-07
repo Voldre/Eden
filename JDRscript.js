@@ -143,7 +143,7 @@ document.querySelector("#awakenButton").addEventListener("click", (e) => {
   const persoData = persosJSON[indexPerso];
 
   JSON.parse(persoData.skills).forEach((skill, index) => {
-    var competence = [...competencesE.children][index];
+    const competence = [...competencesE.children][index];
     competence.children[0].value = skill;
     insertSkill(competence, skill, awakenClass);
   });
@@ -577,12 +577,15 @@ window.addEventListener("load", () => {
   }
   loadFiche(selectedID);
 });
+
 selectPerso.addEventListener("change", (e) => {
-  var perso = e.target.value;
-  var indexPerso = e.target.selectedIndex;
+  const perso = e.target.value;
+  const indexPerso = e.target.selectedIndex;
 
   loadFiche(indexPerso);
 
+  const newUrl = `${window.location.origin}${window.location.pathname}?perso=${indexPerso + 1}`;
+  window.history.pushState({}, perso, newUrl);
   toastNotification("Chargement réussi de " + perso);
 });
 
@@ -720,10 +723,17 @@ function statsValue(resistance) {
 function getAllRes(persoEqpts) {
   const resAmount = statsValue(true);
 
-  const montantBlocP = parseEqptsByRegex(["Blocage +", "Blocage physique +"], persoEqpts).reduce((a, b) => a + b);
-  const montantEsq = parseEqptsByRegex(["Esquive +"], persoEqpts).reduce((a, b) => a + b);
-  const montantBlocM = parseEqptsByRegex(["Blocage +", "Blocage magique +"], persoEqpts).reduce((a, b) => a + b);
-  const montantRes = parseEqptsByRegex(["Résistance d'esprit +"], persoEqpts).reduce((a, b) => a + b);
+  const indexPerso = document.querySelector(".perso").id;
+  const persoData = persosJSON[indexPerso];
+
+  const montantBlocP = parseEqptsByRegex(["Blocage +", "Blocage physique +"], persoEqpts, persoData).reduce(
+    (a, b) => a + b
+  );
+  const montantEsq = parseEqptsByRegex(["Esquive +"], persoEqpts, persoData).reduce((a, b) => a + b);
+  const montantBlocM = parseEqptsByRegex(["Blocage +", "Blocage magique +"], persoEqpts, persoData).reduce(
+    (a, b) => a + b
+  );
+  const montantRes = parseEqptsByRegex(["Résistance d'esprit +"], persoEqpts, persoData).reduce((a, b) => a + b);
 
   document.querySelector("#resForce").innerText = `Bloc ${resAmount[0]} ${montantBlocP ? `+ ${montantBlocP}` : ""}`;
   document.querySelector("#resDexté").innerText = `Esq ${resAmount[1]} ${montantEsq ? `+ ${montantEsq}` : ""}`;
@@ -735,9 +745,12 @@ function createEquipmentSynthesis(persoEqpts) {
   const eqptSynthesisE = document.querySelector(".equipements-synthese");
   eqptSynthesisE.innerHTML = "";
 
-  synthesisCategories.forEach((category) => {
-    const eqptsValueList = parseEqptsByRegex(category.regex, persoEqpts);
+  const indexPerso = document.querySelector(".perso").id;
+  const persoData = persosJSON[indexPerso];
 
+  synthesisCategories.forEach((category) => {
+    const eqptsValueList = parseEqptsByRegex(category.regex, persoEqpts, persoData);
+    // console.log("eqptsValueList", eqptsValueList);
     const eqptsValue = eqptsValueList.reduce((total, item) => total + item, 0);
 
     if (!eqptsValue || eqptsValue === 0) return;
