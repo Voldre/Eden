@@ -34,7 +34,7 @@ const synthesisCategories = [
   { regex: ["Soin +"], label: "S", img: false },
   { regex: ["Dégât physique +"], label: "P", img: false },
   ...elementsCategories.slice(0, 3),
-  { regex: ["Dégât magique +"], label: "M", img: false },
+  { regex: ["Dégât magique +", "Dégât élémentaire +"], label: "M", img: false },
   ...elementsCategories.slice(3),
   { regex: ["Dégât -", "Dégât reçu -"], label: "ARM", img: false },
 ];

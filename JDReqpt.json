@@ -645,14 +645,16 @@
     "desc": "Une tunique ayant autrefois appartenue \u00e0 un grand magicien noir",
     "effet": "D\u00e9g\u00e2t magique +2",
     "montant": "D\u00e9g\u00e2t -4",
-    "icone": "k20806"
+    "icone": "k20806",
+    "access": "D2"
   },
   "89": {
     "nom": "Tenue de Ninja",
     "desc": "Une tenue con\u00e7ue par des ninjas d'une autre \u00e8re",
     "effet": "D\u00e9g\u00e2t physique +2",
     "montant": "D\u00e9g\u00e2t -5",
-    "icone": "k20213"
+    "icone": "k20213",
+    "access": "D2"
   },
   "90": {
     "nom": "Plastron Ecailleux",
@@ -926,8 +928,8 @@
   "127": {
     "nom": "Faucille de l'Esprit",
     "desc": "Une faucille ayant absorb\u00e9s des \u00e2mes",
-    "effet": "Esprit +1",
-    "montant": "D\u00e9g\u00e2t +6",
+    "effet": "Esprit +2",
+    "montant": "D\u00e9g\u00e2t +7",
     "icone": "W55504"
   },
   "128": {
@@ -982,7 +984,7 @@
   "135": {
     "nom": "Arc de l'Esprit",
     "desc": "Un arc apportant de la lucidit\u00e9 \u00e0 son porteur",
-    "effet": "Esprit +1",
+    "effet": "Esprit +2",
     "montant": "D\u00e9g\u00e2t +7",
     "icone": "W50204"
   },
@@ -1293,7 +1295,7 @@
   "179": {
     "nom": "Grimoire du Savoir",
     "desc": "Un grimoire am\u00e9liorant l'intelligence du porteur",
-    "effet": "Intelligence +1",
+    "effet": "Intelligence +2",
     "montant": "D\u00e9g\u00e2t +7",
     "icone": "W61405"
   },
@@ -1588,7 +1590,7 @@
     "desc": "Une guitare tr\u00e8s ancienne ayant appartenu aux anc\u00eatres de la For\u00eat Arc-en-Ciel",
     "effet": "Soin +3",
     "montant": "D\u00e9g\u00e2t +6",
-    "icone": "W61004"
+    "icone": "W60804"
   },
   "219": {
     "nom": "Guitare de Delphes",
@@ -2249,7 +2251,8 @@
     "desc": "Une robe cr\u00e9\u00e9 par des magiciens voulant renforc\u00e9 leur magie \u00e9l\u00e9mentaire.",
     "effet": "",
     "montant": "D\u00e9g\u00e2t -3, d\u00e9g\u00e2t \u00e9l\u00e9mentaire +2",
-    "icone": "A20019"
+    "icone": "A20019",
+    "access": "D2"
   },
   "306": {
     "nom": "Veste de l'Esprit",
@@ -2264,7 +2267,8 @@
     "desc": "Un plastron renfor\u00e7ant la magie \u00e9l\u00e9mentaire de son porteur (feu, glace, nature, ...).",
     "effet": "",
     "montant": "D\u00e9g\u00e2t -5, d\u00e9g\u00e2t \u00e9l\u00e9mentaire +2",
-    "icone": "A20095"
+    "icone": "A20095",
+    "access": "D2"
   },
   "308": {
     "nom": "Masse Grav\u00e9e",
@@ -2541,7 +2545,7 @@
   "343": {
     "nom": "Gunner de l'Esprit",
     "desc": "Un Gunner qui am\u00e9liore les capacit\u00e9s de concentration de son porteur",
-    "effet": "Esprit +1",
+    "effet": "Esprit +2",
     "montant": "D\u00e9g\u00e2t +8",
     "icone": "W51900"
   },
@@ -2806,7 +2810,7 @@
   "378": {
     "nom": "B\u00e2ton de l'Esprit",
     "desc": "Un b\u00e2ton am\u00e9liorant l'esprit de son porteur.",
-    "effet": "Esprit +1",
+    "effet": "Esprit +2",
     "montant": "D\u00e9g\u00e2t +7",
     "icone": "W60102"
   },
@@ -3383,8 +3387,36 @@
     "nom": "Tr\u00e8fle du risque",
     "desc": "Ce tr\u00e8fle permet d'amplifier les effets du hasard... Que choisira le destin ?",
     "effet": "Amplification",
-    "montant": "Dégât +2, Si PV < 33% : Critique \u00e0 1, 2, 3 et 20, 19, 18",
+    "montant": "D\u00e9g\u00e2t +2, Si PV < 33% : Critique \u00e0 1, 2, 3 et 20, 19, 18",
     "icone": "k10052",
     "access": "D0"
+  },
+  "455": {
+    "nom": "Guitare de l'Esprit",
+    "desc": "Une guitare amenant la lucidit\u00e9 \u00e0 son porteur",
+    "effet": "Esprit +2",
+    "montant": "D\u00e9g\u00e2t +8",
+    "icone": "W60805"
+  },
+  "456": {
+    "nom": "Guitare Ensorcel\u00e9e",
+    "desc": "Une guitare tr\u00e8s ancienne ayant appartenu aux anc\u00eatres de la For\u00eat Arc-en-Ciel",
+    "effet": "Soin +3",
+    "montant": "D\u00e9g\u00e2t +8, Intelligence +1",
+    "icone": "W61004"
+  },
+  "457": {
+    "nom": "B\u00e2ton Magique",
+    "desc": "Ce b\u00e2ton est con\u00e7ue pour renforcer la puissance magique.",
+    "effet": "Intelligence +2",
+    "montant": "D\u00e9g\u00e2t +8",
+    "icone": "W60304"
+  },
+  "458": {
+    "nom": "Poignard d'Andredi",
+    "desc": "Ce poignard r\u00e9cup\u00e9r\u00e9 sur les serres d'Andredi est capable d'infliger des blessures presque insoignable. A ne pas confier entre de mauvaises mains.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +5, si critique (1,2,3) : Emp\u00eache de se soigner pendant 3 tours",
+    "icone": "W11105"
   }
 }
