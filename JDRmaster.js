@@ -15,13 +15,7 @@ function updateSlots() {
 [...document.querySelectorAll(".ennemi")].forEach((selectEnnemiE) => {
   // Fill Select elements
   [[0, { nom: "" }], ...Object.entries(enemyJSON)].forEach(([index, enemy]) => {
-    if (
-      !logged &&
-      enemy.nom !== "" &&
-      !enemy.nom.includes("Veyda")
-      // && !enemy.nom.includes("Plouka")
-    )
-      return;
+    if (!logged && enemy.nom !== "" && !enemy.nom.includes("Veyda") && !enemy.nom.includes("Champi Baga")) return;
     var option = document.createElement("option");
     option.value = index;
     option.innerText = enemy.nom;
@@ -257,7 +251,7 @@ if (logged) {
     descE.innerText = eqpt.desc;
     effetE.innerText = eqpt.effet; // Ajout Sanofi
     montantE.innerText = eqpt.montant;
-    iconeE.src = "http://voldre.free.fr/Eden/images/items/" + eqpt.icone + ".png";
+    if (eqpt.icone !== "?") iconeE.src = "http://voldre.free.fr/Eden/images/items/" + eqpt.icone + ".png";
 
     eqptE.append(nomE, descE, effetE, montantE, iconeE);
     equipementsE.append(eqptE);
@@ -414,13 +408,13 @@ if (logged) {
 
   function handleGenericSelectChange(selectElements) {
     const v = {};
-    let emptyValue = false;
+    let hasEmptyValue = false;
     selectElements.forEach((selectE) => {
       v[selectE.className] = selectE.value;
-      if (selectE.value === "") emptyValue = true;
+      if (selectE.value === "") hasEmptyValue = true;
     });
 
-    if (emptyValue) return;
+    if (hasEmptyValue) return;
 
     const stats = statsJSON.classes.find((e) => e.Classe === v["classe"]);
     const raceStats = statsJSON.races.find((e) => e.Race === v["race"]);
@@ -436,7 +430,8 @@ if (logged) {
           : s.portee === "AoE"
           ? rang.montantVariable["AoE"] + guilde.montantVariable["AoE"]
           : 0;
-      const montantVarTot = s.montantVariable + bonusMontantVar;
+      const montantVarTot =
+        s.type === "Buff" ? Math.round((s.montantVariable + bonusMontantVar) / 2) : s.montantVariable + bonusMontantVar;
 
       const bonusMontantEffet =
         s.portee === "Mono"
@@ -444,9 +439,10 @@ if (logged) {
           : s.portee === "AoE"
           ? rang.montantEffet["AoE"] + guilde.montantEffet["AoE"]
           : 0;
-      const montantEffetTot = s.effet.includes("Dégât")
-        ? s.montantEffet + bonusMontantEffet
-        : Math.round((s.montantEffet + bonusMontantEffet) / 2);
+      const montantEffetTot = unformatText(s.effet).includes("degat")
+        ? s.montantEffet +
+          Math.round(bonusMontantEffet * (unformatText(s.effet).includes("prochain degat") ? 2.5 : 1.5))
+        : s.montantEffet + Math.round(bonusMontantEffet / 2);
 
       const duree = s.duree + rang.duree + guilde.duree;
 
@@ -456,7 +452,9 @@ if (logged) {
     });
 
     const statsName = ["Force", "Dextérité", "Intelligence", "Charisme", "Esprit"];
-    const statsValues = statsName.map((statName) => stats[statName] * 2 + raceStats[statName] + rang["stat"]);
+    const statsValues = statsName.map(
+      (statName) => stats[statName] * 2 + raceStats[statName] + rang["stat"] + (guilde["stat"] || 0)
+    );
 
     const enemyData = {
       visuel3D: "Switch...",

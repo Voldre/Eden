@@ -301,7 +301,7 @@
     "map_z": null,
     "map_r": null,
     "bgm": 12,
-    "mobs": [96, 97, 98, 99]
+    "mobs": [129, 150, 176, 177]
   },
   "26": {
     "name": "Plaines Fleuries",

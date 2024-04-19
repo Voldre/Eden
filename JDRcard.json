@@ -502,7 +502,7 @@
     "value": 3,
     "kind": "boss",
     "name": "Diana - G\u00e9n\u00e9rale Offensive",
-    "description": "Diana, la Tigresse Pourpre froide et franche de la Curie M\u00e9t\u00e9role, la l\u00e9gendaire G\u00e9nr\u00e9ale de Division Offensive.",
+    "description": "Diana, la Tigresse Pourpre froide et franche de la Curie M\u00e9t\u00e9role, la l\u00e9gendaire G\u00e9n\u00e9rale de Division Offensive.",
     "kindId": "diana"
   },
   {
@@ -1509,6 +1509,166 @@
     "name": "Soie de tisseuse",
     "description": "Cette soie très douce et résistante est issue d'araignée tisseuse, cela en fait une matière assez rare.",
     "kindId": "I00289b"
+  },
+  {
+    "id": 1408,
+    "value": 1,
+    "kind": "composant",
+    "name": "Tablette Chocolalpaga",
+    "description": "Un chocolat fondant préparé amoureusement par les Anurans à partir du lait d'Alpaga, un vrai délice.",
+    "kindId": "k10290"
+  },
+  {
+    "id": 1409,
+    "value": 1,
+    "kind": "composant",
+    "name": "Pansement Alpaga",
+    "description": "Le pansement des Alpahéros !",
+    "kindId": "k10345"
+  },
+  {
+    "id": 1410,
+    "value": 1,
+    "kind": "composant",
+    "name": "Bâtonnet Glacé d'Alpaga au chocolat",
+    "description": "Un bâtonnet glacé goût chocolat mélangé avec un peu de lait Alpaga. C'est le met favori des petits et des grands !",
+    "kindId": "k10749"
+  },
+  {
+    "id": 1411,
+    "value": 1,
+    "kind": "composant",
+    "name": "Alpaga de Prairie",
+    "description": "C'est une monture adorable et audacieuse ! Pas le plus rapide, mais l'un des plus mignons !",
+    "kindId": "i00563"
+  },
+  {
+    "id": 1412,
+    "value": 2,
+    "kind": "composant",
+    "name": "Barbapalpaga",
+    "description": "On chuchotait à son sujet autour des feux de camp... Les aventuriers en rêvaient la nuit... Et le voici enfin : le Ma�tre des Alpagas ! Note : Il est déconseillé d'essayer de le manger.",
+    "kindId": "i00632"
+  },
+  {
+    "id": 1413,
+    "value": 2,
+    "kind": "composant",
+    "name": "Avocalpaga",
+    "description": "Il paraîtrait que cette race d'Alpaga serait devenue verte suite à l'ingestion de trop d'épinards. Ils pensaient sans doute devenir plus forts, ce que les Alpagas peuvent être bêtes parfois non ?",
+    "kindId": "i00633"
+  },
+  {
+    "id": 1414,
+    "value": 1,
+    "kind": "composant",
+    "name": "Fashionalpaga",
+    "description": "Il est peut-être une victime de la mode, mais cet alpaga n'a rien à envier aux autres !",
+    "kindId": "i00815"
+  },
+  {
+    "id": 1415,
+    "value": 1,
+    "kind": "composant",
+    "name": "Saharalpaga",
+    "description": "Ces alpagas sophistiqués vivent dans le désert et savent tout sur la zenitude. Ils attendent patiemment que des aventuriers les adoptent.",
+    "kindId": "i00816"
+  },
+  {
+    "id": 1416,
+    "value": 2,
+    "kind": "composant",
+    "name": "Barakalpaga",
+    "description": "Cet Alpaga baraqué fait presque 2 fois la taille d'un Alpaga standard ! Et il a une belle coupe afro !",
+    "kindId": "i00952"
+  },
+  {
+    "id": 1417,
+    "value": 2,
+    "kind": "composant",
+    "name": "Chevalier Alpaga",
+    "description": "Un Alpaga capable d'assister son cavalier au combat !",
+    "kindId": "i01701"
+  },
+  {
+    "id": 1418,
+    "value": 3,
+    "kind": "composant",
+    "name": "Alpaga brillant",
+    "description": "Cet animal légendaire n'apparaitrait qu'en de rares occasions et brille d'une lumi�re dor�e la nuit !",
+    "kindId": "i00725b"
+  },
+  {
+    "id": 1419,
+    "value": 1,
+    "kind": "composant",
+    "name": "Sanglier Sauvage",
+    "description": "Espèce très vivace. Les sangliers sont admirés pour leur férocité et leur courage",
+    "kindId": "i00558"
+  },
+  {
+    "id": 1420,
+    "value": 2,
+    "kind": "composant",
+    "name": "Sanglier Punk",
+    "description": "Espèce rare. Les exploits au combat de cette bête féroce et imposante sont nombreux",
+    "kindId": "i00560"
+  },
+  {
+    "id": 1421,
+    "value": 1,
+    "kind": "composant",
+    "name": "Dent de Sabre Sauvage",
+    "description": "Bête robuste résistante au froid et aux coups. On dit que de la glace coule dans ses veines",
+    "kindId": "i00561"
+  },
+  {
+    "id": 1422,
+    "value": 2,
+    "kind": "composant",
+    "name": "Dent de Sabres du Blizzard",
+    "description": "Il aurait été béni par un esprit de glace. Personne n'en doute à la vue de son regard glacé",
+    "kindId": "i00562"
+  },
+  {
+    "id": 1423,
+    "value": 1,
+    "kind": "composant",
+    "name": "Yack de Voyage",
+    "description": "Arpentez les régions d'Ezur sur le comfortable dos de ce Yack",
+    "kindId": "i00629"
+  },
+  {
+    "id": 1424,
+    "value": 2,
+    "kind": "composant",
+    "name": "Yack de Luxe",
+    "description": "Ce Yack vous permettra d'arpenter les régions d'Ezur avec un ami !",
+    "kindId": "i00630"
+  },
+  {
+    "id": 1425,
+    "value": 1,
+    "kind": "composant",
+    "name": "Licorne Boréale",
+    "description": "Traversez les contrées d'Ezur au galop sur le dos de cette superbe Licorne",
+    "kindId": "i00848"
+  },
+  {
+    "id": 1426,
+    "value": 2,
+    "kind": "composant",
+    "name": "Licorne Boréale Exceptionnelle",
+    "description": "Cette licorne boréale pourra galoper partout dans Ezur sans crainte de finir trop blessé",
+    "kindId": "i00849"
+  },
+  {
+    "id": 1427,
+    "value": 3,
+    "kind": "composant",
+    "name": "Licorne des Tempêtes",
+    "description": "Les ennemis vous entendront arriver au son des tempêtes et du tonnerre, au dos de cette Licorne amplie de magie !",
+    "kindId": "i00854"
   },
   {
     "id": 1501,

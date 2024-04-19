@@ -1036,13 +1036,13 @@
     "skills": [
       "Fracas Terrestre / Atk Foudroyante : 2D10 +14 / +4 AoE : force/intel",
       "Machoir Enorme : 4D6+22 : force",
-      "M\u00e8re fondatrice : Soin 2D10+25 Invoque 2 lutins préhistorique (PV/2) : esprit",
+      "M\u00e8re fondatrice : Soin 2D10+25 Invoque 2 lutins pr\u00e9historique (PV/2) : esprit",
       "Passif : Armure +5, quand 33% PV : Si Blocage critique => Fracas terrestre auto"
     ],
     "stats": "17,9,15,11,16",
     "desc": "BOSS : Une tortue verte antique mont\u00e9e d'un arbre gigantesque. Elle est redoutable et tr\u00e8s r\u00e9sistante",
     "infos": "Faible au feu et au per\u00e7ant",
-    "drop": "Ep\u00e9e Verdoyante / Hache Verdâtre, rare : Plastron Ecailleux"
+    "drop": "Ep\u00e9e Verdoyante / Hache Verd\u00e2tre, rare : Plastron Ecailleux"
   },
   "72": {
     "visuel3D": "m059",
@@ -1935,8 +1935,8 @@
     "pvmax": "300",
     "skills": [
       "Lumi\u00e8re de Gu\u00e9rison : 2D10+15 (1/3 rejouer) : Intelligence",
-      "Vague Foudroyante : 3D6+16, Blocage-3 AoE 3 tours : Force",
-      "Lumi\u00e8re Sacr\u00e9e : 3D6+20 / Euphorie : +1D4 (min 2) +2 par coup sur 5 tours : esprit",
+      "Vague Foudroyante : 3D6+17, Blocage-3 AoE 3 tours : Force",
+      "Lumi\u00e8re Sacr\u00e9e : 3D6+25 / Euphorie : +1D4 (min 2) +2 par coup (max 6) sur 5 tours : esprit",
       "Passif : Blocage +2 (Def Acier), Armure -15, Ferveur Guerrier : si KO (2 fois) succ\u00e8s 1D2 (10/20) : Soigne 3D10+20 PV (D\u00e9g\u00e2t/Armure +5 perma)"
     ],
     "stats": "17,9,17,14,15",
@@ -1994,10 +1994,10 @@
     "nom": "Pachirou",
     "pvmax": "230",
     "skills": [
-      "Artillerie Lourde : 3D10+15 : Dext\u00e9rit\u00e9",
-      "Explosif Visqueux : 2D6+15, diminue de 2 dext\u00e9 & esquive pour 3 tours : Dext\u00e9rit\u00e9",
+      "Artillerie Lourde : 3D10+17 : Dext\u00e9rit\u00e9",
+      "Explosif Visqueux : 2D6+16, diminue de 2 dext\u00e9 & esquive pour 3 tours : Dext\u00e9rit\u00e9",
       "Robotisation \u00e9veill\u00e9 : D\u00e9g\u00e2ts 1D4+6 et buff Armure +1D6 sur 4 tours : Esprit",
-      "Passif : PV < 110 : Blocage/Esq critique : contre-attaque bombe 2D6+10"
+      "Passif : PV < 110 : Blocage/Esq critique : contre-attaque bombe 2D6+15"
     ],
     "stats": "11,19,11,13,16",
     "desc": "Zumi \u00e0 la peau brune orang\u00e9e, Commandante de 5 unit\u00e9s offensives, fan d'explosive, dynamique et chaotique.",
@@ -2009,8 +2009,8 @@
     "nom": "Vimess - G\u00e9n\u00e9ral d'Exp\u00e9dition",
     "pvmax": "250",
     "skills": [
-      "Invoc Ph\u00e9nix (Torch) : 40 PV (revie 1 fois), Stats 15 (bloc 8), Charge 2D10+12 FOR, Tornade Feu AoE (-1D) INT, Pr\u00e9v -4 D\u00e9g\u00e2t & -1 malus, explosion AoE \u00e0 la mort (2D10+20, idem soin Vimess)",
-      "Pluie de Fl\u00e8ches (/Douloureuse) : 3D6+21 AoE (/ -7 et 0 heal 3 tours) (Mono +6) : Dext\u00e9rit\u00e9",
+      "Invoc Ph\u00e9nix (Torch) : 40 PV (revie 1 fois), Stats 15 (bloc 8), Charge 2D10+12 FOR, Tornade Feu AoE (-1D) INT, Prévention : Buff Armure +5 & -1 malus INT.<br/> Explosion à la mort : Dégât AoE \u00e0 la mort (2D10+20, idem soin Vimess)",
+      "Pluie de Fl\u00e8ches (/Douloureuse) : 3D6+22 AoE (/-7 et 0 heal 3 tours) (Mono +7) : Dext\u00e9rit\u00e9",
       "Saut d'esquive (& blocage) : 5 tentatives : tir 2D6+12 (jdrcombat +40)",
       "Passif : Esquive +2, si PV < 125 : esq/bloc cible -2"
     ],
@@ -2227,7 +2227,7 @@
     "stats": "17,7,16,9,11",
     "desc": "Grande tortue brune cramoisie de la Vall\u00e9e de la Mort",
     "infos": "Faible au feu et \u00e0 la glace",
-    "drop": "Ecaille/Peau/Griffe rare de tortue, très rare : Plastron écailleux"
+    "drop": "Ecaille/Peau/Griffe rare de tortue, tr\u00e8s rare : Plastron \u00e9cailleux"
   },
   "151": {
     "visuel3D": "m241",
@@ -2267,10 +2267,10 @@
       "Faiblesse Critique : 5D6 +20 Crit (1,2 : *1.5,  3 : *1.25) : Force (jdrcombat +20)",
       "Dash (Cicatrice) de l'esprit : 4D6 +16 : -1 buff, se replace : Force",
       "Transe - Tueuse X : Atk Mono -> AoE, bloc/esq +2, -1 malus : 4 tours : Esprit",
-      "Passif : Si PV < 120 : Absorbe 1/3 des d\u00e9g\u00e2ts (apr\u00e8s armure) en PV. (+ Furtivit\u00e9 fuite dext\u00e9)"
+      "Passif : Si PV < 120 : Absorbe 1/3 des d\u00e9g\u00e2ts (apr\u00e8s armure) en PV. (+ Furtivit\u00e9 fuite dext\u00e9 +3)"
     ],
     "stats": "19,13,11,13,17",
-    "desc": "La Tigresse Pourpre froide et franche de la Curie M\u00e9t\u00e9role, la l\u00e9gendaire G\u00e9nr\u00e9ale de Division Offensive.",
+    "desc": "La Tigresse Pourpre froide et franche de la Curie M\u00e9t\u00e9role, la l\u00e9gendaire G\u00e9n\u00e9rale de Division Offensive.",
     "infos": "Faible au feu et aux t\u00e9n\u00e8bres",
     "drop": "A VOIR"
   },
@@ -2609,44 +2609,74 @@
     "nom": "Esprit de la Vengeance",
     "pvmax": "150",
     "skills": [
-      "Tempête Noire : 2D6+15 (+5 parasite) AoE : intelligence",
-      "Flèche des ombres sanglantes : 3D6+15, soin 1D10+5 (+5 parasite) : intelligence",
+      "Temp\u00eate Noire : 2D6+15 (+5 parasite) AoE : intelligence",
+      "Fl\u00e8che des ombres sanglantes : 3D6+15, soin 1D10+5 (+5 parasite) : intelligence",
       "Voile du blizzard : Dur\u00e9e 3 tours invisi sauf annulation, Intel+2, D\u00e9g\u00e2t+5 : intelligence",
       "Parasite : 6 DGT chaque tour (5 tours) : intelligence"
     ],
     "stats": "7,13,17,9,13",
-    "desc": "Fant\u00f4me noir aux reflets rougeâtres tr\u00e8s hostile et en recherche de vengeance.",
+    "desc": "Fant\u00f4me noir aux reflets rouge\u00e2tres tr\u00e8s hostile et en recherche de vengeance.",
     "infos": "Faible \u00e0 la lumi\u00e8re et \u00e0 la nature",
     "drop": "Extrait fantomatique, rare : Noyau abyssal"
   },
   "177": {
     "visuel3D": "m289d",
-    "nom": "Bourreau du Grand Bul’tik",
+    "nom": "Bourreau du Grand Bul\u2019tik",
     "pvmax": "180",
     "skills": [
       "Vague terrestre : 2D10 +14 AoE : force",
       "Succion : 3D6+16 (soin 3/4) : force",
-      "Hache énergivore : 3D6+20 et Réussite -3 (4 tours) : Intelligence",
-      "Appel du Bul'tik : 3 tours d'incantation : Réveil un autre Bourreau du Grand Bul'tik : Intelligence"
+      "Hache \u00e9nergivore : 3D6+20 et R\u00e9ussite -3 (4 tours) : Intelligence",
+      "Appel du Bul'tik : 3 tours d'incantation : R\u00e9veil un autre Bourreau du Grand Bul'tik : Intelligence"
     ],
     "stats": "16,11,17,11,16",
     "desc": "Insecte l\u00e9zard avec une armure bleut\u00e9, on raconte qu'il s'agit d'un ancien Draka\u00ef de la Grande Guerre ayant succomb\u00e9 \u00e0 un surplus de d\u00e9monologie.",
     "infos": "Faible au feu et au contondant",
-    "drop": "rare : Collier Lueur d'âme, très rare : Hache du Bul'tik"
+    "drop": "rare : Collier Lueur d'\u00e2me, tr\u00e8s rare : Hache du Bul'tik"
   },
   "178": {
     "visuel3D": "m315",
-    "nom": "Adonis 2 - Juge déterminé",
+    "nom": "Adonis 2 - Juge d\u00e9termin\u00e9",
     "pvmax": "270",
     "skills": [
       "\u00c2me Enchain\u00e9e / Entrave Mentale : 3D6+18 (+5 si PV<100) et dext\u00e9-3  / res espr -3 (AoE) sur 3 tours : Dext\u00e9rit\u00e9/Espr'it",
       "Scellement Douloureux : Aucun sort physique, 0 SOIN pendant 4-5 tours : Esprit",
       "Verdict Final : 4D6 +20 (crit (1,2,3) X1.5) : Force",
-      "Furtivit\u00e9 / Aura du Pourfendeur : DGT T\u00e9n\u00e8b +2D6+8 pendant 4-5 tours : Esprit <br/> 2 fois : Oeil Hypnotique (res -3), idem Fl\u00fbte : Contr\u00f4le esprit AoE, (res -2) <br/> Bague Corail (blocage -2, résistance esprit -3) AoE sur 3 tours"
+      "Furtivit\u00e9 / Aura du Pourfendeur : DGT T\u00e9n\u00e8b +2D6+8 pendant 4-5 tours : Esprit <br/> 2 fois : Oeil Hypnotique (res -3), idem Fl\u00fbte : Contr\u00f4le esprit AoE, (res -2) <br/> Bague Corail (blocage -2, r\u00e9sistance esprit -3) AoE sur 3 tours"
     ],
     "stats": "17,17,9,12,17",
-    "desc": "Adonis a perfectionné sa technique de meurtre, cet anuran bleu n'hésite pas à utiliser son charme et sa sociabilité pour condamner ses ennemis.",
+    "desc": "Adonis a perfectionn\u00e9 sa technique de meurtre, cet anuran bleu n'h\u00e9site pas \u00e0 utiliser son charme et sa sociabilit\u00e9 pour condamner ses ennemis.",
     "infos": "Faible au tranchant et \u00e0 la foudre",
     "drop": "50 po, Cape Hypnotique, Fl\u00fbte des Fleurs de Lune, Bague Corail, rare : Faucille d\u00e9moniaque"
+  },
+  "179": {
+    "visuel3D": "m025b2",
+    "nom": "Fred - Champi Baga Dopant",
+    "pvmax": "100",
+    "skills": [
+      "Coup de boule : 2D6+13 : force",
+      "Spore toxique : 1D6+10 AoE  : intelligence",
+      "Spore dopant : Buff 1D4+4 AoE pendant 4 tours : Esprit",
+      "Passif : D\u00e9g\u00e2t re\u00e7u -3 (PV+10 charisme +1)"
+    ],
+    "stats": "16,10,15,12,14",
+    "desc": "Fred est un Champigno\u00efde Baga brun orang\u00e9 tr\u00e8s social et toujours motiv\u00e9. Provient de la Carri\u00e8re Angor.",
+    "infos": "Faible au tranchant et \u00e0 la glace",
+    "drop": ""
+  },
+  "180": {
+    "visuel3D": "m089e",
+    "nom": "Andredi - Pr\u00e9dateur Ail\u00e9",
+    "pvmax": "280",
+    "skills": [
+      "Coup de Serre : 4D6+24 : force",
+      "Griffures P\u00e9n\u00e9trantes : 3D6+18 (Armure/2 sur 3 tours) AoE : force",
+      "Cri strident : Blocage -3 AoE pendant 4 tours : Esprit",
+      "Passif : si critique (1,2,3) : Emp\u00eache de se soigner pendant 3 tours (+ d\u00e9g\u00e2t re\u00e7u +10 (5 AoE))"
+    ],
+    "stats": "18,15,11,11,17",
+    "desc": "Une cr\u00e9ature mutante ail\u00e9e, mi-gorille mi-faucon, ses serres sont gorg\u00e9es de haine et de sang.",
+    "infos": "Faible au per\u00e7ant et \u00e0 la nature",
+    "drop": "Plume brillante, serres d'Andredi (pour craft), Pens\u00e9e Avide, rare: Poignard d'Andredi"
   }
 }

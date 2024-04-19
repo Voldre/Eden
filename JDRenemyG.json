@@ -277,7 +277,7 @@
           "montantVariable": 0,
           "type": "Buff",
           "portee": "Mono",
-          "effet": "Dégât +1D6 (min 2) +",
+          "effet": "dégât +1D6 (min 2) +",
           "montantEffet": 2,
           "duree": 3
         },
@@ -386,7 +386,7 @@
           "montantVariable": 0,
           "type": "Buff",
           "portee": "AoE",
-          "effet": "(lanceur inclus) Dégât +1D4 +",
+          "effet": "(lanceur inclus) dégât +1D4 +",
           "montantEffet": 3,
           "duree": 1
         }
@@ -409,12 +409,12 @@
         {
           "nom": "Invocation du Tigre/Aigle",
           "stat": "Esprit",
-          "montantFixe": "PV 40, Dégât Mono 1D6 + AoE (-10)",
-          "montantVariable": 4,
+          "montantFixe": "PV 40, Force/Dexté : 15, Intel/Esprit : 11",
+          "montantVariable": 0,
           "type": "Degat (Invocation)",
-          "portee": "AoE",
-          "effet": "Stat à 14+",
-          "montantEffet": 0,
+          "portee": "Mono",
+          "effet": "dégât Mono (AoE), 2D6 (1D6) +",
+          "montantEffet": 4,
           "duree": 0
         },
         {
@@ -426,7 +426,7 @@
           "portee": "Mono",
           "effet": "Blocage et réussite des sorts -",
           "montantEffet": 2,
-          "duree": 3
+          "duree": 2
         },
         {
           "nom": "Piège d'entrave",
@@ -511,7 +511,7 @@
           "montantVariable": 0,
           "type": "Buff",
           "portee": "Mono",
-          "effet": "Prochain coup : Réussite +2 et Dégât +1D6 (min 3) +",
+          "effet": "Prochain dégât : Réussite +2 et dégât +1D6 (min 3) +",
           "montantEffet": 4,
           "duree": 0
         },
@@ -524,7 +524,7 @@
           "portee": "Mono",
           "effet": "Blocage (ou Esquive) et réussite des sorts -",
           "montantEffet": 2,
-          "duree": 3
+          "duree": 2
         },
         {
           "nom": "Saut d'Esquive",
@@ -533,7 +533,7 @@
           "montantVariable": 2,
           "type": "Esquive Dégât",
           "portee": "Mono",
-          "effet": "(3 tentatives : Remplace l'esquive)",
+          "effet": "3 tentatives : Remplace l'esquive",
           "montantEffet": 0,
           "duree": 0
         }
@@ -571,7 +571,7 @@
           "montantVariable": 0,
           "type": "Buff",
           "portee": "Mono",
-          "effet": "Dégât +1D6 (min 2) +",
+          "effet": "dégât +1D6 (min 2) +",
           "montantEffet": 2,
           "duree": 3
         },
@@ -585,6 +585,398 @@
           "effet": "Aucun sort physique",
           "montantEffet": 0,
           "duree": 3
+        }
+      ]
+    },
+    {
+      "classe": "Clerc",
+      "sorts": [
+        {
+          "nom": "Guérison (Résurrection)",
+          "stat": "Intelligence",
+          "montantFixe": "3D6 (2t, PV+20)",
+          "montantVariable": 15,
+          "type": "Soin",
+          "portee": "Mono",
+          "effet": "",
+          "montantEffet": 0,
+          "duree": 0
+        },
+        {
+          "nom": "Vent Purificateur",
+          "stat": "Intelligence",
+          "montantFixe": "2D6",
+          "montantVariable": 8,
+          "type": "Soin Debuff",
+          "portee": "AoE",
+          "effet": "(-1 malus)",
+          "montantEffet": 0,
+          "duree": 0
+        },
+        {
+          "nom": "Châtiment Sacré",
+          "stat": "Intelligence",
+          "montantFixe": "2D6",
+          "montantVariable": 5,
+          "type": "Degat",
+          "portee": "AoE",
+          "effet": "",
+          "montantEffet": 0,
+          "duree": 0
+        },
+        {
+          "nom": "Bénédiction de la Lumière /Grâce de la Sagesse",
+          "stat": "Esprit",
+          "montantFixe": "",
+          "montantVariable": 0,
+          "type": "Buff",
+          "portee": "Mono",
+          "effet": "Valeur Dé -1 (si >1) / Blocage et Esquive +",
+          "montantEffet": 2,
+          "duree": 4
+        }
+      ]
+    },
+    {
+      "classe": "Barde",
+      "sorts": [
+        {
+          "nom": "Guérison (Résurrection)",
+          "stat": "Intelligence",
+          "montantFixe": "3D6 (2t, PV+20)",
+          "montantVariable": 10,
+          "type": "Soin",
+          "portee": "Mono",
+          "effet": "",
+          "montantEffet": 0,
+          "duree": 0
+        },
+        {
+          "nom": "Bombe Vocale / Brisure Vibrante",
+          "stat": "Intelligence",
+          "montantFixe": "2D6 / (2t) 4D6 +10",
+          "montantVariable": 10,
+          "type": "Degat",
+          "portee": "Mono",
+          "effet": "",
+          "montantEffet": 0,
+          "duree": 0
+        },
+        {
+          "nom": "Hymne à la Guerre / Symphonie Démoniaque",
+          "stat": "Esprit",
+          "montantFixe": "",
+          "montantVariable": 0,
+          "type": "Buff",
+          "portee": "AoE",
+          "effet": "dégât physique/magique +1D4 (min 2? -1?) +",
+          "montantEffet": 2,
+          "duree": 3
+        },
+        {
+          "nom": "Hymne Inspirant / Encouragement Musical",
+          "stat": "Charisme",
+          "montantFixe": "",
+          "montantVariable": 0,
+          "type": "Buff",
+          "portee": "AoE",
+          "effet": "Réussite des sorts +1 / (2t) 0 dodo, +2 res esprit, Armure +1D4 +",
+          "montantEffet": 2,
+          "duree": 4
+        }
+      ]
+    },
+    {
+      "classe": "Shaman",
+      "sorts": [
+        {
+          "nom": "Guérison (Résurrection)",
+          "stat": "Intelligence",
+          "montantFixe": "3D6 (2t, PV+20)",
+          "montantVariable": 10,
+          "type": "Soin",
+          "portee": "Mono",
+          "effet": "",
+          "montantEffet": 0,
+          "duree": 0
+        },
+        {
+          "nom": "Totem Gracieux",
+          "stat": "Esprit",
+          "montantFixe": "Invoque un familier Totem : 30-50 PV, Force : 11, Dexté/Intel/Esprit : 15. <br/>Mode Soin : 0 move/blocage, 0 dé. <br/>Mode Soutien : move/blocage, sort Eclair (intel) : 1D8",
+          "montantVariable": 2,
+          "type": "Degat",
+          "portee": "Mono",
+          "effet": "Soin (+1) PV/tour // Sort renforcement  Force/Intel (+) : +",
+          "montantEffet": 2,
+          "duree": 3
+        },
+        {
+          "nom": "Prévention / Bouclier d'épines / Puma (Stats +X, DGT 3D6 + 6*X ?)",
+          "stat": "Esprit",
+          "montantFixe": "",
+          "montantVariable": 0,
+          "type": "Buff",
+          "portee": "Mono",
+          "effet": "Armure +1D4 (+1 / +0), -1 malus / (+) épines  +",
+          "montantEffet": 2,
+          "duree": 4
+        },
+        {
+          "nom": "Eclair en Furie / Tempête du Shaman",
+          "stat": "Intelligence",
+          "montantFixe": "3D6 / 1D10 (*66%)",
+          "montantVariable": 8,
+          "type": "Degat",
+          "portee": "Mono",
+          "effet": "",
+          "montantEffet": 0,
+          "duree": 0
+        }
+      ]
+    },
+    {
+      "classe": "Sage",
+      "sorts": [
+        {
+          "nom": "Aura : Ami du Marteau (Résurrection)",
+          "stat": "Intelligence",
+          "montantFixe": " PV+ 1D6, (2t, PV+25 car 0 buff)",
+          "montantVariable": 6,
+          "type": "Soin Buff",
+          "portee": "Mono",
+          "effet": "Prochain dégât +1D6+",
+          "montantEffet": 2,
+          "duree": 0
+        },
+        {
+          "nom": "Aura : Enchantement Elementaire / Bouclier protecteur",
+          "stat": "Esprit",
+          "montantFixe": "Pour l'élément choisi : Armure (+/2) et dgt infligé (+) : 1D4 (min 2) ",
+          "montantVariable": 1,
+          "type": "Buff",
+          "portee": "AoE",
+          "effet": "Blocage +",
+          "montantEffet": 2,
+          "duree": 3
+        },
+        {
+          "nom": "Prévention",
+          "stat": "Esprit",
+          "montantFixe": "",
+          "montantVariable": 0,
+          "type": "Buff",
+          "portee": "Mono",
+          "effet": "-1 malus, Armure +1D4 +",
+          "montantEffet": 2,
+          "duree": 4
+        },
+        {
+          "nom": "Séisme (Marteau du Scellement)",
+          "stat": "Intelligence",
+          "montantFixe": "3D6 (2D6)",
+          "montantVariable": 6,
+          "type": "Degat",
+          "portee": "Mono",
+          "effet": "(-1 malus)",
+          "montantEffet": 0,
+          "duree": 0
+        }
+      ]
+    },
+    {
+      "classe": "Magicien",
+      "sorts": [
+        {
+          "nom": "Bombe Incendiaire / Eclair chargé (2t)",
+          "stat": "Intelligence",
+          "montantFixe": "3D6 / 3D6+2D10 (+50% var)",
+          "montantVariable": 8,
+          "type": "Degat",
+          "portee": "Mono",
+          "effet": "",
+          "montantEffet": 0,
+          "duree": 0
+        },
+        {
+          "nom": "Attaque Foudroyante / Tempête de Glace / Explosion glaciale (3t)",
+          "stat": "Intelligence",
+          "montantFixe": "2D6 / 4D6 (+50%)",
+          "montantVariable": 6,
+          "type": "Degat",
+          "portee": "AoE",
+          "effet": "",
+          "montantEffet": 0,
+          "duree": 0
+        },
+        {
+          "nom": "Voile du Blizzard / Magie Extrême",
+          "stat": "Esprit",
+          "montantFixe": "",
+          "montantVariable": 0,
+          "type": "Buff",
+          "portee": "Mono",
+          "effet": "(Intel +1/2, dgt +5/10) / Prochain dégât : Réussite +2 et dégât +1D6 (min 3) +",
+          "montantEffet": 4,
+          "duree": 3
+        },
+        {
+          "nom": "Saut Dimensionnel",
+          "stat": "Intelligence",
+          "montantFixe": "",
+          "montantVariable": 0,
+          "type": "Esquive",
+          "portee": "Mono",
+          "effet": "(3 tentatives : Remplace l'esquive)",
+          "montantEffet": 0,
+          "duree": 0
+        }
+      ]
+    },
+    {
+      "classe": "Illusionniste",
+      "sorts": [
+        {
+          "nom": "Bombe Incendiaire / Stalactites Glaciales",
+          "stat": "Intelligence",
+          "montantFixe": "3D6 / 4D6",
+          "montantVariable": 8,
+          "type": "Degat",
+          "portee": "Mono",
+          "effet": "",
+          "montantEffet": 0,
+          "duree": 0
+        },
+        {
+          "nom": "Attaque Foudroyante / Oeil Hypnotique",
+          "stat": "Intelligence",
+          "montantFixe": "2D6",
+          "montantVariable": 6,
+          "type": "Degat",
+          "portee": "AoE",
+          "effet": "/ Endort pendant 1D4 tours, Res esprit -",
+          "montantEffet": 1,
+          "duree": 0
+        },
+        {
+          "nom": "Contrôle de l'Esprit / Voile du Blizzard / Rituel de Mana",
+          "stat": "Esprit",
+          "montantFixe": "",
+          "montantVariable": 0,
+          "type": "Buff",
+          "portee": "AoE",
+          "effet": "Hypnose pendant 1D4 tours / (Intel +1/2, dgt +5/10) / Esprit AoE +",
+          "montantEffet": 2,
+          "duree": 4
+        },
+        {
+          "nom": "Dédoublement / Saut Dimensionnel",
+          "stat": "Esprit/Intelligence",
+          "montantFixe": "",
+          "montantVariable": 0,
+          "type": "Esquive",
+          "portee": "Mono",
+          "effet": "2 tours / (3 tentatives : Remplace l'esquive)",
+          "montantEffet": 0,
+          "duree": 0
+        }
+      ]
+    },
+    {
+      "classe": "Démoniste",
+      "sorts": [
+        {
+          "nom": "Bombe Incendiaire / Flèche Ombres ombres",
+          "stat": "Intelligence",
+          "montantFixe": "3D6(+4)/2D6",
+          "montantVariable": 4,
+          "type": "Degat",
+          "portee": "Mono",
+          "effet": "/ Soin PV (+5 si parasite) + 1D10 +",
+          "montantEffet": 2,
+          "duree": 0
+        },
+        {
+          "nom": "Attaque Foudroyante / Infection Pullulante",
+          "stat": "Intelligence",
+          "montantFixe": "2D6 / 1D10",
+          "montantVariable": 6,
+          "type": "Degat",
+          "portee": "AoE",
+          "effet": "/ + (tours parasite restant)*",
+          "montantEffet": 2,
+          "duree": 0
+        },
+        {
+          "nom": "Pacte / Hommage",
+          "stat": "Esprit",
+          "montantFixe": "PV 35 : Force/Dexté : 11/13, Intel/Esprit : 15, soin de 2 à 35 PV",
+          "montantVariable": 0,
+          "type": "Buff",
+          "portee": "Mono",
+          "effet": "Dégât 1D6 (+) / Armure (+/2) +",
+          "montantEffet": 2,
+          "duree": 3
+        },
+        {
+          "nom": "Saut Dimensionnel / Menaces Mortelles",
+          "stat": "Intelligence/Esprit",
+          "montantFixe": "",
+          "montantVariable": 0,
+          "type": "Esquive/Malus",
+          "portee": "AoE",
+          "effet": "(3 tentatives : Remplace l'esquive) // Esquive/Blocage/Res (-/2), réussite -",
+          "montantEffet": 3,
+          "duree": 1
+        }
+      ]
+    },
+    {
+      "classe": "Luminary",
+      "sorts": [
+        {
+          "nom": "Coupure de lumière / noire / Portail des ténèbres",
+          "stat": "Force",
+          "montantFixe": "3D6 / 2D6 (+tp)",
+          "montantVariable": 8,
+          "type": "Degat",
+          "portee": "Mono",
+          "effet": "",
+          "montantEffet": 0,
+          "duree": 0
+        },
+        {
+          "nom": "Destruction de l'aurore / noire / Assaut du chaos",
+          "stat": "Intelligence",
+          "montantFixe": "2D6 // 2D10",
+          "montantVariable": 6,
+          "type": "Degat",
+          "portee": "AoE",
+          "effet": "/ dégât élément reçu +",
+          "montantEffet": 3,
+          "duree": 3
+        },
+        {
+          "nom": "Prière Divine / Sacrifice d'Ombre Noire",
+          "stat": "Esprit",
+          "montantFixe": "Soin 2D6 (+), prochain dégât lumière +1D8",
+          "montantVariable": 2,
+          "type": "Invocation/Buff",
+          "portee": "Mono",
+          "effet": "Chaque tour : PV -1D4 (-), Force/Intel (+3/4), Dgt ténèbres (+) +",
+          "montantEffet": 4,
+          "duree": 0
+        },
+        {
+          "nom": "Saut Dimensionnel",
+          "stat": "Intelligence",
+          "montantFixe": "",
+          "montantVariable": 0,
+          "type": "Esquive",
+          "portee": "Mono",
+          "effet": "3 tentatives : Remplace l'esquive",
+          "montantEffet": 0,
+          "duree": 0
         }
       ]
     }
@@ -697,7 +1089,8 @@
       "pv": 40,
       "montantVariable": { "Mono": 5, "AoE": 2 },
       "montantEffet": { "Mono": 2, "AoE": 1 },
-      "duree": 1
+      "duree": 1,
+      "stat": 1
     }
   ]
 }
