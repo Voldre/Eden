@@ -66,7 +66,7 @@
     "nom": "Lumi\u00e8re Sacr\u00e9e",
     "desc": "D\u00e9g\u00e2ts de lumi\u00e8re \u00e0 distance sur la cible, peut provoquer l'ennemi si coup critique",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "1D10+2, si critique : 75% de chance d'\u00eatre vis\u00e9 (1 tour)",
+    "montant": "1D10+3, si critique (1,2,3) : 75% de chance d'\u00eatre vis\u00e9 (1 tour)",
     "icone": "E0302",
     "stat": "Intelligence",
     "classe": ["Templier"]
@@ -82,9 +82,9 @@
   },
   "8": {
     "nom": "Bouclier de Lumi\u00e8re",
-    "desc": "R\u00e9duit les d\u00e9g\u00e2ts magique re\u00e7u de tout le monde",
+    "desc": "R\u00e9duit les d\u00e9g\u00e2ts re\u00e7u de tout le monde",
     "effet": "Buff AoE",
-    "montant": "1D4+1 pendant 3 tours",
+    "montant": "1D4 pendant 3 tours",
     "icone": "E0309",
     "stat": "Esprit",
     "classe": ["Templier"]
@@ -129,7 +129,7 @@
     "nom": "Embuscade",
     "desc": "Frappe sournoisement l'ennemi, d\u00e9g\u00e2t doubl\u00e9 si par surprise",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "1D8+2 (X2)",
+    "montant": "1D8+3 (Furtif = X2)",
     "icone": "E0048",
     "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Voleur"]
@@ -147,7 +147,7 @@
     "nom": "Faiblesse Critique",
     "desc": "Frappe efficacement l'ennemi, d\u00e9g\u00e2t doubl\u00e9 si coup critique (d\u00e9 : 1, 2 ou 3)",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "R\u00e9ussite +1, 1D8+4 (X2)",
+    "montant": "1D8+4 (Critique 1,2,3 = X2), r\u00e9ussite-1",
     "icone": "E0057",
     "stat": "Force",
     "classe": ["Assassin"]
@@ -199,9 +199,9 @@
   },
   "28": {
     "nom": "Tir de Pr\u00e9cision",
-    "desc": "Chance de touch\u00e9 augment\u00e9, d\u00e9g\u00e2t doubl\u00e9 si coup critique (d\u00e9 : 1 ou 2)",
+    "desc": "Chance de touch\u00e9 augment\u00e9, d\u00e9g\u00e2t doubl\u00e9 si coup critique",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "R\u00e9ussite +2, 1D8+2 (X2)",
+    "montant": "R\u00e9ussite +2, 1D8+2 (Critique 1,2 = X2)",
     "icone": "E0011",
     "stat": "Dext\u00e9rit\u00e9",
     "classe": ["Chasseur", "Ing\u00e9nieur", "Corsaire", "Juge"]
@@ -570,7 +570,7 @@
     "nom": "Menaces Mortelles",
     "desc": "Effraye les ennemis pour leur faire perdre leurs moyens.",
     "effet": "Malus AoE",
-    "montant": "Prochaine r\u00e9ussite des sorts : -3, esquive/blocage/résistance -1, dure 1 tour",
+    "montant": "Prochaine r\u00e9ussite des sorts : -3, esquive/blocage/r\u00e9sistance -1, dure 1 tour",
     "icone": "E0135",
     "stat": "Esprit",
     "classe": ["D\u00e9moniste"]
@@ -696,7 +696,7 @@
     "nom": "Contr\u00f4le de l'Energie",
     "desc": "Met en transe : soigne et r\u00e9duit la dext\u00e9rit\u00e9, am\u00e9liore la r\u00e9sistance aux stuns",
     "effet": "Buff et Soin",
-    "montant": "Soin 2D6 +8, pendant 3 tours : dext\u00e9-2, r\u00e9sistance d'esprit +4",
+    "montant": "Soin 2D6 +8, pendant 3 tours : dext\u00e9-2, r\u00e9sistance d'esprit +2, -1 malus",
     "icone": "E0334",
     "stat": "Esprit",
     "classe": ["Assassin"]
@@ -739,7 +739,7 @@
   },
   "89": {
     "nom": "Fl\u00e8che Eblouissante",
-    "desc": "Tir une fl\u00e8che qui lance un flash sur l'ennemi.",
+    "desc": "Tir une fl\u00e8che infligeant des d\u00e9g\u00e2ts de lumi\u00e8res qui \u00e9blouit l'ennemi.",
     "effet": "D\u00e9g\u00e2t Malus",
     "montant": "1D8+2, et r\u00e9ussite des sorts -3 (3 tours)",
     "icone": "E0072",
@@ -856,9 +856,9 @@
   },
   "102": {
     "nom": "Verdict Final",
-    "desc": "Frappe efficacement l'ennemi, d\u00e9g\u00e2t doubl\u00e9 si coup critique (d\u00e9 : 1 ou 2)",
+    "desc": "Frappe efficacement l'ennemi, d\u00e9g\u00e2t doubl\u00e9 si coup critique",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "1D8+4 (X2), r\u00e9ussite-1",
+    "montant": "1D8+4 (Critique 1,2,3 = X2), r\u00e9ussite-1",
     "icone": "E0866",
     "stat": "Force",
     "classe": ["Juge"]
@@ -930,7 +930,7 @@
     "nom": "Terreur du Dragon",
     "desc": "L'utilisateur terrorise son adversaire et le destabilise.  Effets - Embras\u00e9 : Effet+1; D\u00e9moniaque : D\u00e9g\u00e2t 10 PV; Cach\u00e9 : Dur\u00e9e+1",
     "effet": "Malus",
-    "montant": "Résistance d'Esprit et R\u00e9ussite des sorts : -2 sur 3 tours  (+ effet mode)",
+    "montant": "R\u00e9sistance d'Esprit et R\u00e9ussite des sorts : -2 sur 3 tours  (+ effet mode)",
     "icone": "E1023",
     "stat": "Charisme",
     "classe": ["Chev Dragon"]
@@ -966,7 +966,7 @@
     "nom": "Coup de Poing Irrit\u00e9",
     "desc": "Frappe et inflige des d\u00e9g\u00e2ts de nature \u00e0 l'ennemi",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "1D8+4",
+    "montant": "1D8+4, +1 si faiblesse",
     "icone": "E0027",
     "stat": "Force",
     "classe": ["Guerrier"]
@@ -990,8 +990,8 @@
     "classe": ["Luminary"]
   },
   "117": {
-    "nom": "Fr\u00e9n\u00e9sie des Ogres",
-    "desc": "Action Instantan\u00e9e. La loyaut\u00e9 envers les Ogres permet au lanceur de dilater ses veines, le mettant dans un \u00e9t\u00e9 fr\u00e9n\u00e9tique de Berserker.",
+    "nom": "Fr\u00e9n\u00e9sie",
+    "desc": "Action Instantan\u00e9e. La d\u00e9termination du Samoura\u00ef permet au lanceur de dilater ses veines, le mettant dans un \u00e9t\u00e9 fr\u00e9n\u00e9tique de Berserker.",
     "effet": "Buff Malus",
     "montant": "A chaque tour (4 max) : D\u00e9g\u00e2t (+) et PV (-) 1D6+6, r\u00e9ussite des sorts -1",
     "icone": "E0779",
@@ -1063,7 +1063,7 @@
   },
   "125": {
     "nom": "Armure Draconique",
-    "desc": "Le DK (Dragon Knight) rev\u00eate son corps d'\u00e9caille sur 4 tours. Effets - Embras\u00e9 : Epines+3; D\u00e9moniaque : D\u00e9g\u00e2t subi -2; Cach\u00e9 : Dur\u00e9e+1",
+    "desc": "Le DK (Dragon Knight) rev\u00eate son corps d'\u00e9cailles. Effets - Embras\u00e9 : Epines+3; D\u00e9moniaque : D\u00e9g\u00e2t subi -2; Cach\u00e9 : Dur\u00e9e+1",
     "effet": "Buff",
     "montant": "D\u00e9g\u00e2t subi -1D4 (min 2) pendant 3 tours  (+ effet mode)",
     "icone": "E1022",
@@ -1081,12 +1081,12 @@
   },
   "127": {
     "nom": "Protection Absolue",
-    "desc": "Action Instantan\u00e9e. L'ing\u00e9nieur canalyse toute son \u00e9nergie autour de son armure, for\u00e7ant les attaques des ennemis \u00e0 venir vers lui. M\u00eame les attaques de zones (AoE) ne visent que le lanceur.",
+    "desc": "Action Instantan\u00e9e. Le guerrier canalyse toute son \u00e9nergie pour former un bouclier autour de tous ses camarades, for\u00e7ant les attaques des ennemis \u00e0 venir vers lui. M\u00eame les attaques de zones (AoE) ne visent que le lanceur.",
     "effet": "Blocage",
     "montant": "1 fois par combat : Mono : Blocage, AoE : Blocage -3, d\u00e9g\u00e2t * 2.5 (-10) sur 1 tour",
-    "icone": "j058",
+    "icone": "j058b",
     "stat": "Esprit",
-    "classe": ["Ing\u00e9nieur"]
+    "classe": ["Guerrier"]
   },
   "128": {
     "nom": "B\u00e9n\u00e9diction de la Lumi\u00e8re",
@@ -1182,7 +1182,7 @@
     "nom": "Ferveur du Guerrier",
     "desc": "Lorsque la d\u00e9votion du Guerrier est totale (r\u00e9ussite 25%), il parvient \u00e0 se maintenir en vie au-del\u00e0 d'un coup fatal.",
     "effet": "Soin",
-    "montant": "Avant de tomber KO (3 fois par combat) : succ\u00e8s 1D4 (5/20) : Soigne 1D10+5 PV (buffs préservés)",
+    "montant": "Avant de tomber KO (3 fois par combat) : succ\u00e8s 1D4 (5/20) : Soigne 1D10+5 PV (buffs pr\u00e9serv\u00e9s)",
     "icone": "E0662",
     "stat": "",
     "classe": ["Guerrier"]
@@ -1204,5 +1204,14 @@
     "icone": "E0889",
     "stat": "Esprit",
     "classe": ["Juge"]
+  },
+  "141": {
+    "nom": "Barri\u00e8re glaciale",
+    "desc": "Le sage plante son marteau de le sol et invoque autour de lui une barri\u00e8re de glace pour \u00e9loigner ses opposants.",
+    "effet": "D\u00e9g\u00e2t AoE R-",
+    "montant": "1D6+1 et r\u00e9ussite -2 (1 tour)",
+    "icone": "E1052b",
+    "stat": "Intelligence",
+    "classe": ["Sage"]
   }
 }

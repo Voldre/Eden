@@ -91,6 +91,19 @@ window.addEventListener("load", () => {
       return;
     }
 
+    // 27/04/24 : New logs : cheat log to handle potential cheat !
+    const sumStats =
+      parseInt(perso.force) +
+      parseInt(perso.dexté) +
+      parseInt(perso.intel) +
+      parseInt(perso.charisme) +
+      parseInt(perso.esprit);
+
+    if (perso.degat > 45 || perso.armure > 35 || perso.pvmax > 200 || sumStats > 72) {
+      console.log("new C log...");
+      saveCheat(urlParams.get("enemy"));
+    }
+
     // selectPerso.value = urlParams.get("perso") - 1;
     // selectedPerso = selectPerso.value;
     // var selectedID = selectPerso.selectedIndex;
@@ -231,8 +244,7 @@ function loadSkills(c1, c2) {
         " : " +
         listSkills[id].buffElem +
         " +" +
-        listSkills[id].montant +
-        "+" +
+        `${listSkills[id].montant ? listSkills[id].montant + "+" : ""}` +
         listSkills[id].montantFixe +
         ", " +
         listSkills[id].duree +
@@ -622,6 +634,28 @@ async function victory() {
 
   // Show rewards (cards)
   showCardsAndCoins(winCards, earnedCoins);
+}
+
+async function saveCheat(enemy) {
+  const cheatJSON = getData("combatCheat");
+  const cheatID = parseInt(Object.keys(cheatJSON).reverse()[0]) + 1 || 1;
+
+  const newCheatLog = {};
+  newCheatLog[cheatID] = {
+    date: new Date().toLocaleString(),
+    joueur: indexPlayer,
+    perso: nomPerso,
+    enemy: enemy,
+    degat: perso.degat,
+    armure: perso.armure,
+    pvmax: perso.pvmax,
+    sumStats: [perso.force, perso.dexté, perso.intel, perso.charisme, perso.esprit],
+  };
+
+  const newCheatLogEncoded = JSON.stringify(newCheatLog).replaceAll("+", "%2B").replaceAll(";", "%3B");
+  const cookiePerso = "combatCheatJSON=" + newCheatLogEncoded + "; SameSite=Strict";
+  document.cookie = cookiePerso;
+  await callPHP({ action: "saveFile", name: "combatCheat" });
 }
 
 async function saveLog(earnedCoins, winCards) {
