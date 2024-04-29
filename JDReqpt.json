@@ -1142,8 +1142,8 @@
   },
   "158": {
     "nom": "Bouclier du D\u00e9mon",
-    "desc": "Un bouclier vivant qui bouge et absorbe la magie et se renforce, il \u00e9tait conserv\u00e9 par la Curie M\u00e9t\u00e9role",
-    "effet": "",
+    "desc": "Un bouclier vivant qui bouge et absorbe la magie et se renforce, il \u00e9tait conserv\u00e9 par la Curie M\u00e9t\u00e9role, il a l'air de grandir avec le temps et l'\u00e9nergie absorb\u00e9e.",
+    "effet": "Mal\u00e9diction du Lien",
     "montant": "D\u00e9g\u00e2t -5 - Niveau",
     "icone": "W71207"
   },
@@ -1829,7 +1829,7 @@
   "250": {
     "nom": "Lapin chou rose",
     "desc": "Un lapin trop chou et adorable, bienveillant et gentil. Le lapin agit ind\u00e9pendamment de son porteur.",
-    "effet": "Capacit\u00e9",
+    "effet": "Mal\u00e9diction du Lien / Capacit\u00e9",
     "montant": "3 fois par s\u00e9ance : le Lapin influence un D\u00e9 (\u00b15)",
     "icone": "k10145",
     "access": "A4"
@@ -1837,7 +1837,7 @@
   "251": {
     "nom": "Pierre de Chance",
     "desc": "Une pierre pouvant porter chance \u00e0 son porteur. Un miracle peut se produire dans les extr\u00eames.",
-    "effet": "",
+    "effet": "Mal\u00e9diction du Lien",
     "montant": "2 fois par s\u00e9ance : Relance d'un D\u00e9 possible (si identique : Amplification, miracle si D\u00e9 1 & 20)",
     "icone": "i01472",
     "access": "A3"
@@ -1845,7 +1845,7 @@
   "252": {
     "nom": "Lapin chou violet",
     "desc": "Un lapin trop chou mais qui est espi\u00e8gle, rus\u00e9, malin et farceur. Le lapin agit ind\u00e9pendamment de son porteur.",
-    "effet": "Capacit\u00e9",
+    "effet": "Mal\u00e9diction du Lien / Capacit\u00e9",
     "montant": "3 fois par s\u00e9ance : le Lapin influence un D\u00e9 (\u00b15)",
     "icone": "k10146",
     "access": "A4"
@@ -2411,7 +2411,7 @@
     "nom": "Joyau de Sekhmet",
     "desc": "Un joyau rouge mal\u00e9fique contenant l'\u00e2me d'une ancienne guerri\u00e8re d'il y a plusieurs si\u00e8cles : Sekhmet. Une force mal\u00e9fique en \u00e9mane.",
     "effet": "Conversion Lumi\u00e8re en T\u00e9n\u00e8bres",
-    "montant": "Force +1, Intelligence +1",
+    "montant": "Ne peut pas \u00eatre retir\u00e9 (mal\u00e9diction du lien) : Force +1, Intelligence +1",
     "icone": "i01082b",
     "access": "D1"
   },
@@ -2595,7 +2595,7 @@
   "350": {
     "nom": "Cha\u00eene du destin",
     "desc": "Cette cha\u00eene maudite conf\u00e8re al\u00e9atoirement un bonus ou un malus \u00e0 son porteur. De plus, une fois \u00e9quip\u00e9, il ne peut plus \u00eatre retir\u00e9",
-    "effet": "Lien Eternel",
+    "effet": "Mal\u00e9diction du Lien",
     "montant": "PV +15, Par combat : Jet 1D6 : D\u00e9g\u00e2t/Soin \u00b16,4,2 (-6 \u00e0 +6) AoE/2",
     "icone": "A00039",
     "access": "D2"
@@ -2603,8 +2603,8 @@
   "351": {
     "nom": "Plastron du partage",
     "desc": "Ce plastron r\u00e9sistant et maudit force son porteur \u00e0 aider un camarade en subissant la moiti\u00e9 de ses d\u00e9g\u00e2ts \u00e0 sa place.",
-    "effet": "",
-    "montant": "D\u00e9g\u00e2t -7, partage des d\u00e9g\u00e2ts de moiti\u00e9",
+    "effet": "Mal\u00e9diction du Lien",
+    "montant": "D\u00e9g\u00e2t -7, partage des d\u00e9g\u00e2ts de moiti\u00e9 d'une personne",
     "icone": "a20109b"
   },
   "352": {
@@ -3418,5 +3418,146 @@
     "effet": "",
     "montant": "D\u00e9g\u00e2t +5, si critique (1,2,3) : Emp\u00eache de se soigner pendant 3 tours",
     "icone": "W11105"
+  },
+  "459": {
+    "nom": "Pierre de s\u00e9curit\u00e9 Magn\u00e9tique",
+    "desc": "Une pierre de s\u00e9curit\u00e9 charg\u00e9 en magn\u00e9tisme.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -4",
+    "icone": "i01204"
+  },
+  "460": {
+    "nom": "Cape de la Confr\u00e9rie Ecarlate",
+    "desc": "Cette cape porte l'embl\u00e8me de la confr\u00e9rie \u00e9carlate. Une aura imposante s'en d\u00e9gage.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +2, d\u00e9g\u00e2t critique +5",
+    "icone": "A60013b",
+    "access": "D1"
+  },
+  "461": {
+    "nom": "Plastron du Templier Noir",
+    "desc": "Un antique plastron de templier qui doit remonter avant la grande guerre : une magie \u00e9trange en \u00e9mane. Appartient \u00e0 la Panoplie du Templier Noir",
+    "effet": "Mal\u00e9diction du lien",
+    "montant": "D\u00e9g\u00e2t -5 (-1 par pi\u00e8ce) : Force / Intelligence +1 si Templier",
+    "icone": "k20472b",
+    "condition": { "type": "panoplie", "value": "Templier Noir", "bonus": "D\u00e9g\u00e2t re\u00e7u -2" }
+  },
+  "462": {
+    "nom": "Bouclier du Templier Noir",
+    "desc": "Un antique bouclier \u00e0 l'effigie d'un \u00eatre d\u00e9figur\u00e9 et m\u00e9connaissable. Une magie \u00e9trange en \u00e9mane. Appartient \u00e0 la Panoplie du Templier Noir",
+    "effet": "Mal\u00e9diction du lien",
+    "montant": "D\u00e9g\u00e2t -5, d\u00e9g\u00e2t t\u00e9n\u00e8bres +3 (+1 par pi\u00e8ce)",
+    "icone": "W71306b",
+    "condition": { "type": "panoplie", "value": "Templier Noir", "bonus": "D\u00e9g\u00e2t t\u00e9n\u00e8bres +1" },
+    "access": "D2"
+  },
+  "463": {
+    "nom": "Masse du Templier Noir",
+    "desc": "Une antique masse qui noircie toutes sources de lumi\u00e8re. Une magie \u00e9trange en \u00e9mane. Appartient \u00e0 la Panoplie du Templier Noir",
+    "effet": "Mal\u00e9diction du lien",
+    "montant": "D\u00e9g\u00e2t +6 (+2 par pi\u00e8ce), conversion Lumi\u00e8re => T\u00e9n\u00e8bres",
+    "icone": "W33403b",
+    "condition": { "type": "panoplie", "value": "Templier Noir", "bonus": "D\u00e9g\u00e2t +2" }
+  },
+  "464": {
+    "nom": "Esprit errant",
+    "desc": "Ce fant\u00f4me est un fragment de votre esprit qui n'a pas \u00e9t\u00e9 assimil\u00e9 lors de votre r\u00e9surrection... Il ne peut pas s'\u00e9loigner trop.",
+    "effet": "Mal\u00e9diction du Lien / Esprit -5",
+    "montant": "D\u00e9phasage (Instantan\u00e9e Esprit) : Permet de voir et entendre \u00e0 la place du fant\u00f4me : traverse les murs",
+    "icone": "k10683",
+    "access": "D2"
+  },
+  "465": {
+    "nom": "Cha\u00eene de Jade",
+    "desc": "Lorsque cette cha\u00eene remue, elle lib\u00e8re une douce m\u00e9lodie apaisante.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -1. Dur\u00e9e des malus -1 tour",
+    "icone": "A00040b",
+    "access": "A2"
+  },
+  "466": {
+    "nom": "Plastron de Jade",
+    "desc": "Cette armure verdoyante d\u00e9gage une aura rassurante et apaise son porteur.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t -5, dur\u00e9e des malus -1 tour",
+    "icone": "A20083b",
+    "access": "A1"
+  },
+  "467": {
+    "nom": "Pendentif Ryujin",
+    "desc": "Ce pendentif est un h\u00e9ritage familiale de la famille Ryujin, on y distingue la silhouette d'un dragon.",
+    "effet": "PV +10",
+    "montant": "Montant du mode draconique : +1",
+    "icone": "k10159c",
+    "access": "D2"
+  },
+  "468": {
+    "nom": "Coiffe de soldats d'Amur",
+    "desc": "Cette magnifique coiffe appartient aux fid\u00e8les soldats du Royaume d'Amur.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -3, Esprit +1",
+    "icone": "k10549",
+    "access": "A0"
+  },
+  "469": {
+    "nom": "Cape de capitaine",
+    "desc": "Cette cape est offerte aux capitaines digne de ce rang. Tr\u00e8s utile pour survivre.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -2, Soin re\u00e7u +25%",
+    "icone": "A60015b",
+    "access": "A0"
+  },
+  "470": {
+    "nom": "Marque de rouge \u00e0 l\u00e8vres",
+    "desc": "Il n'y a rien de tel qu'un baiser d'une jolie fille",
+    "effet": "Mal\u00e9diction du lien",
+    "montant": "Charisme +4 face au sexe oppos\u00e9",
+    "icone": "k10354",
+    "access": "A1"
+  },
+  "471": {
+    "nom": "Masque de Nekao",
+    "desc": "Masque d'un ancien Pharaon du Royaume d'Amur : Nekao, ... le pr\u00e9senter",
+    "effet": "Mal\u00e9diction du lien",
+    "montant": "A d\u00e9finir",
+    "icone": "k10437",
+    "access": "A1"
+  },
+  "472": {
+    "nom": "Pendentif de platine",
+    "desc": "Un pendentif ail\u00e9 ayant re\u00e7u plusieurs b\u00e9n\u00e9dictions.",
+    "effet": "",
+    "montant": "PV Soin re\u00e7u +33%, d\u00e9g\u00e2t re\u00e7u -2",
+    "icone": "k10498",
+    "access": "A2"
+  },
+  "473": {
+    "nom": "Tatouage draconique",
+    "desc": "Un tatouage de dragon qui ne peut \u00eatre effac\u00e9",
+    "effet": "Mal\u00e9diction du Lien",
+    "montant": "A d\u00e9finir",
+    "icone": "k10573",
+    "access": "A0"
+  },
+  "474": {
+    "nom": "Griffe vivante",
+    "desc": "Cette griffe est en r\u00e9alit\u00e9 un organisme vivant. Une fois \u00e0 votre poign\u00e9e elle ne veut plus s'en s\u00e9parer : vous la maintenez en vie, tel un parasite.",
+    "effet": "Mal\u00e9diction du lien",
+    "montant": "D\u00e9g\u00e2t +8, Force+1. Et -3 PV par attaque lanc\u00e9e",
+    "icone": "W32805"
+  },
+  "475": {
+    "nom": "Arc Titanesque",
+    "desc": "Un arc extr\u00eamement grand et lourd. Tr\u00e8s puissant mais peu pr\u00e9cis.",
+    "effet": "Dext\u00e9rit\u00e9 -4",
+    "montant": "D\u00e9g\u00e2t +15",
+    "icone": "W51702"
+  },
+  "476": {
+    "nom": "Tenue de Prisonnier",
+    "desc": "La tenue officielle des prisons d'Aven. La couleur correspond au crime connu. Des rumeurs courent comme quoi il y aurait des combats clandestins.",
+    "effet": "Mal\u00e9diction du Lien",
+    "montant": "D\u00e9g\u00e2t -2",
+    "icone": "k20453"
   }
 }

@@ -501,8 +501,8 @@
     "id": 1054,
     "value": 3,
     "kind": "boss",
-    "name": "Diana - G\u00e9n\u00e9rale Offensive",
-    "description": "Diana, la Tigresse Pourpre froide et franche de la Curie M\u00e9t\u00e9role, la l\u00e9gendaire G\u00e9n\u00e9rale de Division Offensive.",
+    "name": "Diana - Tigresse Pourpre",
+    "description": "Diana la G\u00e9n\u00e9rale Offensive : froide et franche de la Curie M\u00e9t\u00e9role, la l\u00e9gendaire G\u00e9n\u00e9rale de Division Offensive.",
     "kindId": "diana"
   },
   {
@@ -512,6 +512,22 @@
     "name": "Yéti - Monstre imaginaire des glaces",
     "description": "Un incroyable Yéti des glaces : 6m de long et 3m de large ! Plein de poils et de dents pointus ! Rien que le regarder donne des vrais frissons !",
     "kindId": "m230b"
+  },
+  {
+    "id": 1056,
+    "value": 3,
+    "kind": "boss",
+    "name": "Vassago - Général Déchu",
+    "description": "Juge et Ancien Général de Division Offensive de la Curie Métérole, formateur de Diana. Il considère que la Curie n'est pas fiable/juste. Il a réussi à être en possession d'une magie hors norme....",
+    "kindId": "vassago"
+  },
+  {
+    "id": 1057,
+    "value": 3,
+    "kind": "boss",
+    "name": "Esprit de Magnétite",
+    "description": "Cet esprit est entièrement composé de magnétite qui a pris vie. Il participe à l'équilibre de la magnétude de sa zone.",
+    "kindId": "m090c"
   },
   {
     "id": 1201,
@@ -1669,6 +1685,15 @@
     "name": "Licorne des Tempêtes",
     "description": "Les ennemis vous entendront arriver au son des tempêtes et du tonnerre, au dos de cette Licorne amplie de magie !",
     "kindId": "i00854"
+  },
+  {
+    "id": 1428,
+    "value": 1,
+    "kind": "composant",
+    "name": "Poudre magnétique",
+    "description": "Cette poudre est très utile pour certaines technologies et équipements, elle est attirée par les aimants.",
+    "kindId": "i00586",
+    "maps": [16]
   },
   {
     "id": 1501,
@@ -2894,13 +2919,13 @@
   {
     "id": 1704,
     "value": 3,
-    "kind": "anecdoteII",
+    "kind": "anecdote",
     "name": "Rad Ed et Zwei",
-    "description": "Rad Ed a explosé Zwei et le peu d'égo qu'il avait. Ce sale menteur et traitre lâche !",
+    "description": "Rad Ed a explosé Zwei et le peu d'égo qu'il lui restait lorsqu'elle a appris son mensonge. Ce n'est qu'un sale menteur et lâche traitre ! Mais elle accepte de se le trainer.",
     "maps": [16],
     "enemies": [],
-    "kindId": "items/",
-    "group": 1
+    "kindId": "uiiconPNG/radedcolere",
+    "group": 2
   },
   {
     "id": 1710,
@@ -3428,6 +3453,160 @@
     "maps": [1],
     "enemies": [],
     "kindId": "skillIcon/J567",
+    "group": 1
+  },
+  {
+    "id": 1796,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Une mission posée",
+    "description": "Après le Purgatoire Blanc, Malvis et Erida, seules, décident de prendre une mission tranquille en attendant les autres : escorter des personnes jusqu'au Royaume d'Amur.",
+    "maps": [11],
+    "enemies": [],
+    "kindId": "otherIcon/group004",
+    "group": 1
+  },
+  {
+    "id": 1797,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "La Glace Kibo",
+    "description": "Le lieutenant Plouka à une solution pour se débarasser de Kratos : faire diversion en lui achetant une glace ! Mais pas n'importe laquelle... La Glace Kibo !",
+    "maps": [3],
+    "enemies": [],
+    "kindId": "uiiconPNG/glacekibo",
+    "group": 1
+  },
+  {
+    "id": 1798,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Le retour de Fred",
+    "description": "Aux Monts Calcaires, Kibo et son unité offensive nettoi un campe de champignoïde, c'est alors que Kibo a pitié de l'un d'eux et décide de le prendre sous son aile : c'est la réincarnation de Fred !",
+    "maps": [2],
+    "enemies": [],
+    "kindId": "monsters/m025b",
+    "group": 1
+  },
+  {
+    "id": 1799,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Kibo et Vimira (2)",
+    "description": "Kibo à la facheuse tendance à ramener des problèmes, cela énerve systématiquement Vimira qui le sermonne : \"Non mais sérieux ?! Un champignoïde !\", \"C'est quoi cette dette ?!\"",
+    "maps": [1],
+    "enemies": [],
+    "kindId": "skillIcon/normal06",
+    "group": 1
+  },
+  {
+    "id": 1800,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Ol l'Anuran !",
+    "description": "Alors qu'Erida cherche à composer une équipe pour retrouver Malvis à la Vallée de la Mort, elle fait la rencontre de Ol : un mercenaire Anuran trèèès discret et muet.",
+    "maps": [1],
+    "enemies": [],
+    "kindId": "uiiconPNG/olok",
+    "group": 1
+  },
+  {
+    "id": 1801,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Expédition à la Vallée de la Mort",
+    "description": "Erida, Kratos, Ol et Kibo arrivent à la Vallée de la Mort avec difficulté, et c'est pire sur les lieux. Même les monstres basiques de la zone peuvent être très dangereux, comment vont-ils faire...",
+    "maps": [25],
+    "enemies": [],
+    "kindId": "otherIcon/group025",
+    "group": 1
+  },
+  {
+    "id": 1802,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Assaut d'Adonis",
+    "description": "Adonis en quête d'équipements est tombé sur Malvis pour la dépouiller. Malvis n'a rien vu venir, tout ça parce qu'il s'est fait passé pour un autre Anuran et à su qu'elle irait seule ici ...",
+    "maps": [25],
+    "enemies": [],
+    "kindId": "skillIcon/E0904b",
+    "group": 1
+  },
+  {
+    "id": 1803,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "La Confrérie Ecarlate",
+    "description": "Ce groupe est composé d'anciens membres de la Curie Métérole, de l'Empire Heldentod, et de plusieurs autres nations. Tous l'ont rejoint pour une raison : apporter justice soi-même et remédier aux lacunes laissés par ces derniers. Vassago est leur leader.",
+    "maps": [25],
+    "enemies": [],
+    "kindId": "otherIcon/confrerie_ecarlate",
+    "group": 1
+  },
+  {
+    "id": 1804,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Kibo et Fred",
+    "description": "Kibo adore son nouveau compagnon Champignoïde Fred ! Mais parfois il a besoin d'être seul, pour réviser par exemple... Mais Fred veut jouer avec lui ! Du coup Kibo a craqué, il lui a même payé une armure !",
+    "maps": [1],
+    "enemies": [],
+    "kindId": "monsters/m025b2",
+    "group": 1
+  },
+  {
+    "id": 1805,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Erida et les Retrouvailles",
+    "description": "Erida pendant sa semaine de repos à pu retrouver sa cousine Aradia après plusieurs mois ! Cela l'a rassurée de la savoir \"en forme\", elle a ainsi pu en parler à sa famille.",
+    "maps": [1],
+    "enemies": [],
+    "kindId": "skillIcon/normal04",
+    "group": 1
+  },
+  {
+    "id": 1806,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Ol et Erida",
+    "description": "Erida a profité de ses jours de repos pour retrouver Ol et lui donner des conseils d'aventuriers. Ils ont pu partir à l'aventure et tisser une vraie relation tout les deux. Ol était ravi que quelqu'un pense à lui.",
+    "maps": [1],
+    "enemies": [],
+    "kindId": "uiiconPNG/olcoeur",
+    "group": 1
+  },
+  {
+    "id": 1807,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Sauver Kibo",
+    "description": "Alors que Kibo est endetté (soi-disant par Zéphyr). Kratos a eu une idée de génie pour rembourser la dette de Kibo : faire tomber Malvis dans un procès pour obtenir une prime et gagner de l'argent ! Mais tout le monde n'est pas de cet avis...",
+    "maps": [1],
+    "enemies": [],
+    "kindId": "skillIcon/E0213",
+    "group": 1
+  },
+  {
+    "id": 1808,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Epreuve de la Collecte",
+    "description": "La première épreuve du Purgatoire est la collecte, organisée par Vimess. L'objectif est simple : récupéré 3 jetons aux numéros identique et les garder jusqu'au bout, tous les coups sont permis !",
+    "maps": [1],
+    "enemies": [],
+    "kindId": "otherIcon/purgatoire",
+    "group": 1
+  },
+  {
+    "id": 1809,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Epreuve de Gestion de Crise",
+    "description": "La seconde épreuve du Purgatoire des mercenaires les envoient sur une mission à responsabilité multiple : éradiquer la menace, travailler en équipe, sauver la population. Cela demande de nombreuses qualités.",
+    "maps": [16],
+    "enemies": [],
+    "kindId": "monsters/m090c",
     "group": 1
   },
   {

@@ -196,7 +196,8 @@
     "map_y": null,
     "map_z": null,
     "map_r": null,
-    "bgm": 33
+    "bgm": 33,
+    "mobs": [181, 182, 183]
   },
   "17": {
     "name": "Vestiges du Belliqueux",
@@ -301,7 +302,7 @@
     "map_z": null,
     "map_r": null,
     "bgm": 12,
-    "mobs": [129, 150, 176, 177]
+    "mobs": [129, 150, 176, 177, 167]
   },
   "26": {
     "name": "Plaines Fleuries",

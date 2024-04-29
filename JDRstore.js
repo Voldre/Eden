@@ -21,6 +21,7 @@ export const skillsAwakenJSON = getData("skillsAwaken");
 
 export const masterJSON = getData("master");
 export const logsJSON = getData("combatLogs");
+// export const cheatJSON = getData("combatCheat");
 
 export const enemyGenericJSON = getData("enemyG");
 export const statsJSON = getData("stats");
