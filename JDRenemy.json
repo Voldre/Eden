@@ -1742,7 +1742,7 @@
       "Zone noire : 2D10+14 (bloc m-2) AoE stat -2 (stat-3 si parasite) pendant 3 tours : Intelligence",
       "Eclair en Furie : 4D6 +19 (bloc m-2) et r\u00e9ussite -5 sur 1 tour : Intelligence",
       "Aura Bouclier Protec (+ Ctrl mentale) : Blocage +3 et -1 Malus pendant 4 tours : esprit",
-      "Esprit Descell\u00e9 : Invoque 1 Fant\u00f4me L\u00e9thargique (2 si d\u00e9 <= 7, si crit : Esprit de la Vengeance) : Esprit"
+      "Esprit Descell\u00e9 : Invoque 1 Fant\u00f4me L\u00e9thargique (2 si d\u00e9 <= 8, si crit : Esprit de la Vengeance) : Esprit"
     ],
     "stats": "13,7,17,10,17",
     "desc": "Torturran riche qui est Primat (Cardinal) de la Chelona, il a travaill\u00e9 \u00e0 l'Ordre des Chevaliers de la rose, capable de desceller",
@@ -1994,7 +1994,7 @@
     "nom": "Pachirou",
     "pvmax": "230",
     "skills": [
-      "Artillerie Lourde : 3D10+17 : Dext\u00e9rit\u00e9",
+      "Artillerie Lourde : 3D10+15 : Dext\u00e9rit\u00e9",
       "Explosif Visqueux : 2D6+16, diminue de 2 dext\u00e9 & esquive pour 3 tours : Dext\u00e9rit\u00e9",
       "Robotisation \u00e9veill\u00e9 : D\u00e9g\u00e2ts 1D4+6 et buff Armure +1D6 sur 4 tours : Esprit",
       "Passif : PV < 110 : Blocage/Esq critique : contre-attaque bombe 2D6+15"
@@ -2011,7 +2011,7 @@
     "skills": [
       "Invoc Ph\u00e9nix (Torch) : 40 PV (revie 1 fois), Stats 15 (bloc 8), Charge 2D10+12 FOR, Tornade Feu AoE (-1D) INT, Pr\u00e9vention : Buff Armure +5 & -1 malus INT.<br/> Explosion \u00e0 la mort : D\u00e9g\u00e2t AoE \u00e0 la mort (2D10+20, idem soin Vimess)",
       "Pluie de Fl\u00e8ches (/Douloureuse) : 3D6+22 AoE (/-7 et 0 heal 3 tours) (Mono +7) : Dext\u00e9rit\u00e9",
-      "Saut d'esquive (& blocage) : 5 tentatives : tir 2D6+12 (jdrcombat +40)",
+      "Saut d'esquive (& blocage) : 5 tentatives : tir 2D6+14 (jdrcombat +40)",
       "Passif : Esquive +2, si PV < 125 : esq/bloc cible -2"
     ],
     "stats": "13,19,11,15,16",
@@ -2321,16 +2321,16 @@
   },
   "157": {
     "visuel3D": "m158",
-    "nom": "Samael - N\u00b05 Hydra (Beholder ?)",
-    "pvmax": "230",
+    "nom": "Samael - \"G\u00e9n\u00e9ral D\u00e9mon\"",
+    "pvmax": "200",
     "skills": [
-      "Panopticor Eveill\u00e9 : 40 PV, Force/Intel : 15/16. Sort : Parasite obscur : 8 (+4/t *4) (Intel), Coup tentac : 2D6+10 (Force) : Esprit",
-      "Hommage : Soin 2-40PV, D\u00e9g\u00e2t (+) Armure (+) 6 (3 tours) : Esprit",
-      "Parasite obscur : 12 + 5/t *4.  -- Saut Dimensionnel : 3 tentatives : Intel",
-      "Fl\u00e8che des Ombres : 2D10+ 15 si para, (heal 2D6+6+'6 si para) : Intel"
+      "Panopticor Eveill\u00e9 : 40 PV, Force/Intel-Esprit : 15/16. Sort : Parasite obscur : 8 (+4/t *4) (Intel), Coup tentac : 2D6+10 (Force) : Esprit",
+      "Hommage : Soin 2-40PV, D\u00e9g\u00e2t (+) et Armure (+) 6 sur 3 tours : Esprit",
+      "Parasite obscur : 12 + 6/t *4.  -- Saut Dimensionnel : 3 tentatives : Intel",
+      "Fl\u00e8che des Ombres : 2D10+ 15, Soin 2D6+6 (+6 si para) : Intel"
     ],
     "stats": "7,13,17,12,17",
-    "desc": "Humain d\u00e9moniste sous de sombres habits. Il a souvent des propos bizarres et sombres (chuunibyou), 5eme t\u00eate de l'Hydra.",
+    "desc": "Humain d\u00e9moniste sous de sombres habits. Il a souvent des propos bizarres et sombres (chuunibyou).",
     "infos": "Faible \u00e0 la nature et aux t\u00e9n\u00e8bres",
     "drop": "Pendentif Occulte, B\u00e2ton Sadique, Noyau abyssal"
   },
@@ -2487,10 +2487,10 @@
   "168": {
     "visuel3D": "m053b",
     "nom": "Bonoss - Ursun Luminary (Veyda)",
-    "pvmax": "155",
+    "pvmax": "145",
     "skills": [
-      "Coupure blanche : 3D6 +10 : Force",
-      "Destruction Noire : 2D6 +9 : Intelligence",
+      "Coupure blanche : 3D6 +9 : Force",
+      "Destruction Noire : 2D6 +8 : Intelligence",
       "Pri\u00e8re Divine : Soin 1D8 +5. Prochain d\u00e9g\u00e2t lumi\u00e8re +1D6 +2 (1 tour max) : Esprit",
       "Assaut du Chaos : 7 charges : 3D6+10, d\u00e9g\u00e2t re\u00e7u de l'\u00e9l\u00e9ment +3 pendant 3 tours : Intelligence"
     ],
@@ -2504,7 +2504,7 @@
     "nom": "Josh - Drakai Guerrier (Veyda)",
     "pvmax": "180",
     "skills": [
-      "Perce-Armure : 2D6+10, d\u00e9g\u00e2t physique re\u00e7u +3 (3 tours) : force",
+      "Perce-Armure : 2D6+10, d\u00e9g\u00e2t physique re\u00e7u + 3 (3 tours) : force",
       "Mur de Titan : D\u00e9g\u00e2t subi -1D4 -4 pendant 3 tours : Force",
       "D\u00e9fense d'Acier : Blocage +2 pendant 1D4 (min 2) +2 tours : Esprit",
       "Provocation : 1D6+10 : 75% de chance d'\u00eatre vis\u00e9 (3 tours) : Charisme"
@@ -2517,12 +2517,12 @@
   "170": {
     "visuel3D": "m066",
     "nom": "Ruro - Drakai Shaman (Veyda)",
-    "pvmax": "145",
+    "pvmax": "120",
     "skills": [
-      "Punition Divine : 2D6+11 : Intelligence",
+      "Punition Divine : 2D6+10 : Intelligence",
       "Totem Gracieux : Mode Soin : Soin 4 PV par tour. - Mode Soutien : attaque/bloque ((Invoque un familier Totem : 30 PV, Force : 9, Dext\u00e9 : 13, Intel : 14. - Mode Soin : Ne peut pas bouger / se prot\u00e9ger, 0 jet de d\u00e9. - Mode Soutien : peut bouger et bloquer, 2 sorts : 1) Renforcement : +2 Force ou +2 Intel sur la cible : 3 tours (intel) , 2) Eclair : 1D8 (intel))) : Esprit",
-      "R\u00e9surrection : Incantation 2 tours (1 d\u00e9/tour) : soigne de 2D10+18 (utilisable sur un vivant) : Intelligence",
-      "Bouclier d'\u00e9pines : D\u00e9g\u00e2t subi (-) et d\u00e9g\u00e2t d'\u00e9pines (+) 1D4 (min 2)+1 pendant 4 tours : Intelligence"
+      "R\u00e9surrection : Incantation 2 tours (1 d\u00e9/tour) : Soin 2D10+18 (utilisable sur un vivant) : Intelligence",
+      "Bouclier d'\u00e9pines : D\u00e9g\u00e2t subi (-) et d\u00e9g\u00e2t d'\u00e9pines (+) 1D4 (min 2)+1 pendant 4 tours : Intelligence<br/>Passif : Si coup critique : se soigne 1D6+6."
     ],
     "stats": "8,9,17,11,16",
     "desc": "Drakai Alchimiste qui est tr\u00e8s peu pr\u00e9cautionneux, le laboratoire vie parfois des jours sombres...",
@@ -2534,7 +2534,7 @@
     "nom": "Plotodo - Torturran Juge (Veyda)",
     "pvmax": "190",
     "skills": [
-      "\u00c2me Enchain\u00e9e : 2D6+11 et Dext\u00e9-3 sur 3 tours : Dext\u00e9rit\u00e9",
+      "\u00c2me Enchain\u00e9e : 2D6+11 et Dext\u00e9-3 (AoE ligne) sur 3 tours : Dext\u00e9rit\u00e9",
       "Scellement : Aucun sort physique pendant 3 tours : Esprit",
       "Verdict Final : 3D6 +13 (S Crit (1,2,3) X1.5) : Force",
       "Aura du Pourfendeur : DGT +1D6+4 pendant 4 tours : Esprit"
@@ -2579,7 +2579,7 @@
     "nom": "Spike - Zumi Assassin (Veyda)",
     "pvmax": "165",
     "skills": [
-      "Cicatrice de l'Esprit : Degat 3D6 +7 (-1 buff) : Force",
+      "Cicatrice de l'Esprit : Degat 3D6 +9 (-1 buff) : Force",
       "Griffure Noire : Degat Malus 2D6 +7, Blocage et Esquive -1 sur 3 tours AoE : Force",
       "Transe - Mode Tueur : Buff D\u00e9g\u00e2t +1D6 (min 2) +4 sur 3 tours Mono : Esprit",
       "Contr\u00f4le de l'Energie : Soin 2D6 +15, Dext\u00e9 -2 et R\u00e9sistance d'esprit +3 sur 3 tours (Mono) : Esprit"
@@ -2783,5 +2783,140 @@
     "desc": "Un soldat d'\u00e9lite heldentod qui a servit d'exp\u00e9rience pour un d\u00e9moniste et a \u00e9t\u00e9 fusionn\u00e9 avec un loup/grizzli.",
     "infos": "Faible au per\u00e7ant et aux t\u00e9n\u00e8bres",
     "drop": "Griffe de D\u00e9mon, crocs sombre, ..."
+  },
+  "188": {
+    "visuel3D": "rita",
+    "nom": "Rita - Botaniste d'Amur",
+    "pvmax": "245",
+    "skills": [
+      "S\u00e9isme : 3D6+20 (+5 mono) AoE : Intelligence",
+      "Gu\u00e9rison (R\u00e9surrection) : Soin 3D6 +30 (+20) : Intelligence",
+      "Bouclier d'Osiris : Epines / Armure 1D4+6  (-2 malus) sur 6 tours : Esprit",
+      "Totem d'Al-hara : 60 PV (Stats 16), sorts (d\u00e9) : Soin AoE : 1D6+4 -- Eclair 1D10+10 -- Renforce Force/Intel +4 sur 4 tours : Esprit "
+    ],
+    "stats": "13,7,19,14,19",
+    "desc": "Cheffe de la guilde Al-hara, ses connaissances en botanique sont si grand qu'elle serait une encyclop\u00e9die \u00e0 elle seule.",
+    "infos": "Faible au per\u00e7ant et au feu",
+    "drop": "Glyphe du Shaman, ..."
+  },
+  "189": {
+    "visuel3D": "sohan",
+    "nom": "Sohan - Champion Royal",
+    "pvmax": "225",
+    "skills": [
+      "Int\u00e9gration / Furtivit\u00e9 : Esquive +3 AoE / Fufu Dext\u00e9 +3, chance touch\u00e9 -3 : sur 5 tours : Esprit",
+      "Attaque Rapide / Embuscade : 3D6+22 / (total X1.5) : Dext\u00e9rit\u00e9",
+      "Fumig\u00e8ne : (esquive/contre ?) R\u00e9ussite -3 (3 tours) AoE : Esprit",
+      "Passif : Si PV < 120 : Esquive +2, d\u00e9g\u00e2t +5"
+    ],
+    "stats": "13,18,7,13,17",
+    "desc": "Soldat de l'arm\u00e9e Royale d'Amur, il excelle dans la discr\u00e9tion, l'agilit\u00e9 et le meurtre.",
+    "infos": "Faible au contondant et \u00e0 la glace",
+    "drop": "tr\u00e8s rare : Poignard porte-bonheur, Tenue de Vagabond"
+  },
+  "190": {
+    "visuel3D": "lona",
+    "nom": "Lona - Briseuse de Sceau",
+    "pvmax": "235",
+    "skills": [
+      "Parasite fr\u00e9n\u00e9tique : 2D6+14 et -8 sur 5 tours (2 vie # infection/pr\u00e9vention) : Intelligence",
+      "Infection Pullulante / Temp\u00eate Noire : 2D6 +18/+6 + (tours para)*3 : Intelligence",
+      "Esprit Descell\u00e9 : Invoque 1 Fant\u00f4me L\u00e9thargique (2 si d\u00e9 <= 6, si crit : Esprit de la Vengeance -50 PV) : Esprit",
+      "Hommage : Soin 2 \u00e0 35 +15, Armure +5 sur 4 tours : Esprit<br/>Saut Dimensionnel : 3 tentatives : Intelligence"
+    ],
+    "stats": "7,15,19,11,18",
+    "desc": "Incantatrice et Briseuse de sceau, elle est la bras-droit de la Beholder, on raconte quelle aurait travaill\u00e9e pour l'Ordre des Chevaliers de la Rose...",
+    "infos": "Faible au tranchant et \u00e0 la lumi\u00e8re",
+    "drop": "rare : Tunique de Mage Noir, tr\u00e8s rare : Codex du D\u00e9moniste"
+  },
+  "191": {
+    "visuel3D": "lugune",
+    "nom": "Lugune - Porte-parole des t\u00e9n\u00e8bres",
+    "pvmax": "245",
+    "skills": [
+      "Parasite propageur : 1D10+10 et 5 sur 5 tours, AoE mini si d\u00e9 <=6 : Intelligence",
+      "Fl\u00e8ches des Ombres : D\u00e9g\u00e2t 2D6 +23, Soin 1D10+12 (+5 si parasite) : Intelligence",
+      "Griffure Noire : 3D6 +12, et -2 blocage/esquive pour 3 tours AoE : Force",
+      "Menaces Mortelles : R\u00e9ussite -4, Esq/Bloc/Res -2, dure 2 tours : Esprit"
+    ],
+    "stats": "16,7,18,14,17",
+    "desc": "Anuran d\u00e9moniste, chef de la Beholder et porte-parole de la magie noire, il est tr\u00e8s social et pr\u00f4ne les bienfaits de cette magie controvers\u00e9e.",
+    "infos": "Faible au contondant et \u00e0 la lumi\u00e8re",
+    "drop": ""
+  },
+  "192": {
+    "visuel3D": "m058b",
+    "nom": "Moturth - Dompteur Prodigieux",
+    "pvmax": "270",
+    "skills": [
+      "Triple Tir (Blessure Douloureuse / Entrave) : Degat 3D6 (1D10) +25, (0 soin / entrave) sur 4 tours Mono : Dext\u00e9rit\u00e9",
+      "Fl\u00e8che M\u00e9ga Eblouissante : 2D6 +20, r\u00e9ussite -2 (3 tours) AoE : Dext\u00e9rit\u00e9",
+      "S\u00e9r\u00e9nit\u00e9 : Dext\u00e9+2 Esquive+2, D\u00e9g\u00e2t subi -1D6-6 pendant 4 tours : Esprit",
+      "Passif : Rhinotaure (120 PV, Stats 16, 1t/2 : Charge  2D10+16 (1D10 AoE))"
+    ],
+    "stats": "14,18,9,14,17",
+    "desc": "Grand ogre bleut\u00e9 chef de la Destri, il a dompt\u00e9 plus de 100 cr\u00e9atures dont sa monture:  Rhinotaure",
+    "infos": "Faible \u00e0 la foudre et aux t\u00e9n\u00e8bres",
+    "drop": "Bible du Familier, ..."
+  },
+  "193": {
+    "visuel3D": "yuchi",
+    "nom": "Yuchi - Cavali\u00e8re Ranger",
+    "pvmax": "250",
+    "skills": [
+      "Attaque Rapide / Triple Tir : 3D6 +22 : Dext\u00e9rit\u00e9",
+      "Attaque Furieuse : 2D6 +20 AoE : Dext\u00e9rit\u00e9",
+      "Int\u00e9gration : Esquive +3 sur 4 tours AoE : Esprit",
+      "Passif : Smido (95 PV, Stats 16, 1t/2 : Morsure  2D6+14)"
+    ],
+    "stats": "13,18,9,13,16",
+    "desc": "Ogresse ranger habile au corps \u00e0 corps et \u00e0 distance, bras droit de la Destri. Elle d\u00e9die sa vie aux animaux, sa monture s'appelle Smido",
+    "infos": "Faible au feu et aux t\u00e9n\u00e8bres",
+    "drop": "Bible du Familier, ..."
+  },
+  "194": {
+    "visuel3D": "bento",
+    "nom": "Bento - Navigateur Ing\u00e9nieux",
+    "pvmax": "270",
+    "skills": [
+      "Artillerie Lourde (Blessure Douloureuse) : 3D6+25 (1D10) +25 (0 soin) sur 4 tours : Dext\u00e9rit\u00e9",
+      "Boost d'Armure / Robotisation (instantan\u00e9e) : Soin 2D6 +13 / D\u00e9g\u00e2t +1D4+6 (4 t) , Armure +1D4 (min 2) +4 sur 4 tours : Esprit",
+      "Bombe \u00e0 Huile (Explosifs Visqueux) : D\u00e9g\u00e2t 2D6+20 (-1D, Esquive -3 sur 4 tours) AoE : Dext\u00e9rit\u00e9",
+      "Lavage de Cerveau : R\u00e9sistance d'esprit et r\u00e9ussite -4 sur 4 tours : Esprit<br/>Passif Blocage +1... + Si PV <140 : en robotisation : D\u00e9g\u00e2t +5, Armure \u00e0 10 fixe"
+    ],
+    "stats": "11,17,13,14,17",
+    "desc": "Chef de l'Expedita, il a voyag\u00e9 dans tout Ezur \u00e0 bord de son propre dirigeable et b\u00e2teau en compagnie de ses camarades.",
+    "infos": "Faible au contondant et \u00e0 la nature",
+    "drop": "Veste d'Ing\u00e9nieur, ..."
+  },
+  "195": {
+    "visuel3D": "edgar",
+    "nom": "Edgar - L'Elegant",
+    "pvmax": "250",
+    "skills": [
+      "Perc\u00e9e du Chevalier : 3D6 +22 (+5 si provoqué) : Dext\u00e9rit\u00e9",
+      "Temp\u00eate Infernale : 2D6 +18 (50% provoc 1 tour) AoE : Dext\u00e9rit\u00e9",
+      "Silence : Aucun sort magique sur 4 tours, + provocation (3/4) : Esprit",
+      "Vivacit\u00e9 Accrue : Dext\u00e9rit\u00e9 et Esquive +4 sur 5 tours : Esprit<br/>Passif : 5 Armure, Bloc/Esq +1"
+    ],
+    "stats": "13,17,7,15,17",
+    "desc": "Diplomate blond et noble chef de la L\u00e9gion Saphir, c'est un homme tr\u00e8s \u00e9loquant et loquace",
+    "infos": "Faible \u00e0 la glace et \u00e0 la foudre",
+    "drop": "Armure Distingu\u00e9e, Rapi\u00e8re de Braider"
+  },
+  "196": {
+    "visuel3D": "orion",
+    "nom": "Orion - L'Aventurier",
+    "pvmax": "230",
+    "skills": [
+      "Triple Tir (Blessure Douloureuse / Entrave) : 3D6 (1D10) +22, (0 soin / entrave) sur 4 tours : Dext\u00e9rit\u00e9",
+      "Invocation du Gu\u00e9pard (40 PV) : Force/Dext\u00e9 : 16, Intel/Esprit : 11, d\u00e9g\u00e2t Mono (AoE), 2D6 (1D6) +10 Mono : Esprit",
+      "Perforation  : D\u00e9g\u00e2t Malus 2D6 +16, Blocage et r\u00e9ussite -3 sur 3 tours : Dext\u00e9rit\u00e9",
+      "Saut d'esquive : 4 tentatives : tir 2D6+10<br/>Passif : Esquive +2, si PV < 125 : esq/bloc cible -2"
+    ],
+    "stats": "10,18,9,13,16",
+    "desc": "Ezelin passionné par l'exploration et l'aventure, c'est un ami du Général de Division d'Expédition Vimess, les deux se sont beaucoup entrainés ensemble.",
+    "infos": "Faible au feu et aux t\u00e9n\u00e8bres",
+    "drop": ""
   }
 }

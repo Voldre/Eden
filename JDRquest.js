@@ -1,4 +1,5 @@
 import { playerJSON, mapsJSON, pnjJSON, persosJSON, enemyJSON } from "./JDRstore";
+import { toastNotification } from "./utils";
 
 // const apiKey = "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";
 const apiUrl = "https://api.openai.com/v1/chat/completions";
@@ -41,6 +42,10 @@ window.addEventListener("load", async () => {
   const persoData = persosJSON[(parseInt(indexPerso) - 1).toString()];
   const enemyData = chooseEnemy(urlParams.get("map"));
 
+  if (!enemyData) {
+    toastNotification("Erreur : aucun ennemi n'existe sur cette map");
+    return;
+  }
   initializeEnemy(enemyData, rarity);
 
   const randomPNJ = Math.floor(Math.random() * Object.entries(pnjJSON).length + 1);
@@ -160,8 +165,6 @@ function chooseEnemy(mapId = null, category = null) {
   if (mapId) {
     if (!mapsJSON[mapId].mobs) {
       responseElement.innerHTML = "Erreur : Aucun n'ennemi n'existe pour le moment sur cette carte, désolé !";
-      stop();
-      document.querySelector(".loading").remove();
       return;
     }
     enemyListId = enemyListId.filter((eID) => mapsJSON[mapId].mobs.includes(parseInt(eID)));
@@ -191,7 +194,7 @@ function initializeEnemy(enemyData, rarity) {
     document.querySelector("#rarity").src = "images/uiiconPNG/combat_mob.png";
     document.querySelector("#rarity").alt = "Monstre Commun";
   }
-  if (rarity === 2 || (enemyData.pvmax >= 120 && enemyData.pvmax < 200)) {
+  if (rarity === 2 || (enemyData.pvmax > 120 && enemyData.pvmax < 200)) {
     document.querySelector("#rarity").src = "images/uiiconPNG/combat_elite.png";
     document.querySelector("#rarity").alt = "Elite";
   }
@@ -201,6 +204,7 @@ function initializeEnemy(enemyData, rarity) {
   }
 
   document.querySelector("#enemy").src = "./images/monsters/" + enemyData.visuel3D + ".png";
+  document.querySelector("#enemy").alt = enemyData.visuel3D;
   document.querySelector("#enemy").title = enemyData.nom;
 }
 
@@ -208,7 +212,7 @@ function initializeActions(enemyData, pnjEnemy = { nom: null }, mapID) {
   document.querySelector("#actions").innerHTML = "";
 
   // Upgrade enemy to Elite if the rarity selected randomly is "2" and the enemy is "common"
-  const isElite = rarity === 2 && enemyData.pvmax < 120;
+  const isElite = rarity === 2 && enemyData.pvmax <= 120;
 
   const actions = pnjEnemy.nom
     ? ["Accepter la Quête", "Refuser la Quête", "Refuser et combattre"]

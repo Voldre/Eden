@@ -64,15 +64,15 @@
           "duree": 0
         },
         {
-          "nom": "Attaque Cyclone",
-          "stat": "Force",
+          "nom": "Tempête Infernale",
+          "stat": "Force/Dextérité",
           "montantFixe": "2D6",
-          "montantVariable": 5,
+          "montantVariable": 4,
           "type": "Degat",
           "portee": "AoE",
-          "effet": "",
+          "effet": "50% de chance d'être ciblé",
           "montantEffet": 0,
-          "duree": 0
+          "duree": 1
         },
         {
           "nom": "Silence",
@@ -484,7 +484,7 @@
           "montantVariable": 0,
           "type": "Malus",
           "portee": "Mono",
-          "effet": "Résistance d'esprit et réussite des sorts (-1) -",
+          "effet": "Résistance d'esprit et réussite (-1) -",
           "montantEffet": 2,
           "duree": 3
         }
@@ -718,7 +718,7 @@
           "montantVariable": 0,
           "type": "Buff",
           "portee": "Mono",
-          "effet": "Armure +1D4 (+1 / +0), -1 malus / (+) épines  +",
+          "effet": "Armure +1D4 (+) : +1 (-1 malus) / épines / X=",
           "montantEffet": 2,
           "duree": 4
         },
@@ -886,15 +886,15 @@
       "classe": "Démoniste",
       "sorts": [
         {
-          "nom": "Bombe Incendiaire / Flèche Ombres ombres",
+          "nom": "Flèche Ombres ombres / Parasite",
           "stat": "Intelligence",
-          "montantFixe": "3D6(+4)/2D6",
+          "montantFixe": "Dégât 2D6 (+) et Soin 1D10 (+/3, +5 si parasite) ",
           "montantVariable": 4,
           "type": "Degat",
           "portee": "Mono",
-          "effet": "/ Soin PV (+5 si parasite) + 1D10 +",
+          "effet": "Parasite 1D10 (+*2) puis 3+",
           "montantEffet": 2,
-          "duree": 0
+          "duree": 4
         },
         {
           "nom": "Attaque Foudroyante / Infection Pullulante",
@@ -912,9 +912,9 @@
           "stat": "Esprit",
           "montantFixe": "PV 35 : Force/Dexté : 11/13, Intel/Esprit : 15, soin de 2 à 35 PV",
           "montantVariable": 0,
-          "type": "Buff",
+          "type": "",
           "portee": "Mono",
-          "effet": "Dégât 1D6 (+) / Armure (+/2) +",
+          "effet": "Pet Dégât 1D8 (+) / Buff Armure (+/2) +",
           "montantEffet": 2,
           "duree": 3
         },

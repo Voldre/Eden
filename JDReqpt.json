@@ -644,7 +644,7 @@
     "nom": "Tunique de Mage Noir",
     "desc": "Une tunique ayant autrefois appartenue \u00e0 un grand magicien noir",
     "effet": "D\u00e9g\u00e2t magique +2",
-    "montant": "D\u00e9g\u00e2t -4",
+    "montant": "D\u00e9g\u00e2t -4, dégât ténèbres +2",
     "icone": "k20806",
     "access": "D2"
   },
@@ -652,7 +652,7 @@
     "nom": "Tenue de Ninja",
     "desc": "Une tenue con\u00e7ue par des ninjas d'une autre \u00e8re",
     "effet": "D\u00e9g\u00e2t physique +2",
-    "montant": "D\u00e9g\u00e2t -5",
+    "montant": "D\u00e9g\u00e2t -5, dégât tranchant +2",
     "icone": "k20213",
     "access": "D2"
   },
@@ -2250,7 +2250,7 @@
     "nom": "Robe Elementaire",
     "desc": "Une robe cr\u00e9\u00e9 par des magiciens voulant renforc\u00e9 leur magie \u00e9l\u00e9mentaire.",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t -3, d\u00e9g\u00e2t \u00e9l\u00e9mentaire +2",
+    "montant": "D\u00e9g\u00e2t -3, d\u00e9g\u00e2t \u00e9l\u00e9mentaire +3",
     "icone": "A20019",
     "access": "D2"
   },
@@ -3036,7 +3036,7 @@
     "nom": "Robe \u00e9toil\u00e9e renforc\u00e9e",
     "desc": "Une version am\u00e9lior\u00e9e de la robe \u00e9toil\u00e9e, con\u00e7ue pour des magiciens de haut niveau",
     "effet": "Intelligence +1",
-    "montant": "D\u00e9g\u00e2t -3, PV +10",
+    "montant": "D\u00e9g\u00e2t -3, D\u00e9g\u00e2t magique +2",
     "icone": "A20032b"
   },
   "409": {
