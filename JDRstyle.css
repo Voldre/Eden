@@ -822,6 +822,14 @@ dialog::backdrop {
   width: 120px;
 }
 
+/* Extension of map name (multi select) */
+.point .name[data-map]:hover {
+  user-select: none;
+  background-color: rgba(36, 36, 106, 1);
+  cursor: pointer;
+  cursor: url("images/layout/cursor-x.png"), auto;
+}
+
 .common {
   border: 1px green solid;
 }

@@ -1,5 +1,5 @@
 import { cardJSON, persosJSON, enemyJSON, allSkills, playerJSON, getData } from "./JDRstore";
-import { callPHP, initDialog, Perso, toastNotification } from "./utils";
+import { callPHP, initDialog, isTextInText, Perso, toastNotification } from "./utils";
 
 // prettier-ignore
 const classes = [ "Guerrier", "Chevalier", "Templier", "Chev Dragon", "Voleur", "Assassin", "Danselame", "Samouraï", "Chasseur", "Ingénieur", "Corsaire", "Juge", "Clerc", "Barde", "Shaman", "Sage", "Magicien", "Illusionniste", "Démoniste", "Luminary",];
@@ -111,7 +111,7 @@ window.addEventListener("load", () => {
     // Not in real fight
     const enemyCombatData = Object.values(enemyJSON).map((e) => {
       let enemyStats = new Enemy(e);
-      enemyStats.rarity = enemyStats.pvmax >= 200 ? "BOSS" : enemyStats.pvmax >= 120 ? "ELITE" : "COMMUN";
+      enemyStats.rarity = enemyStats.pvmax >= 200 ? "BOSS" : enemyStats.pvmax > 120 ? "ELITE" : "COMMUN";
       enemyStats.degatMin =
         (enemyStats.rarity === "BOSS" && enemyStats.degat < MIN_BOSS) ||
         (enemyStats.rarity === "COMMUN" && enemyStats.degat < MIN_COMMON);
@@ -140,7 +140,7 @@ window.addEventListener("load", () => {
 
   if (selectedEnemy.pvmax >= 200) {
     enemyRarity = Math.trunc(selectedEnemy.pvmax / 100) + 1;
-  } else if (selectedEnemy.pvmax >= 120) {
+  } else if (selectedEnemy.pvmax > 120) {
     enemyRarity = 2;
   } else {
     enemyRarity = 1;
@@ -281,7 +281,7 @@ function loadEnemy(enemyData, isElite = false) {
   enemy = new Enemy(enemyData);
 
   // Apply "isElite" only if not an elite or a boss
-  if (isElite && enemy.pvmax < 120) {
+  if (isElite && enemy.pvmax <= 120) {
     enemy.nom += " (ELITE)";
     // Value clipped between min and max
     enemy.pvmax = enemy.pv = Math.round(Math.max(130, Math.min(enemy.pvmax * 1.5, 180)));
@@ -318,13 +318,7 @@ function Enemy(enemyData) {
   var rawMontantSkills = enemyData.skills.map((skill) => {
     // console.log(skill)
     // remove all buff skills and passif
-    if (
-      skill.toLowerCase().includes("passif") ||
-      skill.toLowerCase().includes("esprit") ||
-      skill.toLowerCase().includes("soin") ||
-      skill.toLowerCase().includes("buff")
-    )
-      return NaN;
+    if (["passif", "esprit", "soin", "buff", "provocation"].find((text) => isTextInText(skill, text))) return NaN;
 
     var allPlusPosition = [];
     for (var i = 0; i < skill.length; i++) {

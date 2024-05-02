@@ -110,6 +110,9 @@
   { "id": 289, "value": 1, "kind": "map", "name": "Île du Mariage", "description": "", "kindId": 97 },
   { "id": 290, "value": 2, "kind": "map", "name": "Île du Mariage", "description": "", "kindId": 97 },
   { "id": 291, "value": 3, "kind": "map", "name": "Île du Mariage", "description": "", "kindId": 97 },
+  { "id": 308, "value": 1, "kind": "map", "name": "Arènes GvG", "description": "", "kindId": 308 },
+  { "id": 309, "value": 2, "kind": "map", "name": "Arènes GvG", "description": "", "kindId": 308 },
+  { "id": 310, "value": 3, "kind": "map", "name": "Arènes GvG", "description": "", "kindId": 308 },
   { "id": 501, "value": 1, "kind": "map", "name": "Ville de Guilde - Veyda", "description": "", "kindId": 501 },
   { "id": 502, "value": 2, "kind": "map", "name": "Ville de Guilde - Veyda", "description": "", "kindId": 501 },
   { "id": 503, "value": 3, "kind": "map", "name": "Ville de Guilde - Veyda", "description": "", "kindId": 501 },
@@ -528,6 +531,22 @@
     "name": "Esprit de Magnétite",
     "description": "Cet esprit est entièrement composé de magnétite qui a pris vie. Il participe à l'équilibre de la magnétude de sa zone.",
     "kindId": "m090c"
+  },
+  {
+    "id": 1058,
+    "value": 3,
+    "kind": "boss",
+    "name": "Bento - Navigateur Ing\u00e9nieux",
+    "description": "Chef de l'Expedita, il a voyag\u00e9 dans tout Ezur \u00e0 bord de son propre dirigeable et b\u00e2teau en compagnie de ses camarades.",
+    "kindId": "bento"
+  },
+  {
+    "id": 1059,
+    "value": 3,
+    "kind": "boss",
+    "name": "Orion - L'Aventurier",
+    "description": "Ezelin passionné par l'exploration et l'aventure, c'est un ami du Général de Division d'Expédition Vimess, les deux se sont beaucoup entrainés ensemble.",
+    "kindId": "orion"
   },
   {
     "id": 1201,

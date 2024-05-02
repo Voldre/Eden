@@ -310,14 +310,12 @@ function loadPerso(perso, index, joueurData) {
 
 document.addEventListener("click", (e) => {
   if (e.target.dataset.map || (e.target.parentElement && e.target.parentElement.dataset.map)) {
-    window.location.href =
-      "jdr_quest.html?perso=" +
-      (parseInt(indexPerso) + 1) +
-      "&map=" +
-      (e.target.dataset.map || e.target.parentElement.dataset.map);
+    const map = e.target.dataset.map || e.target.parentElement.dataset.map;
+    window.location.href = "jdr_quest.html?perso=" + (parseInt(indexPerso) + 1) + "&map=" + map;
     return;
   }
   if (
+    e.target.className !== "point" &&
     e.target.className !== "worldmap-img" &&
     e.target.className !== "persoPic" &&
     !e.target.className.includes("mapMenu")
