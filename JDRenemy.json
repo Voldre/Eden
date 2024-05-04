@@ -2476,7 +2476,7 @@
     "skills": [
       "Verdict Final : 5D6 +25 Crit (1,2 : *1.5; 3,4 : *1.25) : Force // Entrave Mentale : 4D6+20 et -3 Res Espr'it sur 3 tours : Espr'it",
       "Aura du Sanguinaire : D\u00e9g\u00e2t +1D6+9 (Absorbe +5 PV), Bloc/Esq +2 sur 5 tours : Esprit",
-      "Scellement AoE : Aucun sort physique pendant 3 tours (Absorbe +5 PV) : Espr'it, (jdrcombat +45)",
+      "Scellement AoE : Aucun sort physique pendant 3 tours (Absorbe +5 PV) : Espr'it, (jdrcombat +40)",
       "Passif : Absorbe 1/3 des d\u00e9g\u00e2ts (apr\u00e8s armure) en PV. Si \"0 soin\" : Heal/2"
     ],
     "stats": "17,13,11,13,19",
@@ -2789,7 +2789,7 @@
     "nom": "Rita - Botaniste d'Amur",
     "pvmax": "245",
     "skills": [
-      "S\u00e9isme : 3D6+20 (+5 mono) AoE : Intelligence",
+      "S\u00e9isme : 3D6+17 (+5 AoE) : Intelligence (jdrCombat +25)",
       "Gu\u00e9rison (R\u00e9surrection) : Soin 3D6 +30 (+20) : Intelligence",
       "Bouclier d'Osiris : Epines / Armure 1D4+6  (-2 malus) sur 6 tours : Esprit",
       "Totem d'Al-hara : 60 PV (Stats 16), sorts (d\u00e9) : Soin AoE : 1D6+4 -- Eclair 1D10+10 -- Renforce Force/Intel +4 sur 4 tours : Esprit "
@@ -2805,7 +2805,7 @@
     "pvmax": "225",
     "skills": [
       "Int\u00e9gration / Furtivit\u00e9 : Esquive +3 AoE / Fufu Dext\u00e9 +3, chance touch\u00e9 -3 : sur 5 tours : Esprit",
-      "Attaque Rapide / Embuscade : 3D6+22 / (total X1.5) : Dext\u00e9rit\u00e9",
+      "Attaque Rapide / Embuscade : 3D6 +22 / (fufu total +8, X1.5?) : Dext\u00e9rit\u00e9",
       "Fumig\u00e8ne : (esquive/contre ?) R\u00e9ussite -3 (3 tours) AoE : Esprit",
       "Passif : Si PV < 120 : Esquive +2, d\u00e9g\u00e2t +5"
     ],
@@ -2820,7 +2820,7 @@
     "pvmax": "235",
     "skills": [
       "Parasite fr\u00e9n\u00e9tique : 2D6+14 et -8 sur 5 tours (2 vie # infection/pr\u00e9vention) : Intelligence",
-      "Infection Pullulante / Temp\u00eate Noire : 2D6 +18/+6 + (tours para)*3 : Intelligence",
+      "Temp\u00eate Noire / Infection Pullulante : 2D6+24 / -6 + (tours para)*3 : Intelligence (jdrCombat +40)",
       "Esprit Descell\u00e9 : Invoque 1 Fant\u00f4me L\u00e9thargique (2 si d\u00e9 <= 6, si crit : Esprit de la Vengeance -50 PV) : Esprit",
       "Hommage : Soin 2 \u00e0 35 +15, Armure +5 sur 4 tours : Esprit<br/>Saut Dimensionnel : 3 tentatives : Intelligence"
     ],
@@ -2835,8 +2835,8 @@
     "pvmax": "245",
     "skills": [
       "Parasite propageur : 1D10+10 et 5 sur 5 tours, AoE mini si d\u00e9 <=6 : Intelligence",
-      "Fl\u00e8ches des Ombres : D\u00e9g\u00e2t 2D6 +23, Soin 1D10+12 (+5 si parasite) : Intelligence",
-      "Griffure Noire : 3D6 +12, et -2 blocage/esquive pour 3 tours AoE : Force",
+      "Fl\u00e8ches des Ombres : D\u00e9g\u00e2t 2D6 +23, soin 1D10+12 (+5 si parasite) : Intelligence",
+      "Griffure Noire : 3D6 +12, et -2 blocage/esquive pour 3 tours AoE : Force (jdrCombat +40)",
       "Menaces Mortelles : R\u00e9ussite -4, Esq/Bloc/Res -2, dure 2 tours : Esprit"
     ],
     "stats": "16,7,18,14,17",
@@ -2850,7 +2850,7 @@
     "pvmax": "270",
     "skills": [
       "Triple Tir (Blessure Douloureuse / Entrave) : Degat 3D6 (1D10) +25, (0 soin / entrave) sur 4 tours Mono : Dext\u00e9rit\u00e9",
-      "Fl\u00e8che M\u00e9ga Eblouissante : 2D6 +20, r\u00e9ussite -2 (3 tours) AoE : Dext\u00e9rit\u00e9",
+      "Fl\u00e8che M\u00e9ga Eblouissante : 2D6 +20, r\u00e9ussite -2 (3 tours) AoE : Dext\u00e9rit\u00e9 (jdrCombat +25)",
       "S\u00e9r\u00e9nit\u00e9 : Dext\u00e9+2 Esquive+2, D\u00e9g\u00e2t subi -1D6-6 pendant 4 tours : Esprit",
       "Passif : Rhinotaure (120 PV, Stats 16, 1t/2 : Charge  2D10+16 (1D10 AoE))"
     ],
@@ -2864,8 +2864,8 @@
     "nom": "Yuchi - Cavali\u00e8re Ranger",
     "pvmax": "250",
     "skills": [
-      "Attaque Rapide / Triple Tir : 3D6 +22 : Dext\u00e9rit\u00e9",
-      "Attaque Furieuse : 2D6 +20 AoE : Dext\u00e9rit\u00e9",
+      "Attaque Rapide / Triple Tir : 3D6 +20 : Dext\u00e9rit\u00e9",
+      "Attaque Furieuse : 2D6 +16 (+5 si PV<150) AoE : Dext\u00e9rit\u00e9",
       "Int\u00e9gration : Esquive +3 sur 4 tours AoE : Esprit",
       "Passif : Smido (95 PV, Stats 16, 1t/2 : Morsure  2D6+14)"
     ],
@@ -2894,7 +2894,7 @@
     "nom": "Edgar - L'Elegant",
     "pvmax": "250",
     "skills": [
-      "Perc\u00e9e du Chevalier : 3D6 +22 (+5 si provoqué) : Dext\u00e9rit\u00e9",
+      "Perc\u00e9e du Chevalier : 3D6 +22 (+5 si provoqu\u00e9) : Dext\u00e9rit\u00e9",
       "Temp\u00eate Infernale : 2D6 +18 (50% provoc 1 tour) AoE : Dext\u00e9rit\u00e9",
       "Silence : Aucun sort magique sur 4 tours, + provocation (3/4) : Esprit",
       "Vivacit\u00e9 Accrue : Dext\u00e9rit\u00e9 et Esquive +4 sur 5 tours : Esprit<br/>Passif : 5 Armure, Bloc/Esq +1"
@@ -2911,12 +2911,27 @@
     "skills": [
       "Triple Tir (Blessure Douloureuse / Entrave) : 3D6 (1D10) +22, (0 soin / entrave) sur 4 tours : Dext\u00e9rit\u00e9",
       "Invocation du Gu\u00e9pard (40 PV) : Force/Dext\u00e9 : 16, Intel/Esprit : 11, d\u00e9g\u00e2t Mono (AoE), 2D6 (1D6) +10 Mono : Esprit",
-      "Perforation  : D\u00e9g\u00e2t Malus 2D6 +16, Blocage et r\u00e9ussite -3 sur 3 tours : Dext\u00e9rit\u00e9",
+      "Perforation  : D\u00e9g\u00e2t Malus 2D6 +18, Blocage et r\u00e9ussite -3 sur 3 tours : Dext\u00e9rit\u00e9",
       "Saut d'esquive : 4 tentatives : tir 2D6+10<br/>Passif : Esquive +2, si PV < 125 : esq/bloc cible -2"
     ],
     "stats": "10,18,9,13,16",
-    "desc": "Ezelin passionné par l'exploration et l'aventure, c'est un ami du Général de Division d'Expédition Vimess, les deux se sont beaucoup entrainés ensemble.",
+    "desc": "Ezelin passionn\u00e9 par l'exploration et l'aventure, c'est un ami du G\u00e9n\u00e9ral de Division d'Exp\u00e9dition Vimess, les deux se sont beaucoup entrain\u00e9s ensemble.",
     "infos": "Faible au feu et aux t\u00e9n\u00e8bres",
     "drop": ""
+  },
+  "197": {
+    "visuel3D": "leonhart",
+    "nom": "Leonhart - 1er Chevalier",
+    "pvmax": "350",
+    "skills": [
+      "Perc\u00e9e du Chevalier (Temp\u00eate Infernale) : 4D6 +30 (-8, Prov 50% 1t) : force",
+      "Enchantement Glaciale : Blocage/Res +3,  d\u00e9g\u00e2t +1D6+4 sur 4 tours, rel\u00e2chement : (Montant*2) : Esp'rit (jdrcombat +99)",
+      "Silence du n\u00e9ant : Nullifie la magie (sort, soin, buff)  pendant 3 tours (non annulable) : Esprit",
+      "Passif : Armure +10, vivacit\u00e9 : esquive+2"
+    ],
+    "stats": "18,15,9,17,18",
+    "desc": "Premier chevalier de l'ordre des Chevaliers du Temple, c'est un homme d\u00e9vou\u00e9 pour aider les autres, tr\u00e8s fiable et g\u00e9n\u00e9reux.",
+    "infos": "Faible \u00e0 la glace et \u00e0 la nature",
+    "drop": "Insigne de l'Ordre du Temple, Rapi\u00e8re ..."
   }
 }

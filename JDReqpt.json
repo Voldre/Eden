@@ -644,7 +644,7 @@
     "nom": "Tunique de Mage Noir",
     "desc": "Une tunique ayant autrefois appartenue \u00e0 un grand magicien noir",
     "effet": "D\u00e9g\u00e2t magique +2",
-    "montant": "D\u00e9g\u00e2t -4, dégât ténèbres +2",
+    "montant": "D\u00e9g\u00e2t -4, d\u00e9g\u00e2t t\u00e9n\u00e8bres +2",
     "icone": "k20806",
     "access": "D2"
   },
@@ -652,7 +652,7 @@
     "nom": "Tenue de Ninja",
     "desc": "Une tenue con\u00e7ue par des ninjas d'une autre \u00e8re",
     "effet": "D\u00e9g\u00e2t physique +2",
-    "montant": "D\u00e9g\u00e2t -5, dégât tranchant +2",
+    "montant": "D\u00e9g\u00e2t -5, d\u00e9g\u00e2t tranchant +2",
     "icone": "k20213",
     "access": "D2"
   },
@@ -1178,7 +1178,7 @@
   "163": {
     "nom": "Destruction Sacr\u00e9e",
     "desc": "Une \u00e9p\u00e9e d\u00e9tenant un pouvoir de destruction",
-    "effet": "D\u00e9g\u00e2t lumi\u00e8re +2",
+    "effet": "D\u00e9g\u00e2t lumi\u00e8re +3",
     "montant": "D\u00e9g\u00e2t +11",
     "icone": "W21105"
   },
@@ -3559,5 +3559,33 @@
     "effet": "Mal\u00e9diction du Lien",
     "montant": "D\u00e9g\u00e2t -2",
     "icone": "k20453"
+  },
+  "477": {
+    "nom": "Robe de Jade",
+    "desc": "Cette robe est orn\u00e9e d'une parure verdoyante qui d\u00e9gage une aura rassurante et apaise son porteur.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t -3, dur\u00e9e des malus -1 tour",
+    "icone": "A20004"
+  },
+  "478": {
+    "nom": "Tenue de Luminary",
+    "desc": "Une tenue id\u00e9ale qui amplifie le talent des chevaliers du chaos : Luminary",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t -4 (Si Luminary : d\u00e9g\u00e2ts +3)",
+    "icone": "k20578"
+  },
+  "479": {
+    "nom": "Tenue de Noble Fortun\u00e9",
+    "desc": "Une tenue alliant noblesse et richesse, id\u00e9ale pour les diplomates aventureux.",
+    "effet": "Or trouv\u00e9 +50%",
+    "montant": "D\u00e9g\u00e2t -5, Charisme +2",
+    "icone": "k20635"
+  },
+  "480": {
+    "nom": "Tenue de Mage Acad\u00e9mique",
+    "desc": "Une tenue alliant noblesse et richesse, id\u00e9ale pour les diplomates aventureux.",
+    "effet": "Exp\u00e9rience re\u00e7u +20%",
+    "montant": "D\u00e9g\u00e2t -4 (Si magicien/illusionniste : d\u00e9g\u00e2ts +2)",
+    "icone": "k21032"
   }
 }

@@ -272,16 +272,23 @@ if (logged) {
 
   const eqptNameFilter = document.querySelector("#eqptNameFilter");
   const eqptEffectFilter = document.querySelector("#eqptEffectFilter");
-  eqptNameFilter.addEventListener("blur", () => {
-    eqptFilter();
-  });
-  eqptEffectFilter.addEventListener("blur", () => {
+  const revertFilterNames = document.querySelector("#revertNameFilter");
+
+  [eqptNameFilter, eqptEffectFilter].map((element) =>
+    element.addEventListener("blur", () => {
+      eqptFilter();
+    })
+  );
+  revertFilterNames.addEventListener("change", () => {
     eqptFilter();
   });
 
   const eqptFilter = () => {
-    const filterName = eqptNameFilter.value;
-    const filterEffect = eqptEffectFilter.value;
+    // Update 02/05/2024 : Handle multiple filters if splited by coma, + revert filter
+    // Filters (of same type) are defined by UNION (||), so we display any eqpt matching one of the filter
+    const filterNames = !!eqptNameFilter.value ? eqptNameFilter.value.split(",") : [];
+    const filterEffects = !!eqptEffectFilter.value ? eqptEffectFilter.value.split(",") : [];
+    const isRevertFilterNames = revertFilterNames.checked;
 
     let nbEqptsDisplayed = 0;
 
@@ -290,10 +297,18 @@ if (logged) {
       const eqptEffect = eqptE.querySelector(".effet").innerText;
       const eqptMontant = eqptE.querySelector(".montant").innerText;
 
-      if (
-        isTextInText(eqptName, filterName) &&
-        (isTextInText(eqptEffect, filterEffect) || isTextInText(eqptMontant, filterEffect))
-      ) {
+      const filterNamesCondition =
+        !filterNames.length || filterNames.find((filterName) => isTextInText(eqptName, filterName));
+      const filtersConditionsMet =
+        //         isRevertFilterNames ^= filterNamesCondition
+        // The revert is only applied on filterNames
+        (isRevertFilterNames ? !filterNamesCondition : filterNamesCondition) &&
+        (!filterEffects.length ||
+          filterEffects.find(
+            (filterEffect) => isTextInText(eqptEffect, filterEffect) || isTextInText(eqptMontant, filterEffect)
+          ));
+
+      if (filtersConditionsMet) {
         eqptE.classList.remove("hide");
         nbEqptsDisplayed++;
       } else eqptE.classList.add("hide");
