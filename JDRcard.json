@@ -536,12 +536,20 @@
     "id": 1058,
     "value": 3,
     "kind": "boss",
+    "name": "Lycanthrope Heldentod",
+    "description": "Un soldat d'\u00e9lite heldentod qui a servit d'exp\u00e9rience pour un d\u00e9moniste et a \u00e9t\u00e9 fusionn\u00e9 avec un grizzli.",
+    "kindId": "m301b"
+  },
+  {
+    "id": 1059,
+    "value": 3,
+    "kind": "boss",
     "name": "Bento - Navigateur Ing\u00e9nieux",
     "description": "Chef de l'Expedita, il a voyag\u00e9 dans tout Ezur \u00e0 bord de son propre dirigeable et b\u00e2teau en compagnie de ses camarades.",
     "kindId": "bento"
   },
   {
-    "id": 1059,
+    "id": 1060,
     "value": 3,
     "kind": "boss",
     "name": "Orion - L'Aventurier",
@@ -3627,6 +3635,61 @@
     "enemies": [],
     "kindId": "monsters/m090c",
     "group": 1
+  },
+  {
+    "id": 1810,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "L'arrivée du Garde Impérial",
+    "description": "Alors qu'Estia accepte de devenir citoyenne Heldentod, ce dernier lui remet un de ses gardes : Zhaïtan, ils sont à présent prêt à repartir.",
+    "maps": [35],
+    "enemies": [],
+    "kindId": "monsters/zhaitan",
+    "group": 2
+  },
+  {
+    "id": 1811,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "La corruption du soldat",
+    "description": "Avec l'aide de Vidal, le groupe est parti aux Plaines du Levant dans une ancienne mine où se trouvait un homme loup-garou mutant. Les héritiers n'ont pas été au top de leur forme, et pareil pour le \"grand\" garde Zhaïtan.",
+    "maps": [33],
+    "enemies": [],
+    "kindId": "uiiconPNG/pic_012c",
+    "group": 2
+  },
+  {
+    "id": 1812,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Je veux baiser Rubis !",
+    "description": "Pour se détendre et revoir Tatiana, le groupe se rend au quartier des plaisirs, et Estia s'élance : \"Je veux baiser Rubis !\", chose après quoi la femme de joie l'invite à l'intérieur pour voir Rubis ! Comme quoi ...",
+    "maps": [35],
+    "enemies": [],
+    "kindId": "uiiconPNG/rubisHot",
+    "group": 2
+  },
+  {
+    "id": 1813,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Aura : Bouclier destructeur",
+    "description": "Sekhmet maîtrise un sort particulier : Bouclier destructeur, capable d'affaiblir la résistance de ses alliés, très dangereux !",
+    "maps": [308],
+    "enemies": [],
+    "kindId": "skillIcon/E0541b",
+    "group": 3
+  },
+  {
+    "id": 1814,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Encore esquivé",
+    "description": "Lors de la GvG face à l'Expedita, Spike, Poisseux et Leyla ont encore fait preuve d'une agilité incroyable pour esquiver les attaques et éclairs, leur offrant la victoire !",
+    "maps": [308],
+    "enemies": [],
+    "kindId": "skillIcon/E0675",
+    "group": 3
   },
   {
     "id": 15000,
