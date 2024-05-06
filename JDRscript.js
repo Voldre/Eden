@@ -562,11 +562,49 @@ function insertEqpt(eqptElement, eqptName) {
   }
 }
 
-//  LOADING
+//  PERSOS
 const selectPerso = document.querySelector("#selectPerso");
 var selectedPerso = selectPerso.value;
 var selectedID = selectPerso.selectedIndex;
 
+const archiveE = document.querySelector("#archived");
+
+Object.entries(persosJSON).forEach(([id, perso]) => {
+  const option = document.createElement("option");
+  option.value = "J" + (parseInt(id) + 1);
+  option.innerText = perso.nom;
+  // By default, hidden archived
+  option.hidden = perso.isArchived;
+  selectPerso.append(option);
+});
+// Default new slots for new characters (limited)
+[0, 1].map((i) => {
+  const nbNewPersos = Object.values(persosJSON).filter((perso) => perso.joueur === undefined).length;
+  if (nbNewPersos > 5) {
+    toastNotification("Limite de personnages temporaires atteinte");
+    return;
+  }
+  const option = document.createElement("option");
+  const label = "J" + (Object.entries(persosJSON).length + i + 1);
+  option.value = label;
+  option.innerText = label;
+  option.hidden = false;
+  selectPerso.append(option);
+});
+
+archiveE.addEventListener("change", (e) => {
+  onArchive(e.target.checked);
+});
+
+const onArchive = (isArchived) => {
+  Object.entries(persosJSON).forEach(([id, perso]) => {
+    // Hidden if isArchived is matching
+    selectPerso.options[parseInt(id)].hidden = isArchived !== perso.isArchived;
+  });
+  archiveE.checked = isArchived;
+};
+
+//  LOADING
 window.addEventListener("load", () => {
   const urlParams = new URLSearchParams(window.location.search);
   if (urlParams.has("perso")) {
@@ -634,6 +672,7 @@ function loadFiche(indexPerso) {
   document.querySelector(".notes").value = persoData.notes;
   document.querySelector(".sticky").value = persoData.sticky ?? "";
 
+  onArchive(persoData.isArchived);
   // Classes du perso
   var classePID = classes.indexOf(persoData.classeP);
   var classeSID = classes.indexOf(persoData.classeS);
@@ -875,6 +914,10 @@ document.querySelector("#save").addEventListener("click", () => {
   const cookiePerso = savePerso();
   // Save to JSON...
   // Only store persosJSON current user (perso id)
+  if (!cookiePerso) {
+    toastNotification("Erreur : ID Perso invalide");
+    return;
+  }
   console.log(cookiePerso.length);
   document.cookie = cookiePerso;
   if (cookiePerso.length < 4000) {
@@ -891,7 +934,10 @@ function savePerso() {
 
   const eqptsName = [...equipementsE.children].map((competenceE) => competenceE.children[0].value);
 
-  persosJSON[document.querySelector(".perso").id] = {
+  const persoId = document.querySelector(".perso").id;
+  if (!persoId || persoId < 0) return null;
+
+  persosJSON[persoId] = {
     nom: document.querySelector("#nom").value,
     race: document.querySelector("#race").value,
     classeP: document.querySelector("#classeP").value,
@@ -927,12 +973,13 @@ function savePerso() {
     background: document.querySelector(".background").value,
     notes: document.querySelector(".notes").value,
     sticky: document.querySelector(".sticky").value,
+    isArchived: persosJSON[persoId]?.isArchived ?? false,
   };
 
   console.log(persosJSON);
 
   const newPerso = {};
-  newPerso[document.querySelector(".perso").id] = persosJSON[document.querySelector(".perso").id];
+  newPerso[persoId] = persosJSON[persoId];
   console.log(newPerso);
 
   const newPersoEncoded = JSON.stringify(newPerso).replaceAll("+", "%2B").replaceAll(";", "%3B");
