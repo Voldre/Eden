@@ -325,6 +325,16 @@ if (logged) {
     const lastEnemy = allEnemies[allEnemies.length - 1];
     if (allEnemies.length > 5) {
       lastEnemy.remove();
+      updateSlots();
+
+      // If last enemy has "current turn", make new turn because enemy will close
+      const hasCurrentTurn = !!lastEnemy.querySelector("#currentTurnE");
+      if (hasCurrentTurn) {
+        document.querySelector("#tour").value = parseInt(document.querySelector("#tour").value) + 1;
+        const nextTurnE = allSlots[0].querySelector(".nextTurn");
+        nextTurnE.classList.remove("hide");
+        nextTurnE.id = "currentTurnE";
+      }
     } else {
       const newEnemyE = lastEnemy.cloneNode(true);
       newEnemyE.id = "e" + allEnemies.length;

@@ -2102,7 +2102,7 @@
     "nom": "Appel Mondial",
     "desc": "Un m\u00e9gaphone permettant d'amplifier la voix et de provoquer les ennemis.",
     "effet": "Capacit\u00e9",
-    "montant": "4 fois par combat (Instantan\u00e9e) : Permet de provoquer les ennemis (75% chance d'\u00eatre cibl\u00e9)",
+    "montant": "4 fois par combat (Instantan\u00e9e) : Permet de provoquer les ennemis (75% chance d'\u00eatre cibl\u00e9) pour 1 tour",
     "icone": "I00420",
     "access": "D3"
   },
@@ -3587,5 +3587,12 @@
     "effet": "Exp\u00e9rience re\u00e7u +20%",
     "montant": "D\u00e9g\u00e2t -4 (Si magicien/illusionniste : d\u00e9g\u00e2ts +2)",
     "icone": "k21032"
+  },
+  "481": {
+    "nom": "Combinaison de Pilote Ezuréen",
+    "desc": "La combinaison officielle des pilotes de l'écurie Ferralpaga !",
+    "montant": "Dégât -4, Dextérité +2",
+    "effet": "Monture : Vitesse++",
+    "icone": "k20199"
   }
 }
