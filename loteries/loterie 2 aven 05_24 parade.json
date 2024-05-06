@@ -1,0 +1,155 @@
+{ 
+20  "218": {
+    "nom": "Guitare Enchant\u00e9e",
+    "desc": "Une guitare tr\u00e8s ancienne ayant appartenu aux anc\u00eatres de la For\u00eat Arc-en-Ciel",
+    "effet": "Soin +3",
+    "montant": "D\u00e9g\u00e2t +6",
+    "icone": "W60804"
+  },
+19    "47": {
+      "nom": "Calice de la Curie Métérole",
+      "desc": "Un des calices datant de la grande guerre, gardé par la Curie Métérole",
+      "effet": "",
+      "montant": "Dégât de lumières +3",
+      "icone": "i00552"
+    },
+18    "49": {
+      "nom": "Sac à dos extensible",
+      "desc": "Un sac à dos ultra spacieux",
+      "effet": "",
+      "montant": "Retire tous les malus liés à l'inventaire",
+      "icone": "i00791"
+    },
+17  "275": {
+    "nom": "Anneau de r\u00e9sistance mentale",
+    "desc": "Cet anneau con\u00e7u par des moines Ursuns augmente la r\u00e9sistance d'esprit de son porteur.",
+    "effet": "",
+    "montant": "R\u00e9sistance d'esprit +3",
+    "icone": "A00020",
+    "access": "A2"
+  },      
+16  "268": {
+    "nom": "Katana Entaille-cerisier",
+    "desc": "La rumeur raconte que ce katana tire son pouvoir de la s\u00e8ve d'un grand cerisier.",
+    "effet": "Dur\u00e9e des sorts +1 tour",
+    "montant": "D\u00e9g\u00e2t +7",
+    "icone": "W21505"
+  },
+15  "337": {
+    "nom": "Hache Verd\u00e2tre",
+    "desc": "Une hache compos\u00e9e de r\u00e9sidus d'insectes, d'arbres et de plantes magiques. Ces r\u00e9sidus impr\u00e8gnent les attaques physiques ex\u00e9cut\u00e9es.",
+    "effet": "Element : Nature",
+    "montant": "D\u00e9g\u00e2t +9, d\u00e9g\u00e2t de nature +3",
+    "icone": "W23707"
+  },
+14  "289": {
+    "nom": "Gilet d'\u00e9pines",
+    "desc": "Gilet sur lequel diff\u00e9rentes \u00e9pines ont \u00e9t\u00e9 plac\u00e9s pour blesser les ennemis qui attaquent au corps \u00e0 corps. Fonctionne si touch\u00e9 ou bloqu\u00e9.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t -4, d\u00e9g\u00e2t piquant : 4",
+    "icone": "A20051b"
+  },
+13  "256": {
+    "nom": "Griffe \u00e0 Plasma",
+    "desc": "Une griffe \u00e9lectrique satur\u00e9 en magie lui conf\u00e9rant son pouvoir de plasma.",
+    "effet": "El\u00e9ment : Foudre",
+    "montant": "D\u00e9g\u00e2t +5",
+    "icone": "W35105"
+  },
+ 12 "260": {
+    "nom": "Tiare du Savoir",
+    "desc": "Une tiare magique qui am\u00e9liore la concentration de son porteur et le guide.",
+    "effet": "",
+    "montant": "Intelligence +1, Esprit +1",
+    "icone": "A10017",
+    "access": "A0"
+  },
+11  "206": {
+    "nom": "Glyphe du Danselame",
+    "desc": "Un glyphe con\u00e7u pour am\u00e9liorer 2 \u00e9l\u00e9ments",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t de feu +3, tranchant +2",
+    "icone": "i01128",
+    "access": "D3"
+  },
+
+10 "285": {
+    "nom": "Appel Mondial",
+    "desc": "Un m\u00e9gaphone permettant d'amplifier la voix et de provoquer les ennemis.",
+    "effet": "Capacit\u00e9",
+    "montant": "4 fois par combat (Instantan\u00e9e Charisme) : Permet de provoquer les ennemis (75% chance d'\u00eatre cibl\u00e9)",
+    "icone": "I00420",
+    "access": "D3"
+  },
+  
+ 9 "198": {
+    "nom": "Collier d'Asbi",
+    "desc": "Un collier incrust\u00e9 de crystaux d'Asbi, am\u00e9liore la survie de son porteur",
+    "effet": "",
+    "montant": "Esquive +1 & Blocage +1",
+    "icone": "A00032",
+    "access": "A0"
+  },
+ 8 "384": {
+    "nom": "Anneau du Bagarreur",
+    "desc": "Cet anneau conf\u00e8re accentue l'attaque de son porteur",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +2, PV +5",
+    "icone": "A00006",
+    "access": "D0"
+  },
+7    "51": {
+      "nom": "Pièce argenté Alpaga",
+      "desc": "Une pièce argentée un peu rare, créé à l'effigie d'un Alpaga",
+      "effet": "",
+      "montant": "Augmente de 50% l'or trouvé par le porteur (ennemi, coffre)",
+      "icone": "i00808"
+    },
+6   "55": {
+      "nom": "Anneau de résistance magique",
+      "desc": "Réduit les dégâts magiques reçus",
+      "effet": "",
+      "montant": "Dégâts magiques reçus -2",
+      "icone": "A00019"
+    },
+    
+5    "50": {
+      "nom": "Pièce dorée Alpaga",
+      "desc": "Une des rares pièces dorées créé à l'effigie d'un Alpaga",
+      "effet": "",
+      "montant": "Double l'or trouvé par le porteur (ennemi, coffre)",
+      "icone": "i00807"
+    },
+4      "338": {
+    "nom": "Gemme de p\u00e9tale",
+    "desc": "Une petite gemme en forme de p\u00e9tale de cerisier, fortifie son porteur",
+    "effet": "",
+    "montant": "PV +10, Blocage +1",
+    "icone": "I00364",
+    "access": "A0"
+  },
+3  "330": {
+    "nom": "Super Chapeau Champi",
+    "desc": "Une version am\u00e9lior\u00e9e du Chapeau de Champigno\u00efde. Il a appartenu \u00e0 un grand champigno\u00efde.",
+    "effet": "",
+    "montant": "Soin +3 et D\u00e9g\u00e2t magique +3, (AoE/2)",
+    "icone": "A10028",
+    "access": "D3"
+  },
+2      "433": {
+    "nom": "Rapi\u00e8re de la Curie",
+    "desc": "Cette rapi\u00e8re est con\u00e7ue pour les meilleures troupes de la Curie M\u00e9t\u00e9role",
+    "effet": "D\u00e9g\u00e2t de lumi\u00e8re +2",
+    "montant": "D\u00e9g\u00e2t +5",
+    "icone": "W11802"
+  },
+1    "429": {
+    "nom": "Bouclier du Survivant",
+    "desc": "Ce bouclier a sauv\u00e9 de nombreux innocents d'une mort certaine.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t -3 (-3 si PV < 33%)",
+    "condition": { "type": "PV", "value": "3", "bonus": "D\u00e9g\u00e2t re\u00e7u -3" },
+    "icone": "W70206d",
+    "access": "A1"
+  },
+  }

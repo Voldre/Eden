@@ -1723,6 +1723,62 @@
     "maps": [16]
   },
   {
+    "id": 1429,
+    "value": 1,
+    "kind": "composant",
+    "name": "Tortue de Crystal",
+    "description": "Le cristal qui alimente cette tortue vient d'une technologie avancée. Elle peut transporter trois personnes à la fois. Seul un aventurier qui connaît l'importance de la défense peut en être le propriétaire.",
+    "kindId": "i00814"
+  },
+  {
+    "id": 1430,
+    "value": 1,
+    "kind": "composant",
+    "name": "Dinde en Cavale",
+    "description": "Cours, Dinde, cours ! Cours comme si ta vie en dépendait !",
+    "kindId": "i00861"
+  },
+  {
+    "id": 1431,
+    "value": 1,
+    "kind": "composant",
+    "name": "Destrier de Preux Chevalier",
+    "description": "Vous serez le chevalier de toutes les princesses - ou les princes - en péril.",
+    "kindId": "i00885"
+  },
+  {
+    "id": 1432,
+    "value": 1,
+    "kind": "composant",
+    "name": "Hélicoptère Steampunk",
+    "description": "Devenez le Maître des Airs avec cet Hélicoptère ! Propulsé à la vapeur, il vous emmènera à l'autre bout d'Ezur en un brin de temps.",
+    "kindId": "i00850"
+  },
+  {
+    "id": 1433,
+    "value": 2,
+    "kind": "composant",
+    "name": "Supercopter V.2 Turbo",
+    "description": "Toujours plus vite, toujours plus haut avec ce nouveau modèle tout droit sorti des usines Zumis ! Vous serez désormais le plus rapide des loups volants !",
+    "kindId": "i01085"
+  },
+  {
+    "id": 1434,
+    "value": 3,
+    "kind": "composant",
+    "name": "Dragon Gardien",
+    "description": "Ce dragon est le gardien des citoyens d'Ezur, envoy� par les anciens pour veiller sur eux. Peut transporter jusqu'à 5 personnes.",
+    "kindId": "i00887"
+  },
+  {
+    "id": 1435,
+    "value": 1,
+    "kind": "composant",
+    "name": "Poudre de Joie",
+    "description": "Une poudre coup de fouet faite par les Zumis. Elle provoque un état d'excitation temporaire, ne pas respecter la posologie entra�ne des effets indésirables.",
+    "kindId": "i00980"
+  },
+  {
     "id": 1501,
     "value": 3,
     "kind": "anecdote",
