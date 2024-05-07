@@ -1308,7 +1308,8 @@
     "bgm": null
   },
   "308": {
-    "name": "Couloir de l'Esprit Gardien",
+    "name": "Instances d'Aven (Arènes / Tour des Cieux / Purgatoire / GvG)",
+    "desc": "Couloir de l'Esprit Gardien",
     "wmap_x": 0,
     "wmap_y": 0,
     "wmap": 5,

@@ -39,6 +39,11 @@ https://wiki.vg-resource.com/Noesis , Noesis Download : http://www.richwhitehous
     <input id="bgmToggle" type="checkbox" <?php if(isset($_COOKIE['bgmState'])){ echo $_COOKIE['bgmState'];} ?> />
     <span class="slider round"></span>
     </label>
+    <!-- 07/05 Ajout du Toggle pour white background -->
+    <label class="switch" title="White background" id="iconWhiteBG">
+    <input id="whiteBgToggle" type="checkbox" <?php if(isset($_COOKIE['whiteBgState'])){ echo $_COOKIE['whiteBgState'];} ?> />
+    <span class="slider round"></span>
+    </label>
     </div>
     
 </header>

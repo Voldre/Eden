@@ -354,7 +354,7 @@
     "kind": "boss",
     "name": "Ochak - Primat de la Chelona",
     "description": "Torturran riche qui est Primat (Cardinal) de la Chelona, il a travaill\u00e9 \u00e0 l'Ordre des Chevaliers de la rose, il est capable de desceller.",
-    "kindId": "m042b"
+    "kindId": "ochak"
   },
   {
     "id": 1031,
@@ -442,7 +442,7 @@
     "kind": "boss",
     "name": "Grambo - N°7 Hydra",
     "description": "Anuran Corsaire se battant au pistolet et 7eme t\u00eate de l'Hydra.",
-    "kindId": "m241"
+    "kindId": "grambo"
   },
   {
     "id": 1046,
@@ -755,7 +755,6 @@
     "description": "Ce complément peut renforcer l'utlisateur sur le moyen terme (ex : 1 séance) en PV/défense, etc...",
     "kindId": "I00024"
   },
-
   {
     "id": 1226,
     "value": 1,
@@ -2136,7 +2135,7 @@
     "kind": "anecdote",
     "name": "Estia et War",
     "description": "Au d\u00e9but Estia portait une haute estime pour War, ce grand samoura\u00ef puissant ! Et puis petit \u00e0 petit, la r\u00e9alit\u00e9 \u00e0 fait surface...",
-    "maps": [1, 59],
+    "maps": [59],
     "enemies": [],
     "kindId": "skillIcon/normal10",
     "group": 2
@@ -2191,7 +2190,7 @@
     "kind": "anecdote",
     "name": "Le l\u00e9gendaire bouclier Zuminator",
     "description": "Zuminator aurait laiss\u00e9 en ce monde le symbole de sa puissance et de sa justice : son bouclier !",
-    "maps": [1],
+    "maps": [19],
     "enemies": [],
     "kindId": "items/W73002",
     "group": 2
@@ -2235,7 +2234,7 @@
     "kind": "anecdote",
     "name": "Malvis et le Loukoum",
     "description": "Le Crystal de Volesang est un Loukoum, je cite, Malvis. Malheureusement on dirait bien que ce dernier ne pr\u00e9sente pas les m\u00eames bienfaits gustatifs... !",
-    "maps": [1, 12],
+    "maps": [12],
     "enemies": [111],
     "kindId": "items/I00220b",
     "group": 1
@@ -3159,7 +3158,7 @@
     "kind": "anecdote",
     "name": "Veyda et la Tour des Cieux",
     "description": "La Veyda a pu participer à la Tour des Cieux (catégorie sans tapette/soin), et ils se sont hisser jusqu'aux 15e étage !",
-    "maps": [1],
+    "maps": [308],
     "enemies": [],
     "kindId": "otherIcon/group081",
     "group": 3
@@ -3170,7 +3169,7 @@
     "kind": "anecdote",
     "name": "Draigos et les explosions",
     "description": "Draigos est capable de retourner une situation grâce à l'explosion glaciale, il l'a prouvé face à Grambo et face au Tank Ursun. Il a bloqué physiquement sa charge pour mieux toucher... Ses amis ! EXPLOSION ! Hein ? Fallait pas viser là ?!",
-    "maps": [1],
+    "maps": [308],
     "enemies": [],
     "kindId": "skillIcon/E0726",
     "group": 3
@@ -3676,7 +3675,7 @@
     "kind": "anecdote",
     "name": "Epreuve de la Collecte",
     "description": "La première épreuve du Purgatoire est la collecte, organisée par Vimess. L'objectif est simple : récupéré 3 jetons aux numéros identique et les garder jusqu'au bout, tous les coups sont permis !",
-    "maps": [1],
+    "maps": [308],
     "enemies": [],
     "kindId": "otherIcon/purgatoire",
     "group": 1
@@ -3746,6 +3745,28 @@
     "enemies": [],
     "kindId": "skillIcon/E0675",
     "group": 3
+  },
+  {
+    "id": 1815,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Nanook le déterminé",
+    "description": "Nanook est un vieux Torturran passant pour la 28e fois les épreuves du purgatoire en vue d'une promotion au rang de lieutenant, il est lent... Mais déterminé.",
+    "maps": [2],
+    "enemies": [],
+    "kindId": "monsters/nanook",
+    "group": 1
+  },
+  {
+    "id": 1816,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Promotion de Kibo",
+    "description": "Kibo à par miracle réussi les épreuves écrites, orales (et à peu près l'épreuve de terrain) lui permettant d'obtenir le grade de Lieutenant Défensif !",
+    "maps": [1],
+    "enemies": [],
+    "kindId": "items/I00477",
+    "group": 1
   },
   {
     "id": 15000,

@@ -1213,5 +1213,23 @@
     "icone": "E1052b",
     "stat": "Intelligence",
     "classe": ["Sage"]
+  },
+  "142": {
+    "nom": "Morsure Sauvage",
+    "desc": "Coup de morsure physique.",
+    "effet": "D\u00e9g\u00e2t",
+    "montant": "2D6+1D4",
+    "icone": "E0355",
+    "stat": "Force",
+    "classe": ["loup du givre", "loup du givre (a,a)"]
+  },
+  "143": {
+    "nom": "Attaque tournoyante",
+    "desc": "Coup de queue tournoyante.",
+    "effet": "D\u00e9g\u00e2t AoE R-",
+    "montant": "1D6+3",
+    "icone": "E0892b",
+    "stat": "Force",
+    "classe": ["loup du givre", "loup du givre (a,a)"]
   }
 }
