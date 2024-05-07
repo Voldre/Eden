@@ -7,6 +7,9 @@ var keyboard = {};
 var factor = 1;
 var player = initPlayer(factor);
 
+let onTouch = false;
+let touchKey = null;
+
 var USE_WIREFRAME = false;
 
 // 18/06/22 - Read json file with maps data
@@ -18,26 +21,11 @@ var maplist;
 let folder;
 
 function initPlayer(factor = 1) {
-  const factorSpeed = onMap ? 4 : 1;
-  // if(onMap){
-  //     factorSpeed = 5;
-  // }else{ factorSpeed = 1;}
-
-  if ("ontouchstart" in document.documentElement) {
-    // content for touch-screen (mobile) devices
-    return {
-      height: 1.6,
-      speed: 0.002 * factor * factorSpeed,
-      turnSpeed: Math.PI * 0.0002 * factor,
-    };
-  } else {
-    // everything else (desktop)
-    return {
-      height: 1.6,
-      speed: 0.2 * factor * factorSpeed,
-      turnSpeed: Math.PI * 0.02 * factor,
-    };
-  }
+  return {
+    height: 1.6,
+    speed: 0.15 * factor * (onMap ? 4 : 1),
+    turnSpeed: Math.PI * 0.015 * factor,
+  };
 }
 
 function myObjectInit() {
@@ -175,6 +163,12 @@ function init() {
     document.cookie = "bgmState=checked";
   } else {
     document.cookie = "bgmState=";
+  }
+
+  if (document.getElementById("whiteBgToggle").checked) {
+    document.cookie = "whiteBgState=checked";
+  } else {
+    document.cookie = "whiteBgState=";
   }
 
   if (!onMap) {
@@ -385,6 +379,9 @@ function init() {
             });
           });
         }
+        if (read_cookie("whiteBgState") == "") {
+          scene.background = new THREE.Color();
+        }
 
         // Position et Rotation de notre objet
         if (onMap) {
@@ -499,23 +496,29 @@ function animate() {
   }
 
   // Création des intéractions pour l'interface mobile
-  $("#up").on("click", function () {
-    up();
+  $("#up").on("pointerdown", (e) => {
+    e.preventDefault();
+    touchKey = "up";
   });
-  $("#down").on("click", function () {
-    down();
+  $("#down").on("pointerdown", (e) => {
+    e.preventDefault();
+    touchKey = "down";
   });
-  $("#left").on("click", function () {
-    left();
+  $("#left").on("pointerdown", (e) => {
+    e.preventDefault();
+    touchKey = "left";
   });
-  $("#right").on("click", function () {
-    right();
+  $("#right").on("pointerdown", (e) => {
+    e.preventDefault();
+    touchKey = "right";
   });
-  $("#turnLeft").on("click", function () {
-    turnLeft();
+  $("#turnLeft").on("pointerdown", (e) => {
+    e.preventDefault();
+    touchKey = "turnLeft";
   });
-  $("#turnRight").on("click", function () {
-    turnRight();
+  $("#turnRight").on("pointerdown", (e) => {
+    e.preventDefault();
+    touchKey = "turnRight";
   });
 
   // $("#bgmToggle").on("click",function(){
@@ -542,25 +545,25 @@ function animate() {
   };
 
   // ZQSD mouvement translation
-  if (keyboard[90]) {
+  if (keyboard[90] || (onTouch && touchKey === "up")) {
     // Z key
     if ($("#objets").is(":focus")) {
       $("#objets").blur();
     }
     up();
   }
-  if (keyboard[83]) {
+  if (keyboard[83] || (onTouch && touchKey === "down")) {
     // S key
     if ($("#objets").is(":focus")) {
       $("#objets").blur();
     }
     down();
   }
-  if (keyboard[81]) {
+  if (keyboard[81] || (onTouch && touchKey === "left")) {
     // Q key
     left();
   }
-  if (keyboard[68]) {
+  if (keyboard[68] || (onTouch && touchKey === "right")) {
     // D key
     right();
   }
@@ -568,14 +571,14 @@ function animate() {
   //console.log(camera.position);
 
   // Rotation de la caméra
-  if (keyboard[37]) {
+  if (keyboard[37] || (onTouch && touchKey === "turnLeft")) {
     // left arrow key
     if ($("#objets").is(":focus")) {
       $("#objets").blur();
     }
     turnLeft();
   }
-  if (keyboard[39]) {
+  if (keyboard[39] || (onTouch && touchKey === "turnRight")) {
     // right arrow key
     if ($("#objets").is(":focus")) {
       $("#objets").blur();
@@ -617,6 +620,7 @@ function animate() {
     scene.children[3].rotation.y -= 0.01;
   }
   // Add 18/08/2023 (finally ! After all this time, one year ! xD)
+  // Use R/F to move Top/Bottom the design
   if (keyboard[82]) {
     // R
     scene.children[3].position.y += 0.01;
@@ -654,9 +658,23 @@ function animate() {
     if (document.getElementById("bgmToggle").checked) document.querySelector("audio").pause();
     else document.querySelector("audio").play();
   }
+
+  // Avoid mobile to "save/open image in new tab"
+  document.querySelector('footer').addEventListener("contextmenu", (event) => event.preventDefault());
+
   window.addEventListener("keydown", keyDown);
   window.addEventListener("keyup", keyUp);
+  window.addEventListener("pointerdown", () => {
+    onTouch = true;
+  });
+  window.addEventListener("pointerup", () => {
+    onTouch = false;
+    touchKey = null;
+  });
   document.getElementById("bgmToggle").addEventListener("change", bgmState);
+  document.getElementById("whiteBgToggle").addEventListener("change", (e) => {
+    scene.background = e.target.checked ? new THREE.Color() : null;
+  })
 }
 
 //window.onload = init(1152, 648);

@@ -250,16 +250,20 @@ function updateSkillsList() {
   // Depending on classes
   [...competencesE.children].forEach((competence) => {
     // Skills list
-    var selectedOption = competence.children[0].value;
+    const selectedOption = competence.children[0].value;
     removeOptions(competence.children[0]);
     var option = document.createElement("option");
     option.value = "";
     competence.children[0].append(option);
 
-    var classeP = document.querySelector("#classeP").value;
-    var classeS = document.querySelector("#classeS").value;
+    const classeP = document.querySelector("#classeP").value;
+    const classeS = document.querySelector("#classeS").value;
+
+    // Look at the First weapon name
+    const weaponName = unformatText(document.querySelector('.arme').children[0].value);
+
     Object.values(skillsJSON).forEach((skill) => {
-      if (skill.classe.includes(classeP) || skill.classe.includes(classeS)) {
+      if (skill.classe.includes(classeP) || skill.classe.includes(classeS) || skill.classe.includes(weaponName)) {
         // Si la classe est dans la liste
         var option = document.createElement("option");
         option.value = skill.nom;
@@ -333,7 +337,7 @@ function insertSkill(skillElement, skillName, awakenClass = false) {
     }
 
     if (selectedSkill.effet == "Invocation") {
-      var pvPetE = document.createElement("input");
+      const pvPetE = document.createElement("input");
       pvPetE.type = "number";
       skillElement.append(pvPetE);
     }
@@ -530,6 +534,7 @@ const equipementsE = document.querySelector(".equipements");
     );
     getAllRes(persoEqpts);
     createEquipmentSynthesis(persoEqpts);
+    updateSkillsList();
   });
 
   // Click on eqpt element
@@ -559,6 +564,12 @@ function insertEqpt(eqptElement, eqptName) {
     eqptElement.children[3].src = "http://voldre.free.fr/Eden/images/items/" + selectedEqpt.icone + ".png";
     eqptElement.children[3].title = selectedEqpt.desc;
     eqptElement.children[4].innerText = selectedEqpt.desc;
+
+    if (selectedEqpt.effet == "Monture de Combat") {
+      const pvPetE = document.createElement("input");
+      pvPetE.type = "number";
+      eqptElement.append(pvPetE);
+    }
   }
 }
 

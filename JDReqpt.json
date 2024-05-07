@@ -3594,5 +3594,19 @@
     "montant": "Dégât -4, Dextérité +2",
     "effet": "Monture : Vitesse++",
     "icone": "k20199"
+  },
+  "482": {
+    "nom": "Loup du Givre",
+    "desc": "Originaire des steppes arctiques, c'est une monture tr\u00e8s fid\u00e8le : am\u00e9liorable. Stats: 13,16,9,12,13",
+    "effet": "Monture de Combat",
+    "montant": "D\u00e9g\u00e2t +6 (PV : 80 + 5*niveau)",
+    "icone": "i01513b"
+  },
+  "483": {
+    "nom": "Loup du Givre (A,A)",
+    "desc": "Originaire des steppes arctiques, c'est une monture tr\u00e8s fid\u00e8le : am\u00e9liorable. Stats: 14,17,9,12,14",
+    "effet": "Monture de Combat",
+    "montant": "D\u00e9g\u00e2t +8 (PV : 100 + 5*niveau)",
+    "icone": "i01513e"
   }
 }

@@ -1735,14 +1735,14 @@
     "drop": "rare : Chaussures d'agilit\u00e9 OU Gilet des Dunes Eternelles, tr\u00e8s rare : Dague \u00e9cailles noires"
   },
   "118": {
-    "visuel3D": "m042b",
+    "visuel3D": "ochak",
     "nom": "Ochak - Primat de la Chelona",
     "pvmax": "280",
     "skills": [
-      "Zone noire : 2D10+14 (bloc m-2) AoE stat -2 (stat-3 si parasite) pendant 3 tours : Intelligence",
-      "Eclair en Furie : 4D6 +19 (bloc m-2) et r\u00e9ussite -5 sur 1 tour : Intelligence",
-      "Aura Bouclier Protec (+ Ctrl mentale) : Blocage +3 et -1 Malus pendant 4 tours : esprit",
-      "Esprit Descell\u00e9 : Invoque 1 Fant\u00f4me L\u00e9thargique (2 si d\u00e9 <= 8, si crit : Esprit de la Vengeance) : Esprit"
+      "Zone noire : 2D10+16 (bloc m-2) AoE stat -2 (stat-3 si parasite) pendant 3 tours : Intelligence",
+      "Eclair en Furie : 4D6 +21 (bloc m-2) et r\u00e9ussite -5 sur 1 tour : Intelligence",
+      "Aura Bouclier Protec (+ Ctrl mentale) : Blocage +3 et (-1 Malus si dé <=6) pendant 4 tours : esprit",
+      "Esprit Descell\u00e9 : Invoque 1 Fant\u00f4me L\u00e9thargique (2 si d\u00e9 <= 8, si crit : Esprit de la Vengeance) : Esprit<br/> Prévention du Descelleur : D\u00e9g\u00e2t -1D4-4 pour 4 tours, -1 malus : (même silence) Intelligence"
     ],
     "stats": "13,7,17,10,17",
     "desc": "Torturran riche qui est Primat (Cardinal) de la Chelona, il a travaill\u00e9 \u00e0 l'Ordre des Chevaliers de la rose, capable de desceller",
@@ -2230,7 +2230,7 @@
     "drop": "Ecaille/Peau/Griffe rare de tortue, tr\u00e8s rare : Plastron \u00e9cailleux"
   },
   "151": {
-    "visuel3D": "m241",
+    "visuel3D": "grambo",
     "nom": "Grambo - N\u00b07 Hydra",
     "pvmax": "210",
     "skills": [
@@ -2635,7 +2635,7 @@
     "drop": "rare : Collier Lueur d'\u00e2me, tr\u00e8s rare : Hache du Bul'tik"
   },
   "178": {
-    "visuel3D": "m315",
+    "visuel3D": "adonis",
     "nom": "Adonis 2 - Juge d\u00e9termin\u00e9",
     "pvmax": "270",
     "skills": [
