@@ -1675,16 +1675,16 @@
     "drop": "rare : Sceptre du Shaman, tr\u00e8s rare : Cape de sorcier"
   },
   "114": {
-    "visuel3D": "m249",
+    "visuel3D": "zephyr",
     "nom": "Z\u00e9phyr",
-    "pvmax": "230",
+    "pvmax": "240",
     "skills": [
       "Aura Bouclier Protec : Blocage +3 pendant 4 tours : esprit",
       "Aura Ami du Marteau : Soin 2D10 +15. Prochain d\u00e9g\u00e2t +2D6+6 : intel",
-      "Marteau du Scellement (Mono/AoE) : 2D6+12 (jdrcombat +18) glace, retire un bu'ff : intel",
+      "Marteau du Scellement (Mono/AoE -5) : 2D6+16 (jdrcombat +20) glace, retire un bu'ff : intel",
       "Symphonie de guerre : D\u00e9g\u00e2t +1D6+4 AoE (3 tours) : esprit"
     ],
-    "stats": "5,11,16,12,17",
+    "stats": "9,11,19,14,18",
     "desc": "Grand sage de la Curie M\u00e9t\u00e9role : Commandant (U Def) et Cardinal. Carr\u00e9 et sympa",
     "infos": "Faible au per\u00e7ant et nature",
     "drop": "40po, Marteau Canon Glacial, rare : Collier Asbi"
@@ -1692,7 +1692,7 @@
   "115": {
     "visuel3D": "m021",
     "nom": "Dragon Terrestre",
-    "pvmax": "300",
+    "pvmax": "350",
     "skills": [
       "Tremblement Intense : 2D10 +11 AoE : force",
       "Croc/Griffe Imposante : 3D6+16 : force",
@@ -1707,7 +1707,7 @@
   "116": {
     "visuel3D": "m369",
     "nom": "Dragon Fourrure Mythique",
-    "pvmax": "300",
+    "pvmax": "350",
     "skills": [
       "Tremblement Intense : 2D10 +11 AoE : force",
       "Croc/Griffe Imposante : 3D6+16 : force",
@@ -1930,7 +1930,7 @@
     "drop": "Mucus de fourmilion, crochet enchant\u00e9"
   },
   "131": {
-    "visuel3D": "m473b",
+    "visuel3D": "botassius",
     "nom": "Botassius - G\u00e9n\u00e9ral D\u00e9fensif",
     "pvmax": "300",
     "skills": [
@@ -2294,10 +2294,10 @@
     "nom": "Akala - T\u00eate de l'Hydra",
     "pvmax": "300",
     "skills": [
-      "Destruction/Coupure Noir/Blanc : AoE 3D6+20 (+ 1D Mono) (Chaque \"-100 PV\" : -5), Force/Intel",
+      "Destruction/Coupure Noir/Blanc : AoE 3D6+20 (+ 1D Mono) (Chaque -100 PV : -5), Force/Intel",
       "Assaut du Chaos HYDRA (7 t\u00eates/charges) : 3D6+22 (chance blocage/2) : Intel",
-      "Terreur du Dragon : R\u00e9ussite -3 (4 tours). Revers d'\u00e9caille : 2 tentatives par double (<10 : 66%, >=10 : 33%) (Soin 15 PV #Cach\u00e9) : Esprit",
-      "Passif : Tous les 100 PV : D\u00e9doublement Eveill\u00e9. Si PV < 100 et critique : +1 Double (1 fois)"
+      "Terreur du Dragon : Résistance d'Esprit et R\u00e9ussite -3 (3 tours (2t si double)) AoE.<br/>Si Double : Revers d'\u00e9caille : 2 tentatives chacun + perd son tour (Soin 20 PV #Cach\u00e9) : Esprit",
+      "Passif : Blocage +1. Tous les 100 PV : D\u00e9doublement Eveill\u00e9. Si PV < 100 et critique : +1 Double (1 fois)"
     ],
     "stats": "17,11,17,13,16",
     "desc": "Homme DK Luminary chef de la guilde Hydra, ind\u00e9pendant de l'Empire Heldentod, il veut atteindre les sommets.",
@@ -2419,7 +2419,7 @@
       "Parasite obscur : 12 + 4/t *5 // Fl\u00e8che des Ombres : 2D10+ 12, si para : heal 2D6+6+4 si actif : Intel",
       "Voile du Blizzard (Intel +1) / Saut Dimensionnel (3 fois) // Passif : Tous les effets +1 tour ! # Invisible into d\u00e9doublement, mais double invisi 100%"
     ],
-    "stats": "7,11,17,11,19",
+    "stats": "7,11,17,12,19",
     "desc": "Ezelin trop cute aux cheveux violets, un peu enfantine en apparence mais tr\u00e8s d\u00e9termin\u00e9e et dou\u00e9e. A un passif avec la Beholder",
     "infos": "Faible au tranchant et au feu // Gameplay Akala \"Je joue 2 fois!\"",
     "drop": "rare : Robe \u00e9toil\u00e9e renforc\u00e9e, tr\u00e8s rare : B\u00e2ton Quartz d'Automne"
@@ -2592,12 +2592,12 @@
   "175": {
     "visuel3D": "lucius",
     "nom": "Lucius - Chef de la Veyda",
-    "pvmax": "290",
+    "pvmax": "280",
     "skills": [
-      "Soin Inverseur : Transforme les soins re\u00e7us par les ennemis en d\u00e9g\u00e2t (AoE) 4 tours (non annulable) : Esprit",
+      "Soin Inverseur (4 fois max) : Transforme les soins re\u00e7us par les ennemis en d\u00e9g\u00e2t (AoE) sur 3 tours (non annulable) : Esprit",
       "Faiblesse Critique : 4D6 +18 Crit (1,2 : *1.5, 3 : *1.25) : Force<br/>Cicatrice : 4D6+20 (-1 bonus) : Force -1",
       "Griffure Noire : 3D6 +12, et -2 blocage/esquive pour 3 tours AoE : Force",
-      "Pelote d'entrave : 4 tentatives (Instantan\u00e9e) : Mono/AoE force \u00e0 re-esquiver ou re-bloquer (r\u00e9ussite -1) : Esprit <br/> Passif : Si Blocage/Esquive critique : Coup d'opportunit\u00e9"
+      "Pelote d'entrave : 4 tentatives (Instantan\u00e9e) : Mono/AoE force \u00e0 re-esquiver ou re-bloquer (r\u00e9ussite -1) : Esprit <br/> Passif : Si Blocage/Esquive critique : Coup d'opportunit\u00e9 (max 2 fois par tour)"
     ],
     "stats": "18,8,14,14,17",
     "desc": "Lucius, ancien Roi D\u00e9chu du pass\u00e9, il a fond\u00e9 la Veyda pour assouvir ses nouvelles ambitions de conqu\u00eates du monde. Avec cette fois plus de pr\u00e9paration.",

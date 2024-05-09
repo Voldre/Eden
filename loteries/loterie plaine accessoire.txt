@@ -1,6 +1,6 @@
 Dé Amplificateur
-Pendentif Ailé OU Pièce dorée Alpaga
-*Plume brillante OU Bouquin Pare-balle 
+Bouquin Pare-balle OU Pièce dorée Alpaga
+*Plume brillante OU Pendentif Ailé
 Pièce argentée Alpaga OU Bijou Iris
 Anneau du Sorcier OU Plaque Réfléchissante
 Cache oeil de Pirate ou Bible du Familier
@@ -9,11 +9,11 @@ Collier Asbi OU Crochet enchanté
 *Calice de la Curie Métérole OU Boucle d'oreilles du Maëlstrom
 Gourde miraculeuse
 Amulette d'Expérience
-Ceinture de Samouraï
+*Ceinture de Samouraï
 Pendentif du Croc Brumeux
 **Charme d'Expérience
 Pierre de sécurité
-Anneau de résistance magique
+*Anneau de résistance magique
 Glyphe des Ursuns OU Puce Electronique Silus
 Glyphe des Ursuns (2)
 Croc de Smilodon
