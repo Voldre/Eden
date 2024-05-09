@@ -25,7 +25,7 @@ const elementsCategories = elements.map((element) => {
   // Remove all accents (é,è,ç)
   const labelElement = unformatText(element);
   // Dégât xxx + || Dégât de xxx + ... ?
-  return { regex: [` ${element} +`], label: labelElement, img: true };
+  return { regex: [`${element} +`], label: labelElement, img: true };
 });
 
 const synthesisCategories = [
@@ -985,6 +985,7 @@ function savePerso() {
     notes: document.querySelector(".notes").value,
     sticky: document.querySelector(".sticky").value,
     isArchived: persosJSON[persoId]?.isArchived ?? false,
+    joueur: persosJSON[persoId]?.joueur ?? null
   };
 
   console.log(persosJSON);

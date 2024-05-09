@@ -306,7 +306,7 @@
     "kind": "boss",
     "name": "Z\u00e9phyr - Sage Cardinal",
     "description": "Grand sage de la Curie M\u00e9t\u00e9role : Commandant (U Def) et Cardinal. Mec pas tr\u00e8s carr\u00e9 mais sympa.",
-    "kindId": "m249"
+    "kindId": "zephyr"
   },
   {
     "id": 1025,
@@ -370,7 +370,7 @@
     "kind": "boss",
     "name": "Botassius - Gardien de Lumière",
     "description": "Grand g\u00e9n\u00e9ral de division d\u00e9fensive de la Curie. On raconte qu'il n'est jamais tomb\u00e9 lors d'un combat. Sa dévotion et son courage l'immunise contre bien des altérations.",
-    "kindId": "m473b"
+    "kindId": "botassius"
   },
   {
     "id": 1034,
@@ -1981,7 +1981,7 @@
     "kind": "anecdote",
     "name": "Aradia et les enfants",
     "description": "Aradia a l'habitude de former son arm\u00e9e, son arm\u00e9e d'enfants d\u00e9mons ! Ensemble ils chassent pour conqu\u00e9rir les bonbons !",
-    "maps": [10, 1],
+    "maps": [10],
     "enemies": [],
     "kindId": "skillIcon/E0487",
     "group": 2
@@ -3532,7 +3532,7 @@
     "kind": "anecdote",
     "name": "Combat interminable",
     "description": "A la fin du Purgatoire Blanc, Zéphyr a décidé d'organiser un combat contre le groupe avec une invité d'honneur : Diana ! Mais malgré sa puissance le combat a été interminable ! Il y a eu beaucoup de blocage et de soins des deux côtés !",
-    "maps": [1],
+    "maps": [308],
     "enemies": [],
     "kindId": "skillIcon/J567",
     "group": 1
@@ -3652,8 +3652,8 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Ol et Erida",
-    "description": "Erida a profité de ses jours de repos pour retrouver Ol et lui donner des conseils d'aventuriers. Ils ont pu partir à l'aventure et tisser une vraie relation tout les deux. Ol était ravi que quelqu'un pense à lui.",
-    "maps": [1],
+    "description": "Erida a profité de ses jours de repos pour retrouver Ol et lui donner des conseils d'aventuriers. Ils ont pu partir à l'aventure à la Colline Tranquille et tisser une vraie relation tous les deux. Ol était ravi que quelqu'un pense à lui.",
+    "maps": [3],
     "enemies": [],
     "kindId": "uiiconPNG/olcoeur",
     "group": 1
@@ -3762,10 +3762,32 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Promotion de Kibo",
-    "description": "Kibo à par miracle réussi les épreuves écrites, orales (et à peu près l'épreuve de terrain) lui permettant d'obtenir le grade de Lieutenant Défensif !",
+    "description": "Kibo a, par miracle, réussi les épreuves écrites, orales (et à peu près l'épreuve de terrain) lui permettant d'obtenir le grade de Lieutenant Défensif !",
     "maps": [1],
     "enemies": [],
     "kindId": "items/I00477",
+    "group": 1
+  },
+  {
+    "id": 1817,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Parade des Chevaliers du Temple",
+    "description": "La parade a été l'occasion de féciliter les jeunes promus de la Curie, ainsi qu'une occasion en or de faire la fête et de se remémorer les temps passés (spectacle, histoire, quizz,...)",
+    "maps": [1],
+    "enemies": [],
+    "kindId": "uiiconPNG/Promotion 05_24",
+    "group": 1
+  },
+  {
+    "id": 1818,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Course de la Ferralpaga",
+    "description": "L'écurie Ferralpaga a orgnaisé pendant le festival une course de montures. Malvis, Kibo et Erida y sont allés et ont défier le grand Moturth ! Brocoli dopé à fond à fini 1er et Erida 3eme !",
+    "maps": [1],
+    "enemies": [],
+    "kindId": "otherIcon/ac513",
     "group": 1
   },
   {
