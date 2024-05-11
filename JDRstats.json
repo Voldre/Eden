@@ -7,7 +7,8 @@
       "Intelligence": 3,
       "Charisme": 7,
       "Esprit": 7,
-      "PV": 60
+      "PV": 60,
+      "armure": "lourd"
     },
     {
       "Classe": "Chevalier",
@@ -16,7 +17,8 @@
       "Intelligence": 3,
       "Charisme": 7,
       "Esprit": 7,
-      "PV": 50
+      "PV": 50,
+      "armure": "lourd"
     },
     {
       "Classe": "Templier",
@@ -25,7 +27,8 @@
       "Intelligence": 6,
       "Charisme": 6,
       "Esprit": 6,
-      "PV": 60
+      "PV": 60,
+      "armure": "lourd"
     },
     {
       "Classe": "Chev Dragon",
@@ -34,7 +37,8 @@
       "Intelligence": 4,
       "Charisme": 7,
       "Esprit": 7,
-      "PV": 55
+      "PV": 55,
+      "armure": "lourd"
     },
     {
       "Classe": "Voleur",
@@ -43,7 +47,8 @@
       "Intelligence": 3,
       "Charisme": 6,
       "Esprit": 7,
-      "PV": 40
+      "PV": 40,
+      "armure": "leger"
     },
     {
       "Classe": "Assassin",
@@ -52,7 +57,8 @@
       "Intelligence": 3,
       "Charisme": 5,
       "Esprit": 6,
-      "PV": 50
+      "PV": 50,
+      "armure": "leger"
     },
     {
       "Classe": "Danselame",
@@ -61,7 +67,8 @@
       "Intelligence": 4,
       "Charisme": 8,
       "Esprit": 6,
-      "PV": 40
+      "PV": 40,
+      "armure": "leger"
     },
     {
       "Classe": "Samouraï",
@@ -70,7 +77,8 @@
       "Intelligence": 3,
       "Charisme": 5,
       "Esprit": 7,
-      "PV": 55
+      "PV": 55,
+      "armure": "lourd"
     },
     {
       "Classe": "Chasseur",
@@ -79,7 +87,8 @@
       "Intelligence": 4,
       "Charisme": 6,
       "Esprit": 7,
-      "PV": 45
+      "PV": 45,
+      "armure": "leger"
     },
     {
       "Classe": "Ingénieur",
@@ -88,7 +97,8 @@
       "Intelligence": 5,
       "Charisme": 5,
       "Esprit": 7,
-      "PV": 50
+      "PV": 50,
+      "armure": "leger"
     },
     {
       "Classe": "Corsaire",
@@ -97,7 +107,8 @@
       "Intelligence": 4,
       "Charisme": 7,
       "Esprit": 6,
-      "PV": 45
+      "PV": 45,
+      "armure": "leger"
     },
     {
       "Classe": "Juge",
@@ -106,7 +117,8 @@
       "Intelligence": 4,
       "Charisme": 6,
       "Esprit": 6,
-      "PV": 50
+      "PV": 50,
+      "armure": "leger"
     },
     {
       "Classe": "Clerc",
@@ -115,7 +127,8 @@
       "Intelligence": 9,
       "Charisme": 7,
       "Esprit": 7,
-      "PV": 35
+      "PV": 35,
+      "armure": "magique"
     },
     {
       "Classe": "Barde",
@@ -124,7 +137,8 @@
       "Intelligence": 7,
       "Charisme": 8,
       "Esprit": 7,
-      "PV": 35
+      "PV": 35,
+      "armure": "magique"
     },
     {
       "Classe": "Shaman",
@@ -133,7 +147,8 @@
       "Intelligence": 8,
       "Charisme": 6,
       "Esprit": 8,
-      "PV": 40
+      "PV": 40,
+      "armure": "magique"
     },
     {
       "Classe": "Sage",
@@ -142,7 +157,8 @@
       "Intelligence": 7,
       "Charisme": 6,
       "Esprit": 8,
-      "PV": 40
+      "PV": 40,
+      "armure": "magique"
     },
     {
       "Classe": "Magicien",
@@ -151,7 +167,8 @@
       "Intelligence": 9,
       "Charisme": 6,
       "Esprit": 8,
-      "PV": 35
+      "PV": 35,
+      "armure": "magique"
     },
     {
       "Classe": "Illusionniste",
@@ -160,7 +177,8 @@
       "Intelligence": 7,
       "Charisme": 6,
       "Esprit": 9,
-      "PV": 35
+      "PV": 35,
+      "armure": "magique"
     },
     {
       "Classe": "Démoniste",
@@ -169,7 +187,8 @@
       "Intelligence": 8,
       "Charisme": 6,
       "Esprit": 8,
-      "PV": 35
+      "PV": 35,
+      "armure": "magique"
     },
     {
       "Classe": "Luminary",
@@ -178,7 +197,8 @@
       "Intelligence": 8,
       "Charisme": 5,
       "Esprit": 7,
-      "PV": 45
+      "PV": 45,
+      "armure": "magique"
     }
   ],
   "races": [

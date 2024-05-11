@@ -1173,7 +1173,7 @@
     "nom": "Instinct de Survie",
     "desc": "Le sang de dragon bouillonne et enclenche le mode survie pour son porteur. Effets - Embras\u00e9 : D\u00e9g\u00e2ts +3; D\u00e9moniaque : Blocage+1; Cach\u00e9 : Soin PV+3",
     "effet": "Buff et Soin",
-    "montant": "(Si PV <50%) Soin 1D4+2 (bonus des montants /2) pendant 3 tours (+ effet mode)",
+    "montant": "(Si PV <50%) Soin 1D4+2 (bonus des montants de soin /2) pendant 3 tours (+ effet mode)",
     "icone": "E0583",
     "stat": "Force",
     "classe": ["Chev Dragon"]
