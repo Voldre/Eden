@@ -246,7 +246,7 @@
     "nom": "R\u00e9cup\u00e9ration de la b\u00eate",
     "desc": "Soigne votre Familier et le renforce",
     "effet": "Soin",
-    "montant": "2D6 +8. D\u00e9g\u00e2t+5 pour 3 tours",
+    "montant": "2D6 +8. D\u00e9g\u00e2t+4 pour 3 tours",
     "icone": "E0260",
     "stat": "Esprit",
     "classe": ["Chasseur"]
@@ -1229,7 +1229,7 @@
     "effet": "D\u00e9g\u00e2t AoE R-",
     "montant": "1D6+3",
     "icone": "E0892b",
-    "stat": "Force",
+    "stat": "Dext\u00e9rit\u00e9",
     "classe": ["loup du givre", "loup du givre (a,a)"]
   }
 }

@@ -1,4 +1,4 @@
-import { skillsJSON, skillsAwakenJSON, eqptJSON, persosJSON, galeryJSON, masterJSON } from "./JDRstore";
+import { skillsJSON, skillsAwakenJSON, eqptJSON, persosJSON, galeryJSON, masterJSON, statsJSON } from "./JDRstore";
 import { callPHP, toastNotification, initDialog, parseEqptsByRegex, unformatText } from "./utils";
 
 console.log("Skills JSON", skillsJSON);
@@ -260,7 +260,7 @@ function updateSkillsList() {
     const classeS = document.querySelector("#classeS").value;
 
     // Look at the First weapon name
-    const weaponName = unformatText(document.querySelector('.arme').children[0].value);
+    const weaponName = unformatText(document.querySelector(".arme").children[0].value);
 
     Object.values(skillsJSON).forEach((skill) => {
       if (skill.classe.includes(classeP) || skill.classe.includes(classeS) || skill.classe.includes(weaponName)) {
@@ -565,6 +565,11 @@ function insertEqpt(eqptElement, eqptName) {
     eqptElement.children[3].title = selectedEqpt.desc;
     eqptElement.children[4].innerText = selectedEqpt.desc;
 
+    // Update eqptElement 05/2024, case de PV pour monture
+    if (eqptElement.children.length >= 6) {
+      eqptElement.removeChild(eqptElement.children[5]);
+    }
+
     if (selectedEqpt.effet == "Monture de Combat") {
       const pvPetE = document.createElement("input");
       pvPetE.type = "number";
@@ -694,9 +699,6 @@ function loadFiche(indexPerso) {
   document.querySelector(".iconClasses").children[1].id = persoData.classeS;
   document.querySelector(".iconClasses").children[1].src =
     "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" + iconsClasses[classeSID] + ".png";
-  updateSkillsList();
-
-  updateSkillsSlots();
 
   // Nouveauté 15/08 : Calcul automatique du montant des stats
   statsVerification(persoData.niv);
@@ -718,13 +720,6 @@ function loadFiche(indexPerso) {
 
   defineAwaken(persoData.awaken);
 
-  // Skills du perso
-  JSON.parse(persoData.skills).forEach((skill, index) => {
-    var competence = [...competencesE.children][index];
-    competence.children[0].value = skill;
-    insertSkill(competence, skill);
-  });
-
   // Equipements du perso
   const persoEqptsName = JSON.parse(persoData.eqpts);
   persoEqptsName.forEach((eqpt, index) => {
@@ -739,6 +734,17 @@ function loadFiche(indexPerso) {
   getAllRes(persoEqpts);
   createEquipmentSynthesis(persoEqpts);
 
+  // Skills du perso (update list après les équipements, car skills issus de l'arme "Monture de Combat")
+  updateSkillsList();
+
+  updateSkillsSlots();
+
+  JSON.parse(persoData.skills).forEach((skill, index) => {
+    var competence = [...competencesE.children][index];
+    competence.children[0].value = skill;
+    insertSkill(competence, skill);
+  });
+
   // Inventaire du perso
   document.querySelector(".inventaire").value = persoData.inventaire;
 
@@ -748,6 +754,8 @@ function loadFiche(indexPerso) {
 
   document.querySelector(".personnalité").value = persoData.personnalite;
   document.querySelector(".background").value = persoData.background;
+
+  saveButton.disabled = false;
 }
 
 function statsValue(resistance) {
@@ -916,8 +924,9 @@ document.querySelector(".galerie").addEventListener("click", (e) => {
 // ALL SAVE
 
 // Save persos
+const saveButton = document.querySelector("#save");
 
-document.querySelector("#save").addEventListener("click", () => {
+saveButton.addEventListener("click", () => {
   if (!masterJSON.allow) {
     toastNotification("Les sauvegardes sont bloquées par le MJ");
     return;
@@ -926,7 +935,7 @@ document.querySelector("#save").addEventListener("click", () => {
   // Save to JSON...
   // Only store persosJSON current user (perso id)
   if (!cookiePerso) {
-    toastNotification("Erreur : ID Perso invalide");
+    toastNotification("Erreur : ID Perso ou Nom invalide");
     return;
   }
   console.log(cookiePerso.length);
@@ -946,10 +955,12 @@ function savePerso() {
   const eqptsName = [...equipementsE.children].map((competenceE) => competenceE.children[0].value);
 
   const persoId = document.querySelector(".perso").id;
-  if (!persoId || persoId < 0) return null;
+  const name = document.querySelector("#nom").value;
+
+  if (!persoId || persoId < 0 || !name) return null;
 
   persosJSON[persoId] = {
-    nom: document.querySelector("#nom").value,
+    nom: name,
     race: document.querySelector("#race").value,
     classeP: document.querySelector("#classeP").value,
     classeS: document.querySelector("#classeS").value,
@@ -985,7 +996,7 @@ function savePerso() {
     notes: document.querySelector(".notes").value,
     sticky: document.querySelector(".sticky").value,
     isArchived: persosJSON[persoId]?.isArchived ?? false,
-    joueur: persosJSON[persoId]?.joueur ?? null
+    joueur: persosJSON[persoId]?.joueur ?? null,
   };
 
   console.log(persosJSON);
@@ -1055,3 +1066,107 @@ const labelsDescription = {
 };
 
 initDialog(labelsDescription);
+
+// Display information about all basic stats of the character (race, class, level)
+
+const infoStatsE = document.querySelector("#infoStats");
+
+infoStatsE.addEventListener("click", () => {
+  // Calculation of all stats
+  const race = document.querySelector("#race").value;
+  const classeP = document.querySelector("#classeP").value;
+  const classeS = document.querySelector("#classeS").value;
+  const niv = document.querySelector("#niv").value;
+
+  const classesStats = statsJSON.classes.filter((e) => [classeP, classeS].includes(e.Classe));
+  const raceStats = statsJSON.races.find((e) => e.Race === race);
+
+  const allStats = sumObjectsByKey(classesStats[0], classesStats[1] ?? classesStats[0], raceStats);
+  const eqptsName = [...equipementsE.children].map((competenceE) => competenceE.children[0].value);
+
+  const persoEqpts = eqptsName.map((eqptName) =>
+    Object.values(eqptJSON).find((eqpt) => unformatText(eqpt.nom) == unformatText(eqptName))
+  );
+
+  const indexPerso = document.querySelector(".perso").id;
+  const pvStuff = parseEqptsByRegex(["PV +"], persoEqpts, persosJSON[indexPerso]).reduce((a, b) => a + b);
+
+  console.log("allStats", allStats);
+
+  const dialog = document.querySelector("dialog");
+
+  dialog.innerText = "";
+  dialog.style.width = "75%";
+
+  const globalE = document.createElement("p");
+  globalE.className = "dialogStats";
+
+  const titleE = document.createElement("h2");
+  titleE.innerText = "Statistique de référence";
+  globalE.append(titleE);
+
+  const pv = document.createElement("p");
+  pv.innerText = `PV : ${allStats.PV + 5 * (niv - 1) + pvStuff} = ${allStats.PV} (base) + ${
+    5 * (niv - 1)
+  } (niveau) + ${pvStuff} (stuff)`;
+  globalE.append(pv);
+
+  // Count stats over 17
+  let statOver = 0;
+
+  const statsE = document.createElement("div");
+  statsE.className = "stats";
+  ["Force", "Dextérité", "Intelligence", "Charisme", "Esprit"].map((statName) => {
+    const statE = document.createElement("div");
+    statE.className = "stat";
+
+    const statNameE = document.createElement("p");
+    statNameE.innerText = statName;
+
+    // Esprit is "- 1" under level 5
+    const statValue = allStats[statName] + (statName === "Esprit" && niv < 5 ? -1 : 0);
+
+    const over = Math.max(statValue - 17, 0);
+    statOver += over;
+
+    statE.append(statNameE, `${statValue}${over > 0 ? ` (-${over})` : ""}`);
+    statsE.append(statE);
+  });
+
+  globalE.append(statsE);
+
+  const sumStats =
+    allStats["Force"] +
+    allStats["Dextérité"] +
+    allStats["Intelligence"] +
+    allStats["Charisme"] +
+    (allStats["Esprit"] - 2);
+
+  const nbStatsToChoose = 60 - sumStats + Math.max(Math.ceil((niv - 9) / 5), 0);
+  const nivInfo = document.createElement("p");
+  nivInfo.innerText = `+ ${nbStatsToChoose + statOver} stat(s) au choix, car niveau ${niv}`;
+  globalE.append(nivInfo);
+
+  // Bouton de fermeture
+  const closeE = document.createElement("button");
+  closeE.id = "close";
+  closeE.innerText = "Fermer";
+  closeE.addEventListener("click", () => {
+    dialog.close();
+  });
+  globalE.append(closeE);
+
+  dialog.append(globalE);
+  // Ouverture en "modal"
+  dialog.showModal();
+});
+
+function sumObjectsByKey(...objs) {
+  console.log(objs);
+  return objs.reduce((a, b) => {
+    for (let k in b) {
+      if (b.hasOwnProperty(k)) a[k] = (a[k] || 0) + b[k];
+    }
+    return a;
+  }, {});
+}
