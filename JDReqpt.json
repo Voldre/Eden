@@ -2243,7 +2243,7 @@
   },
   "304": {
     "nom": "Cotte de Maille",
-    "desc": "Une cotte de maille, flexible et solide \u00e0 la fois, permet \u00e0 son porteur de mieux bloquer.",
+    "desc": "(Armure Légère) Une cotte de maille, flexible et solide \u00e0 la fois, permet \u00e0 son porteur de mieux bloquer.",
     "effet": "Blocage +1",
     "montant": "D\u00e9g\u00e2t -4",
     "icone": "A20073"
@@ -2651,7 +2651,7 @@
   },
   "357": {
     "nom": "Cotte Heldentod",
-    "desc": "Une cotte de maille tr\u00e8s r\u00e9sistante port\u00e9e par certaines unit\u00e9s Heldentod.",
+    "desc": "(Armure Lourde) Une cotte de maille tr\u00e8s r\u00e9sistante port\u00e9e par certaines unit\u00e9s Heldentod.",
     "effet": "",
     "montant": "D\u00e9g\u00e2t -6",
     "icone": "A20074"
@@ -3080,7 +3080,7 @@
   },
   "413": {
     "nom": "Cotte du Survivant",
-    "desc": "Cette cotte de maille est r\u00e9put\u00e9e pour avoir sauv\u00e9 la vie \u00e0 un bon nombre de h\u00e9ros.",
+    "desc": "(Armure Légère) Cette cotte de maille est r\u00e9put\u00e9e pour avoir sauv\u00e9 la vie \u00e0 un bon nombre de h\u00e9ros.",
     "effet": "",
     "montant": "D\u00e9g\u00e2t -4, Blocage +1 (+1 si PV < 33%)",
     "condition": { "type": "PV", "value": "3", "bonus": "Blocage +1" },

@@ -45,7 +45,8 @@ document.querySelector("#race").addEventListener("change", (e) => {
 });
 
 // CLASSES
-document.querySelectorAll('[id^="classe"]').forEach((classeElem, i) => {
+const allClassE = document.querySelectorAll('[id^="classe"]');
+allClassE.forEach((classeElem, i) => {
   ["", ...classes].forEach((classe) => {
     const option = document.createElement("option");
     option.value = classe;
@@ -54,7 +55,7 @@ document.querySelectorAll('[id^="classe"]').forEach((classeElem, i) => {
   });
 
   classeElem.addEventListener("change", (e) => {
-    var selectedClasseID = classes.indexOf(e.target.value);
+    const selectedClasseID = classes.indexOf(e.target.value);
     if (selectedClasseID == -1) {
       console.log(e.target.value + " is not a class (in the list)");
       document.querySelector(".iconClasses").children[i].src = "";
@@ -63,9 +64,68 @@ document.querySelectorAll('[id^="classe"]').forEach((classeElem, i) => {
         "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" + iconsClasses[selectedClasseID] + ".png";
 
       updateSkillsList();
+
+      // Display armor type
+      displayArmorTypes();
     }
   });
 });
+
+const displayArmorTypes = () => {
+  const physicBorderClasses = ["Chevalier"];
+  const magicBorderClasses = ["Sage", "Luminary"];
+
+  const classes = [allClassE[0].value, allClassE[1].value];
+  const classesArmorTypes = classes.map((classe) => statsJSON.classes.find((c) => c.Classe === classe));
+
+  let physicException = false;
+  let magicException = false;
+
+  physicBorderClasses.forEach((pClass) => {
+    if (classes.includes(pClass)) {
+      physicException = true;
+    }
+  });
+  magicBorderClasses.forEach((pClass) => {
+    if (classes.includes(pClass)) {
+      magicException = true;
+    }
+  });
+
+  let armorTypes = [];
+
+  if (physicException) {
+    const otherClass = classesArmorTypes.filter((c) => !physicBorderClasses.includes(c.Classe))[0];
+    armorTypes.push("lourd");
+    if (!otherClass) {
+      // Chevalier Chevalier
+      armorTypes.push("leger");
+    } else if (otherClass.armure !== "lourd") {
+      armorTypes.push("leger");
+      armorTypes.push(otherClass.armure);
+    }
+  } else if (magicException) {
+    const otherClass = classesArmorTypes.filter((c) => !magicBorderClasses.includes(c.Classe))[0];
+    armorTypes.push("magique");
+    if (!otherClass) {
+      // Sage Luminary - or one twice
+      armorTypes.push("leger");
+    } else if (otherClass.armure !== "magique") {
+      armorTypes.push("leger");
+      armorTypes.push(otherClass.armure);
+    }
+  } else
+    armorTypes = statsJSON.classes
+      .filter((e) => classes.includes(e.Classe))
+      .map((classStat) => classStat.armure)
+      .flat();
+
+  // console.log(allClassE[0].value, allClassE[1].value, armorTypes);
+
+  ["magique", "leger", "lourd"].forEach((type) => {
+    document.querySelector("#" + type).className = armorTypes.includes(type) ? "skillRangeIcon" : "hide skillRangeIcon";
+  });
+};
 
 // CLASSES EVEILLES
 const iconClassesEs = [...document.querySelector(".iconClasses").children];
@@ -658,6 +718,8 @@ function loadFiche(indexPerso) {
   document.querySelector("#race").value = persoData.race;
   document.querySelector("#classeP").value = persoData.classeP;
   document.querySelector("#classeS").value = persoData.classeS;
+
+  displayArmorTypes();
   document.querySelector("#xp").value = persoData.xp;
   document.querySelector("#niv").value = persoData.niv;
 
@@ -1060,7 +1122,7 @@ const labelsDescription = {
   stress:
     'Fatigue/Stress max : 200%. Chaque 50%, les stats diminue de 1 (4 max).<br/> La fatigue s\'accumule au fur et à mesures des combats (sauf tour des cieux). Le stress uniquement dans les zones dédiées.<br/><br/>Le stress "accentué" augmente de 50%, la "réduction" diminue de 33%.',
   infoEQPT:
-    "Changer d'arme en combat se fait en début de tour (action instantanée). <br/><br/>Porter une armure non adapté (magique, léger, lourd) n'est pas possible. Sauf si gros malus (malus de stats, ...).<br/><br/>Le montant fixe total de l'ensemble des stuffs est limité : +2 de montant des buffs et +1 durée des buffs.<br/><br/>Le montant fixe total (hors %) des accessoires est limité : +2 par stat, +3 blocage/esquive, pour les soins (infligé, reçu) : 6, pour les dégâts infligés : 6 (+2 si bonus élémentaire) et dégâts reçu : 5",
+    'Changer d\'arme en combat se fait en début de tour (action instantanée). <br/><br/>Porter une armure non adapté (magique, léger, lourd) implique des malus de stats (voir page "Infos JDR", section "Armure").<br/><br/>Le montant total de l\'ensemble des stuffs est limité : +2 de montant des buffs et +1 durée des buffs.<br/><br/>Le montant fixe total (hors %) des accessoires est limité : +2 par stat, +3 blocage/esquive, pour les soins (infligé, reçu) : 6, pour les dégâts infligés : 6 (+2 si bonus élémentaire) et dégâts reçu : 5',
   //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."
   synthese: syntheseDesc(),
 };
