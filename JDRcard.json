@@ -1589,7 +1589,7 @@
     "value": 2,
     "kind": "composant",
     "name": "Barbapalpaga",
-    "description": "On chuchotait à son sujet autour des feux de camp... Les aventuriers en rêvaient la nuit... Et le voici enfin : le Ma�tre des Alpagas ! Note : Il est déconseillé d'essayer de le manger.",
+    "description": "On chuchotait à son sujet autour des feux de camp... Les aventuriers en rêvaient la nuit... Et le voici enfin : le Maître des Alpagas ! Note : Il est déconseillé d'essayer de le manger.",
     "kindId": "i00632"
   },
   {
@@ -1637,7 +1637,7 @@
     "value": 3,
     "kind": "composant",
     "name": "Alpaga brillant",
-    "description": "Cet animal légendaire n'apparaitrait qu'en de rares occasions et brille d'une lumi�re dor�e la nuit !",
+    "description": "Cet animal légendaire n'apparaitrait qu'en de rares occasions et brille d'une lumière dorée la nuit !",
     "kindId": "i00725b"
   },
   {
@@ -1766,7 +1766,7 @@
     "value": 3,
     "kind": "composant",
     "name": "Dragon Gardien",
-    "description": "Ce dragon est le gardien des citoyens d'Ezur, envoy� par les anciens pour veiller sur eux. Peut transporter jusqu'à 5 personnes.",
+    "description": "Ce dragon est le gardien des citoyens d'Ezur, envoyé par les anciens pour veiller sur eux. Peut transporter jusqu'à 5 personnes.",
     "kindId": "i00887"
   },
   {
@@ -1774,7 +1774,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Poudre de Joie",
-    "description": "Une poudre coup de fouet faite par les Zumis. Elle provoque un état d'excitation temporaire, ne pas respecter la posologie entra�ne des effets indésirables.",
+    "description": "Une poudre coup de fouet faite par les Zumis. Elle provoque un état d'excitation temporaire, ne pas respecter la posologie entraîne des effets indésirables.",
     "kindId": "i00980"
   },
   {
