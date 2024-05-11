@@ -310,3 +310,5 @@ export const unformatText = (text) =>
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
     .trim();
+
+export const capitalize = (string) => string.charAt(0).toUpperCase() + string.slice(1);

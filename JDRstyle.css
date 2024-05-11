@@ -319,6 +319,10 @@ dialog::backdrop {
   background-color: wheat;
 }
 
+.wrong{
+  border:2px rgb(190, 10, 10, 0.6) solid !important;
+}
+
 /* JDR Univers */
 
 #races .race {

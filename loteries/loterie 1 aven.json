@@ -70,13 +70,7 @@
       "montant": "Dégât de foudre +2 (dégât des ingénieurs +2)",
       "icone": "i00689"
     },
-9    "49": {
-      "nom": "Sac à dos extensible",
-      "desc": "Un sac à dos ultra spacieux",
-      "effet": "",
-      "montant": "Retire tous les malus liés à l'inventaire",
-      "icone": "i00791"
-    },
+
 8    "50": {
       "nom": "Pièce dorée Alpaga",
       "desc": "Une des rares pièces dorées créé à l'effigie d'un Alpaga",
