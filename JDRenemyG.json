@@ -75,25 +75,25 @@
           "duree": 1
         },
         {
-          "nom": "Silence",
+          "nom": "Silence / Spirale Glaciale",
           "stat": "Esprit",
-          "montantFixe": "",
+          "montantFixe": "A la fin : Dgt +1D6",
           "montantVariable": 0,
           "type": "Malus",
           "portee": "Mono",
-          "effet": "Aucun sort magique",
-          "montantEffet": 0,
+          "effet": "Aucun sort magique / Blocage+",
+          "montantEffet": 1,
           "duree": 3
         },
         {
-          "nom": "Vivacité Accrue",
+          "nom": "Vivacité Accrue / Défense d'Acier",
           "stat": "Esprit",
           "montantFixe": "",
           "montantVariable": 0,
           "type": "Buff",
           "portee": "Mono",
-          "effet": "Dextérité et Esquive +",
-          "montantEffet": 2,
+          "effet": "Dextérité et Esquive // Blocage +",
+          "montantEffet": 1,
           "duree": 4
         }
       ]
@@ -148,7 +148,7 @@
       ]
     },
     {
-      "classe": "Chevalier Dragon",
+      "classe": "Chev Dragon",
       "sorts": [
         {
           "nom": "Revers d'écaille / Mode Draconique ",

@@ -565,7 +565,7 @@
     "nom": "Sac d'Alpaga Dor\u00e9",
     "desc": "Sac \u00e0 dos \u00e0 l'effigie d'un Alpaga dor\u00e9. Tr\u00e8s mignon.",
     "effet": "Buff",
-    "montant": "Renforce l'invocation Alpaga : PV +10, toutes stat +1, d\u00e9g\u00e2t+2",
+    "montant": "Renforce l'invocation Alpaga : PV+10, toutes stat +1, d\u00e9g\u00e2t+2",
     "icone": "k60100",
     "access": "D3"
   },
@@ -637,7 +637,8 @@
     "nom": "Plastron de Templier",
     "desc": "Plastron cr\u00e9\u00e9 pour les hauts templiers de la Curie M\u00e9t\u00e9role",
     "effet": "Intelligence +1",
-    "montant": "D\u00e9g\u00e2t -6 (PV +5 pour les Templiers)",
+    "montant": "D\u00e9g\u00e2t -6 (PV+5 pour les Templiers)",
+    "condition": { "type": "classe", "value": ["Templier"], "bonus": "PV +5" },
     "icone": "k20475"
   },
   "88": {
@@ -1077,6 +1078,7 @@
     "desc": "Une ceinture renfor\u00e7ant son porteur",
     "effet": "",
     "montant": "PV +20 (+5 si Samoura\u00ef)",
+    "condition": { "type": "classe", "value": ["Samouraï"], "bonus": "PV +5" },
     "icone": "a30054",
     "access": "A1"
   },
@@ -1317,7 +1319,7 @@
     "nom": "Bible du Familier",
     "desc": "Un ouvrage rare permettant d'am\u00e9liorer la puissance des familiers",
     "effet": "Am\u00e9lioration familier",
-    "montant": "Familier : PV +10, d\u00e9g\u00e2t/soin+4 (AoE/2)",
+    "montant": "Familier : PV+10, d\u00e9g\u00e2t/soin+4 (AoE/2)",
     "icone": "I00134",
     "access": "D3"
   },
@@ -2462,8 +2464,9 @@
   "332": {
     "nom": "Bouclier Zuminator",
     "desc": "Un bouclier \u00e0 l'effigie de Zuminator, le Zumi du conte de super-heros.",
-    "effet": "Si Zumi : PV +10",
+    "effet": "Si Zumi : PV+10",
     "montant": "D\u00e9g\u00e2t -4. Blocage physique critique : renvoi le coup",
+    "condition": { "type": "race", "value": ["Zumi"], "bonus": "PV +10" },
     "icone": "W73002"
   },
   "333": {
@@ -2516,7 +2519,7 @@
     "nom": "Pierre Loukoum",
     "desc": "Une pierre au go\u00fbt aigre et sucr\u00e9e qui ravive les papilles, le su\u00e7oter renforce son porteur. Attention de ne pas l'avaler !",
     "effet": "",
-    "montant": "2 fois par combat (Instantan\u00e9e) : PV +5 et r\u00e9ussite des sorts +1 sur 3 tours",
+    "montant": "2 fois par combat (Instantan\u00e9e) : PV+5 et r\u00e9ussite des sorts +1 sur 3 tours",
     "icone": "I00218",
     "access": "D2"
   },
@@ -3604,7 +3607,7 @@
   },
   "483": {
     "nom": "Loup du Givre (A,A)",
-    "desc": "Originaire des steppes arctiques, c'est une monture tr\u00e8s fid\u00e8le : am\u00e9liorable. Stats: 14,17,9,12,14",
+    "desc": "Originaire des steppes arctiques, c'est une monture tr\u00e8s fid\u00e8le : am\u00e9liorable. Stats: 13,16,9,12,14",
     "effet": "Monture de Combat",
     "montant": "D\u00e9g\u00e2t +8 (PV : 100 + 5*niveau)",
     "icone": "i01513e"
