@@ -312,3 +312,21 @@ export const unformatText = (text) =>
     .trim();
 
 export const capitalize = (string) => string.charAt(0).toUpperCase() + string.slice(1);
+
+export const sameDay = (first, second) =>
+  first.getUTCFullYear() === second.getUTCFullYear() &&
+  first.getUTCMonth() === second.getUTCMonth() &&
+  first.getUTCDate() === second.getUTCDate();
+
+export const dateToString = (date, full) => {
+  const stringDate = date.toLocaleString("fr-FR");
+  return full ? stringDate : stringDate.split(" ")[0];
+};
+
+export const stringToDate = (stringDate) => {
+  const splitDate = stringDate.split("/");
+  // console.log(splitDate, new Date(splitDate[2], parseInt(splitDate[1]) - 1, splitDate[0]));
+
+  // Date(year,month-1,day,hours) : hours = 2 to Handle converison locale string FR
+  return new Date(splitDate[2], parseInt(splitDate[1]) - 1, splitDate[0], 2);
+};

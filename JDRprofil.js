@@ -1,5 +1,5 @@
-import { cardJSON, persosJSON, eqptJSON, enemyJSON, mapsJSON, allSkills, playerJSON } from "./JDRstore";
-import { Perso, callPHP, initDialog, toastNotification } from "./utils";
+import { cardJSON, persosJSON, enemyJSON, mapsJSON, playerJSON } from "./JDRstore";
+import { Perso, callPHP, dateToString, initDialog, sameDay, stringToDate, toastNotification } from "./utils";
 
 const charactersList = document.querySelector(".charactersList");
 const persosE = [...charactersList.children];
@@ -47,12 +47,10 @@ window.addEventListener("load", () => {
       const playerConnectedE = document.createElement("div");
       playerConnectedE.className = "connectionPoint";
 
-      const jDateSplit = playerData.date.split("/");
-      const joueurDate = formatDate(jDateSplit);
-      const today = formatDate(new Date().toLocaleString().split(" ")[0].split("/"));
+      const joueurDate = stringToDate(playerData.date);
+      const today = stringToDate(dateToString(new Date()));
 
-      // console.log(jDateSplit, new Date().toLocaleString().split(" ")[0].split("/"));
-      if (joueurDate >= today) {
+      if (sameDay(joueurDate, today)) {
         playerConnectedE.style.backgroundColor = "green";
       } else {
         playerConnectedE.style.backgroundColor = "grey";
@@ -95,8 +93,10 @@ window.addEventListener("load", () => {
 
       const playerEntriesE = document.createElement("p");
 
+      // New day = not today and in future
+      console.log(joueurDate, today, sameDay(joueurDate, today));
       const entriesToday =
-        joueurDate >= today
+        joueurDate >= today || sameDay(joueurDate, today)
           ? Math.round(
               (playerData["entries"].reduce((acc, cur) => acc + cur / 3, 0) / playerData["entries"].length) * 100
             )
@@ -216,16 +216,16 @@ function loadPlayer(player) {
 }
 
 function updateDay(joueurData, indexPlayer) {
-  const jDateSplit = joueurData.date.split("/");
-  const joueurDate = formatDate(jDateSplit);
-  const today = formatDate(new Date().toLocaleString().split(" ")[0].split("/"));
+  const joueurDate = stringToDate(joueurData.date);
+  const today = stringToDate(dateToString(new Date()));
 
   // Bug Fix 29/11/23, different UTC (local time) can generate date in future
   // In this case, UTC+X can go on page, and put date to Day+1, and UTC+0 can go back and put date to Day
   // This switch always trigger the updateDay. Thank you Hugo and Rachel !
-  if (joueurDate >= today) return joueurData;
+  // Bug Fix 14/05/24 : Check date by string, and locale string format make error ! Thank you again Rachel !
+  if (sameDay(joueurDate, today)) return joueurData;
 
-  joueurData.date = today.toLocaleString().split(" ")[0];
+  joueurData.date = dateToString(today);
   joueurData.entries = joueurData.entries.map(() => 3);
 
   // Exception Hugo qui n'a qu'un/deux personnage(s) (26/11/23)
@@ -248,9 +248,6 @@ function updateDay(joueurData, indexPlayer) {
   toastNotification("Cadeau de Connexion Quotidienne : 5 Pièces Alpaga !", 6000);
 
   return joueurData;
-}
-function formatDate(splitDate) {
-  return new Date(splitDate[2], parseInt(splitDate[1]) - 1, splitDate[0]);
 }
 
 function loadPerso(perso, index, joueurData) {

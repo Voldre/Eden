@@ -557,6 +557,14 @@
     "kindId": "orion"
   },
   {
+    "id": 1061,
+    "value": 3,
+    "kind": "boss",
+    "name": "Leonhart - 1er Chevalier",
+    "description": "H\u00e9ros et 1er chevalier de l'ordre des Chevaliers du Temple, c'est un homme d\u00e9vou\u00e9 pour aider les autres, tr\u00e8s fiable et g\u00e9n\u00e9reux.",
+    "kindId": "leonhart"
+  },
+  {
     "id": 1201,
     "value": 1,
     "kind": "composant",
@@ -1742,7 +1750,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Destrier de Preux Chevalier",
-    "description": "Vous serez le chevalier de toutes les princesses - ou les princes - en péril.",
+    "description": "(Charisme +1 si Tank) Vous serez le chevalier de toutes les princesses - ou les princes - en péril.",
     "kindId": "i00885"
   },
   {
@@ -1776,6 +1784,15 @@
     "name": "Poudre de Joie",
     "description": "Une poudre coup de fouet faite par les Zumis. Elle provoque un état d'excitation temporaire, ne pas respecter la posologie entraîne des effets indésirables.",
     "kindId": "i00980"
+  },
+  {
+    "id": 1436,
+    "value": 2,
+    "kind": "composant",
+    "name": "Coton Violacée",
+    "description": "Un coton rare qui est réceptif à la magie, surtout aux ténèbres.",
+    "kindId": "I00199b",
+    "maps": [34, 29]
   },
   {
     "id": 1501,
@@ -3789,6 +3806,28 @@
     "enemies": [],
     "kindId": "otherIcon/ac513",
     "group": 1
+  },
+  {
+    "id": 1819,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Je suis... Le masque !",
+    "description": "Pendant le festival, Kratos aide bénévolement et met un sac sur sa tête, c'est \"Le Masque\", il a donné des chouquettes et croisé Leyla et Rad Ed et ont discuté de Kibo.",
+    "maps": [1],
+    "enemies": [],
+    "kindId": "items/kratosMasque",
+    "group": 3
+  },
+  {
+    "id": 1820,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Shkrouk et Gaazor et... la bouffe ",
+    "description": "Quand ils mangent ensemble, Gaazor ne peut pas s'empêcher de faire des grimaces pour faire rire son frère comme quand ils étaient petits. Dans un concours de bouffe : c'est le bordel !",
+    "maps": [1],
+    "enemies": [],
+    "kindId": "items/i00868",
+    "group": 3
   },
   {
     "id": 15000,
