@@ -1078,7 +1078,7 @@
     "desc": "Une ceinture renfor\u00e7ant son porteur",
     "effet": "",
     "montant": "PV +20 (+5 si Samoura\u00ef)",
-    "condition": { "type": "classe", "value": ["Samouraï"], "bonus": "PV +5" },
+    "condition": { "type": "classe", "value": ["Samoura\u00ef"], "bonus": "PV +5" },
     "icone": "a30054",
     "access": "A1"
   },
@@ -1407,9 +1407,9 @@
     "nom": "Cape Hypnotique",
     "desc": "Une cape poss\u00e9dant un oeil capable d'endormir les ennemis, tel un illusionniste",
     "effet": "Capacit\u00e9",
-    "montant": "2 fois par combat : Oeil Hypnotique (res esprit -3)",
+    "montant": "2 fois par combat : Oeil Hypnotique (res esprit -2)",
     "icone": "k60288",
-    "access": "D4"
+    "access": "D3"
   },
   "195": {
     "nom": "D\u00e9 Amplificateur",
@@ -1993,7 +1993,7 @@
     "nom": "Fl\u00fbte des Fleurs de Lune",
     "desc": "Une fl\u00fbte faite de p\u00e9tales et de tiges de fleurs de lune, ceux qui l\u2019entendent suivront aveugl\u00e9ment le joueur",
     "effet": "Capacit\u00e9",
-    "montant": "1 fois par combat : Contr\u00f4le de l'Esprit AoE (res esprit -2)",
+    "montant": "1 fois par combat : Contr\u00f4le de l'Esprit AoE (res esprit -1)",
     "icone": "I00154",
     "access": "D4"
   },
@@ -2104,7 +2104,7 @@
     "nom": "Appel Mondial",
     "desc": "Un m\u00e9gaphone permettant d'amplifier la voix et de provoquer les ennemis.",
     "effet": "Capacit\u00e9",
-    "montant": "4 fois par combat (Instantan\u00e9e) : Permet de provoquer les ennemis (75% chance d'\u00eatre cibl\u00e9) pour 1 tour",
+    "montant": "4 fois par combat (Instantan\u00e9e Charisme) : Permet de provoquer les ennemis (75% chance d'\u00eatre cibl\u00e9) pour 1 tour",
     "icone": "I00420",
     "access": "D3"
   },
@@ -2243,7 +2243,7 @@
   },
   "304": {
     "nom": "Cotte de Maille",
-    "desc": "(Armure Légère) Une cotte de maille, flexible et solide \u00e0 la fois, permet \u00e0 son porteur de mieux bloquer.",
+    "desc": "(Armure L\u00e9g\u00e8re) Une cotte de maille, flexible et solide \u00e0 la fois, permet \u00e0 son porteur de mieux bloquer.",
     "effet": "Blocage +1",
     "montant": "D\u00e9g\u00e2t -4",
     "icone": "A20073"
@@ -3080,9 +3080,9 @@
   },
   "413": {
     "nom": "Cotte du Survivant",
-    "desc": "(Armure Légère) Cette cotte de maille est r\u00e9put\u00e9e pour avoir sauv\u00e9 la vie \u00e0 un bon nombre de h\u00e9ros.",
+    "desc": "(Armure L\u00e9g\u00e8re) Cette cotte de maille est r\u00e9put\u00e9e pour avoir sauv\u00e9 la vie \u00e0 un bon nombre de h\u00e9ros.",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t -4, Blocage +1 (+1 si PV < 33%)",
+    "montant": "D\u00e9g\u00e2t -4, Blocage +1 (Bloc+1 si PV < 33%)",
     "condition": { "type": "PV", "value": "3", "bonus": "Blocage +1" },
     "icone": "A20076",
     "access": "A1"
@@ -3592,9 +3592,9 @@
     "icone": "k21032"
   },
   "481": {
-    "nom": "Combinaison de Pilote Ezuréen",
-    "desc": "La combinaison officielle des pilotes de l'écurie Ferralpaga !",
-    "montant": "Dégât -4, Dextérité +2",
+    "nom": "Combinaison de Pilote Ezur\u00e9en",
+    "desc": "La combinaison officielle des pilotes de l'\u00e9curie Ferralpaga !",
+    "montant": "D\u00e9g\u00e2t -4, Dext\u00e9rit\u00e9 +2",
     "effet": "Monture : Vitesse++",
     "icone": "k20199"
   },
@@ -3611,5 +3611,12 @@
     "effet": "Monture de Combat",
     "montant": "D\u00e9g\u00e2t +8 (PV : 100 + 5*niveau)",
     "icone": "i01513e"
+  },
+  "484": {
+    "nom": "Robe Protectrice",
+    "desc": "Une robe con\u00e7ue pour am\u00e9liorer la r\u00e9sistance de son porteur",
+    "effet": "PV +5",
+    "montant": "D\u00e9g\u00e2t -3, Blocage +1",
+    "icone": "k20297"
   }
 }

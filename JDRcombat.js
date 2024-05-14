@@ -1,5 +1,5 @@
 import { cardJSON, persosJSON, enemyJSON, allSkills, playerJSON, getData } from "./JDRstore";
-import { callPHP, initDialog, isTextInText, Perso, toastNotification } from "./utils";
+import { callPHP, dateToString, initDialog, isTextInText, Perso, toastNotification } from "./utils";
 
 // prettier-ignore
 const classes = [ "Guerrier", "Chevalier", "Templier", "Chev Dragon", "Voleur", "Assassin", "Danselame", "Samouraï", "Chasseur", "Ingénieur", "Corsaire", "Juge", "Clerc", "Barde", "Shaman", "Sage", "Magicien", "Illusionniste", "Démoniste", "Luminary",];
@@ -636,7 +636,7 @@ async function saveCheat(enemy) {
 
   const newCheatLog = {};
   newCheatLog[cheatID] = {
-    date: new Date().toLocaleString(),
+    date: dateToString(new Date(), true),
     joueur: indexPlayer,
     perso: nomPerso,
     enemy: enemy,
@@ -659,7 +659,7 @@ async function saveLog(earnedCoins, winCards) {
 
   const newLog = {};
   newLog[logID] = {
-    date: new Date().toLocaleString(),
+    date: dateToString(new Date(), true),
     joueur: indexPlayer,
     perso: nomPerso,
     map: mapID,

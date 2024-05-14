@@ -286,7 +286,7 @@ function statsVerification() {
     }
   });
   // PV are always the right value (character cannot have more, stuff are handled)
-  if (pvMaxE.value !== allStats["PVMax"]) {
+  if (parseInt(pvMaxE.value) !== allStats["PVMax"]) {
     pvMaxE.classList.add("wrong");
   } else {
     pvMaxE.classList.remove("wrong");
@@ -724,8 +724,11 @@ window.addEventListener("load", () => {
     // loadFiche(urlParams.get('perso'));
     selectedPerso = selectPerso.value;
     indexPerso = selectPerso.selectedIndex;
-    loadFiche(selectedID);
+    loadFiche();
     toastNotification("Chargement réussi de " + selectedPerso);
+  } else {
+    indexPerso = 0;
+    loadFiche();
   }
 });
 
@@ -823,10 +826,8 @@ function loadFiche() {
   );
   persoEqpts.forEach((eqpt, index) => {
     const eqptE = [...equipementsE.children][index];
-    if (eqpt) {
-      eqptE.children[0].value = eqpt.nom;
-      insertEqpt(eqptE, eqpt);
-    }
+    eqptE.children[0].value = eqpt?.nom ?? "";
+    insertEqpt(eqptE, eqpt);
   });
 
   getAllRes(persoEqpts);

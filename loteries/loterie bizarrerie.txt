@@ -3,7 +3,7 @@ R47-48 (i01545) Lapin ... **dégât +2 si présent**
 R141 Dragon Gardien (i00887) - **dissuade les monstres sauvages d'attaquer le groupe**
 R103-R105 Licorne Tempête **dégât +2 si présent** (i00854) / Boréale Exceptionnelle **dégât -2 si présent** (i00849) / Boréale (i00848) (customisable)
 R121-124 (i00851 - i01068 - i01318) Calèche/Carrosse Citrouille  **nuit gratuite mode auberge (15 PV) et 0 po (3-5 po)**
-Pot du ...
+*Pot bleuté
 R41 Alpaga rose ou blanc (0 effet) / Destrier de preux chevalier (i00884) (si Tank, charisme+1)
 Pièce argentée Alpaga OU Baga portatif
 Bijou Iris

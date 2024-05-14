@@ -220,7 +220,7 @@ const labelsDescription = {
   protege:
     "Un personnage peut protéger un allié d'une seule attaque par tour. Pour cela, il aura un malus de blocage selon la situation (2 ou +).<br/> Si un second ennemi attaque, la protection est impossible.<br/> Sur un échec critique, c'est la personne protégée qui se prend le coup. Dé 19 ou Dé 20 : 0 blocage.",
   incanter:
-    "Un personnage peut incanter un sort sur plusieurs tours. Pendant ce temps, le personnage ne peut plus esquiver ni se déplacer.<br/> Sur un échec critique de blocage (voire une réussite critique de l'ennemi, selon le contexte), l'incantation est annulée.",
+    "Un personnage peut incanter un sort sur plusieurs tours. Pendant ce temps, le personnage ne peut plus esquiver ni se déplacer.<br/> Sur un échec critique de blocage (voire une réussite critique de l'ennemi, selon le contexte), l'incantation est annulée.<br/><br/>Les effets des réussites critiques varient selon les incantations :<br/>- Incantation en 3 tours (3 dés) : le 1er supprime le 2nd tour, le 2nd tour augmente les dégâts de 5 (ou +?), le 3eme tour implique le montant maximum des dés,<br/>- Incantation en 2 tours (2 dés) : le 1er tour augmente les dégâts de 5 (ou +?), le 2nd tour implique le montant maximum des dés,<br/>- Incantation en 2 tours (1 dé) : le dé est au Tour 1 et implique le montant maximum des dés.",
   //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."
   "coup-allié":
     "Lorsqu'on décide de se prendre un coup par un allié (joueur, familier), comme pour un blocage sur un dé 20 : le joueur prend les dégâts divisés par 2 et sans armure.",
