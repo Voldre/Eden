@@ -34,7 +34,8 @@ export class Perso {
 
     this.niv = persoData.niv;
     // 25/11/23 Suite à hugo qui fait PvMax/Pv, j'introduis le fait de prendre le max des 2... xD
-    this.pvmax = this.pv = Math.max(persoData.pvmax, persoData.pv);
+    // 14/05/24 : Maintenant que la case est mise en rouge en cas de mauvais montant des PV max, plus besoin
+    this.pvmax = this.pv = persoData.pvmax;
 
     // Calcul des dégâts fixes et de l'armure
     const stuffs = JSON.parse(persoData.eqpts).map((eqptName) => {
