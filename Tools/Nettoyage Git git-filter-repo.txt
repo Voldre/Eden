@@ -1,0 +1,96 @@
+Mode opératoire : Nettoyager de l'historique des commits sur Git
+Objectif : Diminuer la taille du répertoire (du dossier .git, actuellement : 4.5Go !)
+
+1) Installer le fichier "git-filter-repo" https://github.com/newren/git-filter-repo
+
+2) Cloner le répertoire à mettre à jour (SI BESOIN)
+
+3) Placer le fichier "git-filter-repo" (sans extension) dans le dossier du projet
+
+4) Dans l'invite de commande : python3 git-filter-repo --analyze 
+	==> Une fois terminée, aller dans le répo, dans .git\filter-repo\analysis
+	==> Ouvrir directories-all-sizes et directories-deleted-size
+==> Ce sont tous les dossiers et le poids qu'ils représentent dans l'historique git
+
+5) Utiliser la commande : python3 git-filter-repo --invert-paths --path "mon-dossier" --force  
+	==> Cela supprimera le directories nommé "mon-dossier" qui était écrit dans les fichiers.
+
+	Exemple: 4609577255 3933496910 2023-09-18 images/3D
+	Donnera : python3 git-filter-repo --invert-paths --path "images/3D" --force 
+
+6) Une fois terminée : git remote add origin https://github.com/OWNER/REPOSITORY.git
+
+Ex : git remote add origin https://github.com/Voldre/Eden.git
+
+7) And Finale Publication ^_^ : git push origin --force --all
+
+==> Les étapes 3 à 7 peuvent être reproduitent jusqu'à obtenir un historique .git satisfaisant
+
+Plus de commandes (ex : supprimer tout > à X Mo, ou les fichiers selon la REGEX, ou juste un fichier, etc...)
+ ==> https://github.com/newren/git-filter-repo/blob/main/Documentation/converting-from-bfg-repo-cleaner.md#cheat-sheet-conversion-of-examples-from-bfg
+
+
+La documentation globale du processus : https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository
+
+
+
+
+
+
+EXEMPLE CONCRET
+
+
+AU DEBUT :
+
+=== All directories by reverse size ===
+Format: unpacked size, packed size, date deleted, directory name
+
+
+  4609577255 3933496910 2023-09-18 images/3D
+  1590126531 1503686399 2023-09-18 images/3D/maps
+  1642318973 1408813518 2022-06-12 images/monster
+  1592656560 1407087399 2023-09-18 images/3D/monsters
+   473231212  406467455 2023-09-18 images/3D/items
+   460142075  389241431 2022-06-12 images/char
+   446406801  338512273 2023-09-18 images/3D/ride
+   438406314  330712052 2022-06-12 images/ride
+   315905019  286815536 2022-04-18 images/items2
+   316210586  242918409 2022-06-12 images/house
+   293244491  225841348 2023-09-18 images/3D/house
+    80702717   64086811 2022-03-21 3D Eden in web
+    43392553   42454137 2023-10-06 Fichier de JDR
+    33463813   33547975 2022-06-12 images/itemIcon
+
+  5857995712 5212482486 <present>  <toplevel>
+  5413485479 4781454835 <present>  images
+  1717651330 1520648231 2022-06-12 images/map
+  1154682912  999937483 2022-04-18 images/monster2
+   503340570  501188223 <present>  images/loadingframe
+   507186890  440478787 <present>  images/items
+   406610867  405043916 <present>  bgm
+     1146855    1148979 <present>  images/otherIcon
+      108775       6866 2022-06-12 images/map/toTest/fbxunifybi2 noanimation
+       11445       4042 <present>  loteries
+
+
+A LA FIN : 
+
+  1941026960 1851915307 <present>  <toplevel>
+  1414220096 1339931694 <present>  images
+   503340570  501188223 <present>  images/loadingframe
+   507186890  440478566 <present>  images/items
+   406610867  405043916 <present>  bgm
+   141572980  138460778 <present>  images/maps
+   103481914  102062312 <present>  Tools
+    80927745   80352406 <present>  images/jdrgalerie
+    79507060   78170663 <present>  images/EE_illustrations
+    59437831   59444428 <present>  images/uiiconPNG
+    10181091   10201798 <present>  images/skillIcon
+     8015207    7674299 <present>  images/imagesets
+     4735697    3679965 2022-03-21 3D
+     3061782    3042345 <present>  images/layout
+     2875216    2873716 <present>  images/PNJ
+     2534759    2539337 <present>  images/monsters
+     1146855    1148979 <present>  images/otherIcon
+       11445       4042 <present>  loteries
+
