@@ -251,10 +251,10 @@ label{
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.75);
 }
 .galerie img {
-  width: 45vw;
+  width: 23vw;
   margin: 2px;
   height: auto;
   border: 2px gray solid;
@@ -900,6 +900,10 @@ label{
 @media (max-width: 700px) {
   .flexContainer {
     display: flex;
+  }  
+  .galerie img {
+    width: 45vw;
+    margin-left: -2px;
   }
   .informations {
     display: grid;
