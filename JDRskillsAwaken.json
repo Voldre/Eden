@@ -224,7 +224,7 @@
   },
   "75": {
     "nom": "Invocation d'Alpaga",
-    "desc": "Invoque un esprit Alpaga de t\u00e9n\u00e8bres, peut flotter. 30 PV, Force : 12, Dext\u00e9 : 13, Intel : 15, Charisme : 12, Esprit : 10. Sort : Crachat 1D8+3 (Intel), Charge 1D10+2 (Force), Aura Noire (Intel) : Maître phys > ten, dégât +3 (3t)",
+    "desc": "Invoque un esprit Alpaga de t\u00e9n\u00e8bres, peut flotter. 30 PV, Force : 12, Dext\u00e9 : 13, Intel : 15, Charisme : 12, Esprit : 10. Sort : Crachat 1D8+3 (Intel), Charge 1D10+2 (Force), Aura Noire (Intel) : Buff conversion phys > ten, dégât +3 (3t)",
     "montant": "Invocation jusqu'\u00e0 coupure magique, Apprend \"Aura Noire\" "
   },
   "83": {

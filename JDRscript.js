@@ -1,5 +1,13 @@
 import { skillsJSON, skillsAwakenJSON, eqptJSON, persosJSON, galeryJSON, masterJSON, statsJSON } from "./JDRstore";
-import { callPHP, toastNotification, initDialog, parseEqptsByRegex, unformatText, capitalize } from "./utils";
+import {
+  callPHP,
+  toastNotification,
+  initDialog,
+  parseEqptsByRegex,
+  unformatText,
+  capitalize,
+  aoeDescInfo,
+} from "./utils";
 
 console.log("Skills JSON", skillsJSON);
 console.log("Persos JSON", persosJSON);
@@ -157,14 +165,14 @@ iconClassesEs.forEach((icClasseE) => {
   });
 });
 
-function defineAwaken(classe = "undefined") {
-  document.querySelector(".awakenSkill").classList.add("hide");
+function defineAwaken(classe = "") {
+  awakenSkillE.classList.add("hide");
 
   const stuffsName = [...equipementsE.children].map((eqpt) => eqpt.children[0].value.toLowerCase());
   const niv = nivE.value;
-  if (classe === "undefined" || classe === "" || (niv < 10 && !stuffsName.includes("pistolet suspect"))) return;
+  if (classe === "" || (niv < 10 && !stuffsName.includes("pistolet suspect"))) return;
 
-  document.querySelector(".awakenSkill").classList.remove("hide");
+  awakenSkillE.classList.remove("hide");
 
   var nbUse;
   if (niv >= 15) {
@@ -175,7 +183,6 @@ function defineAwaken(classe = "undefined") {
     nbUse = 1;
   }
 
-  const awakenSkillE = document.querySelector(".awakenSkill");
   awakenSkillE.id = classe;
   awakenSkillE.querySelector(".nom").innerText = "Eveil du " + classe;
   awakenSkillE.querySelector(".effet").innerText = "Inactif";
@@ -256,6 +263,8 @@ document.querySelector("#xp").addEventListener("change", (e) => {
   }
   // Nouveauté 18/10/23 : Compétence éveillés
   defineAwaken();
+  // Nouveauté 24/05/24 : Passif niveau 12
+  setPassif(niv >= 12);
 });
 
 // Nouveauté 15/08 : Calcul automatique du montant des stats
@@ -412,6 +421,9 @@ function insertSkill(skillElement, skillName, awakenClass = false) {
       const skillRangeIconE = document.createElement("span");
       skillRangeIconE.className = "skillRangeIcon";
       skillRangeIconE.style.backgroundImage = `url(http://voldre.free.fr/Eden/images/layout/${skillRange}.png)`;
+      const rangeI = aoeDescInfo.range.findIndex((x) => x === skillRange[0]);
+      const typeI = aoeDescInfo.type.findIndex((x) => x === skillRange[1]);
+      skillRangeIconE.title = `AoE en ${aoeDescInfo.rangeName[rangeI]} ${aoeDescInfo.typeName[typeI]}`;
 
       const skillStatE = document.createElement("span");
       skillStatE.innerText = "/ " + selectedSkill.stat;
@@ -677,7 +689,6 @@ function insertEqpt(eqptElement, selectedEqpt) {
 //  PERSOS
 const selectPerso = document.querySelector("#selectPerso");
 var selectedPerso = selectPerso.value;
-var selectedID = selectPerso.selectedIndex;
 
 const archiveE = document.querySelector("#archived");
 
@@ -818,6 +829,7 @@ function loadFiche() {
   [...document.querySelector(".iconClasses").children].forEach((e) => e.classList.remove("awaken"));
 
   defineAwaken(persoData.awaken);
+  setPassif(persoData.niv >= 12);
 
   // Equipements du perso
   persoEqptsName = JSON.parse(persoData.eqpts);
@@ -1061,7 +1073,7 @@ function savePerso() {
     xp: document.querySelector("#xp").value,
     niv: nivE.value,
 
-    awaken: document.querySelector(".awakenSkill").id,
+    awaken: nivE.value >= 10 ? awakenSkillE.id : "",
 
     pv: document.querySelector("#pv").value,
     pvmax: pvMaxE.value,
@@ -1089,6 +1101,7 @@ function savePerso() {
     background: document.querySelector(".background").value,
     notes: document.querySelector(".notes").value,
     sticky: document.querySelector(".sticky").value,
+    passif12: persosJSON[persoId]?.passif12 ?? undefined,
     isArchived: persosJSON[persoId]?.isArchived ?? false,
     joueur: persosJSON[persoId]?.joueur ?? null,
   };
@@ -1123,7 +1136,7 @@ buttonIframe.addEventListener("click", () => {
 
 function syntheseDesc() {
   let description =
-    "La synthèse résume les montants de dégâts et d'armures issus des équipements.<br/> Attention, cela ne prend pas en compte les montants conditionnels (si panoplie, classe), voici la légende :<br/>";
+    "La synthèse résume les montants de dégâts et d'armures issus des équipements.<br/> Les montants conditionnels (panoplie, classe, ...) sont pris en compte (07/04/24), voici la légende :<br/>";
   synthesisCategories.forEach((category) => {
     if (category.img) {
       description +=
@@ -1157,6 +1170,8 @@ const labelsDescription = {
     'Changer d\'arme en combat se fait en début de tour (action instantanée). <br/><br/>Porter une armure non adapté (magique, léger, lourd) implique des malus de stats (voir page "Infos JDR", section "Armure").<br/><br/>Le montant total de l\'ensemble des stuffs est limité : +2 de montant des buffs et +1 durée des buffs.<br/><br/>Le montant fixe total (hors %) des accessoires est limité : +2 par stat, +3 blocage/esquive, pour les soins (infligé, reçu) : 6, pour les dégâts infligés : 6 (+2 si bonus élémentaire) et dégâts reçu : 5',
   //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."
   synthese: syntheseDesc(),
+  passif12:
+    'Le passif niveau 12 consiste en un ajout de montant de stats.<br/>Vous avez 4 points à répartir dans les montants suivant (max 2 points par montant) :<br/>1 point :<ul><li>Dégât +1</li><li>Soin +1</li><li>Armure +1</li><li>PV +5</li><li>Familier : Dégât et Soin +1</li></ul>2 points :<ul><li>Blocage Physique +1</li><li>Esquive +1</li><li>Blocage Magique +1</li><li>Résistance d\'esprit +1</li><li>Montant des buffs +1</li><li>Durée des buffs +1</li><li>Une statistique +1</li></ul><span style="color: lightcoral;">/!\\ Attention : vous ne pourrez plus facilement changer votre passif après avoir choisi !</span><br/>A noter : ces montants ne comptent pas dans la limite des stuffs (voir "Equipements - Infos")',
 };
 
 initDialog(labelsDescription);
@@ -1260,4 +1275,19 @@ function sumObjectsByKey(...objs) {
     }
     return a;
   }, {});
+}
+
+function setPassif(isAvailable) {
+  const passif12E = document.querySelector("#passif12");
+  passif12E.innerHTML = "";
+
+  const li = document.createElement("li");
+
+  li.innerText =
+    "Passif 12 " +
+    (persosJSON[persoE.id].passif12
+      ? ": " + persosJSON[persoE.id].passif12
+      : "à définir : 4 points à répartir (cliquez)");
+  passif12E.classList = isAvailable ? "" : "hide";
+  passif12E.append(li);
 }

@@ -318,7 +318,7 @@
     "nom": "Gu\u00e9rison",
     "desc": "Soigne la cible",
     "effet": "Soin",
-    "montant": "2D6 +10 (+5 si Clerc)",
+    "montant": "2D6 +10 (+1D6 si Clerc)",
     "icone": "E0018",
     "stat": "Intelligence",
     "classe": ["Clerc", "Barde", "Shaman", "Sage"]
@@ -1083,7 +1083,7 @@
     "nom": "Protection Absolue",
     "desc": "Action Instantan\u00e9e. Le guerrier canalyse toute son \u00e9nergie pour former un bouclier autour de tous ses camarades, for\u00e7ant les attaques des ennemis \u00e0 venir vers lui. M\u00eame les attaques de zones (AoE) ne visent que le lanceur.",
     "effet": "Blocage",
-    "montant": "1 fois par combat : Mono : Blocage, AoE : Blocage -3, d\u00e9g\u00e2t * 2.5 (-10) sur 1 tour",
+    "montant": "1 fois par combat : Mono : Blocage, AoE : Blocage -3, d\u00e9g\u00e2t * 2.5 (-10) sur le tour",
     "icone": "j058b",
     "stat": "Esprit",
     "classe": ["Guerrier"]

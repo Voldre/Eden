@@ -173,7 +173,7 @@
     "map_z": null,
     "map_r": null,
     "bgm": 35,
-    "mobs": [47, 48, 24, 79, 71, 129]
+    "mobs": [47, 48, 24, 79, 71, 129, 178]
   },
   "15": {
     "name": "Hautes-terres",

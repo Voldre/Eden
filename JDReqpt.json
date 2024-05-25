@@ -1804,7 +1804,7 @@
     "nom": "Grimoire du Cr\u00e9ateur",
     "desc": "Un grimoire l\u00e9gendaire capable d'invoquer une cr\u00e9ature de l'\u00e9l\u00e9ment de son choix. Invoqu\u00e9 : 30 PV, Force : 15, Dext\u00e9 : 12, Intel : 14, Charisme : 12, Esprit : 12. Sort : Coup per\u00e7ant 1D10+2 (Force), Jet Elementaire 1D10+2 (Intel)",
     "effet": "Capacit\u00e9",
-    "montant": "D\u00e9g\u00e2t +10, 2 fois par combat : invoque une cr\u00e9ature \u00e9l\u00e9mentaire",
+    "montant": "D\u00e9g\u00e2t +12, 3 fois par combat : invoque une cr\u00e9ature \u00e9l\u00e9mentaire",
     "icone": "W63401"
   },
   "247": {
@@ -3618,5 +3618,33 @@
     "effet": "PV +5",
     "montant": "D\u00e9g\u00e2t -3, Blocage +1",
     "icone": "k20297"
+  },
+  "485": {
+    "nom": "Casque Incognito",
+    "desc": "Un casque lapin permettant de passer incognito, vous serez m\u00e9connaissable... normalement",
+    "effet": "M\u00e9connaissable",
+    "montant": "R\u00e9ussite -1, Chance d'\u00eatre vis\u00e9e -33%",
+    "icone": "k10635"
+  },
+  "486": {
+    "nom": "Sifflet Alpaga",
+    "desc": "Un sifflet serpentin tr\u00e8s mignon permettant de d\u00e9concentrer les ennemis",
+    "effet": "Capacit\u00e9",
+    "montant": "4 fois par combat (Instantan\u00e9e) R\u00e9ussite -3 (AoE) pendant 1 tour",
+    "icone": "k10268"
+  },
+  "487": {
+    "nom": "Oeuf de Vie",
+    "desc": "Un oeuf unique originaire de ... capable d'apporter la vie l\u00e0 o\u00f9 il passe.",
+    "effet": "Capacit\u00e9",
+    "montant": "Avant de tomber KO (2 fois par combat) : succ\u00e8s 1D4 (5/20) : Soigne 1D10+10 PV (buffs pr\u00e9serv\u00e9s)",
+    "icone": "k60194"
+  },
+  "488": {
+    "nom": "Sac \u00e0 dos Lapin",
+    "desc": "Sac ayant appartenue \u00e0 une enfant morte myst\u00e9rieusement, le sac semble vouloir prot\u00e9ger son porteur.",
+    "effet": "Mal\u00e9diction du Lien",
+    "montant": "La moiti\u00e9 des soins et effets donn\u00e9s aux autres sont redonn\u00e9s au porteur",
+    "icone": "k60026"
   }
 }

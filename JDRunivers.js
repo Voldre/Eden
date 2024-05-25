@@ -1,5 +1,5 @@
 import { skillsJSON } from "./JDRstore";
-import { initDialog } from "./utils";
+import { aoeDescInfo, initDialog } from "./utils";
 
 // prettier-ignore
 const classes = [ "Guerrier", "Chevalier", "Templier", "Chev Dragon", "Voleur", "Assassin", "Danselame", "Samouraï", "Chasseur", "Ingénieur", "Corsaire", "Juge", "Clerc", "Barde", "Shaman", "Sage", "Magicien", "Illusionniste", "Démoniste", "Luminary",];
@@ -183,13 +183,6 @@ console.log("Nb skills by class by stat", allListSkillsByClassByStats);
 // ---
 
 function aoeDesc() {
-  const aoeDescInfo = {
-    range: ["L", "R"],
-    type: ["-", "+"],
-    rangeName: ["Ligne de", "Rond de"],
-    typeName: ["Courte portée", "Longue portée"],
-    typeMalus: ["Esquivable Malus 4 si proche, 2 si éloigné", "Esquivable seulement de loin, Malus 3-4"],
-  };
   let description = "Il existe 4 types d'Attaques de Zone (AoE) :<br/>";
   for (var i = 0; i < 4; i++) {
     const rangeI = Math.floor(i / 2);
@@ -233,7 +226,7 @@ const labelsDescription = {
   montant:
     'Le montant des buffs augmente :<ul><li>Les dégâts infligés des buffs (A la charge, Magie extrême, Euphorie, ...),</li><li>Les dégâts reçus des buffs (Encouragement musical, Mur de Titan, ...)</li></ul>Les montants des malus sont également compris dans ce terme "montant des buffs" :<ul><li>Les dégâts infligés des malus (Parasite, Flèche empoisonnée, ...)</li><li>Les dégâts reçus des malus (Perce-Armure, Affablissement Mental, ...)</li></ul>Rappel : le montant des buffs de l\'ensemble des stuffs est limité à +2 de ',
   monture:
-    "Une monture de combat est considérée comme : <br/>1) Une arme évolutive (emplacement d'arme) qui octroie des compétences au personnage,<br/>2) Un familier : il a ses PV, ses stats, et seuls les compétences et accessoires dédiés aux familiers agissent dessus.",
+    "Une monture de combat est considérée comme : <br/>1) Une arme évolutive (emplacement d'arme) qui octroie des compétences au personnage (les compétences consomment le tour du perso), les autres emplacements d'armes n'affectent que le perso, pas la monture<br/>2) Un familier : il a ses PV, ses stats, et seuls les compétences et accessoires dédiés aux familiers agissent dessus.",
 };
 
 initDialog(labelsDescription);

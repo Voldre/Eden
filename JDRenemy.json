@@ -2240,7 +2240,7 @@
       "Scellement : Aucun sort physique, pendant 4 tours : Esprit"
     ],
     "stats": "6,17,15,10,16",
-    "desc": "Anuran Corsaire se battant au pistolet et 7eme t\u00eate de l'Hydra",
+    "desc": "Anuran Corsaire se battant au pistolet et 7eme t\u00eate de l'Hydra. Fier et rancunier.",
     "infos": "Faible au per\u00e7ant et \u00e0 la lumi\u00e8re",
     "drop": "50po, veste des hautes terres, rare: Fusil d'Asbi"
   },
@@ -2375,7 +2375,7 @@
       "Passif : Bloc P+2, Si PV < 120, dur\u00e9e des sorts +1 tour, D\u00e9g\u00e2t/Soin +5"
     ],
     "stats": "7,11,17,18,15",
-    "desc": "Surnomm\u00e9 Chris, s\u00e9ducteur un peu pervers et dou\u00e9 d'un charme irr\u00e9sistible.",
+    "desc": "Surnomm\u00e9 Chris, s\u00e9ducteur et dot\u00e9 d'un charme irr\u00e9sistible.",
     "infos": "Faiblesse au contondant et glace",
     "drop": "rare : Anneau curatif, Tenue de Noblesse, tr\u00e8s rare : Guitare massive"
   },
