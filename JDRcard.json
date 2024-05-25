@@ -441,7 +441,7 @@
     "value": 3,
     "kind": "boss",
     "name": "Grambo - N°7 Hydra",
-    "description": "Anuran Corsaire se battant au pistolet et 7eme t\u00eate de l'Hydra.",
+    "description": "Anuran Corsaire se battant au pistolet et 7eme t\u00eate de l'Hydra. Fier et rancunier.",
     "kindId": "grambo"
   },
   {
@@ -563,6 +563,14 @@
     "name": "Leonhart - 1er Chevalier",
     "description": "H\u00e9ros et 1er chevalier de l'ordre des Chevaliers du Temple, c'est un homme d\u00e9vou\u00e9 pour aider les autres, tr\u00e8s fiable et g\u00e9n\u00e9reux.",
     "kindId": "leonhart"
+  },
+  {
+    "id": 1062,
+    "value": 3,
+    "kind": "boss",
+    "name": "Adonis 2 - Juge déterminé",
+    "description": "Adonis a perfectionn\u00e9 sa technique de meurtre, il utilise la manipulation d'esprits (attaque, déconcentration, ruse) pour condamner ses ennemis.",
+    "kindId": "adonis"
   },
   {
     "id": 1201,
@@ -3828,6 +3836,28 @@
     "enemies": [],
     "kindId": "items/i00868",
     "group": 3
+  },
+  {
+    "id": 1821,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Lutte intense contre Adonis",
+    "description": "Une cape, une flûte et une bague : tout pour vaincre l'esprit du groupe. Heureusement Vassago a donné un bon coup de main et Adonis a enfin été attrapé ! Après 20 séances !",
+    "maps": [14],
+    "enemies": [],
+    "kindId": "items/k60288",
+    "group": 1
+  },
+  {
+    "id": 1822,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "L'élu d'Alhara",
+    "description": "Dans la luttre contre Adonis, un hommes est arrivé et à utilisé un pouvoir quasi divin pour contrôler les esprits. Il a inversé la balance et a décidé de récupérer ses objets... !",
+    "maps": [14],
+    "enemies": [166],
+    "kindId": "monsters/azrael",
+    "group": 1
   },
   {
     "id": 15000,

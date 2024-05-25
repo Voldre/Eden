@@ -7,6 +7,32 @@ body {
   z-index: 0;
   overflow-x: hidden;
 }
+
+
+dialog {
+  z-index: 10;
+  margin-top: 10px;
+  background-color: rgba(26, 25, 25, 0.99);
+  position: fixed;
+  width: 98%;
+  border: 2px wheat solid;
+  border-radius: 1rem;
+  color: wheat;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+label{
+  cursor: pointer;
+  cursor: url("images/layout/cursor-hover.png"), auto;
+}
+
+/* JDR Perso */
+
 .topleft {
   display: inline-block;
   width: 49%;
@@ -34,22 +60,6 @@ body {
   max-height: 270px;
   min-width: 50px;
   min-height: 70px;
-}
-dialog {
-  z-index: 10;
-  margin-top: 10px;
-  background-color: rgba(26, 25, 25, 0.99);
-  position: fixed;
-  width: 98%;
-  border: 2px wheat solid;
-  border-radius: 1rem;
-  color: wheat;
-  top: 50%;
-  transform: translate(0, -50%);
-}
-
-dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.35);
 }
 
 .stats {

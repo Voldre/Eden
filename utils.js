@@ -28,6 +28,14 @@ export const toastNotification = (text, duration = 3000) => {
   }
 };
 
+export const aoeDescInfo = {
+  range: ["L", "R"],
+  type: ["-", "+"],
+  rangeName: ["Ligne de", "Rond de"],
+  typeName: ["Courte portée", "Longue portée"],
+  typeMalus: ["Esquivable Malus 4 si proche, 2 si éloigné", "Esquivable seulement de loin, Malus 3-4"],
+};
+
 export class Perso {
   constructor(persoData, inFight = true) {
     this.nom = persoData.nom;
@@ -236,6 +244,12 @@ export const parseEqptValue = (text, eqpt) => {
 
 // text : string[], eqpts : eqpt[], persoData : Perso
 export const parseEqptsByRegex = (texts, eqpts, persoData) => {
+  // 24/05/2024 : Handle Passif level 12
+  if (persoData.niv >= 12) {
+    console.log("niv 12");
+    eqpts = eqpts.concat({ montant: persoData.passif12 });
+  }
+  console.log(persoData, eqpts);
   return eqpts.map((eqpt) => {
     if (!eqpt) return 0;
     // For each regex, parse Eqpt, and do the sum of each regex (.reduce)
