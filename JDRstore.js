@@ -34,7 +34,7 @@ export function getData(filename, JDR = true) {
       xhReq.open("GET", "./" + filename + ".json" + "?" + new Date().getTime(), false);
     }
     xhReq.send(null);
-    return JSON.parse(xhReq.responseText);
+    return xhReq.responseText ? JSON.parse(xhReq.responseText) : {};
   }
   return [];
 }

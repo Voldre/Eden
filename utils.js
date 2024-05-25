@@ -246,10 +246,8 @@ export const parseEqptValue = (text, eqpt) => {
 export const parseEqptsByRegex = (texts, eqpts, persoData) => {
   // 24/05/2024 : Handle Passif level 12
   if (persoData.niv >= 12) {
-    console.log("niv 12");
     eqpts = eqpts.concat({ montant: persoData.passif12 });
   }
-  console.log(persoData, eqpts);
   return eqpts.map((eqpt) => {
     if (!eqpt) return 0;
     // For each regex, parse Eqpt, and do the sum of each regex (.reduce)

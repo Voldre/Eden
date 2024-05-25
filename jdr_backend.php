@@ -7,7 +7,8 @@ session_start();
             $dir = './images/jdrgalerie';
             $files = scandir($dir);
             print_r($files);
-
+            
+            // Files must not contain any accents !!!
             file_put_contents('JDRgalery.json', json_encode($files));
         }
 
