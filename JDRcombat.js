@@ -77,7 +77,7 @@ window.addEventListener("load", () => {
 
     // 29/11/23 : Add check of entries at the beginning of the fight (here)
     if (currentPersoEntries <= 0) {
-      toastNotification("Erreur : Le personnage a déjà consommé toutes ses entrées.", 6000);
+      toastNotification("Erreur : Le personnage a déjà consommé toutes ses entrées.", 6000, true);
       endRediction();
       return;
     }
@@ -86,7 +86,7 @@ window.addEventListener("load", () => {
 
     // 30/01/24 : Short security to handle abberation (like Nyx with more than 1 billion damage)
     if (perso.degat > 75 || perso.armure > 50 || perso.pvmax > 275) {
-      toastNotification("Erreur : Le personnage a des statistiques hors-norme.", 6000);
+      toastNotification("Erreur : Le personnage a des statistiques hors-norme.", 6000, true);
       endRediction();
       return;
     }
@@ -99,7 +99,7 @@ window.addEventListener("load", () => {
       parseInt(perso.charisme) +
       parseInt(perso.esprit);
 
-    if (perso.degat > 45 || perso.armure > 35 || perso.pvmax > 200 || sumStats > 72) {
+    if (perso.degat > 52 || perso.armure > 35 || perso.pvmax > 200 || sumStats > 72) {
       console.log("new C log...");
       saveCheat(urlParams.get("enemy"));
     }
@@ -169,7 +169,7 @@ function cookieCheck() {
   }
 
   if (cookieAllow !== "true") {
-    toastNotification("Erreur : Lancez un combat à partir d'une quête", 6000);
+    toastNotification("Erreur : Lancez un combat à partir d'une quête", 6000, true);
     endRediction();
     return false;
   } else {
@@ -532,35 +532,29 @@ function newturn() {
 }
 
 async function isEnded() {
-  if (ingame) {
-    if (enemy.pv <= 0) {
-      toastNotification("Victoire !");
-      document.querySelector("#instruction").innerText = "Victoire !";
-      updateDesc("Vous avez vaincu " + enemy.nom);
-      ingame = false;
+  if (ingame && (enemy.pv <= 0 || perso.pv <= 0)) {
+    ingame = false;
+    const isVictory = enemy.pv <= 0;
+    toastNotification(isVictory ? "Victoire !" : "Défaite");
+    document.querySelector("#instruction").innerText = isVictory ? "Victoire !" : "Défaite";
+    updateDesc(`Vous avez ${isVictory ? "vaincu" : "perdu contre"} ${enemy.nom}`);
 
-      // Victory
-      if (joueurData) {
+    if (!joueurData) {
+      toastNotification("Erreur : Pas de joueur détecté, sauvegarde impossible", 6000, true);
+      return;
+    }
+
+    try {
+      if (isVictory) {
         await victory();
-        toastNotification("Sauvegarde effectuée, redirection ...", 6000);
       } else {
-        toastNotification("Pas de joueur détecté", 6000);
-      }
-    } else if (perso.pv <= 0) {
-      toastNotification("Défaite");
-      document.querySelector("#instruction").innerText = "Défaite";
-      updateDesc("Vous avez perdu contre " + enemy.nom);
-      ingame = false;
-
-      // Defeat
-      if (joueurData) {
         await saveLog(0, null);
-
         await savePlayer(joueurData);
-        toastNotification("Sauvegarde effectuée, redirection ...", 6000);
-      } else {
-        toastNotification("Pas de joueur détecté", 6000);
       }
+      toastNotification("Sauvegarde effectuée, redirection ...", 6000);
+    } catch (e) {
+      console.error(e);
+      toastNotification("Erreur : le combat n'a pas pu être sauvegardé :" + e.message, 6000, true);
     }
   }
 
@@ -616,7 +610,7 @@ async function victory() {
 
   // Security 30/12 : Bug when update files, cookies of player are like "corrupted" and enemy data doesn't work well
   if (!newJoueurData.alpagaCoin) {
-    toastNotification("Erreur : Données corrompues : Supprimez vos cookies.", 12000);
+    toastNotification("Erreur : Données corrompues : Supprimez vos cookies.", 12000, true);
     stop();
   }
 
@@ -691,7 +685,7 @@ async function savePlayer(newJoueurData) {
   if (currentPersoEntries === newJoueurData.entries[persoIDforPlayer]) newJoueurData.entries[persoIDforPlayer] -= 1;
 
   if (newJoueurData.entries[persoIDforPlayer] <= -1) {
-    toastNotification("Erreur : Le personnage a déjà consommé toutes ses entrées.", 6000);
+    toastNotification("Erreur : Le personnage a déjà consommé toutes ses entrées.", 6000, true);
     return;
   }
 
@@ -734,6 +728,8 @@ function showCardsAndCoins(winCards, newCoins) {
   // });
 
   const dialog = document.querySelector("dialog");
+  // Disable outside click to close dialog
+  dialog.style.pointerEvents = "none";
   document.querySelector("#coins").innerText = newCoins.toString();
 
   const cardsE = document.querySelector("#cards");

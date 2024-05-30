@@ -266,7 +266,7 @@ function loadPerso(perso, index, joueurData) {
   persoE.querySelector(".persoPic").src = perso.pp;
   persoE.addEventListener("click", () => {
     if (joueurData.entries[index] <= 0) {
-      toastNotification("Erreur : Le personnage ne peut plus aller combattre, revenez demain !");
+      toastNotification("Erreur : Le personnage ne peut plus aller combattre, revenez demain !", 4000, true);
     } else {
       document.querySelector("#worldmap").classList.remove("hide");
       document.querySelector(".continent").classList.add("active");

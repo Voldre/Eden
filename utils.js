@@ -10,8 +10,13 @@ export async function callPHP(data) {
   console.log("jdr_backend.php executed, data : ", data);
 }
 
-export const toastNotification = (text, duration = 3000) => {
+let currentTimeout;
+
+export const toastNotification = (text, duration = 3000, error = false) => {
   const toaster = document.getElementById("toast");
+
+  if (error) toaster.classList.add("error");
+  else toaster.classList.remove("error");
 
   if (toaster.getAttribute("listener") !== "true") {
     toaster.addEventListener("click", () => {
@@ -19,10 +24,12 @@ export const toastNotification = (text, duration = 3000) => {
     });
   }
 
-  if (!toaster.classList.contains("show")) {
+  if (!toaster.classList.contains("show") || error) {
+    // Clear timeout if defined
+    clearTimeout(currentTimeout);
     toaster.classList.add("show");
     toaster.innerText = text;
-    setTimeout(function () {
+    currentTimeout = setTimeout(function () {
       toaster.classList.remove("show");
     }, duration);
   }
@@ -52,7 +59,7 @@ export class Perso {
 
     if (!stuffs[0]) {
       if (inFight) {
-        toastNotification("Erreur : Le personnage n'est pas apte à se battre.", 8000);
+        toastNotification("Erreur : Le personnage n'est pas apte à se battre.", 8000, true);
         stop();
       } else {
         this.degat = "-";
@@ -282,7 +289,7 @@ export const parseEqptBonus = (eqpt, texts, eqpts, persoData) => {
         bonus = nbValidClass * parseEqptBonus;
         break;
       case "race":
-        bonus = persoData.race === eqpt.condition.value && parseEqptBonus;
+        bonus = eqpt.condition.value.includes(persoData.race) && parseEqptBonus;
         break;
       case "panoplie":
         // Get eqptsName, excepted the selected eqpt (that can match panoplie, ex : Heldentod)

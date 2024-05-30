@@ -993,7 +993,7 @@
     "nom": "Arc Arc-en-Ciel",
     "desc": "Un Arc forg\u00e9 avec un composant tr\u00e8s pr\u00e9cieux : le Minerai Arc-en-Ciel",
     "effet": "Blocage +2",
-    "montant": "D\u00e9g\u00e2t +9",
+    "montant": "D\u00e9g\u00e2t +10",
     "icone": "W50502"
   },
   "137": {
@@ -1069,7 +1069,7 @@
   "148": {
     "nom": "Ep\u00e9e Titanesque",
     "desc": "L'\u00e9p\u00e9e la plus lourde qui existe aujourd'hui",
-    "effet": "Dext\u00e9 -4, Esquive-2",
+    "effet": "Dext\u00e9 -5",
     "montant": "D\u00e9g\u00e2t +15",
     "icone": "W21105"
   },
@@ -1811,7 +1811,7 @@
     "nom": "Katana Polymorphe",
     "desc": "Un Katana l\u00e9gendaire capable de s'enchanter d'un \u00e9l\u00e9ment qu'il a subi (il y a moins de 3 tours) pendant 3 tours.",
     "effet": "Capacit\u00e9",
-    "montant": "D\u00e9g\u00e2t +10, 2 fois par combat (Instantan\u00e9) : s'enchante et d\u00e9g\u00e2t +5 sur 3 tours",
+    "montant": "D\u00e9g\u00e2t +10, 2 fois par combat (Instantan\u00e9) : s'enchante et d\u00e9g\u00e2t+5 sur 3 tours",
     "icone": "W26901"
   },
   "248": {
@@ -2223,7 +2223,7 @@
     "nom": "Marteau du Sage",
     "desc": "Un marteau con\u00e7u pour aider les sages.",
     "effet": "Intelligence +1",
-    "montant": "D\u00e9g\u00e2t +6, Soin +2 (AoE/2) (+1 si sage)",
+    "montant": "D\u00e9g\u00e2t +7, Soin +2 (AoE/2) (+1 si sage)",
     "condition": { "type": "classe", "value": ["Sage"], "bonus": "D\u00e9g\u00e2t +1, Soin +1" },
     "icone": "W40908"
   },
@@ -2268,7 +2268,7 @@
     "nom": "Plastron Elementaire",
     "desc": "Un plastron renfor\u00e7ant la magie \u00e9l\u00e9mentaire de son porteur (feu, glace, nature, ...).",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t -5, d\u00e9g\u00e2t \u00e9l\u00e9mentaire +2",
+    "montant": "D\u00e9g\u00e2t -5, d\u00e9g\u00e2t \u00e9l\u00e9mentaire +3",
     "icone": "A20095",
     "access": "D2"
   },
@@ -2584,7 +2584,9 @@
     "nom": "Plastron de Delphes",
     "desc": "Un plastron cr\u00e9\u00e9 par des anciens habitants de Delphes, ses propri\u00e9t\u00e9s curatives sont tr\u00e8s myst\u00e9rieuses.",
     "effet": "PV Soin re\u00e7u +3",
-    "montant": "D\u00e9g\u00e2t -5",
+    "montant": "D\u00e9g\u00e2t -5, (PV+5 si Torturran ou Ursun)",
+    "condition": { "type": "race", "value": ["Torturran", "Ursun"], "bonus": "PV +5" },
+
     "icone": "A20108"
   },
   "349": {
@@ -2842,7 +2844,7 @@
     "nom": "Ep\u00e9e Colossale Arc-en-Ciel",
     "desc": "Une \u00e9p\u00e9e colossale forg\u00e9e avec un composant tr\u00e8s pr\u00e9cieux : le Minerai Arc-en-Ciel",
     "effet": "Blocage +2",
-    "montant": "D\u00e9g\u00e2t +9",
+    "montant": "D\u00e9g\u00e2t +10",
     "icone": "W21207"
   },
   "383": {
@@ -2945,7 +2947,7 @@
     "desc": "Ces lunettes sont tr\u00e8s pris\u00e9es par les Zumis, c'est un peu leur marque de fabrique.",
     "effet": "",
     "montant": "Dext\u00e9rit\u00e9 +1, Esprit +1 (+1 si Zumi)",
-    "condition": { "type": "race", "value": "Zumi", "bonus": "Esprit +1" },
+    "condition": { "type": "race", "value": ["Zumi"], "bonus": "Esprit +1" },
     "icone": "k10106",
     "access": "A1"
   },
@@ -3288,7 +3290,7 @@
     "nom": "Robe de la Curie",
     "desc": "Une robe con\u00e7ue pour les membres de l'\u00e9glise de la Curie M\u00e9t\u00e9role",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t -3, Soin +2 et D\u00e9g\u00e2t magique +2 (AoE/2)",
+    "montant": "D\u00e9g\u00e2t -3, Soin +2 et D\u00e9g\u00e2t magique +2",
     "icone": "A20020"
   },
   "442": {
