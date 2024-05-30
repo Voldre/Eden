@@ -741,6 +741,8 @@ window.addEventListener("load", () => {
     indexPerso = 0;
     loadFiche();
   }
+
+  saveButton.disabled = false;
 });
 
 selectPerso.addEventListener("change", (e) => {
@@ -868,8 +870,6 @@ function loadFiche() {
 
   // Nouveauté 15/08/23 : Calcul automatique du montant des stats, 12/05/24 : Add stats repertatition
   statsVerification();
-
-  saveButton.disabled = false;
 }
 
 function statsValue(resistance) {
