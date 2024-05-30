@@ -890,8 +890,12 @@ label{
   transition: bottom 1s;
   transition-timing-function: ease-in-out;
 }
+#toast.error {
+  background-color: hsla(0, 65%, 60%, 0.95);
+}
+
 #toast:hover {
-  filter: hue-rotate(-60deg);
+  filter: saturate(1.6);
 }
 #toast.show {
   bottom: 40px;

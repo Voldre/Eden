@@ -2874,7 +2874,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "La manipulation des Héritiers",
-    "description": "Conrad a manipulé Marcus pour vaincre Rubis, mais cela s'est retourné contre lui. Rubis et Vidal ont fait toute une comédie pour duper Conrad et le peuple, utilisant ainsi Marcus et le groupe pour parvenir à faire tomber Conrad. Terrifiant n'est-ce pas ?",
+    "description": "Conrad a manipulé Marcus pour vaincre Rubis, mais cela s'est retourné contre lui. Rubis et Vidal ont fait toute une comédie pour le duper lui et le peuple, utilisant ainsi Marcus et le groupe pour parvenir à le faire tomber. Terrifiant n'est-ce pas ?",
     "maps": [34],
     "enemies": [],
     "kindId": "skillIcon/E0440",
@@ -3413,7 +3413,7 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Concert à la Veyda",
-    "description": "Le concert pour la cagnotte \"Sauver Gaazor\" a été bien animée : entre Plotodo qui pète un câble sur des nobles racistes, une voleuse Anuran, la chanson de Crimson, le questionnaire, le lutin abandonné (non sérieux il est à qui ?) et surtout l'incendie ! On peut dire que c'était le feu !",
+    "description": "Le concert pour la cagnotte \"Sauver Gaazor\" a été bien animée : entre Plotodo qui pète un câble sur des nobles racistes, une voleuse Anuran, la chanson de Crimson, le questionnaire, le lutin abandonné (sérieux il est à qui ?) et surtout l'incendie ! On peut dire que c'était le feu !",
     "maps": [501],
     "enemies": [160],
     "kindId": "skillIcon/E0708",
@@ -3857,6 +3857,50 @@
     "maps": [14],
     "enemies": [166],
     "kindId": "monsters/azrael",
+    "group": 1
+  },
+  {
+    "id": 1823,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "La vérité sur Fred",
+    "description": "Lorsque le groupe part voir Rumbledore, ce dernier leur apprend une nouvelle chouqante : Fred est une femelle ! Mais qu'a-t-elle fait aux Marais Décrépis ... ?",
+    "maps": [7],
+    "enemies": [],
+    "kindId": "monsters/m025bf",
+    "group": 1
+  },
+  {
+    "id": 1824,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "La visite de la Destri",
+    "description": "A la guilde de la Destri (invitation de Moturth). Ils ont pu découvrir le dressage de montures sous toute ses formes. Dont un envol de griffon qui a faillit mal tourner...",
+    "maps": [12],
+    "enemies": [],
+    "kindId": "monsters/m073b",
+    "group": 1
+  },
+  {
+    "id": 1825,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Kibo l'influençable",
+    "description": "Arrivé sur le Continent Zumi, Kibo entend parlé d'un super hôtel avec une chambre Zuminator, il fera tout pour y aller ! Sur les lieux, il profitera comme un fou dans sa tenue de héros et signera un autographe à une fan.",
+    "maps": [20],
+    "enemies": [],
+    "kindId": "otherIcon/group016b",
+    "group": 1
+  },
+  {
+    "id": 1826,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Kibo et Stessi",
+    "description": "A l'hôtel Zumiraculeux, Kibo rencontrera la jeune aguicheuse Business Woman Stessi, elle lui fera quelques avances : offrira des verres, sera coquine... Tout ça pour qu'au final Kibo la pousse par terre comme une malpropre. \"Faut pas déconner !\"",
+    "maps": [20],
+    "enemies": [],
+    "kindId": "monsters/stessi",
     "group": 1
   },
   {

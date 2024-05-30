@@ -43,7 +43,7 @@ window.addEventListener("load", async () => {
   const enemyData = chooseEnemy(urlParams.get("map"));
 
   if (!enemyData) {
-    toastNotification("Erreur : aucun ennemi n'existe sur cette map");
+    toastNotification("Erreur : aucun ennemi n'existe sur cette map", 6000, true);
     return;
   }
   initializeEnemy(enemyData, rarity);

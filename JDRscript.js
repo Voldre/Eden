@@ -704,7 +704,7 @@ Object.entries(persosJSON).forEach(([id, perso]) => {
 [0, 1].map((i) => {
   const nbNewPersos = Object.values(persosJSON).filter((perso) => perso.joueur === undefined).length;
   if (nbNewPersos > 5) {
-    toastNotification("Limite de personnages temporaires atteinte");
+    toastNotification("Limite de personnages temporaires atteinte", 2000, true);
     return;
   }
   const option = document.createElement("option");
@@ -1043,7 +1043,7 @@ saveButton.addEventListener("click", () => {
   // Save to JSON...
   // Only store persosJSON current user (perso id)
   if (!cookiePerso) {
-    toastNotification("Erreur : ID Perso ou Nom invalide");
+    toastNotification("Erreur : ID Perso ou Nom invalide", 4000, true);
     return;
   }
   console.log(cookiePerso.length);
@@ -1053,7 +1053,7 @@ saveButton.addEventListener("click", () => {
     callPHP({ action: "saveFile", name: "persos" });
     toastNotification("Sauvegarde effectuée");
   } else {
-    toastNotification("ECHEC : Plus de place disponible sur la fiche !", 10000);
+    toastNotification("ECHEC : Plus de place disponible sur la fiche !", 10000, true);
   }
 });
 

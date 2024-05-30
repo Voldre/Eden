@@ -134,7 +134,7 @@ if (logged) {
     const mainE = currentTurnE.closest(".perso") || currentTurnE.closest(".infoEnnemi");
 
     if (!allSlots) {
-      toastNotification("Impossible de passer le tour");
+      toastNotification("Impossible de passer le tour", 4000, true);
       return;
     }
 

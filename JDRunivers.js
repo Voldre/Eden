@@ -227,6 +227,8 @@ const labelsDescription = {
     'Le montant des buffs augmente :<ul><li>Les dégâts infligés des buffs (A la charge, Magie extrême, Euphorie, ...),</li><li>Les dégâts reçus des buffs (Encouragement musical, Mur de Titan, ...)</li></ul>Les montants des malus sont également compris dans ce terme "montant des buffs" :<ul><li>Les dégâts infligés des malus (Parasite, Flèche empoisonnée, ...)</li><li>Les dégâts reçus des malus (Perce-Armure, Affablissement Mental, ...)</li></ul>Rappel : le montant des buffs de l\'ensemble des stuffs est limité à +2 de ',
   monture:
     "Une monture de combat est considérée comme : <br/>1) Une arme évolutive (emplacement d'arme) qui octroie des compétences au personnage (les compétences consomment le tour du perso), les autres emplacements d'armes n'affectent que le perso, pas la monture<br/>2) Un familier : il a ses PV, ses stats, et seuls les compétences et accessoires dédiés aux familiers agissent dessus.",
+  instant:
+    "Dans chaque tour d'un joueur, il est possible de faire 1 action (attaque, ...) et 1 action instantanée qui est facultative, voici la liste de ces actions :<ul><li>Changement d'armes parmi les 3 emplacements.<br/>/!\\ changer un équipement par un autre consomme le tour</li><li>Compétences instantanées : octroyées par certaines classes ou équipements.<br/>/!\\ Un même sort instantanée ne peut être utilisé que tous les 3 tours (anti-spam)</li><li>Utiliser un objet/gadget : 1 potion, 1 bombe, ...</li></ul>A noter : il est possible d'utiliser 2 actions instantanées en 1 tour, la seconde action consommera le tour.<br/>/!\\ Faire un échec critique (19, 20) sur une action instantanée fait perdre le tour.",
 };
 
 initDialog(labelsDescription);
