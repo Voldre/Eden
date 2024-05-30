@@ -226,22 +226,24 @@
     </div>
 
     <h2 style="margin-bottom: 0px">Cartes à collectionner</h2>
+    <fieldset style="width: fit-content;" class="hide">
+  <legend>Filtres :</legend>
+    <input type="radio" id="all" name="acquired" value="all" checked/>
+    <label for="all">Toutes</label>
+    <input type="radio" id="acquired" name="acquired" value="acquired"  />
+    <label for="acquired">Cartes acquises</label>
+    <input type="radio" id="not-acquired" name="acquired" value="not-acquired" />
+    <label for="not-acquired">Cartes manquantes</label>
+</fieldset>
+
     <div id="allCards" class="flexContainer" style="flex-direction: column">
-      <h3>
-        <label for="map">Maps & Donjons <span id="mapCount"></span></label>
-      </h3>
+      <label for="map">Maps & Donjons <span id="mapCount"></span> ▼</label>
       <div id="map"></div>
-      <h3>
-        <label for="boss">Boss <span id="bossCount"></span></label>
-      </h3>
+      <label for="boss">Boss <span id="bossCount"></span> ▼</label>
       <div class="flexContainer" id="boss"></div>
-      <h3>
-        <label for="composant">Composants / Objets / Montures <span id="composantCount"></span></label>
-      </h3>
+      <label for="composant">Composants / Objets / Montures <span id="composantCount"></span> ▼</label>
       <div class="flexContainer" id="composant"></div>
-      <h3>
-        <label for="anecdote">Anecdotes de Personnages <span id="anecdoteCount"></span></label>
-      </h3>
+      <label for="anecdote">Anecdotes de Personnages <span id="anecdoteCount"></span> ▼</label>
       <div class="flexContainer" id="anecdote">
         <div id="g1"><h5>Groupe 1</h5></div>
 

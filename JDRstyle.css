@@ -811,6 +811,19 @@ label{
   border: none;
 }
 
+#allCards label{
+  padding: 5px;
+  font-size: 20px;  
+  font-weight: bold;
+  margin-block: 5px;
+}
+#allCards label:hover{
+  display: block;
+  background-color: rgba(36, 36, 106, 0.7);
+  cursor: pointer;
+  cursor: url("images/layout/cursor-x.png"), auto;
+}
+
 .card {
   overflow: auto;
   max-height: 150px;
@@ -965,6 +978,7 @@ label{
   #g2,
   #g3 {
     margin-bottom: 5px;
-    flex-basis: 50%;
+    flex-basis: 33%;
+    margin-left:-3px;
   }
 }

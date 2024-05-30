@@ -11,6 +11,8 @@ const classes = [ "Guerrier", "Chevalier", "Templier", "Chev Dragon", "Voleur", 
 // prettier-ignore
 const iconsClasses = [ "01", "02", "03", "18", "04", "05", "06", "16", "07", "08", "09", "59", "10", "11", "12", "17", "13", "14", "15", "19",];
 
+const cardKinds = ["map", "boss", "composant", "anecdote"];
+
 //  LOADING
 const selectPerso = document.querySelector("#selectPlayer");
 var selectedPerso = selectPerso.value;
@@ -188,6 +190,8 @@ document.querySelector("#selectPlayer").addEventListener("change", (e) => {
 function loadPlayer(player) {
   charactersList.id = player;
 
+  document.querySelector("fieldset").className = !!playerJSON[player] ? "" : "hide";
+
   if (!playerJSON[player]) return;
 
   const joueurData = updateDay(playerJSON[player], player);
@@ -326,10 +330,8 @@ document.addEventListener("click", (e) => {
 });
 
 function loadCards(joueurData) {
-  const kinds = ["map", "boss", "composant", "anecdote"];
-
   // Reset
-  kinds.forEach((kind) => {
+  cardKinds.forEach((kind) => {
     if (kind === "anecdote") {
       [...document.querySelector("#" + kind).querySelectorAll("div")].forEach((e) => (e.innerText = ""));
     } else document.querySelector("#" + kind).innerText = "";
@@ -388,9 +390,7 @@ function loadCards(joueurData) {
 }
 
 function countCards(joueurData) {
-  const kinds = ["map", "boss", "composant", "anecdote"];
-
-  kinds.forEach((kind) => {
+  cardKinds.forEach((kind) => {
     const countJoueurCardsByKind = joueurData.cards
       .map((cardId) => cardJSON.filter((c) => c.id === cardId && c.kind === kind).length)
       .reduce((partialSum, a) => partialSum + a, 0);
@@ -402,17 +402,50 @@ function countCards(joueurData) {
   });
 }
 
+// Hide/Show cards by categories :
+
+cardKinds.map((kind) => {
+  const label = document.querySelector('label[for="' + kind + '"]');
+  const element = document.getElementById(kind);
+  label.addEventListener("click", () => {
+    const willBeHidden = !element.classList.contains("hide");
+    element.classList.toggle("hide");
+    label.innerText = label.innerText.slice(0, -1) + (willBeHidden ? "▲" : "▼");
+  });
+});
+
+// Filters cards :
+const radioButtons = [...document.querySelectorAll("input[type='radio']")];
+radioButtons.map((radioButton) =>
+  radioButton.addEventListener("change", () => {
+    const allCardsE = [...document.querySelectorAll(".card")];
+    const filter = radioButtons.find((r) => r.checked).value;
+    if (filter === "all") {
+      allCardsE.map((cardE) => cardE.classList.remove("hide"));
+    } else {
+      allCardsE.map((cardE) => {
+        const isAcquired = cardE.children.length > 1;
+        if ((filter === "acquired" && isAcquired) || (filter === "not-acquired" && !isAcquired)) {
+          cardE.classList.remove("hide");
+        } else {
+          cardE.classList.add("hide");
+        }
+      });
+    }
+  })
+);
+
 // Modal (Dialog) des informations de bases des labels
 
 const labelsDescription = {
   alpagaCoin:
     "Les pièces d'Alpaga peuvent être échangées contre de l'expérience ou de l'or.<br/>1 XP (1 perso) = 4 à 10+ Pièces Alpaga<br/>1 Or (1 perso) = 2 à 4+ Pièces Alpaga.<br/> > Ce taux varie selon le nombre de persos, leur niveau, leur sort (soin/armure).<br/><br/>Attention : Pour échanger les pièces, il faut que la situation soit cohérente (roleplay), exemple : une interlude, le personnage a quitté le groupe pendant un moment, etc... Et même dans ces conditions, la quantité d'XP/Or donné est limité (ex : on ne peut pas obtenir 3 niveaux d'un coup), voici des exemples :<br/>- Sans aucun délai, les limites sont de 20 XP et 30 pièces (l'un ou l'autre, sinon moins).<br/>- Selon les séances loupées : 10 + 30 * (nombre de séances) en XP / pièces. Maximum : 200 / 300 (idem nouveau perso).",
-  map: "Les cartes de maps & donjons peuvent être obtenues sur leurs zones spécifiques. Elles donnent des informations sur la zone en question.",
-  boss: "Les cartes de Boss peuvent être obtenues n'importe où mais que sur des ennemis de niveau Boss (>= 200 PV). Elles donnent quelques informations sur eux et représentent une belle collection à avoir.",
-  composant:
-    "Les cartes composants peuvent être obtenues n'importe où. Elles représentent un composant de mine, de ferme ou d'invocation (créatures).",
-  anecdote:
-    "Les cartes anecdotes peuvent être obtenues dans des endroits et face à des ennemis étant en lien avec l'anecdote. Elles font références à des moments cultes vécus pendant le JDR !",
+  // map: "Les cartes de maps & donjons peuvent être obtenues sur leurs zones spécifiques. Elles donnent des informations sur la zone en question.",
+  // boss: "Les cartes de Boss peuvent être obtenues n'importe où mais que sur des ennemis de niveau Boss (>= 200 PV). Elles donnent quelques informations sur eux et représentent une belle collection à avoir.",
+  // composant:
+  //   "Les cartes composants peuvent être obtenues n'importe où. Elles représentent un composant de mine, de ferme ou d'invocation (créatures).",
+  // anecdote:
+  //   "Les cartes anecdotes peuvent être obtenues dans des endroits et face à des ennemis étant en lien avec l'anecdote. Elles font références à des moments cultes vécus pendant le JDR !",
 };
 
 initDialog(labelsDescription);
