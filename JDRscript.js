@@ -7,6 +7,8 @@ import {
   unformatText,
   capitalize,
   aoeDescInfo,
+  sum,
+  sumEqptsAsAccess,
 } from "./utils";
 
 console.log("Skills JSON", skillsJSON);
@@ -36,6 +38,15 @@ const elementsCategories = elements.map((element) => {
   return { regex: [`${element} +`], label: labelElement, img: true };
 });
 
+const statistiques = ["Force", "Dextérité", "Intelligence", "Charisme", "Esprit"];
+
+// Categories not in the synthesis, but used to calcule limits
+const statsCategories = statistiques.map((stat) => {
+  // Don't match "Résistance d'esprit" for "Esprit" stat
+  const regex = stat === "Esprit" ? /(?<!résistance d')esprit \+/gi : stat;
+  return { regex: [`${regex} +`], label: unformatText(stat), img: false };
+});
+
 const synthesisCategories = [
   { regex: ["Dégât +"], label: "DGT", img: false },
   { regex: ["Faiblesse +"], label: "F", img: false },
@@ -59,6 +70,8 @@ const nivE = document.querySelector("#niv");
 
 let persoEqptsName = [];
 let persoEqpts = [];
+
+const errorEqptE = document.querySelector("#errorEQPT");
 
 // RACES
 const raceE = document.querySelector("#race");
@@ -270,11 +283,11 @@ document.querySelector("#xp").addEventListener("change", (e) => {
 // Nouveauté 15/08 : Calcul automatique du montant des stats
 function statsVerification() {
   const niv = nivE.value;
-  const sommeStats = statsValue(false).reduce((a, b) => a + b);
+  const sommeStats = statsValue(false).reduce(sum);
   const statsRequired = 61 + Math.trunc(parseInt(niv) / 5);
   if (sommeStats !== statsRequired) {
     document.querySelector("#errorStat").innerText =
-      " - Attention, vos points de stats ne sont pas bon : " + sommeStats + ", attendu : " + statsRequired;
+      "/!\\ Attention : Erreur points de stats : " + sommeStats + ", attendu : " + statsRequired;
   } else {
     document.querySelector("#errorStat").innerText = "";
   }
@@ -895,14 +908,10 @@ function statsValue(resistance) {
 function getAllRes(persoEqpts) {
   const resAmount = statsValue(true);
 
-  const montantBlocP = parseEqptsByRegex(["Blocage +", "Blocage physique +"], persoEqpts, persoData).reduce(
-    (a, b) => a + b
-  );
-  const montantEsq = parseEqptsByRegex(["Esquive +"], persoEqpts, persoData).reduce((a, b) => a + b);
-  const montantBlocM = parseEqptsByRegex(["Blocage +", "Blocage magique +"], persoEqpts, persoData).reduce(
-    (a, b) => a + b
-  );
-  const montantRes = parseEqptsByRegex(["Résistance d'esprit +"], persoEqpts, persoData).reduce((a, b) => a + b);
+  const montantBlocP = parseEqptsByRegex(["Blocage +", "Blocage physique +"], persoEqpts, persoData).reduce(sum, 0);
+  const montantEsq = parseEqptsByRegex(["Esquive +"], persoEqpts, persoData).reduce(sum, 0);
+  const montantBlocM = parseEqptsByRegex(["Blocage +", "Blocage magique +"], persoEqpts, persoData).reduce(sum, 0);
+  const montantRes = parseEqptsByRegex(["Résistance d'esprit +"], persoEqpts, persoData).reduce(sum, 0);
 
   document.querySelector("#resForce").innerText = `Bloc ${resAmount[0]} ${montantBlocP ? `+ ${montantBlocP}` : ""}`;
   document.querySelector("#resDexté").innerText = `Esq ${resAmount[1]} ${montantEsq ? `+ ${montantEsq}` : ""}`;
@@ -914,10 +923,18 @@ function createEquipmentSynthesis(persoEqpts) {
   const eqptSynthesisE = document.querySelector(".equipements-synthese");
   eqptSynthesisE.innerHTML = "";
 
+  let accessValues = [];
+
   synthesisCategories.forEach((category) => {
     const eqptsValueList = parseEqptsByRegex(category.regex, persoEqpts, persoData);
     // console.log("eqptsValueList", eqptsValueList);
-    const eqptsValue = eqptsValueList.reduce((total, item) => total + item, 0);
+    const eqptsValue = eqptsValueList.reduce(sum, 0);
+
+    // 01/06/2024 : Get category over the defined limit for accessories (exclude passif)
+    accessValues.push({
+      label: category.label,
+      value: sumEqptsAsAccess(category.regex, persoEqpts, persoData),
+    });
 
     if (!eqptsValue || eqptsValue === 0) return;
 
@@ -947,6 +964,77 @@ function createEquipmentSynthesis(persoEqpts) {
     synthesisCategoryE.append(categoryHeaderE, categoryValueE);
     eqptSynthesisE.append(synthesisCategoryE);
   });
+
+  // 01/06/2024 : Display category over the defined limit for accessories
+  statsCategories.forEach((category) => {
+    accessValues.push({
+      label: category.label,
+      value: sumEqptsAsAccess(category.regex, persoEqpts, persoData),
+    });
+  });
+
+  const montantBlocP = sumEqptsAsAccess(["Blocage +", "Blocage physique +"], persoEqpts, persoData);
+  const montantEsq = sumEqptsAsAccess(["Esquive +"], persoEqpts, persoData);
+  const montantBlocM = sumEqptsAsAccess(["Blocage +", "Blocage magique +"], persoEqpts, persoData);
+  const montantRes = sumEqptsAsAccess(["Résistance d'esprit +"], persoEqpts, persoData);
+
+  const degatPM = accessValues
+    .filter((v) => ["DGT", "P", "M"].includes(v.label))
+    .map((v) => v.value)
+    .reduce(sum, 0);
+  const degatElems = accessValues.filter((v) => elements.map((e) => unformatText(e)).includes(v.label));
+
+  console.log(accessValues);
+
+  const accesLimitsByCategory = [
+    { label: "Dégât (P/M)", limit: 6, value: degatPM },
+    ...degatElems.map((degatElem) => ({
+      label: `Dégât (P+M) + ${degatElem.label}`,
+      limit: 8,
+      value: degatPM + degatElem.value,
+    })),
+    { label: "Soin", limit: 6, value: accessValues.find((v) => v.label === "S").value },
+    ...statsCategories.map((category) => ({
+      label: category.label,
+      limit: 2,
+      value: accessValues.find((v) => v.label === category.label).value,
+    })),
+    { label: "Armure", limit: 5, value: accessValues.find((v) => v.label === "ARM").value },
+    { label: "Blocage physique", limit: 3, value: montantBlocP },
+    { label: "Esquive", limit: 3, value: montantEsq },
+    { label: "Blocage magique", limit: 3, value: montantBlocM },
+    { label: "Résistance d'esprit", limit: 3, value: montantRes },
+  ];
+  // console.log(accesLimitsByCategory);
+  const eqptOverLimits = accesLimitsByCategory.filter((category) => category.value > category.limit);
+  errorEqptE.innerText = eqptOverLimits.length ? "/!\\ Des montants dépassent les limites" : "";
+
+  if (eqptOverLimits) {
+    errorEqptE.addEventListener("click", () => showEqptErrors(eqptOverLimits));
+  }
+}
+
+function showEqptErrors(eqptOverLimits) {
+  const dialog = document.querySelector("dialog");
+  dialog.innerText = "La somme des montants des accessoires sont trop élevés sur les catégories suivantes :";
+  const listE = document.createElement("ul");
+  eqptOverLimits.map((eqptLimit) => {
+    const limitE = document.createElement("li");
+    limitE.innerText = `${eqptLimit.label} : ${eqptLimit.value} > ${eqptLimit.limit}`;
+    listE.append(limitE);
+  });
+  dialog.append(listE);
+
+  // Bouton de fermeture
+  const closeE = document.createElement("button");
+  closeE.id = "close";
+  closeE.innerText = "Fermer";
+  closeE.addEventListener("click", () => {
+    dialog.close();
+  });
+  dialog.append(closeE);
+
+  dialog.showModal();
 }
 
 //  DOWNLOAD as FILE
@@ -1206,7 +1294,7 @@ infoStatsE.addEventListener("click", () => {
 
   const statsE = document.createElement("div");
   statsE.className = "stats";
-  ["Force", "Dextérité", "Intelligence", "Charisme", "Esprit"].map((statName) => {
+  statistiques.map((statName) => {
     const statNameE = document.createElement("p");
     statNameE.innerText = statName;
 
@@ -1250,7 +1338,7 @@ const getStats = () => {
   const classesStats = statsJSON.classes.filter((e) => [classeP, classeS].includes(e.Classe));
   const raceStats = statsJSON.races.find((e) => e.Race === race);
 
-  const pvStuff = parseEqptsByRegex(["PV +"], persoEqpts, persoData).reduce((a, b) => a + b, 0);
+  const pvStuff = parseEqptsByRegex(["PV +"], persoEqpts, persoData).reduce(sum, 0);
 
   const allStats = sumObjectsByKey(classesStats[0], classesStats[1] ?? classesStats[0], raceStats);
 

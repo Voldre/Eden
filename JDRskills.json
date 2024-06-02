@@ -372,7 +372,7 @@
     "nom": "Totem Gracieux",
     "desc": "Invoque un familier Totem : 30 PV, Force : 9, Dext\u00e9 : 13, Intel/Esprit : 14. - Mode Soin : Ne peut pas bouger / se prot\u00e9ger, 0 jet de d\u00e9. - Mode Soutien : peut bouger et bloquer, 2 sorts : 1) Renforcement : +2 Force ou +2 Intel sur la cible : 3 tours (intel) , 2) Eclair : 1D8 (intel)",
     "effet": "Invocation",
-    "montant": "(jusqu'\u00e0 coupure magique), Mode Soin : Soin 3 PV par tour. - Mode Soutien : attaque/bloque",
+    "montant": "(jusqu'\u00e0 coupure magique), Mode Soin : Soin 3 PV (AoE) par tour. - Mode Soutien : attaque/bloque",
     "icone": "E0115",
     "stat": "Esprit",
     "classe": ["Shaman"]

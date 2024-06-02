@@ -8,6 +8,12 @@ body {
   overflow-x: hidden;
 }
 
+#errorStat,
+#errorEQPT{
+  color:rgb(213, 70, 70); 
+  font-size: 16px;
+  align-content: center;
+}
 
 dialog {
   z-index: 10;

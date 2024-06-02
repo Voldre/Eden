@@ -292,7 +292,7 @@
     "nom": "Cache oeil de Pirate",
     "desc": "Un cache oeil qui vous permet de mieux viser !",
     "effet": "",
-    "montant": "Dext\u00e9rit\u00e9 +2 (Charisme +1 si Corsaire)",
+    "montant": "Dext\u00e9rit\u00e9 +2 (Charisme+1 si Corsaire)",
     "condition": { "type": "classe", "value": ["Corsaire"], "bonus": "Charisme +1" },
     "icone": "k10200",
     "access": "A0"
@@ -564,7 +564,7 @@
   "77": {
     "nom": "Sac d'Alpaga Dor\u00e9",
     "desc": "Sac \u00e0 dos \u00e0 l'effigie d'un Alpaga dor\u00e9. Tr\u00e8s mignon.",
-    "effet": "Buff",
+    "effet": "Familier",
     "montant": "Renforce l'invocation Alpaga : PV+10, toutes stat +1, d\u00e9g\u00e2t+2",
     "icone": "k60100",
     "access": "D3"
@@ -999,21 +999,21 @@
   "137": {
     "nom": "Arc du Dompteur",
     "desc": "Am\u00e9lioration de l'Arc du Dresseur, il a \u00e9t\u00e9 pris en main par un grand dompteur.",
-    "effet": "Am\u00e9lioration familier",
+    "effet": "Familier",
     "montant": "D\u00e9g\u00e2t +8, Familier : d\u00e9g\u00e2t/soin+4 (AoE/2), r\u00e9ussite sort+1",
     "icone": "W50503"
   },
   "138": {
     "nom": "Grimoire de la B\u00eate",
     "desc": "Un grimoire renfor\u00e7ant les liens avec votre Familier.",
-    "effet": "Am\u00e9lioration familier",
+    "effet": "Familier",
     "montant": "D\u00e9g\u00e2t +6, Familier : d\u00e9g\u00e2t/soin+2 (AoE/2), r\u00e9ussite sort+1",
     "icone": "W62907"
   },
   "139": {
     "nom": "Grimoire de l'Invocateur",
     "desc": "Am\u00e9lioration du Grimoire de la B\u00eate, il a \u00e9t\u00e9 pris en main par un grand invoncateur.",
-    "effet": "Am\u00e9lioration familier",
+    "effet": "Familier",
     "montant": "D\u00e9g\u00e2t +8, Familier : d\u00e9g\u00e2t/soin+4 (AoE/2), r\u00e9ussite sort+1",
     "icone": "W62903"
   },
@@ -1131,7 +1131,7 @@
   "156": {
     "nom": "Arc du Dresseur",
     "desc": "Arc renfor\u00e7ant les liens avec votre Familier.",
-    "effet": "Am\u00e9lioration des Familiers",
+    "effet": "Familier",
     "montant": "D\u00e9g\u00e2t +6, Familier : d\u00e9g\u00e2t/soin+2 (AoE/2), r\u00e9ussite sort+1",
     "icone": "W50303"
   },
@@ -1318,7 +1318,7 @@
   "182": {
     "nom": "Bible du Familier",
     "desc": "Un ouvrage rare permettant d'am\u00e9liorer la puissance des familiers",
-    "effet": "Am\u00e9lioration familier",
+    "effet": "Familier",
     "montant": "Familier : PV+10, d\u00e9g\u00e2t/soin+4 (AoE/2)",
     "icone": "I00134",
     "access": "D3"
@@ -1663,7 +1663,7 @@
   "228": {
     "nom": "Ep\u00e9e du H\u00e9ros",
     "desc": "Une \u00e9p\u00e9e port\u00e9e par un grand h\u00e9ros du pass\u00e9, des rumeurs disent qu'il s'agit du premier Chevalier du Chaos. Appartient \u00e0 la Panoplie du \"H\u00e9ros\".",
-    "effet": "Force +1, Intel +1",
+    "effet": "Force +1, Intelligence +1",
     "montant": "D\u00e9g\u00e2t +4 (+2 si panoplie)",
     "condition": { "type": "panoplie", "value": "Brassard du H\u00e9ros", "bonus": "D\u00e9g\u00e2t +2" },
     "icone": "W10604"
@@ -1884,7 +1884,7 @@
     "nom": "Lunettes Anciennes",
     "desc": "Des lunettes assez anciennes aux propri\u00e9t\u00e9s inconnues",
     "effet": "Capacit\u00e9",
-    "montant": "2 fois par combat (Instantan\u00e9e) : Dext\u00e9rit\u00e9 +3 pendant 3 tours",
+    "montant": "2 fois par combat (Instantan\u00e9e) : Dext\u00e9rit\u00e9+3 pendant 3 tours",
     "icone": "k19016",
     "access": "D2"
   },
@@ -2260,7 +2260,7 @@
     "nom": "Veste de l'Esprit",
     "desc": "Une veste renfor\u00e7ant l'esprit de son porteur. Appartient \u00e0 la Panoplie de l'Esprit (tout objet \"de l'esprit\" en fait partie)",
     "effet": "Esprit +1",
-    "montant": "D\u00e9g\u00e2t -4, (si panoplie : r\u00e9sistance esprit +2)",
+    "montant": "D\u00e9g\u00e2t -4, (si panoplie : r\u00e9sistance esprit+2)",
     "condition": { "type": "panoplie", "value": "Esprit", "bonus": "R\u00e9sistance d'esprit +2" },
     "icone": "A20064"
   },
@@ -2457,7 +2457,7 @@
   "331": {
     "nom": "Robe de D\u00e9mone du Nord",
     "desc": "Une robe cousue sp\u00e9cialement pour la \"g\u00e9n\u00e9rale de l'arm\u00e9e de d\u00e9mons du nord\" par le Roi Lucius",
-    "effet": "Am\u00e9lioration familier",
+    "effet": "Familier",
     "montant": "D\u00e9g\u00e2t -4, Familier : d\u00e9g\u00e2t/soin+2 (AoE/2), r\u00e9ussite sort+1",
     "icone": "k20180"
   },
@@ -2480,8 +2480,8 @@
   "334": {
     "nom": "Bandeau du Rageux",
     "desc": "Un bandeau \u00e0 l'effigie d'un perroquet, ce qui ne repr\u00e9sente pas du tout le Rageux, un aigle.",
-    "effet": "Am\u00e9lioration familier",
-    "montant": "Maintient l'Aigle en vie malgr\u00e9 la distance",
+    "effet": "Familier",
+    "montant": "Maintient l'Aigle en vie malgr\u00e9 la distance, + 5 PV pour lui",
     "icone": "bandeau",
     "access": "A4"
   },
@@ -2586,7 +2586,6 @@
     "effet": "PV Soin re\u00e7u +3",
     "montant": "D\u00e9g\u00e2t -5, (PV+5 si Torturran ou Ursun)",
     "condition": { "type": "race", "value": ["Torturran", "Ursun"], "bonus": "PV +5" },
-
     "icone": "A20108"
   },
   "349": {
@@ -2718,7 +2717,8 @@
     "nom": "Plastron Draconique",
     "desc": "Un plastron d\u00e9di\u00e9 aux Chevaliers Dragons, seuls les plus nobles et puissants se le voit octroy\u00e9.",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t -6 (Force +1, Intel +1 pour les Chev D.)",
+    "montant": "D\u00e9g\u00e2t -6 (Force+1, Intel+1 pour les Chev D.)",
+    "condition": { "type": "classe", "value": ["Chev Dragon"], "bonus": "Force +1, Intelligence +1" },
     "icone": "A20081"
   },
   "366": {
@@ -2996,7 +2996,7 @@
   "402": {
     "nom": "Robe de G\u00e9n\u00e9rale du Nord",
     "desc": "Am\u00e9lioration de la \"Robe de d\u00e9mone du Nord\", elle repr\u00e9sente mieux la hauteur de sa personne !",
-    "effet": "Am\u00e9lioration familier",
+    "effet": "Familier",
     "montant": "D\u00e9g\u00e2t -4, Familier : d\u00e9g\u00e2t/soin+4 (AoE/2), r\u00e9ussite sort+1",
     "icone": "k20926"
   },
@@ -3075,7 +3075,7 @@
     "nom": "Cape de fuite",
     "desc": "Cette cape est tr\u00e8s  utile lorsque la situation tourne mal, elle vous aidera \u00e0 survivre !",
     "effet": "",
-    "montant": "Si PV < 33%, Esquive et Dext\u00e9rit\u00e9 +2",
+    "montant": "Si PV < 33%, Esquive et Dext\u00e9rit\u00e9+2",
     "condition": { "type": "PV", "value": "3", "bonus": "Esquive +2, Dext\u00e9rit\u00e9 +2" },
     "icone": "A60015",
     "access": "A1"
@@ -3186,7 +3186,7 @@
     "nom": "Ep\u00e9e Gemme Noire",
     "desc": "Cette \u00e9p\u00e9e a \u00e9t\u00e9 taill\u00e9e dans une gemme sombre, elle inspire la peur et la haine.",
     "effet": "Element : T\u00e9n\u00e8bres",
-    "montant": "D\u00e9g\u00e2t +9 , d\u00e9g\u00e2t de t\u00e9n\u00e8bres +2 (D\u00e9g\u00e2t +1 si Luminary) ",
+    "montant": "D\u00e9g\u00e2t +9 , d\u00e9g\u00e2t de t\u00e9n\u00e8bres +2 (Si Luminary : D\u00e9g\u00e2t+1) ",
     "condition": { "type": "classe", "value": ["Luminary"], "bonus": "D\u00e9g\u00e2t +1" },
     "icone": "W25607"
   },
@@ -3260,7 +3260,7 @@
     "nom": "Mitre de l'Ev\u00eaque",
     "desc": "Cette toque est d\u00e9di\u00e9e aux \u00e9v\u00eaques de la Curie M\u00e9t\u00e9role, cela leur apporte tout ce dont ils ont besoins.",
     "effet": "Soin +2",
-    "montant": "Intelligence +1, Esprit +1, (Charisme +1 si Clerc/Sage)",
+    "montant": "Intelligence +1, Esprit +1, (Charisme+1 si Clerc/Sage)",
     "condition": { "type": "classe", "value": ["Clerc", "Sage"], "bonus": "Charisme +1" },
     "icone": "A10011"
   },
@@ -3366,7 +3366,7 @@
     "nom": "Chapeau du barde",
     "desc": "",
     "effet": "",
-    "montant": "Dext\u00e9rit\u00e9 +1, Intelligence +1 (Charisme +1 si Barde)",
+    "montant": "Dext\u00e9rit\u00e9 +1, Intelligence +1 (Charisme+1 si Barde)",
     "condition": { "type": "classe", "value": ["Barde"], "bonus": "Charisme +1" },
     "icone": "A10058",
     "access": "A0"
@@ -3443,7 +3443,7 @@
     "nom": "Plastron du Templier Noir",
     "desc": "Un antique plastron de templier qui doit remonter avant la grande guerre : une magie \u00e9trange en \u00e9mane. Appartient \u00e0 la Panoplie du Templier Noir",
     "effet": "Mal\u00e9diction du lien",
-    "montant": "D\u00e9g\u00e2t -5 (-1 par pi\u00e8ce) : Force / Intelligence +1 si Templier",
+    "montant": "D\u00e9g\u00e2t -5 (-1 par pi\u00e8ce) : Force +1, Intelligence +1",
     "icone": "k20472b",
     "condition": { "type": "panoplie", "value": "Templier Noir", "bonus": "D\u00e9g\u00e2t re\u00e7u -2" }
   },
@@ -3548,7 +3548,7 @@
     "nom": "Griffe vivante",
     "desc": "Cette griffe est en r\u00e9alit\u00e9 un organisme vivant. Une fois \u00e0 votre poign\u00e9e elle ne veut plus s'en s\u00e9parer : vous la maintenez en vie, tel un parasite.",
     "effet": "Mal\u00e9diction du lien",
-    "montant": "D\u00e9g\u00e2t +8, Force+1. Et -3 PV par attaque lanc\u00e9e",
+    "montant": "D\u00e9g\u00e2t +8, Force +1. Et -3 PV par attaque lanc\u00e9e",
     "icone": "W32805"
   },
   "475": {
@@ -3576,7 +3576,8 @@
     "nom": "Tenue de Luminary",
     "desc": "Une tenue id\u00e9ale qui amplifie le talent des chevaliers du chaos : Luminary",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t -4 (Si Luminary : d\u00e9g\u00e2ts +3)",
+    "montant": "D\u00e9g\u00e2t -4 (Si Luminary : D\u00e9g\u00e2t+3)",
+    "condition": { "type": "classe", "value": ["Luminary"], "bonus": "Dégât +3" },
     "icone": "k20578"
   },
   "479": {
@@ -3590,7 +3591,8 @@
     "nom": "Tenue de Mage Acad\u00e9mique",
     "desc": "Une tenue alliant noblesse et richesse, id\u00e9ale pour les diplomates aventureux.",
     "effet": "Exp\u00e9rience re\u00e7u +20%",
-    "montant": "D\u00e9g\u00e2t -4 (Si magicien/illusionniste : d\u00e9g\u00e2ts +2)",
+    "montant": "D\u00e9g\u00e2t -4 (Si magicien/illusionniste : D\u00e9g\u00e2t+2)",
+    "condition": { "type": "classe", "value": ["Magicien", "Illusionniste"], "bonus": "Dégât +2" },
     "icone": "k21032"
   },
   "481": {
@@ -3648,5 +3650,64 @@
     "effet": "Mal\u00e9diction du Lien",
     "montant": "La moiti\u00e9 des soins et effets donn\u00e9s aux autres sont redonn\u00e9s au porteur",
     "icone": "k60026"
+  },
+  "489": {
+    "nom": "Veste d'Archerie",
+    "desc": "Une veste parfaite pour les archers avis\u00e9s !",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t -5 (Si chasseur ou corsaire : d\u00e9g\u00e2t+2)",
+    "condition": { "type": "classe", "value": ["Chasseur", "Corsaire"], "bonus": "Dégât +2" },
+    "icone": "k21068"
+  },
+  "490": {
+    "nom": "Veste du Voyageur",
+    "desc": "Une veste parfaite pour les voyageurs tout terrain !",
+    "effet": "Dext\u00e9rit\u00e9 +1, Esprit +1",
+    "montant": "D\u00e9g\u00e2t -5, 0 malus intemp\u00e9ries",
+    "icone": "k21044"
+  },
+  "491": {
+    "nom": "Tenue de Dresseur",
+    "desc": "Une tenue avec tout l'attirail du dresseur pour le bien des b\u00eates.",
+    "effet": "Familier",
+    "montant": "D\u00e9g\u00e2t -4, Familier : d\u00e9g\u00e2t/soin+2 (AoE/2), r\u00e9ussite sort+1",
+    "icone": "k20017"
+  },
+  "492": {
+    "nom": "Tenue du Dompteur",
+    "desc": "Une tenue du dresseur am\u00e9lior\u00e9 pour les plus dompteurs endurcis",
+    "effet": "Familier",
+    "montant": "D\u00e9g\u00e2t -5, Familier : d\u00e9g\u00e2t/soin+4 (AoE/2), r\u00e9ussite sort+1",
+    "icone": "k20230"
+  },
+  "493": {
+    "nom": "Gourde merveilleuse",
+    "desc": "Une gourde miraculeuse am\u00e9lior\u00e9e : avec elle vous ne craignez plus rien",
+    "effet": "Capacit\u00e9",
+    "montant": "3 fois par combat (Instantan\u00e9e) : 3D6 + 12",
+    "icone": "k60035"
+  },
+  "494": {
+    "nom": "Puce du Barde",
+    "desc": "Une puce \u00e9lectronique cr\u00e9\u00e9e par des Bardes Zumis pour renforcer leur musique !",
+    "effet": "",
+    "montant": "Montant des buffs +1, (d\u00e9g\u00e2t/soin+2 Si Barde)",
+    "condition": { "type": "classe", "value": ["Barde"], "bonus": "Dégât +2, Soin +2" },
+    "icone": "i01631"
+  },
+  "495": { "nom": "Dragon Gardien Emeraude", "desc": "Estia...", "effet": "", "montant": "", "icone": "i00938b" },
+  "496": {
+    "nom": "Pendentif de la B\u00eate",
+    "desc": "Ce pendentif \u00e9met des ondes positives aux cr\u00e9atures environnantes, notamment les familiers",
+    "effet": "Familier",
+    "montant": "Familier : Stats +1, d\u00e9g\u00e2t/soin+2 (AoE/2)",
+    "icone": "A00048b"
+  },
+  "497": {
+    "nom": "Oeuf Digital",
+    "desc": "Cet oeuf semble venir d'une autre dimension, il octroie de la vitalit\u00e9 aux familiers",
+    "effet": "Familier",
+    "montant": "Familier : PV+15 (+10 si Monture)",
+    "icone": "i00946b"
   }
 }
