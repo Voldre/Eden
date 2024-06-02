@@ -445,11 +445,19 @@
     "kindId": "grambo"
   },
   {
+    "id": 1044,
+    "value": 3,
+    "kind": "boss",
+    "name": "Ziss- N°5 Hydra",
+    "description": "Drakaï 5eme tête de l'Hydra, elle est sérieuse, studieuse et rigoureuse. Elle veut qu'on lui donne sa chance.",
+    "kindId": "ziss"
+  },
+  {
     "id": 1046,
     "value": 3,
-    "kind": "bossIII",
+    "kind": "boss",
     "name": "Snoko - N°3 Hydra",
-    "description": "Tuskar assassin tr\u00e8s bagarreur et puissant, 3eme t\u00eate de l'Hydra.",
+    "description": "Tuskar assassin tr\u00e8s bagarreur et puissant, 3eme t\u00eate de l'Hydra. Il s'échauffe vite et est méfiant, mais réglo.",
     "kindId": "m069b"
   },
   {
@@ -459,6 +467,14 @@
     "name": "Charles - N°2 Hydra",
     "description": "Bras droit d'Akala ? Chevalier Draka\u00ef tr\u00e8s tr\u00e8s noble, \"Noblesse Oblize\", \u00e9l\u00e9gant, juste, courtois et d\u00e9vastateur.",
     "kindId": "m063"
+  },
+  {
+    "id": 1048,
+    "value": 3,
+    "kind": "boss",
+    "name": "Akala - Tête de l'Hydra",
+    "description": "Chevalier Dragon Luminary et Chef de la guilde Hydra, il a quitté l'Empire Heldentod et à fait sa propre guilde, il veut atteindre les sommets.",
+    "kindId": "akala"
   },
   {
     "id": 1049,

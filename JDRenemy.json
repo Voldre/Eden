@@ -982,7 +982,7 @@
     "stats": "16,16,9,12,16",
     "desc": "Anuran bleu tr\u00e8s social et tr\u00e8s tueur, il cherche \u00e0 condamner... ?",
     "infos": "Faible au tranchant et \u00e0 la foudre",
-    "drop": "50 po, Cape Hypnotique, Fl\u00fbte des Fleurs de Lune, rare : Faucille d\u00e9moniaque; Coton violacée (tenue juge)"
+    "drop": "50 po, Cape Hypnotique, Fl\u00fbte des Fleurs de Lune, rare : Faucille d\u00e9moniaque; Coton violac\u00e9e (tenue juge)"
   },
   "68": {
     "visuel3D": "m200",
@@ -2249,13 +2249,13 @@
     "nom": "Snoko - N\u00b03 Hydra",
     "pvmax": "250",
     "skills": [
-      "Solo (-6) / Faiblesse Critique : 3D6 +16 (Crit X1.5) : Force",
-      "Griffure Noire : 2D6 +12 et -2 blocage/esquive pour 3 tours AoE : Esprit",
+      "Solo (-6) / Faiblesse Critique : 3D6 +16 (Crit X1.5) : Force  (jdrCombat +35)",
+      "Griffure Noire : 2D6 +12 et -2 blocage/esquive pour 3 tours AoE : Force",
       "Contr\u00f4le Energie RES : -1 buff, d\u00e9g\u00e2t re\u00e7u -1D6 -8, res esprit +3 sur 4 tours : Esprit",
       "Passif \"Transe - Mode Tueur\": D\u00e9g\u00e2t +1D4 (min 2) +2, pour chaque 50 PV !"
     ],
     "stats": "17,9,9,12,17",
-    "desc": "Tuskar assassin tr\u00e8s bagarreur et puissant, 3eme t\u00eate de l'Hydra",
+    "desc": "Tuskar assassin tr\u00e8s bagarreur et puissant, 3eme t\u00eate de l'Hydra. Il s'échauffe vite et est méfiant, mais réglo.",
     "infos": "Faible \u00e0 la glace et \u00e0 la foudre",
     "drop": "75po, Anneau du Bagarreur, rare : Griffe de Puissance"
   },
@@ -2281,7 +2281,7 @@
     "skills": [
       "Silence AoE : Aucun sort magique pendant 3 tours : Esprit",
       "Perc\u00e9e du Chevalier (Atk Cyclone) : 4D6 +20 (-5) : force",
-      "Spirale Glaciale : Blocage +3 sur 2-3 tours, rel\u00e2chement : 2D6+6 : Esp'rit (jdrcombat +27)",
+      "Spirale Glaciale : Blocage +3 sur 2-3 tours, rel\u00e2chement : 2D6+6 : Esp'rit (jdrcombat +35)",
       "Passif : Esquive+2, Armure +10. Si PV < 100 : Armure +5 Dur\u00e9e des sorts +1"
     ],
     "stats": "17,15,9,14,17",
@@ -2294,13 +2294,13 @@
     "nom": "Akala - T\u00eate de l'Hydra",
     "pvmax": "300",
     "skills": [
-      "Destruction/Coupure Noir/Blanc : AoE 3D6+20 (+ 1D Mono) (Chaque -100 PV : -5), Force/Intel",
+      "Destruction/Coupure Noir/Blanc : AoE 3D6+20 (+ 1D Mono) (Chaque -100 PV : -5), Force/Intel (jdrCombat +30)",
       "Assaut du Chaos HYDRA (7 t\u00eates/charges) : 3D6+22 (chance blocage/2) : Intel",
-      "Terreur du Dragon : R\u00e9sistance d'Esprit et R\u00e9ussite -3 (3 tours (2t si double)) AoE.<br/>Si Double : Revers d'\u00e9caille : 2 tentatives chacun + perd son tour (Soin 20 PV #Cach\u00e9) : Esprit",
-      "Passif : Blocage +1. Tous les 100 PV : D\u00e9doublement Eveill\u00e9. Si PV < 100 et critique : +1 Double (1 fois)"
+      "Terreur du Dragon : R\u00e9sistance d'Esprit et R\u00e9ussite -3 (3 tours (2t si double)) AoE.<br/>Double < 100 PV : Revers d'\u00e9caille : 2 tentatives chacun + perd son tour (Soin 20 PV #Cach\u00e9) : Esprit",
+      "Passif : Blocage +1. Tous les 100 PV : D\u00e9doublement Eveill\u00e9 (Incante 1 tour pour spawn : prend des dégâts pendant ce temps et double à les mêmes PV)."
     ],
     "stats": "17,11,17,13,16",
-    "desc": "Homme DK Luminary chef de la guilde Hydra, ind\u00e9pendant de l'Empire Heldentod, il veut atteindre les sommets.",
+    "desc": "Chevalier Dragon Luminary et Chef de la guilde Hydra, il a quitté l'Empire Heldentod et à fait sa propre guilde, il veut atteindre les sommets.",
     "infos": "Faible au contondant et \u00e0 la foudre",
     "drop": "Plastron Draconique, rare : Gemme du Chaos, Bijou Iris"
   },
@@ -2312,10 +2312,10 @@
       "Ch\u00e2timent Sacr\u00e9 / Vent purificateur : 2D6+11 (-1 malus) : Intel",
       "Gu\u00e9rison / R\u00e9surrection : 2D10+16 (*2) : Intel",
       "Gr\u00e2ce de la Sagesse : Blocage +3, Esprit +3, 4 tours : Esprit",
-      "B\u00e9n\u00e9diction de la Lumi\u00e8re : -1 sur le D\u00e9, pendant 4 tours : Esprit"
+      "B\u00e9n\u00e9diction de la Lumi\u00e8re : -1 sur le D\u00e9, pendant 4 tours : Esprit<br/>Passif : durée des malus -1 tour"
     ],
     "stats": "7,13,17,12,17",
-    "desc": "Zumi Clerc \u00e0 la peau verte, sp\u00e9cialis\u00e9 en soin et 6eme t\u00eate de l'Hydra. R\u00e9serv\u00e9 mais pers\u00e9v\u00e9rant.",
+    "desc": "Zumi Clerc \u00e0 la peau verte, sp\u00e9cialis\u00e9 en soin et 6eme t\u00eate de l'Hydra. Attitude calme et posée, réfléchis.",
     "infos": "Faible au per\u00e7ant et aux t\u00e9n\u00e8bres",
     "drop": "Masse du rem\u00e8de, Anneau curatif, tr\u00e8s rare : Pierre de F\u00e9r\u00e9gal"
   },
@@ -2375,7 +2375,7 @@
       "Passif : Bloc P+2, Si PV < 120, dur\u00e9e des sorts +1 tour, D\u00e9g\u00e2t/Soin +5"
     ],
     "stats": "7,11,17,18,15",
-    "desc": "Surnomm\u00e9 Chris, s\u00e9ducteur et dot\u00e9 d'un charme irr\u00e9sistible.",
+    "desc": "Surnomm\u00e9 Chris, s\u00e9ducteur un peu pervers et dou\u00e9 d'un charme irr\u00e9sistible.",
     "infos": "Faiblesse au contondant et glace",
     "drop": "rare : Anneau curatif, Tenue de Noblesse, tr\u00e8s rare : Guitare massive"
   },
@@ -2416,7 +2416,7 @@
     "skills": [
       "D\u00e9doublement Eveill\u00e9 : Invoque un double sur 2(+1) tours : Esprit",
       "Rituel de Mana : Esprit/Res +3 AoE sur 1D4 +2 tours // Menace Mortelle : R\u00e9ussite des sorts : -3, esquive/blocage -2 AoE sur 1(+1) tour : Esprit",
-      "Parasite obscur : 12 + 4/t *5 // Fl\u00e8che des Ombres : 2D10+ 12, si para : heal 2D6+6+4 si actif : Intel",
+      "Parasite obscur : 12 + 4/t *5 // Fl\u00e8che des Ombres : 2D10+ 14, si para : heal 2D6+6 +4 si actif : Intel",
       "Voile du Blizzard (Intel +1) / Saut Dimensionnel (3 fois) // Passif : Tous les effets +1 tour ! # Invisible into d\u00e9doublement, mais double invisi 100%"
     ],
     "stats": "7,11,17,12,19",
@@ -2948,5 +2948,35 @@
     "desc": "Vieux Anuran expert dans la nature et les soins. Peau bleue violac\u00e9e.",
     "infos": "Faible au tranchant et \u00e0 la glace",
     "drop": "Drop : 50 po, Tunique de Delphes, rare : Sceptre du Shaman, Glyphe du Shaman"
+  },
+  "199": {
+    "visuel3D": "m287",
+    "nom": "Tentacules globuleux",
+    "pvmax": "170",
+    "skills": [
+      "Crachat visqueux : 2D6+12 Dext\u00e9 -3 (3 tours) AoE : Intelligence",
+      "Crachat corrosif : 1D6+5 pendant 3 tours : intelligence",
+      "Coup de tentacules : 2D10 +15 : force",
+      "Passif : Dext\u00e9 -2 si touch\u00e9 (1 tour)"
+    ],
+    "stats": "15,9,17,10,14",
+    "desc": "Monstre tentaculaire parsem\u00e9 de poches gluantes et globuleuses, qui sait ce qui peut en sortir...",
+    "infos": "Faible au tranchant et au feu",
+    "drop": "..."
+  },
+  "200": {
+    "visuel3D": "ziss",
+    "nom": "Ziss- N\u00b05 Hydra",
+    "pvmax": "215",
+    "skills": [
+      "Gu\u00e9rison (R\u00e9surrection) : Heal 3D6 (2t, PV+15) +20 // Eclair Furie (Temp\u00eate) : 3D6+10+5 (-1D -5) : Intelligence",
+      "Totem Gracieux : 40 PV, Force : 11, Dext\u00e9/Intel/Esprit : 15. Mode Soin : 6 PV/tour.<br/>Soutien : Eclair (AoE) : 2D6 (1D6) +10 // Sort Force/Intel +4 sur 4 tours : Esprit",
+      "Pr\u00e9vention d'\u00e9pines : Armure/Epines +1D6+4, -1 malus sur 5 tours : Esprit",
+      "Passif : Soin critique == -1 malus +5 PV. Si PV <100 : Totem +2 PV/tour"
+    ],
+    "stats": "9,11,18,12,17",
+    "desc": "Draka\u00ef 5eme t\u00eate de l'Hydra, elle est s\u00e9rieuse, studieuse et rigoureuse. Elle veut qu'on lui donne sa chance.",
+    "infos": "Faible au per\u00e7ant et aux t\u00e9n\u00e8bres",
+    "drop": "Cha\u00eene de Jade"
   }
 }
