@@ -1,5 +1,5 @@
 import { cardJSON, persosJSON, enemyJSON, allSkills, playerJSON, getData } from "./JDRstore";
-import { callPHP, dateToString, initDialog, isTextInText, Perso, toastNotification } from "./utils";
+import { callPHP, dateToString, initDialog, isTextInText, Perso, sum, toastNotification } from "./utils";
 
 // prettier-ignore
 const classes = [ "Guerrier", "Chevalier", "Templier", "Chev Dragon", "Voleur", "Assassin", "Danselame", "Samouraï", "Chasseur", "Ingénieur", "Corsaire", "Juge", "Clerc", "Barde", "Shaman", "Sage", "Magicien", "Illusionniste", "Démoniste", "Luminary",];
@@ -339,7 +339,7 @@ function Enemy(enemyData) {
     });
 
     // console.log(amount)
-    var average = amount.reduce((a, b) => a + b, 0) / amount.length;
+    var average = amount.reduce(sum, 0) / amount.length;
     // console.log(average)
 
     // In average, add Dices
@@ -356,7 +356,7 @@ function Enemy(enemyData) {
 
   // Pour les ennemis, sachant que des sorts sont mal comptés (ex 1D8 +1D6 +4)
   // Je rajoute 50% de dégâts (contre 10% par niveau pour les joueurs), que 50% pas 100% car les des (1D10,2D6,...) sont comptés !
-  this.degat = Math.round((montantSkills.reduce((a, b) => a + b, 0) / montantSkills.length) * 1.5);
+  this.degat = Math.round((montantSkills.reduce(sum, 0) / montantSkills.length) * 1.5);
   // console.log(this.degat)
 }
 

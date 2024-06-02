@@ -78,7 +78,7 @@ export class Perso {
         }
         return 0;
       })
-      .reduce((a, b) => a + b);
+      .reduce(sum);
 
     const montantAccessArmure = stuffs
       .map((stuff) => {
@@ -88,7 +88,7 @@ export class Perso {
         }
         return 0;
       })
-      .reduce((a, b) => a + b);
+      .reduce(sum);
 
     console.log("Access effets (" + persoData.nom + ") (Dégât, Armure) : ", montantAccessDegat, montantAccessArmure);
 
@@ -101,8 +101,8 @@ export class Perso {
     const montantArme1 = stuffsDamages[0];
     const montantArme2 = stuffsDamages[1];
 
-    const montantAccessDegatNat = stuffsDamages.slice(3).reduce((a, b) => a + b);
-    const montantAccessArmureNat = stuffsArmor.reduce((a, b) => a + b) - montantBouclier - montantArmure;
+    const montantAccessDegatNat = stuffsDamages.slice(3).reduce(sum);
+    const montantAccessArmureNat = stuffsArmor.reduce(sum) - montantBouclier - montantArmure;
 
     console.log(
       "stuffs nat damages/armor",
@@ -158,15 +158,11 @@ export class Perso {
     // **
 
     // 03/12 Add Bloc/Esq (resistance) bonus according to stuff
-    const montantBlocP = parseEqptsByRegex(["Blocage +", "Blocage physique +"], stuffs, persoData).reduce(
-      (a, b) => a + b
-    );
+    const montantBlocP = parseEqptsByRegex(["Blocage +", "Blocage physique +"], stuffs, persoData).reduce(sum);
 
-    const montantEsq = parseEqptsByRegex(["Esquive +"], stuffs, persoData).reduce((a, b) => a + b);
+    const montantEsq = parseEqptsByRegex(["Esquive +"], stuffs, persoData).reduce(sum);
 
-    const montantBlocM = parseEqptsByRegex(["Blocage +", "Blocage magique +"], stuffs, persoData).reduce(
-      (a, b) => a + b
-    );
+    const montantBlocM = parseEqptsByRegex(["Blocage +", "Blocage magique +"], stuffs, persoData).reduce(sum);
 
     const statsB = [persoData.forceB, persoData.dextéB, persoData.intelB, persoData.charismeB, persoData.espritB].map(
       (statB) => {
@@ -238,21 +234,32 @@ export const initDialog = (labelsDescription) => {
 
 // text : string, eqpt : eqpt
 export const parseEqptValue = (text, eqpt) => {
-  const regex = unformatText(text);
+  // Handle "+" in regex
+  const regex = new RegExp(unformatText(text).replaceAll("+", "\\+"));
   if (!eqpt) return 0;
   const eqptValue = [eqpt.montant, eqpt.effet].map((eqptText) => {
-    const hasValue = unformatText(eqptText).split(regex)[1];
-    if (!hasValue) return "0";
-    return hasValue.split(",")[0].split(" ")[0];
+    // Update regex to handle "negative lookbehind assertion"
+    const match = regex.exec(unformatText(eqptText));
+    if (!match) return "0";
+    const position = match.index + match[0].length;
+    console.log(regex, eqptText, eqptText[position] + (eqptText[position + 1] ?? ""));
+    return eqptText[position] + (eqptText[position + 1] ?? "");
   });
   // if (regex.includes("glace")) console.log(`(${regex})`, eqpt, eqptValue);
   return parseInt(eqptValue[0]) + parseInt(eqptValue[1]);
 };
 
+// Shortcut function to make sum of access amounts (without passif, only access parts)
+// Never send eqpts without access in parseEqptsByRegex, because "panoplies" with
+// weapons/armor will not match (because equipments are not sent in the function) !
+// So we need to slice AFTER
+export const sumEqptsAsAccess = (texts, eqpts, persoData) =>
+  parseEqptsByRegex(texts, eqpts, persoData, false).slice(4).reduce(sum, 0);
+
 // text : string[], eqpts : eqpt[], persoData : Perso
-export const parseEqptsByRegex = (texts, eqpts, persoData) => {
+export const parseEqptsByRegex = (texts, eqpts, persoData, withPassif = true) => {
   // 24/05/2024 : Handle Passif level 12
-  if (persoData.niv >= 12) {
+  if (persoData.niv >= 12 && withPassif) {
     eqpts = eqpts.concat({ montant: persoData.passif12 });
   }
   return eqpts.map((eqpt) => {
@@ -330,6 +337,8 @@ export const unformatText = (text) =>
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
     .trim();
+
+export const sum = (a, b) => a + b;
 
 export const capitalize = (string) => string.charAt(0).toUpperCase() + string.slice(1);
 
