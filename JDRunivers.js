@@ -9,7 +9,7 @@ const iconsClasses = [ "01", "02", "03", "18", "04", "05", "06", "16", "07", "08
 const classesDesc = [
   "Les guerriers possèdent de solides aptitudes au combat ainsi que de lourdes armures résistantes. Peut effrayer les ennemis et motiver ses alliés.",
   "Les chevaliers incarnent le courage. Esquivant et bloquant les coups, ils attaquent sans relâche jusqu’à obtenir la victoire. Ils aiment les duels et sont très précis et rapide.",
-  "Stimulés par leur noble croyance, les templiers invoquent le pouvoir divin pour punir le mal. Tout comme les clercs, ce sont des fervants de l'église et agisse pour elle.<br/><b>Contrainte : Apprentissage lié à la Curie Métérole.</b>",
+  "Stimulés par leur noble croyance, les templiers invoquent le pouvoir divin pour punir le mal. Tout comme les clercs, ce sont des fervants de l'église et agisse pour elle.",
   "Après avoir passé un pacte avec un terrible dragon, les DK (Dragon Knight) ont reçu des pouvoirs proche de l'immortalité. Leurs visages intimident leurs ennemis. Mieux vaut ne pas leur chercher des noises.<br/><b>Contrainte : Être un descendant indirect de l'empereur \"Heldentod Ier\" (l'avoir comme ascendant sachant qu'il est mort il y a plus de 200 ans).</b>",
   "Tapis dans l'ombre, Le voleur rusé et silencieux tire profit de sa vitesse pour prendre les ennemis de court lors des combats. Très discret.",
   "Les assassins maîtrisent l’art de supprimer leurs adversaires, sans laisser de traces. Grâce à leurs techniques de combat avancées, ils peuvent également affronter leurs adversaires en face à face.",
@@ -229,6 +229,8 @@ const labelsDescription = {
     "Une monture de combat est considérée comme : <br/>1) Une arme évolutive (emplacement d'arme) qui octroie des compétences au personnage (les compétences consomment le tour du perso), les autres emplacements d'armes n'affectent que le perso, pas la monture<br/>2) Un familier : il a ses PV, ses stats, et seuls les compétences et accessoires dédiés aux familiers agissent dessus.",
   instant:
     "Dans chaque tour d'un joueur, il est possible de faire 1 action (attaque, ...) et 1 action instantanée qui est facultative, voici la liste de ces actions :<ul><li>Changement d'armes parmi les 3 emplacements.<br/>/!\\ changer un équipement par un autre consomme le tour</li><li>Compétences instantanées : octroyées par certaines classes ou équipements.<br/>/!\\ Un même sort instantanée ne peut être utilisé que tous les 3 tours (anti-spam)</li><li>Utiliser un objet/gadget : 1 potion, 1 bombe, ...</li></ul>A noter : il est possible d'utiliser 2 actions instantanées en 1 tour, la seconde action consommera le tour.<br/>/!\\ Faire un échec critique (19, 20) sur une action instantanée fait perdre le tour.",
+  degatPM:
+    "Les dégâts physiques (P) englobe les dégâts réalisés par des attaques de Force, de Dextérité et de Charisme.<br/>Les dégâts magiques (M) englobe les dégâts réalisés par des sorts d'Intelligence et d'Esprit",
 };
 
 initDialog(labelsDescription);

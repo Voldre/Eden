@@ -1318,7 +1318,7 @@
     "map_z": null,
     "map_r": null,
     "bgm": null,
-    "mobs": [169, 170, 171, 194, 196]
+    "mobs": [169, 170, 171, 194, 196, 152, 155, 200]
   },
   "406": {
     "name": "Arène du Temple antique du chaos",
