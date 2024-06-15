@@ -1,5 +1,11 @@
 <?php
 include("header.php");
+
+if(isset($_GET["data"])){
+    $repository = $_GET["data"];
+    $files = scandir("images/3D/$repository/");
+}
+
 ?>
 
 <!-- 
@@ -15,38 +21,38 @@ https://wiki.vg-resource.com/Noesis , Noesis Download : http://www.richwhitehous
 <script defer type="text/javascript" src="three.min.js"></script>
 <script defer type="text/javascript" src="MTLLoader.js"></script>
 <script defer type="text/javascript" src="OBJLoader.js"></script>
-<script defer type="text/javascript" src="threeEden.js"></script>
+<script defer type="module" src="threeEden.js"></script>
 
-<body onload="init()" style="overflow:hidden; text-align:center;margin-top:0px;">
-<header class="header3D">
-    <!--<input type="button" value="Toggle Wireframe" onclick="mesh.material.wireframe=!mesh.material.wireframe;meshFloor.material.wireframe=!meshFloor.material.wireframe;" />--> 
-    <span class="commandes">ZQSD : bouger  &nbsp;  &nbsp;  <span id="textMap"> &#8616; : changer d'image  &nbsp; R/F : haut/bas  &nbsp; </span> &nbsp; &harr; : tourner</span>
-    <nav>
-    <ul class="menu">
-      <?php if(isset($_GET['data'])){ ?>
-        <li><a href="3D.php" class="notranslate">3D Designs</a></li>
-      <?php } ?>
-      <li><a href="index.php">Page principale</a></li>
-    </ul>
-</nav>
-    <!-- 09/06 Ajout du Toggle pour le Background -->
-    <div style="margin-right:17px;">
-    <label class="switch" title="Afficher l'arrière plan" id="iconBG">
-    <input id="bgToggle" type="checkbox" <?php if(isset($_COOKIE['bgState'])){ echo $_COOKIE['bgState'];} ?> />
-    <span class="slider round"></span>
-    </label>
-    <label class="switch" title="Jouer la musique" id="iconBGM">
-    <input id="bgmToggle" type="checkbox" <?php if(isset($_COOKIE['bgmState'])){ echo $_COOKIE['bgmState'];} ?> />
-    <span class="slider round"></span>
-    </label>
-    <!-- 07/05 Ajout du Toggle pour white background -->
-    <label class="switch" title="White background" id="iconWhiteBG">
-    <input id="whiteBgToggle" type="checkbox" <?php if(isset($_COOKIE['whiteBgState'])){ echo $_COOKIE['whiteBgState'];} ?> />
-    <span class="slider round"></span>
-    </label>
-    </div>
-    
-</header>
+<body style="overflow:hidden; text-align:center;margin-top:0px;">
+    <header class="header3D">
+        <!--<input type="button" value="Toggle Wireframe" onclick="mesh.material.wireframe=!mesh.material.wireframe;meshFloor.material.wireframe=!meshFloor.material.wireframe;" />--> 
+        <span class="commandes">ZQSD : bouger  &nbsp;  &nbsp; ↨ (R/F) : monter/descendre &nbsp; &nbsp; &harr; : tourner  &nbsp; &nbsp; <span class='customCommand'></span></span>
+        <nav>
+        <ul class="menu">
+        <?php if(isset($_GET['data'])){ ?>
+            <li><a href="3D.php" class="notranslate">3D Designs</a></li>
+        <?php } ?>
+        <li><a href="index.php">Page principale</a></li>
+        </ul>
+        </nav>
+        <!-- 09/06 Ajout du Toggle pour le Background -->
+        <div style="margin-right:17px;">
+        <label class="switch" title="Afficher l'arrière plan" id="iconBG">
+        <input id="bgToggle" type="checkbox" <?php if(isset($_COOKIE['bgState'])){ echo $_COOKIE['bgState'];} ?> />
+        <span class="slider round"></span>
+        </label>
+        <label class="switch" title="Jouer la musique" id="iconBGM">
+        <input id="bgmToggle" type="checkbox" <?php if(isset($_COOKIE['bgmState'])){ echo $_COOKIE['bgmState'];} ?> />
+        <span class="slider round"></span>
+        </label>
+        <!-- 07/05 Ajout du Toggle pour white background -->
+        <label class="switch" title="White background" id="iconWhiteBG">
+        <input id="whiteBgToggle" type="checkbox" <?php if(isset($_COOKIE['whiteBgState'])){ echo $_COOKIE['whiteBgState'];} ?> />
+        <span class="slider round"></span>
+        </label>
+        </div>
+        
+    </header>
 <?php 
 if(!isset($_GET["data"])){
     ?>
@@ -67,15 +73,11 @@ exit();
 ?>
 <div class="select3D">
     <img id="iconPic" class="iconImg" onerror='document.getElementById("iconPic").style.display = "none"'; />
-    <span style="font-size:20px">&#8616;</span> <select onchange="update(); changeIcon();" id="objets">
+    <span style="font-size:20px">&#8616;</span> 
+    <select id="objets">
     <?php
-        //$monsterRepository = 'images/monster/';
-        if(isset($_GET["data"])){
-            $repository = $_GET["data"];
-        }
-        $files = scandir("images/3D/$repository/");
         if($repository == "maps"){
-            echo "<option>Sélectionner ...</option>";
+            echo "<option value=''>Sélectionner ...</option>";
         }
         foreach($files as $file){
             if(strpos($file,".obj") !== false){
@@ -97,38 +99,26 @@ exit();
             }
         }
     ?>
-        <!--<option value="Axe">Hache</option>
-        <option value="bird">Oiseau</option>-->
     </select>
+    <select id="colors">
+    <!-- Colors (variants) Select -->
+    <?php
+        if($repository == "monsters"){
+            // Create all colors options
+            foreach($files as $file){
+                if(strpos($file,".png") !== false){
+                    // On garde tout sauf l'extension
+                    $file = strtok($file,  '.');  
+                    echo "<option value=$file>".substr($file,-2)."</option>";
+                }
+            }    
+        }    
+    ?>
+   </select>
 </div>
 <h2 id="loading" class="notranslate"></h2>
 <div id="canvasPosition"></div>
-<div id="bgmPosition"></div>
-    <script type="text/javascript">
-    
-    document.getElementById("iconPic").style.display = "none";
-
-    function changeIcon(){
-        foldersWithIcons = ['items','monsters'];
-        currentFolder = window.location.search.split('=')[1];
-        if(foldersWithIcons.includes(currentFolder)){
-            file = document.getElementById("objets").value.slice(1); // On récupère tout sauf la 1ere lettre
-
-            if(currentFolder == "items"){letter = "W";}
-            // if currentFolder == "monsters"
-            if(document.getElementById("objets").value[0] == "M"){
-                letter = "m"
-            }else if(document.getElementById("objets").value[0] == "R"){
-                letter = "R";
-            }
-            // Update 12/06/2022 pour mieux gérer l'affichage ou non de l'icone
-            document.getElementById("iconPic").style.display = "block";
-            if(currentFolder == "items"){ file = file + "01";}
-            document.getElementById("iconPic").src = "images/"+currentFolder+"/"+letter+file+".png";
-        }
-    }
-
-    </script>
+<audio loop><source type="audio/ogg" /></audio>
 <footer>
 <div class="grid-container">
   <div class="grid-item"><img id="turnLeft" src="images/layout/arrow2.png" alt="Arrow" style="transform: rotate(235deg);" /></div>
