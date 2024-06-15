@@ -190,7 +190,9 @@ document.querySelector("#selectPlayer").addEventListener("change", (e) => {
 function loadPlayer(player) {
   charactersList.id = player;
 
-  document.querySelector("fieldset").className = !!playerJSON[player] ? "" : "hide";
+  [...document.querySelectorAll("fieldset")].map(
+    (fieldSetE) => (fieldSetE.className = !!playerJSON[player] ? "" : "hide")
+  );
 
   if (!playerJSON[player]) return;
 
@@ -432,6 +434,21 @@ radioButtons.map((radioButton) =>
         }
       });
     }
+  })
+);
+
+// Filters anecdotes group cards
+const checkboxes = [...document.querySelectorAll("input[type='checkbox']")];
+checkboxes.map((checkbox) =>
+  checkbox.addEventListener("change", () => {
+    checkboxes.map((cb) => {
+      console.log(cb, cb.value);
+      const anecdotesE = [...document.querySelector(`#${cb.value}`).querySelectorAll(".card")];
+      anecdotesE.map((anecdoteE) => {
+        if (cb.checked) anecdoteE.classList.remove("hide");
+        else anecdoteE.classList.add("hide");
+      });
+    });
   })
 );
 
