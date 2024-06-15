@@ -130,6 +130,9 @@ select {
 .select3D select {
   max-width: 175px;
 }
+.select3D select:focus {
+  border:2px blue solid;
+}
 
 #loading {
   position: fixed;

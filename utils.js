@@ -359,3 +359,11 @@ export const stringToDate = (stringDate) => {
   // Date(year,month-1,day,hours) : hours = 2 to Handle converison locale string FR
   return new Date(splitDate[2], parseInt(splitDate[1]) - 1, splitDate[0], 2);
 };
+
+export const readCookie = (key) => {
+  let result;
+  // eslint-disable-next-line no-cond-assign
+  return (result = new RegExp("(?:^|; )" + encodeURIComponent(key) + "=([^;]*)").exec(document.cookie))
+    ? result[1]
+    : null;
+};

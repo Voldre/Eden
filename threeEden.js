@@ -1,179 +1,110 @@
-/* eslint-disable no-undef */
-var scene, camera, renderer, mesh;
-var meshFloor, ambientLight, light;
+import { isTextInText, readCookie } from "./utils";
+import { mapsJSON } from "./JDRstore";
 
-var keyboard = {};
+// 3D Variables
+let scene, camera, renderer;
 
-var factor = 1;
-var player = initPlayer(factor);
+// Events Variables
+
+let keyboard = {};
 
 let onTouch = false;
 let touchKey = null;
 
-var USE_WIREFRAME = false;
+// URL Parameters
 
-// 18/06/22 - Read json file with maps data
-var onMap;
-var myObject;
-var map;
-var maplist;
+const urlParams = new URLSearchParams(window.location.search);
 
-let folder;
+const folder = urlParams.get("data");
+const onMap = folder === "maps";
 
-function initPlayer(factor = 1) {
+// Evolutive Variables
+
+const objetsE = document.getElementById("objets");
+const colorsE = document.getElementById("colors");
+const canvasE = document.getElementById("canvasPosition");
+let myObject;
+
+const initObject = () => {
+  if (onMap) {
+    if (!objetsE.value) {
+      // Default mapID
+      let mapName = mapID;
+      while (mapName.length < 3) {
+        mapName = "0" + mapName;
+      }
+
+      const mapObject = "S" + mapName;
+      objetsE.value = mapObject;
+      return mapObject;
+    }
+    // Ex : 41 from S041
+    mapID = parseInt(objetsE.value.slice(1));
+    return objetsE.value;
+  } else {
+    return objetsE.value;
+  }
+};
+
+let mapID = urlParams.get("map");
+let animationId;
+
+const updatePlayer = (factor = 1) => {
   return {
     height: 1.6,
-    speed: 0.15 * factor * (onMap ? 4 : 1),
-    turnSpeed: Math.PI * 0.015 * factor,
+    factor: factor,
+    speed: 0.1 * factor * (onMap ? 4 : 1),
   };
-}
+};
 
-function myObjectInit() {
-  // Si une map est précisée dans l'URL    et qu'on n'a pas demandé de map (dans le select)
-  if (typeof window.location.search.split("&")[1] != "undefined" && !myrequest) {
-    var myValue = window.location.search.split("&")[1].split("=")[1];
-    while (myValue.length < 3) {
-      myValue = "0" + myValue;
-    }
-    return "S" + myValue;
-  } else {
-    return null;
-  }
-}
+let player = updatePlayer(1);
 
-function initForMap() {
-  onMap = false;
-  // Première valeur en paramètre de l'URL
-  folder = window.location.search.split("=")[1];
-  if (folder) {
-    folder = folder.split("&")[0];
-  }
-  // folder = folder.split("&")[0];
+// THREE Global Parameters
 
-  if (typeof folder == "undefined") {
-    document.getElementById("google_translate_element").style.display = "inline";
-    return console.warn("En attente de la sélection");
-  }
-
-  // 11.06.22 - Pour l'UI, on retire le choix de langue sur les designs
-  document.getElementById("google_translate_element").style.display = "none";
-
-  if (folder == "maps") {
-    onMap = true;
-  }
-
-  if (!onMap) {
-    myObject = myObjectInit();
-    if (myObject == null) {
-      myObject = document.getElementById("objets").value;
-    }
-  } else {
-    // Changement du texte pour les maps
-    document.getElementById("textMap").innerHTML = " &#8616; : monter/descendre &nbsp; ";
-
-    player = initPlayer(factor);
-
-    myObject = myObjectInit();
-
-    // Si j'ai une requête et qu'on n'a pas de map dans l'URL
-    if ((myrequest && myObject == null) || myObject == "") {
-      // Variable dans ma dropdown list <select>
-      myObject = document.getElementById("objets").value;
-      // Si j'ai pas de requête et pas de données dans l'URL
-    } else if (!myrequest && (myObject == "" || myObject == null)) {
-      console.log("Présence sur les cartes de donjons, détecté.");
-      document.getElementById("loading").innerHTML =
-        "<h4 style='position: fixed;width: 98vw;text-align:center;left: 0px;'>Ici vous pouvez sélectionner un donjon présent dans le jeu.<br/>Malheureusement certaines d'entres eux ne s'affichent pas correctement.</h4>";
-      throw new Error("En attente du choix de l'utilisateur");
-      // Sinon (si j'ai des données dans l'URL)
-    } else {
-      document.getElementById("objets").value = myObject;
-    }
-
-    // console.log(myObject);
-    map = parseInt(myObject.replace("S", ""));
-  }
-
-  maplist = (function () {
-    var json = null;
-    $.ajax({
-      async: false,
-      global: false,
-      url: "maps.json",
-      dataType: "json",
-      success: function (data) {
-        json = data;
-      },
-    });
-    return json;
-  })();
-  // console.log(maplist)
-}
-
-initForMap();
-
-var myrequest = false;
+let USE_WIREFRAME = false;
 
 THREE.Cache.enabled = true; // VD 04/06/2022 : Alléger les chargements
+const manager = new THREE.LoadingManager();
+manager.onLoad = function () {
+  console.log("Tous les fichiers ont été chargés avec succès");
+  // console.log(THREE.Cache.files);
+};
+
+// Global Parameters
 
 window.performance.setResourceTimingBufferSize(2000);
 // window.performance.getEntriesByType("resource")
 
-// eslint-disable-next-line no-unused-vars
+// 11.06.22 - Pour l'UI, on retire le choix de langue sur les designs
+document.getElementById("google_translate_element").style.display = folder ? "none" : "inline";
+
+// #region update()
+
 function update() {
   // 10/06/22 - Update : window.stop() arrête toutes les requêtes
   // Cela permet donc d'annuler les anciens chargements encore en cours
   window.stop();
-  player = initPlayer(factor);
+
   // Permet d'annuler l'execution automatique de la fonction animate()
   // qui a été lancée lors de l'initialisation de l'objet précédent
-  cancelAnimationFrame(myrequest);
+  cancelAnimationFrame(animationId);
 
   // On supprime le canvas de l'ancien Objet 3D
   // if(document.getElementsByTagName("canvas")[0]){
   document.getElementsByTagName("canvas")[0]?.remove();
-  myrequest = true;
 
   init();
   //init(1152, 648);
 }
 
-function read_cookie(key) {
-  var result;
-  // eslint-disable-next-line no-cond-assign
-  return (result = new RegExp("(?:^|; )" + encodeURIComponent(key) + "=([^;]*)").exec(document.cookie))
-    ? result[1]
-    : null;
-}
+// #region init()
 
 function init() {
-  initForMap();
+  myObject = initObject();
 
-  /* Update 09.06.22 - Ajout d'un toggle permettant
-    de choisir si on veut ou non afficher l'arrière plan.
-    Car il met un peu + de temps à se générer et avec plein de
-    designs c'est vite désagréable, mais pas les maps  */
-  if (document.getElementById("bgToggle").checked) {
-    document.cookie = "bgState=checked";
-  } else {
-    document.cookie = "bgState=";
-  }
-  // 16.06.22 - Ajout d'un toggle pour la musique !
-  if (document.getElementById("bgmToggle").checked) {
-    document.cookie = "bgmState=checked";
-  } else {
-    document.cookie = "bgmState=";
-  }
+  changeIcon();
 
-  if (document.getElementById("whiteBgToggle").checked) {
-    document.cookie = "whiteBgState=checked";
-  } else {
-    document.cookie = "whiteBgState=";
-  }
-
-  if (!onMap) {
-    document.getElementById("iconBGM").style.display = "none";
-  }
+  if (onMap) initBGM();
 
   scene = new THREE.Scene();
   /* **************************************************
@@ -182,11 +113,8 @@ function init() {
     Car là elle est trop petite et du coup on voit rien sauf quand
     on est collé dessus, ce n'est pas le but. 4000 >> 1000
     ************************************************** */
-  camera = new THREE.PerspectiveCamera(90, 1280 / 720, 0.1, 4000);
 
-  mesh = new THREE.Mesh();
-
-  meshFloor = new THREE.Mesh(
+  const meshFloor = new THREE.Mesh(
     new THREE.PlaneGeometry(20, 20, 10, 10),
     new THREE.MeshPhongMaterial({ color: 0xffffff, wireframe: USE_WIREFRAME })
   );
@@ -201,80 +129,63 @@ function init() {
     });
     */
 
-  if (onMap) {
-    ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-  } else {
-    ambientLight = new THREE.AmbientLight(0xffffff, 0.85);
-  }
+  const ambientLight = new THREE.AmbientLight(0xffffff, onMap ? 0.5 : 0.85);
   scene.add(ambientLight);
 
-  light = new THREE.PointLight(0xffffff, 1.5, 20);
+  const light = new THREE.PointLight(0xffffff, 1.5, 20);
   light.position.set(-3, 6, -6);
   light.castShadow = true;
   light.shadow.camera.near = 0.1;
   light.shadow.camera.far = 25;
-  scene.add(light);
-
   // VD 23/09/23 : Light make weird shadow
   light.position.z = 100;
+  scene.add(light);
 
-  var mtlLoader = new THREE.MTLLoader();
+  // MTL Loader
+  const mtlLoader = new THREE.MTLLoader(manager);
   mtlLoader.setMaterialOptions({ ignoreZeroRGBs: true });
 
   // console.log(mtlLoader);
-  mtlLoader.load("http://voldre.free.fr/Eden/images/3D/" + folder + "/" + myObject + ".mtl", function (materials) {
-    //console.log(materials);
-    var listWrongMaterials = [];
-    for (var material in materials.materialsInfo) {
-      // Gestion des 3 cas possibles d'absence de textures : 1) "chemin sans arrivé",  2) rien de déclaré,  3) textures ""
-      if (
-        materials.materialsInfo[material]["map_kd"] == "images/3D/map/" ||
-        typeof materials.materialsInfo[material]["map_kd"] == "undefined" ||
-        materials.materialsInfo[material]["map_kd"] == ""
-      ) {
-        listWrongMaterials.push(materials.materialsInfo[material]["name"]);
-      }
-    }
-    console.log(listWrongMaterials);
-    /*
-        var listLiensTextures = [];
-        for(var material in materials.materialsInfo){
-            if(materials.materialsInfo[material]["map_kd"] != null){
-                listLiensTextures.push(materials.materialsInfo[material]["map_kd"]);
-            }
-        }
-        function onlyUnique(value, index, self) {
-            return self.indexOf(value) === index;
-          }
-        listLiensTextures = listLiensTextures.filter(onlyUnique);
-        */
+  mtlLoader.load("http://voldre.free.fr/Eden/images/3D/" + folder + "/" + myObject + ".mtl", (materials) => {
+    console.log(materials);
 
-    if (folder == "maps") {
-      // materials.preload();
+    const wrongMaterials = [];
+
+    Object.values(materials.materialsInfo).map((material) => {
+      const texture = material["map_kd"];
+      // Gestion des 2 cas possibles d'absence de textures : 1) "chemin sans arrivé", 2) rien de déclaré
+      if (!texture || texture == "images/3D/map/") {
+        wrongMaterials.push(material.name);
+      } else {
+        // 13/06/2024 : Apply choosed colors if defined
+        const choosedColor = colorsE.value.toUpperCase();
+        material["map_kd"] = choosedColor
+          ? material["map_kd"].slice(0, -10) + choosedColor + ".png"
+          : material["map_kd"];
+      }
+    });
+
+    if (onMap) {
+      materials.preload();
     }
 
     // Ajout VD - 04/06/2022 - suivi du loading :
     console.log("On loading ...");
 
-    var onProgress = (xhr) => {
-      if (xhr.lengthComputable) {
-        var percentComplete = (xhr.loaded / xhr.total) * 100;
-        document.getElementById("loading").innerHTML = "Loading : " + Math.round(percentComplete, 2) + "%";
-      }
-    };
-
-    var objLoader = new THREE.OBJLoader();
+    const objLoader = new THREE.OBJLoader(manager);
     objLoader.setMaterials(materials);
     // console.log(materials);
 
-    mesh.position.y += 1;
-    mesh.receiveShadow = true;
-    mesh.castShadow = true;
-
+    const onProgress = (xhr) => {
+      if (xhr.lengthComputable) {
+        const percentComplete = (xhr.loaded / xhr.total) * 100;
+        document.getElementById("loading").innerHTML = "Loading : " + Math.round(percentComplete, 2) + "%";
+      }
+    };
     objLoader.load(
       "http://voldre.free.fr/Eden/images/3D/" + folder + "/" + myObject + ".obj",
-      function (mesh) {
-        console.log("Loaded : " + myObject);
+      (mesh) => {
+        // console.log("Loaded : " + myObject);
         document.getElementById("loading").innerHTML = null;
 
         mesh.traverse(function (node) {
@@ -301,99 +212,75 @@ function init() {
              ... even if they have no texture", and that's on what I have worked.
              I checked PNG for all materials, and if I find no one, "visibile = false"
              ******************************************/
-        var children = mesh.children;
-        console.log(children);
-        for (var i = 0; i < children.length; i++) {
-          children[i].castShadow = true;
+        mesh.children.forEach((meshElement) => {
+          meshElement.castShadow = true;
           // Make PNG transparence efficient
-          children[i].material.alphaTest = 0.5;
-          children[i].material.transparent = true;
+          meshElement.material.alphaTest = 0.5;
+          meshElement.material.transparent = true;
           // Check if this material are in my "black list" of materials
-          if (listWrongMaterials.includes(children[i].material.name)) {
-            mesh.children[i].visible = false; // If yes, I hide it for real, like in the game
+          if (wrongMaterials.includes(meshElement.material.name)) {
+            meshElement.visible = false; // If yes, I hide it for real, like in the game
           }
-        }
+        });
 
         // Paramètre autorisant à update la rotation de l'objet
         mesh.matrixWorld.matrixWorldNeedsUpdate = true;
+
         scene.add(mesh);
 
-        // 06/06/2022 - Ajout du background d'Eden
-        const date = new Date();
-        const currentHour = parseInt(
-          date
-            .toLocaleTimeString({
-              hour: "2-digit",
-              hour12: false,
-              timeZone: "Europe/Paris",
-            })
-            .split(":")[0]
-        );
+        // BACKGROUND
+        if (readCookie("whiteBgState") == "") {
+          scene.background = new THREE.Color();
+        } else if (readCookie("bgState") == "") {
+          // 06/06/2022 - Ajout du background d'Eden (si c'est voulu)
 
-        const backgroundByHour = {
-          5: "A402",
-          8: "A102",
-          11: "D502",
-          15: "G602",
-          17: "G603",
-          18: "D302",
-          19: "A302",
-          20: "C301",
-          21: "C402",
-          23: "G604",
-        };
-        const choosenHour = Object.keys(backgroundByHour).find((hour) => hour >= currentHour);
-        // console.log(currentHour+":"+choosenHour)
-        const myBG = backgroundByHour[choosenHour];
+          const date = new Date();
+          const currentHour = parseInt(
+            date
+              .toLocaleTimeString({
+                hour: "2-digit",
+                hour12: false,
+                timeZone: "Europe/Paris",
+              })
+              .split(":")[0]
+          );
 
-        /*
-            if(currentHour <= 5){
-                myBG = "A402";
-            }else if(currentHour <= 8){
-                myBG = "A102";
-            }else if(currentHour <= 11){
-                myBG = "D502";
-            }else if(currentHour <= 15){
-                myBG = "G602";
-            }else if(currentHour <= 17){
-            myBG = "G603";
-            }else if(currentHour <= 18){
-            myBG = "D302";
-            }else if(currentHour <= 19){
-            myBG = "A302";
-            }else if(currentHour <= 20){
-            myBG = "C301";
-            }else if(currentHour <= 21){
-            myBG = "C402";
-            }else{ myBG = "G604";}
-            */
+          const backgroundByHour = {
+            5: "A402",
+            8: "A102",
+            11: "D502",
+            15: "G602",
+            17: "G603",
+            18: "D302",
+            19: "A302",
+            20: "C301",
+            21: "C402",
+            23: "G604",
+          };
+          const choosenHour = Object.keys(backgroundByHour).find((hour) => hour >= currentHour);
+          const myBG = backgroundByHour[choosenHour];
 
-        // 09/06 -- On affiche le fond d'écran que si c'est voulu
-        if (read_cookie("bgState") == "") {
-          mesh2 = new THREE.Mesh();
-          mtlLoader.load("http://voldre.free.fr/Eden/images/3D/maps/" + myBG + ".mtl", function (materials2) {
-            objLoader.setMaterials(materials2);
-            objLoader.load("http://voldre.free.fr/Eden/images/3D/maps/" + myBG + ".obj", function (mesh2) {
-              scene.add(mesh2);
-              mesh2.rotation.x = -Math.PI / 2;
+          // meshBG = new THREE.Mesh();
+          mtlLoader.load("http://voldre.free.fr/Eden/images/3D/maps/" + myBG + ".mtl", (materialsBG) => {
+            objLoader.setMaterials(materialsBG);
+            objLoader.load("http://voldre.free.fr/Eden/images/3D/maps/" + myBG + ".obj", (meshBG) => {
+              scene.add(meshBG);
+              meshBG.rotation.x = -Math.PI / 2;
             });
           });
         }
-        if (read_cookie("whiteBgState") == "") {
-          scene.background = new THREE.Color();
-        }
 
         // Position et Rotation de notre objet
+
         if (onMap) {
           // Coordonnées de la génération de la map
           // Pour changer en live la position : scene.children[3].position.set = (0,0,0)
-          if (maplist[map]["map_x"] != null) {
-            mesh.position.set(maplist[map]["map_x"], maplist[map]["map_y"], maplist[map]["map_z"]);
-            mesh.rotation.z = maplist[map]["map_r"] * Math.PI;
-          } else {
-            mesh.position.set(0, 0, 0);
-            mesh.rotation.z = Math.PI;
-          }
+          mesh.position.set(
+            mapsJSON[mapID]["map_x"] ?? 0,
+            mapsJSON[mapID]["map_y"] ?? 0,
+            mapsJSON[mapID]["map_z"] ?? 0
+          );
+          mesh.rotation.z = (mapsJSON[mapID]["map_r"] ?? 1) * Math.PI;
         } else if (folder == "items") {
           mesh.position.set(0, 1, -3.3);
           mesh.rotation.z = Math.PI / 1.4; // Pour qu'il regarde vers nous
@@ -411,6 +298,7 @@ function init() {
   });
 
   // Caméra
+  camera = new THREE.PerspectiveCamera(90, 1280 / 720, 0.1, 4000);
 
   if (folder != "house") {
     camera.position.set(0, player.height, -5);
@@ -419,6 +307,8 @@ function init() {
     camera.position.set(0, player.height + 3.2, -17);
     camera.lookAt(new THREE.Vector3(0, player.height + 3, 0));
   }
+
+  // Render
 
   renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 
@@ -431,34 +321,15 @@ function init() {
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.BasicShadowMap;
 
-  var myBGM;
-  // eslint-disable-next-line valid-typeof
-  if (typeof document.getElementById("canvasPosition") != null) {
-    document.getElementById("canvasPosition").appendChild(renderer.domElement);
-    if (onMap) {
-      if (maplist[map]["bgm"] != null) {
-        myBGM = maplist[map]["bgm"].toString();
-        while (myBGM.length < 3) {
-          myBGM = "0" + myBGM;
-        }
-        document.getElementById("bgmPosition").innerHTML =
-          '<audio loop><source src="bgm/bgm' + myBGM + '.ogg" type="audio/ogg" /></audio>';
-        if (read_cookie("bgmState") == "") {
-          document.getElementsByTagName("audio")[0].autoplay = true;
-        }
-        document.getElementsByTagName("audio")[0].volume = 0.4;
-      } else {
-        document.getElementById("bgmPosition").innerHTML = "";
-      }
-    }
-
-    animate();
-  }
+  canvasE?.appendChild(renderer.domElement);
+  animate();
 }
+
+// #region animate()
 
 function animate() {
   // Récupération de la requête dans une variable pour la garder en mémoire
-  myrequest = requestAnimationFrame(animate);
+  animationId = requestAnimationFrame(animate);
 
   // Objet 3D
 
@@ -472,92 +343,26 @@ function animate() {
     //console.log(scene.children[3]);
   }
 
-  function up() {
-    camera.position.x += -Math.sin(camera.rotation.y) * player.speed;
-    camera.position.z += Math.cos(camera.rotation.y) * player.speed;
-  }
-  function right() {
-    camera.position.x += Math.sin(camera.rotation.y - Math.PI / 2) * player.speed;
-    camera.position.z += -Math.cos(camera.rotation.y - Math.PI / 2) * player.speed;
-  }
-  function down() {
-    camera.position.x += Math.sin(camera.rotation.y) * player.speed;
-    camera.position.z += -Math.cos(camera.rotation.y) * player.speed;
-  }
-  function left() {
-    camera.position.x += Math.sin(camera.rotation.y + Math.PI / 2) * player.speed;
-    camera.position.z += -Math.cos(camera.rotation.y + Math.PI / 2) * player.speed;
-  }
-  function turnLeft() {
-    camera.rotation.y -= player.turnSpeed / 1.3;
-  }
-  function turnRight() {
-    camera.rotation.y += player.turnSpeed / 1.3;
-  }
-
-  // Création des intéractions pour l'interface mobile
-  $("#up").on("pointerdown", (e) => {
-    e.preventDefault();
-    touchKey = "up";
-  });
-  $("#down").on("pointerdown", (e) => {
-    e.preventDefault();
-    touchKey = "down";
-  });
-  $("#left").on("pointerdown", (e) => {
-    e.preventDefault();
-    touchKey = "left";
-  });
-  $("#right").on("pointerdown", (e) => {
-    e.preventDefault();
-    touchKey = "right";
-  });
-  $("#turnLeft").on("pointerdown", (e) => {
-    e.preventDefault();
-    touchKey = "turnLeft";
-  });
-  $("#turnRight").on("pointerdown", (e) => {
-    e.preventDefault();
-    touchKey = "turnRight";
-  });
-
-  // $("#bgmToggle").on("click",function(){
-  //     if(!$("#bgmToggle").is(':checked')){
-  //         document.getElementById("bgmPosition").innerHTML = "";
-  //     }
-  // })
-
-  document.getElementById("prev").onclick = function () {
-    // console.log($("#objets").val());
-    if (onMap) {
-      camera.position.y += 2.5;
-    } else {
-      $("#objets option:selected").prev().prop("selected", true).change();
-    }
-  };
-  document.getElementById("next").onclick = function () {
-    // console.log($("#objets").val());
-    if (onMap) {
-      camera.position.y -= 2.5;
-    } else {
-      $("#objets option:selected").next().prop("selected", true).change();
-    }
-  };
+  // MOVEMENTS
 
   // ZQSD mouvement translation
-  if (keyboard[90] || (onTouch && touchKey === "up")) {
+  if (keyboard[90] || (onTouch && touchKey === "up" && ![objetsE, colorsE].includes(document.activeElement))) {
     // Z key
-    if ($("#objets").is(":focus")) {
-      $("#objets").blur();
-    }
     up();
   }
-  if (keyboard[83] || (onTouch && touchKey === "down")) {
+  if (keyboard[83] || (onTouch && touchKey === "down" && ![objetsE, colorsE].includes(document.activeElement))) {
     // S key
-    if ($("#objets").is(":focus")) {
-      $("#objets").blur();
-    }
     down();
+  }
+  // Add 18/08/2023 (finally ! After all this time, one year ! xD)
+  // Use R/F to move Top/Bottom the 3D design
+  if (keyboard[82]) {
+    // R
+    scene.children[3].position.y += 0.01;
+  }
+  if (keyboard[70]) {
+    // F
+    scene.children[3].position.y -= 0.01;
   }
   if (keyboard[81] || (onTouch && touchKey === "left")) {
     // Q key
@@ -568,46 +373,23 @@ function animate() {
     right();
   }
 
-  //console.log(camera.position);
-
   // Rotation de la caméra
   if (keyboard[37] || (onTouch && touchKey === "turnLeft")) {
     // left arrow key
-    if ($("#objets").is(":focus")) {
-      $("#objets").blur();
-    }
     turnLeft();
   }
   if (keyboard[39] || (onTouch && touchKey === "turnRight")) {
     // right arrow key
-    if ($("#objets").is(":focus")) {
-      $("#objets").blur();
-    }
     turnRight();
   }
 
-  if (keyboard[38]) {
+  if (keyboard[38] || (onTouch && touchKey === "prev")) {
     // Top Arrow
-    if (onMap) {
-      camera.position.y += player.speed;
-    } else {
-      $("#objets").focus();
-    }
+    camera.position.y += player.speed / 2;
   }
-  if (keyboard[40]) {
+  if (keyboard[40] || (onTouch && touchKey === "next")) {
     // Bottom Arrow
-    if (onMap) {
-      camera.position.y -= player.speed;
-    } else {
-      $("#objets").focus();
-    }
-  }
-  if (keyboard[16]) {
-    factor = factor == 1 ? 2 : 1;
-    player = initPlayer(factor);
-    // if(player.speed == 1){
-    // player.speed = 2;
-    // }else{ player.speed = 1;}
+    camera.position.y -= player.speed / 2;
   }
 
   // Rotation de l'objet
@@ -619,62 +401,217 @@ function animate() {
     // E
     scene.children[3].rotation.y -= 0.01;
   }
-  // Add 18/08/2023 (finally ! After all this time, one year ! xD)
-  // Use R/F to move Top/Bottom the design
-  if (keyboard[82]) {
-    // R
-    scene.children[3].position.y += 0.01;
-  }
-  if (keyboard[70]) {
-    // F
-    scene.children[3].position.y -= 0.01;
-  }
 
-  if (keyboard[161] || keyboard[48]) {
-    // "!" ou "0", 04/06/2022 - Kill du programme
-    console.log("Programme stoppé");
-    cancelAnimationFrame(myrequest);
-    window.stop();
+  // if (keyboard[161] || keyboard[48]) {
+  //   // "!" ou "0", 04/06/2022 - Kill du programme
+  //   console.log("Programme stoppé");
+  //   cancelAnimationFrame(animationId);
+  //   window.stop();
 
-    this.renderer.domElement.addEventListener("dblclick", null, false); //remove listener to render
-    this.scene = null;
-    this.projector = null;
-    this.camera = null;
-    this.controls = null;
-    // On supprime le canvas de l'ancien Objet 3D
-    document.getElementsByTagName("canvas")[0].remove();
-  }
+  //   this.renderer.domElement.addEventListener("dblclick", null, false); //remove listener to render
+  //   this.scene = null;
+  //   this.projector = null;
+  //   this.camera = null;
+  //   this.controls = null;
+  //   // On supprime le canvas de l'ancien Objet 3D
+  //   document.getElementsByTagName("canvas")[0].remove();
+  // }
+
   renderer.render(scene, camera);
-
-  function keyDown(event) {
-    keyboard[event.keyCode] = true;
-  }
-
-  function keyUp(event) {
-    keyboard[event.keyCode] = false;
-  }
-
-  function bgmState() {
-    if (document.getElementById("bgmToggle").checked) document.querySelector("audio").pause();
-    else document.querySelector("audio").play();
-  }
-
-  // Avoid mobile to "save/open image in new tab"
-  document.querySelector('footer').addEventListener("contextmenu", (event) => event.preventDefault());
-
-  window.addEventListener("keydown", keyDown);
-  window.addEventListener("keyup", keyUp);
-  window.addEventListener("pointerdown", () => {
-    onTouch = true;
-  });
-  window.addEventListener("pointerup", () => {
-    onTouch = false;
-    touchKey = null;
-  });
-  document.getElementById("bgmToggle").addEventListener("change", bgmState);
-  document.getElementById("whiteBgToggle").addEventListener("change", (e) => {
-    scene.background = e.target.checked ? new THREE.Color() : null;
-  })
 }
 
-//window.onload = init(1152, 648);
+// #region Mvt functions
+
+function up() {
+  camera.position.x += -Math.sin(camera.rotation.y) * player.speed;
+  camera.position.z += Math.cos(camera.rotation.y) * player.speed;
+}
+function right() {
+  camera.position.x += Math.sin(camera.rotation.y - Math.PI / 2) * player.speed;
+  camera.position.z += -Math.cos(camera.rotation.y - Math.PI / 2) * player.speed;
+}
+function down() {
+  camera.position.x += Math.sin(camera.rotation.y) * player.speed;
+  camera.position.z += -Math.cos(camera.rotation.y) * player.speed;
+}
+function left() {
+  camera.position.x += Math.sin(camera.rotation.y + Math.PI / 2) * player.speed;
+  camera.position.z += -Math.cos(camera.rotation.y + Math.PI / 2) * player.speed;
+}
+function turnLeft() {
+  camera.rotation.y -= 0.02;
+}
+function turnRight() {
+  camera.rotation.y += 0.02;
+}
+
+// #region Mobile
+
+const mobileInputs = ["up", "down", "left", "right", "turnLeft", "turnRight", "prev", "next"];
+
+mobileInputs.map((input) => {
+  document.querySelector(`#${input}`).addEventListener("pointerdown", (e) => {
+    e.preventDefault();
+    touchKey = input;
+  });
+});
+
+[document.getElementById("prev"), document.getElementById("next")].map((elem) => {
+  elem.addEventListener("click", () => {
+    if (!onMap) $("#objets option:selected").prev().prop("selected", true).change();
+  });
+});
+
+// Avoid mobile to "save/open image in new tab"
+document.querySelector("footer").addEventListener("contextmenu", (event) => event.preventDefault());
+
+// #region Keyboard Event L.
+
+window.addEventListener("keydown", (event) => {
+  keyboard[event.keyCode] = true;
+});
+window.addEventListener("keyup", (event) => {
+  keyboard[event.keyCode] = false;
+});
+window.addEventListener("pointerdown", () => {
+  onTouch = true;
+});
+window.addEventListener("pointerup", () => {
+  onTouch = false;
+  touchKey = null;
+});
+
+const keyPress = (e) => {
+  if (["1", "2", "3"].includes(e.key)) {
+    if (onMap) {
+      player = updatePlayer(parseInt(e.key));
+      document.querySelector(".customCommand").innerText = `[1,2,3] : Vitesse (${e.key})`;
+    } else {
+      if (e.key === "1") objetsE.focus();
+      if (e.key === "2") colorsE.focus();
+      if (e.key === "3") canvasE.focus();
+    }
+  }
+};
+window.addEventListener("keypress", keyPress);
+
+// #region Loading
+
+window.addEventListener("load", () => {
+  const customCommandE = document.querySelector(".customCommand");
+  if (!onMap) {
+    document.getElementById("iconBGM").style.display = "none";
+    customCommandE.innerHTML = "[1,2,3] (Focus) :  Liste, Couleurs, Design";
+  } else {
+    customCommandE.innerHTML = "[1,2,3] : Vitesse (1)";
+  }
+
+  // If on map and no default map
+  if (onMap && !mapID) {
+    // Si pas d'animation, pas d'élément dans la liste et qu'on n'a pas de map dans l'URL
+    document.getElementById("loading").innerHTML =
+      "<h4 style='position: fixed;width: 98vw;text-align:center;left: 0px;'>Ici vous pouvez sélectionner un donjon présent dans le jeu.<br/>Malheureusement certaines d'entres eux ne s'affichent pas correctement.</h4>";
+    return;
+  }
+
+  init();
+  updateColorsList();
+});
+
+// #region Select Listeners
+
+// Remove all effects on select, except Top/Bottom and M
+[objetsE, colorsE].map((selectE) =>
+  selectE.addEventListener("keydown", (e) => {
+    const allowedKeys = ["ArrowUp", "ArrowDown", "m"];
+    if (allowedKeys.includes(e.key)) return;
+    e.preventDefault();
+    keyPress(e);
+  })
+);
+
+objetsE.addEventListener("change", (e) => {
+  update();
+  updateColorsList(e.target.value);
+});
+
+colorsE.addEventListener("change", () => {
+  update();
+});
+
+const updateColorsList = (object) => {
+  [...colorsE.options].map((optionE) => {
+    optionE.hidden = !isTextInText(optionE.value, object ?? objetsE.value);
+    // set default colors
+    colorsE.value = (object ?? "M001").toUpperCase() + "01";
+  });
+};
+
+// #region Icons
+
+const iconPicE = document.getElementById("iconPic");
+
+function changeIcon() {
+  const foldersWithIcons = ["items", "monsters"];
+  if (foldersWithIcons.includes(folder)) {
+    iconPicE.style.display = "block";
+
+    let file = objetsE.value.slice(1); // On récupère tout sauf la 1ere lettre
+
+    let letter;
+    if (folder == "items") {
+      letter = "W";
+      file = file + "01";
+    }
+    // if folder == "monsters"
+    if (objetsE.value[0].toUpperCase() == "M") {
+      letter = "m";
+    } else if (objetsE.value[0].toUpperCase() == "R") {
+      letter = "R";
+    }
+    // Update 12/06/2022 pour mieux gérer l'affichage ou non de l'icone
+
+    iconPicE.src = "images/" + folder + "/" + letter + file + ".png";
+  } else {
+    iconPicE.style.display = "none";
+  }
+}
+
+// #region Toggles
+
+/* Update 09.06.22 - Ajout d'un toggle permettant
+    de choisir si on veut ou non afficher l'arrière plan.
+    Car il met un peu + de temps à se générer et avec plein de
+    designs c'est vite désagréable, mais pas les maps  */
+
+const togglesName = ["bg", "bgm", "whiteBg"];
+
+// Set cookies
+togglesName.map((name) => {
+  document.getElementById(`${name}Toggle`).addEventListener("click", (e) => {
+    console.log("cookie updated");
+    document.cookie = `${name}State=${e.target.checked ? "checked" : ""}`;
+  });
+});
+
+// BGM Handler
+
+const audioE = document.querySelector("audio");
+audioE.volume = 0.4;
+const bgmToggleE = document.getElementById("bgmToggle");
+
+let myBGM;
+const initBGM = () => {
+  myBGM = mapsJSON[mapID]["bgm"].toString();
+  while (myBGM.length < 3) {
+    myBGM = "0" + myBGM;
+  }
+  audioE.src = `bgm/bgm${myBGM}.ogg`;
+  if (!bgmToggleE.checked) audioE.play();
+  else audioE.pause();
+};
+bgmToggleE.addEventListener("change", initBGM);
+
+document.getElementById("whiteBgToggle").addEventListener("change", (e) => {
+  scene.background = e.target.checked ? new THREE.Color() : null;
+});
