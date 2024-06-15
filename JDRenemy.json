@@ -2255,7 +2255,7 @@
       "Passif \"Transe - Mode Tueur\": D\u00e9g\u00e2t +1D4 (min 2) +2, pour chaque 50 PV !"
     ],
     "stats": "17,9,9,12,17",
-    "desc": "Tuskar assassin tr\u00e8s bagarreur et puissant, 3eme t\u00eate de l'Hydra. Il s'échauffe vite et est méfiant, mais réglo.",
+    "desc": "Tuskar assassin tr\u00e8s bagarreur et puissant, 3eme t\u00eate de l'Hydra. Il s'\u00e9chauffe vite et est m\u00e9fiant, mais r\u00e9glo.",
     "infos": "Faible \u00e0 la glace et \u00e0 la foudre",
     "drop": "75po, Anneau du Bagarreur, rare : Griffe de Puissance"
   },
@@ -2297,10 +2297,10 @@
       "Destruction/Coupure Noir/Blanc : AoE 3D6+20 (+ 1D Mono) (Chaque -100 PV : -5), Force/Intel (jdrCombat +30)",
       "Assaut du Chaos HYDRA (7 t\u00eates/charges) : 3D6+22 (chance blocage/2) : Intel",
       "Terreur du Dragon : R\u00e9sistance d'Esprit et R\u00e9ussite -3 (3 tours (2t si double)) AoE.<br/>Double < 100 PV : Revers d'\u00e9caille : 2 tentatives chacun + perd son tour (Soin 20 PV #Cach\u00e9) : Esprit",
-      "Passif : Blocage +1. Tous les 100 PV : D\u00e9doublement Eveill\u00e9 (Incante 1 tour pour spawn : prend des dégâts pendant ce temps et double à les mêmes PV)."
+      "Passif : Blocage +1. Tous les 100 PV : D\u00e9doublement Eveill\u00e9 (Incante 1 tour pour spawn : prend des d\u00e9g\u00e2ts pendant ce temps et double \u00e0 les m\u00eames PV)."
     ],
     "stats": "17,11,17,13,16",
-    "desc": "Chevalier Dragon Luminary et Chef de la guilde Hydra, il a quitté l'Empire Heldentod et à fait sa propre guilde, il veut atteindre les sommets.",
+    "desc": "Chevalier Dragon Luminary et Chef de la guilde Hydra, il a quitt\u00e9 l'Empire Heldentod et \u00e0 fait sa propre guilde, il veut atteindre les sommets.",
     "infos": "Faible au contondant et \u00e0 la foudre",
     "drop": "Plastron Draconique, rare : Gemme du Chaos, Bijou Iris"
   },
@@ -2312,10 +2312,10 @@
       "Ch\u00e2timent Sacr\u00e9 / Vent purificateur : 2D6+11 (-1 malus) : Intel",
       "Gu\u00e9rison / R\u00e9surrection : 2D10+16 (*2) : Intel",
       "Gr\u00e2ce de la Sagesse : Blocage +3, Esprit +3, 4 tours : Esprit",
-      "B\u00e9n\u00e9diction de la Lumi\u00e8re : -1 sur le D\u00e9, pendant 4 tours : Esprit<br/>Passif : durée des malus -1 tour"
+      "B\u00e9n\u00e9diction de la Lumi\u00e8re : -1 sur le D\u00e9, pendant 4 tours : Esprit<br/>Passif : dur\u00e9e des malus -1 tour"
     ],
     "stats": "7,13,17,12,17",
-    "desc": "Zumi Clerc \u00e0 la peau verte, sp\u00e9cialis\u00e9 en soin et 6eme t\u00eate de l'Hydra. Attitude calme et posée, réfléchis.",
+    "desc": "Zumi Clerc \u00e0 la peau verte, sp\u00e9cialis\u00e9 en soin et 6eme t\u00eate de l'Hydra. Attitude calme et pos\u00e9e, r\u00e9fl\u00e9chis.",
     "infos": "Faible au per\u00e7ant et aux t\u00e9n\u00e8bres",
     "drop": "Masse du rem\u00e8de, Anneau curatif, tr\u00e8s rare : Pierre de F\u00e9r\u00e9gal"
   },
@@ -2978,5 +2978,20 @@
     "desc": "Draka\u00ef 5eme t\u00eate de l'Hydra, elle est s\u00e9rieuse, studieuse et rigoureuse. Elle veut qu'on lui donne sa chance.",
     "infos": "Faible au per\u00e7ant et aux t\u00e9n\u00e8bres",
     "drop": "Cha\u00eene de Jade"
+  },
+  "201": {
+    "visuel3D": "m061d",
+    "nom": "Kachgar - Commandant Khan",
+    "pvmax": "260",
+    "skills": [
+      "Coupure de lumi\u00e8re / noire / Portail des t\u00e9n\u00e8bres : Degat 3D6 / 2D6 (+tp) +24, Mono : Force",
+      "Pri\u00e8re Divine (Sacrifice ombre) : Soin 2D6+20, prochain d\u00e9g\u00e2t lumi\u00e8re +1D8 +12, (chaque tour : PV -10, Force/Intel (+4), Dgt t\u00e9n\u00e8bres +10) : Esprit",
+      "R\u00e9ussite sorts : -3, esq/bloc/r\u00e9s -1, dure 2 tour, AoE : Intelligence",
+      "Saut Dimensionnel : Esquive , 3 tentatives : Intelligence<br/>Passif : si PV <130 : Sacrifice = +5 DGT (+ soin 5 PV)"
+    ],
+    "stats": "16,10,17,12,16",
+    "desc": "Commandant de la grande tribu d'ogres des Khans, il a accomplit plusieurs exploits dans sa carri\u00e8re.",
+    "infos": "Faible \u00e0 la nature et au contondant",
+    "drop": "Gemme du chaos, Ep\u00e9e Colossale du Savoir"
   }
 }

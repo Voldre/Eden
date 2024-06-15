@@ -824,7 +824,6 @@ label{
   margin-block: 5px;
 }
 #allCards label:hover{
-  display: block;
   background-color: rgba(36, 36, 106, 0.7);
   cursor: pointer;
   cursor: url("images/layout/cursor-x.png"), auto;
@@ -972,6 +971,7 @@ label{
 
   #anecdote {
     display: flex;
+    flex-flow:nowrap;
   }
 
   .charactersList > div {
@@ -984,7 +984,6 @@ label{
   #g2,
   #g3 {
     margin-bottom: 5px;
-    flex-basis: 33%;
     margin-left:-3px;
   }
 }
