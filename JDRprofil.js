@@ -200,6 +200,28 @@ function loadPlayer(player) {
 
   console.log(joueurData);
 
+  // Display 100% image
+  const playerCards = joueurData.cards
+    .map((pC) => cardJSON.find((c) => c.id === parseInt(pC)))
+    .filter((p) => p != undefined);
+
+  const pBossP = Math.round(
+    (100 * playerCards.filter((p) => p.kind === "boss").length) / cardJSON.filter((p) => p.kind === "boss").length
+  );
+  const pComposP = Math.round(
+    (100 * playerCards.filter((p) => p.kind === "composant").length) /
+      cardJSON.filter((p) => p.kind === "composant").length
+  );
+  const pAnecdoteP = Math.round(
+    (100 * playerCards.filter((p) => p.kind === "anecdote").length) /
+      cardJSON.filter((p) => p.kind === "anecdote").length
+  );
+
+  const allDone = pBossP === 100 && pComposP === 100 && pAnecdoteP === 100;
+  console.log(allDone, pBossP, pComposP, pAnecdoteP);
+  document.querySelector("#image100").closest("label").style.display = allDone ? "block" : "none";
+  document.querySelector("#image10k").style.display = joueurData.alpagaCoin >= 10000 ? "block" : "none";
+
   document.querySelector(".alpagaCoin").innerText = joueurData.alpagaCoin;
   document.querySelector(".alpagaCoinSpent").innerText = " (" + joueurData.alpagaCoinSpent + ")";
 
@@ -269,7 +291,11 @@ function loadPerso(perso, index, joueurData) {
   persoE.querySelector("#degat").value = persoCombat.degat;
   persoE.querySelector("#armure").value = persoCombat.armure;
 
+  const persoWith10kPic = ["Malvis"];
   persoE.querySelector(".persoPic").src = perso.pp;
+  if (joueurData.alpagaCoin >= 10000 && persoWith10kPic.includes(perso.nom))
+    persoE.querySelector(".persoPic").src = perso.pp.replaceAll(".jpg", "_10k.jpg");
+
   persoE.addEventListener("click", () => {
     if (joueurData.entries[index] <= 0) {
       toastNotification("Erreur : Le personnage ne peut plus aller combattre, revenez demain !", 4000, true);
@@ -463,6 +489,7 @@ const labelsDescription = {
   //   "Les cartes composants peuvent être obtenues n'importe où. Elles représentent un composant de mine, de ferme ou d'invocation (créatures).",
   // anecdote:
   //   "Les cartes anecdotes peuvent être obtenues dans des endroits et face à des ennemis étant en lien avec l'anecdote. Elles font références à des moments cultes vécus pendant le JDR !",
+  image100: "100% des boss, composants et anecdotes ont été obtenus ! Félicitations !",
 };
 
 initDialog(labelsDescription);
