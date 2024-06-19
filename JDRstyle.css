@@ -842,6 +842,7 @@ label{
 .card img {
   height: 40px;
   width: 40px;
+  border-radius: 4px;
 }
 .card h4,
 .card p {

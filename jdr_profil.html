@@ -40,7 +40,8 @@
             <option value="">---</option>
           </select>
         </li>
-        <li>
+        <li style="width:160px; display: flex;">
+          <img id="image10k" src="images/uiiconPNG/alpagahype.gif" title="10 000 pièces Alpaga !!!" style="height: 50px; display:none;margin:0px;">
           <label for="alpagaCoin"
             ><span class="alpagaCoin"></span> <span class="alpagaCoinSpent"></span>
             <img src="images/alpagaCoin.png" class="alpagaCoinPic" alt=" pièces" />
@@ -224,18 +225,23 @@
         <img class="persoPic" src="" alt="--" />
       </div>
     </div>
-
-    <h2 style="margin-bottom: 0px">Cartes à collectionner</h2>
-    <fieldset style="width: fit-content;" class="hide">
-    <legend>Filtres :</legend>
-      <input type="radio" id="all" name="acquired" value="all" checked/>
-      <label for="all">Toutes</label>
-      <input type="radio" id="acquired" name="acquired" value="acquired"  />
-      <label for="acquired">Cartes acquises</label>
-      <input type="radio" id="not-acquired" name="acquired" value="not-acquired" />
-      <label for="not-acquired">Cartes manquantes</label>
-    </fieldset>
-
+    <div class="flexContainer">
+      <div>
+      <h2 style="margin-bottom: 0px">Cartes à collectionner</h2>
+      <fieldset style="width: fit-content;" class="hide">
+      <legend>Filtres :</legend>
+        <input type="radio" id="all" name="acquired" value="all" checked/>
+        <label for="all">Toutes</label>
+        <input type="radio" id="acquired" name="acquired" value="acquired"  />
+        <label for="acquired">Cartes acquises</label>
+        <input type="radio" id="not-acquired" name="acquired" value="not-acquired" />
+        <label for="not-acquired">Cartes manquantes</label>
+      </fieldset>
+      </div>
+      <label for="image100" style="display:none">
+        <img id="image100" src="images/uiiconPNG/broco-cafe.gif"/>
+      </label>
+    </div>
     <div id="allCards" class="flexContainer" style="flex-direction: column">
       <label for="map">Maps & Donjons <span id="mapCount"></span> ▼</label>
       <div id="map"></div>

@@ -3920,6 +3920,17 @@
     "group": 1
   },
   {
+    "id": 1827,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "GvG - Hydra",
+    "description": "La tant attendue GvG face à l'Hydra aura été intense : 7 vs 5 avec Lucius ! En face 2 grandes têtes : le n°1 et 3 ! Que de rebondissement ! Jusqu'à la fin tout le monde avait le souffle coupée : ils sont vraiment puissants.",
+    "maps": [308],
+    "enemies": [],
+    "kindId": "uiiconPNG/Hydra",
+    "group": 3
+  },
+  {
     "id": 15000,
     "value": 3,
     "kind": "anecdoteII",
