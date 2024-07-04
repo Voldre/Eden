@@ -20,8 +20,8 @@
   },
   "9": {
     "nom": "Revers d'\u00e9caille",
-    "desc": "Action Instantanée. Remplace l'esquive ou le blocage. Renvoi l'attaque re\u00e7u uniquement au lanceur (critique 100%, 66%, 33%). Effets - Embras\u00e9 : D\u00e9g\u00e2t renvoy\u00e9 +5; D\u00e9moniaque : prochaine r\u00e9ussite +1; Cach\u00e9 : Soin PV+10",
-    "montant": "1 fois par éveil : Action instantanée, renvoi (<10 : 66%, >=10 : 33%)"
+    "desc": "Remplace l'esquive ou le blocage. Renvoi l'attaque re\u00e7u uniquement au lanceur (critique 100%, 66%, 33%). Effets - Embras\u00e9 : D\u00e9g\u00e2t renvoy\u00e9 +5; D\u00e9moniaque : prochaine r\u00e9ussite +1; Cach\u00e9 : Soin PV+10",
+    "montant": "1 tentative offerte par éveil, renvoi (<10 : 66%, >=10 : 33%)"
   },
   "10": {
     "nom": "Pouvoir du dragon",

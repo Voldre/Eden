@@ -254,7 +254,8 @@
     "map_y": null,
     "map_z": null,
     "map_r": null,
-    "bgm": 8
+    "bgm": 8,
+    "mobs": [49, 55, 182]
   },
   "22": {
     "name": "Forêt Ensorcelée",
@@ -567,7 +568,7 @@
     "map_z": null,
     "map_r": null,
     "bgm": 53,
-    "mobs": [72, 112, 113, 134]
+    "mobs": [72, 112, 113, 134, 201]
   },
   "97": {
     "name": "Île du Mariage",

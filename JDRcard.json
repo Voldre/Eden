@@ -589,6 +589,14 @@
     "kindId": "adonis"
   },
   {
+    "id": 1063,
+    "value": 3,
+    "kind": "boss",
+    "name": "Kachgar - Commandant Khan",
+    "description": "Commandant de la grande tribu d'ogres des Khan, il a accomplit plusieurs exploits dans sa carri\u00e8re. Il est très fourbe comme le reste de son clan.",
+    "kindId": "m061d"
+  },
+  {
     "id": 1201,
     "value": 1,
     "kind": "composant",
@@ -2154,7 +2162,7 @@
     "kind": "anecdote",
     "name": "Rad Ed et la malchance",
     "description": "Rad Ed est une assassin dou\u00e9e, mais la chance ne semble pas beaucoup lui sourire... Peut-\u00eatre qu'il faudrait rendre \u00e0 Ein la griffe de son fr\u00e8re ?!",
-    "maps": [59, 1],
+    "maps": [59],
     "enemies": [],
     "kindId": "skillIcon/normal08",
     "group": 2
@@ -2187,7 +2195,7 @@
     "kind": "anecdote",
     "name": "Rad Ed et Ein",
     "description": "Rad Ed est fan du grand Ursun Ein qui lui a sauv\u00e9 la vie face \u00e0 la Chelona, son r\u00eave est de devenir comme lui, mais quand est-il vraiment ?",
-    "maps": [16, 59],
+    "maps": [16],
     "enemies": [],
     "kindId": "otherIcon/group021",
     "group": 2
@@ -3929,6 +3937,72 @@
     "enemies": [],
     "kindId": "uiiconPNG/Hydra",
     "group": 3
+  },
+  {
+    "id": 1828,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Zhaïtan, l'ami du peuple",
+    "description": "Pendant ses jours de repos, Zhaïtan aime s'améliorer et aider le peuple : même sauver un chat, cela fait parti du travail des gardes impéraux !",
+    "maps": [35],
+    "enemies": [],
+    "kindId": "items/i00627",
+    "group": 2
+  },
+  {
+    "id": 1829,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Le livre de \"Samouraï\"",
+    "description": "Zhaïtan à mis la main pour Estia sur un livre qui parle de \"Samouraï\" sans savoir que ce livre contenait des informations secrètes sur Valence, pouvant causer du tort à la confédération... ! Mais tranquille.",
+    "maps": [35],
+    "enemies": [],
+    "kindId": "items/I00136",
+    "group": 2
+  },
+  {
+    "id": 1830,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "La surprise de Scott",
+    "description": "Pendant la fête de nationalité d'Estia. Scott à fait une surprise au groupe : il a présenté sa fille Aurore ! Une ancienne combattante au service de Marcus qui a pu leur parler de son passé.",
+    "maps": [35],
+    "enemies": [],
+    "kindId": "monsters/aurore",
+    "group": 2
+  },
+  {
+    "id": 1831,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Relation entre tribus",
+    "description": "Les tribus d'ogres sont connus pour leur fidélité sans faille et leur rivalité inter-tribus. Négocier avec n'est pas chose aisé et Magnus le sait. Mais face à l'opposition, il faut.",
+    "maps": [59],
+    "enemies": [],
+    "kindId": "otherIcon/ac528",
+    "group": 2
+  },
+  {
+    "id": 1832,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Ascension des Khan",
+    "description": "La légendaire tribu des Khan ayant régné en Aristère jusqu'à Heldentod Ier est de retour. Leur fourberie et leur barbarie n'a pas changé depuis tout ce temps. Que préparent-ils...",
+    "maps": [59],
+    "enemies": [],
+    "kindId": "uiiconPNG/pic_032b",
+    "group": 2
+  },
+  {
+    "id": 1833,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Résistance d'Estia",
+    "description": "Estia a coursé un ogre sur sa monture sur plusieurs mètres. Et elle a même, seule, tenue tête à 2 chefs de la tribu Khan. Elle ne recul devant rien et leur a même inspiré le respect... Chance ou talent ?",
+    "maps": [59],
+    "enemies": [],
+    "kindId": "skillIcon/J503",
+    "group": 2
   },
   {
     "id": 15000,
