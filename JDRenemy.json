@@ -901,7 +901,7 @@
     "skills": [
       "Mode Draconique : Embras\u00e9 : Force/Intel+2, D\u00e9moniaque : Charisme+2, Cach\u00e9 : Esprit+2 : Esprit",
       "Terreur du Dragon AoE : R\u00e9ussite des sorts : -2 sur 3 tours AoE (+ mode Cf. DK) : Charisme",
-      "Pouvoir du Dragon / Atk Cyclone : 3D6+17 (+'3) (AoE-5) (feu, t\u00e9n\u00e8bres,physique) : Force",
+      "Pouvoir du Dragon / Atk Cyclone : 3D6+19 (AoE-5) (feu, t\u00e9n\u00e8bres,physique) : Force",
       "Revers d'\u00e9caille \u00e9veill\u00e9 : 5 tentatives par combat (<10 : 66%, >=10 : 33%) (+ mode Cf. DK) : Esprit"
     ],
     "stats": "15,13,7,15,16",
@@ -2159,7 +2159,7 @@
     "nom": "Vidal - Sorcier Dragon",
     "pvmax": "250",
     "skills": [
-      "Pouvoir du Dragon / Temp\u00eate de Glace : 3D6+15 (+'3) (AoE-5)  (feu, t\u00e9n\u00e8bres,glace) : Intel",
+      "Pouvoir du Dragon / Temp\u00eate de Glace : 3D6+17 (AoE-5)  (feu, t\u00e9n\u00e8bres,glace) : Intel",
       "Saut Dimensionnel : 3 tentatives par combat : remplace l'esquive/blocage (buff prochain d\u00e9g\u00e2t +5) : intel",
       "Magie Extr\u00eame : Prochain d\u00e9g\u00e2t magique +2D6 +8 : Esprit",
       "Revers d'\u00e9caille : 4 tentatives par combat (<10 : 66%, >=10 : 33%) (+Soin PV+15 #Mode Cach\u00e9) : Esprit"
@@ -2984,14 +2984,59 @@
     "nom": "Kachgar - Commandant Khan",
     "pvmax": "260",
     "skills": [
-      "Coupure de lumi\u00e8re / noire / Portail des t\u00e9n\u00e8bres : Degat 3D6 / 2D6 (+tp) +24, Mono : Force",
-      "Pri\u00e8re Divine (Sacrifice ombre) : Soin 2D6+20, prochain d\u00e9g\u00e2t lumi\u00e8re +1D8 +12, (chaque tour : PV -10, Force/Intel (+4), Dgt t\u00e9n\u00e8bres +10) : Esprit",
-      "R\u00e9ussite sorts : -3, esq/bloc/r\u00e9s -1, dure 2 tour, AoE : Intelligence",
-      "Saut Dimensionnel : Esquive , 3 tentatives : Intelligence<br/>Passif : si PV <130 : Sacrifice = +5 DGT (+ soin 5 PV)"
+      "Coupure de lumi\u00e8re / noire (Destruction/Portail) : Degat 3D6 (2D6 AoE/+tp) +24, Mono : Force",
+      "Pri\u00e8re Divine (Sacrifice ombre) : Soin 2D6+20, prochain d\u00e9g\u00e2t lumi\u00e8re +1D8 +12, (chaque tour : PV -10, Force/Intel +4, t\u00e9n\u00e8bres +10) : Esprit",
+      "Menaces Mortelles : R\u00e9ussite -3, Esq/Bloc/Res -2, dure 2 tours (AoE) : Esprit",
+      "Saut Dimensionnel : Esquive , 3 tentatives : Intelligence<br/>Passi'f : si PV <130 : Sacrifice = +5 DGT (et +5 PV/coup) (jdrCombat +40)"
     ],
     "stats": "16,10,17,12,16",
-    "desc": "Commandant de la grande tribu d'ogres des Khans, il a accomplit plusieurs exploits dans sa carri\u00e8re.",
+    "desc": "Commandant de la grande tribu d'ogres des Khan, il a accomplit plusieurs exploits dans sa carri\u00e8re. Il est tr\u00e8s fourbe comme le reste de son clan.",
     "infos": "Faible \u00e0 la nature et au contondant",
     "drop": "Gemme du chaos, Ep\u00e9e Colossale du Savoir"
+  },
+  "202": {
+    "visuel3D": "m371b",
+    "nom": "Aigle Rhino Alpha",
+    "pvmax": "260",
+    "skills": [
+      "Bourrasque : AoE : 3D6 +18 : Intelligence",
+      "Coup de corne : 3D6 +18 (Crit, 3,4 : X1.5) : Force",
+      "Cri de soutien : D\u00e9g\u00e2t +1D6+10 AoE (3 tours) : Esprit",
+      "Passif : 5 Armure (corne de protection), si PV < 130 : +1 Force/Intel/Esprit"
+    ],
+    "stats": "16,11,16,11,17",
+    "desc": "Grand Aigle Rhino originaire de la Jungle Mayland, tr\u00e8s robuste et puissant",
+    "infos": "Faible \u00e0 la foudre et \u00e0 la lumi\u00e8re",
+    "drop": "rare : Plume brillante, Corne d'Aigle Rhino "
+  },
+  "203": {
+    "visuel3D": "m373b",
+    "nom": "Golem Magmatique",
+    "pvmax": "150",
+    "skills": [
+      "Charge : 1D10 +18 : Force",
+      "Secousse de Feu : 1D10+14 AoE : Intel",
+      "Eruption : R\u00e9chauffe l'air ambiante temporairement, Stat-1 AoE sur 3 tours (cumulable) : Intelligence",
+      "Renforcement volcanique : D\u00e9g\u00e2t +1D6+6, Soin +1D10+12 AoE sur 3 tours : Intelligence"
+    ],
+    "stats": "15,9,17,11,14",
+    "desc": "De puissants golem magique compos\u00e9 de laves et de d\u00e9bris magmatiques.",
+    "infos": "Faible \u00e0 la glace et aux t\u00e9n\u00e8bres",
+    "drop": "Plastron d'Obsidienne, Ep\u00e9e Colossale d'Obsidienne, acier obsidienne raffin\u00e9e"
+  },
+  "204": {
+    "visuel3D": "m090g",
+    "nom": "Esprit Br\u00fblant Alt\u00e9r\u00e9",
+    "pvmax": "260",
+    "skills": [
+      "Rayon de feu # Baram : 3D10 15 : Intelligence",
+      "Feu propageur : 2D10 +15 AoE : Intelligence",
+      "Aura perturbante : D\u00e9 +1 pendant 3 tours AoE : Esprit",
+      "Passif : Si ennemi d\u00e9 20, amplifie (+5 dgt).<br/> D\u00e9g\u00e2t +5, buff +1 tour si PV <130"
+    ],
+    "stats": "15,9,17,11,14",
+    "desc": "Un esprit qui a pris comme r\u00e9ceptacle une \u00e9trange roche magmatique, lui accordant des pouvoirs tr\u00e8s perturbant.",
+    "infos": "Faible au per\u00e7ant et \u00e0 la glace",
+    "drop": "Crystal du Forgeron, Hache Embras\u00e9e, Pierre de Magma maudite, ..."
   }
 }

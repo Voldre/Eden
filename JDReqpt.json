@@ -3186,7 +3186,7 @@
     "nom": "Ep\u00e9e Gemme Noire",
     "desc": "Cette \u00e9p\u00e9e a \u00e9t\u00e9 taill\u00e9e dans une gemme sombre, elle inspire la peur et la haine.",
     "effet": "Element : T\u00e9n\u00e8bres",
-    "montant": "D\u00e9g\u00e2t +9 , d\u00e9g\u00e2t de t\u00e9n\u00e8bres +2 (Si Luminary : D\u00e9g\u00e2t+1) ",
+    "montant": "D\u00e9g\u00e2t +9 , d\u00e9g\u00e2t de t\u00e9n\u00e8bres +2 (D\u00e9g\u00e2t +1 si Luminary) ",
     "condition": { "type": "classe", "value": ["Luminary"], "bonus": "D\u00e9g\u00e2t +1" },
     "icone": "W25607"
   },
@@ -3576,8 +3576,8 @@
     "nom": "Tenue de Luminary",
     "desc": "Une tenue id\u00e9ale qui amplifie le talent des chevaliers du chaos : Luminary",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t -4 (Si Luminary : D\u00e9g\u00e2t+3)",
-    "condition": { "type": "classe", "value": ["Luminary"], "bonus": "Dégât +3" },
+    "montant": "D\u00e9g\u00e2t -4 (Si Luminary : d\u00e9g\u00e2ts +3)",
+    "condition": { "type": "classe", "value": ["Luminary"], "bonus": "D\u00e9g\u00e2t +3" },
     "icone": "k20578"
   },
   "479": {
@@ -3591,8 +3591,8 @@
     "nom": "Tenue de Mage Acad\u00e9mique",
     "desc": "Une tenue alliant noblesse et richesse, id\u00e9ale pour les diplomates aventureux.",
     "effet": "Exp\u00e9rience re\u00e7u +20%",
-    "montant": "D\u00e9g\u00e2t -4 (Si magicien/illusionniste : D\u00e9g\u00e2t+2)",
-    "condition": { "type": "classe", "value": ["Magicien", "Illusionniste"], "bonus": "Dégât +2" },
+    "montant": "D\u00e9g\u00e2t -4 (Si magicien/illusionniste : d\u00e9g\u00e2ts +2)",
+    "condition": { "type": "classe", "value": ["Magicien", "Illusionniste"], "bonus": "D\u00e9g\u00e2t +2" },
     "icone": "k21032"
   },
   "481": {
@@ -3656,7 +3656,7 @@
     "desc": "Une veste parfaite pour les archers avis\u00e9s !",
     "effet": "",
     "montant": "D\u00e9g\u00e2t -5 (Si chasseur ou corsaire : d\u00e9g\u00e2t+2)",
-    "condition": { "type": "classe", "value": ["Chasseur", "Corsaire"], "bonus": "Dégât +2" },
+    "condition": { "type": "classe", "value": ["Chasseur", "Corsaire"], "bonus": "D\u00e9g\u00e2t +2" },
     "icone": "k21068"
   },
   "490": {
@@ -3692,7 +3692,7 @@
     "desc": "Une puce \u00e9lectronique cr\u00e9\u00e9e par des Bardes Zumis pour renforcer leur musique !",
     "effet": "",
     "montant": "Montant des buffs +1, (d\u00e9g\u00e2t/soin+2 Si Barde)",
-    "condition": { "type": "classe", "value": ["Barde"], "bonus": "Dégât +2, Soin +2" },
+    "condition": { "type": "classe", "value": ["Barde"], "bonus": "D\u00e9g\u00e2t +2, Soin +2" },
     "icone": "i01631"
   },
   "495": { "nom": "Dragon Gardien Emeraude", "desc": "Estia...", "effet": "", "montant": "", "icone": "i00938b" },
@@ -3709,5 +3709,19 @@
     "effet": "Familier",
     "montant": "Familier : PV+15 (+10 si Monture)",
     "icone": "i00946b"
+  },
+  "498": {
+    "nom": "Echarpe chaude",
+    "desc": "Une douce \u00e9charpe permettant de r\u00e9sister au froid.",
+    "effet": "PV +5",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -1, (0 malus dans les zones froides)",
+    "icone": "A40001"
+  },
+  "499": {
+    "nom": "Corne d'Aigle Rhino",
+    "desc": "Une corne de tr\u00e8s bonne facture d'un Aigle Rhino, tr\u00e8s utile pour devenir plus puissant.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +2, d\u00e9g\u00e2t per\u00e7ant +2",
+    "icone": "I00263"
   }
 }

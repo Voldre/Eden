@@ -11,6 +11,12 @@ session_start();
             // Files must not contain any accents !!!
             file_put_contents('JDRgalery.json', json_encode($files));
         }
+        
+        if ($_POST['action'] == "wallpaper") { 
+            $dir = './images/wallpaper';
+            $files = scandir($dir);
+            echo json_encode($files);
+        }
 
         if ($_POST['action'] == "chatGpt") { 
             $chatgptkey = getenv('chatgpt_api'); 
