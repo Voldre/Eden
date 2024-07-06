@@ -2114,8 +2114,8 @@
     "nom": "Heldentod III",
     "pvmax": "350",
     "skills": [
-      "Attaque rapide : 3D6+20 (si PV bas +6, jdrcombat +70) : Force",
-      "Coup d\u00e9chirant : 2D6 +12 AoE (+6 d\u00e9g\u00e2ts re\u00e7us 3 tours) : Force",
+      "Attaque rapide : 3D6+22 (si PV bas +6, jdrcombat +70) : Force",
+      "Coup d\u00e9chirant : 2D6 +14 AoE (+6 d\u00e9g\u00e2ts re\u00e7us 3 tours) : Force",
       "Mal\u00e9diction Folle : -1D4+5(+1 si pv<50%) d\u00e9g\u00e2ts/tours AoE (si remove malus, ce montant*(nb perso remove) sur le lanceur), 4 tours : Esprit",
       "Passif : si coup critique retire un malus et le coup lanc\u00e9 est buff\u00e9 (1D10+6)"
     ],
@@ -2144,10 +2144,10 @@
     "nom": "Caldari - Empereur Insecte",
     "pvmax": "260",
     "skills": [
-      "Vague terrestre : 2D10 +16 AoE : force",
-      "Succion : 4D6+20 (soigne \u00e7a +6) : force",
-      "Crachat visqueux : 2D6+12 Dext\u00e9 -3 (3 tours) AoE : Intelligence",
-      "Passif : chaque \"-50 PV\" : Epine # Poison au cac : 2 d\u00e9g\u00e2ts"
+      "Vague terrestre : 2D10 +18 AoE : force",
+      "Succion : 4D6+20 (soigne \u00e7a -10) : force",
+      "Crachat visqueux : 2D6+14 Dext\u00e9 -4 (3 tours) AoE : Intelligence",
+      "Passif : chaque \"-50 PV\" : Si touch\u00e9 (ou bloc d\u00e9 1/2) : Epine : +2 d\u00e9g\u00e2ts # Poison au cac"
     ],
     "stats": "17,11,16,11,13",
     "desc": "Insecte l\u00e9zard avec une armure bleut\u00e9, on raconte qu'il s'agit d'un ancien Draka\u00ef ayant succomb\u00e9 \u00e0 un surplus de d\u00e9monologie.",
@@ -2895,9 +2895,9 @@
     "pvmax": "250",
     "skills": [
       "Perc\u00e9e du Chevalier : 3D6 +22 (+5 si provoqu\u00e9) : Dext\u00e9rit\u00e9",
-      "Temp\u00eate Infernale : 2D6 +18 (50% provoc 1 tour) AoE : Dext\u00e9rit\u00e9",
+      "Temp\u00eate Infernale : 2D6 +18 (50% provoc 2 tours) AoE : Dext\u00e9rit\u00e9",
       "Silence : Aucun sort magique sur 4 tours, + provocation (3/4) : Esprit",
-      "Vivacit\u00e9 Accrue : Dext\u00e9rit\u00e9 et Esquive +4 sur 5 tours : Esprit<br/>Passif : 5 Armure, Bloc/Esq +1"
+      "Vivacit\u00e9 Accrue : Dext\u00e9rit\u00e9 et Esquive +3 sur 5 tours : Esprit<br/>Passif : 5 Armure, Bloc/Esq +1"
     ],
     "stats": "13,17,7,15,17",
     "desc": "Diplomate blond et noble chef de la L\u00e9gion Saphir, c'est un homme tr\u00e8s \u00e9loquant et loquace",
@@ -3038,5 +3038,20 @@
     "desc": "Un esprit qui a pris comme r\u00e9ceptacle une \u00e9trange roche magmatique, lui accordant des pouvoirs tr\u00e8s perturbant.",
     "infos": "Faible au per\u00e7ant et \u00e0 la glace",
     "drop": "Crystal du Forgeron, Hache Embras\u00e9e, Pierre de Magma maudite, ..."
+  },
+  "205": {
+    "visuel3D": "elysia",
+    "nom": "Elysia - Etoile de la Chance",
+    "pvmax": "360",
+    "skills": [
+      "Aura de Mauvaise Fortune : +1 sur le d\u00e9 (AoE) 3 tours : Esprit",
+      "Attaque Furieuse/Rapide : 4D6+20 (+10 mono) : Dext\u00e9rit\u00e9",
+      "Etoile Protectrice : Bloc/Esq/Res +2 (-2 malus) sur 4 tours : Esprit",
+      "Passif 1 : (1/tour) Force \u00e0 relancer 1 fois et stock le d\u00e9 (x5) (sauf crit dé 1)<br/>Tour 5*x : paire/triple/quad/quint (DGT++5)<br/>Suite : -1 sur le d\u00e9 (combo 4/5 chiffres : 3/5t)<br/>Passif 2 : PV<200/100 : 1 relance chaque 2/1t"
+    ],
+    "stats": "14,19,12,12,19",
+    "desc": "Fille Ezelin rebelle au caract\u00e8re bien tremp\u00e9e, elle est joyeuse et franche. B\u00e9nie par la chance, elle a re\u00e7ue ce don de fa\u00e7on myst\u00e9rieuse par une divinit\u00e9.",
+    "infos": "Faible \u00e0 la nature et \u00e0 la lumi\u00e8re",
+    "drop": "D\u00e9 Amplificateur"
   }
 }

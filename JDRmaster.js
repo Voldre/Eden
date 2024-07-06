@@ -619,6 +619,13 @@ if (logged) {
     toastNotification("Ennemi créé");
   });
 
+  document.querySelector("#randomBoss").addEventListener("click", () => {
+    const bosses = Object.entries(enemyJSON).filter((e) => e[1].pvmax > 200);
+    const randomIndex = Math.floor(Math.random() * bosses.length);
+    console.log(bosses, randomIndex, bosses[randomIndex][0], bosses[randomIndex][0] - 1);
+    loadEnemy(bosses[randomIndex][0], document.querySelector("#e0"));
+  });
+
   document.querySelector("#logout").addEventListener("click", () => callPHP({ action: "logout" }));
 }
 

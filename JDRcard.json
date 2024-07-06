@@ -597,6 +597,22 @@
     "kindId": "m061d"
   },
   {
+    "id": 1064,
+    "value": 3,
+    "kind": "boss",
+    "name": "Aigle Rhino Alpha",
+    "description": "Grand Aigle Rhino originaire de la Jungle Mayland, tr\u00e8s robuste et puissant. Pourquoi a-t-il quitté les siens et niché sur un phare de la Jungle Céleste ?",
+    "kindId": "m371b"
+  },
+  {
+    "id": 1065,
+    "value": 3,
+    "kind": "boss",
+    "name": "Esprit Brûlant Altéré",
+    "description": "Esprit qui a pris comme r\u00e9ceptacle une \u00e9trange roche magmatique, lui accordant des pouvoirs tr\u00e8s perturbant de malchance.",
+    "kindId": "m090g"
+  },
+  {
     "id": 1201,
     "value": 1,
     "kind": "composant",
@@ -4003,6 +4019,61 @@
     "enemies": [],
     "kindId": "skillIcon/J503",
     "group": 2
+  },
+  {
+    "id": 1834,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Inventions Zumis",
+    "description": "Le groupe à pu découvrir 1001 inventions des Zumis au Musée de l'Institut Silus, en passant par Douvone, les propulseurs, un bouclier électromagnétique, et plein d'autres !",
+    "maps": [20],
+    "enemies": [],
+    "kindId": "items/k60080",
+    "group": 1
+  },
+  {
+    "id": 1835,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Défaillance du Simulateur",
+    "description": "Alors que le Maître d'Art Star leur proposer d'essayer le simulateur de combat d'entraînement, des défaillances apparaissent quand Malvis tente d'y rentrer. Mais que s'est-il passé ?! Pourquoi maintenant ?",
+    "maps": [20],
+    "enemies": [],
+    "kindId": "skillIcon/E0373b",
+    "group": 1
+  },
+  {
+    "id": 1836,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Phare de Fresnel",
+    "description": "L'ingénieur Fresnel à besoin d'aide, les dirigeables et bâteaux perdent leur orientation pendant les tempêtes car les phares ne sont pas assez visible : il faut installer ses lentilles dernier cri !",
+    "maps": [21],
+    "enemies": [],
+    "kindId": "otherIcon/phare",
+    "group": 1
+  },
+  {
+    "id": 1837,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Les mines Tuskars",
+    "description": "Afin d'aider les Tuskars de Baltaroï, le groupe s'aventure dans leur mine, et c'est un peu compliqué : entre Poisseux et Rageux qui se battent, les golems, la gadoue, les attaques des alliés...",
+    "maps": [9],
+    "enemies": [],
+    "kindId": "otherIcon/group008",
+    "group": 3
+  },
+  {
+    "id": 1838,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Le cailloux maudit",
+    "description": "Après s'être débarassé de l'esprit maudit par la malchance, le groupe semble porter la poisse, comme Poisseux ! Et c'est Yuki qui finira liée à ce maudit cailloux : la malchance la suivra !",
+    "maps": [9],
+    "enemies": [],
+    "kindId": "items//I00235c",
+    "group": 3
   },
   {
     "id": 15000,

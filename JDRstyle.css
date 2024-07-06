@@ -391,6 +391,13 @@ label{
 .highlight {
   background-color: rgba(96, 69, 216, 0.5) !important;
 }
+
+th,
+td {
+  border: 1px solid rgb(160 160 160);
+  padding: 2px 4px;
+}
+
 /*
 .skillslist div img{
     float:right;
