@@ -112,7 +112,7 @@
     "map_z": null,
     "map_r": null,
     "bgm": 12,
-    "mobs": [14, 29, 31, 32, 38, 151]
+    "mobs": [14, 29, 31, 32, 38, 151, 203, 204]
   },
   "10": {
     "name": "Plaines Dorées",
@@ -255,7 +255,7 @@
     "map_z": null,
     "map_r": null,
     "bgm": 8,
-    "mobs": [49, 55, 182]
+    "mobs": [49, 55, 86, 182, 202]
   },
   "22": {
     "name": "Forêt Ensorcelée",

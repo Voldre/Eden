@@ -203,8 +203,64 @@ function aoeDesc() {
 }
 
 const labelsDescription = {
-  critique:
-    "Le Dé 1 est une réussite critique (dégâts et buffs au max), le Dé 2 un semi-critique (boosté). Pareil pour les échecs avec Dé 19 et Dé 20.<br/> En cas de Dé 20 sur une attaque, selon la portée : <br/> &nbsp; - Attaque mono : le lanceur prend les dégâts,<br/> &nbsp; - Attaque AoE : les alliés dans la zone prennent les dégâts (ou soi-même si aucun allié)<br/> Le montant des dégâts est divisés par 2 et ne compte pas l'armure.<br/> Pour les buffs, l'effet est inversé en malus et le montant est égal à la compétence, mais la durée divisée par 2.",
+  critique: `Les valeurs extrêmes des Dé (1, 20) sont des critiques et (2, 19) semi-critiques. Voici leurs effets :<br/> 
+    <table>
+    <thead>
+      <tr>
+        <th scope="col">Dé (+effet)</th>
+        <th scope="col">Effet Attaques</th>
+        <th scope="col">Effet Buffs</th>
+        <th scope="col">Effet Bloc/Esq</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dé 0</td>
+        <td>Montant max des dés +50%</td>
+        <td>Durée +2 tours</td>
+        <td>Selon contexte</td>
+      </tr>
+      <tr>
+        <td>Dé 1</td>
+        <td>Montant max des dés</td>
+        <td>Durée +1 tour</td>
+        <td>Selon contexte</td>
+      </tr>
+      <tr>
+        <td>Dé 2</td>
+        <td>Selon contexte & stuffs</td>
+      </tr>
+      <tr>
+        <td>Dé 19</td>
+        <td>Selon contexte & stuffs</td>
+      </tr>
+      <tr>
+        <td>Dé 20/21/22</td>
+        <td>Mono : le lanceur prend les dégâts : 0 armure,<br/>AoE : les alliés dedans prennent, sinon : le lanceur</td>
+        <td>Buff converti en Malus</td>
+        <td>Dégât reçu +X</td>
+      </tr>
+      <tr>
+        <td>Dé 20</td>
+        <td>Dégât = Jet de dé, montant/2</td>
+        <td>Durée divisée par 2</td>
+        <td>Dégât reçu +5</td>
+      </tr>
+      <tr>
+        <td>Dé 21</td>
+        <td>Dégât = Jet de dé, montant total</td>
+        <td>Durée totale</td>
+        <td>Dégât reçu +10</td>
+      </tr>
+      <tr>
+        <td>Dé 22</td>
+        <td>Dégât max (zone AoE élargie)</td>
+        <td>Durée totale, Effet *2</td>
+        <td>Dégât reçu +50%</td>
+      </tr>
+    </tbody>
+  </table>
+  `,
   aoe: aoeDesc() + "<br/>Concernant l'esquive, tout sort mono-cible peut être esquivé, sauf les sorts d'esprits.",
   bloquage:
     "Toutes les attaques peuvent être bloquées (physiquement (force) ou magiquement (intelligence))<br/>Bloquer plusieurs fois de suite donne des malus (Blocage -1 par coup), si le coup suivant est une attaque mono-cible, blocage -1 sur le coup.<br/>Cumule max : -4 blocage.<br/><br/>Même avec malus et autres effets, un Dé à 1 ou 2 génèrera tout le temps une réussite de blocage.",
