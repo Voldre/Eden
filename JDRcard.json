@@ -297,7 +297,7 @@
     "value": 3,
     "kind": "boss",
     "name": "Gaazor - Ogre Chef Shaman",
-    "description": "Gaazor est un ogre \u00e0 la peau noire bleut\u00e9, recouvert d'une grande cape. Il a finit en prison pour vente d'esclaves \u00e0 l'Empire Heldentod. Mais r\u00e9ussira peut-\u00eatre qu'il réussira à sortir...",
+    "description": "Gaazor est un ogre \u00e0 la peau noire bleut\u00e9, recouvert d'une grande cape. Il a finit en prison pour vente d'esclaves \u00e0 l'Empire Heldentod. Mais peut-\u00eatre qu'il réussira à sortir...",
     "kindId": "m228"
   },
   {
@@ -611,6 +611,14 @@
     "name": "Esprit Brûlant Altéré",
     "description": "Esprit qui a pris comme r\u00e9ceptacle une \u00e9trange roche magmatique, lui accordant des pouvoirs tr\u00e8s perturbant de malchance.",
     "kindId": "m090g"
+  },
+  {
+    "id": 1066,
+    "value": 3,
+    "kind": "boss",
+    "name": "Crimson - L'Enchanteur",
+    "description": "Surnomm\u00e9 Chris, s\u00e9ducteur un peu coquin dot\u00e9 d'un charme irr\u00e9sistible, il fait parti des meilleurs bardes d'Ezur et est fan de Nyx.",
+    "kindId": "crimson"
   },
   {
     "id": 1201,
@@ -4072,7 +4080,51 @@
     "description": "Après s'être débarassé de l'esprit maudit par la malchance, le groupe semble porter la poisse, comme Poisseux ! Et c'est Yuki qui finira liée à ce maudit cailloux : la malchance la suivra !",
     "maps": [9],
     "enemies": [],
-    "kindId": "items//I00235c",
+    "kindId": "items/I00235c",
+    "group": 3
+  },
+  {
+    "id": 1839,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Alec, le marchand Heldentod",
+    "description": "Le groupe sera rejoint par Alec, un marchand itinérant commerçant avec les tribus d'Ogres des Steppes, il va les \"aider\" à en apprendre plus sur les mystérieuses disparitions.",
+    "maps": [35],
+    "enemies": [],
+    "kindId": "monsters/m012g",
+    "group": 2
+  },
+  {
+    "id": 1840,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Traversée aux Steppes",
+    "description": "Le groupe, se faisant passé pour des marchands, à pu déceler des activités suspectes dans les tribus d'ogres : commerces illégaux, mauvaise récoltes douteuses, ...",
+    "maps": [59],
+    "enemies": [],
+    "kindId": "items/charette",
+    "group": 2
+  },
+  {
+    "id": 1841,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "\"Estia\" au quartier des plaisirs",
+    "description": "Estia rencontre Flora, qui n'est autre que sa doubleuse au quartier des plaisirs. C'est une rencontre perturbante... Mais elles s'entendent bien !",
+    "maps": [35],
+    "enemies": [],
+    "kindId": "monsters/flora",
+    "group": 2
+  },
+  {
+    "id": 1842,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Retour de flamme",
+    "description": "Alors que la finale des perdants du GvG allait commencer, des gardes Heldentod arrient face à Nyx, et ils sont bien décidés à la ramener à l'Empire...",
+    "maps": [1],
+    "enemies": [],
+    "kindId": "monsters/m127b",
     "group": 3
   },
   {

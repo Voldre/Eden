@@ -107,9 +107,9 @@
     "xp": "1585",
     "niv": "12",
     "awaken": "Luminary",
-    "pv": "145",
+    "pv": "50",
     "pvmax": "145",
-    "stress": "50",
+    "stress": "",
     "pp": "http://voldre.free.fr/Eden/images/jdrgalerie/Malvis2.jpg",
     "force": "12",
     "dext\u00e9": "13",
@@ -120,15 +120,15 @@
     "dext\u00e9B": "",
     "intelB": "+2",
     "charismeB": "",
-    "espritB": "",
+    "espritB": "-1",
     "skills": "[\"Invocation d'Alpaga\",\"Triple Tir\",\"Coupure Noire\",\"Destruction de l'aurore\",\"Pri\u00e8re Divine\",\"Sacrifice d'Ombre Noire\",\"Assaut du Chaos\",\"Pi\u00e8ge d'Entrave\"]",
-    "eqpts": "[\"Ep\u00e9e de parade\",\"Ep\u00e9e du H\u00e9ros\",\"Arc du Dompteur\",\"Manteau Polaire\",\"Cape de la Confr\u00e9rie Ecarlate\",\"Viseur High Tech\",\"Sac d'Alpaga Dor\u00e9\",\"Brassard du H\u00e9ros\",\"Collier d'asbi\"]",
+    "eqpts": "[\"Ep\u00e9e de parade\",\"Ep\u00e9e du H\u00e9ros\",\"Arc du Dompteur\",\"Manteau Polaire\",\"Cape de la Confr\u00e9rie Ecarlate\",\"Viseur High Tech\",\"Sac d'Alpaga Dor\u00e9\",\"Brassard du H\u00e9ros\",\"Gemme du Chaos\"]",
     "inventaire": "Monture Avocat Alpaga -> Brocoli\n1 semaine de repas Alpaga\n10 m\u00e9daille d'ar\u00e8ne\nChapeau de capitaine\nGemme du chaos\nCape de la Confr\u00e9rie Ecarlate\nRobe \u00e9l\u00e9mentaire\nPendentif occulte\n1 fragment des cristaux eden\nGerme champigno\u00efde\nExtrait fantomatique\u00d72\n\u00c9pine de monstre\nFourrure alpaga *2\nCombinaison de Pilote Ezur\u00e9en\n\nMoi :\nLivre sur les drakais\nPoil d'alpaga\nCrystal liquide\nCroc sombre\nCache oreille v2  *1\n1 eau for\u00eat ensoleill\u00e9e \n4 potion de soins ( 2 des10+6)\n1 potion ressu (3 des 10 + 10)\nCollier d'asbi\n\nLassar maison :\nD\u00e9dicace de de Leonhard\nFaucille d\u00e9moniaque (troph\u00e9e \ud83c\udfc6)\nEp\u00e9e des Plaines dor\u00e9\nMasse de lumi\u00e8re",
     "argent": "310",
     "personnalite": "Malvis: joviale, dr\u00f4le,fonce dans le tas, attire les probl\u00e8mes, ne sait pas chanter\nMilo : fonce dans le tas, protecteur, pas comique\nMode Milo (+2 force / -1 dex / -1 intel).\nMalvis a 18 ans\nCapable de Switch entre Milo et Malvis (r\u00e9ussite a 10) action instantan\u00e9e ",
     "background": "Malvis est originaire de la haute terre et vit avec sa famille dans une ferme d'alpaga. Son p\u00e8re, puis son fr\u00e8re jumeau Milo qui a pris le relais, a poursuivi son exploration pour trouver les alpagas les plus rares au monde << alpagas dor\u00e9s >>. Cependant lors d'une exp\u00e9ditions son fr\u00e8re Milo meurt tragiquement. \nElle doit donc prendre sa place pour trouver des alpagas uniques, n\u00e9anmoins elle ne sera jamais vraiment seule lors de ses exp\u00e9ditions car l'\u00e2me de son fr\u00e8re a trouv\u00e9 refuge dans sa folie.\nCommence a d\u00e9test\u00e9 les nobles de chez Erida",
     "notes": "Rumbledor magicien qui vit au bourbes chelona-> anti dieu faire r\u00e9appara\u00eetre (x\u00e9nophobie) -> marais decrepi et sud ouest\nRomy ing\u00e9nieur mines (ami)\nTorturans for\u00eat arc en ciel\nMamie dans la coline tranquille\nLassar -> chef exp\u00e9dition au sein de la curimeterol (mec)\nBilly -> commer\u00e7ant Alpaga.\nSteve le corsaire (ami)\nMaesly fille ing\u00e9nieur Alpaga d\u00e9sert \nTemplier 3vs3 -> Sora\nVoleur 3vs3 -> Dalas\nMarma Templier chef d'une unit\u00e9 d\u00e9fense curie meterole (Milo)(ami)\nUrsina\nMoyemoye-> Zumi robot\nAdonis -> tueur enfui\nKasar - braconnier qui connait Milo\nEnro - ma\u00eetre d'art\nPaolo - corsaire \nLes 3 filles que Marma t'a d\u00e9crite suivant ta description : Narissa (unit\u00e9 offensive), Peroni (unit\u00e9 offensive), Vimira (lieutenant d\u00e9fensive)\nBlessure douloureuse dext 1D6 2tours\nOsbo est un ma\u00eetre chasseur \u00e9veill\u00e9 \u00e0 la Vall\u00e9e de Vulcain : renards !\nArman guerrier que connait etincellia \nAuranne\nStar (Basile ) famille Schwartz Zumi noir\nFresnel Augustin\nFaible au contondant et \u00e0 la foudre",
-    "sticky": "1585",
+    "sticky": "1545",
     "passif12": "D\u00e9g\u00e2t +2, Esprit +1",
     "isArchived": false,
     "joueur": "Victorine"
@@ -568,7 +568,7 @@
     "xp": "750",
     "niv": "7",
     "awaken": "",
-    "pv": "120",
+    "pv": "125",
     "pvmax": "125",
     "stress": "-8",
     "pp": "http://voldre.free.fr/Eden/images/jdrgalerie/Leyla.png",
@@ -585,7 +585,7 @@
     "skills": "[\"Robotisation\",\"R\u00e9paration Armure\",\"Robot Destructeur\",\"Balle \u00e9lectrique\",\"Lavage de Cerveau\",\"Explosifs Visqueux\",\"Perforation\",\"Blessure Douloureuse\"]",
     "eqpts": "[\"Gunner de l'esprit\",\"\",\"Fusil de guerre\",\"Veste de braider\",\"Chaussures d'agilit\u00e9\",\"Puce \u00e9lectronique Silus\",\"Sac \u00e0 dos extensible\",\"Pierre algue\",\"\"]",
     "inventaire": "Caisse a outils\n3 potion de soin 2 des 10+6 \n1 bombe eboullisante\n1 bombe brouilleuse\nVeste de braider\nPoil \nVeste naturelle\nPotion fracas",
-    "argent": "22",
+    "argent": "42",
     "personnalite": "Jeune fille tr\u00e8s inventive et intelligente. Elle manipule beaucoup pour cacher ses v\u00e9ritables intentions, elle veut cr\u00e9er la plus grosse explosion que Ezur n'ai jamais vu. Car elle trouve les couleurs d'une explosion belle. C'est un tableau en mouvement, une sculpture de quelque seconde.",
     "background": "Jeune fille qui a quitt\u00e9 le domicile familiale \u00e0 10 ans pour aller sur le continent zumi. Tr\u00e8s dou\u00e9e et int\u00e9ress\u00e9e par tout les inventions, elle se formera aupr\u00e8s d'ing\u00e9nieurs zumi tres dou\u00e9. Elle s'am\u00e9liora puis lors d'une invention avec des camarades, celle-ci explosera. \nElle sera fascin\u00e9 par l'explosion et commencera \u00e0 en cr\u00e9er en secret des petites, puis une grosse avant de quitter le continent zumi. Personne ne l'a soup\u00e7onnera, car elle aura toujours montrer un c\u00f4t\u00e9 calme et gentille. \nElle commencera \u00e0 cr\u00e9er de bug \"obsolescence programmer\" sur les machines qu'elle cr\u00e9er ou repart pour que les gens reviennent. \nElle finira par s'installer au mont Aride et travailler avec Romy et son \u00e9quipe d'ing\u00e9nieur. ",
     "notes": "Liste des bombes :   Bombe = Action Instantan\u00e9e\nBombe Impacte (1D10+6)\nBombe Gluante (1D6+4, Esquive -2 pour 3 tours) \nBombe Brouilleuse (Techno perturb\u00e9, Esprit -3 pour 4 tours) \nBombe Eblouissante (1D6+3, et r\u00e9ussite des sorts -2 pour 3 tours) \nBombe Glac\u00e9e (1D10+3 glace, Dext\u00e9rit\u00e9 -2 pour 3 tours)\nBombe Surdos\u00e9es (2D10+10)\n",
@@ -1247,7 +1247,7 @@
     "notes": "",
     "sticky": "",
     "isArchived": false,
-    "joueur": "Hugo"
+    "joueur": null
   },
   "39": {
     "nom": "J40",
@@ -1313,6 +1313,6 @@
     "notes": "",
     "sticky": "",
     "isArchived": false,
-    "joueur": "Yves"
+    "joueur": null
   }
 }

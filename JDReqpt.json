@@ -3695,7 +3695,13 @@
     "condition": { "type": "classe", "value": ["Barde"], "bonus": "D\u00e9g\u00e2t +2, Soin +2" },
     "icone": "i01631"
   },
-  "495": { "nom": "Dragon Gardien Emeraude", "desc": "Estia...", "effet": "", "montant": "", "icone": "i00938b" },
+  "495": {
+    "nom": "Dragon-Serpent de Jade",
+    "desc": "(Sylfe) Un Dragon-Serpent au reflet de jade. Ses \u00e9cailles \u00e9mettent une aura apaisante.",
+    "effet": "",
+    "montant": "Dur\u00e9e des malus -1 tour",
+    "icone": "i00938b"
+  },
   "496": {
     "nom": "Pendentif de la B\u00eate",
     "desc": "Ce pendentif \u00e9met des ondes positives aux cr\u00e9atures environnantes, notamment les familiers",
@@ -3723,5 +3729,12 @@
     "effet": "",
     "montant": "D\u00e9g\u00e2t +2, d\u00e9g\u00e2t per\u00e7ant +2",
     "icone": "I00263"
+  },
+  "500": {
+    "nom": "Pierre de Magma Maudite",
+    "desc": "Cette pierre de magma a \u00e9t\u00e9 alt\u00e9r\u00e9 par une mal\u00e9diction divine, amenant la malchance \u00e0 son porteur.",
+    "effet": "Mal\u00e9diction du Lien",
+    "montant": "D\u00e9gat +3, Montant du D\u00e9 +1",
+    "icone": "I00235c"
   }
 }
