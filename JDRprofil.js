@@ -78,17 +78,17 @@ window.addEventListener("load", () => {
         .filter((p) => p != undefined);
       // console.log(playerCards);
 
-      const pBossP = Math.round(
+      const pBossP = Math.floor(
         (100 * playerCards?.filter((p) => p.kind === "boss").length) / cardJSON.filter((p) => p.kind === "boss").length
       );
-      const pMapsP = Math.round(
+      const pMapsP = Math.floor(
         (100 * playerCards?.filter((p) => p.kind === "map").length) / cardJSON.filter((p) => p.kind === "map").length
       );
-      const pAnecdoteP = Math.round(
+      const pAnecdoteP = Math.floor(
         (100 * playerCards?.filter((p) => p.kind === "anecdote").length) /
           cardJSON.filter((p) => p.kind === "anecdote").length
       );
-      const pTotalP = Math.round((100 * playerCards?.length) / cardJSON.length);
+      const pTotalP = Math.floor((100 * playerCards?.length) / cardJSON.length);
 
       playerCardsEP.innerHTML =
         "Boss " + pBossP + "%, Anecdotes " + pAnecdoteP + "%<br/>Maps " + pMapsP + "%, Total " + pTotalP + "%";

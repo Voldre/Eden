@@ -2327,7 +2327,7 @@
       "Panopticor Eveill\u00e9 : 40 PV, Force/Intel-Esprit : 15/16. Sort : Parasite obscur : 8 (+4/t *4) (Intel), Coup tentac : 2D6+10 (Force) : Esprit",
       "Hommage : Soin 2-40PV, D\u00e9g\u00e2t (+) et Armure (+) 6 sur 3 tours : Esprit",
       "Parasite obscur : 12 + 6/t *4.  -- Saut Dimensionnel : 3 tentatives : Intel",
-      "Fl\u00e8che des Ombres : 2D10+ 15, Soin 2D6+6 (+6 si para) : Intel"
+      "Fl\u00e8che des Ombres : 2D10+ 15, Heal si para : 2D6+6 (+4 si actif) : Intel"
     ],
     "stats": "7,13,17,12,17",
     "desc": "Humain d\u00e9moniste sous de sombres habits. Il a souvent des propos bizarres et sombres (chuunibyou).",
@@ -2371,23 +2371,23 @@
     "skills": [
       "Vent Purif / Gu\u00e9rison: Soin 2D10+28 (-14, -1 malus) / Bombe Vocale (Feu/Glace) : 2D6+18 : Intelligence",
       "Encouragement Musical : D\u00e9g\u00e2t subi -1D4-6 AoE, 0 dodo, +2 r\u00e9s esprit /// Symphonie de guerre : D\u00e9g\u00e2t +1D6+5 AoE -- 4 tours : Charisme",
-      "Charme de l'Enchanteur : Esquive -2, r\u00e9ussite-3 (AoE), Anti-provoc (chance de le vis\u00e9 1/2 H, 1/4 F) sur 3 tours : Charisme",
+      "Charme de l'Enchanteur : Esquive -2, r\u00e9ussite-3 (AoE), Anti-provoc (chance de le vis\u00e9 1/2 H, 1/4 F) sur 3 tours : Charisme (jdrcombat +27)",
       "Passif : Bloc P+2, Si PV < 120, dur\u00e9e des sorts +1 tour, D\u00e9g\u00e2t/Soin +5"
     ],
     "stats": "7,11,17,18,15",
-    "desc": "Surnomm\u00e9 Chris, s\u00e9ducteur un peu pervers et dou\u00e9 d'un charme irr\u00e9sistible.",
+    "desc": "Surnomm\u00e9 Chris, s\u00e9ducteur un peu coquin dot\u00e9 d'un charme irr\u00e9sistible, il fait parti des meilleurs bardes d'Ezur et est fan de Nyx.",
     "infos": "Faiblesse au contondant et glace",
     "drop": "rare : Anneau curatif, Tenue de Noblesse, tr\u00e8s rare : Guitare massive"
   },
   "161": {
     "visuel3D": "fira",
     "nom": "Fira - Virtuose de G\u00e9nie",
-    "pvmax": "260",
+    "pvmax": "250",
     "skills": [
-      "Lames Dansantes X : 3D6+18 (+1D mono) AoE : Dext\u00e9rit\u00e9",
-      "Danse du Po\u00e8te : D\u00e9g\u00e2t +1D6+4, Dext\u00e9rit\u00e9+2 AoE sur 3 tours : Esprit",
+      "Lames Dansantes X : 3D6+18 (+1D mono) AoE : Dext\u00e9rit\u00e9 (jdrcombat +24)",
+      "Danse du Po\u00e8te : D\u00e9g\u00e2t +1D6+4, Dext\u00e9rit\u00e9+2 AoE sur 4 tours : Esprit",
       "Concentration : Esquive +2, Res Esprit +1 pendant 5 tours (dur\u00e9e des malus (ou effet) : /2) : Esprit",
-      "Passif : Si esquive critique : l'ennemi le plus proche se prend l'attaque, d\u00e9g\u00e2t +5 prochain coup"
+      "Passif : Si esquive critique : l'ennemi le plus proche se prend l'attaque"
     ],
     "stats": "11,17,11,14,17",
     "desc": "Jeune homme humain mais petit, Fira est \u00e0 la fois ma\u00eetre d'art et chef de la Symbardy ! C'est un musicien dou\u00e9 d'une technique brillante et un artiste extr\u00eamement habile.",
@@ -2444,9 +2444,9 @@
     "nom": "Prince du Fl\u00e9au",
     "pvmax": "410",
     "skills": [
-      "Rayon Noir : 6D6 +45 (+10 si para) : Intelligence // Coup Physique : 3D6+22",
-      "Zone de calamit\u00e9 : 4D6+30 (+5 si para) et -2 r\u00e9ussites sur 3 tours : Intelligence",
-      "Parasite Inviolable : 2D6+8 pendant 4 tours -2 stats, non annulable : Intel/Esprit",
+      "Rayon Noir : 6D6 +45 (bloc/esq -2) : Intelligence // Coup Physique : 3D6+22",
+      "Zone de calamit\u00e9 : 4D6+30 (bloc-2) et -2 r\u00e9ussites sur 3 tours : Intelligence",
+      "Parasite Inviolable : 2D6+8 pendant 4 tours -2 stats, non annulable : Esprit",
       "Bouclier Noir : Armure 2D6+10 pendant 4 tours : Esprit (m\u00eame si silence)"
     ],
     "stats": "15,13,20,11,19",
@@ -2835,9 +2835,9 @@
     "pvmax": "245",
     "skills": [
       "Parasite propageur : 1D10+10 et 5 sur 5 tours, AoE mini si d\u00e9 <=6 : Intelligence",
-      "Fl\u00e8ches des Ombres : D\u00e9g\u00e2t 2D6 +23, soin 1D10+12 (+5 si parasite) : Intelligence",
+      "Fl\u00e8ches des Ombres : D\u00e9g\u00e2t 2D6 +23, si parasite : soin 1D10+15 : Intelligence",
       "Griffure Noire : 3D6 +12, et -2 blocage/esquive pour 3 tours AoE : Force (jdrCombat +40)",
-      "Menaces Mortelles : R\u00e9ussite -4, Esq/Bloc/Res -2, dure 2 tours : Esprit"
+      "Menaces Mortelles : R\u00e9ussite -4, Esq/Bloc/Res -2, AoE dure 2 tours : Esprit"
     ],
     "stats": "16,7,18,14,17",
     "desc": "Anuran d\u00e9moniste, chef de la Beholder et porte-parole de la magie noire, il est tr\u00e8s social et pr\u00f4ne les bienfaits de cette magie controvers\u00e9e.",
@@ -3047,7 +3047,7 @@
       "Aura de Mauvaise Fortune : +1 sur le d\u00e9 (AoE) 3 tours : Esprit",
       "Attaque Furieuse/Rapide : 4D6+20 (+10 mono) : Dext\u00e9rit\u00e9",
       "Etoile Protectrice : Bloc/Esq/Res +2 (-2 malus) sur 4 tours : Esprit",
-      "Passif 1 : (1/tour) Force \u00e0 relancer 1 fois et stock le d\u00e9 (x5) (sauf crit dé 1)<br/>Tour 5*x : paire/triple/quad/quint (DGT++5)<br/>Suite : -1 sur le d\u00e9 (combo 4/5 chiffres : 3/5t)<br/>Passif 2 : PV<200/100 : 1 relance chaque 2/1t"
+      "Passif 1 : (1/tour) Force \u00e0 relancer 1 fois et stock le d\u00e9 (x5) (sauf crit dé 1)<br/>Pendant le stock : paire/triple/quad/quint (DGT++5)<br/>Suite : -1 sur le d\u00e9 (combo 4/5 chiffres : 3/5t)<br/>Passif 2 : PV<200/100 : 1 relance chaque 2/1t"
     ],
     "stats": "14,19,12,12,19",
     "desc": "Fille Ezelin rebelle au caract\u00e8re bien tremp\u00e9e, elle est joyeuse et franche. B\u00e9nie par la chance, elle a re\u00e7ue ce don de fa\u00e7on myst\u00e9rieuse par une divinit\u00e9.",
