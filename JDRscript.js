@@ -423,6 +423,9 @@ function insertSkill(skillElement, skillName, awakenClass = false) {
       selectedAwakenSkill = Object.values(skillsAwakenJSON).find((skill) => skill.nom == skillName);
     }
 
+    // Check if it's same skill by icon
+    const sameSkill = skillElement.children[3].children[0].src.includes(selectedSkill.icone);
+
     const skillDesc = selectedAwakenSkill?.desc || selectedSkill.desc;
     const skillMontant = selectedAwakenSkill?.montant || selectedSkill.montant;
 
@@ -454,8 +457,10 @@ function insertSkill(skillElement, skillName, awakenClass = false) {
     skillElement.children[4].innerText = skillDesc;
 
     // Update 29/07/2023, case de PV pour familiers
-    if (skillElement.children.length >= 6) {
-      skillElement.removeChild(skillElement.children[5]);
+    const inputExists = skillElement.children.length >= 6;
+    if (inputExists) {
+      if (sameSkill) return; // No need to update
+      skillElement.removeChild(skillElement.children[5]); // Update
     }
 
     if (selectedSkill.effet == "Invocation") {
