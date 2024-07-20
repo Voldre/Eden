@@ -760,44 +760,44 @@
     "value": 1,
     "kind": "composant",
     "name": "Potion de Soin",
-    "description": "Utile pour se soigner en urgence.",
-    "kindId": "I00044"
+    "description": "Utile pour se soigner (2D10 +6) en urgence.",
+    "kindId": "I00036"
   },
   {
     "id": 1217,
     "value": 1,
     "kind": "composant",
     "name": "Potion d'encaissement",
-    "description": "Permet de mieux r\u00e9sister aux coups des ennemis",
-    "kindId": "I00048"
+    "description": "Permet de mieux r\u00e9sister aux coups des ennemis (-5 dégâts sur 3 tours)",
+    "kindId": "I00040"
   },
   {
     "id": 1218,
     "value": 1,
     "kind": "composant",
     "name": "Potion de concentration",
-    "description": "Permet d'avoir un esprit qui r\u00e9siste mieux",
-    "kindId": "I00051"
+    "description": "Permet d'avoir un esprit qui r\u00e9siste mieux (+4 résistances d'esprit sur 4 tours)",
+    "kindId": "I00043"
   },
   {
     "id": 1219,
     "value": 1,
     "kind": "composant",
     "name": "Potion de puissance",
-    "description": "Am\u00e9liore les capacit\u00e9s physiques de celui qui la boit.",
-    "kindId": "I00046"
+    "description": "Am\u00e9liore les capacit\u00e9s d'attaque (+5 dégâts sur 3 tours).",
+    "kindId": "I00038"
   },
   {
     "id": 1220,
     "value": 1,
     "kind": "composant",
     "name": "Potion de confusion",
-    "description": "R\u00e9duit la r\u00e9ussite de celui qui est touch\u00e9.",
+    "description": "R\u00e9duit la r\u00e9ussite de celui qui est touch\u00e9 (-2 réussite sur 3 tours).",
     "kindId": "i00718"
   },
   {
     "id": 1221,
-    "value": 1,
+    "value": 0,
     "kind": "composant",
     "name": "Potion Paillettes",
     "description": "Cette potion magnifique a une seule propri\u00e9t\u00e9 : elle permet de g\u00e9n\u00e9rer des paillettes autour de soi par magie !",
@@ -818,6 +818,14 @@
     "name": "Complément Vitaminé",
     "description": "Ce complément peut renforcer l'utlisateur sur le moyen terme (ex : 1 séance) en PV/défense, etc...",
     "kindId": "I00024"
+  },
+  {
+    "id": 1224,
+    "value": 1,
+    "kind": "composant",
+    "name": "Potion énergisante",
+    "description": "Améliore les capacités de celui qui la boit (+1 réussite sur 4 tours).",
+    "kindId": "I00041"
   },
   {
     "id": 1226,
@@ -914,7 +922,7 @@
     "value": 2,
     "kind": "composant",
     "name": "Potion de Soin Amélioré",
-    "description": "Utile pour se soigner en cas d'extrême urgence.",
+    "description": "Utile pour se soigner en cas d'extrême urgence (4D10 +10).",
     "kindId": "I00044"
   },
   {
@@ -1849,6 +1857,70 @@
     "description": "Un coton rare qui est réceptif à la magie, surtout aux ténèbres.",
     "kindId": "I00199b",
     "maps": [34, 29]
+  },
+  {
+    "id": 1437,
+    "value": 2,
+    "kind": "composant",
+    "name": "Potion d'encaissement accrue",
+    "description": "Permet de mieux r\u00e9sister aux coups des ennemis",
+    "kindId": "I00048"
+  },
+  {
+    "id": 1438,
+    "value": 2,
+    "kind": "composant",
+    "name": "Potion de puissance accrue",
+    "description": "Am\u00e9liore les capacit\u00e9s physiques de celui qui la boit.",
+    "kindId": "I00046"
+  },
+  {
+    "id": 1439,
+    "value": 2,
+    "kind": "composant",
+    "name": "Potion perturbante",
+    "description": "R\u00e9duit la r\u00e9ussite de celui qui est touch\u00e9 (-3 réussite sur 3 tours).",
+    "kindId": "i00719"
+  },
+  {
+    "id": 1440,
+    "value": 2,
+    "kind": "composant",
+    "name": "Potion d'invisibilité",
+    "description": "Permet de se rendre invisible très discrètement (invisible et -3 chance d'être touché pendant 3 tours)",
+    "kindId": "I00051"
+  },
+  {
+    "id": 1441,
+    "value": 2,
+    "kind": "composant",
+    "name": "Potion dopante",
+    "description": "Améliore grandement les capacités de celui qui la boit (+2 réussite sur 4 tours).",
+    "kindId": "I00049"
+  },
+  {
+    "id": 1442,
+    "value": 3,
+    "kind": "composant",
+    "name": "Potion de résurrection",
+    "description": "Cette potion est capable de ramener à la vie (3D10 +10) une personne récemment tombée !",
+    "kindId": "I00068"
+  },
+  {
+    "id": 1442,
+    "value": 3,
+    "kind": "composant",
+    "name": "Potion de fatigue",
+    "description": "Une potion qui va générer une grosse fatigue à celui qui est touché, l'affaiblissant (-1 stat pendant X tours).",
+    "kindId": "I00059"
+  },
+  {
+    "id": 1443,
+    "value": 3,
+    "kind": "composant",
+    "name": "Potion Jetable",
+    "description": "Cette potion possède un ingrédient particulier lui permettant de se répandre une fois jetée, octroyant ses effets sur toute une zone (AoE). Que ce soit du soin, des dégâts ou de l'encaissement...",
+    "kindId": "i00697"
   },
   {
     "id": 1501,
