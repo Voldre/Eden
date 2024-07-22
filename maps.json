@@ -255,7 +255,7 @@
     "map_z": null,
     "map_r": null,
     "bgm": 8,
-    "mobs": [49, 55, 86, 182, 202]
+    "mobs": [49, 55, 86, 182, 202, 206]
   },
   "22": {
     "name": "Forêt Ensorcelée",

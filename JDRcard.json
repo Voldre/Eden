@@ -4200,6 +4200,28 @@
     "group": 3
   },
   {
+    "id": 1843,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "La chance du Casino",
+    "description": "Le groupe à pu tester le casino Zumi du Désert du Couchant, et on dirait que la chance à souris à Kibo et Malvis ! Ils ont même battu une femme \"chanceuse\"...",
+    "maps": [20],
+    "enemies": [],
+    "kindId": "items/i01360",
+    "group": 1
+  },
+  {
+    "id": 1844,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "La manipulation de Kibo",
+    "description": "Kibo a été manipulé par Mento, un Zumi illusionniste, afin de tendre un piège à Kratos et Erida pour sa vengeance du purgatoire. Et il a été persuasif ! Les Zombies sont là, contrôlés par eux... !",
+    "maps": [21],
+    "enemies": [],
+    "kindId": "skillIcon/E0624",
+    "group": 1
+  },
+  {
     "id": 15000,
     "value": 3,
     "kind": "anecdoteII",
