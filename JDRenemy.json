@@ -3047,11 +3047,26 @@
       "Aura de Mauvaise Fortune : +1 sur le d\u00e9 (AoE) 3 tours : Esprit",
       "Attaque Furieuse/Rapide : 4D6+20 (+10 mono) : Dext\u00e9rit\u00e9",
       "Etoile Protectrice : Bloc/Esq/Res +2 (-2 malus) sur 4 tours : Esprit",
-      "Passif 1 : (1/tour) Force \u00e0 relancer 1 fois et stock le d\u00e9 (x5) (sauf crit dé 1)<br/>Pendant le stock : paire/triple/quad/quint (DGT++5)<br/>Suite : -1 sur le d\u00e9 (combo 4/5 chiffres : 3/5t)<br/>Passif 2 : PV<200/100 : 1 relance chaque 2/1t"
+      "Passif 1 : (1/tour) Force \u00e0 relancer 1 fois et stock le d\u00e9 (x5) (sauf crit d\u00e9 1)<br/>Pendant le stock : paire/triple/quad/quint (DGT++5)<br/>Suite : -1 sur le d\u00e9 (combo 4/5 chiffres : 3/5t)<br/>Passif 2 : PV<200/100 : 1 relance chaque 2/1t"
     ],
     "stats": "14,19,12,12,19",
     "desc": "Fille Ezelin rebelle au caract\u00e8re bien tremp\u00e9e, elle est joyeuse et franche. B\u00e9nie par la chance, elle a re\u00e7ue ce don de fa\u00e7on myst\u00e9rieuse par une divinit\u00e9.",
     "infos": "Faible \u00e0 la nature et \u00e0 la lumi\u00e8re",
     "drop": "D\u00e9 Amplificateur"
+  },
+  "206": {
+    "visuel3D": "m047f",
+    "nom": "Mento",
+    "pvmax": "240",
+    "skills": [
+      "Stalactites / Atk Foudroyante : 3D6+24 / -6 : Intelligence",
+      "Oeil Hypnotique : Endort 1D4 tours, res esprit -1 AoE : Intelligence",
+      "Contr\u00f4le de l'Esprit : Hypnose 1D4 tours (-1 res esprit) : Esprit",
+      "Voile du Blizzard (Intel+2) / Rituel de Mana : Esprit AoE +3 sur 5 tours AoE : Esprit<br/>Saut Dimensionnel : 4 tentatives (esquive) : Intel"
+    ],
+    "stats": "7,15,17,12,19",
+    "desc": "Zumi bleut\u00e9 qui est un menteur qui fait tout pour ses propres int\u00e9r\u00eats, 0 int\u00e9grit\u00e9",
+    "infos": "Faible \u00e0 la foudre et \u00e0 la nature",
+    "drop": "Ecussion de la Curie Bronze (?), Cache oeil de Pirate, rare : Tiare du Savoir, Morceau de M\u00e9t\u00e9orite"
   }
 }

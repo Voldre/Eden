@@ -1319,6 +1319,11 @@ infoStatsE.addEventListener("click", () => {
   const nivInfo = document.createElement("p");
   nivInfo.innerText = `+ ${nbStatsToChoose + statOver} stat(s) au choix, car niveau ${niv}`;
   globalE.append(nivInfo);
+  if (60 - sumStats > 1) {
+    const classWithPointsToChoose = document.createElement("p");
+    classWithPointsToChoose.innerText = "L'ingénieur et le Chevalier Dragon ont chcaun 1 point en plus à répartir";
+    globalE.append(classWithPointsToChoose);
+  }
 
   // Bouton de fermeture
   const closeE = document.createElement("button");

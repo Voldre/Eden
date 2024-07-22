@@ -3736,5 +3736,12 @@
     "effet": "Mal\u00e9diction du Lien",
     "montant": "D\u00e9gat +3, Montant du D\u00e9 +1",
     "icone": "I00235c"
+  },
+  "501": {
+    "nom": "Morceau de M\u00e9t\u00e9orite",
+    "desc": "Ce morceau de m\u00e9t\u00e9orite est tellement riche en \u00e9nergie qu'il affecte son porteur.",
+    "effet": "",
+    "montant": "Montant des buffs +2, Esprit +1",
+    "icone": "i00547b"
   }
 }
