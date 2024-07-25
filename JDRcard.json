@@ -687,7 +687,7 @@
     "id": 1208,
     "value": 2,
     "kind": "composant",
-    "name": "Quartz d'Automne",
+    "name": "Minerai Quartz d'Automne",
     "description": "Ce Quartz est issu de sources chaudes riches en min\u00e9raux et en souffre, la magie autour de lui s'intensifie.",
     "kindId": "I00204",
     "maps": [32]
@@ -903,7 +903,7 @@
     "id": 1236,
     "value": 2,
     "kind": "composant",
-    "name": "Herbe-miracle",
+    "name": "Herbe miracle",
     "description": "Découverte par de vieux sages, cette herbe vivace peut géurir beaucoup de blessures.",
     "kindId": "I00179",
     "maps": [12, 14, 21]
@@ -922,7 +922,7 @@
     "value": 2,
     "kind": "composant",
     "name": "Potion de Soin Amélioré",
-    "description": "Utile pour se soigner en cas d'extrême urgence (4D10 +10).",
+    "description": "Utile pour se soigner en cas d'extrême urgence (3D10 +10).",
     "kindId": "I00044"
   },
   {
@@ -1083,7 +1083,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Bombe Impacte",
-    "description": "Cette bombe inflige pas mal de d\u00e9g\u00e2ts \u00e0 l'impacte, utile pour percer des armures.",
+    "description": "Cette bombe inflige pas mal de d\u00e9g\u00e2ts \u00e0 l'impacte (1D10+6), utile pour percer des armures.",
     "kindId": "I00385"
   },
   {
@@ -1109,7 +1109,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Bombe Gluante",
-    "description": "Cette bombe est particulièrement utile pour ralentir et entraver ses victimes.",
+    "description": "Cette bombe est particulièrement utile pour ralentir et entraver ses victimes (1D6+4, Esquive-2 pour 3 tours).",
     "kindId": "I00386b"
   },
   {
@@ -1117,7 +1117,7 @@
     "value": 2,
     "kind": "composant",
     "name": "Bombe Brouilleuse",
-    "description": "Une bombe particulière qui émet des ondes électromagnétiques venant perturber les appareils technologiques aux alentours.",
+    "description": "Une bombe particulière qui émet des ondes électromagnétiques venant perturber les appareils technologiques aux alentours (et Esprit -3 pour 4 tours).",
     "kindId": "I00386c"
   },
   {
@@ -1125,7 +1125,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Bombe Eblouissante",
-    "description": "Une bombe émettant une lumière très flashy et vive. Très utile pour s'enfuir, la Curie en possède.",
+    "description": "Une bombe émettant une lumière très flashy et vive (1D6+3, réussite des sorts -2 pour 3 tours). Très utile pour s'enfuir, la Curie en possède.",
     "kindId": "I00387"
   },
   {
@@ -1133,7 +1133,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Bombe Glacée",
-    "description": "Cette bombe utilisant des minerais d'énergies gelés est très pratique pour glacer certaines surfaces ou objets.",
+    "description": "Cette bombe utilisant des minerais d'énergies gelés est très pratique pour glacer certaines surfaces ou objets (1D10+3, Dextérité -2 pour 3 tours).",
     "kindId": "I00386"
   },
   {
@@ -1141,7 +1141,7 @@
     "value": 2,
     "kind": "composant",
     "name": "Bombe Surdosée",
-    "description": "Une bombe avec une surdose d'explosif : à manier avec précaution pour éviter qu'elle explose entre les mains !",
+    "description": "Une bombe avec une surdose d'explosif (2D10+10) : à manier avec précaution pour éviter qu'elle explose entre les mains !",
     "kindId": "I00385b"
   },
   {
@@ -1149,7 +1149,7 @@
     "value": 3,
     "kind": "composantX",
     "name": "Bombe Noire",
-    "description": "Une bombe très spéciale conçue dans les laboratoires de la Veyda",
+    "description": "Une bombe très spéciale conçue dans les laboratoires de la Veyda (3D10+15)",
     "kindId": "I00385c"
   },
   {
@@ -1573,7 +1573,7 @@
     "value": 2,
     "kind": "composant",
     "name": "Bombe Fracas",
-    "description": "Cette bombe a été conçue tout spécialement pour réduire la défense de ses victimes.",
+    "description": "Cette bombe a été conçue tout spécialement pour réduire la défense de ses victimes (1D10+3, Blocage -2 pour 3 tours).",
     "kindId": "i00598"
   },
   {

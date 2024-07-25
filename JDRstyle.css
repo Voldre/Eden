@@ -339,6 +339,32 @@ label {
   border: 2px rgb(190, 10, 10, 0.6) solid !important;
 }
 
+.items {
+  padding: 2px;
+  padding-bottom: 0px;
+  border-block: 2px gray solid;
+  width: 90%;
+  max-height: 150px;
+  overflow: auto;
+  background-color: #333;
+}
+.items img {
+  height: 48px;
+  width: 48px;
+  border: 2px solid transparent;
+}
+.items img:hover {
+  cursor: pointer;
+  cursor: url("images/layout/cursor-hover.png"), auto;
+  filter: brightness(115%);
+}
+
+.itemHeader {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
 /* JDR Lore */
 
 #lore h4 {

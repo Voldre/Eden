@@ -1,4 +1,13 @@
-import { skillsJSON, skillsAwakenJSON, eqptJSON, persosJSON, galeryJSON, masterJSON, statsJSON } from "./JDRstore";
+import {
+  skillsJSON,
+  skillsAwakenJSON,
+  eqptJSON,
+  persosJSON,
+  galeryJSON,
+  masterJSON,
+  statsJSON,
+  cardJSON,
+} from "./JDRstore";
 import {
   callPHP,
   toastNotification,
@@ -9,6 +18,7 @@ import {
   aoeDescInfo,
   sum,
   sumEqptsAsAccess,
+  isTextInText,
 } from "./utils";
 
 console.log("Skills JSON", skillsJSON);
@@ -879,6 +889,8 @@ function loadFiche() {
   // Inventaire du perso
   document.querySelector(".inventaire").value = persoData.inventaire;
 
+  getItemsInInventory(persoData.inventaire);
+
   document.querySelector(".poids").innerText = poids[races.indexOf(persoData.race)];
 
   document.querySelector("#argent").value = persoData.argent;
@@ -1260,7 +1272,7 @@ const labelsDescription = {
   stress:
     'Fatigue/Stress max : 200%. Chaque 50%, les stats diminue de 1 (4 max).<br/> La fatigue s\'accumule au fur et à mesures des combats (sauf tour des cieux). Le stress uniquement dans les zones dédiées.<br/><br/>Le stress "accentué" augmente de 50%, la "réduction" diminue de 33%.',
   infoEQPT:
-    'Changer d\'arme en combat se fait en début de tour (action instantanée). <br/><br/>Porter une armure non adapté (magique, léger, lourd) implique des malus de stats (voir page "Infos JDR", section "Armure").<br/><br/>Le montant total de l\'ensemble des stuffs est limité : +2 de montant des buffs et +1 durée des buffs.<br/><br/>Le montant fixe total (hors %) des accessoires est limité : +2 par stat, +3 blocage/esquive, pour les soins (infligé, reçu) : 6, pour les dégâts infligés : 6 (+2 si bonus élémentaire) et dégâts reçu : 5',
+    "Changer d'arme en combat (si équipée) se fait en début de tour (action instantanée).<br/>Sinon, échanger d'arme ou d'accessoire prend 1 tour.<br/><br/>Porter une armure non adapté (magique, léger, lourd) implique des malus de stats (voir page \"Infos JDR\", section \"Armure\").<br/><br/>Le montant total de l'ensemble des stuffs est limité : +2 de montant des buffs et +1 durée des buffs.<br/><br/>Le montant fixe total (hors %) des accessoires est limité : +2 par stat, +3 blocage/esquive, pour les soins (infligé, reçu) : 6, pour les dégâts infligés : 6 (+2 si bonus élémentaire) et dégâts reçu : 5",
   //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."
   synthese: syntheseDesc(),
   passif12:
@@ -1389,3 +1401,86 @@ function setPassif(isAvailable) {
   passif12E.classList = isAvailable ? "" : "hide";
   passif12E.append(li);
 }
+
+const getCards = Object.values(cardJSON)
+  .filter((card) => card.kind === "composant")
+  .map((card) => ({
+    title: card.name,
+    desc: card.description,
+    montant: "",
+    src: `http://voldre.free.fr/Eden/images/items/${card.kindId}.png`,
+  }));
+
+const getEqpts = Object.values(eqptJSON).map((eqpt) => ({
+  title: eqpt.nom,
+  desc: eqpt.desc,
+  montant: eqpt.montant,
+  effet: eqpt.effet,
+  src: `http://voldre.free.fr/Eden/images/items/${eqpt.icone}.png`,
+}));
+
+const allItems = [...getCards, ...getEqpts];
+
+const dialog = document.querySelector("dialog");
+
+// Display items in the inventory
+const getItemsInInventory = (inventory) => {
+  const inventoryUnformated = unformatText(inventory).replaceAll("bombes", "bombe").replaceAll("potions", "potion");
+
+  const itemsInInventory = allItems.filter((item) => isTextInText(inventoryUnformated, item.title));
+
+  const eqptsName = [...equipementsE.children].map((competenceE) => unformatText(competenceE.children[0].value));
+
+  const itemsE = document.querySelector(".items");
+  itemsE.innerHTML = "";
+
+  itemsInInventory.map((item) => {
+    const imgE = document.createElement("img");
+    imgE.src = item.src;
+    imgE.title = item.title + "\n" + item.desc + "\n" + item.montant;
+
+    // Highlight equipments equipped
+    if (eqptsName.find((eqptName) => isTextInText(eqptName, item.title))) imgE.style.borderColor = "goldenrod";
+
+    imgE.addEventListener("click", () => {
+      dialog.innerText = "";
+
+      const headerE = document.createElement("div");
+      headerE.className = "itemHeader";
+      headerE.append(imgE.cloneNode());
+      const title = document.createElement("h2");
+      title.innerText = item.title;
+      headerE.append(title);
+
+      dialog.append(headerE);
+
+      const desc = document.createElement("p");
+      desc.innerText = item.desc;
+      dialog.append(desc);
+
+      if (item.montant) {
+        const montant = document.createElement("p");
+        montant.innerText = item.montant;
+        dialog.append(montant);
+        const effet = document.createElement("p");
+        effet.innerText = item.effet;
+        dialog.append(effet);
+      }
+
+      // fermeture
+      const closeE = document.createElement("button");
+      closeE.id = "close";
+      closeE.innerText = "Fermer";
+      closeE.addEventListener("click", () => {
+        dialog.close();
+      });
+      dialog.append(closeE);
+
+      dialog.showModal();
+    });
+
+    itemsE.append(imgE);
+  });
+};
+
+document.querySelector(".inventaire").addEventListener("change", (e) => getItemsInInventory(e.target.value));
