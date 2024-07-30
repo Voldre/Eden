@@ -69,7 +69,7 @@ if(isset($_GET["data"])){
     }else if($_GET["data"] == "worldmap"){
     
         ?>
-        <div id="worldmapContainer" class="container" style="overflow-y: hidden;">
+        <div id="worldmapContainer" class="container">
         <div class="select3D" style="left:auto;z-index:10;margin:0px;padding:0px;">
             <ul style="display:flex;margin:0px;padding:0px;">
                 <li class="mapMenu"  data-map=1>Sud-Ouest</li>
@@ -78,7 +78,7 @@ if(isset($_GET["data"])){
                 <li class="mapMenu" data-map=9>Île Sombre</li>
             </ul>
         </div>
-            <div class="continent active" id="C0">
+            <div class="continent active" id="C0" style="height:600px">
             <?php
                 foreach($maplist as $key=>$value){
                     if(isset($value["wmap"]) && $value["wmap"]==0){
@@ -86,7 +86,7 @@ if(isset($_GET["data"])){
                     }
                 }
             ?>
-                <img id="worldmap01" src="images/mapworld01-YVES.png"/>
+                <img id="worldmap01" src="images/mapworld01-YVES-HD-Final-v2.png" style="height:660px;margin-top:20px"/>
             </div>
             <div class="continent" id="C1">
             <?php
@@ -192,12 +192,23 @@ if(isset($_GET["data"])){
         }
     });
 
+    const worldMap01E = document.querySelector("#worldmap01")
+    const Continent0E = document.querySelector("#C0")
+
+    document.addEventListener('load', () => setYvesMap())
     document.querySelector(".YVES")?.addEventListener('click', e =>{
-        if(document.querySelector("#worldmap01").src.includes('YVES')){
-            document.querySelector("#worldmap01").src = "images/mapworld012.png";
+        if(worldMap01E.src.includes('YVES')){
+            worldMap01E.src = "images/mapworld012.png";
+            worldMap01E.style.height = "auto";
+            worldMap01E.style.marginTop = 'auto';
+            Continent0E.style.height = "auto";
             // document.querySelectorAll(".point").style.backgroundImage = 'url("images/mapIcon_1.png")';
             // document.querySelectorAll(".point:hover").style.backgroundImage = 'url("images/mapIcon_2.png")';
-        }else{  document.querySelector("#worldmap01").src = "images/mapworld01-YVES.png"; 
+        }else{  
+            worldMap01E.src = "images/mapworld01-YVES-HD-Final-v2.png"; 
+            worldMap01E.style.height = '660px';
+            worldMap01E.style.marginTop = '20px';
+            Continent0E.style.height = "600px";
         }
     })
 </script>

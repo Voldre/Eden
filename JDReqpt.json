@@ -151,7 +151,7 @@
   "22": {
     "nom": "Ceinture Tuskar",
     "desc": "Ceinture fabriqu\u00e9 par l'artisanat Tuskar",
-    "effet": "Buff",
+    "effet": "",
     "montant": "PV +10",
     "icone": "A30018",
     "access": "A1"
@@ -3411,7 +3411,7 @@
     "icone": "W61004"
   },
   "457": {
-    "nom": "B\u00e2ton Magique",
+    "nom": "B\u00e2ton de Grand Mage",
     "desc": "Ce b\u00e2ton est con\u00e7ue pour renforcer la puissance magique.",
     "effet": "Intelligence +2",
     "montant": "D\u00e9g\u00e2t +8",
@@ -3743,5 +3743,12 @@
     "effet": "",
     "montant": "Montant des buffs +2, Esprit +1",
     "icone": "i00547b"
+  },
+  "502": {
+    "nom": "Pistolet de Parade",
+    "desc": "Ce pistolet est \u00e9quip\u00e9 d'un bouclier permettant \u00e0 son utilisateur de mieux bloquer les attaques.",
+    "effet": "Blocage physique +2",
+    "montant": "D\u00e9g\u00e2t +8",
+    "icone": "W51101"
   }
 }

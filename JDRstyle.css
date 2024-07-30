@@ -342,7 +342,8 @@ label {
 .items {
   padding: 2px;
   padding-bottom: 0px;
-  border-block: 2px gray solid;
+  border: 2px gray solid;
+  border-left: none;
   width: 90%;
   max-height: 150px;
   overflow: auto;
@@ -874,11 +875,37 @@ td {
   display: flex;
   position: fixed;
   width: 100%;
-  margin: 0px;
+  max-height: unset;
   padding: 0px;
   z-index: 5;
-  overflow-y: hidden;
   border: none;
+  overflow: auto;
+}
+
+#worldmap .continent {
+  max-width: 800px;
+  max-height: 520px;
+  margin: 0 auto;
+  overflow: auto;
+  border: 1px solid #333;
+}
+
+#worldmap .continent .continent0wrapper {
+  background-image: url("images/mapworld01-YVES-HD-Final-v2.png");
+  aspect-ratio: 1.15;
+  background-size: cover;
+}
+
+/* #worldmap .continent .worldmap-img {
+  position: relative;
+  height: 615px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+*/
+
+#worldmap .continent0wrapper .point {
+  margin-top: -22px;
 }
 
 #allCards label {

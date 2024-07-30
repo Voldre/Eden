@@ -98,6 +98,7 @@ if(isset($_GET["data"])){
                 <button title='Lecture en boucle' id="loop"><img src="https://cdn0.iconfinder.com/data/icons/google-material-design-3-0/48/ic_loop_48px-48.png" style="height: 26px;"></button>
                 <button title='Suivant' id="next"><img src="https://cdn2.iconfinder.com/data/icons/picol-vector/32/controls_chapter_next-48.png" style="height: 26px;"></button>
             </div>
+            <input type="text" id="filter" style="width:70%;" placeholder="Filtre : foret,guilde,..."/>
         </div>
     </div>
     
@@ -168,6 +169,8 @@ function drawMusics($repository,$audioMap){
 // ------------- JAVASCRIPT PART ---------------
 // ---------------------------------------------
 
+const audioWrappers = [...document.querySelectorAll('.audioWrapper')]            
+
 const discE = document.querySelector('.disc')
 let discImages = [];
 const updateDisc = ()=>{
@@ -206,10 +209,10 @@ const switchMusic = (currentMusic,newMusic) => {
 
 const randomMusic = () =>{
     const currentMusic = currentMusicWrapper.children[0]
-        // Remove "sound" from random list
-    const audioWrappers = [...document.querySelectorAll('.audioWrapper')].filter(audio => !audio.id.includes('sound0'))            
-    const randomIndex = Math.floor(Math.random() * audioWrappers.length);
-    const newMusic = audioWrappers[randomIndex];
+        // Remove "sound" from random list, and remove hidden audio
+    const ostWrappers = audioWrappers.filter(audio => !audio.id.includes('sound0') && !audio.classList.contains('hide'))
+    const randomIndex = Math.floor(Math.random() * ostWrappers.length);
+    const newMusic = ostWrappers[randomIndex];
 
     switchMusic(currentMusic,newMusic)
 
@@ -273,6 +276,31 @@ buttonLoop.addEventListener('click', ()=>{
     randomActivated = false
     loopActivated = !loopActivated
     audioItems.forEach(item => item.loop = loopActivated)
+})
+
+
+// Filter
+
+document.querySelector('#filter').addEventListener('change',(e)=>{
+    const filterValue = e.target.value
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+
+    const filterNames = filterValue ? filterValue.split(",") : [];
+
+    audioWrappers.forEach(audioWrapper =>{ 
+        const audioName = audioWrapper.children[0].innerText
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .toLowerCase()
+
+        if(!filterNames.length || filterNames.find((filterName) => audioName.includes(filterName))){
+            audioWrapper.classList.remove('hide')    
+        }else{
+            audioWrapper.classList.add('hide')  
+        }
+    })
 })
 </script>
 </body>
