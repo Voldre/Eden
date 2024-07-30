@@ -1934,8 +1934,8 @@
     "nom": "Botassius - G\u00e9n\u00e9ral D\u00e9fensif",
     "pvmax": "300",
     "skills": [
-      "Lumi\u00e8re de Gu\u00e9rison : 2D10+15 (1/3 rejouer) : Intelligence",
-      "Vague Foudroyante : 3D6+17, Blocage-3 AoE 3 tours : Force",
+      "Lumi\u00e8re de Gu\u00e9rison / Bouclier de Lumière : 2D10+15 (1/3 rejouer) / Armure 1D4+4 AoE pendant 4 tours : Intelligence",
+      "Vague Foudroyante : 3D6+17, Blocage-3 AoE 3 tours : Force (jdrCombat +25)",
       "Lumi\u00e8re Sacr\u00e9e : 3D6+25 / Euphorie : +1D4 (min 2) +2 par coup (max 6) sur 5 tours : esprit",
       "Passif : Blocage +2 (Def Acier), Armure -15, Ferveur Guerrier : si KO (2 fois) succ\u00e8s 1D2 (10/20) : Soigne 3D10+20 PV (D\u00e9g\u00e2t/Armure +5 perma)"
     ],
@@ -2009,8 +2009,8 @@
     "nom": "Vimess - G\u00e9n\u00e9ral d'Exp\u00e9dition",
     "pvmax": "250",
     "skills": [
-      "Invoc Ph\u00e9nix (Torch) : 40 PV (revie 1 fois), Stats 15 (bloc 8), Charge 2D10+12 FOR, Tornade Feu AoE (-1D) INT, Pr\u00e9vention : Buff Armure +5 & -1 malus INT.<br/> Explosion \u00e0 la mort : D\u00e9g\u00e2t AoE \u00e0 la mort (2D10+20, idem soin Vimess)",
-      "Pluie de Fl\u00e8ches (/Douloureuse) : 3D6+22 AoE (/-7 et 0 heal 3 tours) (Mono +7) : Dext\u00e9rit\u00e9",
+      "Invoc Ph\u00e9nix (Torch) : 40 PV (revie 1 fois), Stats 15 (bloc 8), Charge 2D10+13 FOR, Tornade Feu AoE (-1D) INT, Pr\u00e9vention : Buff Armure +5 & -1 malus INT.<br/> Explosion \u00e0 la mort : D\u00e9g\u00e2t AoE \u00e0 la mort (2D10+20, idem soin Vimess)",
+      "Pluie de Fl\u00e8ches (/Douloureuse) : 3D6+23 AoE (/-7 et 0 heal 3 tours) (Mono +7) : Dext\u00e9rit\u00e9",
       "Saut d'esquive (& blocage) : 5 tentatives : tir 2D6+14 (jdrcombat +40)",
       "Passif : Esquive +2, si PV < 125 : esq/bloc cible -2"
     ],
@@ -2264,7 +2264,7 @@
     "nom": "Diana - Tigresse Pourpre",
     "pvmax": "270",
     "skills": [
-      "Faiblesse Critique : 5D6 +20 Crit (1,2 : *1.5,  3 : *1.25) : Force (jdrcombat +20)",
+      "Faiblesse Critique : 5D6 +20 Crit (1,2 : *1.5,  3 : *1.25) : Force (jdrcombat +10)",
       "Dash (Cicatrice) de l'esprit : 4D6 +16 : -1 buff, se replace : Force",
       "Transe - Tueuse X : Atk Mono -> AoE, bloc/esq +2, -1 malus : 4 tours : Esprit",
       "Passif : Si PV < 120 : Absorbe 1/3 des d\u00e9g\u00e2ts (apr\u00e8s armure) en PV. (+ Furtivit\u00e9 fuite dext\u00e9 +3)"
@@ -2309,8 +2309,8 @@
     "nom": "Romarin - N\u00b06 Hydra",
     "pvmax": "200",
     "skills": [
-      "Ch\u00e2timent Sacr\u00e9 / Vent purificateur : 2D6+11 (-1 malus) : Intel",
-      "Gu\u00e9rison / R\u00e9surrection : 2D10+16 (*2) : Intel",
+      "Ch\u00e2timent Sacr\u00e9 / Vent purificateur : 2D6+12 (-1 malus) : Intel",
+      "Gu\u00e9rison / R\u00e9surrection : 2D10+18 (*2) : Intel",
       "Gr\u00e2ce de la Sagesse : Blocage +3, Esprit +3, 4 tours : Esprit",
       "B\u00e9n\u00e9diction de la Lumi\u00e8re : -1 sur le D\u00e9, pendant 4 tours : Esprit<br/>Passif : dur\u00e9e des malus -1 tour"
     ],
@@ -2657,9 +2657,9 @@
       "Coup de boule : 2D6+13 : force",
       "Spore toxique : 1D6+10 AoE  : intelligence",
       "Spore dopant : Buff 1D4+4 AoE pendant 4 tours : Esprit",
-      "Passif : D\u00e9g\u00e2t re\u00e7u -3 (PV+10 charisme +1)"
+      "Passif : (Plastron & Cape) : D\u00e9g\u00e2t re\u00e7u -4, PV+10, Charisme +1, Dextérité +1"
     ],
-    "stats": "16,10,15,12,14",
+    "stats": "16,11,15,12,14",
     "desc": "Fred est un Champigno\u00efde Baga brun orang\u00e9 tr\u00e8s social et toujours motiv\u00e9. Provient de la Carri\u00e8re Angor.",
     "infos": "Faible au tranchant et \u00e0 la glace",
     "drop": ""
@@ -3068,5 +3068,20 @@
     "desc": "Zumi bleut\u00e9 qui est un menteur qui fait tout pour ses propres int\u00e9r\u00eats, 0 int\u00e9grit\u00e9",
     "infos": "Faible \u00e0 la foudre et \u00e0 la nature",
     "drop": "Ecussion de la Curie Bronze (?), Cache oeil de Pirate, rare : Tiare du Savoir, Morceau de M\u00e9t\u00e9orite"
+  },
+  "207": {
+    "visuel3D": "irene",
+    "nom": "Ir\u00e8ne - Jolie Fripouille",
+    "pvmax": "240",
+    "skills": [
+      "Ch\u00e2timent Sacr\u00e9 (Punition Divine) / Destruc Noire : 3D6 +16 (+ 6) : Intel",
+      "Pri\u00e8re Divine/Sacrifice Ombres : Soin 2D6 +14 (Lum +5) / -5 PV et T\u00e9n\u00e8bres 1D6+6 (Force,Intel+2) : Esprit",
+      "Vent purificateur : 2D6+14 (-1 malus) : Intel",
+      "(Voile du Blizzard) Saut Dimensionnel : 3 tentatives : Intel<br/>Passif PV <120 : D\u00e9g\u00e2t & Soin +5 (+5 si critique)"
+    ],
+    "stats": "13,7,18,14,18",
+    "desc": "Sous ses airs mignons, cette jeune filoute manigance des trucs louches pour son propre int\u00e9r\u00eat",
+    "infos": "Faible au contondant et au feu",
+    "drop": "Anneau curatif, rare : Dague \u00e9cailles noires, tr\u00e8s rare : Tenue de Luminary"
   }
 }

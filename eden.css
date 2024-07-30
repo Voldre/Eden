@@ -304,6 +304,10 @@ li img,
 .active {
   display: block !important;
 }
+.hide {
+  display: none !important;
+}
+
 .YVES {
   position: absolute;
   left: 39%;
@@ -313,8 +317,13 @@ li img,
 .YVES:hover {
   background-image: url("images/otherIcon/function027.png");
 }
+
+#worldmapContainer {
+  padding: 0px;
+}
+
 .continent {
-  min-width: 700px;
+  min-width: 660px;
   text-align: center;
   position: relative;
   display: none;
@@ -596,14 +605,9 @@ Brightness on mouseover and onclick */
 
   .select3D {
     width: 95%;
+    left: 30%;
   }
   .container ul .mapMenu {
     min-width: auto;
-  }
-
-  .continent {
-    left: 51%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
   }
 }

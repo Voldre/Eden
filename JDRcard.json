@@ -1253,7 +1253,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Potion Flambante",
-    "description": "Une potion conçue pour intensifier les magies de flammes.",
+    "description": "Une potion conçue pour intensifier les magies de flammes (dégât +7 sur 4 tours).",
     "kindId": "I00075"
   },
   {
@@ -1261,7 +1261,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Potion Glacée",
-    "description": "Une potion améliorant les capacités de glaces.",
+    "description": "Une potion améliorant les capacités de glaces (dégât +7 sur 4 tours).",
     "kindId": "I00076"
   },
   {
@@ -1269,7 +1269,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Potion Foudroyante",
-    "description": "Cette potion amplifie les magies électriques.",
+    "description": "Cette potion amplifie les magies électriques (dégât +7 sur 4 tours).",
     "kindId": "I00077"
   },
   {
@@ -1277,7 +1277,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Potion Naturelle",
-    "description": "Cette potion connecte son utilisateur à la nature.",
+    "description": "Cette potion connecte son utilisateur à la nature (dégât +7 sur 4 tours).",
     "kindId": "I00078"
   },
   {
@@ -1285,7 +1285,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Potion Eblouissante",
-    "description": "Une potion conçue pour accentuer la lumière.",
+    "description": "Une potion conçue pour accentuer la lumière (dégât +7 sur 4 tours).",
     "kindId": "I00079"
   },
   {
@@ -1293,7 +1293,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Potion Ténèbreuse",
-    "description": "Une potion imprégnée de magie noire intense.",
+    "description": "Une potion imprégnée de magie noire intense (dégât +7 sur 4 tours).",
     "kindId": "I00080"
   },
   {
@@ -1301,7 +1301,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Potion Fracas",
-    "description": "Une potion qui amplifie le contondant.",
+    "description": "Une potion qui amplifie le contondant (dégât +7 sur 4 tours).",
     "kindId": "I00082"
   },
   {
@@ -1309,7 +1309,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Potion Coupante",
-    "description": "Une potion qui améliore les tranches.",
+    "description": "Une potion qui améliore les tranches (dégât +7 sur 4 tours).",
     "kindId": "I00081"
   },
   {
@@ -1317,7 +1317,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Potion Perforante",
-    "description": "Une potion qui accentue la percée.",
+    "description": "Une potion qui accentue la percée (dégât +7 sur 4 tours).",
     "kindId": "I00083"
   },
   {
@@ -1863,7 +1863,7 @@
     "value": 2,
     "kind": "composant",
     "name": "Potion d'encaissement accrue",
-    "description": "Permet de mieux r\u00e9sister aux coups des ennemis",
+    "description": "Permet de bien mieux r\u00e9sister aux coups des ennemis (-8 dégâts sur 3 tours)",
     "kindId": "I00048"
   },
   {
@@ -1871,7 +1871,7 @@
     "value": 2,
     "kind": "composant",
     "name": "Potion de puissance accrue",
-    "description": "Am\u00e9liore les capacit\u00e9s physiques de celui qui la boit.",
+    "description": "Am\u00e9liore grandement les capacit\u00e9s d'attaque (+8 dégâts sur 3 tours).",
     "kindId": "I00046"
   },
   {
