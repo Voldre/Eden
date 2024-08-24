@@ -99,7 +99,8 @@ window.addEventListener("load", () => {
       parseInt(perso.charisme) +
       parseInt(perso.esprit);
 
-    if (perso.degat > 52 || perso.armure > 35 || perso.pvmax > 200 || sumStats > 72) {
+    // Not Malvis, because she is overcheat with her damage
+    if ((perso.degat > 52 && perso.nom !== "Malvis") || perso.armure > 35 || perso.pvmax > 200 || sumStats > 72) {
       console.log("new C log...");
       saveCheat(urlParams.get("enemy"));
     }

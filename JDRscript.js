@@ -1272,7 +1272,7 @@ const labelsDescription = {
   stress:
     'Fatigue/Stress max : 200%. Chaque 50%, les stats diminue de 1 (4 max).<br/> La fatigue s\'accumule au fur et à mesures des combats (sauf tour des cieux). Le stress uniquement dans les zones dédiées.<br/><br/>Le stress "accentué" augmente de 50%, la "réduction" diminue de 33%.',
   infoEQPT:
-    "Changer d'arme en combat (si équipée) se fait en début de tour (action instantanée).<br/>Sinon, échanger d'arme ou d'accessoire prend 1 tour.<br/><br/>Porter une armure non adapté (magique, léger, lourd) implique des malus de stats (voir page \"Infos JDR\", section \"Armure\").<br/><br/>Le montant total de l'ensemble des stuffs est limité : +2 de montant des buffs et +1 durée des buffs.<br/><br/>Le montant fixe total (hors %) des accessoires est limité : +2 par stat, +3 blocage/esquive, pour les soins (infligé, reçu) : 6, pour les dégâts infligés : 6 (+2 si bonus élémentaire) et dégâts reçu : 5",
+    "Changer d'arme en combat (si équipée) se fait en début de tour (action instantanée).<br/>Sinon, échanger d'arme ou d'accessoire prend 1 tour.<br/><br/>Porter une armure non adapté (magique, léger, lourd) implique des malus de stats (voir page \"Infos JDR\", section \"Armure\").<br/><br/>Le montant total de l'ensemble des stuffs est limité : +2 de montant des buffs, +1 durée des buffs, -1 durée des malus, et +50% PV soin reçu.<br/><br/>Le montant fixe total (hors %) des accessoires est limité : +2 par stat, +3 blocage/esquive, pour les soins (infligé, reçu) : 6, pour les dégâts infligés : 6 (+2 si bonus élémentaire) et dégâts reçu : 5",
   //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."
   synthese: syntheseDesc(),
   passif12:
