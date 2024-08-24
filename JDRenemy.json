@@ -212,7 +212,7 @@
   "16": {
     "visuel3D": "m103",
     "nom": "Ver des sables",
-    "pvmax": "90",
+    "pvmax": "80",
     "skills": [
       "Morsure : 2D10+6 : force",
       "S\u00e9isme : 1D10+6 AoE : force",
@@ -521,7 +521,7 @@
   },
   "37": {
     "visuel3D": "m118",
-    "nom": "Rumbledore de Wish",
+    "nom": "Rumbledi de Wish",
     "pvmax": "150",
     "skills": [
       "Temp\u00eate de Glace : 1D12 +7 : Intelligence",
@@ -627,10 +627,10 @@
   "44": {
     "visuel3D": "m105",
     "nom": "Fourmilion du D\u00e9sert",
-    "pvmax": "85",
+    "pvmax": "95",
     "skills": [
-      "Vague terrestre : 1D10 +6 AoE : force",
-      "Morsure : 2D10 +6 : force",
+      "Vague terrestre : 1D10 +7 AoE : force",
+      "Morsure : 2D10 +7 : force",
       "Crachat corrosif : 1D6+2 pendant 3 tours : intelligence",
       ""
     ],
@@ -641,7 +641,7 @@
   },
   "45": {
     "visuel3D": "m156",
-    "nom": "Templier de la Curie - Marma",
+    "nom": "Templier de la Curie - Marma v1",
     "pvmax": "150",
     "skills": [
       "Euphorie : +1D4 (min 2) par coup. Buff pendant 4-5 tours (max 5) : esprit",
@@ -687,14 +687,14 @@
   "48": {
     "visuel3D": "m203",
     "nom": "Mante Fatalame",
-    "pvmax": "80",
+    "pvmax": "90",
     "skills": [
-      "Coup de crochet : 1D10 +10 : dext\u00e9rit\u00e9",
+      "Vague terrestre : 1D10 +10 AoE : dext\u00e9rit\u00e9",
       "Coup de corne : 2D10+10 : force",
       "Vivacit\u00e9 : Dext\u00e9+2 Esq+2 : Esprit",
       ""
     ],
-    "stats": "15,15,9,9,13",
+    "stats": "16,15,9,9,13",
     "desc": "Mante verte avec plusieurs faucilles dans son dos",
     "infos": "Faible au tranchant et \u00e0 la foudre",
     "drop": "Crochet porte bonheur, rare : Ep\u00e9e odorante"
@@ -895,16 +895,16 @@
     "drop": "Arc du Dresseur, rare : Veste des Hautes-terres"
   },
   "62": {
-    "visuel3D": "m312b",
-    "nom": "Rubis - Chevali\u00e8re Dragonne",
-    "pvmax": "270",
+    "visuel3D": "rubis",
+    "nom": "Rubis - Héritière Favorite",
+    "pvmax": "280",
     "skills": [
       "Mode Draconique : Embras\u00e9 : Force/Intel+2, D\u00e9moniaque : Charisme+2, Cach\u00e9 : Esprit+2 : Esprit",
       "Terreur du Dragon AoE : R\u00e9ussite des sorts : -2 sur 3 tours AoE (+ mode Cf. DK) : Charisme",
-      "Pouvoir du Dragon / Atk Cyclone : 3D6+19 (AoE-5) (feu, t\u00e9n\u00e8bres,physique) : Force",
-      "Revers d'\u00e9caille \u00e9veill\u00e9 : 5 tentatives par combat (<10 : 66%, >=10 : 33%) (+ mode Cf. DK) : Esprit"
+      "Pouvoir du Dragon / Atk Cyclone : 3D6+22 (AoE-5) (feu, t\u00e9n\u00e8b,phys) : Force",
+      "Revers d'\u00e9caille \u00e9veill\u00e9 : 5 tentatives par combat (<10 : 66%, >=10 : 33%) (+ mode Cf. DK) : Esprit<br/>Passif : (Def Acier Perma) Blocage+2, PV < 140 : Dégât +5 (Crit +5)"
     ],
-    "stats": "15,13,7,15,16",
+    "stats": "17,13,9,15,17",
     "desc": "H\u00e9riti\u00e8re de l'empire Heldentod, connue pour sa d\u00e9termination et sa prestance. Elle est tr\u00e8s strat\u00e8ge mais froide et parfois sans piti\u00e9.",
     "infos": "Faible \u00e0 la nature et aux t\u00e9n\u00e8bres",
     "drop": "Ep\u00e9e de parade OU Gantelet de Lieutenant, tr\u00e8s rare : Brassard du Pouvoir"
@@ -1015,16 +1015,16 @@
     "drop": "Anneau de r\u00e9sistance, Pierre Algue, rare : Croix corrompue"
   },
   "70": {
-    "visuel3D": "m156",
-    "nom": "Templier Marma - V2 (Nv7)",
-    "pvmax": "240",
+    "visuel3D": "marma",
+    "nom": "Templier Marma - Capitaine",
+    "pvmax": "250",
     "skills": [
       "Euphorie : +1D4+1 (min 3) par coup. Buff pendant 4-5 tours (max 5) : esprit",
-      "Lumi\u00e8re de Gu\u00e9rison : soin 2D10 +14, 1/4 de rejouer : intelligence",
-      "Lumi\u00e8re Sacr\u00e9e : 2D10 +12 : intelligence",
-      "Attaque tournoyante : 2D8 +9 : force"
+      "Lumi\u00e8re de Gu\u00e9rison : soin 2D10 +12, 1/4 de rejouer : intelligence",
+      "Lumi\u00e8re Sacr\u00e9e : 2D10 +16 : intelligence",
+      "Attaque tournoyante : 2D10 +11  : force"
     ],
-    "stats": "14,9,16,12,15",
+    "stats": "15,9,17,12,16",
     "desc": "Un Templier de la Curie M\u00e9t\u00e9role, il est chef d'une unit\u00e9 d\u00e9fensive et est quelqu'un de gentil et social. Il essaye de faire les choses s\u00e9rieusement.",
     "infos": "Faible aux t\u00e9n\u00e8bres et \u00e0 la foudre",
     "drop": "Calice de la Curie M\u00e9t\u00e9role, tr\u00e8s rare : Plastron de Templier"
@@ -1034,8 +1034,8 @@
     "nom": "Ecorce Terrestre - Pionnier de Gaia",
     "pvmax": "330",
     "skills": [
-      "Fracas Terrestre / Atk Foudroyante : 2D10 +14 / +4 AoE : force/intel",
-      "Machoir Enorme : 4D6+22 : force",
+      "Fracas Terrestre / Atk Foudroyante : 2D10 +16 / +4 AoE : force/intel",
+      "M\u00e2choire Enorme : 4D6+24 : force",
       "M\u00e8re fondatrice : Soin 2D10+25 Invoque 2 lutins pr\u00e9historique (PV/2) : esprit",
       "Passif : Armure +5, quand 33% PV : Si Blocage critique => Fracas terrestre auto"
     ],
@@ -1216,7 +1216,7 @@
     "skills": [
       "Morsure : 2D10+8 : force",
       "S\u00e9isme acide : 1D10+8 AoE : force",
-      "Souffle ralentissant : dext\u00e9-3 (3 tours): esprit",
+      "Souffle paralysant : force/intel-3 (3 tours): esprit",
       "Poison : 1D4+4 sur 3 tours : intel"
     ],
     "stats": "15,7,13,8,14",
@@ -1697,7 +1697,7 @@
       "Tremblement Intense : 2D10 +11 AoE : force",
       "Croc/Griffe Imposante : 3D6+16 : force",
       "Hurlement Strident : (force,dext\u00e9,intel) -2 AoE sur 3 tours : esprit",
-      "Passif : Euphorie (+2/coup (max 10*2)), reset quand touche"
+      "Passif Draconique : Euphorie (+2/coup (max 10*2)), reset quand touche"
     ],
     "stats": "17,9,9,11,16",
     "desc": "Grand dragon terrestre gris brun \u00e0 la peau \u00e9cailleuse et rocheuse, petites ailes",
@@ -1737,9 +1737,9 @@
   "118": {
     "visuel3D": "ochak",
     "nom": "Ochak - Primat de la Chelona",
-    "pvmax": "280",
+    "pvmax": "290",
     "skills": [
-      "Zone noire : 2D10+16 (bloc m-2) AoE stat -2 (stat-3 si parasite) pendant 3 tours : Intelligence",
+      "Zone noire : 2D10+18 (bloc m-2) AoE stat -2 (stat-3 si parasite) pendant 3 tours : Intelligence",
       "Eclair en Furie : 4D6 +21 (bloc m-2) et r\u00e9ussite -5 sur 1 tour : Intelligence",
       "Aura Bouclier Protec (+ Ctrl mentale) : Blocage +3 et (-1 Malus si d\u00e9 <=6) pendant 4 tours : esprit",
       "Esprit Descell\u00e9 : Invoque 1 Fant\u00f4me L\u00e9thargique (2 si d\u00e9 <= 8, si crit : Esprit de la Vengeance) : Esprit<br/> Pr\u00e9vention du Descelleur : D\u00e9g\u00e2t -1D4-4 pour 4 tours, -1 malus : (m\u00eame silence) Intelligence"
@@ -1915,17 +1915,17 @@
     "drop": "Germe de champigno\u00efde rare, Chapeau de champigno\u00efde, tr\u00e8s rare : Super chapeau"
   },
   "130": {
-    "visuel3D": "m105",
+    "visuel3D": "m105b",
     "nom": "Fourmilion Toxique",
     "pvmax": "110",
     "skills": [
-      "Vague terrestre : 1D10 +12 AoE : force",
-      "Morsure : 2D10 +13 : force",
-      "Crachat corrosif : 1D6+5 pendant 3 tours : intelligence",
-      "Passif : nature/foudre -10 d\u00e9g\u00e2ts"
+      "Vague terrestre : 1D10 +13 AoE : force",
+      "Morsure : 2D10 +14 : force",
+      "Crachat corrosif (-1 esq/bloc) : 1D6+6 pendant 3 tours : intelligence",
+      "Passif : nature/foudre -10 d\u00e9g\u00e2ts re\u00e7u, et si bloc/esq echec crit : 5 d\u00e9g\u00e2ts de toxine"
     ],
-    "stats": "16,11,15,9,11",
-    "desc": "Fourmilion violet/rouge avec un dos pulpeux verd\u00e2tre",
+    "stats": "17,11,15,9,11",
+    "desc": "Fourmilion rouge p\u00e2le avec un dos pulpeux verd\u00e2tre, toxique et dangereux",
     "infos": "Faible au per\u00e7ant et \u00e0 la lumi\u00e8re",
     "drop": "Mucus de fourmilion, crochet enchant\u00e9"
   },
@@ -1934,7 +1934,7 @@
     "nom": "Botassius - G\u00e9n\u00e9ral D\u00e9fensif",
     "pvmax": "300",
     "skills": [
-      "Lumi\u00e8re de Gu\u00e9rison / Bouclier de Lumière : 2D10+15 (1/3 rejouer) / Armure 1D4+4 AoE pendant 4 tours : Intelligence",
+      "Lumi\u00e8re de Gu\u00e9rison / Bouclier de Lumi\u00e8re : 2D10+18 (1/3 rejouer) / Armure 1D4+4 AoE pendant 4 tours : Intelligence",
       "Vague Foudroyante : 3D6+17, Blocage-3 AoE 3 tours : Force (jdrCombat +25)",
       "Lumi\u00e8re Sacr\u00e9e : 3D6+25 / Euphorie : +1D4 (min 2) +2 par coup (max 6) sur 5 tours : esprit",
       "Passif : Blocage +2 (Def Acier), Armure -15, Ferveur Guerrier : si KO (2 fois) succ\u00e8s 1D2 (10/20) : Soigne 3D10+20 PV (D\u00e9g\u00e2t/Armure +5 perma)"
@@ -1994,8 +1994,8 @@
     "nom": "Pachirou",
     "pvmax": "230",
     "skills": [
-      "Artillerie Lourde : 3D10+15 : Dext\u00e9rit\u00e9",
-      "Bombe \u00e0 Huile (Explosifs Visqueux) :  2D6+16 (+1D) : Dext\u00e9-2 ESQ-2 sur 3 tours AoE : Dext\u00e9rit\u00e9",
+      "Artillerie Lourde : 3D10+17 : Dext\u00e9rit\u00e9",
+      "Bombe \u00e0 Huile (Explosifs Visqueux) :  2D6+18 (+1D) : Dext\u00e9-2 ESQ-2 sur 3 tours AoE : Dext\u00e9rit\u00e9",
       "Robotisation \u00e9veill\u00e9 : D\u00e9g\u00e2ts 1D4+6 et buff Armure +1D6 sur 4 tours : Esprit",
       "Passif : PV < 110 : Blocage/Esq critique : contre-attaque bombe 2D6+15"
     ],
@@ -2159,7 +2159,7 @@
     "nom": "Vidal - Sorcier Dragon",
     "pvmax": "250",
     "skills": [
-      "Pouvoir du Dragon / Temp\u00eate de Glace : 3D6+17 (AoE-5)  (feu, t\u00e9n\u00e8bres,glace) : Intel",
+      "Pouvoir du Dragon / Temp\u00eate de Glace : 3D6+20 (AoE-5)  (feu, t\u00e9n\u00e8bres,glace) : Intel",
       "Saut Dimensionnel : 3 tentatives par combat : remplace l'esquive/blocage (buff prochain d\u00e9g\u00e2t +5) : intel",
       "Magie Extr\u00eame : Prochain d\u00e9g\u00e2t magique +2D6 +8 : Esprit",
       "Revers d'\u00e9caille : 4 tentatives par combat (<10 : 66%, >=10 : 33%) (+Soin PV+15 #Mode Cach\u00e9) : Esprit"
@@ -2205,7 +2205,7 @@
     "pvmax": "270",
     "skills": [
       "Euphorie : +1D4+2 (min 4) par coup. Buff pendant 4-5 tours (max 5) : esprit",
-      "Perc\u00e9e du Guerrier : 1D6 + 1D6 + 1D4 +18 : force",
+      "Perc\u00e9e du Guerrier : 1D6 + 1D6 + 1D4 +18 : force (jdrCombat +25)",
       "Instinct de Survie : PV & D\u00e9g\u00e2t : +1D6+6 pendant 3 tours : esprit",
       "Passif : Si coup critique : armure/2"
     ],
@@ -2444,9 +2444,9 @@
     "nom": "Prince du Fl\u00e9au",
     "pvmax": "410",
     "skills": [
-      "Rayon Noir : 6D6 +45 (bloc/esq -2) : Intelligence // Coup Physique : 3D6+22",
-      "Zone de calamit\u00e9 : 4D6+30 (bloc-2) et -2 r\u00e9ussites sur 3 tours : Intelligence",
-      "Parasite Inviolable : 2D6+8 pendant 4 tours -2 stats, non annulable : Esprit",
+      "Rayon Noir : 6D6 +45 (bloc/esq -2) mini-AoE : Intelligence // Coup Physique : 3D6+22",
+      "Zone de calamit\u00e9 : 4D6+30 (bloc-2) et -2 r\u00e9ussites sur 3 tours (AoE) : Intelligence",
+      "Parasite Inviolable : 2D6+8 pendant 4 tours -2 stats, non annulable : Espr'it (jdrCombat +45)",
       "Bouclier Noir : Armure 2D6+10 pendant 4 tours : Esprit (m\u00eame si silence)"
     ],
     "stats": "15,13,20,11,19",
@@ -2639,9 +2639,9 @@
     "nom": "Adonis 2 - Juge d\u00e9termin\u00e9",
     "pvmax": "270",
     "skills": [
-      "\u00c2me Enchain\u00e9e / Entrave Mentale : 3D6+18 et dext\u00e9-3  / res espr -3 (AoE) sur 3 tours : Dext\u00e9rit\u00e9/Espr'it",
+      "\u00c2me Enchain\u00e9e / Entrave Mentale : 3D6+20 et dext\u00e9-3  / res espr -3 (AoE) sur 3 tours : Dext\u00e9rit\u00e9/Espr'it",
       "Scellement Douloureux : Aucun sort physique, 0 SOIN pendant 4-5 tours : Esprit",
-      "Verdict Final : 4D6 +20 (1,2,3 : X1.5) : Force",
+      "Verdict Final : 4D6 +22 (1,2,3 : X1.5) : Force",
       "Furtivit\u00e9 / Aura du Pourfendeur : DGT T\u00e9n\u00e8b +2D6+8 (+5 PV<100) pendant 4 tours : Esprit<br/><br/>2 fois (Cape/Fl\u00fbte) : Oeil Hypnotique (res -3) / Contr\u00f4le Esprit AoE (res -2) <br/> Bague Corail (Instantan\u00e9e) : (blocage -2, r\u00e9sistance esprit -3) AoE sur 3 tours"
     ],
     "stats": "17,17,11,12,17",
@@ -2657,7 +2657,7 @@
       "Coup de boule : 2D6+13 : force",
       "Spore toxique : 1D6+10 AoE  : intelligence",
       "Spore dopant : Buff 1D4+4 AoE pendant 4 tours : Esprit",
-      "Passif : (Plastron & Cape) : D\u00e9g\u00e2t re\u00e7u -4, PV+10, Charisme +1, Dextérité +1"
+      "Passif : (Plastron & Cape) : D\u00e9g\u00e2t re\u00e7u -4, PV+10, Charisme +1, Dext\u00e9rit\u00e9 +1"
     ],
     "stats": "16,11,15,12,14",
     "desc": "Fred est un Champigno\u00efde Baga brun orang\u00e9 tr\u00e8s social et toujours motiv\u00e9. Provient de la Carri\u00e8re Angor.",
@@ -2669,7 +2669,7 @@
     "nom": "Andredi - Pr\u00e9dateur Ail\u00e9",
     "pvmax": "280",
     "skills": [
-      "Coup de Serre : 4D6+22 : force",
+      "Coup de Serre : 4D6+25 : force",
       "Griffures P\u00e9n\u00e9trantes : 3D6+15 (Armure/2 sur 3 tours) AoE : force",
       "Cri strident : Blocage -3 AoE pendant 4 tours : Esprit",
       "Passif : si critique (1,2,3) : Emp\u00eache de se soigner pendant 3 tours (+ d\u00e9g\u00e2t re\u00e7u +10 (5 AoE))<br/>Si PV < 150 : D\u00e9g\u00e2t +5"
@@ -2714,7 +2714,7 @@
     "nom": "Esprit de Magn\u00e9tite",
     "pvmax": "260",
     "skills": [
-      "Rayon magn\u00e9tique : Bloc/Esq -4 (car attir\u00e9), mini AoE : 3D6 +19 : Intelligence",
+      "Rayon magn\u00e9tique : Bloc/Esq -4 (car attir\u00e9), mini-AoE : 3D6 +19 : Intelligence",
       "Gravitation : (bloc \u00e9chec critique : stun 1 tour # \u00e9cras\u00e9)  3D6 +15 : Intelligence",
       "Soutien Mat\u00e9riaux : Buff d\u00e9g\u00e2t +1D6+6 AoE sur 3tours : Esprit",
       "Passif : D\u00e9g\u00e2t/Armure +2 par ennemi rocheux/magn\u00e9tique"
@@ -3045,7 +3045,7 @@
     "pvmax": "360",
     "skills": [
       "Aura de Mauvaise Fortune : +1 sur le d\u00e9 (AoE) 3 tours : Esprit",
-      "Attaque Furieuse/Rapide : 4D6+20 (+10 mono) : Dext\u00e9rit\u00e9",
+      "Attaque Furieuse/Rapide : 4D6+20 (+10 mono) : Dext\u00e9rit\u00e9 (jdrCombat +15)",
       "Etoile Protectrice : Bloc/Esq/Res +2 (-2 malus) sur 4 tours : Esprit",
       "Passif 1 : (1/tour) Force \u00e0 relancer 1 fois et stock le d\u00e9 (x5) (sauf crit d\u00e9 1)<br/>Pendant le stock : paire/triple/quad/quint (DGT++5)<br/>Suite : -1 sur le d\u00e9 (combo 4/5 chiffres : 3/5t)<br/>Passif 2 : PV<200/100 : 1 relance chaque 2/1t"
     ],
@@ -3056,10 +3056,10 @@
   },
   "206": {
     "visuel3D": "m047f",
-    "nom": "Mento",
+    "nom": "Mento - Mercenaire menteur",
     "pvmax": "240",
     "skills": [
-      "Stalactites / Atk Foudroyante : 3D6+24 / -6 : Intelligence",
+      "Atk Foudroyante (Stalactites) : 3D6+20 (+6) : Intelligence",
       "Oeil Hypnotique : Endort 1D4 tours, res esprit -1 AoE : Intelligence",
       "Contr\u00f4le de l'Esprit : Hypnose 1D4 tours (-1 res esprit) : Esprit",
       "Voile du Blizzard (Intel+2) / Rituel de Mana : Esprit AoE +3 sur 5 tours AoE : Esprit<br/>Saut Dimensionnel : 4 tentatives (esquive) : Intel"
@@ -3083,5 +3083,65 @@
     "desc": "Sous ses airs mignons, cette jeune filoute manigance des trucs louches pour son propre int\u00e9r\u00eat",
     "infos": "Faible au contondant et au feu",
     "drop": "Anneau curatif, rare : Dague \u00e9cailles noires, tr\u00e8s rare : Tenue de Luminary"
+  },
+  "208": {
+    "visuel3D": "shellona",
+    "nom": "Shellona - Fondateur R\u00e9incarn\u00e9",
+    "pvmax": "360",
+    "skills": [
+      "Lumi\u00e8re Gu\u00e9rison : 2D10+22 (1/4 rejouer) : Intelligence<br/> Pr\u00e9vention Chelona : -2 malus Armure/Epines +1D6+4 sur 5 tours : Espr (m\u00eame silence)",
+      "Totem Chelona (esprit) : 60 PV - Stats 17.<br/>Soin : 1D6 +9 chaque tour<br/>Soutien : renforcement +2 force/intel AoE (3 tours), \u00e9clair : 2D6+16",
+      "Lumi\u00e8re Noire / Coup Infernal : 3D6+42 (-10, idem physique) : Intelligence",
+      "Passif : Blocage +1, Noyau Schiste : critique = soin (+ totem) X2 (AoE/2), D\u00e9 3 : /2 aussi"
+    ],
+    "stats": "13,10,19,14,18",
+    "desc": "Le corps de Cosmos a \u00e9t\u00e9 utilis\u00e9 comme receptacle pour \u00e9veiller l'esprit de Shellona : l'illustre fondateur de la secte en personne ! Son esprit a \u00e9t\u00e9 pr\u00e9serv\u00e9 par miracle...",
+    "infos": "Faible \u00e0 la glace et \u00e0 la lumi\u00e8re",
+    "drop": "Cosmos (lol), Carapace Sacrificiel, rare : Plastron de Templier, tr\u00e8s rare : Masse du Prolongement"
+  },
+  "209": {
+    "visuel3D": "leviathan",
+    "nom": "Leviathan - Serpent du Cataclysme",
+    "pvmax": "500",
+    "skills": [
+      "(bloc/esq -3) mini-AoE : Force/Intel. M\u00e2choire Abyssale : 6D6 +45 <br/>Souffle : 4D6+30, soin re\u00e7u -50% sur 5 tours",
+      "Queue D\u00e9ferlante : 4D6 +35 (bloc-2) AoE : Force (jdrCombat +40)<br/>Temp\u00eate Oc\u00e9anique : 1D6 +19 (-2 r\u00e9ussite 1t) AoE sur 3 tours : Intelligence",
+      "Aura d'An\u00e9antissement : -2 buffs et Stats -1 pendant 4 tours (AoE) : Esprit",
+      "Passif : chaque -150 PV : Onde (AoE++) 1D6 +19 et -3,4,5 r\u00e9ussite : 3 tours (Res E)"
+    ],
+    "stats": "21,11,19,11,16",
+    "desc": "Aussi surnomm\u00e9 \"La D\u00e9ferlante\", on raconte que cet Esprit Sacr\u00e9 aurait par le pass\u00e9 fait englourir une \u00eele dans l'oc\u00e9an. Il repr\u00e9sente le Serpent de Mer de la Destruction...",
+    "infos": "Faible au tranchant et \u00e0 la foudre",
+    "drop": "Ecaille du Leviathan (x1 ~ 3), Dague \u00e9cailles noires, rare : Griffe D\u00e9chirante, Pierre de s\u00e9curit\u00e9 Sublime"
+  },
+  "210": {
+    "visuel3D": "m409b",
+    "nom": "Bulblarve - Reine Prolifique",
+    "pvmax": "350",
+    "skills": [
+      "Roulement massif (bloc-3 (-4 si ⩽ 5)) : 4D6+25 AoE \u21d4 : Force<br/>Crachat : 2D10+16 AoE (bloc-2) : Intel",
+      "Gel\u00e9e Royale : Buff mono \u221e : PV +50, D\u00e9g\u00e2t +5, Stats +1, mais -25 PV (mob wait 1t) : 0 d\u00e9",
+      "Survie Royale : Buff D\u00e9g\u00e2t +1D4+4 AoE sur 4 tours : Esprit",
+      "Passif : 0 esquive, Bloc = 6 ALL<br/>Chaque 5 tours : +2 mobs # 2D6<br/>Si PV < 150 : Gel\u00e9e Royale : Effet positif *2"
+    ],
+    "stats": "21,6,15,8,18",
+    "desc": "Grosse limace insecto\u00efde avec un dos pulpeux qui est depuis longtemps prolifique et \u00e9tablis son royaume.",
+    "infos": "Faible au tranchant et au feu",
+    "drop": "Mucus Royal *X (ver : Soie d'Or), rare : Membrane de Reine, Ep\u00e9e naus\u00e9abonde"
+  },
+  "211": {
+    "visuel3D": "marcus",
+    "nom": "Marcus - Héritier Vagabond",
+    "pvmax": "260",
+    "skills": [
+      "Pouvoir du Dragon / Atk Cyclone : 3D6+18 (AoE-5) (feu, tén, phys) : Force",
+      "Terreur du Dragon : Res Esprit / Réussite  -3 sur 3 tours : Charisme",
+      "Instinct de Survie : PV & Dégât : +1D6+6 pendant 3 tours : Esprit",
+      "Revers d'écaille : 3 tentatives par combat (<10 : 66%, >=10 : 33%) (Dégât rev+5 #Embrasé) : Esprit<br/>Passif : Mode Défense : Dexté-3, Armure +5"
+    ],
+    "stats": "16,13,7,15,16",
+    "desc": "Héritier de l'Empire Heldentod, Marcus est déterminé mais un peu instable, il est en recherche de bonnes opportunités mais est honnête et juste.",
+    "infos": "Faible à la nature et aux ténèbres",
+    "drop": "Glyphe du Chevalier Dragon, Lance Incandescente"
   }
 }

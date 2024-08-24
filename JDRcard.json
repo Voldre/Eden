@@ -138,7 +138,7 @@
     "kind": "boss",
     "name": "Marma - Templier Capitaine",
     "description": "Un Templier de la Curie M\u00e9t\u00e9role, il est chef d'une unit\u00e9 d\u00e9fensive et c'est quelqu'un de gentil et social. Il (essaye) de faire les choses s\u00e9rieusement.",
-    "kindId": "m156"
+    "kindId": "marma"
   },
   {
     "id": 1004,
@@ -218,7 +218,7 @@
     "kind": "boss",
     "name": "Rubis - Héritière Favorite",
     "description": "H\u00e9riti\u00e8re de l'empire Heldentod, connue pour sa d\u00e9termination et sa prestance. Elle est tr\u00e8s strat\u00e8ge mais froide et parfois sans piti\u00e9.",
-    "kindId": "m312b"
+    "kindId": "rubis"
   },
   {
     "id": 1014,
@@ -619,6 +619,38 @@
     "name": "Crimson - L'Enchanteur",
     "description": "Surnomm\u00e9 Chris, s\u00e9ducteur un peu coquin dot\u00e9 d'un charme irr\u00e9sistible, il fait parti des meilleurs bardes d'Ezur et est fan de Nyx.",
     "kindId": "crimson"
+  },
+  {
+    "id": 1067,
+    "value": 3,
+    "kind": "boss",
+    "name": "Andredi - Pr\u00e9dateur Ail\u00e9",
+    "description": "Une cr\u00e9ature mutante ail\u00e9e, mi-gorille mi-faucon, ses serres sont gorg\u00e9es de haine et de sang.",
+    "kindId": "m089e"
+  },
+  {
+    "id": 1068,
+    "value": 3,
+    "kind": "boss",
+    "name": "Marcus - Héritier Vagabond",
+    "description": "Héritier de l'Empire Heldentod, Marcus est déterminé mais un peu instable, il est en recherche de bonnes opportunités mais est honnête et juste.",
+    "kindId": "marcus"
+  },
+  {
+    "id": 1069,
+    "value": 3,
+    "kind": "boss",
+    "name": "Mento - Mercenaire menteur",
+    "description": "Zumi bleut\u00e9 qui est un menteur qui fait tout pour ses propres int\u00e9r\u00eats, 0 int\u00e9grit\u00e9.",
+    "kindId": "m047f"
+  },
+  {
+    "id": 1070,
+    "value": 3,
+    "kind": "boss",
+    "name": "Fira - Virtuose de G\u00e9nie",
+    "description": "Jeune homme humain mais petit, Fira est \u00e0 la fois ma\u00eetre d'art et chef de la Symbardy ! C'est un musicien dou\u00e9 d'une technique brillante et un artiste extr\u00eamement habile.",
+    "kindId": "fira"
   },
   {
     "id": 1201,
@@ -1537,7 +1569,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Minerai de Jade",
-    "description": "La jade a la particularité de ralentir le métabolisme et détendre. Entre vos mains, vous avez un sentiment d'apaisement.",
+    "description": "La jade a la particularité de ralentir le métabolisme et de détendre. Entre vos mains, vous avez un sentiment d'apaisement.",
     "kindId": "I00219f",
     "maps": [23, 26, 28]
   },
@@ -1921,6 +1953,46 @@
     "name": "Potion Jetable",
     "description": "Cette potion possède un ingrédient particulier lui permettant de se répandre une fois jetée, octroyant ses effets sur toute une zone (AoE). Que ce soit du soin, des dégâts ou de l'encaissement...",
     "kindId": "i00697"
+  },
+  {
+    "id": 1444,
+    "value": 3,
+    "kind": "composant",
+    "name": "Ecaille du Leviathan",
+    "description": "Cette écaille a été récupéré sur le légendaire Leviathan, une pure puissance en émane, elle peut servir à confectionner des équipements très qualitatif.",
+    "kindId": "I00282b"
+  },
+  {
+    "id": 1445,
+    "value": 2,
+    "kind": "composant",
+    "name": "Mucus Royal",
+    "description": "Ce mucus a été récupéré sur une Bulblarve, une reine insecte très prolifique. Ce mucus à d'étonnantes propriétés collantes et énergisantes.",
+    "kindId": "I00382b"
+  },
+  {
+    "id": 1446,
+    "value": 1,
+    "kind": "composant",
+    "name": "Eclat de Rosé",
+    "description": "Ce composant d'invocation à une douce odeur, peut être utilisé dans la confection d'objet lié à la vitalité.",
+    "kindId": "I00337"
+  },
+  {
+    "id": 1447,
+    "value": 2,
+    "kind": "composant",
+    "name": "Instinct Dévoreur",
+    "description": "Ce composant d'invocation donne à celui qui l'incorpore une faim insatiable... ou parfois elle les dévorent. A manipuler avec précaution.",
+    "kindId": "I00338"
+  },
+  {
+    "id": 1448,
+    "value": 2,
+    "kind": "composant",
+    "name": "Condensé de matériaux",
+    "description": "Ce composant détient l'essence magique de plusieurs matériaux. Bien manipulé, elle peut renforcer des matériaux.",
+    "kindId": "i00661"
   },
   {
     "id": 1501,
@@ -4220,6 +4292,72 @@
     "enemies": [],
     "kindId": "skillIcon/E0624",
     "group": 1
+  },
+  {
+    "id": 1845,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Kibo et les Responsabilités",
+    "description": "Kibo le jeune lieutenant semble ne pas prendre ses nouvelles responsabilités très au sérieux : \"vol\" de repas dans un hôtel, retard de 2 jours au boulot, manque de rigueur avec son équipe, prise d'info, aïe aïe aïe...",
+    "maps": [21],
+    "enemies": [],
+    "kindId": "uiiconPNG/prefer18b",
+    "group": 1
+  },
+  {
+    "id": 1846,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Gestion de Crise : Chelona",
+    "description": "Une crise à lieu à la Vallée des Rois : l'interrogatoire à montré que la Chelona connaît l'emplacement de la secrète Salle Ulta, possèdant de nombreuses puissantes reliques, il faut les empêcher d'y aller et vite !",
+    "maps": [8],
+    "enemies": [],
+    "kindId": "skillIcon/E0957",
+    "group": 1
+  },
+  {
+    "id": 1847,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Malvis et les Dégâts",
+    "description": "Cela fait longtemps qu'on le sait, mais Malvis fait des dégâts, BEAUCOUP de dégâts ! Ecorce Terrestre l'a vu avec sa lumière, et le Leviathan avec ses ténèbres. Et bien d'autres encore avant eux (l'aigle rhino, Gimu la mante, ...).",
+    "maps": [8],
+    "enemies": [],
+    "kindId": "skillIcon/E0618",
+    "group": 1
+  },
+  {
+    "id": 1848,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Acte final : Chelona (1/2)",
+    "description": "Ecorce Terrestre est là pour attaquer Jardin alors qu'Ochak et son Esprit Sacré Andredi rôde dans la Vallée... Et c'est là que le Leviathan, un Esprit \"Legendaire\", arrive et détruit une partie de la Vallée : l'emplacement de la Salle Ulta est dévoilé et ils comptent bien s'y rendre !",
+    "maps": [8],
+    "enemies": [],
+    "kindId": "otherIcon/acte_final_chelona_1",
+    "group": 1
+  },
+  {
+    "id": 1849,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Zhaïtan le Critique",
+    "description": "Quand Zhaïtan doit, pour une raison, se rendre chez quelqu'un, il note avec précision le traitement reçu, la qualité de l'accueil, de l'échange. C'est un vrai critique en herbe !",
+    "maps": [35],
+    "enemies": [],
+    "kindId": "otherIcon/ac024",
+    "group": 2
+  },
+  {
+    "id": 1850,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "La paperasse d'héritier",
+    "description": "Estia en tant que Bras-droit de Marcus doit gérer la paperasse, mais elle est perdue ! Au point de supplier une ancienne amie de Marcus de revenir ! Et finalement elle délègue à Azora qui va, avec le Bras-droit de Magnus, critiquer et dénigrer le traitement que subisse les ogres.",
+    "maps": [35],
+    "enemies": [],
+    "kindId": "items/I00143b",
+    "group": 2
   },
   {
     "id": 15000,

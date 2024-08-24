@@ -1019,6 +1019,10 @@ td {
     width: 45vw;
     margin-left: -2px;
   }
+  #passif12 {
+    font-size: 14px;
+  }
+
   .informations {
     display: grid;
     justify-content: space-around;

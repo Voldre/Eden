@@ -1112,7 +1112,7 @@
     "effet": "",
     "montant": "PV Soin re\u00e7u +33%",
     "icone": "k10113",
-    "access": "A3"
+    "access": "A2"
   },
   "154": {
     "nom": "Ep\u00e9e des Plaines Dor\u00e9es",
@@ -1284,7 +1284,7 @@
     "desc": "Une pierre garantissant la r\u00e9ussite lors du craft",
     "effet": "",
     "montant": "D\u00e9g\u00e2t re\u00e7u -4",
-    "icone": "I00529",
+    "icone": "I00529b",
     "access": "A0"
   },
   "178": {
@@ -1733,7 +1733,7 @@
     "access": "A4"
   },
   "237": {
-    "nom": "Pierre de s\u00e9curit\u00e9 Noir",
+    "nom": "Pierre de Securite Diamant Noir",
     "desc": "Une pierre maudite garantissant la r\u00e9ussite lors du craft",
     "effet": "Stress Accentu\u00e9",
     "montant": "D\u00e9g\u00e2t re\u00e7u -5",
@@ -2612,8 +2612,8 @@
     "icone": "a20109b"
   },
   "352": {
-    "nom": "Pierre de F\u00e9r\u00e9gal",
-    "desc": "Cette pierre est issu de la Vall\u00e9e F\u00e9r\u00e9gal des Zumis. Elle est insuffl\u00e9 de l'\u00e9nergie des crystaux d'Asbi. Appartient \u00e0 la panoplie d'Asbi.",
+    "nom": "Pierre de F\u00e9r\u00e9gal Sublime",
+    "desc": "Cette pierre est issue de la Vall\u00e9e F\u00e9r\u00e9gal des Zumis. Elle est insuffl\u00e9 de l'\u00e9nergie des crystaux d'Asbi. Appartient \u00e0 la panoplie d'Asbi.",
     "effet": "",
     "montant": "D\u00e9g\u00e2t re\u00e7u -2 (+1 par objet d'Asbi)",
     "condition": { "type": "panoplie", "value": "Asbi", "bonus": "D\u00e9g\u00e2t re\u00e7u -1" },
@@ -3425,11 +3425,12 @@
     "icone": "W11105"
   },
   "459": {
-    "nom": "Pierre de s\u00e9curit\u00e9 Magn\u00e9tique",
-    "desc": "Une pierre de s\u00e9curit\u00e9 charg\u00e9 en magn\u00e9tisme.",
+    "nom": "Pierre de s\u00e9curit\u00e9 d'Améthyste",
+    "desc": "Une pierre de s\u00e9curit\u00e9 qui attire beaucoup les esprits magiques de par sa teneur en magie. Elle est d'ailleurs magnétique.",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t re\u00e7u -4",
-    "icone": "i01204"
+    "montant": "D\u00e9g\u00e2t re\u00e7u -3, Esprit +1",
+    "icone": "i01204",
+    "access": "A0"
   },
   "460": {
     "nom": "Cape de la Confr\u00e9rie Ecarlate",
@@ -3510,7 +3511,7 @@
     "effet": "",
     "montant": "D\u00e9g\u00e2t re\u00e7u -2, Soin re\u00e7u +25%",
     "icone": "A60015b",
-    "access": "A0"
+    "access": "A1"
   },
   "470": {
     "nom": "Marque de rouge \u00e0 l\u00e8vres",
@@ -3570,7 +3571,8 @@
     "desc": "Cette robe est orn\u00e9e d'une parure verdoyante qui d\u00e9gage une aura rassurante et apaise son porteur.",
     "effet": "",
     "montant": "D\u00e9g\u00e2t -3, dur\u00e9e des malus -1 tour",
-    "icone": "A20004"
+    "icone": "A20004",
+    "access": "A1"
   },
   "478": {
     "nom": "Tenue de Luminary",
@@ -3628,28 +3630,32 @@
     "desc": "Un casque lapin permettant de passer incognito, vous serez m\u00e9connaissable... normalement",
     "effet": "M\u00e9connaissable",
     "montant": "R\u00e9ussite -1, Chance d'\u00eatre vis\u00e9e -33%",
-    "icone": "k10635"
+    "icone": "k10635",
+    "access": "A1"
   },
   "486": {
     "nom": "Sifflet Alpaga",
     "desc": "Un sifflet serpentin tr\u00e8s mignon permettant de d\u00e9concentrer les ennemis",
     "effet": "Capacit\u00e9",
-    "montant": "4 fois par combat (Instantan\u00e9e) R\u00e9ussite -3 (AoE) pendant 1 tour",
-    "icone": "k10268"
+    "montant": "3 fois par combat (Instantan\u00e9e) R\u00e9ussite -3 (AoE) pendant 1 tour",
+    "icone": "k10268",
+    "access": "D2"
   },
   "487": {
     "nom": "Oeuf de Vie",
     "desc": "Un oeuf unique originaire de ... capable d'apporter la vie l\u00e0 o\u00f9 il passe.",
     "effet": "Capacit\u00e9",
     "montant": "Avant de tomber KO (2 fois par combat) : succ\u00e8s 1D4 (5/20) : Soigne 1D10+10 PV (buffs pr\u00e9serv\u00e9s)",
-    "icone": "k60194"
+    "icone": "k60194",
+    "access": "A4"
   },
   "488": {
     "nom": "Sac \u00e0 dos Lapin",
     "desc": "Sac ayant appartenue \u00e0 une enfant morte myst\u00e9rieusement, le sac semble vouloir prot\u00e9ger son porteur.",
     "effet": "Mal\u00e9diction du Lien",
     "montant": "La moiti\u00e9 des soins et effets donn\u00e9s aux autres sont redonn\u00e9s au porteur",
-    "icone": "k60026"
+    "icone": "k60026",
+    "access": "A3"
   },
   "489": {
     "nom": "Veste d'Archerie",
@@ -3685,7 +3691,8 @@
     "desc": "Une gourde miraculeuse am\u00e9lior\u00e9e : avec elle vous ne craignez plus rien",
     "effet": "Capacit\u00e9",
     "montant": "3 fois par combat (Instantan\u00e9e) : 3D6 + 12",
-    "icone": "k60035"
+    "icone": "k60035",
+    "access": "A4"
   },
   "494": {
     "nom": "Puce du Barde",
@@ -3693,28 +3700,32 @@
     "effet": "",
     "montant": "Montant des buffs +1, (d\u00e9g\u00e2t/soin+2 Si Barde)",
     "condition": { "type": "classe", "value": ["Barde"], "bonus": "D\u00e9g\u00e2t +2, Soin +2" },
-    "icone": "i01631"
+    "icone": "i01631",
+    "access": "D2"
   },
   "495": {
     "nom": "Dragon-Serpent de Jade",
     "desc": "(Sylfe) Un Dragon-Serpent au reflet de jade. Ses \u00e9cailles \u00e9mettent une aura apaisante.",
     "effet": "",
-    "montant": "Dur\u00e9e des malus -1 tour",
-    "icone": "i00938b"
+    "montant": "Dur\u00e9e des malus -1 tour, peut faire des actions",
+    "icone": "i00938b",
+    "access": "A2"
   },
   "496": {
     "nom": "Pendentif de la B\u00eate",
     "desc": "Ce pendentif \u00e9met des ondes positives aux cr\u00e9atures environnantes, notamment les familiers",
     "effet": "Familier",
     "montant": "Familier : Stats +1, d\u00e9g\u00e2t/soin+2 (AoE/2)",
-    "icone": "A00048b"
+    "icone": "A00048b",
+    "access": "D1"
   },
   "497": {
     "nom": "Oeuf Digital",
     "desc": "Cet oeuf semble venir d'une autre dimension, il octroie de la vitalit\u00e9 aux familiers",
     "effet": "Familier",
     "montant": "Familier : PV+15 (+10 si Monture)",
-    "icone": "i00946b"
+    "icone": "i00946b",
+    "access": "A2"
   },
   "498": {
     "nom": "Echarpe chaude",
@@ -3728,7 +3739,8 @@
     "desc": "Une corne de tr\u00e8s bonne facture d'un Aigle Rhino, tr\u00e8s utile pour devenir plus puissant.",
     "effet": "",
     "montant": "D\u00e9g\u00e2t +2, d\u00e9g\u00e2t per\u00e7ant +2",
-    "icone": "I00263"
+    "icone": "I00263",
+    "access": "D1"
   },
   "500": {
     "nom": "Pierre de Magma Maudite",
@@ -3742,7 +3754,8 @@
     "desc": "Ce morceau de m\u00e9t\u00e9orite est tellement riche en \u00e9nergie qu'il affecte son porteur.",
     "effet": "",
     "montant": "Montant des buffs +2, Esprit +1",
-    "icone": "i00547b"
+    "icone": "i00547b",
+    "access": "D2"
   },
   "502": {
     "nom": "Pistolet de Parade",
@@ -3750,5 +3763,92 @@
     "effet": "Blocage physique +2",
     "montant": "D\u00e9g\u00e2t +8",
     "icone": "W51101"
+  },
+  "503": {
+    "nom": "Carapace Sacrificiel",
+    "desc": "Cette myst\u00e9rieuse carapace semble li\u00e9e \u00e0 Shellona, le fondateur de la secte. Un \u00e9trange pouvoir en \u00e9mane",
+    "effet": "??? (inconnu)",
+    "montant": "Si PV <33%, D\u00e9g\u00e2ts et Soin : +4",
+    "icone": "I00285b",
+    "access": "D3"
+  },
+  "504": {
+    "nom": "Membrane de Reine",
+    "desc": "Cette membrane, bien que visqueuse, est tr\u00e8s r\u00e9sistante et \u00e0 des facult\u00e9s de r\u00e9cup\u00e9ration.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -3, Soin re\u00e7u +25%",
+    "icone": "I00297b",
+    "access": "A1"
+  },
+  "505": {
+    "nom": "Ep\u00e9e Naus\u00e9abonde",
+    "desc": "Cette \u00e9p\u00e9e emet une odeur tr\u00e8s forte qui peut d\u00e9sorienter plus d'un.",
+    "effet": "Charisme -2",
+    "montant": "D\u00e9g\u00e2t +5, si coup critique (1,2,3) : Esprit -3 sur 2 tours",
+    "icone": "W13502"
+  },
+  "506": {
+    "nom": "Pierre de s\u00e9curit\u00e9 F\u00e9tiche",
+    "desc": "Une pierre de s\u00e9curit\u00e9 am\u00e9lior\u00e9 capable d'emp\u00eacher la destruction et d'am\u00e9liorer les chances de r\u00e9ussites.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -3",
+    "icone": "I00529",
+    "access": "A0"
+  },
+  "507": {
+    "nom": "Pierre de S\u00e9curit\u00e9 de Hurlevent",
+    "desc": "Une d\u00e9riv\u00e9e de la pierre de s\u00e9curit\u00e9 version Hurlevent.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -2, Intelligence +1",
+    "icone": "i01007",
+    "access": "A0"
+  },
+  "508": {
+    "nom": "Pierre de Hurlevent Sublime",
+    "desc": "Une am\u00e9lioration de la Pierre de S\u00e9curit\u00e9 de Hurlevent qui encaisse mieux.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -3, Intelligence +1",
+    "icone": "i01010",
+    "access": "A0"
+  },
+  "509": {
+    "nom": "Pierre de S\u00e9curit\u00e9 de Noireflamme",
+    "desc": "Une d\u00e9riv\u00e9e de la pierre de s\u00e9curit\u00e9 version Noireflamme.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -2, Force +1",
+    "icone": "i01008",
+    "access": "A0"
+  },
+  "510": {
+    "nom": "Pierre de Noireflamme Sublime",
+    "desc": "Une am\u00e9lioration de la Pierre de S\u00e9curit\u00e9 de Noireflamme qui encaisse mieux.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -3, Force +1",
+    "icone": "i01011",
+    "access": "A0"
+  },
+  "511": {
+    "nom": "Pierre de S\u00e9curit\u00e9 de F\u00e9r\u00e9gal",
+    "desc": "Une d\u00e9riv\u00e9e de la pierre de s\u00e9curit\u00e9 version F\u00e9r\u00e9gal.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -2, Dext\u00e9rit\u00e9 +1",
+    "icone": "i01006",
+    "access": "A0"
+  },
+  "512": {
+    "nom": "Pierre de Securite de Jade",
+    "desc": "Une pierre de sécurité capable d'apaiser son porteur. C'est une des pierres de sécurité les plus rares.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -2. Dur\u00e9e des malus -1 tour",
+    "icone": "i01550",
+    "access": "A1"
+  },
+  "513": {
+    "nom": "Pierre de Securite Diamant Blanc",
+    "desc": "Une pierre bénite garantissant la r\u00e9ussite lors du craft, réduit énormément les dégâts.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -5",
+    "icone": "i01554",
+    "access": "A0"
   }
 }
