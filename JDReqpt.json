@@ -3850,5 +3850,12 @@
     "montant": "D\u00e9g\u00e2t re\u00e7u -5",
     "icone": "i01554",
     "access": "A0"
+  },
+  "514": {
+    "nom": "Echarpe du Totem",
+    "desc": "Cette écharpe possède un motif de totem, elle confère à son porteur une capacité d'invocation, tout en permettant de r\u00e9sister au froid.",
+    "effet": "0 malus froid, capacité",
+    "montant": "3 fois par combat (Esprit) : Invocation du Totem, d\u00e9g\u00e2t re\u00e7u -1",
+    "icone": "A40001b"
   }
 }

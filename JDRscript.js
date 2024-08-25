@@ -7,7 +7,7 @@ import {
   masterJSON,
   statsJSON,
   cardJSON,
-} from "./JDRstore";
+} from "./JDRstore.js";
 import {
   callPHP,
   toastNotification,
@@ -19,7 +19,7 @@ import {
   sum,
   sumEqptsAsAccess,
   isTextInText,
-} from "./utils";
+} from "./utils.js";
 
 console.log("Skills JSON", skillsJSON);
 console.log("Persos JSON", persosJSON);

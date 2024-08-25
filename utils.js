@@ -1,4 +1,4 @@
-import { allSkills, eqptJSON } from "./JDRstore";
+import { allSkills, eqptJSON } from "./JDRstore.js";
 
 export async function callPHP(data) {
   $.ajax({

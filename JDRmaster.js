@@ -1,5 +1,5 @@
-import { skillsJSON, eqptJSON, masterJSON, enemyJSON, enemyGenericJSON, statsJSON, persosJSON } from "./JDRstore";
-import { callPHP, isTextInText, toastNotification, unformatText } from "./utils";
+import { skillsJSON, eqptJSON, masterJSON, enemyJSON, enemyGenericJSON, statsJSON, persosJSON } from "./JDRstore.js";
+import { callPHP, isTextInText, toastNotification, unformatText } from "./utils.js";
 
 const logged = !!document.querySelector(".admin");
 
