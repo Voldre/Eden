@@ -1,5 +1,5 @@
-import { cardJSON, persosJSON, enemyJSON, mapsJSON, playerJSON } from "./JDRstore";
-import { Perso, callPHP, dateToString, initDialog, sameDay, stringToDate, toastNotification } from "./utils";
+import { cardJSON, persosJSON, enemyJSON, mapsJSON, playerJSON } from "./JDRstore.js";
+import { Perso, callPHP, dateToString, initDialog, sameDay, stringToDate, toastNotification } from "./utils.js";
 
 const charactersList = document.querySelector(".charactersList");
 const persosE = [...charactersList.children];

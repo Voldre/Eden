@@ -1,5 +1,5 @@
-import { isTextInText, readCookie } from "./utils";
-import { mapsJSON } from "./JDRstore";
+import { isTextInText, readCookie } from "./utils.js";
+import { mapsJSON } from "./JDRstore.js";
 
 // 3D Variables
 let scene, camera, renderer;

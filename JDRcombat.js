@@ -1,5 +1,5 @@
-import { cardJSON, persosJSON, enemyJSON, allSkills, playerJSON, getData } from "./JDRstore";
-import { callPHP, dateToString, initDialog, isTextInText, Perso, sum, toastNotification } from "./utils";
+import { cardJSON, persosJSON, enemyJSON, allSkills, playerJSON, getData } from "./JDRstore.js";
+import { callPHP, dateToString, initDialog, isTextInText, Perso, sum, toastNotification } from "./utils.js";
 
 // prettier-ignore
 const classes = [ "Guerrier", "Chevalier", "Templier", "Chev Dragon", "Voleur", "Assassin", "Danselame", "Samouraï", "Chasseur", "Ingénieur", "Corsaire", "Juge", "Clerc", "Barde", "Shaman", "Sage", "Magicien", "Illusionniste", "Démoniste", "Luminary",];

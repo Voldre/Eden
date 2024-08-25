@@ -1,5 +1,5 @@
-import { skillsJSON } from "./JDRstore";
-import { aoeDescInfo, initDialog } from "./utils";
+import { skillsJSON } from "./JDRstore.js";
+import { aoeDescInfo, initDialog } from "./utils.js";
 
 // prettier-ignore
 const classes = [ "Guerrier", "Chevalier", "Templier", "Chev Dragon", "Voleur", "Assassin", "Danselame", "Samouraï", "Chasseur", "Ingénieur", "Corsaire", "Juge", "Clerc", "Barde", "Shaman", "Sage", "Magicien", "Illusionniste", "Démoniste", "Luminary",];

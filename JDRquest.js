@@ -1,5 +1,5 @@
-import { playerJSON, mapsJSON, pnjJSON, persosJSON, enemyJSON } from "./JDRstore";
-import { toastNotification } from "./utils";
+import { playerJSON, mapsJSON, pnjJSON, persosJSON, enemyJSON } from "./JDRstore.js";
+import { toastNotification } from "./utils.js";
 
 // const apiKey = "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";
 const apiUrl = "https://api.openai.com/v1/chat/completions";
