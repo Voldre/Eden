@@ -1,6 +1,0 @@
-Qu'est-ce qu'on affiche quand on clic sur une map
-	Exemple : On affiche la map et on positionne les donjons dessus (clickables)
-Patcher les maps en mettant les bonnes couleurs
-Créer les coordonnées initiales de toutes les maps 3D
-Générer sur la worldmap tous les TP (continents suds manquants)
-
