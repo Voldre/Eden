@@ -272,6 +272,13 @@ li img,
   height: 50px;
 }
 
+.tinyIcon {
+  vertical-align: top;
+  width: 26px;
+  height: 26px;
+  margin: 1px;
+}
+
 .mapIcon {
   opacity: 0.75;
   width: 45px;

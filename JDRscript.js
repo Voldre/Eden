@@ -19,6 +19,7 @@ import {
   sum,
   sumEqptsAsAccess,
   isTextInText,
+  dateToString,
 } from "./utils.js";
 
 console.log("Skills JSON", skillsJSON);
@@ -714,6 +715,70 @@ function insertEqpt(eqptElement, selectedEqpt) {
   }
 }
 
+// INVENTAIRE
+
+// Display items in the inventory
+const getItemsInInventory = (inventory) => {
+  const inventoryUnformated = unformatText(inventory).replaceAll("bombes", "bombe").replaceAll("potions", "potion");
+
+  const itemsInInventory = allItems.filter((item) => isTextInText(inventoryUnformated, item.title));
+
+  const eqptsName = [...equipementsE.children].map((competenceE) => unformatText(competenceE.children[0].value));
+
+  const itemsE = document.querySelector(".items");
+  itemsE.innerHTML = "";
+
+  itemsInInventory.map((item) => {
+    const imgE = document.createElement("img");
+    imgE.src = item.src;
+    imgE.title = item.title + "\n" + item.desc + "\n" + item.montant;
+
+    // Highlight equipments equipped
+    if (eqptsName.find((eqptName) => isTextInText(eqptName, item.title))) imgE.style.borderColor = "goldenrod";
+
+    imgE.addEventListener("click", () => {
+      dialog.innerText = "";
+
+      const headerE = document.createElement("div");
+      headerE.className = "itemHeader";
+      headerE.append(imgE.cloneNode());
+      const title = document.createElement("h2");
+      title.innerText = item.title;
+      headerE.append(title);
+
+      dialog.append(headerE);
+
+      const desc = document.createElement("p");
+      desc.innerText = item.desc;
+      dialog.append(desc);
+
+      if (item.montant) {
+        const montant = document.createElement("p");
+        montant.innerText = item.montant;
+        dialog.append(montant);
+        const effet = document.createElement("p");
+        effet.innerText = item.effet;
+        dialog.append(effet);
+      }
+
+      // fermeture
+      const closeE = document.createElement("button");
+      closeE.id = "close";
+      closeE.innerText = "Fermer";
+      closeE.addEventListener("click", () => {
+        dialog.close();
+      });
+      dialog.append(closeE);
+
+      dialog.showModal();
+    });
+
+    itemsE.append(imgE);
+  });
+};
+
+document.querySelector(".inventaire").addEventListener("change", (e) => getItemsInInventory(e.target.value));
+
 //  PERSOS
 const selectPerso = document.querySelector("#selectPerso");
 var selectedPerso = selectPerso.value;
@@ -770,7 +835,10 @@ window.addEventListener("load", () => {
     loadFiche();
   }
 
+  // Enable all buttons
   saveButton.disabled = false;
+  downloadButton.disabled = false;
+  screenshotButton.disabled = false;
 });
 
 selectPerso.addEventListener("change", (e) => {
@@ -1055,51 +1123,40 @@ function showEqptErrors(eqptOverLimits) {
 }
 
 //  DOWNLOAD as FILE
-// Function to download data to a file
-document.querySelector("#download").addEventListener("click", () => {
-  download(JSON.stringify(persosJSON[persoE.id]), selectedPerso + ".json", "text/plain");
+
+// Function to download character data as file
+const downloadButton = document.querySelector("#download");
+downloadButton.addEventListener("click", () => {
+  download(JSON.stringify(persosJSON[persoE.id]), `${persoData.nom}_${dateToString(new Date())}.json`);
 });
 
-function download(data, filename, type) {
-  var xhReq = new XMLHttpRequest();
+function download(data, filename) {
+  const file = new Blob([data], { type: "application/json" });
 
-  xhReq.open("POST", "http://voldre.free.fr/Eden/" + filename, true);
-  xhReq.send(data);
+  // Créer une URL pour le Blob
+  const url = URL.createObjectURL(file);
 
-  var file = new Blob([data], { type: type });
-  if (window.navigator.msSaveOrOpenBlob)
-    // IE10+
-    window.navigator.msSaveOrOpenBlob(file, filename);
-  else {
-    // Others
-    var a = document.createElement("a"),
-      url = URL.createObjectURL(file);
-    a.href = url;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-    setTimeout(function () {
-      document.body.removeChild(a);
-      window.URL.revokeObjectURL(url);
-    }, 0);
-  }
+  // Créer un élément de lien, l'ajouter et le déclencher
+  const link = document.createElement("a");
+  link.download = filename;
+  link.href = url;
+  link.click();
 }
-// Download as screenshot under body
-/*
-document.querySelector("#screenshot").addEventListener('click',() =>{
-    html2canvas(document.querySelector('.perso')).then(function(canvas) {
-    // Export the canvas to its data URI representation
-    var base64image = canvas.toDataURL("image/png");
 
-    // Open the image in a new window
-    // window.open(base64image , "_blank");
-    var screenshot = document.createElement('img');
-    screenshot.src = "data:"+base64image;
-    // screenshot.classList.add('screen');
-    document.body.append(screenshot)
-    });
+// Download a screenshot of the character page
+const screenshotButton = document.querySelector("#screenshot");
+screenshotButton.addEventListener("click", () => {
+  screenshotButton.disabled = true;
+  toastNotification("Capture d'écran en cours ...", 5000);
+
+  html2canvas(document.querySelector(".perso"), { backgroundColor: null }).then((canvas) => {
+    const link = document.createElement("a");
+    link.download = `screenshot ${persoData.nom} ${dateToString(new Date())}.png`;
+    link.href = canvas.toDataURL();
+    link.click();
+    screenshotButton.disabled = false;
+  });
 });
-*/
 
 // PROFIL PICTURE
 
@@ -1276,7 +1333,7 @@ const labelsDescription = {
   //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."
   synthese: syntheseDesc(),
   passif12:
-    'Le passif niveau 12 consiste en un ajout de montant de stats.<br/>Vous avez 4 points à répartir dans les montants suivant (max 2 points par montant) :<br/>1 point :<ul><li>Dégât +1</li><li>Soin +1</li><li>Armure +1</li><li>PV +5</li><li>Familier : Dégât et Soin +1</li></ul>2 points :<ul><li>Blocage Physique +1</li><li>Esquive +1</li><li>Blocage Magique +1</li><li>Résistance d\'esprit +1</li><li>Montant des buffs +1</li><li>Durée des buffs +1</li><li>Une statistique +1</li></ul><span style="color: lightcoral;">/!\\ Attention : vous ne pourrez plus facilement changer votre passif après avoir choisi !</span><br/>A noter : ces montants ne comptent pas dans la limite des stuffs (voir "Equipements - Infos")',
+    'Le passif niveau 12 consiste en un ajout de montant de stats.<br/>Vous avez 4 points à répartir dans les montants suivant (max 2 points par montant) :<br/>1 point :<ul><li>Dégât +1</li><li>Soin +1</li><li>Dégât reçu -1</li><li>PV +5</li><li>Familier : Dégât et Soin +1</li></ul>2 points :<ul><li>Blocage Physique +1</li><li>Esquive +1</li><li>Blocage Magique +1</li><li>Résistance d\'esprit +1</li><li>Montant des buffs +1</li><li>Durée des buffs +1</li><li>Une statistique +1</li></ul><span style="color: lightcoral;">/!\\ Attention : vous ne pourrez plus facilement changer votre passif après avoir choisi !</span><br/>A noter : ces montants ne comptent pas dans la limite des stuffs (voir "Equipements - Infos")',
 };
 
 initDialog(labelsDescription);
@@ -1422,65 +1479,3 @@ const getEqpts = Object.values(eqptJSON).map((eqpt) => ({
 const allItems = [...getCards, ...getEqpts];
 
 const dialog = document.querySelector("dialog");
-
-// Display items in the inventory
-const getItemsInInventory = (inventory) => {
-  const inventoryUnformated = unformatText(inventory).replaceAll("bombes", "bombe").replaceAll("potions", "potion");
-
-  const itemsInInventory = allItems.filter((item) => isTextInText(inventoryUnformated, item.title));
-
-  const eqptsName = [...equipementsE.children].map((competenceE) => unformatText(competenceE.children[0].value));
-
-  const itemsE = document.querySelector(".items");
-  itemsE.innerHTML = "";
-
-  itemsInInventory.map((item) => {
-    const imgE = document.createElement("img");
-    imgE.src = item.src;
-    imgE.title = item.title + "\n" + item.desc + "\n" + item.montant;
-
-    // Highlight equipments equipped
-    if (eqptsName.find((eqptName) => isTextInText(eqptName, item.title))) imgE.style.borderColor = "goldenrod";
-
-    imgE.addEventListener("click", () => {
-      dialog.innerText = "";
-
-      const headerE = document.createElement("div");
-      headerE.className = "itemHeader";
-      headerE.append(imgE.cloneNode());
-      const title = document.createElement("h2");
-      title.innerText = item.title;
-      headerE.append(title);
-
-      dialog.append(headerE);
-
-      const desc = document.createElement("p");
-      desc.innerText = item.desc;
-      dialog.append(desc);
-
-      if (item.montant) {
-        const montant = document.createElement("p");
-        montant.innerText = item.montant;
-        dialog.append(montant);
-        const effet = document.createElement("p");
-        effet.innerText = item.effet;
-        dialog.append(effet);
-      }
-
-      // fermeture
-      const closeE = document.createElement("button");
-      closeE.id = "close";
-      closeE.innerText = "Fermer";
-      closeE.addEventListener("click", () => {
-        dialog.close();
-      });
-      dialog.append(closeE);
-
-      dialog.showModal();
-    });
-
-    itemsE.append(imgE);
-  });
-};
-
-document.querySelector(".inventaire").addEventListener("change", (e) => getItemsInInventory(e.target.value));
