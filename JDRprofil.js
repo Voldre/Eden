@@ -79,7 +79,9 @@ window.addEventListener("load", () => {
       // console.log(playerCards);
 
       const pBossP = Math.floor(
-        (100 * playerCards?.filter((p) => p.kind === "boss").length) / cardJSON.filter((p) => p.kind === "boss").length
+        // Ignore hidden bosses
+        (100 * playerCards?.filter((p) => p.kind === "boss" && !p.hidden).length) /
+          cardJSON.filter((p) => p.kind === "boss" && !p.hidden).length
       );
       const pMapsP = Math.floor(
         (100 * playerCards?.filter((p) => p.kind === "map").length) / cardJSON.filter((p) => p.kind === "map").length
@@ -407,7 +409,7 @@ function loadCards(joueurData) {
       cardE.appendChild(descCardE);
     } else {
       // Card to hide if not obtained
-      if (card.id === 1055) return;
+      if (card.hidden) return;
     }
     if (card.kind === "anecdote") {
       document.querySelector("#g" + card.group)?.append(cardE);
@@ -420,13 +422,21 @@ function loadCards(joueurData) {
 function countCards(joueurData) {
   cardKinds.forEach((kind) => {
     const countJoueurCardsByKind = joueurData.cards
-      .map((cardId) => cardJSON.filter((c) => c.id === cardId && c.kind === kind).length)
+      // Remove hidden
+      .map((cardId) => cardJSON.filter((c) => c.id === cardId && c.kind === kind && !c.hidden).length)
       .reduce((partialSum, a) => partialSum + a, 0);
 
-    const countCardsByKind = cardJSON.filter((c) => c.kind === kind).length;
+    const countHiddenCards = joueurData.cards
+      // Remove hidden
+      .map((cardId) => cardJSON.filter((c) => c.id === cardId && c.kind === kind && c.hidden).length)
+      .reduce((partialSum, a) => partialSum + a, 0);
 
-    document.querySelector("#" + kind + "Count").innerText =
-      "(" + countJoueurCardsByKind + "/" + countCardsByKind + ")";
+    // Remove hidden
+    const countCardsByKind = cardJSON.filter((c) => c.kind === kind && !c.hidden).length;
+
+    document.querySelector("#" + kind + "Count").innerText = `(${countJoueurCardsByKind}/${countCardsByKind})${
+      countHiddenCards ? ` (+${countHiddenCards})` : ""
+    }`;
   });
 }
 

@@ -3,6 +3,12 @@ import chardet
 import fnmatch
 import unicodedata
 
+# Ce script permet d'encoder correctement les fichiers T_.ini qui contiennent
+# les traductions FR (ou US) du jeu.
+# A noter : l'encodage attendu est ANSI, car le jeu ne supporte pas l'UTF8
+# La solution actuelle garde les accents, supprime les "caractères spéciaux"
+# et pour que le texte soit bien interprété, les accents sont suivi d'un espace
+
 def remove_accents(input_str):
     nfkd_form = unicodedata.normalize('NFKD', input_str)
     return ''.join([c for c in nfkd_form if not unicodedata.combining(c)])

@@ -39,7 +39,7 @@ try:
     last_id = 36951
 
     for index,id in tqdm(enumerate(range(first_id,last_id))):
-        data = (id,group_amelio,index, 1,money_ezur_point,1)
+        data = (id,group_amelio,index, 20,money_ezur_point,1)
         cursor.execute(insert_query, data)
 
     # Validation des modifications

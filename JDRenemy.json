@@ -896,13 +896,13 @@
   },
   "62": {
     "visuel3D": "rubis",
-    "nom": "Rubis - Héritière Favorite",
+    "nom": "Rubis - H\u00e9riti\u00e8re Favorite",
     "pvmax": "280",
     "skills": [
       "Mode Draconique : Embras\u00e9 : Force/Intel+2, D\u00e9moniaque : Charisme+2, Cach\u00e9 : Esprit+2 : Esprit",
       "Terreur du Dragon AoE : R\u00e9ussite des sorts : -2 sur 3 tours AoE (+ mode Cf. DK) : Charisme",
       "Pouvoir du Dragon / Atk Cyclone : 3D6+22 (AoE-5) (feu, t\u00e9n\u00e8b,phys) : Force",
-      "Revers d'\u00e9caille \u00e9veill\u00e9 : 5 tentatives par combat (<10 : 66%, >=10 : 33%) (+ mode Cf. DK) : Esprit<br/>Passif : (Def Acier Perma) Blocage+2, PV < 140 : Dégât +5 (Crit +5)"
+      "Revers d'\u00e9caille \u00e9veill\u00e9 : 5 tentatives par combat (<10 : 66%, >=10 : 33%) (+ mode Cf. DK) : Esprit<br/>Passif : (Def Acier Perma) Blocage+2, PV < 140 : D\u00e9g\u00e2t +5 (Crit +5)"
     ],
     "stats": "17,13,9,15,17",
     "desc": "H\u00e9riti\u00e8re de l'empire Heldentod, connue pour sa d\u00e9termination et sa prestance. Elle est tr\u00e8s strat\u00e8ge mais froide et parfois sans piti\u00e9.",
@@ -1934,7 +1934,7 @@
     "nom": "Botassius - G\u00e9n\u00e9ral D\u00e9fensif",
     "pvmax": "300",
     "skills": [
-      "Lumi\u00e8re de Gu\u00e9rison / Bouclier de Lumi\u00e8re : 2D10+18 (1/3 rejouer) / Armure 1D4+4 AoE pendant 4 tours : Intelligence",
+      "Lumi\u00e8re de Gu\u00e9rison / Bouclier de Lumi\u00e8re : 2D10+18 (1/3 rejouer) / Armure 1D4+5 AoE pendant 4 tours : Intelligence",
       "Vague Foudroyante : 3D6+17, Blocage-3 AoE 3 tours : Force (jdrCombat +25)",
       "Lumi\u00e8re Sacr\u00e9e : 3D6+25 / Euphorie : +1D4 (min 2) +2 par coup (max 6) sur 5 tours : esprit",
       "Passif : Blocage +2 (Def Acier), Armure -15, Ferveur Guerrier : si KO (2 fois) succ\u00e8s 1D2 (10/20) : Soigne 3D10+20 PV (D\u00e9g\u00e2t/Armure +5 perma)"
@@ -2161,7 +2161,7 @@
     "skills": [
       "Pouvoir du Dragon / Temp\u00eate de Glace : 3D6+20 (AoE-5)  (feu, t\u00e9n\u00e8bres,glace) : Intel",
       "Saut Dimensionnel : 3 tentatives par combat : remplace l'esquive/blocage (buff prochain d\u00e9g\u00e2t +5) : intel",
-      "Magie Extr\u00eame : Prochain d\u00e9g\u00e2t magique +2D6 +8 : Esprit",
+      "Magie Extr\u00eame : Prochain d\u00e9g\u00e2t magique +2D6 +9 : Esprit",
       "Revers d'\u00e9caille : 4 tentatives par combat (<10 : 66%, >=10 : 33%) (+Soin PV+15 #Mode Cach\u00e9) : Esprit"
     ],
     "stats": "15,7,17,11,16",
@@ -2446,11 +2446,11 @@
     "skills": [
       "Rayon Noir : 6D6 +45 (bloc/esq -2) mini-AoE : Intelligence // Coup Physique : 3D6+22",
       "Zone de calamit\u00e9 : 4D6+30 (bloc-2) et -2 r\u00e9ussites sur 3 tours (AoE) : Intelligence",
-      "Parasite Inviolable : 2D6+8 pendant 4 tours -2 stats, non annulable : Espr'it (jdrCombat +45)",
+      "Parasite Inviolable : 2D6+8 pendant 4 tours -2 stats, non annulable : Espr'it (jdrCombat +30)",
       "Bouclier Noir : Armure 2D6+10 pendant 4 tours : Esprit (m\u00eame si silence)"
     ],
     "stats": "15,13,20,11,19",
-    "desc": "Le l\u00e9gendaire Prince du Fl\u00e9au dans sa forme humaine. Et encore, ce n'est pas le pire...",
+    "desc": "Le l\u00e9gendaire Prince du Fl\u00e9au dans sa forme humaine. Il n'y a presque aucune aura aussi noire que la sienne. Et encore, ce n'est pas la pire de ses formes...",
     "infos": "Faible \u00e0 la lumi\u00e8re et \u00e0 la nature",
     "drop": "Dague vorace, Pendentif du risque"
   },
@@ -3105,7 +3105,7 @@
     "pvmax": "500",
     "skills": [
       "(bloc/esq -3) mini-AoE : Force/Intel. M\u00e2choire Abyssale : 6D6 +45 <br/>Souffle : 4D6+30, soin re\u00e7u -50% sur 5 tours",
-      "Queue D\u00e9ferlante : 4D6 +35 (bloc-2) AoE : Force (jdrCombat +40)<br/>Temp\u00eate Oc\u00e9anique : 1D6 +19 (-2 r\u00e9ussite 1t) AoE sur 3 tours : Intelligence",
+      "Queue D\u00e9ferlante : 4D6 +35 (bloc-2) AoE : Force (jdrCombat +33)<br/>Temp\u00eate Oc\u00e9anique : 1D6 +19 (-2 r\u00e9ussite 1t) AoE sur 3 tours : Intelligence",
       "Aura d'An\u00e9antissement : -2 buffs et Stats -1 pendant 4 tours (AoE) : Esprit",
       "Passif : chaque -150 PV : Onde (AoE++) 1D6 +19 et -3,4,5 r\u00e9ussite : 3 tours (Res E)"
     ],
@@ -3119,7 +3119,7 @@
     "nom": "Bulblarve - Reine Prolifique",
     "pvmax": "350",
     "skills": [
-      "Roulement massif (bloc-3 (-4 si ⩽ 5)) : 4D6+25 AoE \u21d4 : Force<br/>Crachat : 2D10+16 AoE (bloc-2) : Intel",
+      "Roulement massif (bloc-3 (-4 si \u2a7d 5)) : 4D6+25 AoE \u21d4 : Force<br/>Crachat : 2D10+16 AoE (bloc-2) : Intel",
       "Gel\u00e9e Royale : Buff mono \u221e : PV +50, D\u00e9g\u00e2t +5, Stats +1, mais -25 PV (mob wait 1t) : 0 d\u00e9",
       "Survie Royale : Buff D\u00e9g\u00e2t +1D4+4 AoE sur 4 tours : Esprit",
       "Passif : 0 esquive, Bloc = 6 ALL<br/>Chaque 5 tours : +2 mobs # 2D6<br/>Si PV < 150 : Gel\u00e9e Royale : Effet positif *2"
@@ -3131,17 +3131,32 @@
   },
   "211": {
     "visuel3D": "marcus",
-    "nom": "Marcus - Héritier Vagabond",
+    "nom": "Marcus - H\u00e9ritier Vagabond",
     "pvmax": "260",
     "skills": [
-      "Pouvoir du Dragon / Atk Cyclone : 3D6+18 (AoE-5) (feu, tén, phys) : Force",
-      "Terreur du Dragon : Res Esprit / Réussite  -3 sur 3 tours : Charisme",
-      "Instinct de Survie : PV & Dégât : +1D6+6 pendant 3 tours : Esprit",
-      "Revers d'écaille : 3 tentatives par combat (<10 : 66%, >=10 : 33%) (Dégât rev+5 #Embrasé) : Esprit<br/>Passif : Mode Défense : Dexté-3, Armure +5"
+      "Pouvoir du Dragon / Atk Cyclone : 3D6+18 (AoE-5) (feu, t\u00e9n, phys) : Force",
+      "Terreur du Dragon : Res Esprit / R\u00e9ussite  -3 sur 3 tours : Charisme",
+      "Instinct de Survie : PV & D\u00e9g\u00e2t : +1D6+6 pendant 3 tours : Esprit",
+      "Revers d'\u00e9caille : 3 tentatives par combat (<10 : 66%, >=10 : 33%) (D\u00e9g\u00e2t rev+5 #Embras\u00e9) : Esprit<br/>Passif : Mode D\u00e9fense : Dext\u00e9-3, Armure +5"
     ],
     "stats": "16,13,7,15,16",
-    "desc": "Héritier de l'Empire Heldentod, Marcus est déterminé mais un peu instable, il est en recherche de bonnes opportunités mais est honnête et juste.",
-    "infos": "Faible à la nature et aux ténèbres",
+    "desc": "H\u00e9ritier de l'Empire Heldentod, Marcus est d\u00e9termin\u00e9 mais un peu instable, il est en recherche de bonnes opportunit\u00e9s mais est honn\u00eate et juste.",
+    "infos": "Faible \u00e0 la nature et aux t\u00e9n\u00e8bres",
     "drop": "Glyphe du Chevalier Dragon, Lance Incandescente"
+  },
+  "212": {
+    "visuel3D": "aguero",
+    "nom": "Aguero - Perce-Esprit",
+    "pvmax": "235",
+    "skills": [
+      "Bombe Incendiaire / Stalactites Glaciales : Degat 3D6 (+5) +25, Mono : Intelligence",
+      "Attaque Foudroyante / Oeil Hypnotique : Degat 2D6 +21, / Endort pendant 1D4 tours, Res espr -2 AoE : Intelligence",
+      "Contr\u00f4le de l'Esprit : Hypnose pendant 1D4 tours<br/>Rituel de Mana : Esprit AoE +3 sur 5 tours : Esprit",
+      "Saut Dimensionnel : 3 Esquive : Intelligence"
+    ],
+    "stats": "8,11,17,13,20",
+    "desc": "Aguero \u00e9tait un Torturran gardien de la Salle Ulta, il avait un talent unique pour sonder l'esprit des gens et d\u00e9couvrir la v\u00e9rit\u00e9...",
+    "infos": "Faible au per\u00e7ant et \u00e0 la lumi\u00e8re",
+    "drop": "Brassard de r\u00e9sistance, rare : Casque de concentration"
   }
 }
