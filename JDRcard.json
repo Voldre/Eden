@@ -512,9 +512,10 @@
     "id": 1053,
     "value": 3,
     "kind": "boss",
-    "name": "Plouka - Lieutenant Offensif",
-    "description": "Anuran Lieutenant \u00e0 la peau rouge, dr\u00f4le, social et b\u00eate. Premier chef de Kibo !",
-    "kindId": "m038b"
+    "name": "Prince du Fl\u00e9au",
+    "description": "Le l\u00e9gendaire Prince du Fl\u00e9au dans sa forme humaine. Il n'y a presque aucune aura aussi noire que la sienne. Et encore, ce n'est pas la pire de ses formes...",
+    "kindId": "m158e",
+    "hidden": true
   },
   {
     "id": 1054,
@@ -530,7 +531,8 @@
     "kind": "boss",
     "name": "Yéti - Monstre imaginaire des glaces",
     "description": "Un incroyable Yéti des glaces : 6m de long et 3m de large ! Plein de poils et de dents pointus ! Rien que le regarder donne des vrais frissons !",
-    "kindId": "m230b"
+    "kindId": "m230b",
+    "hidden": true
   },
   {
     "id": 1056,
@@ -651,6 +653,39 @@
     "name": "Fira - Virtuose de G\u00e9nie",
     "description": "Jeune homme humain mais petit, Fira est \u00e0 la fois ma\u00eetre d'art et chef de la Symbardy ! C'est un musicien dou\u00e9 d'une technique brillante et un artiste extr\u00eamement habile.",
     "kindId": "fira"
+  },
+  {
+    "id": 1071,
+    "value": 3,
+    "kind": "boss",
+    "name": "Aguero - Perce-Esprit",
+    "description": "Aguero \u00e9tait un Torturran gardien de la Salle Ulta, il avait un talent unique pour sonder l'esprit des gens et d\u00e9couvrir la v\u00e9rit\u00e9. Mais il n'est plus de ce monde.",
+    "kindId": "aguero"
+  },
+  {
+    "id": 1072,
+    "value": 3,
+    "kind": "boss",
+    "name": "Shellona - Fondateur R\u00e9incarn\u00e9",
+    "description": "Le corps de Cosmos a \u00e9t\u00e9 utilis\u00e9 comme receptacle pour \u00e9veiller l'esprit de Shellona : l'illustre fondateur de la secte en personne ! Son esprit a \u00e9t\u00e9 pr\u00e9serv\u00e9 par miracle...",
+    "kindId": "shellona"
+  },
+  {
+    "id": 1073,
+    "value": 3,
+    "kind": "boss",
+    "name": "Leviathan - Serpent du Cataclysme",
+    "description": "Aussi surnomm\u00e9 \"La D\u00e9ferlante\", on raconte que cet Esprit Sacr\u00e9 aurait par le pass\u00e9 fait englourir une \u00eele dans l'oc\u00e9an. Il repr\u00e9sente le Serpent de Mer de la Destruction...",
+    "kindId": "leviathan",
+    "hidden": true
+  },
+  {
+    "id": 1074,
+    "value": 3,
+    "kind": "boss",
+    "name": "Plouka - Lieutenant Offensif",
+    "description": "Anuran Lieutenant \u00e0 la peau rouge, dr\u00f4le, social et b\u00eate. Premier chef de Kibo !",
+    "kindId": "m038b"
   },
   {
     "id": 1201,
@@ -4358,6 +4393,39 @@
     "enemies": [],
     "kindId": "items/I00143b",
     "group": 2
+  },
+  {
+    "id": 1851,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Aradia, la Finale (GvG 3e place)",
+    "description": "Aradia a permis à la Veyda d'obtenir la 3eme place au GvG, comment ? Elle a utilisée son hypnose sur Fira qui a un faible pour elle : un cocktail destructeur ! Fira totalement sous son influence a pulvérisé ses alliés, tombant tous au tapis !",
+    "maps": [308],
+    "enemies": [],
+    "kindId": "otherIcon/ac511b",
+    "group": 3
+  },
+  {
+    "id": 1852,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Acte final : Chelona (2/2)",
+    "description": "Shellona est déterminé à détruire l'humanité avec le Leviathan, et Ochak est prêt à finir avec le groupe. Shellona utilisera Aguero pour contrôler le groupe et semer la discorde ! Heureusement des renforts arrivent et les héros décrochent la victoire, mais pas sans perte...",
+    "maps": [8],
+    "enemies": [],
+    "kindId": "otherIcon/acte_final_chelona_2",
+    "group": 1
+  },
+  {
+    "id": 1853,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Kibo, Fred et les petits",
+    "description": "Alors que le groupe se remet des évènements de la Chelona, Kibo découvre avec stupeur que Fred a donnée naissance à une ribambelle de bébés champis ! Ils sont tellement nombreux ! Vimira va péter un câble si je les amène ! Et qui est le père ?!",
+    "maps": [8],
+    "enemies": [],
+    "kindId": "otherIcon/group011b",
+    "group": 1
   },
   {
     "id": 15000,
