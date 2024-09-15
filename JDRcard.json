@@ -2030,6 +2030,38 @@
     "kindId": "i00661"
   },
   {
+    "id": 1449,
+    "value": 2,
+    "kind": "composant",
+    "name": "Tulipe Emeraude",
+    "description": "Cette tulipe aux teintes d'émeraude est gorgée de magie régénérative, très utile pour fabriquer des potions de soins voire plus.",
+    "kindId": "I00151b"
+  },
+  {
+    "id": 1450,
+    "value": 1,
+    "kind": "composant",
+    "name": "Ramie",
+    "description": "La ramie est une fibre végétale issue de l'ortie, qui appartient à la famille des urticacées, elle est présente un peu partout.",
+    "kindId": "I00147"
+  },
+  {
+    "id": 1451,
+    "value": 1,
+    "kind": "composant",
+    "name": "Fleur de Lin",
+    "description": "Le lin est une matière naturelle végétale cultivée principalement dans les zones tempérées proche de la mer, très utile à la confection de vêtements.",
+    "kindId": "I00149"
+  },
+  {
+    "id": 1451,
+    "value": 2,
+    "kind": "composant",
+    "name": "Coléus",
+    "description": "Le Coleus est une plante à fleur rougeoyante de la famille des Labiées, c'est une plante originaie des oasis d'Amur. Elle est connue pour apporté aux textiles des propriétés magiques tout en renforçant la matière.",
+    "kindId": "I00148"
+  },
+  {
     "id": 1501,
     "value": 3,
     "kind": "anecdote",

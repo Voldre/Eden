@@ -2903,7 +2903,7 @@
     "nom": "Griffe D\u00e9chirante",
     "desc": "Cette griffe peut fragmenter et d\u00e9chiqueter la force de ses victimes.",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t +5, Si coup critique (1,2,3) : Force -3 (2 tours)",
+    "montant": "D\u00e9g\u00e2t +5, Si coup critique (1,2,3) : Force -4 (2 tours)",
     "icone": "W31903"
   },
   "391": {
@@ -3425,8 +3425,8 @@
     "icone": "W11105"
   },
   "459": {
-    "nom": "Pierre de s\u00e9curit\u00e9 d'Améthyste",
-    "desc": "Une pierre de s\u00e9curit\u00e9 qui attire beaucoup les esprits magiques de par sa teneur en magie. Elle est d'ailleurs magnétique.",
+    "nom": "Pierre de s\u00e9curit\u00e9 d'Am\u00e9thyste",
+    "desc": "Une pierre de s\u00e9curit\u00e9 qui attire beaucoup les esprits magiques de par sa teneur en magie. Elle est d'ailleurs magn\u00e9tique.",
     "effet": "",
     "montant": "D\u00e9g\u00e2t re\u00e7u -3, Esprit +1",
     "icone": "i01204",
@@ -3837,7 +3837,7 @@
   },
   "512": {
     "nom": "Pierre de Securite de Jade",
-    "desc": "Une pierre de sécurité capable d'apaiser son porteur. C'est une des pierres de sécurité les plus rares.",
+    "desc": "Une pierre de s\u00e9curit\u00e9 capable d'apaiser son porteur. C'est une des pierres de s\u00e9curit\u00e9 les plus rares.",
     "effet": "",
     "montant": "D\u00e9g\u00e2t re\u00e7u -2. Dur\u00e9e des malus -1 tour",
     "icone": "i01550",
@@ -3845,7 +3845,7 @@
   },
   "513": {
     "nom": "Pierre de Securite Diamant Blanc",
-    "desc": "Une pierre bénite garantissant la r\u00e9ussite lors du craft, réduit énormément les dégâts.",
+    "desc": "Une pierre b\u00e9nite garantissant la r\u00e9ussite lors du craft, r\u00e9duit \u00e9norm\u00e9ment les d\u00e9g\u00e2ts.",
     "effet": "",
     "montant": "D\u00e9g\u00e2t re\u00e7u -5",
     "icone": "i01554",
@@ -3853,9 +3853,16 @@
   },
   "514": {
     "nom": "Echarpe du Totem",
-    "desc": "Cette écharpe possède un motif de totem, elle confère à son porteur une capacité d'invocation, tout en permettant de r\u00e9sister au froid.",
-    "effet": "0 malus froid, capacité",
+    "desc": "Cette \u00e9charpe poss\u00e8de un motif de totem, elle conf\u00e8re \u00e0 son porteur une capacit\u00e9 d'invocation, tout en permettant de r\u00e9sister au froid.",
+    "effet": "0 malus froid, capacit\u00e9",
     "montant": "3 fois par combat (Esprit) : Invocation du Totem, d\u00e9g\u00e2t re\u00e7u -1",
     "icone": "A40001b"
+  },
+  "515": {
+    "nom": "Gantelet Leviathan",
+    "desc": "Ce gantelet a \u00e9t\u00e9 con\u00e7u \u00e0 partir d'\u00e9cailles du l\u00e9gendaire Leviathan, lui octroyant une grande puissance.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -2, D\u00e9g\u00e2t +3",
+    "icone": "A40032b"
   }
 }

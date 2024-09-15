@@ -84,7 +84,7 @@
     "nom": "Bouclier de Lumi\u00e8re",
     "desc": "R\u00e9duit les d\u00e9g\u00e2ts re\u00e7u de tout le monde",
     "effet": "Buff AoE",
-    "montant": "1D4 pendant 3 tours",
+    "montant": "1D4 (min 2) pendant 3 tours",
     "icone": "E0309",
     "stat": "Esprit",
     "classe": ["Templier"]
@@ -1155,7 +1155,7 @@
     "nom": "D\u00e9doublement",
     "desc": "Cr\u00e9e un double de soi avec les m\u00eames stats et buffs (\u00e0 l'invocation). La dur\u00e9e des sorts lanc\u00e9es sont divis\u00e9es par 2, ou, cas \u00e9ch\u00e9ant, ses d\u00e9g\u00e2ts/soins et ses montants (invocation/buff/malus), sont divis\u00e9s par 2. Ses d\u00e9g\u00e2ts re\u00e7us touchent le porteur et sont aussi divis\u00e9s par 2 (avec armure/2).",
     "effet": "Invocation",
-    "montant": "Invoque un double de soi pendant 2 tours.",
+    "montant": "Invoque un double de soi pendant 2 tours (max 3 tours avec boost).",
     "icone": "E1042",
     "stat": "Esprit",
     "classe": ["Illusionniste"]
