@@ -691,7 +691,7 @@
     "skills": [
       "Vague terrestre : 1D10 +10 AoE : dext\u00e9rit\u00e9",
       "Coup de corne : 2D10+10 : force",
-      "Vivacit\u00e9 : Dext\u00e9+2 Esq+2 : Esprit",
+      "Vivacit\u00e9 : Dext\u00e9+2 Esq+2 sur 4 tours : Esprit",
       ""
     ],
     "stats": "16,15,9,9,13",
@@ -2882,7 +2882,7 @@
       "Artillerie Lourde (Blessure Douloureuse) : 3D6+25 (1D10) +25 (0 soin) sur 4 tours : Dext\u00e9rit\u00e9",
       "Boost d'Armure / Robotisation (instantan\u00e9e) : Soin 2D6 +13 / D\u00e9g\u00e2t +1D4+6 (4 t) , Armure +1D4 (min 2) +4 sur 4 tours : Esprit",
       "Bombe \u00e0 Huile (Explosifs Visqueux) : D\u00e9g\u00e2t 2D6+20 (-1D, Esquive -3 sur 4 tours) AoE : Dext\u00e9rit\u00e9",
-      "Lavage de Cerveau : R\u00e9sistance d'esprit et r\u00e9ussite -4 sur 4 tours : Esprit<br/>Passif Blocage +1... + Si PV <140 : en robotisation : D\u00e9g\u00e2t +5, Armure \u00e0 10 fixe"
+      "Lavage de Cerveau : R\u00e9sistance d'esprit et r\u00e9ussite -4 sur 4 tours : Esprit<br/>Passif : Blocage +1. Si PV <140 : en robot' : D\u00e9g\u00e2t +5, Armure \u00e0 10 fixe"
     ],
     "stats": "11,17,13,14,17",
     "desc": "Chef de l'Expedita, il a voyag\u00e9 dans tout Ezur \u00e0 bord de son propre dirigeable et b\u00e2teau en compagnie de ses camarades.",
@@ -3119,9 +3119,9 @@
     "nom": "Bulblarve - Reine Prolifique",
     "pvmax": "350",
     "skills": [
-      "Roulement massif (bloc-3 (-4 si \u2a7d 5)) : 4D6+25 AoE \u21d4 : Force<br/>Crachat : 2D10+16 AoE (bloc-2) : Intel",
+      "Roulement massif (bloc-3 (-4 si \u2a7d 5)) : 4D6+25 (~+15) AoE \u21d4 : Force<br/>Crachat : 2D10+16 AoE (bloc-2) : Intel",
       "Gel\u00e9e Royale : Buff mono \u221e : PV +50, D\u00e9g\u00e2t +5, Stats +1, mais -25 PV (mob wait 1t) : 0 d\u00e9",
-      "Survie Royale : Buff D\u00e9g\u00e2t +1D4+4 AoE sur 4 tours : Esprit",
+      "Survie Royale : Buf'f D\u00e9g\u00e2t +1D4+6 AoE sur 4 tours : Espr'it",
       "Passif : 0 esquive, Bloc = 6 ALL<br/>Chaque 5 tours : +2 mobs # 2D6<br/>Si PV < 150 : Gel\u00e9e Royale : Effet positif *2"
     ],
     "stats": "21,6,15,8,18",

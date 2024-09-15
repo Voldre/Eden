@@ -189,7 +189,7 @@ iconClassesEs.forEach((icClasseE) => {
   });
 });
 
-function defineAwaken(classe = "") {
+function defineAwaken(classe) {
   awakenSkillE.classList.add("hide");
 
   const stuffsName = [...equipementsE.children].map((eqpt) => eqpt.children[0].value.toLowerCase());
@@ -286,9 +286,12 @@ document.querySelector("#xp").addEventListener("change", (e) => {
     equipementsE.lastElementChild.classList.add("hide");
   }
   // Nouveauté 18/10/23 : Compétence éveillés
-  defineAwaken();
-  // Nouveauté 24/05/24 : Passif niveau 12
-  setPassif(niv >= 12);
+  const awakenClass = [...document.querySelector(".iconClasses").children]?.find((iconClass) =>
+    iconClass.classList.contains("awaken")
+  ).id;
+  defineAwaken(awakenClass);
+  // Nouveauté 24/05/24 - 14/09/24 : Passif niveau 12 & 14
+  setPassifs(niv);
 });
 
 // Nouveauté 15/08 : Calcul automatique du montant des stats
@@ -927,7 +930,7 @@ function loadFiche() {
   [...document.querySelector(".iconClasses").children].forEach((e) => e.classList.remove("awaken"));
 
   defineAwaken(persoData.awaken);
-  setPassif(persoData.niv >= 12);
+  setPassifs(persoData.niv);
 
   // Equipements du perso
   persoEqptsName = JSON.parse(persoData.eqpts);
@@ -1334,6 +1337,8 @@ const labelsDescription = {
   synthese: syntheseDesc(),
   passif12:
     'Le passif niveau 12 consiste en un ajout de montant de stats.<br/>Vous avez 4 points à répartir dans les montants suivant (max 2 points par montant) :<br/>1 point :<ul><li>Dégât +1</li><li>Soin +1</li><li>Dégât reçu -1</li><li>PV +5</li><li>Familier : Dégât et Soin +1</li></ul>2 points :<ul><li>Blocage Physique +1</li><li>Esquive +1</li><li>Blocage Magique +1</li><li>Résistance d\'esprit +1</li><li>Montant des buffs +1</li><li>Durée des buffs +1</li><li>Une statistique +1</li></ul><span style="color: lightcoral;">/!\\ Attention : vous ne pourrez plus facilement changer votre passif après avoir choisi !</span><br/>A noter : ces montants ne comptent pas dans la limite des stuffs (voir "Equipements - Infos")',
+  passif14:
+    "Le passif niveau 14 octroi au personnage une nouvelle capacité unique, il peut s'agir d'un passif ou d'une aptitude.<br/>Ces capacités sont similaires à celles des boss, car le niveau 14+ reflète un très haut niveau de puissance.<br/><br/>Voici la liste des capacités (en parenthèses le nombre d'utilisation par séance) :<ul><li>Seconde Chance : Relance de dé (*2)</li><li>Survivaliste : Survie à 1 PV à un coup fatal (*2, pas d'affilé)</li><li>Propagation : Change la portée d'un sort Mono en AoE courte-portée, ou AoE courte en grande, si buff/malus : -1 tour (*2)<ul><li>Exception : Parasite -2 tours</li></ul></li><li>Amplification : Augmente de 50% tout les effets (stat, bloc, montant, ...) des sorts de buff (sauf sort d'atk/malus, et indéfni). Les sorts Buff et Soin, la partie Soin n'est pas amplifiée. (*2)<ul><li>Exception : Les stats du Sacrifice d'Ombre ne sont boostés que de +1.</li></ul></li><li>Adaptation : Changement de stuff en combat sans contrepartie (*3)</li><li>Constitution Supérieure : Esprit +1, Charisme +1, PV +10</li><li>Attaque Chargé : 1 tour d'incantation (sans 1er jet de dé), l'attaque aura +33% de dégât et l'ennemi -3 Bloc/Esq/Res (*2)</li></ul>La tentative n'est pas consommé en cas d'échec de la compétence, sauf en cas de critique (19,20)",
 };
 
 initDialog(labelsDescription);
@@ -1444,19 +1449,32 @@ function sumObjectsByKey(...objs) {
   }, {});
 }
 
-function setPassif(isAvailable) {
+function setPassifs(niv) {
   const passif12E = document.querySelector("#passif12");
   passif12E.innerHTML = "";
+  passif12E.classList = niv >= 12 ? "" : "hide";
+  const passif14E = document.querySelector("#passif14");
+  passif14E.innerHTML = "";
+  passif14E.classList = niv >= 14 ? "" : "hide";
 
-  const li = document.createElement("li");
+  if (niv >= 12) {
+    const li = document.createElement("li");
 
-  li.innerText =
-    "Passif 12 " +
-    (persosJSON[persoE.id].passif12
-      ? ": " + persosJSON[persoE.id].passif12
-      : "à définir : 4 points à répartir (cliquez)");
-  passif12E.classList = isAvailable ? "" : "hide";
-  passif12E.append(li);
+    li.innerText =
+      "Passif 12 " +
+      (persosJSON[persoE.id].passif12
+        ? ": " + persosJSON[persoE.id].passif12
+        : "à définir : 4 points à répartir (cliquez)");
+    passif12E.append(li);
+  }
+
+  if (niv >= 14) {
+    const li = document.createElement("li");
+
+    li.innerText =
+      "Passif 14 " + (persosJSON[persoE.id].passif14 ? ": " + persosJSON[persoE.id].passif14 : " à définir (cliquez)");
+    passif14E.append(li);
+  }
 }
 
 const getCards = Object.values(cardJSON)
