@@ -17,15 +17,6 @@
     "stat": "Force",
     "classe": ["Guerrier", "Chevalier", "Templier", "Chev Dragon"]
   },
-  "57": {
-    "nom": "Mur de Titan",
-    "desc": "R\u00e9duit les d\u00e9g\u00e2ts subis par le lanceur",
-    "effet": "Buff",
-    "montant": "D\u00e9g\u00e2t subi -1D4 (min 2) -2 pendant 3 tours",
-    "icone": "E0029",
-    "stat": "Force",
-    "classe": ["Guerrier"]
-  },
   "2": {
     "nom": "Provocation",
     "desc": "Le lanceur provoque la cible ce qui augmente les chances d'\u00eatre vis\u00e9",
@@ -118,9 +109,9 @@
   },
   "12": {
     "nom": "Furtivit\u00e9",
-    "desc": "Vous rend invisible (Annulation si coup re\u00e7u ou si comp\u00e9tence force/dext\u00e9/intel utilis\u00e9e), renforce",
+    "desc": "Vous rend invisible (Annulable), renforce",
     "effet": "Invisible",
-    "montant": "Dur\u00e9e 3 tours sauf annulation, Dext\u00e9+1, D\u00e9g\u00e2t+2",
+    "montant": "Dur\u00e9e 3 tours (annulable), Dext\u00e9+1, D\u00e9g\u00e2t+2",
     "icone": "E0318",
     "stat": "Esprit",
     "classe": ["Voleur"]
@@ -217,7 +208,7 @@
   },
   "30": {
     "nom": "Invocation du Tigre",
-    "desc": "Invoque un Tigre Crocs-Tranchants : 30 PV, Force : 15, Dext\u00e9 : 13, Intel : 9, Charisme : 12, Esprit : 11. Sort : Morsure 1D8 (Force), Charge 1D8 (Force)",
+    "desc": "Invoque un Tigre Crocs-Tranchants : 30 PV, Force : 15, Dext\u00e9 : 13, Intel : 9, Charisme : 11, Esprit : 13. Sort : Morsure 1D8 (Force), Cri strident : -2 réussite 1 tour AoE (Esprit)",
     "effet": "Invocation",
     "montant": "Invocation jusqu'\u00e0 coupure magique",
     "icone": "E0075",
@@ -408,7 +399,7 @@
     "nom": "Saut Dimensionnel",
     "desc": "T\u00e9l\u00e9porte le joueur jusqu'\u00e0 5m l\u00e0 o\u00f9 il regarde",
     "effet": "Esquive",
-    "montant": "3 tentatives par combat : remplace l'esquive (ou le blocage, avec malus AoE (-2,-4)) par la t\u00e9l\u00e9portation",
+    "montant": "3 tentatives par combat : remplace l'esquive (ou le blocage, avec malus AoE (-3,-5)) par la t\u00e9l\u00e9portation",
     "icone": "E0025",
     "stat": "Intelligence",
     "classe": ["Magicien", "Illusionniste", "D\u00e9moniste", "Luminary"]
@@ -433,9 +424,9 @@
   },
   "54": {
     "nom": "Voile du Blizzard",
-    "desc": "Rend invisible et am\u00e9liore temporairement l'intelligence et les d\u00e9g\u00e2ts. Diminue les chances d'\u00eatre touch\u00e9.",
+    "desc": "Rend invisible (Annulable) et am\u00e9liore temporairement l'intelligence et les d\u00e9g\u00e2ts.",
     "effet": "Invisible",
-    "montant": "Dur\u00e9e 3 tours (4 si incantation) sauf annulation, Intel+1, D\u00e9g\u00e2t+2",
+    "montant": "Dur\u00e9e 3 tours (4 si incantation), Intel+1, D\u00e9g\u00e2t+2",
     "icone": "E0119",
     "stat": "Esprit",
     "classe": ["Magicien", "Illusionniste"]
@@ -457,6 +448,15 @@
     "icone": "E0125",
     "stat": "Intelligence",
     "classe": ["Illusionniste"]
+  },
+  "57": {
+    "nom": "Mur de Titan",
+    "desc": "R\u00e9duit les d\u00e9g\u00e2ts subis par le lanceur",
+    "effet": "Buff",
+    "montant": "D\u00e9g\u00e2t subi -1D4 (min 2) -2 pendant 3 tours",
+    "icone": "E0029",
+    "stat": "Force",
+    "classe": ["Guerrier"]
   },
   "58": {
     "nom": "Destruction de l'aurore",
@@ -588,7 +588,7 @@
     "nom": "R\u00e9surrection",
     "desc": "(Utilisable m\u00eame vivant) prend 2 tours : Soigne/Ressuscite un joueur avec quelques PV ",
     "effet": "Soin",
-    "montant": "Incantation 2 tours (1 d\u00e9/tour) : soigne de 2D10+16",
+    "montant": "Incantation en 2 tours (1 d\u00e9/tour) : soigne de 2D10+16",
     "icone": "E0020",
     "stat": "Intelligence",
     "classe": ["Clerc", "Barde", "Shaman", "Sage"]
@@ -705,7 +705,7 @@
     "nom": "Lumi\u00e8re de Gu\u00e9rison",
     "desc": "Soigne la cible, et 1 chance sur 4 de pouvoir rejouer",
     "effet": "Soin",
-    "montant": "1D10 +8, 1/4 de rejouer",
+    "montant": "1D10 +8, 1/4 de rejouer (max 2 fois par tour)",
     "icone": "E0307",
     "stat": "Intelligence",
     "classe": ["Templier"]
@@ -1054,7 +1054,7 @@
   },
   "124": {
     "nom": "Infection Pullulante",
-    "desc": "La cible \u00e9met une explosion (qui blesse lui et les autres) qui peut entra\u00eener l'explosion d'un autre parasite obscur originel (qui blesse les autres). L'explosion propage le parasite aux ennemis. Le parasite ne blesse plus mais peut soigner via Fl\u00e8che des Ombres (3 tours si la cible n'\u00e9tait pas parasit\u00e9).",
+    "desc": "La cible \u00e9met une explosion (qui blesse lui et les autres) qui peut entra\u00eener l'explosion d'un autre parasite obscur originel (qui blesse que les autres). L'explosion propage le parasite aux ennemis. Les parasites ne blessent plus et ne peuvent plus exploser, mais peut soigner via Fl\u00e8che des Ombres (3 tours si la cible n'\u00e9tait pas parasit\u00e9).",
     "effet": "D\u00e9g\u00e2t Malus AoE R-",
     "montant": "1D8 + 2*(tours parasite restant)",
     "icone": "E0743",
@@ -1065,7 +1065,7 @@
     "nom": "Armure Draconique",
     "desc": "Le DK (Dragon Knight) rev\u00eate son corps d'\u00e9cailles. Effets - Embras\u00e9 : Epines+3; D\u00e9moniaque : D\u00e9g\u00e2t subi -2; Cach\u00e9 : Dur\u00e9e+1",
     "effet": "Buff",
-    "montant": "D\u00e9g\u00e2t subi -1D4 (min 2) pendant 3 tours  (+ effet mode)",
+    "montant": "D\u00e9g\u00e2t subi -1D4 (min 2) pendant 3 tours (+ effet mode)",
     "icone": "E1022",
     "stat": "Esprit",
     "classe": ["Chev Dragon"]
@@ -1081,7 +1081,7 @@
   },
   "127": {
     "nom": "Protection Absolue",
-    "desc": "Action Instantan\u00e9e. Le guerrier canalyse toute son \u00e9nergie pour former un bouclier autour de tous ses camarades, for\u00e7ant les attaques des ennemis \u00e0 venir vers lui. M\u00eame les attaques de zones (AoE) ne visent que le lanceur.",
+    "desc": "Action Instantan\u00e9e. Le guerrier canalyse toute son \u00e9nergie pour former un bouclier autour de ses camarades, for\u00e7ant les attaques des ennemis \u00e0 venir vers lui. M\u00eame les attaques de zones (AoE) ne visent que le lanceur.",
     "effet": "Blocage",
     "montant": "1 fois par combat : Mono : Blocage, AoE : Blocage -3, d\u00e9g\u00e2t * 2.5 (-10) sur le tour",
     "icone": "j058b",
@@ -1099,7 +1099,7 @@
   },
   "129": {
     "nom": "Temp\u00eate Infernale",
-    "desc": "Tournoi et inflige des d\u00e9g\u00e2ts de zone. Les ennemis touch\u00e9s sont provoqu\u00e9s au tour suivant.",
+    "desc": "Tournoie et inflige des d\u00e9g\u00e2ts de zone. Les ennemis touch\u00e9s sont provoqu\u00e9s au tour suivant.",
     "effet": "D\u00e9g\u00e2t Malus AoE R-",
     "montant": "1D6+1, 50% de chance d'\u00eatre cibl\u00e9 (1 tour)",
     "icone": "E0034",
@@ -1173,7 +1173,7 @@
     "nom": "Instinct de Survie",
     "desc": "Le sang de dragon bouillonne et enclenche le mode survie pour son porteur. Effets - Embras\u00e9 : D\u00e9g\u00e2ts +3; D\u00e9moniaque : Blocage+1; Cach\u00e9 : Soin PV+3",
     "effet": "Buff et Soin",
-    "montant": "(Si PV <50%) Soin 1D4+2 (bonus des montants de soin /2) pendant 3 tours (+ effet mode)",
+    "montant": "(Si PV <50%) Soin 1D4+2 (bonus des montants de soin (effectué/reçu) /2) pendant 3 tours (+ effet mode)",
     "icone": "E0583",
     "stat": "Force",
     "classe": ["Chev Dragon"]

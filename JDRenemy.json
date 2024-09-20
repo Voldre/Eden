@@ -3158,5 +3158,20 @@
     "desc": "Aguero \u00e9tait un Torturran gardien de la Salle Ulta, il avait un talent unique pour sonder l'esprit des gens et d\u00e9couvrir la v\u00e9rit\u00e9...",
     "infos": "Faible au per\u00e7ant et \u00e0 la lumi\u00e8re",
     "drop": "Brassard de r\u00e9sistance, rare : Casque de concentration"
+  },
+  "213": {
+    "visuel3D": "daryun",
+    "nom": "Daryun - Conqu\u00e9rant de Luposia",
+    "pvmax": "360",
+    "skills": [
+      "Frappe Fr\u00e9n\u00e9tique : 4D6+30 (+3/touche, max 5), cumule reset apr\u00e8s 4 tours, mini-AoE (bloc/esq -2) : Force<br/>Impact Cin\u00e9tique : 4D6+20 (r\u00e9ussite -5) : Force (m\u00eame silence), mais Esq/Bloc m",
+      "Griffure Noire : 4D6 +20 et -2 blocage/esquive AoE pour 4 tours : Force",
+      "Rugissement Meurtrier : D\u00e9g\u00e2t +1D6+4, PV +10 quand ennemi touch\u00e9, pendant 5 tours : Force (m\u00eame silence)",
+      "Constitution de Roi : Armure +5, Bloc/Esq/Res +1, dur\u00e9e Malus /2<br/>PV <150 : Effet Rugissement *2. Si Bloc/Esq critique : Coup opportun"
+    ],
+    "stats": "21,15,11,15,13",
+    "desc": "Berserker r\u00e9put\u00e9 pour sa puissance hors-norme, il est connu comme \u00e9tant le bras arm\u00e9 de la Venturo. Il a \u00e9t\u00e9 vainqueur pendant 3 ann\u00e9es de suite au plus grand tournoi Luposia.",
+    "infos": "Faible \u00e0 la foudre et aux t\u00e9n\u00e8bres",
+    "drop": "Hache Cruelle, Anneau du Conqu\u00e9rant"
   }
 }

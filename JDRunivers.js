@@ -280,7 +280,7 @@ const labelsDescription = {
   armure:
     "Il existe 3 types d'armures (magique, léger, lourd), chaque classe permet de porter l'un de ces types.<br/>Certaines classes combinées peuvent porter un type supplémentaire (Chevalier hors tank, Sage et Luminary hors mage)<br/><br/>Si le personnage porte une armure d'un type différent de ces classes, les malus suivants sont appliqués :<ul><li>Stuff non magique : Intelligence -2,</li><li>Stuff non léger : Dextérité -2,</li><li>Stuff non lourd : Force -2,</li></ul>Si le type d'armure est le même pour les 2 classes du personnage, le malus de la Stat est de -3.",
   montant:
-    'Le montant des buffs augmente :<ul><li>Les dégâts infligés des buffs (A la charge, Magie extrême, Euphorie, ...),</li><li>Les dégâts reçus des buffs (Encouragement musical, Mur de Titan, ...)</li></ul>Les montants des malus sont également compris dans ce terme "montant des buffs" :<ul><li>Les dégâts infligés des malus (Parasite, Flèche empoisonnée, ...)</li><li>Les dégâts reçus des malus (Perce-Armure, Affablissement Mental, ...)</li></ul>Rappel : le montant des buffs de l\'ensemble des stuffs est limité à +2 de ',
+    'Le montant des buffs augmente :<ul><li>Les dégâts infligés des buffs (A la charge, Magie extrême, Aura du Samouraï, ...),</li><li>Les dégâts reçus des buffs (Encouragement musical, Mur de Titan, Robotisation, ...)</li></ul>Les montants des malus sont également compris dans ce terme "montant des buffs" :<ul><li>Les dégâts infligés des malus (Parasite, Flèche empoisonnée, ...)</li><li>Les dégâts reçus des malus (Perce-Armure, Affablissement Mental, ...)</li></ul>Rappel : le montant des buffs de l\'ensemble des stuffs est limité à +2',
   monture:
     "Une monture de combat est considérée comme : <br/>1) Une arme évolutive (emplacement d'arme) qui octroie des compétences au personnage (les compétences consomment le tour du perso), les autres emplacements d'armes n'affectent que le perso, pas la monture<br/>2) Un familier : il a ses PV, ses stats, et seuls les compétences et accessoires dédiés aux familiers agissent dessus.",
   instant:
@@ -289,6 +289,8 @@ const labelsDescription = {
     "Les dégâts physiques (P) englobe les dégâts réalisés par des attaques de Force, de Dextérité et de Charisme.<br/>Les dégâts magiques (M) englobe les dégâts réalisés par des sorts d'Intelligence et d'Esprit",
   survie:
     "Lorsqu'un joueur tombe KO, sa vie est en jeu. Son temps avant la mort est compté selon les cicronstances (lieu, contexte) et ses dégâts, soit <b>environ</b> :<ul><li>A 0 : 10 tours</li><li>A -25 : 8 tours</li><li>A -50 : 5 tours</li><li>A -75 : 3 tours</li><li>A -100 : 2 tours</li><li>Si les PV descendent à l'équivalent des PV max (ou -150 PV) : 0 tour (mort instantanée)</li></ul>A noter qu'il est possible d'être soigné (sort, potion) et blessé, et que franchir un seuil augmente/diminue les tours.<br/>De plus, pour chaque KO supplémentaire dans un laps de temps court, la survie est diminué de 2 tours.<br/><br/>Un jet de survie est lancé quand il reste 5, 2 puis 0 tours. Le jet de survie peut changer la durée de survie (en tour) : Dé 1 : +2 tours, Dé 2-5 : +1 et l'inverse en négatif.",
+  "soin-recu":
+    "Les bonus de soins reçus (montant fixe ou %), ne s'appliquent que sur les compétences et pas sur les objets (accessoires, potions, ...).",
 };
 
 initDialog(labelsDescription);
