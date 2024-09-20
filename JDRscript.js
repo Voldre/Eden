@@ -286,10 +286,7 @@ document.querySelector("#xp").addEventListener("change", (e) => {
     equipementsE.lastElementChild.classList.add("hide");
   }
   // Nouveauté 18/10/23 : Compétence éveillés
-  const awakenClass = [...document.querySelector(".iconClasses").children]?.find((iconClass) =>
-    iconClass.classList.contains("awaken")
-  ).id;
-  defineAwaken(awakenClass);
+  defineAwaken(persoData.awaken);
   // Nouveauté 24/05/24 - 14/09/24 : Passif niveau 12 & 14
   setPassifs(niv);
 });
@@ -1332,13 +1329,35 @@ const labelsDescription = {
   stress:
     'Fatigue/Stress max : 200%. Chaque 50%, les stats diminue de 1 (4 max).<br/> La fatigue s\'accumule au fur et à mesures des combats (sauf tour des cieux). Le stress uniquement dans les zones dédiées.<br/><br/>Le stress "accentué" augmente de 50%, la "réduction" diminue de 33%.',
   infoEQPT:
-    "Changer d'arme en combat (si équipée) se fait en début de tour (action instantanée).<br/>Sinon, échanger d'arme ou d'accessoire prend 1 tour.<br/><br/>Porter une armure non adapté (magique, léger, lourd) implique des malus de stats (voir page \"Infos JDR\", section \"Armure\").<br/><br/>Le montant total de l'ensemble des stuffs est limité : +2 de montant des buffs, +1 durée des buffs, -1 durée des malus, et +50% PV soin reçu.<br/><br/>Le montant fixe total (hors %) des accessoires est limité : +2 par stat, +3 blocage/esquive, pour les soins (infligé, reçu) : 6, pour les dégâts infligés : 6 (+2 si bonus élémentaire) et dégâts reçu : 5",
+    "Changer d'arme en combat (si équipée) se fait en début de tour (action instantanée).<br/>Sinon, échanger d'arme ou d'accessoire prend 1 tour.<br/><br/>Porter une armure non adapté (magique, léger, lourd) implique des malus de stats (voir page \"Infos JDR\", section \"Armure\").<br/><br/>Le montant total de l'ensemble des stuffs est limité : +2 de montant des sorts, +1 durée des sorts, -1 durée des malus, et +50% PV soin reçu.<br/><br/>Le montant fixe total (hors %) des accessoires est limité : +2 par stat, +3 blocage/esquive, pour les soins (infligé, reçu) : 6, pour les dégâts infligés : 6 (+2 si bonus élémentaire) et dégâts reçu : 5",
   //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."
   synthese: syntheseDesc(),
   passif12:
-    'Le passif niveau 12 consiste en un ajout de montant de stats.<br/>Vous avez 4 points à répartir dans les montants suivant (max 2 points par montant) :<br/>1 point :<ul><li>Dégât +1</li><li>Soin +1</li><li>Dégât reçu -1</li><li>PV +5</li><li>Familier : Dégât et Soin +1</li></ul>2 points :<ul><li>Blocage Physique +1</li><li>Esquive +1</li><li>Blocage Magique +1</li><li>Résistance d\'esprit +1</li><li>Montant des buffs +1</li><li>Durée des buffs +1</li><li>Une statistique +1</li></ul><span style="color: lightcoral;">/!\\ Attention : vous ne pourrez plus facilement changer votre passif après avoir choisi !</span><br/>A noter : ces montants ne comptent pas dans la limite des stuffs (voir "Equipements - Infos")',
-  passif14:
-    "Le passif niveau 14 octroi au personnage une nouvelle capacité unique, il peut s'agir d'un passif ou d'une aptitude.<br/>Ces capacités sont similaires à celles des boss, car le niveau 14+ reflète un très haut niveau de puissance.<br/><br/>Voici la liste des capacités (en parenthèses le nombre d'utilisation par séance) :<ul><li>Seconde Chance : Relance de dé (*2)</li><li>Survivaliste : Survie à 1 PV à un coup fatal (*2, pas d'affilé)</li><li>Propagation : Change la portée d'un sort Mono en AoE courte-portée, ou AoE courte en grande, si buff/malus : -1 tour (*2)<ul><li>Exception : Parasite -2 tours</li></ul></li><li>Amplification : Augmente de 50% tout les effets (stat, bloc, montant, ...) des sorts de buff (sauf sort d'atk/malus, et indéfni). Les sorts Buff et Soin, la partie Soin n'est pas amplifiée. (*2)<ul><li>Exception : Les stats du Sacrifice d'Ombre ne sont boostés que de +1.</li></ul></li><li>Adaptation : Changement de stuff en combat sans contrepartie (*3)</li><li>Constitution Supérieure : Esprit +1, Charisme +1, PV +10</li><li>Attaque Chargé : 1 tour d'incantation (sans 1er jet de dé), l'attaque aura +33% de dégât et l'ennemi -3 Bloc/Esq/Res (*2)</li></ul>La tentative n'est pas consommé en cas d'échec de la compétence, sauf en cas de critique (19,20)",
+    'Le passif niveau 12 consiste en un ajout de montant de stats.<br/>Vous avez 4 points à répartir dans les montants suivant (max 2 points par montant, sauf le 3) :<br/>1 point :<ul><li>Dégât +1</li><li>Soin +1</li><li>Dégât reçu -1</li><li>PV +5</li><li>Familier : Dégât et Soin +1</li></ul>2 points :<ul><li>Blocage Physique +1</li><li>Esquive +1</li><li>Blocage Magique +1</li><li>Résistance d\'esprit +1</li><li>Montant des sorts +1</li><li>Une statistique +1</li></ul>3 points :<ul><li>Durée des sorts +1</li></ul>4 points :<ul><li>+1 emplacement de sort</li></ul><span style="color: lightcoral;">/!\\ Attention : vous ne pourrez plus facilement changer votre passif après avoir choisi !</span><br/>A noter : ces montants ne comptent pas dans la limite des stuffs (voir "Equipements - Infos")',
+  passif14: `Le passif niveau 14 octroi au personnage une nouvelle capacité unique, il peut s'agir d'un passif ou d'une aptitude.
+  <br/>Ces capacités sont similaires à celles des boss, car le niveau 14+ reflète un très haut niveau de puissance.
+  <br/>Voici la liste des capacités...
+  <br/><br/>Capacités utilisables 2 fois par séance : 
+  <ul>
+  <li>Survivaliste : Survie à 1 PV à un coup fatal, et immunise au prochain coup reçu (s'il y en a un) ce même tour (ne fonctionne pas 2 fois le même tour)</li>
+  <li>Propagation : Change la portée d'un sort Mono en AoE courte-portée, ou AoE courte en grande, si sort de buff/malus : durée -1 tour
+    <ul><li>Exception sur la durée : Parasite, Blessure Douloureuse, Silence et Scellement dure entre 2 et 3 tours</li></ul>
+  </li>
+  <li>Amplification : Augmente de 50% tout les effets (stat, bloc, montant, ...) des sorts de buff (sauf sort d'atk/malus, et indéfni). Les sorts Buff et Soin, la partie Soin n'est pas amplifiée.
+    <ul><li>Exception : Les stats du Sacrifice d'Ombre ne sont boostés que de +1.</li><li>Les sorts boostés par les éveils (ex : Aura : Bouclier Protecteur, Intégration) sont limités à +4 max (au lieu de +5)</li></ul>
+  </li>
+  </ul>
+  Capacités utilisables 3 fois par séance :
+  <ul>
+  <li>Seconde Chance : Relance de dé</li>
+  <li>Adaptation : Changement de stuff en combat sans contrepartie, poids supportable augmenté</li>
+  <li>Attaque Chargé : 1 tour d'incantation (sans 1er jet de dé), l'attaque aura +33% de dégât et l'ennemi -3 Bloc/Esq/Res</li>
+  </ul>
+  Capacité activée en permanence : 
+  <ul>
+  <li>Constitution Supérieure : Esprit +1 et +3 points à choisir sur le Passif 12, toujours avec la limite totale de 2 points par montant.</li>
+  </ul>
+  A noter : Les capacités liés aux sorts ne sont pas consommées en cas d'échec, sauf en cas de critique (19,20)`,
 };
 
 initDialog(labelsDescription);

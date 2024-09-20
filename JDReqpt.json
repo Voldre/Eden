@@ -3864,5 +3864,19 @@
     "effet": "",
     "montant": "D\u00e9g\u00e2t re\u00e7u -2, D\u00e9g\u00e2t +3",
     "icone": "A40032b"
+  },
+  "516": {
+    "nom": "Anneau du Conqu\u00e9rant",
+    "desc": "Un anneau con\u00e7u pour les plus d\u00e9termin\u00e9s \u00e0 conqu\u00e9rir le monde !",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +4, PV +5",
+    "icone": "A00006c"
+  },
+  "517": {
+    "nom": "Anneau de Sant\u00e9",
+    "desc": "Une des am\u00e9liorations de l'anneau du bagarreur, orient\u00e9 vitalit\u00e9",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +2, PV +15",
+    "icone": "A00006e"
   }
 }
