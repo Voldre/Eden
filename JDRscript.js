@@ -428,7 +428,7 @@ function insertSkill(skillElement, skillName, awakenClass = false) {
     skillElement.children[3].title = "";
     skillElement.children[4].innerText = "";
   } else {
-    var selectedAwakenSkill;
+    let selectedAwakenSkill;
     if (selectedSkill.classe.includes(awakenClass)) {
       skillElement.classList.add("awaken");
       selectedAwakenSkill = Object.values(skillsAwakenJSON).find((skill) => skill.nom == skillName);
@@ -1264,6 +1264,7 @@ function savePerso() {
     notes: document.querySelector(".notes").value,
     sticky: document.querySelector(".sticky").value,
     passif12: persosJSON[persoId]?.passif12 ?? undefined,
+    passif14: persosJSON[persoId]?.passif14 ?? undefined,
     isArchived: persosJSON[persoId]?.isArchived ?? false,
     joueur: persosJSON[persoId]?.joueur ?? null,
   };
@@ -1333,7 +1334,7 @@ const labelsDescription = {
   //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."
   synthese: syntheseDesc(),
   passif12:
-    'Le passif niveau 12 consiste en un ajout de montant de stats.<br/>Vous avez 4 points à répartir dans les montants suivant (max 2 points par montant, sauf le 3) :<br/>1 point :<ul><li>Dégât +1</li><li>Soin +1</li><li>Dégât reçu -1</li><li>PV +5</li><li>Familier : Dégât et Soin +1</li></ul>2 points :<ul><li>Blocage Physique +1</li><li>Esquive +1</li><li>Blocage Magique +1</li><li>Résistance d\'esprit +1</li><li>Montant des sorts +1</li><li>Une statistique +1</li></ul>3 points :<ul><li>Durée des sorts +1</li></ul>4 points :<ul><li>+1 emplacement de sort</li></ul><span style="color: lightcoral;">/!\\ Attention : vous ne pourrez plus facilement changer votre passif après avoir choisi !</span><br/>A noter : ces montants ne comptent pas dans la limite des stuffs (voir "Equipements - Infos")',
+    'Le passif niveau 12 consiste en un ajout de montant de stats.<br/>Vous avez 4 points à répartir dans les montants suivant (max 2 points par montant, sauf le 3) :<br/>1 point :<ul><li>Dégât +1</li><li>Soin +1</li><li>Dégât reçu -1</li><li>PV +7.5</li><li>Familier : Dégât et Soin +1</li></ul>2 points :<ul><li>Blocage Physique +1</li><li>Esquive +1</li><li>Blocage Magique +1</li><li>Résistance d\'esprit +1</li><li>Montant des sorts +1</li><li>Une statistique +1</li></ul>3 points :<ul><li>Durée des sorts +1</li></ul>4 points :<ul><li>+1 emplacement de sort</li></ul><span style="color: lightcoral;">/!\\ Attention : vous ne pourrez plus facilement changer votre passif après avoir choisi !</span><br/>A noter : ces montants ne comptent pas dans la limite des stuffs (voir "Equipements - Infos")',
   passif14: `Le passif niveau 14 octroi au personnage une nouvelle capacité unique, il peut s'agir d'un passif ou d'une aptitude.
   <br/>Ces capacités sont similaires à celles des boss, car le niveau 14+ reflète un très haut niveau de puissance.
   <br/>Voici la liste des capacités...
@@ -1341,7 +1342,7 @@ const labelsDescription = {
   <ul>
   <li>Survivaliste : Survie à 1 PV à un coup fatal, et immunise au prochain coup reçu (s'il y en a un) ce même tour (ne fonctionne pas 2 fois le même tour)</li>
   <li>Propagation : Change la portée d'un sort Mono en AoE courte-portée, ou AoE courte en grande, si sort de buff/malus : durée -1 tour
-    <ul><li>Exception sur la durée : Parasite, Blessure Douloureuse, Silence et Scellement dure entre 2 et 3 tours</li></ul>
+    <ul><li>Exception sur la durée : Parasite, Blessure Douloureuse, Silence et Scellement dure entre 2 et 3 tours. Dédoublement dure 1 tour max.</li></ul>
   </li>
   <li>Amplification : Augmente de 50% tout les effets (stat, bloc, montant, ...) des sorts de buff (sauf sort d'atk/malus, et indéfni). Les sorts Buff et Soin, la partie Soin n'est pas amplifiée.
     <ul><li>Exception : Les stats du Sacrifice d'Ombre ne sont boostés que de +1.</li><li>Les sorts boostés par les éveils (ex : Aura : Bouclier Protecteur, Intégration) sont limités à +4 max (au lieu de +5)</li></ul>
@@ -1349,7 +1350,7 @@ const labelsDescription = {
   </ul>
   Capacités utilisables 3 fois par séance :
   <ul>
-  <li>Seconde Chance : Relance de dé</li>
+  <li>Seconde Chance : Relance de dé (sauf si échec critique)</li>
   <li>Adaptation : Changement de stuff en combat sans contrepartie, poids supportable augmenté</li>
   <li>Attaque Chargé : 1 tour d'incantation (sans 1er jet de dé), l'attaque aura +33% de dégât et l'ennemi -3 Bloc/Esq/Res</li>
   </ul>

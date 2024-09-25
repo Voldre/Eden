@@ -1891,7 +1891,7 @@
   "258": {
     "nom": "Robe de Lucius",
     "desc": "Robe confectionn\u00e9e par le Roi Ezelin Lucius. Permet d'invoquer son esprit : 35 PV, Force : 15, Dext\u00e9 : 14, Intel : 13, Charisme : 14, Esprit : 14.  Sorts : Perc\u00e9e 1D10+6 (Force), Aura Noire : 1D6+4 AoE (Intel)",
-    "effet": "Capacit\u00e9",
+    "effet": "Capacit\u00e9, Mal\u00e9diction du lien",
     "montant": "D\u00e9g\u00e2t -4, 2 fois par combat : invoque l'Esprit du Roi",
     "icone": "a20128"
   },
@@ -3442,7 +3442,7 @@
   },
   "461": {
     "nom": "Plastron du Templier Noir",
-    "desc": "Un antique plastron de templier qui doit remonter avant la grande guerre : une magie \u00e9trange en \u00e9mane. Appartient \u00e0 la Panoplie du Templier Noir",
+    "desc": "Un antique plastron de templier qui doit remonter \u00e0 la grande guerre : une magie \u00e9trange en \u00e9mane. Appartient \u00e0 la Panoplie du Templier Noir",
     "effet": "Mal\u00e9diction du lien",
     "montant": "D\u00e9g\u00e2t -5 (-1 par pi\u00e8ce) : Force +1, Intelligence +1",
     "icone": "k20472b",
@@ -3878,5 +3878,12 @@
     "effet": "",
     "montant": "D\u00e9g\u00e2t +2, PV +15",
     "icone": "A00006e"
+  },
+  "518": {
+    "nom": "Anneau du Lien Eternel",
+    "desc": "Cet anneau permet de lier 2 \"amants\" afin de leur permettre de vivre un amour puissant. Si puissant que s'\u00e9loigner en est d\u00e9sagr\u00e9able. Attention à la tromperie !",
+    "effet": "Mal\u00e9diction du Lien",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -3*X, Esprit +1*X. X =\"degr\u00e9 amour/proximit\u00e9\"",
+    "icone": "i01312b"
   }
 }
