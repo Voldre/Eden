@@ -386,7 +386,7 @@
     "map_z": null,
     "map_r": null,
     "bgm": 41,
-    "mobs": [62, 78, 76, 77, 107, 108]
+    "mobs": [62, 78, 76, 77, 107, 108, 210]
   },
   "33": {
     "name": "Plaines du Levant",

@@ -1,4 +1,4 @@
-import { skillsJSON } from "./JDRstore.js";
+import { skillsAwakenJSON, skillsJSON } from "./JDRstore.js";
 import { aoeDescInfo, initDialog } from "./utils.js";
 
 // prettier-ignore
@@ -56,7 +56,7 @@ classes.forEach((classe, i) => {
 
     document.querySelector(".classeDesc").innerHTML = classesDesc[classes.indexOf(selectedE.id)];
     // document.querySelector('.classeDesc').setHTML(classesDesc[classes.indexOf(selectedE.id)]);
-    updateSkillsList(selectedE.id);
+    updateSkillsList(selectedE.id, false);
   });
 });
 
@@ -82,14 +82,16 @@ buttonElem.addEventListener("click", () => {
 });
 
 // Skills list
-
-function updateSkillsList(classe) {
+const awakenButton = document.querySelector("#awakenButton");
+const updateSkillsList = (classe, isAwaken) => {
   document.querySelector(".skillslist").innerHTML = "";
 
-  Object.values(skillsJSON).forEach((skill) => {
-    if (!skill.classe.includes(classe)) return;
+  const skillsList = Object.values(skillsJSON).filter((skill) => skill.classe.includes(classe));
 
-    var skillE = document.createElement("div");
+  skillsList.forEach((skill) => {
+    const skillE = document.createElement("div");
+    if (isAwaken) skillE.classList.add("awaken");
+    else skillE.classList.remove("akawen");
     skillE.classList.add("skill");
     var nomE = document.createElement("p");
     nomE.classList.add("nom");
@@ -104,7 +106,10 @@ function updateSkillsList(classe) {
     iconeE.classList.add("icone");
 
     nomE.innerText = skill.nom;
-    descE.innerText = skill.desc;
+
+    const awakenSkill = Object.values(skillsAwakenJSON).find((s) => s.nom === skill.nom);
+    descE.innerText = isAwaken && awakenSkill?.desc ? awakenSkill.desc : skill.desc;
+    montantE.innerText = isAwaken && awakenSkill?.montant ? awakenSkill.montant : skill.montant;
 
     const skillRange = skill.effet.split("AoE ")[1] ?? null; // en bas [0] + "AoE"
     const effetDesc = skillRange ? skill.effet.split(" AoE")[0] : skill.effet;
@@ -122,14 +127,40 @@ function updateSkillsList(classe) {
       effetE.innerText += " / " + skill.stat + " / " + skill.classe?.toString().replaceAll(",", ", "); // Ajout Sanofi
     }
 
-    montantE.innerText = skill.montant;
     iconeE.src = "http://voldre.free.fr/Eden/images/skillIcon/" + skill.icone + ".png";
 
     skillE.append(nomE, descE, effetE, montantE, iconeE);
 
+    // Show/hide awaken skill on click
+    skillE.addEventListener("click", () => {
+      skillE.classList.toggle("awaken");
+
+      const selectedAwakenSkill =
+        skillE.classList.contains("awaken") && Object.values(skillsAwakenJSON).find((s) => s.nom == skill.nom);
+
+      skillE.querySelector(".desc").innerText = selectedAwakenSkill?.desc || skill.desc;
+      skillE.querySelector(".montant").innerText = selectedAwakenSkill?.montant || skill.montant;
+
+      updateAwakenButtonTriggered();
+    });
+
     document.querySelector(".skillslist").append(skillE);
+    updateAwakenButtonTriggered();
   });
-}
+};
+
+awakenButton.addEventListener("click", () => {
+  // If all skills are awaken, remove awaken. Else add it.
+  const isAwaken = awakenButton.src.includes("25");
+  updateSkillsList(document.querySelector(".highlight").id, !isAwaken);
+});
+
+const updateAwakenButtonTriggered = () => {
+  const isAllSkillsAwaken = [...document.querySelector(".skillslist").children].every((child) =>
+    child.classList.contains("awaken")
+  );
+  awakenButton.src = `images/otherIcon/function02${isAllSkillsAwaken ? 5 : 4}.png`;
+};
 
 // ANALYZE :  Counts which stats are most used for skills
 
@@ -280,7 +311,7 @@ const labelsDescription = {
   armure:
     "Il existe 3 types d'armures (magique, léger, lourd), chaque classe permet de porter l'un de ces types.<br/>Certaines classes combinées peuvent porter un type supplémentaire (Chevalier hors tank, Sage et Luminary hors mage)<br/><br/>Si le personnage porte une armure d'un type différent de ces classes, les malus suivants sont appliqués :<ul><li>Stuff non magique : Intelligence -2,</li><li>Stuff non léger : Dextérité -2,</li><li>Stuff non lourd : Force -2,</li></ul>Si le type d'armure est le même pour les 2 classes du personnage, le malus de la Stat est de -3.",
   montant:
-    'Le montant des buffs augmente :<ul><li>Les dégâts infligés des buffs (A la charge, Magie extrême, Aura du Samouraï, ...),</li><li>Les dégâts reçus des buffs (Encouragement musical, Mur de Titan, Robotisation, ...)</li></ul>Les montants des malus sont également compris dans ce terme "montant des buffs" :<ul><li>Les dégâts infligés des malus (Parasite, Flèche empoisonnée, ...)</li><li>Les dégâts reçus des malus (Perce-Armure, Affablissement Mental, ...)</li></ul>Rappel : le montant des buffs de l\'ensemble des stuffs est limité à +2',
+    "Le montant des buffs augmente :<ul><li>Les dégâts infligés des buffs (A la charge, Magie extrême, Aura du Samouraï, ...),</li><li>Les dégâts reçus des buffs (Encouragement musical, Mur de Titan, Robotisation, ...)</li></ul>Les montants des malus sont également compris dans ce terme \"montant des buffs\" :<ul><li>Les dégâts infligés des malus (Parasite, Flèche empoisonnée, ...)</li><li>Les dégâts reçus des malus (Perce-Armure, Affablissement Mental, ...)</li></ul>Rappel : le montant des buffs de l'ensemble des stuffs est limité à +2<br/><br/>Pour la durée des sorts, le max est à +1 tour (2 si passif 12). Les capacités des équipements en bénéficient aussi, mais ne peuvent gagner qu'un tour max.",
   monture:
     "Une monture de combat est considérée comme : <br/>1) Une arme évolutive (emplacement d'arme) qui octroie des compétences au personnage (les compétences consomment le tour du perso), les autres emplacements d'armes n'affectent que le perso, pas la monture<br/>2) Un familier : il a ses PV, ses stats, et seuls les compétences et accessoires dédiés aux familiers agissent dessus.",
   instant:

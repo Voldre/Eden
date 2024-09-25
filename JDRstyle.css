@@ -331,7 +331,7 @@ label {
 .awaken {
   border: 1px solid goldenrod;
 }
-.awaken .nom {
+.awaken select {
   background-color: wheat;
 }
 

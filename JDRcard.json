@@ -688,6 +688,14 @@
     "kindId": "m038b"
   },
   {
+    "id": 1075,
+    "value": 3,
+    "kind": "boss",
+    "name": "Bulblarve - Reine Prolifique",
+    "description": "Grosse limace insecto\u00efde avec un dos pulpeux qui est depuis longtemps prolifique à Vulcain où elle y a \u00e9tabli son royaume.",
+    "kindId": "m409b"
+  },
+  {
     "id": 1201,
     "value": 1,
     "kind": "composant",
@@ -1974,14 +1982,6 @@
     "kindId": "I00068"
   },
   {
-    "id": 1442,
-    "value": 3,
-    "kind": "composant",
-    "name": "Potion de fatigue",
-    "description": "Une potion qui va générer une grosse fatigue à celui qui est touché, l'affaiblissant (-1 stat pendant X tours).",
-    "kindId": "I00059"
-  },
-  {
     "id": 1443,
     "value": 3,
     "kind": "composant",
@@ -2054,12 +2054,28 @@
     "kindId": "I00149"
   },
   {
-    "id": 1451,
+    "id": 1452,
     "value": 2,
     "kind": "composant",
     "name": "Coléus",
     "description": "Le Coleus est une plante à fleur rougeoyante de la famille des Labiées, c'est une plante originaie des oasis d'Amur. Elle est connue pour apporté aux textiles des propriétés magiques tout en renforçant la matière.",
     "kindId": "I00148"
+  },
+  {
+    "id": 1453,
+    "value": 2,
+    "kind": "composant",
+    "name": "Mycelium",
+    "description": "Formé d'une filaments blanchâtre, le Mycellium est un ensemble de fibres vivantes servant à nourrir les champignons et champignoïdes. Cet ingrédient peut être utilisé pour fabriquer des potions de qualités.",
+    "kindId": "I00382c"
+  },
+  {
+    "id": 1454,
+    "value": 3,
+    "kind": "composant",
+    "name": "Potion de fatigue",
+    "description": "Une potion qui va générer une grosse fatigue à celui qui est touché, l'affaiblissant (-1 stat pendant X tours).",
+    "kindId": "I00059"
   },
   {
     "id": 1501,
@@ -4458,6 +4474,17 @@
     "enemies": [],
     "kindId": "otherIcon/group011b",
     "group": 1
+  },
+  {
+    "id": 1854,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Azora et Aurore",
+    "description": "Dans la Grotte Infesté de Vulcain, Azora assura la mission de soigner le groupe. Mais ce ne fut pas un franc succès, surtout sur la douce Aurore qui, à plusieurs reprises, a été attaqué : \"Bon cette fois je te soigne !\", disait-elle.",
+    "maps": [32],
+    "enemies": [],
+    "kindId": "skillIcon/E1014b",
+    "group": 2
   },
   {
     "id": 15000,

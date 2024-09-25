@@ -1109,10 +1109,10 @@
     "nom": "Fr\u00e9d\u00e9ric - Officier Heldentod",
     "pvmax": "250",
     "skills": [
-      "Euphorie : +1D4+1 (min 3) par coup. Buff pendant 4-5 tours (max 5) : esprit",
-      "Perc\u00e9e du Guerrier : 1D6 + 1D6 + 1D4 +14 : force",
-      "Perce-Armure : 1D10+14 + d\u00e9g\u00e2t physique re\u00e7u +5 (3 tours) : force",
-      "Attaque tournoyante : 2D8 +11 : force"
+      "Euphorie : +1D4+2 (min 3) par coup. Buff pendant 4-5 tours (max 5) : esprit",
+      "Perc\u00e9e du Guerrier : 1D6 + 1D6 + 1D4 +17 : force",
+      "Perce-Armure : 1D10+17 + d\u00e9g\u00e2t physique re\u00e7u +5 (3 tours) : force",
+      "Attaque tournoyante : 2D8 +13 : force"
     ],
     "stats": "17,11,13,13,15",
     "desc": "Guerrier grand et robuste se battant pour l'empire Heldentod, d\u00e9cor\u00e9 par le grand mar\u00e9chal de l'Empire, vicieux.",
@@ -1124,10 +1124,10 @@
     "nom": "McDougal - H\u00e9raut Heldentod",
     "pvmax": "220",
     "skills": [
-      "Marteau Insolent : 1D10 +12 AoE, et -1 de blocage et d'esquive pour 3 tours : force",
-      "Marteau de Scellement : 1D10+15 de glace, retire un bu'ff : force",
+      "Marteau Insolent : 1D10 +14 AoE, et -1 de blocage et d'esquive pour 3 tours : force",
+      "Marteau de Scellement : 1D10+18 de glace, retire un bu'ff : force",
       "Aura Bouclier : Blocage +3 AoE sur 3 tours : Esprit",
-      "Aura Ami Marteau : Soin 2D10 +16. Prochain d\u00e9g\u00e2t +1D6+8 : esprit"
+      "Aura Ami Marteau : Soin 2D10 +18. Prochain d\u00e9g\u00e2t +1D6+9 : esprit"
     ],
     "stats": "17,8,13,12,17",
     "desc": "Ogre costaud et  officier de l'Empire Heldentod dont les fonctions \u00e9taient la transmission des messages, les proclamations solennelles. Il est connu pour sa force et son soutien ravageur",
@@ -2731,7 +2731,7 @@
     "skills": [
       "Aura B\u00e9nite : Soin 5D6 +30. Buff d\u00e9g\u00e2t +3D6+12 sur 3 tours : Intel",
       "Bouclier Divin : (5 fois max) Retire tout malus et immunise de tout d\u00e9g\u00e2t pendant 2 tours (puis 2 tours d\u00e9g\u00e2t +25%, non relan\u00e7able) : Esprit (m\u00eame silence)",
-      "Tranche du Destin : 6D6+50, chance de bloc/esq /2 : Force<br/>D\u00e9sint\u00e9gration : 5D6+40 AoE et 0 t\u00e9n\u00e8bres / malus utilisable, Bloc/Res esp -3 pendant 3 tours : Intel",
+      "Tranche du Destin : 6D6+50, chance de bloc/esq /2 : Force<br/>D\u00e9sint\u00e9gration : 5D6+40 AoE et 0 t\u00e9n\u00e8bres / malus utilisable, Bloc/Res -3 pendant 3 tours : Intel",
       "Passif : 20 armure,  Soin 10 PV/tour, Res esprit 13, dur\u00e9e des malus /2"
     ],
     "stats": "17,15,20,17,18",
@@ -3044,10 +3044,10 @@
     "nom": "Elysia - Etoile de la Chance",
     "pvmax": "360",
     "skills": [
-      "Aura de Mauvaise Fortune : +1 sur le d\u00e9 (AoE) 3 tours : Esprit",
+      "Aura de Mauvaise Fortune (3 fois : +1) : +1 sur le d\u00e9 (AoE) 3 tours : Esprit",
       "Attaque Furieuse/Rapide : 4D6+20 (+10 mono) : Dext\u00e9rit\u00e9 (jdrCombat +15)",
       "Etoile Protectrice : Bloc/Esq/Res +2 (-2 malus) sur 4 tours : Esprit",
-      "Passif 1 : (1/tour) Force \u00e0 relancer 1 fois et stock le d\u00e9 (x5) (sauf crit d\u00e9 1)<br/>Pendant le stock : paire/triple/quad/quint (DGT++5)<br/>Suite : -1 sur le d\u00e9 (combo 4/5 chiffres : 3/5t)<br/>Passif 2 : PV<200/100 : 1 relance chaque 2/1t"
+      "Passif 1 : (1/tour) Force \u00e0 relancer 1 fois et stock le d\u00e9 (x5), sauf crit d\u00e9 1<br/>Après le stock (pdt 5t) : paire/triple/quad/quint (DGT++5 (sauf paire), atk Bloc/Esq/Res --1)<br/>Suite : -1 sur le d\u00e9 (combo 3/4/5 chiffres : 1/3/5t)<br/>Passif 2 : PV<200/100 : 1 relance chaque 2/1t"
     ],
     "stats": "14,19,12,12,19",
     "desc": "Fille Ezelin rebelle au caract\u00e8re bien tremp\u00e9e, elle est joyeuse et franche. B\u00e9nie par la chance, elle a re\u00e7ue ce don de fa\u00e7on myst\u00e9rieuse par une divinit\u00e9.",
@@ -3125,7 +3125,7 @@
       "Passif : 0 esquive, Bloc = 6 ALL<br/>Chaque 5 tours : +2 mobs # 2D6<br/>Si PV < 150 : Gel\u00e9e Royale : Effet positif *2"
     ],
     "stats": "21,6,15,8,18",
-    "desc": "Grosse limace insecto\u00efde avec un dos pulpeux qui est depuis longtemps prolifique et \u00e9tablis son royaume.",
+    "desc": "Grosse limace insecto\u00efde avec un dos pulpeux qui est depuis longtemps prolifique à Vulcain où elle y a \u00e9tabli son royaume.",
     "infos": "Faible au tranchant et au feu",
     "drop": "Mucus Royal *X (ver : Soie d'Or), rare : Membrane de Reine, Ep\u00e9e naus\u00e9abonde"
   },
