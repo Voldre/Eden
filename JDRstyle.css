@@ -427,6 +427,8 @@ label {
 }
 
 .classeslist div:hover {
+  cursor: pointer;
+  cursor: url("images/layout/cursor-x.png"), auto;
   background-color: rgba(96, 69, 216, 0.2);
 }
 .classeslist div p {

@@ -4487,6 +4487,50 @@
     "group": 2
   },
   {
+    "id": 1855,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Malvis et sa famille",
+    "description": "Malvis, de retour chez elle, donne des news à sa famille et découvre que Voldre était plus souvent là-bas qu'elle. Son petit frère veut d'ailleurs aller à l'aventure, et sa mère se permet de vider son sac plein de choses périmées dangereuses pour Broco, le soi-disant \"Alpaga Doré\" !",
+    "maps": [15],
+    "enemies": [],
+    "kindId": "items/I00017",
+    "group": 1
+  },
+  {
+    "id": 1856,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Kibo, l'unité, l'alcool",
+    "description": "L'alcool fait partie intégrante de l'unité, tellement que c'est écrit dans les règles ! Mais pas sans conséquence : Kibo à fini bourré à une cérémonie, l'unité est accusé de tapage nocturne, et Evan devient une autre personne très provocatrice ! Le groupe l'aura appris à ses dépends.",
+    "maps": [1],
+    "enemies": [],
+    "kindId": "otherIcon/ac026b",
+    "group": 1
+  },
+  {
+    "id": 1857,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Erida et le noble Olister",
+    "description": "Erida aux Plaines Fleuries à reçu une lettre très bien écrite d'un certain Olister von Strunkel, une famille de parfumerie noble. Derrière ce nom ce cache... Ol ! L'Anuran muet mais amoureux (et riche !). Ensemble ils ont pu planifier leur année : vacances, missions, et ... mariage ?",
+    "maps": [26],
+    "enemies": [],
+    "kindId": "uiiconPNG/olbague",
+    "group": 1
+  },
+  {
+    "id": 1858,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Kibo et l'école Champi",
+    "description": "Kibo veut créer une école pour former les Champignoïdes au combat ! Avec le financement de la Curie, il en fera des soldats ! Avec l'aide de Rumbledore, le Mushroom Sitter, ils seront redoutables ! Surtout pour salir le linge, manger du chocolat 🤢 et foutre la zizani où ils passent !",
+    "maps": [7],
+    "enemies": [],
+    "kindId": "otherIcon/group012b",
+    "group": 1
+  },
+  {
     "id": 15000,
     "value": 3,
     "kind": "anecdoteII",

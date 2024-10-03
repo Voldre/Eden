@@ -478,12 +478,9 @@ const checkboxes = [...document.querySelectorAll("input[type='checkbox']")];
 checkboxes.map((checkbox) =>
   checkbox.addEventListener("change", () => {
     checkboxes.map((cb) => {
-      console.log(cb, cb.value);
-      const anecdotesE = [...document.querySelector(`#${cb.value}`).querySelectorAll(".card")];
-      anecdotesE.map((anecdoteE) => {
-        if (cb.checked) anecdoteE.classList.remove("hide");
-        else anecdoteE.classList.add("hide");
-      });
+      const groupeE = document.querySelector(`#${cb.value}`);
+      if (cb.checked) groupeE.classList.remove("hide");
+      else groupeE.classList.add("hide");
     });
   })
 );

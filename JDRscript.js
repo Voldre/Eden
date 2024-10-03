@@ -31,6 +31,20 @@ const buttonBuffs = document.querySelector("#buttonBuffs");
 
 // prettier-ignore
 const classes = [ "Guerrier", "Chevalier", "Templier", "Chev Dragon", "Voleur", "Assassin", "Danselame", "Samouraï", "Chasseur", "Ingénieur", "Corsaire", "Juge", "Clerc", "Barde", "Shaman", "Sage", "Magicien", "Illusionniste", "Démoniste", "Luminary",];
+
+console.log(
+  "Combo de classes (Tableau X*Y) 20-20 :",
+  classes.map((c1) => ({
+    classe: c1,
+    nb: classes.map(
+      (c2) =>
+        Object.values(persosJSON).filter(
+          (p) => (p.classeP === c1 && p.classeS === c2) || (p.classeP === c2 && p.classeS === c1)
+        )?.length ?? 0
+    ),
+  }))
+);
+
 // prettier-ignore
 const iconsClasses = [ "01", "02", "03", "18", "04", "05", "06", "16", "07", "08", "09", "59", "10", "11", "12", "17", "13", "14", "15", "19",];
 // prettier-ignore
@@ -1334,7 +1348,7 @@ const labelsDescription = {
   //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."
   synthese: syntheseDesc(),
   passif12:
-    'Le passif niveau 12 consiste en un ajout de montant de stats.<br/>Vous avez 4 points à répartir dans les montants suivant (max 2 points par montant, sauf le 3) :<br/>1 point :<ul><li>Dégât +1</li><li>Soin +1</li><li>Dégât reçu -1</li><li>PV +7.5</li><li>Familier : Dégât et Soin +1</li></ul>2 points :<ul><li>Blocage Physique +1</li><li>Esquive +1</li><li>Blocage Magique +1</li><li>Résistance d\'esprit +1</li><li>Montant des sorts +1</li><li>Une statistique +1</li></ul>3 points :<ul><li>Durée des sorts +1</li></ul>4 points :<ul><li>+1 emplacement de sort</li></ul><span style="color: lightcoral;">/!\\ Attention : vous ne pourrez plus facilement changer votre passif après avoir choisi !</span><br/>A noter : ces montants ne comptent pas dans la limite des stuffs (voir "Equipements - Infos")',
+    'Le passif niveau 12 consiste en un ajout de montant de stats.<br/>Vous avez 4 points à répartir dans les montants suivant (max 2 points par montant, sauf le 3) :<br/>1 point :<ul><li>Dégât +1</li><li>Soin +1</li><li>Dégât reçu -1</li><li>PV +7.5</li><li>Familier : Dégât et Soin +1</li></ul>2 points :<ul><li>Blocage Physique +1</li><li>Esquive +1</li><li>Blocage Magique +1</li><li>Résistance d\'esprit +1</li><li>Montant des sorts +1</li><li>Une statistique +1</li></ul>3 points :<ul><li>+1 emplacement de sort</li></ul>4 points :<ul><li>Durée des sorts +1</li></ul><span style="color: lightcoral;">/!\\ Attention : vous ne pourrez plus facilement changer votre passif après avoir choisi !</span><br/>A noter : ces montants ne comptent pas dans la limite des stuffs (voir "Equipements - Infos")',
   passif14: `Le passif niveau 14 octroi au personnage une nouvelle capacité unique, il peut s'agir d'un passif ou d'une aptitude.
   <br/>Ces capacités sont similaires à celles des boss, car le niveau 14+ reflète un très haut niveau de puissance.
   <br/>Voici la liste des capacités...
