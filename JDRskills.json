@@ -3,7 +3,7 @@
     "nom": "Charge du Guerrier",
     "desc": "Fonce sur la cible et peut l'\u00e9tourdir (malus de r\u00e9ussite) si coup critique.",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "1D10+2, si critique : r\u00e9ussite cible -3 (1 tour)",
+    "montant": "1D10+2, si critique : r\u00e9ussite cible -4 (2 tours)",
     "icone": "E0280",
     "stat": "Force",
     "classe": ["Guerrier", "Chevalier", "Templier", "Chev Dragon"]
@@ -152,15 +152,6 @@
     "stat": "Force",
     "classe": ["Assassin"]
   },
-  "24": {
-    "nom": "Lames Dansantes",
-    "desc": "Envoi des lames au vent et tranche 3 fois l'ennemi choisi",
-    "effet": "D\u00e9g\u00e2t",
-    "montant": "3D6",
-    "icone": "E0062",
-    "stat": "Dext\u00e9rit\u00e9",
-    "classe": ["Danselame"]
-  },
   "25": {
     "nom": "Charme tape-\u00e0-l-oeil",
     "desc": "Lance un charme sur la cible pour r\u00e9duire sa concentration, efficace si sexe oppos\u00e9, sinon : r\u00e9ussite -5",
@@ -208,7 +199,7 @@
   },
   "30": {
     "nom": "Invocation du Tigre",
-    "desc": "Invoque un Tigre Crocs-Tranchants : 30 PV, Force : 15, Dext\u00e9 : 13, Intel : 9, Charisme : 11, Esprit : 13. Sort : Morsure 1D8 (Force), Cri strident : -2 réussite 1 tour AoE (Esprit)",
+    "desc": "Invoque un Tigre Crocs-Tranchants : 30 PV, Force : 15, Dext\u00e9 : 13, Intel : 9, Charisme : 11, Esprit : 13. Sort : Morsure 1D8 (Force), Cri strident : -2 r\u00e9ussite 1 tour AoE (Esprit)",
     "effet": "Invocation",
     "montant": "Invocation jusqu'\u00e0 coupure magique",
     "icone": "E0075",
@@ -300,7 +291,7 @@
     "nom": "S\u00e9isme",
     "desc": "Inflige des d\u00e9g\u00e2ts de nature \u00e0 la cible",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "1D10+2",
+    "montant": "1D10+2 (+2 si faiblesse)",
     "icone": "E0016",
     "stat": "Intelligence",
     "classe": ["Clerc", "Barde", "Shaman", "Sage"]
@@ -318,7 +309,7 @@
     "nom": "Punition Divine",
     "desc": "Inflige des d\u00e9g\u00e2ts de lumi\u00e8res \u00e0 la cible",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "1D10+2",
+    "montant": "1D10+2 (+2 si faiblesse)",
     "icone": "E0092",
     "stat": "Intelligence",
     "classe": ["Clerc", "Barde", "Shaman", "Sage"]
@@ -730,7 +721,7 @@
   },
   "88": {
     "nom": "Lame Dansante du Po\u00e8te",
-    "desc": "Envoi des lames de vent (d\u00e9g\u00e2ts de nature si Po\u00e8me du Vent actif) et tranche 3 fois l'ennemi choisi",
+    "desc": "Envoi des lames de vent (d\u00e9g\u00e2t de nature si Po\u00e8me du Vent actif) et tranche 3 fois l'ennemi choisi",
     "effet": "D\u00e9g\u00e2t",
     "montant": "3D6 (+1 si Po\u00e8me du Vent actif)",
     "icone": "LameDansantePoete",
@@ -964,9 +955,9 @@
   },
   "114": {
     "nom": "Coup de Poing Irrit\u00e9",
-    "desc": "Frappe et inflige des d\u00e9g\u00e2ts de nature \u00e0 l'ennemi",
+    "desc": "Frappe et inflige des d\u00e9g\u00e2ts de nature \u00e0 l'ennemi, l'affaiblissant.",
     "effet": "D\u00e9g\u00e2t",
-    "montant": "1D8+4, +1 si faiblesse",
+    "montant": "1D6+2 : Force -2 (pendant 2 tours)",
     "icone": "E0027",
     "stat": "Force",
     "classe": ["Guerrier"]
@@ -1027,9 +1018,9 @@
   },
   "121": {
     "nom": "Transe - Mode Tueur",
-    "desc": "Met son lanceur dans un \u00e9tat de transe lui permettant de taper plus fort. Au tour 0 : Blocage +2",
+    "desc": "Met son lanceur dans un \u00e9tat de transe lui permettant de taper plus fort.",
     "effet": "Buff",
-    "montant": "D\u00e9g\u00e2t +1D4 (min 2) +2 pendant 3 tours",
+    "montant": "D\u00e9g\u00e2t +1D4 (min 2) +2 pendant 3 tours (tour 0 : Blocage +2)",
     "icone": "E0912",
     "stat": "Esprit",
     "classe": ["Assassin"]
@@ -1173,7 +1164,7 @@
     "nom": "Instinct de Survie",
     "desc": "Le sang de dragon bouillonne et enclenche le mode survie pour son porteur. Effets - Embras\u00e9 : D\u00e9g\u00e2ts +3; D\u00e9moniaque : Blocage+1; Cach\u00e9 : Soin PV+3",
     "effet": "Buff et Soin",
-    "montant": "(Si PV <50%) Soin 1D4+2 (bonus des montants de soin (effectué/reçu) /2) pendant 3 tours (+ effet mode)",
+    "montant": "(Si PV <50%) Soin 1D4+2 (bonus des montants de soin (effectu\u00e9/re\u00e7u) /2) pendant 3 tours (+ effet mode)",
     "icone": "E0583",
     "stat": "Force",
     "classe": ["Chev Dragon"]
@@ -1231,5 +1222,23 @@
     "icone": "E0892b",
     "stat": "Dext\u00e9rit\u00e9",
     "classe": ["loup du givre", "loup du givre (a,a)"]
+  },
+  "144": {
+    "nom": "Super Star",
+    "desc": "Gr\u00e2ce \u00e0 ces supers pas de danse, l'alli\u00e9 cibl\u00e9 (ou soi) peut devenir une super star et avoir le swag !",
+    "effet": "Buff",
+    "montant": "Dext\u00e9rit\u00e9 +2 et Charisme +2 pendant 4 tours",
+    "icone": "E0340",
+    "stat": "Charisme",
+    "classe": ["Danselame"]
+  },
+  "145": {
+    "nom": "Coup N\u00e9vralgique",
+    "desc": "Un coup qui tape sur les nerfs de la cible (dans les 2 sens du terme) : le rendant plus vuln\u00e9rable.",
+    "effet": "D\u00e9g\u00e2t Malus",
+    "montant": "1D6+1 : Stats -2 pendant 2 tours",
+    "icone": "E0768",
+    "stat": "Dext\u00e9rit\u00e9",
+    "classe": ["Voleur", "Danselame"]
   }
 }

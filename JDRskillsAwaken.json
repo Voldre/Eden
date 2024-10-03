@@ -2,7 +2,7 @@
   "0": {
     "nom": "Charge du Guerrier",
     "desc": "Fonce sur la cible et peut l'\u00e9tourdir (malus de r\u00e9ussite) si coup critique.",
-    "montant": "1D10+4, r\u00e9ussite cible -3 (1 tour)"
+    "montant": "1D10+5, r\u00e9ussite cible -3 (2 tours)"
   },
   "1": {
     "nom": "Attaque Cyclone",
@@ -66,11 +66,6 @@
   "21": {
     "nom": "Perce-Armure",
     "montant": "D\u00e9g\u00e2t 1D10, et d\u00e9g\u00e2t physique re\u00e7u +5 pendant 4 tours"
-  },
-  "24": {
-    "nom": "Lames Dansantes",
-    "desc": "Envoi des lames au vent et tranche 3 fois l'ennemi choisi",
-    "montant": "3D6 (Blocage/Esquive cible -2)"
   },
   "25": {
     "nom": "Charme tape-\u00e0-l-oeil",
@@ -140,7 +135,7 @@
   },
   "40": {
     "nom": "S\u00e9isme",
-    "montant": "1D10+5 (si faiblesse : esquive/blocage -2 sur 1 tour)"
+    "montant": "1D10+5, si faiblesse : Esquive/Blocage -2 sur 2 tours"
   },
   "41": {
     "nom": "Gu\u00e9rison",
@@ -148,7 +143,7 @@
   },
   "42": {
     "nom": "Punition Divine",
-    "montant": "1D10+5 (si faiblesse : réussite -3 sur 1 tour)"
+    "montant": "1D10+5 si faiblesse : Réussite -3 sur 2 tours"
   },
   "43": {
     "nom": "Pr\u00e9vention",
@@ -309,8 +304,7 @@
   },
   "79": {
     "nom": "Gr\u00e2ce de la Sagesse",
-    "effet": "Buff AoE",
-    "montant": "Blocage +1 et Esprit +1 pendant 4 tours"
+    "montant": "Blocage +2 et Esprit +3 pendant 4 tours"
   },
   "80": {
     "nom": "Ch\u00e2timent Sacr\u00e9",
@@ -347,8 +341,7 @@
   },
   "88": {
     "nom": "Lame Dansante du Po\u00e8te",
-    "desc": "Envoi des lames de vent (d\u00e9g\u00e2ts de nature si Po\u00e8me du Vent actif) et tranche 3 fois l'ennemi choisi",
-    "montant": "3D6 (+3 si Po\u00e8me du Vent) (Blocage/Esquive cible -2)"
+    "montant": "3D6 (+2 si Po\u00e8me du Vent) (Blocage/Esquive cible -2)"
   },
   "89": {
     "nom": "Fl\u00e8che Eblouissante",
@@ -385,7 +378,7 @@
   },
   "98": {
     "nom": "Perforation",
-    "montant": "1D6+3 : Blocage -3 et réussite des sorts -2 (pendant 2 tours)"
+    "montant": "1D6+3 : Blocage -2 et réussite des sorts -3 (pendant 2 tours)"
   },
   "99": {
     "nom": "D\u00e9fense d'Acier",
@@ -449,7 +442,7 @@
   },
   "114": {
     "nom": "Coup de Poing Irrit\u00e9",
-    "montant": "1D10+8"
+    "montant": "1D6+5 : Force -3 (pendant 2 tours)"
   },
   "115": {
     "nom": "Destruction Noire",
@@ -563,5 +556,13 @@
   "139": {
     "nom": "Pluie de Fl\u00e8ches",
     "montant": "1D8+5"
+  },
+  "144": {
+    "nom": "Super Star",
+    "montant": "Dext\u00e9rit\u00e9 +2 et Charisme +3 pendant 4 tours"
+  },
+  "145": {
+    "nom": "Coup N\u00e9vralgique",
+    "montant": "1D6+4 : Stats -2 pendant 2 tours"
   }
 }
