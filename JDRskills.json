@@ -586,7 +586,7 @@
   },
   "73": {
     "nom": "Purgatoire",
-    "desc": "Envoi une tranche de flamme sur plusieurs m\u00e8tres, peut toucher les ennemis larges 2 fois. D\u00e9g\u00e2t+4 si l'ennemi \u00e0 subi la Coupe Asura",
+    "desc": "Envoi une tranche de flamme sur plusieurs m\u00e8tres, peut toucher les ennemis larges 2 fois. D\u00e9g\u00e2t en plus si l'ennemi \u00e0 subi la Coupe Asura",
     "effet": "D\u00e9g\u00e2t AoE L-",
     "montant": "1D8+1 (+4) (+1D8+1)",
     "icone": "E0462",
