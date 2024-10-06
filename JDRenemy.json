@@ -77,7 +77,7 @@
     "stats": "12,12,15,11,12",
     "desc": "Petit lutin tout rond et vert avec une feuille",
     "infos": "Faible au feu et au per\u00e7ant",
-    "drop": "R\u00e9sidu de lutin"
+    "drop": "Energie Agit\u00e9e"
   },
   "7": {
     "visuel3D": "m083",
@@ -87,7 +87,7 @@
     "stats": "17,9,9,12,14",
     "desc": "Gros crabe vivant \u00e0 la Baie Belouga",
     "infos": "Faible au contondant et glace",
-    "drop": "Carapace de crabe"
+    "drop": "Chair/Pince de crabe"
   },
   "8": {
     "visuel3D": "m037",
@@ -162,7 +162,7 @@
     "stats": "9,12,16,9,12",
     "desc": "Angel\u00e9e ros\u00e2tre vivant pr\u00e8s des baies",
     "infos": "Faible au tranchant et foudre",
-    "drop": "R\u00e9sidu d'angel\u00e9e"
+    "drop": "Energie Agit\u00e9e"
   },
   "13": {
     "visuel3D": "m087",
@@ -192,7 +192,7 @@
     "stats": "13,8,15,8,14",
     "desc": "Esprit tentaculaire cr\u00e9\u00e9 de magie noire",
     "infos": "Faible au per\u00e7ant et \u00e0 la lumi\u00e8re",
-    "drop": "R\u00e9sidu d'esprit, rare : Noyau abyssal"
+    "drop": "Poudre d'esprit, rare : Noyau abyssal"
   },
   "15": {
     "visuel3D": "m104",
@@ -297,7 +297,7 @@
     "stats": "15,5,14,8,10",
     "desc": "Grande tortue couleur turquoise",
     "infos": "Faible au feu et tranchant",
-    "drop": "Carapace de torture. Rare : Pierre algue"
+    "drop": "Carapace/Peau de torture. Rare : Pierre algue"
   },
   "22": {
     "visuel3D": "m077",
@@ -312,7 +312,7 @@
     "stats": "16,3,15,8,8",
     "desc": "Grande tortue avec un arbre sur sa carapace",
     "infos": "Faible au feu et \u00e0 la glace",
-    "drop": "Carapace de tortue. Rare : Anneau du rem\u00e8de"
+    "drop": "Carapace/Peau de tortue. Rare : Anneau du rem\u00e8de"
   },
   "23": {
     "visuel3D": "m086",
@@ -327,7 +327,7 @@
     "stats": "10,8,16,11,15",
     "desc": "Petit dryade (farfadet) tout rond et bleu avec une feuille surplomb\u00e9 de magie",
     "infos": "Faible au per\u00e7ant et \u00e0 la lumi\u00e8re",
-    "drop": "R\u00e9sidu de lutin*2, rare : noyau abyssal"
+    "drop": "Energie Agit\u00e9e*2, rare : Tr\u00e8fle de Lutin"
   },
   "24": {
     "visuel3D": "m087",
@@ -427,7 +427,7 @@
     "stats": "14,11,15,8,8",
     "desc": "Petite floraison verd\u00e2tre avec un chapeau",
     "infos": "Faible au feu et per\u00e7ant",
-    "drop": ""
+    "drop": "Vigne Pourpre"
   },
   "31": {
     "visuel3D": "m070",
@@ -547,7 +547,7 @@
     "stats": "15,14,10,9,9",
     "desc": "Tigre \u00e0 dent de sabre avec la peau rougeoyante et deux crocs ac\u00e9r\u00e9s",
     "infos": "Faible \u00e0 la glace et au contondant",
-    "drop": "rare : Croc de Smilodon"
+    "drop": "Peau de Smilodon, rare : Croc de Smilodon"
   },
   "39": {
     "visuel3D": "m053",
@@ -592,7 +592,7 @@
     "stats": "13,15,14,9,9",
     "desc": "Un aigle g\u00e9ant et brun avec un immense bec",
     "infos": "Faible au feu et au per\u00e7ant",
-    "drop": "Bec imposant, rare : Plume brillante"
+    "drop": "Bec d'aigle, rare : Plume brillante"
   },
   "42": {
     "visuel3D": "m311",
@@ -622,7 +622,7 @@
     "stats": "14,9,16,10,11",
     "desc": "Fleur en forme de rosier, rose sur le somm\u00e9 et racines torsad\u00e9es piquantes",
     "infos": "Faible au feu et \u00e0 la glace",
-    "drop": "Racine \u00e9pineuse, rare : huile de rose"
+    "drop": "Epine de Monstre, Vigne Pourpre, rare : huile de rose"
   },
   "44": {
     "visuel3D": "m105",
@@ -637,7 +637,7 @@
     "stats": "15,13,14,9,11",
     "desc": "Fourmilion jaune et violet avec une morsure d'araign\u00e9e, et un dos pulpeux vert ",
     "infos": "Faible \u00e0 la nature et au tranchant",
-    "drop": "Mucus de fourmillion, rare : Crochet porte bonheur"
+    "drop": "Mucus de fourmilion, rare : Crochet porte bonheur"
   },
   "45": {
     "visuel3D": "m156",
@@ -682,7 +682,7 @@
     "stats": "13,8,15,8,14",
     "desc": "Une fleur folle avec des fleurs au bout, aime se terrer dans le sol",
     "infos": "Faible au feu et \u00e0 la lumi\u00e8re",
-    "drop": "P\u00e9tales de fleur folle"
+    "drop": "Herbe d'eau, rare : Herbe miracle"
   },
   "48": {
     "visuel3D": "m203",
@@ -712,7 +712,7 @@
     "stats": "12,16,14,8,9",
     "desc": "Mante turquoise pleine de magie, avec un abdomen translucide (bleu/vert)",
     "infos": "Faible \u00e0 la nature et au contondant",
-    "drop": "Mucus magique, rare : Crochet enchant\u00e9"
+    "drop": "Crochet enchant\u00e9"
   },
   "50": {
     "visuel3D": "m317",
@@ -742,7 +742,7 @@
     "stats": "13,15,15,9,9",
     "desc": "Un griffon couleur grise, corps de lion, t\u00eate et serres d'aigles",
     "infos": "Faible \u00e0 la glace et au per\u00e7ant",
-    "drop": "Bec d'aigle, rare : Peau de griffon"
+    "drop": "Bec d'aigle, Fruit-flamme, Poudre de griffon cendr\u00e9"
   },
   "52": {
     "visuel3D": "m023",
@@ -757,7 +757,7 @@
     "stats": "16,10,11,9,13",
     "desc": "Crabe rouge robuste avec une carapace piquante (shellmon)",
     "infos": "Faible \u00e0 la foudre et la lumi\u00e8re",
-    "drop": "Carapace de crabe, rare : Acier Volcanique"
+    "drop": "Pince de crabe, rare : Acier Volcanique"
   },
   "53": {
     "visuel3D": "m168",
@@ -772,7 +772,7 @@
     "stats": "15,13,15,8,8",
     "desc": "Cactus orang\u00e9 de taille moyenne",
     "infos": "Faible au contondant et aux t\u00e9n\u00e8bres",
-    "drop": "Fruit de cactus, rare : \u00e9pines de cactus"
+    "drop": "Fruit de cactus, rare : \u00e9pines de monstres*2"
   },
   "54": {
     "visuel3D": "m048c",
@@ -802,7 +802,7 @@
     "stats": "16,14,11,9,9",
     "desc": "Chauve souris grise tr\u00e8s poilue et grosse, ronde",
     "infos": "Faible au tranchant et \u00e0 la lumi\u00e8re",
-    "drop": "Fruits sucr\u00e9s/amers, Aile de chauve-souris"
+    "drop": "Fruits sucr\u00e9s/amers, Fruit \u00c2mambre"
   },
   "56": {
     "visuel3D": "m081",
@@ -900,9 +900,9 @@
     "pvmax": "280",
     "skills": [
       "Mode Draconique : Embras\u00e9 : Force/Intel+2, D\u00e9moniaque : Charisme+2, Cach\u00e9 : Esprit+2 : Esprit",
-      "Terreur du Dragon AoE : R\u00e9ussite des sorts : -2 sur 3 tours AoE (+ mode Cf. DK) : Charisme",
-      "Pouvoir du Dragon / Atk Cyclone : 3D6+22 (AoE-5) (feu, t\u00e9n\u00e8b,phys) : Force",
-      "Revers d'\u00e9caille \u00e9veill\u00e9 : 5 tentatives par combat (<10 : 66%, >=10 : 33%) (+ mode Cf. DK) : Esprit<br/>Passif : (Def Acier Perma) Blocage+2, PV < 140 : D\u00e9g\u00e2t +5 (Crit +5)"
+      "Terreur du Dragon AoE : R\u00e9ussite des sorts : -3 sur 3 tours AoE (+ mode Cf. DK) : Charisme",
+      "Pouvoir du Dragon / Atk Cyclone : 3D6+25 (AoE-5) (feu, t\u00e9n\u00e8b,phys) : Force",
+      "Revers d'\u00e9caille \u00e9veill\u00e9 (instant) : 5 tentatives (<10 : 66%, >=10 : 33%) (+ mode Cf. DK) : Esprit<br/>Passif : (Def Acier Perma) Blocage+2, PV < 140 : D\u00e9g\u00e2t +5 (Crit +10)"
     ],
     "stats": "17,13,9,15,17",
     "desc": "H\u00e9riti\u00e8re de l'empire Heldentod, connue pour sa d\u00e9termination et sa prestance. Elle est tr\u00e8s strat\u00e8ge mais froide et parfois sans piti\u00e9.",
@@ -1072,7 +1072,7 @@
     "stats": "7,13,17,9,13",
     "desc": "Fant\u00f4me bleu violac\u00e9 tr\u00e8s hostile",
     "infos": "Faible \u00e0 la lumi\u00e8re et \u00e0 la nature",
-    "drop": "Extrait fantomatique, rare : Noyau abyssal"
+    "drop": "Pens\u00e9e Terrifi\u00e9e, rare : Noyau abyssal"
   },
   "74": {
     "visuel3D": "m118",
@@ -1162,7 +1162,7 @@
     "stats": "16,6,15,9,11",
     "desc": "Grande tortue pr\u00e9historique couleur turquoise",
     "infos": "Faible au feu et tranchant",
-    "drop": "Carapace de torture. Rare : Pierre algue"
+    "drop": "Carapace/Peau de torture. Rare : Pierre algue"
   },
   "80": {
     "visuel3D": "m032",
@@ -1192,7 +1192,7 @@
     "stats": "14,10,16,11,15",
     "desc": "Petit dryade (farfadet) du pass\u00e9 tout rond et vert avec une feuille",
     "infos": "Faible au per\u00e7ant et \u00e0 la foudre",
-    "drop": "R\u00e9sidu de lutin*2, rare : Noyau abyssal"
+    "drop": "Energie Agit\u00e9e*2, rare : Tr\u00e8fle de Lutin"
   },
   "82": {
     "visuel3D": "m219",
@@ -1402,7 +1402,7 @@
     "stats": "8,15,13,8,12",
     "desc": "Une fleur avec de grandes lianes piquantes capable de se mouvoir en for\u00eat",
     "infos": "Faible au tranchant et au feu",
-    "drop": "Racine \u00e9pineuse x2, rare : huile de rose"
+    "drop": "Epines de monstres, Epine ensanglant\u00e9e"
   },
   "96": {
     "visuel3D": "m230",
@@ -1507,7 +1507,7 @@
     "stats": "15,8,14,8,14",
     "desc": "Escargot g\u00e9ant recouvert de piques avec une bouche dent\u00e9e vorace",
     "infos": "Faible \u00e0 la glace et aux t\u00e9n\u00e8bres",
-    "drop": "Carapace d'escargot, peau d'escargot, rare : Pierre Algue"
+    "drop": "Pens\u00e9e Avide, rare : Pierre Algue"
   },
   "103": {
     "visuel3D": "m301",
@@ -1552,7 +1552,7 @@
     "stats": "9,15,15,9,15",
     "desc": "Grand cam\u00e9l\u00e9on vert vaseux qui se montre agressif et stress\u00e9. Il effraye ses ennemis pour se d\u00e9fendre",
     "infos": "Faible au per\u00e7ant et au feu",
-    "drop": "Ecaille de reptile, rare : Anneau du rem\u00e8de; Oeil de cam\u00e9l\u00e9on"
+    "drop": "Peau de l\u00e9zard, rare : Anneau du rem\u00e8de"
   },
   "106": {
     "visuel3D": "m301",
@@ -1582,7 +1582,7 @@
     "stats": "17,9,13,11,14",
     "desc": "Crabe vert de jade recouvert d'une \u00e9paisse carapace, a des petits yeux",
     "infos": "Faible au contondant et aux t\u00e9n\u00e8bres",
-    "drop": "Pierre algue, rare : Carapace \u00e9cailleuse"
+    "drop": "Pince de crabe, rare : Minerai de Jade"
   },
   "108": {
     "visuel3D": "m294",
@@ -1597,7 +1597,7 @@
     "stats": "16,9,14,11,15",
     "desc": "Un pangolin recouvert d'\u00e9cailles et de crystaux orang\u00e9s magnifiques. De nature assez craintive",
     "infos": "Faible au per\u00e7ant et aux t\u00e9n\u00e8bres",
-    "drop": "Ecailles de Pangolin (rare x2), rare : Pierre de S\u00e9curit\u00e9 OU griffe de pangolin"
+    "drop": "Crystal liquide (rare x2), Pierre de S\u00e9curit\u00e9"
   },
   "109": {
     "visuel3D": "taharqa",
@@ -1627,7 +1627,7 @@
     "stats": "16,9,16,10,15",
     "desc": "Gardien du Royaume d'Amur embaum\u00e9 dans des tissus # momie",
     "infos": "Faible au tranchant et \u00e0 la nature",
-    "drop": "Tissus de momie, rare : Pendentif Occulte, Griffe du D\u00e9sert"
+    "drop": "Col\u00e9us, rare : Pendentif Occulte, Griffe du D\u00e9sert"
   },
   "111": {
     "visuel3D": "m197",
@@ -1837,7 +1837,7 @@
     "stats": "7,15,15,9,15",
     "desc": "L\u00e9zard rouge\u00e2tre \u00e0 collerette qui vit essentiellement dans les marais et les zones humides, sauvage.",
     "infos": "Faible au tranchant et au feu",
-    "drop": "Queue de L\u00e9zard, \u00e9caille de l\u00e9zard"
+    "drop": "Peau de L\u00e9zard (*2 rare)"
   },
   "125": {
     "visuel3D": "m193",
@@ -1852,7 +1852,7 @@
     "stats": "16,9,16,11,11",
     "desc": "Limace surplomb\u00e9es de magnifiques cristaux bleu violac\u00e9e et vivant \u00e0 la For\u00eat de Crystal",
     "infos": "Faible au per\u00e7ant et \u00e0 la nature",
-    "drop": "crystal de r\u00e9sistance, crystal d'asbi, rare : Noyau abyssal"
+    "drop": "Crystal liquide (rare *2), crystal d'asbi, rare : Noyau abyssal"
   },
   "126": {
     "visuel3D": "m087b",
@@ -1867,7 +1867,7 @@
     "stats": "16,9,16,11,11",
     "desc": "Un grand champigno\u00efde surplomb\u00e9 de crystaux bleu violac\u00e9, cr\u00e9\u00e9 par des exp\u00e9riences",
     "infos": "Faible au contondant et \u00e0 la nature",
-    "drop": "Germe de champignon X3, Rare : Super Chapeau Champi, Fragment de Crystal d'Eden"
+    "drop": "Germe de Champigno\u00efde de Crystal (*2 rare), Rare : Super Chapeau Champi, Fragment de Crystal d'Eden"
   },
   "127": {
     "visuel3D": "m126",
@@ -1897,7 +1897,7 @@
     "stats": "16,9,15,10,15",
     "desc": "Un puissant tyrannosaure venimeux (acide mycolique) qui vit \u00e0 la Jungle du Dieu Serpent.",
     "infos": "Faible au feu et au tranchant",
-    "drop": "Peau de tyrannosaure, tr\u00e8s rare : Hache Verd\u00e2tre"
+    "drop": "Ecaille d'Ankylosaure, tr\u00e8s rare : Hache Verd\u00e2tre"
   },
   "129": {
     "visuel3D": "m087c",
@@ -1912,7 +1912,7 @@
     "stats": "7,13,17,10,12",
     "desc": "Ces champigno\u00efdes sont ensorcel\u00e9es de magies tr\u00e8s \u00e9tranges, de dr\u00f4le de choses \u00e9manent d'eux.",
     "infos": "Faible \u00e0 la lumi\u00e8re et \u00e0 la glace",
-    "drop": "Germe de champigno\u00efde rare, Chapeau de champigno\u00efde, tr\u00e8s rare : Super chapeau"
+    "drop": "Instinct D\u00e9voreur, Chapeau de champigno\u00efde, tr\u00e8s rare : Super chapeau"
   },
   "130": {
     "visuel3D": "m105b",
@@ -2152,17 +2152,17 @@
     "stats": "17,11,16,11,13",
     "desc": "Insecte l\u00e9zard avec une armure bleut\u00e9, on raconte qu'il s'agit d'un ancien Draka\u00ef ayant succomb\u00e9 \u00e0 un surplus de d\u00e9monologie.",
     "infos": "Faible au feu et au per\u00e7ant",
-    "drop": "Fibres toxiques, rare : Croc de Caldari"
+    "drop": "Peau de l\u00e9zard, rare : Graine de Fl\u00e9trissure, Croc de Caldari"
   },
   "146": {
     "visuel3D": "m350",
     "nom": "Vidal - Sorcier Dragon",
     "pvmax": "250",
     "skills": [
-      "Pouvoir du Dragon / Temp\u00eate de Glace : 3D6+20 (AoE-5)  (feu, t\u00e9n\u00e8bres,glace) : Intel",
+      "Pouvoir du Dragon / Atk foudr / Temp\u00eate Glace : 3D6+20 (AoE-5) : Intel",
       "Saut Dimensionnel : 3 tentatives par combat : remplace l'esquive/blocage (buff prochain d\u00e9g\u00e2t +5) : intel",
       "Magie Extr\u00eame : Prochain d\u00e9g\u00e2t magique +2D6 +9 : Esprit",
-      "Revers d'\u00e9caille : 4 tentatives par combat (<10 : 66%, >=10 : 33%) (+Soin PV+15 #Mode Cach\u00e9) : Esprit"
+      "Revers d'\u00e9caille (instant) : 4 tentatives par combat (<10 : 66%, >=10 : 33%) (+Soin PV+15 #Mode Cach\u00e9) : Esprit<br/>Passif : Blocage+1"
     ],
     "stats": "15,7,17,11,16",
     "desc": "H\u00e9ritier de l'Empire aux cheveux noir de jais, il s'agit d'un des grands sorciers de la cour Heldentod, il a un potentiel magique \u00e9norme.",
@@ -2474,7 +2474,7 @@
     "nom": "Vassago - G\u00e9n\u00e9ral D\u00e9chu",
     "pvmax": "330",
     "skills": [
-      "Verdict Final : 5D6 +25 Crit (1,2 : *1.5; 3,4 : *1.25) : Force // Entrave Mentale : 4D6+20 et -3 Res Espr'it sur 3 tours : Espr'it",
+      "Verdict Final : 5D6 +25 Crit (1,2 : *1.5; 3,4 : *1.25) : Force<br/> Entrave Mentale : 4D6+20 et -3 Res Espr'it sur 3 tours : Espr'it",
       "Aura du Sanguinaire : D\u00e9g\u00e2t +1D6+9 (Absorbe +5 PV), Bloc/Esq +2 sur 5 tours : Esprit",
       "Scellement AoE : Aucun sort physique pendant 3 tours (Absorbe +5 PV) : Espr'it, (jdrcombat +40)",
       "Passif : Absorbe 1/3 des d\u00e9g\u00e2ts (apr\u00e8s armure) en PV. Si \"0 soin\" : Heal/2"
@@ -2617,7 +2617,7 @@
     "stats": "7,13,17,9,13",
     "desc": "Fant\u00f4me noir aux reflets rouge\u00e2tres tr\u00e8s hostile et en recherche de vengeance.",
     "infos": "Faible \u00e0 la lumi\u00e8re et \u00e0 la nature",
-    "drop": "Extrait fantomatique, rare : Noyau abyssal"
+    "drop": "Pens\u00e9e Avide (*2), rare : Noyau abyssal"
   },
   "177": {
     "visuel3D": "m289d",
@@ -2752,7 +2752,7 @@
     "stats": "17,11,11,11,16",
     "desc": "Insecte violac\u00e9e corrompue par un puissant d\u00e9moniste.",
     "infos": "Faible au tranchant et \u00e0 la foudre",
-    "drop": ""
+    "drop": "Instinct D\u00e9voreur"
   },
   "186": {
     "visuel3D": "m292b",
@@ -3047,7 +3047,7 @@
       "Aura de Mauvaise Fortune (3 fois : +1) : +1 sur le d\u00e9 (AoE) 3 tours : Esprit",
       "Attaque Furieuse/Rapide : 4D6+20 (+10 mono) : Dext\u00e9rit\u00e9 (jdrCombat +15)",
       "Etoile Protectrice : Bloc/Esq/Res +2 (-2 malus) sur 4 tours : Esprit",
-      "Passif 1 : (1/tour) Force \u00e0 relancer 1 fois et stock le d\u00e9 (x5), sauf crit d\u00e9 1<br/>Après le stock (pdt 5t) : paire/triple/quad/quint (DGT++5 (sauf paire), atk Bloc/Esq/Res --1)<br/>Suite : -1 sur le d\u00e9 (combo 3/4/5 chiffres : 1/3/5t)<br/>Passif 2 : PV<200/100 : 1 relance chaque 2/1t"
+      "Passif 1 : (1/tour) Force \u00e0 relancer 1 fois et stock le d\u00e9 (x5), sauf crit d\u00e9 1<br/>Apr\u00e8s le stock (pdt 5t) : paire/triple/quad/quint (DGT++5 (sauf paire), atk Bloc/Esq/Res --1)<br/>Suite : -1 sur le d\u00e9 (combo 3/4/5 chiffres : 1/3/5t)<br/>Passif 2 : PV<200/100 : 1 relance chaque 2/1t"
     ],
     "stats": "14,19,12,12,19",
     "desc": "Fille Ezelin rebelle au caract\u00e8re bien tremp\u00e9e, elle est joyeuse et franche. B\u00e9nie par la chance, elle a re\u00e7ue ce don de fa\u00e7on myst\u00e9rieuse par une divinit\u00e9.",
@@ -3125,7 +3125,7 @@
       "Passif : 0 esquive, Bloc = 6 ALL<br/>Chaque 5 tours : +2 mobs # 2D6<br/>Si PV < 150 : Gel\u00e9e Royale : Effet positif *2"
     ],
     "stats": "21,6,15,8,18",
-    "desc": "Grosse limace insecto\u00efde avec un dos pulpeux qui est depuis longtemps prolifique à Vulcain où elle y a \u00e9tabli son royaume.",
+    "desc": "Grosse limace insecto\u00efde avec un dos pulpeux qui est depuis longtemps prolifique \u00e0 Vulcain o\u00f9 elle y a \u00e9tabli son royaume.",
     "infos": "Faible au tranchant et au feu",
     "drop": "Mucus Royal *X (ver : Soie d'Or), rare : Membrane de Reine, Ep\u00e9e naus\u00e9abonde"
   },
@@ -3137,7 +3137,7 @@
       "Pouvoir du Dragon / Atk Cyclone : 3D6+18 (AoE-5) (feu, t\u00e9n, phys) : Force",
       "Terreur du Dragon : Res Esprit / R\u00e9ussite  -3 sur 3 tours : Charisme",
       "Instinct de Survie : PV & D\u00e9g\u00e2t : +1D6+6 pendant 3 tours : Esprit",
-      "Revers d'\u00e9caille : 3 tentatives par combat (<10 : 66%, >=10 : 33%) (D\u00e9g\u00e2t rev+5 #Embras\u00e9) : Esprit<br/>Passif : Mode D\u00e9fense : Dext\u00e9-3, Armure +5"
+      "Revers d'\u00e9caille (instant) : 3 tentatives par combat (<10 : 66%, >=10 : 33%) (D\u00e9g\u00e2t renv+5 #Embras\u00e9) : Esprit<br/>Passif : Mode D\u00e9fense : Dext\u00e9-3, Armure +5"
     ],
     "stats": "16,13,7,15,16",
     "desc": "H\u00e9ritier de l'Empire Heldentod, Marcus est d\u00e9termin\u00e9 mais un peu instable, il est en recherche de bonnes opportunit\u00e9s mais est honn\u00eate et juste.",
@@ -3173,5 +3173,20 @@
     "desc": "Berserker r\u00e9put\u00e9 pour sa puissance hors-norme, il est connu comme \u00e9tant le bras arm\u00e9 de la Venturo. Il a \u00e9t\u00e9 vainqueur pendant 3 ann\u00e9es de suite au plus grand tournoi Luposia.",
     "infos": "Faible \u00e0 la foudre et aux t\u00e9n\u00e8bres",
     "drop": "Hache Cruelle, Anneau du Conqu\u00e9rant"
+  },
+  "214": {
+    "visuel3D": "qorina",
+    "nom": "Qorina - Princesse Flamboyante",
+    "pvmax": "380",
+    "skills": [
+      "Coup Incandescant : 3D6 +30 (+5 mono poing/lum) : Force/Intel<br/>Feu Dévoreur : 2D6+20, Stats -3 (3 tours, 2 si bloc) : Intel (3 → 4 si DK)",
+      "Flamme Imp\u00e9riale : Mode \"+1D6+9, Bloc/Esq+2\" sur 5 tours : Esprit",
+      "Lumi\u00e8re Pure : 3D6+25, -1 malus (rejoue si critique)",
+      "Art Khan (buff indéf, instant, Esprit), mode :<br/> - Offensif : Flamme d\u00e9g\u00e2t / malus,<br/> - D\u00e9fensif : Flamme soin / buff,<br/> PV <50% : Flamme \"+5, Bloc/Esq+1\"<br/>Anti-DK : Stuff Dragonite (25%) + revers, vs DK"
+    ],
+    "stats": "17,11,17,13,17",
+    "desc": "Descendante d'une ancienne lign\u00e9e Khan, Qorina poss\u00e8de la puissante flamme ancestrale de son glorieux empire perdu.",
+    "infos": "Faible au per\u00e7ant et \u00e0 la glace",
+    "drop": "A d\u00e9finir"
   }
 }
