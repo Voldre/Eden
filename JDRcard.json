@@ -789,8 +789,8 @@
     "id": 1211,
     "value": 1,
     "kind": "composant",
-    "name": "Epine de Cactus",
-    "description": "Une \u00e9pine de monstres cactus, elle peut servir pour fabriquer des potions.",
+    "name": "Epine de Monstre",
+    "description": "Une \u00e9pine de monstres plante (épineur, cactus), elle peut servir pour fabriquer des potions.",
     "kindId": "I00290",
     "maps": [5, 11, 20]
   },
@@ -817,8 +817,8 @@
     "value": 1,
     "kind": "composant",
     "name": "Vigne Pourpre",
-    "description": "Si vous ouvrez cette vigne, un fluide vert visqueux s'en \u00e9chappe.",
-    "kindId": "I00185",
+    "description": "Si vous ouvrez cette vigne, un fluide vert visqueux et très collant s'en \u00e9chappe.",
+    "kindId": "I00183",
     "maps": [6, 8, 14]
   },
   {
@@ -916,7 +916,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Fruit Volta",
-    "description": "Ce fruit très acide absorbe et conserve l'énergie. Son jus a déjà gravement brûlé plusieurs personnes.",
+    "description": "Ce fruit très acide absorbe et conserve l'énergie. Son jus a déjà gravement électriser plusieurs personnes.",
     "kindId": "I00158",
     "maps": [9, 12, 13]
   },
@@ -988,7 +988,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Herbe Céleste",
-    "description": "Son iridescence crée un faible halo au soleil. Les poètes ont appelé sa couleur Paradisienne.",
+    "description": "Son iridescence crée un faible halo au soleil. Les poètes ont appelé sa couleur Paradisienne. Utilisable pour créer des objets lumineux.",
     "kindId": "I00178",
     "maps": [10, 21, 26]
   },
@@ -1014,7 +1014,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Epine ensanglantée",
-    "description": "Cette épine à la couleur du sang séché, on raconte qu'elle attaque les voyageurs la nuit.",
+    "description": "Cette ronce à la couleur du sang séché, on raconte qu'elle attaque les voyageurs la nuit. Riche en énergie vitale.",
     "kindId": "I00185",
     "maps": [25, 30]
   },
@@ -1221,11 +1221,11 @@
   },
   {
     "id": 1290,
-    "value": 3,
-    "kind": "composantX",
-    "name": "Bombe Noire",
-    "description": "Une bombe très spéciale conçue dans les laboratoires de la Veyda (3D10+15)",
-    "kindId": "I00385c"
+    "value": 2,
+    "kind": "composant",
+    "name": "Bombe Aggravante",
+    "description": "Une bombe spéciale capable d'aggraver la situation d'une personne ! (1D10+10, durée des malus +1)",
+    "kindId": "i00599b"
   },
   {
     "id": 1291,
@@ -1272,7 +1272,7 @@
     "value": 2,
     "kind": "composant",
     "name": "Pensée Avide",
-    "description": "La convoitise sans fin des monstres devient une énergie puissante après leur mort. Les gens appellent cela la pensée gourmande.",
+    "description": "La convoitise sans fin des monstres devient une énergie puissante après leur mort. Peut booster la magie d'un objet.",
     "kindId": "I00339"
   },
   {
@@ -1400,7 +1400,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Blé brillant",
-    "description": "Un blé aux lueurs dorées poussant dans des plaines très ensoleillées.",
+    "description": "Un blé aux lueurs dorées poussant dans des plaines très ensoleillées. Riche en glucide et protéine.",
     "kindId": "I00180",
     "maps": [10, 15, 36]
   },
@@ -1418,7 +1418,7 @@
     "value": 3,
     "kind": "composant",
     "name": "Blé cramoisie",
-    "description": "Ce blé pousse dans des sols riches en minéraux, comme sur le territoire Heldentod.",
+    "description": "Ce blé pousse dans des sols riches en minéraux, comme sur le territoire Heldentod. Rend plus fort.",
     "kindId": "I00182",
     "maps": [32, 35]
   },
@@ -1504,7 +1504,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Séquoia Ancien",
-    "description": "Ce Séquoia pousse dans des terres isolées, il est souvent vieux de plusieurs siècles, au point qu'il soit recouvert de poussière.",
+    "description": "Ce Séquoia pousse dans des terres isolées, souvent vieux de plusieurs siècles. Il lâche énormément de poussière et de fumée en brûlant.",
     "kindId": "I00192",
     "maps": [58, 59, 16]
   },
@@ -1594,7 +1594,7 @@
     "value": 3,
     "kind": "composant",
     "name": "Amalgame Ténèbreux",
-    "description": "Cet amalgalme de matière ténébreuse est utile pour confectionner toutes sortes d'objet liés aux ténèbres.",
+    "description": "Cet amalgalme de matière ténébreuse est utile pour confectionner toute sorte d'objets liés aux ténèbres.",
     "kindId": "I00207b",
     "maps": [25, 34]
   },
@@ -1621,7 +1621,7 @@
     "value": 2,
     "kind": "composant",
     "name": "Minerai Zircon",
-    "description": "Ce minerai pâle est extrêmement lourd et résistant, il peut servir à confectionner à la confection d'arme et armure très solide.",
+    "description": "Ce minerai pâle est extrêmement lourd et résistant, il peut servir à la confection d'arme et armure très solide.",
     "kindId": "I00219b",
     "maps": [8, 16, 20]
   },
@@ -1645,11 +1645,11 @@
   },
   {
     "id": 1401,
-    "value": 2,
+    "value": 1,
     "kind": "composant",
     "name": "Bombe Fracas",
-    "description": "Cette bombe a été conçue tout spécialement pour réduire la défense de ses victimes (1D10+3, Blocage -2 pour 3 tours).",
-    "kindId": "i00598"
+    "description": "Cette bombe a été conçue tout spécialement pour réduire la défense de ses victimes (1D6+4, Blocage -2 pour 3 tours).",
+    "kindId": "I00385d"
   },
   {
     "id": 1402,
@@ -1986,7 +1986,7 @@
     "value": 3,
     "kind": "composant",
     "name": "Potion Jetable",
-    "description": "Cette potion possède un ingrédient particulier lui permettant de se répandre une fois jetée, octroyant ses effets sur toute une zone (AoE). Que ce soit du soin, des dégâts ou de l'encaissement...",
+    "description": "Cette potion possède un bouchon très particulier lui permettant à son contenu de se répandre une fois jetée, octroyant ses effets sur toute une zone (AoE). Que ce soit du soin, des dégâts ou de l'encaissement...",
     "kindId": "i00697"
   },
   {
@@ -2047,7 +2047,7 @@
   },
   {
     "id": 1451,
-    "value": 1,
+    "value": 2,
     "kind": "composant",
     "name": "Fleur de Lin",
     "description": "Le lin est une matière naturelle végétale cultivée principalement dans les zones tempérées proche de la mer, très utile à la confection de vêtements.",
@@ -2055,10 +2055,10 @@
   },
   {
     "id": 1452,
-    "value": 2,
+    "value": 3,
     "kind": "composant",
     "name": "Coléus",
-    "description": "Le Coleus est une plante à fleur rougeoyante de la famille des Labiées, c'est une plante originaie des oasis d'Amur. Elle est connue pour apporté aux textiles des propriétés magiques tout en renforçant la matière.",
+    "description": "Le Coleus est une plante à fleur rougeoyante de la famille des Labiées, c'est une plante originaie des oasis d'Amur. Elle est connue pour apporter aux textiles des propriétés magiques tout en renforçant la matière.",
     "kindId": "I00148"
   },
   {
@@ -2076,6 +2076,118 @@
     "name": "Potion de fatigue",
     "description": "Une potion qui va générer une grosse fatigue à celui qui est touché, l'affaiblissant (-1 stat pendant X tours).",
     "kindId": "I00059"
+  },
+  {
+    "id": 1455,
+    "value": 0,
+    "kind": "composant",
+    "name": "Bombe à eau",
+    "description": "Une bombe très dissuasive en hiver mais amusante en été, elle ne vous sera peut-être pas très utile en combat, mais qui sait !",
+    "kindId": "i00963b"
+  },
+  {
+    "id": 1456,
+    "value": 1,
+    "kind": "composant",
+    "name": "Fumigène",
+    "description": "Un fumigène très utile pour générer de la fumée dans une zone, empêchant de voir ce qu'il se passe (Stats -2 pour 4 tours : atténué ou annulable avec la distance)",
+    "kindId": "I00386d"
+  },
+  {
+    "id": 1457,
+    "value": 2,
+    "kind": "composant",
+    "name": "Fumi-sans-gène",
+    "description": "Un fumigène amélioré très utile pour générer une épaisse fumée dans une zone, empêchant de voir ce qu'il se passe (Stats -3 pour 4 tours (ou +) : atténué ou annulable avec la distance)",
+    "kindId": "I00386e"
+  },
+  {
+    "id": 1458,
+    "value": 2,
+    "kind": "composant",
+    "name": "Bombe Méga-Fracas",
+    "description": "Une amélioration de la bombe fracas pour vraiment fracasser la défense des ennemis ! (1D10+9, Blocage -3 pour 3 tours)",
+    "kindId": "I00385e"
+  },
+  {
+    "id": 1459,
+    "value": 2,
+    "kind": "composant",
+    "name": "Bombe Méga-Gluante",
+    "description": "Une amélioration de la bombe fracas boosté en glue bien collante ! (1D10+9, Esquive-3 pour 3 tours).",
+    "kindId": "I00386g"
+  },
+  {
+    "id": 1460,
+    "value": 3,
+    "kind": "composant",
+    "name": "Bombe Méga-BOOM",
+    "description": "Une bombe avec... beaucoup trop d'explosif, tellement qu'elle risque d'exploser à tout moment (3D8 +17) : à manier avec avec grande précaution, sinon, c'est le drame !",
+    "kindId": "i00597b"
+  },
+  {
+    "id": 1461,
+    "value": 3,
+    "kind": "composant",
+    "name": "Bombe Hallucinogène",
+    "description": "Une bombe capable de donner des hallucinations à ceux qui inhale sa fumée (Statut Hallucination : Force à lancer une attaque aléatoire sur un ennemi au hasard (jet de résistance d'esprit))",
+    "kindId": "I00386f"
+  },
+  {
+    "id": 1462,
+    "value": 1,
+    "kind": "composant",
+    "name": "Bec d'Aigle",
+    "description": "Un bec imposant d'un aigle, peut servir pour fabriquer des potions.",
+    "kindId": "I00275"
+  },
+  {
+    "id": 1463,
+    "value": 1,
+    "kind": "composant",
+    "name": "Mucus de fourmilion",
+    "description": "Substance visqueuse servant d'enduit protecteur, riche en bactérie. Utile pour certaines potions",
+    "kindId": "I00298b"
+  },
+  {
+    "id": 1464,
+    "value": 1,
+    "kind": "composant",
+    "name": "Pince de Crabe",
+    "description": "Une pince récupérée sur un puissant cralbe, peut servir pour fabriquer des potions.",
+    "kindId": "I00279"
+  },
+  {
+    "id": 1465,
+    "value": 2,
+    "kind": "composant",
+    "name": "Graine de Flétrissure",
+    "description": "Ces graines sont produites par certaines plantes gravement malade ou mourante. Très rares, elle porte en elle une substance capable de dégrader l'état de ce qui la touche.",
+    "kindId": "I00163"
+  },
+  {
+    "id": 1466,
+    "value": 2,
+    "kind": "composant",
+    "name": "Pensée Propagatrice",
+    "description": "Cette pensée s'est matéralisée dans une enveloppe physique, la rendant plus maléable. Elle est de nature chaotique et à tendance à propager l'énergie de ce qui entre à son contact.",
+    "kindId": "I00415c"
+  },
+  {
+    "id": 1467,
+    "value": 3,
+    "kind": "composant",
+    "name": "Pensée du Fléau",
+    "description": "Cette substance contient les germes du Fléau et est capable de conférer ses propriétés à un objet. Ce composant a été récupéré sur un esprit démoniaque très puissant.",
+    "kindId": "I00415b"
+  },
+  {
+    "id": 12900,
+    "value": 3,
+    "kind": "composantX",
+    "name": "Bombe Noire",
+    "description": "Une bombe très spéciale conçue dans les laboratoires de la Veyda (3D10+15)",
+    "kindId": "I00385c"
   },
   {
     "id": 1501,

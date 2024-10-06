@@ -277,7 +277,6 @@
   },
   "73": {
     "nom": "Purgatoire",
-    "desc": "Envoi une tranche de flamme sur plusieurs m\u00e8tres, peut toucher les ennemis larges 2 fois. D\u00e9g\u00e2t+4 si l'ennemi \u00e0 subi la Coupe Asura",
     "montant": "1D10+2 (+6) (+1D8+1)"
   },
   "74": {
@@ -456,7 +455,6 @@
   },
   "117": {
     "nom": "Fr\u00e9n\u00e9sie",
-    "desc": "Action Instantan\u00e9e. La loyaut\u00e9 envers les Ogres permet au lanceur de dilater ses veines, le mettant dans un \u00e9t\u00e9 fr\u00e9n\u00e9tique de Berserker.",
     "montant": "A chaque tour (4 max) : D\u00e9g\u00e2t (+) et PV (-) 10 ou 15 (à choisir), Si 15 : réussite -1"
   },
   "118": {
@@ -495,7 +493,6 @@
   },
   "126": {
     "nom": "Dash Foudroyant",
-    "desc": "Le lanceur fait un Dash en avant de quelques m\u00e8tres en tranchant sa cible, lui infligeant des d\u00e9g\u00e2ts de foudre. Tel un Samoura\u00ef vif qui se replace.",
     "montant": "1D10+3, Buff : Esquive +2 sur 2 tours"
   },
   "127": {
