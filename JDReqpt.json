@@ -557,7 +557,7 @@
     "nom": "Gourde miraculeuse",
     "desc": "Une gourde boostant tous les liquides qu'elle contient",
     "effet": "Capacit\u00e9",
-    "montant": "2 fois par combat (Instantan\u00e9e) : soin 2D6+10",
+    "montant": "2 fois par combat (Instantan\u00e9e) : soin 2D6+10 (fixe)",
     "icone": "k60034",
     "access": "A3"
   },
@@ -644,16 +644,18 @@
   "88": {
     "nom": "Tunique de Mage Noir",
     "desc": "Une tunique ayant autrefois appartenue \u00e0 un grand magicien noir",
-    "effet": "D\u00e9g\u00e2t magique +2",
-    "montant": "D\u00e9g\u00e2t -4, d\u00e9g\u00e2t t\u00e9n\u00e8bres +2",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t -4, d\u00e9g\u00e2t t\u00e9n\u00e8bres +2 (+1 si D\u00e9moniste)",
+    "condition": { "type": "classe", "value": ["D\u00e9moniste"], "bonus": "D\u00e9g\u00e2t t\u00e9n\u00e8bres +1" },
     "icone": "k20806",
     "access": "D2"
   },
   "89": {
     "nom": "Tenue de Ninja",
     "desc": "Une tenue con\u00e7ue par des ninjas d'une autre \u00e8re",
-    "effet": "D\u00e9g\u00e2t physique +2",
-    "montant": "D\u00e9g\u00e2t -5, d\u00e9g\u00e2t tranchant +2",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t -5, d\u00e9g\u00e2t tranchant +2 (+1 si Voleur)",
+    "condition": { "type": "classe", "value": ["Voleur"], "bonus": "D\u00e9g\u00e2t tranchant +1" },
     "icone": "k20213",
     "access": "D2"
   },
@@ -1070,7 +1072,7 @@
     "nom": "Ep\u00e9e Titanesque",
     "desc": "L'\u00e9p\u00e9e la plus lourde qui existe aujourd'hui",
     "effet": "Dext\u00e9 -5",
-    "montant": "D\u00e9g\u00e2t +15",
+    "montant": "D\u00e9g\u00e2t +15 (Si force >=16, Dext\u00e9 +1)",
     "icone": "W21105"
   },
   "149": {
@@ -1245,7 +1247,8 @@
     "nom": "Croix corrompue",
     "desc": "Une croix forg\u00e9e pour les adeptes de magie noire",
     "effet": "D\u00e9g\u00e2t t\u00e9n\u00e8bres +3",
-    "montant": "D\u00e9g\u00e2t +7",
+    "montant": "D\u00e9g\u00e2t +7 (+1 si D\u00e9moniste)",
+    "condition": { "type": "classe", "value": ["D\u00e9moniste"], "bonus": "D\u00e9g\u00e2t +1" },
     "icone": "W64404"
   },
   "173": {
@@ -1672,7 +1675,7 @@
     "nom": "Flacon secret de Rumbledore",
     "desc": "Un flacon scell\u00e9 contenant des crystaux d'\u00e9nergies. L'aura qui en \u00e9mane renforce son porteur.",
     "effet": "",
-    "montant": "Intelligence +2",
+    "montant": "Intelligence +2, D\u00e9g\u00e2t magique +3",
     "icone": "I00085",
     "access": "A1"
   },
@@ -1915,7 +1918,8 @@
     "nom": "Chaussures d'agilit\u00e9",
     "desc": "Des chaussures offrant agilit\u00e9 et abilit\u00e9 \u00e0 son porteur, tout devient fluide.",
     "effet": "",
-    "montant": "Dext\u00e9rit\u00e9 +1, Esprit +1",
+    "montant": "Dext\u00e9rit\u00e9 +1, Esprit +1 (Charisme+1 si Danselame)",
+    "condition": { "type": "classe", "value": ["Danselame"], "bonus": "Charisme +1" },
     "icone": "A50022",
     "access": "A1"
   },
@@ -2049,7 +2053,7 @@
     "nom": "Puce amplificatrice",
     "desc": "Cette puce a \u00e9t\u00e9 cr\u00e9\u00e9e par un magicien zumi qui en avait marre de faire des sorts de soutien faible.",
     "effet": "",
-    "montant": "Montant des buffs +1, d\u00e9g\u00e2t +1 (+1 Si Ing\u00e9nieur)",
+    "montant": "Montant des buffs +1, d\u00e9g\u00e2t +1 (+1 si Ing\u00e9nieur)",
     "condition": { "type": "classe", "value": ["Ing\u00e9nieur"], "bonus": "D\u00e9g\u00e2t +1" },
     "icone": "i00688",
     "access": "D1"
@@ -2370,7 +2374,7 @@
     "nom": "Masse Pulv\u00e9risante",
     "desc": "Une masse capable de pulv\u00e9riser la d\u00e9fense de sa cible.",
     "effet": "Blocage cible -1",
-    "montant": "D\u00e9g\u00e2t +5 (+1 Si Guerrier)",
+    "montant": "D\u00e9g\u00e2t +5 (+1 si Guerrier)",
     "condition": { "type": "classe", "value": ["Guerrier"], "bonus": "D\u00e9g\u00e2t +1" },
     "icone": "W33501"
   },
@@ -2801,7 +2805,7 @@
     "nom": "Hache Puissante",
     "desc": "Am\u00e9lioration de la hache forte, elle donne beaucoup de force \u00e0 son porteur, hussss !",
     "effet": "Force +2",
-    "montant": "D\u00e9g\u00e2t +8 (+1 Si Guerrier)",
+    "montant": "D\u00e9g\u00e2t +8 (+1 si Guerrier)",
     "condition": { "type": "classe", "value": ["Guerrier"], "bonus": "D\u00e9g\u00e2t +1" },
     "icone": "W20103"
   },
@@ -2946,7 +2950,7 @@
     "nom": "Lunettes Zumis",
     "desc": "Ces lunettes sont tr\u00e8s pris\u00e9es par les Zumis, c'est un peu leur marque de fabrique.",
     "effet": "",
-    "montant": "Dext\u00e9rit\u00e9 +1, Esprit +1 (+1 si Zumi)",
+    "montant": "Dext\u00e9rit\u00e9 +1, Esprit +1 (Esprit+1 si Zumi)",
     "condition": { "type": "race", "value": ["Zumi"], "bonus": "Esprit +1" },
     "icone": "k10106",
     "access": "A1"
@@ -3224,8 +3228,8 @@
   "432": {
     "nom": "Faucille Sanguinaire",
     "desc": "Une faucille forg\u00e9 dans un Minerai de Sang, tr\u00e8s rare et difficile \u00e0 manipuler. Cette faucille est d'une qualit\u00e9 extr\u00eame.",
-    "effet": "Force -1, Esprit -2",
-    "montant": "D\u00e9g\u00e2t +12, si critique (1,2) : Soin PV = d\u00e9g\u00e2ts/2",
+    "effet": "Force -1, Esprit -3",
+    "montant": "D\u00e9g\u00e2t +12, si critique (1,2) : Soin PV = d\u00e9g\u00e2ts/2 (fixe)",
     "icone": "W55502"
   },
   "433": {
@@ -3364,7 +3368,7 @@
   },
   "451": {
     "nom": "Chapeau du barde",
-    "desc": "",
+    "desc": "Un chapeau tr\u00e8s \u00e9l\u00e9gant qui refl\u00e8te la personnalit\u00e9 po\u00e9tique et l\u00e9g\u00e8re des bardes. Une pi\u00e8ce somptueuse.",
     "effet": "",
     "montant": "Dext\u00e9rit\u00e9 +1, Intelligence +1 (Charisme+1 si Barde)",
     "condition": { "type": "classe", "value": ["Barde"], "bonus": "Charisme +1" },
@@ -3555,8 +3559,8 @@
   "475": {
     "nom": "Arc Titanesque",
     "desc": "Un arc extr\u00eamement grand et lourd. Tr\u00e8s puissant mais peu pr\u00e9cis.",
-    "effet": "Dext\u00e9rit\u00e9 -4",
-    "montant": "D\u00e9g\u00e2t +15",
+    "effet": "Dext\u00e9rit\u00e9 -5",
+    "montant": "D\u00e9g\u00e2t +15  (Si force >=15, Dext\u00e9 +1)",
     "icone": "W51702"
   },
   "476": {
@@ -3578,7 +3582,7 @@
     "nom": "Tenue de Luminary",
     "desc": "Une tenue id\u00e9ale qui amplifie le talent des chevaliers du chaos : Luminary",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t -4 (Si Luminary : d\u00e9g\u00e2ts +3)",
+    "montant": "D\u00e9g\u00e2t -4 (Si Luminary : d\u00e9g\u00e2t+3)",
     "condition": { "type": "classe", "value": ["Luminary"], "bonus": "D\u00e9g\u00e2t +3" },
     "icone": "k20578"
   },
@@ -3661,7 +3665,7 @@
     "nom": "Veste d'Archerie",
     "desc": "Une veste parfaite pour les archers avis\u00e9s !",
     "effet": "",
-    "montant": "D\u00e9g\u00e2t -5 (Si chasseur ou corsaire : d\u00e9g\u00e2t+2)",
+    "montant": "D\u00e9g\u00e2t -5 (Si Chasseur, Corsaire : d\u00e9g\u00e2t+2)",
     "condition": { "type": "classe", "value": ["Chasseur", "Corsaire"], "bonus": "D\u00e9g\u00e2t +2" },
     "icone": "k21068"
   },
@@ -3688,9 +3692,9 @@
   },
   "493": {
     "nom": "Gourde merveilleuse",
-    "desc": "Une gourde miraculeuse am\u00e9lior\u00e9e : avec elle vous ne craignez plus rien",
+    "desc": "Une gourde miraculeuse am\u00e9lior\u00e9e : avec elle vous ne craignez plus rien.",
     "effet": "Capacit\u00e9",
-    "montant": "3 fois par combat (Instantan\u00e9e) : 3D6 + 12",
+    "montant": "3 fois par combat (Instantan\u00e9e) : 3D6 + 12 (fixe)",
     "icone": "k60035",
     "access": "A4"
   },
@@ -3881,9 +3885,74 @@
   },
   "518": {
     "nom": "Anneau du Lien Eternel",
-    "desc": "Cet anneau permet de lier 2 \"amants\" afin de leur permettre de vivre un amour puissant. Si puissant que s'\u00e9loigner en est d\u00e9sagr\u00e9able. Attention à la tromperie !",
+    "desc": "Cet anneau permet de lier 2 \"amants\" afin de leur permettre de vivre un amour puissant. Si puissant que s'\u00e9loigner en est d\u00e9sagr\u00e9able. Attention \u00e0 la tromperie !",
     "effet": "Mal\u00e9diction du Lien",
     "montant": "D\u00e9g\u00e2t re\u00e7u -3*X, Esprit +1*X. X =\"degr\u00e9 amour/proximit\u00e9\"",
     "icone": "i01312b"
+  },
+  "519": {
+    "nom": "C'est ma peluche",
+    "desc": "Cette peluche de chat noir trop mignon poss\u00e8de une \u00e9trange magie qui fait r\u00e9gresser l'\u00e2ge mental et physique de son porteur (jusqu'\u00e0 6 ans).",
+    "effet": "Mal\u00e9diction du Lien",
+    "montant": "Charisme +5, Esprit -5",
+    "icone": "k60245"
+  },
+  "520": {
+    "nom": "Casque Anti-magie",
+    "desc": "Ce casque d'apparence ordinaire annule un peu la magie, mais aussi l'intelligence de son porteur.",
+    "effet": "Intelligence -2",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -2, Blocage magique +3",
+    "icone": "A10100"
+  },
+  "521": {
+    "nom": "Griffe Anti-magie",
+    "desc": "Cette griffe est renforc\u00e9e d'un alliange r\u00e9duisant la magie, pratique pour se prot\u00e9ger de sort.",
+    "effet": "Intelligence -1",
+    "montant": "D\u00e9g\u00e2t +4, Blocage magique +2",
+    "icone": "W35104"
+  },
+  "522": {
+    "nom": "Anneau du d\u00e9fenseur",
+    "desc": "Cet anneau est la fusion d'un anneau de r\u00e9sistance et d'un anneau protecteur, il assure la s\u00e9curit\u00e9.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -2, Blocage physique +2",
+    "icone": "A00014b"
+  },
+  "523": {
+    "nom": "Pendentif du Ranger",
+    "desc": "Ce pendentif am\u00e9liore les capacit\u00e9s athl\u00e9tique de son porteur.",
+    "effet": "",
+    "montant": "Force +1, Dext\u00e9rit\u00e9 +1",
+    "icone": "A00048c"
+  },
+  "524": {
+    "nom": "Casque de Chevalier Alpaga",
+    "desc": "Le Roi Alpaga d\u00e9cerne ce casque aux personnes auxquelles il fait r\u00e9ellement confiance.",
+    "effet": "Force +1, Charisme +1",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -2",
+    "icone": "k10250"
+  },
+  "525": {
+    "nom": "Casque Imposant",
+    "desc": "Ce casque am\u00e9liore la carrure de celui qui le porte",
+    "effet": "Force +1, Charisme +1",
+    "montant": "D\u00e9g\u00e2t re\u00e7u -1",
+    "icone": "A10081"
+  },
+  "526": {
+    "nom": "Gantelet du Pugilat",
+    "desc": "Ce gantelet est con\u00e7u pour am\u00e9liorer les d\u00e9g\u00e2ts de frappe au corps \u00e0 corps.",
+    "effet": "",
+    "montant": "D\u00e9g\u00e2t +2, D\u00e9g\u00e2t contondant +1 (+1 si Assassin)",
+    "condition": { "type": "classe", "value": ["Assassin"], "bonus": "D\u00e9g\u00e2t contondant +1" },
+    "icone": "A40030b"
+  },
+  "527": {
+    "nom": "Collier du Vaillant",
+    "desc": "Collier con\u00e7u pour am\u00e9liorer la d\u00e9termination de son porteur, tr\u00e8s pris\u00e9 des Samoura\u00efs.",
+    "effet": "",
+    "montant": "Force +1, Esprit +1 (Esprit+1 si Samoura\u00ef)",
+    "condition": { "type": "classe", "value": ["Samoura\u00ef"], "bonus": "Esprit +1" },
+    "icone": "A00042"
   }
 }
