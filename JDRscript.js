@@ -68,7 +68,7 @@ const statistiques = ["Force", "Dextérité", "Intelligence", "Charisme", "Espri
 // Categories not in the synthesis, but used to calcule limits
 const statsCategories = statistiques.map((stat) => {
   // Don't match "Résistance d'esprit" for "Esprit" stat
-  const regex = stat === "Esprit" ? /(?<!résistance d')esprit \+/gi : stat;
+  const regex = stat === "Esprit" ? "(?<!résistance d')esprit" : stat;
   return { regex: [`${regex} +`], label: unformatText(stat), img: false };
 });
 
@@ -853,6 +853,21 @@ window.addEventListener("load", () => {
   saveButton.disabled = false;
   downloadButton.disabled = false;
   screenshotButton.disabled = false;
+
+  callPHP({ action: "jdrGalerie" });
+
+  // Fill galery
+  if (!galeryJSON?.length) {
+    toastNotification("Erreur : le chargement de la galerie à échouée", 4000, true);
+  } else {
+    galeryJSON.forEach((pic) => {
+      if (pic.includes(".jpg") || pic.includes(".png") || pic.includes(".webp")) {
+        var imgE = document.createElement("img");
+        imgE.src = "./images/jdrgalerie/" + pic;
+        document.querySelector(".galerie").append(imgE);
+      }
+    });
+  }
 });
 
 selectPerso.addEventListener("change", (e) => {
@@ -1183,15 +1198,6 @@ document.querySelector("#galerie").addEventListener("click", () => {
   document.querySelector(".galerie").classList.remove("hide");
 });
 
-// Fill galery
-galeryJSON.forEach((pic) => {
-  if (pic.includes(".jpg") || pic.includes(".png") || pic.includes(".webp")) {
-    var imgE = document.createElement("img");
-    imgE.src = "./images/jdrgalerie/" + pic;
-    document.querySelector(".galerie").append(imgE);
-  }
-});
-
 // Choosed picture
 document.querySelector(".galerie").addEventListener("click", (e) => {
   if (!e.target.src) {
@@ -1297,8 +1303,6 @@ function savePerso() {
 }
 
 // Global Save
-
-callPHP({ action: "jdrGalerie" });
 
 // Show/Hide other pages of Eden
 var buttonIframe = document.querySelector("#buttonIframe");

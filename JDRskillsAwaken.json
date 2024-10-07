@@ -74,8 +74,8 @@
   },
   "26": {
     "nom": "Coupe Asura",
-    "desc": "Envoi une tranche sur plusieurs m\u00e8tres, peut toucher les ennemis larges 2 fois. Marque deux fois les ennemis",
-    "montant": "1D10+2 (double marque) + (1D8+1)"
+    "desc": "Envoi une tranche sur plusieurs m\u00e8tres, peut toucher les ennemis larges 2 fois. Pose une double marque (qui peut agir 2 fois)",
+    "montant": "1D10+2 + (1D8+1) double marque Asura (3 tours max)"
   },
   "27": {
     "nom": "Eclair unique",

@@ -163,9 +163,9 @@
   },
   "26": {
     "nom": "Coupe Asura",
-    "desc": "Envoi une tranche sur plusieurs m\u00e8tres, peut toucher les ennemis larges 2 fois",
-    "effet": "D\u00e9g\u00e2t AoE L-",
-    "montant": "1D8+1 + (1D8+1)",
+    "desc": "Envoi une tranche sur plusieurs m\u00e8tres, peut toucher les ennemis larges 2 fois. Pose sur l'ennemi une marque Asura.",
+    "effet": "D\u00e9g\u00e2t Malus AoE L-",
+    "montant": "1D8+1 + (1D8+1), marque Asura (3 tours max)",
     "icone": "E0481",
     "stat": "Force",
     "classe": ["Samoura\u00ef"]
