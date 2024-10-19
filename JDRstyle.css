@@ -32,9 +32,10 @@ dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.35);
 }
 
-label {
+label:hover {
   cursor: pointer;
   cursor: url("images/layout/cursor-hover.png"), auto;
+  text-shadow: 0px -1px 10px wheat;
 }
 
 /* JDR Perso */
@@ -60,12 +61,17 @@ label {
   margin: 0 auto;
   text-align: initial;
 }
-.topright img {
-  border: 2px black solid;
-  /* width: 100%; */
+
+.topright #pp {
+  cursor: pointer;
+  cursor: url("images/layout/cursor-hover.png"), auto;
+  position: relative;
   max-height: 270px;
   min-width: 50px;
   min-height: 70px;
+  top: 52%;
+  left: 51%;
+  transform: translate(-50%, -50%);
 }
 
 .stats {
@@ -146,8 +152,6 @@ label {
 }
 
 .awakenSkill > .effet {
-  cursor: pointer;
-  cursor: url("images/layout/cursor-hover.png"), auto;
   font-size: 15px;
   width: 60px;
 }
@@ -182,16 +186,6 @@ label {
   margin: auto;
   border: 2px solid goldenrod;
   border-radius: 5px;
-}
-
-#pp {
-  cursor: pointer;
-  cursor: url("images/layout/cursor-hover.png"), auto;
-  position: relative;
-  top: 52%;
-  left: 51%;
-  transform: translate(-50%, -50%);
-  max-width: 123%;
 }
 
 .buffTurn,
@@ -416,29 +410,35 @@ label {
   border-radius: 8%;
 }
 .informations {
-  display: flex;
-  justify-content: space-around;
-  padding: 1px;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, auto));
 }
+
+.classeslist {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .classeslist div {
   border: 1px gray solid;
   margin: 1px;
   width: 9vw;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .classeslist div:hover {
   cursor: pointer;
   cursor: url("images/layout/cursor-x.png"), auto;
   background-color: rgba(96, 69, 216, 0.2);
+  box-shadow: 0px -1px 10px wheat;
 }
-.classeslist div p {
-  text-align: center;
-  padding: 2px;
-}
-.classeslist div img {
-  display: block;
-  margin: auto;
+
+.classeslist div:hover img {
+  box-shadow: 0px -1px 10px wheat;
 }
 
 .admin .equipements {
@@ -457,6 +457,10 @@ th,
 td {
   border: 1px solid rgb(160 160 160);
   padding: 2px 4px;
+}
+
+#awakenButton:hover {
+  filter: drop-shadow(0px -1px 5px wheat);
 }
 
 /*
@@ -826,10 +830,11 @@ td {
 }
 .charactersList > div:hover,
 #playersE > div:hover {
-  background-color: rgba(36, 36, 106, 0.8);
+  background-color: rgba(36, 36, 106, 0.6);
   cursor: pointer;
   cursor: url("images/layout/cursor-hover.png"), auto;
   filter: brightness(110%);
+  text-shadow: 0px -1px 10px wheat;
 }
 .persoPic {
   max-width: 170px;
@@ -899,16 +904,51 @@ td {
   background-size: cover;
 }
 
-/* #worldmap .continent .worldmap-img {
-  position: relative;
-  height: 615px;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-*/
-
-#worldmap .continent0wrapper .point {
+#worldmap .continent .continent0wrapper div {
   margin-top: -22px;
+}
+
+#worldmap .continent div {
+  position: absolute;
+  width: 34px;
+  height: 42px;
+  border: none;
+  background-image: url("images/mapIcon_1B.png");
+}
+
+#worldmap .continent div:hover {
+  background-image: url("images/mapIcon_2B.png");
+  cursor: url("images/layout/cursor_tp.png"), auto;
+}
+
+#worldmap .continent div:hover p {
+  display: block;
+}
+
+#worldmap .continent div p {
+  position: absolute;
+  z-index: 1;
+  top: 16px;
+  left: 16px;
+  display: none;
+  background-image: none;
+  background-color: rgba(40, 40, 40, 1);
+  border: 2px grey solid;
+  min-width: 80px;
+  max-width: 250px;
+  font-size: 16px;
+  font-weight: normal;
+  margin: 1px;
+  color: wheat;
+  user-select: none;
+}
+
+/* Extension of map name (multi select) */
+#worldmap .continent div p[data-map]:hover {
+  user-select: none;
+  background-color: rgba(36, 36, 106, 1);
+  cursor: pointer;
+  cursor: url("images/layout/cursor-x.png"), auto;
 }
 
 #allCards label {
@@ -951,14 +991,6 @@ td {
 #map .card {
   margin: auto;
   width: 120px;
-}
-
-/* Extension of map name (multi select) */
-.point .name[data-map]:hover {
-  user-select: none;
-  background-color: rgba(36, 36, 106, 1);
-  cursor: pointer;
-  cursor: url("images/layout/cursor-x.png"), auto;
 }
 
 .common {
@@ -1038,6 +1070,7 @@ td {
   }
   .classeslist div p {
     margin: auto;
+    padding: 2px;
   }
   .combat {
     display: grid;

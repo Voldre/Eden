@@ -1,321 +1,341 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    
-    <meta charset="UTF-8">
-    
-    <meta name="description" content="Eden Eternal - Fiches de personnages pour JDR (Jeu De Rôle)">
+  <head>
+    <meta charset="UTF-8" />
 
-    <link rel="stylesheet" href="http://voldre.free.fr/style.css">
-    <link rel="stylesheet" href="eden.css">
-    <link rel="stylesheet" href="JDRstyle.css">
+    <meta name="description" content="Eden Eternal - Fiches de personnages pour JDR (Jeu De Rôle)" />
+
+    <link rel="stylesheet" href="http://voldre.free.fr/style.css" />
+    <link rel="stylesheet" href="eden.css" />
+    <link rel="stylesheet" href="JDRstyle.css" />
 
     <!--<script src="jquery-3.6.0.min.js"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
     <script type="module" src="JDRscript.js" defer></script>
     <title>Eden JDR</title>
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- Never forget the viewport ! -->
-    <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=5.0, minimum-scale=0.86 maximum-scale=1">
-</head>
-<body>
-    <nav style="margin-left:10px;">
-        <ul class="menu">
+    <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=5.0, minimum-scale=0.86 maximum-scale=1" />
+  </head>
+  <body>
+    <nav style="margin-left: 10px">
+      <ul class="menu">
         <li><a href="jdr_univers.html">Infos JDR</a></li>
         <li><a href="jdr_lore.html">Lore</a></li>
         <li><a href="jdr_profil.html">Profil</a></li>
         <li>
-        <div>
-            <select name="selectPerso" id="selectPerso" style="width: 130px;">
-            </select>
-            <label for="archived" name="archived" style="font-size: 14px; color: #f5deb3db;">Archive 
-                <input type="checkbox" id="archived" title="Afficher les archives" />
+          <div>
+            <select name="selectPerso" id="selectPerso" style="width: 130px"></select>
+            <label for="archived" name="archived" style="font-size: 14px; color: #f5deb3db"
+              >Archive
+              <input type="checkbox" id="archived" title="Afficher les archives" />
             </label>
-        </div>
+          </div>
         </li>
         <li><button id="save" disabled>Sauvegarder</button></li>
-        <li><button id="download" disabled><img src="https://cdn4.iconfinder.com/data/icons/multimedia-75/512/multimedia-21-48.png" class="tinyIcon"></button>
-            <button id="screenshot" disabled><img src="https://cdn0.iconfinder.com/data/icons/typicons-2/24/camera-outline-48.png" class="tinyIcon"></button></li>
-        </ul>
+        <li>
+          <button id="download" disabled>
+            <img src="https://cdn4.iconfinder.com/data/icons/multimedia-75/512/multimedia-21-48.png" class="tinyIcon" />
+          </button>
+          <button id="screenshot" disabled>
+            <img src="https://cdn0.iconfinder.com/data/icons/typicons-2/24/camera-outline-48.png" class="tinyIcon" />
+          </button>
+        </li>
+      </ul>
     </nav>
-    <div class="perso" id="1" style="border: 1px gray solid;">
-        <div class="hide galerie"></div>
-        <div id="toast"></div>
+    <div class="perso" id="1" style="border: 1px gray solid">
+      <div class="hide galerie"></div>
+      <div id="toast"></div>
+      <div class="flexContainer">
+        <div class="topleft">
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" name="nom" /><br />
+          <label for="race">Race</label>
+          <select id="race" name="race">
+            <option value="Humain">Humain</option>
+            <option value="Ezelin">Ezelin</option>
+            <option value="Ursun">Ursun</option>
+            <option value="Zumi">Zumi</option>
+            <option value="Anuran">Anuran</option>
+            <option value="Torturran">Torturran</option>
+            <option value="Drakai">Drakai</option>
+            <option value="Tuskar">Tuskar</option>
+            <option value="Ogre">Ogre</option>
+          </select>
+          <br />
+          <label for="classeP">Classe 1</label>
+          <select name="classeP" id="classeP"></select>
+          <br />
+          <label for="classeS">Classe 2</label>
+          <select name="classeS" id="classeS"></select>
+          <br />
+          <div class="iconClasses"><img src="" class="classeP" alt="" /><img src="" class="classeS" alt="" /></div>
+          <img src="./images/uiiconPNG/prefer01.png" class="skillRangeIcon" id="infoStats" />
+          <label for="xp">XP</label>
+          <input style="width: 60px" type="number" id="xp" name="xp" />
+          <br />
+          <label for="niv">Niv</label>
+          <input style="width: 50px" type="number" id="niv" name="niv" readonly />
+          <br />
+          <label for="pv">PV/Max</label>
+          <input style="width: 38px" type="number" id="pv" name="pv" />
+          <input style="width: 38px" type="number" id="pvmax" name="pvmax" />
+          <br />
+          <label for="stress">Fatigue/Stress</label>
+          <input style="width: 38px" type="number" min="0" max="200" id="stress" name="stress" />% <span id="stressImpact"></span><br />
+        </div>
+        <div class="topright">
+          <img id="pp" src="./images/Grenadier.webp" alt="" />
+          <button class="hide" id="galerie">Changer (Galerie)</button>
+        </div>
+      </div>
+      <h4>Statistiques &nbsp; &nbsp; <span id="errorStat"></span></h4>
+      <dialog>
+        <span>Permet d'utiliser des attaques fortes, de pousser, de soulever</span>
+        <button id="close">Fermer</button>
+      </dialog>
+      <div class="stats">
+        <div class="stat">
+          <label for="force">Force</label>
+          <input type="number" min="1" max="17" id="force" name="force" />
+          <input type="text" min="-10" max="10" id="forceB" style="height: 23px; font-size: 17px" />
+          <div class="resStat" id="resForce"></div>
+        </div>
+        <div class="stat">
+          <label for="dexté">Dextérité</label>
+          <input type="number" min="1" max="17" id="dexté" name="dexté" />
+          <input type="text" min="-10" max="10" id="dextéB" style="height: 23px; font-size: 17px" />
+          <div class="resStat" id="resDexté"></div>
+        </div>
+        <div class="stat">
+          <label for="intel">Intelligence</label>
+          <input type="number" min="1" max="17" id="intel" name="intel" />
+          <input type="text" min="-10" max="10" id="intelB" style="height: 23px; font-size: 17px" />
+          <div class="resStat" id="resIntel"></div>
+        </div>
+        <div class="stat">
+          <label for="charisme">Charisme</label>
+          <input type="number" min="1" max="17" id="charisme" name="charisme" />
+          <input type="text" min="-10" max="10" id="charismeB" style="height: 23px; font-size: 17px" />
+          <div class="resStat" id="resCharisme"></div>
+        </div>
+        <div class="stat">
+          <label for="esprit">Esprit</label>
+          <input type="number" min="1" max="17" id="esprit" name="esprit" />
+          <input type="text" min="-10" max="10" id="espritB" style="height: 23px; font-size: 17px" />
+          <div class="resStat" id="resEsprit"></div>
+        </div>
+      </div>
+      <button id="buttonBuffs" class="hide">+</button>
+      <h4>Compétences (Attaque de base : 1D10)</h4>
+      <div class="malus">
+        <div>
+          <input type="number" />
+          <input type="text" class="commentaire" placeholder="dexté -2, dégât -5" />
+        </div>
+        <div>
+          <input type="number" />
+          <input type="text" class="commentaire" placeholder="blocage-2" />
+        </div>
+      </div>
+      <div class="skills">
+        <!-- (.skill>(input.nom+p.effet+p.montant+img.icone))*3  -->
+        <div class="skill">
+          <select name="" class="nom"></select>
+          <div class="effet"></div>
+          <p class="montant"></p>
+          <div class="buffTurn">
+            <img src="" alt="" class="icone" title="Description de la compétence" />
+          </div>
+          <p class="desc hide"></p>
+          <!-- icone + élément ?  -->
+        </div>
+        <div class="skill">
+          <select name="" class="nom"></select>
+          <div class="effet"></div>
+          <p class="montant"></p>
+          <div class="buffTurn">
+            <img src="" alt="" class="icone" title="Description de la compétence" />
+          </div>
+          <p class="desc hide"></p>
+        </div>
+        <div class="skill">
+          <select name="" class="nom"></select>
+          <div class="effet"></div>
+          <p class="montant"></p>
+          <div class="buffTurn">
+            <img src="" alt="" class="icone" title="Description de la compétence" />
+          </div>
+          <p class="desc hide"></p>
+        </div>
+        <div class="skill">
+          <select name="" class="nom"></select>
+          <div class="effet"></div>
+          <p class="montant"></p>
+          <div class="buffTurn">
+            <img src="" alt="" class="icone" title="Description de la compétence" />
+          </div>
+          <p class="desc hide"></p>
+        </div>
+        <div class="skill">
+          <select name="" class="nom"></select>
+          <div class="effet"></div>
+          <p class="montant"></p>
+          <div class="buffTurn">
+            <img src="" alt="" class="icone" title="Description de la compétence" />
+          </div>
+          <p class="desc hide"></p>
+        </div>
+        <div class="skill">
+          <select name="" class="nom"></select>
+          <div class="effet"></div>
+          <p class="montant"></p>
+          <div class="buffTurn">
+            <img src="" alt="" class="icone" title="Description de la compétence" />
+          </div>
+          <p class="desc hide"></p>
+        </div>
+        <div class="skill">
+          <select name="" class="nom"></select>
+          <div class="effet"></div>
+          <p class="montant"></p>
+          <div class="buffTurn">
+            <img src="" alt="" class="icone" title="Description de la compétence" />
+          </div>
+          <p class="desc hide"></p>
+        </div>
+        <div class="skill">
+          <select name="" class="nom"></select>
+          <div class="effet"></div>
+          <p class="montant"></p>
+          <div class="buffTurn">
+            <img src="" alt="" class="icone" title="Description de la compétence" />
+          </div>
+          <p class="desc hide"></p>
+        </div>
+      </div>
+      <div class="awakenSkill hide" id="">
+        <p class="nom"></p>
+        <button class="effet" id="awakenButton"></button>
+        <p class="montant"></p>
+        <img src="" alt="" class="icone" title="Description de la compétence d'éveil" />
+        <p class="desc hide"></p>
+      </div>
+      <div class="bag">
         <div class="flexContainer">
-            <div class="topleft">
-                <label for="nom">Nom</label>
-                <input type='text' id="nom" name="nom" /><br/>
-                <label for="race">Race</label>
-                <select id="race" name="race">
-                    <option value="Humain">Humain</option>
-                    <option value="Ezelin">Ezelin</option>
-                    <option value="Ursun">Ursun</option>
-                    <option value="Zumi">Zumi</option>
-                    <option value="Anuran">Anuran</option>
-                    <option value="Torturran">Torturran</option>
-                    <option value="Drakai">Drakai</option>
-                    <option value="Tuskar">Tuskar</option>
-                    <option value="Ogre">Ogre</option></select><br/>
-                <label for="classeP">Classe 1</label>
-                <select name="classeP" id="classeP"></select><br/>
-                <label for="classeS">Classe 2</label>
-                <select name="classeS" id="classeS"></select><br/>
-                <div class="iconClasses"><img src="" class="classeP" alt=""><img src="" class="classeS" alt=""></div>
-                <img src="./images/uiiconPNG/prefer01.png" class="skillRangeIcon" id="infoStats"/> 
-                <label for="xp">XP</label>
-                <input style='width: 60px;' type='number' id="xp" name="xp" /><br/>
-                <label for="niv">Niv</label>
-                <input style='width: 50px;' type='number' id="niv" name="niv" readonly /><br/>
-
-                <label for="pv">PV/Max</label>
-                <input style='width: 38px;' type='number' id="pv" name="pv" />
-                <input style='width: 38px;' type='number' id="pvmax" name="pvmax" /><br/>
-                                
-                <label for="stress">Fatigue/Stress</label>
-                <input style='width: 38px;' type='number' min="0" max="200" id="stress" name="stress" />% <span id='stressImpact'></span><br/>
-            </div>
-            <div class="topright">
-                <img id="pp"src="./images/Grenadier.webp" alt="">
-                <button class="hide" id="galerie">Changer (Galerie)</button>
-            </div>
+          <h4>
+            Equipements - <label style="font-size: 14px; font-weight: bold" for="infoEQPT">Infos ⓘ</label>
+            <img src="images/skillIcon/E0647.png" alt="" class="hide skillRangeIcon" id="magique" title="Armure Magique" />
+            <img src="images/skillIcon/E0648.png" alt="" class="hide skillRangeIcon" id="leger" title="Armure Légère" />
+            <img src="images/skillIcon/E0649.png" alt="" class="hide skillRangeIcon" id="lourd" title="Armure Lourde" />
+          </h4>
+          <p id="errorEQPT"></p>
+          <label for="synthese" style="height: fit-content; align-self: center">
+            <div class="equipements-synthese"></div>
+          </label>
         </div>
-        <h4>Statistiques &nbsp; &nbsp; <span id='errorStat'></span></h4>
-        <dialog>
-            <span>Permet d'utiliser des attaques fortes, de pousser, de soulever</span>
-            <button id="close">Fermer</button>
-        </dialog>
-        <div class="stats">
-            <div class="stat" ><label for="force">Force</label>
-                <input type='number' min="1" max="17" id="force" name="force" />
-                <input type='text' min="-10" max="10" id="forceB" style="height: 23px; font-size: 17px;"></input>
-                <div class="resStat" id="resForce"></div>
-            </div>
-            <div class="stat" ><label for="dexté">Dextérité</label>
-                <input type='number' min="1" max="17" id="dexté" name="dexté"></input>
-                <input type='text' min="-10" max="10" id="dextéB" style="height: 23px; font-size: 17px;"></input>
-                <div class="resStat" id="resDexté"></div>
-            </div>
-            <div class="stat" ><label for="intel">Intelligence</label>
-                <input type='number' min="1" max="17" id="intel" name="intel"></input>
-                <input type='text' min="-10" max="10" id="intelB" style="height: 23px; font-size: 17px;"></input>
-                <div class="resStat" id="resIntel"></div>
-            </div>
-            <div class="stat" ><label for="charisme">Charisme</label>
-                <input type='number' min="1" max="17" id="charisme" name="charisme"></input>
-                <input type='text' min="-10" max="10" id="charismeB" style="height: 23px; font-size: 17px;"></input>
-                <div class="resStat" id="resCharisme"></div>
-            </div>
-            <div class="stat" ><label for="esprit">Esprit</label>
-                <input type='number' min="1" max="17" id="esprit" name="esprit"></input>
-                <input type='text' min="-10" max="10" id="espritB" style="height: 23px; font-size: 17px;"></input>
-                <div class="resStat" id="resEsprit"></div>
-            </div>
-        </div>
-        <button id="buttonBuffs" class="hide">+</button>
-        <h4>Compétences (Attaque de base : 1D10)</h4>
-        <div class="malus">
-            <div>
-            <input type="number"/>
-            <input type="text" class="commentaire" placeholder="dexté -2, dégât -5"></input>
-            </div>
-            <div>
-            <input type="number"/>
-            <input type="text" class="commentaire" placeholder="blocage-2"></input>
-            </div>
-        </div>
-        <div class="skills">
-            <!-- p.desc+ -->
-            <!-- (.skill>(input.nom+p.effet+p.montant+img.icone))*3  -->
-            <div class="skill">
-                <select name="" class="nom"></select>
-                <div class="effet"></div>
-                <p class="montant"></p>
-                <div class="buffTurn">
-                <img src="" alt="" class="icone" title="Description de la compétence">
-                </div>                
-                <p class="desc hide"></p>
-                <!-- icone + élément ?  -->
-            </div>
-            <div class="skill">
-                <select name="" class="nom"></select>
-                <div class="effet"></div>
-                <p class="montant"></p>
-                <div class="buffTurn">
-                <img src="" alt="" class="icone" title="Description de la compétence">
-                </div>                
-                <p class="desc hide"></p>
-            </div>
-            <div class="skill">
-                <select name="" class="nom"></select>
-                <div class="effet"></div>
-                <p class="montant"></p>
-                <div class="buffTurn">
-                <img src="" alt="" class="icone" title="Description de la compétence">
-                </div>                
-                <p class="desc hide"></p>
-            </div>
-            <div class="skill">
-                <select name="" class="nom"></select>
-                <div class="effet"></div>
-                <p class="montant"></p>
-                <div class="buffTurn">
-                <img src="" alt="" class="icone" title="Description de la compétence">
-                </div>                
-                <p class="desc hide"></p>
-            </div>
-            <div class="skill">
-                <select name="" class="nom"></select>
-                <div class="effet"></div>
-                <p class="montant"></p>
-                <div class="buffTurn">
-                <img src="" alt="" class="icone" title="Description de la compétence">
-                </div>                
-                <p class="desc hide"></p>
-            </div>
-            <div class="skill">
-                <select name="" class="nom"></select>
-                <div class="effet"></div>
-                <p class="montant"></p>
-                <div class="buffTurn">
-                <img src="" alt="" class="icone" title="Description de la compétence">
-                </div>                
-                <p class="desc hide"></p>
-            </div>
-            <div class="skill">
-                <select name="" class="nom"></select>
-                <div class="effet"></div>
-                <p class="montant"></p>
-                <div class="buffTurn">
-                <img src="" alt="" class="icone" title="Description de la compétence">
-                </div>                
-                <p class="desc hide"></p>
-            </div>
-            <div class="skill">
-                <select name="" class="nom"></select>
-                <div class="effet"></div>
-                <p class="montant"></p>
-                <div class="buffTurn">
-                <img src="" alt="" class="icone" title="Description de la compétence">
-                </div>              
-                <p class="desc hide"></p>
-            </div>
-        </div>
-        <div class="awakenSkill hide" id="">
-            <p class="nom"></p>
-            <button class="effet" id="awakenButton"></button>
+        <div class="equipements">
+          <div class="arme">
+            <input type="text" name="" class="nom" placeholder="arme" />
+            <p class="effet"></p>
             <p class="montant"></p>
-            <img src="" alt="" class="icone" title="Description de la compétence d'éveil">
+            <img src="" alt="" class="icone" title="Description de l'arme" />
             <p class="desc hide"></p>
+          </div>
+          <div class="arme">
+            <input type="text" name="" class="nom" placeholder="arme" />
+            <p class="effet"></p>
+            <p class="montant"></p>
+            <img src="" alt="" class="icone" title="Description de l'arme" />
+            <p class="desc hide"></p>
+          </div>
+          <div class="arme">
+            <input type="text" name="" class="nom" placeholder="arme" />
+            <p class="effet"></p>
+            <p class="montant"></p>
+            <img src="" alt="" class="icone" title="Description de l'arme" />
+            <p class="desc hide"></p>
+          </div>
+          <div class="equipement" style="margin: 14px auto">
+            <input type="text" name="" class="nom" placeholder="equipement" />
+            <p class="effet"></p>
+            <p class="montant"></p>
+            <img src="" alt="" class="icone" title="Description de l'équipement" />
+            <p class="desc hide"></p>
+          </div>
+          <div class="accessoire">
+            <input type="text" name="" class="nom" placeholder="accessoire" />
+            <p class="effet"></p>
+            <p class="montant"></p>
+            <img src="" alt="" class="icone" title="Description de l'accessoire" />
+            <p class="desc hide"></p>
+          </div>
+          <div class="accessoire">
+            <input type="text" name="" class="nom" placeholder="accessoire" />
+            <p class="effet"></p>
+            <p class="montant"></p>
+            <img src="" alt="" class="icone" title="Description de l'accessoire" />
+            <p class="desc hide"></p>
+          </div>
+          <div class="accessoire">
+            <input type="text" name="" class="nom" placeholder="accessoire" />
+            <p class="effet"></p>
+            <p class="montant"></p>
+            <img src="" alt="" class="icone" title="Description de l'accessoire" />
+            <p class="desc hide"></p>
+          </div>
+          <div class="accessoire hide">
+            <!-- Nouveauté 27/05 : 4eme accessoire au niveau 4 -->
+            <input type="text" name="" class="nom" placeholder="accessoire" />
+            <p class="effet"></p>
+            <p class="montant"></p>
+            <img src="" alt="" class="icone" title="Description de l'accessoire" />
+            <p class="desc hide"></p>
+          </div>
+          <div class="accessoire hide">
+            <!-- Nouveauté 12/06 : 5eme accessoire au niveau 8 -->
+            <input type="text" name="" class="nom" placeholder="accessoire" />
+            <p class="effet"></p>
+            <p class="montant"></p>
+            <img src="" alt="" class="icone" title="Description de l'accessoire" />
+            <p class="desc hide"></p>
+          </div>
         </div>
-        <div class="bag">
-            <div class="flexContainer">
-                <h4>Equipements - <label style="font-size:14px;font-weight:bold" for="infoEQPT">Infos ⓘ</label> 
-                    <img src="images/skillIcon/E0647.png" alt="" class="icone" class="hide skillRangeIcon" id="magique" title="Armure Magique">
-                    <img src="images/skillIcon/E0648.png" alt="" class="icone" class="hide skillRangeIcon" id="leger" title="Armure Légère">
-                    <img src="images/skillIcon/E0649.png" alt="" class="icone" class="hide skillRangeIcon" id="lourd" title="Armure Lourde">
-                </h4>
-                <p id="errorEQPT"></p>
-                <label for="synthese" style="height: fit-content;align-self: center;">
-                    <div class="equipements-synthese"></div>
-                </label>
-            </div>
-            <div class="equipements">
-                <div class="arme">
-                    <input type="text" name="" class="nom"  placeholder="arme"></input>
-                    <p class="effet"></p>
-                    <p class="montant"></p>
-                    <img src="" alt="" class="icone" title="Description de l'arme">
-                    <p class="desc hide"></p>
-                </div>
-                <div class="arme">
-                    <input type="text" name="" class="nom" placeholder="arme"></input>
-                    <p class="effet"></p>
-                    <p class="montant"></p>
-                    <img src="" alt="" class="icone" title="Description de l'arme">
-                    <p class="desc hide"></p>
-                </div>
-                <div class="arme">
-                    <input type="text" name="" class="nom" placeholder="arme"></input>
-                    <p class="effet"></p>
-                    <p class="montant"></p>
-                    <img src="" alt="" class="icone" title="Description de l'arme">
-                    <p class="desc hide"></p>
-                </div>
-                <div class="equipement" style="margin:14px auto;">
-                    <input type="text" name="" class="nom" placeholder="equipement"></input>
-                    <p class="effet"></p>
-                    <p class="montant"></p>
-                    <img src="" alt="" class="icone" title="Description de l'équipement">
-                    <p class="desc hide"></p>
-                </div>
-                <div class="accessoire">
-                    <input type="text" name="" class="nom" placeholder="accessoire"></input>
-                    <p class="effet"></p>
-                    <p class="montant"></p>
-                    <img src="" alt="" class="icone" title="Description de l'accessoire">
-                    <p class="desc hide"></p>
-                </div>
-                <div class="accessoire">
-                    <input type="text" name="" class="nom" placeholder="accessoire"></input>
-                    <p class="effet"></p>
-                    <p class="montant"></p>
-                    <img src="" alt="" class="icone" title="Description de l'accessoire">
-                    <p class="desc hide"></p>
-                </div>
-                <div class="accessoire">
-                    <input type="text" name="" class="nom" placeholder="accessoire"></input>
-                    <p class="effet"></p>
-                    <p class="montant"></p>
-                    <img src="" alt="" class="icone" title="Description de l'accessoire">
-                    <p class="desc hide"></p>
-                </div>
-                <div class="accessoire hide"> <!-- Nouveauté 27/05 : 4eme accessoire au niveau 4 -->
-                    <input type="text" name="" class="nom" placeholder="accessoire"></input>
-                    <p class="effet"></p>
-                    <p class="montant"></p>
-                    <img src="" alt="" class="icone" title="Description de l'accessoire">
-                    <p class="desc hide"></p>
-                </div>
-                <div class="accessoire hide"> <!-- Nouveauté 12/06 : 5eme accessoire au niveau 8 -->
-                    <input type="text" name="" class="nom" placeholder="accessoire"></input>
-                    <p class="effet"></p>
-                    <p class="montant"></p>
-                    <img src="" alt="" class="icone" title="Description de l'accessoire">
-                    <p class="desc hide"></p>
-                </div>
-            </div>
-            <ul id="passifs" >
-                <label for="passif12" class="hide" id="passif12"></label>
-                <label for="passif14" class="hide" id="passif14"></label>
-            </ul>
-            <h4>Inventaire (Poids supportable : <span class="poids">- - -</span>)</h4>
-            <textarea class="inventaire" placeholder="2 potions de soin (2D10 +6)" cols="30" rows="10"></textarea><br/>
-            <div class="items"></div>
-            <label for="argent">Pièces d'or</label>
-            <input type='text' id="argent" name="argent" placeholder="50"></input><br/>
-        </div>
-        <div class="detailsPerso">
-            <h4>Personnalité</h4>
-            <textarea cols="40" rows="10" class="personnalité"></textarea>
-            <h4>Background</h4>
-            <textarea cols="40" rows="10" class="background"></textarea>
-        </div>
-        <h4>Notes diverses</h4>
-        <textarea name="" id="" cols="45" rows="10" class="notes"></textarea>
-
+        <ul id="passifs">
+          <label for="passif12" class="hide" id="passif12"></label>
+          <label for="passif14" class="hide" id="passif14"></label>
+        </ul>
+        <h4>Inventaire (Poids supportable : <span class="poids">- - -</span>)</h4>
+        <textarea class="inventaire" placeholder="2 potions de soin (2D10 +6)" cols="30" rows="10"></textarea><br />
+        <div class="items"></div>
+        <label for="argent">Pièces d'or</label>
+        <input type="text" id="argent" name="argent" placeholder="50" /><br />
+      </div>
+      <div class="detailsPerso">
+        <h4>Personnalité</h4>
+        <textarea cols="40" rows="10" class="personnalité"></textarea>
+        <h4>Background</h4>
+        <textarea cols="40" rows="10" class="background"></textarea>
+      </div>
+      <h4>Notes diverses</h4>
+      <textarea name="" id="" cols="45" rows="10" class="notes"></textarea>
     </div>
-</div>
-</body>
-<footer style="margin-bottom:60px">
-    <br/>
-    <button id="buttonIframe" style="z-index: 10;  position: absolute;">Afficher le site</button>
-    <iframe class="hide" src="http://voldre.free.fr/Eden/univers.php?data=worldmap" style="width: 100vw; height: 92vh;border-top: 4px double wheat" frameborder="0"></iframe>
+  </body>
+  <footer style="margin-bottom: 60px">
+    <br />
+    <button id="buttonIframe" style="z-index: 10; position: absolute">Afficher le site</button>
+    <iframe
+      class="hide"
+      src="http://voldre.free.fr/Eden/univers.php?data=worldmap"
+      style="width: 100vw; height: 92vh; border-top: 4px double wheat"
+      frameborder="0"
+    ></iframe>
     <!-- <li><a href="../">Site général</a></li> -->
-</footer>
-<div class="sticky-wrapper">Notes <input type="text" class="sticky" placeholder="Dégât +12, Armure 5, +2 avec ..."></input>
+  </footer>
+  <div class="sticky-wrapper">Notes <input type="text" class="sticky" placeholder="Dégât +12, Armure 5, +2 avec ..." /></div>
 </html>
