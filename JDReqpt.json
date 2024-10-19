@@ -3954,5 +3954,12 @@
     "montant": "Force +1, Esprit +1 (Esprit+1 si Samoura\u00ef)",
     "condition": { "type": "classe", "value": ["Samoura\u00ef"], "bonus": "Esprit +1" },
     "icone": "A00042"
+  },
+  "528": {
+    "nom": "Ep\u00e9e Colossale Khan",
+    "desc": "Une ancienne \u00e9p\u00e9e de l'Empire Khan, tr\u00e8s aiguis\u00e9e, lourde et puissante.",
+    "effet": "Blocage cible -1",
+    "montant": "D\u00e9g\u00e2t +9",
+    "icone": "W20904"
   }
 }

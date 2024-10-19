@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,9 +10,9 @@
     <link rel="shortcut icon" href="images/brocoli_icon.ico" />
     <!--<script src="jquery-3.6.0.min.js"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    
-    <script type="module"src="JDRprofil.js" defer></script>
-    
+
+    <script type="module" src="JDRprofil.js" defer></script>
+
     <title>Eden JDR</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,10 +40,11 @@
             <option value="">---</option>
           </select>
         </li>
-        <li style="width:160px; display: flex;">
-          <img id="image10k" src="images/uiiconPNG/alpagahype.gif" title="10 000 pièces Alpaga !!!" style="height: 50px; display:none;margin:0px;">
-          <label for="alpagaCoin"
-            ><span class="alpagaCoin"></span> <span class="alpagaCoinSpent"></span>
+        <li style="width: 160px; display: flex">
+          <img id="image10k" src="images/uiiconPNG/alpagahype.gif" title="10 000 pièces Alpaga !!!" style="display: none; margin: 0px" />
+          <label for="alpagaCoin">
+            <span class="alpagaCoin"></span>
+            <span class="alpagaCoinSpent"></span>
             <img src="images/alpagaCoin.png" class="alpagaCoinPic" alt=" pièces" />
           </label>
         </li>
@@ -55,77 +56,77 @@
     </dialog>
     <div id="toast"></div>
     <div id="worldmap" class="container hide">
-      <div class="select3D" style="left:auto;z-index:10;padding:0px;margin-top:-10px;">
-        <ul style="display:flex;margin:0px;padding:0px;">
-            <li class="mapMenu"  data-worldmap=1>Sud-Ouest</li>
-            <li class="mapMenu activate" data-worldmap=0>Central</li>
-            <li class="mapMenu" data-worldmap=2>Sud-Est</li>
+      <div class="select3D" style="left: auto; z-index: 10; padding: 0px; margin-top: -10px">
+        <ul style="display: flex; margin: 0px; padding: 0px">
+          <li class="mapMenu" data-worldmap="1">Sud-Ouest</li>
+          <li class="mapMenu activate" data-worldmap="0">Central</li>
+          <li class="mapMenu" data-worldmap="2">Sud-Est</li>
         </ul>
       </div>
-      <div data-worldmap=0 class="continent active" >
-        <div class="continent0wrapper">
-        <div class="point" style="top: 26.5%; left: 64.9%"><p class="name" data-map="1">Aven</p><p class="name"  data-map="308" style="top:36px">Instances (Arène, Tour, GvG)</p></div>
-        <div data-map="2" class="point" style="top: 10.6%; left: 69.2%"><p class="name">Monts Calcaires</p></div>
-        <div data-map="3" class="point" style="top: 17.6%; left: 73.3%"><p class="name">Colline tranquille</p></div>
-        <div data-map="4" class="point" style="top: 16%; left: 66.1%"><p class="name">Forêt Arc-en-Ciel</p></div>
-        <div data-map="5" class="point" style="top: 11.5%; left: 60.7%"><p class="name">Monts Arides</p></div>
-        <div data-map="6" class="point" style="top: 16.9%; left: 54%"><p class="name">Baie Bélouga</p></div>
-        <div data-map="7" class="point" style="top: 20.8%; left: 48.8%"><p class="name">Bourbes</p></div>
-        <div data-map="8" class="point" style="top: 12.9%; left: 42.6%"><p class="name">Vallée des Rois</p></div>
-        <div data-map="9" class="point" style="top: 28.3%; left: 42.2%"><p class="name">Volcan Avila</p></div>
-        <div data-map="10" class="point" style="top: 33.1%; left: 52.1%"><p class="name">Plaines Dorées</p></div>
-        <div data-map="11" class="point" style="top: 41.7%; left: 58.4%">
-          <p class="name">Terres des Dunes Éternelles</p>
-        </div>
-        <div data-map="12" class="point" style="top: 38.5%; left: 41.1%"><p class="name">Forêt de Delphes</p></div>
-        <div data-map="13" class="point" style="top: 40.2%; left: 32.3%"><p class="name">Pic de Noireflammes</p></div>
-        <div data-map="14" class="point" style="top: 45.6%; left: 46.4%"><p class="name">Marais Décrépits</p></div>
-        <div data-map="15" class="point" style="top: 53.9%; left: 45.5%"><p class="name">Hautes-terres</p></div>
-        <div data-map="16" class="point" style="top: 39.3%; left: 75%"><p class="name">Crocs Brumeux</p></div>
-        <!-- <div data-map="17" class="point" style="top: 58%; left: 71%"><p class="name">Vestiges du Belliqueux</p></div> -->
-        <!-- <div data-map="18" class="point" style="top: 46%; left: 66%"><p class="name">Ruines d'Amur</p></div> -->
-        <div data-map="22" class="point" style="top: 30.1%; left: 30.7%"><p class="name">Forêt Ensorcelée</p></div>
-        <div data-map="23" class="point" style="top: 35.6%; left: 21.3%"><p class="name">Crète Diamantée</p></div>
-        <div data-map="24" class="point" style="top: 24.6%; left: 24.8%"><p class="name">Pic du Maëlstrom</p></div>
-        <div data-map="25" class="point" style="top: 17.6%; left: 21.9%"><p class="name">Vallée de la Mort</p></div>
-        <div data-map="26" class="point" style="top: 23.6%; left: 35.6%"><p class="name">Plaines Fleuries</p></div>
-        <div data-map="27" class="point" style="top: 11.2%; left: 29.8%">
-          <p class="name">Falaise des Grands Vents</p>
-        </div>
-        <div data-map="32" class="point" style="top: 47.8%; left: 33.1%"><p class="name">Vallée de Vulcain</p></div>
-        <div data-map="33" class="point" style="top: 48%; left: 23%"><p class="name">Plaines du Levant</p></div>
-        <div data-map="34" class="point" style="top: 61.7%; left: 27%"><p class="name">Royaume Dévasté</p></div>
-        <div data-map="35" class="point" style="top:55.7%; left:23%;"><p class="name">Capitale Heldentod</p></div> <!-- New ! -->
-        <div data-map="36" class="point" style="top: 55.1%; left: 55.4%"><p class="name">Plaines d'Elos</p></div>
-        <!-- <div data-map="37" class="point" style="top: 64.4%; left: 57.1%"><p class="name">Marina d'Edouard</p></div> -->
-        <!-- <div data-map="38" class="point" style="top: 60.5%; left: 49.4%"><p class="name">Royaume Durango</p></div> -->
-        <!-- All below are new maps ! -->
-        <div data-map="46" class="point" style="top:47.5%; left:53%;"><p class="name">Mont Gowen</p></div>
-        <div data-map="58" class="point" style="top: 22%; left: 13.5%"><p class="name">Côte d'Aristère</p></div> 
-        <div data-map="59" class="point" style="top: 42.5%; left: 16.5%"><p class="name">Steppes d'Aristère</p></div> 
-        <div data-map="97" class="point" style="top: 25.5%; left: 75.9%"><p class="name">Île du Mariage</p></div> 
-        <div data-map="501" class="point" style="top: 20.5%; left: 61%"><p class="name">Ville de Guilde</p></div> 
-        </div>
+      <div data-worldmap="0" class="continent active">
+        <section class="continent0wrapper">
+          <div style="top: 26.5%; left: 64.9%">
+            <p data-map="1">Aven</p>
+            <p data-map="308" style="top: 36px">Instances (Arène, Tour, GvG)</p>
+          </div>
+          <div data-map="2" style="top: 10.6%; left: 69.2%"><p>Monts Calcaires</p></div>
+          <div data-map="3" style="top: 17.6%; left: 73.3%"><p>Colline tranquille</p></div>
+          <div data-map="4" style="top: 16%; left: 66.1%"><p>Forêt Arc-en-Ciel</p></div>
+          <div data-map="5" style="top: 11.5%; left: 60.7%"><p>Monts Arides</p></div>
+          <div data-map="6" style="top: 16.9%; left: 54%"><p>Baie Bélouga</p></div>
+          <div data-map="7" style="top: 20.8%; left: 48.8%"><p>Bourbes</p></div>
+          <div data-map="8" style="top: 12.9%; left: 42.6%"><p>Vallée des Rois</p></div>
+          <div data-map="9" style="top: 28.3%; left: 42.2%"><p>Volcan Avila</p></div>
+          <div data-map="10" style="top: 33.1%; left: 52.1%"><p>Plaines Dorées</p></div>
+          <div data-map="11" style="top: 41.7%; left: 58.4%"><p>Terres des Dunes Éternelles</p></div>
+          <div data-map="12" style="top: 38.5%; left: 41.1%"><p>Forêt de Delphes</p></div>
+          <div data-map="13" style="top: 40.2%; left: 32.3%"><p>Pic de Noireflammes</p></div>
+          <div data-map="14" style="top: 45.6%; left: 46.4%"><p>Marais Décrépits</p></div>
+          <div data-map="15" style="top: 53.9%; left: 45.5%"><p>Hautes-terres</p></div>
+          <div data-map="16" style="top: 39.3%; left: 75%"><p>Crocs Brumeux</p></div>
+          <!-- <div data-map="17"  style="top: 58%; left: 71%"><p >Vestiges du Belliqueux</p></div> -->
+          <!-- <div data-map="18"  style="top: 46%; left: 66%"><p >Ruines d'Amur</p></div> -->
+          <div data-map="22" style="top: 30.1%; left: 30.7%"><p>Forêt Ensorcelée</p></div>
+          <div data-map="23" style="top: 35.6%; left: 21.3%"><p>Crète Diamantée</p></div>
+          <div data-map="24" style="top: 24.6%; left: 24.8%"><p>Pic du Maëlstrom</p></div>
+          <div data-map="25" style="top: 17.6%; left: 21.9%"><p>Vallée de la Mort</p></div>
+          <div data-map="26" style="top: 23.6%; left: 35.6%"><p>Plaines Fleuries</p></div>
+          <div data-map="27" style="top: 11.2%; left: 29.8%"><p>Falaise des Grands Vents</p></div>
+          <div data-map="32" style="top: 47.8%; left: 33.1%"><p>Vallée de Vulcain</p></div>
+          <div data-map="33" style="top: 48%; left: 23%"><p>Plaines du Levant</p></div>
+          <div data-map="34" style="top: 61.7%; left: 27%"><p>Royaume Dévasté</p></div>
+          <div data-map="35" style="top: 55.7%; left: 23%"><p>Capitale Heldentod</p></div>
+          <!-- New ! -->
+          <div data-map="36" style="top: 55.1%; left: 55.4%"><p>Plaines d'Elos</p></div>
+          <!-- <div data-map="37"  style="top: 64.4%; left: 57.1%"><p >Marina d'Edouard</p></div> -->
+          <!-- <div data-map="38"  style="top: 60.5%; left: 49.4%"><p >Royaume Durango</p></div> -->
+          <!-- All below are new maps ! -->
+          <div data-map="46" style="top: 47.5%; left: 53%"><p>Mont Gowen</p></div>
+          <div data-map="58" style="top: 22%; left: 13.5%"><p>Côte d'Aristère</p></div>
+          <div data-map="59" style="top: 42.5%; left: 16.5%"><p>Steppes d'Aristère</p></div>
+          <div data-map="97" style="top: 25.5%; left: 75.9%"><p>Île du Mariage</p></div>
+          <div data-map="501" style="top: 20.5%; left: 61%"><p>Ville de Guilde</p></div>
+        </section>
       </div>
-      <div data-worldmap=1 class="continent">              
-        <div data-map="19" class="point" style="top:58%; left:58.2%;"><p class="name">Vallée Férégal</p></div>
-        <div data-map="20" class="point" style="top:49.7%; left:51.8%;"><p class="name">Désert du Couchant</p></div>
-        <div data-map="21" class="point" style="top:51.3%; left:43.3%;"><p class="name">Jungle Céleste</p></div>
-        <!-- <div data-map="54" class="point" style="top:66%; left:57%;"><p class="name">Jungle Mayland</p></div> -->
-        <!-- <div data-map="55" class="point" style="top:73%; left:62%;"><p class="name">Bassin Shaxia</p></div> -->
-        <!-- <div data-map="57" class="point" style="top:45%; left:58%;"><p class="name">(Île chez les Zumis) Viroona Vale</p></div> -->               
-        
-        <img class="worldmap-img" src="images/mapworld02.png"> 
+      <div data-worldmap="1" class="continent">
+        <div data-map="19" style="top: 58%; left: 58.2%"><p>Vallée Férégal</p></div>
+        <div data-map="20" style="top: 49.7%; left: 51.8%"><p>Désert du Couchant</p></div>
+        <div data-map="21" style="top: 51.3%; left: 43.3%"><p>Jungle Céleste</p></div>
+        <!-- <div data-map="54"  style="top:66%; left:57%;"><p >Jungle Mayland</p></div> -->
+        <!-- <div data-map="55"  style="top:73%; left:62%;"><p >Bassin Shaxia</p></div> -->
+        <!-- <div data-map="57"  style="top:45%; left:58%;"><p >(Île chez les Zumis) Viroona Vale</p></div> -->
+
+        <img class="worldmap-img" src="images/mapworld02.png" />
       </div>
-      <div data-worldmap=2 class="continent">
-        <div data-map="28" class="point" style="top:37.3%; left:48.4%;"><p class="name">Lagune Enchantée</p></div></a>
-        <div data-map="29" class="point" style="top:27.6%; left:38%;"><p class="name">Côte de Hurlevent</p></div></a>
-        <!-- <div data-map="30" class="point" style="top:22%; left:47.2%;"><p class="name">Jungle du Dieu Serpent</p></div></a> -->
-        <!-- <div data-map="51" class="point" style="top:14.4%; left:56.2%;"><p class="name">Dôme Céleste</p></div></a> -->
-        <!-- <div data-map="52" class="point" style="top:17%; left:67.5%;"><p class="name">Hauteurs Feudegivre</p></div></a> -->
-        <!-- <div data-map="53" class="point" style="top:25%; left:71%;"><p class="name">Meeryasha</p></div></a>                 -->
-        
-        <img class="worldmap-img" src="images/mapworld03.png">
+      <div data-worldmap="2" class="continent">
+        <div data-map="28" style="top: 37.3%; left: 48.4%"><p>Lagune Enchantée</p></div>
+        <div data-map="29" style="top: 27.6%; left: 38%"><p>Côte de Hurlevent</p></div>
+        <!-- <div data-map="30"  style="top:22%; left:47.2%;"><p >Jungle du Dieu Serpent</p></div></a> -->
+        <!-- <div data-map="51"  style="top:14.4%; left:56.2%;"><p >Dôme Céleste</p></div></a> -->
+        <!-- <div data-map="52"  style="top:17%; left:67.5%;"><p >Hauteurs Feudegivre</p></div></a> -->
+        <!-- <div data-map="53"  style="top:25%; left:71%;"><p >Meeryasha</p></div></a>                 -->
+
+        <img class="worldmap-img" src="images/mapworld03.png" />
       </div>
     </div>
     <div class="flexContainer charactersList">
@@ -135,9 +136,9 @@
           <label for="nom">Nom</label>
           <input type="text" id="nom" name="nom" readonly /><br />
           <label for="degat">Dégât</label>
-          <input style='width: 20px;' type='number' id="degat" name="degat" readonly></input>
+          <input style="width: 20px" type="number" id="degat" name="degat" readonly />
           <label for="armure">Armure</label>
-          <input style='width: 20px;' type='number' id="armure" name="armure" readonly></input><br/>
+          <input style="width: 20px" type="number" id="armure" name="armure" readonly /><br />
         </div>
 
         <div class="iconClasses">
@@ -151,9 +152,9 @@
           <label for="nom">Nom</label>
           <input type="text" id="nom" name="nom" readonly /><br />
           <label for="degat">Dégât</label>
-          <input style='width: 20px;' type='number' id="degat" name="degat" readonly></input>
+          <input style="width: 20px" type="number" id="degat" name="degat" readonly />
           <label for="armure">Armure</label>
-          <input style='width: 20px;' type='number' id="armure" name="armure" readonly></input><br/>
+          <input style="width: 20px" type="number" id="armure" name="armure" readonly /><br />
         </div>
 
         <div class="iconClasses">
@@ -167,9 +168,9 @@
           <label for="nom">Nom</label>
           <input type="text" id="nom" name="nom" readonly /><br />
           <label for="degat">Dégât</label>
-          <input style='width: 20px;' type='number' id="degat" name="degat" readonly></input>
+          <input style="width: 20px" type="number" id="degat" name="degat" readonly />
           <label for="armure">Armure</label>
-          <input style='width: 20px;' type='number' id="armure" name="armure" readonly></input><br/>
+          <input style="width: 20px" type="number" id="armure" name="armure" readonly /><br />
         </div>
 
         <div class="iconClasses">
@@ -183,9 +184,9 @@
           <label for="nom">Nom</label>
           <input type="text" id="nom" name="nom" readonly /><br />
           <label for="degat">Dégât</label>
-          <input style='width: 20px;' type='number' id="degat" name="degat" readonly></input>
+          <input style="width: 20px" type="number" id="degat" name="degat" readonly />
           <label for="armure">Armure</label>
-          <input style='width: 20px;' type='number' id="armure" name="armure" readonly></input><br/>
+          <input style="width: 20px" type="number" id="armure" name="armure" readonly /><br />
         </div>
 
         <div class="iconClasses">
@@ -199,9 +200,9 @@
           <label for="nom">Nom</label>
           <input type="text" id="nom" name="nom" readonly /><br />
           <label for="degat">Dégât</label>
-          <input style='width: 20px;' type='number' id="degat" name="degat" readonly></input>
+          <input style="width: 20px" type="number" id="degat" name="degat" readonly />
           <label for="armure">Armure</label>
-          <input style='width: 20px;' type='number' id="armure" name="armure" readonly></input><br/>
+          <input style="width: 20px" type="number" id="armure" name="armure" readonly /><br />
         </div>
         <div class="iconClasses">
           <img src="" style="width: 60px; height: 33px" alt="" /><img src="" style="width: 60px; height: 33px" alt="" />
@@ -214,9 +215,9 @@
           <label for="nom">Nom</label>
           <input type="text" id="nom" name="nom" readonly /><br />
           <label for="degat">Dégât</label>
-          <input style='width: 20px;' type='number' id="degat" name="degat" readonly></input>
+          <input style="width: 20px" type="number" id="degat" name="degat" readonly />
           <label for="armure">Armure</label>
-          <input style='width: 20px;' type='number' id="armure" name="armure" readonly></input><br/>
+          <input style="width: 20px" type="number" id="armure" name="armure" readonly /><br />
         </div>
 
         <div class="iconClasses">
@@ -227,36 +228,36 @@
     </div>
     <div class="flexContainer">
       <div>
-      <h2 style="margin-bottom: 0px">Cartes à collectionner</h2>
-      <fieldset style="width: fit-content;" class="hide">
-      <legend>Filtres :</legend>
-        <input type="radio" id="all" name="acquired" value="all" checked/>
-        <label for="all">Toutes</label>
-        <input type="radio" id="acquired" name="acquired" value="acquired"  />
-        <label for="acquired">Cartes acquises</label>
-        <input type="radio" id="not-acquired" name="acquired" value="not-acquired" />
-        <label for="not-acquired">Cartes manquantes</label>
-      </fieldset>
+        <h2 style="margin-bottom: 0px">Cartes à collectionner</h2>
+        <fieldset style="width: fit-content" class="hide">
+          <legend>Filtres :</legend>
+          <input type="radio" id="all" name="acquired" value="all" checked />
+          <label for="all">Toutes</label>
+          <input type="radio" id="acquired" name="acquired" value="acquired" />
+          <label for="acquired">Cartes acquises</label>
+          <input type="radio" id="not-acquired" name="acquired" value="not-acquired" />
+          <label for="not-acquired">Cartes manquantes</label>
+        </fieldset>
       </div>
-      <label for="image100" style="display:none">
-        <img id="image100" src="images/uiiconPNG/broco-cafe.gif"/>
+      <label for="image100" style="display: none">
+        <img id="image100" src="images/uiiconPNG/broco-cafe.gif" />
       </label>
     </div>
     <div id="allCards" class="flexContainer" style="flex-direction: column">
-      <label for="map">Maps & Donjons <span id="mapCount"></span> ▼</label>
+      <label for="map">Maps &amp; Donjons <span id="mapCount"></span> ▼</label>
       <div id="map"></div>
       <label for="boss">Boss <span id="bossCount"></span> ▼</label>
       <div class="flexContainer" id="boss"></div>
       <label for="composant">Composants / Objets / Montures <span id="composantCount"></span> ▼</label>
       <div class="flexContainer" id="composant"></div>
       <label for="anecdote">Anecdotes de Personnages <span id="anecdoteCount"></span> ▼</label>
-      <fieldset style="width: fit-content;" class="hide">
-      <legend>Filtres :</legend>
-        <input type="checkbox" id="cb-g1" name="group" value="g1" checked/>
+      <fieldset style="width: fit-content" class="hide">
+        <legend>Filtres :</legend>
+        <input type="checkbox" id="cb-g1" name="group" value="g1" checked />
         <label for="cb-g1">G1</label>
         <input type="checkbox" id="cb-g2" name="group" value="g2" checked />
         <label for="cb-g2">G2</label>
-        <input type="checkbox" id="cb-g3" name="group" value="g3" checked/>
+        <input type="checkbox" id="cb-g3" name="group" value="g3" checked />
         <label for="cb-g3">G3</label>
       </fieldset>
       <div class="flexContainer" id="anecdote">

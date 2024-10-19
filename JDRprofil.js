@@ -191,9 +191,8 @@ document.querySelector("#selectPlayer").addEventListener("change", (e) => {
 
 function loadPlayer(player) {
   charactersList.id = player;
-
   [...document.querySelectorAll("fieldset")].map(
-    (fieldSetE) => (fieldSetE.className = !!playerJSON[player] ? "" : "hide")
+    (fieldSetE) => (fieldSetE.className = playerJSON[player] ? "" : "hide")
   );
 
   if (!playerJSON[player]) return;
@@ -346,7 +345,7 @@ document.addEventListener("click", (e) => {
     return;
   }
   if (
-    e.target.className !== "point" &&
+    !e.target.dataset.map &&
     e.target.className !== "worldmap-img" &&
     e.target.className !== "persoPic" &&
     !e.target.className.includes("mapMenu")
