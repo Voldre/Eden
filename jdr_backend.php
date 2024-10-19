@@ -49,7 +49,9 @@ session_start();
 
                 // var_dump($file);
                 file_put_contents('JDR'.$name.'.json', json_encode($file));
+                echo true;
             } 
+            echo false;
         }
         
         if ($_POST['action'] === "saveBackup") {            
@@ -68,6 +70,7 @@ session_start();
 
         if($_POST['action'] === 'logout'){
             session_destroy();
+            echo true;
         }
     }
 ?>

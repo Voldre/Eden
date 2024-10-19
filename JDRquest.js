@@ -117,19 +117,19 @@ window.addEventListener("load", async () => {
   });
 });
 
-function getChatGPTKey() {
-  // eslint-disable-next-line no-undef
-  return $.ajax({
-    url: "jdr_backend.php",
-    type: "post",
-    data: { action: "chatGpt" },
-    error: function (error) {
-      console.log(error);
-
-      responseElement.innerHTML = "Echec de la récupération de la clé de l'API ChatGPT :" + JSON.stringify(error);
-      document.querySelector(".game").classList.remove("loading");
-    },
-  });
+async function getChatGPTKey() {
+  try {
+    const result = await fetch("jdr_backend.php", {
+      headers: { "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8" },
+      method: "POST",
+      body: new URLSearchParams({ action: "chatGpt" }),
+    });
+    return result;
+  } catch (error) {
+    console.log(error);
+    responseElement.innerHTML = "Echec de la récupération de la clé de l'API ChatGPT :" + JSON.stringify(error);
+    document.querySelector(".game").classList.remove("loading");
+  }
 }
 
 function writeMessage(persoData, pnjData, mapData, enemyData) {
