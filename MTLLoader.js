@@ -4,8 +4,7 @@
  * @author angelxuanchang
  */
 
-
-
+import { THREE } from "./three.min.js";
 
 THREE.MTLLoader = function( manager ) {
 

@@ -1,0 +1,26 @@
+{
+  "extends": ["eslint:recommended"],
+  "ignorePatterns": [
+    "*.css",
+    "*.html",
+    "MTLLoader.js",
+    "OBJLoader.js",
+    "jtest.js",
+    "loading-bar.js",
+    "three.min.js",
+    "images/*"
+  ],
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2021": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-console": "off",
+    "no-case-declarations": "off"
+  }
+}
