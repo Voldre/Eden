@@ -512,15 +512,15 @@ function insertSkill(skillElement, skillName, awakenClass = false) {
 
     // Update 14/01/2024, add inputs to handle number of hits
     if (skillName === "Euphorie") {
-      var wrapperE = document.createElement("div");
+      const wrapperE = document.createElement("div");
       wrapperE.style.width = "max-content";
-      var textE = document.createElement("span");
+      const textE = document.createElement("span");
       textE.innerText = "Coups";
-      var coupE = document.createElement("input");
-      coupE.style.width = "40px";
-      coupE.type = "number";
-      coupE.max = 5;
-      wrapperE.append(textE, coupE);
+      const hitsE = document.createElement("input");
+      hitsE.style.width = "40px";
+      hitsE.type = "number";
+      hitsE.max = 5;
+      wrapperE.append(textE, hitsE);
       skillElement.append(wrapperE);
     }
   }
@@ -1004,7 +1004,7 @@ function statsValue(resistance) {
     const statMain = document.querySelector("#" + stat).value;
     const statBWithRegex = document.querySelector("#" + stat + "B").value.replace(/[^\d.+-]/g, "");
 
-    const statsBValue = !!statBWithRegex?.match(/^[-+]\d+|\d*$/)[0]
+    const statsBValue = statBWithRegex?.match(/^[-+]\d+|\d*$/)[0]
       ? parseInt(statBWithRegex.replace("+", "").replace("-", ""))
       : 0;
 
@@ -1228,7 +1228,7 @@ saveButton.addEventListener("click", () => {
     toastNotification("Erreur : ID Perso ou Nom invalide", 4000, true);
     return;
   }
-  console.log(cookiePerso.length);
+  console.log(`Cookie length : ${cookiePerso.length}/4000`);
   document.cookie = cookiePerso;
   if (cookiePerso.length < 4000) {
     document.cookie = cookiePerso;
@@ -1481,7 +1481,7 @@ const getStats = () => {
 function sumObjectsByKey(...objs) {
   return objs.reduce((a, b) => {
     for (let k in b) {
-      if (b.hasOwnProperty(k)) a[k] = (a[k] || 0) + b[k];
+      a[k] = (a[k] || 0) + b?.[k];
     }
     return a;
   }, {});

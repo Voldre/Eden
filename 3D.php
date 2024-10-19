@@ -18,9 +18,9 @@ https://wiki.vg-resource.com/Noesis , Noesis Download : http://www.richwhitehous
 
 -->
 
-<script defer type="text/javascript" src="three.min.js"></script>
-<script defer type="text/javascript" src="MTLLoader.js"></script>
-<script defer type="text/javascript" src="OBJLoader.js"></script>
+<script defer type="module" src="three.min.js"></script>
+<script defer type="module" src="MTLLoader.js"></script>
+<script defer type="module" src="OBJLoader.js"></script>
 <script defer type="module" src="threeEden.js"></script>
 
 <body style="overflow:hidden; text-align:center;margin-top:0px;">
