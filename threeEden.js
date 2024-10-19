@@ -346,11 +346,11 @@ function animate() {
   // MOVEMENTS
 
   // ZQSD mouvement translation
-  if (keyboard[90] || (onTouch && touchKey === "up" && ![objetsE, colorsE].includes(document.activeElement))) {
+  if (keyboard[90] || (onTouch && touchKey === "up")) {
     // Z key
     up();
   }
-  if (keyboard[83] || (onTouch && touchKey === "down" && ![objetsE, colorsE].includes(document.activeElement))) {
+  if (keyboard[83] || (onTouch && touchKey === "down")) {
     // S key
     down();
   }
@@ -383,11 +383,11 @@ function animate() {
     turnRight();
   }
 
-  if (keyboard[38] || (onTouch && touchKey === "prev")) {
+  if (keyboard[38] || (onTouch && touchKey === "prev" && onMap)) {
     // Top Arrow
     camera.position.y += player.speed / 2;
   }
-  if (keyboard[40] || (onTouch && touchKey === "next")) {
+  if (keyboard[40] || (onTouch && touchKey === "next" && onMap)) {
     // Bottom Arrow
     camera.position.y -= player.speed / 2;
   }
@@ -456,9 +456,18 @@ mobileInputs.map((input) => {
   });
 });
 
-[document.getElementById("prev"), document.getElementById("next")].map((elem) => {
+[document.getElementById("prev"), document.getElementById("next")].forEach((elem, i) => {
+  const prev = i === 0;
+
   elem.addEventListener("click", () => {
-    if (!onMap) $("#objets option:selected").prev().prop("selected", true).change();
+    if (!onMap) {
+      const selectedOption = document.querySelector("#objets option:checked");
+      const sibling = prev ? selectedOption.previousElementSibling : selectedOption.nextElementSibling;
+      if (selectedOption && sibling) {
+        sibling.selected = true;
+        document.getElementById("objets").dispatchEvent(new Event("change")); // Déclenche l'événement "change"
+      }
+    }
   });
 });
 
