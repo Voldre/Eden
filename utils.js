@@ -1,13 +1,16 @@
 import { allSkills, eqptJSON } from "./JDRstore.js";
 
 export async function callPHP(data) {
-  $.ajax({
-    url: "jdr_backend.php",
-    type: "post",
-    data: data,
-    async: true,
+  const result = await fetch("jdr_backend.php", {
+    headers: { "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8" },
+    method: "POST",
+    body: new URLSearchParams(data),
   });
   console.log("jdr_backend.php executed, data : ", data);
+
+  return result.text();
+  // Later content-type JSON, body JSON.stringify, and retrieve result.json() ?
+  // If that, also change jdr_backend to json_decode input url parameters
 }
 
 let currentTimeout;
@@ -167,7 +170,7 @@ export class Perso {
     const statsB = [persoData.forceB, persoData.dextéB, persoData.intelB, persoData.charismeB, persoData.espritB].map(
       (statB) => {
         const statBWithRegex = statB.replace(/[^\d.+-]/g, "");
-        if (!!statB.match(/^[-+]\d+|\d*$/)[0]) return statBWithRegex;
+        if (statB.match(/^[-+]\d+|\d*$/)[0]) return statBWithRegex;
         else return "";
       }
     );
