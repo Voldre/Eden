@@ -1,14 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    
-    <meta charset="UTF-8">
-    
-    <meta name="description" content="Eden Eternal - Fiches de personnages pour JDR (Jeu De Rôle)">
+  <head>
+    <meta charset="UTF-8" />
 
-    <link rel="stylesheet" href="http://voldre.free.fr/style.css">
-    <link rel="stylesheet" href="eden.css">
-    <link rel="stylesheet" href="JDRstyle.css">
+    <meta name="description" content="Eden Eternal - Fiches de personnages pour JDR (Jeu De Rôle)" />
+
+    <link rel="stylesheet" href="http://voldre.free.fr/style.css" />
+    <link rel="stylesheet" href="eden.css" />
+    <link rel="stylesheet" href="JDRstyle.css" />
 
     <link rel="shortcut icon" href="images/brocoli_icon.ico" />
     <!--<script src="jquery-3.6.0.min.js"></script>-->
@@ -16,42 +15,40 @@
     <script type="module" src="JDRquest.js" defer></script>
     <title>JDR Quête</title>
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- Never forget the viewport ! -->
-    <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=5.0, minimum-scale=0.86">
-</head>
-<body>
-    <nav style="margin-left:10px;">
-        <ul class="menu">
+    <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=5.0, minimum-scale=0.86" />
+  </head>
+  <body>
+    <nav style="margin-left: 10px">
+      <ul class="menu">
         <!-- <li><a href="">Présentation</a></li> -->
-            <li><a href="jdr_univers.html">Infos JDR</a></li>
-            <li><a href="jdr_profil.html">Profil</a></li>
-            <!-- <li><a href="jdr.html">Fiches de persos</a></li> -->
-            <li><a href="jdr.html">Fiches de persos</a></li>
-            <li id="persoName"></li>
-            <li>
-                <audio loop controls="" style="width: 240px;">
-                    <source src="bgm/bgm040.ogg" type="audio/ogg">
-                </audio>
-            </li>
-        </ul>
+        <li><a href="jdr_univers.html">Infos JDR</a></li>
+        <li><a href="jdr_profil.html">Profil</a></li>
+        <!-- <li><a href="jdr.html">Fiches de persos</a></li> -->
+        <li><a href="jdr.html">Fiches de persos</a></li>
+        <li id="persoName"></li>
+        <li>
+          <audio loop controls="" style="width: 240px">
+            <source src="bgm/bgm040.ogg" type="audio/ogg" />
+          </audio>
+        </li>
+      </ul>
     </nav>
     <div id="toast"></div>
-    <br/>
     <div class="game">
-        <h2 id="mapName"></h2>
-        <ul id="actions"></ul>
-        <img id="pnj"></img>
-        <img id="perso"></img>
+      <h2 id="mapName"></h2>
+      <ul id="actions"></ul>
+      <img id="pnj" />
+      <img id="perso" />
     </div>
     <div class="enemy-wrapper">
-        <img id="rarity" style="float: right;  margin-right: 5px; height:64px" src="" alt=""/>
-        <img id="enemy" style="float: right;  margin-right: 0px;" src="" alt="">
+      <img id="rarity" style="float: right; margin-right: 5px; height: 64px" src="" alt="" />
+      <img id="enemy" style="float: right; margin-right: 0px" src="" alt="" />
     </div>
-    <div id="response" style="margin-left: 6px;"><button id='fetch_gpt'>Générer la quête</button></div>
-</body>
-<footer>
-    <br/>
-</footer>
+    <div id="response" style="margin-left: 6px">
+      <button id="fetch_gpt">Générer la quête</button>
+    </div>
+  </body>
 </html>

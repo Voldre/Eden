@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "htmlhint": "^1.1.4",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3"
+  },
+  "scripts": {
+    "lint": " eslint --ext js,jsx,ts,tsx"
+  }
+}

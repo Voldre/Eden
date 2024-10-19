@@ -1,3 +1,4 @@
+import { THREE } from "./three.min.js";
 import { isTextInText, readCookie } from "./utils.js";
 import { mapsJSON } from "./JDRstore.js";
 
