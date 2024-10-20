@@ -7,7 +7,7 @@ let scene, camera, renderer;
 
 // Events Variables
 
-let keyboard = {};
+const keyboard = {};
 
 let onTouch = false;
 let touchKey = null;
@@ -62,7 +62,7 @@ let player = updatePlayer(1);
 
 // THREE Global Parameters
 
-let USE_WIREFRAME = false;
+const USE_WIREFRAME = false;
 
 THREE.Cache.enabled = true; // VD 04/06/2022 : Alléger les chargements
 const manager = new THREE.LoadingManager();

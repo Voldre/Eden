@@ -14,19 +14,15 @@ const iconsClasses = [ "01", "02", "03", "18", "04", "05", "06", "16", "07", "08
 const cardKinds = ["map", "boss", "composant", "anecdote"];
 
 //  LOADING
-const selectPerso = document.querySelector("#selectPlayer");
-var selectedPerso = selectPerso.value;
-var indexPerso;
+let indexPerso;
 // var selectedID = selectPerso.selectedIndex;
 
 window.addEventListener("load", () => {
   const urlParams = new URLSearchParams(window.location.search);
 
   if (urlParams.has("joueur")) {
-    selectPerso.value = urlParams.get("joueur");
-    selectedPerso = selectPerso.value;
     // selectedID = selectPerso.selectedIndex;
-    loadPlayer(selectedPerso);
+    loadPlayer(urlParams.get("joueur"));
   } else {
     // Default page with all players information
     document.querySelector("#allCards").classList.add("hide");
@@ -175,20 +171,6 @@ window.addEventListener("load", () => {
   }
 });
 
-Object.keys(playerJSON).forEach((player) => {
-  // console.log(player);
-  var option = document.createElement("option");
-  option.value = player;
-  option.innerText = player;
-  document.querySelector("#selectPlayer").append(option);
-});
-
-document.querySelector("#selectPlayer").addEventListener("change", (e) => {
-  document.querySelector("#allCards").classList.remove("hide");
-  document.querySelector("#playersE")?.remove();
-  loadPlayer(e.target.value);
-});
-
 function loadPlayer(player) {
   charactersList.id = player;
   [...document.querySelectorAll("fieldset")].map(
@@ -263,7 +245,7 @@ function updateDay(joueurData, indexPlayer) {
 
   joueurData.alpagaCoin += 5;
 
-  var newPlayer = {};
+  const newPlayer = {};
   newPlayer[indexPlayer] = joueurData;
   // console.log(joueurData);
 
@@ -309,8 +291,8 @@ function loadPerso(perso, index, joueurData) {
   });
 
   // Classes du perso
-  var classePID = classes.indexOf(perso.classeP);
-  var classeSID = classes.indexOf(perso.classeS);
+  const classePID = classes.indexOf(perso.classeP);
+  const classeSID = classes.indexOf(perso.classeS);
 
   persoE.querySelector(".iconClasses").children[0].src =
     "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" + iconsClasses[classePID] + ".png";

@@ -364,9 +364,16 @@ export const stringToDate = (stringDate) => {
 };
 
 export const readCookie = (key) => {
-  let result;
-  // eslint-disable-next-line no-cond-assign
-  return (result = new RegExp("(?:^|; )" + encodeURIComponent(key) + "=([^;]*)").exec(document.cookie))
-    ? result[1]
-    : null;
+  const cookieString = document.cookie.split("; ").find((row) => row.startsWith(`${key}=`));
+  return cookieString ? cookieString.split("=")[1] : undefined;
+};
+
+export const fillSelectOptions = (selectE, options) => {
+  options.forEach((option) => {
+    const optionE = document.createElement("option");
+    optionE.value = option.value;
+    optionE.innerText = option.innerText;
+    optionE.hidden = option.hidden ?? false;
+    selectE.append(optionE);
+  });
 };

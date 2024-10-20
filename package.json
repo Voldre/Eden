@@ -1,11 +1,27 @@
 {
   "devDependencies": {
     "eslint": "^8.57.1",
+    "eslint-plugin-prettier": "^5.2.1",
     "htmlhint": "^1.1.4",
+    "husky": "^8.0.0",
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3"
   },
   "scripts": {
-    "lint": " eslint --ext js,jsx,ts,tsx"
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx . --max-warnings 0 --debug",
+    "lint-fix": "eslint --ext .js,.jsx,.ts,.tsx . --fix --max-warnings 0 --debug",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "**/*.html": [
+      "htmlhint"
+    ],
+    "**/*.js": [
+      "eslint --max-warnings 0",
+      "prettier --write"
+    ],
+    "**/*.{json,css,md}": [
+      "prettier --write"
+    ]
   }
 }

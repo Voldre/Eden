@@ -1,5 +1,5 @@
 // JSON Initialisation
-var xhReq = new XMLHttpRequest();
+const xhReq = new XMLHttpRequest();
 
 console.log(window.location.href);
 
