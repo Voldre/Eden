@@ -1,5 +1,5 @@
 import { cardJSON, persosJSON, enemyJSON, allSkills, playerJSON, getData } from "./JDRstore.js";
-import { callPHP, dateToString, initDialog, isTextInText, Perso, sum, toastNotification } from "./utils.js";
+import { callPHP, dateToString, initDialog, isTextInText, Perso, readCookie, sum, toastNotification } from "./utils.js";
 
 // prettier-ignore
 const classes = [ "Guerrier", "Chevalier", "Templier", "Chev Dragon", "Voleur", "Assassin", "Danselame", "Samouraï", "Chasseur", "Ingénieur", "Corsaire", "Juge", "Clerc", "Barde", "Shaman", "Sage", "Magicien", "Illusionniste", "Démoniste", "Luminary",];
@@ -34,18 +34,6 @@ var logID;
 let mapID;
 let enemyRarity;
 let cardRarity;
-
-// Initialize persos list
-Object.entries(persosJSON).forEach(([id, perso]) => {
-  if (!perso.nom) return;
-  var option = document.createElement("option");
-  option.value = id;
-  option.innerText = perso.nom.slice(0, 11);
-  document.querySelector("#selectPerso").append(option);
-});
-
-//  Actions Management
-// const selectPerso = document.querySelector("#selectPerso");
 
 // Load perso if URL parameter
 window.addEventListener("load", () => {
@@ -104,14 +92,10 @@ window.addEventListener("load", () => {
       console.log("new C log...");
       saveCheat(urlParams.get("enemy"));
     }
-
-    // selectPerso.value = urlParams.get("perso") - 1;
-    // selectedPerso = selectPerso.value;
-    // var selectedID = selectPerso.selectedIndex;
   } else {
     // Not in real fight
     const enemyCombatData = Object.values(enemyJSON).map((e) => {
-      let enemyStats = new Enemy(e);
+      const enemyStats = new Enemy(e);
       enemyStats.rarity = enemyStats.pvmax >= 200 ? "BOSS" : enemyStats.pvmax > 120 ? "ELITE" : "COMMUN";
       enemyStats.degatMin =
         (enemyStats.rarity === "BOSS" && enemyStats.degat < MIN_BOSS) ||
@@ -155,21 +139,7 @@ window.addEventListener("load", () => {
 });
 
 function cookieCheck() {
-  let name = "loadJDRcombat=";
-  let decodedCookie = decodeURIComponent(document.cookie);
-  let ca = decodedCookie.split(";");
-  for (let i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == " ") {
-      c = c.substring(1);
-    }
-    var cookieAllow = false;
-    if (c.indexOf(name) == 0) {
-      cookieAllow = c.substring(name.length, c.length);
-    }
-  }
-
-  if (cookieAllow !== "true") {
+  if (readCookie("loadJDRcombat") !== "true") {
     toastNotification("Erreur : Lancez un combat à partir d'une quête", 6000, true);
     endRediction();
     return false;
@@ -181,20 +151,10 @@ function cookieCheck() {
   }
 }
 
-// selectPerso.addEventListener("change", (e) => {
-//   var indexPerso = e.target.selectedIndex;
-//   loadFiche(indexPerso);
-//   loadEnemy(chooseEnemy());
-
-//   toastNotification("Chargement réussi de " + e.target.value);
-
-//   newturn();
-// });
-
 function loadFiche(indexPerso) {
   document.querySelector(".perso").id = indexPerso;
 
-  var persoData = persosJSON[indexPerso];
+  const persoData = persosJSON[indexPerso];
 
   if (!persoData) return;
 
@@ -221,8 +181,8 @@ function loadFiche(indexPerso) {
   document.querySelector("#esprit").value = perso.esprit;
 
   // Classes du perso
-  var classePID = classes.indexOf(perso.classeP);
-  var classeSID = classes.indexOf(perso.classeS);
+  const classePID = classes.indexOf(perso.classeP);
+  const classeSID = classes.indexOf(perso.classeS);
 
   loadSkills(perso.classeP, perso.classeS);
 
@@ -308,7 +268,7 @@ function Enemy(enemyData) {
 
   this.pvmax = this.pv = enemyData.pvmax;
 
-  var enemyStats = enemyData.stats.split(",");
+  const enemyStats = enemyData.stats.split(",");
   this.force = parseInt(enemyStats[0]);
   this.dexté = parseInt(enemyStats[1]);
   this.intel = parseInt(enemyStats[2]);
