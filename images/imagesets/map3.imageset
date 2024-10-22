@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<Imageset Name="WorldMap3" Imagefile="mapworld03.png" >
-    <Image Name="Background" XPos="0" YPos="0" Width="512" Height="512" />
-</Imageset>
