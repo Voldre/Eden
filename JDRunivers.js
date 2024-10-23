@@ -1,10 +1,5 @@
-import { skillsAwakenJSON, skillsJSON } from "./JDRstore.js";
+import { classes, iconsClasses, skillsAwakenJSON, skillsJSON } from "./JDRstore.js";
 import { aoeDescInfo, initDialog } from "./utils.js";
-
-// prettier-ignore
-const classes = [ "Guerrier", "Chevalier", "Templier", "Chev Dragon", "Voleur", "Assassin", "Danselame", "Samouraï", "Chasseur", "Ingénieur", "Corsaire", "Juge", "Clerc", "Barde", "Shaman", "Sage", "Magicien", "Illusionniste", "Démoniste", "Luminary",];
-// prettier-ignore
-const iconsClasses = [ "01", "02", "03", "18", "04", "05", "06", "16", "07", "08", "09", "59", "10", "11", "12", "17", "13", "14", "15", "19",];
 
 const classesDesc = [
   "Les guerriers possèdent de solides aptitudes au combat ainsi que de lourdes armures résistantes. Peut effrayer les ennemis et motiver ses alliés.",
@@ -31,14 +26,14 @@ const classesDesc = [
 
 // Generate classes elements
 classes.forEach((classe, i) => {
-  var classeE = document.createElement("div");
+  const classeE = document.createElement("div");
   classeE.id = classe;
-  var nomE = document.createElement("p");
+  const nomE = document.createElement("p");
   if (classe == "Chev Dragon") {
     classe = "C. Dragon";
   }
   nomE.innerText = classe;
-  var iconeE = document.createElement("img");
+  const iconeE = document.createElement("img");
   iconeE.src = "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" + iconsClasses[i] + ".png";
 
   classeE.append(nomE, iconeE);
@@ -93,16 +88,16 @@ const updateSkillsList = (classe, isAwaken) => {
     if (isAwaken) skillE.classList.add("awaken");
     else skillE.classList.remove("akawen");
     skillE.classList.add("skill");
-    var nomE = document.createElement("p");
+    const nomE = document.createElement("p");
     nomE.classList.add("nom");
-    var descE = document.createElement("p");
+    const descE = document.createElement("p");
     descE.classList.add("desc");
-    var effetE = document.createElement("p");
+    const effetE = document.createElement("p");
     effetE.classList.add("effet");
-    var montantE = document.createElement("p");
+    const montantE = document.createElement("p");
     montantE.classList.add("montant");
 
-    var iconeE = document.createElement("img");
+    const iconeE = document.createElement("img");
     iconeE.classList.add("icone");
 
     nomE.innerText = skill.nom;
@@ -165,7 +160,7 @@ const updateAwakenButtonTriggered = () => {
 // ANALYZE :  Counts which stats are most used for skills
 
 // Nb skills by stats
-var skillsJSONStat = Object.values(skillsJSON).map((skill) => skill.stat);
+const skillsJSONStat = Object.values(skillsJSON).map((skill) => skill.stat);
 const occurrences = skillsJSONStat.reduce(function (acc, curr) {
   return acc[curr] ? ++acc[curr] : (acc[curr] = 1), acc;
 }, {});
@@ -173,7 +168,7 @@ const occurrences = skillsJSONStat.reduce(function (acc, curr) {
 document.querySelector(".statsBySkills").innerText = JSON.stringify(occurrences).replaceAll(",", ", ");
 
 // Nb skills by effect
-var skillsJSONEffect = Object.values(skillsJSON).map((skill) => skill.effet);
+const skillsJSONEffect = Object.values(skillsJSON).map((skill) => skill.effet);
 const listEffects = skillsJSONEffect.reduce(function (acc, curr) {
   return acc[curr] ? ++acc[curr] : (acc[curr] = 1), acc;
 }, {});
@@ -198,13 +193,13 @@ console.log(
 );
 
 // Nb skills by class by stat
-var allListSkillsByClassByStats = {};
+const allListSkillsByClassByStats = {};
 classes.forEach((classe) => {
   const skillsClass = Object.values(skillsJSON).filter((skill) => skill.classe == classe);
   // console.log(skillsClass)
   const skillsClassStats = Object.values(skillsClass).map((skill) => skill.stat);
   // console.log(skillsClassStats)
-  var listSkillsByClassStats = skillsClassStats.reduce(function (acc, curr) {
+  const listSkillsByClassStats = skillsClassStats.reduce(function (acc, curr) {
     return acc[curr] ? ++acc[curr] : (acc[curr] = 1), acc;
   }, {});
   allListSkillsByClassByStats[classe] = listSkillsByClassStats;
@@ -215,7 +210,7 @@ console.log("Nb skills by class by stat", allListSkillsByClassByStats);
 
 function aoeDesc() {
   let description = "Il existe 4 types d'Attaques de Zone (AoE) :<br/>";
-  for (var i = 0; i < 4; i++) {
+  for (let i = 0; i < 4; i++) {
     const rangeI = Math.floor(i / 2);
     const typeI = i % 2;
     description +=

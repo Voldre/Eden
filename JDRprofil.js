@@ -1,15 +1,19 @@
-import { cardJSON, persosJSON, enemyJSON, mapsJSON, playerJSON } from "./JDRstore.js";
-import { Perso, callPHP, dateToString, initDialog, sameDay, stringToDate, toastNotification } from "./utils.js";
+import { cardJSON, persosJSON, enemyJSON, mapsJSON, playerJSON, classes, iconsClasses } from "./JDRstore.js";
+import {
+  Perso,
+  callPHP,
+  dateToString,
+  initDialog,
+  sameDay,
+  setCookie,
+  stringToDate,
+  toastNotification,
+} from "./utils.js";
 
 const charactersList = document.querySelector(".charactersList");
 const persosE = [...charactersList.children];
 
 // Table Initialisation
-
-// prettier-ignore
-const classes = [ "Guerrier", "Chevalier", "Templier", "Chev Dragon", "Voleur", "Assassin", "Danselame", "Samouraï", "Chasseur", "Ingénieur", "Corsaire", "Juge", "Clerc", "Barde", "Shaman", "Sage", "Magicien", "Illusionniste", "Démoniste", "Luminary",];
-// prettier-ignore
-const iconsClasses = [ "01", "02", "03", "18", "04", "05", "06", "16", "07", "08", "09", "59", "10", "11", "12", "17", "13", "14", "15", "19",];
 
 const cardKinds = ["map", "boss", "composant", "anecdote"];
 
@@ -132,8 +136,6 @@ window.addEventListener("load", () => {
     console.log("Persos par classes :", counter);
 
     const newCounter = {};
-    // prettier-ignore
-    const classes = [ "Guerrier", "Chevalier", "Templier", "Chev Dragon", "Voleur", "Assassin", "Danselame", "Samouraï", "Chasseur", "Ingénieur", "Corsaire", "Juge", "Clerc", "Barde", "Shaman", "Sage", "Magicien", "Illusionniste", "Démoniste", "Luminary",];
     classes.forEach((c) => {
       const persosC = Object.values(persosJSON)
         .filter((p) => parseInt(p.niv) < 15)
@@ -249,11 +251,7 @@ function updateDay(joueurData, indexPlayer) {
   newPlayer[indexPlayer] = joueurData;
   // console.log(joueurData);
 
-  const newPersoEncoded = JSON.stringify(newPlayer).replaceAll("+", "%2B").replaceAll(";", "%3B");
-  const cookiePerso = "playerJSON=" + newPersoEncoded + "; SameSite=Strict";
-  document.cookie = cookiePerso;
-
-  // eslint-disable-next-line no-undef
+  setCookie("playerJSON", newPlayer);
   callPHP({ action: "saveFile", name: "player" });
 
   toastNotification("Cadeau de Connexion Quotidienne : 5 Pièces Alpaga !", 6000);
