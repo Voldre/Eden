@@ -368,6 +368,16 @@ export const readCookie = (key) => {
   return cookieString ? cookieString.split("=")[1] : undefined;
 };
 
+export const setCookie = (name, value) => {
+  const stringValue = JSON.stringify(value).replaceAll("+", "%2B").replaceAll(";", "%3B");
+  document.cookie = `${name}=${stringValue}; SameSite=Strict`;
+
+  if (name === "persosJSON") {
+    console.log(`Cookie length : ${stringValue.length}/4000`);
+  }
+  return stringValue.length < 4000;
+};
+
 export const fillSelectOptions = (selectE, options) => {
   options.forEach((option) => {
     const optionE = document.createElement("option");

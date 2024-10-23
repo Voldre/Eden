@@ -1,22 +1,27 @@
-import { cardJSON, persosJSON, enemyJSON, allSkills, playerJSON, getData } from "./JDRstore.js";
-import { callPHP, dateToString, initDialog, isTextInText, Perso, readCookie, sum, toastNotification } from "./utils.js";
-
-// prettier-ignore
-const classes = [ "Guerrier", "Chevalier", "Templier", "Chev Dragon", "Voleur", "Assassin", "Danselame", "Samouraï", "Chasseur", "Ingénieur", "Corsaire", "Juge", "Clerc", "Barde", "Shaman", "Sage", "Magicien", "Illusionniste", "Démoniste", "Luminary",];
-// prettier-ignore
-const iconsClasses = [ "01", "02", "03", "18", "04", "05", "06", "16", "07", "08", "09", "59", "10", "11", "12", "17", "13", "14", "15", "19",];
+import { cardJSON, persosJSON, enemyJSON, allSkills, playerJSON, getData, classes, iconsClasses } from "./JDRstore.js";
+import {
+  callPHP,
+  dateToString,
+  initDialog,
+  isTextInText,
+  Perso,
+  readCookie,
+  setCookie,
+  sum,
+  toastNotification,
+} from "./utils.js";
 
 console.log(allSkills);
 
-var perso = {};
-var enemy = {};
+let perso = {};
+let enemy = {};
 
-var turn = 0;
-var ingame = false;
-var indexPlayer;
-var joueurData;
-var selectedEnemy;
-var currentPersoEntries;
+let turn = 0;
+let ingame = false;
+let indexPlayer;
+let joueurData;
+let selectedEnemy;
+let currentPersoEntries;
 const turnToCheck = 6 + Math.floor(Math.random() * 3);
 
 const MIN_COMMON = 15;
@@ -27,9 +32,9 @@ const MAX_ELITE = 39;
 const MIN_BOSS = 28;
 const MAX_BOSS = 52; // 49... + out of limite (+3)
 
-var indexPerso;
-var nomPerso;
-var logID;
+let indexPerso;
+let nomPerso;
+let logID;
 
 let mapID;
 let enemyRarity;
@@ -146,7 +151,7 @@ function cookieCheck() {
   } else {
     console.log("Allowed");
     // Remove permission for next attempt
-    document.cookie = "loadJDRcombat=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    setCookie("loadJDRcombat", false);
     return true;
   }
 }
@@ -276,47 +281,29 @@ function Enemy(enemyData) {
   this.esprit = parseInt(enemyStats[4]);
 
   // Calcul des dégâts fixes
-  var rawMontantSkills = enemyData.skills.map((skill) => {
-    // console.log(skill)
-    // remove all buff skills and passif
-    if (["passif", "esprit", "soin", "buff", "provocation"].find((text) => isTextInText(skill, text))) return NaN;
+  const montantSkills = enemyData.skills
+    // Ignorer les compétences passives, buff, soins, etc.
+    .filter((skill) => !["passif", "esprit", "soin", "buff", "provocation"].some((text) => isTextInText(skill, text)))
+    .map((skill) => {
+      // Trouver toutes les positions des "+"
+      const plusPositions = [...skill].map((char, i) => (char === "+" ? i : -1)).filter((i) => i !== -1);
+      if (plusPositions.length === 0) return NaN;
 
-    var allPlusPosition = [];
-    for (var i = 0; i < skill.length; i++) {
-      if (skill[i] === "+") allPlusPosition.push(i);
-    }
-    // console.log(allPlusPosition)
+      // Calculer les montants après chaque "+"
+      const amounts = plusPositions.map((pos) => parseInt(skill.slice(pos + 1, pos + 3)) || 0);
+      const average = amounts.reduce((a, b) => a + b, 0) / amounts.length;
 
-    if (allPlusPosition == []) return NaN;
+      // In average, add Dices
+      const dices = dicesAverageConversion(skill);
 
-    var amount = [];
-
-    allPlusPosition.forEach((plusPosition) => {
-      // console.log(skill[plusPosition+1], skill)
-      if (parseInt(skill[plusPosition + 1]) > 0) {
-        // console.log(skill[plusPosition+1],skill[plusPosition+2])
-        amount.push(parseInt(skill[plusPosition + 1] + skill[plusPosition + 2]));
-      }
-    });
-
-    // console.log(amount)
-    var average = amount.reduce(sum, 0) / amount.length;
-    // console.log(average)
-
-    // In average, add Dices
-    var dices = dicesAverageConversion(skill);
-
-    return average + dices;
-  });
-
-  var montantSkills = rawMontantSkills.filter(function (value) {
-    return !Number.isNaN(value);
-  });
+      return average + dices;
+    })
+    .filter((value) => !Number.isNaN(value));
 
   // console.log(montantSkills)
 
   // Pour les ennemis, sachant que des sorts sont mal comptés (ex 1D8 +1D6 +4)
-  // Je rajoute 50% de dégâts (contre 10% par niveau pour les joueurs), que 50% pas 100% car les des (1D10,2D6,...) sont comptés !
+  // Je rajoute 50% de dégâts (contre x% par niveau pour les joueurs), que 50% pas 100% car les des (1D10,2D6,...) sont comptés !
   this.degat = Math.round((montantSkills.reduce(sum, 0) / montantSkills.length) * 1.5);
   // console.log(this.degat)
 }
@@ -326,6 +313,8 @@ function Enemy(enemyData) {
 // });
 // console.log(enemyGenerated);
 
+// ***********
+// @TODO Obsolete function : to remove ? update ?
 function chooseEnemy(category = null) {
   // prettier-ignore
   const forbidden = ["82","85","101","104","109"];
@@ -334,7 +323,7 @@ function chooseEnemy(category = null) {
   // prettier-ignore
   const boss = ["24","29","45","46","50","54","56","57","59","61","62","67","70","71","74","75","76","77","80","82","84","85","89","90","101","106","109","111","113","114","115","116","117","118","121","122"];
 
-  var enemyList = [];
+  let enemyList = [];
 
   if (!category) {
     enemyList = { ...enemyJSON };
@@ -350,7 +339,7 @@ function chooseEnemy(category = null) {
     });
   }
 
-  var randomEnemy = Math.floor(Math.random() * Object.keys(enemyList).length);
+  const randomEnemy = Math.floor(Math.random() * Object.keys(enemyList).length);
   if (!category) {
     // Reset index
     enemyList = resetIndex(enemyList);
@@ -361,18 +350,19 @@ function chooseEnemy(category = null) {
 }
 
 function resetIndex(object) {
-  var items = {};
+  const items = {};
 
-  var i = 0;
-  for (var index in object) {
+  let i = 0;
+  for (const index in object) {
     items[i] = object[index];
     i++;
   }
   return items;
 }
+// ***********
 
 function dicesAverageConversion(skill) {
-  var dices = 0;
+  let dices = 0;
   if (skill.includes("1D12")) {
     dices += 6.5;
   }
@@ -416,7 +406,7 @@ function dicesAverageConversion(skill) {
 }
 
 function dicesConversion(skill) {
-  var dices = 0;
+  let dices = 0;
   if (skill.includes("1D12")) {
     dices += Math.floor(Math.random() * 12 + 1);
   }
@@ -528,8 +518,8 @@ const newCards = [];
 async function victory() {
   const enemyID = parseInt(Object.entries(enemyJSON).find((e) => e[1] === selectedEnemy)[0]);
 
-  var newJoueurData = { ...joueurData };
-  var winCards = [];
+  const newJoueurData = { ...joueurData };
+  const winCards = [];
 
   // Map card
   if (mapID) {
@@ -601,9 +591,7 @@ async function saveCheat(enemy) {
     sumStats: [perso.force, perso.dexté, perso.intel, perso.charisme, perso.esprit],
   };
 
-  const newCheatLogEncoded = JSON.stringify(newCheatLog).replaceAll("+", "%2B").replaceAll(";", "%3B");
-  const cookiePerso = "combatCheatJSON=" + newCheatLogEncoded + "; SameSite=Strict";
-  document.cookie = cookiePerso;
+  setCookie("combatCheatJSON", newCheatLog);
   await callPHP({ action: "saveFile", name: "combatCheat" });
 }
 
@@ -629,10 +617,7 @@ async function saveLog(earnedCoins, winCards) {
 
   // console.log(newLog);
 
-  const newLogEncoded = JSON.stringify(newLog).replaceAll("+", "%2B").replaceAll(";", "%3B");
-  const cookiePerso = "combatLogsJSON=" + newLogEncoded + "; SameSite=Strict";
-
-  document.cookie = cookiePerso;
+  setCookie("combatLogsJSON", newLog);
   // console.log("saveFile done : combatLogs, jdr_backend.php executed");
   await callPHP({ action: "saveFile", name: "combatLogs" });
 }
@@ -650,15 +635,11 @@ async function savePlayer(newJoueurData) {
     return;
   }
 
-  var newPlayer = {};
+  const newPlayer = {};
   newPlayer[indexPlayer] = newJoueurData;
   // console.log(newPlayer);
 
-  const newPersoEncoded = JSON.stringify(newPlayer).replaceAll("+", "%2B").replaceAll(";", "%3B");
-  // encodeURIComponent(JSON.stringify(newPerso))
-  const cookiePerso = "playerJSON=" + newPersoEncoded + "; SameSite=Strict";
-
-  document.cookie = cookiePerso;
+  setCookie("playerJSON", newPlayer);
   await callPHP({ action: "saveFile", name: "player" });
 }
 
@@ -748,22 +729,16 @@ function endRediction() {
 // Dice
 
 function rollDice(user, type, statName) {
-  var duration = 500; // in ms
+  const duration = 500; // in ms
 
-  var result;
-  var section;
-  if (user == perso) {
-    section = document.querySelector(".playerAction");
-  } else {
-    section = document.querySelector(".enemyAction");
-  }
+  const section = user == perso ? document.querySelector(".playerAction") : document.querySelector(".enemyAction");
 
-  var stat = user[statName];
+  const stat = user[statName];
   // console.log(user,statName,stat)
 
-  var dice = section.querySelector(".dice");
+  const dice = section.querySelector(".dice");
 
-  var success;
+  let success;
 
   // Stat name section + Success amount
   if (type == "attaque" || type == "skill" || type == "soin" || type == "buff") {
@@ -781,18 +756,14 @@ function rollDice(user, type, statName) {
   // Result (correction 20/11/23 : change round to floor to have nice repartition)
   const diceValue = Math.floor(Math.random() * 20 + 1);
 
+  let result;
   if (diceValue > success) {
     result = "fail";
-    if (diceValue == 20) {
-      result = "crit fail";
-    }
+    if (diceValue == 20) result = "crit fail";
   } else {
     result = "success";
-    if (diceValue == 1) {
-      result = "crit success";
-    }
+    if (diceValue == 1) result = "crit success";
   }
-
   // Display result
 
   if (!dice.classList.contains("show")) {
@@ -830,12 +801,9 @@ function resetDices() {
   updateDesc("");
 }
 
-// Skills and stats buttons
-const skillsButton = [...document.querySelectorAll(".skillCombat")].map((skillE) => skillE.children[0]);
-
 const statsButton = ["bforce", "bdexté", "bintel"]; //,"bcharisme","besprit"];
 statsButton.forEach((buttonStat) => {
-  var statName = buttonStat.slice(1);
+  const statName = buttonStat.slice(1);
   document.querySelector("#" + buttonStat).addEventListener("click", () => {
     turnExecution({
       type: "attaque",
@@ -898,16 +866,18 @@ function enemyTurn(enemy) {
   document.querySelector("#instruction").innerText = "Au tour de l'ennemi...";
 
   // CHOIX DE STAT : Stat choisi par l'ennemi : que l'une des 2 meilleures
-  var stats = { force: enemy.force, dexté: enemy.dexté, intel: enemy.intel };
-  var minStat = Object.keys(stats).reduce((key, v) => (stats[v] < stats[key] ? v : key));
+  const { force, dexté, intel } = enemy;
+  const stats = { force, dexté, intel };
+
+  const minStat = Object.keys(stats).reduce((key, v) => (stats[v] < stats[key] ? v : key));
 
   delete stats[minStat];
-  var sumStatsATK = Object.values(stats)[0] + Object.values(stats)[1];
+  const sumStatsATK = Object.values(stats)[0] + Object.values(stats)[1];
 
   // enemy.force+enemy.dexté+enemy.intel;
-  var randValue = Math.round(Math.random() * sumStatsATK);
+  const randValue = Math.round(Math.random() * sumStatsATK);
 
-  var statName;
+  let statName;
   if (randValue < Object.values(stats)[0]) {
     statName = Object.keys(stats)[0];
   } else {
@@ -923,20 +893,15 @@ function enemyTurn(enemy) {
 
 function executeAction(user, userSkill) {
   // console.log(userSkill);
-  var type = userSkill.type;
-  var statName = userSkill.statUsed;
+  const type = userSkill.type;
+  const statName = userSkill.statUsed;
 
   resetDices();
 
-  var opponent;
-  if (user == perso) {
-    opponent = enemy;
-  } else {
-    opponent = perso;
-  }
+  const opponent = user == perso ? enemy : perso;
 
-  var userResult = rollDice(user, type, statName);
-  var montant;
+  const userResult = rollDice(user, type, statName);
+  let montant;
 
   // Montant des dégâts
   if (userResult == "crit success") {
@@ -953,7 +918,7 @@ function executeAction(user, userSkill) {
       updateDesc("Touché critique !");
     } else if (userResult == "success") {
       setTimeout(function () {
-        var opponentResult = rollDice(opponent, "defense", statName);
+        const opponentResult = rollDice(opponent, "defense", statName);
         if (opponentResult == "fail") {
           updateDesc("Touché !");
           hit(opponent, user.degat + montant);
@@ -1003,7 +968,7 @@ function executeAction(user, userSkill) {
 }
 
 function hit(user, amount) {
-  var damage = amount - (user.armure || 0);
+  const damage = amount - (user.armure || 0);
   if (damage > 0) {
     // Si <0 == Big armure, mal chance, etc... donc 0 mais ça ne soigne pas
     user.pv -= damage;
@@ -1063,6 +1028,9 @@ function updateDesc(desc) {
   }, 1000);
 }
 
+// Skills and stats buttons
+const skillsButton = [...document.querySelectorAll(".skillCombat")].map((skillE) => skillE.children[0]);
+
 function unlockInputs(bool) {
   statsButton.forEach((buttonStat) => {
     document.querySelector("#" + buttonStat).disabled = !bool;
@@ -1084,8 +1052,8 @@ function unlockInputs(bool) {
 
 function updateBuff() {
   [...document.querySelectorAll(".buff")].forEach((buffE) => {
-    var dureeE = buffE.querySelector(".duree");
-    var buffElem = buffE.querySelector(".icone").title.split(",");
+    const dureeE = buffE.querySelector(".duree");
+    let buffElem = buffE.querySelector(".icone").title.split(",");
 
     if (dureeE.children[0].innerText == "") return;
 

@@ -1,5 +1,14 @@
-import { skillsJSON, eqptJSON, masterJSON, enemyJSON, enemyGenericJSON, statsJSON, persosJSON } from "./JDRstore.js";
-import { callPHP, isTextInText, toastNotification, unformatText } from "./utils.js";
+import {
+  skillsJSON,
+  eqptJSON,
+  masterJSON,
+  enemyJSON,
+  enemyGenericJSON,
+  statsJSON,
+  persosJSON,
+  getData,
+} from "./JDRstore.js";
+import { callPHP, fillSelectOptions, isTextInText, setCookie, toastNotification, unformatText } from "./utils.js";
 
 const logged = !!document.querySelector(".admin");
 
@@ -14,7 +23,7 @@ buttonIframe?.addEventListener("click", () => {
   document.querySelector("iframe").classList.toggle("hide");
 });
 
-var allSlots;
+let allSlots;
 function updateSlots() {
   const enemiesList = [...document.querySelectorAll(".infoEnnemi")].filter(
     (infoE) => infoE.querySelector("#pvmax").value != ""
@@ -23,15 +32,24 @@ function updateSlots() {
   allSlots = [...enemiesList, ...persosList] || [document.querySelectorAll(".infoEnnemi")];
 }
 
+// Enemies Select Options
 [...document.querySelectorAll(".ennemi")].forEach((selectEnnemiE) => {
-  // Fill Select elements
-  [[0, { nom: "" }], ...Object.entries(enemyJSON)].forEach(([index, enemy]) => {
-    if (!logged && enemy.nom !== "" && !enemy.nom.includes("Veyda") && !enemy.nom.includes("Champi Baga")) return;
-    var option = document.createElement("option");
-    option.value = index;
-    option.innerText = enemy.nom;
-    selectEnnemiE.append(option);
-  });
+  const allowedEnnemiesPart = ["Veyda", "Champi Baga"];
+
+  const options = [
+    { value: 0, innerText: "" },
+    ...Object.entries(enemyJSON)
+      .filter(
+        // If logged : take all, else : take allowed enemies
+        (enemy) => logged || allowedEnnemiesPart.some((enemyPart) => enemy.nom.includes(enemyPart))
+      )
+      .map(([index, enemy]) => ({
+        value: index,
+        innerText: enemy.nom,
+      })),
+  ];
+
+  fillSelectOptions(selectEnnemiE, options);
 
   // Change enemy selected
 
@@ -79,7 +97,8 @@ function loadEnemy(indexEnemy, ennemiElement, genericEnemy = null) {
   ennemiElement.querySelector("#pv").value = enemyData.pvmax;
   if (enemyData.pvmax >= 200) ennemiElement.querySelector("#boss_icon").classList.remove("hide");
   else ennemiElement.querySelector("#boss_icon").classList.add("hide");
-  var nbP = document.querySelector("#nbP").value; // new functionality 28/08/2023
+
+  const nbP = document.querySelector("#nbP").value; // new functionality 28/08/2023
   ennemiElement.querySelector("#pvmax").value =
     nbP !== "3"
       ? Math.round(enemyData.pvmax * (1 + (nbP - 3) * 0.33))
@@ -96,8 +115,8 @@ function loadEnemy(indexEnemy, ennemiElement, genericEnemy = null) {
 
   // Skills de l'ennemi
   enemyData.skills.forEach((skill, index) => {
-    var competence = [...ennemiElement.querySelectorAll(".competence")][index];
-    competence.innerHTML = skill;
+    const competenceE = [...ennemiElement.querySelectorAll(".competence")][index];
+    competenceE.innerHTML = skill;
   });
 
   if (logged) updateSlots();
@@ -133,7 +152,7 @@ if (window.location.href.includes("html")) {
 }
 
 // Next turn
-var allTurnE = [...document.querySelectorAll(".nextTurn")];
+const allTurnE = [...document.querySelectorAll(".nextTurn")];
 
 allTurnE.forEach((turnE) => turnE.addEventListener("click", () => nextTurn()));
 document.addEventListener("keydown", (e) => {
@@ -172,24 +191,24 @@ function nextTurn() {
 }
 
 // Disable the possibility of launching many audio simultaneously
+const audiosE = document.getElementsByTagName("audio");
+const currentMusicE = document.getElementById("currentMusic");
 
 document.addEventListener(
   "play",
   function (e) {
-    var audios = document.getElementsByTagName("audio");
-    for (var i = 0, len = audios.length; i < len; i++) {
-      if (audios[i] != e.target) {
-        audios[i].pause();
-        if (audios[i].currentTime < 30) {
-          audios[i].currentTime = 0;
+    for (let i = 0, len = audiosE.length; i < len; i++) {
+      if (audiosE[i] != e.target) {
+        audiosE[i].pause();
+        if (audiosE[i].currentTime < 30) {
+          audiosE[i].currentTime = 0;
         }
       }
     }
     if (e.target.firstChild.attributes) {
-      var currentBGM = e.target.firstChild.attributes.src.nodeValue.split("/")[1].split(".")[0];
+      const currentBGM = e.target.firstChild.attributes.src.nodeValue.split("/")[1].split(".")[0];
       console.log(currentBGM);
-      document.getElementById("currentMusic").innerText =
-        document.getElementById(currentBGM).innerText + " (" + currentBGM + ")";
+      currentMusicE.innerText = document.getElementById(currentBGM).innerText + " (" + currentBGM + ")";
     }
   },
   true
@@ -198,20 +217,27 @@ document.addEventListener(
 // prettier-ignore
 const elements = ["ontond", "ranch", "perç", "feu", "lace", "oudre", "ature", "énèbre", "umière",];
 
+const abnormalWeaknesses = Object.values(enemyJSON)
+  .filter((enemy) => !enemy.nom.includes("Veyda") && parseInt(enemy.pvmax) < 500)
+  .map((enemy) => {
+    const weaknesses = elements.filter((element) => isTextInText(enemy.infos, element));
+
+    if (weaknesses.length !== 2) return { nom: enemy.nom, infos: enemy.infos, elements: weaknesses };
+  })
+  .filter((w) => !!w);
+
+if (abnormalWeaknesses.length) console.log("Abnormal weaknesses :", abnormalWeaknesses);
+
 const enemyWeakness = Object.values(enemyJSON).map((enemy) => enemy.infos);
 
 const elementsCount = {};
-
 elements.forEach((element) => {
   const fullText = unformatText(JSON.stringify(enemyWeakness));
   // The g in the regular expression (meaning "g"lobal) says to search the whole string rather than just find the first occurrence
   const regex = new RegExp(unformatText(element), "g"); // Regex for the element in global
-  const count = (fullText.match(regex) || []).length;
-  elementsCount[element] = count;
+  elementsCount[element] = (fullText.match(regex) || []).length;
 });
-console.log("Enemies Weaknesses :");
-console.log(enemyWeakness);
-console.log(elementsCount);
+console.log("Enemies Weaknesses :", elementsCount);
 
 // console.log("Pour trouver des ennemis par nom  : Object.values(enemyJSON).filter(enemy => enemy.nom.includes('rsun')");
 document.querySelector("#filtre").addEventListener("change", (e) => {
@@ -244,18 +270,18 @@ function toggleDesc(descE) {
 const equipementsE = document.querySelector(".equipements");
 // eqpts list
 Object.values(eqptJSON).forEach((eqpt) => {
-  var eqptE = document.createElement("div");
+  const eqptE = document.createElement("div");
   eqptE.classList.add("eqpt");
-  var nomE = document.createElement("p");
+  const nomE = document.createElement("p");
   nomE.classList.add("nom");
-  var descE = document.createElement("p");
+  const descE = document.createElement("p");
   descE.classList.add("desc");
-  var effetE = document.createElement("p");
+  const effetE = document.createElement("p");
   effetE.classList.add("effet");
-  var montantE = document.createElement("p");
+  const montantE = document.createElement("p");
   montantE.classList.add("montant");
 
-  var iconeE = document.createElement("img");
+  const iconeE = document.createElement("img");
   iconeE.classList.add("icone");
 
   nomE.innerText = eqpt.nom;
@@ -386,25 +412,22 @@ document.querySelector("#newEnemy").addEventListener("click", () => {
 document.querySelector("#updatePInfo").addEventListener("click", () => {
   updateSlots();
 
-  var xhReq = new XMLHttpRequest();
-
   const pInfo = document.querySelector("#pInfo");
-  xhReq.open("GET", "./JDRpersos.json" + "?" + new Date().getTime(), false);
-  xhReq.send(null);
-  var persosJSON = JSON.parse(xhReq.responseText);
 
-  var playersListID = document.querySelector("#pList").value.split(",");
+  const persosJSON = getData("persos");
+
+  const playersListID = document.querySelector("#pList").value.split(",");
 
   pInfo.innerHTML = "";
 
   Object.entries(playersListID).forEach(([index, pID]) => {
-    var player = persosJSON[(parseInt(pID) - 1).toString()]; // Car index 0 à la première
+    const player = persosJSON[(parseInt(pID) - 1).toString()]; // Car index 0 à la première
     if (!player) return; // Can't continue
 
     if ([...document.querySelectorAll(".perso")][index])
       [...document.querySelectorAll(".perso")][index].children[0].value = player.nom;
 
-    var liElem = document.createElement("li");
+    const liElem = document.createElement("li");
     liElem.innerText = player.nom + " : " + player.pv + "/" + player.pvmax;
     pInfo.append(liElem);
   });
@@ -413,7 +436,7 @@ document.querySelector("#updatePInfo").addEventListener("click", () => {
 // Variateurs de PV et Dégâts selon le nombre de joueurs (new functionality 28/08/2023)
 
 document.querySelector("#nbP").addEventListener("change", (e) => {
-  var nbP = e.target.value;
+  const nbP = e.target.value;
   if (nbP >= 3) {
     document.querySelector("#variation").innerText = "+" + (nbP - 3) * 33 + "%";
   } else {
@@ -436,7 +459,11 @@ genericElements.forEach((genericE) => {
   const selectElements = [...genericE.children];
   selectElements.forEach((selectE) => {
     const propName = selectE.className;
-    addOptions(enemyGenericJSON[propName + "s"], propName, selectE);
+    // Fill options with all of an element (classes, races, rangs, guildes), mapped on "prop" value (classe =, ...)
+    fillSelectOptions(
+      selectE,
+      Object.values(enemyGenericJSON[propName + "s"].map((e) => ({ value: e[propName], innerText: e[propName] })))
+    );
 
     selectE.addEventListener("change", () => handleGenericSelectChange(selectElements));
   });
@@ -505,19 +532,6 @@ function handleGenericSelectChange(selectElements) {
   loadEnemy(0, selectElements[0].closest(".infoEnnemi"), enemyData);
 }
 
-function addOptions(data, propName, selectE) {
-  var option = document.createElement("option");
-  option.value = "";
-  option.innerText = "";
-  selectE.append(option);
-  Object.values(data).forEach((e) => {
-    var option = document.createElement("option");
-    option.value = e[propName];
-    option.innerText = e[propName];
-    selectE.append(option);
-  });
-}
-
 // ALL SAVES
 
 // Allow save for users
@@ -556,9 +570,9 @@ document.querySelector("#saveBackup").addEventListener("click", () => {
 // Create skill & Save
 
 document.querySelector("#createSkill").addEventListener("click", () => {
-  var addSkill = document.querySelector(".addSkill");
-  var skillID = parseInt(Object.keys(skillsJSON).reverse()[0]) + 1 || 1;
-  var newSkill = {};
+  const addSkill = document.querySelector(".addSkill");
+  const skillID = parseInt(Object.keys(skillsJSON).reverse()[0]) + 1 || 1;
+  const newSkill = {};
   newSkill[skillID] = {
     nom: addSkill.children[0 + 1].value,
     desc: addSkill.children[2 + 1].value,
@@ -569,8 +583,7 @@ document.querySelector("#createSkill").addEventListener("click", () => {
     classe: addSkill.children[12 + 1].value.split(","),
   };
   console.log(newSkill);
-
-  document.cookie = "skillsJSON=" + encodeURIComponent(JSON.stringify(newSkill));
+  setCookie("skillsJSON", newSkill);
 
   callPHP({ action: "saveFile", name: "skills" });
   skillsJSON[skillID] = newSkill[skillID];
@@ -580,9 +593,9 @@ document.querySelector("#createSkill").addEventListener("click", () => {
 // Create eqpt & Save
 
 document.querySelector("#createEqpt").addEventListener("click", () => {
-  var addEqpt = document.querySelector(".addEqpt");
-  var eqptID = parseInt(Object.keys(eqptJSON).reverse()[0]) + 1 || 1;
-  var newEqpt = {};
+  const addEqpt = document.querySelector(".addEqpt");
+  const eqptID = parseInt(Object.keys(eqptJSON).reverse()[0]) + 1 || 1;
+  const newEqpt = {};
   newEqpt[eqptID] = {
     nom: addEqpt.children[0 + 1].value,
     desc: addEqpt.children[2 + 1].value,
@@ -592,7 +605,7 @@ document.querySelector("#createEqpt").addEventListener("click", () => {
   };
   console.log(newEqpt);
 
-  document.cookie = "eqptJSON=" + encodeURIComponent(JSON.stringify(newEqpt));
+  setCookie("eqptJSON", newEqpt);
 
   callPHP({ action: "saveFile", name: "eqpt" });
   eqptJSON[eqptID] = newEqpt[eqptID];
@@ -602,9 +615,9 @@ document.querySelector("#createEqpt").addEventListener("click", () => {
 // Create enemy & Save
 
 document.querySelector("#createEnemy").addEventListener("click", () => {
-  var addEnemy = document.querySelector(".addEnemy");
-  var enemyID = parseInt(Object.keys(enemyJSON).reverse()[0]) + 1 || 1;
-  var newEnemy = {};
+  const addEnemy = document.querySelector(".addEnemy");
+  const enemyID = parseInt(Object.keys(enemyJSON).reverse()[0]) + 1 || 1;
+  const newEnemy = {};
   newEnemy[enemyID] = {
     visuel3D: addEnemy.children[0 + 1].value,
     nom: addEnemy.children[2 + 1].value,
@@ -622,7 +635,7 @@ document.querySelector("#createEnemy").addEventListener("click", () => {
   };
   console.log(newEnemy);
 
-  document.cookie = "enemyJSON=" + encodeURIComponent(JSON.stringify(newEnemy));
+  setCookie("enemyJSON", newEnemy);
 
   callPHP({ action: "saveFile", name: "enemy" });
   enemyJSON[enemyID] = newEnemy[enemyID];
