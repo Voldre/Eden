@@ -7,6 +7,9 @@ import {
   masterJSON,
   statsJSON,
   cardJSON,
+  classes,
+  iconsClasses,
+  iconsEveil,
 } from "./JDRstore.js";
 import {
   callPHP,
@@ -20,6 +23,8 @@ import {
   sumEqptsAsAccess,
   isTextInText,
   dateToString,
+  fillSelectOptions,
+  setCookie,
 } from "./utils.js";
 
 console.log("Skills JSON", skillsJSON);
@@ -28,9 +33,6 @@ console.log("Persos JSON", persosJSON);
 const buttonBuffs = document.querySelector("#buttonBuffs");
 
 // Table Initialisation
-
-// prettier-ignore
-const classes = [ "Guerrier", "Chevalier", "Templier", "Chev Dragon", "Voleur", "Assassin", "Danselame", "Samouraï", "Chasseur", "Ingénieur", "Corsaire", "Juge", "Clerc", "Barde", "Shaman", "Sage", "Magicien", "Illusionniste", "Démoniste", "Luminary",];
 
 console.log(
   "Combo de classes (Tableau X*Y) 20-20 :",
@@ -45,14 +47,9 @@ console.log(
   }))
 );
 
-// prettier-ignore
-const iconsClasses = [ "01", "02", "03", "18", "04", "05", "06", "16", "07", "08", "09", "59", "10", "11", "12", "17", "13", "14", "15", "19",];
-// prettier-ignore
-const iconsEveil = [ "J009", "J011", "J013", "j043", "J015", "J017", "J019", "j039", "J021", "J023", "J025", "j087", "J027", "J029", "J031", "j041", "J033", "J035", "J037", "j045"];
-// prettier-ignore
-const races = [ "Humain", "Ezelin", "Ursun", "Zumi", "Anuran", "Torturran", "Drakai", "Tuskar", "Ogre",];
-// prettier-ignore
-const poids = [ "Moyen", "Léger", "Lourd", "Léger", "Moyen", "Moyen", "Léger", "Lourd", "Lourd",];
+const races = ["Humain", "Ezelin", "Ursun", "Zumi", "Anuran", "Torturran", "Drakai", "Tuskar", "Ogre"];
+
+const poids = ["Moyen", "Léger", "Lourd", "Léger", "Moyen", "Moyen", "Léger", "Lourd", "Lourd"];
 
 const elements = ["contondant", "tranchant", "perçant", "feu", "glace", "foudre", "nature", "lumière", "ténèbres"];
 
@@ -108,15 +105,13 @@ raceE.addEventListener("change", (e) => {
 
 // CLASSES
 const allClassE = document.querySelectorAll('[id^="classe"]');
-allClassE.forEach((classeElem, i) => {
-  ["", ...classes].forEach((classe) => {
-    const option = document.createElement("option");
-    option.value = classe;
-    option.innerText = classe;
-    classeElem.append(option);
-  });
+allClassE.forEach((classE, i) => {
+  fillSelectOptions(
+    classE,
+    ["", ...classes].map((classe) => ({ value: classe, innerText: classe }))
+  );
 
-  classeElem.addEventListener("change", (e) => {
+  classE.addEventListener("change", (e) => {
     const selectedClasseID = classes.indexOf(e.target.value);
     if (selectedClasseID == -1) {
       console.log(e.target.value + " is not a class (in the list)");
@@ -212,7 +207,7 @@ function defineAwaken(classe) {
 
   awakenSkillE.classList.remove("hide");
 
-  var nbUse;
+  let nbUse;
   if (niv >= 15) {
     nbUse = 3;
   } else if (niv >= 12) {
@@ -229,7 +224,7 @@ function defineAwaken(classe) {
   awakenSkillE.querySelector(".montant").innerText =
     nbUse + " fois par combat : Eveil des compétences : Durée " + nbTurns + " tours";
 
-  var classeID = classes.indexOf(classe);
+  const classeID = classes.indexOf(classe);
   awakenSkillE.querySelector(".icone").src =
     "http://voldre.free.fr/Eden/images/skillIcon/" + iconsEveil[classeID] + ".png";
   awakenSkillE.querySelector(".desc").innerText =
@@ -245,7 +240,7 @@ awakenSkillE.addEventListener("click", (e) => {
 });
 
 document.querySelector("#awakenButton").addEventListener("click", (e) => {
-  var awakenClass; // Classe à éveiller
+  let awakenClass; // Classe à éveiller
   if (e.target.innerText == "Inactif") {
     e.target.innerText = "Actif";
     e.target.style.color = "green";
@@ -392,13 +387,9 @@ function updateSkillsSlots() {
 }
 function updateSkillsList() {
   // Depending on classes
-  [...competencesE.children].forEach((competence) => {
+  [...competencesE.children].forEach((competenceE) => {
     // Skills list
-    const selectedOption = competence.children[0].value;
-    removeOptions(competence.children[0]);
-    var option = document.createElement("option");
-    option.value = "";
-    competence.children[0].append(option);
+    const selectedOption = competenceE.children[0].value;
 
     const classeP = classePElement.value;
     const classeS = classeSElement.value;
@@ -406,29 +397,20 @@ function updateSkillsList() {
     // Look at the First weapon name
     const weaponName = unformatText(document.querySelector(".arme").children[0].value);
 
-    Object.values(skillsJSON).forEach((skill) => {
-      if (skill.classe.includes(classeP) || skill.classe.includes(classeS) || skill.classe.includes(weaponName)) {
-        // Si la classe est dans la liste
-        var option = document.createElement("option");
-        option.value = skill.nom;
-        option.innerText = skill.nom;
-        competence.children[0].append(option);
-      }
-    });
-    competence.children[0].value = selectedOption;
+    // Liste des sorts des classes (+ arme)
+    const options = Object.values(skillsJSON)
+      .filter(
+        (skill) => skill.classe.includes(classeP) || skill.classe.includes(classeS) || skill.classe.includes(weaponName)
+      )
+      .map((skill) => ({ value: skill.nom, innerText: skill.nom }));
+
+    fillSelectOptions(competenceE.children[0], options);
+    competenceE.children[0].value = selectedOption;
   });
 }
 
-function removeOptions(selectElement) {
-  var i,
-    L = selectElement.options.length - 1;
-  for (i = L; i >= 0; i--) {
-    selectElement.remove(i);
-  }
-}
-
 function insertSkill(skillElement, skillName, awakenClass = false) {
-  var selectedSkill = Object.values(skillsJSON).find((skill) => skill.nom == skillName);
+  const selectedSkill = Object.values(skillsJSON).find((skill) => skill.nom == skillName);
 
   skillElement.classList.remove("awaken");
 
@@ -495,13 +477,13 @@ function insertSkill(skillElement, skillName, awakenClass = false) {
     }
     // Update 05/01/2024, add inputs to handle charges (light/dark)
     if (skillName === "Assaut du Chaos") {
-      var wrapperE = document.createElement("div");
+      const wrapperE = document.createElement("div");
       wrapperE.style.width = "max-content";
-      var textE = document.createElement("span");
+      const textE = document.createElement("span");
       textE.innerText = "Lum/Ten";
-      var lumiereE = document.createElement("input");
+      const lumiereE = document.createElement("input");
       lumiereE.style.width = "40px";
-      var tenebresE = document.createElement("input");
+      const tenebresE = document.createElement("input");
       tenebresE.style.width = "40px";
 
       lumiereE.type = "number";
@@ -794,33 +776,31 @@ const getItemsInInventory = (inventory) => {
 document.querySelector(".inventaire").addEventListener("change", (e) => getItemsInInventory(e.target.value));
 
 //  PERSOS
-const selectPerso = document.querySelector("#selectPerso");
-var selectedPerso = selectPerso.value;
+const selectPersoE = document.querySelector("#selectPerso");
+let selectedPerso = selectPersoE.value;
 
 const archiveE = document.querySelector("#archived");
 
-Object.entries(persosJSON).forEach(([id, perso]) => {
-  const option = document.createElement("option");
-  option.value = "J" + (parseInt(id) + 1);
-  option.innerText = perso.nom;
-  // By default, hidden archived
-  option.hidden = perso.isArchived;
-  selectPerso.append(option);
-});
+const persoOptions = Object.entries(persosJSON).map(([id, perso]) => ({
+  value: "J" + (parseInt(id) + 1),
+  innerText: perso.nom,
+  hidden: perso.isArchived,
+}));
+
+const nbNewPersos = Object.values(persosJSON).filter((perso) => perso.joueur === undefined).length;
+
 // Default new slots for new characters (limited)
-[0, 1].map((i) => {
-  const nbNewPersos = Object.values(persosJSON).filter((perso) => perso.joueur === undefined).length;
-  if (nbNewPersos > 5) {
-    toastNotification("Limite de personnages temporaires atteinte", 2000, true);
-    return;
-  }
-  const option = document.createElement("option");
-  const label = "J" + (Object.entries(persosJSON).length + i + 1);
-  option.value = label;
-  option.innerText = label;
-  option.hidden = false;
-  selectPerso.append(option);
-});
+const newPersoOptions =
+  nbNewPersos > 5
+    ? []
+    : [0, 1].map((i) => {
+        const label = "J" + (Object.entries(persosJSON).length + i + 1);
+        return { value: label, innerText: label, hidden: false };
+      });
+
+if (!newPersoOptions.length) toastNotification("Limite de personnages temporaires atteinte", 2000, true);
+
+fillSelectOptions(selectPersoE, [...persoOptions, ...newPersoOptions]);
 
 archiveE.addEventListener("change", (e) => {
   onArchive(e.target.checked);
@@ -829,7 +809,7 @@ archiveE.addEventListener("change", (e) => {
 const onArchive = (isArchived) => {
   Object.entries(persosJSON).forEach(([id, perso]) => {
     // Hidden if isArchived is matching
-    selectPerso.options[parseInt(id)].hidden = isArchived !== perso.isArchived;
+    selectPersoE.options[parseInt(id)].hidden = isArchived !== perso.isArchived;
   });
   archiveE.checked = isArchived;
 };
@@ -838,10 +818,10 @@ const onArchive = (isArchived) => {
 window.addEventListener("load", () => {
   const urlParams = new URLSearchParams(window.location.search);
   if (urlParams.has("perso")) {
-    selectPerso.value = "J" + urlParams.get("perso");
+    selectPersoE.value = "J" + urlParams.get("perso");
     // loadFiche(urlParams.get('perso'));
-    selectedPerso = selectPerso.value;
-    indexPerso = selectPerso.selectedIndex;
+    selectedPerso = selectPersoE.value;
+    indexPerso = selectPersoE.selectedIndex;
     loadFiche();
     toastNotification("Chargement réussi de " + selectedPerso);
   } else {
@@ -862,7 +842,7 @@ window.addEventListener("load", () => {
   } else {
     galeryJSON.forEach((pic) => {
       if (pic.includes(".jpg") || pic.includes(".png") || pic.includes(".webp")) {
-        var imgE = document.createElement("img");
+        const imgE = document.createElement("img");
         imgE.src = "./images/jdrgalerie/" + pic;
         document.querySelector(".galerie").append(imgE);
       }
@@ -870,7 +850,7 @@ window.addEventListener("load", () => {
   }
 });
 
-selectPerso.addEventListener("change", (e) => {
+selectPersoE.addEventListener("change", (e) => {
   const perso = e.target.value;
   indexPerso = e.target.selectedIndex;
 
@@ -930,8 +910,8 @@ function loadFiche() {
 
   onArchive(persoData.isArchived);
   // Classes du perso
-  var classePID = classes.indexOf(persoData.classeP);
-  var classeSID = classes.indexOf(persoData.classeS);
+  const classePID = classes.indexOf(persoData.classeP);
+  const classeSID = classes.indexOf(persoData.classeS);
 
   document.querySelector(".iconClasses").children[0].id = persoData.classeP;
   document.querySelector(".iconClasses").children[0].src =
@@ -978,9 +958,9 @@ function loadFiche() {
   updateSkillsSlots();
 
   JSON.parse(persoData.skills).forEach((skill, index) => {
-    var competence = [...competencesE.children][index];
-    competence.children[0].value = skill;
-    insertSkill(competence, skill);
+    const competenceE = [...competencesE.children][index];
+    competenceE.children[0].value = skill;
+    insertSkill(competenceE, skill);
   });
 
   // Inventaire du perso
@@ -1037,7 +1017,7 @@ function createEquipmentSynthesis(persoEqpts) {
   const eqptSynthesisE = document.querySelector(".equipements-synthese");
   eqptSynthesisE.innerHTML = "";
 
-  let accessValues = [];
+  const accessValues = [];
 
   synthesisCategories.forEach((category) => {
     const eqptsValueList = parseEqptsByRegex(category.regex, persoEqpts, persoData);
@@ -1178,6 +1158,7 @@ screenshotButton.addEventListener("click", () => {
   screenshotButton.disabled = true;
   toastNotification("Capture d'écran en cours ...", 5000);
 
+  // eslint-disable-next-line no-undef
   html2canvas(document.querySelector(".perso"), { backgroundColor: null }).then((canvas) => {
     const link = document.createElement("a");
     link.download = `screenshot ${persoData.nom} ${dateToString(new Date())}.png`;
@@ -1221,17 +1202,16 @@ saveButton.addEventListener("click", () => {
     toastNotification("Les sauvegardes sont bloquées par le MJ");
     return;
   }
-  const cookiePerso = savePerso();
+  const newPerso = savePerso();
   // Save to JSON...
   // Only store persosJSON current user (perso id)
-  if (!cookiePerso) {
+  if (!newPerso) {
     toastNotification("Erreur : ID Perso ou Nom invalide", 4000, true);
     return;
   }
-  console.log(`Cookie length : ${cookiePerso.length}/4000`);
-  document.cookie = cookiePerso;
-  if (cookiePerso.length < 4000) {
-    document.cookie = cookiePerso;
+  console.log(`Cookie length : ${newPerso.length}/4000`);
+  const result = setCookie("persosJSON", newPerso);
+  if (result) {
     callPHP({ action: "saveFile", name: "persos" });
     toastNotification("Sauvegarde effectuée");
   } else {
@@ -1295,17 +1275,13 @@ function savePerso() {
   newPerso[persoId] = persosJSON[persoId];
   console.log(newPerso);
 
-  const newPersoEncoded = JSON.stringify(newPerso).replaceAll("+", "%2B").replaceAll(";", "%3B");
-  // encodeURIComponent(JSON.stringify(newPerso))
-  const cookiePerso = "persosJSON=" + newPersoEncoded + "; SameSite=Strict";
-
-  return cookiePerso;
+  return newPerso;
 }
 
 // Global Save
 
 // Show/Hide other pages of Eden
-var buttonIframe = document.querySelector("#buttonIframe");
+const buttonIframe = document.querySelector("#buttonIframe");
 buttonIframe.addEventListener("click", () => {
   if (buttonIframe.innerText == "Afficher le site") {
     buttonIframe.innerText = "Masquer le site";
@@ -1480,7 +1456,7 @@ const getStats = () => {
 
 function sumObjectsByKey(...objs) {
   return objs.reduce((a, b) => {
-    for (let k in b) {
+    for (const k in b) {
       a[k] = (a[k] || 0) + b?.[k];
     }
     return a;

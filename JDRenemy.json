@@ -6,7 +6,7 @@
     "skills": ["Charge : fonce : 2D6+4 : force", "Morsure : mord : 1D10+4 : force", "", ""],
     "stats": "15,11,9,9,12",
     "desc": "Sanglier brun vivant \u00e0 la Colline Tranquille",
-    "infos": "Faible au feu",
+    "infos": "Faible au feu et tranchant",
     "drop": "80% Fourrure de sanglier X2, 40% D\u00e9fense de sanglier X1"
   },
   "2": {
@@ -21,7 +21,7 @@
     ],
     "stats": "8,12,16,8,14",
     "desc": "Drakai \u00e0 la peau violette en tenue de mage d\u00e9moniste",
-    "infos": "Faible au contondant, per\u00e7ant et lumi\u00e8res",
+    "infos": "Faible au contondant et lumi\u00e8res",
     "drop": "30po, Robe \u00e9toil\u00e9e, rare : pendentif occulte"
   },
   "3": {
@@ -2571,7 +2571,7 @@
     ],
     "stats": "19,13,13,11,13",
     "desc": "Un incroyable Y\u00e9ti des glaces : 6m de long et 3m de large ! Plein de poils et de dents pointus ! Rien que le regarder donne des vrais frissons !",
-    "infos": "",
+    "infos": "Faible au feu et au per\u00e7ant",
     "drop": ""
   },
   "174": {

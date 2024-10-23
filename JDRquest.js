@@ -1,13 +1,12 @@
 import { playerJSON, mapsJSON, pnjJSON, persosJSON, enemyJSON } from "./JDRstore.js";
-import { toastNotification } from "./utils.js";
+import { setCookie, toastNotification } from "./utils.js";
 
 // const apiKey = "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";
 const apiUrl = "https://api.openai.com/v1/chat/completions";
 
 const responseElement = document.querySelector("#response");
-var rarity;
 
-let indexPerso, indexPlayer, pnjEnemy, mapID;
+let rarity, indexPerso, indexPlayer, pnjEnemy, mapID;
 
 // Load perso if URL parameter
 window.addEventListener("load", async () => {
@@ -151,7 +150,7 @@ function chooseEnemy(mapId = null, category = null) {
   // prettier-ignore
   const forbidden = ["82","101","104","109"];
 
-  var enemyListId = Object.keys(enemyJSON).filter((eID) => !forbidden.includes(eID));
+  let enemyListId = Object.keys(enemyJSON).filter((eID) => !forbidden.includes(eID));
 
   // prettier-ignore
   const boss = ["24","29","45","46","50","54","56","57","59","61","62","67","70","71","74","75","76","77","80","82","84","85","86","89","90","101","106","109","111","113","114","118","119"];
@@ -221,16 +220,16 @@ function initializeActions(enemyData, pnjEnemy = { nom: null }, mapID) {
   Object.entries(actions).forEach(([id, action]) => {
     const liElem = document.createElement("li");
     liElem.innerText = action;
-
-    var enemy;
-    var actionURL;
-    if (id == 0) {
+    id = parseInt(id);
+    let enemy;
+    let actionURL;
+    if (id === 0) {
       enemy = enemyData["nom"];
       actionURL =
         "jdr_combat.html?perso=" + indexPerso + "&enemy=" + enemy + "&map=" + mapID + (isElite ? "&isElite" : "");
-    } else if (id == 1) {
+    } else if (id === 1) {
       actionURL = "jdr_profil.html?joueur=" + indexPlayer;
-    } else if (id == 2) {
+    } else if (id === 2) {
       // Change enemy
       enemy = pnjEnemy["nom"];
       actionURL =
@@ -238,7 +237,7 @@ function initializeActions(enemyData, pnjEnemy = { nom: null }, mapID) {
     }
 
     liElem.addEventListener("click", () => {
-      setCookie("loadJDRcombat", true, 0.01);
+      if (id !== 1) setCookie("loadJDRcombat", true);
       window.location.href = actionURL;
     });
     document.querySelector("#actions").append(liElem);
@@ -252,10 +251,3 @@ document.querySelector(".enemy-wrapper").addEventListener("click", () => {
   initializeEnemy(enemyData, rarity);
   initializeActions(enemyData, pnjEnemy, mapID);
 });
-
-function setCookie(cname, cvalue, exdays) {
-  const d = new Date();
-  d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
-  let expires = "expires=" + d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
