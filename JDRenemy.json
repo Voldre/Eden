@@ -3,7 +3,7 @@
     "visuel3D": "m075",
     "nom": "Sanglier Dentranchante",
     "pvmax": "70",
-    "skills": ["Charge : fonce : 2D6+4 : force", "Morsure : mord : 1D10+4 : force", "", ""],
+    "skills": ["Charge : fonce : 2D6+6 : force", "Morsure : mord : 1D10+4 : force", "", ""],
     "stats": "15,11,9,9,12",
     "desc": "Sanglier brun vivant \u00e0 la Colline Tranquille",
     "infos": "Faible au feu et tranchant",
@@ -31,7 +31,7 @@
     "skills": [
       "Charge : 1D10 +8 : force",
       "Coup de hache : 1D10 + 1D6 +7 : force",
-      "Cri de guerre : d\u00e9g\u00e2t +3 a tlm pendant 4 tours",
+      "Cri de guerre : buff d\u00e9g\u00e2t +3 a tlm pendant 4 tours",
       ""
     ],
     "stats": "15,11,7,9,12",
@@ -58,7 +58,7 @@
     "visuel3D": "m025",
     "nom": "Champigno\u00efde Baga",
     "pvmax": "55",
-    "skills": ["Coup de boule : 1D10+4 : force", "Spore : 1D6+4 AoE nature : intelligence", "", ""],
+    "skills": ["Coup de boule : 1D10+6 : force", "Spore : 1D6+6 AoE nature : intelligence", "", ""],
     "stats": "14,9,14,10,13",
     "desc": "Petit champigno\u00efde rouge du Mont Calcaire",
     "infos": "Faible au feu et \u00e0 la glace",
@@ -276,7 +276,7 @@
     "skills": [
       "Perce-Armure : 1D8+5 + d\u00e9g\u00e2t physique re\u00e7u +3 (3 tours) : force",
       "Charge : 2D8+5 : force",
-      "Cri de guerre : d\u00e9g\u00e2t +4 a tlm pendant 3 tours",
+      "Cri de guerre : buff d\u00e9g\u00e2t +4 a tlm pendant 3 tours",
       ""
     ],
     "stats": "16,12,8,13,14",
@@ -319,7 +319,7 @@
     "nom": "Lutin Runique",
     "pvmax": "80",
     "skills": [
-      "Coup de boule : 1D10+4 : force",
+      "Coup de boule : 1D10+6 : force",
       "Magie extr\u00eame : +1D4+4 magique \u00e0 tlm pour 3 tours : esprit",
       "Stalactites de Glace : 3D6 +6 : intelligence",
       "Bombe incendiaire : 1D10 +9 : intelligence"
@@ -451,7 +451,7 @@
     "skills": [
       "Eclat de roche : 1D10+6 : force",
       "Fracassement terresstre : 1D8+5 AoE : force",
-      "Cri de guerre : d\u00e9g\u00e2t +4 a tlm pendant 4 tours : esprit",
+      "Cri de guerre : buff d\u00e9g\u00e2t +4 a tlm pendant 4 tours : esprit",
       ""
     ],
     "stats": "17,11,10,8,13",
@@ -659,7 +659,7 @@
     "nom": "Voldre",
     "pvmax": "240",
     "skills": [
-      "Coupe Asura : 1D10 + (1D10)+15 : force",
+      "Coupe Asura : 1D10 + (1D10) +15 : force",
       "Eclair Unique : 1D10 + (1D10) +18 : force",
       "Contr\u00f4le de l'esprit : Soin 4D8 +10, pendant 3 tours : dext\u00e9-4, r\u00e9sistance au stun (res esprit +4)",
       "Foi du temple : Esprit+3, D\u00e9g\u00e2t subi -1D6-7 pendant 4 tours : esprit"
@@ -824,8 +824,8 @@
     "nom": "Ursina",
     "pvmax": "260",
     "skills": [
-      "Coupe Asura : 2D10+15 (+1D6) : force",
-      "Purgatoire : 2D8+15 (+5 asura) (+1D) : esprit",
+      "Coupe Asura : 2D10+15 (+5 large) : force",
+      "Purgatoire : 2D8+15 (+5 asura) (+5 large) : esprit",
       "Foi du temple \u00e9veill\u00e9 : Blocage+2, Esprit+3, D\u00e9g\u00e2t subi -1D6-6 pendant 4 tours : esprit",
       "Euphorie : +1D4 (min 2)+2 par coup. Buff pendant 4 tours (max 5) : esprit"
     ],
@@ -885,7 +885,7 @@
     "pvmax": "210",
     "skills": [
       "Triple Tir : 1D8+1D6+1D4+15 : Dext\u00e9rit\u00e9",
-      "Blessure Douloureuse : 1D10 +13, et 0 soin sur 4 tours : Dext\u00e9rit\u00e9",
+      "Blessure Douloureuse : 1D10 +13, et 0 heal sur 4 tours : Dext\u00e9rit\u00e9",
       "S\u00e9r\u00e9nit\u00e9 : Dext\u00e9+2 Esquive+2, D\u00e9g\u00e2t subi -1D6-6 pendant 4 tours : Esprit",
       "Fl\u00e8che M\u00e9ga Eblouissante : 1D10 +15, r\u00e9ussite des sorts -2 (3 tours) AoE : Dext\u00e9rit\u00e9"
     ],
@@ -901,7 +901,7 @@
     "skills": [
       "Mode Draconique : Embras\u00e9 : Force/Intel+2, D\u00e9moniaque : Charisme+2, Cach\u00e9 : Esprit+2 : Esprit",
       "Terreur du Dragon AoE : R\u00e9ussite des sorts : -3 sur 3 tours AoE (+ mode Cf. DK) : Charisme",
-      "Pouvoir du Dragon / Atk Cyclone : 3D6+25 (AoE-5) (feu, t\u00e9n\u00e8b,phys) : Force",
+      "Atk Cyclone / Pouvoir du Dragon : 3D6+21 (Mono+7) (feu, t\u00e9n\u00e8b,phys) : Force",
       "Revers d'\u00e9caille \u00e9veill\u00e9 (instant) : 5 tentatives (<10 : 66%, >=10 : 33%) (+ mode Cf. DK) : Esprit<br/>Passif : (Def Acier Perma) Blocage+2, PV < 140 : D\u00e9g\u00e2t +5 (Crit +10)"
     ],
     "stats": "17,13,9,15,17",
@@ -917,7 +917,7 @@
       "Charge : 1D10 +12 : force",
       "Vague terrestre : 1D10 +8 AoE : force",
       "D\u00e9fense : D\u00e9g\u00e2t -7 sur 3 tours : Esprit",
-      "Cri de guerre : d\u00e9g\u00e2t +4 AoE sur 4 tours : Esprit"
+      "Cri de guerre : buff d\u00e9g\u00e2t +4 AoE sur 4 tours : Esprit"
     ],
     "stats": "17,9,11,9,15",
     "desc": "Un taureau \u00e0 carapace de roc orang\u00e9. Des crystaux bleus pars\u00e8ment son corps.",
@@ -1034,7 +1034,7 @@
     "nom": "Ecorce Terrestre - Pionnier de Gaia",
     "pvmax": "330",
     "skills": [
-      "Fracas Terrestre / Atk Foudroyante : 2D10 +16 / +4 AoE : force/intel",
+      "Fracas Terrestre / Atk Foudroyante : 2D10 +16 / +5 AoE : force/intel",
       "M\u00e2choire Enorme : 4D6+24 : force",
       "M\u00e8re fondatrice : Soin 2D10+25 Invoque 2 lutins pr\u00e9historique (PV/2) : esprit",
       "Passif : Armure +5, quand 33% PV : Si Blocage critique => Fracas terrestre auto"
@@ -1079,9 +1079,9 @@
     "nom": "Rumbledore (le vrai)",
     "pvmax": "250",
     "skills": [
-      "Temp\u00eate de Glace : 3D10 +15 : Intelligence",
+      "Temp\u00eate de Glace : 2D10 +20 (+5 si PV<50%) : Intelligence",
       "Saut Dimensio DIVIN : 4 tentatives par combat : remplace l'esq/blocage et remplace sa place par un autre joueur (subit le coup) : intel",
-      "Magie Extr\u00eame + : Prochain d\u00e9g\u00e2t magique +2D6 +10 : Espr'it (jdrcombat +42)",
+      "Magie Extr\u00eame + : Prochain d\u00e9g\u00e2t magique +2D6 +10 : Esprit",
       "Bombe Incendiaire M\u00e9ga : 3D10 +18, Si crit(1,2,3) ou bloc(20) : STUN 1 tour : Intelligence"
     ],
     "stats": "7,11,18,13,16",
@@ -1380,11 +1380,11 @@
     "pvmax": "90",
     "skills": [
       "Croc pourri : 1D10+6, soin re\u00e7u /2 (3 tours) : force",
-      "Projection d'eau : 1D10+4 AoE : intelligence",
+      "Projection d'eau : 1D10+9 AoE : intelligence",
       "Coup de queue : 2D10+6 : force",
       ""
     ],
-    "stats": "15,8,13,8,12",
+    "stats": "15,8,14,8,12",
     "desc": "Poisson g\u00e9ant aux yeux noir qui ressort de l'abysse oc\u00e9anique",
     "infos": "Faible \u00e0 la lumi\u00e8re et \u00e0 la foudre",
     "drop": "Dent g\u00e9ante, \u00e9cailles de poissons"
@@ -1740,7 +1740,7 @@
     "pvmax": "290",
     "skills": [
       "Zone noire : 2D10+18 (bloc m-2) AoE stat -2 (stat-3 si parasite) pendant 3 tours : Intelligence",
-      "Eclair en Furie : 4D6 +21 (bloc m-2) et r\u00e9ussite -5 sur 1 tour : Intelligence",
+      "Eclair en Furie : 4D6 +20 (bloc m-2) et r\u00e9ussite -5 sur 1 tour : Intelligence",
       "Aura Bouclier Protec (+ Ctrl mentale) : Blocage +3 et (-1 Malus si d\u00e9 <=6) pendant 4 tours : esprit",
       "Esprit Descell\u00e9 : Invoque 1 Fant\u00f4me L\u00e9thargique (2 si d\u00e9 <= 8, si crit : Esprit de la Vengeance) : Esprit<br/> Pr\u00e9vention du Descelleur : D\u00e9g\u00e2t -1D4-4 pour 4 tours, -1 malus : (m\u00eame silence) Intelligence"
     ],
@@ -1769,8 +1769,8 @@
     "nom": "Invidia",
     "pvmax": "220",
     "skills": [
-      "Triple Tir : 1D8+1D6+1D4+18 : Dext\u00e9rit\u00e9",
-      "Blessure Douloureuse : 1D10 +16, et 0 heal sur 4 tours : Dext\u00e9rit\u00e9",
+      "Triple Tir : 1D8+1D6+1D4+16 (+5 si PV<120) : Dext\u00e9rit\u00e9",
+      "Blessure Douloureuse : 1D10 +15, et 0 heal sur 4 tours : Dext\u00e9rit\u00e9",
       "S\u00e9r\u00e9nit\u00e9 : Dext\u00e9+2 Esquive+2, D\u00e9g\u00e2t subi -1D6-6 pendant 4 tours : Esprit",
       "Passif (Pr\u00e9cision): Esquive/Blocage cible +2"
     ],
@@ -1799,8 +1799,8 @@
     "nom": "Anuran Danselame",
     "pvmax": "180",
     "skills": [
-      "Lames Dansantes : 3D6 + 15 : Dext\u00e9rit\u00e9",
-      "Danse de l'oiseau de feu : 2D6+11 : Dext\u00e9rit\u00e9",
+      "Lames Dansantes : 3D6 + 14 : Dext\u00e9rit\u00e9",
+      "Danse de l'oiseau de feu : 2D6+12 : Dext\u00e9rit\u00e9",
       "Charme tape-\u00e0-l-oeil : R\u00e9ussite/Esq -3 sur 3 tours : Charisme",
       "Passif : Esquive+2"
     ],
@@ -1860,7 +1860,7 @@
     "pvmax": "250",
     "skills": [
       "Attaque foudroyante : AoE 3D6 + 10 (+3/champi) : Intelligence",
-      "Spore explosif : 4D6 +16 (jdrcombat +25) : Intelligence",
+      "Spore explosif : 4D6 +16 : Intelligence",
       "Spore mutant crystal (+2/champi) : Invoque un mini champi crystal (40 PV, charge 1D10+6 (D\u00e9 <15), explose \u00e0 la mort 2D10+10 AoE) : Esprit",
       "Passif : d\u00e9g\u00e2t re\u00e7u -5 (ou -10)"
     ],
@@ -1907,7 +1907,7 @@
       "Stalactite : 1D10 + 1D6 + 1D4 +12 : intelligence",
       "Attaque foudroyante : AoE 2D6 + 8 : intelligence",
       "D\u00e9voreur : 2D6+8 (d\u00e9g\u00e2ts/soign\u00e9s) : intelligence",
-      "Poison : 1D4+4 sur 3 tours : intel"
+      "Poison : 1D4+6 sur 3 tours : intel"
     ],
     "stats": "7,13,17,10,12",
     "desc": "Ces champigno\u00efdes sont ensorcel\u00e9es de magies tr\u00e8s \u00e9tranges, de dr\u00f4le de choses \u00e9manent d'eux.",
@@ -1979,7 +1979,7 @@
     "nom": "Samoura\u00ef Ogre",
     "pvmax": "160",
     "skills": [
-      "Coupe Asura : 1D10 + (1D6)+10 : force",
+      "Coupe Asura : 1D10 + (1D6) +10 : force",
       "Eclair Unique : 1D10 + (1D6) +14 : force",
       "Fr\u00e9n\u00e9sie Ogres : Chaque tour (4 max) : D\u00e9g\u00e2t (+) / PV (-) 1D6+6 : Esprit",
       "Passif : Si PV < 50 : d\u00e9g\u00e2ts +5"
@@ -1995,7 +1995,7 @@
     "pvmax": "230",
     "skills": [
       "Artillerie Lourde : 3D10+17 : Dext\u00e9rit\u00e9",
-      "Bombe \u00e0 Huile (Explosifs Visqueux) :  2D6+18 (+1D) : Dext\u00e9-2 ESQ-2 sur 3 tours AoE : Dext\u00e9rit\u00e9",
+      "Explosifs Visqueux (Bombe \u00e0 Huile) : 2D6+18 (+5) : Dext\u00e9-2 ESQ-2 sur 3 tours AoE : Dext\u00e9rit\u00e9",
       "Robotisation \u00e9veill\u00e9 : D\u00e9g\u00e2ts 1D4+6 et buff Armure +1D6 sur 4 tours : Esprit",
       "Passif : PV < 110 : Blocage/Esq critique : contre-attaque bombe 2D6+15"
     ],
@@ -2114,7 +2114,7 @@
     "nom": "Heldentod III",
     "pvmax": "350",
     "skills": [
-      "Attaque rapide : 3D6+22 (si PV bas +6, jdrcombat +70) : Force",
+      "Attaque rapide : 3D6+22 (si PV bas +6, jdrcombat +75) : Force",
       "Coup d\u00e9chirant : 2D6 +14 AoE (+6 d\u00e9g\u00e2ts re\u00e7us 3 tours) : Force",
       "Mal\u00e9diction Folle : -1D4+5(+1 si pv<50%) d\u00e9g\u00e2ts/tours AoE (si remove malus, ce montant*(nb perso remove) sur le lanceur), 4 tours : Esprit",
       "Passif : si coup critique retire un malus et le coup lanc\u00e9 est buff\u00e9 (1D10+6)"
@@ -2159,7 +2159,7 @@
     "nom": "Vidal - Sorcier Dragon",
     "pvmax": "250",
     "skills": [
-      "Pouvoir du Dragon / Atk foudr / Temp\u00eate Glace : 3D6+20 (AoE-5) : Intel",
+      "Atk foudr / Temp\u00eate Glace (Pouvoir du Dragon) : 3D6+20 (Mono+5) : Intel",
       "Saut Dimensionnel : 3 tentatives par combat : remplace l'esquive/blocage (buff prochain d\u00e9g\u00e2t +5) : intel",
       "Magie Extr\u00eame : Prochain d\u00e9g\u00e2t magique +2D6 +9 : Esprit",
       "Revers d'\u00e9caille (instant) : 4 tentatives par combat (<10 : 66%, >=10 : 33%) (+Soin PV+15 #Mode Cach\u00e9) : Esprit<br/>Passif : Blocage+1"
@@ -2174,9 +2174,9 @@
     "nom": "Barnardo - Barde Elogieux",
     "pvmax": "170",
     "skills": [
-      "Gu\u00e9rison: Soin 2D10+25 (-1 malus?) / Bombe Vocale : 2D6+10 : Intelligence",
+      "Gu\u00e9rison: Heal 2D10+25 (-1 malus?) / Bombe Vocale : 2D6+10 : Intelligence",
       "Encouragement Musical : D\u00e9g\u00e2t subi -1D4-6 AoE, 0 dodo, +2 r\u00e9s esprit, 4 tours : Charisme",
-      "Symphonie de guerre : D\u00e9g\u00e2t +1D6+3 AoE (3 tours) : Charisme (jdrcombat +50)",
+      "Symphonie de guerre : D\u00e9g\u00e2t +1D6+5 AoE (3 tours) : Charisme",
       "Passif : Si PV < 50% : Effet de tous les buffs +2"
     ],
     "stats": "7,13,17,17,11",
@@ -2205,7 +2205,7 @@
     "pvmax": "270",
     "skills": [
       "Euphorie : +1D4+2 (min 4) par coup. Buff pendant 4-5 tours (max 5) : esprit",
-      "Perc\u00e9e du Guerrier : 1D6 + 1D6 + 1D4 +18 : force (jdrCombat +25)",
+      "Perc\u00e9e du Guerrier : 2D6 + 1D4 +19 : force (jdrCombat +10)",
       "Instinct de Survie : PV & D\u00e9g\u00e2t : +1D6+6 pendant 3 tours : esprit",
       "Passif : Si coup critique : armure/2"
     ],
@@ -2281,7 +2281,7 @@
     "skills": [
       "Silence AoE : Aucun sort magique pendant 3 tours : Esprit",
       "Perc\u00e9e du Chevalier (Atk Cyclone) : 4D6 +20 (-5) : force",
-      "Spirale Glaciale : Blocage +3 sur 2-3 tours, rel\u00e2chement : 2D6+6 : Esp'rit (jdrcombat +35)",
+      "Spirale Glaciale : Blocage +3 sur 2-3 tours, rel\u00e2chement : 2D6+6 : Esp'rit (jdrcombat +25)",
       "Passif : Esquive+2, Armure +10. Si PV < 100 : Armure +5 Dur\u00e9e des sorts +1"
     ],
     "stats": "17,15,9,14,17",
@@ -2321,7 +2321,7 @@
   },
   "157": {
     "visuel3D": "m158",
-    "nom": "Samael - \"G\u00e9n\u00e9ral D\u00e9mon\"",
+    "nom": "Samael - 'G\u00e9n\u00e9ral D\u00e9mon'",
     "pvmax": "200",
     "skills": [
       "Panopticor Eveill\u00e9 : 40 PV, Force/Intel-Esprit : 15/16. Sort : Parasite obscur : 8 (+4/t *4) (Intel), Coup tentac : 2D6+10 (Force) : Esprit",
@@ -2384,7 +2384,7 @@
     "nom": "Fira - Virtuose de G\u00e9nie",
     "pvmax": "250",
     "skills": [
-      "Lames Dansantes X : 3D6+18 (+1D mono) AoE : Dext\u00e9rit\u00e9 (jdrcombat +24)",
+      "Lames Dansantes X : 3D6+18 (+7 mono) AoE : Dext\u00e9rit\u00e9",
       "Danse du Po\u00e8te : D\u00e9g\u00e2t +1D6+4, Dext\u00e9rit\u00e9+2 AoE sur 4 tours : Esprit",
       "Concentration : Esquive +2, Res Esprit +1 pendant 5 tours (dur\u00e9e des malus (ou effet) : /2) : Esprit",
       "Passif : Si esquive critique : l'ennemi le plus proche se prend l'attaque"
@@ -2416,7 +2416,7 @@
     "skills": [
       "D\u00e9doublement Eveill\u00e9 : Invoque un double sur 2(+1) tours : Esprit",
       "Rituel de Mana : Esprit/Res +3 AoE sur 1D4 +2 tours // Menace Mortelle : R\u00e9ussite des sorts : -3, esquive/blocage -2 AoE sur 1(+1) tour : Esprit",
-      "Parasite obscur : 12 + 4/t *5 // Fl\u00e8che des Ombres : 2D10+ 14, si para : heal 2D6+6 +4 si actif : Intel",
+      "Parasite obscur : 12 + 4/t *5 // Fl\u00e8che des Ombres : 2D10 +16, si para : heal 2Đ6+6 +4 si actif : Intel",
       "Voile du Blizzard (Intel +1) / Saut Dimensionnel (3 fois) // Passif : Tous les effets +1 tour ! # Invisible into d\u00e9doublement, mais double invisi 100%"
     ],
     "stats": "7,11,17,12,19",
@@ -2669,7 +2669,7 @@
     "nom": "Andredi - Pr\u00e9dateur Ail\u00e9",
     "pvmax": "280",
     "skills": [
-      "Coup de Serre : 4D6+25 : force",
+      "Coup de Serre : 4D6+24 : force",
       "Griffures P\u00e9n\u00e9trantes : 3D6+15 (Armure/2 sur 3 tours) AoE : force",
       "Cri strident : Blocage -3 AoE pendant 4 tours : Esprit",
       "Passif : si critique (1,2,3) : Emp\u00eache de se soigner pendant 3 tours (+ d\u00e9g\u00e2t re\u00e7u +10 (5 AoE))<br/>Si PV < 150 : D\u00e9g\u00e2t +5"
@@ -2819,8 +2819,8 @@
     "nom": "Lona - Briseuse de Sceau",
     "pvmax": "235",
     "skills": [
-      "Parasite fr\u00e9n\u00e9tique : 2D6+14 et -8 sur 5 tours (2 vie # infection/pr\u00e9vention) : Intelligence",
-      "Temp\u00eate Noire / Infection Pullulante : 2D6+24 / -6 + (tours para)*3 : Intelligence (jdrCombat +40)",
+      "Parasite fr\u00e9n\u00e9tique : 2D6+18 et -7 sur 5 tours (2 vie # infection/pr\u00e9vention) : Intelligence",
+      "Temp\u00eate Noire / Infection Pullulante : 2D6+24 / -6 + (tours para)*3 : Intelligence",
       "Esprit Descell\u00e9 : Invoque 1 Fant\u00f4me L\u00e9thargique (2 si d\u00e9 <= 6, si crit : Esprit de la Vengeance -50 PV) : Esprit",
       "Hommage : Soin 2 \u00e0 35 +15, Armure +5 sur 4 tours : Esprit<br/>Saut Dimensionnel : 3 tentatives : Intelligence"
     ],
@@ -2850,7 +2850,7 @@
     "pvmax": "270",
     "skills": [
       "Triple Tir (Blessure Douloureuse / Entrave) : Degat 3D6 (1D10) +25, (0 soin / entrave) sur 4 tours Mono : Dext\u00e9rit\u00e9",
-      "Fl\u00e8che M\u00e9ga Eblouissante : 2D6 +20, r\u00e9ussite -2 (3 tours) AoE : Dext\u00e9rit\u00e9 (jdrCombat +25)",
+      "Fl\u00e8che M\u00e9ga Eblouissante : 2D6 +18, r\u00e9ussite -3 (3 tours) AoE : Dext\u00e9rit\u00e9",
       "S\u00e9r\u00e9nit\u00e9 : Dext\u00e9+2 Esquive+2, D\u00e9g\u00e2t subi -1D6-6 pendant 4 tours : Esprit",
       "Passif : Rhinotaure (120 PV, Stats 16, 1t/2 : Charge  2D10+16 (1D10 AoE))"
     ],
@@ -2924,8 +2924,8 @@
     "nom": "Leonhart - 1er Chevalier",
     "pvmax": "350",
     "skills": [
-      "Perc\u00e9e du Chevalier (Temp\u00eate Infernale) : 4D6 +30 (-8, Prov 50% 1t) : force",
-      "Enchantement Glaciale : Blocage/Res +3,  d\u00e9g\u00e2t +1D6+4 sur 4 tours, rel\u00e2chement : (Montant*2) : Esp'rit (jdrcombat +99)",
+      "Temp\u00eate Infernale (Perc\u00e9e du Chevalier) : 4D6 +23 (+7 mono), Prov 50% 1t : force (jdrCombat +40)",
+      "Enchantement Glaciale : Blocage/Res +3,  d\u00e9g\u00e2t +1D6+4 sur 4 tours, rel\u00e2chement : (Montant*2) : Esprit",
       "Silence du n\u00e9ant : Nullifie la magie (sort, soin, buff)  pendant 3 tours (non annulable) : Esprit",
       "Passif : Armure +10, vivacit\u00e9 : esquive+2"
     ],
@@ -2984,10 +2984,10 @@
     "nom": "Kachgar - Commandant Khan",
     "pvmax": "260",
     "skills": [
-      "Coupure de lumi\u00e8re / noire (Destruction/Portail) : Degat 3D6 (2D6 AoE/+tp) +24, Mono : Force",
-      "Pri\u00e8re Divine (Sacrifice ombre) : Soin 2D6+20, prochain d\u00e9g\u00e2t lumi\u00e8re +1D8 +12, (chaque tour : PV -10, Force/Intel +4, t\u00e9n\u00e8bres +10) : Esprit",
+      "Coupure de lumi\u00e8re / noire (Destruction/Portail) : Degat 3D6 (-5 AoE/+tp) +22, Mono : Force",
+      "Pri\u00e8re Divine (Sacrifice ombre) : Heal 2D6+24, prochain d\u00e9g\u00e2t lumi\u00e8re +1D8 +12, (chaque tour : PV -10, Force/Intel +4, t\u00e9n\u00e8bres +10) : Espr",
       "Menaces Mortelles : R\u00e9ussite -3, Esq/Bloc/Res -2, dure 2 tours (AoE) : Esprit",
-      "Saut Dimensionnel : Esquive , 3 tentatives : Intelligence<br/>Passi'f : si PV <130 : Sacrifice = +5 DGT (et +5 PV/coup) (jdrCombat +40)"
+      "Saut Dimensionnel : Esquive , 3 tentatives : Intelligence<br/>Passif : si PV <130 : Sacrifice = +5 DGT (et soin +5 PV/coup)"
     ],
     "stats": "16,10,17,12,16",
     "desc": "Commandant de la grande tribu d'ogres des Khan, il a accomplit plusieurs exploits dans sa carri\u00e8re. Il est tr\u00e8s fourbe comme le reste de son clan.",
@@ -3045,7 +3045,7 @@
     "pvmax": "360",
     "skills": [
       "Aura de Mauvaise Fortune (3 fois : +1) : +1 sur le d\u00e9 (AoE) 3 tours : Esprit",
-      "Attaque Furieuse/Rapide : 4D6+20 (+10 mono) : Dext\u00e9rit\u00e9 (jdrCombat +15)",
+      "Attaque Furieuse/Rapide : 4D6+22 (+'8 mono) : Dext\u00e9rit\u00e9 (jdrCombat +15)",
       "Etoile Protectrice : Bloc/Esq/Res +2 (-2 malus) sur 4 tours : Esprit",
       "Passif 1 : (1/tour) Force \u00e0 relancer 1 fois et stock le d\u00e9 (x5), sauf crit d\u00e9 1<br/>Apr\u00e8s le stock (pdt 5t) : paire/triple/quad/quint (DGT++5 (sauf paire), atk Bloc/Esq/Res --1)<br/>Suite : -1 sur le d\u00e9 (combo 3/4/5 chiffres : 1/3/5t)<br/>Passif 2 : PV<200/100 : 1 relance chaque 2/1t"
     ],
@@ -3089,9 +3089,9 @@
     "nom": "Shellona - Fondateur R\u00e9incarn\u00e9",
     "pvmax": "360",
     "skills": [
-      "Lumi\u00e8re Gu\u00e9rison : 2D10+22 (1/4 rejouer) : Intelligence<br/> Pr\u00e9vention Chelona : -2 malus Armure/Epines +1D6+4 sur 5 tours : Espr (m\u00eame silence)",
+      "Lumi\u00e8re Gu\u00e9rison : 2D10+22 (1/4 rejouer) : Intelligence<br/> Pr\u00e9vention Chelona : -2 malus Armure/Epines +1D6+5 sur 5 tours : Espr (m\u00eame silence)",
       "Totem Chelona (esprit) : 60 PV - Stats 17.<br/>Soin : 1D6 +9 chaque tour<br/>Soutien : renforcement +2 force/intel AoE (3 tours), \u00e9clair : 2D6+16",
-      "Lumi\u00e8re Noire / Coup Infernal : 3D6+42 (-10, idem physique) : Intelligence",
+      "Lumi\u00e8re Noire / Coup Infernal : 3D6+40 (-8 AoE, idem physique) : Intelligence",
       "Passif : Blocage +1, Noyau Schiste : critique = soin (+ totem) X2 (AoE/2), D\u00e9 3 : /2 aussi"
     ],
     "stats": "13,10,19,14,18",
@@ -3134,8 +3134,8 @@
     "nom": "Marcus - H\u00e9ritier Vagabond",
     "pvmax": "260",
     "skills": [
-      "Pouvoir du Dragon / Atk Cyclone : 3D6+18 (AoE-5) (feu, t\u00e9n, phys) : Force",
-      "Terreur du Dragon : Res Esprit / R\u00e9ussite  -3 sur 3 tours : Charisme",
+      "Atk Cyclone (Pouvoir du Dragon) : 3D6+18 (Mono+5) (feu, t\u00e9n, phys) : Force",
+      "Terreur du Dragon : Res Esprit / R\u00e9ussite -3 sur 3 tours : Charisme",
       "Instinct de Survie : PV & D\u00e9g\u00e2t : +1D6+6 pendant 3 tours : Esprit",
       "Revers d'\u00e9caille (instant) : 3 tentatives par combat (<10 : 66%, >=10 : 33%) (D\u00e9g\u00e2t renv+5 #Embras\u00e9) : Esprit<br/>Passif : Mode D\u00e9fense : Dext\u00e9-3, Armure +5"
     ],
@@ -3165,9 +3165,9 @@
     "pvmax": "360",
     "skills": [
       "Frappe Fr\u00e9n\u00e9tique : 4D6+30 (+3/touche, max 5), cumule reset apr\u00e8s 4 tours, mini-AoE (bloc/esq -2) : Force<br/>Impact Cin\u00e9tique : 4D6+20 (r\u00e9ussite -5) : Force (m\u00eame silence), mais Esq/Bloc m",
-      "Griffure Noire : 4D6 +20 et -2 blocage/esquive AoE pour 4 tours : Force",
-      "Rugissement Meurtrier : D\u00e9g\u00e2t +1D6+4, PV +10 quand ennemi touch\u00e9, pendant 5 tours : Force (m\u00eame silence)",
-      "Constitution de Roi : Armure +5, Bloc/Esq/Res +1, dur\u00e9e Malus /2<br/>PV <150 : Effet Rugissement *2. Si Bloc/Esq critique : Coup opportun"
+      "Griffure Noire : 4D6 +22 et -2 blocage/esquive AoE pour 4 tours : Force",
+      "Rugissement Meurtrier : D\u00e9g\u00e2t +1D6+4, Soin PV +10 quand ennemi touch\u00e9, pendant 5 tours : Force (m\u00eame silence)",
+      "Constitution de Roi : Armure =5, Bloc/Esq/Res +1, dur\u00e9e Malus /2<br/>PV <150 : Effet Rugissement *2. Si Bloc/Esq critique : Coup opportun"
     ],
     "stats": "21,15,11,15,13",
     "desc": "Berserker r\u00e9put\u00e9 pour sa puissance hors-norme, il est connu comme \u00e9tant le bras arm\u00e9 de la Venturo. Il a \u00e9t\u00e9 vainqueur pendant 3 ann\u00e9es de suite au plus grand tournoi Luposia.",
