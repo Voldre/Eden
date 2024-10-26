@@ -511,9 +511,9 @@ window.addEventListener("load", () => {
   const customCommandE = document.querySelector(".customCommand");
   if (!onMap) {
     document.getElementById("iconBGM").style.display = "none";
-    customCommandE.innerHTML = "[1,2,3] (Focus) :  Liste, Couleurs, Design";
+    customCommandE.innerText = "[1,2,3] (Focus) :  Liste, Couleurs, Design";
   } else {
-    customCommandE.innerHTML = "[1,2,3] : Vitesse (1)";
+    customCommandE.innerText = "[1,2,3] : Vitesse (1)";
   }
 
   // If on map and no default map

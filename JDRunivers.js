@@ -1,5 +1,5 @@
 import { classes, iconsClasses, skillsAwakenJSON, skillsJSON } from "./JDRstore.js";
-import { aoeDescInfo, initDialog } from "./utils.js";
+import { aoeDescInfo, createElement, initDialog } from "./utils.js";
 
 const classesDesc = [
   "Les guerriers possèdent de solides aptitudes au combat ainsi que de lourdes armures résistantes. Peut effrayer les ennemis et motiver ses alliés.",
@@ -26,17 +26,13 @@ const classesDesc = [
 
 // Generate classes elements
 classes.forEach((classe, i) => {
-  const classeE = document.createElement("div");
-  classeE.id = classe;
-  const nomE = document.createElement("p");
-  if (classe == "Chev Dragon") {
-    classe = "C. Dragon";
-  }
-  nomE.innerText = classe;
-  const iconeE = document.createElement("img");
-  iconeE.src = "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" + iconsClasses[i] + ".png";
+  if (classe == "Chev Dragon") classe = "C. Dragon";
+  const nomE = createElement("p", classe);
+  const iconeE = createElement("img", undefined, {
+    src: "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" + iconsClasses[i] + ".png",
+  });
 
-  classeE.append(nomE, iconeE);
+  const classeE = createElement("div", [nomE, iconeE], { id: classe });
 
   document.querySelector(".classeslist").append(classeE);
 });
@@ -77,69 +73,63 @@ buttonElem.addEventListener("click", () => {
 });
 
 // Skills list
+const skillsListE = document.querySelector(".skillslist");
 const awakenButton = document.querySelector("#awakenButton");
 const updateSkillsList = (classe, isAwaken) => {
-  document.querySelector(".skillslist").innerHTML = "";
+  skillsListE.innerHTML = "";
 
   const skillsList = Object.values(skillsJSON).filter((skill) => skill.classe.includes(classe));
 
   skillsList.forEach((skill) => {
-    const skillE = document.createElement("div");
-    if (isAwaken) skillE.classList.add("awaken");
-    else skillE.classList.remove("akawen");
-    skillE.classList.add("skill");
-    const nomE = document.createElement("p");
-    nomE.classList.add("nom");
-    const descE = document.createElement("p");
-    descE.classList.add("desc");
-    const effetE = document.createElement("p");
-    effetE.classList.add("effet");
-    const montantE = document.createElement("p");
-    montantE.classList.add("montant");
-
-    const iconeE = document.createElement("img");
-    iconeE.classList.add("icone");
-
-    nomE.innerText = skill.nom;
+    const nomE = createElement("p", skill.nom, { class: "nom" });
 
     const awakenSkill = Object.values(skillsAwakenJSON).find((s) => s.nom === skill.nom);
-    descE.innerText = isAwaken && awakenSkill?.desc ? awakenSkill.desc : skill.desc;
-    montantE.innerText = isAwaken && awakenSkill?.montant ? awakenSkill.montant : skill.montant;
 
-    const skillRange = skill.effet.split("AoE ")[1] ?? null; // en bas [0] + "AoE"
-    const effetDesc = skillRange ? skill.effet.split(" AoE")[0] : skill.effet;
-    effetE.innerText = effetDesc;
-    if (skillRange) {
-      const skillRangeIconE = document.createElement("span");
-      skillRangeIconE.className = "skillRangeIcon";
-      skillRangeIconE.style.backgroundImage = `url(http://voldre.free.fr/Eden/images/layout/${skillRange}.png)`;
-
-      const skillStatE = document.createElement("span");
-      skillStatE.innerText = " / " + skill.stat + " / " + skill.classe?.toString().replaceAll(",", ", ");
-
-      effetE.append(skillRangeIconE, skillStatE);
-    } else {
-      effetE.innerText += " / " + skill.stat + " / " + skill.classe?.toString().replaceAll(",", ", "); // Ajout Sanofi
-    }
-
-    iconeE.src = "http://voldre.free.fr/Eden/images/skillIcon/" + skill.icone + ".png";
-
-    skillE.append(nomE, descE, effetE, montantE, iconeE);
-
-    // Show/hide awaken skill on click
-    skillE.addEventListener("click", () => {
-      skillE.classList.toggle("awaken");
-
-      const selectedAwakenSkill =
-        skillE.classList.contains("awaken") && Object.values(skillsAwakenJSON).find((s) => s.nom == skill.nom);
-
-      skillE.querySelector(".desc").innerText = selectedAwakenSkill?.desc || skill.desc;
-      skillE.querySelector(".montant").innerText = selectedAwakenSkill?.montant || skill.montant;
-
-      updateAwakenButtonTriggered();
+    const descE = createElement("p", isAwaken && awakenSkill?.desc ? awakenSkill.desc : skill.desc, { class: "desc" });
+    const montantE = createElement("p", isAwaken && awakenSkill?.montant ? awakenSkill.montant : skill.montant, {
+      class: "montant",
     });
 
-    document.querySelector(".skillslist").append(skillE);
+    const iconeE = createElement("img", undefined, {
+      class: "icone",
+      src: "http://voldre.free.fr/Eden/images/skillIcon/" + skill.icone + ".png",
+    });
+
+    const skillRange = skill.effet.split("AoE ")[1] ?? null; // en bas [0] + "AoE"
+
+    const effetDesc = skillRange ? skill.effet.split(" AoE")[0] : skill.effet;
+    const skillRangeIconE =
+      skillRange &&
+      createElement("span", undefined, {
+        class: "skillRangeIcon",
+        style: { backgroundImage: `url(http://voldre.free.fr/Eden/images/layout/${skillRange}.png)` },
+      });
+    const statDesc = " / " + skill.stat + " / " + skill.classe?.toString().replaceAll(",", ", ");
+
+    const effetE = createElement(
+      "p",
+      skillRangeIconE ? [effetDesc, skillRangeIconE, statDesc] : [effetDesc, statDesc],
+      {
+        class: "effet",
+      }
+    );
+
+    const skillE = createElement("div", [nomE, descE, effetE, montantE, iconeE], {
+      class: `skill ${isAwaken ? "awaken" : ""}`,
+      onClick: () => {
+        skillE.classList.toggle("awaken");
+
+        const selectedAwakenSkill =
+          skillE.classList.contains("awaken") && Object.values(skillsAwakenJSON).find((s) => s.nom == skill.nom);
+
+        skillE.querySelector(".desc").innerText = selectedAwakenSkill?.desc || skill.desc;
+        skillE.querySelector(".montant").innerText = selectedAwakenSkill?.montant || skill.montant;
+
+        updateAwakenButtonTriggered();
+      },
+    });
+
+    skillsListE.append(skillE);
     updateAwakenButtonTriggered();
   });
 };
@@ -151,9 +141,7 @@ awakenButton.addEventListener("click", () => {
 });
 
 const updateAwakenButtonTriggered = () => {
-  const isAllSkillsAwaken = [...document.querySelector(".skillslist").children].every((child) =>
-    child.classList.contains("awaken")
-  );
+  const isAllSkillsAwaken = [...skillsListE.children].every((child) => child.classList.contains("awaken"));
   awakenButton.src = `images/otherIcon/function02${isAllSkillsAwaken ? 5 : 4}.png`;
 };
 

@@ -2,6 +2,7 @@ import { cardJSON, persosJSON, enemyJSON, mapsJSON, playerJSON, classes, iconsCl
 import {
   Perso,
   callPHP,
+  createElement,
   dateToString,
   initDialog,
   sameDay,
@@ -30,49 +31,39 @@ window.addEventListener("load", () => {
   } else {
     // Default page with all players information
     document.querySelector("#allCards").classList.add("hide");
-    const playersE = document.createElement("div");
-    playersE.classList.add("flexContainer");
-    playersE.classList.add("charactersList");
-    playersE.id = "playersE";
 
     Object.entries(playerJSON).forEach((player) => {
-      const playerE = document.createElement("div");
-      playerE.addEventListener("click", () => {
-        window.location.href = "jdr_profil.html?joueur=" + player[0];
-      });
-
-      const playerNameE = document.createElement("h3");
-      playerNameE.innerText = player[0];
+      const playerNameE = createElement("h3", player[0]);
 
       const playerData = player[1];
-
-      const playerConnectedE = document.createElement("div");
-      playerConnectedE.className = "connectionPoint";
-
       const joueurDate = stringToDate(playerData.date);
       const today = stringToDate(dateToString(new Date()));
 
-      if (sameDay(joueurDate, today)) {
-        playerConnectedE.style.backgroundColor = "green";
-      } else {
-        playerConnectedE.style.backgroundColor = "grey";
-      }
+      const playerConnectedE = createElement("div", undefined, {
+        class: "connectionPoint",
+        style: { backgroundColor: sameDay(joueurDate, today) ? "green" : "grey" },
+      });
 
-      const playerCoinE = document.createElement("p");
-      playerCoinE.innerText = playerData["alpagaCoin"] + " (" + playerData["alpagaCoinSpent"] + ") ";
+      const playerCoinE = createElement("p", playerData["alpagaCoin"] + " (" + playerData["alpagaCoinSpent"] + ") ");
 
-      const playerCoinPicE = document.createElement("img");
-      playerCoinPicE.src = "images/alpagaCoin.png";
-      playerCoinPicE.className = "alpagaCoinPic";
-      playerCoinPicE.alt = " pièces";
+      const playerCoinPicE = createElement("img", undefined, {
+        src: "images/alpagaCoin.png",
+        class: "alpagaCoinPic",
+        alt: " pièces",
+      });
+
       playerCoinE.append(playerCoinPicE);
 
-      const playerCardsE = document.createElement("p");
-      playerCardsE.innerText = "Nombre de cartes : " + playerData["cards"].length;
-      playerCardsE.style.fontSize = "13.5px";
+      const playerCardsE = createElement("p", "Nombre de cartes : " + playerData["cards"].length, {
+        style: { fontSize: "13.5px" },
+      });
 
-      const playerCardsEP = document.createElement("p");
-      playerCardsEP.style.fontSize = "13.5px";
+      const playerCardsEP = createElement(
+        "p",
+        "Boss " + pBossP + "%, Anecdotes " + pAnecdoteP + "%<br/>Maps " + pMapsP + "%, Total " + pTotalP + "%",
+        { style: { fontSize: "13.5px" } }
+      );
+
       const playerCards = playerData.cards
         .map((pC) => cardJSON.find((c) => c.id === parseInt(pC)))
         .filter((p) => p != undefined);
@@ -92,24 +83,29 @@ window.addEventListener("load", () => {
       );
       const pTotalP = Math.floor((100 * playerCards?.length) / cardJSON.length);
 
-      playerCardsEP.innerHTML =
-        "Boss " + pBossP + "%, Anecdotes " + pAnecdoteP + "%<br/>Maps " + pMapsP + "%, Total " + pTotalP + "%";
-
-      const playerEntriesE = document.createElement("p");
-
-      // New day = not today and in future
-      console.log(joueurDate, today, sameDay(joueurDate, today));
       const entriesToday =
         joueurDate >= today || sameDay(joueurDate, today)
           ? Math.round(
               (playerData["entries"].reduce((acc, cur) => acc + cur / 3, 0) / playerData["entries"].length) * 100
             )
           : 100;
-      playerEntriesE.innerText = "Entrées restantes : " + entriesToday + "%";
-      playerEntriesE.style.fontSize = "13px";
 
-      playerE.append(playerConnectedE, playerNameE, playerCoinE, playerCardsE, playerCardsEP, playerEntriesE);
+      const playerEntriesE = createElement("p", "Entrées restantes : " + entriesToday + "%", {
+        style: { fontSize: "13px" },
+      });
+
+      const playerE = createElement(
+        "div",
+        [playerConnectedE, playerNameE, playerCoinE, playerCardsE, playerCardsEP, playerEntriesE],
+        {
+          onClick: () => {
+            window.location.href = "jdr_profil.html?joueur=" + player[0];
+          },
+        }
+      );
       playersE.append(playerE);
+
+      const playersE = createElement("div", playerE, { id: "playersE", class: "flexContainer, charactersList" });
       document.querySelector("body").append(playersE);
     });
 
@@ -349,38 +345,35 @@ function loadCards(joueurData) {
   const rarityClass = ["common", "rare", "epic"];
 
   cardJSON.forEach((card) => {
-    const cardE = document.createElement("div");
-    cardE.className = "card";
-    cardE.classList.add(rarityClass[card.value - 1]);
-    const nameCardE = document.createElement("h4");
-    nameCardE.innerText = card.name;
-    const descCardE = document.createElement("p");
-    descCardE.innerText = card.description;
-
-    const imgCardE = document.createElement("img");
+    const nameCardE = createElement("h4", card.name);
+    const descCardE = createElement("p", card.description);
 
     const imgEndPoint = "images/";
+    let imgSrc;
 
     switch (card.kind) {
       case "map": {
-        imgCardE.src = imgEndPoint + "loadingframe/Loading_" + card.kindId + ".png";
+        imgSrc = imgEndPoint + "loadingframe/Loading_" + card.kindId + ".png";
         break;
       }
       case "boss": {
-        imgCardE.src = imgEndPoint + "monsters/" + card.kindId + ".png";
+        imgSrc = imgEndPoint + "monsters/" + card.kindId + ".png";
         break;
       }
       case "composant": {
-        imgCardE.src = imgEndPoint + "items/" + card.kindId + ".png";
+        imgSrc = imgEndPoint + "items/" + card.kindId + ".png";
         break;
       }
       case "anecdote": {
-        imgCardE.src = imgEndPoint + card.kindId + ".png";
+        imgSrc = imgEndPoint + card.kindId + ".png";
         break;
       }
       default:
         console.log("Erreur, type non reconnu : " + card.kind);
     }
+    const imgCardE = createElement("img", undefined, { src: imgSrc });
+
+    const cardE = createElement("div", undefined, { class: `card, ${rarityClass[card.value - 1]}` });
 
     cardE.appendChild(imgCardE);
     if (joueurData.cards.includes(card.id)) {

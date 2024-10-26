@@ -8,7 +8,15 @@ import {
   persosJSON,
   getData,
 } from "./JDRstore.js";
-import { callPHP, fillSelectOptions, isTextInText, setCookie, toastNotification, unformatText } from "./utils.js";
+import {
+  callPHP,
+  createElement,
+  fillSelectOptions,
+  isTextInText,
+  setCookie,
+  toastNotification,
+  unformatText,
+} from "./utils.js";
 
 const logged = !!document.querySelector(".admin");
 
@@ -116,6 +124,7 @@ function loadEnemy(indexEnemy, ennemiElement, genericEnemy = null) {
   // Skills de l'ennemi
   enemyData.skills.forEach((skill, index) => {
     const competenceE = [...ennemiElement.querySelectorAll(".competence")][index];
+    // innerHTML because enemy skill can have <br/>
     competenceE.innerHTML = skill;
   });
 
@@ -244,8 +253,7 @@ document.querySelector("#filtre").addEventListener("change", (e) => {
   document.querySelector("#filteredEnemys").innerHTML = null;
   const enemiesList = Object.values(enemyJSON).filter((enemy) => isTextInText(enemy.nom, e.target.value));
   enemiesList.forEach((enemy) => {
-    const liElem = document.createElement("li");
-    liElem.innerText = enemy.nom + " - " + enemy.visuel3D;
+    const liElem = createElement("li", enemy.nom + " - " + enemy.visuel3D);
     document.querySelector("#filteredEnemys").append(liElem);
   });
 });
@@ -270,27 +278,17 @@ function toggleDesc(descE) {
 const equipementsE = document.querySelector(".equipements");
 // eqpts list
 Object.values(eqptJSON).forEach((eqpt) => {
-  const eqptE = document.createElement("div");
-  eqptE.classList.add("eqpt");
-  const nomE = document.createElement("p");
-  nomE.classList.add("nom");
-  const descE = document.createElement("p");
-  descE.classList.add("desc");
-  const effetE = document.createElement("p");
-  effetE.classList.add("effet");
-  const montantE = document.createElement("p");
-  montantE.classList.add("montant");
+  const nomE = createElement("p", eqpt.nom, { class: "nom" });
+  const descE = createElement("p", eqpt.desc, { class: "desc" });
+  const effetE = createElement("p", eqpt.effet, { class: "effet" });
+  const montantE = createElement("p", eqpt.montant, { class: "montant" });
 
-  const iconeE = document.createElement("img");
-  iconeE.classList.add("icone");
+  const iconeE = createElement("img", undefined, {
+    class: "icone",
+    src: eqpt.icone !== "?" ? "http://voldre.free.fr/Eden/images/items/" + eqpt.icone + ".png" : "",
+  });
 
-  nomE.innerText = eqpt.nom;
-  descE.innerText = eqpt.desc;
-  effetE.innerText = eqpt.effet; // Ajout Sanofi
-  montantE.innerText = eqpt.montant;
-  if (eqpt.icone !== "?") iconeE.src = "http://voldre.free.fr/Eden/images/items/" + eqpt.icone + ".png";
-
-  eqptE.append(nomE, descE, effetE, montantE, iconeE);
+  const eqptE = createElement("div", [nomE, descE, effetE, montantE, iconeE], { class: "eqpt" });
   equipementsE.append(eqptE);
 });
 
@@ -427,8 +425,7 @@ document.querySelector("#updatePInfo").addEventListener("click", () => {
     if ([...document.querySelectorAll(".perso")][index])
       [...document.querySelectorAll(".perso")][index].children[0].value = player.nom;
 
-    const liElem = document.createElement("li");
-    liElem.innerText = player.nom + " : " + player.pv + "/" + player.pvmax;
+    const liElem = createElement("li", player.nom + " : " + player.pv + "/" + player.pvmax);
     pInfo.append(liElem);
   });
 });

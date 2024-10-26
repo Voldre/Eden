@@ -25,10 +25,14 @@ import {
   dateToString,
   fillSelectOptions,
   setCookie,
+  closeButton,
+  createElement,
 } from "./utils.js";
 
 console.log("Skills JSON", skillsJSON);
 console.log("Persos JSON", persosJSON);
+
+const dialog = document.querySelector("dialog");
 
 const buttonBuffs = document.querySelector("#buttonBuffs");
 
@@ -430,9 +434,6 @@ function insertSkill(skillElement, skillName, awakenClass = false) {
       selectedAwakenSkill = Object.values(skillsAwakenJSON).find((skill) => skill.nom == skillName);
     }
 
-    // Check if it's same skill by icon
-    const sameSkill = skillElement.children[3].children[0].src.includes(selectedSkill.icone);
-
     const skillDesc = selectedAwakenSkill?.desc || selectedSkill.desc;
     const skillMontant = selectedAwakenSkill?.montant || selectedSkill.montant;
 
@@ -441,15 +442,16 @@ function insertSkill(skillElement, skillName, awakenClass = false) {
     skillElement.children[1].innerText = selectedSkillEffet;
 
     if (skillRange) {
-      const skillRangeIconE = document.createElement("span");
-      skillRangeIconE.className = "skillRangeIcon";
-      skillRangeIconE.style.backgroundImage = `url(http://voldre.free.fr/Eden/images/layout/${skillRange}.png)`;
       const rangeI = aoeDescInfo.range.findIndex((x) => x === skillRange[0]);
       const typeI = aoeDescInfo.type.findIndex((x) => x === skillRange[1]);
-      skillRangeIconE.title = `AoE en ${aoeDescInfo.rangeName[rangeI]} ${aoeDescInfo.typeName[typeI]}`;
 
-      const skillStatE = document.createElement("span");
-      skillStatE.innerText = "/ " + selectedSkill.stat;
+      const skillRangeIconE = createElement("span", undefined, {
+        title: `AoE en ${aoeDescInfo.rangeName[rangeI]} ${aoeDescInfo.typeName[typeI]}`,
+        class: "skillRangeIcon",
+        style: { backgroundImage: `url(http://voldre.free.fr/Eden/images/layout/${skillRange}.png)` },
+      });
+
+      const skillStatE = createElement("span", "/ " + selectedSkill.stat);
 
       skillElement.children[1].append(skillRangeIconE, skillStatE);
     } else {
@@ -466,43 +468,31 @@ function insertSkill(skillElement, skillName, awakenClass = false) {
     // Update 29/07/2023, case de PV pour familiers
     const inputExists = skillElement.children.length >= 6;
     if (inputExists) {
+      // Check if it's same skill by icon
+      const sameSkill = skillElement.children[3].children[0].src.includes(selectedSkill.icone);
       if (sameSkill) return; // No need to update
       skillElement.removeChild(skillElement.children[5]); // Update
     }
 
     if (selectedSkill.effet == "Invocation") {
-      const pvPetE = document.createElement("input");
-      pvPetE.type = "number";
+      const pvPetE = createElement("input", undefined, { type: "number" });
       skillElement.append(pvPetE);
     }
     // Update 05/01/2024, add inputs to handle charges (light/dark)
     if (skillName === "Assaut du Chaos") {
-      const wrapperE = document.createElement("div");
-      wrapperE.style.width = "max-content";
-      const textE = document.createElement("span");
-      textE.innerText = "Lum/Ten";
-      const lumiereE = document.createElement("input");
-      lumiereE.style.width = "40px";
-      const tenebresE = document.createElement("input");
-      tenebresE.style.width = "40px";
+      const textE = createElement("span", "Lum/Ten");
+      const lumiereE = createElement("input", undefined, { type: "number", style: { width: "40px" } });
+      const tenebresE = createElement("input", undefined, { type: "number", style: { width: "40px" } });
 
-      lumiereE.type = "number";
-      tenebresE.type = "number";
-      wrapperE.append(textE, lumiereE, tenebresE);
+      const wrapperE = createElement("div", [textE, lumiereE, tenebresE], { style: { width: "max-content" } });
       skillElement.append(wrapperE);
     }
 
     // Update 14/01/2024, add inputs to handle number of hits
     if (skillName === "Euphorie") {
-      const wrapperE = document.createElement("div");
-      wrapperE.style.width = "max-content";
-      const textE = document.createElement("span");
-      textE.innerText = "Coups";
-      const hitsE = document.createElement("input");
-      hitsE.style.width = "40px";
-      hitsE.type = "number";
-      hitsE.max = 5;
-      wrapperE.append(textE, hitsE);
+      const textE = createElement("span", "Coups");
+      const hitsE = createElement("input", undefined, { style: { width: "40px" }, type: "number", max: 5 });
+      const wrapperE = createElement("div", [textE, hitsE], { style: { width: "max-content" } });
       skillElement.append(wrapperE);
     }
   }
@@ -511,8 +501,6 @@ function insertSkill(skillElement, skillName, awakenClass = false) {
 function insertBuffInteraction(buffTurnE, skillName, selectedSkill, skillMontant) {
   const skillEffet = selectedSkill.effet;
   buffTurnE.style.cursor = "pointer";
-
-  const dialog = document.querySelector("dialog");
 
   if (
     skillEffet.includes("Provocation") ||
@@ -536,69 +524,43 @@ function insertBuffInteraction(buffTurnE, skillName, selectedSkill, skillMontant
       dialog.innerText = "";
       dialog.style.width = "60%";
 
-      const globalE = document.createElement("p");
-      globalE.className = "dialogBuff";
+      const turnText = createElement("p", "Tours ");
 
-      const name = document.createElement("p");
-      name.innerText = skillName;
-      globalE.append(name);
+      const turnE = createElement("input", undefined, {
+        type: "number",
+        min: 1,
+        max: 9,
+        value: 3,
+      });
 
-      const inputs = document.createElement("div");
-      inputs.style.display = "flex";
-      inputs.style.alignItems = "center";
+      const confirmE = createElement("button", "Confirmer", {
+        onClick: () => {
+          const turnOfBuffE = createElement("p", turnE.value);
+          const amountOfBuffE = createElement("p", hasAmount ? amountE.value : "");
+          buffTurnE.append(turnOfBuffE, amountOfBuffE);
+          dialog.close();
+        },
+      });
 
-      const turnText = document.createElement("p");
-      turnText.innerText = "Tours ";
-      inputs.append(turnText);
-
-      const turnE = document.createElement("input");
-      turnE.type = "number";
-      turnE.min = 1;
-      turnE.max = 9;
-      turnE.value = 3;
-
-      const confirmE = document.createElement("button");
+      // Event listener defined after createElement because confirmE is required
       turnE.addEventListener("change", (e) => {
         confirmE.disabled = e.target.value < 1;
       });
+
       inputs.append(turnE);
 
-      const amountText = document.createElement("p");
-      const amountE = document.createElement("input");
+      const amountText = createElement("p", "Montants ");
+      const amountE = createElement("input", undefined, { type: "number", min: 1, max: 20, value: 2 });
       console.log(skillMontant);
 
       const hasAmount = skillMontant.includes("1D") || skillMontant.includes("effet mode");
-      if (hasAmount) {
-        amountText.innerText = "Montants ";
-        inputs.append(amountText);
 
-        amountE.type = "number";
-        amountE.min = 1;
-        amountE.max = 20;
-        amountE.value = 2;
-        inputs.append(amountE);
-      }
-      globalE.append(inputs);
-
-      confirmE.innerText = "Confirmer";
-      confirmE.addEventListener("click", () => {
-        const turnOfBuffE = document.createElement("p");
-        const amountOfBuffE = document.createElement("p");
-        turnOfBuffE.innerText = turnE.value;
-        amountOfBuffE.innerText = hasAmount ? amountE.value : "";
-        buffTurnE.append(turnOfBuffE, amountOfBuffE);
-        dialog.close();
+      const inputs = createElement("div", hasAmount ? [turnText, turnE, amountText, amountE] : [turnText, turnE], {
+        style: { display: "flex", alignItems: "center" },
       });
-      globalE.append(confirmE);
 
-      // Bouton de fermeture
-      const closeE = document.createElement("button");
-      closeE.id = "close";
-      closeE.innerText = "Fermer";
-      closeE.addEventListener("click", () => {
-        dialog.close();
-      });
-      globalE.append(closeE);
+      const name = createElement("p", skillName);
+      const globalE = createElement("p", [name, inputs, confirmE, closeButton(dialog)], { class: "dialogBuff" });
 
       dialog.append(globalE);
       // Ouverture en "modal"
@@ -704,8 +666,7 @@ function insertEqpt(eqptElement, selectedEqpt) {
     }
 
     if (selectedEqpt.effet == "Monture de Combat") {
-      const pvPetE = document.createElement("input");
-      pvPetE.type = "number";
+      const pvPetE = createElement("input", undefined, { type: "number" });
       eqptElement.append(pvPetE);
     }
   }
@@ -725,9 +686,10 @@ const getItemsInInventory = (inventory) => {
   itemsE.innerHTML = "";
 
   itemsInInventory.map((item) => {
-    const imgE = document.createElement("img");
-    imgE.src = item.src;
-    imgE.title = item.title + "\n" + item.desc + "\n" + item.montant;
+    const imgE = createElement("img", undefined, {
+      src: item.src,
+      title: item.title + "\n" + item.desc + "\n" + item.montant,
+    });
 
     // Highlight equipments equipped
     if (eqptsName.find((eqptName) => isTextInText(eqptName, item.title))) imgE.style.borderColor = "goldenrod";
@@ -735,36 +697,20 @@ const getItemsInInventory = (inventory) => {
     imgE.addEventListener("click", () => {
       dialog.innerText = "";
 
-      const headerE = document.createElement("div");
-      headerE.className = "itemHeader";
-      headerE.append(imgE.cloneNode());
-      const title = document.createElement("h2");
-      title.innerText = item.title;
-      headerE.append(title);
+      const title = createElement("h2", item.title);
+      const headerE = createElement("div", [imgE.cloneNode(), title], { class: "itemHeader" });
+      const desc = createElement("p", item.desc);
 
-      dialog.append(headerE);
-
-      const desc = document.createElement("p");
-      desc.innerText = item.desc;
-      dialog.append(desc);
+      dialog.append(headerE, desc);
 
       if (item.montant) {
-        const montant = document.createElement("p");
-        montant.innerText = item.montant;
-        dialog.append(montant);
-        const effet = document.createElement("p");
-        effet.innerText = item.effet;
-        dialog.append(effet);
+        // @TODO directly append item.montant, item.effet ?
+        const montant = createElement("p", item.montant);
+        const effet = createElement("p", item.effet);
+        dialog.append(montant, effet);
       }
 
-      // fermeture
-      const closeE = document.createElement("button");
-      closeE.id = "close";
-      closeE.innerText = "Fermer";
-      closeE.addEventListener("click", () => {
-        dialog.close();
-      });
-      dialog.append(closeE);
+      dialog.append(closeButton(dialog));
 
       dialog.showModal();
     });
@@ -842,8 +788,7 @@ window.addEventListener("load", () => {
   } else {
     galeryJSON.forEach((pic) => {
       if (pic.includes(".jpg") || pic.includes(".png") || pic.includes(".webp")) {
-        const imgE = document.createElement("img");
-        imgE.src = "./images/jdrgalerie/" + pic;
+        const imgE = createElement("img", undefined, { src: "./images/jdrgalerie/" + pic });
         document.querySelector(".galerie").append(imgE);
       }
     });
@@ -1039,23 +984,16 @@ function createEquipmentSynthesis(persoEqpts) {
       categoryValue = eqptsValue;
     }
 
-    const synthesisCategoryE = document.createElement("div");
-    synthesisCategoryE.className = "synthese";
+    const categoryValueE = createElement("p", `${categoryValue}`);
 
-    const categoryValueE = document.createElement("p");
-    categoryValueE.innerText = categoryValue;
+    const categoryHeaderE = category.img
+      ? createElement("img", undefined, {
+          title: category.label,
+          src: encodeURI(`images/layout/${category.label}.png`),
+        })
+      : createElement("p", category.label);
 
-    let categoryHeaderE;
-    if (category.img) {
-      categoryHeaderE = document.createElement("img");
-      categoryHeaderE.src = encodeURI(`images/layout/${category.label}.png`);
-      categoryHeaderE.title = category.label;
-    } else {
-      categoryHeaderE = document.createElement("p");
-      categoryHeaderE.innerText = category.label;
-    }
-
-    synthesisCategoryE.append(categoryHeaderE, categoryValueE);
+    const synthesisCategoryE = createElement("div", [categoryHeaderE, categoryValueE], { class: "synthese" });
     eqptSynthesisE.append(synthesisCategoryE);
   });
 
@@ -1109,25 +1047,18 @@ function createEquipmentSynthesis(persoEqpts) {
 }
 
 function showEqptErrors(eqptOverLimits) {
-  const dialog = document.querySelector("dialog");
   dialog.innerText = "La somme des montants des accessoires sont trop élevés sur les catégories suivantes :";
-  const listE = document.createElement("ul");
-  eqptOverLimits.map((eqptLimit) => {
-    const limitE = document.createElement("li");
-    limitE.innerText = `${eqptLimit.label} : ${eqptLimit.value} > ${eqptLimit.limit}`;
-    listE.append(limitE);
-  });
+  const listE = createElement(
+    "ul",
+    eqptOverLimits.map((eqptLimit) =>
+      createElement("li", `${eqptLimit.label} : ${eqptLimit.value} > ${eqptLimit.limit}`)
+    )
+  );
+
   dialog.append(listE);
 
   // Bouton de fermeture
-  const closeE = document.createElement("button");
-  closeE.id = "close";
-  closeE.innerText = "Fermer";
-  closeE.addEventListener("click", () => {
-    dialog.close();
-  });
-  dialog.append(closeE);
-
+  dialog.append(closeButton(dialog));
   dialog.showModal();
 }
 
@@ -1146,9 +1077,7 @@ function download(data, filename) {
   const url = URL.createObjectURL(file);
 
   // Créer un élément de lien, l'ajouter et le déclencher
-  const link = document.createElement("a");
-  link.download = filename;
-  link.href = url;
+  const link = createElement("a", { download: filename, href: url });
   link.click();
 }
 
@@ -1160,9 +1089,10 @@ screenshotButton.addEventListener("click", () => {
 
   // eslint-disable-next-line no-undef
   html2canvas(document.querySelector(".perso"), { backgroundColor: null }).then((canvas) => {
-    const link = document.createElement("a");
-    link.download = `screenshot ${persoData.nom} ${dateToString(new Date())}.png`;
-    link.href = canvas.toDataURL();
+    const link = createElement("a", {
+      download: `screenshot ${persoData.nom} ${dateToString(new Date())}.png`,
+      href: canvas.toDataURL(),
+    });
     link.click();
     screenshotButton.disabled = false;
   });
@@ -1366,61 +1296,47 @@ infoStatsE.addEventListener("click", () => {
   const niv = nivE.value;
   const { sumStats, allStats, pvStuff } = getStats();
 
-  const dialog = document.querySelector("dialog");
   // Reset dialog
   dialog.innerText = "";
   dialog.style.width = "75%";
 
-  const globalE = document.createElement("p");
-  globalE.className = "dialogStats";
+  const titleE = createElement("h2", "Statistique de référence");
 
-  const titleE = document.createElement("h2");
-  titleE.innerText = "Statistique de référence";
-  globalE.append(titleE);
-
-  const pv = document.createElement("p");
-  pv.innerText = `PV : ${allStats.PVMax} = ${allStats.PV} (base) + ${5 * (niv - 1)} (niveau) + ${pvStuff} (stuff)`;
-  globalE.append(pv);
+  const pvE = createElement(
+    "p",
+    `PV : ${allStats.PVMax} = ${allStats.PV} (base) + ${5 * (niv - 1)} (niveau) + ${pvStuff} (stuff)`
+  );
 
   // Count stats over 17
-  let statOver = 0;
+  const statOver = statistiques.map((statName) => Math.max(allStats[statName] - 17, 0)).reduce(sum);
 
-  const statsE = document.createElement("div");
-  statsE.className = "stats";
-  statistiques.map((statName) => {
-    const statNameE = document.createElement("p");
-    statNameE.innerText = statName;
+  const statsE = createElement(
+    "div",
+    statistiques.map((statName) => {
+      const statNameE = createElement("p", statName);
 
-    const statE = document.createElement("div");
-    statE.className = "stat";
-
-    const over = Math.max(allStats[statName] - 17, 0);
-    statOver += over;
-
-    statE.append(statNameE, `${allStats[statName]}${over > 0 ? ` (-${over})` : ""}`);
-    statsE.append(statE);
-  });
-
-  globalE.append(statsE);
+      const over = Math.max(allStats[statName] - 17, 0);
+      return createElement("div", [statNameE, `${allStats[statName]}${over > 0 ? ` (-${over})` : ""}`], {
+        class: "stat",
+      });
+    }),
+    { class: "stats" }
+  );
 
   const nbStatsToChoose = 60 - sumStats + Math.max(Math.ceil((niv - 9) / 5), 0);
-  const nivInfo = document.createElement("p");
-  nivInfo.innerText = `+ ${nbStatsToChoose + statOver} stat(s) au choix, car niveau ${niv}`;
-  globalE.append(nivInfo);
+  const nivInfoE = createElement("p", `+ ${nbStatsToChoose + statOver} stat(s) au choix, car niveau ${niv}`);
+
+  const globalE = createElement("p", [titleE, pvE, statsE, nivInfoE], { class: "dialogStats" });
+
   if (60 - sumStats > 1) {
-    const classWithPointsToChoose = document.createElement("p");
-    classWithPointsToChoose.innerText = "L'ingénieur et le Chevalier Dragon ont chcaun 1 point en plus à répartir";
+    const classWithPointsToChoose = createElement(
+      "p",
+      "L'ingénieur et le Chevalier Dragon ont chcaun 1 point en plus à répartir"
+    );
     globalE.append(classWithPointsToChoose);
   }
 
-  // Bouton de fermeture
-  const closeE = document.createElement("button");
-  closeE.id = "close";
-  closeE.innerText = "Fermer";
-  closeE.addEventListener("click", () => {
-    dialog.close();
-  });
-  globalE.append(closeE);
+  globalE.append(closeButton(dialog));
 
   dialog.append(globalE);
   // Ouverture en "modal"
@@ -1471,22 +1387,17 @@ function setPassifs(niv) {
   passif14E.innerHTML = "";
   passif14E.classList = niv >= 14 ? "" : "hide";
 
+  const perso = persosJSON[persoE.id];
   if (niv >= 12) {
-    const li = document.createElement("li");
-
-    li.innerText =
-      "Passif 12 " +
-      (persosJSON[persoE.id].passif12
-        ? ": " + persosJSON[persoE.id].passif12
-        : "à définir : 4 points à répartir (cliquez)");
+    const li = createElement(
+      "li",
+      `Passif 12 "${perso.passif12 ? `: ${perso.passif12}` : "à définir : 4 points à répartir (cliquez)"}`
+    );
     passif12E.append(li);
   }
 
   if (niv >= 14) {
-    const li = document.createElement("li");
-
-    li.innerText =
-      "Passif 14 " + (persosJSON[persoE.id].passif14 ? ": " + persosJSON[persoE.id].passif14 : " à définir (cliquez)");
+    const li = createElement("li", `Passif 14 "${perso.passif14 ? `: ${perso.passif14}` : " à définir (cliquez)"}`);
     passif14E.append(li);
   }
 }
@@ -1509,5 +1420,3 @@ const getEqpts = Object.values(eqptJSON).map((eqpt) => ({
 }));
 
 const allItems = [...getCards, ...getEqpts];
-
-const dialog = document.querySelector("dialog");
