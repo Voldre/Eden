@@ -1,5 +1,5 @@
 import { playerJSON, mapsJSON, pnjJSON, persosJSON, enemyJSON } from "./JDRstore.js";
-import { setCookie, toastNotification } from "./utils.js";
+import { createElement, setCookie, toastNotification } from "./utils.js";
 
 // const apiKey = "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";
 const apiUrl = "https://api.openai.com/v1/chat/completions";
@@ -12,7 +12,7 @@ let rarity, indexPerso, indexPlayer, pnjEnemy, mapID;
 window.addEventListener("load", async () => {
   const urlParams = new URLSearchParams(window.location.search);
   if (!urlParams.has("perso")) {
-    responseElement.innerHTML =
+    responseElement.innerText =
       "Erreur : vous devez saisir dans l'URL un numéro de personnage (jdr_quest?perso=4) par exemple.";
     stop();
     document.querySelector(".loading").remove();
@@ -163,7 +163,7 @@ function chooseEnemy(mapId = null, category = null) {
 
   if (mapId) {
     if (!mapsJSON[mapId].mobs) {
-      responseElement.innerHTML = "Erreur : Aucun n'ennemi n'existe pour le moment sur cette carte, désolé !";
+      responseElement.innerText = "Erreur : Aucun n'ennemi n'existe pour le moment sur cette carte, désolé !";
       return;
     }
     enemyListId = enemyListId.filter((eID) => mapsJSON[mapId].mobs.includes(parseInt(eID)));
@@ -218,8 +218,6 @@ function initializeActions(enemyData, pnjEnemy = { nom: null }, mapID) {
     : ["Accepter la Quête", "Refuser la Quête"];
 
   Object.entries(actions).forEach(([id, action]) => {
-    const liElem = document.createElement("li");
-    liElem.innerText = action;
     id = parseInt(id);
     let enemy;
     let actionURL;
@@ -236,10 +234,13 @@ function initializeActions(enemyData, pnjEnemy = { nom: null }, mapID) {
         "jdr_combat.html?perso=" + indexPerso + "&enemy=" + enemy + "&map=" + mapID + (isElite ? "&isElite" : "");
     }
 
-    liElem.addEventListener("click", () => {
-      if (id !== 1) setCookie("loadJDRcombat", true);
-      window.location.href = actionURL;
+    const liElem = createElement("li", action, {
+      onClick: () => {
+        if (id !== 1) setCookie("loadJDRcombat", true);
+        window.location.href = actionURL;
+      },
     });
+
     document.querySelector("#actions").append(liElem);
   });
 }

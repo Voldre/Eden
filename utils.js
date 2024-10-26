@@ -203,17 +203,13 @@ export const initDialog = (labelsDescription) => {
 
     label.addEventListener("click", () => {
       dialog.innerText = "";
-      const text = document.createElement("p");
-      text.innerHTML = labelsDescription[label.htmlFor]; // description
-      dialog.append(text);
-      // Bouton de fermeture
-      const closeE = document.createElement("button");
-      closeE.id = "close";
-      closeE.innerText = "Fermer";
-      closeE.addEventListener("click", () => {
-        dialog.close();
-      });
-      dialog.append(closeE);
+
+      const desc = document.createElement("p");
+      // Don't use util createElement function because HTML insert
+      desc.innerHTML = labelsDescription[label.htmlFor]; // description
+      dialog.append(desc);
+
+      dialog.append(closeButton(dialog));
 
       // Ouverture en "modal"
       dialog.showModal();
@@ -380,10 +376,36 @@ export const setCookie = (name, value) => {
 
 export const fillSelectOptions = (selectE, options) => {
   options.forEach((option) => {
-    const optionE = document.createElement("option");
-    optionE.value = option.value;
-    optionE.innerText = option.innerText;
-    optionE.hidden = option.hidden ?? false;
+    const optionE = createElement("option", option.innerText, { value: option.value, hidden: option.hidden ?? false });
     selectE.append(optionE);
   });
 };
+
+export const createElement = (tag, children, attributes) => {
+  const element = document.createElement(tag);
+  for (const key in attributes) {
+    if (key.startsWith("on")) {
+      element.addEventListener(key.substring(2).toLowerCase(), attributes[key]);
+    } else {
+      element.setAttribute(key, attributes[key]);
+    }
+  }
+
+  [...(children ?? [])].forEach((child) => {
+    if (typeof child === "string") {
+      element.appendChild(document.createTextNode(child));
+    } else {
+      element.appendChild(child);
+    }
+  });
+  return element;
+};
+
+// Bouton de fermeture
+export const closeButton = (dialog) =>
+  createElement("button", "Fermer", {
+    id: "close",
+    onClick: () => {
+      dialog.close();
+    },
+  });
