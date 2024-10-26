@@ -1,6 +1,7 @@
 import { cardJSON, persosJSON, enemyJSON, allSkills, playerJSON, getData, classes, iconsClasses } from "./JDRstore.js";
 import {
   callPHP,
+  createElement,
   dateToString,
   initDialog,
   isTextInText,
@@ -99,7 +100,7 @@ window.addEventListener("load", () => {
     }
   } else {
     // Not in real fight
-    const enemyCombatData = Object.values(enemyJSON).map((e) => {
+    const enemyCombatData = Object.entries(enemyJSON).map(([id, e]) => {
       const enemyStats = new Enemy(e);
       enemyStats.rarity = enemyStats.pvmax >= 200 ? "BOSS" : enemyStats.pvmax > 120 ? "ELITE" : "COMMUN";
       enemyStats.degatMin =
@@ -108,13 +109,13 @@ window.addEventListener("load", () => {
       enemyStats.degatMax =
         (enemyStats.rarity === "BOSS" && enemyStats.degat > MAX_BOSS) ||
         (enemyStats.rarity === "COMMUN" && enemyStats.degat > MAX_COMMON);
-
+      enemyStats.id = id;
       return enemyStats;
     });
     console.log(
       "Stats & Degats de tous les ennemis :",
       enemyCombatData,
-      "> JSON.stringify() > copy all (...) > JSON to Excel"
+      "> JSON.stringify() > Copier l'objet > JSON to Excel"
     );
   }
 
@@ -285,22 +286,31 @@ function Enemy(enemyData) {
     // Ignorer les compétences passives, buff, soins, etc.
     .filter((skill) => !["passif", "esprit", "soin", "buff", "provocation"].some((text) => isTextInText(skill, text)))
     .map((skill) => {
+      const skillText = skill.replaceAll(" ", "");
       // Trouver toutes les positions des "+"
-      const plusPositions = [...skill].map((char, i) => (char === "+" ? i : -1)).filter((i) => i !== -1);
+      const plusPositions = [...skillText].map((char, i) => (char === "+" ? i : -1)).filter((i) => i !== -1);
       if (plusPositions.length === 0) return NaN;
 
       // Calculer les montants après chaque "+"
-      const amounts = plusPositions.map((pos) => parseInt(skill.slice(pos + 1, pos + 3)) || 0);
+      const amounts = plusPositions
+        .map((pos) => {
+          const value = parseInt(skillText.slice(pos + 1, pos + 3));
+          // Don't count values with "D" for Dices, and "1,2,3,4" like "3D6"
+          return isNaN(value) || value < 5 ? 0 : value;
+        })
+        .filter((v) => !!v);
       const average = amounts.reduce((a, b) => a + b, 0) / amounts.length;
 
       // In average, add Dices
-      const dices = dicesAverageConversion(skill);
+      const dices = dicesAverageConversion(skillText);
+
+      console.log({ average, dices });
 
       return average + dices;
     })
     .filter((value) => !Number.isNaN(value));
 
-  // console.log(montantSkills)
+  console.log(montantSkills);
 
   // Pour les ennemis, sachant que des sorts sont mal comptés (ex 1D8 +1D6 +4)
   // Je rajoute 50% de dégâts (contre x% par niveau pour les joueurs), que 50% pas 100% car les des (1D10,2D6,...) sont comptés !
@@ -677,41 +687,36 @@ function showCardsAndCoins(winCards, newCoins) {
   const cardsE = document.querySelector("#cards");
 
   winCards.forEach((card) => {
-    const li = document.createElement("li");
-    li.innerText = card.name;
-
-    if (newCards.includes(card.id)) {
-      li.style.color = "gold";
-      // li.innerText += " (New !)";
-    }
-
-    const div = document.createElement("div");
-    const imgCardE = document.createElement("img");
+    const li = createElement("li", `${card.name}${newCards.includes(card.id) ? " (NEW)" : ""}`, {
+      style: newCards.includes(card.id) ? { color: "gold" } : {},
+    });
 
     const imgEndPoint = "images/";
-
+    let imgSrc;
     switch (card.kind) {
       case "map": {
-        imgCardE.src = imgEndPoint + "loadingframe/Loading_" + card.kindId + ".png";
+        imgSrc = imgEndPoint + "loadingframe/Loading_" + card.kindId + ".png";
         break;
       }
       case "boss": {
-        imgCardE.src = imgEndPoint + "monsters/" + card.kindId + ".png";
+        imgSrc = imgEndPoint + "monsters/" + card.kindId + ".png";
         break;
       }
       case "composant": {
-        imgCardE.src = imgEndPoint + "items/" + card.kindId + ".png";
+        imgSrc = imgEndPoint + "items/" + card.kindId + ".png";
         break;
       }
       case "anecdote": {
-        imgCardE.src = imgEndPoint + card.kindId + ".png";
+        imgSrc = imgEndPoint + card.kindId + ".png";
         break;
       }
       default:
         console.log("Erreur, type non reconnu : " + card.kind);
     }
 
-    div.append(li, imgCardE);
+    const imgCardE = createElement("img", undefined, { src: imgSrc });
+    const div = createElement("div", [li, imgCardE]);
+
     cardsE.append(div);
   });
 
