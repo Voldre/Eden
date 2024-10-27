@@ -547,11 +547,8 @@ function insertBuffInteraction(buffTurnE, skillName, selectedSkill, skillMontant
         confirmE.disabled = e.target.value < 1;
       });
 
-      inputs.append(turnE);
-
       const amountText = createElement("p", "Montants ");
       const amountE = createElement("input", undefined, { type: "number", min: 1, max: 20, value: 2 });
-      console.log(skillMontant);
 
       const hasAmount = skillMontant.includes("1D") || skillMontant.includes("effet mode");
 
@@ -1010,8 +1007,12 @@ function createEquipmentSynthesis(persoEqpts) {
   const montantBlocM = sumEqptsAsAccess(["Blocage +", "Blocage magique +"], persoEqpts, persoData);
   const montantRes = sumEqptsAsAccess(["Résistance d'esprit +"], persoEqpts, persoData);
 
-  const degatPM = accessValues
-    .filter((v) => ["DGT", "P", "M"].includes(v.label))
+  const degatP = accessValues
+    .filter((v) => ["DGT", "P"].includes(v.label))
+    .map((v) => v.value)
+    .reduce(sum, 0);
+  const degatM = accessValues
+    .filter((v) => ["DGT", "M"].includes(v.label))
     .map((v) => v.value)
     .reduce(sum, 0);
   const degatElems = accessValues.filter((v) => elements.map((e) => unformatText(e)).includes(v.label));
@@ -1019,11 +1020,12 @@ function createEquipmentSynthesis(persoEqpts) {
   console.log(accessValues);
 
   const accesLimitsByCategory = [
-    { label: "Dégât (P/M)", limit: 6, value: degatPM },
+    { label: "Dégât (Phy)", limit: 6, value: degatP },
+    { label: "Dégât (Mag)", limit: 6, value: degatM },
     ...degatElems.map((degatElem) => ({
-      label: `Dégât (P+M) + ${degatElem.label}`,
+      label: `Dégât (P|M) + ${degatElem.label}`,
       limit: 8,
-      value: degatPM + degatElem.value,
+      value: Math.max(degatP, degatM) + degatElem.value,
     })),
     { label: "Soin", limit: 6, value: accessValues.find((v) => v.label === "S").value },
     ...statsCategories.map((category) => ({

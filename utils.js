@@ -376,8 +376,11 @@ export const setCookie = (name, value) => {
 
 export const fillSelectOptions = (selectE, options) => {
   options.forEach((option) => {
-    const optionE = createElement("option", option.innerText, { value: option.value, hidden: option.hidden ?? false });
-    selectE.append(optionE);
+    const optionE = createElement("option", option.innerText, {
+      value: option.value,
+    });
+    if (option.hidden) optionE.hidden = true;
+    selectE.appendChild(optionE);
   });
 };
 
@@ -386,6 +389,8 @@ export const createElement = (tag, children, attributes) => {
   for (const key in attributes) {
     if (key.startsWith("on")) {
       element.addEventListener(key.substring(2).toLowerCase(), attributes[key]);
+    } else if (key === "style" && typeof attributes.style === "object") {
+      Object.assign(element.style, attributes.style); // Applique chaque propriété de style
     } else {
       element.setAttribute(key, attributes[key]);
     }

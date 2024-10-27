@@ -513,7 +513,7 @@
     "value": 3,
     "kind": "boss",
     "name": "Prince du Fl\u00e9au",
-    "description": "Le l\u00e9gendaire Prince du Fl\u00e9au dans sa forme humaine. Il n'y a presque aucune aura aussi noire que la sienne. Et encore, ce n'est pas la pire de ses formes...",
+    "description": "Le l\u00e9gendaire Prince du Fl\u00e9au sous forme d'esprit. Il n'y a presque aucune aura aussi noire que la sienne. Et encore, ce n'est pas la pire de ses formes...",
     "kindId": "m158e",
     "hidden": true
   },
@@ -694,6 +694,14 @@
     "name": "Bulblarve - Reine Prolifique",
     "description": "Grosse limace insecto\u00efde avec un dos pulpeux qui est depuis longtemps prolifique à Vulcain où elle y a \u00e9tabli son royaume.",
     "kindId": "m409b"
+  },
+  {
+    "id": 1076,
+    "value": 3,
+    "kind": "boss",
+    "name": "Qorina - Princesse Flamboyante",
+    "description": "Descendante d'une ancienne lign\u00e9e Khan, Qorina poss\u00e8de la puissante flamme ancestrale de son glorieux empire perdu. Ses desseins semblent être la destruction d'Heldentod, mais elle n'agit pas de paire avec ses semblables...",
+    "kindId": "qorina"
   },
   {
     "id": 1201,
@@ -4641,6 +4649,50 @@
     "enemies": [],
     "kindId": "otherIcon/group012b",
     "group": 1
+  },
+  {
+    "id": 1859,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Entraînement de Samouraï",
+    "description": "Afin de parfaire ses capacités offensives de Samouraï, Estia à fait un deal avec Prescillia, la mentor de Rubis. Cette dernière accepte de l'entraîner en échange d'un futur service pour sa protégée Rubis.",
+    "maps": [35],
+    "enemies": [],
+    "kindId": "monsters/prescillia",
+    "group": 2
+  },
+  {
+    "id": 1860,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Les curiosités du Labo Vingot",
+    "description": "Le Labo Vingot est officiellement un arsenal militaire Heldentod, mais derrière s'y cache de sombre secrets, et des expériences douteuses... Comme l'expérience Epsilon, le \"Chevalier Dragon Artificiel\".",
+    "maps": [32],
+    "enemies": [],
+    "kindId": "monsters/epsilon",
+    "group": 2
+  },
+  {
+    "id": 1861,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "L'encensoir Khan et le passé",
+    "description": "Le groupe à mis la main dans un ancien bastion Khan sur un encensoir très particulier, ce dernier semble pouvoir amener Estia dans le passé, dans des souvenirs à l'époque de Ryujin 1er. Et pas que...",
+    "maps": [58],
+    "enemies": [],
+    "kindId": "items/I00474b",
+    "group": 2
+  },
+  {
+    "id": 1862,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Le piège de feu Khan",
+    "description": "Au moment de la fuite, l'Ogresse Qorina a activé le piège ultime du bastion : le piège de feu. Un dispositif qui active d'énormes turbines dans les murs faisant brûler l'intégralité des lieux. Ce piège vicieux scellera pour de bon le destin des ogres KO qui y étaient...",
+    "maps": [58],
+    "enemies": [],
+    "kindId": "skillIcon/E0725",
+    "group": 2
   },
   {
     "id": 15000,

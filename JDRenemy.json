@@ -2450,7 +2450,7 @@
       "Bouclier Noir : Armure 2D6+10 pendant 4 tours : Esprit (m\u00eame si silence)"
     ],
     "stats": "15,13,20,11,19",
-    "desc": "Le l\u00e9gendaire Prince du Fl\u00e9au dans sa forme humaine. Il n'y a presque aucune aura aussi noire que la sienne. Et encore, ce n'est pas la pire de ses formes...",
+    "desc": "Le l\u00e9gendaire Prince du Fl\u00e9au sous forme d'esprit. Il n'y a presque aucune aura aussi noire que la sienne. Et encore, ce n'est pas la pire de ses formes...",
     "infos": "Faible \u00e0 la lumi\u00e8re et \u00e0 la nature",
     "drop": "Dague vorace, Pendentif du risque"
   },
@@ -3185,7 +3185,7 @@
       "Art Khan (buff indéf, instant, Esprit), mode :<br/> - Offensif : Flamme d\u00e9g\u00e2t / malus,<br/> - D\u00e9fensif : Flamme soin / buff,<br/> PV <50% : Flamme \"+5, Bloc/Esq+1\"<br/>Anti-DK : Stuff Dragonite (25%) + revers, vs DK"
     ],
     "stats": "17,11,17,13,17",
-    "desc": "Descendante d'une ancienne lign\u00e9e Khan, Qorina poss\u00e8de la puissante flamme ancestrale de son glorieux empire perdu.",
+    "desc": "Descendante d'une ancienne lign\u00e9e Khan, Qorina poss\u00e8de la puissante flamme ancestrale de son glorieux empire perdu. Ses desseins semblent être la destruction d'Heldentod, mais elle n'agit pas de paire avec ses semblables...",
     "infos": "Faible au per\u00e7ant et \u00e0 la glace",
     "drop": "A d\u00e9finir"
   }
