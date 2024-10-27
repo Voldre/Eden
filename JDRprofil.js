@@ -32,7 +32,7 @@ window.addEventListener("load", () => {
     // Default page with all players information
     document.querySelector("#allCards").classList.add("hide");
 
-    Object.entries(playerJSON).forEach((player) => {
+    const playerEList = Object.entries(playerJSON).map((player) => {
       const playerNameE = createElement("h3", player[0]);
 
       const playerData = player[1];
@@ -58,12 +58,6 @@ window.addEventListener("load", () => {
         style: { fontSize: "13.5px" },
       });
 
-      const playerCardsEP = createElement(
-        "p",
-        "Boss " + pBossP + "%, Anecdotes " + pAnecdoteP + "%<br/>Maps " + pMapsP + "%, Total " + pTotalP + "%",
-        { style: { fontSize: "13.5px" } }
-      );
-
       const playerCards = playerData.cards
         .map((pC) => cardJSON.find((c) => c.id === parseInt(pC)))
         .filter((p) => p != undefined);
@@ -83,6 +77,11 @@ window.addEventListener("load", () => {
       );
       const pTotalP = Math.floor((100 * playerCards?.length) / cardJSON.length);
 
+      const playerCardsEP = createElement("p", undefined, { style: { fontSize: "13.5px" } });
+      // innerHTML because <br/> tag
+      playerCardsEP.innerHTML =
+        "Boss " + pBossP + "%, Anecdotes " + pAnecdoteP + "%<br/>Maps " + pMapsP + "%, Total " + pTotalP + "%";
+
       const entriesToday =
         joueurDate >= today || sameDay(joueurDate, today)
           ? Math.round(
@@ -94,7 +93,7 @@ window.addEventListener("load", () => {
         style: { fontSize: "13px" },
       });
 
-      const playerE = createElement(
+      return createElement(
         "div",
         [playerConnectedE, playerNameE, playerCoinE, playerCardsE, playerCardsEP, playerEntriesE],
         {
@@ -103,11 +102,10 @@ window.addEventListener("load", () => {
           },
         }
       );
-      playersE.append(playerE);
-
-      const playersE = createElement("div", playerE, { id: "playersE", class: "flexContainer, charactersList" });
-      document.querySelector("body").append(playersE);
     });
+
+    const playersE = createElement("div", playerEList, { id: "playersE", class: "flexContainer charactersList" });
+    document.querySelector("body").append(playersE);
 
     // Display all persos stats in combat
     Object.values(persosJSON).forEach((p) => {
@@ -220,6 +218,9 @@ function loadPlayer(player) {
 
   loadCards(joueurData);
   countCards(joueurData);
+
+  applyFilter();
+  applyCheckbox();
 
   toastNotification("Chargement réussi de " + player);
 }
@@ -370,10 +371,11 @@ function loadCards(joueurData) {
       }
       default:
         console.log("Erreur, type non reconnu : " + card.kind);
+        return;
     }
     const imgCardE = createElement("img", undefined, { src: imgSrc });
 
-    const cardE = createElement("div", undefined, { class: `card, ${rarityClass[card.value - 1]}` });
+    const cardE = createElement("div", undefined, { class: `card ${rarityClass[card.value - 1]}` });
 
     cardE.appendChild(imgCardE);
     if (joueurData.cards.includes(card.id)) {
@@ -426,36 +428,36 @@ cardKinds.map((kind) => {
 
 // Filters cards :
 const radioButtons = [...document.querySelectorAll("input[type='radio']")];
-radioButtons.map((radioButton) =>
-  radioButton.addEventListener("change", () => {
-    const allCardsE = [...document.querySelectorAll(".card")];
-    const filter = radioButtons.find((r) => r.checked).value;
-    if (filter === "all") {
-      allCardsE.map((cardE) => cardE.classList.remove("hide"));
-    } else {
-      allCardsE.map((cardE) => {
-        const isAcquired = cardE.children.length > 1;
-        if ((filter === "acquired" && isAcquired) || (filter === "not-acquired" && !isAcquired)) {
-          cardE.classList.remove("hide");
-        } else {
-          cardE.classList.add("hide");
-        }
-      });
-    }
-  })
-);
+radioButtons.map((radioButton) => radioButton.addEventListener("change", applyFilter));
+
+function applyFilter() {
+  const allCardsE = [...document.querySelectorAll(".card")];
+  const filter = radioButtons.find((r) => r.checked).value;
+  if (filter === "all") {
+    allCardsE.map((cardE) => cardE.classList.remove("hide"));
+  } else {
+    allCardsE.map((cardE) => {
+      const isAcquired = cardE.children.length > 1;
+      if ((filter === "acquired" && isAcquired) || (filter === "not-acquired" && !isAcquired)) {
+        cardE.classList.remove("hide");
+      } else {
+        cardE.classList.add("hide");
+      }
+    });
+  }
+}
 
 // Filters anecdotes group cards
 const checkboxes = [...document.querySelectorAll("input[type='checkbox']")];
-checkboxes.map((checkbox) =>
-  checkbox.addEventListener("change", () => {
-    checkboxes.map((cb) => {
-      const groupeE = document.querySelector(`#${cb.value}`);
-      if (cb.checked) groupeE.classList.remove("hide");
-      else groupeE.classList.add("hide");
-    });
-  })
-);
+checkboxes.map((checkbox) => checkbox.addEventListener("change", applyCheckbox));
+
+function applyCheckbox() {
+  checkboxes.map((cb) => {
+    const groupeE = document.querySelector(`#${cb.value}`);
+    if (cb.checked) groupeE.classList.remove("hide");
+    else groupeE.classList.add("hide");
+  });
+}
 
 // Modal (Dialog) des informations de bases des labels
 

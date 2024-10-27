@@ -457,10 +457,10 @@ genericElements.forEach((genericE) => {
   selectElements.forEach((selectE) => {
     const propName = selectE.className;
     // Fill options with all of an element (classes, races, rangs, guildes), mapped on "prop" value (classe =, ...)
-    fillSelectOptions(
-      selectE,
-      Object.values(enemyGenericJSON[propName + "s"].map((e) => ({ value: e[propName], innerText: e[propName] })))
-    );
+    fillSelectOptions(selectE, [
+      { value: "", innerText: "" },
+      ...Object.values(enemyGenericJSON[propName + "s"].map((e) => ({ value: e[propName], innerText: e[propName] }))),
+    ]);
 
     selectE.addEventListener("change", () => handleGenericSelectChange(selectElements));
   });
