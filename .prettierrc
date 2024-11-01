@@ -25,5 +25,8 @@
         "semi": true
       }
     }
-  ]
+  ],
+  "endOfLine": "auto",
+  "jsxSingleQuote": true,
+  "bracketSpacing": true
 }

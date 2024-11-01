@@ -1,5 +1,5 @@
 import { classes, iconsClasses, skillsAwakenJSON, skillsJSON } from "./JDRstore.js";
-import { aoeDescInfo, createElement, initDialog } from "./utils.js";
+import { aoeDescInfo, createElement, eventOnClick, initDialog } from "./utils.js";
 
 const classesDesc = [
   "Les guerriers possèdent de solides aptitudes au combat ainsi que de lourdes armures résistantes. Peut effrayer les ennemis et motiver ses alliés.",
@@ -26,10 +26,10 @@ const classesDesc = [
 
 // Generate classes elements
 classes.forEach((classe, i) => {
-  if (classe == "Chev Dragon") classe = "C. Dragon";
+  if (classe === "Chev Dragon") classe = "C. Dragon";
   const nomE = createElement("p", classe);
   const iconeE = createElement("img", undefined, {
-    src: "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" + iconsClasses[i] + ".png",
+    src: `http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE${iconsClasses[i]}.png`,
   });
 
   const classeE = createElement("div", [nomE, iconeE], { id: classe });
@@ -54,7 +54,7 @@ classes.forEach((classe, i) => {
 // Show/Hide races
 const buttonRace = document.querySelector("#buttonRace");
 buttonRace.addEventListener("click", () => {
-  if (buttonRace.innerText == "Afficher") {
+  if (buttonRace.innerText === "Afficher") {
     buttonRace.innerText = "Masquer";
   } else {
     buttonRace.innerText = "Afficher";
@@ -64,7 +64,7 @@ buttonRace.addEventListener("click", () => {
 // Show/Hide elements
 const buttonElem = document.querySelector("#buttonElem");
 buttonElem.addEventListener("click", () => {
-  if (buttonElem.innerText == "Afficher") {
+  if (buttonElem.innerText === "Afficher") {
     buttonElem.innerText = "Masquer";
   } else {
     buttonElem.innerText = "Afficher";
@@ -92,7 +92,7 @@ const updateSkillsList = (classe, isAwaken) => {
 
     const iconeE = createElement("img", undefined, {
       class: "icone",
-      src: "http://voldre.free.fr/Eden/images/skillIcon/" + skill.icone + ".png",
+      src: `http://voldre.free.fr/Eden/images/skillIcon/${skill.icone}.png`,
     });
 
     const skillRange = skill.effet.split("AoE ")[1] ?? null; // en bas [0] + "AoE"
@@ -104,7 +104,7 @@ const updateSkillsList = (classe, isAwaken) => {
         class: "skillRangeIcon",
         style: { backgroundImage: `url(http://voldre.free.fr/Eden/images/layout/${skillRange}.png)` },
       });
-    const statDesc = " / " + skill.stat + " / " + skill.classe?.toString().replaceAll(",", ", ");
+    const statDesc = ` / ${skill.stat} / ${skill.classe?.toString().replaceAll(",", ", ")}`;
 
     const effetE = createElement(
       "p",
@@ -116,18 +116,21 @@ const updateSkillsList = (classe, isAwaken) => {
 
     const skillE = createElement("div", [nomE, descE, effetE, montantE, iconeE], {
       class: `skill ${isAwaken ? "awaken" : ""}`,
-      onClick: () => {
-        skillE.classList.toggle("awaken");
-
-        const selectedAwakenSkill =
-          skillE.classList.contains("awaken") && Object.values(skillsAwakenJSON).find((s) => s.nom == skill.nom);
-
-        skillE.querySelector(".desc").innerText = selectedAwakenSkill?.desc || skill.desc;
-        skillE.querySelector(".montant").innerText = selectedAwakenSkill?.montant || skill.montant;
-
-        updateAwakenButtonTriggered();
-      },
     });
+
+    // Add manually event for fastClick
+    const fastClickEvent = () => {
+      skillE.classList.toggle("awaken");
+
+      const selectedAwakenSkill =
+        skillE.classList.contains("awaken") && Object.values(skillsAwakenJSON).find((s) => s.nom === skill.nom);
+
+      skillE.querySelector(".desc").innerText = selectedAwakenSkill?.desc || skill.desc;
+      skillE.querySelector(".montant").innerText = selectedAwakenSkill?.montant || skill.montant;
+
+      updateAwakenButtonTriggered();
+    };
+    eventOnClick(skillE, fastClickEvent);
 
     skillsListE.append(skillE);
     updateAwakenButtonTriggered();
@@ -149,7 +152,7 @@ const updateAwakenButtonTriggered = () => {
 
 // Nb skills by stats
 const skillsJSONStat = Object.values(skillsJSON).map((skill) => skill.stat);
-const occurrences = skillsJSONStat.reduce(function (acc, curr) {
+const occurrences = skillsJSONStat.reduce((acc, curr) => {
   return acc[curr] ? ++acc[curr] : (acc[curr] = 1), acc;
 }, {});
 
@@ -157,7 +160,7 @@ document.querySelector(".statsBySkills").innerText = JSON.stringify(occurrences)
 
 // Nb skills by effect
 const skillsJSONEffect = Object.values(skillsJSON).map((skill) => skill.effet);
-const listEffects = skillsJSONEffect.reduce(function (acc, curr) {
+const listEffects = skillsJSONEffect.reduce((acc, curr) => {
   return acc[curr] ? ++acc[curr] : (acc[curr] = 1), acc;
 }, {});
 
@@ -165,12 +168,12 @@ console.log("Nb skills by effect", listEffects);
 
 // Nb skills by class
 const skillsJSONClass = Object.values(skillsJSON).map((skill) => skill.classe);
-const listSkillsByClass = skillsJSONClass.reduce(function (acc, curr) {
+const listSkillsByClass = skillsJSONClass.reduce((acc, curr) => {
   return acc[curr] ? ++acc[curr] : (acc[curr] = 1), acc;
 }, {});
 
 const skillsJSONClassIndiv = [].concat(...skillsJSONClass);
-const listSkillsByClassIndiv = skillsJSONClassIndiv.reduce(function (acc, curr) {
+const listSkillsByClassIndiv = skillsJSONClassIndiv.reduce((acc, curr) => {
   return acc[curr] ? ++acc[curr] : (acc[curr] = 1), acc;
 }, {});
 
@@ -183,11 +186,11 @@ console.log(
 // Nb skills by class by stat
 const allListSkillsByClassByStats = {};
 classes.forEach((classe) => {
-  const skillsClass = Object.values(skillsJSON).filter((skill) => skill.classe == classe);
+  const skillsClass = Object.values(skillsJSON).filter((skill) => skill.classe === classe);
   // console.log(skillsClass)
   const skillsClassStats = Object.values(skillsClass).map((skill) => skill.stat);
   // console.log(skillsClassStats)
-  const listSkillsByClassStats = skillsClassStats.reduce(function (acc, curr) {
+  const listSkillsByClassStats = skillsClassStats.reduce((acc, curr) => {
     return acc[curr] ? ++acc[curr] : (acc[curr] = 1), acc;
   }, {});
   allListSkillsByClassByStats[classe] = listSkillsByClassStats;
@@ -201,17 +204,10 @@ function aoeDesc() {
   for (let i = 0; i < 4; i++) {
     const rangeI = Math.floor(i / 2);
     const typeI = i % 2;
-    description +=
-      "<br/><img class='skillRangeIcon' src='http://voldre.free.fr/Eden/images/layout/" +
-      aoeDescInfo.range[rangeI] +
-      aoeDescInfo.type[typeI] +
-      ".png'/> Attaque en " +
-      aoeDescInfo.rangeName[rangeI] +
-      " " +
-      aoeDescInfo.typeName[typeI] +
-      " : <br/>" +
-      aoeDescInfo.typeMalus[typeI] +
-      ".<br/>";
+    description += `<br/>
+    <img class='skillRangeIcon' src='http://voldre.free.fr/Eden/images/layout/${aoeDescInfo.range[rangeI]}${aoeDescInfo.type[typeI]}.png'/> 
+    Attaque en ${aoeDescInfo.rangeName[rangeI]}${aoeDescInfo.typeName[typeI]} : 
+    <br/>${aoeDescInfo.typeMalus[typeI]}.<br/>`;
   }
   return description;
 }
@@ -275,7 +271,7 @@ const labelsDescription = {
     </tbody>
   </table>
   `,
-  aoe: aoeDesc() + "<br/>Concernant l'esquive, tout sort mono-cible peut être esquivé, sauf les sorts d'esprits.",
+  aoe: `${aoeDesc()}<br/>Concernant l'esquive, tout sort mono-cible peut être esquivé, sauf les sorts d'esprits.`,
   bloquage:
     "Toutes les attaques peuvent être bloquées (physiquement (force) ou magiquement (intelligence))<br/>Bloquer plusieurs fois de suite donne des malus (Blocage -1 par coup), si le coup suivant est une attaque mono-cible, blocage -1 sur le coup.<br/>Cumule max : -4 blocage.<br/><br/>Même avec malus et autres effets, un Dé à 1 ou 2 génèrera tout le temps une réussite de blocage.",
   invisible:

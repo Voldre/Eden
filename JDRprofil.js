@@ -44,7 +44,7 @@ window.addEventListener("load", () => {
         style: { backgroundColor: sameDay(joueurDate, today) ? "green" : "grey" },
       });
 
-      const playerCoinE = createElement("p", playerData["alpagaCoin"] + " (" + playerData["alpagaCoinSpent"] + ") ");
+      const playerCoinE = createElement("p", `${playerData["alpagaCoin"]} (${playerData["alpagaCoinSpent"]}) `);
 
       const playerCoinPicE = createElement("img", undefined, {
         src: "images/alpagaCoin.png",
@@ -54,13 +54,11 @@ window.addEventListener("load", () => {
 
       playerCoinE.append(playerCoinPicE);
 
-      const playerCardsE = createElement("p", "Nombre de cartes : " + playerData["cards"].length, {
+      const playerCardsE = createElement("p", `Nombre de cartes : ${playerData["cards"].length}`, {
         style: { fontSize: "13.5px" },
       });
 
-      const playerCards = playerData.cards
-        .map((pC) => cardJSON.find((c) => c.id === parseInt(pC)))
-        .filter((p) => p != undefined);
+      const playerCards = playerData.cards.map((pC) => cardJSON.find((c) => c.id === parseInt(pC))).filter((p) => !!p);
       // console.log(playerCards);
 
       const pBossP = Math.floor(
@@ -79,8 +77,7 @@ window.addEventListener("load", () => {
 
       const playerCardsEP = createElement("p", undefined, { style: { fontSize: "13.5px" } });
       // innerHTML because <br/> tag
-      playerCardsEP.innerHTML =
-        "Boss " + pBossP + "%, Anecdotes " + pAnecdoteP + "%<br/>Maps " + pMapsP + "%, Total " + pTotalP + "%";
+      playerCardsEP.innerHTML = `Boss ${pBossP}%, Anecdotes ${pAnecdoteP}%<br/>Maps ${pMapsP}%, Total ${pTotalP}%`;
 
       const entriesToday =
         joueurDate >= today || sameDay(joueurDate, today)
@@ -89,7 +86,7 @@ window.addEventListener("load", () => {
             )
           : 100;
 
-      const playerEntriesE = createElement("p", "Entrées restantes : " + entriesToday + "%", {
+      const playerEntriesE = createElement("p", `Entrées restantes : ${entriesToday}%`, {
         style: { fontSize: "13px" },
       });
 
@@ -98,7 +95,7 @@ window.addEventListener("load", () => {
         [playerConnectedE, playerNameE, playerCoinE, playerCardsE, playerCardsEP, playerEntriesE],
         {
           onClick: () => {
-            window.location.href = "jdr_profil.html?joueur=" + player[0];
+            window.location.href = `jdr_profil.html?joueur=${player[0]}`;
           },
         }
       );
@@ -110,7 +107,7 @@ window.addEventListener("load", () => {
     // Display all persos stats in combat
     Object.values(persosJSON).forEach((p) => {
       const persoP = new Perso(p, false);
-      persoP.degat != "-" && console.log(persoP);
+      persoP.degat !== "-" && console.log("Perso :", persoP);
     });
 
     // Display all persos by classes (if perso really exist)
@@ -127,19 +124,22 @@ window.addEventListener("load", () => {
         counter[ele] = 1;
       }
     });
-    console.log("Persos par classes :", counter);
+    console.log("Nb persos par classes :", counter);
 
     const newCounter = {};
-    classes.forEach((c) => {
-      const persosC = Object.values(persosJSON)
-        .filter((p) => parseInt(p.niv) < 15)
-        .filter((p) => p.classeP === c || p.classeS === c);
-      persosC.forEach((pC) => {
-        if (!newCounter[c]) newCounter[c] = [];
-        newCounter[c].push(pC.nom);
+
+    const activeP = Object.values(persosJSON).filter((p) => JSON.parse(p.eqpts).filter((e) => !!e).length >= 4);
+    const inactiveP = Object.values(persosJSON).filter((p) => !activeP.includes(p));
+
+    [false, true].forEach((isArchived) => {
+      const persosByClasses = classes.map((c) => {
+        const persos = (isArchived ? inactiveP : activeP).filter((p) => p.classeP === c || p.classeS === c);
+        return { class: c, persos };
       });
+      console.log(`Classes des persos ${isArchived ? "inactif (<4 eqpts)" : "actifs (>= 4 eqpts)"}`, persosByClasses);
     });
-    console.log(newCounter);
+
+    console.log("Persos actifs :", activeP, "Persos inactifs :", inactiveP);
 
     // Display nb anecdote by map
     const anecdoteByMap = Object.entries(mapsJSON).map((m) => [
@@ -148,16 +148,13 @@ window.addEventListener("load", () => {
     ]);
     console.log("Anecdotes par map (FAIRE INDEX+1 car Aven === 1 pas 0)", anecdoteByMap);
 
-    // Display nb anecdote by map
-    const enemiesOnMap = Object.entries(mapsJSON)
-      .filter((m) => m[1].mobs !== undefined)
-      .map((m) => [
-        m[1].name,
-        m[1].mobs.map((e) => [Object.values(enemyJSON[e.toString()])[1], Object.values(enemyJSON[e.toString()])[2]]),
-      ]);
+    // Display nb anecdotes by map
+    const enemiesOnMap = Object.values(mapsJSON)
+      .filter((map) => map.mobs !== undefined)
+      .map((map) => [map.name, map.mobs.map((e) => [enemyJSON[e.toString()].nom, enemyJSON[e.toString()].pvmax])]);
     console.log("Ennemis par map", enemiesOnMap);
 
-    const bossByMap = enemiesOnMap.map((map_e) => [map_e[0], map_e[1].filter((e) => e[1] >= 200).length]);
+    const bossByMap = enemiesOnMap.map(([map, mobs]) => [map, mobs.filter((e) => e[1] >= 200).length]);
     console.log("Nb boss par map", bossByMap);
 
     console.log(
@@ -180,9 +177,7 @@ function loadPlayer(player) {
   console.log(joueurData);
 
   // Display 100% image
-  const playerCards = joueurData.cards
-    .map((pC) => cardJSON.find((c) => c.id === parseInt(pC)))
-    .filter((p) => p != undefined);
+  const playerCards = joueurData.cards.map((pC) => cardJSON.find((c) => c.id === parseInt(pC))).filter((p) => !!p);
 
   const pBossP = Math.round(
     (100 * playerCards.filter((p) => p.kind === "boss").length) / cardJSON.filter((p) => p.kind === "boss").length
@@ -197,12 +192,11 @@ function loadPlayer(player) {
   );
 
   const allDone = pBossP === 100 && pComposP === 100 && pAnecdoteP === 100;
-  console.log(allDone, pBossP, pComposP, pAnecdoteP);
   document.querySelector("#image100").closest("label").style.display = allDone ? "block" : "none";
   document.querySelector("#image10k").style.display = joueurData.alpagaCoin >= 10000 ? "block" : "none";
 
   document.querySelector(".alpagaCoin").innerText = joueurData.alpagaCoin;
-  document.querySelector(".alpagaCoinSpent").innerText = " (" + joueurData.alpagaCoinSpent + ")";
+  document.querySelector(".alpagaCoinSpent").innerText = ` (${joueurData.alpagaCoinSpent})`;
 
   const persosData = joueurData.persos.map((idPerso) => {
     return persosJSON[idPerso - 1]; // Error, index -1
@@ -222,7 +216,7 @@ function loadPlayer(player) {
   applyFilter();
   applyCheckbox();
 
-  toastNotification("Chargement réussi de " + player);
+  toastNotification(`Chargement réussi de ${player}`);
 }
 
 function updateDay(joueurData, indexPlayer) {
@@ -261,7 +255,7 @@ function loadPerso(perso, index, joueurData) {
   const persoE = persosE[index];
 
   // Entrées du perso
-  persoE.querySelector(".entries").innerText = joueurData.entries[index] + "/3 ";
+  persoE.querySelector(".entries").innerText = `${joueurData.entries[index]}/3 `;
 
   persoE.querySelector("#nom").value = perso.nom;
 
@@ -290,18 +284,18 @@ function loadPerso(perso, index, joueurData) {
   const classeSID = classes.indexOf(perso.classeS);
 
   persoE.querySelector(".iconClasses").children[0].src =
-    "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" + iconsClasses[classePID] + ".png";
+    `http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE${iconsClasses[classePID]}.png`;
   persoE.querySelector(".iconClasses").children[1].src =
-    "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" + iconsClasses[classeSID] + ".png";
+    `http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE${iconsClasses[classeSID]}.png`;
 
   persoE.classList.remove("hide");
 }
 
 // Update worldmap displayed (add 2 continents 23/12/2023)
-[...document.querySelectorAll(".mapMenu")].map((eMapMenu) => {
-  eMapMenu.addEventListener("click", (e) => {
+[...document.querySelectorAll(".mapMenu")].forEach((mapMenuE) => {
+  mapMenuE.addEventListener("click", (e) => {
     // On new click, remove all activated menu
-    [...document.querySelectorAll(".mapMenu")].forEach((eMap) => eMap.classList.remove("activate"));
+    [...document.querySelectorAll(".mapMenu")].forEach((mapE) => mapE.classList.remove("activate"));
     e.target.classList.add("activate");
 
     // Detect which continent is displayed
@@ -318,7 +312,7 @@ function loadPerso(perso, index, joueurData) {
 document.addEventListener("click", (e) => {
   if (e.target.dataset.map || (e.target.parentElement && e.target.parentElement.dataset.map)) {
     const map = e.target.dataset.map || e.target.parentElement.dataset.map;
-    window.location.href = "jdr_quest.html?perso=" + (parseInt(indexPerso) + 1) + "&map=" + map;
+    window.location.href = `jdr_quest.html?perso=${parseInt(indexPerso) + 1}&map=${map}`;
     return;
   }
   if (
@@ -331,7 +325,7 @@ document.addEventListener("click", (e) => {
       if ([...eContinent.classList].includes("active")) eContinent.classList.remove("active");
     });
     document.querySelector("#worldmap").classList.add("hide");
-    [...document.querySelectorAll(".mapMenu")].forEach((eMap) => eMap.classList.remove("activate"));
+    [...document.querySelectorAll(".mapMenu")].forEach((mapE) => mapE.classList.remove("activate"));
   }
 });
 
@@ -339,8 +333,8 @@ function loadCards(joueurData) {
   // Reset
   cardKinds.forEach((kind) => {
     if (kind === "anecdote") {
-      [...document.querySelector("#" + kind).querySelectorAll("div")].forEach((e) => (e.innerText = ""));
-    } else document.querySelector("#" + kind).innerText = "";
+      [...document.querySelector(`#${kind}`).querySelectorAll("div")].forEach((e) => (e.innerText = ""));
+    } else document.querySelector(`#${kind}`).innerText = "";
   });
 
   const rarityClass = ["common", "rare", "epic"];
@@ -354,23 +348,23 @@ function loadCards(joueurData) {
 
     switch (card.kind) {
       case "map": {
-        imgSrc = imgEndPoint + "loadingframe/Loading_" + card.kindId + ".png";
+        imgSrc = `${imgEndPoint}loadingframe/Loading_${card.kindId}.png`;
         break;
       }
       case "boss": {
-        imgSrc = imgEndPoint + "monsters/" + card.kindId + ".png";
+        imgSrc = `${imgEndPoint}monsters/${card.kindId}.png`;
         break;
       }
       case "composant": {
-        imgSrc = imgEndPoint + "items/" + card.kindId + ".png";
+        imgSrc = `${imgEndPoint}items/${card.kindId}.png`;
         break;
       }
       case "anecdote": {
-        imgSrc = imgEndPoint + card.kindId + ".png";
+        imgSrc = `${imgEndPoint + card.kindId}.png`;
         break;
       }
       default:
-        console.log("Erreur, type non reconnu : " + card.kind);
+        console.log(`Erreur, type non reconnu : ${card.kind}`);
         return;
     }
     const imgCardE = createElement("img", undefined, { src: imgSrc });
@@ -381,14 +375,13 @@ function loadCards(joueurData) {
     if (joueurData.cards.includes(card.id)) {
       cardE.appendChild(nameCardE);
       cardE.appendChild(descCardE);
-    } else {
-      // Card to hide if not obtained
-      if (card.hidden) return;
-    }
+    } // Card to hide if not obtained
+    else if (card.hidden) return;
+
     if (card.kind === "anecdote") {
-      document.querySelector("#g" + card.group)?.append(cardE);
+      document.querySelector(`#g${card.group}`)?.append(cardE);
     } else {
-      document.querySelector("#" + card.kind)?.append(cardE);
+      document.querySelector(`#${card.kind}`)?.append(cardE);
     }
   });
 }
@@ -408,7 +401,7 @@ function countCards(joueurData) {
     // Remove hidden
     const countCardsByKind = cardJSON.filter((c) => c.kind === kind && !c.hidden).length;
 
-    document.querySelector("#" + kind + "Count").innerText = `(${countJoueurCardsByKind}/${countCardsByKind})${
+    document.querySelector(`#${kind}Count`).innerText = `(${countJoueurCardsByKind}/${countCardsByKind})${
       countHiddenCards ? ` (+${countHiddenCards})` : ""
     }`;
   });
@@ -416,8 +409,8 @@ function countCards(joueurData) {
 
 // Hide/Show cards by categories :
 
-cardKinds.map((kind) => {
-  const label = document.querySelector('label[for="' + kind + '"]');
+cardKinds.forEach((kind) => {
+  const label = document.querySelector(`label[for="${kind}"]`);
   const element = document.getElementById(kind);
   label.addEventListener("click", () => {
     const willBeHidden = !element.classList.contains("hide");
@@ -428,15 +421,15 @@ cardKinds.map((kind) => {
 
 // Filters cards :
 const radioButtons = [...document.querySelectorAll("input[type='radio']")];
-radioButtons.map((radioButton) => radioButton.addEventListener("change", applyFilter));
+radioButtons.forEach((radioButton) => radioButton.addEventListener("change", applyFilter));
 
 function applyFilter() {
   const allCardsE = [...document.querySelectorAll(".card")];
   const filter = radioButtons.find((r) => r.checked).value;
   if (filter === "all") {
-    allCardsE.map((cardE) => cardE.classList.remove("hide"));
+    allCardsE.forEach((cardE) => cardE.classList.remove("hide"));
   } else {
-    allCardsE.map((cardE) => {
+    allCardsE.forEach((cardE) => {
       const isAcquired = cardE.children.length > 1;
       if ((filter === "acquired" && isAcquired) || (filter === "not-acquired" && !isAcquired)) {
         cardE.classList.remove("hide");
@@ -449,10 +442,10 @@ function applyFilter() {
 
 // Filters anecdotes group cards
 const checkboxes = [...document.querySelectorAll("input[type='checkbox']")];
-checkboxes.map((checkbox) => checkbox.addEventListener("change", applyCheckbox));
+checkboxes.forEach((checkbox) => checkbox.addEventListener("change", applyCheckbox));
 
 function applyCheckbox() {
-  checkboxes.map((cb) => {
+  checkboxes.forEach((cb) => {
     const groupeE = document.querySelector(`#${cb.value}`);
     if (cb.checked) groupeE.classList.remove("hide");
     else groupeE.classList.add("hide");
