@@ -1,5 +1,6 @@
 {
-  "extends": ["eslint:recommended"],
+  "env": { "browser": true },
+
   "ignorePatterns": [
     "*.css",
     "*.html",
@@ -10,21 +11,108 @@
     "three.min.js",
     "images/*"
   ],
-  "env": {
-    "browser": true,
-    "commonjs": true,
-    "es2021": true
-  },
+  "extends": [
+    // We reset almost all rules,
+    // but we extends recommended in case of missing rule or modules updates
+    "eslint:recommended",
+    // "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  //  "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": 12,
+    "ecmaVersion": "latest",
     "sourceType": "module"
+    // "project": "tsconfig.json"
   },
+  "plugins": [
+    // For generic rules, see: https://eslint.org/docs/latest/rules/
+    // "@typescript-eslint", // See: https://typescript-eslint.io/rules/
+    "prettier" // See: https://github.com/prettier/eslint-plugin-prettier#options
+  ],
+
   "rules": {
+    // Generic ESLint
+    "array-callback-return": "warn",
+    "no-constant-binary-expression": "warn",
+    "no-constructor-return": "error",
+    "no-promise-executor-return": "warn",
+    "no-self-compare": "warn",
+    "no-template-curly-in-string": "warn",
+    "no-unmodified-loop-condition": "warn",
+    "no-unreachable-loop": "warn",
+    "no-unused-private-class-members": "warn",
+    "require-atomic-updates": "warn",
+    "block-scoped-var": "warn",
+    "camelcase": "warn",
+    "consistent-return": "warn",
+    "default-case": "warn",
+    "default-case-last": "warn",
+    "default-param-last": "off",
+    "dot-notation": "off",
+    "eqeqeq": "error",
+    "grouped-accessor-pairs": "warn",
+    "multiline-comment-style": ["warn", "separate-lines"],
+    "new-cap": "error",
+    "no-alert": "warn",
+    "no-bitwise": "warn",
+    // "no-console": "warn", // Useless for Eden
+    "no-continue": "error",
+    "no-else-return": "warn",
+    "no-empty": ["warn", { "allowEmptyCatch": true }],
+    "no-empty-function": "off",
+    "no-floating-decimal": "error",
+    "no-implied-eval": "error",
+    "no-labels": "error",
+    "no-lonely-if": "warn",
+    "no-multi-str": "warn",
+    "no-new": "warn",
+    "no-new-wrappers": "error",
+    "no-octal-escape": "error",
+    "no-return-assign": "warn",
+    "no-script-url": "error",
+    "no-throw-literal": "off",
+    "no-undef-init": "warn",
+    "no-unneeded-ternary": "warn",
+    "no-unused-expressions": "off",
     "no-unused-vars": "warn",
     "no-var": "warn",
     "no-const-assign": "error",
     "prefer-const": "warn",
     "no-console": "off",
-    "no-case-declarations": "off"
+    "no-case-declarations": "off",
+    "no-useless-computed-key": "warn",
+    "no-useless-concat": "warn",
+    "no-useless-constructor": "off",
+    "no-useless-rename": "warn",
+    "no-useless-return": "warn",
+    "no-void": "warn",
+    "object-shorthand": "error",
+    "operator-assignment": "warn",
+    "prefer-arrow-callback": "warn",
+    "prefer-regex-literals": "warn",
+    "prefer-template": "warn",
+    "require-await": "off",
+    "spaced-comment": ["warn", "always", { "markers": ["/"] }],
+    "vars-on-top": "warn",
+
+    // TypeScript
+
+    // "@typescript-eslint/explicit-function-return-type": ["warn", { "allowExpressions": true }],
+
+    // TypeScript extensions
+
+    // "@typescript-eslint/default-param-last": "warn",
+    // "@typescript-eslint/dot-notation": "error",
+    // "@typescript-eslint/no-empty-function": "warn",
+
+    // "@typescript-eslint/no-shadow": [
+    // "warn",// { "ignoreOnInitialization": true }
+    // ],
+
+    // "@typescript-eslint/no-throw-literal": "error","@typescript-eslint/no-unused-expressions": "warn","@typescript-eslint/no-unused-vars": ["warn", { "args": "after-used", "ignoreRestSiblings": true }],"@typescript-eslint/no-useless-constructor": "error","@typescript-eslint/require-await": "error",
+
+    // Prettier
+
+    "prettier/prettier": "warn" // Import
   }
 }

@@ -32,19 +32,18 @@ const initObject = () => {
       // Default mapID
       let mapName = mapID;
       while (mapName.length < 3) {
-        mapName = "0" + mapName;
+        mapName = `0${mapName}`;
       }
 
-      const mapObject = "S" + mapName;
+      const mapObject = `S${mapName}`;
       objetsE.value = mapObject;
       return mapObject;
     }
     // Ex : 41 from S041
     mapID = parseInt(objetsE.value.slice(1));
     return objetsE.value;
-  } else {
-    return objetsE.value;
   }
+  return objetsE.value;
 };
 
 let mapID = urlParams.get("map");
@@ -53,7 +52,7 @@ let animationId;
 const updatePlayer = (factor = 1) => {
   return {
     height: 1.6,
-    factor: factor,
+    factor,
     speed: 0.1 * factor * (onMap ? 4 : 1),
   };
 };
@@ -95,7 +94,7 @@ function update() {
   document.getElementsByTagName("canvas")[0]?.remove();
 
   init();
-  //init(1152, 648);
+  // init(1152, 648);
 }
 
 // #region init()
@@ -108,12 +107,12 @@ function init() {
   if (onMap) initBGM();
 
   scene = new THREE.Scene();
-  /* **************************************************
-    Le secret pour afficher le background (qui est éloigné?)
-    ==> Il faut aggrandir la distance d'affichage !
-    Car là elle est trop petite et du coup on voit rien sauf quand
-    on est collé dessus, ce n'est pas le but. 4000 >> 1000
-    ************************************************** */
+  // *************************************************
+  // Le secret pour afficher le background (qui est éloigné?)
+  // ==> Il faut aggrandir la distance d'affichage !
+  // Car là elle est trop petite et du coup on voit rien sauf quand
+  // on est collé dessus, ce n'est pas le but. 4000 >> 1000
+  // *************************************************
 
   const meshFloor = new THREE.Mesh(
     new THREE.PlaneGeometry(20, 20, 10, 10),
@@ -123,12 +122,12 @@ function init() {
   meshFloor.receiveShadow = true;
   scene.add(meshFloor);
 
-  /*
-    const fbxloader = new THREE.FBXLoader();
-    fbxloader.load('http://voldre.free.fr/Eden/UD338out.fbx', object => {
-        scene.add(object);
-    });
-    */
+  //
+  // const fbxloader = new THREE.FBXLoader();
+  // fbxloader.load('http://voldre.free.fr/Eden/UD338out.fbx', object => {
+  //     scene.add(object);
+  // });
+  //
 
   const ambientLight = new THREE.AmbientLight(0xffffff, onMap ? 0.5 : 0.85);
   scene.add(ambientLight);
@@ -147,21 +146,21 @@ function init() {
   mtlLoader.setMaterialOptions({ ignoreZeroRGBs: true });
 
   // console.log(mtlLoader);
-  mtlLoader.load("http://voldre.free.fr/Eden/images/3D/" + folder + "/" + myObject + ".mtl", (materials) => {
+  mtlLoader.load(`http://voldre.free.fr/Eden/images/3D/${folder}/${myObject}.mtl`, (materials) => {
     console.log(materials);
 
     const wrongMaterials = [];
 
-    Object.values(materials.materialsInfo).map((material) => {
+    Object.values(materials.materialsInfo).forEach((material) => {
       const texture = material["map_kd"];
       // Gestion des 2 cas possibles d'absence de textures : 1) "chemin sans arrivé", 2) rien de déclaré
-      if (!texture || texture == "images/3D/map/") {
+      if (!texture || texture === "images/3D/map/") {
         wrongMaterials.push(material.name);
       } else {
         // 13/06/2024 : Apply choosed colors if defined
         const choosedColor = colorsE.value.toUpperCase();
         material["map_kd"] = choosedColor
-          ? material["map_kd"].slice(0, -10) + choosedColor + ".png"
+          ? `${material["map_kd"].slice(0, -10) + choosedColor}.png`
           : material["map_kd"];
       }
     });
@@ -180,39 +179,39 @@ function init() {
     const onProgress = (xhr) => {
       if (xhr.lengthComputable) {
         const percentComplete = (xhr.loaded / xhr.total) * 100;
-        document.getElementById("loading").innerHTML = "Loading : " + Math.round(percentComplete, 2) + "%";
+        document.getElementById("loading").innerHTML = `Loading : ${Math.round(percentComplete, 2)}%`;
       }
     };
     objLoader.load(
-      "http://voldre.free.fr/Eden/images/3D/" + folder + "/" + myObject + ".obj",
+      `http://voldre.free.fr/Eden/images/3D/${folder}/${myObject}.obj`,
       (mesh) => {
         // console.log("Loaded : " + myObject);
         document.getElementById("loading").innerHTML = null;
 
-        mesh.traverse(function (node) {
+        mesh.traverse((node) => {
           if (node instanceof THREE.Mesh) {
             node.castShadow = true;
             node.receiveShadow = true;
           }
         });
 
-        /********* Most important update *********
-             07/06/2022 :
-             Adding alphaTest and transparent parameters
-             in order to make transparent part of PNG effective !
-             If not, the transparent part will render black or white
-             Examples here : "Tools/Issue with the PNG transparent - alpha.png"
-             12/06/2022 - (the best part of update) :
-             Analyze of each material and their "map kd" (their PNG texture)
-             in order to find which materials have no texture.
-             Because I understood that all "white/blue/purple" walls were
-             materials built in the game to block the player. As a real wall.
-             And so, these materials got no texture but exist !
-             That's not a "miss conversion", that's intended transparent !
-             But the NIF to OBJ conversion, by default, show them ...
-             ... even if they have no texture", and that's on what I have worked.
-             I checked PNG for all materials, and if I find no one, "visibile = false"
-             ******************************************/
+        // ******* Most important update *********
+        //   07/06/2022 :
+        //   Adding alphaTest and transparent parameters
+        //   in order to make transparent part of PNG effective !
+        //   If not, the transparent part will render black or white
+        //   Examples here : "Tools/Issue with the PNG transparent - alpha.png"
+        //   12/06/2022 - (the best part of update) :
+        //   Analyze of each material and their "map kd" (their PNG texture)
+        //   in order to find which materials have no texture.
+        //   Because I understood that all "white/blue/purple" walls were
+        //   materials built in the game to block the player. As a real wall.
+        //   And so, these materials got no texture but exist !
+        //   That's not a "miss conversion", that's intended transparent !
+        //   But the NIF to OBJ conversion, by default, show them ...
+        //   ... even if they have no texture", and that's on what I have worked.
+        //   I checked PNG for all materials, and if I find no one, "visibile = false"
+        //   *****************************************
         mesh.children.forEach((meshElement) => {
           meshElement.castShadow = true;
           // Make PNG transparence efficient
@@ -230,9 +229,9 @@ function init() {
         scene.add(mesh);
 
         // BACKGROUND
-        if (readCookie("whiteBgState") == "") {
+        if (readCookie("whiteBgState") === "") {
           scene.background = new THREE.Color();
-        } else if (readCookie("bgState") == "") {
+        } else if (readCookie("bgState") === "") {
           // 06/06/2022 - Ajout du background d'Eden (si c'est voulu)
 
           const date = new Date();
@@ -262,9 +261,9 @@ function init() {
           const myBG = backgroundByHour[choosenHour];
 
           // meshBG = new THREE.Mesh();
-          mtlLoader.load("http://voldre.free.fr/Eden/images/3D/maps/" + myBG + ".mtl", (materialsBG) => {
+          mtlLoader.load(`http://voldre.free.fr/Eden/images/3D/maps/${myBG}.mtl`, (materialsBG) => {
             objLoader.setMaterials(materialsBG);
-            objLoader.load("http://voldre.free.fr/Eden/images/3D/maps/" + myBG + ".obj", (meshBG) => {
+            objLoader.load(`http://voldre.free.fr/Eden/images/3D/maps/${myBG}.obj`, (meshBG) => {
               scene.add(meshBG);
               meshBG.rotation.x = -Math.PI / 2;
             });
@@ -282,7 +281,7 @@ function init() {
             mapsJSON[mapID]["map_z"] ?? 0
           );
           mesh.rotation.z = (mapsJSON[mapID]["map_r"] ?? 1) * Math.PI;
-        } else if (folder == "items") {
+        } else if (folder === "items") {
           mesh.position.set(0, 1, -3.3);
           mesh.rotation.z = Math.PI / 1.4; // Pour qu'il regarde vers nous
         } else {
@@ -301,7 +300,7 @@ function init() {
   // Caméra
   camera = new THREE.PerspectiveCamera(90, 1280 / 720, 0.1, 4000);
 
-  if (folder != "house") {
+  if (folder !== "house") {
     camera.position.set(0, player.height, -5);
     camera.lookAt(new THREE.Vector3(0, player.height, 0));
   } else {
@@ -313,9 +312,9 @@ function init() {
 
   renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 
-  /* Size (width, height) of the canvas
-    11.06.22 - UI Improvement : Adaptation du canvas selon l'écran 
-    seulement, donc plus besoin de paramètre pour init() */
+  // Size (width, height) of the canvas
+  // 11.06.22 - UI Improvement : Adaptation du canvas selon l'écran
+  // seulement, donc plus besoin de paramètre pour init()
   // window.innerWidth = Taille fenêtre, window.screen.width = Taille écran
   renderer.setSize(window.innerWidth * 0.98, window.innerWidth * 0.46);
 
@@ -334,14 +333,14 @@ function animate() {
 
   // Objet 3D
 
-  if (typeof scene.children[3] != "undefined" && !onMap) {
+  if (!!scene.children[3] && !onMap) {
     // scene.children[3].rotation.z += 0.003;
     scene.children[3].position.z = -2.75;
     // "Remove" the floor
     scene.children[0].position.z = 1000;
     // Put camera in front of
     scene.children[3].rotation.z = 3.4;
-    //console.log(scene.children[3]);
+    // console.log(scene.children[3]);
   }
 
   // MOVEMENTS
@@ -450,7 +449,7 @@ function turnRight() {
 
 const mobileInputs = ["up", "down", "left", "right", "turnLeft", "turnRight", "prev", "next"];
 
-mobileInputs.map((input) => {
+mobileInputs.forEach((input) => {
   document.querySelector(`#${input}`).addEventListener("pointerdown", (e) => {
     e.preventDefault();
     touchKey = input;
@@ -550,10 +549,10 @@ colorsE.addEventListener("change", () => {
 });
 
 const updateColorsList = (object) => {
-  [...colorsE.options].map((optionE) => {
+  [...colorsE.options].forEach((optionE) => {
     optionE.hidden = !isTextInText(optionE.value, object ?? objetsE.value);
     // set default colors
-    colorsE.value = (object ?? "M001").toUpperCase() + "01";
+    colorsE.value = `${(object ?? "M001").toUpperCase()}01`;
   });
 };
 
@@ -569,19 +568,19 @@ function changeIcon() {
     let file = objetsE.value.slice(1); // On récupère tout sauf la 1ere lettre
 
     let letter;
-    if (folder == "items") {
+    if (folder === "items") {
       letter = "W";
-      file = file + "01";
+      file += "01";
     }
     // if folder == "monsters"
-    if (objetsE.value[0].toUpperCase() == "M") {
+    if (objetsE.value[0].toUpperCase() === "M") {
       letter = "m";
-    } else if (objetsE.value[0].toUpperCase() == "R") {
+    } else if (objetsE.value[0].toUpperCase() === "R") {
       letter = "R";
     }
     // Update 12/06/2022 pour mieux gérer l'affichage ou non de l'icone
 
-    iconPicE.src = "images/" + folder + "/" + letter + file + ".png";
+    iconPicE.src = `images/${folder}/${letter}${file}.png`;
   } else {
     iconPicE.style.display = "none";
   }
@@ -589,15 +588,15 @@ function changeIcon() {
 
 // #region Toggles
 
-/* Update 09.06.22 - Ajout d'un toggle permettant
-    de choisir si on veut ou non afficher l'arrière plan.
-    Car il met un peu + de temps à se générer et avec plein de
-    designs c'est vite désagréable, mais pas les maps  */
+// Update 09.06.22 - Ajout d'un toggle permettant
+//  de choisir si on veut ou non afficher l'arrière plan.
+//  Car il met un peu + de temps à se générer et avec plein de
+//  designs c'est vite désagréable, mais pas les maps
 
 const togglesName = ["bg", "bgm", "whiteBg"];
 
 // Set cookies
-togglesName.map((name) => {
+togglesName.forEach((name) => {
   document.getElementById(`${name}Toggle`).addEventListener("click", (e) => {
     console.log("cookie updated");
     document.cookie = `${name}State=${e.target.checked ? "checked" : ""}`;
@@ -614,7 +613,7 @@ let myBGM;
 const initBGM = () => {
   myBGM = mapsJSON[mapID]["bgm"].toString();
   while (myBGM.length < 3) {
-    myBGM = "0" + myBGM;
+    myBGM = `0${myBGM}`;
   }
   audioE.src = `bgm/bgm${myBGM}.ogg`;
   if (!bgmToggleE.checked) audioE.play();

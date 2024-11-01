@@ -32,7 +32,7 @@ export const toastNotification = (text, duration = 3000, error = false) => {
     clearTimeout(currentTimeout);
     toaster.classList.add("show");
     toaster.innerText = text;
-    currentTimeout = setTimeout(function () {
+    currentTimeout = setTimeout(() => {
       toaster.classList.remove("show");
     }, duration);
   }
@@ -57,7 +57,7 @@ export class Perso {
 
     // Calcul des dégâts fixes et de l'armure
     const stuffs = JSON.parse(persoData.eqpts).map((eqptName) => {
-      return Object.values(eqptJSON).find((eqpt) => unformatText(eqpt.nom) == unformatText(eqptName));
+      return Object.values(eqptJSON).find((eqpt) => unformatText(eqpt.nom) === unformatText(eqptName));
     });
 
     if (!stuffs[0]) {
@@ -76,7 +76,7 @@ export class Perso {
     const montantAccessDegat = stuffs
       .map((stuff) => {
         if (!stuff) return 0;
-        if (!!stuff.access && stuff.access[0] == "D") {
+        if (!!stuff.access && stuff.access[0] === "D") {
           return parseInt(stuff.access[1]);
         }
         return 0;
@@ -86,14 +86,14 @@ export class Perso {
     const montantAccessArmure = stuffs
       .map((stuff) => {
         if (!stuff) return 0;
-        if (!!stuff.access && stuff.access[0] == "A") {
+        if (!!stuff.access && stuff.access[0] === "A") {
           return parseInt(stuff.access[1]);
         }
         return 0;
       })
       .reduce(sum);
 
-    console.log("Access effets (" + persoData.nom + ") (Dégât, Armure) : ", montantAccessDegat, montantAccessArmure);
+    console.log(`Access effets (${persoData.nom}) (Dégât, Armure) : `, montantAccessDegat, montantAccessArmure);
 
     // Récupération de tous les points de dégâts et armures naturels (valeur + bonus conditionnels)
     const stuffsDamages = parseEqptsByRegex(["Dégât +"], stuffs, persoData);
@@ -107,14 +107,16 @@ export class Perso {
     const montantAccessDegatNat = stuffsDamages.slice(3).reduce(sum);
     const montantAccessArmureNat = stuffsArmor.reduce(sum) - montantBouclier - montantArmure;
 
-    console.log(
-      "stuffs nat damages/armor",
+    console.log({
       stuffsDamages,
       stuffsArmor,
-      "access :",
+      montantBouclier,
+      montantArmure,
       montantAccessDegatNat,
-      montantAccessArmureNat
-    );
+      montantAccessArmureNat,
+      montantArme1,
+      montantArme2,
+    });
 
     // Bonus de dégât par niveau (20/11/23 : Fixe à 2 en +, exponentiel par niveau)
     this.degat = Math.round(
@@ -171,7 +173,7 @@ export class Perso {
       (statB) => {
         const statBWithRegex = statB.replace(/[^\d.+-]/g, "");
         if (statB.match(/^[-+]\d+|\d*$/)[0]) return statBWithRegex;
-        else return "";
+        return "";
       }
     );
 
@@ -241,7 +243,7 @@ export const parseEqptValue = (text, eqpt) => {
     const match = regex.exec(unformatText(eqptText));
     if (!match) return "0";
     const position = match.index + match[0].length;
-    console.log(regex, eqptText, eqptText[position] + (eqptText[position + 1] ?? ""));
+
     return eqptText[position] + (eqptText[position + 1] ?? "");
   });
   // if (regex.includes("glace")) console.log(`(${regex})`, eqpt, eqptValue);
@@ -287,24 +289,27 @@ export const parseEqptBonus = (eqpt, texts, eqpts, persoData) => {
   let bonus = 0;
   if (parseEqptBonus !== 0) {
     switch (eqpt.condition.type) {
-      case "classe":
+      case "classe": {
         // Check if the Primary or Secondary class are included in the class condition list
         const nbValidClass = [persoData.classeP, persoData.classeS].filter((pClasse) =>
           eqpt.condition.value.includes(pClasse)
         ).length;
         bonus = nbValidClass * parseEqptBonus;
         break;
-      case "race":
+      }
+      case "race": {
         bonus = eqpt.condition.value.includes(persoData.race) && parseEqptBonus;
         break;
-      case "panoplie":
+      }
+      case "panoplie": {
         // Get eqptsName, excepted the selected eqpt (that can match panoplie, ex : Heldentod)
-        const eqptsName = eqpts.map((eq) => eq && eq != eqpt && unformatText(eq.nom));
+        const eqptsName = eqpts.map((eq) => eq && eq !== eqpt && unformatText(eq.nom));
         const nbEqptsInPanop = eqptsName.filter(
           (eqptName) => eqptName && eqptName.includes(unformatText(eqpt.condition.value))
         ).length;
         bonus = nbEqptsInPanop * parseEqptBonus;
         break;
+      }
       // There are 2 problems with PV condition effect :
       // 1) persoData.pv is read, so you need to save and refresh to see the synthesis updated
       // 2) If currently the perso met the condition, in the mini-game (jdr combat), the bonus will always be triggered, because "persoData" is low HP
@@ -375,6 +380,7 @@ export const setCookie = (name, value) => {
 };
 
 export const fillSelectOptions = (selectE, options) => {
+  selectE.innerHTML = ""; // Remove previous options
   options.forEach((option) => {
     const optionE = createElement("option", option.innerText, {
       value: option.value,
@@ -414,3 +420,19 @@ export const closeButton = (dialog) =>
       dialog.close();
     },
   });
+
+export const eventOnClick = (element, fastEvent, longEvent = undefined) => {
+  let clickStartTime;
+  const longClickDuration = 500; // Durée en ms pour considérer un clic comme "maintenu"
+
+  element.addEventListener("mousedown", () => {
+    clickStartTime = Date.now();
+  });
+
+  element.addEventListener("mouseup", () => {
+    const clickDuration = Date.now() - clickStartTime;
+
+    if (clickDuration >= longClickDuration) longEvent?.();
+    else fastEvent();
+  });
+};

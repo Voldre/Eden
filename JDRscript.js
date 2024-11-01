@@ -117,12 +117,12 @@ allClassE.forEach((classE, i) => {
 
   classE.addEventListener("change", (e) => {
     const selectedClasseID = classes.indexOf(e.target.value);
-    if (selectedClasseID == -1) {
-      console.log(e.target.value + " is not a class (in the list)");
+    if (selectedClasseID === -1) {
+      console.log(`${e.target.value} is not a class (in the list)`);
       document.querySelector(".iconClasses").children[i].src = "";
     } else {
       document.querySelector(".iconClasses").children[i].src =
-        "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" + iconsClasses[selectedClasseID] + ".png";
+        `http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE${iconsClasses[selectedClasseID]}.png`;
 
       updateSkillsList();
 
@@ -186,7 +186,7 @@ const displayArmorTypes = () => {
   // console.log(allClassE[0].value, allClassE[1].value, armorTypes);
 
   ["magique", "leger", "lourd"].forEach((type) => {
-    document.querySelector("#" + type).className = armorTypes.includes(type) ? "skillRangeIcon" : "hide skillRangeIcon";
+    document.querySelector(`#${type}`).className = armorTypes.includes(type) ? "skillRangeIcon" : "hide skillRangeIcon";
   });
 };
 
@@ -195,7 +195,7 @@ const iconClassesEs = [...document.querySelector(".iconClasses").children];
 iconClassesEs.forEach((icClasseE) => {
   icClasseE.addEventListener("click", (e) => {
     iconClassesEs.forEach((e) => e.classList.remove("awaken"));
-    const classe = document.querySelector("#" + e.target.className).value;
+    const classe = document.querySelector(`#${e.target.className}`).value;
     e.target.classList.add("awaken");
 
     defineAwaken(classe);
@@ -221,18 +221,17 @@ function defineAwaken(classe) {
   }
 
   awakenSkillE.id = classe;
-  awakenSkillE.querySelector(".nom").innerText = "Eveil du " + classe;
+  awakenSkillE.querySelector(".nom").innerText = `Eveil du ${classe}`;
   awakenSkillE.querySelector(".effet").innerText = "Inactif";
 
   const nbTurns = nbUse === 1 ? "4" : "3";
   awakenSkillE.querySelector(".montant").innerText =
-    nbUse + " fois par combat : Eveil des compétences : Durée " + nbTurns + " tours";
+    `${nbUse} fois par combat : Eveil des compétences : Durée ${nbTurns} tours`;
 
   const classeID = classes.indexOf(classe);
-  awakenSkillE.querySelector(".icone").src =
-    "http://voldre.free.fr/Eden/images/skillIcon/" + iconsEveil[classeID] + ".png";
+  awakenSkillE.querySelector(".icone").src = `http://voldre.free.fr/Eden/images/skillIcon/${iconsEveil[classeID]}.png`;
   awakenSkillE.querySelector(".desc").innerText =
-    "Eveil de la classe du " + classe + ", ses compétences sont altérées et améliorées !";
+    `Eveil de la classe du ${classe}, ses compétences sont altérées et améliorées !`;
 }
 
 // Click on awaken skill element
@@ -245,7 +244,7 @@ awakenSkillE.addEventListener("click", (e) => {
 
 document.querySelector("#awakenButton").addEventListener("click", (e) => {
   let awakenClass; // Classe à éveiller
-  if (e.target.innerText == "Inactif") {
+  if (e.target.innerText === "Inactif") {
     e.target.innerText = "Actif";
     e.target.style.color = "green";
     awakenClass = awakenSkillE.id;
@@ -311,7 +310,7 @@ function statsVerification() {
   const statsRequired = 61 + Math.trunc(parseInt(niv) / 5);
   if (sommeStats !== statsRequired) {
     document.querySelector("#errorStat").innerText =
-      "/!\\ Attention : Erreur points de stats : " + sommeStats + ", attendu : " + statsRequired;
+      `/!\\ Attention : Erreur points de stats : ${sommeStats}, attendu : ${statsRequired}`;
   } else {
     document.querySelector("#errorStat").innerText = "";
   }
@@ -322,8 +321,8 @@ function statsVerification() {
   allStats.Dexté = allStats.Dextérité;
   allStats.Intel = allStats.Intelligence;
 
-  ["force", "dexté", "intel", "charisme", "esprit"].map((statName) => {
-    const statE = document.querySelector("#" + statName);
+  ["force", "dexté", "intel", "charisme", "esprit"].forEach((statName) => {
+    const statE = document.querySelector(`#${statName}`);
     // The maximum is 17
     if (statE.value < Math.min(allStats[capitalize(statName)], 17)) {
       statE.classList.add("wrong");
@@ -346,7 +345,7 @@ document.querySelector(".stats").addEventListener("change", (e) => {
 
   const eqptsName = [...equipementsE.children].map((competenceE) => competenceE.children[0].value);
   const persoEqpts = eqptsName.map((eqptName) =>
-    Object.values(eqptJSON).find((eqpt) => unformatText(eqpt.nom) == unformatText(eqptName))
+    Object.values(eqptJSON).find((eqpt) => unformatText(eqpt.nom) === unformatText(eqptName))
   );
   getAllRes(persoEqpts);
 });
@@ -354,7 +353,7 @@ document.querySelector(".stats").addEventListener("change", (e) => {
 // STRESS
 document.querySelector("#stress").addEventListener("change", (e) => {
   if (e.target.value >= 50) {
-    document.querySelector("#stressImpact").innerText = "(Stats -" + Math.trunc(e.target.value / 50) + ")";
+    document.querySelector("#stressImpact").innerText = `(Stats -${Math.trunc(e.target.value / 50)})`;
   } else {
     document.querySelector("#stressImpact").innerText = "";
   }
@@ -414,13 +413,13 @@ function updateSkillsList() {
 }
 
 function insertSkill(skillElement, skillName, awakenClass = false) {
-  const selectedSkill = Object.values(skillsJSON).find((skill) => skill.nom == skillName);
+  const selectedSkill = Object.values(skillsJSON).find((skill) => unformatText(skill.nom) === unformatText(skillName));
 
   skillElement.classList.remove("awaken");
 
   if (!selectedSkill) {
-    if (skillName != "") {
-      console.log(skillName + " is not a skill (in the list)");
+    if (skillName !== "") {
+      console.log(`${skillName} is not a skill (in the list)`);
     }
     skillElement.children[1].innerText = "";
     skillElement.children[2].innerText = "";
@@ -431,7 +430,9 @@ function insertSkill(skillElement, skillName, awakenClass = false) {
     let selectedAwakenSkill;
     if (selectedSkill.classe.includes(awakenClass)) {
       skillElement.classList.add("awaken");
-      selectedAwakenSkill = Object.values(skillsAwakenJSON).find((skill) => skill.nom == skillName);
+      selectedAwakenSkill = Object.values(skillsAwakenJSON).find(
+        (skill) => unformatText(skill.nom) === unformatText(skillName)
+      );
     }
 
     const skillDesc = selectedAwakenSkill?.desc || selectedSkill.desc;
@@ -451,17 +452,16 @@ function insertSkill(skillElement, skillName, awakenClass = false) {
         style: { backgroundImage: `url(http://voldre.free.fr/Eden/images/layout/${skillRange}.png)` },
       });
 
-      const skillStatE = createElement("span", "/ " + selectedSkill.stat);
+      const skillStatE = createElement("span", `/ ${selectedSkill.stat}`);
 
       skillElement.children[1].append(skillRangeIconE, skillStatE);
     } else {
-      skillElement.children[1].innerText += " / " + selectedSkill.stat;
+      skillElement.children[1].innerText += ` / ${selectedSkill.stat}`;
     }
 
     skillElement.children[2].innerText = skillMontant;
     insertBuffInteraction(skillElement.children[3], skillName, selectedSkill, skillMontant);
-    skillElement.children[3].children[0].src =
-      "http://voldre.free.fr/Eden/images/skillIcon/" + selectedSkill.icone + ".png";
+    skillElement.children[3].children[0].src = `http://voldre.free.fr/Eden/images/skillIcon/${selectedSkill.icone}.png`;
     skillElement.children[3].title = skillDesc;
     skillElement.children[4].innerText = skillDesc;
 
@@ -474,7 +474,7 @@ function insertSkill(skillElement, skillName, awakenClass = false) {
       skillElement.removeChild(skillElement.children[5]); // Update
     }
 
-    if (selectedSkill.effet == "Invocation") {
+    if (selectedSkill.effet === "Invocation") {
       const pvPetE = createElement("input", undefined, { type: "number" });
       skillElement.append(pvPetE);
     }
@@ -620,12 +620,12 @@ const equipementsE = document.querySelector(".equipements");
 [...equipementsE.children].forEach((equipementE) => {
   // Selected eqpt
   equipementE.children[0].addEventListener("change", (e) => {
-    const newEqpt = Object.values(eqptJSON).find((eqpt) => unformatText(eqpt.nom) == unformatText(e.target.value));
+    const newEqpt = Object.values(eqptJSON).find((eqpt) => unformatText(eqpt.nom) === unformatText(e.target.value));
     insertEqpt(equipementE, newEqpt);
 
     persoEqptsName = [...equipementsE.children].map((equipementE) => equipementE.children[0].value);
     persoEqpts = persoEqptsName.map((eqptName) =>
-      Object.values(eqptJSON).find((eqpt) => unformatText(eqpt.nom) == unformatText(eqptName))
+      Object.values(eqptJSON).find((eqpt) => unformatText(eqpt.nom) === unformatText(eqptName))
     );
     getAllRes(persoEqpts);
     createEquipmentSynthesis(persoEqpts);
@@ -653,7 +653,7 @@ function insertEqpt(eqptElement, selectedEqpt) {
   } else {
     eqptElement.children[1].innerText = selectedEqpt.effet;
     eqptElement.children[2].innerText = selectedEqpt.montant;
-    eqptElement.children[3].src = "http://voldre.free.fr/Eden/images/items/" + selectedEqpt.icone + ".png";
+    eqptElement.children[3].src = `http://voldre.free.fr/Eden/images/items/${selectedEqpt.icone}.png`;
     eqptElement.children[3].title = selectedEqpt.desc;
     eqptElement.children[4].innerText = selectedEqpt.desc;
 
@@ -662,7 +662,7 @@ function insertEqpt(eqptElement, selectedEqpt) {
       eqptElement.removeChild(eqptElement.children[5]);
     }
 
-    if (selectedEqpt.effet == "Monture de Combat") {
+    if (selectedEqpt.effet === "Monture de Combat") {
       const pvPetE = createElement("input", undefined, { type: "number" });
       eqptElement.append(pvPetE);
     }
@@ -682,10 +682,10 @@ const getItemsInInventory = (inventory) => {
   const itemsE = document.querySelector(".items");
   itemsE.innerHTML = "";
 
-  itemsInInventory.map((item) => {
+  itemsInInventory.forEach((item) => {
     const imgE = createElement("img", undefined, {
       src: item.src,
-      title: item.title + "\n" + item.desc + "\n" + item.montant,
+      title: `${item.title}\n${item.desc}\n${item.montant}`,
     });
 
     // Highlight equipments equipped
@@ -725,7 +725,7 @@ let selectedPerso = selectPersoE.value;
 const archiveE = document.querySelector("#archived");
 
 const persoOptions = Object.entries(persosJSON).map(([id, perso]) => ({
-  value: "J" + (parseInt(id) + 1),
+  value: `J${parseInt(id) + 1}`,
   innerText: perso.nom,
   hidden: perso.isArchived,
 }));
@@ -737,7 +737,7 @@ const newPersoOptions =
   nbNewPersos > 5
     ? []
     : [0, 1].map((i) => {
-        const label = "J" + (Object.entries(persosJSON).length + i + 1);
+        const label = `J${Object.entries(persosJSON).length + i + 1}`;
         return { value: label, innerText: label, hidden: false };
       });
 
@@ -761,12 +761,12 @@ const onArchive = (isArchived) => {
 window.addEventListener("load", () => {
   const urlParams = new URLSearchParams(window.location.search);
   if (urlParams.has("perso")) {
-    selectPersoE.value = "J" + urlParams.get("perso");
+    selectPersoE.value = `J${urlParams.get("perso")}`;
     // loadFiche(urlParams.get('perso'));
     selectedPerso = selectPersoE.value;
     indexPerso = selectPersoE.selectedIndex;
     loadFiche();
-    toastNotification("Chargement réussi de " + selectedPerso);
+    toastNotification(`Chargement réussi de ${selectedPerso}`);
   } else {
     indexPerso = 0;
     loadFiche();
@@ -785,7 +785,7 @@ window.addEventListener("load", () => {
   } else {
     galeryJSON.forEach((pic) => {
       if (pic.includes(".jpg") || pic.includes(".png") || pic.includes(".webp")) {
-        const imgE = createElement("img", undefined, { src: "./images/jdrgalerie/" + pic });
+        const imgE = createElement("img", undefined, { src: `./images/jdrgalerie/${pic}` });
         document.querySelector(".galerie").append(imgE);
       }
     });
@@ -800,7 +800,7 @@ selectPersoE.addEventListener("change", (e) => {
 
   const newUrl = `${window.location.origin}${window.location.pathname}?perso=${indexPerso + 1}`;
   window.history.pushState({}, perso, newUrl);
-  toastNotification("Chargement réussi de " + perso);
+  toastNotification(`Chargement réussi de ${perso}`);
 });
 
 function loadFiche() {
@@ -813,8 +813,7 @@ function loadFiche() {
   console.log(`N° de ${persoData.nom} : ${indexPerso + 1}`);
 
   document.querySelector("#nom").value = persoData.nom;
-  document.querySelector(".topleft").children[0].title = "Perso n°" + (parseInt(indexPerso) + 1);
-  document.querySelector("#nom").title = "Perso n°" + parseInt(indexPerso) + 1;
+  document.querySelector("#nom").title = `Perso n°${parseInt(indexPerso)}${1}`;
   raceE.value = persoData.race;
   classePElement.value = persoData.classeP;
   classeSElement.value = persoData.classeS;
@@ -827,12 +826,8 @@ function loadFiche() {
   pvMaxE.value = persoData.pvmax;
 
   document.querySelector("#stress").value = persoData.stress;
-
-  if (persoData.stress >= 50) {
-    document.querySelector("#stressImpact").innerText = "(Stats -" + Math.trunc(persoData.stress / 50) + ")";
-  } else {
-    document.querySelector("#stressImpact").innerText = "";
-  }
+  document.querySelector("#stressImpact").innerText =
+    persoData.stress >= 50 ? `(Stats -${Math.trunc(persoData.stress / 50)})` : "";
 
   document.querySelector("#pp").src = persoData.pp;
   document.querySelector("#force").value = persoData.force;
@@ -857,10 +852,10 @@ function loadFiche() {
 
   document.querySelector(".iconClasses").children[0].id = persoData.classeP;
   document.querySelector(".iconClasses").children[0].src =
-    "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" + iconsClasses[classePID] + ".png";
+    `http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE${iconsClasses[classePID]}.png`;
   document.querySelector(".iconClasses").children[1].id = persoData.classeS;
   document.querySelector(".iconClasses").children[1].src =
-    "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" + iconsClasses[classeSID] + ".png";
+    `http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE${iconsClasses[classeSID]}.png`;
 
   // Nouveauté 27/05 : 4eme accessoire si le perso est au moins niveau 4
   if (persoData.niv >= 4) {
@@ -883,7 +878,7 @@ function loadFiche() {
   // Equipements du perso
   persoEqptsName = JSON.parse(persoData.eqpts);
   persoEqpts = persoEqptsName.map((eqptName) =>
-    Object.values(eqptJSON).find((eqpt) => unformatText(eqpt.nom) == unformatText(eqptName))
+    Object.values(eqptJSON).find((eqpt) => unformatText(eqpt.nom) === unformatText(eqptName))
   );
   persoEqpts.forEach((eqpt, index) => {
     const eqptE = [...equipementsE.children][index];
@@ -923,8 +918,8 @@ function loadFiche() {
 
 function statsValue(resistance) {
   return ["force", "dexté", "intel", "charisme", "esprit"].map((stat) => {
-    const statMain = document.querySelector("#" + stat).value;
-    const statBWithRegex = document.querySelector("#" + stat + "B").value.replace(/[^\d.+-]/g, "");
+    const statMain = document.querySelector(`#${stat}`).value;
+    const statBWithRegex = document.querySelector(`#${stat}B`).value.replace(/[^\d.+-]/g, "");
 
     const statsBValue = statBWithRegex?.match(/^[-+]\d+|\d*$/)[0]
       ? parseInt(statBWithRegex.replace("+", "").replace("-", ""))
@@ -1073,13 +1068,15 @@ downloadButton.addEventListener("click", () => {
 });
 
 function download(data, filename) {
+  toastNotification("Téléchargement en cours ...", 3000);
+
   const file = new Blob([data], { type: "application/json" });
 
   // Créer une URL pour le Blob
   const url = URL.createObjectURL(file);
 
   // Créer un élément de lien, l'ajouter et le déclencher
-  const link = createElement("a", { download: filename, href: url });
+  const link = createElement("a", undefined, { download: filename, href: url });
   link.click();
 }
 
@@ -1091,7 +1088,7 @@ screenshotButton.addEventListener("click", () => {
 
   // eslint-disable-next-line no-undef
   html2canvas(document.querySelector(".perso"), { backgroundColor: null }).then((canvas) => {
-    const link = createElement("a", {
+    const link = createElement("a", undefined, {
       download: `screenshot ${persoData.nom} ${dateToString(new Date())}.png`,
       href: canvas.toDataURL(),
     });
@@ -1215,7 +1212,7 @@ function savePerso() {
 // Show/Hide other pages of Eden
 const buttonIframe = document.querySelector("#buttonIframe");
 buttonIframe.addEventListener("click", () => {
-  if (buttonIframe.innerText == "Afficher le site") {
+  if (buttonIframe.innerText === "Afficher le site") {
     buttonIframe.innerText = "Masquer le site";
   } else {
     buttonIframe.innerText = "Afficher le site";
@@ -1224,15 +1221,11 @@ buttonIframe.addEventListener("click", () => {
 });
 
 function syntheseDesc() {
-  let description =
-    "La synthèse résume les montants de dégâts et d'armures issus des équipements.<br/> Les montants conditionnels (panoplie, classe, ...) sont pris en compte (07/04/24), voici la légende :<br/>";
+  let description = `La synthèse résume les montants de dégâts et d'armures issus des équipements.<br/> 
+  Les montants conditionnels (panoplie, classe, ...) sont pris en compte (07/04/24), voici la légende :<br/>`;
   synthesisCategories.forEach((category) => {
     if (category.img) {
-      description +=
-        "<br/><img src='http://voldre.free.fr/Eden/images/layout/" +
-        category.label +
-        ".png'/> = Dégât de " +
-        category.label;
+      description += `<br/><img src='http://voldre.free.fr/Eden/images/layout/${category.label}.png'/> = Dégât de ${category.label}`;
     } else {
       description += `<br/>${category.label} : ${category.regex[0].replace("+", "").replace("Soin", "Soin effectué")}`;
     }

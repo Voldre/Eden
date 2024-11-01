@@ -11,6 +11,7 @@ import {
 import {
   callPHP,
   createElement,
+  eventOnClick,
   fillSelectOptions,
   isTextInText,
   setCookie,
@@ -23,7 +24,7 @@ const logged = !!document.querySelector(".admin");
 // Show/Hide other pages of Eden
 const buttonIframe = document.querySelector("#buttonIframe");
 buttonIframe?.addEventListener("click", () => {
-  if (buttonIframe.innerText == "Afficher le site") {
+  if (buttonIframe.innerText === "Afficher le site") {
     buttonIframe.innerText = "Masquer le site";
   } else {
     buttonIframe.innerText = "Afficher le site";
@@ -34,10 +35,10 @@ buttonIframe?.addEventListener("click", () => {
 let allSlots;
 function updateSlots() {
   const enemiesList = [...document.querySelectorAll(".infoEnnemi")].filter(
-    (infoE) => infoE.querySelector("#pvmax").value != ""
+    (infoE) => infoE.querySelector("#pvmax").value !== ""
   );
-  const persosList = [...document.querySelectorAll(".perso")].filter((persoE) => persoE.children[0].value != "");
-  allSlots = [...enemiesList, ...persosList] || [document.querySelectorAll(".infoEnnemi")];
+  const persosList = [...document.querySelectorAll(".perso")].filter((persoE) => persoE.children[0].value !== "");
+  allSlots = [...enemiesList, ...persosList];
 }
 
 // Enemies Select Options
@@ -49,7 +50,7 @@ function updateSlots() {
     ...Object.entries(enemyJSON)
       .filter(
         // If logged : take all, else : take allowed enemies
-        (enemy) => logged || allowedEnnemiesPart.some((enemyPart) => enemy.nom.includes(enemyPart))
+        ([_, enemy]) => logged || allowedEnnemiesPart.some((enemyPart) => enemy.nom.includes(enemyPart))
       )
       .map(([index, enemy]) => ({
         value: index,
@@ -63,7 +64,7 @@ function updateSlots() {
 
   selectEnnemiE.addEventListener("change", (e) => {
     loadEnemy(e.target.value, selectEnnemiE.closest(".infoEnnemi"));
-    toastNotification("Chargement de l'ennemi réussi : " + e.target.value);
+    toastNotification(`Chargement de l'ennemi réussi : ${e.target.value}`);
   });
 });
 
@@ -71,7 +72,7 @@ function loadEnemy(indexEnemy, ennemiElement, genericEnemy = null) {
   const enemyData = genericEnemy || enemyJSON[indexEnemy];
 
   if (!enemyData) {
-    console.log(indexEnemy + " is not an enemy (in the list)");
+    console.log(`${indexEnemy} is not an enemy (in the list)`);
     // ennemiElement.querySelector('#nom').innerText = "";
     ennemiElement.querySelector("#desc").innerText = "";
     ennemiElement.querySelector("#infos").innerText = "";
@@ -93,14 +94,13 @@ function loadEnemy(indexEnemy, ennemiElement, genericEnemy = null) {
   }
 
   // ennemiElement.querySelector('#nom').innerText = enemyData.nom;
-  ennemiElement.querySelector("#desc").innerText = enemyData.desc && "Desc : " + enemyData.desc;
-  ennemiElement.querySelector("#infos").innerText = enemyData.infos && "Infos / BP : " + enemyData.infos;
-  ennemiElement.querySelector("#drop").innerText = enemyData.drop && "Drop : " + enemyData.drop;
+  ennemiElement.querySelector("#desc").innerText = enemyData.desc && `Desc : ${enemyData.desc}`;
+  ennemiElement.querySelector("#infos").innerText = enemyData.infos && `Infos / BP : ${enemyData.infos}`;
+  ennemiElement.querySelector("#drop").innerText = enemyData.drop && `Drop : ${enemyData.drop}`;
 
   ennemiElement.querySelector(".visuel").innerText = enemyData.visuel3D;
   if (enemyData.visuel3D !== "Switch...")
-    ennemiElement.querySelector(".icon").src =
-      "http://voldre.free.fr/Eden/images/monsters/" + enemyData.visuel3D + ".png";
+    ennemiElement.querySelector(".icon").src = `http://voldre.free.fr/Eden/images/monsters/${enemyData.visuel3D}.png`;
   ennemiElement.querySelector(".icon").alt = enemyData.visuel3D.toLowerCase();
   ennemiElement.querySelector("#pv").value = enemyData.pvmax;
   if (enemyData.pvmax >= 200) ennemiElement.querySelector("#boss_icon").classList.remove("hide");
@@ -143,7 +143,8 @@ if (!logged) {
 }
 
 // load notes
-document.querySelector(".notes").value = masterJSON.notes;
+const notesE = document.querySelector(".notes");
+notesE.value = masterJSON.notes;
 
 console.log("Enemy JSON", enemyJSON);
 
@@ -205,9 +206,9 @@ const currentMusicE = document.getElementById("currentMusic");
 
 document.addEventListener(
   "play",
-  function (e) {
+  (e) => {
     for (let i = 0, len = audiosE.length; i < len; i++) {
-      if (audiosE[i] != e.target) {
+      if (audiosE[i] !== e.target) {
         audiosE[i].pause();
         if (audiosE[i].currentTime < 30) {
           audiosE[i].currentTime = 0;
@@ -217,7 +218,7 @@ document.addEventListener(
     if (e.target.firstChild.attributes) {
       const currentBGM = e.target.firstChild.attributes.src.nodeValue.split("/")[1].split(".")[0];
       console.log(currentBGM);
-      currentMusicE.innerText = document.getElementById(currentBGM).innerText + " (" + currentBGM + ")";
+      currentMusicE.innerText = `${document.getElementById(currentBGM).innerText} (${currentBGM})`;
     }
   },
   true
@@ -232,6 +233,7 @@ const abnormalWeaknesses = Object.values(enemyJSON)
     const weaknesses = elements.filter((element) => isTextInText(enemy.infos, element));
 
     if (weaknesses.length !== 2) return { nom: enemy.nom, infos: enemy.infos, elements: weaknesses };
+    return undefined;
   })
   .filter((w) => !!w);
 
@@ -253,13 +255,13 @@ document.querySelector("#filtre").addEventListener("change", (e) => {
   document.querySelector("#filteredEnemys").innerHTML = null;
   const enemiesList = Object.values(enemyJSON).filter((enemy) => isTextInText(enemy.nom, e.target.value));
   enemiesList.forEach((enemy) => {
-    const liElem = createElement("li", enemy.nom + " - " + enemy.visuel3D);
+    const liElem = createElement("li", `${enemy.nom} - ${enemy.visuel3D}`);
     document.querySelector("#filteredEnemys").append(liElem);
   });
 });
 
 [...document.querySelectorAll(".enemyDesc")].forEach((descE) => {
-  descE.addEventListener("click", () => toggleDesc(descE));
+  eventOnClick(descE, () => toggleDesc(descE));
 });
 
 function toggleDesc(descE) {
@@ -285,7 +287,7 @@ Object.values(eqptJSON).forEach((eqpt) => {
 
   const iconeE = createElement("img", undefined, {
     class: "icone",
-    src: eqpt.icone !== "?" ? "http://voldre.free.fr/Eden/images/items/" + eqpt.icone + ".png" : "",
+    src: eqpt.icone !== "?" ? `http://voldre.free.fr/Eden/images/items/${eqpt.icone}.png` : "",
   });
 
   const eqptE = createElement("div", [nomE, descE, effetE, montantE, iconeE], { class: "eqpt" });
@@ -295,7 +297,7 @@ Object.values(eqptJSON).forEach((eqpt) => {
 // Show/Hide eqpts
 const buttonEqpt = document.querySelector("#buttonEqpt");
 buttonEqpt.addEventListener("click", () => {
-  if (buttonEqpt.innerText == "Afficher") {
+  if (buttonEqpt.innerText === "Afficher") {
     buttonEqpt.innerText = "Masquer";
   } else {
     buttonEqpt.innerText = "Afficher";
@@ -372,13 +374,13 @@ document.querySelector("#newEnemy").addEventListener("click", () => {
     }
   } else {
     const newEnemyE = lastEnemy.cloneNode(true);
-    newEnemyE.id = "e" + allEnemies.length;
+    newEnemyE.id = `e${allEnemies.length}`;
 
     // Add event listeners
     // Classic enemy on select
     newEnemyE.querySelector(".ennemi").addEventListener("change", (e) => {
       loadEnemy(e.target.value, newEnemyE);
-      toastNotification("Chargement de l'ennemi réussi : " + e.target.value);
+      toastNotification(`Chargement de l'ennemi réussi : ${e.target.value}`);
     });
 
     // Next turn button
@@ -425,7 +427,7 @@ document.querySelector("#updatePInfo").addEventListener("click", () => {
     if ([...document.querySelectorAll(".perso")][index])
       [...document.querySelectorAll(".perso")][index].children[0].value = player.nom;
 
-    const liElem = createElement("li", player.nom + " : " + player.pv + "/" + player.pvmax);
+    const liElem = createElement("li", `${player.nom} : ${player.pv}/${player.pvmax}`);
     pInfo.append(liElem);
   });
 });
@@ -435,9 +437,9 @@ document.querySelector("#updatePInfo").addEventListener("click", () => {
 document.querySelector("#nbP").addEventListener("change", (e) => {
   const nbP = e.target.value;
   if (nbP >= 3) {
-    document.querySelector("#variation").innerText = "+" + (nbP - 3) * 33 + "%";
+    document.querySelector("#variation").innerText = `+${(nbP - 3) * 33}%`;
   } else {
-    document.querySelector("#variation").innerText = "-" + (3 - nbP) * 33 + "%";
+    document.querySelector("#variation").innerText = `-${(3 - nbP) * 33}%`;
   }
 });
 
@@ -459,7 +461,7 @@ genericElements.forEach((genericE) => {
     // Fill options with all of an element (classes, races, rangs, guildes), mapped on "prop" value (classe =, ...)
     fillSelectOptions(selectE, [
       { value: "", innerText: "" },
-      ...Object.values(enemyGenericJSON[propName + "s"].map((e) => ({ value: e[propName], innerText: e[propName] }))),
+      ...Object.values(enemyGenericJSON[`${propName}s`].map((e) => ({ value: e[propName], innerText: e[propName] }))),
     ]);
 
     selectE.addEventListener("change", () => handleGenericSelectChange(selectElements));
@@ -519,7 +521,7 @@ function handleGenericSelectChange(selectElements) {
     visuel3D: "Switch...",
     nom: "",
     pvmax: stats["PV"] * 2 + raceStats["PV"] + rang["pv"] + guilde["pv"],
-    skills: skills,
+    skills,
     stats: statsValues.join(","),
     desc: "",
     infos: "",
@@ -533,11 +535,7 @@ function handleGenericSelectChange(selectElements) {
 
 // Allow save for users
 function toggleButton() {
-  if (masterJSON.allow == true) {
-    document.querySelector("#allowSave").style = "border: 3px solid green";
-  } else {
-    document.querySelector("#allowSave").style = "border: 3px solid red";
-  }
+  document.querySelector("#allowSave").style = `border: 3px solid ${masterJSON.allow ? "green" : "red"}`;
 }
 
 toggleButton();
@@ -545,16 +543,16 @@ document.querySelector("#allowSave").addEventListener("click", () => {
   masterJSON.allow = !masterJSON.allow;
   toggleButton();
 
-  masterJSON.notes = document.querySelector(".notes").value;
+  masterJSON.notes = notesE.value;
 
-  document.cookie = "masterJSON=" + encodeURIComponent(JSON.stringify(masterJSON));
+  document.cookie = `masterJSON=${encodeURIComponent(JSON.stringify(masterJSON))}`;
   callPHP({ action: "saveFile", name: "master" });
   toastNotification("Autorisation modifiée");
 });
 
 document.querySelector("#save").addEventListener("click", () => {
-  masterJSON.notes = document.querySelector(".notes").value;
-  document.cookie = "masterJSON=" + encodeURIComponent(JSON.stringify(masterJSON));
+  masterJSON.notes = notesE.value;
+  document.cookie = `masterJSON=${encodeURIComponent(JSON.stringify(masterJSON))}`;
   callPHP({ action: "saveFile", name: "master" });
   toastNotification("Données sauvegardées");
 });
@@ -642,7 +640,6 @@ document.querySelector("#createEnemy").addEventListener("click", () => {
 document.querySelector("#randomBoss").addEventListener("click", () => {
   const bosses = Object.entries(enemyJSON).filter((e) => e[1].pvmax > 200);
   const randomIndex = Math.floor(Math.random() * bosses.length);
-  console.log(bosses, randomIndex, bosses[randomIndex][0], bosses[randomIndex][0] - 1);
   loadEnemy(bosses[randomIndex][0], document.querySelector("#e0"));
 });
 

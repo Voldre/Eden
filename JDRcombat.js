@@ -58,8 +58,9 @@ window.addEventListener("load", () => {
         if (player[1].persos.includes(parseInt(indexPerso))) {
           return player[0];
         }
+        return undefined;
       })
-      .filter((e) => e != undefined)[0];
+      .filter((e) => !!e)[0];
 
     if (!cookieCheck()) return;
 
@@ -121,12 +122,9 @@ window.addEventListener("load", () => {
 
   // Init Enemy
 
-  if (urlParams.has("enemy")) {
-    selectedEnemy = Object.values(enemyJSON).find((e) => e.nom == urlParams.get("enemy"));
-  } else {
-    selectedEnemy = chooseEnemy();
-    // Math.round(Math.random()*110)
-  }
+  selectedEnemy = urlParams.has("enemy")
+    ? Object.values(enemyJSON).find((e) => e.nom === urlParams.get("enemy"))
+    : chooseEnemy();
   loadEnemy(selectedEnemy, urlParams.has("isElite"));
 
   if (selectedEnemy.pvmax >= 200) {
@@ -149,12 +147,11 @@ function cookieCheck() {
     toastNotification("Erreur : Lancez un combat à partir d'une quête", 6000, true);
     endRediction();
     return false;
-  } else {
-    console.log("Allowed");
-    // Remove permission for next attempt
-    setCookie("loadJDRcombat", false);
-    return true;
   }
+  console.log("Allowed");
+  // Remove permission for next attempt
+  setCookie("loadJDRcombat", false);
+  return true;
 }
 
 function loadFiche(indexPerso) {
@@ -178,11 +175,11 @@ function loadFiche(indexPerso) {
 
   document.querySelector("#pp").src = persoData.pp;
   document.querySelector("#force").value = perso.force;
-  document.querySelector("#resForce").innerText = "Bloc +" + perso.forceRes;
+  document.querySelector("#resForce").innerText = `Bloc +${perso.forceRes}`;
   document.querySelector("#dexté").value = perso.dexté;
-  document.querySelector("#resDexté").innerText = "Esq +" + perso.dextéRes;
+  document.querySelector("#resDexté").innerText = `Esq +${perso.dextéRes}`;
   document.querySelector("#intel").value = perso.intel;
-  document.querySelector("#resIntel").innerText = "Bloc +" + perso.intelRes;
+  document.querySelector("#resIntel").innerText = `Bloc +${perso.intelRes}`;
   document.querySelector("#charisme").value = perso.charisme;
   document.querySelector("#esprit").value = perso.esprit;
 
@@ -193,9 +190,9 @@ function loadFiche(indexPerso) {
   loadSkills(perso.classeP, perso.classeS);
 
   document.querySelector(".iconClasses").children[0].src =
-    "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" + iconsClasses[classePID] + ".png";
+    `http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE${iconsClasses[classePID]}.png`;
   document.querySelector(".iconClasses").children[1].src =
-    "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE" + iconsClasses[classeSID] + ".png";
+    `http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE${iconsClasses[classeSID]}.png`;
 }
 
 function loadSkills(c1, c2) {
@@ -205,27 +202,19 @@ function loadSkills(c1, c2) {
     skillE.querySelector(".skillName").value = listSkills[id].nom;
     skillE.querySelector(".skillStat").innerText = listSkills[id].statUsed;
 
-    if (listSkills[id].type == "buff") {
+    if (listSkills[id].type === "buff") {
       skillE.querySelector(".montant").innerText =
-        listSkills[id].type +
-        " : " +
-        listSkills[id].buffElem +
-        " +" +
-        `${listSkills[id].montant ? listSkills[id].montant + "+" : ""}` +
-        listSkills[id].montantFixe +
-        ", " +
-        listSkills[id].duree +
-        " tours";
+        `${listSkills[id].type} : ${listSkills[id].buffElem} +` +
+        `${listSkills[id].montant ? `${listSkills[id].montant}+` : ""}${listSkills[id].montantFixe}, 
+        ${listSkills[id].duree} tours`;
       skillE.querySelector(".montant").innerText = skillE.querySelector(".montant").innerText.replaceAll(",", ", ");
+    } else if (!listSkills[id].montantFixe) {
+      skillE.querySelector(".montant").innerText = `${listSkills[id].type} : ${listSkills[id].montant}`;
     } else {
-      if (!listSkills[id].montantFixe) {
-        skillE.querySelector(".montant").innerText = listSkills[id].type + " : " + listSkills[id].montant;
-      } else {
-        skillE.querySelector(".montant").innerText =
-          listSkills[id].type + " : " + listSkills[id].montant + "+" + listSkills[id].montantFixe;
-      }
+      skillE.querySelector(".montant").innerText =
+        `${listSkills[id].type} : ${listSkills[id].montant}+${listSkills[id].montantFixe}`;
     }
-    skillE.querySelector(".icone").src = "http://voldre.free.fr/Eden/images/skillIcon/" + listSkills[id].icone + ".png";
+    skillE.querySelector(".icone").src = `http://voldre.free.fr/Eden/images/skillIcon/${listSkills[id].icone}.png`;
 
     skillE.addEventListener("click", () => {
       // Bug fix Victorine 26/11/2023 : check if button disabled
@@ -261,7 +250,7 @@ function loadEnemy(enemyData, isElite = false) {
   document.querySelector("#epvmax").value = enemy.pvmax;
   document.querySelector(".lifebar").style.width = `${enemy.pvmax}px`;
 
-  document.querySelector("#epp").src = "http://voldre.free.fr/Eden/images/monsters/" + enemyData.visuel3D + ".png";
+  document.querySelector("#epp").src = `http://voldre.free.fr/Eden/images/monsters/${enemyData.visuel3D}.png`;
   document.querySelector("#epp").alt = enemyData.visuel3D;
 
   document.querySelector("#desc").innerText = enemyData.desc;
@@ -340,12 +329,12 @@ function chooseEnemy(category = null) {
     forbidden.forEach((enemyF) => {
       delete enemyList[enemyF];
     });
-  } else if (category == "boss") {
+  } else if (category === "boss") {
     enemyList = { ...enemyJSON };
     enemyList = Object.keys(enemyList).filter((enemy) => boss.includes(enemy));
 
     forbidden.forEach((enemyF) => {
-      enemyList = enemyList.filter((enemy) => enemy != enemyF);
+      enemyList = enemyList.filter((enemy) => enemy !== enemyF);
     });
   }
 
@@ -484,7 +473,7 @@ function newturn() {
     savePlayer(joueurData);
   }
 
-  toastNotification("Tour n°" + turn + ", choisissez une action");
+  toastNotification(`Tour n°${turn}, choisissez une action`);
   document.querySelector("#instruction").innerText = "Choisissez une action";
 
   updateBuff();
@@ -515,7 +504,7 @@ async function isEnded() {
       toastNotification("Sauvegarde effectuée, redirection ...", 6000);
     } catch (e) {
       console.error(e);
-      toastNotification("Erreur : le combat n'a pas pu être sauvegardé :" + e.message, 6000, true);
+      toastNotification(`Erreur : le combat n'a pas pu être sauvegardé :${e.message}`, 6000, true);
     }
   }
 
@@ -538,7 +527,7 @@ async function victory() {
     mapCard ? winCards.push(mapCard) : null;
   }
   // Boss card
-  if (cardRarity == 3) {
+  if (cardRarity === 3) {
     const bossCard = cardJSON.find(
       (card) => card.kind === "boss" && card.kindId.toLowerCase() === selectedEnemy.visuel3D.toLowerCase()
     );
@@ -594,7 +583,7 @@ async function saveCheat(enemy) {
     date: dateToString(new Date(), true),
     joueur: indexPlayer,
     perso: nomPerso,
-    enemy: enemy,
+    enemy,
     degat: perso.degat,
     armure: perso.armure,
     pvmax: perso.pvmax,
@@ -616,9 +605,9 @@ async function saveLog(earnedCoins, winCards) {
     joueur: indexPlayer,
     perso: nomPerso,
     map: mapID,
-    cardRarity: cardRarity,
+    cardRarity,
     enemy: selectedEnemy.nom,
-    earnedCoins: earnedCoins,
+    earnedCoins,
     winCards: winCards?.map((w) => [w.id, w.name]) || [],
     turn: parseInt(document.querySelector("#turn").innerText),
     pv: perso.pv,
@@ -695,23 +684,23 @@ function showCardsAndCoins(winCards, newCoins) {
     let imgSrc;
     switch (card.kind) {
       case "map": {
-        imgSrc = imgEndPoint + "loadingframe/Loading_" + card.kindId + ".png";
+        imgSrc = `${imgEndPoint}loadingframe/Loading_${card.kindId}.png`;
         break;
       }
       case "boss": {
-        imgSrc = imgEndPoint + "monsters/" + card.kindId + ".png";
+        imgSrc = `${imgEndPoint}monsters/${card.kindId}.png`;
         break;
       }
       case "composant": {
-        imgSrc = imgEndPoint + "items/" + card.kindId + ".png";
+        imgSrc = `${imgEndPoint}items/${card.kindId}.png`;
         break;
       }
       case "anecdote": {
-        imgSrc = imgEndPoint + card.kindId + ".png";
+        imgSrc = `${imgEndPoint + card.kindId}.png`;
         break;
       }
       default:
-        console.log("Erreur, type non reconnu : " + card.kind);
+        console.log(`Erreur, type non reconnu : ${card.kind}`);
     }
 
     const imgCardE = createElement("img", undefined, { src: imgSrc });
@@ -726,9 +715,8 @@ function showCardsAndCoins(winCards, newCoins) {
 
 function endRediction() {
   setTimeout(() => {
-    window.location.href = "jdr_profil.html?joueur=" + indexPlayer;
+    window.location.href = `jdr_profil.html?joueur=${indexPlayer}`;
   }, 5500);
-  return;
 }
 
 // Dice
@@ -736,7 +724,7 @@ function endRediction() {
 function rollDice(user, type, statName) {
   const duration = 500; // in ms
 
-  const section = user == perso ? document.querySelector(".playerAction") : document.querySelector(".enemyAction");
+  const section = user === perso ? document.querySelector(".playerAction") : document.querySelector(".enemyAction");
 
   const stat = user[statName];
   // console.log(user,statName,stat)
@@ -746,15 +734,15 @@ function rollDice(user, type, statName) {
   let success;
 
   // Stat name section + Success amount
-  if (type == "attaque" || type == "skill" || type == "soin" || type == "buff") {
+  if (["attaque", "skill", "soin", "buff"].includes(type)) {
     section.querySelector(".statName").innerText = statName;
     // 24/11/23 : Max success is 18 (because user can have 19,20, ... !)
     success = Math.min(stat, 18);
   } else {
     // Defense
-    section.querySelector(".statName").innerText = statName + "/2";
+    section.querySelector(".statName").innerText = `${statName}/2`;
     // 24/11/23 : Max success is 13 (because user can have more !)
-    success = Math.min(Math.ceil(stat / 2) + (user[statName + "Res"] ?? 0), 13);
+    success = Math.min(Math.ceil(stat / 2) + (user[`${statName}Res`] ?? 0), 13);
     // console.log("Defense " + statName + " : " + success);
   }
 
@@ -764,30 +752,33 @@ function rollDice(user, type, statName) {
   let result;
   if (diceValue > success) {
     result = "fail";
-    if (diceValue == 20) result = "crit fail";
+    if (diceValue === 20) result = "crit fail";
   } else {
     result = "success";
-    if (diceValue == 1) result = "crit success";
+    if (diceValue === 1) result = "crit success";
   }
   // Display result
 
   if (!dice.classList.contains("show")) {
     dice.classList.add("show");
-    setTimeout(function () {
+    setTimeout(() => {
       dice.classList.remove("show");
       dice.innerText = diceValue;
 
-      if (result == "fail") {
-        dice.style.filter = "drop-shadow(1px 1px 10px darkred)";
-      }
-      if (result == "crit fail") {
-        dice.style.filter = "drop-shadow(1px 1px 15px red)";
-      }
-      if (result == "success") {
-        dice.style.filter = "drop-shadow(1px 1px 10px green)";
-      }
-      if (result == "crit success") {
-        dice.style.filter = "drop-shadow(1px 1px 15px yellow)";
+      switch (result) {
+        case "fail":
+          dice.style.filter = "drop-shadow(1px 1px 10px darkred)";
+          break;
+        case "crit fail":
+          dice.style.filter = "drop-shadow(1px 1px 15px red)";
+          break;
+        case "success":
+          dice.style.filter = "drop-shadow(1px 1px 10px green)";
+          break;
+        case "crit success":
+          dice.style.filter = "drop-shadow(1px 1px 15px yellow)";
+          break;
+        default:
       }
     }, duration);
   }
@@ -806,10 +797,10 @@ function resetDices() {
   updateDesc("");
 }
 
-const statsButton = ["bforce", "bdexté", "bintel"]; //,"bcharisme","besprit"];
+const statsButton = ["bforce", "bdexté", "bintel"]; // ,"bcharisme","besprit"];
 statsButton.forEach((buttonStat) => {
   const statName = buttonStat.slice(1);
-  document.querySelector("#" + buttonStat).addEventListener("click", () => {
+  document.querySelector(`#${buttonStat}`).addEventListener("click", () => {
     turnExecution({
       type: "attaque",
       montant: "Dégât +1D10",
@@ -836,11 +827,11 @@ function turnExecution(persoSkill, skillE = null) {
 
   executeAction(perso, persoSkill);
 
-  setTimeout(function () {
+  setTimeout(() => {
     enemyTurn(enemy);
   }, 3000);
 
-  setTimeout(function () {
+  setTimeout(() => {
     newturn();
     // Add 05/11/2023 : Can't use same skill 2 times
     if (skillE) {
@@ -903,31 +894,31 @@ function executeAction(user, userSkill) {
 
   resetDices();
 
-  const opponent = user == perso ? enemy : perso;
+  const opponent = user === perso ? enemy : perso;
 
   const userResult = rollDice(user, type, statName);
   let montant;
 
   // Montant des dégâts
-  if (userResult == "crit success") {
+  if (userResult === "crit success") {
     montant = dicesAverageConversion(userSkill.montant) * 2 + (userSkill.montantFixe || 0);
-  } else if (userResult == "success") {
+  } else if (userResult === "success") {
     montant = dicesConversion(userSkill.montant) + (userSkill.montantFixe || 0);
   }
 
   // console.log("montant : ", montant);
 
-  if (type == "attaque") {
-    if (userResult == "crit success") {
+  if (type === "attaque") {
+    if (userResult === "crit success") {
       hit(opponent, user.degat + montant);
       updateDesc("Touché critique !");
-    } else if (userResult == "success") {
-      setTimeout(function () {
+    } else if (userResult === "success") {
+      setTimeout(() => {
         const opponentResult = rollDice(opponent, "defense", statName);
-        if (opponentResult == "fail") {
+        if (opponentResult === "fail") {
           updateDesc("Touché !");
           hit(opponent, user.degat + montant);
-        } else if (opponentResult == "crit fail") {
+        } else if (opponentResult === "crit fail") {
           hit(opponent, user.degat + 5 + montant);
           updateDesc("Touché !");
         } else {
@@ -935,8 +926,8 @@ function executeAction(user, userSkill) {
         }
       }, 1500);
     }
-  } else if (type == "soin") {
-    if (userResult == "crit success") {
+  } else if (type === "soin") {
+    if (userResult === "crit success") {
       // Update 26/11/23 : Nerf du heal qui est trop cheat
       // "Heal autant que ton montant de dégâts, ce n'est pas normal"
       // 0 de dégâts transformé en heal, ce n'est pas normal non plus
@@ -944,24 +935,24 @@ function executeAction(user, userSkill) {
       // heal(user, (user.degat * 4) / 5 + montant);
       heal(user, Math.floor(user.degat * 0.9) + montant);
       updateDesc("Soin critique !");
-    } else if (userResult == "success") {
+    } else if (userResult === "success") {
       // heal(user, Math.floor((user.degat * 4) / 5) + montant);
       heal(user, Math.floor(user.degat * 0.9) + montant);
       updateDesc("Soin !");
     }
-  } else if (type == "buff") {
-    if (userResult == "crit success") {
+  } else if (type === "buff") {
+    if (userResult === "crit success") {
       buff(userSkill, montant);
       updateDesc("Buff critique !");
-    } else if (userResult == "success") {
+    } else if (userResult === "success") {
       buff(userSkill, montant);
       updateDesc("Buff !");
     }
   }
 
-  if (userResult == "fail") {
+  if (userResult === "fail") {
     updateDesc("Echec");
-  } else if (userResult == "crit fail") {
+  } else if (userResult === "crit fail") {
     // Update 05/01/2024 : Pour les ennemis, sachant qu'ils n'ont pas d'armure, ils ont une
     // réduction égale à 1/8 des dégâts.
     // Exemple joueur (32 dégâts, 20 armures) : (32/2 = 16) + (20/2 =10) = 26, 26 - 20 (armure) = 6 sur un échec critique
@@ -978,7 +969,7 @@ function hit(user, amount) {
     // Si <0 == Big armure, mal chance, etc... donc 0 mais ça ne soigne pas
     user.pv -= damage;
   }
-  if (user == perso) {
+  if (user === perso) {
     document.querySelector("#pv").value = user.pv;
   } else {
     document.querySelector("#epv").value = user.pv;
@@ -1006,12 +997,12 @@ function buff(userSkill, amount) {
       return false;
     }
 
-    if (buffE.querySelector(".duree").children[0].innerText != "") return true;
+    if (buffE.querySelector(".duree").children[0].innerText !== "") return true;
 
     buffE.querySelector(".duree").children[0].innerText = userSkill.duree + 1; // +1 car tour actuel à ne pas compter !
     buffE.querySelector(".duree").children[1].innerText = userSkill.duree;
     buffE.querySelector(".montant").innerText = amount;
-    buffE.querySelector(".icone").src = "http://voldre.free.fr/Eden/images/skillIcon/" + userSkill.icone + ".png";
+    buffE.querySelector(".icone").src = `http://voldre.free.fr/Eden/images/skillIcon/${userSkill.icone}.png`;
 
     buffE.querySelector(".icone").title = userSkill.buffElem.toString();
 
@@ -1020,7 +1011,7 @@ function buff(userSkill, amount) {
     userSkill.buffElem.forEach((bE) => {
       bE = bE.replace("/tour", "");
       perso[bE] = parseInt(perso[bE]) + amount;
-      document.querySelector("#" + bE).value = perso[bE];
+      document.querySelector(`#${bE}`).value = perso[bE];
     });
 
     return false;
@@ -1038,7 +1029,7 @@ const skillsButton = [...document.querySelectorAll(".skillCombat")].map((skillE)
 
 function unlockInputs(bool) {
   statsButton.forEach((buttonStat) => {
-    document.querySelector("#" + buttonStat).disabled = !bool;
+    document.querySelector(`#${buttonStat}`).disabled = !bool;
   });
 
   skillsButton.forEach((buttonSkill) => {
@@ -1060,16 +1051,16 @@ function updateBuff() {
     const dureeE = buffE.querySelector(".duree");
     let buffElem = buffE.querySelector(".icone").title.split(",");
 
-    if (dureeE.children[0].innerText == "") return;
+    if (dureeE.children[0].innerText === "") return;
 
-    if (dureeE.children[0].innerText != "1") {
+    if (dureeE.children[0].innerText !== "1") {
       dureeE.children[0].innerText = parseInt(dureeE.children[0].innerText) - 1;
 
       // If buff per turn (ex : Euphorie), apply buff
       if (buffE.querySelector(".icone").title.includes("/tour")) {
         buffElem = buffElem[0].replace("/tour", "");
         perso[buffElem] += parseInt(buffE.querySelector(".montant").innerText);
-        document.querySelector("#" + buffElem).value = perso[buffElem];
+        document.querySelector(`#${buffElem}`).value = perso[buffElem];
       }
       // Else, if last turn
     } else {
@@ -1078,11 +1069,11 @@ function updateBuff() {
         buffElem = buffElem[0].replace("/tour", "");
         perso[buffElem] -=
           parseInt(buffE.querySelector(".montant").innerText) * (parseInt(dureeE.children[1].innerText) + 1);
-        document.querySelector("#" + buffElem).value = perso[buffElem];
+        document.querySelector(`#${buffElem}`).value = perso[buffElem];
       } else {
         buffElem.forEach((bE) => {
           perso[bE] -= parseInt(buffE.querySelector(".montant").innerText);
-          document.querySelector("#" + bE).value = perso[bE];
+          document.querySelector(`#${bE}`).value = perso[bE];
         });
       }
 
@@ -1094,8 +1085,6 @@ function updateBuff() {
       buffE.querySelector(".icone").title = "";
       buffE.id = "";
     }
-
-    return false;
   });
 }
 

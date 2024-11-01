@@ -29,9 +29,9 @@ export const statsJSON = getData("stats");
 export function getData(filename, JDR = true) {
   if (window.location.href.includes("http")) {
     if (JDR) {
-      xhReq.open("GET", "./JDR" + filename + ".json" + "?" + new Date().getTime(), false);
+      xhReq.open("GET", `./JDR${filename}.json?${new Date().getTime()}`, false);
     } else {
-      xhReq.open("GET", "./" + filename + ".json" + "?" + new Date().getTime(), false);
+      xhReq.open("GET", `./${filename}.json?${new Date().getTime()}`, false);
     }
     xhReq.send(null);
     return xhReq.responseText ? JSON.parse(xhReq.responseText) : {};
