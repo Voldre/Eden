@@ -60,7 +60,7 @@ if(isset($_GET['logout'])){
             <br/>
             <input style='width: 38px;' type='number' id="pv" name="pv"></input>
             <input style='width: 38px;' type='number' id="pvmax" name="pvmax"></input>
-            <label for="pv">PV/Max</label><img src="images/uiiconPNG/combat_boss.png" id="boss_icon" class="hide icon" style="float:right" />
+            <label for="pv">PV/Max</label><img src="images/layout/combat_boss.png" id="boss_icon" class="hide icon" style="float:right" />
             <br/>
             <p class="competence"></p>
             <p class="competence"></p>

@@ -185,15 +185,15 @@ function chooseEnemy(mapId = null, category = null) {
 
 function initializeEnemy(enemyData, rarity) {
   if (rarity === 1) {
-    document.querySelector("#rarity").src = "images/uiiconPNG/combat_mob.png";
+    document.querySelector("#rarity").src = "images/layout/combat_mob.png";
     document.querySelector("#rarity").alt = "Monstre Commun";
   }
   if (rarity === 2 || (enemyData.pvmax > 120 && enemyData.pvmax < 200)) {
-    document.querySelector("#rarity").src = "images/uiiconPNG/combat_elite.png";
+    document.querySelector("#rarity").src = "images/layout/combat_elite.png";
     document.querySelector("#rarity").alt = "Elite";
   }
   if (rarity === 3) {
-    document.querySelector("#rarity").src = "images/uiiconPNG/combat_boss.png";
+    document.querySelector("#rarity").src = "images/layout/combat_boss.png";
     document.querySelector("#rarity").alt = "Boss";
   }
 

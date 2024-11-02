@@ -10,6 +10,7 @@ import {
   classes,
   iconsClasses,
   iconsEveil,
+  elements,
 } from "./JDRstore.js";
 import {
   callPHP,
@@ -54,8 +55,6 @@ console.log(
 const races = ["Humain", "Ezelin", "Ursun", "Zumi", "Anuran", "Torturran", "Drakai", "Tuskar", "Ogre"];
 
 const poids = ["Moyen", "Léger", "Lourd", "Léger", "Moyen", "Moyen", "Léger", "Lourd", "Lourd"];
-
-const elements = ["contondant", "tranchant", "perçant", "feu", "glace", "foudre", "nature", "lumière", "ténèbres"];
 
 const elementsCategories = elements.map((element) => {
   // Remove all accents (é,è,ç)

@@ -229,10 +229,48 @@
 
     <div id="elem" class="hide">
       <p>
-        Chaque attaque possède un élément, un élément physique et/ou magique, connaîtres les faiblesses élémentaires des ennemis permet de
-        récupérer des trésors précieux.
+        Chaque attaque possède un élément (physique ou élémentaire), connaîtres les faiblesses des ennemis permet de récupérer des trésors
+        précieux. Chaque ennemi possède 2 faiblesses, parmis :
       </p>
-      <img src="images/elements.png" style="max-width: 105%" alt="Liste des éléments PNG" />
+      <ul style="gap: 0.5rem; display: flex; flex-direction: column">
+        <!-- (li>img+p>span+span)*9 -->
+        <li>
+          <img src="images/layout/contondant.png" class="skillRangeIcon" />
+          <span><b>Contondant</b> (frappe) : est causée par les marteaux, masses, gourdins, ainsi que bâton et grimoire</span>
+        </li>
+        <li>
+          <img src="images/layout/tranchant.png" class="skillRangeIcon" />
+          <span><b>Tranchant</b> : est causée par les griffes, épées, dagues, hache, épée colossale</span>
+        </li>
+        <li>
+          <img src="images/layout/percant.png" class="skillRangeIcon" />
+          <span><b>Perçant</b> : est causée par les arcs, pistolets, lances</span>
+        </li>
+        <li>
+          <img src="images/layout/feu.png" class="skillRangeIcon" />
+          <span><b>Feu</b> : utilisé principalement par les classes : DPS magiques, Danselame, Chevalier dragon</span>
+        </li>
+        <li>
+          <img src="images/layout/glace.png" class="skillRangeIcon" />
+          <span><b>Glace</b> : utilisé principalement par les classes : Magicien, Illusionniste, Chevalier, Sage</span>
+        </li>
+        <li>
+          <img src="images/layout/foudre.png" class="skillRangeIcon" />
+          <span><b>Foudre</b> : utilisé principalement par les classes : DPS magiques, Shaman, Samouraï</span>
+        </li>
+        <li>
+          <img src="images/layout/nature.png" class="skillRangeIcon" />
+          <span><b>Nature</b> : utilisé principalement par les classes : Soins, Ingénieur, Guerrier</span>
+        </li>
+        <li>
+          <img src="images/layout/lumiere.png" class="skillRangeIcon" />
+          <span><b>Lumière</b> : utilisé principalement par les classes : Soins, Templier, Luminary</span>
+        </li>
+        <li>
+          <img src="images/layout/tenebres.png" class="skillRangeIcon" />
+          <span><b>Ténèbres</b> : utilisé principalement par les classes : Démoniste, Luminary, Juge</span>
+        </li>
+      </ul>
     </div>
     <p class="statsBySkills"></p>
     <h2>Classes</h2>

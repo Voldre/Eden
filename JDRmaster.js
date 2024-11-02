@@ -7,6 +7,7 @@ import {
   statsJSON,
   persosJSON,
   getData,
+  elements,
 } from "./JDRstore.js";
 import {
   callPHP,
@@ -223,9 +224,6 @@ document.addEventListener(
   },
   true
 );
-
-// prettier-ignore
-const elements = ["ontond", "ranch", "perç", "feu", "lace", "oudre", "ature", "énèbre", "umière",];
 
 const abnormalWeaknesses = Object.values(enemyJSON)
   .filter((enemy) => !enemy.nom.includes("Veyda") && parseInt(enemy.pvmax) < 500)

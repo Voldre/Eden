@@ -2237,7 +2237,7 @@
     "name": "Draigos et les explications",
     "description": "Draigos a un mode AFK, il est comme d\u00e9connect\u00e9. Ainsi, tout ce que vous lui direz sera traduit par \"Bla bleu bli bla bleu blou !\"",
     "maps": [6],
-    "enemies": [85],
+    "enemies": [],
     "kindId": "skillIcon/E0231",
     "group": 1
   },
