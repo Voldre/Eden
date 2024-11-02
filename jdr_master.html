@@ -43,7 +43,8 @@
         <br />
         <input style="width: 38px" type="number" id="pv" name="pv" />
         <input style="width: 38px" type="number" id="pvmax" name="pvmax" />
-        <label for="pv">PV/Max</label><img src="images/layout/combat_boss.png" id="boss_icon" class="hide icon" style="float: right" />
+        <label for="pv">PV/Max </label><span id="weaknesses"></span>
+        <img src="images/layout/combat_boss.png" id="boss_icon" class="hide icon" style="float: right" />
         <br />
         <p class="competence"></p>
         <p class="competence"></p>
@@ -76,7 +77,6 @@
             <input type="number" min="-10" max="10" class="statB" />
           </div>
         </div>
-        <p id="infos"></p>
         <input type="text" class="commentaire" placeholder="est étourdi, attiré par, enragé, ... prépare une ataque..." />
         <button name="nextTurn" class="nextTurn" id="currentTurnE">+</button>
         <br />
@@ -115,7 +115,8 @@
         <br />
         <input style="width: 38px" type="number" id="pv" name="pv" />
         <input style="width: 38px" type="number" id="pvmax" name="pvmax" />
-        <label for="pv">PV/Max</label><img src="images/layout/combat_boss.png" id="boss_icon" class="hide icon" style="float: right" />
+        <label for="pv">PV/Max </label><span id="weaknesses"></span>
+        <img src="images/layout/combat_boss.png" id="boss_icon" class="hide icon" style="float: right" />
         <br />
         <p class="competence"></p>
         <p class="competence"></p>
@@ -148,7 +149,6 @@
             <input type="number" min="-10" max="10" class="statB" />
           </div>
         </div>
-        <p id="infos"></p>
         <input type="text" class="commentaire" placeholder="est étourdi, attiré par, enragé, ... prépare une ataque..." />
         <button name="nextTurn" class="nextTurn hide">+</button>
         <br />
@@ -187,7 +187,7 @@
         <br />
         <input style="width: 38px" type="number" id="pv" name="pv" />
         <input style="width: 38px" type="number" id="pvmax" name="pvmax" />
-        <label for="pv">PV/Max</label>
+        <label for="pv">PV/Max </label><span id="weaknesses"></span>
         <img src="images/layout/combat_boss.png" id="boss_icon" class="hide icon" style="float: right" />
         <br />
         <p class="competence"></p>
@@ -221,7 +221,6 @@
             <input type="number" min="-10" max="10" class="statB" />
           </div>
         </div>
-        <p id="infos"></p>
         <input type="text" class="commentaire" placeholder="est étourdi, attiré par, enragé, ... prépare une ataque..." />
         <button name="nextTurn" class="nextTurn hide">+</button>
         <br />
@@ -1012,7 +1011,7 @@
       <br />
       Nom<input type="text" />
       <br />
-      PV Max<input type="text" />
+      PV Max<input type="number" min="0" />
       <br />
       Skill<input type="text" placeholder="nom :montant effet :stat" />
       <br />
@@ -1026,9 +1025,11 @@
       <br />
       Desc<input type="text" placeholder="petit ... brun et ..." />
       <br />
-      Infos BP<input type="text" placeholder="Faible au feu et contondant." />
-      <br />
       Drop<input type="text" placeholder="compo 1, rare : accessoire, ..." />
+      <br />
+      Infos BP
+      <select></select>
+      <select></select>
       <br />
       <button id="createEnemy">Créer</button>
     </div>

@@ -1,8 +1,8 @@
 {
   "0": {
     "nom": "Charge du Guerrier",
-    "desc": "Fonce sur la cible et peut l'\u00e9tourdir (malus de r\u00e9ussite) si coup critique.",
-    "montant": "1D10+5, r\u00e9ussite cible -3 (2 tours)"
+    "desc": "Fonce sur la cible et peut l'étourdir (malus de réussite) si coup critique.",
+    "montant": "1D10+5, réussite cible -3 (2 tours)"
   },
   "1": {
     "nom": "Attaque Cyclone",
@@ -11,43 +11,43 @@
   },
   "2": {
     "nom": "Provocation",
-    "desc": "Le lanceur provoque la cible ce qui augmente les chances d'\u00eatre vis\u00e9",
-    "montant": "D\u00e9g\u00e2t 1D10+2, et 90% de chance d'\u00eatre vis\u00e9 pendant 3 tours"
+    "desc": "Le lanceur provoque la cible ce qui augmente les chances d'être visé",
+    "montant": "Dégât 1D10+2, et 90% de chance d'être visé pendant 3 tours"
   },
   "3": {
     "nom": "Euphorie",
-    "montant": "+4 par coup re\u00e7u, cumulable 5 fois pendant 4 tours"
+    "montant": "+4 par coup reçu, cumulable 5 fois pendant 4 tours"
   },
   "4": {
-    "nom": "Perc\u00e9e du Chevalier",
+    "nom": "Percée du Chevalier",
     "desc": "Frappe la cible 4 fois",
     "montant": "3D6 + 1D4"
   },
   "5": {
-    "nom": "Vivacit\u00e9 Accrue",
-    "montant": "Esquive+2, Dext\u00e9rit\u00e9+2, Soin reçu +4 pendant 4 tours"
+    "nom": "Vivacité Accrue",
+    "montant": "Esquive+2, Dextérité+2, Soin reçu +4 pendant 4 tours"
   },
   "6": {
-    "nom": "Lumi\u00e8re Sacr\u00e9e",
-    "montant": "1D10+5, provocation 75% de chance d'\u00eatre vis\u00e9 (1 tour)"
+    "nom": "Lumière Sacrée",
+    "montant": "1D10+5, provocation 75% de chance d'être visé (1 tour)"
   },
   "7": {
     "nom": "Coup Infernal",
     "montant": "1D10+4"
   },
   "8": {
-    "nom": "Bouclier de Lumi\u00e8re",
+    "nom": "Bouclier de Lumière",
     "effet": "Buff et Soin AoE",
-    "desc": "R\u00e9duit les d\u00e9g\u00e2ts re\u00e7u de tout le monde et soigne",
+    "desc": "Réduit les dégâts reçu de tout le monde et soigne",
     "montant": "1D4 (min 2) pendant 3 tours. + Soin 1D6+1"
   },
   "9": {
-    "nom": "Revers d'\u00e9caille",
+    "nom": "Revers d'écaille",
     "montant": "1 tentative offerte par éveil, renvoi (<10 : 66%, >=10 : 33%)"
   },
   "10": {
     "nom": "Pouvoir du dragon",
-    "desc": "Tranche la cible selon le mode choisi (feu, t\u00e9n\u00e8bres,physique)",
+    "desc": "Tranche la cible selon le mode choisi (feu, ténèbres,physique)",
     "montant": "1D10+8"
   },
   "11": {
@@ -56,8 +56,8 @@
     "montant": "1D10+4"
   },
   "12": {
-    "nom": "Furtivit\u00e9",
-    "montant": "Dur\u00e9e 3 tours sauf annulation, Chance d'être touché -3, Dext\u00e9+1, D\u00e9g\u00e2t+2"
+    "nom": "Furtivité",
+    "montant": "Durée 3 tours sauf annulation, Chance d'être touché -3, Dexté+1, Dégât+2"
   },
   "20": {
     "nom": "Embuscade",
@@ -65,26 +65,26 @@
   },
   "21": {
     "nom": "Perce-Armure",
-    "montant": "D\u00e9g\u00e2t 1D10, et d\u00e9g\u00e2t physique re\u00e7u +5 pendant 4 tours"
+    "montant": "Dégât 1D10, et dégât physique reçu +5 pendant 4 tours"
   },
   "25": {
-    "nom": "Charme tape-\u00e0-l-oeil",
-    "desc": "Lance un charme sur la cible pour r\u00e9duire sa concentration, efficace si sexe oppos\u00e9, sinon : r\u00e9ussite -3",
-    "montant": "Esquive et r\u00e9ussite des sorts : -3 sur 3 tours, (Sur le coup : Résistance cible -3)"
+    "nom": "Charme tape-à-l-oeil",
+    "desc": "Lance un charme sur la cible pour réduire sa concentration, efficace si sexe opposé, sinon : réussite -3",
+    "montant": "Esquive et réussite des sorts : -3 sur 3 tours, (Sur le coup : Résistance cible -3)"
   },
   "26": {
     "nom": "Coupe Asura",
-    "desc": "Envoi une tranche sur plusieurs m\u00e8tres, peut toucher les ennemis larges 2 fois. Pose une double marque (qui peut agir 2 fois)",
+    "desc": "Envoi une tranche sur plusieurs mètres, peut toucher les ennemis larges 2 fois. Pose une double marque (qui peut agir 2 fois)",
     "montant": "1D10+2 + (1D8+1) double marque Asura (3 tours max)"
   },
   "27": {
     "nom": "Eclair unique",
-    "desc": "Tranche avec un coup d'\u00e9clair, un second \u00e9clair touche si l'ennemi \u00e0 subi la Coupe Asura",
+    "desc": "Tranche avec un coup d'éclair, un second éclair touche si l'ennemi à subi la Coupe Asura",
     "montant": "1D10+4 + (1D10 et malus : -2 Dextérité sur 3 tours)"
   },
   "28": {
-    "nom": "Tir de Pr\u00e9cision",
-    "montant": "R\u00e9ussite +2, 1D10+5 (Critique 1,2 = X2)"
+    "nom": "Tir de Précision",
+    "montant": "Réussite +2, 1D10+5 (Critique 1,2 = X2)"
   },
   "29": {
     "nom": "Triple Tir",
@@ -93,32 +93,32 @@
   },
   "30": {
     "nom": "Invocation du Tigre",
-    "desc": "Invoque un Tigre Crocs-Tranchants : 30 PV, Force : 15, Dext\u00e9 : 13, Intel : 9, Charisme : 11, Esprit : 14. Sort : Morsure 1D8+3 (Force), Cri strident : -2 réussite 2 tours AoE (Esprit)",
-    "montant": "Invocation jusqu'\u00e0 coupure magique"
+    "desc": "Invoque un Tigre Crocs-Tranchants : 30 PV, Force : 15, Dexté : 13, Intel : 9, Charisme : 11, Esprit : 14. Sort : Morsure 1D8+3 (Force), Cri strident : -2 réussite 2 tours AoE (Esprit)",
+    "montant": "Invocation jusqu'à coupure magique"
   },
   "31": {
     "nom": "Invocation Aigle Chasseur",
-    "desc": "Invoque un Aigle chasseur : 25 PV, Force : 14, Dext\u00e9 : 15, Intel : 9, Charisme : 12, Esprit : 11. Sort : Coup de Bec 1D8+5 (Force), Vent coupant 1D8+1 AoE (Dext\u00e9)",
-    "montant": "Invocation jusqu'\u00e0 coupure magique"
+    "desc": "Invoque un Aigle chasseur : 25 PV, Force : 14, Dexté : 15, Intel : 9, Charisme : 12, Esprit : 11. Sort : Coup de Bec 1D8+5 (Force), Vent coupant 1D8+1 AoE (Dexté)",
+    "montant": "Invocation jusqu'à coupure magique"
   },
   "32": {
     "nom": "Blessure Douloureuse",
-    "desc": "Blesse l'ennemi et l'emp\u00eache de se soigner pendant 3 tours, l'effet n'est pas annulable.",
+    "desc": "Blesse l'ennemi et l'empêche de se soigner pendant 3 tours, l'effet n'est pas annulable.",
     "montant": "1D8+2 (Non annulable)"
   },
   "34": {
     "nom": "Robotisation",
-    "desc": "Vous transforme en Guerrier M\u00e9ca capable d'utiliser des attaques technologiques",
-    "montant": "Action Instantan\u00e9e. R\u00e9duit les d\u00e9g\u00e2ts re\u00e7u de 1D4 (min 2) +1, dure 4 tours"
+    "desc": "Vous transforme en Guerrier Méca capable d'utiliser des attaques technologiques",
+    "montant": "Action Instantanée. Réduit les dégâts reçu de 1D4 (min 2) +1, dure 4 tours"
   },
   "35": {
-    "nom": "Bombe \u00e0 Huile",
-    "desc": "Si robotis\u00e9 : Inflige une explosion sur plusieurs m\u00e8tres autour de la cible.",
+    "nom": "Bombe à Huile",
+    "desc": "Si robotisé : Inflige une explosion sur plusieurs mètres autour de la cible.",
     "montant": "1D8+5"
   },
   "36": {
     "nom": "Explosifs Visqueux",
-    "desc": "Si robotis\u00e9 : La bombe explose (d\u00e9g\u00e2t de nature) et englue tout autour de la cible, attaquer peut d\u00e9faire la glue",
+    "desc": "Si robotisé : La bombe explose (dégât de nature) et englue tout autour de la cible, attaquer peut défaire la glue",
     "montant": "1D6+1, Esquive -3 pour 3 tours"
   },
   "37": {
@@ -126,19 +126,19 @@
     "montant": "1 fois par éveil : remplace l'esquive par un tir 1D6 (blocable)"
   },
   "38": {
-    "nom": "Fl\u00e8che Terrorisante",
-    "montant": "1D6+3 : Esquive -3 et r\u00e9ussite des sorts -3 (pendant 2 tours)"
+    "nom": "Flèche Terrorisante",
+    "montant": "1D6+3 : Esquive -3 et réussite des sorts -3 (pendant 2 tours)"
   },
   "39": {
-    "nom": "S\u00e9r\u00e9nit\u00e9",
-    "montant": "Dext\u00e9+2, D\u00e9g\u00e2t subi -1D4 (min 2) +2 pendant 3 tours"
+    "nom": "Sérénité",
+    "montant": "Dexté+2, Dégât subi -1D4 (min 2) +2 pendant 3 tours"
   },
   "40": {
-    "nom": "S\u00e9isme",
+    "nom": "Séisme",
     "montant": "1D10+5, si faiblesse : Esquive/Blocage -2 sur 2 tours"
   },
   "41": {
-    "nom": "Gu\u00e9rison",
+    "nom": "Guérison",
     "montant": "3D6 +12 (+5 si Clerc)"
   },
   "42": {
@@ -146,32 +146,32 @@
     "montant": "1D10+5 si faiblesse : Réussite -3 sur 2 tours"
   },
   "43": {
-    "nom": "Pr\u00e9vention",
-    "montant": "D\u00e9g\u00e2t subi -1D4 (min 2) -2 pour 3 tours, -2 malus"
+    "nom": "Prévention",
+    "montant": "Dégât subi -1D4 (min 2) -2 pour 3 tours, -2 malus"
   },
   "44": {
     "nom": "Bombe Vocale",
-    "desc": "Inflige à la fois des d\u00e9g\u00e2ts de feu ET de glace \u00e0 la cible",
+    "desc": "Inflige à la fois des dégâts de feu ET de glace à la cible",
     "montant": "1D10+6 (Element Feu et Glace)"
   },
   "45": {
-    "nom": "Hymne \u00e0 la Guerre",
-    "desc": "Augmente les d\u00e9g\u00e2ts physiques inflig\u00e9s par le groupe",
-    "montant": "D\u00e9g\u00e2t physique 1D4 (min 2) +3 pendant 4 tours"
+    "nom": "Hymne à la Guerre",
+    "desc": "Augmente les dégâts physiques infligés par le groupe",
+    "montant": "Dégât physique 1D4 (min 2) +3 pendant 4 tours"
   },
   "46": {
-    "nom": "Bouclier d'\u00e9pines",
-    "montant": "D\u00e9g\u00e2t subi (-) et d\u00e9g\u00e2t d'\u00e9pines (+) 1D4+2 (min 2) pendant 4 tours"
+    "nom": "Bouclier d'épines",
+    "montant": "Dégât subi (-) et dégât d'épines (+) 1D4+2 (min 2) pendant 4 tours"
   },
   "47": {
     "nom": "Totem Gracieux",
-    "desc": "Invoque un familier Totem : 30 PV, Force : 9, Dext\u00e9 : 13, Intel/Esprit : 15. - Mode Soin : Ne peut pas bouger / se prot\u00e9ger, 0 jet de d\u00e9. - Mode Soutien : peut bouger et bloquer, 2 sorts : 1) Renforcement : +3 Force ou +3 Intel sur la cible : 3 tours (intel) , 2) Eclair : 1D8+3 (intel)",
-    "montant": "(jusqu'\u00e0 coupure magique), Mode Soin : Soin 4 PV par tour. - Mode Soutien : attaque/bloque"
+    "desc": "Invoque un familier Totem : 30 PV, Force : 9, Dexté : 13, Intel/Esprit : 15. - Mode Soin : Ne peut pas bouger / se protéger, 0 jet de dé. - Mode Soutien : peut bouger et bloquer, 2 sorts : 1) Renforcement : +3 Force ou +3 Intel sur la cible : 3 tours (intel) , 2) Eclair : 1D8+3 (intel)",
+    "montant": "(jusqu'à coupure magique), Mode Soin : Soin 4 PV par tour. - Mode Soutien : attaque/bloque"
   },
   "48": {
     "nom": "Puma Noir",
-    "desc": "Action Instantan\u00e9e (1 tentative offerte en éveil). Vous transforme en Puma Noir. Impossible de jeter des sorts magiques (Intel/Esprit). Nouveaux sorts : Saignement : 1D8 puis 3 pendant 3 tours (Force). Triple Griffe : 3D6 (Dext\u00e9rit\u00e9)",
-    "montant": "D\u00e9g\u00e2t +15, 0 d\u00e9g\u00e2t/effet d'arme. Force+3, Dext\u00e9+3 pendant 1D4 (min 2) +1 tours (annulable)"
+    "desc": "Action Instantanée (1 tentative offerte en éveil). Vous transforme en Puma Noir. Impossible de jeter des sorts magiques (Intel/Esprit). Nouveaux sorts : Saignement : 1D8 puis 3 pendant 3 tours (Force). Triple Griffe : 3D6 (Dextérité)",
+    "montant": "Dégât +15, 0 dégât/effet d'arme. Force+3, Dexté+3 pendant 1D4 (min 2) +1 tours (annulable)"
   },
   "49": {
     "nom": "Bombe Incendiaire",
@@ -185,19 +185,18 @@
   },
   "51": {
     "nom": "Saut Dimensionnel",
-    "montant": "1 fois par éveil : remplace l'esquive (ou le blocage, avec malus AoE (-3,-5)) par la t\u00e9l\u00e9portation"
+    "montant": "1 fois par éveil : remplace l'esquive (ou le blocage, avec malus AoE (-3,-5)) par la téléportation"
   },
   "53": {
     "nom": "Affaiblissement Mental",
-    "montant": "D\u00e9g\u00e2t magique re\u00e7u +1D4 (min 2) +4 pendant 4 tours"
+    "montant": "Dégât magique reçu +1D4 (min 2) +4 pendant 4 tours"
   },
-
   "54": {
     "nom": "Voile du Blizzard",
-    "montant": "Dur\u00e9e 3 tours (4 si incantation), Chance d'être touché -3, Intel+1, D\u00e9g\u00e2t+2"
+    "montant": "Durée 3 tours (4 si incantation), Chance d'être touché -3, Intel+1, Dégât+2"
   },
   "55": {
-    "nom": "Contr\u00f4le de l'Esprit",
+    "nom": "Contrôle de l'Esprit",
     "montant": "Inflige le status \"Hypnose\" pendant 1D4 tours, résistance d'esprit -2"
   },
   "56": {
@@ -206,51 +205,51 @@
   },
   "57": {
     "nom": "Mur de Titan",
-    "montant": "D\u00e9g\u00e2t subi -1D4 (min 2) -4 pendant 3 tours"
+    "montant": "Dégât subi -1D4 (min 2) -4 pendant 3 tours"
   },
   "58": {
     "nom": "Destruction de l'aurore",
-    "desc": "Portée supplémentaire : Envoie un rayon de lumi\u00e8re jusqu'\u00e0 4m devant et 2m sur les côtés.",
+    "desc": "Portée supplémentaire : Envoie un rayon de lumière jusqu'à 4m devant et 2m sur les côtés.",
     "montant": "1D6+5"
   },
   "59": {
     "nom": "Coupure Noire",
-    "desc": "Inflige une triple tranche de t\u00e9n\u00e8bres \u00e0 l'ennemi, concentre l'énergie.",
+    "desc": "Inflige une triple tranche de ténèbres à l'ennemi, concentre l'énergie.",
     "montant": "2D6 + 1D4 (Donne 3 charges de ténèbres)"
   },
   "60": {
-    "nom": "Pri\u00e8re Divine",
-    "desc": "Action Instantan\u00e9e. Soigne l'utilisateur et boost les prochains d\u00e9g\u00e2ts de lumi\u00e8res : oblig\u00e9 de faire de la lumi\u00e8re",
-    "montant": "Soin 1D8 +10. Prochain d\u00e9g\u00e2t lumi\u00e8res +1D6 +2 (3 tours max)"
+    "nom": "Prière Divine",
+    "desc": "Action Instantanée. Soigne l'utilisateur et boost les prochains dégâts de lumières : obligé de faire de la lumière",
+    "montant": "Soin 1D8 +10. Prochain dégât lumières +1D6 +2 (3 tours max)"
   },
   "61": {
     "nom": "Assaut du Chaos",
-    "desc": "(7-8 charges minimum) Les effets diff\u00e8rent selon l'\u00e9quilibre, faiblesse de l'ennemi : T\u00e9n\u00e8bres, Chaos (toutes ses faiblesses), Lumi\u00e8re.",
-    "montant": "1D10+6, d\u00e9g\u00e2t re\u00e7u de l'\u00e9l\u00e9ment +5 pendant 3 tours"
+    "desc": "(7-8 charges minimum) Les effets diffèrent selon l'équilibre, faiblesse de l'ennemi : Ténèbres, Chaos (toutes ses faiblesses), Lumière.",
+    "montant": "1D10+6, dégât reçu de l'élément +5 pendant 3 tours"
   },
   "62": {
     "nom": "Sacrifice d'Ombre Noire",
-    "desc": "Action Instantan\u00e9e. Tant que l'utilisateur fait des t\u00e9n\u00e8bres, diminue les PV, boost la force et l'intel et les d\u00e9g\u00e2ts de t\u00e9n\u00e8bres",
-    "montant": "Chaque tour : PV (-) et D\u00e9g\u00e2t t\u00e9n\u00e8bres (+) : 1D6+4, Force + Intel +3, "
+    "desc": "Action Instantanée. Tant que l'utilisateur fait des ténèbres, diminue les PV, boost la force et l'intel et les dégâts de ténèbres",
+    "montant": "Chaque tour : PV (-) et Dégât ténèbres (+) : 1D6+4, Force + Intel +3, "
   },
   "63": {
-    "nom": "Coupure de lumi\u00e8re",
-    "desc": "Tranche l'ennemi avec des \u00e9clats de la lumi\u00e8re",
+    "nom": "Coupure de lumière",
+    "desc": "Tranche l'ennemi avec des éclats de la lumière",
     "montant": "1D10+4 (Donne 3 charges de lumière)"
   },
   "64": {
-    "nom": "Po\u00e8me du Vent",
-    "desc": "Un chant qui augmente la dext\u00e9rit\u00e9 des alli\u00e9s",
-    "montant": "Dext\u00e9rit\u00e9 +2 et Esquive +1 pendant 1D4 +2"
+    "nom": "Poème du Vent",
+    "desc": "Un chant qui augmente la dextérité des alliés",
+    "montant": "Dextérité +2 et Esquive +1 pendant 1D4 +2"
   },
   "65": {
-    "nom": "Symphonie D\u00e9moniaque",
-    "desc": "Augmente les d\u00e9g\u00e2ts magiques inflig\u00e9s par le groupe",
-    "montant": "D\u00e9g\u00e2t magique 1D4 (min 2) +3 pendant 4 tours"
+    "nom": "Symphonie Démoniaque",
+    "desc": "Augmente les dégâts magiques infligés par le groupe",
+    "montant": "Dégât magique 1D4 (min 2) +3 pendant 4 tours"
   },
   "66": {
     "nom": "Danse de l'oiseau de feu",
-    "desc": "Le lanceur danse autour des ennemis (sur quelques m\u00e8tres) et les br\u00fblent",
+    "desc": "Le lanceur danse autour des ennemis (sur quelques mètres) et les brûlent",
     "montant": "1D10+3 (+5 si charmé)"
   },
   "67": {
@@ -259,58 +258,58 @@
   },
   "68": {
     "nom": "Parasite Obscur",
-    "desc": "Inflige des d\u00e9g\u00e2ts de t\u00e9n\u00e8bres pendant 4 tours (non annulable)",
-    "montant": "D\u00e9g\u00e2t d'arme puis 3 d\u00e9g\u00e2ts chaque tour (4 tours, non annulable)"
+    "desc": "Inflige des dégâts de ténèbres pendant 4 tours (non annulable)",
+    "montant": "Dégât d'arme puis 3 dégâts chaque tour (4 tours, non annulable)"
   },
   "69": {
-    "nom": "Fl\u00e8che des Ombres",
-    "montant": "D\u00e9g\u00e2t 1D8+5 et si parasite : soin 1D6+3 (+4 si actif)"
+    "nom": "Flèche des Ombres",
+    "montant": "Dégât 1D8+5 et si parasite : soin 1D6+3 (+4 si actif)"
   },
   "70": {
     "nom": "Menaces Mortelles",
-    "montant": "Prochaine r\u00e9ussite des sorts : -3, esquive/blocage/r\u00e9sistance -1, sur le coup : résistance -1, dure 1 tour"
+    "montant": "Prochaine réussite des sorts : -3, esquive/blocage/résistance -1, sur le coup : résistance -1, dure 1 tour"
   },
   "72": {
-    "nom": "R\u00e9surrection",
-    "desc": "(Utilisable m\u00eame vivant) prend 2 tours (1 d\u00e9 par tour) : Soigne/Ressuscite un joueur avec quelques PV ",
-    "montant": "Incantation en 2 tours (1 d\u00e9/tour) : soigne de 3D10+20 (Blocage +2 pendant incantation)"
+    "nom": "Résurrection",
+    "desc": "(Utilisable même vivant) prend 2 tours (1 dé par tour) : Soigne/Ressuscite un joueur avec quelques PV ",
+    "montant": "Incantation en 2 tours (1 dé/tour) : soigne de 3D10+20 (Blocage +2 pendant incantation)"
   },
   "73": {
     "nom": "Purgatoire",
     "montant": "1D10+2 (+6) (+1D8+1)"
   },
   "74": {
-    "nom": "\u00c9clair en Furie",
-    "montant": "1D10, et d\u00e9g\u00e2t magique re\u00e7u +5 pendant 4 tours"
+    "nom": "Éclair en Furie",
+    "montant": "1D10, et dégât magique reçu +5 pendant 4 tours"
   },
   "75": {
     "nom": "Invocation d'Alpaga",
-    "desc": "Invoque un esprit Alpaga de t\u00e9n\u00e8bres, peut flotter. 30 PV, Force : 12, Dext\u00e9 : 13, Intel : 15, Charisme : 12, Esprit : 10. Sort : Crachat 1D8+3 (Intel), Charge 1D10+2 (Force), Aura Noire (Intel) : Buff conversion phys > ten, dégât +3 (3t)",
-    "montant": "Invocation jusqu'\u00e0 coupure magique, Apprend \"Aura Noire\" "
+    "desc": "Invoque un esprit Alpaga de ténèbres, peut flotter. 30 PV, Force : 12, Dexté : 13, Intel : 15, Charisme : 12, Esprit : 10. Sort : Crachat 1D8+3 (Intel), Charge 1D10+2 (Force), Aura Noire (Intel) : Buff conversion phys > ten, dégât +3 (3t)",
+    "montant": "Invocation jusqu'à coupure magique, Apprend \"Aura Noire\" "
   },
   "76": {
     "nom": "Pacte",
-    "desc": "Invoque un Panopticor (d\u00e9mon \u00e0 tentacules). 25 PV, Force : 9, Dext\u00e9 : 14, Intel : 16, Charisme : 10, Esprit : 12. Sort : Jet de T\u00e9n\u00e8bres 1D8+3 (Intel), Coup tentacule 1D10+2 (Dext\u00e9), Perturbation (Intel) : -2 res esprit (2t)",
-    "montant": "Invocation jusqu'\u00e0 coupure magique"
+    "desc": "Invoque un Panopticor (démon à tentacules). 25 PV, Force : 9, Dexté : 14, Intel : 16, Charisme : 10, Esprit : 12. Sort : Jet de Ténèbres 1D8+3 (Intel), Coup tentacule 1D10+2 (Dexté), Perturbation (Intel) : -2 res esprit (2t)",
+    "montant": "Invocation jusqu'à coupure magique"
   },
   "77": {
     "nom": "Hommage",
-    "montant": "Soin de 2 \u00e0 25 PV, r\u00e9duit les d\u00e9g\u00e2ts re\u00e7us de 6 pendant 3 tours"
+    "montant": "Soin de 2 à 25 PV, réduit les dégâts reçus de 6 pendant 3 tours"
   },
   "78": {
     "nom": "Vent Purificateur",
     "montant": "Soin 1D6+9 (-1 malus)"
   },
   "79": {
-    "nom": "Gr\u00e2ce de la Sagesse",
+    "nom": "Grâce de la Sagesse",
     "montant": "Blocage +2 et Esprit +3 pendant 4 tours"
   },
   "80": {
-    "nom": "Ch\u00e2timent Sacr\u00e9",
+    "nom": "Châtiment Sacré",
     "montant": "1D10+3"
   },
   "81": {
-    "nom": "Int\u00e9gration",
+    "nom": "Intégration",
     "montant": "Esquive +3 pendant 3 tours"
   },
   "82": {
@@ -320,18 +319,18 @@
   },
   "83": {
     "nom": "Foi du Temple",
-    "desc": "R\u00e9duit les d\u00e9g\u00e2ts re\u00e7us et augmente l'esprit",
-    "montant": "Esprit+2, D\u00e9g\u00e2t subi -1D4 (min 2) +2 pendant 4 tours"
+    "desc": "Réduit les dégâts reçus et augmente l'esprit",
+    "montant": "Esprit+2, Dégât subi -1D4 (min 2) +2 pendant 4 tours"
   },
   "85": {
-    "nom": "Lumi\u00e8re de Gu\u00e9rison",
+    "nom": "Lumière de Guérison",
     "desc": "Soigne la cible, et 1 chance sur 3 de pouvoir rejouer",
     "montant": "1D10 +10, 1/3 de rejouer (max 2 fois par tour)"
   },
   "86": {
     "nom": "Mode Draconique",
-    "desc": "Action Instantan\u00e9e. Vous permet de choisir votre mode parmis : \"Embras\u00e9\", \"D\u00e9moniaque\", \"Cach\u00e9\"",
-    "montant": "Pendant l'éveil uniquement (a activer) : Embras\u00e9 : Force/Intel+2, D\u00e9moniaque : Charisme+2, Cach\u00e9 : Esprit+2"
+    "desc": "Action Instantanée. Vous permet de choisir votre mode parmis : \"Embrasé\", \"Démoniaque\", \"Caché\"",
+    "montant": "Pendant l'éveil uniquement (a activer) : Embrasé : Force/Intel+2, Démoniaque : Charisme+2, Caché : Esprit+2"
   },
   "87": {
     "nom": "Stalactites Glaciales",
@@ -339,20 +338,20 @@
     "montant": "3D6 + 1D4"
   },
   "88": {
-    "nom": "Lame Dansante du Po\u00e8te",
-    "montant": "3D6 (+2 si Po\u00e8me du Vent) (Blocage/Esquive cible -2)"
+    "nom": "Lame Dansante du Poète",
+    "montant": "3D6 (+2 si Poème du Vent) (Blocage/Esquive cible -2)"
   },
   "89": {
-    "nom": "Fl\u00e8che Eblouissante",
-    "montant": "1D8+4, et r\u00e9ussite des sorts -4 (3 tours)"
+    "nom": "Flèche Eblouissante",
+    "montant": "1D8+4, et réussite des sorts -4 (3 tours)"
   },
   "90": {
-    "nom": "Fl\u00e8che Empoisonn\u00e9e",
+    "nom": "Flèche Empoisonnée",
     "montant": "1D6+2 puis 4 pendant 3 tours (poison)"
   },
   "91": {
-    "nom": "Danse de la guerri\u00e8re",
-    "montant": "Prochain d\u00e9g\u00e2t +1D10+5, r\u00e9ussite +2  (3 tours max)"
+    "nom": "Danse de la guerrière",
+    "montant": "Prochain dégât +1D10+5, réussite +2  (3 tours max)"
   },
   "92": {
     "nom": "Silence",
@@ -360,7 +359,7 @@
   },
   "93": {
     "nom": "Aura : Enchantement Elementaire",
-    "montant": "Pour l'\u00e9l\u00e9ment magique choisi : D\u00e9g\u00e2t subi (-) et d\u00e9g\u00e2t inflig\u00e9 (+) : 1D4 (min 2) +3 pendant 3 tours"
+    "montant": "Pour l'élément magique choisi : Dégât subi (-) et dégât infligé (+) : 1D4 (min 2) +3 pendant 3 tours"
   },
   "94": {
     "nom": "Aura : Bouclier protecteur",
@@ -372,15 +371,15 @@
   },
   "96": {
     "nom": "Aura : Ami du Marteau",
-    "desc": "Apporte du soutien \u00e0 la cible : PV et d\u00e9g\u00e2t",
-    "montant": "Soin 1D10 +8. Prochain d\u00e9g\u00e2t +1D6+4 (3 tours max)"
+    "desc": "Apporte du soutien à la cible : PV et dégât",
+    "montant": "Soin 1D10 +8. Prochain dégât +1D6+4 (3 tours max)"
   },
   "98": {
     "nom": "Perforation",
     "montant": "1D6+3 : Blocage -2 et réussite des sorts -3 (pendant 2 tours)"
   },
   "99": {
-    "nom": "D\u00e9fense d'Acier",
+    "nom": "Défense d'Acier",
     "montant": "Force +1, Blocage Physique +3 et Magique +2, pendant 1D4 (min 2) +2 tours"
   },
   "100": {
@@ -389,23 +388,23 @@
   },
   "101": {
     "nom": "Ombre Rapide",
-    "desc": "Acc\u00e9l\u00e8re le corps du lanceur",
+    "desc": "Accélère le corps du lanceur",
     "montant": "Dexté +1, Esquive +3 pendant 1D4 (min 2) +2 tours"
   },
   "103": {
     "nom": "Artillerie Lourde",
-    "effet": "D\u00e9g\u00e2t",
+    "effet": "Dégât",
     "montant": "1D10+9"
   },
   "104": {
-    "nom": "R\u00e9paration Armure",
-    "desc": "Permet \u00e0 l'ing\u00e9nieur de soigner et r\u00e9parer son armure",
+    "nom": "Réparation Armure",
+    "desc": "Permet à l'ingénieur de soigner et réparer son armure",
     "montant": "3D6+11"
   },
   "105": {
     "nom": "Lavage de Cerveau",
-    "desc": "R\u00e9duit la concentration de l'ennemi (r\u00e9sistance d'esprit, r\u00e9ussite), pendant 3 tours",
-    "montant": "R\u00e9sistance d'Esprit et r\u00e9ussite des sorts -3 sur 3 tours (Sur le coup : Résistance cible -3)"
+    "desc": "Réduit la concentration de l'ennemi (résistance d'esprit, réussite), pendant 3 tours",
+    "montant": "Résistance d'Esprit et réussite des sorts -3 sur 3 tours (Sur le coup : Résistance cible -3)"
   },
   "106": {
     "nom": "Marteau du Scellement",
@@ -413,69 +412,69 @@
     "montant": "1D8+3 de glace, retire tous les buffs"
   },
   "107": {
-    "nom": "Balle \u00e9lectrique",
-    "desc": "Une balle charg\u00e9e en foudre pour blesser l'ennemi",
+    "nom": "Balle électrique",
+    "desc": "Une balle chargée en foudre pour blesser l'ennemi",
     "montant": "1D10+9 de foudre"
   },
   "109": {
     "nom": "Spirale Glaciale",
-    "montant": "Blocage+2 pendant 2-3 tours, puis \u00e0 la fin d\u00e9g\u00e2t glace +1D6+5"
+    "montant": "Blocage+2 pendant 2-3 tours, puis à la fin dégât glace +1D6+5"
   },
   "110": {
     "nom": "Terreur du Dragon",
-    "montant": "Ennemi -10 PV, R\u00e9sistance d'Esprit et R\u00e9ussite des sorts : -2 sur 3 tours  (+ effet mode)"
+    "montant": "Ennemi -10 PV, Résistance d'Esprit et Réussite des sorts : -2 sur 3 tours  (+ effet mode)"
   },
   "111": {
     "nom": "A la Charge !",
     "desc": "Renforce fortement la prochaine attaque physique du lanceur",
-    "montant": "Prochain d\u00e9g\u00e2t +1D8+8 (3 tours max)"
+    "montant": "Prochain dégât +1D8+8 (3 tours max)"
   },
   "112": {
     "nom": "Griffures Noires",
-    "effet": "D\u00e9g\u00e2t Malus AoE R-",
+    "effet": "Dégât Malus AoE R-",
     "montant": "1D6, et -2 de blocage et d'esquive pour 3 tours"
   },
   "113": {
     "nom": "Provocation de Groupe",
-    "montant": "D\u00e9g\u00e2t 1D6+2, et 75% de chance d'\u00eatre cibl\u00e9 pendant 3 tours"
+    "montant": "Dégât 1D6+2, et 75% de chance d'être ciblé pendant 3 tours"
   },
   "114": {
-    "nom": "Coup de Poing Irrit\u00e9",
+    "nom": "Coup de Poing Irrité",
     "montant": "1D6+5 : Force -3 (pendant 2 tours)"
   },
   "115": {
     "nom": "Destruction Noire",
-    "desc": "Envoi une grande tranche de t\u00e9n\u00e8bres jusqu'\u00e0 4m devant.",
+    "desc": "Envoi une grande tranche de ténèbres jusqu'à 4m devant.",
     "montant": "1D8+5"
   },
   "116": {
-    "nom": "Portail des t\u00e9n\u00e8bres",
-    "desc": "Le lanceur fait un Dash en avant de quelques m\u00e8tres en tranchant sa cible, lui infligeant des d\u00e9g\u00e2ts de t\u00e9n\u00e8bres.",
+    "nom": "Portail des ténèbres",
+    "desc": "Le lanceur fait un Dash en avant de quelques mètres en tranchant sa cible, lui infligeant des dégâts de ténèbres.",
     "montant": "1D10+3, Buff : Esquive +2 sur 2 tours"
   },
   "117": {
-    "nom": "Fr\u00e9n\u00e9sie",
-    "montant": "A chaque tour (4 max) : D\u00e9g\u00e2t (+) et PV (-) 10 ou 15 (à choisir), Si 15 : réussite -1"
+    "nom": "Frénésie",
+    "montant": "A chaque tour (4 max) : Dégât (+) et PV (-) 10 ou 15 (à choisir), Si 15 : réussite -1"
   },
   "118": {
     "nom": "Explosion Glaciale",
-    "desc": "L'utilisateur canalyse sa magie pendant 2 tours (1 d\u00e9 par tour) et la balance \u00e0 toute puissance sur ses adversaires en face (chance blocage/2)",
+    "desc": "L'utilisateur canalyse sa magie pendant 2 tours (1 dé par tour) et la balance à toute puissance sur ses adversaires en face (chance blocage/2)",
     "montant": "3D6 +15 (Blocage +2 pendant l'incantation)"
   },
   "119": {
     "nom": "Encouragement Musical",
-    "desc": "1 tour d'incantation. R\u00e9duit les d\u00e9g\u00e2ts subis, immunise \u00e0 l'endormissement et augmente la r\u00e9sistance mentale (Blocage Esprit/2)",
-    "montant": "D\u00e9g\u00e2t subi -1D4-4, 0 dodo, +2 r\u00e9s esprit, pour 4 tours (Blocage +2 pendant incantation)"
+    "desc": "1 tour d'incantation. Réduit les dégâts subis, immunise à l'endormissement et augmente la résistance mentale (Blocage Esprit/2)",
+    "montant": "Dégât subi -1D4-4, 0 dodo, +2 rés esprit, pour 4 tours (Blocage +2 pendant incantation)"
   },
   "120": {
     "nom": "Brisure Vibrante",
-    "desc": "1 tour d'incantation (1 seul dé). Identifie et frappe sur la/les faiblesse(s) physiques de la cible gr\u00e2ce \u00e0 la fr\u00e9quence vibratoire (ondes)",
+    "desc": "1 tour d'incantation (1 seul dé). Identifie et frappe sur la/les faiblesse(s) physiques de la cible grâce à la fréquence vibratoire (ondes)",
     "montant": "3D6 +12 (Blocage +2 pendant l'incantation)"
   },
   "123": {
-    "nom": "Temp\u00eate du Shaman",
-    "desc": "Le Shaman se concentre pour lancer une temp\u00eate de nature sur les ennemis. ",
-    "effet": "D\u00e9g\u00e2t AoE R+",
+    "nom": "Tempête du Shaman",
+    "desc": "Le Shaman se concentre pour lancer une tempête de nature sur les ennemis. ",
+    "effet": "Dégât AoE R+",
     "montant": "1D10+3",
     "icone": "E0977",
     "stat": "Intelligence",
@@ -483,13 +482,13 @@
   },
   "124": {
     "nom": "Infection Pullulante",
-    "desc": "La cible \u00e9met une explosion (qui blesse lui et les autres) qui peut entra\u00eener l'explosion d'un autre parasite obscur originel (qui blesse que les autres). L'explosion propage le parasite aux ennemis. Le parasite propagé est un originel (blesse et peut exploser), durée identique à celui du porteur. Le porteur qui a explosé ne peut plus exploser.",
+    "desc": "La cible émet une explosion (qui blesse lui et les autres) qui peut entraîner l'explosion d'un autre parasite obscur originel (qui blesse que les autres). L'explosion propage le parasite aux ennemis. Le parasite propagé est un originel (blesse et peut exploser), durée identique à celui du porteur. Le porteur qui a explosé ne peut plus exploser.",
     "montant": "1D8 + 2*(tours parasite restant)"
   },
   "125": {
     "nom": "Armure Draconique",
-    "desc": "Le DK (Dragon Knight) rev\u00eate son corps d'\u00e9caille sur 4 tours. Effets - Embras\u00e9 : Epines+3; D\u00e9moniaque : D\u00e9g\u00e2t subi -2; Cach\u00e9 : Dur\u00e9e+1",
-    "montant": "D\u00e9g\u00e2t subi -1D4 (min 2) -2, 3 tours (+ effet mode)"
+    "desc": "Le DK (Dragon Knight) revête son corps d'écaille sur 4 tours. Effets - Embrasé : Epines+3; Démoniaque : Dégât subi -2; Caché : Durée+1",
+    "montant": "Dégât subi -1D4 (min 2) -2, 3 tours (+ effet mode)"
   },
   "126": {
     "nom": "Dash Foudroyant",
@@ -497,16 +496,16 @@
   },
   "127": {
     "nom": "Protection Absolue",
-    "montant": "1 fois par combat : Mono : Blocage +1, AoE : Blocage -2, d\u00e9g\u00e2t * 2.5 (-20) sur 1 tour"
+    "montant": "1 fois par combat : Mono : Blocage +1, AoE : Blocage -2, dégât * 2.5 (-20) sur 1 tour"
   },
   "128": {
-    "nom": "B\u00e9n\u00e9diction de la Lumi\u00e8re",
+    "nom": "Bénédiction de la Lumière",
     "effet": "Buff",
     "montant": "Valeur des D20 : -2 (si >1) pendant 3 tours"
   },
   "129": {
-    "nom": "Temp\u00eate Infernale",
-    "montant": "1D6+3, 75% de chance d'\u00eatre cibl\u00e9 (1 tour)"
+    "nom": "Tempête Infernale",
+    "montant": "1D6+3, 75% de chance d'être ciblé (1 tour)"
   },
   "130": {
     "nom": "Vague Foudroyante",
@@ -514,52 +513,52 @@
   },
   "131": {
     "nom": "Robot Destructeur",
-    "desc": "Invoque un Robot Nano Autodestructeur. Explose sur courte port\u00e9e. Peut \u00eatre surcharg\u00e9 : Feu = +5, Foudre = Port\u00e9e ++,  Glace = Dext\u00e9-4 (3t),  Nature = Force/Int -3 (2t),  Lumi\u00e8re = R\u00e9uss -3 (1t),  T\u00e9n\u00e8bres = Aspire et entrave (1t)",
-    "montant": "1D6+4 (+1/niveau, 0 d\u00e9g\u00e2t/effet d'arme)"
+    "desc": "Invoque un Robot Nano Autodestructeur. Explose sur courte portée. Peut être surchargé : Feu = +5, Foudre = Portée ++,  Glace = Dexté-4 (3t),  Nature = Force/Int -3 (2t),  Lumière = Réuss -3 (1t),  Ténèbres = Aspire et entrave (1t)",
+    "montant": "1D6+4 (+1/niveau, 0 dégât/effet d'arme)"
   },
   "132": {
-    "nom": "Pi\u00e8ge d'Entrave",
-    "montant": "1D10+4 (+1/niveau, 0 d\u00e9g\u00e2t/effet d'arme), Inflige le status \"Entrave\" pendant 3 tours, pendant l'entrave Blocage -2"
+    "nom": "Piège d'Entrave",
+    "montant": "1D10+4 (+1/niveau, 0 dégât/effet d'arme), Inflige le status \"Entrave\" pendant 3 tours, pendant l'entrave Blocage -2"
   },
   "133": {
     "nom": "Dague Chapardeuse",
-    "effet": "D\u00e9g\u00e2t et Loot+",
-    "montant": "1D6+2, +33% d'or et de loot re\u00e7u sur l'ennemi (equivalent attaque sur faiblesse)"
+    "effet": "Dégât et Loot+",
+    "montant": "1D6+2, +33% d'or et de loot reçu sur l'ennemi (equivalent attaque sur faiblesse)"
   },
   "134": {
     "nom": "Hymne Inspirant",
-    "desc": "Encourage ses camarades, augmentant ainsi leur chance de r\u00e9ussir leur sort. Sort complexe \u00e0 ex\u00e9cuter.",
-    "montant": "R\u00e9ussite des sorts +1 sur 3 tours (Si critique (1,2,3) : Soin AoE 1D6+3 PV)"
+    "desc": "Encourage ses camarades, augmentant ainsi leur chance de réussir leur sort. Sort complexe à exécuter.",
+    "montant": "Réussite des sorts +1 sur 3 tours (Si critique (1,2,3) : Soin AoE 1D6+3 PV)"
   },
   "135": {
-    "nom": "D\u00e9doublement",
+    "nom": "Dédoublement",
     "montant": "Invoque un double de soi pendant 2 tours (max 3 tours avec boost), bénéficie aussi des sorts éveillés (toujours effet/2)"
   },
   "136": {
-    "nom": "Aura du Samoura\u00ef",
-    "desc": "Le samoura\u00ef concentre toute son \u00e9nergie pour insuffler de la puissance \u00e0 tout ses camarades (dont lui-m\u00eame)",
-    "montant": "(R\u00e9ussite -1) D\u00e9g\u00e2t +1D4+3 pendant 2 tours (lanceur inclus)"
+    "nom": "Aura du Samouraï",
+    "desc": "Le samouraï concentre toute son énergie pour insuffler de la puissance à tout ses camarades (dont lui-même)",
+    "montant": "(Réussite -1) Dégât +1D4+3 pendant 2 tours (lanceur inclus)"
   },
   "137": {
     "nom": "Instinct de Survie",
-    "desc": "Le sang de dragon bouillonne et enclenche le mode survie pour son porteur. Effets - Embras\u00e9 : D\u00e9g\u00e2ts +2; D\u00e9moniaque : Blocage+1; Cach\u00e9 : Soin PV+3",
+    "desc": "Le sang de dragon bouillonne et enclenche le mode survie pour son porteur. Effets - Embrasé : Dégâts +2; Démoniaque : Blocage+1; Caché : Soin PV+3",
     "montant": "(Si PV <50%) Soin et Dégât +1D4+2 pendant 3 tours (+ effet mode)"
   },
   "138": {
     "nom": "Ferveur du Guerrier",
-    "desc": "Lorsque la d\u00e9votion du Guerrier est totale (r\u00e9ussite 66%), il parvient \u00e0 se maintenir en vie au-del\u00e0 d'un coup fatal.",
+    "desc": "Lorsque la dévotion du Guerrier est totale (réussite 66%), il parvient à se maintenir en vie au-delà d'un coup fatal.",
     "montant": "Avant de tomber KO (1 fois max) : 1 chance sur 2 (10/20) de survivre, soigne 2D10+10 PV (buffs préservés)"
   },
   "139": {
-    "nom": "Pluie de Fl\u00e8ches",
+    "nom": "Pluie de Flèches",
     "montant": "1D8+5"
   },
   "144": {
     "nom": "Super Star",
-    "montant": "Dext\u00e9rit\u00e9 +2 et Charisme +3 pendant 4 tours"
+    "montant": "Dextérité +2 et Charisme +3 pendant 4 tours"
   },
   "145": {
-    "nom": "Coup N\u00e9vralgique",
+    "nom": "Coup Névralgique",
     "montant": "1D6+4 : Stats -2 pendant 2 tours"
   }
 }

@@ -51,6 +51,7 @@ function updateSlots() {
     ...Object.entries(enemyJSON)
       .filter(
         // If logged : take all, else : take allowed enemies
+        // eslint-disable-next-line no-unused-vars
         ([_, enemy]) => logged || allowedEnnemiesPart.some((enemyPart) => enemy.nom.includes(enemyPart))
       )
       .map(([index, enemy]) => ({
@@ -72,11 +73,13 @@ function updateSlots() {
 function loadEnemy(indexEnemy, ennemiElement, genericEnemy = null) {
   const enemyData = genericEnemy || enemyJSON[indexEnemy];
 
+  const weaknessesE = ennemiElement.querySelector("#weaknesses");
+  weaknessesE.innerHTML = "";
+
   if (!enemyData) {
     console.log(`${indexEnemy} is not an enemy (in the list)`);
     // ennemiElement.querySelector('#nom').innerText = "";
     ennemiElement.querySelector("#desc").innerText = "";
-    ennemiElement.querySelector("#infos").innerText = "";
     ennemiElement.querySelector("#drop").innerText = "";
     ennemiElement.querySelector(".visuel").innerText = "Switch...";
     ennemiElement.querySelector(".icon").src = "";
@@ -94,9 +97,13 @@ function loadEnemy(indexEnemy, ennemiElement, genericEnemy = null) {
     return;
   }
 
-  // ennemiElement.querySelector('#nom').innerText = enemyData.nom;
   ennemiElement.querySelector("#desc").innerText = enemyData.desc && `Desc : ${enemyData.desc}`;
-  ennemiElement.querySelector("#infos").innerText = enemyData.infos && `Infos / BP : ${enemyData.infos}`;
+
+  enemyData.weaknesses?.forEach((element) =>
+    weaknessesE.appendChild(
+      createElement("img", undefined, { class: "skillRangeIcon", src: `images/layout/${unformatText(element)}.png` })
+    )
+  );
   ennemiElement.querySelector("#drop").innerText = enemyData.drop && `Drop : ${enemyData.drop}`;
 
   ennemiElement.querySelector(".visuel").innerText = enemyData.visuel3D;
@@ -228,20 +235,17 @@ document.addEventListener(
 const abnormalWeaknesses = Object.values(enemyJSON)
   .filter((enemy) => !enemy.nom.includes("Veyda") && parseInt(enemy.pvmax) < 500)
   .map((enemy) => {
-    const weaknesses = elements.filter((element) => isTextInText(enemy.infos, element));
-
-    if (weaknesses.length !== 2) return { nom: enemy.nom, infos: enemy.infos, elements: weaknesses };
+    const weaknesses = elements.filter((element) => enemy.weaknesses?.includes(element));
+    if (weaknesses.length !== 2) return { nom: enemy.nom, elements: weaknesses };
     return undefined;
   })
   .filter((w) => !!w);
 
 if (abnormalWeaknesses.length) console.log("Abnormal weaknesses :", abnormalWeaknesses);
 
-const enemyWeakness = Object.values(enemyJSON).map((enemy) => enemy.infos);
-
 const elementsCount = {};
 elements.forEach((element) => {
-  const fullText = unformatText(JSON.stringify(enemyWeakness));
+  const fullText = unformatText(JSON.stringify(Object.values(enemyJSON).map((enemy) => enemy.weaknesses)));
   // The g in the regular expression (meaning "g"lobal) says to search the whole string rather than just find the first occurrence
   const regex = new RegExp(unformatText(element), "g"); // Regex for the element in global
   elementsCount[element] = (fullText.match(regex) || []).length;
@@ -606,25 +610,32 @@ document.querySelector("#createEqpt").addEventListener("click", () => {
 });
 
 // Create enemy & Save
+const addEnemyE = document.querySelector(".addEnemy");
+[...addEnemyE.querySelectorAll("select")].forEach((selectE) => {
+  selectE.style.fontSize = "12px";
+  fillSelectOptions(selectE, [
+    { value: "", innerText: "" },
+    ...elements.map((element) => ({ innerText: element, value: element })),
+  ]);
+});
 
 document.querySelector("#createEnemy").addEventListener("click", () => {
-  const addEnemy = document.querySelector(".addEnemy");
   const enemyID = parseInt(Object.keys(enemyJSON).reverse()[0]) + 1 || 1;
   const newEnemy = {};
   newEnemy[enemyID] = {
-    visuel3D: addEnemy.children[0 + 1].value,
-    nom: addEnemy.children[2 + 1].value,
-    pvmax: addEnemy.children[4 + 1].value,
+    visuel3D: addEnemyE.children[0 + 1].value,
+    nom: addEnemyE.children[2 + 1].value,
+    pvmax: addEnemyE.children[4 + 1].value,
     skills: [
-      addEnemy.children[6 + 1].value,
-      addEnemy.children[8 + 1].value,
-      addEnemy.children[10 + 1].value,
-      addEnemy.children[12 + 1].value,
+      addEnemyE.children[6 + 1].value,
+      addEnemyE.children[8 + 1].value,
+      addEnemyE.children[10 + 1].value,
+      addEnemyE.children[12 + 1].value,
     ],
-    stats: addEnemy.children[14 + 1].value,
-    desc: addEnemy.children[16 + 1].value,
-    infos: addEnemy.children[18 + 1].value,
-    drop: addEnemy.children[20 + 1].value,
+    stats: addEnemyE.children[14 + 1].value,
+    desc: addEnemyE.children[16 + 1].value,
+    drop: addEnemyE.children[18 + 1].value,
+    weaknesses: [...addEnemyE.querySelectorAll("select")].map((s) => s.value).filter((s) => !!s),
   };
   console.log(newEnemy);
 
