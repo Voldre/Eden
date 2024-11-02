@@ -520,6 +520,12 @@ td {
   filter: brightness(110%);
 }
 
+#weaknesses {
+  gap: 0.25rem;
+  display: inline-flex;
+  align-items: baseline;
+}
+
 .malus {
   display: flex;
   margin-bottom: 6px;
@@ -543,6 +549,9 @@ td {
 .infoPersos .commentaire,
 .infoEnnemi .commentaire {
   width: 85%;
+}
+.infoEnnemi .commentaire {
+  margin-top: 6px;
 }
 .enemyDesc {
   overflow: hidden;

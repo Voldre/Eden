@@ -26,8 +26,7 @@ const classesDesc = [
 
 // Generate classes elements
 classes.forEach((classe, i) => {
-  if (classe === "Chev Dragon") classe = "C. Dragon";
-  const nomE = createElement("p", classe);
+  const nomE = createElement("p", classe === "Chev Dragon" ? "C. Dragon" : classe);
   const iconeE = createElement("img", undefined, {
     src: `http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE${iconsClasses[i]}.png`,
   });

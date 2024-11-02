@@ -126,8 +126,6 @@ window.addEventListener("load", () => {
     });
     console.log("Nb persos par classes :", counter);
 
-    const newCounter = {};
-
     const activeP = Object.values(persosJSON).filter((p) => JSON.parse(p.eqpts).filter((e) => !!e).length >= 4);
     const inactiveP = Object.values(persosJSON).filter((p) => !activeP.includes(p));
 

@@ -9,13 +9,13 @@ session_start();
             print_r($files);
             
             // Files must not contain any accents !!!
-            file_put_contents('JDRgalery.json', json_encode($files));
+            file_put_contents('JDRgalery.json', json_encode($files,JSON_UNESCAPED_UNICODE));
         }
         
         if ($_POST['action'] == "wallpaper") { 
             $dir = './images/wallpaper';
             $files = scandir($dir);
-            echo json_encode($files);
+            echo json_encode($files,JSON_UNESCAPED_UNICODE);
         }
 
         if ($_POST['action'] == "chatGpt") { 
@@ -48,7 +48,7 @@ session_start();
                 }
 
                 // var_dump($file);
-                file_put_contents('JDR'.$name.'.json', json_encode($file));
+                file_put_contents('JDR'.$name.'.json', json_encode($file,JSON_UNESCAPED_UNICODE));
                 echo true;
             } 
             echo false;
