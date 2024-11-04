@@ -93,6 +93,9 @@ const classePElement = document.querySelector("#classeP");
 const classeSElement = document.querySelector("#classeS");
 const nivE = document.querySelector("#niv");
 
+const pvmaxE = document.querySelector("#pvmax");
+const pvE = document.querySelector("#pv");
+
 let persoEqptsName = [];
 let persoEqpts = [];
 
@@ -107,7 +110,7 @@ raceE.addEventListener("change", (e) => {
 });
 
 // CLASSES
-const allClassE = document.querySelectorAll('[id^="classe"]');
+const allClassE = [classePElement, classeSElement];
 allClassE.forEach((classE, i) => {
   fillSelectOptions(
     classE,
@@ -115,15 +118,38 @@ allClassE.forEach((classE, i) => {
   );
 
   classE.addEventListener("change", (e) => {
-    const selectedClasseID = classes.indexOf(e.target.value);
-    if (selectedClasseID === -1) {
-      console.log(`${e.target.value} is not a class (in the list)`);
+    const selectedClass = e.target.value;
+    const selectedClassID = classes.indexOf(selectedClass);
+    if (selectedClassID === -1) {
+      console.log(`${selectedClass} is not a class (in the list)`);
       document.querySelector(".iconClasses").children[i].src = "";
     } else {
       document.querySelector(".iconClasses").children[i].src =
-        `http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE${iconsClasses[selectedClasseID]}.png`;
+        `http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE${iconsClasses[selectedClassID]}.png`;
 
       updateSkillsList();
+
+      const classConfig = persoData.guardian?.find((config) => config.classeP === selectedClass);
+
+      if (classConfig) {
+        JSON.parse(classConfig.skills).forEach((skill, index) => {
+          const competenceE = [...competencesE.children][index];
+          competenceE.children[0].value = skill;
+          insertSkill(competenceE, skill);
+        });
+
+        classeSElement.value = e.targ;
+
+        const currentPv = (pvE.value / pvmaxE.value) * classConfig.pvmax;
+        pvE.value = Math.round(currentPv);
+        pvmaxE.value = classConfig.pvmax;
+
+        document.querySelector("#force").value = classConfig.force;
+        document.querySelector("#dexté").value = classConfig.dexté;
+        document.querySelector("#intel").value = classConfig.intel;
+        document.querySelector("#charisme").value = classConfig.charisme;
+        document.querySelector("#esprit").value = classConfig.esprit;
+      }
 
       // Display armor type
       displayArmorTypes();
@@ -182,8 +208,6 @@ const displayArmorTypes = () => {
       .map((classStat) => classStat.armure)
       .flat();
 
-  // console.log(allClassE[0].value, allClassE[1].value, armorTypes);
-
   ["magique", "leger", "lourd"].forEach((type) => {
     document.querySelector(`#${type}`).className = armorTypes.includes(type) ? "skillRangeIcon" : "hide skillRangeIcon";
   });
@@ -202,6 +226,8 @@ iconClassesEs.forEach((icClasseE) => {
 });
 
 function defineAwaken(classe) {
+  if (persoData.guardian) return;
+
   awakenSkillE.classList.add("hide");
 
   const stuffsName = [...equipementsE.children].map((eqpt) => eqpt.children[0].value.toLowerCase());
@@ -809,6 +835,23 @@ function loadFiche() {
 
   if (!persoData) return;
 
+  const guardian = persoData.guardian;
+
+  [...document.querySelectorAll(".guardianHide")].forEach((e) => {
+    guardian ? e.classList.add("hide") : e.classList.remove("hide");
+  });
+  [...document.querySelectorAll(".guardianNotHide")].forEach((e) => {
+    !guardian ? e.classList.add("hide") : e.classList.remove("hide");
+  });
+
+  fillSelectOptions(
+    classePElement,
+    ["", ...classes]
+      // Filtre Gardien Eternel
+      .filter((c) => !guardian || guardian?.find((config) => config.classeP === c))
+      .map((classe) => ({ value: classe, innerText: classe }))
+  );
+
   console.log(`N° de ${persoData.nom} : ${indexPerso + 1}`);
 
   document.querySelector("#nom").value = persoData.nom;
@@ -821,7 +864,7 @@ function loadFiche() {
   document.querySelector("#xp").value = persoData.xp;
   nivE.value = persoData.niv;
 
-  document.querySelector("#pv").value = persoData.pv;
+  pvE.value = persoData.pv;
   pvMaxE.value = persoData.pvmax;
 
   document.querySelector("#stress").value = persoData.stress;
@@ -853,8 +896,9 @@ function loadFiche() {
   document.querySelector(".iconClasses").children[0].src =
     `http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE${iconsClasses[classePID]}.png`;
   document.querySelector(".iconClasses").children[1].id = persoData.classeS;
-  document.querySelector(".iconClasses").children[1].src =
-    `http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE${iconsClasses[classeSID]}.png`;
+  document.querySelector(".iconClasses").children[1].src = guardian
+    ? "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE20.png" // Messie
+    : `http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE${iconsClasses[classeSID]}.png`;
 
   // Nouveauté 27/05 : 4eme accessoire si le perso est au moins niveau 4
   if (persoData.niv >= 4) {
@@ -1137,7 +1181,6 @@ saveButton.addEventListener("click", () => {
     toastNotification("Erreur : ID Perso ou Nom invalide", 4000, true);
     return;
   }
-  console.log(`Cookie length : ${newPerso.length}/4000`);
   const result = setCookie("persosJSON", newPerso);
   if (result) {
     callPHP({ action: "saveFile", name: "persos" });
@@ -1155,27 +1198,34 @@ function savePerso() {
 
   if (!persoId || persoId < 0 || !name) return null;
 
-  persosJSON[persoId] = {
-    nom: name,
-    race: raceE.value,
+  const mainElement = {
     classeP: classePElement.value,
-    classeS: classeSElement.value,
-    xp: document.querySelector("#xp").value,
-    niv: nivE.value,
-
-    awaken: nivE.value >= 10 ? awakenSkillE.id : "",
-
-    pv: document.querySelector("#pv").value,
     pvmax: pvMaxE.value,
-
-    stress: document.querySelector("#stress").value,
-
-    pp: document.querySelector("#pp").src,
     force: document.querySelector("#force").value,
     dexté: document.querySelector("#dexté").value,
     intel: document.querySelector("#intel").value,
     charisme: document.querySelector("#charisme").value,
     esprit: document.querySelector("#esprit").value,
+    skills: JSON.stringify(skillsName),
+  };
+
+  persosJSON[persoId] = {
+    nom: name,
+    race: raceE.value,
+
+    classeS: persosJSON[persoId]?.guardian ? classePElement.value : classeSElement.value,
+    xp: document.querySelector("#xp").value,
+    niv: nivE.value,
+
+    awaken: nivE.value >= 10 ? awakenSkillE.id : "",
+
+    pv: pvE.value,
+
+    stress: document.querySelector("#stress").value,
+
+    pp: document.querySelector("#pp").src,
+
+    ...mainElement,
 
     forceB: document.querySelector("#forceB").value,
     dextéB: document.querySelector("#dextéB").value,
@@ -1183,7 +1233,6 @@ function savePerso() {
     charismeB: document.querySelector("#charismeB").value,
     espritB: document.querySelector("#espritB").value,
 
-    skills: JSON.stringify(skillsName),
     eqpts: JSON.stringify(persoEqptsName),
     inventaire: document.querySelector(".inventaire").value,
     argent: document.querySelector("#argent").value,
@@ -1191,10 +1240,18 @@ function savePerso() {
     background: document.querySelector(".background").value,
     notes: document.querySelector(".notes").value,
     sticky: document.querySelector(".sticky").value,
+    passif10: persosJSON[persoId]?.passif10 ?? undefined,
     passif12: persosJSON[persoId]?.passif12 ?? undefined,
     passif14: persosJSON[persoId]?.passif14 ?? undefined,
     isArchived: persosJSON[persoId]?.isArchived ?? false,
     joueur: persosJSON[persoId]?.joueur ?? null,
+    guardian: persosJSON[persoId]?.guardian
+      ? [
+          // Save
+          ...persosJSON[persoId].guardian.filter((config) => config.classeP !== classePElement.value),
+          mainElement,
+        ]
+      : undefined,
   };
 
   console.log(persosJSON);
@@ -1202,6 +1259,9 @@ function savePerso() {
   const newPerso = {};
   newPerso[persoId] = persosJSON[persoId];
   console.log(newPerso);
+
+  // Update persoData
+  persoData = persosJSON[persoId];
 
   return newPerso;
 }
@@ -1232,6 +1292,15 @@ function syntheseDesc() {
   return description;
 }
 
+const passifPoints12Desc = `1 point :<ul><li>Dégât +1</li><li>Soin +1</li><li>Dégât reçu -1</li><li>PV +7.5</li><li>Familier : Dégât et Soin +1</li></ul>
+2 points :<ul><li>Blocage Physique +1</li><li>Esquive +1</li><li>Blocage Magique +1</li><li>Résistance d'esprit +1</li><li>Montant des sorts +1</li><li>Une statistique +1</li></ul>`;
+
+const passifPoints34Desc = `3 points :<ul><li>+1 emplacement de sort</li></ul>
+4 points :<ul><li>Durée des sorts +1</li></ul>`;
+
+const passifWarning = `<span style="color: lightcoral;">/!\\ Attention : vous ne pourrez plus facilement changer votre passif après avoir choisi !</span><br/>
+A noter : ces montants ne comptent pas dans la limite des stuffs (voir "Equipements - Infos")`;
+
 const labelsDescription = {
   force:
     "Permet d'utiliser des attaques lourdes, de pousser, de soulever.<br/>Si la stat est à 1 ou 2 : Impossible de tenir une arme. <br/>Permet de bloquer des coups physiques (Dé/2)<br/><br/> Un blocage à 20 inflige 5 dégâts de plus. <br/>Les stats sont limitées à 17, et 17 (+1) avec buff/stuff.<br/>Le blocage est limité à 13.",
@@ -1251,8 +1320,8 @@ const labelsDescription = {
     "Changer d'arme en combat (si équipée) se fait en début de tour (action instantanée).<br/>Sinon, échanger d'arme ou d'accessoire prend 1 tour.<br/><br/>Porter une armure non adapté (magique, léger, lourd) implique des malus de stats (voir page \"Infos JDR\", section \"Armure\").<br/><br/>Le montant total de l'ensemble des stuffs est limité : +2 de montant des sorts, +1 durée des sorts, -1 durée des malus, et +50% PV soin reçu.<br/><br/>Le montant fixe total (hors %) des accessoires est limité : +2 par stat, +3 blocage/esquive, pour les soins (infligé, reçu) : 6, pour les dégâts infligés : 6 (+2 si bonus élémentaire) et dégâts reçu : 5",
   //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."
   synthese: syntheseDesc(),
-  passif12:
-    'Le passif niveau 12 consiste en un ajout de montant de stats.<br/>Vous avez 4 points à répartir dans les montants suivant (max 2 points par montant, sauf le 3) :<br/>1 point :<ul><li>Dégât +1</li><li>Soin +1</li><li>Dégât reçu -1</li><li>PV +7.5</li><li>Familier : Dégât et Soin +1</li></ul>2 points :<ul><li>Blocage Physique +1</li><li>Esquive +1</li><li>Blocage Magique +1</li><li>Résistance d\'esprit +1</li><li>Montant des sorts +1</li><li>Une statistique +1</li></ul>3 points :<ul><li>+1 emplacement de sort</li></ul>4 points :<ul><li>Durée des sorts +1</li></ul><span style="color: lightcoral;">/!\\ Attention : vous ne pourrez plus facilement changer votre passif après avoir choisi !</span><br/>A noter : ces montants ne comptent pas dans la limite des stuffs (voir "Equipements - Infos")',
+  passif10: `Le passif niveau 10 consiste en un ajout de montant de stats.<br/>Vous avez 2 points à répartir dans les montants suivant :<br/>${passifPoints12Desc}${passifWarning}`,
+  passif12: `Le passif niveau 12 consiste en un ajout de montant de stats.<br/>Vous avez 4 points à répartir dans les montants suivant (max 2 points par montant, sauf le 3) :<br/>${passifPoints12Desc}${passifPoints34Desc}${passifWarning}`,
   passif14: `Le passif niveau 14 octroi au personnage une nouvelle capacité unique, il peut s'agir d'un passif ou d'une aptitude.
   <br/>Ces capacités sont similaires à celles des boss, car le niveau 14+ reflète un très haut niveau de puissance.
   <br/>Voici la liste des capacités...
@@ -1277,6 +1346,8 @@ const labelsDescription = {
   <li>Constitution Supérieure : Esprit +1 et +3 points à choisir sur le Passif 12, toujours avec la limite totale de 2 points par montant.</li>
   </ul>
   A noter : Les capacités liés aux sorts ne sont pas consommées en cas d'échec, sauf en cas de critique (19,20)`,
+  guardianFatigue:
+    "En tant que Gardien Eternel, vous avez la possibilité de Switcher de classe. Mais cela n'est pas sans coût.<br/>- Chaque switch augmente votre fatigue (entre 50 et 10 selon votre niveau).<br/>- Avant le niveau 10, le switch consomme votre tour. Au-delà, le switch devient une action instantanée.",
 };
 
 initDialog(labelsDescription);
@@ -1374,6 +1445,11 @@ function sumObjectsByKey(...objs) {
 }
 
 function setPassifs(niv) {
+  const perso = persosJSON[persoE.id];
+
+  const passif10E = document.querySelector("#passif10");
+  passif10E.innerHTML = "";
+  passif10E.classList = niv >= 10 && perso.guardian ? "" : "hide";
   const passif12E = document.querySelector("#passif12");
   passif12E.innerHTML = "";
   passif12E.classList = niv >= 12 ? "" : "hide";
@@ -1381,11 +1457,18 @@ function setPassifs(niv) {
   passif14E.innerHTML = "";
   passif14E.classList = niv >= 14 ? "" : "hide";
 
-  const perso = persosJSON[persoE.id];
+  if (niv >= 10 && perso.guardian) {
+    const li = createElement(
+      "li",
+      `Passif 10 (Gardien Eternel) ${perso.passif10 ? `: ${perso.passif10}` : "à définir : 2 points à répartir (cliquez)"}`
+    );
+    passif10E.append(li);
+  }
+
   if (niv >= 12) {
     const li = createElement(
       "li",
-      `Passif 12 "${perso.passif12 ? `: ${perso.passif12}` : "à définir : 4 points à répartir (cliquez)"}`
+      `Passif 12 ${perso.passif12 ? `: ${perso.passif12}` : "à définir : 4 points à répartir (cliquez)"}`
     );
     passif12E.append(li);
   }
@@ -1394,6 +1477,22 @@ function setPassifs(niv) {
     const li = createElement("li", `Passif 14 "${perso.passif14 ? `: ${perso.passif14}` : " à définir (cliquez)"}`);
     passif14E.append(li);
   }
+
+  // Set fatigue cost for guardian
+  let fatigueCost;
+  if (niv < 5) {
+    fatigueCost = 50;
+  } else if (niv < 9) {
+    fatigueCost = 40;
+  } else if (niv < 12) {
+    fatigueCost = 30;
+  } else if (niv < 15) {
+    fatigueCost = 20;
+  } else {
+    fatigueCost = 10;
+  }
+
+  document.querySelector("#guardianFatigue").innerText = `${fatigueCost} ${niv >= 10 ? "(Instant)" : "(1 tour)"}`;
 }
 
 const getCards = Object.values(cardJSON)
