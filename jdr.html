@@ -71,9 +71,15 @@
           <label for="classeP">Classe 1</label>
           <select name="classeP" id="classeP"></select>
           <br />
-          <label for="classeS">Classe 2</label>
-          <select name="classeS" id="classeS"></select>
-          <br />
+          <div class="guardianHide">
+            <label for="classeS">Classe 2</label>
+            <select name="classeS" id="classeS"></select>
+            <br />
+          </div>
+          <div class="guardianNotHide hide" style="margin-top: -8px">
+            <label for="guardianFatigue">Fatigue +</label>
+            <span name="guardianFatigue" id="guardianFatigue"></span>
+          </div>
           <div class="iconClasses"><img src="" class="classeP" alt="" /><img src="" class="classeS" alt="" /></div>
           <img src="./images/layout/question_mark.png" class="skillRangeIcon" id="infoStats" />
           <label for="xp">XP</label>
@@ -307,6 +313,7 @@
           </div>
         </div>
         <ul id="passifs">
+          <label for="passif10" class="hide" id="passif10"></label>
           <label for="passif12" class="hide" id="passif12"></label>
           <label for="passif14" class="hide" id="passif14"></label>
         </ul>
