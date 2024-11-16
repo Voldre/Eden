@@ -8,3 +8,4 @@ images/items/*
 images/loadingframe/*
 jdr_master_admin.html
 ignore*
+dist/*

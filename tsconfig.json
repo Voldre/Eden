@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "module": "esnext", // Utiliser le module ES6 (peut être changé selon ton besoin)
+    "skipLibCheck": true,
+    "strict": true, // Activer le mode strict pour un code plus sûr
+    "rootDir": "./", // Indique que les fichiers TypeScript sont à la racine du projet
+    "outDir": "./dist", // Dossier de sortie pour les fichiers compilés
+    "moduleResolution": "bundler",
+    // "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    // "noEmit": true // This param doesn't generate output in /dist
+
+    "esModuleInterop": true, // Permet une meilleure compatibilité avec les modules CommonJS
+
+    "allowJs": true // Allow JS file in commit
+  },
+  "include": ["*.ts"],
+  "exclude": ["tsconfig.json", "node_modules"]
+}
