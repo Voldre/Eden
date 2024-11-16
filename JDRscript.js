@@ -28,17 +28,15 @@ import {
   setCookie,
   closeButton,
   createElement,
+  inputSelector,
+  addChangeListener,
+  addClickListener,
 } from "./utils.js";
-
 console.log("Skills JSON", skillsJSON);
 console.log("Persos JSON", persosJSON);
-
 const dialog = document.querySelector("dialog");
-
 const buttonBuffs = document.querySelector("#buttonBuffs");
-
 // Table Initialisation
-
 console.log(
   "Combo de classes (Tableau X*Y) 20-20 :",
   classes.map((c1) => ({
@@ -51,27 +49,21 @@ console.log(
     ),
   }))
 );
-
 const races = ["Humain", "Ezelin", "Ursun", "Zumi", "Anuran", "Torturran", "Drakai", "Tuskar", "Ogre"];
-
 const poids = ["Moyen", "Léger", "Lourd", "Léger", "Moyen", "Moyen", "Léger", "Lourd", "Lourd"];
-
 const elementsCategories = elements.map((element) => {
   // Remove all accents (é,è,ç)
   const labelElement = unformatText(element);
   // Dégât xxx + || Dégât de xxx + ... ?
   return { regex: [`${element} +`], label: labelElement, img: true };
 });
-
 const statistiques = ["Force", "Dextérité", "Intelligence", "Charisme", "Esprit"];
-
 // Categories not in the synthesis, but used to calcule limits
 const statsCategories = statistiques.map((stat) => {
   // Don't match "Résistance d'esprit" for "Esprit" stat
   const regex = stat === "Esprit" ? "(?<!résistance d')esprit" : stat;
   return { regex: [`${regex} +`], label: unformatText(stat), img: false };
 });
-
 const synthesisCategories = [
   { regex: ["Dégât +"], label: "DGT", img: false },
   { regex: ["Faiblesse +"], label: "F", img: false },
@@ -82,106 +74,106 @@ const synthesisCategories = [
   ...elementsCategories.slice(3),
   { regex: ["Dégât -", "Dégât reçu -"], label: "ARM", img: false },
 ];
-
 // Main elements
-
 const persoE = document.querySelector(".perso");
 let indexPerso = -1;
-let persoData = {};
-
+let persoData;
+const nomE = document.querySelector("#nom");
 const classePElement = document.querySelector("#classeP");
 const classeSElement = document.querySelector("#classeS");
-const nivE = document.querySelector("#niv");
-
-const pvmaxE = document.querySelector("#pvmax");
-const pvE = document.querySelector("#pv");
-
-let persoEqptsName = [];
+const nivE = inputSelector("#niv", "number");
+const pvmaxE = inputSelector("#pvmax", "number");
+const pvE = inputSelector("#pv", "number");
+const forceE = inputSelector("#force", "number");
+const dextéE = inputSelector("#dexté", "number");
+const intelE = inputSelector("#intel", "number");
+const charismeE = inputSelector("#charisme", "number");
+const espritE = inputSelector("#esprit", "number");
+const forceBE = inputSelector("#forceB", "string");
+const dextéBE = inputSelector("#dextéB", "string");
+const intelBE = inputSelector("#intelB", "string");
+const charismeBE = inputSelector("#charismeB", "string");
+const espritBE = inputSelector("#espritB", "string");
+const argentE = inputSelector("#argent", "string");
+const personnaliteE = inputSelector(".personnalité", "string");
+const backgroundE = inputSelector(".background", "string");
+const notesE = inputSelector(".notes", "string");
+const stickyE = inputSelector(".sticky", "string");
 let persoEqpts = [];
-
 const errorEqptE = document.querySelector("#errorEQPT");
-
 // RACES
 const raceE = document.querySelector("#race");
-raceE.addEventListener("change", (e) => {
-  document.querySelector(".poids").innerText = poids[races.indexOf(e.target.value)];
+addChangeListener(raceE, (e) => {
+  const race = e.target.value;
+  document.querySelector(".poids").innerText = poids[races.indexOf(race)];
   // Verify stats repartition
   statsVerification();
 });
-
 // CLASSES
 const allClassE = [classePElement, classeSElement];
+const iconClassesEs = [...document.querySelector(".iconClasses").children];
 allClassE.forEach((classE, i) => {
   fillSelectOptions(
     classE,
     ["", ...classes].map((classe) => ({ value: classe, innerText: classe }))
   );
-
-  classE.addEventListener("change", (e) => {
+  const iconClassE = iconClassesEs[i];
+  addChangeListener(classE, (e) => {
     const selectedClass = e.target.value;
     const selectedClassID = classes.indexOf(selectedClass);
     if (selectedClassID === -1) {
       console.log(`${selectedClass} is not a class (in the list)`);
-      document.querySelector(".iconClasses").children[i].src = "";
+      if (iconClassE) iconClassE.src = "";
     } else {
-      document.querySelector(".iconClasses").children[i].src =
-        `http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE${iconsClasses[selectedClassID]}.png`;
-
-      updateSkillsList();
-
-      const classConfig = persoData.guardian?.find((config) => config.classeP === selectedClass);
-
+      if (iconClassE)
+        iconClassE.src = `http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE${iconsClasses[selectedClassID]}.png`;
+      updateAvailableSkillsList();
+      const classConfig = persoData?.guardian?.find((config) => config.classeP === selectedClass);
       if (classConfig) {
-        JSON.parse(classConfig.skills).forEach((skill, index) => {
-          const competenceE = [...competencesE.children][index];
-          competenceE.children[0].value = skill;
+        classConfig.skills.forEach((skill, index) => {
+          const competenceE = competenceEs[index];
           insertSkill(competenceE, skill);
         });
-
-        classeSElement.value = e.targ;
-
+        // If guardian, apply for second class the primary class
+        classeSElement.value = selectedClass;
+        updateAvailableSkillsList();
         const currentPv = (pvE.value / pvmaxE.value) * classConfig.pvmax;
         pvE.value = Math.round(currentPv);
         pvmaxE.value = classConfig.pvmax;
-
-        document.querySelector("#force").value = classConfig.force;
-        document.querySelector("#dexté").value = classConfig.dexté;
-        document.querySelector("#intel").value = classConfig.intel;
-        document.querySelector("#charisme").value = classConfig.charisme;
-        document.querySelector("#esprit").value = classConfig.esprit;
+        // This syntaxe is 100% lighter than :
+        // document.querySelector<HTMLInputElement>("#force")!.value = `${classConfig.force}`
+        forceE.value = classConfig.force;
+        dextéE.value = classConfig.dexté;
+        intelE.value = classConfig.intel;
+        charismeE.value = classConfig.charisme;
+        espritE.value = classConfig.esprit;
       }
-
       // Display armor type
       displayArmorTypes();
-
       statsVerification();
     }
   });
 });
-
 const displayArmorTypes = () => {
   const physicBorderClasses = ["Chevalier"];
   const magicBorderClasses = ["Sage", "Luminary"];
-
-  const classes = [allClassE[0].value, allClassE[1].value];
-  const classesArmorTypes = classes.map((classe) => statsJSON.classes.find((c) => c.Classe === classe));
-
+  const persoClasses = [allClassE[0].value, allClassE[1].value];
+  const classesArmorTypes = persoClasses
+    .map((classe) => statsJSON.classes.find((c) => c.Classe === classe))
+    .filter((c) => !!c);
   let physicException = false;
   let magicException = false;
-
   physicBorderClasses.forEach((pClass) => {
-    if (classes.includes(pClass)) {
+    if (persoClasses.includes(pClass)) {
       physicException = true;
     }
   });
   magicBorderClasses.forEach((pClass) => {
-    if (classes.includes(pClass)) {
+    if (persoClasses.includes(pClass)) {
       magicException = true;
     }
   });
-
   let armorTypes = [];
-
   if (physicException) {
     const otherClass = classesArmorTypes.filter((c) => !physicBorderClasses.includes(c.Classe))[0];
     armorTypes.push("lourd");
@@ -202,40 +194,28 @@ const displayArmorTypes = () => {
       armorTypes.push("leger");
       armorTypes.push(otherClass.armure);
     }
-  } else
-    armorTypes = statsJSON.classes
-      .filter((e) => classes.includes(e.Classe))
-      .map((classStat) => classStat.armure)
-      .flat();
-
+  } else armorTypes = classesArmorTypes.map((classStat) => classStat.armure).flat();
   ["magique", "leger", "lourd"].forEach((type) => {
     document.querySelector(`#${type}`).className = armorTypes.includes(type) ? "skillRangeIcon" : "hide skillRangeIcon";
   });
 };
-
 // CLASSES EVEILLES
-const iconClassesEs = [...document.querySelector(".iconClasses").children];
-iconClassesEs.forEach((icClasseE) => {
-  icClasseE.addEventListener("click", (e) => {
-    iconClassesEs.forEach((e) => e.classList.remove("awaken"));
-    const classe = document.querySelector(`#${e.target.className}`).value;
-    e.target.classList.add("awaken");
-
+iconClassesEs.forEach((iconClasseE, i) => {
+  iconClasseE.addEventListener("click", () => {
+    iconClassesEs.forEach((e2) => e2.classList.remove("awaken"));
+    iconClassesEs[i].classList.add("awaken");
+    const classe = allClassE[i].value;
     defineAwaken(classe);
   });
 });
-
+const awakenSkillE = document.querySelector(".awakenSkill");
 function defineAwaken(classe) {
-  if (persoData.guardian) return;
-
+  if (persoData?.guardian) return;
   awakenSkillE.classList.add("hide");
-
-  const stuffsName = [...equipementsE.children].map((eqpt) => eqpt.children[0].value.toLowerCase());
+  const stuffsName = equipementEs.map((eqptE) => eqptE.selectE.value.toLowerCase());
   const niv = nivE.value;
   if (classe === "" || (niv < 10 && !stuffsName.includes("pistolet suspect"))) return;
-
   awakenSkillE.classList.remove("hide");
-
   let nbUse;
   if (niv >= 15) {
     nbUse = 3;
@@ -244,30 +224,24 @@ function defineAwaken(classe) {
   } else {
     nbUse = 1;
   }
-
   awakenSkillE.id = classe;
   awakenSkillE.querySelector(".nom").innerText = `Eveil du ${classe}`;
   awakenSkillE.querySelector(".effet").innerText = "Inactif";
-
   const nbTurns = nbUse === 1 ? "4" : "3";
   awakenSkillE.querySelector(".montant").innerText =
     `${nbUse} fois par combat : Eveil des compétences : Durée ${nbTurns} tours`;
-
   const classeID = classes.indexOf(classe);
   awakenSkillE.querySelector(".icone").src = `http://voldre.free.fr/Eden/images/skillIcon/${iconsEveil[classeID]}.png`;
   awakenSkillE.querySelector(".desc").innerText =
     `Eveil de la classe du ${classe}, ses compétences sont altérées et améliorées !`;
 }
-
 // Click on awaken skill element
-const awakenSkillE = document.querySelector(".awakenSkill");
-awakenSkillE.addEventListener("click", (e) => {
+addClickListener(awakenSkillE, (e) => {
   if (e.target.id !== "awakenButton") {
     awakenSkillE.querySelector(".desc").classList.toggle("hide");
   }
 });
-
-document.querySelector("#awakenButton").addEventListener("click", (e) => {
+addClickListener(document.querySelector("#awakenButton"), (e) => {
   let awakenClass; // Classe à éveiller
   if (e.target.innerText === "Inactif") {
     e.target.innerText = "Actif";
@@ -276,23 +250,39 @@ document.querySelector("#awakenButton").addEventListener("click", (e) => {
   } else {
     e.target.innerText = "Inactif";
     e.target.style.color = "black";
-    awakenClass = "No class";
+    awakenClass = undefined;
   }
-
-  JSON.parse(persoData.skills).forEach((skill, index) => {
-    const competence = [...competencesE.children][index];
-    competence.children[0].value = skill;
-    insertSkill(competence, skill, awakenClass);
+  persoData?.skills.forEach((skill, index) => {
+    insertSkill(competenceEs[index], skill, awakenClass);
   });
 });
-
 // PV
-const pvMaxE = document.querySelector("#pvmax");
-pvMaxE.addEventListener("change", () => statsVerification());
-
+pvmaxE.addEventListener("change", () => statsVerification());
 // Niv
-document.querySelector("#xp").addEventListener("change", (e) => {
-  const xp = parseInt(e.target.value);
+const onChangeNiv = (niv) => {
+  updateSkillsSlots();
+  // Nouveauté 15/08/23 : Calcul automatique du montant des stats, 12/05/24 : Add stats repertatition
+  statsVerification();
+  // Nouveauté 27/05/23 : 4eme accessoire au niveau 4
+  if (niv >= 4) {
+    equipementEs[equipementEs.length - 2].classList.remove("hide");
+  } else {
+    equipementEs[equipementEs.length - 2].classList.add("hide");
+  }
+  // Nouveauté 12/06/23 : 5eme accessoire au niveau 8
+  if (niv >= 8) {
+    equipementEs[equipementEs.length - 1].classList.remove("hide");
+  } else {
+    equipementEs[equipementEs.length - 1].classList.add("hide");
+  }
+  // Nouveauté 18/10/23 : Compétence éveillés
+  if (persoData) defineAwaken(persoData.awaken);
+  // Nouveauté 24/05/24 - 14/09/24 : Passif niveau 12 & 14
+  setPassifs(niv);
+};
+const xpE = inputSelector("#xp", "number");
+addChangeListener(xpE, (e) => {
+  const xp = e.target.value;
   let niv;
   // Update 02/04/24 : From lvl 10 to 15 : 200 xp instead of 150
   // Update 12/06/23 : From lvl 5 to 10 : 150 xp instead of 100
@@ -304,50 +294,25 @@ document.querySelector("#xp").addEventListener("change", (e) => {
     niv = Math.trunc(xp / 100) + 1;
   }
   nivE.value = niv;
-
-  updateSkillsSlots();
-
-  // Nouveauté 15/08 : Calcul automatique du montant des stats
-  statsVerification();
-
-  // Nouveauté 27/05/23 : 4eme accessoire au niveau 4
-  if (niv >= 4) {
-    equipementsE.lastElementChild.previousElementSibling.classList.remove("hide");
-  } else {
-    equipementsE.lastElementChild.previousElementSibling.classList.add("hide");
-  }
-  // Nouveauté 12/06/23 : 5eme accessoire au niveau 8
-  if (niv >= 8) {
-    equipementsE.lastElementChild.classList.remove("hide");
-  } else {
-    equipementsE.lastElementChild.classList.add("hide");
-  }
-  // Nouveauté 18/10/23 : Compétence éveillés
-  defineAwaken(persoData.awaken);
-  // Nouveauté 24/05/24 - 14/09/24 : Passif niveau 12 & 14
-  setPassifs(niv);
+  onChangeNiv(niv);
 });
-
 // Nouveauté 15/08 : Calcul automatique du montant des stats
 function statsVerification() {
   const niv = nivE.value;
   const sommeStats = statsValue(false).reduce(sum);
-  const statsRequired = 61 + Math.trunc(parseInt(niv) / 5);
-  if (sommeStats !== statsRequired) {
-    document.querySelector("#errorStat").innerText =
-      `/!\\ Attention : Erreur points de stats : ${sommeStats}, attendu : ${statsRequired}`;
-  } else {
-    document.querySelector("#errorStat").innerText = "";
-  }
-
+  const statsRequired = 61 + Math.trunc(niv / 5);
+  document.querySelector("#errorStat").innerText =
+    sommeStats !== statsRequired
+      ? `/!\\ Attention : Erreur points de stats : ${sommeStats}, attendu : ${statsRequired}`
+      : "";
   // 12/05/2024 Verify stats repartition according to race and classes
+  if (!classePElement.value || !classeSElement.value || !raceE.value) return;
   const { allStats } = getStats();
   // Rename stats name according to element
   allStats.Dexté = allStats.Dextérité;
   allStats.Intel = allStats.Intelligence;
-
   ["force", "dexté", "intel", "charisme", "esprit"].forEach((statName) => {
-    const statE = document.querySelector(`#${statName}`);
+    const statE = inputSelector(`#${statName}`, "number");
     // The maximum is 17
     if (statE.value < Math.min(allStats[capitalize(statName)], 17)) {
       statE.classList.add("wrong");
@@ -356,149 +321,131 @@ function statsVerification() {
     }
   });
   // PV are always the right value (character cannot have more, stuff are handled)
-  if (parseInt(pvMaxE.value) !== allStats["PVMax"]) {
-    pvMaxE.classList.add("wrong");
+  if (pvmaxE.value !== allStats.PVMax) {
+    pvmaxE.classList.add("wrong");
   } else {
-    pvMaxE.classList.remove("wrong");
+    pvmaxE.classList.remove("wrong");
   }
 }
-
-document.querySelector(".stats").addEventListener("change", (e) => {
-  if (parseInt(e.target.value) > parseInt(e.target.max)) e.target.value = e.target.max;
-
+const statsE = inputSelector(".stats", "number");
+statsE.addEventListener("change", () => {
+  if (statsE.value > statsE.max) statsE.value = statsE.max;
   statsVerification();
-
-  const eqptsName = [...equipementsE.children].map((competenceE) => competenceE.children[0].value);
-  const persoEqpts = eqptsName.map((eqptName) =>
-    Object.values(eqptJSON).find((eqpt) => unformatText(eqpt.nom) === unformatText(eqptName))
-  );
-  getAllRes(persoEqpts);
+  getAllRes();
 });
-
 // STRESS
-document.querySelector("#stress").addEventListener("change", (e) => {
-  if (e.target.value >= 50) {
-    document.querySelector("#stressImpact").innerText = `(Stats -${Math.trunc(e.target.value / 50)})`;
-  } else {
-    document.querySelector("#stressImpact").innerText = "";
-  }
-});
-
-// COMPETENCES
-const competencesE = document.querySelector(".skills");
-
-[...competencesE.children].forEach((competence) => {
-  // Selected skill
-  competence.children[0].addEventListener("change", (e) => {
-    insertSkill(competence, e.target.value);
-  });
+const stressE = inputSelector("#stress", "number");
+const updateStress = () => {
+  document.querySelector("#stressImpact").innerText =
+    stressE.value >= 50 ? `(Stats -${Math.trunc(stressE.value / 50)})` : "";
+};
+stressE.addEventListener("change", updateStress);
+const competenceEs = [...document.querySelector(".skills").children].map((competenceE) =>
+  Object.assign(competenceE, {
+    selectE: competenceE.children[0],
+    effetE: competenceE.children[1],
+    montantE: competenceE.children[2],
+    iconeWrapperE: competenceE.children[3],
+    descE: competenceE.children[4],
+  })
+);
+competenceEs.forEach((competenceE) => {
   // Click on skill element
-  competence.addEventListener("click", (e) => {
-    if (!e.target.classList.contains("nom") && !e.target.classList.contains("buffTurn")) {
+  addClickListener(competenceE, (e) => {
+    if (!e.target?.classList.contains("nom") && !e.target.classList.contains("buffTurn")) {
       // If click on select element, don't show/hide the desc ?
-      competence.children[4].classList.toggle("hide");
+      competenceE.descE.classList.toggle("hide");
     }
   });
+  // Selected skill
+  addChangeListener(competenceE.selectE, (e) => {
+    insertSkill(competenceE, e.target.value);
+  });
 });
-
 function updateSkillsSlots() {
   // Display skils slots
-  [...competencesE.children].forEach((competence, i) => {
+  competenceEs.forEach((competenceE, i) => {
     const niv = nivE.value || 1;
     const SlotsAvailable = Math.trunc(niv / 2) + 3; // Update 17/05/23, 3 au lieu de 2, car 4 skills sur ~ 12-13 possibles
     if (i > SlotsAvailable) {
-      competence.classList.add("hide");
+      competenceE.classList.add("hide");
     } else {
-      competence.classList.remove("hide");
+      competenceE.classList.remove("hide");
     }
   });
 }
-function updateSkillsList() {
+function updateAvailableSkillsList() {
   // Depending on classes
-  [...competencesE.children].forEach((competenceE) => {
+  competenceEs.forEach((competenceE) => {
     // Skills list
-    const selectedOption = competenceE.children[0].value;
-
+    const selectedOption = competenceE.selectE.value;
     const classeP = classePElement.value;
     const classeS = classeSElement.value;
-
     // Look at the First weapon name
     const weaponName = unformatText(document.querySelector(".arme").children[0].value);
-
     // Liste des sorts des classes (+ arme)
     const options = Object.values(skillsJSON)
       .filter(
         (skill) => skill.classe.includes(classeP) || skill.classe.includes(classeS) || skill.classe.includes(weaponName)
       )
       .map((skill) => ({ value: skill.nom, innerText: skill.nom }));
-
-    fillSelectOptions(competenceE.children[0], options);
-    competenceE.children[0].value = selectedOption;
+    fillSelectOptions(competenceE.selectE, options);
+    competenceE.selectE.value = selectedOption;
   });
 }
-
-function insertSkill(skillElement, skillName, awakenClass = false) {
+function insertSkill(skillElement, skillName, awakenClass) {
   const selectedSkill = Object.values(skillsJSON).find((skill) => unformatText(skill.nom) === unformatText(skillName));
-
+  skillElement.selectE.value = skillName;
   skillElement.classList.remove("awaken");
-
+  const currentIconSrc = skillElement.iconeWrapperE.children[0].src;
   if (!selectedSkill) {
     if (skillName !== "") {
       console.log(`${skillName} is not a skill (in the list)`);
     }
-    skillElement.children[1].innerText = "";
-    skillElement.children[2].innerText = "";
-    skillElement.children[3].src = "";
-    skillElement.children[3].title = "";
-    skillElement.children[4].innerText = "";
+    skillElement.effetE.innerText = "";
+    skillElement.montantE.innerText = "";
+    skillElement.iconeWrapperE.children[0].src = "";
+    skillElement.iconeWrapperE.children[0].title = "";
+    skillElement.descE.innerText = "";
   } else {
     let selectedAwakenSkill;
-    if (selectedSkill.classe.includes(awakenClass)) {
+    if (awakenClass && selectedSkill.classe.includes(awakenClass)) {
       skillElement.classList.add("awaken");
       selectedAwakenSkill = Object.values(skillsAwakenJSON).find(
         (skill) => unformatText(skill.nom) === unformatText(skillName)
       );
     }
-
     const skillDesc = selectedAwakenSkill?.desc || selectedSkill.desc;
     const skillMontant = selectedAwakenSkill?.montant || selectedSkill.montant;
-
     const skillRange = selectedSkill.effet.split("AoE ")[1] ?? null; // en bas [0] + "AoE"
     const selectedSkillEffet = skillRange ? selectedSkill.effet.split(" AoE")[0] : selectedSkill.effet;
-    skillElement.children[1].innerText = selectedSkillEffet;
-
+    skillElement.effetE.innerText = selectedSkillEffet;
     if (skillRange) {
       const rangeI = aoeDescInfo.range.findIndex((x) => x === skillRange[0]);
       const typeI = aoeDescInfo.type.findIndex((x) => x === skillRange[1]);
-
       const skillRangeIconE = createElement("span", undefined, {
         title: `AoE en ${aoeDescInfo.rangeName[rangeI]} ${aoeDescInfo.typeName[typeI]}`,
-        class: "skillRangeIcon",
+        className: "skillRangeIcon",
         style: { backgroundImage: `url(http://voldre.free.fr/Eden/images/layout/${skillRange}.png)` },
       });
-
       const skillStatE = createElement("span", `/ ${selectedSkill.stat}`);
-
-      skillElement.children[1].append(skillRangeIconE, skillStatE);
+      skillElement.effetE.append(skillRangeIconE, skillStatE);
     } else {
-      skillElement.children[1].innerText += ` / ${selectedSkill.stat}`;
+      skillElement.effetE.innerText += ` / ${selectedSkill.stat}`;
     }
-
-    skillElement.children[2].innerText = skillMontant;
-    insertBuffInteraction(skillElement.children[3], skillName, selectedSkill, skillMontant);
-    skillElement.children[3].children[0].src = `http://voldre.free.fr/Eden/images/skillIcon/${selectedSkill.icone}.png`;
-    skillElement.children[3].title = skillDesc;
-    skillElement.children[4].innerText = skillDesc;
-
+    skillElement.montantE.innerText = skillMontant;
+    insertBuffInteraction(skillElement.iconeWrapperE, skillName, selectedSkill, skillMontant);
+    skillElement.iconeWrapperE.children[0].src = `http://voldre.free.fr/Eden/images/skillIcon/${selectedSkill.icone}.png`;
+    skillElement.iconeWrapperE.title = skillDesc;
+    skillElement.descE.innerText = skillDesc;
     // Update 29/07/2023, case de PV pour familiers
     const inputExists = skillElement.children.length >= 6;
     if (inputExists) {
       // Check if it's same skill by icon
-      const sameSkill = skillElement.children[3].children[0].src.includes(selectedSkill.icone);
+      const sameSkill = currentIconSrc.includes(selectedSkill.icone);
       if (sameSkill) return; // No need to update
       skillElement.removeChild(skillElement.children[5]); // Update
     }
-
     if (selectedSkill.effet === "Invocation") {
       const pvPetE = createElement("input", undefined, { type: "number" });
       skillElement.append(pvPetE);
@@ -508,94 +455,76 @@ function insertSkill(skillElement, skillName, awakenClass = false) {
       const textE = createElement("span", "Lum/Ten");
       const lumiereE = createElement("input", undefined, { type: "number", style: { width: "40px" } });
       const tenebresE = createElement("input", undefined, { type: "number", style: { width: "40px" } });
-
       const wrapperE = createElement("div", [textE, lumiereE, tenebresE], { style: { width: "max-content" } });
       skillElement.append(wrapperE);
     }
-
     // Update 14/01/2024, add inputs to handle number of hits
     if (skillName === "Euphorie") {
       const textE = createElement("span", "Coups");
-      const hitsE = createElement("input", undefined, { style: { width: "40px" }, type: "number", max: 5 });
+      const hitsE = createElement("input", undefined, { style: { width: "40px" }, type: "number", max: "5" });
       const wrapperE = createElement("div", [textE, hitsE], { style: { width: "max-content" } });
       skillElement.append(wrapperE);
     }
   }
 }
-
+// Buff
+const buffEs = [...document.querySelectorAll(".buffTurn")];
+const malusEs = [...document.querySelector(".malus").children];
 function insertBuffInteraction(buffTurnE, skillName, selectedSkill, skillMontant) {
   const skillEffet = selectedSkill.effet;
   buffTurnE.style.cursor = "pointer";
-
-  if (
-    skillEffet.includes("Provocation") ||
-    skillEffet.includes("Buff") ||
-    skillEffet.includes("Malus") ||
-    skillEffet.includes("Transformation") ||
-    skillEffet.includes("Status")
-  ) {
-    buffTurnE.remove;
-    buffTurnE.style.cursor = "url('images/layout/cursor-x.png'), auto";
-    buffTurnE.addEventListener("click", () => {
-      if (buffTurnE.children[1]) {
-        if (buffTurnE.children[1].innerText === "0") {
-          buffTurnE.children[2]?.remove();
-          buffTurnE.children[1].remove();
-        } else {
-          // Don't update, remove skill before
-          return;
-        }
+  const buffEvent = () => {
+    if (buffTurnE.children[1]) {
+      if (buffTurnE.children[1].innerText === "0") {
+        buffTurnE.children[2]?.remove();
+        buffTurnE.children[1].remove();
+      } else {
+        // Don't update, remove skill before
+        return;
       }
-      dialog.innerText = "";
-      dialog.style.width = "60%";
-
-      const turnText = createElement("p", "Tours ");
-
-      const turnE = createElement("input", undefined, {
-        type: "number",
-        min: 1,
-        max: 9,
-        value: 3,
-      });
-
-      const confirmE = createElement("button", "Confirmer", {
-        onClick: () => {
-          const turnOfBuffE = createElement("p", turnE.value);
-          const amountOfBuffE = createElement("p", hasAmount ? amountE.value : "");
-          buffTurnE.append(turnOfBuffE, amountOfBuffE);
-          dialog.close();
-        },
-      });
-
-      // Event listener defined after createElement because confirmE is required
-      turnE.addEventListener("change", (e) => {
-        confirmE.disabled = e.target.value < 1;
-      });
-
-      const amountText = createElement("p", "Montants ");
-      const amountE = createElement("input", undefined, { type: "number", min: 1, max: 20, value: 2 });
-
-      const hasAmount = skillMontant.includes("1D") || skillMontant.includes("effet mode");
-
-      const inputs = createElement("div", hasAmount ? [turnText, turnE, amountText, amountE] : [turnText, turnE], {
-        style: { display: "flex", alignItems: "center" },
-      });
-
-      const name = createElement("p", skillName);
-      const globalE = createElement("p", [name, inputs, confirmE, closeButton(dialog)], { class: "dialogBuff" });
-
-      dialog.append(globalE);
-      // Ouverture en "modal"
-      dialog.showModal();
-
-      buttonBuffs.className = "";
+    }
+    dialog.innerText = "";
+    dialog.style.width = "60%";
+    const turnText = createElement("p", "Tours ");
+    const turnE = createElement("input", undefined, {
+      type: "number",
+      min: "1",
+      max: "9",
+      value: "3",
     });
+    const confirmE = createElement("button", "Confirmer", {
+      onClick: () => {
+        const turnOfBuffE = createElement("p", turnE.value);
+        const amountOfBuffE = createElement("p", hasAmount ? amountE.value : "");
+        buffTurnE.append(turnOfBuffE, amountOfBuffE);
+        dialog.close();
+      },
+    });
+    // Event listener defined after createElement because confirmE is required
+    addChangeListener(turnE, (e) => {
+      confirmE.disabled = parseInt(e.target.value) < 1;
+    });
+    const amountText = createElement("p", "Montants ");
+    const amountE = createElement("input", undefined, { type: "number", min: "1", max: "20", value: "2" });
+    const hasAmount = skillMontant.includes("1D") || skillMontant.includes("effet mode");
+    const inputs = createElement("div", hasAmount ? [turnText, turnE, amountText, amountE] : [turnText, turnE], {
+      style: { display: "flex", alignItems: "center" },
+    });
+    const name = createElement("p", skillName);
+    const globalE = createElement("p", [name, inputs, confirmE, closeButton(dialog)], { className: "dialogBuff" });
+    dialog.append(globalE);
+    // Ouverture en "modal"
+    dialog.showModal();
+    buttonBuffs.className = "";
+  };
+  if (["Provocation", "Buff", "Malus", "Transformation", "Status"].some((effet) => skillEffet.includes(effet))) {
+    buffTurnE.style.cursor = "url('images/layout/cursor-x.png'), auto";
+    buffTurnE.addEventListener("click", buffEvent);
   }
 }
-
 buttonBuffs.addEventListener("click", () => {
   let buffExist = false;
-  [...document.querySelectorAll(".buffTurn")].forEach((buffE) => {
+  buffEs.forEach((buffE) => {
     if (buffE.children.length > 1) {
       const turnLeftElement = buffE.children[1];
       if (turnLeftElement.innerText === "1") {
@@ -603,14 +532,13 @@ buttonBuffs.addEventListener("click", () => {
         buffE.children[1].remove();
       } else {
         buffExist = true;
-        turnLeftElement.innerText = parseInt(turnLeftElement.innerText) - 1;
+        turnLeftElement.innerText = `${parseInt(turnLeftElement.innerText) - 1}`;
       }
     }
   });
-  [...document.querySelector(".malus").children].forEach((buffE) => {
-    const turnLeftElement = buffE.children[0];
-    const turnLeft = Math.max(0, parseInt(turnLeftElement.value) - 1);
-    console.log(turnLeft);
+  malusEs.forEach((malusE) => {
+    const turnLeftElement = malusE.children[0];
+    const turnLeft = Math.max(0, turnLeftElement.value - 1);
     turnLeftElement.value = turnLeft;
     if (turnLeft >= 1) {
       buffExist = true;
@@ -618,14 +546,12 @@ buttonBuffs.addEventListener("click", () => {
   });
   buttonBuffs.className = buffExist ? "" : "hide";
 });
-
-[...document.querySelector(".malus").children].forEach((buffE) => {
-  buffE.children[0].addEventListener("change", (e) => {
+malusEs.forEach((malusE) => {
+  addChangeListener(malusE.children[0], (e) => {
     if (e.target.value > 0) buttonBuffs.className = "";
   });
 });
-
-[...document.querySelectorAll(".buffTurn")].forEach((buffE) => {
+buffEs.forEach((buffE) => {
   buffE.addEventListener("click", () => {
     if (buffE.children.length > 1) {
       const turnLeftElement = buffE.children[1];
@@ -633,130 +559,113 @@ buttonBuffs.addEventListener("click", () => {
         buffE.children[2]?.remove();
         buffE.children[1].remove();
       } else {
-        turnLeftElement.innerText = parseInt(turnLeftElement.innerText) - 1;
+        turnLeftElement.innerText = `${parseInt(turnLeftElement.innerText) - 1}`;
       }
     }
   });
 });
-
-// EQUIPEMENTS
-const equipementsE = document.querySelector(".equipements");
-
-[...equipementsE.children].forEach((equipementE) => {
+const equipementEs = [...document.querySelector(".equipements").children].map((equipementE) =>
+  Object.assign(equipementE, {
+    selectE: equipementE.children[0],
+    effetE: equipementE.children[1],
+    montantE: equipementE.children[2],
+    iconeE: equipementE.children[3],
+    descE: equipementE.children[4],
+  })
+);
+// Use function to get updated select value
+const getPersoEqptsFromSelects = () =>
+  equipementEs.map((eqptE) =>
+    Object.values(eqptJSON).find((eqpt) => unformatText(eqpt.nom) === unformatText(eqptE.selectE.value))
+  );
+equipementEs.forEach((equipementE) => {
   // Selected eqpt
-  equipementE.children[0].addEventListener("change", (e) => {
+  addChangeListener(equipementE.selectE, (e) => {
     const newEqpt = Object.values(eqptJSON).find((eqpt) => unformatText(eqpt.nom) === unformatText(e.target.value));
     insertEqpt(equipementE, newEqpt);
-
-    persoEqptsName = [...equipementsE.children].map((equipementE) => equipementE.children[0].value);
-    persoEqpts = persoEqptsName.map((eqptName) =>
-      Object.values(eqptJSON).find((eqpt) => unformatText(eqpt.nom) === unformatText(eqptName))
-    );
-    getAllRes(persoEqpts);
-    createEquipmentSynthesis(persoEqpts);
-    updateSkillsList();
+    // Update equipements variable on change
+    persoEqpts = getPersoEqptsFromSelects();
+    getAllRes();
+    createEquipmentSynthesis();
+    updateAvailableSkillsList();
   });
-
   // Click on eqpt element
-  equipementE.addEventListener("click", (e) => {
+  addClickListener(equipementE, (e) => {
     if (!e.target.classList.contains("nom")) {
       // If click on select element, don't show/hide the desc ?
-      equipementE.children[4].classList.toggle("hide");
+      equipementE.descE.classList.toggle("hide");
     }
   });
 });
-
 // selectedEqpt as an object eqpt
 function insertEqpt(eqptElement, selectedEqpt) {
   // Best update 18/08/2023 (finally !) : "la casse maj/min" the case (upper/lower) now doesn't matter !
   if (!selectedEqpt) {
-    eqptElement.children[1].innerText = "";
-    eqptElement.children[2].innerText = "";
-    eqptElement.children[3].src = "";
-    eqptElement.children[3].title = "";
-    eqptElement.children[4].innerText = "";
+    eqptElement.effetE.innerText = "";
+    eqptElement.montantE.innerText = "";
+    eqptElement.iconeE.src = "";
+    eqptElement.iconeE.title = "";
+    eqptElement.descE.innerText = "";
   } else {
-    eqptElement.children[1].innerText = selectedEqpt.effet;
-    eqptElement.children[2].innerText = selectedEqpt.montant;
-    eqptElement.children[3].src = `http://voldre.free.fr/Eden/images/items/${selectedEqpt.icone}.png`;
-    eqptElement.children[3].title = selectedEqpt.desc;
-    eqptElement.children[4].innerText = selectedEqpt.desc;
-
+    eqptElement.effetE.innerText = selectedEqpt.effet;
+    eqptElement.montantE.innerText = selectedEqpt.montant;
+    eqptElement.iconeE.src = `http://voldre.free.fr/Eden/images/items/${selectedEqpt.icone}.png`;
+    eqptElement.iconeE.title = selectedEqpt.desc;
+    eqptElement.descE.innerText = selectedEqpt.desc;
     // Update eqptElement 05/2024, case de PV pour monture
     if (eqptElement.children.length >= 6) {
       eqptElement.removeChild(eqptElement.children[5]);
     }
-
     if (selectedEqpt.effet === "Monture de Combat") {
       const pvPetE = createElement("input", undefined, { type: "number" });
       eqptElement.append(pvPetE);
     }
   }
 }
-
 // INVENTAIRE
-
+const inventaireE = document.querySelector(".inventaire");
 // Display items in the inventory
 const getItemsInInventory = (inventory) => {
   const inventoryUnformated = unformatText(inventory).replaceAll("bombes", "bombe").replaceAll("potions", "potion");
-
   const itemsInInventory = allItems.filter((item) => isTextInText(inventoryUnformated, item.title));
-
-  const eqptsName = [...equipementsE.children].map((competenceE) => unformatText(competenceE.children[0].value));
-
   const itemsE = document.querySelector(".items");
   itemsE.innerHTML = "";
-
   itemsInInventory.forEach((item) => {
     const imgE = createElement("img", undefined, {
       src: item.src,
       title: `${item.title}\n${item.desc}\n${item.montant}`,
     });
-
     // Highlight equipments equipped
-    if (eqptsName.find((eqptName) => isTextInText(eqptName, item.title))) imgE.style.borderColor = "goldenrod";
-
+    if (persoEqpts.find((eqpt) => eqpt?.nom && isTextInText(eqpt.nom, item.title)))
+      imgE.style.borderColor = "goldenrod";
     imgE.addEventListener("click", () => {
       dialog.innerText = "";
-
       const title = createElement("h2", item.title);
-      const headerE = createElement("div", [imgE.cloneNode(), title], { class: "itemHeader" });
+      const headerE = createElement("div", [document.importNode(imgE), title], { className: "itemHeader" });
       const desc = createElement("p", item.desc);
-
       dialog.append(headerE, desc);
-
       if (item.montant) {
-        // @TODO directly append item.montant, item.effet ?
         const montant = createElement("p", item.montant);
         const effet = createElement("p", item.effet);
         dialog.append(montant, effet);
       }
-
       dialog.append(closeButton(dialog));
-
       dialog.showModal();
     });
-
     itemsE.append(imgE);
   });
 };
-
-document.querySelector(".inventaire").addEventListener("change", (e) => getItemsInInventory(e.target.value));
-
+addChangeListener(inventaireE, (e) => getItemsInInventory(e.target.value));
 //  PERSOS
 const selectPersoE = document.querySelector("#selectPerso");
 let selectedPerso = selectPersoE.value;
-
 const archiveE = document.querySelector("#archived");
-
 const persoOptions = Object.entries(persosJSON).map(([id, perso]) => ({
   value: `J${parseInt(id) + 1}`,
   innerText: perso.nom,
   hidden: perso.isArchived,
 }));
-
 const nbNewPersos = Object.values(persosJSON).filter((perso) => perso.joueur === undefined).length;
-
 // Default new slots for new characters (limited)
 const newPersoOptions =
   nbNewPersos > 5
@@ -765,15 +674,11 @@ const newPersoOptions =
         const label = `J${Object.entries(persosJSON).length + i + 1}`;
         return { value: label, innerText: label, hidden: false };
       });
-
 if (!newPersoOptions.length) toastNotification("Limite de personnages temporaires atteinte", 2000, true);
-
 fillSelectOptions(selectPersoE, [...persoOptions, ...newPersoOptions]);
-
-archiveE.addEventListener("change", (e) => {
-  onArchive(e.target.checked);
+archiveE.addEventListener("change", () => {
+  onArchive(archiveE.checked);
 });
-
 const onArchive = (isArchived) => {
   Object.entries(persosJSON).forEach(([id, perso]) => {
     // Hidden if isArchived is matching
@@ -781,7 +686,6 @@ const onArchive = (isArchived) => {
   });
   archiveE.checked = isArchived;
 };
-
 //  LOADING
 window.addEventListener("load", () => {
   const urlParams = new URLSearchParams(window.location.search);
@@ -796,14 +700,11 @@ window.addEventListener("load", () => {
     indexPerso = 0;
     loadFiche();
   }
-
   // Enable all buttons
   saveButton.disabled = false;
   downloadButton.disabled = false;
   screenshotButton.disabled = false;
-
   callPHP({ action: "jdrGalerie" });
-
   // Fill galery
   if (!galeryJSON?.length) {
     toastNotification("Erreur : le chargement de la galerie à échouée", 4000, true);
@@ -811,39 +712,31 @@ window.addEventListener("load", () => {
     galeryJSON.forEach((pic) => {
       if (pic.includes(".jpg") || pic.includes(".png") || pic.includes(".webp")) {
         const imgE = createElement("img", undefined, { src: `./images/jdrgalerie/${pic}` });
-        document.querySelector(".galerie").append(imgE);
+        galeryE.append(imgE);
       }
     });
   }
 });
-
-selectPersoE.addEventListener("change", (e) => {
+addChangeListener(selectPersoE, (e) => {
   const perso = e.target.value;
   indexPerso = e.target.selectedIndex;
-
   loadFiche();
-
   const newUrl = `${window.location.origin}${window.location.pathname}?perso=${indexPerso + 1}`;
   window.history.pushState({}, perso, newUrl);
   toastNotification(`Chargement réussi de ${perso}`);
 });
-
 function loadFiche() {
   // Define perso
-  persoE.id = indexPerso;
+  persoE.id = indexPerso.toString();
   persoData = persosJSON[indexPerso];
-
   if (!persoData) return;
-
   const guardian = persoData.guardian;
-
-  [...document.querySelectorAll(".guardianHide")].forEach((e) => {
-    guardian ? e.classList.add("hide") : e.classList.remove("hide");
-  });
-  [...document.querySelectorAll(".guardianNotHide")].forEach((e) => {
-    !guardian ? e.classList.add("hide") : e.classList.remove("hide");
-  });
-
+  [...document.querySelectorAll(".guardianHide")].forEach((e) =>
+    guardian ? e.classList.add("hide") : e.classList.remove("hide")
+  );
+  [...document.querySelectorAll(".guardianNotHide")].forEach((e) =>
+    !guardian ? e.classList.add("hide") : e.classList.remove("hide")
+  );
   fillSelectOptions(
     classePElement,
     ["", ...classes]
@@ -851,200 +744,144 @@ function loadFiche() {
       .filter((c) => !guardian || guardian?.find((config) => config.classeP === c))
       .map((classe) => ({ value: classe, innerText: classe }))
   );
-
   console.log(`N° de ${persoData.nom} : ${indexPerso + 1}`);
-
-  document.querySelector("#nom").value = persoData.nom;
-  document.querySelector("#nom").title = `Perso n°${parseInt(indexPerso)}${1}`;
+  nomE.value = persoData.nom;
+  nomE.title = `Perso n°${indexPerso + 1}`;
   raceE.value = persoData.race;
   classePElement.value = persoData.classeP;
   classeSElement.value = persoData.classeS;
-
   displayArmorTypes();
-  document.querySelector("#xp").value = persoData.xp;
+  xpE.value = persoData.xp;
   nivE.value = persoData.niv;
-
+  onChangeNiv(persoData.niv);
   pvE.value = persoData.pv;
-  pvMaxE.value = persoData.pvmax;
-
-  document.querySelector("#stress").value = persoData.stress;
-  document.querySelector("#stressImpact").innerText =
-    persoData.stress >= 50 ? `(Stats -${Math.trunc(persoData.stress / 50)})` : "";
-
-  document.querySelector("#pp").src = persoData.pp;
-  document.querySelector("#force").value = persoData.force;
-  document.querySelector("#dexté").value = persoData.dexté;
-  document.querySelector("#intel").value = persoData.intel;
-  document.querySelector("#charisme").value = persoData.charisme;
-  document.querySelector("#esprit").value = persoData.esprit;
-
-  document.querySelector("#forceB").value = persoData.forceB;
-  document.querySelector("#dextéB").value = persoData.dextéB;
-  document.querySelector("#intelB").value = persoData.intelB;
-  document.querySelector("#charismeB").value = persoData.charismeB;
-  document.querySelector("#espritB").value = persoData.espritB;
-
-  document.querySelector(".notes").value = persoData.notes;
-  document.querySelector(".sticky").value = persoData.sticky ?? "";
-
+  pvmaxE.value = persoData.pvmax;
+  stressE.value = persoData.stress;
+  updateStress();
+  ppE.src = persoData.pp;
+  forceE.value = persoData.force;
+  dextéE.value = persoData.dexté;
+  intelE.value = persoData.intel;
+  charismeE.value = persoData.charisme;
+  espritE.value = persoData.esprit;
+  forceBE.value = persoData.forceB;
+  dextéBE.value = persoData.dextéB;
+  intelBE.value = persoData.intelB;
+  charismeBE.value = persoData.charismeB;
+  espritBE.value = persoData.espritB;
+  notesE.value = persoData.notes;
+  stickyE.value = persoData.sticky ?? "";
   onArchive(persoData.isArchived);
   // Classes du perso
   const classePID = classes.indexOf(persoData.classeP);
   const classeSID = classes.indexOf(persoData.classeS);
-
-  document.querySelector(".iconClasses").children[0].id = persoData.classeP;
-  document.querySelector(".iconClasses").children[0].src =
-    `http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE${iconsClasses[classePID]}.png`;
-  document.querySelector(".iconClasses").children[1].id = persoData.classeS;
-  document.querySelector(".iconClasses").children[1].src = guardian
+  iconClassesEs[0].id = persoData.classeP;
+  iconClassesEs[0].src = `http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE${iconsClasses[classePID]}.png`;
+  iconClassesEs[1].id = persoData.classeS;
+  iconClassesEs[1].src = guardian
     ? "http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE20.png" // Messie
     : `http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE${iconsClasses[classeSID]}.png`;
-
-  // Nouveauté 27/05 : 4eme accessoire si le perso est au moins niveau 4
-  if (persoData.niv >= 4) {
-    equipementsE.lastElementChild.previousElementSibling.classList.remove("hide");
-  } else {
-    equipementsE.lastElementChild.previousElementSibling.classList.add("hide");
-  }
-  // Nouveauté 12/06 : 5eme accessoire au niveau 8
-  if (persoData.niv >= 8) {
-    equipementsE.lastElementChild.classList.remove("hide");
-  } else {
-    equipementsE.lastElementChild.classList.add("hide");
-  }
   // Nouveauté 18/10/23 : Compétence éveillés
-  [...document.querySelector(".iconClasses").children].forEach((e) => e.classList.remove("awaken"));
-
-  defineAwaken(persoData.awaken);
-  setPassifs(persoData.niv);
-
-  // Equipements du perso
-  persoEqptsName = JSON.parse(persoData.eqpts);
-  persoEqpts = persoEqptsName.map((eqptName) =>
+  iconClassesEs.forEach((e) => e.classList.remove("awaken"));
+  // Update equipements variable on load
+  persoEqpts = persoData.eqpts.map((eqptName) =>
     Object.values(eqptJSON).find((eqpt) => unformatText(eqpt.nom) === unformatText(eqptName))
   );
   persoEqpts.forEach((eqpt, index) => {
-    const eqptE = [...equipementsE.children][index];
-    eqptE.children[0].value = eqpt?.nom ?? "";
+    const eqptE = equipementEs[index];
+    equipementEs[index].selectE.value = eqpt?.nom ?? "";
     insertEqpt(eqptE, eqpt);
   });
-
-  getAllRes(persoEqpts);
-  createEquipmentSynthesis(persoEqpts);
-
-  // Skills du perso (update list après les équipements, car skills issus de l'arme "Monture de Combat")
-  updateSkillsList();
-
-  updateSkillsSlots();
-
-  JSON.parse(persoData.skills).forEach((skill, index) => {
-    const competenceE = [...competencesE.children][index];
-    competenceE.children[0].value = skill;
+  getAllRes();
+  statsVerification();
+  createEquipmentSynthesis();
+  updateAvailableSkillsList();
+  // Fill skills
+  persoData.skills.forEach((skill, index) => {
+    const competenceE = competenceEs[index];
     insertSkill(competenceE, skill);
   });
-
   // Inventaire du perso
-  document.querySelector(".inventaire").value = persoData.inventaire;
-
+  inventaireE.value = persoData.inventaire;
   getItemsInInventory(persoData.inventaire);
-
   document.querySelector(".poids").innerText = poids[races.indexOf(persoData.race)];
-
-  document.querySelector("#argent").value = persoData.argent;
-
-  document.querySelector(".personnalité").value = persoData.personnalite;
-  document.querySelector(".background").value = persoData.background;
-
-  // Nouveauté 15/08/23 : Calcul automatique du montant des stats, 12/05/24 : Add stats repertatition
-  statsVerification();
+  argentE.value = persoData.argent;
+  personnaliteE.value = persoData.personnalite;
+  backgroundE.value = persoData.background;
 }
-
 function statsValue(resistance) {
-  return ["force", "dexté", "intel", "charisme", "esprit"].map((stat) => {
-    const statMain = document.querySelector(`#${stat}`).value;
-    const statBWithRegex = document.querySelector(`#${stat}B`).value.replace(/[^\d.+-]/g, "");
-
-    const statsBValue = statBWithRegex?.match(/^[-+]\d+|\d*$/)[0]
+  const statB = [forceBE, dextéBE, intelBE, charismeBE, espritBE];
+  return [forceE, dextéE, intelE, charismeE, espritE].map((statE, index) => {
+    const statMain = statE.value;
+    const statBWithRegex = statB[index].value.replace(/[^\d.+-]/g, "");
+    const statsBValue = statBWithRegex.match(/^[-+]\d+|\d*$/)?.[0]
       ? parseInt(statBWithRegex.replace("+", "").replace("-", ""))
       : 0;
-
     return resistance
       ? statsBValue !== 0
         ? statBWithRegex.includes("+")
-          ? Math.ceil((parseInt(statMain) + statsBValue) / 2)
-          : Math.ceil((parseInt(statMain) - statsBValue) / 2)
-        : Math.ceil(parseInt(statMain) / 2)
-      : parseInt(statMain);
+          ? Math.ceil((statMain + statsBValue) / 2)
+          : Math.ceil((statMain - statsBValue) / 2)
+        : Math.ceil(statMain / 2)
+      : statMain;
   });
 }
 // SYNTHESE DES EQUIPEMENTS
-
-function getAllRes(persoEqpts) {
+function getAllRes() {
+  if (!persoData) return;
   const resAmount = statsValue(true);
-
   const montantBlocP = parseEqptsByRegex(["Blocage +", "Blocage physique +"], persoEqpts, persoData).reduce(sum, 0);
   const montantEsq = parseEqptsByRegex(["Esquive +"], persoEqpts, persoData).reduce(sum, 0);
   const montantBlocM = parseEqptsByRegex(["Blocage +", "Blocage magique +"], persoEqpts, persoData).reduce(sum, 0);
   const montantRes = parseEqptsByRegex(["Résistance d'esprit +"], persoEqpts, persoData).reduce(sum, 0);
-
   document.querySelector("#resForce").innerText = `Bloc ${resAmount[0]} ${montantBlocP ? `+ ${montantBlocP}` : ""}`;
   document.querySelector("#resDexté").innerText = `Esq ${resAmount[1]} ${montantEsq ? `+ ${montantEsq}` : ""}`;
   document.querySelector("#resIntel").innerText = `Bloc ${resAmount[2]} ${montantBlocM ? `+ ${montantBlocM}` : ""}`;
   document.querySelector("#resEsprit").innerText = `Res ${resAmount[4]} ${montantRes ? `+ ${montantRes}` : ""}`;
 }
-
-function createEquipmentSynthesis(persoEqpts) {
+function createEquipmentSynthesis() {
   const eqptSynthesisE = document.querySelector(".equipements-synthese");
   eqptSynthesisE.innerHTML = "";
-
   const accessValues = [];
-
   synthesisCategories.forEach((category) => {
+    if (!persoData) return;
     const eqptsValueList = parseEqptsByRegex(category.regex, persoEqpts, persoData);
-    // console.log("eqptsValueList", eqptsValueList);
     const eqptsValue = eqptsValueList.reduce(sum, 0);
-
     // 01/06/2024 : Get category over the defined limit for accessories (exclude passif)
     accessValues.push({
       label: category.label,
       value: sumEqptsAsAccess(category.regex, persoEqpts, persoData),
     });
-
     if (!eqptsValue || eqptsValue === 0) return;
-
     let categoryValue;
     if (category.label === "DGT" && eqptsValueList[2]) {
       categoryValue = `${eqptsValue - eqptsValueList[2]} | ${eqptsValue - eqptsValueList[0] - eqptsValueList[1]}`;
     } else {
       categoryValue = eqptsValue;
     }
-
     const categoryValueE = createElement("p", `${categoryValue}`);
-
     const categoryHeaderE = category.img
       ? createElement("img", undefined, {
           title: category.label,
           src: encodeURI(`images/layout/${category.label}.png`),
         })
       : createElement("p", category.label);
-
-    const synthesisCategoryE = createElement("div", [categoryHeaderE, categoryValueE], { class: "synthese" });
+    const synthesisCategoryE = createElement("div", [categoryHeaderE, categoryValueE], { className: "synthese" });
     eqptSynthesisE.append(synthesisCategoryE);
   });
-
   // 01/06/2024 : Display category over the defined limit for accessories
   statsCategories.forEach((category) => {
+    if (!persoData) return;
     accessValues.push({
       label: category.label,
       value: sumEqptsAsAccess(category.regex, persoEqpts, persoData),
     });
   });
-
+  if (!persoData) return;
   const montantBlocP = sumEqptsAsAccess(["Blocage +", "Blocage physique +"], persoEqpts, persoData);
   const montantEsq = sumEqptsAsAccess(["Esquive +"], persoEqpts, persoData);
   const montantBlocM = sumEqptsAsAccess(["Blocage +", "Blocage magique +"], persoEqpts, persoData);
   const montantRes = sumEqptsAsAccess(["Résistance d'esprit +"], persoEqpts, persoData);
-
   const degatP = accessValues
     .filter((v) => ["DGT", "P"].includes(v.label))
     .map((v) => v.value)
@@ -1054,9 +891,7 @@ function createEquipmentSynthesis(persoEqpts) {
     .map((v) => v.value)
     .reduce(sum, 0);
   const degatElems = accessValues.filter((v) => elements.map((e) => unformatText(e)).includes(v.label));
-
-  console.log(accessValues);
-
+  console.log("Synthesis Access Values", accessValues);
   const accesLimitsByCategory = [
     { label: "Dégât (Phy)", limit: 6, value: degatP },
     { label: "Dégât (Mag)", limit: 6, value: degatM },
@@ -1065,27 +900,25 @@ function createEquipmentSynthesis(persoEqpts) {
       limit: 8,
       value: Math.max(degatP, degatM) + degatElem.value,
     })),
-    { label: "Soin", limit: 6, value: accessValues.find((v) => v.label === "S").value },
+    { label: "Soin", limit: 6, value: accessValues.find((v) => v.label === "S")?.value },
     ...statsCategories.map((category) => ({
       label: category.label,
       limit: 2,
-      value: accessValues.find((v) => v.label === category.label).value,
+      value: accessValues.find((v) => v.label === category.label)?.value,
     })),
-    { label: "Armure", limit: 5, value: accessValues.find((v) => v.label === "ARM").value },
+    { label: "Armure", limit: 5, value: accessValues.find((v) => v.label === "ARM")?.value },
     { label: "Blocage physique", limit: 3, value: montantBlocP },
     { label: "Esquive", limit: 3, value: montantEsq },
     { label: "Blocage magique", limit: 3, value: montantBlocM },
     { label: "Résistance d'esprit", limit: 3, value: montantRes },
   ];
   // console.log(accesLimitsByCategory);
-  const eqptOverLimits = accesLimitsByCategory.filter((category) => category.value > category.limit);
+  const eqptOverLimits = accesLimitsByCategory.filter((category) => category.value && category.value > category.limit);
   errorEqptE.innerText = eqptOverLimits.length ? "/!\\ Des montants dépassent les limites" : "";
-
   if (eqptOverLimits) {
     errorEqptE.addEventListener("click", () => showEqptErrors(eqptOverLimits));
   }
 }
-
 function showEqptErrors(eqptOverLimits) {
   dialog.innerText = "La somme des montants des accessoires sont trop élevés sur les catégories suivantes :";
   const listE = createElement(
@@ -1094,81 +927,65 @@ function showEqptErrors(eqptOverLimits) {
       createElement("li", `${eqptLimit.label} : ${eqptLimit.value} > ${eqptLimit.limit}`)
     )
   );
-
   dialog.append(listE);
-
   // Bouton de fermeture
   dialog.append(closeButton(dialog));
   dialog.showModal();
 }
-
 //  DOWNLOAD as FILE
-
 // Function to download character data as file
 const downloadButton = document.querySelector("#download");
 downloadButton.addEventListener("click", () => {
-  download(JSON.stringify(persosJSON[persoE.id]), `${persoData.nom}_${dateToString(new Date())}.json`);
+  download(JSON.stringify(persosJSON[persoE.id]), `${persoData?.nom}_${dateToString(new Date())}.json`);
 });
-
 function download(data, filename) {
   toastNotification("Téléchargement en cours ...", 3000);
-
   const file = new Blob([data], { type: "application/json" });
-
   // Créer une URL pour le Blob
   const url = URL.createObjectURL(file);
-
   // Créer un élément de lien, l'ajouter et le déclencher
   const link = createElement("a", undefined, { download: filename, href: url });
   link.click();
 }
-
 // Download a screenshot of the character page
 const screenshotButton = document.querySelector("#screenshot");
 screenshotButton.addEventListener("click", () => {
   screenshotButton.disabled = true;
   toastNotification("Capture d'écran en cours ...", 5000);
-
   // eslint-disable-next-line no-undef
   html2canvas(document.querySelector(".perso"), { backgroundColor: null }).then((canvas) => {
     const link = createElement("a", undefined, {
-      download: `screenshot ${persoData.nom} ${dateToString(new Date())}.png`,
+      download: `screenshot ${persoData?.nom} ${dateToString(new Date())}.png`,
       href: canvas.toDataURL(),
     });
     link.click();
     screenshotButton.disabled = false;
   });
 });
-
 // PROFIL PICTURE
-
+const ppE = document.querySelector("#pp");
+const galeryButtonE = document.querySelector("#galerieButton");
+const galeryE = document.querySelector(".galerie");
 // Change Profil Picture
-document.querySelector("#pp").addEventListener("click", () => {
+ppE.addEventListener("click", () => {
   // console.log('pp clicked')
-  document.querySelector("#galerie").classList.toggle("hide");
+  galeryButtonE.classList.toggle("hide");
 });
-document.querySelector("#galerie").addEventListener("click", () => {
-  document.querySelector(".galerie").classList.remove("hide");
+galeryButtonE.addEventListener("click", () => {
+  galeryE.classList.remove("hide");
 });
-
 // Choosed picture
-document.querySelector(".galerie").addEventListener("click", (e) => {
-  if (!e.target.src) {
-    document.querySelector(".galerie").classList.add("hide");
-    return;
-  }
+galeryE.addEventListener("click", (e) => {
+  if (!(e.target instanceof HTMLImageElement)) return;
   if (e.target.src.includes(".jpg") || e.target.src.includes(".png")) {
-    document.querySelector("#pp").src = e.target.src;
-    document.querySelector(".galerie").classList.add("hide");
-    document.querySelector(".galerie").classList.add("hide");
+    ppE.src = e.target.src;
+    galeryE.classList.add("hide");
+    galeryE.classList.add("hide");
   }
 });
-
 // ALL SAVE
-
 // Save persos
 const saveButton = document.querySelector("#save");
-
 saveButton.addEventListener("click", () => {
   if (!masterJSON.allow) {
     toastNotification("Les sauvegardes sont bloquées par le MJ");
@@ -1189,57 +1006,44 @@ saveButton.addEventListener("click", () => {
     toastNotification("ECHEC : Plus de place disponible sur la fiche !", 10000, true);
   }
 });
-
 function savePerso() {
-  const skillsName = [...competencesE.children].map((competenceE) => competenceE.children[0].value);
-
+  const skillsName = competenceEs.map((competenceE) => competenceE.selectE.value);
   const persoId = persoE.id;
-  const name = document.querySelector("#nom").value;
-
-  if (!persoId || persoId < 0 || !name) return null;
-
+  const name = nomE.value;
+  if (!persoId || parseInt(persoId) < 0 || !name) return null;
   const mainElement = {
     classeP: classePElement.value,
-    pvmax: pvMaxE.value,
-    force: document.querySelector("#force").value,
-    dexté: document.querySelector("#dexté").value,
-    intel: document.querySelector("#intel").value,
-    charisme: document.querySelector("#charisme").value,
-    esprit: document.querySelector("#esprit").value,
-    skills: JSON.stringify(skillsName),
+    pvmax: pvmaxE.value,
+    force: forceE.value,
+    dexté: dextéE.value,
+    intel: intelE.value,
+    charisme: charismeE.value,
+    esprit: espritE.value,
+    skills: skillsName,
   };
-
   persosJSON[persoId] = {
     nom: name,
     race: raceE.value,
-
     classeS: persosJSON[persoId]?.guardian ? classePElement.value : classeSElement.value,
-    xp: document.querySelector("#xp").value,
+    xp: xpE.value,
     niv: nivE.value,
-
     awaken: nivE.value >= 10 ? awakenSkillE.id : "",
-
     pv: pvE.value,
-
-    stress: document.querySelector("#stress").value,
-
-    pp: document.querySelector("#pp").src,
-
+    stress: stressE.value,
+    pp: ppE.src,
     ...mainElement,
-
-    forceB: document.querySelector("#forceB").value,
-    dextéB: document.querySelector("#dextéB").value,
-    intelB: document.querySelector("#intelB").value,
-    charismeB: document.querySelector("#charismeB").value,
-    espritB: document.querySelector("#espritB").value,
-
-    eqpts: JSON.stringify(persoEqptsName),
-    inventaire: document.querySelector(".inventaire").value,
-    argent: document.querySelector("#argent").value,
-    personnalite: document.querySelector(".personnalité").value,
-    background: document.querySelector(".background").value,
-    notes: document.querySelector(".notes").value,
-    sticky: document.querySelector(".sticky").value,
+    forceB: forceBE.value,
+    dextéB: dextéBE.value,
+    intelB: intelBE.value,
+    charismeB: charismeBE.value,
+    espritB: espritBE.value,
+    eqpts: getPersoEqptsFromSelects().map((eqpt) => eqpt?.nom ?? ""),
+    inventaire: inventaireE.value,
+    argent: argentE.value,
+    personnalite: personnaliteE.value,
+    background: backgroundE.value,
+    notes: notesE.value,
+    sticky: stickyE.value,
     passif10: persosJSON[persoId]?.passif10 ?? undefined,
     passif12: persosJSON[persoId]?.passif12 ?? undefined,
     passif14: persosJSON[persoId]?.passif14 ?? undefined,
@@ -1253,32 +1057,28 @@ function savePerso() {
         ]
       : undefined,
   };
-
-  console.log(persosJSON);
-
-  const newPerso = {};
-  newPerso[persoId] = persosJSON[persoId];
-  console.log(newPerso);
-
+  console.log(persosJSON[persoId]);
   // Update persoData
   persoData = persosJSON[persoId];
-
-  return newPerso;
+  // const newPerso: {
+  //   [key: string]: Perso
+  // } = {}
+  // newPerso[persoId] = persosJSON[persoId]
+  // console.log(newPerso)
+  // Is equivalent to :
+  return { [persoId]: persosJSON[persoId] };
 }
-
 // Global Save
-
 // Show/Hide other pages of Eden
 const buttonIframe = document.querySelector("#buttonIframe");
-buttonIframe.addEventListener("click", () => {
-  if (buttonIframe.innerText === "Afficher le site") {
-    buttonIframe.innerText = "Masquer le site";
+addClickListener(buttonIframe, (e) => {
+  if (e.target.innerText === "Afficher le site") {
+    e.target.innerText = "Masquer le site";
   } else {
-    buttonIframe.innerText = "Afficher le site";
+    e.target.innerText = "Afficher le site";
   }
   document.querySelector("iframe").classList.toggle("hide");
 });
-
 function syntheseDesc() {
   let description = `La synthèse résume les montants de dégâts et d'armures issus des équipements.<br/> 
   Les montants conditionnels (panoplie, classe, ...) sont pris en compte (07/04/24), voici la légende :<br/>`;
@@ -1291,16 +1091,12 @@ function syntheseDesc() {
   });
   return description;
 }
-
 const passifPoints12Desc = `1 point :<ul><li>Dégât +1</li><li>Soin +1</li><li>Dégât reçu -1</li><li>PV +7.5</li><li>Familier : Dégât et Soin +1</li></ul>
 2 points :<ul><li>Blocage Physique +1</li><li>Esquive +1</li><li>Blocage Magique +1</li><li>Résistance d'esprit +1</li><li>Montant des sorts +1</li><li>Une statistique +1</li></ul>`;
-
 const passifPoints34Desc = `3 points :<ul><li>+1 emplacement de sort</li></ul>
 4 points :<ul><li>Durée des sorts +1</li></ul>`;
-
 const passifWarning = `<span style="color: lightcoral;">/!\\ Attention : vous ne pourrez plus facilement changer votre passif après avoir choisi !</span><br/>
 A noter : ces montants ne comptent pas dans la limite des stuffs (voir "Equipements - Infos")`;
-
 const labelsDescription = {
   force:
     "Permet d'utiliser des attaques lourdes, de pousser, de soulever.<br/>Si la stat est à 1 ou 2 : Impossible de tenir une arme. <br/>Permet de bloquer des coups physiques (Dé/2)<br/><br/> Un blocage à 20 inflige 5 dégâts de plus. <br/>Les stats sont limitées à 17, et 17 (+1) avec buff/stuff.<br/>Le blocage est limité à 13.",
@@ -1349,50 +1145,38 @@ const labelsDescription = {
   guardianFatigue:
     "En tant que Gardien Eternel, vous avez la possibilité de Switcher de classe. Mais cela n'est pas sans coût.<br/>- Chaque switch augmente votre fatigue (entre 50 et 10 selon votre niveau).<br/>- Avant le niveau 10, le switch consomme votre tour. Au-delà, le switch devient une action instantanée.",
 };
-
 initDialog(labelsDescription);
-
 // Display information about all basic stats of the character (race, class, level)
-
 const infoStatsE = document.querySelector("#infoStats");
-
 infoStatsE.addEventListener("click", () => {
   // Calculation of all stats
   const niv = nivE.value;
+  if (!classePElement.value || !classeSElement.value || !raceE.value) return;
   const { sumStats, allStats, pvStuff } = getStats();
-
   // Reset dialog
   dialog.innerText = "";
   dialog.style.width = "75%";
-
   const titleE = createElement("h2", "Statistique de référence");
-
-  const pvE = createElement(
+  const pvElem = createElement(
     "p",
     `PV : ${allStats.PVMax} = ${allStats.PV} (base) + ${5 * (niv - 1)} (niveau) + ${pvStuff} (stuff)`
   );
-
   // Count stats over 17
   const statOver = statistiques.map((statName) => Math.max(allStats[statName] - 17, 0)).reduce(sum);
-
-  const statsE = createElement(
+  const statsElem = createElement(
     "div",
     statistiques.map((statName) => {
       const statNameE = createElement("p", statName);
-
       const over = Math.max(allStats[statName] - 17, 0);
       return createElement("div", [statNameE, `${allStats[statName]}${over > 0 ? ` (-${over})` : ""}`], {
-        class: "stat",
+        className: "stat",
       });
     }),
-    { class: "stats" }
+    { className: "stats" }
   );
-
   const nbStatsToChoose = 60 - sumStats + Math.max(Math.ceil((niv - 9) / 5), 0);
   const nivInfoE = createElement("p", `+ ${nbStatsToChoose + statOver} stat(s) au choix, car niveau ${niv}`);
-
-  const globalE = createElement("p", [titleE, pvE, statsE, nivInfoE], { class: "dialogStats" });
-
+  const globalE = createElement("p", [titleE, pvElem, statsElem, nivInfoE], { className: "dialogStats" });
   if (60 - sumStats > 1) {
     const classWithPointsToChoose = createElement(
       "p",
@@ -1400,63 +1184,57 @@ infoStatsE.addEventListener("click", () => {
     );
     globalE.append(classWithPointsToChoose);
   }
-
   globalE.append(closeButton(dialog));
-
   dialog.append(globalE);
   // Ouverture en "modal"
   dialog.showModal();
 });
-
 const getStats = () => {
   const race = raceE.value;
   const classeP = classePElement.value;
   const classeS = classeSElement.value;
   const niv = nivE.value;
-
   const classesStats = statsJSON.classes.filter((e) => [classeP, classeS].includes(e.Classe));
   const raceStats = statsJSON.races.find((e) => e.Race === race);
-
-  const pvStuff = parseEqptsByRegex(["PV +"], persoEqpts, persoData).reduce(sum, 0);
-
-  const allStats = sumObjectsByKey(classesStats[0], classesStats[1] ?? classesStats[0], raceStats);
-
+  const pvStuff = persoData ? parseEqptsByRegex(["PV +"], persoEqpts, persoData).reduce(sum, 0) : 0;
+  const allStats = raceStats
+    ? sumObjectsByKey(classesStats[0], classesStats[1] ?? classesStats[0], raceStats)
+    : sumObjectsByKey(classesStats[0], classesStats[1] ?? classesStats[0]);
   const sumStats =
-    allStats["Force"] +
-    allStats["Dextérité"] +
-    allStats["Intelligence"] +
-    allStats["Charisme"] +
-    (allStats["Esprit"] - 2);
-
+    allStats.Force + allStats["Dextérité"] + allStats.Intelligence + allStats.Charisme + (allStats.Esprit - 2);
   // Esprit is "- 1" under level 5
   allStats.Esprit += niv < 5 ? -1 : 0;
   allStats.PVMax = allStats.PV + 5 * (niv - 1) + pvStuff;
-
   return { sumStats, allStats, pvStuff };
 };
-
 function sumObjectsByKey(...objs) {
-  return objs.reduce((a, b) => {
+  const objsWithValue = objs.map((obj) => {
+    const filteredObj = {};
+    for (const [key, value] of Object.entries(obj)) {
+      if (typeof value === "number") {
+        filteredObj[key] = value;
+      }
+    }
+    return filteredObj;
+  });
+  return objsWithValue.reduce((a, b) => {
     for (const k in b) {
-      a[k] = (a[k] || 0) + b?.[k];
+      a[k] = (a[k] || 0) + (b?.[k] || 0);
     }
     return a;
   }, {});
 }
-
 function setPassifs(niv) {
   const perso = persosJSON[persoE.id];
-
   const passif10E = document.querySelector("#passif10");
-  passif10E.innerHTML = "";
-  passif10E.classList = niv >= 10 && perso.guardian ? "" : "hide";
   const passif12E = document.querySelector("#passif12");
-  passif12E.innerHTML = "";
-  passif12E.classList = niv >= 12 ? "" : "hide";
   const passif14E = document.querySelector("#passif14");
-  passif14E.innerHTML = "";
-  passif14E.classList = niv >= 14 ? "" : "hide";
-
+  [passif10E, passif12E, passif14E].forEach((passifE, i) => {
+    passifE.innerHTML = "";
+    if (niv >= 10 + i * 2) {
+      passifE.classList.remove("hide");
+    } else passifE.classList.add("hide");
+  });
   if (niv >= 10 && perso.guardian) {
     const li = createElement(
       "li",
@@ -1464,7 +1242,6 @@ function setPassifs(niv) {
     );
     passif10E.append(li);
   }
-
   if (niv >= 12) {
     const li = createElement(
       "li",
@@ -1472,12 +1249,10 @@ function setPassifs(niv) {
     );
     passif12E.append(li);
   }
-
   if (niv >= 14) {
     const li = createElement("li", `Passif 14 "${perso.passif14 ? `: ${perso.passif14}` : " à définir (cliquez)"}`);
     passif14E.append(li);
   }
-
   // Set fatigue cost for guardian
   let fatigueCost;
   if (niv < 5) {
@@ -1491,19 +1266,17 @@ function setPassifs(niv) {
   } else {
     fatigueCost = 10;
   }
-
   document.querySelector("#guardianFatigue").innerText = `${fatigueCost} ${niv >= 10 ? "(Instant)" : "(1 tour)"}`;
 }
-
 const getCards = Object.values(cardJSON)
   .filter((card) => card.kind === "composant")
   .map((card) => ({
     title: card.name,
     desc: card.description,
     montant: "",
+    effet: card.value.toString(),
     src: `http://voldre.free.fr/Eden/images/items/${card.kindId}.png`,
   }));
-
 const getEqpts = Object.values(eqptJSON).map((eqpt) => ({
   title: eqpt.nom,
   desc: eqpt.desc,
@@ -1511,5 +1284,4 @@ const getEqpts = Object.values(eqptJSON).map((eqpt) => ({
   effet: eqpt.effet,
   src: `http://voldre.free.fr/Eden/images/items/${eqpt.icone}.png`,
 }));
-
 const allItems = [...getCards, ...getEqpts];

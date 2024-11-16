@@ -271,7 +271,6 @@
   },
   "72": {
     "nom": "Résurrection",
-    "desc": "(Utilisable même vivant) prend 2 tours (1 dé par tour) : Soigne/Ressuscite un joueur avec quelques PV ",
     "montant": "Incantation en 2 tours (1 dé/tour) : soigne de 3D10+20 (Blocage +2 pendant incantation)"
   },
   "73": {
@@ -463,13 +462,11 @@
   },
   "119": {
     "nom": "Encouragement Musical",
-    "desc": "1 tour d'incantation. Réduit les dégâts subis, immunise à l'endormissement et augmente la résistance mentale (Blocage Esprit/2)",
-    "montant": "Dégât subi -1D4-4, 0 dodo, +2 rés esprit, pour 4 tours (Blocage +2 pendant incantation)"
+    "montant": "Incantation 2 tours (1 dé) : Dégât subi -1D4-4, 0 dodo, +2 rés esprit, pour 4 tours (Blocage +2 pendant incantation)"
   },
   "120": {
     "nom": "Brisure Vibrante",
-    "desc": "1 tour d'incantation (1 seul dé). Identifie et frappe sur la/les faiblesse(s) physiques de la cible grâce à la fréquence vibratoire (ondes)",
-    "montant": "3D6 +12 (Blocage +2 pendant l'incantation)"
+    "montant": "Incantation 2 tours (1 dé) : 3D6 +12 (Blocage +2 pendant l'incantation)"
   },
   "123": {
     "nom": "Tempête du Shaman",
