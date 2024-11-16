@@ -2,7 +2,7 @@
   "1": {
     "visuel3D": "m075",
     "nom": "Sanglier Dentranchante",
-    "pvmax": "70",
+    "pvmax": 70,
     "skills": ["Charge : fonce : 2D6+6 : force", "Morsure : mord : 1D10+4 : force", "", ""],
     "stats": "15,11,9,9,12",
     "desc": "Sanglier brun vivant à la Colline Tranquille",
@@ -12,7 +12,7 @@
   "2": {
     "visuel3D": "m015",
     "nom": "Drakai démoniste",
-    "pvmax": "60",
+    "pvmax": 60,
     "skills": [
       "Rayon noir : 1D10 + 1D6 +5 devant,  intelligence",
       "Frappe ténébreuse : 2D10+5 et peut parasiter (1D4 sur 3 tours) : force intelligence",
@@ -27,7 +27,7 @@
   "3": {
     "visuel3D": "m016",
     "nom": "Guerrier Tuskar",
-    "pvmax": "85",
+    "pvmax": 85,
     "skills": [
       "Charge : 1D10 +8 : force",
       "Coup de hache : 1D10 + 1D6 +7 : force",
@@ -42,7 +42,7 @@
   "4": {
     "visuel3D": "m034",
     "nom": "Ancien Garde",
-    "pvmax": "80",
+    "pvmax": 80,
     "skills": [
       "Bras étendu : 1D10 1D6 +5 : force",
       "Bras rayon : 2D10+5 : intelligence",
@@ -57,7 +57,7 @@
   "5": {
     "visuel3D": "m025",
     "nom": "Champignoïde Baga",
-    "pvmax": "55",
+    "pvmax": 55,
     "skills": ["Coup de boule : 1D10+6 : force", "Spore : 1D6+6 AoE nature : intelligence", "", ""],
     "stats": "14,9,14,10,13",
     "desc": "Petit champignoïde rouge du Mont Calcaire",
@@ -67,7 +67,7 @@
   "6": {
     "visuel3D": "m086",
     "nom": "Lutin des Forêts",
-    "pvmax": "55",
+    "pvmax": 55,
     "skills": [
       "Poison : crache du poison : 1D6 et dégât pendant 3 tours : intelligence",
       "Coup de boule : 1D10+5 : force",
@@ -82,7 +82,7 @@
   "7": {
     "visuel3D": "m083",
     "nom": "Crabe carapace de fer",
-    "pvmax": "65",
+    "pvmax": 65,
     "skills": ["Coup de pince : 1D10 + 1D6 +5 : force", "Coup de carapace : 1D10+5 zone : force", "", ""],
     "stats": "17,9,9,12,14",
     "desc": "Gros crabe vivant à la Baie Belouga",
@@ -92,7 +92,7 @@
   "8": {
     "visuel3D": "m037",
     "nom": "Magicien Clerc Anuran",
-    "pvmax": "65",
+    "pvmax": 65,
     "skills": [
       "Soin : 2D10+12 (+6 si besoin) : intelligence",
       "Bombe incendiaire : 1D10+8 : intelligence",
@@ -107,7 +107,7 @@
   "9": {
     "visuel3D": "m042",
     "nom": "Sorcier Torturran",
-    "pvmax": "75",
+    "pvmax": 75,
     "skills": [
       "Zone noire : 1D10+6 zone : malus dextérité -2 pendant 3 tours : intelligence",
       "Stalactites de Glace : 1D10 +2D6 +6 : intelligence",
@@ -122,7 +122,7 @@
   "10": {
     "visuel3D": "m046",
     "nom": "Guerrier Torturran",
-    "pvmax": "95",
+    "pvmax": 95,
     "skills": [
       "Charge : 2D10+6 : force",
       "Frappe terrestre (avec marteau) : 1D10+8 AoE : force",
@@ -137,7 +137,7 @@
   "11": {
     "visuel3D": "m051",
     "nom": "Assassin Zumi",
-    "pvmax": "70",
+    "pvmax": 70,
     "skills": [
       "Griffe Acéré : 1D10 +10 : force",
       "Griffe embrasé (chargé) : 2D10+8 : force esprit",
@@ -152,7 +152,7 @@
   "12": {
     "visuel3D": "m024",
     "nom": "Angelée",
-    "pvmax": "60",
+    "pvmax": 60,
     "skills": [
       "Stalactite : 1D10 + 1D6 + 1D4 +5 : intelligence",
       "Soin : 1D10 +7 : intelligence",
@@ -167,7 +167,7 @@
   "13": {
     "visuel3D": "m087",
     "nom": "Champignoïde magique",
-    "pvmax": "65",
+    "pvmax": 65,
     "skills": [
       "Stalactite : 1D10 + 1D6 + 1D4 +5 : intelligence",
       "Boule de feu : 1D10 +7 : intelligence",
@@ -182,7 +182,7 @@
   "14": {
     "visuel3D": "m090",
     "nom": "Esprit de l'Abysse",
-    "pvmax": "75",
+    "pvmax": 75,
     "skills": [
       "Foudre noire : 1D10 +6 : intelligence",
       "Charge : 1D10 +8 : force",
@@ -197,7 +197,7 @@
   "15": {
     "visuel3D": "m104",
     "nom": "Mante terrestre",
-    "pvmax": "75",
+    "pvmax": 75,
     "skills": [
       "Coup de crochet : 1D10 +8 : dextérité",
       "Vague terrestre : 1D10 +6 AoE : force",
@@ -212,7 +212,7 @@
   "16": {
     "visuel3D": "m103",
     "nom": "Ver des sables",
-    "pvmax": "80",
+    "pvmax": 80,
     "skills": [
       "Morsure : 2D10+6 : force",
       "Séisme : 1D10+6 AoE : force",
@@ -227,7 +227,7 @@
   "17": {
     "visuel3D": "m124",
     "nom": "Pirate aggressif",
-    "pvmax": "80",
+    "pvmax": 80,
     "skills": [
       "Coup de flingue : 1D12 +10 : dextérité",
       "Esquive facile : (3 fois max) : dextérité",
@@ -242,7 +242,7 @@
   "18": {
     "visuel3D": "m123",
     "nom": "Voleur avide",
-    "pvmax": "75",
+    "pvmax": 75,
     "skills": [
       "Tranchées aggressives : 2D8 +6 : force",
       "Embuscade : 1D10 +8 (X2 si discret) : dextérité",
@@ -257,7 +257,7 @@
   "19": {
     "visuel3D": "m158",
     "nom": "Maître Démoniste",
-    "pvmax": "115",
+    "pvmax": 115,
     "skills": [
       "Parasite Obscur : 7 dégâts *(3 tours) : intelligence",
       "Pacte : Invoque un Panopticor : esprit",
@@ -272,7 +272,7 @@
   "20": {
     "visuel3D": "m013",
     "nom": "Guerrier Ursun",
-    "pvmax": "80",
+    "pvmax": 80,
     "skills": [
       "Perce-Armure : 1D8+5 + dégât physique reçu +3 (3 tours) : force",
       "Charge : 2D8+5 : force",
@@ -287,7 +287,7 @@
   "21": {
     "visuel3D": "m076",
     "nom": "Tortue vaseuse",
-    "pvmax": "85",
+    "pvmax": 85,
     "skills": [
       "Seisme : 1D8 +5 AoE : force",
       "Vase limitante : 1D6 +5 AoE (dexté-3 3tours) : intelligence",
@@ -302,7 +302,7 @@
   "22": {
     "visuel3D": "m077",
     "nom": "Tortue terrestre",
-    "pvmax": "90",
+    "pvmax": 90,
     "skills": [
       "Seisme : 1D8 +6 AoE : force",
       "Racine claquante : 1D10+6 de zone : intelligence",
@@ -317,7 +317,7 @@
   "23": {
     "visuel3D": "m086",
     "nom": "Lutin Runique",
-    "pvmax": "80",
+    "pvmax": 80,
     "skills": [
       "Coup de boule : 1D10+6 : force",
       "Magie extrême : +1D4+4 magique à tlm pour 3 tours : esprit",
@@ -332,7 +332,7 @@
   "24": {
     "visuel3D": "m087",
     "nom": "Champignoïde Mutant",
-    "pvmax": "150",
+    "pvmax": 150,
     "skills": [
       "Attaque foudroyante : AoE 2D6 + 5 : intelligence",
       "Spore explosif (mono) : 2D8 +6 : intelligence",
@@ -347,7 +347,7 @@
   "25": {
     "visuel3D": "m014",
     "nom": "Ogre Solitaire",
-    "pvmax": "90",
+    "pvmax": 90,
     "skills": [
       "Euphorie : +1D4 par coup. Buff pendant 4 tours (max 5) : esprit",
       "Attaque Cyclone : 1D10+7 : force",
@@ -362,7 +362,7 @@
   "26": {
     "visuel3D": "m010",
     "nom": "Chasseur Anuran",
-    "pvmax": "65",
+    "pvmax": 65,
     "skills": [
       "Triple Tir : 1D8 + 1D6 + 1D4 +6 : dextérité",
       "Tir de précision : Réussite +1, 1D8+7 (X2)",
@@ -377,7 +377,7 @@
   "27": {
     "visuel3D": "m071",
     "nom": "Shaman Tuskar",
-    "pvmax": "75",
+    "pvmax": 75,
     "skills": [
       "Totem Gracieux : 1D6 +5 pendant 6 tours (tous les 2 tours) : Intelligence",
       "Affaib Mental : +5 dégâts magique subis à la cible pendant 3 tours : Esprit",
@@ -392,7 +392,7 @@
   "28": {
     "visuel3D": "m065",
     "nom": "Chevalier Drakai",
-    "pvmax": "80",
+    "pvmax": 80,
     "skills": [
       "Charge : 1D10 +8 : Force",
       "Vivacité Accrue : Esquive+3, Dextérité+3 à la cible pendant 4 tours : Esprit",
@@ -407,7 +407,7 @@
   "29": {
     "visuel3D": "m072",
     "nom": "Baram la Chimère Volcanique",
-    "pvmax": "230",
+    "pvmax": 230,
     "skills": [
       "Feu propageur : 1D12 +12 AoE : Intelligence",
       "Griffe de démon : 2D10 + 13 : Force",
@@ -422,7 +422,7 @@
   "30": {
     "visuel3D": "m096",
     "nom": "Floraison fétide",
-    "pvmax": "70",
+    "pvmax": 70,
     "skills": ["Poison : AoE 1D8 +5 : intelligence", "Claque : 1D0+6 : force", "", ""],
     "stats": "14,11,15,8,8",
     "desc": "Petite floraison verdâtre avec un chapeau",
@@ -432,7 +432,7 @@
   "31": {
     "visuel3D": "m070",
     "nom": "Chasseur Tuskar",
-    "pvmax": "60",
+    "pvmax": 60,
     "skills": [
       "Triple Tir : 1D8 + 1D6 + 1D4 +5 : Dextérité",
       "Blessure Douloureuse : 1D8 +7, et 0 soin sur 3 tours : Dextérité",
@@ -447,7 +447,7 @@
   "32": {
     "visuel3D": "m080",
     "nom": "Tyrannosaure Ecailles Roc",
-    "pvmax": "75",
+    "pvmax": 75,
     "skills": [
       "Eclat de roche : 1D10+6 : force",
       "Fracassement terresstre : 1D8+5 AoE : force",
@@ -462,7 +462,7 @@
   "33": {
     "visuel3D": "m048",
     "nom": "Ingénieur Zumi",
-    "pvmax": "70",
+    "pvmax": 70,
     "skills": [
       "Robotisation :  dégâts reçu -5, Toutes Stats-1, dure 5 tours",
       "Bombe à huile : 1D10 +7 : Dextérité",
@@ -477,7 +477,7 @@
   "34": {
     "visuel3D": "m130",
     "nom": "Femme Illusionniste",
-    "pvmax": "70",
+    "pvmax": 70,
     "skills": [
       "Voile du blizzard : Rend invisible, pendant l'invisibilité, bonus d'intelligence de 2 : Esprit",
       "Oeil Hypnotique : Les ennemis dans la zone ciblée s'endorment : Intelligence",
@@ -492,7 +492,7 @@
   "35": {
     "visuel3D": "m125",
     "nom": "Garde de ville",
-    "pvmax": "75",
+    "pvmax": 75,
     "skills": [
       "Charge : 1D10 +5 : force",
       "Défense : dégât reçu -5 pendant 2 tours : esprit",
@@ -507,7 +507,7 @@
   "36": {
     "visuel3D": "m135",
     "nom": "Capitaine de ville",
-    "pvmax": "85",
+    "pvmax": 85,
     "skills": [
       "Charge : 1D12 +7 : force",
       "Défense : dégât reçu -7 pendant 3 tours : esprit",
@@ -522,7 +522,7 @@
   "37": {
     "visuel3D": "m118",
     "nom": "Rumbledi de Wish",
-    "pvmax": "150",
+    "pvmax": 150,
     "skills": [
       "Tempête de Glace : 1D12 +7 : Intelligence",
       "Magie Extrême : Prochain dégât magique +1D10 +8 : Esprit",
@@ -537,7 +537,7 @@
   "38": {
     "visuel3D": "m017",
     "nom": "Smilodon",
-    "pvmax": "90",
+    "pvmax": 90,
     "skills": [
       "Morsure : 1D10 +6 : force",
       "Coup de griffe : 1D10 +6 : force",
@@ -552,7 +552,7 @@
   "39": {
     "visuel3D": "m053",
     "nom": "Luminary Clerc Ursun",
-    "pvmax": "80",
+    "pvmax": 80,
     "skills": [
       "Coupure noire : 3D6 +6 : Force",
       "Guérison : 2D6 +14 (+6 si besoin) : Intelligence",
@@ -567,7 +567,7 @@
   "40": {
     "visuel3D": "m055",
     "nom": "Assassin Ursun",
-    "pvmax": "85",
+    "pvmax": 85,
     "skills": [
       "Griffe Acéré : 1D10 +9 : force",
       "Cicatrice de l'esprit : 1D8+6 (retire buff) : force ",
@@ -582,7 +582,7 @@
   "41": {
     "visuel3D": "m092",
     "nom": "Rapace à Bec d'acier",
-    "pvmax": "75",
+    "pvmax": 75,
     "skills": [
       "Pic pic : 2D8+5 : dextérité",
       "Coup de vent : 1D8+5 AoE : intelligence",
@@ -597,7 +597,7 @@
   "42": {
     "visuel3D": "m311",
     "nom": "Chevalier de la Curie (Lassar)",
-    "pvmax": "130",
+    "pvmax": 130,
     "skills": [
       "Percée du Chevalier : 1D8 + 1D6 + 1D4 +6 : Dextérité",
       "Vivacité Accrue : Esquive+3, Dextérité+3 à la cible pendant 4 tours : Esprit",
@@ -612,7 +612,7 @@
   "43": {
     "visuel3D": "m097",
     "nom": "Epineur acéré",
-    "pvmax": "80",
+    "pvmax": 80,
     "skills": [
       "Racine claquante : 1D10+6 AoE : intelligence",
       "Coup d'épine : 2D10+6 : force",
@@ -627,7 +627,7 @@
   "44": {
     "visuel3D": "m105",
     "nom": "Fourmilion du Désert",
-    "pvmax": "95",
+    "pvmax": 95,
     "skills": [
       "Vague terrestre : 1D10 +7 AoE : force",
       "Morsure : 2D10 +7 : force",
@@ -642,7 +642,7 @@
   "45": {
     "visuel3D": "m156",
     "nom": "Templier de la Curie - Marma v1",
-    "pvmax": "150",
+    "pvmax": 150,
     "skills": [
       "Euphorie : +1D4 (min 2) par coup. Buff pendant 4-5 tours (max 5) : esprit",
       "Lumière de Guérison : 2D10 +5, 1/4 de rejouer : intelligence",
@@ -657,7 +657,7 @@
   "46": {
     "visuel3D": "voldre",
     "nom": "Voldre",
-    "pvmax": "240",
+    "pvmax": 240,
     "skills": [
       "Coupe Asura : 1D10 + (1D10) +15 : force",
       "Eclair Unique : 1D10 + (1D10) +18 : force",
@@ -672,7 +672,7 @@
   "47": {
     "visuel3D": "m201",
     "nom": "Uvularia sauvage",
-    "pvmax": "70",
+    "pvmax": 70,
     "skills": [
       "Poison : 1D6+6 AoE + 4 dégât pendant 3 tours : intelligence",
       "Charge : 1D10 +9 : force",
@@ -687,7 +687,7 @@
   "48": {
     "visuel3D": "m203",
     "nom": "Mante Fatalame",
-    "pvmax": "90",
+    "pvmax": 90,
     "skills": [
       "Vague terrestre : 1D10 +10 AoE : dextérité",
       "Coup de corne : 2D10+10 : force",
@@ -702,7 +702,7 @@
   "49": {
     "visuel3D": "m215",
     "nom": "Mante Cyclope",
-    "pvmax": "85",
+    "pvmax": 85,
     "skills": [
       "Coup de crochet : 1D10 +10 : dextérité",
       "Fluide conducteur : 1D8 AoE+8 (malus dexté 3 sur 3 tours) : intelligence",
@@ -717,7 +717,7 @@
   "50": {
     "visuel3D": "m317",
     "nom": "Nemelio",
-    "pvmax": "225",
+    "pvmax": 225,
     "skills": [
       "Euphorie : +1D4 (min 2) par coup. Buff pendant 4 tours (max 5) : esprit",
       "Lumière de Guérison : 2D10 +6, 1/4 de rejouer : intelligence",
@@ -732,7 +732,7 @@
   "51": {
     "visuel3D": "m073",
     "nom": "Griffon Cendré",
-    "pvmax": "80",
+    "pvmax": 80,
     "skills": [
       "Projection de cendre : 1D10+6 AoE : Dexté-1 : Intelligence",
       "Coup de bec : 1D10+8 : Force",
@@ -747,7 +747,7 @@
   "52": {
     "visuel3D": "m023",
     "nom": "Crabe Volcanique",
-    "pvmax": "80",
+    "pvmax": 80,
     "skills": [
       "Défense d'acier : Blocage+3 sur 4 tours : Esprit",
       "Coup de pince : 1D10+9 : Force",
@@ -762,7 +762,7 @@
   "53": {
     "visuel3D": "m168",
     "nom": "Cactus sauteur",
-    "pvmax": "80",
+    "pvmax": 80,
     "skills": [
       "Bouclier d'épines : Dégât réduit 4, dégât des piques 4 pendant 4 tours : intelligence",
       "Lancé d'épines : 1D10+6 AoE : force",
@@ -777,7 +777,7 @@
   "54": {
     "visuel3D": "m048c",
     "nom": "Zumi Mécanique - Douvone",
-    "pvmax": "205",
+    "pvmax": 205,
     "skills": [
       "Robotisation : Dégâts reçu  -2D4-2 (5 tours) : Esprit / Réparation Armure : 3D6+15 : Esprit",
       "Lavage de Cerveau : Blocage et réussite des sorts : -2 sur 4 tours : Esprit",
@@ -792,7 +792,7 @@
   "55": {
     "visuel3D": "m170",
     "nom": "Chauve-souris Gourmande",
-    "pvmax": "90",
+    "pvmax": 90,
     "skills": [
       "Coup de croc : 1D10+9 : force",
       "Tornade : 1D8+6 AoE : dexté",
@@ -807,7 +807,7 @@
   "56": {
     "visuel3D": "m081",
     "nom": "Oberon le Massacreur Sadique",
-    "pvmax": "280",
+    "pvmax": 280,
     "skills": [
       "Coup de Queue : 2D6 +12 AoE : Force",
       "Griffe & Croc : 3D6+15 : Force",
@@ -822,7 +822,7 @@
   "57": {
     "visuel3D": "m056",
     "nom": "Ursina",
-    "pvmax": "260",
+    "pvmax": 260,
     "skills": [
       "Coupe Asura : 2D10+15 (+5 large) : force",
       "Purgatoire : 2D8+15 (+5 asura) (+5 large) : esprit",
@@ -837,7 +837,7 @@
   "58": {
     "visuel3D": "m408",
     "nom": "Scarabée des Glaces",
-    "pvmax": "100",
+    "pvmax": 100,
     "skills": [
       "Coup de croc : 1D10 +13 : force",
       "Tempête de Glace : 1D8+10 AoE (malus dexté 3) : intelligence",
@@ -852,7 +852,7 @@
   "59": {
     "visuel3D": "etincellia",
     "nom": "Etincellia",
-    "pvmax": "240",
+    "pvmax": 240,
     "skills": [
       "Coupure Noire/Blanche : 3D6  +18 : force",
       "Prière Divine/Sacrifice Ombres : Soin 2D6 +24 (DGT/2 +5, 1 seule fois). Next Lumière 1D6+4 / All Ténèbres 1D6+6 (Force,Int+2) : esprit",
@@ -867,7 +867,7 @@
   "60": {
     "visuel3D": "m199",
     "nom": "Garde Tyrolien",
-    "pvmax": "100",
+    "pvmax": 100,
     "skills": [
       "Poigne de fer : 1D6+12 : force",
       "Jet Ténébreux : 2D6+8 : intelligence",
@@ -882,7 +882,7 @@
   "61": {
     "visuel3D": "m308",
     "nom": "Kasar - Braconnier",
-    "pvmax": "210",
+    "pvmax": 210,
     "skills": [
       "Triple Tir : 1D8+1D6+1D4+15 : Dextérité",
       "Blessure Douloureuse : 1D10 +13, et 0 heal sur 4 tours : Dextérité",
@@ -897,7 +897,7 @@
   "62": {
     "visuel3D": "rubis",
     "nom": "Rubis - Héritière Favorite",
-    "pvmax": "280",
+    "pvmax": 280,
     "skills": [
       "Mode Draconique : Embrasé : Force/Intel+2, Démoniaque : Charisme+2, Caché : Esprit+2 : Esprit",
       "Terreur du Dragon AoE : Réussite des sorts : -3 sur 3 tours AoE (+ mode Cf. DK) : Charisme",
@@ -912,7 +912,7 @@
   "63": {
     "visuel3D": "m197",
     "nom": "Taureau Précieux",
-    "pvmax": "100",
+    "pvmax": 100,
     "skills": [
       "Charge : 1D10 +12 : force",
       "Vague terrestre : 1D10 +8 AoE : force",
@@ -927,7 +927,7 @@
   "64": {
     "visuel3D": "m093",
     "nom": "Corbeau Noir",
-    "pvmax": "80",
+    "pvmax": 80,
     "skills": [
       "Pic pic : 2D8+8 : dextérité",
       "Coup de vent : 1D8+8 AoE : intelligence",
@@ -942,7 +942,7 @@
   "65": {
     "visuel3D": "m125",
     "nom": "Garde de Valence",
-    "pvmax": "95",
+    "pvmax": 95,
     "skills": [
       "Charge : 1D10 +12 : force",
       "Coup de Lance/Epee : 1D10 +10 : force",
@@ -957,7 +957,7 @@
   "66": {
     "visuel3D": "m442",
     "nom": "Grand Garde Tyrolien",
-    "pvmax": "220",
+    "pvmax": 220,
     "skills": [
       "Poigne de fer : 2D6+18 : force",
       "Jet Ténébreux : 3D6+12 AoE : intelligence",
@@ -972,7 +972,7 @@
   "67": {
     "visuel3D": "m315",
     "nom": "Adonis - Tueur Juge",
-    "pvmax": "240",
+    "pvmax": 240,
     "skills": [
       "Âme Enchainée : 2D6+16 et dexté-3 (AoE) sur 3 tours : Dextérité",
       "Scellement Douloureux : Aucun sort physique, 0 SOIN pendant 3-4 tours : Esprit",
@@ -987,7 +987,7 @@
   "68": {
     "visuel3D": "m200",
     "nom": "Ankylosaure",
-    "pvmax": "90",
+    "pvmax": 90,
     "skills": [
       "Morsure : 1D10 +11 : force",
       "Attaque tournoyante : 1D8+8 : dextérité",
@@ -1002,7 +1002,7 @@
   "69": {
     "visuel3D": "m042",
     "nom": "Démoniste Torturran",
-    "pvmax": "100",
+    "pvmax": 100,
     "skills": [
       "Zone noire : 1D10+9 AoE dextérité -2 pendant 3 tours : Intelligence",
       "Flèche des Ombres : 1D10+15 et si parasite : soin 1D6+9 : Intelligence",
@@ -1017,7 +1017,7 @@
   "70": {
     "visuel3D": "marma",
     "nom": "Templier Marma - Capitaine",
-    "pvmax": "250",
+    "pvmax": 250,
     "skills": [
       "Euphorie : +1D4+1 (min 3) par coup. Buff pendant 4-5 tours (max 5) : esprit",
       "Lumière de Guérison : heal 2D6 +12, 1/4 de rejouer : intelligence",
@@ -1032,7 +1032,7 @@
   "71": {
     "visuel3D": "m077",
     "nom": "Ecorce Terrestre - Pionnier de Gaia",
-    "pvmax": "330",
+    "pvmax": 330,
     "skills": [
       "Fracas Terrestre / Atk Foudroyante : 2D10 +16 / +5 AoE : force/intel",
       "Mâchoire Enorme : 4D6+24 : force",
@@ -1047,7 +1047,7 @@
   "72": {
     "visuel3D": "m059",
     "nom": "Ogre des glaces",
-    "pvmax": "100",
+    "pvmax": 100,
     "skills": [
       "Fracas de Glace : 1D8 AoE+8 (malus dexté 2) : force",
       "Perce-Armure : 1D8+5 + dégât physique reçu +3 (3 tours) : force",
@@ -1062,7 +1062,7 @@
   "73": {
     "visuel3D": "m216",
     "nom": "Fantôme Léthargique",
-    "pvmax": "75",
+    "pvmax": 75,
     "skills": [
       "Attaque foudroyante : 1D8+10 AoE : intelligence",
       "Stalactite : 1D8+1D6+1D4 +8 : intelligence",
@@ -1077,7 +1077,7 @@
   "74": {
     "visuel3D": "m118",
     "nom": "Rumbledore (le vrai)",
-    "pvmax": "250",
+    "pvmax": 250,
     "skills": [
       "Tempête de Glace : 2D10 +20 (+5 si PV<50%) : Intelligence",
       "Saut Dimensio DIVIN : 4 tentatives par combat : remplace l'esq/blocage et remplace sa place par un autre joueur (subit le coup) : intel",
@@ -1092,7 +1092,7 @@
   "75": {
     "visuel3D": "m311",
     "nom": "Chevalier de la Curie (Lassar) v2 (Nv 7)",
-    "pvmax": "200",
+    "pvmax": 200,
     "skills": [
       "Percée du Chevalier : 1D8 + 1D6 + 1D4 +14 : Dextérité",
       "Vivacité Accrue : Esquive+3, Dextérité+3 à la cible pendant 4 tours : Esprit",
@@ -1107,7 +1107,7 @@
   "76": {
     "visuel3D": "m205",
     "nom": "Frédéric - Officier Heldentod",
-    "pvmax": "250",
+    "pvmax": 250,
     "skills": [
       "Euphorie : +1D4+2 (min 3) par coup. Buff pendant 4-5 tours (max 5) : esprit",
       "Percée du Guerrier : 1D6 + 1D6 + 1D4 +17 : force",
@@ -1122,7 +1122,7 @@
   "77": {
     "visuel3D": "m060",
     "nom": "McDougal - Héraut Heldentod",
-    "pvmax": "220",
+    "pvmax": 220,
     "skills": [
       "Marteau Insolent : 1D10 +14 AoE, et -1 de blocage et d'esquive pour 3 tours : force",
       "Marteau de Scellement : 1D10+18 de glace, retire un bu'ff : force",
@@ -1137,7 +1137,7 @@
   "78": {
     "visuel3D": "m127",
     "nom": "Garde Heldentod",
-    "pvmax": "95",
+    "pvmax": 95,
     "skills": [
       "Charge : 1D10 +11 : force",
       "Coup de Lance/Epee : 1D10 +10 : force",
@@ -1152,7 +1152,7 @@
   "79": {
     "visuel3D": "m076",
     "nom": "Tortue préhistorique",
-    "pvmax": "140",
+    "pvmax": 140,
     "skills": [
       "Seisme : 2D8 +10 AoE : force",
       "Vase limitante : 2D6 +8 AoE (dexté-4 4 tours) : intelligence",
@@ -1167,7 +1167,7 @@
   "80": {
     "visuel3D": "m032",
     "nom": "Mandragore - Graine de l'Yggdrasil",
-    "pvmax": "250",
+    "pvmax": 250,
     "skills": [
       "Rage de Gaia : 1D10+15 AoE : Force",
       "Lumière Gardienne : 2D10+15 et -10 DGT MAG reçu sur 3 tours : Esprit",
@@ -1182,7 +1182,7 @@
   "81": {
     "visuel3D": "m086",
     "nom": "Lutin préhistorique",
-    "pvmax": "85",
+    "pvmax": 85,
     "skills": [
       "Poison : 1D4+5 dégât pendant 3 tours : intelligence",
       "Coup de boule : 2D6+14 : force",
@@ -1197,7 +1197,7 @@
   "82": {
     "visuel3D": "m219",
     "nom": "Aigle Mutant",
-    "pvmax": "253",
+    "pvmax": 253,
     "skills": [
       "Croc Féroce : 2D10 + 8+8 : force",
       "Vent Enflammé :  1D10 + 8+8 AoE : intelligence",
@@ -1212,7 +1212,7 @@
   "83": {
     "visuel3D": "m035",
     "nom": "Ver Carapace Acide",
-    "pvmax": "100",
+    "pvmax": 100,
     "skills": [
       "Morsure : 2D10+8 : force",
       "Séisme acide : 1D10+8 AoE : force",
@@ -1227,7 +1227,7 @@
   "84": {
     "visuel3D": "m102",
     "nom": "Ver Cuirassé - Jimmy",
-    "pvmax": "200",
+    "pvmax": 200,
     "skills": [
       "Morsure : 2D10+15 : force",
       "Séisme acide : 1D10+14 AoE : force",
@@ -1242,7 +1242,7 @@
   "85": {
     "visuel3D": "draigos",
     "nom": "Draigos - Drakai aux bouquins",
-    "pvmax": "200",
+    "pvmax": 200,
     "skills": [
       "Parasite Obscur : 6 DGT 4 tours : intel",
       "Flèche des ombres : 2D6+8+5, et si parasite : soin 3D6+6 : intel",
@@ -1257,7 +1257,7 @@
   "86": {
     "visuel3D": "m091",
     "nom": "Esprit de Crystal",
-    "pvmax": "150",
+    "pvmax": 150,
     "skills": [
       "Foudre noire : 1D10 +6 (X1.5) AoE : intelligence",
       "Charge : 2D10 +12 : force",
@@ -1272,7 +1272,7 @@
   "87": {
     "visuel3D": "m050",
     "nom": "Zumi Sage",
-    "pvmax": "90",
+    "pvmax": 90,
     "skills": [
       "Aura Bouclier Protec : Blocage +3 pendant 4 tours : esprit",
       "Aura Ami du Marteau : Soin 2D10 +12. Prochain dégât +2D6+4 : intel",
@@ -1287,7 +1287,7 @@
   "88": {
     "visuel3D": "m314",
     "nom": "Zumi Juge",
-    "pvmax": "160",
+    "pvmax": 160,
     "skills": [
       "Âme Enchainée : 2D6+6 et dexté-3 sur 3 tours : Dextérité",
       "Scellement : Aucun sort physique pendant 3 tours : Esprit",
@@ -1302,7 +1302,7 @@
   "89": {
     "visuel3D": "m052",
     "nom": "Tank Ursun",
-    "pvmax": "225",
+    "pvmax": 225,
     "skills": [
       "Mur de Titan : Dégât -4 -1D4 pendant 4 tours : force",
       "Provocation :Dégât 1D6+9, et 1D4 fois plus de chance d'être visé pendant 4 tours : Charisme",
@@ -1317,7 +1317,7 @@
   "90": {
     "visuel3D": "m347",
     "nom": "Lucius - Roi Déchu",
-    "pvmax": "255",
+    "pvmax": 255,
     "skills": [
       "Soin Inverseur : Transforme les soins reçus par les ennemis en dégât (AoE) 4 tours (non annulable) : Esprit",
       "Solo (-5) / Faiblesse Critique : 3D6 +17 (Crit X1.5), réussite-1 : Force",
@@ -1332,7 +1332,7 @@
   "91": {
     "visuel3D": "m223",
     "nom": "Altération de Crystal",
-    "pvmax": "150",
+    "pvmax": 150,
     "skills": [
       "Dégagement d'énergie : (1 tour incant) 2D6 AoE+13 (malus esprit -2, 3 tours) : intelligence",
       "Flamme tranchante : 2D10 +10 : force",
@@ -1347,7 +1347,7 @@
   "92": {
     "visuel3D": "m141",
     "nom": "DD Alpaga zombifié",
-    "pvmax": "70",
+    "pvmax": 70,
     "skills": [
       "Coup de boule : 2D10+6 : force",
       "Séisme : 1D10+6 AoE : force",
@@ -1362,7 +1362,7 @@
   "93": {
     "visuel3D": "m174",
     "nom": "Insecte Déformé",
-    "pvmax": "90",
+    "pvmax": 90,
     "skills": [
       "Poison : 1D4+4 sur 3 tours : intel",
       "Mandibule tranche : 2D10+6 : force",
@@ -1377,7 +1377,7 @@
   "94": {
     "visuel3D": "m179",
     "nom": "Poisson Abyssal",
-    "pvmax": "90",
+    "pvmax": 90,
     "skills": [
       "Croc pourri : 1D10+6, soin reçu /2 (3 tours) : force",
       "Projection d'eau : 1D10+9 AoE : intelligence",
@@ -1392,7 +1392,7 @@
   "95": {
     "visuel3D": "m220",
     "nom": "Fleur Envahissante",
-    "pvmax": "50",
+    "pvmax": 50,
     "skills": [
       "Coup de ronce : 1D10+6 : dextérité",
       "Pollen démangeant : Intelligence/Esprit -2 (3 tours) : esprit",
@@ -1407,7 +1407,7 @@
   "96": {
     "visuel3D": "m230",
     "nom": "DD Ogre mutant",
-    "pvmax": "110",
+    "pvmax": 110,
     "skills": [
       "Euphorie : +1D4+2 par coup. Buff pendant 4 tours (max 5) : esprit",
       "Attaque Cyclone : 1D10+7 : force",
@@ -1422,7 +1422,7 @@
   "97": {
     "visuel3D": "m027",
     "nom": "DD Gargouille",
-    "pvmax": "85",
+    "pvmax": 85,
     "skills": [
       "Coup de griffe : 2D10+6 : force",
       "Coup de vent : 1D10+8 AoE : intelligence",
@@ -1437,7 +1437,7 @@
   "98": {
     "visuel3D": "m253",
     "nom": "DD Soldat Squelette",
-    "pvmax": "80",
+    "pvmax": 80,
     "skills": [
       "Charge : 1D10 +10 : force",
       "Coup de Lance/Epee : 1D10 +7 : dextérité",
@@ -1452,7 +1452,7 @@
   "99": {
     "visuel3D": "m247",
     "nom": "DD Géant Mutilé",
-    "pvmax": "140",
+    "pvmax": 140,
     "skills": [
       "Poing féroce : 2D10 +10 : force",
       "Séisme pied : 1D10+10 : force",
@@ -1467,7 +1467,7 @@
   "100": {
     "visuel3D": "m196",
     "nom": "DD Shaman Gnome",
-    "pvmax": "80",
+    "pvmax": 80,
     "skills": [
       "Totem Gracieux (40pv) : 1D6 +6 pendant 6 tours (tous les 2 tours) : Intelligence",
       "Buff dégât : +4 dégâts AoE pendant 3 tours : Esprit",
@@ -1482,7 +1482,7 @@
   "101": {
     "visuel3D": "m375",
     "nom": "DD Noble Corrompu",
-    "pvmax": "160",
+    "pvmax": 160,
     "skills": [
       "Percée du Chevalier : 1D8 + 1D6 + 1D4 +12 : Dextérité",
       "Vivacité Accrue : Esquive+3, Dextérité+2 à la cible pendant 4 tours : Esprit",
@@ -1497,7 +1497,7 @@
   "102": {
     "visuel3D": "m409",
     "nom": "Escargot Vorace",
-    "pvmax": "70",
+    "pvmax": 70,
     "skills": [
       "Bave visqueuse : 1D6+6 Dexté -3 AoE : Intelligence",
       "Morsure : 2D10 +6 : force",
@@ -1512,7 +1512,7 @@
   "103": {
     "visuel3D": "m301",
     "nom": "Loup garou",
-    "pvmax": "90",
+    "pvmax": 90,
     "skills": [
       "Coup de griffe/patte : 2D6+10 : dextérité",
       "Hurlement : stress+5, réussite -1 (3 tours) : esprit",
@@ -1527,7 +1527,7 @@
   "104": {
     "visuel3D": "m198",
     "nom": "DD Gardien cauchemardesque",
-    "pvmax": "150",
+    "pvmax": 150,
     "skills": [
       "Changement de forme (+ dégât +5) : esprit",
       "Cri de pitié : Stress+10 (15) AoE : esprit",
@@ -1542,7 +1542,7 @@
   "105": {
     "visuel3D": "m290",
     "nom": "Caméléon Marécageux",
-    "pvmax": "80",
+    "pvmax": 80,
     "skills": [
       "Furtivité : Rend invisible, dext & esq+2 (3 tours) : esprit",
       "Coup de langue : 1D10+10 (dexté-2, 3 tours) : dextérité",
@@ -1557,7 +1557,7 @@
   "106": {
     "visuel3D": "m301",
     "nom": "DD Abomination",
-    "pvmax": "180",
+    "pvmax": 180,
     "skills": [
       "Coup de griffe/patte : 3D6+15 : dextérité",
       "Hurlement : stress+10, réussite -2 (3 tours) : esprit",
@@ -1572,7 +1572,7 @@
   "107": {
     "visuel3D": "m298",
     "nom": "Crabe de Jade",
-    "pvmax": "95",
+    "pvmax": 95,
     "skills": [
       "Coup de pince : 2D10+9 : Force",
       "Attaque tournoyante : 1D10+10 AoE : Force",
@@ -1587,7 +1587,7 @@
   "108": {
     "visuel3D": "m294",
     "nom": "Pangolin de Crystal",
-    "pvmax": "95",
+    "pvmax": 95,
     "skills": [
       "Charge : 2D10 +10 : Force",
       "Frappe de Crystal : 1D10+8 AoE : Intelligence",
@@ -1602,7 +1602,7 @@
   "109": {
     "visuel3D": "taharqa",
     "nom": "Taharqa",
-    "pvmax": "280",
+    "pvmax": 280,
     "skills": [
       "Percée du Guerrier : 1D6 + 1D6 + 1D4 +16 : Dextérité",
       "Aura Ami Marteau : Soin 2D10 +16. Prochain dégât +1D6+8 : Esprit",
@@ -1617,7 +1617,7 @@
   "110": {
     "visuel3D": "m100",
     "nom": "Gardien d'Amur",
-    "pvmax": "90",
+    "pvmax": 90,
     "skills": [
       "Poigne de fer : 1D6+14 : force",
       "Tourbillon Ténébreux : 2D6+8 AoE : intelligence",
@@ -1632,7 +1632,7 @@
   "111": {
     "visuel3D": "m197",
     "nom": "Volesang - Héraut de Guerre",
-    "pvmax": "300",
+    "pvmax": 300,
     "skills": [
       "Coup de Corne : 3D6+16 : force",
       "Fracas Terrestre : 1D10+15 AoE : force",
@@ -1647,7 +1647,7 @@
   "112": {
     "visuel3D": "m057",
     "nom": "Ogre Corsaire",
-    "pvmax": "80",
+    "pvmax": 80,
     "skills": [
       "Blessure Douloureuse : 2D6+12 et 0 soin (3 tours) : dextérité",
       "Perce-Armure  : 2D6+10 + dégât physique reçu +5  (3 tours) : dextérité",
@@ -1662,7 +1662,7 @@
   "113": {
     "visuel3D": "m228",
     "nom": "Ogre Chef Shaman",
-    "pvmax": "240",
+    "pvmax": 240,
     "skills": [
       "Totem Gracieux : 1D6 +12 pendant 6 tours (tous les 2 tours) : Intelligence",
       "Affaib All AoE : +5 dégât subis AoE pendant 3 tours : Esprit",
@@ -1677,7 +1677,7 @@
   "114": {
     "visuel3D": "zephyr",
     "nom": "Zéphyr",
-    "pvmax": "240",
+    "pvmax": 240,
     "skills": [
       "Aura Bouclier Protec : Blocage +3 pendant 4 tours : esprit",
       "Aura Ami du Marteau : Soin 2D10 +15. Prochain dégât +2D6+6 : intel",
@@ -1692,7 +1692,7 @@
   "115": {
     "visuel3D": "m021",
     "nom": "Dragon Terrestre",
-    "pvmax": "350",
+    "pvmax": 350,
     "skills": [
       "Tremblement Intense : 2D10 +11 AoE : force",
       "Croc/Griffe Imposante : 3D6+16 : force",
@@ -1707,7 +1707,7 @@
   "116": {
     "visuel3D": "m369",
     "nom": "Dragon Fourrure Mythique",
-    "pvmax": "350",
+    "pvmax": 350,
     "skills": [
       "Tremblement Intense : 2D10 +11 AoE : force",
       "Croc/Griffe Imposante : 3D6+16 : force",
@@ -1722,7 +1722,7 @@
   "117": {
     "visuel3D": "m403",
     "nom": "Assassin Illusionniste",
-    "pvmax": "170",
+    "pvmax": 170,
     "skills": [
       "Furtivité/Voile blizz : Invisible, bonus ALL STATS +2 (Prochain coup +2D10) : Esprit",
       "Contrôle de l'Esprit : Durée 1D4, annulable : Esprit",
@@ -1737,7 +1737,7 @@
   "118": {
     "visuel3D": "ochak",
     "nom": "Ochak - Primat de la Chelona",
-    "pvmax": "290",
+    "pvmax": 290,
     "skills": [
       "Zone noire : 2D10+18 (bloc m-2) AoE stat -2 (stat-3 si parasite) pendant 3 tours : Intelligence",
       "Eclair en Furie : 4D6 +20 (bloc m-2) et réussite -5 sur 1 tour : Intelligence",
@@ -1752,7 +1752,7 @@
   "119": {
     "visuel3D": "m215",
     "nom": "Gimu - l'Oeil du Cyclone",
-    "pvmax": "300",
+    "pvmax": 300,
     "skills": [
       "Crochet Cyclique : 3D6+19 : Dextérité",
       "Cyclone Extra : 1D10 +17 AoE (bloc m-2) : Dextérité",
@@ -1767,7 +1767,7 @@
   "120": {
     "visuel3D": "m128b",
     "nom": "Invidia",
-    "pvmax": "220",
+    "pvmax": 220,
     "skills": [
       "Triple Tir : 1D8+1D6+1D4+16 (+5 si PV<120) : Dextérité",
       "Blessure Douloureuse : 1D10 +15, et 0 heal sur 4 tours : Dextérité",
@@ -1782,7 +1782,7 @@
   "121": {
     "visuel3D": "m041",
     "nom": "Anuran Shaman",
-    "pvmax": "105",
+    "pvmax": 105,
     "skills": [
       "Totem Gracieux : 1D6 +9 pendant 6 tours (tous les 2 tours) : Intelligence",
       "Affaib All AoE : +3 dégât subis AoE pendant 3 tours : Esprit",
@@ -1797,7 +1797,7 @@
   "122": {
     "visuel3D": "m039",
     "nom": "Anuran Danselame",
-    "pvmax": "180",
+    "pvmax": 180,
     "skills": [
       "Lames Dansantes : 3D6 + 14 : Dextérité",
       "Danse de l'oiseau de feu : 2D6+12 : Dextérité",
@@ -1812,7 +1812,7 @@
   "123": {
     "visuel3D": "kibo",
     "nom": "Kibo",
-    "pvmax": "250",
+    "pvmax": 250,
     "skills": [
       "Euphorie : +1D4+1 (min 3) par coup. Buff pendant 4 tours (max 5) : esprit",
       "Attaque Cyclone/(Provoc) :  1D10 +15 (pour jdrcombat +20)  (+5, 1/2 visé 3 t) : Force/Charisme",
@@ -1827,7 +1827,7 @@
   "124": {
     "visuel3D": "m190",
     "nom": "Lézard à collerette",
-    "pvmax": "95",
+    "pvmax": 95,
     "skills": [
       "Coup de griffe: 1D10+12 (force-2, 3 tours) : Dextérité",
       "Crachat : 1D10+8 AoE : Intelligence",
@@ -1842,7 +1842,7 @@
   "125": {
     "visuel3D": "m193",
     "nom": "Rampant de Crystal",
-    "pvmax": "110",
+    "pvmax": 110,
     "skills": [
       "Dégagement d'énergie : (1 tour incant) 2D6+12 AoE (malus esprit -2, 3 tours) : Intelligence",
       "Charge glacée : 2D10 +8 : Force",
@@ -1857,7 +1857,7 @@
   "126": {
     "visuel3D": "m087b",
     "nom": "Champignoïde Mutant Crystal",
-    "pvmax": "250",
+    "pvmax": 250,
     "skills": [
       "Attaque foudroyante : AoE 3D6 + 10 (+3/champi) : Intelligence",
       "Spore explosif : 4D6 +16 : Intelligence",
@@ -1872,7 +1872,7 @@
   "127": {
     "visuel3D": "m126",
     "nom": "Garde de la Curie",
-    "pvmax": "110",
+    "pvmax": 110,
     "skills": [
       "Charge : 1D10 +9 : force",
       "Lumière Sacré : 1D10+11 : Intelligence",
@@ -1887,7 +1887,7 @@
   "128": {
     "visuel3D": "m022",
     "nom": "Tyrannosaure mycolique",
-    "pvmax": "110",
+    "pvmax": 110,
     "skills": [
       "Morsure : 2D10+12 : force",
       "Séisme acide : 1D10+10 AoE : force",
@@ -1902,7 +1902,7 @@
   "129": {
     "visuel3D": "m087c",
     "nom": "Champignoïde Dévorant",
-    "pvmax": "110",
+    "pvmax": 110,
     "skills": [
       "Stalactite : 1D10 + 1D6 + 1D4 +12 : intelligence",
       "Attaque foudroyante : AoE 2D6 + 8 : intelligence",
@@ -1917,7 +1917,7 @@
   "130": {
     "visuel3D": "m105b",
     "nom": "Fourmilion Toxique",
-    "pvmax": "110",
+    "pvmax": 110,
     "skills": [
       "Vague terrestre : 1D10 +13 AoE : force",
       "Morsure : 2D10 +14 : force",
@@ -1932,7 +1932,7 @@
   "131": {
     "visuel3D": "botassius",
     "nom": "Botassius - Général Défensif",
-    "pvmax": "300",
+    "pvmax": 300,
     "skills": [
       "Lumière de Guérison / Bouclier de Lumière : 2D10+18 (1/3 rejouer) / Armure 1D4+5 AoE pendant 4 tours : Intelligence",
       "Vague Foudroyante : 3D6+17, Blocage-3 AoE 3 tours : Force (jdrCombat +25)",
@@ -1947,7 +1947,7 @@
   "132": {
     "visuel3D": "m025",
     "nom": "Mori Mori - Roi Champi",
-    "pvmax": "210",
+    "pvmax": 210,
     "skills": [
       "Coup Destructeur : 3D6+12 : Force",
       "Gaz de spores : 1D10+12 (-1 réussite) 3 tours : Intel",
@@ -1962,7 +1962,7 @@
   "133": {
     "visuel3D": "m361",
     "nom": "Ash - L'Associal",
-    "pvmax": "200",
+    "pvmax": 200,
     "skills": [
       "Bombe Incendiaire : 2D6+14 : Intelligence",
       "Tempête de Glace : 2D6+10 : Intelligence",
@@ -1977,7 +1977,7 @@
   "134": {
     "visuel3D": "m058",
     "nom": "Samouraï Ogre",
-    "pvmax": "160",
+    "pvmax": 160,
     "skills": [
       "Coupe Asura : 1D10 + (1D6) +10 : force",
       "Eclair Unique : 1D10 + (1D6) +14 : force",
@@ -1992,7 +1992,7 @@
   "135": {
     "visuel3D": "m314b",
     "nom": "Pachirou",
-    "pvmax": "230",
+    "pvmax": 230,
     "skills": [
       "Artillerie Lourde : 3D10+17 : Dextérité",
       "Explosifs Visqueux (Bombe à Huile) : 2D6+18 (+5) : Dexté-2 ESQ-2 sur 3 tours AoE : Dextérité",
@@ -2007,7 +2007,7 @@
   "136": {
     "visuel3D": "vimess",
     "nom": "Vimess - Général d'Expédition",
-    "pvmax": "250",
+    "pvmax": 250,
     "skills": [
       "Invoc Phénix (Torch) : 40 PV (revie 1 fois), Stats 15 (bloc 8), Charge 2D10+13 FOR, Tornade Feu AoE (-1D) INT, Prévention : Buff Armure +5 & -1 malus INT.<br/> Explosion à la mort : Dégât AoE à la mort (2D10+20, idem soin Vimess)",
       "Pluie de Flèches (/Douloureuse) : 3D6+23 AoE (/-7 et 0 heal 3 tours) (Mono +7) : Dextérité",
@@ -2022,7 +2022,7 @@
   "137": {
     "visuel3D": "m123",
     "nom": "Voleur Robuste",
-    "pvmax": "155",
+    "pvmax": 155,
     "skills": [
       "Tranchées aggressives : 3D6 +12 : force",
       "Embuscade : 2D10 +11 (X2 si discret) : dextérité",
@@ -2037,7 +2037,7 @@
   "138": {
     "visuel3D": "m124",
     "nom": "Pirate Malicieux",
-    "pvmax": "145",
+    "pvmax": 145,
     "skills": [
       "Coup de flingue : 2D10+13 : dextérité",
       "Esquive facile (saut esq) : (5 fois max) : dextérité",
@@ -2052,7 +2052,7 @@
   "139": {
     "visuel3D": "m292",
     "nom": "Grizzli",
-    "pvmax": "110",
+    "pvmax": 110,
     "skills": [
       "Morsure : 2D6 +10 (+ 7 si énervé) : force",
       "Attaque tournoyante : 2D6+8 (+ 5 si énervé) : dextérité",
@@ -2067,7 +2067,7 @@
   "140": {
     "visuel3D": "m136",
     "nom": "Lieutenant Heldentod",
-    "pvmax": "170",
+    "pvmax": 170,
     "skills": [
       "Charge : 2D10 +16 : force",
       "Attaque tournoyante : 2D8+10 : dextérité",
@@ -2082,7 +2082,7 @@
   "141": {
     "visuel3D": "m138",
     "nom": "Soldat d'élite Heldentod",
-    "pvmax": "140",
+    "pvmax": 140,
     "skills": [
       "Charge : 2D10 +14 : force",
       "Griffure Noire : 2D6 +10, et -1 blocage/esquive pour 3 tours AoE : Intel",
@@ -2097,7 +2097,7 @@
   "142": {
     "visuel3D": "m132",
     "nom": "Magicienne Heldentod",
-    "pvmax": "100",
+    "pvmax": 100,
     "skills": [
       "Soin : 3D10+15 : intelligence",
       "Bombe incendiaire : 1D10+11 (si elite fixe*2) : intelligence",
@@ -2112,7 +2112,7 @@
   "143": {
     "visuel3D": "m218",
     "nom": "Heldentod III",
-    "pvmax": "350",
+    "pvmax": 350,
     "skills": [
       "Attaque rapide : 3D6+22 (si PV bas +6, jdrcombat +75) : Force",
       "Coup déchirant : 2D6 +14 AoE (+6 dégâts reçus 3 tours) : Force",
@@ -2127,7 +2127,7 @@
   "144": {
     "visuel3D": "m253",
     "nom": "Squelette Heldentod",
-    "pvmax": "90",
+    "pvmax": 90,
     "skills": [
       "Attaque rapide / Triple Tir : 3D6+10 : Force/Dexté",
       "Cri de guerre: 1D4+4 AoE dégâts : Esprit",
@@ -2142,7 +2142,7 @@
   "145": {
     "visuel3D": "m289",
     "nom": "Caldari - Empereur Insecte",
-    "pvmax": "260",
+    "pvmax": 260,
     "skills": [
       "Vague terrestre : 2D10 +18 AoE : force",
       "Succion : 4D6+20 (soigne ça -10) : force",
@@ -2157,7 +2157,7 @@
   "146": {
     "visuel3D": "m350",
     "nom": "Vidal - Sorcier Dragon",
-    "pvmax": "250",
+    "pvmax": 250,
     "skills": [
       "Atk foudr / Tempête Glace (Pouvoir du Dragon) : 3D6+20 (Mono+5) : Intel",
       "Saut Dimensionnel : 3 tentatives par combat : remplace l'esquive/blocage (buff prochain dégât +5) : intel",
@@ -2172,7 +2172,7 @@
   "147": {
     "visuel3D": "m108b",
     "nom": "Barnardo - Barde Elogieux",
-    "pvmax": "170",
+    "pvmax": 170,
     "skills": [
       "Guérison: Heal 2D10+25 (-1 malus?) / Bombe Vocale : 2D6+10 : Intelligence",
       "Encouragement Musical : Dégât subi -1D4-6 AoE, 0 dodo, +2 rés esprit, 4 tours : Charisme",
@@ -2187,7 +2187,7 @@
   "148": {
     "visuel3D": "m321",
     "nom": "Femme Templier",
-    "pvmax": "190",
+    "pvmax": 190,
     "skills": [
       "Provocation Groupe : 1D10+10, provoc à 50% sur 3 tours : Charisme",
       "Lumière de Guérison : 2D10 +12, 1/4 de rejouer : intelligence",
@@ -2202,7 +2202,7 @@
   "149": {
     "visuel3D": "m322b",
     "nom": "Conrad - Héritier et Général",
-    "pvmax": "270",
+    "pvmax": 270,
     "skills": [
       "Euphorie : +1D4+2 (min 4) par coup. Buff pendant 4-5 tours (max 5) : esprit",
       "Percée du Guerrier : 2D6 + 1D4 +19 : force (jdrCombat +10)",
@@ -2217,7 +2217,7 @@
   "150": {
     "visuel3D": "m076b",
     "nom": "Tortue Maudite",
-    "pvmax": "170",
+    "pvmax": 170,
     "skills": [
       "Seisme : 3D6 +12 AoE : force",
       "Cri d'agonie : 2D6 +12 AoE (force/intel -4 4 tours) : intelligence",
@@ -2232,7 +2232,7 @@
   "151": {
     "visuel3D": "grambo",
     "nom": "Grambo - N°7 Hydra",
-    "pvmax": "210",
+    "pvmax": 210,
     "skills": [
       "Coup de flingue : 2D10+14 : dextérité",
       "Torche de feu : 1D10+15 AoE : intelligence",
@@ -2247,7 +2247,7 @@
   "152": {
     "visuel3D": "m069b",
     "nom": "Snoko - N°3 Hydra",
-    "pvmax": "250",
+    "pvmax": 250,
     "skills": [
       "Solo (-6) / Faiblesse Critique : 3D6 +16 (Crit X1.5) : Force  (jdrCombat +35)",
       "Griffure Noire : 2D6 +12 et -2 blocage/esquive pour 3 tours AoE : Force",
@@ -2262,7 +2262,7 @@
   "153": {
     "visuel3D": "diana",
     "nom": "Diana - Tigresse Pourpre",
-    "pvmax": "270",
+    "pvmax": 270,
     "skills": [
       "Faiblesse Critique : 5D6 +20 Crit (1,2 : *1.5,  3 : *1.25) : Force (jdrcombat +10)",
       "Dash (Cicatrice) de l'esprit : 4D6 +16 : -1 buff, se replace : Force",
@@ -2277,7 +2277,7 @@
   "154": {
     "visuel3D": "m063",
     "nom": "Charles - N°2 Hydra",
-    "pvmax": "275",
+    "pvmax": 275,
     "skills": [
       "Silence AoE : Aucun sort magique pendant 3 tours : Esprit",
       "Percée du Chevalier (Atk Cyclone) : 4D6 +20 (-5) : force",
@@ -2292,7 +2292,7 @@
   "155": {
     "visuel3D": "akala",
     "nom": "Akala - Tête de l'Hydra",
-    "pvmax": "300",
+    "pvmax": 300,
     "skills": [
       "Destruction/Coupure Noir/Blanc : AoE 3D6+20 (+ 1D Mono) (Chaque -100 PV : -5), Force/Intel (jdrCombat +30)",
       "Assaut du Chaos HYDRA (7 têtes/charges) : 3D6+22 (chance blocage/2) : Intel",
@@ -2307,7 +2307,7 @@
   "156": {
     "visuel3D": "m012b",
     "nom": "Romarin - N°6 Hydra",
-    "pvmax": "200",
+    "pvmax": 200,
     "skills": [
       "Châtiment Sacré / Vent purificateur : 2D6+12 (-1 malus) : Intel",
       "Guérison / Résurrection : 2D10+18 (*2) : Intel",
@@ -2322,7 +2322,7 @@
   "157": {
     "visuel3D": "m158",
     "nom": "Samael - 'Général Démon'",
-    "pvmax": "200",
+    "pvmax": 200,
     "skills": [
       "Panopticor Eveillé : 40 PV, Force/Intel-Esprit : 15/16. Sort : Parasite obscur : 8 (+4/t *4) (Intel), Coup tentac : 2D6+10 (Force) : Esprit",
       "Hommage : Soin 2-40PV, Dégât (+) et Armure (+) 6 sur 3 tours : Esprit",
@@ -2337,7 +2337,7 @@
   "158": {
     "visuel3D": "m217",
     "nom": "Bazuda - Grand sorcier",
-    "pvmax": "300",
+    "pvmax": 300,
     "skills": [
       "Tempête de Glace : 3D10 +13 : Intelligence",
       "Magie Extrême + : Prochain dégât magique +2D6 +10 : Esprit",
@@ -2352,7 +2352,7 @@
   "159": {
     "visuel3D": "m055b",
     "nom": "Monra - Champion Belliqueux",
-    "pvmax": "290",
+    "pvmax": 290,
     "skills": [
       "Faiblesse Critique : 4D6 +19 Crit (1,2) *1.5, (3 : *1.25) : Force",
       "Griffure Noire : 3D6 +13, et -2 blocage/esquive pour 3 tours AoE : Force",
@@ -2367,7 +2367,7 @@
   "160": {
     "visuel3D": "crimson",
     "nom": "Crimson - L'Enchanteur",
-    "pvmax": "240",
+    "pvmax": 240,
     "skills": [
       "Vent Purif / Guérison: Soin 2D10+28 (-14, -1 malus) / Bombe Vocale (Feu/Glace) : 2D6+18 : Intelligence",
       "Encouragement Musical : Dégât subi -1D4-6 AoE, 0 dodo, +2 rés esprit /// Symphonie de guerre : Dégât +1D6+5 AoE -- 4 tours : Charisme",
@@ -2382,7 +2382,7 @@
   "161": {
     "visuel3D": "fira",
     "nom": "Fira - Virtuose de Génie",
-    "pvmax": "250",
+    "pvmax": 250,
     "skills": [
       "Lames Dansantes X : 3D6+18 (+7 mono) AoE : Dextérité",
       "Danse du Poète : Dégât +1D6+4, Dextérité+2 AoE sur 4 tours : Esprit",
@@ -2397,7 +2397,7 @@
   "162": {
     "visuel3D": "m047e",
     "nom": "Zack - Foreur Fourbe",
-    "pvmax": "230",
+    "pvmax": 230,
     "skills": [
       "Furtivité : Invisible, bonus ESQ +2 (Prochain coup +1D6) // Intégration : ESQ +3  AoE, sur 3 tours : Esprit",
       "Embuscade rapide : 3D6 +16 (X1.5 si fufu) : Dextérité (jdrcombat +30)",
@@ -2412,7 +2412,7 @@
   "163": {
     "visuel3D": "willow",
     "nom": "Willow - N°4 Hydra",
-    "pvmax": "230",
+    "pvmax": 230,
     "skills": [
       "Dédoublement Eveillé : Invoque un double sur 2(+1) tours : Esprit",
       "Rituel de Mana : Esprit/Res +3 AoE sur 1D4 +2 tours // Menace Mortelle : Réussite des sorts : -3, esquive/blocage -2 AoE sur 1(+1) tour : Esprit",
@@ -2427,7 +2427,7 @@
   "164": {
     "visuel3D": "m009b",
     "nom": "Molman - Roi oublié",
-    "pvmax": "290",
+    "pvmax": 290,
     "skills": [
       "Euphorie : +1D4 (min 2) +2 par coup. Buff pendant 4 tours (max 5) : Esprit",
       "Vague Foudroyante : 3D6+13, Blocage-3 AoE 3 tours : Force",
@@ -2442,7 +2442,7 @@
   "165": {
     "visuel3D": "m158e",
     "nom": "Prince du Fléau",
-    "pvmax": "410",
+    "pvmax": 410,
     "skills": [
       "Rayon Noir : 6D6 +45 (bloc/esq -2) mini-AoE : Intelligence // Coup Physique : 3D6+22",
       "Zone de calamité : 4D6+30 (bloc-2) et -2 réussites sur 3 tours (AoE) : Intelligence",
@@ -2457,7 +2457,7 @@
   "166": {
     "visuel3D": "azrael",
     "nom": "Azraël - Elu d'Al-hara",
-    "pvmax": "380",
+    "pvmax": 380,
     "skills": [
       "Oeil d'Al-hara (Contrôle / Dodo) AoE : (Mono -3 res esprit, Dodo -3) durée 3 tours : Esprit (même si silence)",
       "Détriplement : Invoque 2 doubles pendant 2 tours (dégâts infligé/reçu /2) : Esprit",
@@ -2472,7 +2472,7 @@
   "167": {
     "visuel3D": "vassago",
     "nom": "Vassago - Général Déchu",
-    "pvmax": "330",
+    "pvmax": 330,
     "skills": [
       "Verdict Final : 5D6 +25 Crit (1,2 : *1.5; 3,4 : *1.25) : Force<br/> Entrave Mentale : 4D6+20 et -3 Res Espr'it sur 3 tours : Espr'it",
       "Aura du Sanguinaire : Dégât +1D6+9 (Absorbe +5 PV), Bloc/Esq +2 sur 5 tours : Esprit",
@@ -2487,7 +2487,7 @@
   "168": {
     "visuel3D": "m053b",
     "nom": "Bonoss - Ursun Luminary (Veyda)",
-    "pvmax": "145",
+    "pvmax": 145,
     "skills": [
       "Coupure blanche : 3D6 +9 : Force",
       "Destruction Noire : 2D6 +8 : Intelligence",
@@ -2502,7 +2502,7 @@
   "169": {
     "visuel3D": "m065",
     "nom": "Josh - Drakai Guerrier (Veyda)",
-    "pvmax": "180",
+    "pvmax": 180,
     "skills": [
       "Perce-Armure : 2D6+10, dégât physique reçu + 3 (3 tours) : force",
       "Mur de Titan : Dégât subi -1D4 -4 pendant 3 tours : Force",
@@ -2517,7 +2517,7 @@
   "170": {
     "visuel3D": "m066",
     "nom": "Ruro - Drakai Shaman (Veyda)",
-    "pvmax": "120",
+    "pvmax": 120,
     "skills": [
       "Punition Divine : 2D6+10 : Intelligence",
       "Totem Gracieux : Mode Soin : Soin 4 PV par tour. - Mode Soutien : attaque/bloque ((Invoque un familier Totem : 30 PV, Force : 9, Dexté : 13, Intel : 14. - Mode Soin : Ne peut pas bouger / se protéger, 0 jet de dé. - Mode Soutien : peut bouger et bloquer, 2 sorts : 1) Renforcement : +2 Force ou +2 Intel sur la cible : 3 tours (intel) , 2) Eclair : 1D8 (intel))) : Esprit",
@@ -2532,7 +2532,7 @@
   "171": {
     "visuel3D": "m043",
     "nom": "Plotodo - Torturran Juge (Veyda)",
-    "pvmax": "190",
+    "pvmax": 190,
     "skills": [
       "Âme Enchainée : 2D6+11 et Dexté-3 (AoE ligne) sur 3 tours : Dextérité",
       "Scellement : Aucun sort physique pendant 3 tours : Esprit",
@@ -2547,7 +2547,7 @@
   "172": {
     "visuel3D": "m038b",
     "nom": "Plouka - Lieutenant Offensif",
-    "pvmax": "210",
+    "pvmax": 210,
     "skills": [
       "Faiblesse Critique / Cicatrice : Degat 3D6+13 (Crit X1.5) (ou -1 bu'ff), Mono : Force (jdrcombat +18)",
       "Griffure Noire (Atk Furieuse) : Degat Malus 2D6+11 (+5), Blocage et Esquive -2 sur 3 tours AoE : Dextérité/Force",
@@ -2562,7 +2562,7 @@
   "173": {
     "visuel3D": "m230b",
     "nom": "Yéti - Monstre imaginaire des glaces",
-    "pvmax": "350",
+    "pvmax": 350,
     "skills": [
       "TODO : 6D6 +45 (+10 si para) : Intelligence // Coup Physique : 3D6+20",
       "TODO AoE : 4D6+30 (+5 si para) et -2 réussites sur 3 tours : Intelligence",
@@ -2577,7 +2577,7 @@
   "174": {
     "visuel3D": "m012d",
     "nom": "Spike - Zumi Assassin (Veyda)",
-    "pvmax": "165",
+    "pvmax": 165,
     "skills": [
       "Cicatrice de l'Esprit : Degat 3D6 +9 (-1 buff) : Force",
       "Griffure Noire : Degat Malus 2D6 +7, Blocage et Esquive -1 sur 3 tours AoE : Force",
@@ -2592,7 +2592,7 @@
   "175": {
     "visuel3D": "lucius",
     "nom": "Lucius - Chef de la Veyda",
-    "pvmax": "280",
+    "pvmax": 280,
     "skills": [
       "Soin Inverseur (4 fois max) : Transforme les soins reçus par les ennemis en dégât (AoE) sur 3 tours (non annulable) : Esprit",
       "Faiblesse Critique : 4D6 +18 Crit (1,2 : *1.5, 3 : *1.25) : Force<br/>Cicatrice : 4D6+20 (-1 bonus) : Force -1",
@@ -2607,7 +2607,7 @@
   "176": {
     "visuel3D": "m216e",
     "nom": "Esprit de la Vengeance",
-    "pvmax": "150",
+    "pvmax": 150,
     "skills": [
       "Tempête Noire : 2D6+15 (+5 parasite) AoE : intelligence (jdrcombat +20)",
       "Flèche des ombres sanglantes : 3D6+15, soin 1D10+5 (+5 parasite) : intelligence",
@@ -2622,7 +2622,7 @@
   "177": {
     "visuel3D": "m289d",
     "nom": "Bourreau du Grand Bul’tik",
-    "pvmax": "180",
+    "pvmax": 180,
     "skills": [
       "Vague terrestre : 2D10 +14 AoE : force",
       "Succion : 3D6+16 (soin 3/4) : force",
@@ -2637,7 +2637,7 @@
   "178": {
     "visuel3D": "adonis",
     "nom": "Adonis 2 - Juge déterminé",
-    "pvmax": "270",
+    "pvmax": 270,
     "skills": [
       "Âme Enchainée / Entrave Mentale : 3D6+20 et dexté-3  / res espr -3 (AoE) sur 3 tours : Dextérité/Espr'it",
       "Scellement Douloureux : Aucun sort physique, 0 SOIN pendant 4-5 tours : Esprit",
@@ -2652,7 +2652,7 @@
   "179": {
     "visuel3D": "m025b2",
     "nom": "Fred - Champi Baga Dopant",
-    "pvmax": "100",
+    "pvmax": 100,
     "skills": [
       "Coup de boule : 2D6+13 : force",
       "Spore toxique : 1D6+10 AoE  : intelligence",
@@ -2667,7 +2667,7 @@
   "180": {
     "visuel3D": "m089e",
     "nom": "Andredi - Prédateur Ailé",
-    "pvmax": "280",
+    "pvmax": 280,
     "skills": [
       "Coup de Serre : 4D6+24 : force",
       "Griffures Pénétrantes : 3D6+15 (Armure/2 sur 3 tours) AoE : force",
@@ -2682,7 +2682,7 @@
   "181": {
     "visuel3D": "m212b",
     "nom": "Poisson d'Obsidienne",
-    "pvmax": "100",
+    "pvmax": 100,
     "skills": [
       "Charge : 1D10 +13 : Force",
       "Frappe d'obsidienne: 1D10+9 AoE : Force",
@@ -2697,7 +2697,7 @@
   "182": {
     "visuel3D": "m020b",
     "nom": "Golem calcaire Noir",
-    "pvmax": "110",
+    "pvmax": 110,
     "skills": [
       "Charge : 1D10 +15 : Force",
       "Secousse : 1D10+11 AoE : Force",
@@ -2712,7 +2712,7 @@
   "183": {
     "visuel3D": "m090c",
     "nom": "Esprit de Magnétite",
-    "pvmax": "260",
+    "pvmax": 260,
     "skills": [
       "Rayon magnétique : Bloc/Esq -4 (car attiré), mini-AoE : 3D6 +19 : Intelligence",
       "Gravitation : (bloc échec critique : stun 1 tour # écrasé)  3D6 +15 : Intelligence",
@@ -2727,7 +2727,7 @@
   "184": {
     "visuel3D": "hemera",
     "nom": "Héméra - Sainte Vivante",
-    "pvmax": "700",
+    "pvmax": 700,
     "skills": [
       "Aura Bénite : Soin 5D6 +30. Buff dégât +3D6+12 sur 3 tours : Intel",
       "Bouclier Divin : (5 fois max) Retire tout malus et immunise de tout dégât pendant 2 tours (puis 2 tours dégât +25%, non relançable) : Esprit (même silence)",
@@ -2742,7 +2742,7 @@
   "185": {
     "visuel3D": "m036c",
     "nom": "Parasite maudit",
-    "pvmax": "100",
+    "pvmax": 100,
     "skills": [
       "Poison : 1D4+5 sur 3 tours : esprit",
       "Mandibule tranchante : 2D10+9 : force",
@@ -2757,7 +2757,7 @@
   "186": {
     "visuel3D": "m292b",
     "nom": "Grizzli mutant",
-    "pvmax": "150",
+    "pvmax": 150,
     "skills": [
       "Morsure : 3D6 +12 (+ 7 si énervé) : force",
       "Attaque tournoyante : 2D6+13 (+ 5 si énervé) : dextérité",
@@ -2772,7 +2772,7 @@
   "187": {
     "visuel3D": "m301b",
     "nom": "Lycanthrope Heldentod",
-    "pvmax": "270",
+    "pvmax": 270,
     "skills": [
       "Coup de griffe / Cicatrice esprit : 4D6+18 (+7 // -1 buff) : dextérité",
       "Hurlement : réussite -3 (4 tours) AoE : esprit",
@@ -2787,7 +2787,7 @@
   "188": {
     "visuel3D": "rita",
     "nom": "Rita - Botaniste d'Amur",
-    "pvmax": "245",
+    "pvmax": 245,
     "skills": [
       "Séisme : 3D6+17 (+5 AoE) : Intelligence (jdrCombat +25)",
       "Guérison (Résurrection) : Soin 3D6 +30 (+20) : Intelligence",
@@ -2802,7 +2802,7 @@
   "189": {
     "visuel3D": "sohan",
     "nom": "Sohan - Champion Royal",
-    "pvmax": "225",
+    "pvmax": 225,
     "skills": [
       "Intégration / Furtivité : Esquive +3 AoE / Fufu Dexté +3, chance touché -3 : sur 5 tours : Esprit",
       "Attaque Rapide / Embuscade : 3D6 +22 / (fufu total +8, X1.5?) : Dextérité",
@@ -2817,7 +2817,7 @@
   "190": {
     "visuel3D": "lona",
     "nom": "Lona - Briseuse de Sceau",
-    "pvmax": "235",
+    "pvmax": 235,
     "skills": [
       "Parasite frénétique : 2D6+18 et -7 sur 5 tours (2 vie # infection/prévention) : Intelligence",
       "Tempête Noire / Infection Pullulante : 2D6+24 / -6 + (tours para)*3 : Intelligence",
@@ -2832,7 +2832,7 @@
   "191": {
     "visuel3D": "lugune",
     "nom": "Lugune - Porte-parole des ténèbres",
-    "pvmax": "245",
+    "pvmax": 245,
     "skills": [
       "Parasite propageur : 1D10+10 et 5 sur 5 tours, AoE mini si dé <=6 : Intelligence",
       "Flèches des Ombres : Dégât 2D6 +23, si parasite : soin 1D10+15 : Intelligence",
@@ -2847,7 +2847,7 @@
   "192": {
     "visuel3D": "m058b",
     "nom": "Moturth - Dompteur Prodigieux",
-    "pvmax": "270",
+    "pvmax": 270,
     "skills": [
       "Triple Tir (Blessure Douloureuse / Entrave) : Degat 3D6 (1D10) +25, (0 soin / entrave) sur 4 tours Mono : Dextérité",
       "Flèche Méga Eblouissante : 2D6 +18, réussite -3 (3 tours) AoE : Dextérité",
@@ -2862,7 +2862,7 @@
   "193": {
     "visuel3D": "yuchi",
     "nom": "Yuchi - Cavalière Ranger",
-    "pvmax": "250",
+    "pvmax": 250,
     "skills": [
       "Attaque Rapide / Triple Tir : 3D6 +20 : Dextérité",
       "Attaque Furieuse : 2D6 +16 (+5 si PV<150) AoE : Dextérité",
@@ -2877,7 +2877,7 @@
   "194": {
     "visuel3D": "bento",
     "nom": "Bento - Navigateur Ingénieux",
-    "pvmax": "270",
+    "pvmax": 270,
     "skills": [
       "Artillerie Lourde (Blessure Douloureuse) : 3D6+25 (1D10) +25 (0 soin) sur 4 tours : Dextérité",
       "Boost d'Armure / Robotisation (instantanée) : Soin 2D6 +13 / Dégât +1D4+6 (4 t) , Armure +1D4 (min 2) +4 sur 4 tours : Esprit",
@@ -2892,7 +2892,7 @@
   "195": {
     "visuel3D": "edgar",
     "nom": "Edgar - L'Elegant",
-    "pvmax": "250",
+    "pvmax": 250,
     "skills": [
       "Percée du Chevalier : 3D6 +22 (+5 si provoqué) : Dextérité",
       "Tempête Infernale : 2D6 +18 (50% provoc 2 tours) AoE : Dextérité",
@@ -2907,7 +2907,7 @@
   "196": {
     "visuel3D": "orion",
     "nom": "Orion - L'Aventurier",
-    "pvmax": "230",
+    "pvmax": 230,
     "skills": [
       "Triple Tir (Blessure Douloureuse / Entrave) : 3D6 (1D10) +22, (0 soin / entrave) sur 4 tours : Dextérité",
       "Invocation du Guépard (40 PV) : Force/Dexté : 16, Intel/Esprit : 11, dégât Mono (AoE), 2D6 (1D6) +10 Mono : Esprit",
@@ -2922,7 +2922,7 @@
   "197": {
     "visuel3D": "leonhart",
     "nom": "Leonhart - 1er Chevalier",
-    "pvmax": "350",
+    "pvmax": 350,
     "skills": [
       "Tempête Infernale (Percée du Chevalier) : 4D6 +23 (+7 mono), Prov 50% 1t : force (jdrCombat +40)",
       "Enchantement Glaciale : Blocage/Res +3,  dégât +1D6+4 sur 4 tours, relâchement : (Montant*2) : Esprit",
@@ -2937,7 +2937,7 @@
   "198": {
     "visuel3D": "m041c",
     "nom": "Anuran Druide",
-    "pvmax": "150",
+    "pvmax": 150,
     "skills": [
       "Guérison (Résurrection) : Soin 3D6 (2t, PV+15) +20, Mono : Intelligence",
       "Totem Gracieux : 40 PV : Soin 6 PV/tour : Esprit",
@@ -2952,7 +2952,7 @@
   "199": {
     "visuel3D": "m287",
     "nom": "Tentacules globuleux",
-    "pvmax": "170",
+    "pvmax": 170,
     "skills": [
       "Crachat visqueux : 2D6+12 Dexté -3 (3 tours) AoE : Intelligence",
       "Crachat corrosif : 1D6+5 pendant 3 tours : intelligence",
@@ -2967,7 +2967,7 @@
   "200": {
     "visuel3D": "ziss",
     "nom": "Ziss- N°5 Hydra",
-    "pvmax": "215",
+    "pvmax": 215,
     "skills": [
       "Guérison (Résurrection) : Heal 3D6 (2t, PV+15) +20 // Eclair Furie (Tempête) : 3D6+10+5 (-1D -5) : Intelligence",
       "Totem Gracieux : 40 PV, Force : 11, Dexté/Intel/Esprit : 15. Mode Soin : 6 PV/tour.<br/>Soutien : Eclair (AoE) : 2D6 (1D6) +10 // Sort Force/Intel +4 sur 4 tours : Esprit",
@@ -2982,7 +2982,7 @@
   "201": {
     "visuel3D": "m061d",
     "nom": "Kachgar - Commandant Khan",
-    "pvmax": "260",
+    "pvmax": 260,
     "skills": [
       "Coupure de lumière / noire (Destruction/Portail) : Degat 3D6 (-5 AoE/+tp) +22, Mono : Force",
       "Prière Divine (Sacrifice ombre) : Heal 2D6+24, prochain dégât lumière +1D8 +12, (chaque tour : PV -10, Force/Intel +4, ténèbres +10) : Espr",
@@ -2997,7 +2997,7 @@
   "202": {
     "visuel3D": "m371b",
     "nom": "Aigle Rhino Alpha",
-    "pvmax": "260",
+    "pvmax": 260,
     "skills": [
       "Bourrasque : AoE : 3D6 +18 : Intelligence",
       "Coup de corne : 3D6 +18 (Crit, 3,4 : X1.5) : Force",
@@ -3012,7 +3012,7 @@
   "203": {
     "visuel3D": "m373b",
     "nom": "Golem Magmatique",
-    "pvmax": "150",
+    "pvmax": 150,
     "skills": [
       "Charge : 1D10 +18 : Force",
       "Secousse de Feu : 1D10+14 AoE : Intel",
@@ -3027,7 +3027,7 @@
   "204": {
     "visuel3D": "m090g",
     "nom": "Esprit Brûlant Altéré",
-    "pvmax": "260",
+    "pvmax": 260,
     "skills": [
       "Rayon de feu # Baram : 3D10 15 : Intelligence",
       "Feu propageur : 2D10 +15 AoE : Intelligence",
@@ -3042,7 +3042,7 @@
   "205": {
     "visuel3D": "elysia",
     "nom": "Elysia - Etoile de la Chance",
-    "pvmax": "360",
+    "pvmax": 360,
     "skills": [
       "Aura de Mauvaise Fortune (3 fois : +1) : +1 sur le dé (AoE) 3 tours : Esprit",
       "Attaque Furieuse/Rapide : 4D6+22 (+'8 mono) : Dextérité (jdrCombat +15)",
@@ -3057,7 +3057,7 @@
   "206": {
     "visuel3D": "m047f",
     "nom": "Mento - Mercenaire menteur",
-    "pvmax": "240",
+    "pvmax": 240,
     "skills": [
       "Atk Foudroyante (Stalactites) : 3D6+20 (+6) : Intelligence",
       "Oeil Hypnotique : Endort 1D4 tours, res esprit -1 AoE : Intelligence",
@@ -3072,7 +3072,7 @@
   "207": {
     "visuel3D": "irene",
     "nom": "Irène - Jolie Fripouille",
-    "pvmax": "240",
+    "pvmax": 240,
     "skills": [
       "Châtiment Sacré (Punition Divine) / Destruc Noire : 3D6 +16 (+ 6) : Intel",
       "Prière Divine/Sacrifice Ombres : Soin 2D6 +14 (Lum +5) / -5 PV et Ténèbres 1D6+6 (Force,Intel+2) : Esprit",
@@ -3087,7 +3087,7 @@
   "208": {
     "visuel3D": "shellona",
     "nom": "Shellona - Fondateur Réincarné",
-    "pvmax": "360",
+    "pvmax": 360,
     "skills": [
       "Lumière Guérison : 2D10+22 (1/4 rejouer) : Intelligence<br/> Prévention Chelona : -2 malus Armure/Epines +1D6+5 sur 5 tours : Espr (même silence)",
       "Totem Chelona (esprit) : 60 PV - Stats 17.<br/>Soin : 1D6 +9 chaque tour<br/>Soutien : renforcement +2 force/intel AoE (3 tours), éclair : 2D6+16",
@@ -3102,7 +3102,7 @@
   "209": {
     "visuel3D": "leviathan",
     "nom": "Leviathan - Serpent du Cataclysme",
-    "pvmax": "500",
+    "pvmax": 500,
     "skills": [
       "(bloc/esq -3) mini-AoE : Force/Intel. Mâchoire Abyssale : 6D6 +45 <br/>Souffle : 4D6+30, soin reçu -50% sur 5 tours",
       "Queue Déferlante : 4D6 +35 (bloc-2) AoE : Force (jdrCombat +33)<br/>Tempête Océanique : 1D6 +19 (-2 réussite 1t) AoE sur 3 tours : Intelligence",
@@ -3117,7 +3117,7 @@
   "210": {
     "visuel3D": "m409b",
     "nom": "Bulblarve - Reine Prolifique",
-    "pvmax": "350",
+    "pvmax": 350,
     "skills": [
       "Roulement massif (bloc-3 (-4 si ⩽ 5)) : 4D6+25 (~+15) AoE ⇔ : Force<br/>Crachat : 2D10+16 AoE (bloc-2) : Intel",
       "Gelée Royale : Buff mono ∞ : PV +50, Dégât +5, Stats +1, mais -25 PV (mob wait 1t) : 0 dé",
@@ -3132,7 +3132,7 @@
   "211": {
     "visuel3D": "marcus",
     "nom": "Marcus - Héritier Vagabond",
-    "pvmax": "260",
+    "pvmax": 260,
     "skills": [
       "Atk Cyclone (Pouvoir du Dragon) : 3D6+18 (Mono+5) (feu, tén, phys) : Force",
       "Terreur du Dragon : Res Esprit / Réussite -3 sur 3 tours : Charisme",
@@ -3147,7 +3147,7 @@
   "212": {
     "visuel3D": "aguero",
     "nom": "Aguero - Perce-Esprit",
-    "pvmax": "235",
+    "pvmax": 235,
     "skills": [
       "Bombe Incendiaire / Stalactites Glaciales : Degat 3D6 (+5) +25, Mono : Intelligence",
       "Attaque Foudroyante / Oeil Hypnotique : Degat 2D6 +21, / Endort pendant 1D4 tours, Res espr -2 AoE : Intelligence",
@@ -3162,7 +3162,7 @@
   "213": {
     "visuel3D": "daryun",
     "nom": "Daryun - Conquérant de Luposia",
-    "pvmax": "360",
+    "pvmax": 360,
     "skills": [
       "Frappe Frénétique : 4D6+30 (+3/touche, max 5), cumule reset après 4 tours, mini-AoE (bloc/esq -2) : Force<br/>Impact Cinétique : 4D6+20 (réussite -5) : Force (même silence), mais Esq/Bloc m",
       "Griffure Noire : 4D6 +22 et -2 blocage/esquive AoE pour 4 tours : Force",
@@ -3177,7 +3177,7 @@
   "214": {
     "visuel3D": "qorina",
     "nom": "Qorina - Princesse Flamboyante",
-    "pvmax": "380",
+    "pvmax": 380,
     "skills": [
       "Coup Incandescant : 3D6 +30 (+5 mono poing/lum) : Force/Intel<br/>Feu Dévoreur : 2D6+20, Stats -3 (3 tours, 2 si bloc) : Intel (3 → 4 si DK)",
       "Flamme Impériale : Mode \"+1D6+9, Bloc/Esq+2\" sur 5 tours : Esprit",

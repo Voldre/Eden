@@ -74,11 +74,7 @@
     "desc": "Epée spécialisé pour les chevaliers",
     "effet": "",
     "montant": "Dégât +4 (+1 si Chevalier)",
-    "condition": {
-      "type": "classe",
-      "value": ["Chevalier"],
-      "bonus": "Dégât +1"
-    },
+    "condition": { "type": "classe", "value": ["Chevalier"], "bonus": "Dégât +1" },
     "icone": "W11402"
   },
   "12": {
@@ -130,13 +126,7 @@
     "montant": "Dégât +4",
     "icone": "W40301"
   },
-  "19": {
-    "nom": "Arc en bois",
-    "desc": "Simple arc en bois",
-    "effet": "",
-    "montant": "Dégât +3",
-    "icone": "W50101"
-  },
+  "19": { "nom": "Arc en bois", "desc": "Simple arc en bois", "effet": "", "montant": "Dégât +3", "icone": "W50101" },
   "20": {
     "nom": "Sakura",
     "desc": "Un bâton mystérieux inconnu. On raconte que tout ceux qui le touche finissent par disparaître... !",
@@ -297,11 +287,7 @@
     "desc": "Un cache oeil qui vous permet de mieux viser !",
     "effet": "",
     "montant": "Dextérité +2 (Charisme+1 si Corsaire)",
-    "condition": {
-      "type": "classe",
-      "value": ["Corsaire"],
-      "bonus": "Charisme +1"
-    },
+    "condition": { "type": "classe", "value": ["Corsaire"], "bonus": "Charisme +1" },
     "icone": "k10200",
     "access": "A0"
   },
@@ -356,11 +342,7 @@
     "desc": "Une puce de l'Institut Silus fondé par les Zumis",
     "effet": "",
     "montant": "Dégât de foudre +3 (+1 si Ingénieur)",
-    "condition": {
-      "type": "classe",
-      "value": ["Ingénieur"],
-      "bonus": "Dégât de foudre +1"
-    },
+    "condition": { "type": "classe", "value": ["Ingénieur"], "bonus": "Dégât de foudre +1" },
     "icone": "i00689",
     "access": "D3"
   },
@@ -461,11 +443,7 @@
     "desc": "Une tunique créée par les locaux de la Forêt de Delphes",
     "effet": "PV Soin reçu +3",
     "montant": "Dégât -3 (+1 si Shaman)",
-    "condition": {
-      "type": "classe",
-      "value": ["Shaman"],
-      "bonus": "Dégât reçu -1"
-    },
+    "condition": { "type": "classe", "value": ["Shaman"], "bonus": "Dégât reçu -1" },
     "icone": "A20028"
   },
   "62": {
@@ -654,11 +632,7 @@
     "desc": "Plastron créé pour les hauts templiers de la Curie Métérole",
     "effet": "Intelligence +1",
     "montant": "Dégât -6 (PV+5 pour les Templiers)",
-    "condition": {
-      "type": "classe",
-      "value": ["Templier"],
-      "bonus": "PV +5"
-    },
+    "condition": { "type": "classe", "value": ["Templier"], "bonus": "PV +5" },
     "icone": "k20475"
   },
   "88": {
@@ -666,11 +640,7 @@
     "desc": "Une tunique ayant autrefois appartenue à un grand magicien noir",
     "effet": "",
     "montant": "Dégât -4, dégât ténèbres +2 (+1 si Démoniste)",
-    "condition": {
-      "type": "classe",
-      "value": ["Démoniste"],
-      "bonus": "Dégât ténèbres +1"
-    },
+    "condition": { "type": "classe", "value": ["Démoniste"], "bonus": "Dégât ténèbres +1" },
     "icone": "k20806",
     "access": "D2"
   },
@@ -679,11 +649,7 @@
     "desc": "Une tenue conçue par des ninjas d'une autre ère",
     "effet": "",
     "montant": "Dégât -5, dégât tranchant +2 (+1 si Voleur)",
-    "condition": {
-      "type": "classe",
-      "value": ["Voleur"],
-      "bonus": "Dégât tranchant +1"
-    },
+    "condition": { "type": "classe", "value": ["Voleur"], "bonus": "Dégât tranchant +1" },
     "icone": "k20213",
     "access": "D2"
   },
@@ -727,11 +693,7 @@
     "desc": "Un livre formé de grimoires démoniaques reliés ensemble",
     "effet": "Intelligence +1",
     "montant": "Dégât +10 (+1 si Démoniste)",
-    "condition": {
-      "type": "classe",
-      "value": ["Démoniste"],
-      "bonus": "Dégât +1"
-    },
+    "condition": { "type": "classe", "value": ["Démoniste"], "bonus": "Dégât +1" },
     "icone": "W64808"
   },
   "96": {
@@ -1112,11 +1074,7 @@
     "desc": "Une ceinture renforçant son porteur",
     "effet": "",
     "montant": "PV +20 (+5 si Samouraï)",
-    "condition": {
-      "type": "classe",
-      "value": ["Samouraï"],
-      "bonus": "PV +5"
-    },
+    "condition": { "type": "classe", "value": ["Samouraï"], "bonus": "PV +5" },
     "icone": "a30054",
     "access": "A1"
   },
@@ -1269,11 +1227,7 @@
     "desc": "Sceptre en forme de serpent ayant appartenu à un grand shaman",
     "effet": "",
     "montant": "Dégât +8 (+3 si Shaman)",
-    "condition": {
-      "type": "classe",
-      "value": ["Shaman"],
-      "bonus": "Dégât +3"
-    },
+    "condition": { "type": "classe", "value": ["Shaman"], "bonus": "Dégât +3" },
     "icone": "W62608"
   },
   "171": {
@@ -1288,11 +1242,7 @@
     "desc": "Une croix forgée pour les adeptes de magie noire",
     "effet": "Dégât ténèbres +3",
     "montant": "Dégât +7 (+1 si Démoniste)",
-    "condition": {
-      "type": "classe",
-      "value": ["Démoniste"],
-      "bonus": "Dégât +1"
-    },
+    "condition": { "type": "classe", "value": ["Démoniste"], "bonus": "Dégât +1" },
     "icone": "W64404"
   },
   "173": {
@@ -1411,11 +1361,7 @@
     "desc": "Un brassard augmentant la puissance du porteur. Appartient à la panoplie du combattant",
     "effet": "",
     "montant": "Dégât physique +2 (+2 si panoplie)",
-    "condition": {
-      "type": "panoplie",
-      "value": "Veste du Combattant",
-      "bonus": "Dégât +2"
-    },
+    "condition": { "type": "panoplie", "value": "Veste du Combattant", "bonus": "Dégât +2" },
     "icone": "A40021",
     "access": "D2"
   },
@@ -1606,11 +1552,7 @@
     "desc": "La rumeur raconte que cette tenue aurait appartenu au tout premier Juge Eveillé de l'histoire",
     "effet": "Dégât ténèbres +2",
     "montant": "Dégât -5 (+1 si Juge)",
-    "condition": {
-      "type": "classe",
-      "value": ["Juge"],
-      "bonus": "Dégât reçu -1"
-    },
+    "condition": { "type": "classe", "value": ["Juge"], "bonus": "Dégât reçu -1" },
     "icone": "k21023"
   },
   "214": {
@@ -1625,11 +1567,7 @@
     "desc": "Une tenue de dirigeant de guerre, stratège",
     "effet": "Force +1 Charisme +1",
     "montant": "Dégât -4 (+1 si Chevalier)",
-    "condition": {
-      "type": "classe",
-      "value": ["Chevalier"],
-      "bonus": "Dégât reçu -1"
-    },
+    "condition": { "type": "classe", "value": ["Chevalier"], "bonus": "Dégât reçu -1" },
     "icone": "k20280"
   },
   "216": {
@@ -1724,11 +1662,7 @@
     "desc": "Une épée portée par un grand héros du passé, des rumeurs disent qu'il s'agit du premier Chevalier du Chaos. Appartient à la Panoplie du \"Héros\".",
     "effet": "Force +1, Intelligence +1",
     "montant": "Dégât +4 (+2 si panoplie)",
-    "condition": {
-      "type": "panoplie",
-      "value": "Brassard du Héros",
-      "bonus": "Dégât +2"
-    },
+    "condition": { "type": "panoplie", "value": "Brassard du Héros", "bonus": "Dégât +2" },
     "icone": "W10604"
   },
   "229": {
@@ -1884,13 +1818,7 @@
     "montant": "Dé amplif ?",
     "icone": "k10340"
   },
-  "249": {
-    "nom": "Trèfle à Quatre Feuilles",
-    "desc": "Chance",
-    "effet": "",
-    "montant": "",
-    "icone": "k10053"
-  },
+  "249": { "nom": "Trèfle à Quatre Feuilles", "desc": "Chance", "effet": "", "montant": "", "icone": "k10053" },
   "250": {
     "nom": "Lapin chou rose",
     "desc": "Un lapin trop chou et adorable, bienveillant et gentil. Le lapin agit indépendamment de son porteur.",
@@ -1979,11 +1907,7 @@
     "desc": "Des chaussures offrant agilité et abilité à son porteur, tout devient fluide.",
     "effet": "",
     "montant": "Dextérité +1, Esprit +1 (Charisme+1 si Danselame)",
-    "condition": {
-      "type": "classe",
-      "value": ["Danselame"],
-      "bonus": "Charisme +1"
-    },
+    "condition": { "type": "classe", "value": ["Danselame"], "bonus": "Charisme +1" },
     "icone": "A50022",
     "access": "A1"
   },
@@ -2000,11 +1924,7 @@
     "desc": "Un gantelet ayant appartenu à l'un des plus grands forgerons du Pic de Noireflammes. Appartient à la Panoplie Noireflammes (2 pièces)",
     "effet": "Panoplie",
     "montant": "Dégât +2, (+2 si Panoplie)",
-    "condition": {
-      "type": "panoplie",
-      "value": "Katana Lame Noire",
-      "bonus": "Dégât +2"
-    },
+    "condition": { "type": "panoplie", "value": "Katana Lame Noire", "bonus": "Dégât +2" },
     "icone": "A40036",
     "access": "D0"
   },
@@ -2013,11 +1933,7 @@
     "desc": "Une griffe faite par les Ursuns et offerte aux plus valeureux assassins. Appartient à la Panoplie \"Puissance\".",
     "effet": "Force +1",
     "montant": "Dégât +5 (+1 si panoplie)",
-    "condition": {
-      "type": "panoplie",
-      "value": "Gemme de Puissance",
-      "bonus": "Dégât +1"
-    },
+    "condition": { "type": "panoplie", "value": "Gemme de Puissance", "bonus": "Dégât +1" },
     "icone": "W33801"
   },
   "265": {
@@ -2032,11 +1948,7 @@
     "desc": "Une lance forgée avec le minerai de Stella, perce efficacement l'ennemi.",
     "effet": "Blocage physique cible -3",
     "montant": "Dégât +10 (+1 si Chev. Dragon)",
-    "condition": {
-      "type": "classe",
-      "value": ["Chev Dragon"],
-      "bonus": "Dégât +1"
-    },
+    "condition": { "type": "classe", "value": ["Chev Dragon"], "bonus": "Dégât +1" },
     "icone": "W11007"
   },
   "267": {
@@ -2097,11 +2009,7 @@
     "desc": "Une ceinture portée par les grands nobles du Royaume d'Amur",
     "effet": "",
     "montant": "Dégât reçu -2, Intelligence +1 (+1 si Illusionniste)",
-    "condition": {
-      "type": "classe",
-      "value": ["Illusionniste"],
-      "bonus": "Intelligence +1"
-    },
+    "condition": { "type": "classe", "value": ["Illusionniste"], "bonus": "Intelligence +1" },
     "icone": "A30011",
     "access": "A0"
   },
@@ -2134,11 +2042,7 @@
     "desc": "Cette puce a été créée par un magicien zumi qui en avait marre de faire des sorts de soutien faible.",
     "effet": "",
     "montant": "Montant des buffs +1, dégât +1 (+1 si Ingénieur)",
-    "condition": {
-      "type": "classe",
-      "value": ["Ingénieur"],
-      "bonus": "Dégât +1"
-    },
+    "condition": { "type": "classe", "value": ["Ingénieur"], "bonus": "Dégât +1" },
     "icone": "i00688",
     "access": "D1"
   },
@@ -2161,11 +2065,7 @@
     "desc": "Une gemme augmentant les dégâts infligés, mais diminuant la chance de réussir ses attaques. Appartient à la Panoplie \"Puissance\".",
     "effet": "Réussite -1",
     "montant": "Dégât +4 (+1 si panoplie)",
-    "condition": {
-      "type": "panoplie",
-      "value": "Griffe de Puissance",
-      "bonus": "Dégât +1"
-    },
+    "condition": { "type": "panoplie", "value": "Griffe de Puissance", "bonus": "Dégât +1" },
     "icone": "i01146",
     "access": "D0"
   },
@@ -2234,11 +2134,7 @@
     "desc": "Une veste augmentant la résistance du porteur. Appartient à la panoplie du combattant.",
     "effet": "",
     "montant": "Dégât -4 (+2 si panoplie)",
-    "condition": {
-      "type": "panoplie",
-      "value": "Brassard du Combattant",
-      "bonus": "Dégât reçu -2"
-    },
+    "condition": { "type": "panoplie", "value": "Brassard du Combattant", "bonus": "Dégât reçu -2" },
     "icone": "A20039"
   },
   "291": {
@@ -2320,11 +2216,7 @@
     "desc": "Un marteau conçu pour aider les sages.",
     "effet": "Intelligence +1",
     "montant": "Dégât +7, Soin +2 (AoE/2) (+1 si sage)",
-    "condition": {
-      "type": "classe",
-      "value": ["Sage"],
-      "bonus": "Dégât +1, Soin +1"
-    },
+    "condition": { "type": "classe", "value": ["Sage"], "bonus": "Dégât +1, Soin +1" },
     "icone": "W40908"
   },
   "302": {
@@ -2361,11 +2253,7 @@
     "desc": "Une veste renforçant l'esprit de son porteur. Appartient à la Panoplie de l'Esprit (tout objet \"de l'esprit\" en fait partie)",
     "effet": "Esprit +1",
     "montant": "Dégât -4, (si panoplie : résistance esprit+2)",
-    "condition": {
-      "type": "panoplie",
-      "value": "Esprit",
-      "bonus": "Résistance d'esprit +2"
-    },
+    "condition": { "type": "panoplie", "value": "Esprit", "bonus": "Résistance d'esprit +2" },
     "icone": "A20064"
   },
   "307": {
@@ -2381,11 +2269,7 @@
     "desc": "Une masse gravée d'un glyphe. Plus il serait en contact avec des glyphes, plus il se renforcerait.",
     "effet": "",
     "montant": "Dégât +4 (+1 par glyphe équipée)",
-    "condition": {
-      "type": "panoplie",
-      "value": "Glyphe",
-      "bonus": "Dégât +1"
-    },
+    "condition": { "type": "panoplie", "value": "Glyphe", "bonus": "Dégât +1" },
     "icone": "W34704"
   },
   "309": {
@@ -2425,11 +2309,7 @@
     "desc": "Ce bâton légendaire à le pouvoir d'inverser les éléments (ex : nature/foudre). On raconte qu'il viendrait d'une autre dimension...",
     "effet": "Inversion Elementaire",
     "montant": "Dégât +10 (+1 Si Magicien)",
-    "condition": {
-      "type": "classe",
-      "value": ["Magicien"],
-      "bonus": "Dégât +1"
-    },
+    "condition": { "type": "classe", "value": ["Magicien"], "bonus": "Dégât +1" },
     "icone": "W62507"
   },
   "314": {
@@ -2453,11 +2333,7 @@
     "desc": "Une épée capable d'extraire de ses ennemis une chose incroyable : la connaissance ! Appartient à la Panoplie de l'Expérience (tout objet donnant de l'XP).",
     "effet": "XP reçu +10%",
     "montant": "Dégât +4 (+2 si panoplie)",
-    "condition": {
-      "type": "panoplie",
-      "value": "Ecolier, Bijou, Experience",
-      "bonus": "Dégât +2"
-    },
+    "condition": { "type": "panoplie", "value": "Ecolier, Bijou, Experience", "bonus": "Dégât +2" },
     "icone": "W10108"
   },
   "317": {
@@ -2487,11 +2363,7 @@
     "desc": "Une masse capable de pulvériser la défense de sa cible.",
     "effet": "Blocage cible -1",
     "montant": "Dégât +5 (+1 si Guerrier)",
-    "condition": {
-      "type": "classe",
-      "value": ["Guerrier"],
-      "bonus": "Dégât +1"
-    },
+    "condition": { "type": "classe", "value": ["Guerrier"], "bonus": "Dégât +1" },
     "icone": "W33501"
   },
   "321": {
@@ -2586,11 +2458,7 @@
     "desc": "Un bouclier à l'effigie de Zuminator, le Zumi du conte de super-heros.",
     "effet": "Si Zumi : PV+10",
     "montant": "Dégât -4. Blocage physique critique : renvoi le coup",
-    "condition": {
-      "type": "race",
-      "value": ["Zumi"],
-      "bonus": "PV +10"
-    },
+    "condition": { "type": "race", "value": ["Zumi"], "bonus": "PV +10" },
     "icone": "W73002"
   },
   "333": {
@@ -2709,11 +2577,7 @@
     "desc": "Un plastron créé par des anciens habitants de Delphes, ses propriétés curatives sont très mystérieuses.",
     "effet": "PV Soin reçu +3",
     "montant": "Dégât -5, (PV+5 si Torturran ou Ursun)",
-    "condition": {
-      "type": "race",
-      "value": ["Torturran", "Ursun"],
-      "bonus": "PV +5"
-    },
+    "condition": { "type": "race", "value": ["Torturran", "Ursun"], "bonus": "PV +5" },
     "icone": "A20108"
   },
   "349": {
@@ -2744,11 +2608,7 @@
     "desc": "Cette pierre est issue de la Vallée Férégal des Zumis. Elle est insufflé de l'énergie des crystaux d'Asbi. Appartient à la panoplie d'Asbi.",
     "effet": "",
     "montant": "Dégât reçu -2 (+1 par objet d'Asbi)",
-    "condition": {
-      "type": "panoplie",
-      "value": "Asbi",
-      "bonus": "Dégât reçu -1"
-    },
+    "condition": { "type": "panoplie", "value": "Asbi", "bonus": "Dégât reçu -1" },
     "icone": "i01009",
     "access": "D0"
   },
@@ -2801,11 +2661,7 @@
     "desc": "Un grimoire contenant des savoirs d'Heldentod. Très utile pour les unités de l'Empire",
     "effet": "PV +10",
     "montant": "Dégât +8 (+1 par objet Heldentod)",
-    "condition": {
-      "type": "panoplie",
-      "value": "Heldentod",
-      "bonus": "Dégât +1"
-    },
+    "condition": { "type": "panoplie", "value": "Heldentod", "bonus": "Dégât +1" },
     "icone": "W61402"
   },
   "360": {
@@ -2813,11 +2669,7 @@
     "desc": "Un gantelet dédié à l'armée Heldentod, sa manufacture est spécalisée pour infliger de lourds dégâts.",
     "effet": "",
     "montant": "Dégât reçu -2, dégât +1 (+1 par objet Heldentod)",
-    "condition": {
-      "type": "panoplie",
-      "value": "Heldentod",
-      "bonus": "Dégât +1"
-    },
+    "condition": { "type": "panoplie", "value": "Heldentod", "bonus": "Dégât +1" },
     "icone": "A40015",
     "access": "A0"
   },
@@ -2850,11 +2702,7 @@
     "desc": "Une lance conçue pour l'art martial d'Heldentod. Très utile pour les unités de l'Empire",
     "effet": "PV +10",
     "montant": "Dégât +8 (+1 par objet Heldentod)",
-    "condition": {
-      "type": "panoplie",
-      "value": "Heldentod",
-      "bonus": "Dégât +1"
-    },
+    "condition": { "type": "panoplie", "value": "Heldentod", "bonus": "Dégât +1" },
     "icone": "W54308"
   },
   "365": {
@@ -2862,11 +2710,7 @@
     "desc": "Un plastron dédié aux Chevaliers Dragons, seuls les plus nobles et puissants se le voit octroyé.",
     "effet": "",
     "montant": "Dégât -6 (Force+1, Intel+1 pour les Chev D.)",
-    "condition": {
-      "type": "classe",
-      "value": ["Chev Dragon"],
-      "bonus": "Force +1, Intelligence +1"
-    },
+    "condition": { "type": "classe", "value": ["Chev Dragon"], "bonus": "Force +1, Intelligence +1" },
     "icone": "A20081"
   },
   "366": {
@@ -2905,11 +2749,7 @@
     "desc": "Cette veste a été optimisée pour que les ingénieurs agissent à leur plein potentiel.",
     "effet": "",
     "montant": "Dégât -5 (Si ingénieur : dégâts +3) ",
-    "condition": {
-      "type": "classe",
-      "value": ["Ingénieur"],
-      "bonus": "Dégât +3"
-    },
+    "condition": { "type": "classe", "value": ["Ingénieur"], "bonus": "Dégât +3" },
     "icone": "A20048"
   },
   "371": {
@@ -2954,11 +2794,7 @@
     "desc": "Amélioration de la hache forte, elle donne beaucoup de force à son porteur, hussss !",
     "effet": "Force +2",
     "montant": "Dégât +8 (+1 si Guerrier)",
-    "condition": {
-      "type": "classe",
-      "value": ["Guerrier"],
-      "bonus": "Dégât +1"
-    },
+    "condition": { "type": "classe", "value": ["Guerrier"], "bonus": "Dégât +1" },
     "icone": "W20103"
   },
   "377": {
@@ -3103,11 +2939,7 @@
     "desc": "Ces lunettes sont très prisées par les Zumis, c'est un peu leur marque de fabrique.",
     "effet": "",
     "montant": "Dextérité +1, Esprit +1 (Esprit+1 si Zumi)",
-    "condition": {
-      "type": "race",
-      "value": ["Zumi"],
-      "bonus": "Esprit +1"
-    },
+    "condition": { "type": "race", "value": ["Zumi"], "bonus": "Esprit +1" },
     "icone": "k10106",
     "access": "A1"
   },
@@ -3132,11 +2964,7 @@
     "desc": "Cette tenue est adaptée pour les combattants chevronés (Voleur, Assassin, Chasseur, Corsaire)",
     "effet": "",
     "montant": "Dégât -5, Dégât +1 (+1 par classe citée)",
-    "condition": {
-      "type": "classe",
-      "value": ["Voleur", "Assassin", "Chasseur", "Corsaire"],
-      "bonus": "Dégât +1"
-    },
+    "condition": { "type": "classe", "value": ["Voleur", "Assassin", "Chasseur", "Corsaire"], "bonus": "Dégât +1" },
     "icone": "k20820"
   },
   "400": {
@@ -3209,11 +3037,7 @@
     "desc": "Gants conçus pour améliorer les tirs",
     "effet": "",
     "montant": "Dégât perçant +3, Dextérité +1 (+1 si Chasseur)",
-    "condition": {
-      "type": "classe",
-      "value": ["Chasseur"],
-      "bonus": "Dextérité +1"
-    },
+    "condition": { "type": "classe", "value": ["Chasseur"], "bonus": "Dextérité +1" },
     "icone": "A40017",
     "access": "D2"
   },
@@ -3222,11 +3046,7 @@
     "desc": "Les templiers et clercs sont très friants de ce brassard extrêmement utile !",
     "effet": "",
     "montant": "Dégât lumière +2, dégât reçu -2 (-1 si Templier)",
-    "condition": {
-      "type": "classe",
-      "value": ["Templier"],
-      "bonus": "Dégât reçu -1"
-    },
+    "condition": { "type": "classe", "value": ["Templier"], "bonus": "Dégât reçu -1" },
     "icone": "A40033",
     "access": "D1"
   },
@@ -3235,11 +3055,7 @@
     "desc": "Ce pendentif sombre génère de l'adrenaline chez son porteur lorsque sa vie est en danger, utile mais risqué !",
     "effet": "",
     "montant": "Si PV <33%, Dégâts : +4 et Soin : +3",
-    "condition": {
-      "type": "PV",
-      "value": "3",
-      "bonus": "Dégât +4, Soin +3"
-    },
+    "condition": { "type": "PV", "value": "3", "bonus": "Dégât +4, Soin +3" },
     "icone": "A00046d",
     "access": "D2"
   },
@@ -3248,11 +3064,7 @@
     "desc": "Cette cape est très  utile lorsque la situation tourne mal, elle vous aidera à survivre !",
     "effet": "",
     "montant": "Si PV < 33%, Esquive et Dextérité+2",
-    "condition": {
-      "type": "PV",
-      "value": "3",
-      "bonus": "Esquive +2, Dextérité +2"
-    },
+    "condition": { "type": "PV", "value": "3", "bonus": "Esquive +2, Dextérité +2" },
     "icone": "A60015",
     "access": "A1"
   },
@@ -3261,11 +3073,7 @@
     "desc": "(Armure Légère) Cette cotte de maille est réputée pour avoir sauvé la vie à un bon nombre de héros.",
     "effet": "",
     "montant": "Dégât -4, Blocage +1 (Bloc+1 si PV < 33%)",
-    "condition": {
-      "type": "PV",
-      "value": "3",
-      "bonus": "Blocage +1"
-    },
+    "condition": { "type": "PV", "value": "3", "bonus": "Blocage +1" },
     "icone": "A20076",
     "access": "A1"
   },
@@ -3309,11 +3117,7 @@
     "desc": "Cette griffe puise son énergie du sang qui coule en combat.",
     "effet": "",
     "montant": "Dégât +4 (+3 Si PV <33%)",
-    "condition": {
-      "type": "PV",
-      "value": "3",
-      "bonus": "Dégât +3"
-    },
+    "condition": { "type": "PV", "value": "3", "bonus": "Dégât +3" },
     "icone": "W31406"
   },
   "420": {
@@ -3349,11 +3153,7 @@
     "desc": "Ce marteau est idéale pour les adeptes du combat de la magie : réveillez votre esprit de paladin !",
     "effet": "Dégât lumière +3",
     "montant": "Dégât +8 (+1 si Templier)",
-    "condition": {
-      "type": "classe",
-      "value": ["Templier"],
-      "bonus": "Dégât +1"
-    },
+    "condition": { "type": "classe", "value": ["Templier"], "bonus": "Dégât +1" },
     "icone": "W41201"
   },
   "425": {
@@ -3375,11 +3175,7 @@
     "desc": "Cette épée a été taillée dans une gemme sombre, elle inspire la peur et la haine.",
     "effet": "Element : Ténèbres",
     "montant": "Dégât +9 , dégât de ténèbres +2 (Dégât +1 si Luminary) ",
-    "condition": {
-      "type": "classe",
-      "value": ["Luminary"],
-      "bonus": "Dégât +1"
-    },
+    "condition": { "type": "classe", "value": ["Luminary"], "bonus": "Dégât +1" },
     "icone": "W25607"
   },
   "428": {
@@ -3394,11 +3190,7 @@
     "desc": "Ce bouclier a sauvé de nombreux innocents d'une mort certaine.",
     "effet": "",
     "montant": "Dégât -3 (-3 si PV < 33%)",
-    "condition": {
-      "type": "PV",
-      "value": "3",
-      "bonus": "Dégât reçu -3"
-    },
+    "condition": { "type": "PV", "value": "3", "bonus": "Dégât reçu -3" },
     "icone": "W70206d",
     "access": "A1"
   },
@@ -3457,11 +3249,7 @@
     "desc": "Cette toque est dédiée aux évêques de la Curie Métérole, cela leur apporte tout ce dont ils ont besoins.",
     "effet": "Soin +2",
     "montant": "Intelligence +1, Esprit +1, (Charisme+1 si Clerc/Sage)",
-    "condition": {
-      "type": "classe",
-      "value": ["Clerc", "Sage"],
-      "bonus": "Charisme +1"
-    },
+    "condition": { "type": "classe", "value": ["Clerc", "Sage"], "bonus": "Charisme +1" },
     "icone": "A10011"
   },
   "438": {
@@ -3567,11 +3355,7 @@
     "desc": "Un chapeau très élégant qui reflète la personnalité poétique et légère des bardes. Une pièce somptueuse.",
     "effet": "",
     "montant": "Dextérité +1, Intelligence +1 (Charisme+1 si Barde)",
-    "condition": {
-      "type": "classe",
-      "value": ["Barde"],
-      "bonus": "Charisme +1"
-    },
+    "condition": { "type": "classe", "value": ["Barde"], "bonus": "Charisme +1" },
     "icone": "A10058",
     "access": "A0"
   },
@@ -3580,11 +3364,7 @@
     "desc": "Un poignard très utile en cas d'urgence ! Seuls les plus cruels savent s'en servir correctement !",
     "effet": "",
     "montant": "Dégât +2 (+1 si Voleur, Assassin, Juge)",
-    "condition": {
-      "type": "classe",
-      "value": ["Voleur", "Assassin", "Juge"],
-      "bonus": "Dégât +1"
-    },
+    "condition": { "type": "classe", "value": ["Voleur", "Assassin", "Juge"], "bonus": "Dégât +1" },
     "icone": "k10261",
     "access": "D0"
   },
@@ -3593,11 +3373,7 @@
     "desc": "Une tenue idéale pour voyager et se déplacer avec style",
     "effet": "",
     "montant": "Dégât -5, Esquive +1 (+1 si Voleur ou Danselame)",
-    "condition": {
-      "type": "classe",
-      "value": ["Voleur", "Danselame"],
-      "bonus": "Esquive +1"
-    },
+    "condition": { "type": "classe", "value": ["Voleur", "Danselame"], "bonus": "Esquive +1" },
     "icone": "k20664"
   },
   "454": {
@@ -3658,11 +3434,7 @@
     "effet": "Malédiction du lien",
     "montant": "Dégât -5 (-1 par pièce) : Force +1, Intelligence +1",
     "icone": "k20472b",
-    "condition": {
-      "type": "panoplie",
-      "value": "Templier Noir",
-      "bonus": "Dégât reçu -2"
-    }
+    "condition": { "type": "panoplie", "value": "Templier Noir", "bonus": "Dégât reçu -2" }
   },
   "462": {
     "nom": "Bouclier du Templier Noir",
@@ -3670,11 +3442,7 @@
     "effet": "Malédiction du lien",
     "montant": "Dégât -5, dégât ténèbres +3 (+1 par pièce)",
     "icone": "W71306b",
-    "condition": {
-      "type": "panoplie",
-      "value": "Templier Noir",
-      "bonus": "Dégât ténèbres +1"
-    },
+    "condition": { "type": "panoplie", "value": "Templier Noir", "bonus": "Dégât ténèbres +1" },
     "access": "D2"
   },
   "463": {
@@ -3683,11 +3451,7 @@
     "effet": "Malédiction du lien",
     "montant": "Dégât +6 (+2 par pièce), conversion Lumière => Ténèbres",
     "icone": "W33403b",
-    "condition": {
-      "type": "panoplie",
-      "value": "Templier Noir",
-      "bonus": "Dégât +2"
-    }
+    "condition": { "type": "panoplie", "value": "Templier Noir", "bonus": "Dégât +2" }
   },
   "464": {
     "nom": "Esprit errant",
@@ -3803,11 +3567,7 @@
     "desc": "Une tenue idéale qui amplifie le talent des chevaliers du chaos : Luminary",
     "effet": "",
     "montant": "Dégât -4 (Si Luminary : dégât+3)",
-    "condition": {
-      "type": "classe",
-      "value": ["Luminary"],
-      "bonus": "Dégât +3"
-    },
+    "condition": { "type": "classe", "value": ["Luminary"], "bonus": "Dégât +3" },
     "icone": "k20578"
   },
   "479": {
@@ -3822,11 +3582,7 @@
     "desc": "Une tenue alliant noblesse et richesse, idéale pour les diplomates aventureux.",
     "effet": "Expérience reçu +20%",
     "montant": "Dégât -4 (Si magicien/illusionniste : dégâts +2)",
-    "condition": {
-      "type": "classe",
-      "value": ["Magicien", "Illusionniste"],
-      "bonus": "Dégât +2"
-    },
+    "condition": { "type": "classe", "value": ["Magicien", "Illusionniste"], "bonus": "Dégât +2" },
     "icone": "k21032"
   },
   "481": {
@@ -3894,11 +3650,7 @@
     "desc": "Une veste parfaite pour les archers avisés !",
     "effet": "",
     "montant": "Dégât -5 (Si Chasseur, Corsaire : dégât+2)",
-    "condition": {
-      "type": "classe",
-      "value": ["Chasseur", "Corsaire"],
-      "bonus": "Dégât +2"
-    },
+    "condition": { "type": "classe", "value": ["Chasseur", "Corsaire"], "bonus": "Dégât +2" },
     "icone": "k21068"
   },
   "490": {
@@ -3935,11 +3687,7 @@
     "desc": "Une puce électronique créée par des Bardes Zumis pour renforcer leur musique !",
     "effet": "",
     "montant": "Montant des buffs +1, (dégât/soin+2 Si Barde)",
-    "condition": {
-      "type": "classe",
-      "value": ["Barde"],
-      "bonus": "Dégât +2, Soin +2"
-    },
+    "condition": { "type": "classe", "value": ["Barde"], "bonus": "Dégât +2, Soin +2" },
     "icone": "i01631",
     "access": "D2"
   },
@@ -4180,11 +3928,7 @@
     "desc": "Ce gantelet est conçu pour améliorer les dégâts de frappe au corps à corps.",
     "effet": "",
     "montant": "Dégât +2, Dégât contondant +1 (+1 si Assassin)",
-    "condition": {
-      "type": "classe",
-      "value": ["Assassin"],
-      "bonus": "Dégât contondant +1"
-    },
+    "condition": { "type": "classe", "value": ["Assassin"], "bonus": "Dégât contondant +1" },
     "icone": "A40030b"
   },
   "527": {
@@ -4192,11 +3936,7 @@
     "desc": "Collier conçu pour améliorer la détermination de son porteur, très prisé des Samouraïs.",
     "effet": "",
     "montant": "Force +1, Esprit +1 (Esprit+1 si Samouraï)",
-    "condition": {
-      "type": "classe",
-      "value": ["Samouraï"],
-      "bonus": "Esprit +1"
-    },
+    "condition": { "type": "classe", "value": ["Samouraï"], "bonus": "Esprit +1" },
     "icone": "A00042"
   },
   "528": {

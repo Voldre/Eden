@@ -1,5 +1,6 @@
-import { classes, iconsClasses, skillsAwakenJSON, skillsJSON } from "./JDRstore.js";
-import { aoeDescInfo, countEachOccurences, createElement, eventOnClick, initDialog } from "./utils.js";
+import { classes, iconsClasses, skillsAwakenJSON, skillsJSON } from "./JDRstore.js"
+import { aoeDescInfo, countEachOccurences, createElement, eventOnClick, initDialog } from "./utils.js"
+
 const classesDesc = [
   "Les guerriers possèdent de solides aptitudes au combat ainsi que de lourdes armures résistantes. Peut effrayer les ennemis et motiver ses alliés.",
   "Les chevaliers incarnent le courage. Esquivant et bloquant les coups, ils attaquent sans relâche jusqu’à obtenir la victoire. Ils aiment les duels et sont très précis et rapide.",
@@ -21,154 +22,190 @@ const classesDesc = [
   "Les illusionnistes maîtrisent les arts de la tromperie, ils affectent l'état mental de leurs ennemis pour les vaincres, ils sont discrets et fourbes.",
   "Les démonistes empruntent le pouvoir des ténèbres, insouciants du danger que représente le mal. Ils peuvent ainsi réaliser des sacrifices pour attaquer, se renforcer ou affaiblir. Ils peuvent être possédé par un esprit démoniaque.",
   "Les Luminarys sont des guerriers-mages utilisant les opposées : les ténèbres et la lumière, pour anéantir leurs ennemis. Ils doivent cependant conserver cet équilibre pour ne pas vasciller dans le chaos.<br/><b>Contrainte : Doit s'équilibrer entre la lumière et les ténèbres pour éviter la folie, le chaos. <br/>Exception : Cette règle ne s'applique pas si le personnage n'a qu'un élément (jusqu'au niveau 5)</b>",
-];
+]
+
 // Generate classes elements
-const classesListE = document.querySelector(".classeslist");
+const classesListE = document.querySelector(".classeslist")!
 classes.forEach((classe, i) => {
-  const nomE = createElement("p", classe === "Chev Dragon" ? "C. Dragon" : classe);
+  const nomE = createElement("p", classe === "Chev Dragon" ? "C. Dragon" : classe)
   const iconeE = createElement("img", undefined, {
     src: `http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE${iconsClasses[i]}.png`,
-  });
-  const classeE = createElement("div", [nomE, iconeE], { id: classe });
+  })
+
+  const classeE = createElement("div", [nomE, iconeE], { id: classe })
+
   classeE.addEventListener("click", () => {
-    [...classesListE.children].forEach((cE) => {
-      cE.classList.remove("highlight");
-    });
-    classeE.classList.add("highlight");
-    document.querySelector(".classeDesc").innerHTML = classesDesc[classes.indexOf(classe)];
-    updateSkillsList(classe, false);
-  });
-  classesListE.append(classeE);
-});
+    ;[...classesListE.children].forEach((cE) => {
+      cE.classList.remove("highlight")
+    })
+    classeE.classList.add("highlight")
+
+    document.querySelector(".classeDesc")!.innerHTML = classesDesc[classes.indexOf(classe)]
+    updateSkillsList(classe, false)
+  })
+
+  classesListE.append(classeE)
+})
+
 // Show/Hide races
-const buttonRace = document.querySelector("#buttonRace");
+const buttonRace = document.querySelector("#buttonRace") as HTMLButtonElement
 buttonRace.addEventListener("click", () => {
   if (buttonRace.innerText === "Afficher") {
-    buttonRace.innerText = "Masquer";
+    buttonRace.innerText = "Masquer"
   } else {
-    buttonRace.innerText = "Afficher";
+    buttonRace.innerText = "Afficher"
   }
-  document.querySelector("#races")?.classList.toggle("hide");
-});
+  document.querySelector("#races")?.classList.toggle("hide")
+})
 // Show/Hide elements
-const buttonElem = document.querySelector("#buttonElem");
+const buttonElem = document.querySelector("#buttonElem") as HTMLButtonElement
 buttonElem.addEventListener("click", () => {
   if (buttonElem.innerText === "Afficher") {
-    buttonElem.innerText = "Masquer";
+    buttonElem.innerText = "Masquer"
   } else {
-    buttonElem.innerText = "Afficher";
+    buttonElem.innerText = "Afficher"
   }
-  document.querySelector("#elem")?.classList.toggle("hide");
-});
+  document.querySelector("#elem")?.classList.toggle("hide")
+})
+
 // Skills list
-const skillsListE = document.querySelector(".skillslist");
-const awakenButton = document.querySelector("#awakenButton");
-const updateSkillsList = (classe, isAwaken) => {
-  skillsListE.innerHTML = "";
-  const skillsList = Object.values(skillsJSON).filter((skill) => skill.classe.includes(classe));
+const skillsListE = document.querySelector(".skillslist")!
+const awakenButton = document.querySelector<HTMLImageElement>("#awakenButton")!
+const updateSkillsList = (classe: string, isAwaken: boolean): void => {
+  skillsListE.innerHTML = ""
+
+  const skillsList = Object.values(skillsJSON).filter((skill) => skill.classe.includes(classe))
+
   skillsList.forEach((skill) => {
-    const nomE = createElement("p", skill.nom, { className: "nom" });
-    const awakenSkill = Object.values(skillsAwakenJSON).find((s) => s.nom === skill.nom);
+    const nomE = createElement("p", skill.nom, { className: "nom" })
+
+    const awakenSkill = Object.values(skillsAwakenJSON).find((s) => s.nom === skill.nom)
+
     const descE = createElement("p", isAwaken && awakenSkill?.desc ? awakenSkill.desc : skill.desc, {
       className: "desc",
-    });
+    })
     const montantE = createElement("p", isAwaken && awakenSkill?.montant ? awakenSkill.montant : skill.montant, {
       className: "montant",
-    });
+    })
+
     const iconeE = createElement("img", undefined, {
       className: "icone",
       src: `http://voldre.free.fr/Eden/images/skillIcon/${skill.icone}.png`,
-    });
-    const skillRange = skill.effet.split("AoE ")[1] ?? null; // en bas [0] + "AoE"
-    const effetDesc = skillRange ? skill.effet.split(" AoE")[0] : skill.effet;
+    })
+
+    const skillRange = skill.effet.split("AoE ")[1] ?? null // en bas [0] + "AoE"
+
+    const effetDesc = skillRange ? skill.effet.split(" AoE")[0] : skill.effet
     const skillRangeIconE =
       skillRange &&
       createElement("span", undefined, {
         className: "skillRangeIcon",
         style: { backgroundImage: `url(http://voldre.free.fr/Eden/images/layout/${skillRange}.png)` },
-      });
-    const statDesc = ` / ${skill.stat} / ${skill.classe?.toString().replaceAll(",", ", ")}`;
+      })
+    const statDesc = ` / ${skill.stat} / ${skill.classe?.toString().replaceAll(",", ", ")}`
+
     const effetE = createElement(
       "p",
       skillRangeIconE ? [effetDesc, skillRangeIconE, statDesc] : [effetDesc, statDesc],
       {
         className: "effet",
       }
-    );
+    )
+
     const skillE = createElement("div", [nomE, descE, effetE, montantE, iconeE], {
       className: `skill ${isAwaken ? "awaken" : ""}`,
-    });
+    })
+
     // Add manually event for fastClick
-    const fastClickEvent = () => {
-      skillE.classList.toggle("awaken");
+    const fastClickEvent = (): void => {
+      skillE.classList.toggle("awaken")
+
       const selectedAwakenSkill = skillE.classList.contains("awaken")
         ? Object.values(skillsAwakenJSON).find((s) => s.nom === skill.nom)
-        : undefined;
-      descE.innerText = selectedAwakenSkill?.desc || skill.desc;
-      montantE.innerText = selectedAwakenSkill?.montant || skill.montant;
-      updateAwakenButtonTriggered();
-    };
-    eventOnClick(skillE, fastClickEvent);
-    skillsListE.append(skillE);
-    updateAwakenButtonTriggered();
-  });
-};
+        : undefined
+
+      descE.innerText = selectedAwakenSkill?.desc || skill.desc
+      montantE.innerText = selectedAwakenSkill?.montant || skill.montant
+
+      updateAwakenButtonTriggered()
+    }
+    eventOnClick(skillE, fastClickEvent)
+
+    skillsListE.append(skillE)
+    updateAwakenButtonTriggered()
+  })
+}
+
 awakenButton.addEventListener("click", () => {
   // If all skills are awaken, remove awaken. Else add it.
-  const isAwaken = awakenButton.src.includes("25");
-  updateSkillsList(document.querySelector(".highlight").id, !isAwaken);
-});
-const updateAwakenButtonTriggered = () => {
-  const isAllSkillsAwaken = [...skillsListE.children].every((child) => child.classList.contains("awaken"));
-  awakenButton.src = `images/otherIcon/function02${isAllSkillsAwaken ? 5 : 4}.png`;
-};
+  const isAwaken = awakenButton.src.includes("25")
+  updateSkillsList(document.querySelector(".highlight")!.id, !isAwaken)
+})
+
+const updateAwakenButtonTriggered = (): void => {
+  const isAllSkillsAwaken = [...skillsListE.children].every((child) => child.classList.contains("awaken"))
+  awakenButton.src = `images/otherIcon/function02${isAllSkillsAwaken ? 5 : 4}.png`
+}
+
 // ANALYZE :  Counts which stats are most used for skills
-console.log("Skills JSON", Object.values(skillsJSON));
+
+console.log("Skills JSON", Object.values(skillsJSON))
 // Nb skills by stats
-const skillsJSONStat = Object.values(skillsJSON).map((skill) => skill.stat);
-const occurrences = JSON.stringify(countEachOccurences(skillsJSONStat));
-document.querySelector(".statsBySkills").innerText = occurrences.replaceAll(",", ", ");
+const skillsJSONStat = Object.values(skillsJSON).map((skill) => skill.stat)
+const occurrences = JSON.stringify(countEachOccurences(skillsJSONStat))
+
+document.querySelector<HTMLParagraphElement>(".statsBySkills")!.innerText = occurrences.replaceAll(",", ", ")
+
 // Nb skills by effect
-const skillsJSONEffect = Object.values(skillsJSON).map((skill) => skill.effet);
-const listEffects = countEachOccurences(skillsJSONEffect);
-console.log("Nb skills by effect", listEffects);
+const skillsJSONEffect = Object.values(skillsJSON).map((skill) => skill.effet)
+const listEffects = countEachOccurences(skillsJSONEffect)
+
+console.log("Nb skills by effect", listEffects)
+
 // Nb skills by class
-const skillsJSONClassGroup = Object.values(skillsJSON).map((skill) => skill.classe.toString());
-const listSkillsByClassGroup = countEachOccurences(skillsJSONClassGroup);
+const skillsJSONClassGroup = Object.values(skillsJSON).map((skill) => skill.classe.toString())
+const listSkillsByClassGroup = countEachOccurences(skillsJSONClassGroup)
+
 // Split class group (eg: Guerrier,Chevalier => [Guerrier,Chevalier])
-const skillsJSONClassIndiv = skillsJSONClassGroup.map((s) => s.split(",")).flat();
-const listSkillsByClassIndiv = countEachOccurences(skillsJSONClassIndiv);
-console.log("Nb skills by class (Group)", listSkillsByClassGroup);
+const skillsJSONClassIndiv = skillsJSONClassGroup.map((s) => s.split(",")).flat()
+const listSkillsByClassIndiv = countEachOccurences(skillsJSONClassIndiv)
+
+console.log("Nb skills by class (Group)", listSkillsByClassGroup)
 console.log(
   "Nb skills by class (Indiv)",
   Object.entries(listSkillsByClassIndiv).sort((a, b) => b[1] - a[1])
-);
+)
+
 // Nb skills by class by stat
-const allListSkillsByClassByStats = {};
+const allListSkillsByClassByStats: { [key: string]: { [key: string]: number } } = {}
 classes.forEach((classe) => {
-  const skillsClass = Object.values(skillsJSON).filter((skill) => skill.classe.includes(classe));
-  const skillsClassStats = Object.values(skillsClass).map((skill) => skill.stat);
-  const listSkillsByClassStats = countEachOccurences(skillsClassStats);
-  allListSkillsByClassByStats[classe] = listSkillsByClassStats;
-});
-console.log("Nb skills by class by stat", allListSkillsByClassByStats);
+  const skillsClass = Object.values(skillsJSON).filter((skill) => skill.classe.includes(classe))
+  const skillsClassStats = Object.values(skillsClass).map((skill) => skill.stat)
+  const listSkillsByClassStats = countEachOccurences(skillsClassStats)
+  allListSkillsByClassByStats[classe] = listSkillsByClassStats
+})
+console.log("Nb skills by class by stat", allListSkillsByClassByStats)
+
 console.warn(
   "Skills without class",
   Object.values(skillsJSON).filter((skill) => !classes.find((classe) => skill.classe.includes(classe)))
-);
+)
+
 // ---
-function aoeDesc() {
-  let description = "Il existe 4 types d'Attaques de Zone (AoE) :<br/>";
+
+function aoeDesc(): string {
+  let description = "Il existe 4 types d'Attaques de Zone (AoE) :<br/>"
   for (let i = 0; i < 4; i++) {
-    const rangeI = Math.floor(i / 2);
-    const typeI = i % 2;
+    const rangeI = Math.floor(i / 2)
+    const typeI = i % 2
     description += `<br/>
     <img class='skillRangeIcon' src='http://voldre.free.fr/Eden/images/layout/${aoeDescInfo.range[rangeI]}${aoeDescInfo.type[typeI]}.png'/> 
     Attaque en ${aoeDescInfo.rangeName[rangeI]}${aoeDescInfo.typeName[typeI]} : 
-    <br/>${aoeDescInfo.typeMalus[typeI]}.<br/>`;
+    <br/>${aoeDescInfo.typeMalus[typeI]}.<br/>`
   }
-  return description;
+  return description
 }
+
 const labelsDescription = {
   critique: `Les valeurs extrêmes des Dé (1, 20) sont des critiques et (2, 19) semi-critiques. Voici leurs effets :<br/> 
     <table>
@@ -258,5 +295,6 @@ const labelsDescription = {
     "Lorsqu'un joueur tombe KO, sa vie est en jeu. Son temps avant la mort est compté selon les cicronstances (lieu, contexte) et ses dégâts, soit <b>environ</b> :<ul><li>A 0 : 10 tours</li><li>A -25 : 8 tours</li><li>A -50 : 5 tours</li><li>A -75 : 3 tours</li><li>A -100 : 2 tours</li><li>Si les PV descendent à l'équivalent des PV max (ou -150 PV) : 0 tour (mort instantanée)</li></ul>A noter qu'il est possible d'être soigné (sort, potion) et blessé, et que franchir un seuil augmente/diminue les tours.<br/>De plus, pour chaque KO supplémentaire dans un laps de temps court, la survie est diminué de 2 tours.<br/><br/>Un jet de survie est lancé quand il reste 5, 2 puis 0 tours. Le jet de survie peut changer la durée de survie (en tour) : Dé 1 : +2 tours, Dé 2-5 : +1 et l'inverse en négatif.",
   "soin-recu":
     "Les bonus de soins reçus (montant fixe ou %), ne s'appliquent que sur les compétences et certains accessoires, mais pas sur les objets (gadgets, potions, ...).",
-};
-initDialog(labelsDescription);
+}
+
+initDialog(labelsDescription)

@@ -1,7 +1,7 @@
 [
   {
     "nom": "Guérison",
-    "classe": "Clerc,Barde,Shaman,Sage",
+    "classes": ["Clerc", "Barde", "Shaman", "Sage"],
     "statUsed": "intel",
     "type": "soin",
     "montant": "1D10",
@@ -10,7 +10,7 @@
   },
   {
     "nom": "Magic Boost",
-    "classe": "Magicien,Illusionniste,Démoniste,Luminary",
+    "classes": ["Magicien", "Illusionniste", "Démoniste", "Luminary"],
     "statUsed": "intel",
     "type": "buff",
     "buffElem": ["degat"],
@@ -21,7 +21,7 @@
   },
   {
     "nom": "Encouragement",
-    "classe": "Voleur,Assassin,Danselame,Samouraï",
+    "classes": ["Voleur", "Assassin", "Danselame", "Samouraï"],
     "statUsed": "esprit",
     "type": "buff",
     "buffElem": ["degat"],
@@ -32,7 +32,7 @@
   },
   {
     "nom": "Instinct Sauvage",
-    "classe": "Chasseur,Ingénieur,Corsaire,Juge",
+    "classes": ["Chasseur", "Ingénieur", "Corsaire", "Juge"],
     "statUsed": "esprit",
     "type": "buff",
     "buffElem": ["degat"],
@@ -43,7 +43,7 @@
   },
   {
     "nom": "Mur de Titan",
-    "classe": "Guerrier,Chevalier,Templier,Chev Dragon",
+    "classes": ["Guerrier", "Chevalier", "Templier", "Chev Dragon"],
     "statUsed": "force",
     "type": "buff",
     "buffElem": ["armure"],
@@ -54,7 +54,7 @@
   },
   {
     "nom": "Euphorie",
-    "classe": "Guerrier",
+    "classes": ["Guerrier"],
     "statUsed": "esprit",
     "type": "buff",
     "buffElem": ["degat/tour"],
@@ -65,15 +65,16 @@
   },
   {
     "nom": "Percée du Chev.",
-    "classe": "Chevalier",
+    "classes": ["Chevalier"],
     "statUsed": "force",
     "type": "attaque",
     "montant": "Dégât +2D6+1D4",
+    "montantFixe": 0,
     "icone": "E0290"
   },
   {
     "nom": "Lumière Guérison",
-    "classe": "Templier",
+    "classes": ["Templier"],
     "statUsed": "intel",
     "type": "soin",
     "montant": "1D8",
@@ -82,7 +83,7 @@
   },
   {
     "nom": "Mode Draconique",
-    "classe": "Chev Dragon",
+    "classes": ["Chev Dragon"],
     "statUsed": "esprit",
     "type": "buff",
     "buffElem": ["force", "intel", "charisme", "esprit", "armure"],
@@ -93,7 +94,7 @@
   },
   {
     "nom": "Attaque Rapide",
-    "classe": "Voleur",
+    "classes": ["Voleur"],
     "statUsed": "dexté",
     "type": "attaque",
     "montant": "Dégât +1D8 +1D6 +1D4",
@@ -101,7 +102,7 @@
   },
   {
     "nom": "Contrôle Energie",
-    "classe": "Assassin",
+    "classes": ["Assassin"],
     "statUsed": "esprit",
     "type": "soin",
     "montant": "1D6",
@@ -110,7 +111,7 @@
   },
   {
     "nom": "Lames Dansantes",
-    "classe": "Danselame",
+    "classes": ["Danselame"],
     "statUsed": "dexté",
     "type": "attaque",
     "montant": "Dégât +3D6",
@@ -118,7 +119,7 @@
   },
   {
     "nom": "Foi du Temple",
-    "classe": "Samouraï",
+    "classes": ["Samouraï"],
     "statUsed": "esprit",
     "type": "buff",
     "buffElem": ["armure"],
@@ -129,7 +130,7 @@
   },
   {
     "nom": "Triple Tir",
-    "classe": "Chasseur",
+    "classes": ["Chasseur"],
     "statUsed": "dexté",
     "type": "attaque",
     "montant": "Dégât +1D8 +1D6 +1D4",
@@ -137,7 +138,7 @@
   },
   {
     "nom": "Robotisation",
-    "classe": "Ingénieur",
+    "classes": ["Ingénieur"],
     "statUsed": "esprit",
     "type": "buff",
     "buffElem": ["armure"],
@@ -148,7 +149,7 @@
   },
   {
     "nom": "Pluie de Flèches",
-    "classe": "Corsaire",
+    "classes": ["Corsaire"],
     "statUsed": "dexté",
     "type": "attaque",
     "montant": "Dégât +2D6 +1D4",
@@ -156,7 +157,7 @@
   },
   {
     "nom": "Aura Pourfendeur",
-    "classe": "Juge",
+    "classes": ["Juge"],
     "statUsed": "esprit",
     "type": "buff",
     "buffElem": ["degat"],
@@ -167,7 +168,7 @@
   },
   {
     "nom": "Grâce de Sagesse",
-    "classe": "Clerc",
+    "classes": ["Clerc"],
     "statUsed": "esprit",
     "type": "buff",
     "buffElem": ["intel", "esprit", "degat", "armure"],
@@ -178,7 +179,7 @@
   },
   {
     "nom": "Hymne Symphonie",
-    "classe": "Barde",
+    "classes": ["Barde"],
     "statUsed": "esprit",
     "type": "buff",
     "buffElem": ["degat"],
@@ -189,7 +190,7 @@
   },
   {
     "nom": "Bouclier épines",
-    "classe": "Shaman",
+    "classes": ["Shaman"],
     "statUsed": "esprit",
     "type": "buff",
     "buffElem": ["armure"],
@@ -200,7 +201,7 @@
   },
   {
     "nom": "Marteau Fracas",
-    "classe": "Sage",
+    "classes": ["Sage"],
     "statUsed": "intel",
     "type": "attaque",
     "montant": "Dégât +1D10",
@@ -209,7 +210,7 @@
   },
   {
     "nom": "Magie Extrême",
-    "classe": "Magicien",
+    "classes": ["Magicien"],
     "statUsed": "esprit",
     "type": "buff",
     "buffElem": ["degat"],
@@ -220,7 +221,7 @@
   },
   {
     "nom": "Stalactites",
-    "classe": "Illusionniste",
+    "classes": ["Illusionniste"],
     "statUsed": "intel",
     "type": "attaque",
     "montant": "Dégât +2D6+1D4",
@@ -228,7 +229,7 @@
   },
   {
     "nom": "Hommage",
-    "classe": "Démoniste",
+    "classes": ["Démoniste"],
     "statUsed": "esprit",
     "type": "soin",
     "montant": "1D8",
@@ -237,7 +238,7 @@
   },
   {
     "nom": "Portail Ténèbres",
-    "classe": "Luminary",
+    "classes": ["Luminary"],
     "statUsed": "intel",
     "type": "attaque",
     "montant": "Dégât +1D10",
