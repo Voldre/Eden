@@ -901,7 +901,7 @@
     "skills": [
       "Mode Draconique : Embrasé : Force/Intel+2, Démoniaque : Charisme+2, Caché : Esprit+2 : Esprit",
       "Terreur du Dragon AoE : Réussite des sorts : -3 sur 3 tours AoE (+ mode Cf. DK) : Charisme",
-      "Atk Cyclone / Pouvoir du Dragon : 3D6+21 (Mono+7) (feu, ténèb,phys) : Force",
+      "Atk Cyclone / Pouvoir du Dragon : 3D6+22 (Mono+7) (feu, ténèb,phys) : Force",
       "Revers d'écaille éveillé (instant) : 5 tentatives (<10 : 66%, >=10 : 33%) (+ mode Cf. DK) : Esprit<br/>Passif : (Def Acier Perma) Blocage+2, PV < 140 : Dégât +5 (Crit +10)"
     ],
     "stats": "17,13,9,15,17",
@@ -1020,9 +1020,9 @@
     "pvmax": 250,
     "skills": [
       "Euphorie : +1D4+1 (min 3) par coup. Buff pendant 4-5 tours (max 5) : esprit",
-      "Lumière de Guérison : heal 2D6 +12, 1/4 de rejouer : intelligence",
-      "Lumière Sacrée : 2D10 +16 : intelligence",
-      "Attaque tournoyante : 2D10 +11  : force"
+      "Lumière de Guérison : heal 2D6 +11, 1/4 de rejouer : intelligence",
+      "Lumière Sacrée : 2D10 +15 : intelligence",
+      "Attaque tournoyante : 2D10 +10  : force"
     ],
     "stats": "15,9,17,12,16",
     "desc": "Un Templier de la Curie Métérole, il est chef d'une unité défensive et est quelqu'un de gentil et social. Il essaye de faire les choses sérieusement.",
@@ -2159,7 +2159,7 @@
     "nom": "Vidal - Sorcier Dragon",
     "pvmax": 250,
     "skills": [
-      "Atk foudr / Tempête Glace (Pouvoir du Dragon) : 3D6+20 (Mono+5) : Intel",
+      "Atk foudr / Tempête Glace (Pouvoir du Dragon) : 3D6+21 (Mono+5) : Intel",
       "Saut Dimensionnel : 3 tentatives par combat : remplace l'esquive/blocage (buff prochain dégât +5) : intel",
       "Magie Extrême : Prochain dégât magique +2D6 +9 : Esprit",
       "Revers d'écaille (instant) : 4 tentatives par combat (<10 : 66%, >=10 : 33%) (+Soin PV+15 #Mode Caché) : Esprit<br/>Passif : Blocage+1"
