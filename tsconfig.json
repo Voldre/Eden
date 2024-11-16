@@ -5,8 +5,8 @@
     "module": "esnext", // Utiliser le module ES6 (peut être changé selon ton besoin)
     "skipLibCheck": true,
     "strict": true, // Activer le mode strict pour un code plus sûr
-    "rootDir": "./", // Indique que les fichiers TypeScript sont à la racine du projet
-    "outDir": "./dist", // Dossier de sortie pour les fichiers compilés
+    "rootDir": "./src",
+    "outDir": "./server", // Dossier de sortie pour les fichiers compilés
     "moduleResolution": "bundler",
     // "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
@@ -17,6 +17,6 @@
 
     "allowJs": true // Allow JS file in commit
   },
-  "include": ["*.ts"],
+  "include": ["src/*ts"],
   "exclude": ["tsconfig.json", "node_modules"]
 }

@@ -2,7 +2,7 @@
   "env": { "browser": true },
 
   "ignorePatterns": [
-    "dist/*",
+    "server/*.js",
     "*.css",
     "*.html",
     "MTLLoader.js",
