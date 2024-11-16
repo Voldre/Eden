@@ -1,22 +1,31 @@
-import { cardJSON, persosJSON, enemyJSON, allSkills, playerJSON, getData, classes, iconsClasses } from "./JDRstore.js";
+import {
+  cardJSON,
+  persosJSON,
+  enemyJSON,
+  combatSkillsJSON,
+  playerJSON,
+  getData,
+  classes,
+  iconsClasses,
+  cheatJSON,
+} from "./JDRstore.js";
 import {
   callPHP,
   createElement,
   dateToString,
   initDialog,
+  inputElement,
+  inputSelector,
   isTextInText,
-  Perso,
+  newPerso,
   readCookie,
   setCookie,
   sum,
   toastNotification,
 } from "./utils.js";
-
-console.log(allSkills);
-
-let perso = {};
-let enemy = {};
-
+console.log(combatSkillsJSON);
+let perso;
+let enemy;
 let turn = 0;
 let ingame = false;
 let indexPlayer;
@@ -24,7 +33,6 @@ let joueurData;
 let selectedEnemy;
 let currentPersoEntries;
 const turnToCheck = 6 + Math.floor(Math.random() * 3);
-
 const MIN_COMMON = 15;
 const MAX_COMMON = 29;
 const MIN_ELITE = 26;
@@ -32,68 +40,58 @@ const MIN_ELITE = 26;
 const MAX_ELITE = 39;
 const MIN_BOSS = 28;
 const MAX_BOSS = 52; // 49... + out of limite (+3)
-
 let indexPerso;
 let nomPerso;
 let logID;
-
 let mapID;
-let enemyRarity;
-let cardRarity;
-
+let enemyRarity = 1;
+let cardRarity = 1;
+const newCards = [];
+// Main Element
+const turnE = document.querySelector("#turn");
+const instructionE = document.querySelector("#instruction");
+const pvE = inputSelector("#pv", "number");
+const epvE = inputSelector("#epv", "number");
+const lifebarE = document.querySelector(".lifebar");
+const buffEs = [...document.querySelectorAll(".buff")];
 // Load perso if URL parameter
 window.addEventListener("load", () => {
   const urlParams = new URLSearchParams(window.location.search);
-
   if (urlParams.has("perso")) {
     // Init parameters
-    mapID = parseInt(urlParams.get("map"));
-
+    const map = urlParams.get("map");
+    mapID = map ? parseInt(map) : undefined;
     // Init Perso
-    indexPerso = urlParams.get("perso");
+    indexPerso = parseInt(urlParams.get("perso"));
     nomPerso = persosJSON[indexPerso - 1].nom;
-
     indexPlayer = Object.entries(playerJSON)
       .map((player) => {
-        if (player[1].persos.includes(parseInt(indexPerso))) {
+        if (player[1].persos.includes(indexPerso)) {
           return player[0];
         }
         return undefined;
       })
       .filter((e) => !!e)[0];
-
-    if (!cookieCheck()) return;
-
+    if (!cookieCheck() || !indexPlayer) return;
     joueurData = playerJSON[indexPlayer];
-
     // Update to get current perso entries
-    const persoIDforPlayer = joueurData.persos.indexOf(parseInt(indexPerso));
+    const persoIDforPlayer = joueurData.persos.indexOf(indexPerso);
     currentPersoEntries = joueurData.entries[persoIDforPlayer];
-
     // 29/11/23 : Add check of entries at the beginning of the fight (here)
     if (currentPersoEntries <= 0) {
       toastNotification("Erreur : Le personnage a déjà consommé toutes ses entrées.", 6000, true);
       endRediction();
       return;
     }
-
-    loadFiche(urlParams.get("perso") - 1);
-
+    loadFiche();
     // 30/01/24 : Short security to handle abberation (like Nyx with more than 1 billion damage)
-    if (perso.degat > 75 || perso.armure > 50 || perso.pvmax > 275) {
+    if (!perso || perso.degat > 75 || perso.armure > 50 || perso.pvmax > 275) {
       toastNotification("Erreur : Le personnage a des statistiques hors-norme.", 6000, true);
       endRediction();
       return;
     }
-
     // 27/04/24 : New logs : cheat log to handle potential cheat !
-    const sumStats =
-      parseInt(perso.force) +
-      parseInt(perso.dexté) +
-      parseInt(perso.intel) +
-      parseInt(perso.charisme) +
-      parseInt(perso.esprit);
-
+    const sumStats = perso.force + perso.dexté + perso.intel + perso.charisme + perso.esprit;
     // Not Malvis, because she is overcheat with her damage
     if ((perso.degat > 52 && perso.nom !== "Malvis") || perso.armure > 35 || perso.pvmax > 200 || sumStats > 72) {
       console.log("new C log...");
@@ -102,7 +100,7 @@ window.addEventListener("load", () => {
   } else {
     // Not in real fight
     const enemyCombatData = Object.entries(enemyJSON).map(([id, e]) => {
-      const enemyStats = new Enemy(e);
+      const enemyStats = newEnemy(e);
       enemyStats.rarity = enemyStats.pvmax >= 200 ? "BOSS" : enemyStats.pvmax > 120 ? "ELITE" : "COMMUN";
       enemyStats.degatMin =
         (enemyStats.rarity === "BOSS" && enemyStats.degat < MIN_BOSS) ||
@@ -119,14 +117,16 @@ window.addEventListener("load", () => {
       "> JSON.stringify() > Copier l'objet > JSON to Excel"
     );
   }
-
   // Init Enemy
-
   selectedEnemy = urlParams.has("enemy")
     ? Object.values(enemyJSON).find((e) => e.nom === urlParams.get("enemy"))
     : chooseEnemy();
+  if (!selectedEnemy) {
+    toastNotification("Erreur : L'ennemi n'a pas été trouvé.", 5000, true);
+    endRediction();
+    return;
+  }
   loadEnemy(selectedEnemy, urlParams.has("isElite"));
-
   if (selectedEnemy.pvmax >= 200) {
     enemyRarity = Math.trunc(selectedEnemy.pvmax / 100) + 1;
   } else if (selectedEnemy.pvmax > 120) {
@@ -134,14 +134,12 @@ window.addEventListener("load", () => {
   } else {
     enemyRarity = 1;
     // Handle enemy with "elite mode"
-    enemyRarity += urlParams.has("isElite");
+    enemyRarity += urlParams.has("isElite") ? 1 : 0;
   }
   cardRarity = Math.min(enemyRarity, 3);
-
   // First turn
   newturn();
 });
-
 function cookieCheck() {
   if (readCookie("loadJDRcombat") !== "true") {
     toastNotification("Erreur : Lancez un combat à partir d'une quête", 6000, true);
@@ -153,89 +151,71 @@ function cookieCheck() {
   setCookie("loadJDRcombat", false);
   return true;
 }
-
-function loadFiche(indexPerso) {
-  document.querySelector(".perso").id = indexPerso;
-
-  const persoData = persosJSON[indexPerso];
-
+function loadFiche() {
+  const indexP = (indexPerso ?? 0) - 1;
+  document.querySelector(".perso").id = indexP.toString();
+  const persoData = persosJSON[indexP];
   if (!persoData) return;
-
-  perso = new Perso(persoData);
-
-  document.querySelector("#nom").value = perso.nom;
-
-  document.querySelector("#niv").value = perso.niv;
-  document.querySelector("#pv").value = perso.pv;
-  document.querySelector("#pvmax").value = perso.pvmax;
-
-  document.querySelector("#degat").value = perso.degat;
-
-  document.querySelector("#armure").value = perso.armure;
-
+  perso = newPerso(persoData);
+  inputSelector("#nom", "string").value = perso.nom;
+  inputSelector("#niv", "number").value = perso.niv;
+  pvE.value = perso.pv;
+  inputSelector("#pvmax", "number").value = perso.pvmax;
+  inputSelector("#degat", "number").value = perso.degat;
+  inputSelector("#armure", "number").value = perso.armure;
   document.querySelector("#pp").src = persoData.pp;
-  document.querySelector("#force").value = perso.force;
-  document.querySelector("#resForce").innerText = `Bloc +${perso.forceRes}`;
-  document.querySelector("#dexté").value = perso.dexté;
-  document.querySelector("#resDexté").innerText = `Esq +${perso.dextéRes}`;
-  document.querySelector("#intel").value = perso.intel;
-  document.querySelector("#resIntel").innerText = `Bloc +${perso.intelRes}`;
-  document.querySelector("#charisme").value = perso.charisme;
-  document.querySelector("#esprit").value = perso.esprit;
-
+  inputSelector("#force", "number").value = perso.force;
+  inputSelector("#resForce", "string").innerText = `Bloc +${perso.forceRes}`;
+  inputSelector("#dexté", "number").value = perso.dexté;
+  inputSelector("#resDexté", "string").innerText = `Esq +${perso.dextéRes}`;
+  inputSelector("#intel", "number").value = perso.intel;
+  inputSelector("#resIntel", "string").innerText = `Bloc +${perso.intelRes}`;
+  inputSelector("#charisme", "number").value = perso.charisme;
+  inputSelector("#esprit", "number").value = perso.esprit;
   // Classes du perso
   const classePID = classes.indexOf(perso.classeP);
   const classeSID = classes.indexOf(perso.classeS);
-
   loadSkills(perso.classeP, perso.classeS);
-
-  document.querySelector(".iconClasses").children[0].src =
-    `http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE${iconsClasses[classePID]}.png`;
-  document.querySelector(".iconClasses").children[1].src =
-    `http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE${iconsClasses[classeSID]}.png`;
+  const iconClasses = document.querySelector(".iconClasses");
+  iconClasses.children[0].src = `http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE${iconsClasses[classePID]}.png`;
+  iconClasses.children[1].src = `http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE${iconsClasses[classeSID]}.png`;
 }
-
 function loadSkills(c1, c2) {
-  Object.entries([...document.querySelectorAll(".skillCombat")]).forEach(([id, skillE]) => {
-    const listSkills = allSkills.filter((skill) => skill.classe.includes(c1) || skill.classe.includes(c2));
-    if (!listSkills[id]) return;
-    skillE.querySelector(".skillName").value = listSkills[id].nom;
-    skillE.querySelector(".skillStat").innerText = listSkills[id].statUsed;
-
-    if (listSkills[id].type === "buff") {
+  Object.entries([...document.querySelectorAll(".skillCombat")]).forEach(([i, skillE]) => {
+    const id = parseInt(i);
+    const skills = combatSkillsJSON.filter((skill) => skill.classes.includes(c1) || skill.classes.includes(c2));
+    if (!skills[id]) return;
+    inputElement(skillE.querySelector(".skillName"), "string").value = skills[id].nom;
+    skillE.querySelector(".skillStat").innerText = skills[id].statUsed;
+    const skillMontantE = skillE.querySelector(".montant");
+    if (skills[id].type === "buff") {
+      const skill = skills[id];
       skillE.querySelector(".montant").innerText =
-        `${listSkills[id].type} : ${listSkills[id].buffElem} +` +
-        `${listSkills[id].montant ? `${listSkills[id].montant}+` : ""}${listSkills[id].montantFixe}, 
-        ${listSkills[id].duree} tours`;
-      skillE.querySelector(".montant").innerText = skillE.querySelector(".montant").innerText.replaceAll(",", ", ");
-    } else if (!listSkills[id].montantFixe) {
-      skillE.querySelector(".montant").innerText = `${listSkills[id].type} : ${listSkills[id].montant}`;
+        `${skill.type} : ${skill.buffElem} +` +
+        `${skill.montant ? `${skill.montant}+` : ""}${skill.montantFixe}, 
+        ${skill.duree} tours`;
+      skillMontantE.innerText = skillMontantE.innerText.replaceAll(",", ", ");
+    } else if (!skills[id].montantFixe) {
+      skillMontantE.innerText = `${skills[id].type} : ${skills[id].montant}`;
     } else {
-      skillE.querySelector(".montant").innerText =
-        `${listSkills[id].type} : ${listSkills[id].montant}+${listSkills[id].montantFixe}`;
+      skillMontantE.innerText = `${skills[id].type} : ${skills[id].montant}+${skills[id].montantFixe}`;
     }
-    skillE.querySelector(".icone").src = `http://voldre.free.fr/Eden/images/skillIcon/${listSkills[id].icone}.png`;
-
+    skillE.querySelector(".icone").src = `http://voldre.free.fr/Eden/images/skillIcon/${skills[id].icone}.png`;
     skillE.addEventListener("click", () => {
       // Bug fix Victorine 26/11/2023 : check if button disabled
       // Because the Event Listener is the whole skill Element, not only the button
-      if (!skillE.querySelector(".skillName").disabled) turnExecution(listSkills[id], skillE);
+      if (!skillE.querySelector(".skillName").disabled) turnExecution(skills[id], skillE);
     });
   });
 }
-
 function loadEnemy(enemyData, isElite = false) {
   ingame = true;
   turn = 0;
-
   // Useless with new chooseEnemy() function
   // document.querySelector(".enemies").id = indexEnemy;
   // var enemyData = enemyJSON[indexEnemy];
-
   if (!enemyData) return;
-
-  enemy = new Enemy(enemyData);
-
+  enemy = newEnemy(enemyData);
   // Apply "isElite" only if not an elite or a boss
   if (isElite && enemy.pvmax <= 120) {
     enemy.nom += " (ELITE)";
@@ -243,33 +223,27 @@ function loadEnemy(enemyData, isElite = false) {
     enemy.pvmax = enemy.pv = Math.round(Math.max(130, Math.min(enemy.pvmax * 1.5, 180)));
     enemy.degat = Math.max(MIN_ELITE, Math.min(Math.round(enemy.degat * 1.1) + 5, MAX_ELITE));
   }
-
-  document.querySelector("#enom").value = enemy.nom;
-
-  document.querySelector("#epv").value = enemy.pvmax;
-  document.querySelector("#epvmax").value = enemy.pvmax;
-  document.querySelector(".lifebar").style.width = `${enemy.pvmax}px`;
-
-  document.querySelector("#epp").src = `http://voldre.free.fr/Eden/images/monsters/${enemyData.visuel3D}.png`;
-  document.querySelector("#epp").alt = enemyData.visuel3D;
-
+  inputSelector("#enom", "string").value = enemy.nom;
+  epvE.value = enemy.pvmax;
+  inputSelector("#epvmax", "number").value = enemy.pvmax;
+  lifebarE.style.width = `${enemy.pvmax}px`;
+  const eppE = document.querySelector("#epp");
+  eppE.src = `http://voldre.free.fr/Eden/images/monsters/${enemyData.visuel3D}.png`;
+  eppE.alt = enemyData.visuel3D;
   document.querySelector("#desc").innerText = enemyData.desc;
-
-  document.querySelector("#edegat").value = enemy.degat;
+  inputSelector("#edegat", "number").value = enemy.degat;
 }
-
-function Enemy(enemyData) {
-  this.nom = enemyData.nom;
-
-  this.pvmax = this.pv = enemyData.pvmax;
-
+function newEnemy(enemyData) {
+  enemy = undefined;
+  const loadingEnemy = {};
+  loadingEnemy.nom = enemyData.nom;
+  loadingEnemy.pvmax = loadingEnemy.pv = enemyData.pvmax;
   const enemyStats = enemyData.stats.split(",");
-  this.force = parseInt(enemyStats[0]);
-  this.dexté = parseInt(enemyStats[1]);
-  this.intel = parseInt(enemyStats[2]);
-  this.charisme = parseInt(enemyStats[3]);
-  this.esprit = parseInt(enemyStats[4]);
-
+  loadingEnemy.force = parseInt(enemyStats[0]);
+  loadingEnemy.dexté = parseInt(enemyStats[1]);
+  loadingEnemy.intel = parseInt(enemyStats[2]);
+  loadingEnemy.charisme = parseInt(enemyStats[3]);
+  loadingEnemy.esprit = parseInt(enemyStats[4]);
   // Calcul des dégâts fixes
   const montantSkills = enemyData.skills
     // Ignorer les compétences passives, buff, soins, etc.
@@ -279,7 +253,6 @@ function Enemy(enemyData) {
       // Trouver toutes les positions des "+"
       const plusPositions = [...skillText].map((char, i) => (char === "+" ? i : -1)).filter((i) => i !== -1);
       if (plusPositions.length === 0) return NaN;
-
       // Calculer les montants après chaque "+"
       const amounts = plusPositions
         .map((pos) => {
@@ -289,77 +262,40 @@ function Enemy(enemyData) {
         })
         .filter((v) => !!v);
       const average = amounts.reduce((a, b) => a + b, 0) / amounts.length;
-
       // In average, add Dices
       const dices = dicesAverageConversion(skillText);
-
       console.log({ average, dices });
-
       return average + dices;
     })
     .filter((value) => !Number.isNaN(value));
-
   console.log(montantSkills);
-
   // Pour les ennemis, sachant que des sorts sont mal comptés (ex 1D8 +1D6 +4)
   // Je rajoute 50% de dégâts (contre x% par niveau pour les joueurs), que 50% pas 100% car les des (1D10,2D6,...) sont comptés !
-  this.degat = Math.round((montantSkills.reduce(sum, 0) / montantSkills.length) * 1.5);
+  loadingEnemy.degat = Math.round((montantSkills.reduce(sum, 0) / montantSkills.length) * 1.5);
   // console.log(this.degat)
+  enemy = loadingEnemy;
+  return enemy;
 }
-
 // var enemyGenerated = Object.values(enemyJSON).map((enemy) => {
 //   return new Enemy(enemy);
 // });
 // console.log(enemyGenerated);
-
 // ***********
 // @TODO Obsolete function : to remove ? update ?
 function chooseEnemy(category = null) {
   // prettier-ignore
-  const forbidden = ["82","85","101","104","109"];
+  const forbidden = ["82", "85", "101", "104", "109"];
   // console.log(forbidden.map(f => enemyJSON[f]))
-
   // prettier-ignore
-  const boss = ["24","29","45","46","50","54","56","57","59","61","62","67","70","71","74","75","76","77","80","82","84","85","89","90","101","106","109","111","113","114","115","116","117","118","121","122"];
-
-  let enemyList = [];
-
-  if (!category) {
-    enemyList = { ...enemyJSON };
-    forbidden.forEach((enemyF) => {
-      delete enemyList[enemyF];
-    });
-  } else if (category === "boss") {
-    enemyList = { ...enemyJSON };
-    enemyList = Object.keys(enemyList).filter((enemy) => boss.includes(enemy));
-
-    forbidden.forEach((enemyF) => {
-      enemyList = enemyList.filter((enemy) => enemy !== enemyF);
-    });
+  const boss = ["24", "29", "45", "46", "50", "54", "56", "57", "59", "61", "62", "67", "70", "71", "74", "75", "76", "77", "80", "82", "84", "85", "89", "90", "101", "106", "109", "111", "113", "114", "115", "116", "117", "118", "121", "122"];
+  let enemyList = [...Object.entries(enemyJSON)].filter((e) => !forbidden.includes(e[0]));
+  if (category === "boss") {
+    enemyList = enemyList.filter((e) => boss.includes(e[0]));
   }
-
-  const randomEnemy = Math.floor(Math.random() * Object.keys(enemyList).length);
-  if (!category) {
-    // Reset index
-    enemyList = resetIndex(enemyList);
-  }
-
-  // console.log(enemyList, randomEnemy);
-  return enemyList[randomEnemy];
-}
-
-function resetIndex(object) {
-  const items = {};
-
-  let i = 0;
-  for (const index in object) {
-    items[i] = object[index];
-    i++;
-  }
-  return items;
+  const randomEnemy = Math.floor(Math.random() * enemyList.length);
+  return enemyList[randomEnemy][1];
 }
 // ***********
-
 function dicesAverageConversion(skill) {
   let dices = 0;
   if (skill.includes("1D12")) {
@@ -403,7 +339,6 @@ function dicesAverageConversion(skill) {
   }
   return dices;
 }
-
 function dicesConversion(skill) {
   let dices = 0;
   if (skill.includes("1D12")) {
@@ -447,158 +382,135 @@ function dicesConversion(skill) {
   }
   return dices;
 }
-
 // FIGHT
-
 function newturn() {
   // Correcting inExecution
   inExecution = false;
   isEnded();
-
   turn++;
-  document.querySelector("#turn").innerText = turn;
-
+  turnE.innerText = turn.toString();
   // Update 26/11/23 : Pour éviter la triche de "j'enregistre que si j'ai gagné"
   // J'ai décidé de consommer l'entrée du personnage (en sauvegardant) à partir de 6 à 8 tours de combat
   // 6-8 tours représente un engagement "Je réalise le combat jusqu'au bout"
-
   // Bug Fix 28/11/23 : Ajout condition "ingame". Car si on a déjà gagné (isEnded => victory() / defeat), on a déjà
   // log toutes les informations (avec winCards + earnedcoins), donc pas besoin de re-log !
   if (turn === turnToCheck && ingame) {
     const urlParams = new URLSearchParams(window.location.search);
-
-    if (!urlParams.has("perso")) return;
-
-    saveLog(0, null);
-    savePlayer(joueurData);
+    if (!urlParams.has("perso") || !joueurData) return;
+    saveLog(0, undefined);
+    savePlayer();
   }
-
   toastNotification(`Tour n°${turn}, choisissez une action`);
-  document.querySelector("#instruction").innerText = "Choisissez une action";
-
+  instructionE.innerText = "Choisissez une action";
   updateBuff();
-
   unlockInputs(true);
 }
-
 async function isEnded() {
-  if (ingame && (enemy.pv <= 0 || perso.pv <= 0)) {
+  if (ingame && perso && enemy && (enemy.pv <= 0 || perso.pv <= 0)) {
     ingame = false;
     const isVictory = enemy.pv <= 0;
     toastNotification(isVictory ? "Victoire !" : "Défaite");
-    document.querySelector("#instruction").innerText = isVictory ? "Victoire !" : "Défaite";
+    instructionE.innerText = isVictory ? "Victoire !" : "Défaite";
     updateDesc(`Vous avez ${isVictory ? "vaincu" : "perdu contre"} ${enemy.nom}`);
-
     if (!joueurData) {
       toastNotification("Erreur : Pas de joueur détecté, sauvegarde impossible", 6000, true);
       return;
     }
-
     try {
       if (isVictory) {
         await victory();
       } else {
-        await saveLog(0, null);
-        await savePlayer(joueurData);
+        await saveLog(0, undefined);
+        await savePlayer();
       }
       toastNotification("Sauvegarde effectuée, redirection ...", 6000);
     } catch (e) {
       console.error(e);
-      toastNotification(`Erreur : le combat n'a pas pu être sauvegardé :${e.message}`, 6000, true);
+      toastNotification(
+        `Erreur : le combat n'a pas pu être sauvegardé :${e instanceof Error ? e.message : e}`,
+        6000,
+        true
+      );
     }
   }
-
   if (!ingame) {
     endRediction();
   }
 }
-
-const newCards = [];
 async function victory() {
-  const enemyID = parseInt(Object.entries(enemyJSON).find((e) => e[1] === selectedEnemy)[0]);
-
+  const e = Object.entries(enemyJSON).find((e) => e[1] === selectedEnemy);
+  const enemyID = e ? parseInt(e[0]) : undefined;
+  if (!joueurData) return;
   const newJoueurData = { ...joueurData };
   const winCards = [];
-
   // Map card
   if (mapID) {
     const mapCard = cardJSON.find((card) => card.kind === "map" && card.kindId === mapID && card.value === cardRarity);
     newJoueurData.cards = addCard(newJoueurData.cards, mapCard);
-    mapCard ? winCards.push(mapCard) : null;
+    if (mapCard) winCards.push(mapCard);
   }
   // Boss card
   if (cardRarity === 3) {
     const bossCard = cardJSON.find(
-      (card) => card.kind === "boss" && card.kindId.toLowerCase() === selectedEnemy.visuel3D.toLowerCase()
+      (card) => card.kind === "boss" && card.kindId.toString().toLowerCase() === selectedEnemy?.visuel3D.toLowerCase()
     );
     newJoueurData.cards = addCard(newJoueurData.cards, bossCard);
-    bossCard ? winCards.push(bossCard) : null;
+    if (bossCard) winCards.push(bossCard);
   }
-
   // Compo card
   const cardsCompo = cardJSON.filter((card) => card.kind === "composant");
   const compoCardID = Math.floor(Math.random() * cardsCompo.length);
   const compoCard = cardsCompo[compoCardID];
   newJoueurData.cards = addCard(newJoueurData.cards, compoCard);
-  compoCard ? winCards.push(compoCard) : null;
-
+  if (compoCard) winCards.push(compoCard);
   // Anecdote card (50% chance to get)
   if (Math.random() * 2 <= 1) {
     const anecdoteCardsList = cardJSON.filter(
-      (card) => card.kind === "anecdote" && ((mapID && card.maps?.includes(mapID)) || card.enemies?.includes(enemyID))
+      (card) =>
+        card.kind === "anecdote" &&
+        ((mapID && card.maps?.includes(mapID)) || (enemyID && card.enemies?.includes(enemyID)))
     );
-
     // Choose 1 between all possibilities
     const randomAnecdoteCardID = Math.floor(Math.random() * anecdoteCardsList.length);
     const anecdoteCard = anecdoteCardsList[randomAnecdoteCardID];
-
     newJoueurData.cards = addCard(newJoueurData.cards, anecdoteCard);
-    anecdoteCard ? winCards.push(anecdoteCard) : null;
+    if (anecdoteCard) winCards.push(anecdoteCard);
   }
   // Coins
   newJoueurData.alpagaCoin = addCoins(newJoueurData.alpagaCoin, winCards);
-
   // Security 30/12 : Bug when update files, cookies of player are like "corrupted" and enemy data doesn't work well
   if (!newJoueurData.alpagaCoin) {
     toastNotification("Erreur : Données corrompues : Supprimez vos cookies.", 12000, true);
     stop();
   }
-
   // Save fight in log
   const earnedCoins = newJoueurData.alpagaCoin - joueurData.alpagaCoin;
-  await saveLog(earnedCoins, winCards);
   // Update player data
-  await savePlayer(newJoueurData);
-
+  joueurData = newJoueurData;
+  await saveLog(earnedCoins, winCards);
+  await savePlayer();
   // Show rewards (cards)
   showCardsAndCoins(winCards, earnedCoins);
 }
-
-async function saveCheat(enemy) {
-  const cheatJSON = getData("combatCheat");
+async function saveCheat(enemyName) {
   const cheatID = parseInt(Object.keys(cheatJSON).reverse()[0]) + 1 || 1;
-
   const newCheatLog = {};
   newCheatLog[cheatID] = {
     date: dateToString(new Date(), true),
     joueur: indexPlayer,
     perso: nomPerso,
-    enemy,
-    degat: perso.degat,
-    armure: perso.armure,
-    pvmax: perso.pvmax,
-    sumStats: [perso.force, perso.dexté, perso.intel, perso.charisme, perso.esprit],
+    enemy: enemyName ?? undefined,
+    degat: perso?.degat,
+    armure: perso?.armure,
+    pvmax: perso?.pvmax,
+    sumStats: [perso?.force, perso?.dexté, perso?.intel, perso?.charisme, perso?.esprit],
   };
-
   setCookie("combatCheatJSON", newCheatLog);
   await callPHP({ action: "saveFile", name: "combatCheat" });
 }
-
 async function saveLog(earnedCoins, winCards) {
   const logsJSON = getData("combatLogs");
-
   if (logID === undefined) logID = parseInt(Object.keys(logsJSON).reverse()[0]) + 1 || 1;
-
   const newLog = {};
   newLog[logID] = {
     date: dateToString(new Date(), true),
@@ -606,42 +518,38 @@ async function saveLog(earnedCoins, winCards) {
     perso: nomPerso,
     map: mapID,
     cardRarity,
-    enemy: selectedEnemy.nom,
+    enemy: selectedEnemy?.nom,
     earnedCoins,
     winCards: winCards?.map((w) => [w.id, w.name]) || [],
-    turn: parseInt(document.querySelector("#turn").innerText),
-    pv: perso.pv,
-    epv: enemy.pv,
+    turn: parseInt(turnE.innerText),
+    pv: perso?.pv,
+    epv: enemy?.pv,
   };
-
   // console.log(newLog);
-
   setCookie("combatLogsJSON", newLog);
   // console.log("saveFile done : combatLogs, jdr_backend.php executed");
   await callPHP({ action: "saveFile", name: "combatLogs" });
 }
-
-async function savePlayer(newJoueurData) {
+async function savePlayer() {
+  if (!indexPerso || !joueurData) {
+    toastNotification("Erreur : Le personnage n'a pas été identifié.", 6000, true);
+    return;
+  }
   // Last control before save : if entries are negative, don't save !
-  const persoIDforPlayer = joueurData.persos.indexOf(parseInt(indexPerso));
-
+  const persoIDforPlayer = joueurData.persos.indexOf(indexPerso);
   // Glitch Bug fixes : Victorine 27/11/23 "Infini combat si tu gagnes avant T6-8 !"
   // En effet, l'entrée n'était pas décomptée/consommée si tu finissais avant, mtn dès la save je la compte
-  if (currentPersoEntries === newJoueurData.entries[persoIDforPlayer]) newJoueurData.entries[persoIDforPlayer] -= 1;
-
-  if (newJoueurData.entries[persoIDforPlayer] <= -1) {
+  if (currentPersoEntries === joueurData.entries[persoIDforPlayer]) joueurData.entries[persoIDforPlayer] -= 1;
+  if (!indexPlayer || joueurData.entries[persoIDforPlayer] <= -1) {
     toastNotification("Erreur : Le personnage a déjà consommé toutes ses entrées.", 6000, true);
     return;
   }
-
   const newPlayer = {};
-  newPlayer[indexPlayer] = newJoueurData;
+  newPlayer[indexPlayer] = joueurData;
   // console.log(newPlayer);
-
   setCookie("playerJSON", newPlayer);
   await callPHP({ action: "saveFile", name: "player" });
 }
-
 function addCard(joueurDataCards, card) {
   if (card && !joueurDataCards.includes(card.id)) {
     newCards.push(card.id);
@@ -650,15 +558,13 @@ function addCard(joueurDataCards, card) {
   return joueurDataCards;
 }
 function addCoins(alpagaCoin, winCards) {
-  const cardsValue =
-    winCards?.map((card) => (card ? card.value : 0))?.reduce((acc, value) => acc + value) || enemyRarity;
+  const cardsValue = winCards?.map((card) => (card ? card.value : 0)).reduce(sum) || enemyRarity;
   if (cardRarity === 2) {
     // 13/12/23 : Add 1 alpaga Coin for Elite !
     alpagaCoin += 1;
   }
   return alpagaCoin + cardsValue + Math.max(enemyRarity - 3, 0);
 }
-
 function showCardsAndCoins(winCards, newCoins) {
   // console.log("Earned : " + newCoins.toString() + ", New sold : " + (newCoins + joueurData.alpagaCoin).toString());
   // console.log(winCards.map((card) => card?.name));
@@ -667,19 +573,15 @@ function showCardsAndCoins(winCards, newCoins) {
   //     console.log(card.name + " is a new Card !");
   //   }
   // });
-
   const dialog = document.querySelector("dialog");
   // Disable outside click to close dialog
   dialog.style.pointerEvents = "none";
   document.querySelector("#coins").innerText = newCoins.toString();
-
   const cardsE = document.querySelector("#cards");
-
   winCards.forEach((card) => {
     const li = createElement("li", `${card.name}${newCards.includes(card.id) ? " (NEW)" : ""}`, {
       style: newCards.includes(card.id) ? { color: "gold" } : {},
     });
-
     const imgEndPoint = "images/";
     let imgSrc;
     switch (card.kind) {
@@ -702,53 +604,43 @@ function showCardsAndCoins(winCards, newCoins) {
       default:
         console.log(`Erreur, type non reconnu : ${card.kind}`);
     }
-
     const imgCardE = createElement("img", undefined, { src: imgSrc });
     const div = createElement("div", [li, imgCardE]);
-
     cardsE.append(div);
   });
-
   // Ouverture en "modal"
   dialog.showModal();
 }
-
 function endRediction() {
   setTimeout(() => {
     window.location.href = `jdr_profil.html?joueur=${indexPlayer}`;
   }, 5500);
 }
-
 // Dice
-
 function rollDice(user, type, statName) {
   const duration = 500; // in ms
-
   const section = user === perso ? document.querySelector(".playerAction") : document.querySelector(".enemyAction");
-
   const stat = user[statName];
   // console.log(user,statName,stat)
-
   const dice = section.querySelector(".dice");
-
   let success;
-
+  const statNameE = section.querySelector(".statName");
   // Stat name section + Success amount
   if (["attaque", "skill", "soin", "buff"].includes(type)) {
-    section.querySelector(".statName").innerText = statName;
+    statNameE.innerText = statName;
     // 24/11/23 : Max success is 18 (because user can have 19,20, ... !)
     success = Math.min(stat, 18);
   } else {
     // Defense
-    section.querySelector(".statName").innerText = `${statName}/2`;
+    statNameE.innerText = `${statName}/2`;
     // 24/11/23 : Max success is 13 (because user can have more !)
-    success = Math.min(Math.ceil(stat / 2) + (user[`${statName}Res`] ?? 0), 13);
+    const resBonus =
+      statName === "force" || statName === "dexté" || statName === "intel" ? (user[`${statName}Res`] ?? 0) : 0;
+    success = Math.min(Math.ceil(stat / 2) + resBonus, 13);
     // console.log("Defense " + statName + " : " + success);
   }
-
   // Result (correction 20/11/23 : change round to floor to have nice repartition)
   const diceValue = Math.floor(Math.random() * 20 + 1);
-
   let result;
   if (diceValue > success) {
     result = "fail";
@@ -758,13 +650,11 @@ function rollDice(user, type, statName) {
     if (diceValue === 1) result = "crit success";
   }
   // Display result
-
   if (!dice.classList.contains("show")) {
     dice.classList.add("show");
     setTimeout(() => {
       dice.classList.remove("show");
-      dice.innerText = diceValue;
-
+      dice.innerText = diceValue.toString();
       switch (result) {
         case "fail":
           dice.style.filter = "drop-shadow(1px 1px 10px darkred)";
@@ -782,10 +672,8 @@ function rollDice(user, type, statName) {
       }
     }, duration);
   }
-
   return result;
 }
-
 function resetDices() {
   [...document.querySelectorAll(".dice")].forEach((dice) => {
     dice.style.filter = "";
@@ -796,48 +684,45 @@ function resetDices() {
   });
   updateDesc("");
 }
-
-const statsButton = ["bforce", "bdexté", "bintel"]; // ,"bcharisme","besprit"];
+const statsButton = ["force", "dexté", "intel"];
 statsButton.forEach((buttonStat) => {
-  const statName = buttonStat.slice(1);
-  document.querySelector(`#${buttonStat}`).addEventListener("click", () => {
-    turnExecution({
-      type: "attaque",
-      montant: "Dégât +1D10",
-      statUsed: statName,
-    });
+  document.querySelector(`#b${buttonStat}`).addEventListener("click", () => {
+    turnExecution(enemySkill(buttonStat));
   });
 });
-
 // *** Turn execution ***
+const enemySkill = (stat) => ({
+  nom: "Attaque ennemi",
+  type: "attaque",
+  montant: "Dégât +1D10",
+  montantFixe: 0,
+  statUsed: stat,
+  classes: [],
+  icone: "",
+});
 let inExecution = false;
-function turnExecution(persoSkill, skillE = null) {
+function turnExecution(persoSkill, skillE) {
   // Bug fix Victorine 26/11/2023 : If already clicked (in execution), then cancel
   // Because if not, can spam x skills and kill enemy in 1 turn !
   if (inExecution) return;
   inExecution = true;
-
-  if (!ingame) {
-    toastNotification("Le combat est terminé");
+  if (!ingame || !perso) {
+    toastNotification(`Le combat est terminé ${!perso ? " : Pas de perso détecté" : ""}`, 4000, !perso);
     return;
   }
-
   // Déroulement du tour
   unlockInputs(false);
-
   executeAction(perso, persoSkill);
-
   setTimeout(() => {
-    enemyTurn(enemy);
+    enemyTurn();
   }, 3000);
-
   setTimeout(() => {
     newturn();
     // Add 05/11/2023 : Can't use same skill 2 times
     if (skillE) {
-      skillE.querySelector(".skillName").disabled = true;
+      inputElement(skillE.querySelector(".skillName"), "string").disabled = true;
       // 25/11/2023 : Can't use heal 2 times (too cheat)
-      if (skillE.querySelector(".montant").innerText.includes("soin")) {
+      if (document.querySelector(".montant").innerText.includes("soin")) {
         Object.values([...document.querySelectorAll(".skillCombat")]).forEach((sE) => {
           if (sE.querySelector(".montant").innerText.includes("soin")) {
             sE.querySelector(".skillName").disabled = true;
@@ -847,67 +732,44 @@ function turnExecution(persoSkill, skillE = null) {
     }
   }, 6000);
 }
-
 // Enemy Turn
-
-function enemyTurn(enemy) {
+function enemyTurn() {
   isEnded();
-
-  if (!ingame) {
-    toastNotification("Le combat est terminé");
+  if (!ingame || !enemy) {
+    toastNotification(`Le combat est terminé ${!enemy ? " : Pas d'ennemi détecté" : ""}`, 4000, !enemy);
     return;
   }
-
   toastNotification("Au tour de l'ennemi...");
-  document.querySelector("#instruction").innerText = "Au tour de l'ennemi...";
-
+  instructionE.innerText = "Au tour de l'ennemi...";
   // CHOIX DE STAT : Stat choisi par l'ennemi : que l'une des 2 meilleures
   const { force, dexté, intel } = enemy;
-  const stats = { force, dexté, intel };
-
-  const minStat = Object.keys(stats).reduce((key, v) => (stats[v] < stats[key] ? v : key));
-
-  delete stats[minStat];
-  const sumStatsATK = Object.values(stats)[0] + Object.values(stats)[1];
-
+  // Sort stats from upper to lower
+  const stats = [
+    ["force", force],
+    ["dexté", dexté],
+    ["intel", intel],
+  ].sort((a, b) => b[1] - a[1]);
+  const sumStatsATK = stats[0][1] + stats[1][1];
   // enemy.force+enemy.dexté+enemy.intel;
   const randValue = Math.round(Math.random() * sumStatsATK);
-
-  let statName;
-  if (randValue < Object.values(stats)[0]) {
-    statName = Object.keys(stats)[0];
-  } else {
-    statName = Object.keys(stats)[1];
-  }
-
-  executeAction(enemy, {
-    type: "attaque",
-    montant: "Dégât +1D10",
-    statUsed: statName,
-  });
+  const statName = randValue < stats[0][1] ? stats[0][0] : stats[1][0];
+  executeAction(enemy, enemySkill(statName));
 }
-
 function executeAction(user, userSkill) {
   // console.log(userSkill);
   const type = userSkill.type;
   const statName = userSkill.statUsed;
-
   resetDices();
-
   const opponent = user === perso ? enemy : perso;
-
   const userResult = rollDice(user, type, statName);
-  let montant;
-
+  let montant = 0;
   // Montant des dégâts
   if (userResult === "crit success") {
     montant = dicesAverageConversion(userSkill.montant) * 2 + (userSkill.montantFixe || 0);
   } else if (userResult === "success") {
     montant = dicesConversion(userSkill.montant) + (userSkill.montantFixe || 0);
   }
-
   // console.log("montant : ", montant);
-
   if (type === "attaque") {
     if (userResult === "crit success") {
       hit(opponent, user.degat + montant);
@@ -949,7 +811,6 @@ function executeAction(user, userSkill) {
       updateDesc("Buff !");
     }
   }
-
   if (userResult === "fail") {
     updateDesc("Echec");
   } else if (userResult === "crit fail") {
@@ -962,7 +823,6 @@ function executeAction(user, userSkill) {
     updateDesc("Echec critique");
   }
 }
-
 function hit(user, amount) {
   const damage = amount - (user.armure || 0);
   if (damage > 0) {
@@ -970,74 +830,63 @@ function hit(user, amount) {
     user.pv -= damage;
   }
   if (user === perso) {
-    document.querySelector("#pv").value = user.pv;
+    pvE.value = user.pv;
   } else {
-    document.querySelector("#epv").value = user.pv;
+    epvE.value = user.pv;
     // document.querySelector(".lifebar").style.width = `${Math.max(39 * (user.pv / user.pvmax), 0)}%`;
-    document.querySelector(".lifebar").style.width = `${Math.max(user.pv, 0)}px`;
+    lifebarE.style.width = `${Math.max(user.pv, 0)}px`;
   }
 }
-
 function heal(user, amount) {
   // Bug Fixes Victorine 20/11/23 : Take min between "max HP and healed HP" x)
   // ++ Reduce the heal by 1 point (because too cheat)
-  user.pv = Math.min(user.pvmax, parseInt(user.pv) + amount - 1);
-
+  user.pv = Math.min(user.pvmax, user.pv + amount - 1);
   // min() permet de gérer si les PV soignés sont > aux PV max
-  document.querySelector("#pv").value = user.pv;
+  pvE.value = user.pv;
 }
-
 function buff(userSkill, amount) {
-  [...document.querySelectorAll(".buff")].every((buffE) => {
+  buffEs.every((buffE) => {
+    const buffDurationsEs = buffE.querySelector(".duree");
     // Second security check to don't update Euphorie, which increase each turn
     if (buffE.id === userSkill.nom && buffE.id !== "Euphorie") {
       // if already applied, update buff time
-      buffE.querySelector(".duree").children[0].innerText = userSkill.duree + 1; // +1 car tour actuel à ne pas compter !
-      buffE.querySelector(".duree").children[1].innerText = userSkill.duree;
+      buffDurationsEs.children[0].innerText = `${userSkill.duree + 1}`; // +1 car tour actuel à ne pas compter !
+      buffDurationsEs.children[1].innerText = `${userSkill.duree}`;
       return false;
     }
-
-    if (buffE.querySelector(".duree").children[0].innerText !== "") return true;
-
-    buffE.querySelector(".duree").children[0].innerText = userSkill.duree + 1; // +1 car tour actuel à ne pas compter !
-    buffE.querySelector(".duree").children[1].innerText = userSkill.duree;
-    buffE.querySelector(".montant").innerText = amount;
-    buffE.querySelector(".icone").src = `http://voldre.free.fr/Eden/images/skillIcon/${userSkill.icone}.png`;
-
-    buffE.querySelector(".icone").title = userSkill.buffElem.toString();
-
+    if (buffDurationsEs.children[0].innerText !== "") return true;
+    buffDurationsEs.children[0].innerText = `${userSkill.duree + 1}`; // +1 car tour actuel à ne pas compter !
+    buffDurationsEs.children[1].innerText = `${userSkill.duree}`;
+    buffE.querySelector(".montant").innerText = `${amount}`;
+    const buffIconE = buffE.querySelector(".icone");
+    buffIconE.src = `http://voldre.free.fr/Eden/images/skillIcon/${userSkill.icone}.png`;
+    buffIconE.title = userSkill.buffElem.toString();
     buffE.id = userSkill.nom;
-
     userSkill.buffElem.forEach((bE) => {
-      bE = bE.replace("/tour", "");
-      perso[bE] = parseInt(perso[bE]) + amount;
-      document.querySelector(`#${bE}`).value = perso[bE];
+      if (!perso) return;
+      const statbE = bE.replace("/tour", "");
+      perso[statbE] += amount;
+      inputElement(document.querySelector(`#${statbE}`), "number").value = perso[statbE];
     });
-
     return false;
   });
 }
-
 function updateDesc(desc) {
   setTimeout(() => {
     document.querySelector("#actionDescription").innerText = desc;
   }, 1000);
 }
-
 // Skills and stats buttons
 const skillsButton = [...document.querySelectorAll(".skillCombat")].map((skillE) => skillE.children[0]);
-
 function unlockInputs(bool) {
   statsButton.forEach((buttonStat) => {
     document.querySelector(`#${buttonStat}`).disabled = !bool;
   });
-
   skillsButton.forEach((buttonSkill) => {
     buttonSkill.disabled = !bool;
-
     // Bug Fix 27/11/23 (Grâce aux logs <3, et à la triche de Sekhmet # Battu Ochak Oo)
     if (buttonSkill.value === "Euphorie") {
-      [...document.querySelectorAll(".buff")].forEach((buffE) => {
+      buffEs.forEach((buffE) => {
         if (buffE.id === "Euphorie") {
           buttonSkill.disabled = true;
         }
@@ -1045,51 +894,46 @@ function unlockInputs(bool) {
     }
   });
 }
-
 function updateBuff() {
-  [...document.querySelectorAll(".buff")].forEach((buffE) => {
+  buffEs.forEach((buffE) => {
+    if (!perso) return;
     const dureeE = buffE.querySelector(".duree");
-    let buffElem = buffE.querySelector(".icone").title.split(",");
-
+    const buffIconE = buffE.querySelector(".icone");
+    const buffMontant = buffE.querySelector(".montant");
+    const buffElem = buffIconE.title.split(",");
     if (dureeE.children[0].innerText === "") return;
-
     if (dureeE.children[0].innerText !== "1") {
-      dureeE.children[0].innerText = parseInt(dureeE.children[0].innerText) - 1;
-
+      dureeE.children[0].innerText = `${parseInt(dureeE.children[0].innerText) - 1}`;
       // If buff per turn (ex : Euphorie), apply buff
-      if (buffE.querySelector(".icone").title.includes("/tour")) {
-        buffElem = buffElem[0].replace("/tour", "");
-        perso[buffElem] += parseInt(buffE.querySelector(".montant").innerText);
-        document.querySelector(`#${buffElem}`).value = perso[buffElem];
+      if (buffIconE.title.includes("/tour")) {
+        const buffVar = buffElem[0].replace("/tour", "");
+        perso[buffVar] += parseInt(buffMontant.innerText);
+        inputElement(document.querySelector(`#${buffVar}`), "number").value = perso[buffVar];
       }
       // Else, if last turn
     } else {
-      if (buffE.querySelector(".icone").title.includes("/tour")) {
+      if (buffIconE.title.includes("/tour")) {
         // If buff each turn, we remove the whole buff (amount * duration)
-        buffElem = buffElem[0].replace("/tour", "");
-        perso[buffElem] -=
-          parseInt(buffE.querySelector(".montant").innerText) * (parseInt(dureeE.children[1].innerText) + 1);
-        document.querySelector(`#${buffElem}`).value = perso[buffElem];
+        const buffVar = buffElem[0].replace("/tour", "");
+        perso[buffVar] -= parseInt(buffMontant.innerText) * (parseInt(dureeE.children[1].innerText) + 1);
+        inputElement(document.querySelector(`#${buffVar}`), "number").value = perso[buffVar];
       } else {
         buffElem.forEach((bE) => {
-          perso[bE] -= parseInt(buffE.querySelector(".montant").innerText);
-          document.querySelector(`#${bE}`).value = perso[bE];
+          if (!perso) return;
+          perso[bE] -= parseInt(buffMontant.innerText);
+          inputElement(document.querySelector(`#${bE}`), "number").value = perso[bE];
         });
       }
-
       dureeE.children[0].innerText = "";
       dureeE.children[1].innerText = "";
-
-      buffE.querySelector(".montant").innerText = "";
-      buffE.querySelector(".icone").src = "";
-      buffE.querySelector(".icone").title = "";
+      buffMontant.innerText = "";
+      buffIconE.src = "";
+      buffIconE.title = "";
       buffE.id = "";
     }
   });
 }
-
 // Modal (Dialog) des informations de bases des labels
-
 const labelsDescription = {
   niv: "Augmente automatiquement tous les 100 points d'expériences du Niveau 1 à 5, puis tous les 150.<br/> Tous les niveaux paire (2,4,6,8), vous obtenez une compétence.<br/> Au Niveau 5 vous avez +1 en Esprit.<br/> Au Niveau 10, c'est +1 où vous voulez.",
   pv: "Statistique des PV, augmente de 5 par niveau.",
@@ -1099,5 +943,4 @@ const labelsDescription = {
     "L'armure vaut le montant de l'armure (dégât reçu -x). Puis +10% par niveau. Ex : Armure : 4, niveau 6 : 9*1.1^6 = 7",
   //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."
 };
-
 initDialog(labelsDescription);

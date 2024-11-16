@@ -577,7 +577,7 @@
   },
   "72": {
     "nom": "Résurrection",
-    "desc": "(Utilisable même vivant) prend 2 tours : Soigne/Ressuscite un joueur avec quelques PV ",
+    "desc": "(Utilisable même vivant) prend 2 tours : Soigne/Ressuscite un joueur",
     "effet": "Soin",
     "montant": "Incantation en 2 tours (1 dé/tour) : soigne de 2D10+16",
     "icone": "E0020",
@@ -1002,7 +1002,7 @@
     "nom": "Encouragement Musical",
     "desc": "(effet montant des buffs /2). Incante et réduit les dégâts subis, immunise à l'endormissement et augmente la résistance mentale (Blocage Esprit/2)",
     "effet": "Buff AoE",
-    "montant": "Incantation 2 tours (1 dé) : subi -1D4-2, 0 dodo, +2 rés esprit, pour 4 tours",
+    "montant": "Incantation 2 tours (1 dé) : Dégât subi -1D4-2, 0 dodo, +2 rés esprit, pour 4 tours",
     "icone": "E0406",
     "stat": "Charisme",
     "classe": ["Barde"]

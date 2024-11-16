@@ -49,6 +49,8 @@ if(isset($_GET['logout'])){
         <br/>
         <!-- For player -->
         <div id="toast"></div>
+        <label for="tour">Tour n°</label>
+        <input type="number" name="tour" id="tour" value="1" style="width: 46px" />
         <div class="infoEnnemi" id="e0">
             <div class="enemyType" >
                 <div class="classic">
@@ -60,8 +62,9 @@ if(isset($_GET['logout'])){
             <br/>
             <input style='width: 38px;' type='number' id="pv" name="pv"></input>
             <input style='width: 38px;' type='number' id="pvmax" name="pvmax"></input>
-            <label for="pv">PV/Max</label><img src="images/layout/combat_boss.png" id="boss_icon" class="hide icon" style="float:right" />
-            <br/>
+            <label for="pv">PV/Max </label><span id="weaknesses"></span>
+            <img src="images/layout/combat_boss.png" id="boss_icon" class="hide icon" style="float: right" />
+            <br />
             <p class="competence"></p>
             <p class="competence"></p>
             <p class="competence"></p>

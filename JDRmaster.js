@@ -10,44 +10,50 @@ import {
   elements,
 } from "./JDRstore.js";
 import {
+  addChangeListener,
+  addClickListener,
   callPHP,
   createElement,
   eventOnClick,
   fillSelectOptions,
+  inputElement,
+  inputSelector,
   isTextInText,
   setCookie,
   toastNotification,
   unformatText,
 } from "./utils.js";
-
 const logged = !!document.querySelector(".admin");
-
 // Show/Hide other pages of Eden
 const buttonIframe = document.querySelector("#buttonIframe");
-buttonIframe?.addEventListener("click", () => {
-  if (buttonIframe.innerText === "Afficher le site") {
-    buttonIframe.innerText = "Masquer le site";
-  } else {
-    buttonIframe.innerText = "Afficher le site";
-  }
-  document.querySelector("iframe").classList.toggle("hide");
-});
-
+if (buttonIframe)
+  addClickListener(buttonIframe, (e) => {
+    if (e.target.innerText === "Afficher le site") {
+      e.target.innerText = "Masquer le site";
+    } else {
+      e.target.innerText = "Afficher le site";
+    }
+    document.querySelector("iframe").classList.toggle("hide");
+  });
 let allSlots;
+// Main Elements
+let ennemiEs = [...document.querySelectorAll(".infoEnnemi")];
+const persoEs = [...document.querySelectorAll(".perso")];
+const nbPE = inputSelector("#nbP", "number");
+const tourE = inputSelector("#tour", "number");
+// Update slots when 1) Enemy loaded, 2) Enemy slot added, 3) Perso selected
 function updateSlots() {
-  const enemiesList = [...document.querySelectorAll(".infoEnnemi")].filter(
-    (infoE) => infoE.querySelector("#pvmax").value !== ""
-  );
-  const persosList = [...document.querySelectorAll(".perso")].filter((persoE) => persoE.children[0].value !== "");
+  // Update enemy list
+  ennemiEs = [...document.querySelectorAll(".infoEnnemi")];
+  const enemiesList = ennemiEs.filter((infoE) => !!infoE.querySelector("#pvmax")?.value);
+  const persosList = persoEs.filter((persoE) => !!persoE.children[0].value);
   allSlots = [...enemiesList, ...persosList];
 }
-
 // Enemies Select Options
 [...document.querySelectorAll(".ennemi")].forEach((selectEnnemiE) => {
   const allowedEnnemiesPart = ["Veyda", "Champi Baga"];
-
   const options = [
-    { value: 0, innerText: "" },
+    { value: "0", innerText: "" },
     ...Object.entries(enemyJSON)
       .filter(
         // If logged : take all, else : take allowed enemies
@@ -59,103 +65,103 @@ function updateSlots() {
         innerText: enemy.nom,
       })),
   ];
-
   fillSelectOptions(selectEnnemiE, options);
-
   // Change enemy selected
-
-  selectEnnemiE.addEventListener("change", (e) => {
-    loadEnemy(e.target.value, selectEnnemiE.closest(".infoEnnemi"));
+  addChangeListener(selectEnnemiE, (e) => {
+    loadEnemy(e.target.value, e.target.closest(".infoEnnemi"));
     toastNotification(`Chargement de l'ennemi réussi : ${e.target.value}`);
   });
 });
-
-function loadEnemy(indexEnemy, ennemiElement, genericEnemy = null) {
+function loadEnemy(indexEnemy, ennemiElement, genericEnemy = undefined) {
   const enemyData = genericEnemy || enemyJSON[indexEnemy];
-
   const weaknessesE = ennemiElement.querySelector("#weaknesses");
   weaknessesE.innerHTML = "";
-
-  if (!enemyData) {
-    console.log(`${indexEnemy} is not an enemy (in the list)`);
+  const descE = ennemiElement.querySelector("#desc");
+  const dropE = ennemiElement.querySelector("#drop");
+  const visuelE = ennemiElement.querySelector(".visuel");
+  const iconE = ennemiElement.querySelector(".icon");
+  const pvE = inputSelector("#pv", "number", ennemiElement);
+  const pvMaxE = inputSelector("#pvmax", "number", ennemiElement);
+  const forceE = inputSelector("#force", "string", ennemiElement);
+  const dextéE = inputSelector("#dexté", "string", ennemiElement);
+  const intelE = inputSelector("#intel", "string", ennemiElement);
+  const charismeE = inputSelector("#charisme", "string", ennemiElement);
+  const espritE = inputSelector("#esprit", "string", ennemiElement);
+  if (!enemyData || !enemyData.pvmax) {
+    const errorMessage = `${enemyData?.nom ?? indexEnemy} ${!enemyData.pvmax ? "has no HP !" : "is not an enemy (in the list)"}`;
+    toastNotification(errorMessage, 5000, true);
+    console.error(errorMessage);
     // ennemiElement.querySelector('#nom').innerText = "";
-    ennemiElement.querySelector("#desc").innerText = "";
-    ennemiElement.querySelector("#drop").innerText = "";
-    ennemiElement.querySelector(".visuel").innerText = "Switch...";
-    ennemiElement.querySelector(".icon").src = "";
-    ennemiElement.querySelector("#pv").value = "";
-    ennemiElement.querySelector("#pvmax").value = "";
-
-    ennemiElement.querySelector("#force").value = "";
-    ennemiElement.querySelector("#dexté").value = "";
-    ennemiElement.querySelector("#intel").value = "";
-    ennemiElement.querySelector("#charisme").value = "";
-    ennemiElement.querySelector("#esprit").value = "";
-
+    descE.innerText = "";
+    dropE.innerText = "";
+    visuelE.innerText = "Switch...";
+    iconE.src = "";
+    pvE.value = 0;
+    pvMaxE.value = 0;
+    forceE.value = "";
+    dextéE.value = "";
+    intelE.value = "";
+    charismeE.value = "";
+    espritE.value = "";
     [...ennemiElement.querySelectorAll(".competence")].forEach((e) => (e.innerText = ""));
-
     return;
   }
-
-  ennemiElement.querySelector("#desc").innerText = enemyData.desc && `Desc : ${enemyData.desc}`;
-
-  enemyData.weaknesses?.forEach((element) =>
-    weaknessesE.appendChild(
-      createElement("img", undefined, { class: "skillRangeIcon", src: `images/layout/${unformatText(element)}.png` })
-    )
-  );
-  ennemiElement.querySelector("#drop").innerText = enemyData.drop && `Drop : ${enemyData.drop}`;
-
-  ennemiElement.querySelector(".visuel").innerText = enemyData.visuel3D;
+  descE.innerText = enemyData.desc && `Desc : ${enemyData.desc}`;
+  enemyData.weaknesses
+    ?.filter((w) => !!w)
+    .forEach((element) =>
+      weaknessesE.appendChild(
+        createElement("img", undefined, {
+          className: "skillRangeIcon",
+          src: `images/layout/${unformatText(element)}.png`,
+        })
+      )
+    );
+  dropE.innerText = enemyData.drop && `Drop : ${enemyData.drop}`;
+  visuelE.innerText = enemyData.visuel3D;
   if (enemyData.visuel3D !== "Switch...")
-    ennemiElement.querySelector(".icon").src = `http://voldre.free.fr/Eden/images/monsters/${enemyData.visuel3D}.png`;
-  ennemiElement.querySelector(".icon").alt = enemyData.visuel3D.toLowerCase();
-  ennemiElement.querySelector("#pv").value = enemyData.pvmax;
-  if (enemyData.pvmax >= 200) ennemiElement.querySelector("#boss_icon").classList.remove("hide");
-  else ennemiElement.querySelector("#boss_icon").classList.add("hide");
-
-  const nbP = document.querySelector("#nbP").value; // new functionality 28/08/2023
-  ennemiElement.querySelector("#pvmax").value =
-    nbP !== "3"
+    iconE.src = `http://voldre.free.fr/Eden/images/monsters/${enemyData.visuel3D}.png`;
+  iconE.alt = enemyData.visuel3D.toLowerCase();
+  pvE.value = enemyData.pvmax;
+  const bossIconE = ennemiElement.querySelector("#boss_icon");
+  if (enemyData.pvmax >= 200) bossIconE.classList.remove("hide");
+  else bossIconE.classList.add("hide");
+  const nbP = nbPE.value; // new functionality 28/08/2023
+  pvMaxE.value =
+    nbP !== 3
       ? Math.round(enemyData.pvmax * (1 + (nbP - 3) * 0.33))
-      : parseInt(enemyData.pvmax) >= 200 && logged
-        ? parseInt(enemyData.pvmax) + 100
+      : enemyData.pvmax >= 200 && logged
+        ? enemyData.pvmax + 100
         : enemyData.pvmax;
-
   // Stats
-  ennemiElement.querySelector("#force").value = enemyData.stats.split(",")[0];
-  ennemiElement.querySelector("#dexté").value = enemyData.stats.split(",")[1];
-  ennemiElement.querySelector("#intel").value = enemyData.stats.split(",")[2];
-  ennemiElement.querySelector("#charisme").value = enemyData.stats.split(",")[3];
-  ennemiElement.querySelector("#esprit").value = enemyData.stats.split(",")[4];
-
+  forceE.value = enemyData.stats.split(",")[0];
+  dextéE.value = enemyData.stats.split(",")[1];
+  intelE.value = enemyData.stats.split(",")[2];
+  charismeE.value = enemyData.stats.split(",")[3];
+  espritE.value = enemyData.stats.split(",")[4];
   // Skills de l'ennemi
   enemyData.skills.forEach((skill, index) => {
     const competenceE = [...ennemiElement.querySelectorAll(".competence")][index];
     // innerHTML because enemy skill can have <br/>
     competenceE.innerHTML = skill;
   });
-
   if (logged) updateSlots();
 }
-
 if (!logged) {
   document.querySelector("#pnjTurnE").addEventListener("click", () => {
     [...document.querySelector("#buffs").querySelectorAll('input[type="number"]')].forEach((buffTurnE) => {
-      if (buffTurnE.value > 0) {
-        buffTurnE.value -= 1;
+      const buffE = inputElement(buffTurnE, "number");
+      if (buffE.value > 0) {
+        buffE.value -= 1;
       }
     });
   });
   throw new Error("Not logged");
 }
-
 // load notes
 const notesE = document.querySelector(".notes");
 notesE.value = masterJSON.notes;
-
 console.log("Enemy JSON", enemyJSON);
-
 // Display all persos ID
 console.log(
   "Persos JSON",
@@ -163,55 +169,48 @@ console.log(
     return { "n°": parseInt(perso[0]) + 1, p: perso[1].nom };
   })
 );
-
 if (window.location.href.includes("html")) {
-  console.log("Page must not be read in .html, use .php instead");
+  console.error("Page must not be read in .html, use .php instead");
   stop();
 }
-
 // Next turn
 const allTurnE = [...document.querySelectorAll(".nextTurn")];
-
 allTurnE.forEach((turnE) => turnE.addEventListener("click", () => nextTurn()));
 document.addEventListener("keydown", (e) => {
   if (e.key === "²") nextTurn();
 });
-
 function nextTurn() {
   const currentTurnE = document.querySelector("#currentTurnE");
-  const mainE = currentTurnE.closest(".perso") || currentTurnE.closest(".infoEnnemi");
-
-  if (!allSlots) {
+  const mainE = currentTurnE?.closest(".perso") || currentTurnE?.closest(".infoEnnemi");
+  if (!allSlots || !currentTurnE || !mainE) {
     toastNotification("Impossible de passer le tour", 4000, true);
     return;
   }
-
-  let slotID = allSlots.indexOf(mainE);
-
-  if (allSlots.length === slotID + 1) {
+  let slotIndex = allSlots.indexOf(mainE); // From 0 (first enemy index) to allSlots.length- 1 (last enemy/perso index)
+  // Slot index + 1 = length === last
+  if (slotIndex !== undefined && allSlots.length === slotIndex + 1) {
     // If all done, new turn
-    document.querySelector("#tour").value = parseInt(document.querySelector("#tour").value) + 1;
-    slotID = -1;
+    tourE.value += 1;
+    slotIndex = -1;
   }
-
   // Turn of character done
   [...mainE.querySelector("#buffs").querySelectorAll('input[type="number"]')].forEach((buffTurnE) => {
-    if (buffTurnE.value > 0) {
-      buffTurnE.value -= 1;
+    const buffE = inputElement(buffTurnE, "number");
+    if (buffE.value > 0) {
+      buffE.value -= 1;
     }
   });
-
   currentTurnE.classList.add("hide");
-  currentTurnE.id = null;
-  const nextTurnE = allSlots[slotID + 1].querySelector(".nextTurn");
-  nextTurnE.classList.remove("hide");
-  nextTurnE.id = "currentTurnE";
+  currentTurnE.id = "";
+  const nextTurnE = allSlots[slotIndex + 1]?.querySelector(".nextTurn");
+  if (nextTurnE) {
+    nextTurnE.classList.remove("hide");
+    nextTurnE.id = "currentTurnE";
+  }
 }
-
 // Disable the possibility of launching many audio simultaneously
 const audiosE = document.getElementsByTagName("audio");
 const currentMusicE = document.getElementById("currentMusic");
-
 document.addEventListener(
   "play",
   (e) => {
@@ -223,26 +222,22 @@ document.addEventListener(
         }
       }
     }
-    if (e.target.firstChild.attributes) {
-      const currentBGM = e.target.firstChild.attributes.src.nodeValue.split("/")[1].split(".")[0];
-      console.log(currentBGM);
-      currentMusicE.innerText = `${document.getElementById(currentBGM).innerText} (${currentBGM})`;
+    const currentBGME = e.target instanceof HTMLElement && e.target.previousElementSibling;
+    if (currentBGME instanceof HTMLParagraphElement) {
+      currentMusicE.innerText = `- ${currentBGME.innerText} ${currentBGME.id.includes("bgm") ? `(${currentBGME.id})` : ""}`;
     }
   },
   true
 );
-
 const abnormalWeaknesses = Object.values(enemyJSON)
-  .filter((enemy) => !enemy.nom.includes("Veyda") && parseInt(enemy.pvmax) < 500)
+  .filter((enemy) => !enemy.nom.includes("Veyda") && enemy.pvmax < 500)
   .map((enemy) => {
     const weaknesses = elements.filter((element) => enemy.weaknesses?.includes(element));
     if (weaknesses.length !== 2) return { nom: enemy.nom, elements: weaknesses };
     return undefined;
   })
   .filter((w) => !!w);
-
-if (abnormalWeaknesses.length) console.log("Abnormal weaknesses :", abnormalWeaknesses);
-
+if (abnormalWeaknesses.length) console.warn("Abnormal weaknesses :", abnormalWeaknesses);
 const elementsCount = {};
 elements.forEach((element) => {
   const fullText = unformatText(JSON.stringify(Object.values(enemyJSON).map((enemy) => enemy.weaknesses)));
@@ -251,21 +246,19 @@ elements.forEach((element) => {
   elementsCount[element] = (fullText.match(regex) || []).length;
 });
 console.log("Enemies Weaknesses :", elementsCount);
-
 // console.log("Pour trouver des ennemis par nom  : Object.values(enemyJSON).filter(enemy => enemy.nom.includes('rsun')");
-document.querySelector("#filtre").addEventListener("change", (e) => {
-  document.querySelector("#filteredEnemys").innerHTML = null;
+addChangeListener(inputSelector("#filtre", "string"), (e) => {
+  const filteredEnemiesE = document.querySelector("#filteredEnemies");
+  filteredEnemiesE.innerHTML = "";
   const enemiesList = Object.values(enemyJSON).filter((enemy) => isTextInText(enemy.nom, e.target.value));
   enemiesList.forEach((enemy) => {
     const liElem = createElement("li", `${enemy.nom} - ${enemy.visuel3D}`);
-    document.querySelector("#filteredEnemys").append(liElem);
+    filteredEnemiesE.append(liElem);
   });
 });
-
 [...document.querySelectorAll(".enemyDesc")].forEach((descE) => {
   eventOnClick(descE, () => toggleDesc(descE));
 });
-
 function toggleDesc(descE) {
   if (descE.style.maxHeight === "10px") {
     descE.style.backgroundColor = "";
@@ -275,27 +268,22 @@ function toggleDesc(descE) {
     descE.style.maxHeight = "10px";
   }
 }
-
 // loadEnemy (previously here)
-
 // EQPTS
 const equipementsE = document.querySelector(".equipements");
 // eqpts list
 Object.values(eqptJSON).forEach((eqpt) => {
-  const nomE = createElement("p", eqpt.nom, { class: "nom" });
-  const descE = createElement("p", eqpt.desc, { class: "desc" });
-  const effetE = createElement("p", eqpt.effet, { class: "effet" });
-  const montantE = createElement("p", eqpt.montant, { class: "montant" });
-
+  const nomE = createElement("p", eqpt.nom, { className: "nom" });
+  const descE = createElement("p", eqpt.desc, { className: "desc" });
+  const effetE = createElement("p", eqpt.effet, { className: "effet" });
+  const montantE = createElement("p", eqpt.montant, { className: "montant" });
   const iconeE = createElement("img", undefined, {
-    class: "icone",
+    className: "icone",
     src: eqpt.icone !== "?" ? `http://voldre.free.fr/Eden/images/items/${eqpt.icone}.png` : "",
   });
-
-  const eqptE = createElement("div", [nomE, descE, effetE, montantE, iconeE], { class: "eqpt" });
+  const eqptE = createElement("div", [nomE, descE, effetE, montantE, iconeE], { className: "eqpt" });
   equipementsE.append(eqptE);
 });
-
 // Show/Hide eqpts
 const buttonEqpt = document.querySelector("#buttonEqpt");
 buttonEqpt.addEventListener("click", () => {
@@ -306,13 +294,10 @@ buttonEqpt.addEventListener("click", () => {
   }
   equipementsE.classList.toggle("hide");
 });
-
 // Filter eqpts by name (08/02/2024)
-
-const eqptNameFilter = document.querySelector("#eqptNameFilter");
-const eqptEffectFilter = document.querySelector("#eqptEffectFilter");
-const revertFilterNames = document.querySelector("#revertNameFilter");
-
+const eqptNameFilter = inputSelector("#eqptNameFilter", "string");
+const eqptEffectFilter = inputSelector("#eqptEffectFilter", "string");
+const revertFilterNames = inputSelector("#revertNameFilter", "string");
 [eqptNameFilter, eqptEffectFilter].map((element) =>
   element.addEventListener("blur", () => {
     eqptFilter();
@@ -321,21 +306,17 @@ const revertFilterNames = document.querySelector("#revertNameFilter");
 revertFilterNames.addEventListener("change", () => {
   eqptFilter();
 });
-
 const eqptFilter = () => {
   // Update 02/05/2024 : Handle multiple filters if splited by coma, + revert filter
   // Filters (of same type) are defined by UNION (||), so we display any eqpt matching one of the filter
   const filterNames = eqptNameFilter.value ? eqptNameFilter.value.split(",") : [];
   const filterEffects = eqptEffectFilter.value ? eqptEffectFilter.value.split(",") : [];
   const isRevertFilterNames = revertFilterNames.checked;
-
   let nbEqptsDisplayed = 0;
-
   [...equipementsE.children].forEach((eqptE) => {
     const eqptName = eqptE.querySelector(".nom").innerText;
     const eqptEffect = eqptE.querySelector(".effet").innerText;
     const eqptMontant = eqptE.querySelector(".montant").innerText;
-
     const filterNamesCondition =
       !filterNames.length || filterNames.find((filterName) => isTextInText(eqptName, filterName));
     const filtersConditionsMet =
@@ -346,130 +327,99 @@ const eqptFilter = () => {
         filterEffects.find(
           (filterEffect) => isTextInText(eqptEffect, filterEffect) || isTextInText(eqptMontant, filterEffect)
         ));
-
     if (filtersConditionsMet) {
       eqptE.classList.remove("hide");
       nbEqptsDisplayed++;
     } else eqptE.classList.add("hide");
   });
-
   document.querySelector("#nbEqptFiltered").innerText = `(${nbEqptsDisplayed})`;
 };
-
 // Add new enemy (4th)
-
 document.querySelector("#newEnemy").addEventListener("click", () => {
-  const allEnemies = [...document.querySelectorAll(".infoEnnemi")];
-
-  const lastEnemy = allEnemies[allEnemies.length - 1];
-  if (allEnemies.length > 5) {
+  const lastEnemy = ennemiEs[ennemiEs.length - 1];
+  if (ennemiEs.length > 5) {
     lastEnemy.remove();
-    updateSlots();
-
     // If last enemy has "current turn", make new turn because enemy will close
     const hasCurrentTurn = !!lastEnemy.querySelector("#currentTurnE");
     if (hasCurrentTurn) {
-      document.querySelector("#tour").value = parseInt(document.querySelector("#tour").value) + 1;
+      tourE.value += 1;
       const nextTurnE = allSlots[0].querySelector(".nextTurn");
       nextTurnE.classList.remove("hide");
       nextTurnE.id = "currentTurnE";
     }
   } else {
-    const newEnemyE = lastEnemy.cloneNode(true);
-    newEnemyE.id = `e${allEnemies.length}`;
-
+    const newEnemyE = document.importNode(lastEnemy, true);
+    newEnemyE.id = `e${ennemiEs.length}`;
+    const newEnemySelectE = newEnemyE.querySelector(".ennemi");
+    newEnemySelectE.value = lastEnemy.querySelector(".ennemi").value;
     // Add event listeners
     // Classic enemy on select
-    newEnemyE.querySelector(".ennemi").addEventListener("change", (e) => {
+    addChangeListener(newEnemySelectE, (e) => {
       loadEnemy(e.target.value, newEnemyE);
       toastNotification(`Chargement de l'ennemi réussi : ${e.target.value}`);
     });
-
     // Next turn button
     newEnemyE.querySelector(".nextTurn").addEventListener("click", () => nextTurn());
-
     // hide desc
     const descE = newEnemyE.querySelector(".enemyDesc");
     descE.addEventListener("click", () => toggleDesc(descE));
-
     // Switch kind of enemy with visual text
-    newEnemyE.querySelector(".visuel").addEventListener("click", (e) => {
-      const enemyTypeE = e.target.closest(".infoEnnemi").querySelector(".enemyType");
-      [...enemyTypeE.children].map((child) => child.classList.toggle("hide"));
+    addClickListener(newEnemyE.querySelector(".visuel"), (e) => {
+      const enemyTypeE = e.target?.closest(".infoEnnemi").querySelector(".enemyType");
+      if (enemyTypeE) [...enemyTypeE.children].map((child) => child.classList.toggle("hide"));
     });
-
     // Generic enemy on selects
     const genericE = newEnemyE.querySelector(".generic");
     const selectElements = [...genericE.children];
     selectElements.forEach((selectE) => {
       selectE.addEventListener("change", () => handleGenericSelectChange(selectElements));
     });
-
     document.querySelector(".ennemis").append(newEnemyE);
   }
+  // Update slots to avoid error
+  updateSlots();
 });
-
 // Get and update players PV (new functionality 28/08/2023)
-
 document.querySelector("#updatePInfo").addEventListener("click", () => {
   updateSlots();
-
   const pInfo = document.querySelector("#pInfo");
-
-  const persosJSON = getData("persos");
-
+  const newPersosJSON = getData("persos");
   const playersListID = document.querySelector("#pList").value.split(",");
-
   pInfo.innerHTML = "";
-
   Object.entries(playersListID).forEach(([index, pID]) => {
-    const player = persosJSON[(parseInt(pID) - 1).toString()]; // Car index 0 à la première
+    const player = newPersosJSON[(parseInt(pID) - 1).toString()]; // Car index 0 à la première
     if (!player) return; // Can't continue
-
-    if ([...document.querySelectorAll(".perso")][index])
-      [...document.querySelectorAll(".perso")][index].children[0].value = player.nom;
-
+    if (persoEs[parseInt(index)]) persoEs[parseInt(index)].children[0].value = player.nom;
     const liElem = createElement("li", `${player.nom} : ${player.pv}/${player.pvmax}`);
     pInfo.append(liElem);
   });
 });
-
 // Variateurs de PV et Dégâts selon le nombre de joueurs (new functionality 28/08/2023)
-
-document.querySelector("#nbP").addEventListener("change", (e) => {
+addChangeListener(nbPE, (e) => {
   const nbP = e.target.value;
-  if (nbP >= 3) {
-    document.querySelector("#variation").innerText = `+${(nbP - 3) * 33}%`;
-  } else {
-    document.querySelector("#variation").innerText = `-${(3 - nbP) * 33}%`;
-  }
+  document.querySelector("#variation").innerText = nbP >= 3 ? `+${(nbP - 3) * 33}%` : `-${(3 - nbP) * 33}%`;
 });
-
 // Add new kind of enemy : Generic Enemy !
-
 const genericElements = [...document.querySelectorAll(".generic")];
 [...document.querySelectorAll(".visuel")].forEach((visuelE) => {
   // On click, toggle hidden type
-  visuelE.addEventListener("click", (e) => {
-    const enemyTypeE = e.target.closest(".infoEnnemi").querySelector(".enemyType");
-    [...enemyTypeE.children].map((child) => child.classList.toggle("hide"));
+  addClickListener(visuelE, (e) => {
+    const enemyTypeE = e.target.closest(".infoEnnemi")?.querySelector(".enemyType");
+    if (enemyTypeE) [...enemyTypeE.children].map((child) => child.classList.toggle("hide"));
   });
 });
-
 genericElements.forEach((genericE) => {
   const selectElements = [...genericE.children];
   selectElements.forEach((selectE) => {
     const propName = selectE.className;
-    // Fill options with all of an element (classes, races, rangs, guildes), mapped on "prop" value (classe =, ...)
     fillSelectOptions(selectE, [
       { value: "", innerText: "" },
+      // @ts-expect-error e[propName] is not well handled with enemy generic type
       ...Object.values(enemyGenericJSON[`${propName}s`].map((e) => ({ value: e[propName], innerText: e[propName] }))),
     ]);
-
     selectE.addEventListener("change", () => handleGenericSelectChange(selectElements));
   });
 });
-
 function handleGenericSelectChange(selectElements) {
   const v = {};
   let hasEmptyValue = false;
@@ -477,95 +427,74 @@ function handleGenericSelectChange(selectElements) {
     v[selectE.className] = selectE.value;
     if (selectE.value === "") hasEmptyValue = true;
   });
-
   if (hasEmptyValue) return;
-
-  const stats = statsJSON.classes.find((e) => e.Classe === v["classe"]);
-  const raceStats = statsJSON.races.find((e) => e.Race === v["race"]);
-
-  const classe = enemyGenericJSON.classes.find((e) => e.classe === v["classe"]);
-  const rang = enemyGenericJSON.rangs.find((e) => e.rang === v["rang"]);
-  const guilde = enemyGenericJSON.guildes.find((e) => e.guilde === v["guilde"]);
-
+  const stats = statsJSON.classes.find((e) => e.Classe === v.classe);
+  const raceStats = statsJSON.races.find((e) => e.Race === v.race);
+  const classe = enemyGenericJSON.classes.find((e) => e.classe === v.classe);
+  const rang = enemyGenericJSON.rangs.find((e) => e.rang === v.rang);
+  const guilde = enemyGenericJSON.guildes.find((e) => e.guilde === v.guilde);
   const skills = classe.sorts.map((s) => {
     const bonusMontantVar =
       s.portee === "Mono"
-        ? rang.montantVariable["Mono"] + guilde.montantVariable["Mono"]
+        ? rang.montantVariable.Mono + guilde.montantVariable.Mono
         : s.portee === "AoE"
-          ? rang.montantVariable["AoE"] + guilde.montantVariable["AoE"]
+          ? rang.montantVariable.AoE + guilde.montantVariable.AoE
           : 0;
     const montantVarTot =
       s.type === "Buff" ? Math.round((s.montantVariable + bonusMontantVar) / 2) : s.montantVariable + bonusMontantVar;
-
     const bonusMontantEffet =
       s.portee === "Mono"
-        ? rang.montantEffet["Mono"] + guilde.montantEffet["Mono"]
+        ? rang.montantEffet.Mono + guilde.montantEffet.Mono
         : s.portee === "AoE"
-          ? rang.montantEffet["AoE"] + guilde.montantEffet["AoE"]
+          ? rang.montantEffet.AoE + guilde.montantEffet.AoE
           : 0;
     const montantEffetTot = unformatText(s.effet).includes("degat")
       ? s.montantEffet + Math.round(bonusMontantEffet * (unformatText(s.effet).includes("prochain degat") ? 2.5 : 1.5))
       : s.montantEffet + Math.round(bonusMontantEffet / 2);
-
     const duree = s.duree + rang.duree + guilde.duree;
-
-    return `${s.nom} : ${s.type} ${s.montantFixe}${s.montantFixe ? ` +${montantVarTot}` : ""}, ${s.effet}${
-      s.montantEffet ? montantEffetTot : ""
-    }${s.duree ? ` sur ${duree} tours` : ""} ${s.portee} : ${s.stat}`;
+    return `${s.nom} : ${s.type} ${s.montantFixe}${s.montantFixe ? ` +${montantVarTot}` : ""}, ${s.effet}${s.montantEffet ? montantEffetTot : ""}${s.duree ? ` sur ${duree} tours` : ""} ${s.portee} : ${s.stat}`;
   });
-
   const statsName = ["Force", "Dextérité", "Intelligence", "Charisme", "Esprit"];
   const statsValues = statsName.map(
-    (statName) => stats[statName] * 2 + raceStats[statName] + rang["stat"] + (guilde["stat"] || 0)
+    (statName) => stats[statName] * 2 + raceStats[statName] + rang.stat + (guilde.stat || 0)
   );
-
   const enemyData = {
     visuel3D: "Switch...",
     nom: "",
-    pvmax: stats["PV"] * 2 + raceStats["PV"] + rang["pv"] + guilde["pv"],
+    pvmax: stats.PV * 2 + raceStats.PV + rang.pv + guilde.pv,
     skills,
     stats: statsValues.join(","),
     desc: "",
     infos: "",
     drop: "",
+    weaknesses: ["", ""],
   };
-
-  loadEnemy(0, selectElements[0].closest(".infoEnnemi"), enemyData);
+  loadEnemy("0", selectElements[0].closest(".infoEnnemi"), enemyData);
 }
-
 // ALL SAVES
-
+const allowSaveE = document.querySelector("#allowSave");
 // Allow save for users
-function toggleButton() {
-  document.querySelector("#allowSave").style = `border: 3px solid ${masterJSON.allow ? "green" : "red"}`;
-}
-
+const toggleButton = () => {
+  allowSaveE.style.border = `3px solid ${masterJSON.allow ? "green" : "red"}`;
+};
 toggleButton();
-document.querySelector("#allowSave").addEventListener("click", () => {
-  masterJSON.allow = !masterJSON.allow;
-  toggleButton();
-
+const masterSave = () => {
   masterJSON.notes = notesE.value;
-
-  document.cookie = `masterJSON=${encodeURIComponent(JSON.stringify(masterJSON))}`;
+  setCookie("masterJSON", masterJSON);
   callPHP({ action: "saveFile", name: "master" });
   toastNotification("Autorisation modifiée");
+};
+allowSaveE.addEventListener("click", () => {
+  masterJSON.allow = !masterJSON.allow;
+  toggleButton();
+  masterSave();
 });
-
-document.querySelector("#save").addEventListener("click", () => {
-  masterJSON.notes = notesE.value;
-  document.cookie = `masterJSON=${encodeURIComponent(JSON.stringify(masterJSON))}`;
-  callPHP({ action: "saveFile", name: "master" });
-  toastNotification("Données sauvegardées");
-});
-
+document.querySelector("#save").addEventListener("click", masterSave);
 document.querySelector("#saveBackup").addEventListener("click", () => {
   callPHP({ action: "saveBackup" });
   toastNotification("JDRpersos_backup.json et JDRplayer sauvegardés");
 });
-
 // Create skill & Save
-
 document.querySelector("#createSkill").addEventListener("click", () => {
   const addSkill = document.querySelector(".addSkill");
   const skillID = parseInt(Object.keys(skillsJSON).reverse()[0]) + 1 || 1;
@@ -581,14 +510,11 @@ document.querySelector("#createSkill").addEventListener("click", () => {
   };
   console.log(newSkill);
   setCookie("skillsJSON", newSkill);
-
   callPHP({ action: "saveFile", name: "skills" });
   skillsJSON[skillID] = newSkill[skillID];
   toastNotification("Compétence créé");
 });
-
 // Create eqpt & Save
-
 document.querySelector("#createEqpt").addEventListener("click", () => {
   const addEqpt = document.querySelector(".addEqpt");
   const eqptID = parseInt(Object.keys(eqptJSON).reverse()[0]) + 1 || 1;
@@ -601,14 +527,11 @@ document.querySelector("#createEqpt").addEventListener("click", () => {
     icone: addEqpt.children[8 + 1].value,
   };
   console.log(newEqpt);
-
   setCookie("eqptJSON", newEqpt);
-
   callPHP({ action: "saveFile", name: "eqpt" });
   eqptJSON[eqptID] = newEqpt[eqptID];
   toastNotification("Equipement créé");
 });
-
 // Create enemy & Save
 const addEnemyE = document.querySelector(".addEnemy");
 [...addEnemyE.querySelectorAll("select")].forEach((selectE) => {
@@ -618,14 +541,13 @@ const addEnemyE = document.querySelector(".addEnemy");
     ...elements.map((element) => ({ innerText: element, value: element })),
   ]);
 });
-
 document.querySelector("#createEnemy").addEventListener("click", () => {
   const enemyID = parseInt(Object.keys(enemyJSON).reverse()[0]) + 1 || 1;
   const newEnemy = {};
   newEnemy[enemyID] = {
     visuel3D: addEnemyE.children[0 + 1].value,
     nom: addEnemyE.children[2 + 1].value,
-    pvmax: addEnemyE.children[4 + 1].value,
+    pvmax: parseInt(addEnemyE.children[4 + 1].value),
     skills: [
       addEnemyE.children[6 + 1].value,
       addEnemyE.children[8 + 1].value,
@@ -638,23 +560,19 @@ document.querySelector("#createEnemy").addEventListener("click", () => {
     weaknesses: [...addEnemyE.querySelectorAll("select")].map((s) => s.value).filter((s) => !!s),
   };
   console.log(newEnemy);
-
   setCookie("enemyJSON", newEnemy);
-
   callPHP({ action: "saveFile", name: "enemy" });
   enemyJSON[enemyID] = newEnemy[enemyID];
   toastNotification("Ennemi créé");
 });
-
 document.querySelector("#randomBoss").addEventListener("click", () => {
   const bosses = Object.entries(enemyJSON).filter((e) => e[1].pvmax > 200);
   const randomIndex = Math.floor(Math.random() * bosses.length);
   loadEnemy(bosses[randomIndex][0], document.querySelector("#e0"));
 });
-
 document.querySelector("#logout").addEventListener("click", async () => {
   const response = await callPHP({ action: "logout" });
   if (response)
-    window.location.reload(true); // Force le reload depuis le serveur
+    window.location.reload(); // Force le reload depuis le serveur
   else toastNotification("Deconnexion échouée", 3000, true);
 });

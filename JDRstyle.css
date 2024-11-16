@@ -603,9 +603,9 @@ td {
   margin-bottom: 8px;
 }
 #currentMusic {
-  display: block;
-  margin: 0px;
-  width: 54vw;
+  display: inline;
+  color: lightgray;
+  font-size: 14px;
 }
 .musique {
   height: 110px;

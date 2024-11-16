@@ -336,7 +336,7 @@
       <textarea style="width: 100%" name="" id="" cols="45" rows="10" class="notes"></textarea>
     </div>
     <div>
-      <h3 style="margin: 6px">Liste des musiques <span class="menu" id="currentMusic"></span></h3>
+      <h3 style="margin: 6px; display: flex; justify-content: center; align-items: center">OST <span id="currentMusic"></span></h3>
       <div class="musique">
         <div>
           <p id="bgm001">Ecran Titre</p>
@@ -796,13 +796,13 @@
           </audio>
         </div>
         <div>
-          <p id="bad1">Bad Boy (Hendrickson)</p>
+          <p id="bad1">Bad Boy (Traitre) (Hendrickson)</p>
           <audio loop controls="">
             <source src="bgm/Hendrickson Edited.ogg" type="audio/ogg" />
           </audio>
         </div>
         <div>
-          <p id="bad2">Bad Boy (Hendrickson 2)</p>
+          <p id="bad2">Bad Boy (Traitre) (Hendrickson 2)</p>
           <audio loop controls="">
             <source src="bgm/Hendrickson 2 Majin Dahaka.mp3" type="audio/mp3" />
           </audio>
@@ -1003,7 +1003,7 @@
       <h4>Filtres ennemis</h4>
       <input type="text" id="filtre" />
       <br />
-      <div id="filteredEnemys"></div>
+      <div id="filteredEnemies"></div>
     </div>
     <div class="addEnemy">
       <h4>Ajout d'ennemis</h4>
@@ -1064,6 +1064,7 @@
   <span>Nom</span>
   <input type="text" id="eqptNameFilter" placeholder="epee, asbi, robe" />
   <input type="checkbox" id="revertNameFilter" title="Inverser la sélection des Noms" />
+  &nbsp; &nbsp; &nbsp;
   <span>Effet</span>
   <input type="text" id="eqptEffectFilter" placeholder="dexterite, feu, blocage +, panoplie" />
   <span id="nbEqptFiltered"></span>
