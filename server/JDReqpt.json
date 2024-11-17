@@ -442,7 +442,7 @@
     "nom": "Tunique de Delphes",
     "desc": "Une tunique créée par les locaux de la Forêt de Delphes",
     "effet": "PV Soin reçu +3",
-    "montant": "Dégât -3 (+1 si Shaman)",
+    "montant": "Dégât -3 (-1 si Shaman)",
     "condition": { "type": "classe", "value": ["Shaman"], "bonus": "Dégât reçu -1" },
     "icone": "A20028"
   },
@@ -1551,7 +1551,7 @@
     "nom": "Tenue du Juge",
     "desc": "La rumeur raconte que cette tenue aurait appartenu au tout premier Juge Eveillé de l'histoire",
     "effet": "Dégât ténèbres +2",
-    "montant": "Dégât -5 (+1 si Juge)",
+    "montant": "Dégât -5 (-1 si Juge)",
     "condition": { "type": "classe", "value": ["Juge"], "bonus": "Dégât reçu -1" },
     "icone": "k21023"
   },
@@ -1566,7 +1566,7 @@
     "nom": "Tenue Militaire",
     "desc": "Une tenue de dirigeant de guerre, stratège",
     "effet": "Force +1 Charisme +1",
-    "montant": "Dégât -4 (+1 si Chevalier)",
+    "montant": "Dégât -4 (-1 si Chevalier)",
     "condition": { "type": "classe", "value": ["Chevalier"], "bonus": "Dégât reçu -1" },
     "icone": "k20280"
   },
@@ -1923,7 +1923,7 @@
     "nom": "Gantelet Noireflammes",
     "desc": "Un gantelet ayant appartenu à l'un des plus grands forgerons du Pic de Noireflammes. Appartient à la Panoplie Noireflammes (2 pièces)",
     "effet": "Panoplie",
-    "montant": "Dégât +2, (+2 si Panoplie)",
+    "montant": "Dégât +2 (+2 si Panoplie)",
     "condition": { "type": "panoplie", "value": "Katana Lame Noire", "bonus": "Dégât +2" },
     "icone": "A40036",
     "access": "D0"
@@ -2008,7 +2008,7 @@
     "nom": "Ceinture Pharaonique",
     "desc": "Une ceinture portée par les grands nobles du Royaume d'Amur",
     "effet": "",
-    "montant": "Dégât reçu -2, Intelligence +1 (+1 si Illusionniste)",
+    "montant": "Dégât reçu -2, Intelligence +1 (Intel+1 si Illusionniste)",
     "condition": { "type": "classe", "value": ["Illusionniste"], "bonus": "Intelligence +1" },
     "icone": "A30011",
     "access": "A0"
@@ -2215,7 +2215,7 @@
     "nom": "Marteau du Sage",
     "desc": "Un marteau conçu pour aider les sages.",
     "effet": "Intelligence +1",
-    "montant": "Dégât +7, Soin +2 (AoE/2) (+1 si sage)",
+    "montant": "Dégât +7, Soin +2 (AoE/2) (dégât/soin+1 si sage)",
     "condition": { "type": "classe", "value": ["Sage"], "bonus": "Dégât +1, Soin +1" },
     "icone": "W40908"
   },
@@ -2421,7 +2421,7 @@
     "nom": "Insigne de l'Ordre du Temple",
     "desc": "Ancien insigne en or pur, il aurait appartenu aux ancêtres de la Curie Métérole : l'Ordre des Chevaliers du Temple, les meilleurs templiers d'Aven.",
     "effet": "(Clerc, Sage, Chev, Templ, Cors)",
-    "montant": " Dégât +1 & Soin +1, pour chaque classe possédée : +2 (AoE/2)",
+    "montant": " Dégât +1 & Soin +1 (pour chaque classe possédée : +2) (AoE/2)",
     "condition": {
       "type": "classe",
       "value": ["Clerc", "Sage", "Chevalier", "Templier", "Corsaire"],
@@ -2456,8 +2456,8 @@
   "332": {
     "nom": "Bouclier Zuminator",
     "desc": "Un bouclier à l'effigie de Zuminator, le Zumi du conte de super-heros.",
-    "effet": "Si Zumi : PV+10",
-    "montant": "Dégât -4. Blocage physique critique : renvoi le coup",
+    "effet": "Blocage physique critique : renvoi le coup",
+    "montant": "Dégât -4 (PV+10 si Zumi)",
     "condition": { "type": "race", "value": ["Zumi"], "bonus": "PV +10" },
     "icone": "W73002"
   },
@@ -2607,7 +2607,7 @@
     "nom": "Pierre de Férégal Sublime",
     "desc": "Cette pierre est issue de la Vallée Férégal des Zumis. Elle est insufflé de l'énergie des crystaux d'Asbi. Appartient à la panoplie d'Asbi.",
     "effet": "",
-    "montant": "Dégât reçu -2 (+1 par objet d'Asbi)",
+    "montant": "Dégât reçu -2 (-1 par objet d'Asbi)",
     "condition": { "type": "panoplie", "value": "Asbi", "bonus": "Dégât reçu -1" },
     "icone": "i01009",
     "access": "D0"
@@ -3054,7 +3054,7 @@
     "nom": "Pendentif du risque",
     "desc": "Ce pendentif sombre génère de l'adrenaline chez son porteur lorsque sa vie est en danger, utile mais risqué !",
     "effet": "",
-    "montant": "Si PV <33%, Dégâts : +4 et Soin : +3",
+    "montant": "Si PV <33%, Dégât : +4 et Soin : +3",
     "condition": { "type": "PV", "value": "3", "bonus": "Dégât +4, Soin +3" },
     "icone": "A00046d",
     "access": "D2"
@@ -3174,7 +3174,7 @@
     "nom": "Epée Gemme Noire",
     "desc": "Cette épée a été taillée dans une gemme sombre, elle inspire la peur et la haine.",
     "effet": "Element : Ténèbres",
-    "montant": "Dégât +9 , dégât de ténèbres +2 (Dégât +1 si Luminary) ",
+    "montant": "Dégât +9 , dégât de ténèbres +2 (dégât+1 si Luminary) ",
     "condition": { "type": "classe", "value": ["Luminary"], "bonus": "Dégât +1" },
     "icone": "W25607"
   },
@@ -3432,7 +3432,7 @@
     "nom": "Plastron du Templier Noir",
     "desc": "Un antique plastron de templier qui doit remonter à la grande guerre : une magie étrange en émane. Appartient à la Panoplie du Templier Noir",
     "effet": "Malédiction du lien",
-    "montant": "Dégât -5 (-1 par pièce) : Force +1, Intelligence +1",
+    "montant": "Dégât -5 (-2 par pièce) : Force +1, Intelligence +1",
     "icone": "k20472b",
     "condition": { "type": "panoplie", "value": "Templier Noir", "bonus": "Dégât reçu -2" }
   },
@@ -3581,7 +3581,7 @@
     "nom": "Tenue de Mage Académique",
     "desc": "Une tenue alliant noblesse et richesse, idéale pour les diplomates aventureux.",
     "effet": "Expérience reçu +20%",
-    "montant": "Dégât -4 (Si magicien/illusionniste : dégâts +2)",
+    "montant": "Dégât -4 (Si magicien/illusionniste : dégât+2)",
     "condition": { "type": "classe", "value": ["Magicien", "Illusionniste"], "bonus": "Dégât +2" },
     "icone": "k21032"
   },
@@ -3927,7 +3927,7 @@
     "nom": "Gantelet du Pugilat",
     "desc": "Ce gantelet est conçu pour améliorer les dégâts de frappe au corps à corps.",
     "effet": "",
-    "montant": "Dégât +2, Dégât contondant +1 (+1 si Assassin)",
+    "montant": "Dégât +2, Dégât contondant +1 (dégât+1 si Assassin)",
     "condition": { "type": "classe", "value": ["Assassin"], "bonus": "Dégât contondant +1" },
     "icone": "A40030b"
   },
