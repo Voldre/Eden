@@ -1063,8 +1063,9 @@ td {
     width: 45vw;
     margin-left: -2px;
   }
-  #passif12 {
+  #passifs {
     font-size: 14px;
+    line-height: 1.3;
   }
 
   .informations {

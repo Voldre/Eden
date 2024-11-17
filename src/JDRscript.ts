@@ -34,6 +34,8 @@ import {
   addClickListener,
   InputElement,
   SelectElement,
+  eqptBonusQuantity,
+  splitParenthesisText,
 } from "./utils.js"
 
 console.log("Skills JSON", skillsJSON)
@@ -661,7 +663,11 @@ function insertBuffInteraction(
     buttonBuffs.className = ""
   }
 
-  if (["Provocation", "Buff", "Malus", "Transformation", "Status"].some((effet) => skillEffet.includes(effet))) {
+  if (
+    ["Provocation", "Buff", "Malus", "Transformation", "Status", "Invisible"].some((effet) =>
+      skillEffet.includes(effet)
+    )
+  ) {
     buffTurnE.style.cursor = "url('images/layout/cursor-x.png'), auto"
     buffTurnE.addEventListener("click", buffEvent)
   }
@@ -745,9 +751,18 @@ equipementEs.forEach((equipementE) => {
 
     // Update equipements variable on change
     persoEqpts = getPersoEqptsFromSelects()
+
+    // Refresh all eqpt (for bonus condition)
+    persoEqpts.forEach((eqpt, index) => {
+      const eqptE = equipementEs[index]
+      if (eqptE === equipementE) return // Don't update current eqpt again
+      equipementEs[index].selectE.value = eqpt?.nom ?? ""
+      insertEqpt(eqptE, eqpt)
+    })
     getAllRes()
     createEquipmentSynthesis()
     updateAvailableSkillsList()
+    statsVerification()
   })
 
   // Click on eqpt element
@@ -770,7 +785,22 @@ function insertEqpt(eqptElement: EquipmentE, selectedEqpt: Equipment | undefined
     eqptElement.descE.innerText = ""
   } else {
     eqptElement.effetE.innerText = selectedEqpt.effet
-    eqptElement.montantE.innerText = selectedEqpt.montant
+
+    const bonusQuantity = persoData ? eqptBonusQuantity(selectedEqpt, persoEqpts, persoData) : 0
+    const descParts = splitParenthesisText(selectedEqpt.montant)
+
+    const conditionedDescE =
+      !!bonusQuantity && !!descParts
+        ? createElement("span", `(${descParts[1]})${bonusQuantity > 1 ? ` ×${bonusQuantity}` : ""} `, {
+            style: { color: "goldenrod" },
+          })
+        : undefined
+
+    eqptElement.montantE.innerHTML = "" // Reset
+    eqptElement.montantE.append(
+      ...(conditionedDescE ? [descParts![0], conditionedDescE, descParts![2]] : [selectedEqpt.montant])
+    )
+
     eqptElement.iconeE.src = `http://voldre.free.fr/Eden/images/items/${selectedEqpt.icone}.png`
     eqptElement.iconeE.title = selectedEqpt.desc
     eqptElement.descE.innerText = selectedEqpt.desc
@@ -1220,14 +1250,16 @@ screenshotButton.addEventListener("click", () => {
   toastNotification("Capture d'écran en cours ...", 5000)
 
   // @ts-expect-error Import in HTML file with : https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js
-  html2canvas(document.querySelector(".perso"), { backgroundColor: null }).then((canvas: HTMLCanvasElement) => {
-    const link = createElement("a", undefined, {
-      download: `screenshot ${persoData?.nom} ${dateToString(new Date())}.png`,
-      href: canvas.toDataURL(),
-    })
-    link.click()
-    screenshotButton.disabled = false
-  })
+  html2canvas(document.querySelector(".perso"), { backgroundColor: "rgb(36, 35, 35)" }).then(
+    (canvas: HTMLCanvasElement) => {
+      const link = createElement("a", undefined, {
+        download: `screenshot ${persoData?.nom} ${dateToString(new Date())}.png`,
+        href: canvas.toDataURL(),
+      })
+      link.click()
+      screenshotButton.disabled = false
+    }
+  )
 })
 
 // PROFIL PICTURE
@@ -1413,11 +1445,11 @@ const labelsDescription = {
   stress:
     'Fatigue/Stress max : 200%. Chaque 50%, les stats diminue de 1 (4 max).<br/> La fatigue s\'accumule au fur et à mesures des combats (sauf tour des cieux). Le stress uniquement dans les zones dédiées.<br/><br/>Le stress "accentué" augmente de 50%, la "réduction" diminue de 33%.',
   infoEQPT:
-    "Changer d'arme en combat (si équipée) se fait en début de tour (action instantanée).<br/>Sinon, échanger d'arme ou d'accessoire prend 1 tour.<br/><br/>Porter une armure non adapté (magique, léger, lourd) implique des malus de stats (voir page \"Infos JDR\", section \"Armure\").<br/><br/>Le montant total de l'ensemble des stuffs est limité : +2 de montant des sorts, +1 durée des sorts, -1 durée des malus, et +50% PV soin reçu.<br/><br/>Le montant fixe total (hors %) des accessoires est limité : +2 par stat, +3 blocage/esquive, pour les soins (infligé, reçu) : 6, pour les dégâts infligés : 6 (+2 si bonus élémentaire) et dégâts reçu : 5",
+    "Changer d'arme en combat (si équipée) se fait en début de tour (action instantanée).<br/>Sinon, échanger d'arme ou d'accessoire prend 1 tour.<br/><br/>Porter une armure non adapté (magique, léger, lourd) implique des malus de stats (voir page \"Infos JDR\", section \"Armure\").<br/><br/>Le montant total de l'ensemble des stuffs est limité : <ul><li>+2 de montant des sorts</li><li> +1 durée des sorts</li><li> -1 durée des malus</li><li>+50% PV soin reçu</li></ul><br/>Le montant fixe total (hors %) des accessoires est limité : <ul><li>+2 par stat</li><li>+3 blocage/esquive</li><li>Soins (infligé, reçu) : 6</li><li>Dégâts infligés : 6 (+2 si bonus élémentaire)</li><li>Dégâts reçu (armure) : 5</li></ul>",
   //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."
   synthese: syntheseDesc(),
   passif10: `Le passif niveau 10 consiste en un ajout de montant de stats.<br/>Vous avez 2 points à répartir dans les montants suivant :<br/>${passifPoints12Desc}${passifWarning}`,
-  passif12: `Le passif niveau 12 consiste en un ajout de montant de stats.<br/>Vous avez 4 points à répartir dans les montants suivant (max 2 points par montant, sauf le 3) :<br/>${passifPoints12Desc}${passifPoints34Desc}${passifWarning}`,
+  passif12: `Le passif niveau 12 consiste en un ajout de montant de stats.<br/>Vous avez 4 points à répartir dans les montants suivant (max 2 points par montant, sauf montant 3 & 4) :<br/>${passifPoints12Desc}${passifPoints34Desc}${passifWarning}`,
   passif14: `Le passif niveau 14 octroi au personnage une nouvelle capacité unique, il peut s'agir d'un passif ou d'une aptitude.
   <br/>Ces capacités sont similaires à celles des boss, car le niveau 14+ reflète un très haut niveau de puissance.
   <br/>Voici la liste des capacités...

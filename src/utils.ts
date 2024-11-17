@@ -284,7 +284,7 @@ export const parseEqptBonus = (
   persoData: Perso
 ): number => {
   // Check if bonus is corresponding to text and get the value
-  const eqptBonus = texts
+  const bonusValue = texts
     .map((text) => {
       if (!eqpt.condition) return 0
       const hasValue = unformatText(eqpt.condition.bonus)?.split(unformatText(text))[1]
@@ -293,19 +293,28 @@ export const parseEqptBonus = (
     })
     .reduce((total, item) => total + item)
 
-  let bonus = 0
-  if (eqptBonus !== 0 && eqpt.condition) {
+  const bonus = eqptBonusQuantity(eqpt, eqpts, persoData) * bonusValue
+
+  if (bonus)
+    console.log(`Bonus déclenché (${texts[0]}${bonus}) pour ${persoData.nom} sur `, JSON.stringify(eqpt.condition))
+
+  return bonus
+}
+
+export const eqptBonusQuantity = (eqpt: Equipment, eqpts: (Equipment | undefined)[], persoData: Perso): number => {
+  let bonusQuantity = 0
+  if (eqpt.condition) {
     switch (eqpt.condition.type) {
       case "classe": {
         // Check if the Primary or Secondary class are included in the class condition list
         const nbValidClass = [persoData.classeP, persoData.classeS].filter((pClasse) =>
           eqpt.condition?.value.includes(pClasse)
         ).length
-        bonus = nbValidClass * eqptBonus
+        bonusQuantity = nbValidClass
         break
       }
       case "race": {
-        bonus = eqpt.condition.value.includes(persoData.race) ? eqptBonus : 0
+        bonusQuantity = eqpt.condition.value.includes(persoData.race) ? 1 : 0
         break
       }
       case "panoplie": {
@@ -314,7 +323,7 @@ export const parseEqptBonus = (
         const nbEqptsInPanop = eqptsName.filter(
           (eqptName) => eqptName && eqptName.includes(unformatText(eqpt.condition?.value as string))
         ).length
-        bonus = nbEqptsInPanop * eqptBonus
+        bonusQuantity = nbEqptsInPanop
         break
       }
       // There are 2 problems with PV condition effect :
@@ -328,10 +337,13 @@ export const parseEqptBonus = (
         break
     }
   }
-  if (bonus)
-    console.log(`Bonus déclenché (${texts[0]}${bonus}) pour ${persoData.nom} sur `, JSON.stringify(eqpt.condition))
+  return bonusQuantity
+}
 
-  return bonus
+export const splitParenthesisText = (text: string): [string, string, string] | null => {
+  const result = text.match(/(.*)\((.*?)\)(.*)/)
+  // result[0] is the whole string, then we have before, inside and after
+  return result ? [result[1], result[2], result[3]] : null
 }
 
 export const isTextInText = (mainText: string, subText: string): boolean => {
