@@ -152,7 +152,17 @@ window.addEventListener("load", () => {
     })
     console.log(
       "Stats & Degats de tous les ennemis :",
-      enemyCombatData,
+      [...enemyCombatData].sort((a, b) => parseInt(a.id as string) - parseInt(b.id as string)),
+      "Stats & Degats (tri par puissance) :",
+      [...enemyCombatData]
+        .sort((a, b) => b.degat - a.degat)
+        .map((e) => ({
+          nom: e.nom,
+          id: e.id,
+          degat: e.degat,
+          pv: e.pv,
+          stats: [e.force, e.dexté, e.intel, e.charisme, e.esprit].reduce(sum),
+        })),
       "> JSON.stringify() > Copier l'objet > JSON to Excel"
     )
   }
@@ -347,13 +357,9 @@ function newEnemy(enemyData: Enemy): EnemyCombat {
       // In average, add Dices
       const dices = dicesAverageConversion(skillText)
 
-      console.log({ average, dices })
-
       return average + dices
     })
     .filter((value) => !Number.isNaN(value))
-
-  console.log(montantSkills)
 
   // Pour les ennemis, sachant que des sorts sont mal comptés (ex 1D8 +1D6 +4)
   // Je rajoute 50% de dégâts (contre x% par niveau pour les joueurs), que 50% pas 100% car les des (1D10,2D6,...) sont comptés !

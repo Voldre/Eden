@@ -291,7 +291,7 @@
     "nom": "Séisme",
     "desc": "Inflige des dégâts de nature à la cible",
     "effet": "Dégât",
-    "montant": "1D10+2 (+2 si faiblesse)",
+    "montant": "1D10+2 (+3 si faiblesse)",
     "icone": "E0016",
     "stat": "Intelligence",
     "classe": ["Clerc", "Barde", "Shaman", "Sage"]
@@ -309,7 +309,7 @@
     "nom": "Punition Divine",
     "desc": "Inflige des dégâts de lumières à la cible",
     "effet": "Dégât",
-    "montant": "1D10+2 (+2 si faiblesse)",
+    "montant": "1D10+2 (+3 si faiblesse)",
     "icone": "E0092",
     "stat": "Intelligence",
     "classe": ["Clerc", "Barde", "Shaman", "Sage"]
@@ -370,9 +370,9 @@
   },
   "49": {
     "nom": "Bombe Incendiaire",
-    "desc": "Boule de feu sur l'ennemi",
+    "desc": "Lance une boule de feu sur l'ennemi et peut l'étourdir (malus de réussite) si coup critique",
     "effet": "Dégât",
-    "montant": "1D10+3",
+    "montant": "1D10+2, si critique : réussite cible -4 (2 tours)",
     "icone": "E0021",
     "stat": "Intelligence",
     "classe": ["Magicien", "Illusionniste", "Démoniste", "Luminary"]

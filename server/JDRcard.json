@@ -107,6 +107,12 @@
   { "id": 175, "value": 1, "kind": "map", "name": "Steppes d'Arist\u00e8re", "description": "", "kindId": 59 },
   { "id": 176, "value": 2, "kind": "map", "name": "Steppes d'Arist\u00e8re", "description": "", "kindId": 59 },
   { "id": 177, "value": 3, "kind": "map", "name": "Steppes d'Arist\u00e8re", "description": "", "kindId": 59 },
+  { "id": 178, "value": 1, "kind": "map", "name": "Tengristan", "description": "", "kindId": 60 },
+  { "id": 179, "value": 2, "kind": "map", "name": "Tengristan", "description": "", "kindId": 60 },
+  { "id": 180, "value": 3, "kind": "map", "name": "Tengristan", "description": "", "kindId": 60 },
+  { "id": 181, "value": 1, "kind": "map", "name": "Obelia", "description": "", "kindId": 61 },
+  { "id": 182, "value": 2, "kind": "map", "name": "Obelia", "description": "", "kindId": 61 },
+  { "id": 183, "value": 3, "kind": "map", "name": "Obelia", "description": "", "kindId": 61 },
   { "id": 289, "value": 1, "kind": "map", "name": "Île du Mariage", "description": "", "kindId": 97 },
   { "id": 290, "value": 2, "kind": "map", "name": "Île du Mariage", "description": "", "kindId": 97 },
   { "id": 291, "value": 3, "kind": "map", "name": "Île du Mariage", "description": "", "kindId": 97 },
@@ -702,6 +708,22 @@
     "name": "Qorina - Princesse Flamboyante",
     "description": "Descendante d'une ancienne lign\u00e9e Khan, Qorina poss\u00e8de la puissante flamme ancestrale de son glorieux empire perdu. Ses desseins semblent être la destruction d'Heldentod, mais elle n'agit pas de paire avec ses semblables...",
     "kindId": "qorina"
+  },
+  {
+    "id": 1077,
+    "value": 3,
+    "kind": "boss",
+    "name": "Lona - Briseuse de Sceau",
+    "description": "Incantatrice et Briseuse de sceau, elle est la bras-droit de la Beholder, on raconte quelle aurait travaillée pour l'Ordre des Chevaliers de la Rose...",
+    "kindId": "lona"
+  },
+  {
+    "id": 1078,
+    "value": 3,
+    "kind": "boss",
+    "name": "Qaïdu Khan - Déclencheur de Révolution",
+    "description": "Chef de la tribu Khan et initiateur de la révoluion des Ogres des steppes. Motivé à détruire Heldentod.",
+    "kindId": "qaidu"
   },
   {
     "id": 1201,
@@ -2188,6 +2210,22 @@
     "name": "Pensée du Fléau",
     "description": "Cette substance contient les germes du Fléau et est capable de conférer ses propriétés à un objet. Ce composant a été récupéré sur un esprit démoniaque très puissant.",
     "kindId": "I00415b"
+  },
+  {
+    "id": 1468,
+    "value": 2,
+    "kind": "composant",
+    "name": "Fragment de Draconite",
+    "description": "Petits fragments d'un métal de Draconite, récupéré sur des équipements brisés en Draconite. Rien qu'au touché, les Chevaliers Dragons se sentent perturbés.",
+    "kindId": "I00206d"
+  },
+  {
+    "id": 1469,
+    "value": 2,
+    "kind": "composant",
+    "name": "Trèfle d'Obelia",
+    "description": "Ce magnifique trèfle à une double particularité : il vient d'Obelia, une zone chargée en magie, et il possède 4 feuilles. Cela en fait un objet porteur de chance. On dit qu'il peut transmettre cette capacité à d'autres objets.",
+    "kindId": "k10053b"
   },
   {
     "id": 12900,
@@ -4117,7 +4155,7 @@
     "kind": "anecdote",
     "name": "L'arrivée du Garde Impérial",
     "description": "Alors qu'Estia accepte de devenir citoyenne Heldentod, ce dernier lui remet un de ses gardes : Zhaïtan, ils sont à présent prêt à repartir.",
-    "maps": [35],
+    "maps": [33],
     "enemies": [],
     "kindId": "monsters/zhaitan",
     "group": 2
@@ -4436,7 +4474,7 @@
     "kind": "anecdote",
     "name": "Alec, le marchand Heldentod",
     "description": "Le groupe sera rejoint par Alec, un marchand itinérant commerçant avec les tribus d'Ogres des Steppes, il va les \"aider\" à en apprendre plus sur les mystérieuses disparitions.",
-    "maps": [35],
+    "maps": [59],
     "enemies": [],
     "kindId": "monsters/m012g",
     "group": 2
@@ -4692,6 +4730,83 @@
     "maps": [58],
     "enemies": [],
     "kindId": "skillIcon/E0725",
+    "group": 2
+  },
+  {
+    "id": 1863,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "L'école des Chevaliers Dragons",
+    "description": "Zhaïtan reçoit un courrier de l'Empereur, demandant de faire une intervention à l'école des Chev. Dragons pour partager son savoir. Il se prépare alors avec Estia, Vidal, et un garde. Puis se débrouille le jour J avec une mise en scène Heldentod/Valence, et un ancien \"ami\" turbulent à gérer.",
+    "maps": [35],
+    "enemies": [],
+    "kindId": "items/I00308",
+    "group": 2
+  },
+  {
+    "id": 1864,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Négociation avec Loris",
+    "description": "Vidal et le groupe négocie avec Loris, l'héritier Ezelin, un objet utile pour trouver Xonifar. Loris accepte en échange d'un étrange petit service : livrer 3 fleurs aphrodisiaque au quartier des plaisirs. Le groupe accepte, mais méfiant, en intervertit une. Zhaïtan, la nuit, en sentira les effets.",
+    "maps": [35],
+    "enemies": [],
+    "kindId": "monsters/loris",
+    "group": 2
+  },
+  {
+    "id": 1865,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Infiltration chez les Khans",
+    "description": "A l'entrée du Tengristan, suite à une invitation de Qaïdu Kahn pour rallier les ogres, le groupe s'infiltre sous couverture pour glaner des informations. Suite à cela, Magnus à prévu de lancer l'offensive pour abattre Qaïdu Khan et s'emparer de son Cor de Guerre.",
+    "maps": [60],
+    "enemies": [],
+    "kindId": "monsters/azora-infiltre",
+    "group": 2
+  },
+  {
+    "id": 1866,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Ricochet de Totem",
+    "description": "Avant d'aller à Obelia, Shkrouk est morose au bord de l'eau : il engueule un couple qui se bécote. Il décide alors de se changer les idées en créant une nouvelle discipline : le ricochet de totem en pleine mer !",
+    "maps": [27],
+    "enemies": [],
+    "kindId": "skillIcon/E0266b",
+    "group": 3
+  },
+  {
+    "id": 1867,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Voyage vers Obelia",
+    "description": "Sur le trajet vers Obelia, le groupe à pu faire connaissance avec Lona et même s'entraîner avec. Par contre, la nuit n'a pas été agréable pour tous : Shkrouk a fait de terribles cauchemars, et Poisseux a faillit traverser le plancher.",
+    "maps": [61],
+    "enemies": [],
+    "kindId": "otherIcon/bateau1",
+    "group": 3
+  },
+  {
+    "id": 1868,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "La Brume Khan",
+    "description": "Qaïdu Khan a été vu aux abords du village. Le groupe décide de lancer un assaut surprise. Malheureusement, une mystérieuse brume se lève et perturbe les sens du groupe. De plus, certains se sentent mal à son contact... Les Khans contre-attaque Heldentod, et Estia fini par perdre face à Qaïdu.",
+    "maps": [60],
+    "enemies": [],
+    "kindId": "skillIcon/E0425b",
+    "group": 2
+  },
+  {
+    "id": 1869,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Retour de la bataille",
+    "description": "Sur le chemin du retour, le groupe fait le bilan de la situation : une défaite militaire, mais des doutes envers la puissance et les vrais désirs des Khans ont été glissés dans la tête des tribus grâce à Azora, ce qui aide. Et Qaïdu pense qu'Estia est morte grâce à son talent d'actrice.",
+    "maps": [60],
+    "enemies": [],
+    "kindId": "loadingframe/Loading_59",
     "group": 2
   },
   {
