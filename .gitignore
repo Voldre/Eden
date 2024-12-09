@@ -5,6 +5,7 @@ node_modules
 package-lock.json
 Fichier de JDR/*
 images/items/*
+images/other 3D/*
 images/loadingframe/*
 jdr_master_admin.html
 ignore*
