@@ -2984,8 +2984,8 @@
     "nom": "Kachgar - Commandant Khan",
     "pvmax": 260,
     "skills": [
-      "Coupure de lumière / noire (Destruction/Portail) : Degat 3D6 (-5 AoE/+tp) +22, Mono : Force",
-      "Prière Divine (Sacrifice ombre) : Heal 2D6+24, prochain dégât lumière +1D8 +12, (chaque tour : PV -10, Force/Intel +4, ténèbres +10) : Espr",
+      "Coupure de lumière / noire (Destruction/Portail) : Degat 3D6 (-5 AoE) +17, Mono : Force",
+      "Prière Divine (Sacrifice ombre) : Soin 2D6+24, prochain dégât lumière +1D8 +12, (chaque tour : PV -10, Force/Intel +4, ténèbres +10) : Espr",
       "Menaces Mortelles : Réussite -3, Esq/Bloc/Res -2, dure 2 tours (AoE) : Esprit",
       "Saut Dimensionnel : Esquive , 3 tentatives : Intelligence<br/>Passif : si PV <130 : Sacrifice = +5 DGT (et soin +5 PV/coup)"
     ],
@@ -3149,8 +3149,8 @@
     "nom": "Aguero - Perce-Esprit",
     "pvmax": 235,
     "skills": [
-      "Bombe Incendiaire / Stalactites Glaciales : Degat 3D6 (+5) +25, Mono : Intelligence",
-      "Attaque Foudroyante / Oeil Hypnotique : Degat 2D6 +21, / Endort pendant 1D4 tours, Res espr -2 AoE : Intelligence",
+      "Bombe Incendiaire / Stalactites Glaciales : Degat 3D6 (<150 : +5) +20, Mono : Intelligence",
+      "Attaque Foudroyante / Oeil Hypnotique : Degat 2D6 +20, / Endort pendant 1D4 tours, Res espr -2 AoE : Intelligence",
       "Contrôle de l'Esprit : Hypnose pendant 1D4 tours<br/>Rituel de Mana : Esprit AoE +3 sur 5 tours : Esprit",
       "Saut Dimensionnel : 3 Esquive : Intelligence"
     ],
@@ -3181,12 +3181,147 @@
     "skills": [
       "Coup Incandescant : 3D6 +30 (+5 mono poing/lum) : Force/Intel<br/>Feu Dévoreur : 2D6+20, Stats -3 (3 tours, 2 si bloc) : Intel (3 → 4 si DK)",
       "Flamme Impériale : Mode \"+1D6+9, Bloc/Esq+2\" sur 5 tours : Esprit",
-      "Lumière Pure : 3D6+25, -1 malus (rejoue si critique)",
+      "Lumière Pure : Soin 3D6+25, -1 malus (rejoue si critique)",
       "Art Khan (buff indéf, instant, Esprit), mode :<br/> - Offensif : Flamme dégât / malus,<br/> - Défensif : Flamme soin / buff,<br/> PV <50% : Flamme \"+5, Bloc/Esq+1\"<br/>Anti-DK : Stuff Dragonite (25%) + revers, vs DK"
     ],
     "stats": "17,11,17,13,17",
     "desc": "Descendante d'une ancienne lignée Khan, Qorina possède la puissante flamme ancestrale de son glorieux empire perdu. Ses desseins semblent être la destruction d'Heldentod, mais elle n'agit pas de paire avec ses semblables...",
     "drop": "A définir",
+    "weaknesses": ["perçant", "glace"]
+  },
+  "215": {
+    "visuel3D": "m171",
+    "nom": "Avale-esprit",
+    "pvmax": 110,
+    "skills": [
+      "Absorbe-esprit : Esprit -4 AoE 3 tours : Esprit",
+      "Tentacules : 2D6+11 : Force",
+      "Toxine : 1D6+4 sur 4 tours : Intelligence",
+      "Passif : si ennemi esprit <10 : dégât +50%"
+    ],
+    "stats": "14,9,15,9,16",
+    "desc": "Esprit tentaculaire à la recherche d'esprit faible à dévorer",
+    "drop": "Noyau abyssal, Poudre d'esprit*3",
+    "weaknesses": ["tranchant", "lumière"]
+  },
+  "216": {
+    "visuel3D": "m223e",
+    "nom": "Esprit cristallisé",
+    "pvmax": 110,
+    "skills": [
+      "Dégagement d'énergie : (1 tour incant) 2D6 +10 AoE (malus espri't -3, 3 tours) : intelligence",
+      "Glace tranchante : 2D10 +12 : force",
+      "Percé d'Espri't :  (ignore 50% armure) : 2D10+5 : Espri't",
+      "Crystal vivifiant : 2D10 +15 PV (Soin aux altérations) : intelligence"
+    ],
+    "stats": "15,9,16,10,16",
+    "desc": "Une altération de crystal faible qui est hanté d'un esprit",
+    "drop": "Très rare : Pierre de sécurité d'Améthyste",
+    "weaknesses": ["contondant", "feu"]
+  },
+  "217": {
+    "visuel3D": "m223b",
+    "nom": "Esprit d'Améthyste",
+    "pvmax": 190,
+    "skills": [
+      "Dégagement d'énergie : (1 tour incant) 3D6 +14 AoE  (malus espri't -4, 4 tours) : intelligence",
+      "Percé d'Espri't :  (ignore 50% armure) : 2D6+15 : Espri't",
+      "Crystal vivifiant : 2D10 +20 PV (Soin aux altérations) : intelligence",
+      "Passif : Si Esprit critique : vibration négative : esprit -2 AoE 3 tours"
+    ],
+    "stats": "13,11,18,11,18",
+    "desc": "Une altération de crystal faible qui est hanté d'un esprit",
+    "drop": "Rare : Pierre de sécurité d'Améthyste, poudre d'esprit supérieure *3",
+    "weaknesses": ["perçant", "feu"]
+  },
+  "218": {
+    "visuel3D": "m057b",
+    "nom": "Cavalier Khan",
+    "pvmax": 120,
+    "skills": [
+      "Percée du Chevalier : 1D8 + 1'D6 + 1D4 +11 : Dextérité",
+      "Vivacité Accrue : Esquive+3, Dextérité+3 à la cible pendant 4 tours : Esprit",
+      "Silence : Aucun sort magique pendant 3 tours : Esprit",
+      "Passif Anti-DK : Stuff Draconite (Dégât +25%, reçu -25%) "
+    ],
+    "stats": "13,16,9,13,16",
+    "desc": "Ogre jaune à dos de bête de fer ou de yack, originaire du coeur des steppes. Habile et dangereux",
+    "drop": "Fragment de Draconite, rare : Pendentif du Ranger",
+    "weaknesses": ["nature", "ténèbres"]
+  },
+  "219": {
+    "visuel3D": "m061c",
+    "nom": "Shaman Khan",
+    "pvmax": 110,
+    "skills": [
+      "Éclair en Furie : 2D6+11 (+'7 si brume) : Intelligence",
+      "Totem Gracieux ( 30 PV, Force : 9, Dexté : 13, Intel : 14) : Mode Soin : +4 PV. - Mode Soutien : 2 sorts : 1) Renforcement : +2 Force ou +2 Intel sur la cible : 3 tours (intel) , 2) Eclair : 1D8+8 (intel)) : Esprit",
+      "Résurrection : Incantation 2 tours (1 dé/tour) : Soin 2D10+18 (utilisable sur un vivant) : Intelligence",
+      "Affaiblissement AoE : +5 dégât subis AoE pendant 3 (4 si DK) tours : Esprit"
+    ],
+    "stats": "11,9,17,10,16",
+    "desc": "Ogre Shaman du Tengristan ayant rejoint les Khans. Rare expert en magie",
+    "drop": "Glyphe du Shaman, très rare : Robe Shamanique",
+    "weaknesses": ["contondant", "foudre"]
+  },
+  "220": {
+    "visuel3D": "m060c",
+    "nom": "Maître des Brumes Khan",
+    "pvmax": 190,
+    "skills": [
+      "Éclair en Furie : 3D6+15 (réussite -4 sur 1 tour) : Intelligence",
+      "Guérison (Résurrection) : Soin 3D6 (2t, PV+20) +20 : Intelligence",
+      "Puma Noir Agile (instant) : (Force/Dexté+4) 4 tours max : Triple Griffe : 3D6+14 (Dextérité), Saut d'esquive (2x par transfo) : Esprit",
+      "Passif (si incantation 1/4 tour) : Brume Khan : Epais brouillard perturbant (Stats -1 à -3, + -2 si DK)"
+    ],
+    "stats": "11,14,17,10,16",
+    "desc": "Grand maître Shaman affilié à Tengri. Arborant l'étendard Khan et portant la Brume sur le champ de bataille.",
+    "drop": "Rare : Bâton Perturbant, Robe Shamanique",
+    "weaknesses": ["contondant", "ténèbres"]
+  },
+  "221": {
+    "visuel3D": "qaidu",
+    "nom": "Qaïdu Khan - Déclencheur de Révolution",
+    "pvmax": 300,
+    "skills": [
+      "Coupe Asura / Purgatoire : Degat 2D6 (+6 si Asura) +24 AoE : Force",
+      "Eclair unique : Degat 3D6 (+7 si Asura) +30 : Force (jdrcombat +45)",
+      "Frénésie/Aura Khan : Buff Mono/AoE dégât +2D6+10 / 1D6 +6 (*1.5 si Cor) sur 4/3 tours AoE : Esprit",
+      "Passif Draconite : sur les DK : Dégât +33%, Reçu -33% (si PV <150 : 50%)"
+    ],
+    "stats": "21,13,9,12,17",
+    "desc": "Chef de la tribu Khan et initiateur de la révoluion des Ogres des steppes. Motivé à détruire Heldentod",
+    "drop": "Katana de Draconite Pure, Plastron de Draconite, ",
+    "weaknesses": ["foudre", "lumière"]
+  },
+  "222": {
+    "visuel3D": "m363b",
+    "nom": "Chevalier du Fléau",
+    "pvmax": 160,
+    "skills": [
+      "Percée des Ombres : 3D6 +22 : Dextérité",
+      "Tempête Noire : 2D6+15 (-2 force/intel sur 3 tours) : Intelligence",
+      "Spirale Ténèbreuse : Blocage+2, épine 5 sur 3 tours, à la fin 1D6+10 : Esprit",
+      "Passif : PV <100 : Stats+1, PV <50 : Dégât/Armure +5"
+    ],
+    "stats": "11,15,15,10,17",
+    "desc": "Chevalier Dullahan insufflé de la magie destructrice du fléau.",
+    "drop": "Masse de Ténèbres, Roche Ténèbreuse, rare : Pensée du Fléau",
+    "weaknesses": ["nature", "lumière"]
+  },
+  "223": {
+    "visuel3D": "m296h",
+    "nom": "Champosaurus Exalté",
+    "pvmax": 290,
+    "skills": [
+      "Coup de griffe / Cicatrice : 4D6+18 (+7 // -1 buff) : Dextérité",
+      "Coup déchirant : 3D6 +15 AoE (+'6 dégâts reçus 3 tours) : Dextérité",
+      "Malédiction Folle : -1D4+5 dégâts/tours AoE (si remove malus, ce montant*(nb perso remove) sur le lanceur), 4 tours : Esprit",
+      "Passif : PV (chaque -100) : Hurlement Douloureux (Stats-3 (3 tours), PV <100 : Dégât/Armure +5"
+    ],
+    "stats": "13,17,13,10,17",
+    "desc": "Dinosaure crocodile dopé par une énergie instable créé par le Bourgeon de Vie, très dangereux.",
+    "drop": "Dague écailles noires, Plastron Ecailleux, rare : Ecaille Exalté",
     "weaknesses": ["perçant", "glace"]
   }
 }

@@ -1,7 +1,6 @@
 {
   "0": {
     "nom": "Charge du Guerrier",
-    "desc": "Fonce sur la cible et peut l'étourdir (malus de réussite) si coup critique.",
     "montant": "1D10+5, réussite cible -3 (2 tours)"
   },
   "1": {
@@ -176,7 +175,7 @@
   "49": {
     "nom": "Bombe Incendiaire",
     "desc": "Boule de feu sur l'ennemi",
-    "montant": "1D12+7"
+    "montant": "1D10+5, réussite cible -3 (2 tours)"
   },
   "50": {
     "nom": "Attaque Foudroyante",
@@ -549,6 +548,10 @@
   "139": {
     "nom": "Pluie de Flèches",
     "montant": "1D8+5"
+  },
+  "141": {
+    "nom": "Barrière glaciale",
+    "montant": "1D6+2 et réussite -2 (2 tours)"
   },
   "144": {
     "nom": "Super Star",

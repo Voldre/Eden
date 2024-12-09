@@ -320,8 +320,12 @@ export const eqptBonusQuantity = (eqpt: Equipment, eqpts: (Equipment | undefined
       case "panoplie": {
         // Get eqptsName, excepted the selected eqpt (that can match panoplie, ex : Heldentod)
         const eqptsName = eqpts.map((eq) => eq && eq !== eqpt && unformatText(eq.nom))
-        const nbEqptsInPanop = eqptsName.filter(
-          (eqptName) => eqptName && eqptName.includes(unformatText(eqpt.condition?.value as string))
+
+        const eqptConditionValue = eqpt.condition?.value
+        const panoplies = typeof eqptConditionValue === "string" ? eqptConditionValue.split(",") : eqptConditionValue
+        const nbEqptsInPanop = eqptsName.filter((eqptName) =>
+          // One of the listed panoplies is in the eqpt mane ?
+          panoplies.some((panoplie) => eqptName && eqptName.includes(unformatText(panoplie)))
         ).length
         bonusQuantity = nbEqptsInPanop
         break

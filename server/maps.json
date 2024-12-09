@@ -224,7 +224,7 @@
   "19": {
     "name": "Vallée Férégal",
     "wmap_x": 58,
-    "wmap_y": 58.2,
+    "wmap_y": 58.7,
     "wmap": 1,
     "map_x": null,
     "map_y": null,
@@ -248,7 +248,7 @@
   "21": {
     "name": "Jungle Céleste",
     "wmap_x": 51.3,
-    "wmap_y": 43.3,
+    "wmap_y": 42.8,
     "wmap": 1,
     "map_x": null,
     "map_y": null,
@@ -343,8 +343,8 @@
   },
   "29": {
     "name": "Côte de Hurlevent",
-    "wmap_x": 27.6,
-    "wmap_y": 38,
+    "wmap_x": 27.5,
+    "wmap_y": 37.3,
     "wmap": 2,
     "map_x": null,
     "map_y": null,
@@ -569,6 +569,30 @@
     "map_r": null,
     "bgm": 53,
     "mobs": [72, 112, 113, 134, 201]
+  },
+  "60": {
+    "name": "Tengristan",
+    "wmap_x": 45.5,
+    "wmap_y": 7.5,
+    "wmap": 0,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": 56,
+    "mobs": [218, 219, 220, 221]
+  },
+  "61": {
+    "name": "Obelia",
+    "wmap_x": 27.3,
+    "wmap_y": 45,
+    "wmap": 1,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": 0,
+    "mobs": [215, 216, 217, 190]
   },
   "97": {
     "name": "Île du Mariage",
