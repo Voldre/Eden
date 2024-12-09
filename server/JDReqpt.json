@@ -536,7 +536,7 @@
     "nom": "Lance Incandescente",
     "desc": "Une lance d'une finition presque parfaite, enchanté par les flammes",
     "effet": "Dégât de feu +2",
-    "montant": "Dégât +9",
+    "montant": "Dégât +10",
     "icone": "k30094"
   },
   "75": {
@@ -753,21 +753,21 @@
   "103": {
     "nom": "Marteau de Delphes",
     "desc": "Un marteau fabriqué avec un bois sacré",
-    "effet": "",
+    "effet": "Dégât de nature +2",
     "montant": "Dégât +8",
-    "icone": "W40106"
+    "icone": "W40106b"
   },
   "104": {
     "nom": "Arc de Delphes",
     "desc": "Un arc fabriqué avec un bois sacré",
-    "effet": "",
+    "effet": "Dégât de nature +2",
     "montant": "Dégât +7",
     "icone": "W50203"
   },
   "105": {
     "nom": "Bâton de Delphes",
     "desc": "Un bâton fabriqué avec un bois sacré",
-    "effet": "",
+    "effet": "Dégât de nature +2",
     "montant": "Dégât +7",
     "icone": "W60306"
   },
@@ -917,9 +917,9 @@
   },
   "126": {
     "nom": "Faucille du Marais",
-    "desc": "Une faucille très puissante mais rouillée pouvant souiller l'ennemi",
+    "desc": "Une faucille retrouvé dans un mystérieux marais bourbeux, imprégné de vase.",
     "effet": "Dégât nature +2",
-    "montant": "Dégât +7",
+    "montant": "Dégât +8",
     "icone": "W55407"
   },
   "127": {
@@ -933,8 +933,8 @@
     "nom": "Faucille Agile",
     "desc": "Une faucille rendant l'utilisateur très agile",
     "effet": "Esquive +2",
-    "montant": "Dégât +5",
-    "icone": "W55501"
+    "montant": "Dégât +6",
+    "icone": "W55406"
   },
   "129": {
     "nom": "Marteau Canon",
@@ -1156,7 +1156,7 @@
     "nom": "Katana de Delphes",
     "desc": "Katana fabriqué avec un bois et un acier sacré",
     "effet": "Dégât nature +2",
-    "montant": "Dégât +7",
+    "montant": "Dégât +8",
     "icone": "W21404"
   },
   "161": {
@@ -1219,7 +1219,7 @@
     "nom": "Sceptre du remède",
     "desc": "Un bâton incrusté d'un joyau guérisseur",
     "effet": "",
-    "montant": "Dégât +7, Soin +4, AoE +2",
+    "montant": "Dégât +8, Soin +4 (/2)",
     "icone": "W62504"
   },
   "170": {
@@ -1240,9 +1240,8 @@
   "172": {
     "nom": "Croix corrompue",
     "desc": "Une croix forgée pour les adeptes de magie noire",
-    "effet": "Dégât ténèbres +3",
-    "montant": "Dégât +7 (+1 si Démoniste)",
-    "condition": { "type": "classe", "value": ["Démoniste"], "bonus": "Dégât +1" },
+    "effet": "Dégât ténèbres +2",
+    "montant": "Dégât +7",
     "icone": "W64404"
   },
   "173": {
@@ -1527,8 +1526,8 @@
   "210": {
     "nom": "Crystal de Skleros",
     "desc": "Un crystal duquel émane une puissante magie, il a été trouvé dans les abysses",
-    "effet": "",
-    "montant": "Dégât de glace +3,  ténèbres +2",
+    "effet": "Esprit +1",
+    "montant": "Dégât de glace +3,  ténèbres +3",
     "icone": "I00235",
     "access": "D3"
   },
@@ -1594,7 +1593,7 @@
   "219": {
     "nom": "Guitare de Delphes",
     "desc": "Guitare fabriqué avec un bois sacré",
-    "effet": "",
+    "effet": "Dégât nature +2",
     "montant": "Dégât +7",
     "icone": "W61002"
   },
@@ -2215,7 +2214,7 @@
     "nom": "Marteau du Sage",
     "desc": "Un marteau conçu pour aider les sages.",
     "effet": "Intelligence +1",
-    "montant": "Dégât +7, Soin +2 (AoE/2) (dégât/soin+1 si sage)",
+    "montant": "Dégât +7, Soin +2 (AoE/2) (dégât/soin+1 si Sage)",
     "condition": { "type": "classe", "value": ["Sage"], "bonus": "Dégât +1, Soin +1" },
     "icone": "W40908"
   },
@@ -2717,7 +2716,7 @@
     "nom": "Glyphe du Chevalier Dragon",
     "desc": "Un glyphe conçu pour améliorer 3 éléments.",
     "effet": "",
-    "montant": "Dégât tranchant +3, feu +3, ténèbres +2",
+    "montant": "Dégât perçant +3, feu +2, ténèbres +2",
     "icone": "i01125",
     "access": "D3"
   },
@@ -3777,7 +3776,7 @@
   },
   "506": {
     "nom": "Pierre de sécurité Fétiche",
-    "desc": "Une pierre de sécurité amélioré capable d'empêcher la destruction et d'améliorer les chances de réussites.",
+    "desc": "Une pierre de sécurité amélioré capable d'empêcher la destruction et d'améliorer les chances de réussites des crafts.",
     "effet": "",
     "montant": "Dégât reçu -3",
     "icone": "I00529",
@@ -3945,5 +3944,143 @@
     "effet": "Blocage cible -1",
     "montant": "Dégât +9",
     "icone": "W20904"
+  },
+  "529": {
+    "nom": "Plastron de Draconite",
+    "desc": "Un plastron renforcé au minerai de Draconite.",
+    "effet": "",
+    "montant": "Dégât -6, face aux Dragons : Dégât +25%, reçu -25%",
+    "icone": "A20101b"
+  },
+  "530": {
+    "nom": "Robe Shamanique",
+    "desc": "Une robe conçue par de grands artisans connectés avec la nature.",
+    "effet": "Intelligence +1",
+    "montant": "Dégât -4, (dégât/soin+2 Si Shaman)",
+    "condition": { "type": "classe", "value": ["Shaman"], "bonus": "Dégât +2, Soin +2" },
+    "icone": "A20025"
+  },
+  "531": {
+    "nom": "Bâton Perturbant",
+    "desc": "Ce bâton à le pouvoir de perturber son adversaire.",
+    "effet": "",
+    "montant": "Dégât +10, Si coup critique (1,2,3) : Force/Intel -2 (2 tours)",
+    "icone": "W64501d"
+  },
+  "532": {
+    "nom": "Katana de Draconite Pure",
+    "desc": "Katana de Qaïdu Khan, il est composé de minerai de Draconite Pure, infligeant de sévère dégâts aux dragons.",
+    "effet": "Force +1",
+    "montant": "Dégât +11, face aux Dragons : Dégât +25%",
+    "icone": "W24007"
+  },
+  "533": {
+    "nom": "Glyphe du Démoniste",
+    "desc": "Un glyphe conçu pour améliorer les ténèbres",
+    "effet": "",
+    "montant": "Dégât de ténèbres +4",
+    "icone": "i01139",
+    "access": "D3"
+  },
+  "534": {
+    "nom": "Glyphe du Chevalier",
+    "desc": "Un glyphe conçu pour améliorer 3 éléments",
+    "effet": "",
+    "montant": "Dégât tranchant +3, perçant +2, glace +2",
+    "icone": "i01123",
+    "access": "D3"
+  },
+  "535": {
+    "nom": "Glyphe de l'Ingénieur",
+    "desc": "Un glyphe conçu pour améliorer 2 éléments",
+    "effet": "",
+    "montant": "Dégât contondant +3, foudre +2",
+    "icone": "i01131",
+    "access": "D3"
+  },
+  "536": {
+    "nom": "Bâton de foudre",
+    "desc": "Un Bâton améliorant l'effet de la foudre (améliorable)",
+    "effet": "Dégât de foudre +2",
+    "montant": "Dégât +7",
+    "icone": "W60105"
+  },
+  "537": {
+    "nom": "Bâton à Induction",
+    "desc": "Un Bâton conçu par les Zumis pour amplifier la magie électrique, la foudre !",
+    "effet": "Dégât de foudre +3",
+    "montant": "Dégât +10",
+    "icone": "W60105b"
+  },
+  "538": {
+    "nom": "Croix démoniaque",
+    "desc": "Une croix forgée pour les adeptes de magie noire",
+    "effet": "Dégât ténèbres +3",
+    "montant": "Dégât +8 (+1 si Démoniste)",
+    "condition": { "type": "classe", "value": ["Démoniste"], "bonus": "Dégât +1" },
+    "icone": "W64408"
+  },
+  "539": {
+    "nom": "Bâton de soin",
+    "desc": "Un bâton améliorant l'effet des soins",
+    "effet": "",
+    "montant": "Dégât +7, Soin +2",
+    "icone": "W60104"
+  },
+  "544": {
+    "nom": "Marteau Réversible",
+    "desc": "Un marteau capable d'alterner entre un mode \"soin\" et un mode dégât\"",
+    "effet": "Mode (2 tours min)",
+    "montant": "Dégât +7",
+    "icone": "W41403"
+  },
+  "545": {
+    "nom": "Epée en Acier renforcé",
+    "desc": "Une simple épée en acier de grande qualité forgé par un maître forgeron : simple et efficace.",
+    "effet": "Blocage physique +1",
+    "montant": "Dégât +5",
+    "icone": "W10601"
+  },
+  "546": {
+    "nom": "Rapière du Vaillant",
+    "desc": "Cette rapière donne une aura valeureuse à celui qui la porte.",
+    "effet": "Charisme +1",
+    "montant": "Dégât +4",
+    "icone": "W11501"
+  },
+  "547": {
+    "nom": "Rapière Distinguée",
+    "desc": "Une rapière conçue pour mettre en avant l'importance de son porteur.",
+    "effet": "Charisme +2",
+    "montant": "Dégât +4",
+    "icone": "W11502b"
+  },
+  "548": {
+    "nom": "Arc de Valence",
+    "desc": "Un arc léger venant de l'arsenal fédéral de Valence",
+    "effet": "Dextérité +2",
+    "montant": "Dégât +8",
+    "icone": "W50301"
+  },
+  "549": {
+    "nom": "Arc de Valence raffiné",
+    "desc": "Un Arc de Valence amélioré par l'expertise d'un maître ébéniste.",
+    "effet": "Dextérité +2",
+    "montant": "Dégât +10",
+    "icone": "W50304"
+  },
+  "550": {
+    "nom": "Faucille Rapide",
+    "desc": "Une faucille rendant l'utilisateur aussi véloce que le vent",
+    "effet": "Dextérité +2",
+    "montant": "Dégât +9",
+    "icone": "W55406b"
+  },
+  "551": {
+    "nom": "Faucille Aggravante",
+    "desc": "Cette faucille est imprégnée d'une magie noire qui amplifie les altérations.",
+    "effet": "",
+    "montant": "Dégât +9, durée des malus +1 tour",
+    "icone": "W55503"
   }
 }
