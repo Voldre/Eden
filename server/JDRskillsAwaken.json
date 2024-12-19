@@ -365,12 +365,11 @@
   },
   "95": {
     "nom": "Marteau d'Inspiration",
-    "montant": "1D10+9"
+    "montant": "1D10+9 (dégât physique ou élément de l'Aura)"
   },
   "96": {
     "nom": "Aura : Ami du Marteau",
-    "desc": "Apporte du soutien à la cible : PV et dégât",
-    "montant": "Soin 1D10 +8. Prochain dégât +1D6+4 (3 tours max)"
+    "montant": "Soin 1D10 +2. Prochain dégât +1D6+2 (enchanté de l'élément de l'Aura) (3 tours max)"
   },
   "98": {
     "nom": "Perforation",

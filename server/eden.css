@@ -448,7 +448,7 @@ input:checked + .slider:before {
 
 .menu li {
   width: 125px;
-  height: 50px;
+  height: 45px;
   transition: background-position-x 0.9s linear;
   text-align: center;
 }

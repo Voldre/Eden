@@ -876,7 +876,7 @@ td {
   width: 30px;
   height: 30px;
   margin: 0px;
-  vertical-align: bottom;
+  vertical-align: middle;
 }
 .alpagaCoinSpent {
   color: gainsboro;
@@ -886,6 +886,31 @@ td {
 .charactersList .alpagaCoinPic {
   width: 24px;
   height: 24px;
+}
+
+.chestWrapper {
+  height: 80vh;
+  width: min(100%, 1000px);
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+}
+.chest {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.alpagaCounter {
+  display: flex;
+  position: absolute;
+  gap: 1.5rem;
+  padding: 0 0.5rem;
+  z-index: 15;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 1rem;
+  margin: 0;
+  bottom: 10%;
 }
 
 #worldmap {
@@ -1127,5 +1152,13 @@ td {
   #g3 {
     margin-bottom: 5px;
     margin-left: -3px;
+  }
+
+  .chestWrapper {
+    height: 350px;
+  }
+  .chestWrapper .alpagaCoinPic {
+    width: 18px;
+    height: 18px;
   }
 }
