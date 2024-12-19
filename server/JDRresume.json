@@ -1,0 +1,802 @@
+[
+  {
+    "groupe": 1,
+    "seance": 0,
+    "date": "17/05/23",
+    "titre": "Prologue à la Colline",
+    "personnages": ["Malvis", "Ash"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 1,
+    "date": "21/05/23",
+    "titre": "Introduction aux Bourbes",
+    "personnages": ["Draigos", "Erida", "Malvis"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 2,
+    "date": "28/05/23",
+    "titre": "Le culte et les pirates de la Baie",
+    "personnages": ["Draigos", "Erida", "Malvis"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 3,
+    "date": "04/06/23",
+    "titre": "L'esprit sacré du Volcan Avila",
+    "personnages": ["Draigos", "Erida", "Malvis", "Fiore dei San Didero"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 4,
+    "date": "11/06/23",
+    "titre": "la plaine et le tombeau",
+    "personnages": ["Draigos", "Erida", "Malvis"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 5,
+    "date": "18/06/23",
+    "titre": "Un défrichage et un Zumi Androïd",
+    "personnages": ["Erida", "Malvis", "Cosmos"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 6,
+    "date": "25/06/23",
+    "titre": "L’invention qui créa l’inventeur",
+    "personnages": ["Erida", "Malvis", "Cosmos"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 7,
+    "date": "02/07/23",
+    "titre": "L'attaque de Noireflamme et la \"dérive\" à la forêt ensorcelée",
+    "personnages": ["Erida", "Malvis", "Cosmos"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 8,
+    "date": "09/07/23",
+    "titre": "Un braconnier et un concert",
+    "personnages": ["Erida", "Malvis", "Cosmos"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 1,
+    "date": "14/07/23",
+    "titre": "Deux libérations dont une imprévue",
+    "personnages": ["Eivor", "Aradia", "War", "Kryèri"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 2,
+    "date": "23/07/23",
+    "titre": "L’académie et la malchance des Bourbes",
+    "personnages": ["Eivor", "Aradia", "War", "Nyx", "Kryèri"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 3,
+    "date": "30/07/23",
+    "titre": "Une Vallée mouvementée",
+    "personnages": ["Aradia", "War", "Nyx", "Kryèri", "Rad Ed", "Kibo"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 4,
+    "date": "06/08/23",
+    "titre": "Des quêtes à ne plus en finir",
+    "personnages": ["Aradia", "War", "Nyx", "Rad Ed", "Kibo"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 5,
+    "date": "13/08/23",
+    "titre": "Un concert haut en couleur",
+    "personnages": ["Aradia", "War", "Nyx", "Rad Ed", "Kibo"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 9,
+    "date": "20/08/23",
+    "titre": "L'attaque surprise de la Chelona",
+    "personnages": ["Erida", "Malvis", "Cosmos"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 6,
+    "date": "27/08/23",
+    "titre": "Petit souci avec Heldentod, la rencontre de Ein",
+    "personnages": ["Aradia", "War", "Nyx", "Rad Ed", "Kibo"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 7,
+    "date": "27/08/23",
+    "titre": "Tournoi Versatile : La confrontation des héros",
+    "personnages": ["Aradia", "War", "Nyx", "Kibo"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 10,
+    "date": "06/09/23",
+    "titre": "Fin du Tournoi et rencontre des von Ryner",
+    "personnages": ["Erida", "Malvis", "Cosmos"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 8,
+    "date": "10/09/23",
+    "titre": "Des départs inattendus en Aristère",
+    "personnages": ["Aradia", "War", "Rad Ed", "Kibo", "Estia Ryujin", "Azora"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 11,
+    "date": "17/09/23",
+    "titre": "La Forêt Arc-en-ciel soi-disant \"tranquille\"",
+    "personnages": ["Erida", "Malvis", "Cosmos"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 12,
+    "date": "24/09/23",
+    "titre": "Maëlstrom et des corsaires atypiques\"",
+    "personnages": ["Erida", "Malvis", "Cosmos"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 13,
+    "date": "01/10/23",
+    "titre": "La crise des Plaines Fleuries",
+    "personnages": ["Erida", "Malvis", "Cosmos", "Roco Bonnaro"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 14,
+    "date": "08/10/23",
+    "titre": "Un Loukoum et la forêt aux geysers",
+    "personnages": ["Erida", "Malvis", "Cosmos", "Roco Bonnaro"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 9,
+    "date": "08/10/23",
+    "titre": "Sortie de l'Aristère et repos",
+    "personnages": ["Aradia", "War", "Rad Ed", "Kibo", "Estia Ryujin", "Azora", "Beren nolatary"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 3,
+    "seance": 1,
+    "date": "15/10/23",
+    "titre": "L'émergence des ténèbres",
+    "personnages": ["Aradia", "Sekhmet", "Lutta", "Le Poisseux"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 10,
+    "date": "22/10/23",
+    "titre": "Kibo le Criminel",
+    "personnages": ["War", "Rad Ed", "Kibo", "Estia Ryujin", "Azora"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 3,
+    "seance": 2,
+    "date": "29/10/23",
+    "titre": "Le cambriolage qui tourne mal",
+    "personnages": ["Aradia", "Sekhmet", "Lutta", "Le Poisseux", "Cyritsu"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 11,
+    "date": "01/11/23",
+    "titre": "Un dragon pour Heldentod et l’amour de Kibo",
+    "personnages": ["War", "Rad Ed", "Kibo", "Estia Ryujin", "Azora"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 15,
+    "date": "05/11/23",
+    "titre": "L'assaut dans la Forêt de Delphe",
+    "personnages": ["Erida", "Malvis", "Cosmos"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 16,
+    "date": "05/11/23",
+    "titre": "Le combat de courage et la Tour du Cyclone",
+    "personnages": ["Erida", "Malvis", "Cosmos"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 17,
+    "date": "19/11/23",
+    "titre": "La Forêt de Crystal",
+    "personnages": ["Erida", "Malvis", "Cosmos"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 18,
+    "date": "26/11/23",
+    "titre": "L'assaut de la Chelona",
+    "personnages": ["Erida", "Malvis", "Cosmos"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 19,
+    "date": "05/12/23",
+    "titre": "L'Île du Mariage",
+    "personnages": ["Erida", "Malvis", "Kratos"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 12,
+    "date": "10/12/23",
+    "titre": "L'Empire Heldentod et le Royaume Dévasté",
+    "personnages": ["War", "Rad Ed", "Kibo", "Estia Ryujin", "Azora"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 13,
+    "date": "17/12/23",
+    "titre": "‌La découverte des héritiers",
+    "personnages": ["Rad Ed", "Kibo", "Estia Ryujin", "Azora"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 14,
+    "date": "27/12/23",
+    "titre": "‌Le tournoi saboté",
+    "personnages": ["War", "Kibo", "Estia Ryujin", "Azora"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 15,
+    "date": "30/12/23",
+    "titre": "‌La cérémonie et Heldentod III",
+    "personnages": ["War", "Rad Ed", "Kibo", "Estia Ryujin", "Azora"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 16,
+    "date": "30/12/23",
+    "titre": "‌Amour et problèmes",
+    "personnages": ["Rad Ed", "Kibo", "Estia Ryujin", "Azora"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 20,
+    "date": "07/01/24",
+    "titre": "Repos et Côte d’Aristère",
+    "personnages": ["Erida", "Malvis", "Kratos"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 3,
+    "seance": 3,
+    "date": "14/01/24",
+    "titre": "Une quête et la ville",
+    "personnages": ["Aradia", "Leyla", "Sekhmet", "Le Poisseux", "Cyritsu", "Shkrouk"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 3,
+    "seance": 4,
+    "date": "20/01/24",
+    "titre": "Lutta chef, nouvel ennemi : Hydra",
+    "personnages": ["Draigos", "Lutta", "Ernis", "Shkrouk"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 3,
+    "seance": 5,
+    "date": "28/01/24",
+    "titre": "Veyda vs Tour des Cieux",
+    "personnages": ["Draigos", "Aradia", "Leyla", "Cyritsu", "Shkrouk"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 3,
+    "seance": 6,
+    "date": "03/02/24",
+    "titre": "La chute de la Tête n°2",
+    "personnages": ["Leyla", "Ernis", "Le Poisseux", "Shkrouk"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 3,
+    "seance": 7,
+    "date": "10/02/24",
+    "titre": "Une quête pour l'Hydra",
+    "personnages": ["Aradia", "Leyla", "Sekhmet", "Cyritsu", "Shkrouk"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 3,
+    "seance": 8,
+    "date": "17/02/24",
+    "titre": "Farming à Noireflamme et kidnapping à Delphe",
+    "personnages": ["Draigos", "Nyx", "Ernis", "Shkrouk"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 3,
+    "seance": 9,
+    "date": "25/02/24",
+    "titre": "Fin des belliqueux de Delphe et préparation du concert",
+    "personnages": ["Draigos", "Nyx", "Rad Ed", "Ernis", "Shkrouk"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 3,
+    "seance": 10,
+    "date": "03/03/24",
+    "titre": "Le concert à la Veyda",
+    "personnages": ["Draigos", "Nyx", "Ernis", "Shkrouk"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 3,
+    "seance": 11,
+    "date": "10/03/24",
+    "titre": "Un donjon à Valence et le Prince du Fléau",
+    "personnages": ["Sekhmet", "Leyla", "Ernis", "Le Poisseux", "Shkrouk"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 21,
+    "date": "17/03/24",
+    "titre": "Adonis et la Tempête de Neige",
+    "personnages": ["Erida", "Malvis", "Kibo", "Roco Bonnaro", "Kratos"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 22,
+    "date": "23/03/24",
+    "titre": "Le Purgatoire Blanc",
+    "personnages": ["Erida", "Malvis", "Kibo"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 23,
+    "date": "01/04/24",
+    "titre": "Éparpillement et entrée à la Vallée de la Mort",
+    "personnages": ["Erida", "Malvis", "Kibo", "Kratos"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 24,
+    "date": "07/04/24",
+    "titre": "La confrérie Ecarlate, puis repos",
+    "personnages": ["Erida", "Malvis", "Kibo", "Kratos"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 25,
+    "date": "21/04/24",
+    "titre": "La menace de Kratos et le Purgatoire",
+    "personnages": ["Erida", "Malvis", "Kibo", "Kratos"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 17,
+    "date": "28/04/24",
+    "titre": "Corruption aux Plaines du Levant",
+    "personnages": ["Estia Ryujin", "Azora", "Zhaïtan"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 3,
+    "seance": 12,
+    "date": "01/05/24",
+    "titre": "GvG - Expedita (Partie 1/2)",
+    "personnages": ["Le Poisseux", "Shkrouk"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 26,
+    "date": "05/05/24",
+    "titre": "Le Festival de la parade des Chevaliers",
+    "personnages": ["Erida", "Malvis", "Kibo", "Kratos"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 3,
+    "seance": 13,
+    "date": "09/05/24",
+    "titre": "GvG - Expedita (Partie 2/2), et la Parade des Chevaliers",
+    "personnages": ["Le Poisseux", "Shkrouk"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 27,
+    "date": "12/05/24",
+    "titre": "La chute d'Adonis",
+    "personnages": ["Erida", "Malvis", "Kibo"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 28,
+    "date": "19/05/24",
+    "titre": "Randonné et nuit à l’Hôtel des \"Zumiraculeux\"",
+    "personnages": ["Erida", "Malvis", "Kibo"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 3,
+    "seance": 14,
+    "date": "02/06/24",
+    "titre": "GvG - Hydra, mise totale",
+    "personnages": ["Le Poisseux", "Shkrouk"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 18,
+    "date": "09/06/24",
+    "titre": "Fête de la Nationalité",
+    "personnages": ["Estia Ryujin", "Azora", "Zhaïtan"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 19,
+    "date": "16/06/24",
+    "titre": "Rencontre du clan Khan",
+    "personnages": ["Estia Ryujin", "Azora", "Zhaïtan"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 29,
+    "date": "23/06/24",
+    "titre": "L'Épreuve de la Tempête",
+    "personnages": ["Erida", "Malvis", "Kibo", "Kratos"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 3,
+    "seance": 15,
+    "date": "30/06/24",
+    "titre": "La Quête de la Pierre Maudite",
+    "personnages": ["Draigos", "Aradia", "Le Poisseux", "Shkrouk", "Yuki Hart"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 20,
+    "date": "07/07/24",
+    "titre": "Traversée aux Steppes d'Aristère",
+    "personnages": ["Estia Ryujin", "Azora", "Alec"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 3,
+    "seance": 16,
+    "date": "14/07/24",
+    "titre": "Au revoir Nyx, et GvG - Symbardy",
+    "personnages": ["Nyx", "Le Poisseux", "Shkrouk"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 30,
+    "date": "21/07/24",
+    "titre": "Combat, Casino et Confrontation avec Mento",
+    "personnages": ["Erida", "Malvis", "Kibo", "Kratos"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 31,
+    "date": "28/07/24",
+    "titre": "Retour au Continent et Traque de la Chelona",
+    "personnages": ["Erida", "Malvis", "Kibo"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 32,
+    "date": "03/08/24",
+    "titre": "Acte Final contre la Chelona - Partie 1",
+    "personnages": ["Erida", "Malvis", "Kibo", "Kratos"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 21,
+    "date": "11/08/24",
+    "titre": "Retrouvailles et Préparation pour la Grotte Infesté",
+    "personnages": ["Estia Ryujin", "Azora", "Zhaïtan"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 3,
+    "seance": 17,
+    "date": "25/08/24",
+    "titre": "Fin de la GvG et fête",
+    "personnages": ["Le Poisseux", "Shkrouk"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 33,
+    "date": "01/09/24",
+    "titre": "Acte Final contre la Chelona - Partie 2",
+    "personnages": ["Erida", "Malvis", "Kibo", "Kratos"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 22,
+    "date": "08/09/24",
+    "titre": "Eradication de la reine insecte Bulblarve",
+    "personnages": ["Estia Ryujin", "Azora", "Zhaïtan"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 34,
+    "date": "15/09/24",
+    "titre": "Cérémonie de clôture, et 30 champis",
+    "personnages": ["Erida", "Malvis", "Cosmos", "Kibo", "Kratos"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 1,
+    "seance": 35,
+    "date": "22/09/24",
+    "titre": "Nouveaux départs",
+    "personnages": ["Erida", "Malvis", "Kibo"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 23,
+    "date": "06/10/24",
+    "titre": "Entraînement et découverte du Labo Vingot",
+    "personnages": ["Estia Ryujin", "Azora"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 24,
+    "date": "13/10/24",
+    "titre": "Défaite dans l’Ancienne Ruine Khan",
+    "personnages": ["Estia Ryujin", "Azora", "Zhaïtan"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 25,
+    "date": "27/10/24",
+    "titre": "Préparation pour l’école des chevaliers dragons",
+    "personnages": ["Estia Ryujin", "Azora", "Zhaïtan"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 26,
+    "date": "03/11/24",
+    "titre": "Intervention de Zhaïtan, négociation avec Loris",
+    "personnages": ["Estia Ryujin", "Azora", "Zhaïtan"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 27,
+    "date": "17/11/24",
+    "titre": "Infiltration sous couverture chez les Khans",
+    "personnages": ["Estia Ryujin", "Azora", "Zhaïtan"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  }
+]

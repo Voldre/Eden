@@ -307,3 +307,15 @@ export interface Map {
   bgm: number | null
   mobs?: number[]
 }
+
+// #region Histoires
+export interface Resume {
+  groupe: 1 | 2 | 3
+  seance: number
+  date: string
+  titre: string
+  personnages: string[]
+  contexte: string
+  key_events: string[]
+  objectifs: string[]
+}

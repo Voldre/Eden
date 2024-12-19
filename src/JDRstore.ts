@@ -17,6 +17,7 @@ import {
   Joueurs,
   EnemyGeneric,
   CombatCheatLog,
+  Resume,
 } from "./model"
 
 const xhReq = new XMLHttpRequest()
@@ -56,6 +57,8 @@ export const combatSkillsJSON = getData<CombatSkill<any>[]>("combatS")
 
 export const logsJSON = getData<{ [key: string]: CombatLog }>("combatLogs")
 export const cheatJSON = getData<{ [key: string]: CombatCheatLog }>("combatCheat")
+
+export const resumeJSON = getData<Resume[]>("resume")
 
 export function getData<T>(filename: string, JDR = true): T {
   try {
