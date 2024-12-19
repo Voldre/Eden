@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="description" content="Eden Eternal - Fiches de personnages pour JDR (Jeu De Rôle)" />
+
+    <link rel="stylesheet" href="JDRstyle.css" />
+    <link rel="stylesheet" href="http://voldre.free.fr/style.css" />
+    <link rel="stylesheet" href="eden.css" />
+
+    <link rel="shortcut icon" href="images/brocoli_icon.ico" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="module" src="JDRstory.js" defer></script>
+    <title>JDR Story</title>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Never forget the viewport ! -->
+    <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=5.0, minimum-scale=0.86" />
+  </head>
+  <body>
+    <nav style="margin-left: 10px">
+      <ul class="menu">
+        <li><a href="jdr_univers.html">Infos JDR</a></li>
+        <li><a href="jdr_profil.html">Profil</a></li>
+        <li><a href="jdr.html">Fiches de persos</a></li>
+      </ul>
+    </nav>
+    <div id="toast"></div>
+    <div class="dbMenu">
+      <ul>
+        <a href="?type=resume"
+          ><li><img src="images/brocoli_icon.ico" alt="Résumé" /> Résumé</li></a
+        >
+        <a href="?type=lore"
+          ><li><img src="images/eden-eternal.png" alt="Lore" />Lore</li></a
+        >
+        <a href="?type=moymoy"
+          ><li><img src="images/monsters/m048b.png" alt="Moymoy" />Moymoy</li></a
+        >
+      </ul>
+    </div>
+    <div id="resume-menu" class="hide">
+      <select id="groupe-select">
+        <option value="">Groupe ...</option>
+        <option value="1">Groupe 1</option>
+        <option value="2">Groupe 2</option>
+        <option value="3">Groupe 3</option>
+      </select>
+      <div class="navigation">
+        <button id="prev-seance">
+          <img src="https://cdn0.iconfinder.com/data/icons/font-awesome-solid-vol-1/512/chevron-circle-left-28.png" />
+        </button>
+        <select id="seance-select"></select>
+        <button id="next-seance">
+          <img src="https://cdn0.iconfinder.com/data/icons/font-awesome-solid-vol-1/512/chevron-circle-right-28.png" />
+        </button>
+      </div>
+    </div>
+    <div id="story"></div>
+  </body>
+  <footer>
+    <br />
+  </footer>
+</html>

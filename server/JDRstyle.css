@@ -361,33 +361,115 @@ label:hover {
   align-items: center;
 }
 
-/* JDR Lore */
+/* JDR Story */
 
-#lore h4 {
+/* Menu */
+
+#resume-menu {
+  display: flex;
+  align-items: center;
+}
+
+.navigation {
+  flex-grow: 1;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.navigation #prev-seance,
+.navigation #next-seance {
+  border: none;
+  background: none;
+  filter: invert(100%);
+}
+
+.navigation #prev-seance:hover,
+.navigation #next-seance:hover {
+  filter: invert(75%);
+}
+
+.navigation #prev-seance:disabled,
+.navigation #next-seance:disabled {
+  filter: invert(40%);
+}
+
+/* Content */
+
+#story h2 {
+  text-align: center;
+  text-decoration: underline;
+}
+#story h4 {
   text-align: center;
 }
-.loreContainer {
+
+#story hr {
+  margin: 1rem;
+}
+
+#story pre {
+  white-space: break-spaces;
+  margin: 0;
+}
+
+#story .flex,
+#story .flex-column {
   display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: auto;
+}
+
+#story .flex {
   flex-direction: row;
-  padding: 10px;
+}
+
+#story .flex-column {
+  height: fit-content;
+  flex-direction: column;
+}
+
+#story .flex img {
+  max-width: min(38%, 400px);
+  margin: 2px;
+  border-radius: 10%;
+  height: fit-content;
+}
+
+#story .flex .icone {
+  width: 48px;
+  height: 48px;
+  border-radius: 1rem;
+  border: 1px solid #555;
+  object-fit: cover;
+  object-position: top;
+}
+
+#story .section {
+  padding: 0px 0.5rem;
   width: 97.5%;
   border-inline: 2px gray solid;
   margin: 10px 0;
   align-items: center;
+  line-height: 1.2;
 }
-.loreContainer br {
+#story .section br {
   display: block;
   margin: 10px 0;
 }
 
-.flex {
-  display: flex;
+/* List */
+#story ul {
+  line-height: 2;
 }
-
-.loreContainer img {
-  max-width: min(38%, 400px);
-  margin: 2px;
-  border-radius: 10%;
+#story ul a {
+  cursor: pointer;
+  cursor: url("images/layout/cursor-x.png"), auto;
+}
+#story ul a:hover {
+  filter: hue-rotate(100deg);
 }
 
 /* JDR Univers */
