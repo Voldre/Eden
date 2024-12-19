@@ -3164,10 +3164,10 @@
     "nom": "Daryun - Conquérant de Luposia",
     "pvmax": 360,
     "skills": [
-      "Frappe Frénétique : 4D6+30 (+3/touche, max 5), cumule reset après 4 tours, mini-AoE (bloc/esq -2) : Force<br/>Impact Cinétique : 4D6+20 (réussite -5) : Force (même silence), mais Esq/Bloc m",
+      "Frappe Frénétique : 4D6+30 (+3/touche, max 5) (bloc/esq -2), cumule reset après 4 tours, mini-AoE : Force<br/>Impact Cinétique : 4D6+20 (réussite -5) : Force (même scellé), mais Esq/Bloc m",
       "Griffure Noire : 4D6 +22 et -2 blocage/esquive AoE pour 4 tours : Force",
-      "Rugissement Meurtrier : Dégât +1D6+4, Soin PV +10 quand ennemi touché, pendant 5 tours : Force (même silence)",
-      "Constitution de Roi : Armure =5, Bloc/Esq/Res +1, durée Malus /2<br/>PV <150 : Effet Rugissement *2. Si Bloc/Esq critique : Coup opportun"
+      "Rugissement Meurtrier : Dégât +1D6+4, Soin PV +10 quand ennemi touché, pendant 5 tours : Force (même scellé)",
+      "Constitution de Roi : Armure =5, Bloc/Esq/Res +1, durée Malus /2<br/>PV <150 : Effet Rugissement *2. Si Bloc/Esq/Res critique : Coup opportun"
     ],
     "stats": "21,15,11,15,13",
     "desc": "Berserker réputé pour sa puissance hors-norme, il est connu comme étant le bras armé de la Venturo. Il a été vainqueur pendant 3 années de suite au plus grand tournoi Luposia.",
@@ -3315,7 +3315,7 @@
     "pvmax": 290,
     "skills": [
       "Coup de griffe / Cicatrice : 4D6+18 (+7 // -1 buff) : Dextérité",
-      "Coup déchirant : 3D6 +15 AoE (+'6 dégâts reçus 3 tours) : Dextérité",
+      "Coup déchirant : 3D6 +15 AoE (+'6 dégâts reçus 3 tours) AoE : Dextérité",
       "Malédiction Folle : -1D4+5 dégâts/tours AoE (si remove malus, ce montant*(nb perso remove) sur le lanceur), 4 tours : Esprit",
       "Passif : PV (chaque -100) : Hurlement Douloureux (Stats-3 (3 tours), PV <100 : Dégât/Armure +5"
     ],

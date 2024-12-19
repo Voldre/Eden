@@ -766,7 +766,7 @@
   },
   "93": {
     "nom": "Aura : Enchantement Elementaire",
-    "desc": "Le sage utilise son expertise des gemmes et des enchantements pour renforcer la résistance et les dégâts du groupe sur un élément.",
+    "desc": "Le sage utilise son expertise des enchantements pour renforcer la résistance et les dégâts du groupe sur un élément.",
     "effet": "Buff AoE",
     "montant": "Pour l'élément magique choisi : Dégât subi (-) et dégât infligé (+) : 1D4 (min 2) +1 pendant 3 tours",
     "icone": "E0555",
@@ -784,18 +784,18 @@
   },
   "95": {
     "nom": "Marteau d'Inspiration",
-    "desc": "Fracasse l'ennemi avec un grand coup de marteau",
+    "desc": "Fracasse l'ennemi avec un grand coup de marteau : dégât du type de l'Aura : Enchantement Elémentaire",
     "effet": "Dégât",
-    "montant": "1D10+4",
+    "montant": "1D10+4 (dégât physique ou élément de l'Aura)",
     "icone": "E0538",
     "stat": "Force",
     "classe": ["Sage"]
   },
   "96": {
     "nom": "Aura : Ami du Marteau",
-    "desc": "Apporte du soutien à la cible : PV et dégât",
+    "desc": "Apporte du soutien à la cible : PV et dégât. Enchante l'attaque du type de l'Aura : Enchantement Elémentaire",
     "effet": "Buff et Soin",
-    "montant": "Soin 1D10 +6. Prochain dégât +1D6+2 (3 tours max)",
+    "montant": "Soin 1D10 +6. Prochain dégât +1D6+2 (enchanté de l'élément de l'Aura) (3 tours max)",
     "icone": "E0552",
     "stat": "Intelligence",
     "classe": ["Sage"]

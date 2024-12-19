@@ -56,7 +56,7 @@ window.addEventListener("load", () => {
       const playerCoinE = createElement("p", `${playerData.alpagaCoin} (${playerData.alpagaCoinSpent}) `)
 
       const playerCoinPicE = createElement("img", undefined, {
-        src: "images/alpagaCoin.png",
+        src: "images/layout/alpagaCoin.png",
         className: "alpagaCoinPic",
         alt: " pièces",
       })
@@ -189,8 +189,12 @@ function loadPlayer(player: Joueurs): void {
   document.querySelector("#image100")!.closest("label")!.style.display = allDone ? "block" : "none"
   document.querySelector<HTMLElement>("#image10k")!.style.display = joueurData.alpagaCoin >= 10000 ? "block" : "none"
 
-  document.querySelector<HTMLParagraphElement>(".alpagaCoin")!.innerText = `${joueurData.alpagaCoin}`
-  document.querySelector<HTMLParagraphElement>(".alpagaCoinSpent")!.innerText = ` (${joueurData.alpagaCoinSpent})`
+  const alpagaCoinE = document.querySelector<HTMLParagraphElement>(".alpagaCoin")!
+  alpagaCoinE.innerText = `${joueurData.alpagaCoin}`
+  const alpagaCoinSpentE = document.querySelector<HTMLParagraphElement>(".alpagaCoinSpent")!
+  alpagaCoinSpentE.innerText = ` (${joueurData.alpagaCoinSpent})`
+
+  document.querySelector(".alpagaCoinPic")!.addEventListener("click", () => generateChest(joueurData))
 
   const persosData = joueurData.persos.map((idPerso) => {
     return persosJSON[idPerso - 1] // Error, index -1
@@ -463,3 +467,144 @@ const labelsDescription = {
 }
 
 initDialog(labelsDescription)
+
+// Alpaga coins places
+interface Vertice {
+  top: number
+  left: number
+}
+type ChestVertices = [Vertice, Vertice, Vertice, Vertice]
+
+// Fonction pour déterminer si un point (x, y) est dans le losange
+const isCoinInChest = (x: number, y: number, vertices: ChestVertices): boolean => {
+  const [A, B, C, D] = vertices
+
+  // Aire du losange total
+  const totalArea = triangleArea(A, B, C) + triangleArea(A, C, D)
+
+  // Aire des sous-triangles formés avec le point (x, y)
+  const area1 = triangleArea({ top: y, left: x }, A, B)
+  const area2 = triangleArea({ top: y, left: x }, B, C)
+  const area3 = triangleArea({ top: y, left: x }, C, D)
+  const area4 = triangleArea({ top: y, left: x }, D, A)
+
+  // Si la somme des aires des sous-triangles est égale à l'aire totale, le point est dans le losange
+  return Math.abs(totalArea - (area1 + area2 + area3 + area4)) < 0.01
+}
+
+// Fonction pour calculer l'aire d'un triangle donné par 3 points
+const triangleArea = (p1: Vertice, p2: Vertice, p3: Vertice): number => {
+  return Math.abs((p1.left * (p2.top - p3.top) + p2.left * (p3.top - p1.top) + p3.left * (p1.top - p2.top)) / 2)
+}
+
+// Générer un point aléatoire dans le losange
+const generateRandomCoinInChest = (vertices: ChestVertices): Vertice => {
+  let x, y
+
+  do {
+    // Générer des coordonnées aléatoires dans une boîte englobante
+    const minLeft = Math.min(...vertices.map((v) => v.left))
+    const maxLeft = Math.max(...vertices.map((v) => v.left))
+    const minTop = Math.min(...vertices.map((v) => v.top))
+    const maxTop = Math.max(...vertices.map((v) => v.top))
+
+    x = Math.random() * (maxLeft - minLeft) + minLeft
+    y = Math.random() * (maxTop - minTop) + minTop
+  } while (!isCoinInChest(x, y, vertices))
+
+  return { top: y, left: x }
+}
+
+const generateChest = (joueurData: Player): void => {
+  const dialog = document.querySelector<HTMLDialogElement>("dialog")!
+
+  dialog.innerHTML = ""
+
+  const saturation = Math.min(0.5 + 0.75 * (joueurData.alpagaCoin ** 0.5 / 100), 1.15)
+  const chestE = createElement("img", undefined, {
+    src: "images/layout/chest.png",
+    className: "chest",
+    style: { filter: `saturate(${saturation})` },
+  })
+  const chestZIndexE = createElement("img", undefined, {
+    src: "images/layout/chestZIndex.png",
+    className: "chest",
+    style: { zIndex: "10", filter: `saturate(${saturation})` },
+  })
+
+  // Les coordonnées des sommets du losange
+  const chestVertices: ChestVertices = [
+    { top: 60, left: 22 }, // Left
+    { top: 78, left: 45 }, // Bottom
+    { top: 53, left: 92 }, // Right
+    { top: 35, left: 70 }, // Top
+  ]
+
+  type CoinType = "Diamond" | "Gold" | "Silver" | ""
+
+  const alpagaCoinPics = (quantity: number, type: CoinType): HTMLImageElement[] =>
+    Array.from({ length: quantity }).map(() => {
+      const { top, left } = generateRandomCoinInChest(chestVertices)
+      return createElement("img", undefined, {
+        src: `images/layout/alpagaCoin${type}.png`,
+        className: "alpagaCoinPic",
+        style: {
+          zIndex: type === "Diamond" ? "5" : type === "Gold" ? "2" : type === "Silver" ? "1" : "0",
+          position: "absolute",
+          top: `${top}%`,
+          left: `${left}%`,
+          filter: type === "Diamond" ? "drop-shadow(0px 0px 8px blue)" : "",
+          borderRadius: type === "Diamond" ? "1rem 0" : "",
+          boxShadow: type === "Diamond" ? "blue 1px 1px 10px" : "",
+        },
+      })
+    })
+
+  const diamondAlpaga = Math.trunc(joueurData.alpagaCoin / 10000)
+  const goldenAlpaga = Math.trunc((joueurData.alpagaCoin - diamondAlpaga * 10000) / 150)
+  const silverAlpaga = Math.trunc((joueurData.alpagaCoin - diamondAlpaga * 10000 - goldenAlpaga * 100) / 14.5)
+  const bronzeAlpaga = joueurData.alpagaCoin - diamondAlpaga * 10000 - goldenAlpaga * 100 - silverAlpaga * 10
+
+  const coins: { type: CoinType; value: number }[] = [
+    { type: "Diamond", value: diamondAlpaga },
+    { type: "Gold", value: goldenAlpaga },
+    { type: "Silver", value: silverAlpaga },
+    { type: "", value: bronzeAlpaga },
+  ]
+
+  const alpagaCounterE = createElement(
+    "ul",
+    coins.map((coin) => {
+      const imageE = createElement("img", "undefined", {
+        src: `images/layout/alpagaCoin${coin.type}.png`,
+        className: "alpagaCoinPic",
+      })
+      return createElement("li", [imageE, `: ${coin.value}`])
+    }),
+    { className: "alpagaCounter" }
+  )
+
+  const alpagaCoinEs = [
+    ...alpagaCoinPics(diamondAlpaga, "Diamond"),
+    ...alpagaCoinPics(goldenAlpaga, "Gold"),
+    ...alpagaCoinPics(silverAlpaga, "Silver"),
+    ...alpagaCoinPics(bronzeAlpaga, ""),
+  ]
+  const chestWrapperE = createElement("div", [chestE, chestZIndexE, ...alpagaCoinEs], {
+    className: "chestWrapper",
+  })
+
+  dialog.append(chestWrapperE, alpagaCounterE)
+
+  // Bouton de fermeture
+  dialog.append(
+    createElement("button", "Fermer", {
+      id: "close",
+      onClick: () => {
+        dialog.close()
+      },
+      style: { position: "absolute", left: "85vw", bottom: "11%" },
+    })
+  )
+  dialog.showModal()
+}

@@ -200,7 +200,7 @@ function aoeDesc(): string {
     const typeI = i % 2
     description += `<br/>
     <img class='skillRangeIcon' src='http://voldre.free.fr/Eden/images/layout/${aoeDescInfo.range[rangeI]}${aoeDescInfo.type[typeI]}.png'/> 
-    Attaque en ${aoeDescInfo.rangeName[rangeI]}${aoeDescInfo.typeName[typeI]} : 
+    Attaque en ${aoeDescInfo.rangeName[rangeI]} ${aoeDescInfo.typeName[typeI]} : 
     <br/>${aoeDescInfo.typeMalus[typeI]}.<br/>`
   }
   return description

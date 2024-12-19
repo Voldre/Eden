@@ -1112,6 +1112,33 @@
     "maps": [35]
   },
   {
+    "id": 1252,
+    "value": 1,
+    "kind": "composant",
+    "name": "Griffe Sauvage",
+    "description": "Cette griffe a été récupéré sur un animal sauvage, utile pour forger.",
+    "kindId": "I00274",
+    "maps": []
+  },
+  {
+    "id": 1253,
+    "value": 2,
+    "kind": "composant",
+    "name": "Griffe Acérée",
+    "description": "Cette griffe a obtenue sa couleur noire à force d'avoir été aiguisée comme un couteau, utile pour forger.",
+    "kindId": "I00274e",
+    "maps": []
+  },
+  {
+    "id": 1254,
+    "value": 2,
+    "kind": "composant",
+    "name": "Griffe Lumineuse",
+    "description": "Une griffe qui émet une faible lumière, on raconte quelles viendraient d'une bête bénie.",
+    "kindId": "I00274d",
+    "maps": []
+  },
+  {
     "id": 1255,
     "value": 1,
     "kind": "composant",
@@ -2192,7 +2219,7 @@
     "value": 2,
     "kind": "composant",
     "name": "Graine de Flétrissure",
-    "description": "Ces graines sont produites par certaines plantes gravement malade ou mourante. Très rares, elle porte en elle une substance capable de dégrader l'état de ce qui la touche.",
+    "description": "Ces graines sont produites par des plantes gravement malade ou mourante. Très rares, elle porte en elle l'énergie du fléau : une magie capable de dégrader l'état de ce qui la touche.",
     "kindId": "I00163"
   },
   {
@@ -2226,6 +2253,30 @@
     "name": "Trèfle d'Obelia",
     "description": "Ce magnifique trèfle à une double particularité : il vient d'Obelia, une zone chargée en magie, et il possède 4 feuilles. Cela en fait un objet porteur de chance. On dit qu'il peut transmettre cette capacité à d'autres objets.",
     "kindId": "k10053b"
+  },
+  {
+    "id": 1470,
+    "value": 0,
+    "kind": "composant",
+    "name": "Orchidée de la Passion",
+    "description": "Une magnifique et onéreuse orchidée. De jour, elle se referme et absorbe l'énergie solaire. De nuit, elle s'ouvre et montre sa toute sa beauté, laissant s'échapper une douce odeur aphrodisiaque. Parfait pour une nuit torride...",
+    "kindId": "I100001"
+  },
+  {
+    "id": 1471,
+    "value": 2,
+    "kind": "composant",
+    "name": "Dandelion de Jade",
+    "description": "Ce Pissenlint Dandelion contient une importante quantité d'acide citrique. Parfois utilisé dans des plats, mais surtout utilisé comme agent actif pour contrer la dégénérescence. Attention : sa durée de vie est très faible.",
+    "kindId": "I100004d"
+  },
+  {
+    "id": 1472,
+    "value": 2,
+    "kind": "composant",
+    "name": "Pierre de Foudre",
+    "description": "Cette pierre est un vrai réservoir à énergie. Elle peut à elle seule alimenter plusieurs machines et autres systèmes ingénieux.",
+    "kindId": "I00236d"
   },
   {
     "id": 12900,
