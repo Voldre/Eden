@@ -2785,7 +2785,7 @@
     "nom": "Hache Forte",
     "desc": "Une hache qui donne de la force à son porteur, huss !",
     "effet": "Force +1",
-    "montant": "Dégât +6",
+    "montant": "Dégât +7",
     "icone": "W20104"
   },
   "376": {
@@ -4082,5 +4082,120 @@
     "effet": "",
     "montant": "Dégât +9, durée des malus +1 tour",
     "icone": "W55503"
+  },
+  "552": {
+    "nom": "Ecaille Exalté",
+    "desc": "Une écaille récupérée sur une créature exalté par la magie",
+    "effet": "",
+    "montant": "Montant des buffs +2, dégât reçu -1",
+    "icone": "I00282c"
+  },
+  "553": {
+    "nom": "Collier Durable",
+    "desc": "Un collier conçu pour améliorer la durée des effets.",
+    "effet": "",
+    "montant": "Durée des sorts +1 tour",
+    "icone": "A00029b"
+  },
+  "554": {
+    "nom": "Glyphe du Juge",
+    "desc": "Un glyphe conçu pour améliorer 2 éléments",
+    "effet": "",
+    "montant": "Dégât de tranchant +3, ténèbres +2",
+    "icone": "i01440"
+  },
+  "555": {
+    "nom": "Robe Renforcée",
+    "desc": "Une robe spécialement conçue pour améliorer la résistance de son porteur",
+    "effet": "",
+    "montant": "Dégât -4, Blocage physique +2",
+    "icone": "k20299"
+  },
+  "556": {
+    "nom": "Robe de Sorcier",
+    "desc": "Cette robe a été fabriquée pour des sorciers de haut rang, elle apporte une certaine classe.",
+    "effet": "Intelligence +1",
+    "montant": "Dégât -4",
+    "icone": "k20175"
+  },
+  "557": {
+    "nom": "Robe de Grand Sorcier",
+    "desc": "Cette robe a été fabriquée pour des sorciers de très haut rang, elle apporte une grande classe.",
+    "effet": "Intelligence +1, Charisme +1",
+    "montant": "Dégât -4, Dégât magique +2",
+    "icone": "k20177"
+  },
+  "558": {
+    "nom": "Robe de Prêtre",
+    "desc": "Une robe conçue pour aider les soigneurs dans leur travail ardue.",
+    "effet": "",
+    "montant": "Dégât -3, Soin +2 (Intel+1 si Clerc)",
+    "condition": { "type": "classe", "value": ["Clerc"], "bonus": "Intelligence +1" },
+    "icone": "k20467"
+  },
+  "559": {
+    "nom": "Robe de Vitalité",
+    "desc": "Une robe de prêtre boosté par l'énergie de la vitalité. Elle offre des soins de meilleures qualités",
+    "effet": "PV +5",
+    "montant": "Dégât -2, Soin +4 (Intel+1 si Clerc)",
+    "condition": { "type": "classe", "value": ["Clerc"], "bonus": "Intelligence +1" },
+    "icone": "k20468"
+  },
+  "560": {
+    "nom": "Robe de Lumière",
+    "desc": "Une robe élégante renforçant la puissance des magies de lumière.",
+    "effet": "",
+    "montant": "Dégât -3, dégât de lumière +3",
+    "icone": "k20466"
+  },
+  "561": {
+    "nom": "Armure Technologique",
+    "desc": "Une armure conçue par des ingénieurs Zumis, chargé en électricité",
+    "effet": "Dégât de foudre +3",
+    "montant": "Dégât -4 (Esprit+1 si Zumi)",
+    "condition": { "type": "race", "value": ["Zumi"], "bonus": "Esprit +1" },
+    "icone": "k20351"
+  },
+  "562": {
+    "nom": "Coeur du Fléau",
+    "desc": "Ce coeur aurait appartenu à une créature du Fléau, une énergie extrêmement sombre s'en dégage",
+    "effet": "Esprit -2",
+    "montant": "Durée des malus +1 tour, montant dégât malus +2, dégât ténèbres +2",
+    "icone": "I00271b"
+  },
+  "563": {
+    "nom": "Lance Aggravante",
+    "desc": "Cette lance peut amplifier les maléfices que ses cibles subissent.",
+    "effet": "",
+    "montant": "Dégât +9, Si coup critique (1,2,3) : Durée des malus de la cible +1",
+    "icone": "W11005"
+  },
+  "564": {
+    "nom": "Rapière Aggravante",
+    "desc": "Cette rapière peut amplifier les maléfices que ses cibles subissent.",
+    "effet": "",
+    "montant": "Dégât +4, Si coup critique (1,2,3) : Durée des malus de la cible +1",
+    "icone": "W11706"
+  },
+  "565": {
+    "nom": "Katana Aggravant",
+    "desc": "Ce Katana peut amplifier les maléfices que ses cibles subissent.",
+    "effet": "",
+    "montant": "Dégât +9, Si coup critique (1,2,3) : Durée des malus de la cible +1",
+    "icone": "W25801"
+  },
+  "566": {
+    "nom": "Pistolet Aggravant",
+    "desc": "Ce pistolet peut amplifier les maléfices que ses cibles subissent.",
+    "effet": "",
+    "montant": "Dégât +9, Si coup critique (1,2,3) : Durée des malus de la cible +1",
+    "icone": "W50902"
+  },
+  "567": {
+    "nom": "Grimoire Aggravant",
+    "desc": "Ce grimoire peut amplifier les maléfices que ses cibles subissent.",
+    "effet": "",
+    "montant": "Dégât +9, Si coup critique (1,2,3) : Durée des malus de la cible +1",
+    "icone": "W61805b"
   }
 }

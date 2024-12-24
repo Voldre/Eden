@@ -469,12 +469,12 @@ document.querySelector("#updatePInfo")!.addEventListener("click", () => {
 
   const newPersosJSON = getData<{ [key: string]: Perso }>("persos")
 
-  const playersListID = document.querySelector<HTMLInputElement>("#pList")!.value.split(",")!
+  const playerLabels = document.querySelector<HTMLInputElement>("#pList")!.value.split(",")!
 
   pInfo.innerHTML = ""
 
-  Object.entries(playersListID).forEach(([index, pID]) => {
-    const player = newPersosJSON[(parseInt(pID) - 1).toString()] // Car index 0 à la première
+  Object.entries(playerLabels).forEach(([index, playerLabel]) => {
+    const player = Object.values(newPersosJSON).find((perso) => isTextInText(perso.nom, playerLabel))
     if (!player) return // Can't continue
 
     if (persoEs[parseInt(index)]) persoEs[parseInt(index)].children[0].value = player.nom
@@ -597,7 +597,6 @@ const masterSave = (): void => {
   masterJSON.notes = notesE.value
   setCookie("masterJSON", masterJSON)
   callPHP({ action: "saveFile", name: "master" })
-  toastNotification("Autorisation modifiée")
 }
 
 allowSaveE.addEventListener("click", () => {
@@ -605,9 +604,13 @@ allowSaveE.addEventListener("click", () => {
   toggleButton()
 
   masterSave()
+  toastNotification("Autorisation modifiée")
 })
 
-document.querySelector("#save")!.addEventListener("click", masterSave)
+document.querySelector("#save")!.addEventListener("click", () => {
+  masterSave()
+  toastNotification("Note modifiée")
+})
 
 document.querySelector("#saveBackup")!.addEventListener("click", () => {
   callPHP({ action: "saveBackup" })

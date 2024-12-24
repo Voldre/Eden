@@ -4,6 +4,7 @@ Fichier de JDR/Audio recap JDR/*.ogg
 node_modules
 package-lock.json
 Fichier de JDR/*
+images/EE_illustrations/*
 images/items/*
 images/other 3D/*
 images/loadingframe/*

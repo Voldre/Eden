@@ -372,7 +372,7 @@
   {
     "groupe": 2,
     "seance": 16,
-    "date": "30/12/23",
+    "date": "04/01/24",
     "titre": "‌Amour et problèmes",
     "personnages": ["Rad Ed", "Kibo", "Estia Ryujin", "Azora"],
     "contexte": "",
@@ -504,7 +504,7 @@
     "seance": 23,
     "date": "01/04/24",
     "titre": "Éparpillement et entrée à la Vallée de la Mort",
-    "personnages": ["Erida", "Malvis", "Kibo", "Kratos"],
+    "personnages": ["Erida", "Malvis", "Ol", "Kibo", "Kratos"],
     "contexte": "",
     "key_events": [],
     "objectifs": []
@@ -795,6 +795,16 @@
     "date": "17/11/24",
     "titre": "Infiltration sous couverture chez les Khans",
     "personnages": ["Estia Ryujin", "Azora", "Zhaïtan"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 0,
+    "seance": 0,
+    "date": "21/12/24",
+    "titre": "Ol et le Foudroyeur, et des champis",
+    "personnages": ["Ol", "Foudroyeur"],
     "contexte": "",
     "key_events": [],
     "objectifs": []
