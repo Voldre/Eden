@@ -424,7 +424,7 @@
     "kind": "boss",
     "name": "Vidal - Sorcier Dragon",
     "description": "Héritier de l'Empire aux cheveux noir de jais, il s'agit d'un des grands sorciers de la cour Heldentod, il a un potentiel magique \u00e9norme.",
-    "kindId": "m350"
+    "kindId": "vidal"
   },
   {
     "id": 1040,
@@ -724,6 +724,14 @@
     "name": "Qaïdu Khan - Déclencheur de Révolution",
     "description": "Chef de la tribu Khan et initiateur de la révoluion des Ogres des steppes. Motivé à détruire Heldentod.",
     "kindId": "qaidu"
+  },
+  {
+    "id": 1079,
+    "value": 3,
+    "kind": "boss",
+    "name": "Champosaurus Exalté",
+    "description": "Dinosaure crocodile dopé par une énergie instable créé par le Bourgeon de Vie, il semble avoir été en contact avec les résidus de l'esprit d'Heldentod III...",
+    "kindId": "m296h"
   },
   {
     "id": 1201,
@@ -4859,6 +4867,50 @@
     "enemies": [],
     "kindId": "loadingframe/Loading_59",
     "group": 2
+  },
+  {
+    "id": 1870,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Zhaïtan la majorette",
+    "description": "Zhaïtan cherche à développer ses attaques de portés, il décide alors d'apprendre l'Attaque Cyclone, mais le seul professeur qu'il trouve, c'est Zouka, un ogre peu pédagogue. Zhaïtan reproduit alors le geste hasardeux de Zouka, le faisant ressembler à une majorette. ~",
+    "maps": [35],
+    "enemies": [],
+    "kindId": "skillIcon/E0676",
+    "group": 2
+  },
+  {
+    "id": 1871,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Crésus et son Image",
+    "description": "Quand la Veyda accompagne la Légion Saphir pour soigner Leyla et Sekhmet, ils font face à Crésus, un personnage très haut en couleur, qui se montre a moitié égoïste et... généreux ? Ou bien il est juste trop fier de sa personne pour se donner une mauvaise image.",
+    "maps": [14],
+    "enemies": [],
+    "kindId": "monsters/cresus",
+    "group": 3
+  },
+  {
+    "id": 1872,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "La Beholder et les Rituels",
+    "description": "Lorsque la Beholder propose son aide pour \"démaudire\", elle ne fait pas les choses à moitié ! A l'issu du rituel, deux Chevaliers du Fléau sont apparus et ils étaient costauds ! Mais c'est passé...",
+    "maps": [22],
+    "enemies": [],
+    "kindId": "monsters/m363b",
+    "group": 3
+  },
+  {
+    "id": 1873,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Shkrouk et la Dégustation",
+    "description": "Lorsque Shkrouk tente de deviner le goût des aliments, c'est catastrophique ! Il n'a pas reconnu la moutarde ! Ni le radis d'ailleurs.",
+    "maps": [1],
+    "enemies": [],
+    "kindId": "uiiconPNG/shkrouk_pas_sur",
+    "group": 3
   },
   {
     "id": 15000,

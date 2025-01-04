@@ -5,6 +5,7 @@ node_modules
 package-lock.json
 Fichier de JDR/*
 images/EE_illustrations/*
+images/imagesets/*
 images/items/*
 images/other 3D/*
 images/loadingframe/*

@@ -482,12 +482,15 @@ function updateAvailableSkillsList(): void {
     const classeS = classeSElement.value
 
     // Look at the First weapon name
-    const weaponName = unformatText((document.querySelector(".arme")!.children[0] as HTMLInputElement).value)
+    const weaponName = (document.querySelector(".arme")!.children[0] as HTMLInputElement).value
 
     // Liste des sorts des classes (+ arme)
     const options = Object.values(skillsJSON)
       .filter(
-        (skill) => skill.classe.includes(classeP) || skill.classe.includes(classeS) || skill.classe.includes(weaponName)
+        (skill) =>
+          skill.classe.includes(classeP) ||
+          skill.classe.includes(classeS) ||
+          skill.classe.some((mount) => isTextInText(weaponName, mount))
       )
       .map((skill) => ({ value: skill.nom, innerText: skill.nom }))
 
@@ -813,6 +816,14 @@ function insertEqpt(eqptElement: EquipmentE, selectedEqpt: Equipment | undefined
     if (selectedEqpt.effet === "Monture de Combat") {
       const pvPetE = createElement("input", undefined, { type: "number" })
       eqptElement.append(pvPetE)
+
+      const mountSkills = Object.values(skillsJSON).filter((skill) =>
+        skill.classe.some((mount) => isTextInText(selectedEqpt.nom, mount))
+      )
+
+      eqptElement.descE.innerText += mountSkills.length
+        ? `\nCompétences : ${mountSkills.map((skill) => skill.nom).join(", ")}`
+        : ""
     }
   }
 }
@@ -1109,38 +1120,39 @@ function createEquipmentSynthesis(): void {
 
   const accessValues: { label: string; value: number }[] = []
 
-  synthesisCategories.forEach((category) => {
-    if (!persoData) return
-    const eqptsValueList = parseEqptsByRegex(category.regex, persoEqpts, persoData)
-    const eqptsValue = eqptsValueList.reduce(sum, 0)
+  const synthesisCategoryEs = synthesisCategories
+    .map((category): [string, HTMLDivElement] | undefined => {
+      if (!persoData) return undefined
+      const eqptsValueList = parseEqptsByRegex(category.regex, persoEqpts, persoData)
+      const eqptsValue = eqptsValueList.reduce(sum, 0)
 
-    // 01/06/2024 : Get category over the defined limit for accessories (exclude passif)
-    accessValues.push({
-      label: category.label,
-      value: sumEqptsAsAccess(category.regex, persoEqpts, persoData),
+      // 01/06/2024 : Get category over the defined limit for accessories (exclude passif)
+      accessValues.push({
+        label: category.label,
+        value: sumEqptsAsAccess(category.regex, persoEqpts, persoData),
+      })
+
+      if (!eqptsValue || eqptsValue === 0) return undefined
+
+      let categoryValue
+      if (category.label === "DGT" && eqptsValueList[2]) {
+        categoryValue = `${eqptsValue - eqptsValueList[2]} | ${eqptsValue - eqptsValueList[0] - eqptsValueList[1]}`
+      } else {
+        categoryValue = eqptsValue
+      }
+
+      const categoryValueE = createElement("p", `${categoryValue}`)
+
+      const categoryHeaderE = category.img
+        ? createElement("img", undefined, {
+            title: category.label,
+            src: encodeURI(`images/layout/${category.label}.png`),
+          })
+        : createElement("p", category.label)
+
+      return [category.label, createElement("div", [categoryHeaderE, categoryValueE], { className: "synthese" })]
     })
-
-    if (!eqptsValue || eqptsValue === 0) return
-
-    let categoryValue
-    if (category.label === "DGT" && eqptsValueList[2]) {
-      categoryValue = `${eqptsValue - eqptsValueList[2]} | ${eqptsValue - eqptsValueList[0] - eqptsValueList[1]}`
-    } else {
-      categoryValue = eqptsValue
-    }
-
-    const categoryValueE = createElement("p", `${categoryValue}`)
-
-    const categoryHeaderE = category.img
-      ? createElement("img", undefined, {
-          title: category.label,
-          src: encodeURI(`images/layout/${category.label}.png`),
-        })
-      : createElement("p", category.label)
-
-    const synthesisCategoryE = createElement("div", [categoryHeaderE, categoryValueE], { className: "synthese" })
-    eqptSynthesisE.append(synthesisCategoryE)
-  })
+    .filter((c) => !!c)
 
   // 01/06/2024 : Display category over the defined limit for accessories
   statsCategories.forEach((category) => {
@@ -1196,6 +1208,22 @@ function createEquipmentSynthesis(): void {
   errorEqptE.innerText = eqptOverLimits.length ? "/!\\ Des montants dépassent les limites" : ""
 
   if (eqptOverLimits) {
+    synthesisCategoryEs.forEach((synthesisCategoryE) => {
+      if (
+        eqptOverLimits.some(
+          (category) =>
+            (category.label.includes("Dégât")
+              ? "DGT"
+              : category.label.replace("Armure", "ARM").replace("Soin", "S")) === synthesisCategoryE[0]
+        )
+      ) {
+        const categoryE = synthesisCategoryE[1]
+        categoryE.id = "errorStat"
+        eqptSynthesisE.append(categoryE)
+      }
+      eqptSynthesisE.append(synthesisCategoryE[1])
+    })
+
     errorEqptE.addEventListener("click", () => showEqptErrors(eqptOverLimits))
   }
 }

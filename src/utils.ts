@@ -66,9 +66,10 @@ export const newPerso = (persoData: Perso, inFight: boolean = true): PersoCombat
       toastNotification("Erreur : Le personnage n'est pas apte à se battre.", 8000, true)
       stop()
     } else {
-      perso.degat = undefined
-      perso.armure = undefined
+      perso.degat = 0
+      perso.armure = 0
     }
+    return perso as PersoCombat
   }
 
   // Add 05/11/2023 : Accessories effects (Damage or Armor), according to access specificites
@@ -390,7 +391,7 @@ export const stringToDate = (stringDate: string): Date => {
   const splitDate = stringDate.split("/")
   // console.log(splitDate, new Date(splitDate[2], parseInt(splitDate[1]) - 1, splitDate[0]));
 
-  // Date(year,month-1,day,hours) : hours = 2 to Handle converison locale string FR
+  // Date(year,month-1,day,hours) : hours = 2 to Handle conversion locale string FR
   return new Date(parseInt(splitDate[2]), parseInt(splitDate[1]) - 1, parseInt(splitDate[0]), 2)
 }
 
@@ -583,3 +584,41 @@ export const eventOnClick = (element: Element, fastEvent: () => void, longEvent?
     else fastEvent()
   })
 }
+
+// #region Snowflakes for Cristhmas
+
+const createSnowflake = (): void => {
+  // Position initiale horizontale aléatoire
+  const startX = Math.random() * 100 // en pourcentage
+
+  // Taille aléatoire
+  const size = Math.random() * 12 + 2 // entre 2px et 14px
+
+  const fallDuration = Math.random() * 5 + 5 // entre 5s et 10s
+
+  const snowflake = createElement("div", undefined, {
+    className: "snowflake",
+    style: {
+      left: `${startX}vw`,
+      width: `${size}px`,
+      height: `${size}px`,
+      animationDuration: `${fallDuration}s`,
+    },
+  })
+
+  // Ajout au body
+  document.body.appendChild(snowflake)
+
+  // Supprimer le flocon une fois qu'il est hors de la vue
+  setTimeout(() => {
+    snowflake.remove()
+  }, fallDuration * 1000)
+}
+
+// Générer des flocons de neige périodiquement
+export const startSnowfall = (): void => {
+  setInterval(createSnowflake, 275) // Un flocon toutes les 275ms
+}
+
+const month = new Date().getMonth() // Add Snowfall in December and January
+if ([0, 11].includes(month)) document.addEventListener("DOMContentLoaded", startSnowfall)

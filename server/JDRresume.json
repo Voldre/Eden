@@ -43,7 +43,7 @@
     "groupe": 1,
     "seance": 4,
     "date": "11/06/23",
-    "titre": "la plaine et le tombeau",
+    "titre": "La plaine et le tombeau",
     "personnages": ["Draigos", "Erida", "Malvis"],
     "contexte": "",
     "key_events": [],
@@ -294,7 +294,7 @@
     "seance": 16,
     "date": "05/11/23",
     "titre": "Le combat de courage et la Tour du Cyclone",
-    "personnages": ["Erida", "Malvis", "Cosmos"],
+    "personnages": ["Erida", "Malvis", "Cosmos", "Ainz von gaown"],
     "contexte": "",
     "key_events": [],
     "objectifs": []
@@ -304,7 +304,7 @@
     "seance": 17,
     "date": "19/11/23",
     "titre": "La Forêt de Crystal",
-    "personnages": ["Erida", "Malvis", "Cosmos"],
+    "personnages": ["Erida", "Malvis", "Cosmos", "Ainz von gaown"],
     "contexte": "",
     "key_events": [],
     "objectifs": []
@@ -795,6 +795,46 @@
     "date": "17/11/24",
     "titre": "Infiltration sous couverture chez les Khans",
     "personnages": ["Estia Ryujin", "Azora", "Zhaïtan"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 3,
+    "seance": 18,
+    "date": "24/11/24",
+    "titre": "Voyage à Obelia",
+    "personnages": ["Aradia", "Le Poisseux", "Shkrouk", "Yuki Hart"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 28,
+    "date": "01/12/24",
+    "titre": "Assaut contre les Khans",
+    "personnages": ["Estia Ryujin", "Azora", "Zhaïtan"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 29,
+    "date": "08/12/24",
+    "titre": "Nettoyage au Royaume Dévasté",
+    "personnages": ["Estia Ryujin", "Azora", "Zhaïtan"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 3,
+    "seance": 19,
+    "date": "15/12/24",
+    "titre": "Contrecoup du Fléau, Légion Saphir et Beholder",
+    "personnages": ["Leyla", "Sekhmet", "Ernis"],
     "contexte": "",
     "key_events": [],
     "objectifs": []

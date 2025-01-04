@@ -72,13 +72,14 @@ summaries.forEach((summary) => {
 
     console.log(header, content);
 
-    // prettier-ignore
     // All characters in 2024
+    // prettier-ignore
     const personnages = ["Test","Draigos","Erida","Malvis","Eivor","Marek","Fiore dei San Didero","Cosmos","Aradia","War","Nyx","Xiuhxin","Kryèri","Borak","Rad Ed","Kibo","Estia Ryujin","Leyla","Epsilon","Céleste","Azora","Sekhmet","Lutta","Roco Bonnaro","Ernis","Le Poisseux","Beren nolatary","Cyritsu","Ainz von gaown","Kratos","Ol","Shkrouk","Coracx / Belamis","Zhaïtan","Yuki Hart","Ash","Mania","Willy & Samba","Alec","Falco chëre","Nono","Bellum","Rozo"]
     .filter((perso) => header
       .replace('Poisseux','Le Poisseux')
       .replace('Estia','Estia Ryujin')
       .replace('Yuki','Yuki Hart')
+      .replace('Ainz','Ainz von gaown')
       .includes(perso));
 
     htmlFiles.push({

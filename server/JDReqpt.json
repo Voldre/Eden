@@ -2591,7 +2591,7 @@
     "nom": "Chaîne du destin",
     "desc": "Cette chaîne maudite confère aléatoirement un bonus ou un malus à son porteur. De plus, une fois équipé, il ne peut plus être retiré",
     "effet": "Malédiction du Lien",
-    "montant": "PV +15, Par combat : Jet 1D6 : Dégât/Soin ±6,4,2 (-6 à +6) AoE/2",
+    "montant": "PV +10, Par combat : Jet 1D6 : Dégât/Soin ±6,4,2 (-6 à +6) AoE/2",
     "icone": "A00039",
     "access": "D2"
   },
@@ -4197,5 +4197,33 @@
     "effet": "",
     "montant": "Dégât +9, Si coup critique (1,2,3) : Durée des malus de la cible +1",
     "icone": "W61805b"
+  },
+  "568": {
+    "nom": "Lunettes Opaques",
+    "desc": "Ces lunettes, bien qu'elles soient stylées et qu'elles imposent le respect, sont très opaque et réduise la vision de celui qui les portent.",
+    "effet": "Malédiction du Lien",
+    "montant": "Réussite (sauf charisme) -4, Charisme +2",
+    "icone": "k10156"
+  },
+  "569": {
+    "nom": "Bague d'Améthyste",
+    "desc": "Une bague fabriquée à partir d'Améthyste et renforcée par un enchantement. Elle attire parfois les esprits magiques.",
+    "effet": "",
+    "montant": "Dégât +3, Esprit +1",
+    "icone": "A00004b"
+  },
+  "570": {
+    "nom": "Gorille Vulcain",
+    "desc": "Originaire de la Vallée de Vulcain, c'est un gorille joueur et très fidèle : améliorable. Stats: 14,15,9,12,13",
+    "effet": "Monture de Combat",
+    "montant": "Dégât +6 (PV : 80 + 5*niveau)",
+    "icone": "sambab"
+  },
+  "571": {
+    "nom": "Gorille Vulcain (A,A)",
+    "desc": "Originaire de la Vallée de Vulcain, c'est un gorille joueur et très fidèle : améliorable. Stats: 14,15,9,12,14",
+    "effet": "Monture de Combat",
+    "montant": "Dégât +8 (PV : 100 + 5*niveau)",
+    "icone": "sambae"
   }
 }

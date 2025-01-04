@@ -901,7 +901,7 @@
     "skills": [
       "Mode Draconique : Embrasé : Force/Intel+2, Démoniaque : Charisme+2, Caché : Esprit+2 : Esprit",
       "Terreur du Dragon AoE : Réussite des sorts : -3 sur 3 tours AoE (+ mode Cf. DK) : Charisme",
-      "Atk Cyclone / Pouvoir du Dragon : 3D6+22 (Mono+7) (feu, ténèb,phys) : Force",
+      "Atk Cyclone / Pouvoir du Dragon : 3D6+23 (Mono+7) (feu, ténèb,phys) : Force",
       "Revers d'écaille éveillé (instant) : 5 tentatives (<10 : 66%, >=10 : 33%) (+ mode Cf. DK) : Esprit<br/>Passif : (Def Acier Perma) Blocage+2, PV < 140 : Dégât +5 (Crit +10)"
     ],
     "stats": "17,13,9,15,17",
@@ -1664,7 +1664,7 @@
     "nom": "Ogre Chef Shaman",
     "pvmax": 240,
     "skills": [
-      "Totem Gracieux : 1D6 +12 pendant 6 tours (tous les 2 tours) : Intelligence",
+      "Totem Gracieux (40 PV): 1D6 +12 pendant 6 tours (tous les 2 tours) : Intelligence",
       "Affaib All AoE : +5 dégât subis AoE pendant 3 tours : Esprit",
       "Éclair en Furie : 3D6+14 : Intelligence",
       "Puma Noir : (Force/Dexté+5) 4 tours : saignement : 1D6+10 puis 5 pendant 3 tours (Force). Triple Griffe : 3D6+15 (Dextérité) : esprit"
@@ -2155,11 +2155,11 @@
     "weaknesses": ["perçant", "feu"]
   },
   "146": {
-    "visuel3D": "m350",
+    "visuel3D": "vidal",
     "nom": "Vidal - Sorcier Dragon",
     "pvmax": 250,
     "skills": [
-      "Atk foudr / Tempête Glace (Pouvoir du Dragon) : 3D6+21 (Mono+5) : Intel",
+      "Atk foudr / Tempête Glace (Pouvoir du Dragon) : 3D6+23 (Mono+5) : Intel",
       "Saut Dimensionnel : 3 tentatives par combat : remplace l'esquive/blocage (buff prochain dégât +5) : intel",
       "Magie Extrême : Prochain dégât magique +2D6 +9 : Esprit",
       "Revers d'écaille (instant) : 4 tentatives par combat (<10 : 66%, >=10 : 33%) (+Soin PV+15 #Mode Caché) : Esprit<br/>Passif : Blocage+1"
@@ -3320,7 +3320,7 @@
       "Passif : PV (chaque -100) : Hurlement Douloureux (Stats-3 (3 tours), PV <100 : Dégât/Armure +5"
     ],
     "stats": "13,17,13,10,17",
-    "desc": "Dinosaure crocodile dopé par une énergie instable créé par le Bourgeon de Vie, très dangereux.",
+    "desc": "Dinosaure crocodile dopé par une énergie instable créé par le Bourgeon de Vie, il semble avoir été en contact avec les résidus de l'esprit d'Heldentod III...",
     "drop": "Dague écailles noires, Plastron Ecailleux, rare : Ecaille Exalté",
     "weaknesses": ["perçant", "glace"]
   }

@@ -1212,16 +1212,16 @@
     "montant": "2D6+1D4",
     "icone": "E0355",
     "stat": "Force",
-    "classe": ["loup du givre", "loup du givre (a,a)"]
+    "classe": ["loup du givre"]
   },
   "143": {
     "nom": "Attaque tournoyante",
-    "desc": "Coup de queue tournoyante.",
+    "desc": "Inflige une violente attaque de zone autour de soi.",
     "effet": "Dégât AoE R-",
     "montant": "1D6+3",
     "icone": "E0892b",
     "stat": "Dextérité",
-    "classe": ["loup du givre", "loup du givre (a,a)"]
+    "classe": ["loup du givre", "gorille vulcain"]
   },
   "144": {
     "nom": "Super Star",
@@ -1240,5 +1240,14 @@
     "icone": "E0768",
     "stat": "Dextérité",
     "classe": ["Voleur", "Danselame"]
+  },
+  "146": {
+    "nom": "Griffe Sauvage",
+    "desc": "Coup de griffe physique.",
+    "effet": "Dégât",
+    "montant": "2D6+1D4",
+    "icone": "E0873",
+    "stat": "Force",
+    "classe": ["gorille vulcain"]
   }
 }

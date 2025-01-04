@@ -75,7 +75,7 @@ const addResume = async (resume: Resume): Promise<void> => {
 export const loadHtmlIntoElement = async (url: string, container: Element): Promise<void> => {
   try {
     // Récupération du fichier HTML
-    const response = await fetch(url)
+    const response = await fetch(`${url}?${new Date().getTime()}`)
     if (!response.ok) {
       throw new Error(`Erreur HTTP : ${response.status}`)
     }

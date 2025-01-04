@@ -529,7 +529,7 @@ const generateChest = (joueurData: Player): void => {
   const chestZIndexE = createElement("img", undefined, {
     src: "images/layout/chestZIndex.png",
     className: "chest",
-    style: { zIndex: "10", filter: `saturate(${saturation})` },
+    style: { zIndex: "10", filter: `saturate(${saturation})`, pointerEvents: "none" },
   })
 
   // Les coordonnées des sommets du losange

@@ -418,24 +418,29 @@ label:hover {
 #story .flex-column {
   display: flex;
   align-items: center;
-  width: 100%;
   overflow: auto;
 }
 
 #story .flex {
+  width: 100%;
   flex-direction: row;
 }
 
 #story .flex-column {
   height: fit-content;
   flex-direction: column;
+  max-width: 95%;
 }
 
 #story .flex img {
   max-width: min(38%, 400px);
+  max-height: 250px;
   margin: 2px;
   border-radius: 10%;
   height: fit-content;
+}
+#story .flex-column img {
+  max-width: 95%;
 }
 
 #story .flex .icone {
@@ -960,6 +965,11 @@ td {
   margin: 0px;
   vertical-align: middle;
 }
+.alpagaCoinPic:hover {
+  filter: brightness(120%) saturate(175%) hue-rotate(10deg);
+  cursor: pointer;
+  cursor: url("images/layout/cursor-x.png"), auto;
+}
 .alpagaCoinSpent {
   color: gainsboro;
   font-size: 16px;
@@ -1242,5 +1252,36 @@ td {
   .chestWrapper .alpagaCoinPic {
     width: 18px;
     height: 18px;
+  }
+}
+
+/* Christmas Snowflakes */
+.snowflake {
+  position: fixed;
+  top: -10px;
+  background-image: url("https://cdn3.iconfinder.com/data/icons/font-awesome-regular-1/512/snowflake-32.png");
+  background-size: cover;
+  color: white;
+  pointer-events: none;
+  animation:
+    fall linear infinite,
+    sway 4s ease-in-out infinite;
+  z-index: 1;
+  filter: invert(1);
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh); /* Descend au-delà de l'écran */
+  }
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    margin-left: -20px;
+  }
+  50% {
+    margin-left: 20px;
   }
 }
