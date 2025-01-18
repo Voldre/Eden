@@ -310,7 +310,7 @@ export interface Map {
 
 // #region Histoires
 export interface Resume {
-  groupe: 1 | 2 | 3
+  groupe: 0 | 1 | 2 | 3
   seance: number
   date: string
   titre: string

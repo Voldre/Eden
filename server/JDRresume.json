@@ -841,10 +841,40 @@
   },
   {
     "groupe": 0,
-    "seance": 0,
+    "seance": 1,
     "date": "21/12/24",
     "titre": "Ol et le Foudroyeur, et des champis",
     "personnages": ["Ol", "Foudroyeur"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 0,
+    "seance": 2,
+    "date": "26/12/24",
+    "titre": "Noël à Aven",
+    "personnages": ["Malvis", "Zhaïtan", "Aradia", "Rad Ed", "Shkrouk", "Foudroyeur"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 3,
+    "seance": 20,
+    "date": "05/01/25",
+    "titre": "À la recherche de Samba",
+    "personnages": ["Leyla", "Ernis", "Willy & Samba"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 30,
+    "date": "12/01/25",
+    "titre": "La grotte secrète de Xonifar",
+    "personnages": ["Estia Ryujin", "Azora", "Zhaïtan"],
     "contexte": "",
     "key_events": [],
     "objectifs": []

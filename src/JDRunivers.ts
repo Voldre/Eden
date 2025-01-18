@@ -295,6 +295,44 @@ const labelsDescription = {
     "Lorsqu'un joueur tombe KO, sa vie est en jeu. Son temps avant la mort est compté selon les cicronstances (lieu, contexte) et ses dégâts, soit <b>environ</b> :<ul><li>A 0 : 10 tours</li><li>A -25 : 8 tours</li><li>A -50 : 5 tours</li><li>A -75 : 3 tours</li><li>A -100 : 2 tours</li><li>Si les PV descendent à l'équivalent des PV max (ou -150 PV) : 0 tour (mort instantanée)</li></ul>A noter qu'il est possible d'être soigné (sort, potion) et blessé, et que franchir un seuil augmente/diminue les tours.<br/>De plus, pour chaque KO supplémentaire dans un laps de temps court, la survie est diminué de 2 tours.<br/><br/>Un jet de survie est lancé quand il reste 5, 2 puis 0 tours. Le jet de survie peut changer la durée de survie (en tour) : Dé 1 : +2 tours, Dé 2-5 : +1 et l'inverse en négatif.",
   "soin-recu":
     "Les bonus de soins reçus (montant fixe ou %), ne s'appliquent que sur les compétences et certains accessoires, mais pas sur les objets (gadgets, potions, ...).",
+  lowStats: `Lorsqu'une statistique descend trop, des effets néfastes arrivent. Voici leurs effets :<br/> 
+    <table>
+    <thead>
+      <tr>
+        <th scope="col">Statistique</th>
+        <th scope="col">2 (Esprit : 4 et 3)</th>
+        <th scope="col">1 (Esprit : 2 et 1)</th>
+        <th scope="col">0</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Force</td>
+        <td>Impossible de tenir une arme</td>
+        <td>Impossible de porter une armure</td>
+        <td>Immobile</td>
+      </tr>
+      <tr>
+        <td>Dextérité</td>
+        <td>Déplacement extrêmement ralentit</td>
+        <td>Impossible de se déplacer</td>
+        <td>Immobile</td>
+      </tr>
+      <tr>
+        <td>Intelligence</td>
+        <td>Impossible de réfléchir, action immédiate</td>
+        <td>Impossible d'utiliser une compétence</td>
+        <td>Immobile</td>
+      </tr>
+      <tr>
+        <td>Esprit</td>
+        <td>Immobile</td>
+        <td>Evanouis</td>
+        <td>Mort Immédiate</td>
+      </tr>
+    </tbody>
+  </table>
+  `,
 }
 
 initDialog(labelsDescription)

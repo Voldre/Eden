@@ -865,7 +865,7 @@
     "kind": "composant",
     "name": "Jus de larve de reine insecte",
     "description": "Ce jus a \u00e9t\u00e9 r\u00e9cup\u00e9r\u00e9 dans un oeuf d'insecte un peu particulier, utile pour des potions ...?",
-    "kindId": "I00042",
+    "kindId": "I00033",
     "maps": [8]
   },
   {
@@ -920,24 +920,24 @@
     "id": 1222,
     "value": 1,
     "kind": "composant",
-    "name": "Concoction Anuran",
-    "description": "Cette concoction permet \u00e0 celui qui la consomme de se transformer en Anuran !",
-    "kindId": "I00110"
+    "name": "Potion stimulante",
+    "description": "Une potion coup-de-boost, un véritable petit remontant, tel un bon café (Fatigue -25 sur 5 tours)",
+    "kindId": "I00042"
   },
   {
     "id": 1223,
-    "value": 1,
+    "value": 2,
     "kind": "composant",
-    "name": "Complément Vitaminé",
-    "description": "Ce complément peut renforcer l'utlisateur sur le moyen terme (ex : 1 séance) en PV/défense, etc...",
-    "kindId": "I00024"
+    "name": "Potion dynamisante",
+    "description": "Cette potion dynamise tout votre corps, réduisant considérablement les effets de la fatigue. Mais attention au contre-coup... (Fatigue -50 sur 5 tours)",
+    "kindId": "I00050"
   },
   {
     "id": 1224,
     "value": 1,
     "kind": "composant",
     "name": "Potion énergisante",
-    "description": "Améliore les capacités de celui qui la boit (+1 réussite sur 4 tours).",
+    "description": "Améliore les capacités de celui qui la boit (+2 réussite sur 4 tours).",
     "kindId": "I00041"
   },
   {
@@ -1208,6 +1208,14 @@
     "description": "La peau de tortue est toute flasque. Peut être utilisé pour créer des armures magiques.",
     "kindId": "I00246",
     "maps": [4, 6, 14]
+  },
+  {
+    "id": 1271,
+    "value": 1,
+    "kind": "composant",
+    "name": "Concoction Anuran",
+    "description": "Cette concoction permet \u00e0 celui qui la consomme de se transformer en Anuran !",
+    "kindId": "I00110"
   },
   {
     "id": 1281,
@@ -2035,7 +2043,7 @@
     "value": 2,
     "kind": "composant",
     "name": "Potion dopante",
-    "description": "Améliore grandement les capacités de celui qui la boit (+2 réussite sur 4 tours).",
+    "description": "Améliore grandement les capacités de celui qui la boit (+3 réussite sur 4 tours).",
     "kindId": "I00049"
   },
   {
@@ -2285,6 +2293,14 @@
     "name": "Pierre de Foudre",
     "description": "Cette pierre est un vrai réservoir à énergie. Elle peut à elle seule alimenter plusieurs machines et autres systèmes ingénieux.",
     "kindId": "I00236d"
+  },
+  {
+    "id": 1473,
+    "value": 3,
+    "kind": "composant",
+    "name": "Bourgeon de Vie",
+    "description": "Cette bague, ornée d’un joyau rouge Vermillon, est une relique transmise de génération en génération d'Empereurs jusqu'à Heldentod III et son drame. Depuis elle était gardée à la cour royale, jusqu'au vol de Conrad. Elle apporte la fertilité et décuple le potentiel est descendants.",
+    "kindId": "i01309i"
   },
   {
     "id": 12900,
@@ -4911,6 +4927,28 @@
     "enemies": [],
     "kindId": "uiiconPNG/shkrouk_pas_sur",
     "group": 3
+  },
+  {
+    "id": 1874,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Recrutement à la Veyda",
+    "description": "La Veyda peut se montrer convaincante lors des recrutements, surtout si le candidat est redevable ! Willy peut en témoigner : en échange du sauvetage de Samba face à des braconniers, la guilde lui a présenté une facture de 1200 po ! Il en a même tremblé !",
+    "maps": [4],
+    "enemies": [],
+    "kindId": "skillIcon/E0334b",
+    "group": 3
+  },
+  {
+    "id": 1875,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Déflagration de la monstruosité",
+    "description": "En traquant Xonifar à la Vallée de la Mort, ils tombent sur une immense créature difforme, servant d'appareil reproducteur de créatures mutantes : encore une de ses abomination. Le groupe s'en débarasse en la faisant brûler de l'intérieur avec ses gaz, infligeant de lourd dégât de zone.",
+    "maps": [4],
+    "enemies": [],
+    "kindId": "skillIcon/j060b",
+    "group": 2
   },
   {
     "id": 15000,

@@ -43,7 +43,10 @@ let params: { [key: string]: string | number | undefined } = {
 })()
 
 const addResume = async (resume: Resume): Promise<void> => {
-  const header = createElement("h3", `Séance ${resume.seance} - Groupe ${resume.groupe} - ${resume.date}`)
+  const header = createElement(
+    "h3",
+    `${resume.groupe !== 0 ? `Séance ${resume.seance} - Groupe ${resume.groupe}` : "Hors Série"} - ${resume.date}`
+  )
   const titleE = createElement("h2", resume.titre, { style: { flexGrow: "0.75" } })
   const personnageIconsE = createElement(
     "div",
@@ -140,11 +143,15 @@ const setResumeLinks = (group: number, container: Element): void => {
     .map((resume) =>
       createElement(
         "li",
-        createElement("a", `Séance ${resume.seance} : ${resume.titre} - ${resume.date}`, {
-          onClick: () => {
-            onChangeSeance(`${resume.seance}`)
-          },
-        })
+        createElement(
+          "a",
+          `${group !== 0 ? `Séance ${resume.seance}` : "Hors Série"} : ${resume.titre} - ${resume.date}`,
+          {
+            onClick: () => {
+              onChangeSeance(`${resume.seance}`)
+            },
+          }
+        )
       )
     )
   const resumeLinksE = createElement("ul", resumeLinkEs)
@@ -174,12 +181,15 @@ const update = async (): Promise<void> => {
         { innerText: "Séance ...", value: "" },
         ...resumeJSON
           .filter((resume) => resume.groupe === selectedGroup)
-          .map((resume) => ({ innerText: `Séance ${resume.seance}`, value: resume.seance.toString() })),
+          .map((resume) => ({
+            innerText: `${selectedGroup !== 0 ? "Séance" : "Hors Série"} ${resume.seance}`,
+            value: resume.seance.toString(),
+          })),
       ])
 
       // Do not update story content if a seance exist
       if (params.seance !== undefined) {
-        if (selectedGroup) {
+        if (selectedGroup !== undefined) {
           setResumeLinks(selectedGroup, storyE)
         } else {
           storyE.innerHTML = "<h1 style='text-align: center;'>Résumés des dernières séances...</h1>"
@@ -196,7 +206,7 @@ const update = async (): Promise<void> => {
     }
 
     // Seance update
-    if (selectedGroup && params.seance !== selectedSeance) {
+    if (selectedGroup !== undefined && params.seance !== selectedSeance) {
       storyE.innerHTML = ""
       const selectedResume = resumeJSON.find(
         (resume) => resume.groupe === selectedGroup && resume.seance === selectedSeance

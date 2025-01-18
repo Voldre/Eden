@@ -152,9 +152,9 @@
   },
   "23": {
     "nom": "Noyau de Schiste",
-    "desc": "Noyau concentré de schiste, peut augmenter l'effet des soins",
+    "desc": "Noyau concentré de schiste, augmente considérablement l'effet des soins",
     "effet": "Soin",
-    "montant": "Soin Critique (Dé 1,2) : X2, si AoE : 50%. Dé 3 : la moitié",
+    "montant": "Soin Critique (Dé 1,2) : +50%, si AoE : 25%. Dé 3 : la moitié",
     "icone": "i00667",
     "access": "A3"
   },
@@ -4088,21 +4088,24 @@
     "desc": "Une écaille récupérée sur une créature exalté par la magie",
     "effet": "",
     "montant": "Montant des buffs +2, dégât reçu -1",
-    "icone": "I00282c"
+    "icone": "I00282c",
+    "access": "D2"
   },
   "553": {
     "nom": "Collier Durable",
     "desc": "Un collier conçu pour améliorer la durée des effets.",
     "effet": "",
     "montant": "Durée des sorts +1 tour",
-    "icone": "A00029b"
+    "icone": "A00029b",
+    "access": "A2"
   },
   "554": {
     "nom": "Glyphe du Juge",
     "desc": "Un glyphe conçu pour améliorer 2 éléments",
     "effet": "",
     "montant": "Dégât de tranchant +3, ténèbres +2",
-    "icone": "i01440"
+    "icone": "i01440",
+    "access": "D3"
   },
   "555": {
     "nom": "Robe Renforcée",
@@ -4161,7 +4164,8 @@
     "desc": "Ce coeur aurait appartenu à une créature du Fléau, une énergie extrêmement sombre s'en dégage",
     "effet": "Esprit -2",
     "montant": "Durée des malus +1 tour, montant dégât malus +2, dégât ténèbres +2",
-    "icone": "I00271b"
+    "icone": "I00271b",
+    "access": "D4"
   },
   "563": {
     "nom": "Lance Aggravante",
@@ -4225,5 +4229,122 @@
     "effet": "Monture de Combat",
     "montant": "Dégât +8 (PV : 100 + 5*niveau)",
     "icone": "sambae"
+  },
+  "572": {
+    "nom": "Veste de Puissance",
+    "desc": "Une veste conçue pour améliorer la force de son porteur",
+    "effet": "Force +1",
+    "montant": "Dégât -4",
+    "icone": "A20039"
+  },
+  "573": {
+    "nom": "Gilet de Puissance",
+    "desc": "Un gilet très résistant conçu pour améliorer la force de son porteur",
+    "effet": "Force +1",
+    "montant": "Dégât -5",
+    "icone": "A20049b"
+  },
+  "574": {
+    "nom": "Cotte légère",
+    "desc": "Cette cotte est assez légère pour donner de l'agilité à son porteur.",
+    "effet": "Dextérité +1",
+    "montant": "Dégât -5",
+    "icone": "A20075"
+  },
+  "575": {
+    "nom": "Veste perçante",
+    "desc": "Une veste conçue pour améliorer les dégâts perçants.",
+    "effet": "",
+    "montant": "Dégât -5, dégât perçant +2",
+    "icone": "k20834"
+  },
+  "576": {
+    "nom": "Veste d'aventurier raffiné",
+    "desc": "Cette veste est réservé aux aventuriers expérimentés",
+    "effet": "Force +1, Dextérité +1",
+    "montant": "Dégât -4",
+    "icone": "A20046"
+  },
+  "577": {
+    "nom": "Plastron de concentration",
+    "desc": "Ce plastron concentre la puissance de son porteur.",
+    "effet": "Force +1, Esprit +1",
+    "montant": "Dégât -5",
+    "icone": "A20078"
+  },
+  "578": {
+    "nom": "Anneau d'évasion",
+    "desc": "Réduit les dégâts reçus et améliore l'esquive",
+    "effet": "",
+    "montant": "Dégât reçu -2, Esquive +1",
+    "icone": "A00018b"
+  },
+  "579": {
+    "nom": "Collier de Métamorphose",
+    "desc": "Ce collier à le pouvoir de vous métamorphoser en une créature ou une autre personne. Mais attention aux effets secondaires...",
+    "effet": "Malédiction du lien / Capacité",
+    "montant": "1 fois par combat (Esprit) : Métamorphose",
+    "icone": "k10715",
+    "access": "A3"
+  },
+  "580": {
+    "nom": "Bague d'agilité",
+    "desc": "Cette bague offre de l'agilité à son porteur.",
+    "effet": "",
+    "montant": "PV +5, Esquive +1",
+    "icone": "k10114"
+  },
+  "581": {
+    "nom": "Ecouteur Futuriste",
+    "desc": "Cet écouteur est un récepteur d'ondes et permet de lire les pensées des monstres ! ... ou du moins, c'est ce que prétend la notice !",
+    "effet": "",
+    "montant": "Charisme +1 (+ voix dans la tête)",
+    "icone": "k10175",
+    "access": "A1"
+  },
+  "582": {
+    "nom": "Marteau du Sage Scelleur",
+    "desc": "Un marteau du sage amélioré, conçu spécifiquement pour les experts du scellement.",
+    "effet": "Blocage cible -2",
+    "montant": "Dégât +8 (+2 si Sage)",
+    "condition": { "type": "classe", "value": ["Sage"], "bonus": "Dégât +2" },
+    "icone": "W40902"
+  },
+  "583": {
+    "nom": "Marteau du Sage Enchanteur",
+    "desc": "Un marteau du sage amélioré, conçu spécifiquement pour les experts du soutien et du renforcement.",
+    "effet": "Soin +2, Intelligence +1",
+    "montant": "Dégât +8 (Montant des buffs+1 si Sage)",
+    "condition": { "type": "classe", "value": ["Sage"], "bonus": "Montant des buffs +1" },
+    "icone": "W40902b"
+  },
+  "584": {
+    "nom": "Anneau de soin magique",
+    "desc": "Une des améliorations de l'anneau du remède, orienté magie.",
+    "effet": "",
+    "montant": "Soin +4 (AoE/2), Intelligence +1",
+    "icone": "A00005c"
+  },
+  "585": {
+    "nom": "Anneau de soin enchanté",
+    "desc": "Une des améliorations de l'anneau du remède, orienté esprit, fabriqué par des Torturrans.",
+    "effet": "Esprit +1",
+    "montant": "Soin +4 (AoE/2) (+2 si Torturran)",
+    "condition": { "type": "race", "value": ["Torturran"], "bonus": "Soin +2" },
+    "icone": "A00005d"
+  },
+  "586": {
+    "nom": "Bâton du Dévoué",
+    "desc": "Ce bâton amplifie les soins prodigués aux alliés, au détriment de celle de son porteur...",
+    "effet": "Malédiction du Lien",
+    "montant": "Dégât +9, Soin +5 (-5 PV/soigné)",
+    "icone": "W62605"
+  },
+  "587": {
+    "nom": "Grimoire de l'Esclave",
+    "desc": "Cet ancien grimoire était utilisé autrefois à Amur pour forcer les esclaves à soigner leur maître plutôt qu'eux-même.",
+    "effet": "Malédiction du Lien",
+    "montant": "Dégât +9, Soin +5 (Impossible de se soigner)",
+    "icone": "W61805"
   }
 }
