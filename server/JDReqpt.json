@@ -206,7 +206,7 @@
     "nom": "Bâton d'Asbi",
     "desc": "Bâton enchanté à la pierre Asbi",
     "effet": "",
-    "montant": "Dégât +6, réussite des sorts +1",
+    "montant": "Dégât +8, réussite des sorts +1",
     "icone": "W60503"
   },
   "31": {
@@ -761,14 +761,14 @@
     "nom": "Arc de Delphes",
     "desc": "Un arc fabriqué avec un bois sacré",
     "effet": "Dégât de nature +2",
-    "montant": "Dégât +7",
+    "montant": "Dégât +8",
     "icone": "W50203"
   },
   "105": {
     "nom": "Bâton de Delphes",
     "desc": "Un bâton fabriqué avec un bois sacré",
     "effet": "Dégât de nature +2",
-    "montant": "Dégât +7",
+    "montant": "Dégât +8",
     "icone": "W60306"
   },
   "106": {
@@ -784,7 +784,7 @@
     "desc": "Un glyphe conçu pour améliorer certaines armes",
     "effet": "",
     "montant": "Dégât contondant +2",
-    "icone": "i01667",
+    "icone": "i01640",
     "access": "D2"
   },
   "108": {
@@ -842,7 +842,7 @@
     "nom": "Masse du remède",
     "desc": "Une masse avec une gemme de soin incrustée",
     "effet": "",
-    "montant": "Dégât +4, Soin +2, AoE +1",
+    "montant": "Dégât +4, Soin +2 (AoE/2)",
     "icone": "W30606"
   },
   "116": {
@@ -1067,7 +1067,7 @@
     "desc": "L'épée la plus lourde qui existe aujourd'hui",
     "effet": "Dexté -5",
     "montant": "Dégât +15 (Si force >=16, Dexté +1)",
-    "icone": "W21105"
+    "icone": "W21106"
   },
   "149": {
     "nom": "Ceinture de Samouraï",
@@ -1082,7 +1082,7 @@
     "nom": "Gantelet de Lieutenant",
     "desc": "Un gantelet renforçant son porteur",
     "effet": "",
-    "montant": "PV +10. Dégât reçu -2",
+    "montant": "Dégât reçu -2, PV +10",
     "icone": "A40016",
     "access": "A0"
   },
@@ -1174,10 +1174,10 @@
     "icone": "W21302"
   },
   "163": {
-    "nom": "Destruction Sacrée",
-    "desc": "Une épée détenant un pouvoir de destruction",
-    "effet": "Dégât lumière +3",
-    "montant": "Dégât +11",
+    "nom": "Epée Colossale - Destruction Sacrée",
+    "desc": "Une épée de rang \"Sacrée\", détenant le pouvoir de frénésie : +2 dégât par touche sur la cible, le cumule est réinitialisé après 2 tours sans toucher.",
+    "effet": "",
+    "montant": "Dégât +10, +2/touche (max 5, reset si 0 touche 2 tours)",
     "icone": "W21105"
   },
   "164": {
@@ -1198,14 +1198,14 @@
     "nom": "Katana Incisif",
     "desc": "Un katana aggravant les blessures de ses victimes",
     "effet": "Dégât critique +10",
-    "montant": "Dégât +7",
+    "montant": "Dégât +8",
     "icone": "W24105"
   },
   "167": {
     "nom": "Katana Renforcé",
     "desc": "Un katana en acier amélioré par l'expertise d'un forgeron.",
     "effet": "",
-    "montant": "Dégât +6",
+    "montant": "Dégât +7",
     "icone": "W21403"
   },
   "168": {
@@ -1342,27 +1342,24 @@
   },
   "186": {
     "nom": "Marteau Bolter Asbi",
-    "desc": "Un marteau équipé d'un \"Bolter\" et de crystaux d'Asbi",
-    "effet": "Dégât AoE +3",
-    "montant": "Dégât +9",
+    "desc": "Un marteau ultra high-tech équipé d'un \"Bolter\" et de crystaux d'Asbi",
+    "effet": "",
+    "montant": "Dégât +11, réussite des sorts +1",
     "icone": "W41301"
   },
   "187": {
     "nom": "Brassard du Pouvoir",
     "desc": "Un brassard augmentant les pouvoirs de son porteur",
     "effet": "",
-    "montant": "Dégât AoE+4",
-    "icone": "a40045",
-    "access": "D3"
+    "montant": "Toutes Stats +1, Dégât +1",
+    "icone": "a40045"
   },
   "188": {
     "nom": "Brassard du Combattant",
-    "desc": "Un brassard augmentant la puissance du porteur. Appartient à la panoplie du combattant",
+    "desc": "Un brassard augmentant les dégâts du porteur.",
     "effet": "",
-    "montant": "Dégât physique +2 (+2 si panoplie)",
-    "condition": { "type": "panoplie", "value": "Veste du Combattant", "bonus": "Dégât +2" },
-    "icone": "A40021",
-    "access": "D2"
+    "montant": "Dégât +2, PV +10",
+    "icone": "A40021"
   },
   "189": {
     "nom": "Tenue de Supporter",
@@ -1594,7 +1591,7 @@
     "nom": "Guitare de Delphes",
     "desc": "Guitare fabriqué avec un bois sacré",
     "effet": "Dégât nature +2",
-    "montant": "Dégât +7",
+    "montant": "Dégât +8",
     "icone": "W61002"
   },
   "220": {
@@ -1675,10 +1672,9 @@
   "230": {
     "nom": "Puissance de Bélouga",
     "desc": "Un artefact ancien gardé à Bélouga, on dit qu'il contient la puissance des baleines.",
-    "effet": "",
-    "montant": "Dégât AoE +3",
-    "icone": "I00344",
-    "access": "D3"
+    "effet": "PV +10",
+    "montant": "Dégât +3, si AoE : réussite +1",
+    "icone": "I00344"
   },
   "231": {
     "nom": "Médaille Versatile",
@@ -1708,9 +1704,9 @@
     "nom": "Coeur Fossilisé",
     "desc": "Un coeur d'un démon supérieur vigoureux qui a durci, il est utilisé comme une relique.",
     "effet": "Stress Accentué",
-    "montant": "Toutes Stats +1",
+    "montant": "Toutes Stats +1, PV +10",
     "icone": "I00271",
-    "access": "A1"
+    "access": "A0"
   },
   "235": {
     "nom": "Toxine Noire",
@@ -1793,7 +1789,7 @@
     "nom": "Katana taillé",
     "desc": "Un katana conçu avec une corne taillée d'un monstre. Très tranchant et acéré",
     "effet": "Dégât critique +5",
-    "montant": "Dégât +6",
+    "montant": "Dégât +7",
     "icone": "W22906"
   },
   "246": {
@@ -1932,7 +1928,7 @@
     "desc": "Une griffe faite par les Ursuns et offerte aux plus valeureux assassins. Appartient à la Panoplie \"Puissance\".",
     "effet": "Force +1",
     "montant": "Dégât +5 (+1 si panoplie)",
-    "condition": { "type": "panoplie", "value": "Gemme de Puissance", "bonus": "Dégât +1" },
+    "condition": { "type": "panoplie", "value": "de Puissance", "bonus": "Dégât +1" },
     "icone": "W33801"
   },
   "265": {
@@ -2057,14 +2053,14 @@
     "desc": "Une fusil extrêmement puissant capable de blesser fortement ses cibles, si elles sont touchées",
     "effet": "Réussite -2",
     "montant": "Dégât +14",
-    "icone": "W51901"
+    "icone": "W53002"
   },
   "281": {
     "nom": "Gemme de Puissance",
     "desc": "Une gemme augmentant les dégâts infligés, mais diminuant la chance de réussir ses attaques. Appartient à la Panoplie \"Puissance\".",
     "effet": "Réussite -1",
     "montant": "Dégât +4 (+1 si panoplie)",
-    "condition": { "type": "panoplie", "value": "Griffe de Puissance", "bonus": "Dégât +1" },
+    "condition": { "type": "panoplie", "value": "de Puissance", "bonus": "Dégât +1" },
     "icone": "i01146",
     "access": "D0"
   },
@@ -2129,12 +2125,11 @@
     "icone": "A20051b"
   },
   "290": {
-    "nom": "Veste du Combattant",
-    "desc": "Une veste augmentant la résistance du porteur. Appartient à la panoplie du combattant.",
-    "effet": "",
-    "montant": "Dégât -4 (+2 si panoplie)",
-    "condition": { "type": "panoplie", "value": "Brassard du Combattant", "bonus": "Dégât reçu -2" },
-    "icone": "A20039"
+    "nom": "Manteau de Delphes",
+    "desc": "Ce manteau est fait avec un tissu riche en magie, le secret de sa régénération réside dans la façon dont il est cousu.",
+    "effet": "PV Soin reçu +3",
+    "montant": "Dégât -4",
+    "icone": "A20057b"
   },
   "291": {
     "nom": "Perle de l'éclipse",
@@ -2420,13 +2415,13 @@
     "nom": "Insigne de l'Ordre du Temple",
     "desc": "Ancien insigne en or pur, il aurait appartenu aux ancêtres de la Curie Métérole : l'Ordre des Chevaliers du Temple, les meilleurs templiers d'Aven.",
     "effet": "(Clerc, Sage, Chev, Templ, Cors)",
-    "montant": " Dégât +1 & Soin +1 (pour chaque classe possédée : +2) (AoE/2)",
+    "montant": " Dégât +2 & Soin +1 (pour chaque classe possédée : +1) (AoE/2)",
     "condition": {
       "type": "classe",
       "value": ["Clerc", "Sage", "Chevalier", "Templier", "Corsaire"],
-      "bonus": "Dégât +2, Soin +2"
+      "bonus": "Dégât +1, Soin +1"
     },
-    "icone": "i01667",
+    "icone": "i01340",
     "access": "D0"
   },
   "329": {
@@ -2581,7 +2576,7 @@
   },
   "349": {
     "nom": "Veste de Ténacité",
-    "desc": "Cette tenue a été conçue pour la survie : elle vous permettra de résister à un coup fatal ! (1 fois par combat ou 2 si PV remonte > 66%)",
+    "desc": "Cette tenue a été conçue pour la survie : elle vous permettra de résister à un coup fatal ! (1 fois par combat ou 2 si PV remonte > 50%)",
     "effet": "PV +10",
     "montant": "Dégât -5, résiste à un coup fatal (laissant 1 PV)",
     "icone": "A20068",
@@ -2729,7 +2724,7 @@
     "access": "A2"
   },
   "368": {
-    "nom": "Guitare de Puissance",
+    "nom": "Guitare Endiablée",
     "desc": "Une guitare octroyant à son porteur et ses alliés une puissance supérieure.",
     "effet": "Montant des buffs +1",
     "montant": "Dégât +10, PV +10",
@@ -2886,7 +2881,7 @@
     "nom": "Anneau de Vie",
     "desc": "Une des améliorations de l'anneau du remède, orienté vitalité.",
     "effet": "",
-    "montant": "PV +15, Soin +4, (AoE/2)",
+    "montant": "Soin +4 (AoE/2), PV +15",
     "icone": "A00005b",
     "access": "D2"
   },
@@ -3238,9 +3233,9 @@
   },
   "436": {
     "nom": "Couronne de Richesse",
-    "desc": "Une ancienne couronne amenant prospérité à son porteur.",
-    "effet": "Or trouvé +50%",
-    "montant": "Stats +1, dégât reçu -1",
+    "desc": "Une ancienne couronne de souverain amenant prospérité à son porteur.",
+    "effet": "",
+    "montant": "Stats +1, Or trouvé +50%",
     "icone": "A10022"
   },
   "437": {
@@ -3359,8 +3354,8 @@
     "access": "A0"
   },
   "452": {
-    "nom": "Poignard porte-bonheur",
-    "desc": "Un poignard très utile en cas d'urgence ! Seuls les plus cruels savent s'en servir correctement !",
+    "nom": "Couteau porte-bonheur",
+    "desc": "Un couteau très utile en cas d'urgence ! Seuls les plus cruels savent s'en servir correctement !",
     "effet": "",
     "montant": "Dégât +2 (+1 si Voleur, Assassin, Juge)",
     "condition": { "type": "classe", "value": ["Voleur", "Assassin", "Juge"], "bonus": "Dégât +1" },
@@ -3632,7 +3627,7 @@
     "nom": "Oeuf de Vie",
     "desc": "Un oeuf unique originaire de ... capable d'apporter la vie là où il passe.",
     "effet": "Capacité",
-    "montant": "Avant de tomber KO (2 fois par combat) : succès 1D4 (5/20) : Soigne 1D10+10 PV (buffs préservés)",
+    "montant": "Avant de tomber KO (2 fois par combat) : 1/2 chance de tenir : Soigne 1D10+10 PV (buffs préservés)",
     "icone": "k60194",
     "access": "A4"
   },
@@ -3704,7 +3699,7 @@
     "effet": "Familier",
     "montant": "Familier : Stats +1, dégât/soin+2 (AoE/2)",
     "icone": "A00048b",
-    "access": "D1"
+    "access": "D3"
   },
   "497": {
     "nom": "Oeuf Digital",
@@ -4323,7 +4318,8 @@
     "desc": "Une des améliorations de l'anneau du remède, orienté magie.",
     "effet": "",
     "montant": "Soin +4 (AoE/2), Intelligence +1",
-    "icone": "A00005c"
+    "icone": "A00005c",
+    "access": "D2"
   },
   "585": {
     "nom": "Anneau de soin enchanté",
@@ -4331,7 +4327,8 @@
     "effet": "Esprit +1",
     "montant": "Soin +4 (AoE/2) (+2 si Torturran)",
     "condition": { "type": "race", "value": ["Torturran"], "bonus": "Soin +2" },
-    "icone": "A00005d"
+    "icone": "A00005d",
+    "access": "D2"
   },
   "586": {
     "nom": "Bâton du Dévoué",
@@ -4346,5 +4343,46 @@
     "effet": "Malédiction du Lien",
     "montant": "Dégât +9, Soin +5 (Impossible de se soigner)",
     "icone": "W61805"
+  },
+  "588": {
+    "nom": "Tenue de Gradé de l'Ordre",
+    "desc": "Uniforme officiel des membres haut gradés de l'Ordre des Chevaliers du Temple",
+    "effet": "Intelligence +1",
+    "montant": "Dégât -5, Charisme +2",
+    "icone": "k21056"
+  },
+  "589": {
+    "nom": "Crinière de Lunicorne",
+    "desc": "Cette ceinture est faite avec une partie de la crinière de Lunicorne, l'Esprit du Lac d'Obelia, il est très concentré en énergie.",
+    "effet": "PV +5",
+    "montant": "Esprit +1, durée des sorts +1",
+    "icone": "a30052",
+    "access": "A2"
+  },
+  "590": {
+    "nom": "Noyau abyssal vivant",
+    "desc": "Ce noyau alimentait un esprit magique lié à la vitalité",
+    "effet": "",
+    "montant": "Esprit +2, PV +15",
+    "icone": "I00223b"
+  },
+  "591": {
+    "nom": "Gravure de Delphes",
+    "desc": "Cette ancienne gravure de Delphes semble tenir sa puissance de la forêt elle-même. Appartient à la Panoplie de Delphes.",
+    "effet": "",
+    "montant": "Dégât +1 & Dégât reçu -1 (+1 par objet de Delphes)",
+    "condition": {
+      "type": "panoplie",
+      "value": ["Delphes"],
+      "bonus": "Dégât +1, Dégât reçu -1"
+    },
+    "icone": "i00787"
+  },
+  "592": {
+    "nom": "Katana de Puissance",
+    "desc": "Un Katana conçu pour porter plus facilement des coups.",
+    "effet": "Force +1",
+    "montant": "Dégât +7",
+    "icone": "W24106"
   }
 }

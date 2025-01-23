@@ -1,5 +1,5 @@
 import { THREE } from "./three.min.js";
-import { isTextInText, readCookie } from "./utils.js";
+import { isTextInText, readCookie } from "./utils/index.js";
 import { mapsJSON } from "./JDRstore.js";
 
 // 3D Variables

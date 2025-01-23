@@ -1,6 +1,13 @@
 import { playerJSON, mapsJSON, pnjJSON, persosJSON, enemyJSON } from "./JDRstore.js"
 import { Enemy, Joueurs, Map, Perso, Player, PNJ } from "./model.js"
-import { createElement, isTextInText, setCookie, toastNotification } from "./utils.js"
+import {
+  createElement,
+  getRandomBetween,
+  getRandomItem,
+  isTextInText,
+  setCookie,
+  toastNotification,
+} from "./utils/index.js"
 
 const apiUrl = "https://api.openai.com/v1/chat/completions"
 
@@ -62,7 +69,7 @@ window.addEventListener("load", async () => {
   pnjEnemy = Object.values(enemyJSON).find((e) => isTextInText(e.visuel3D, pnjData.id))
 
   // 10 pour le moment en desc
-  mapId = urlParams.get("map") || Math.round(Math.random() * 7 + 3).toString()
+  mapId = urlParams.get("map") || getRandomBetween(3, 10).toString()
   const mapData = mapsJSON[mapId]
 
   gameE.style.backgroundImage = `url('./images/loadingframe/Loading_${mapId}B.jpg')`
@@ -173,7 +180,7 @@ function chooseEnemy(category: "boss" | "mob" | undefined = undefined): Enemy | 
     enemyListId = enemyListId.filter((eID) => mapsJSON[mapId!].mobs?.includes(parseInt(eID)))
 
     // If map choosed for fight, filter by rarity !
-    rarity = Math.floor(Math.random() * 3) + 1
+    rarity = getRandomBetween(1, 3)
 
     if (rarity <= 2) {
       // Handle ennemy rarity 1 & 2 (Common & Rare)
@@ -185,8 +192,7 @@ function chooseEnemy(category: "boss" | "mob" | undefined = undefined): Enemy | 
     }
   }
 
-  const randomId = Math.floor(Math.random() * enemyListId.length)
-  const enemyData = enemyJSON[enemyListId[randomId]]
+  const enemyData = enemyJSON[getRandomItem(enemyListId)]
   return enemyData
 }
 

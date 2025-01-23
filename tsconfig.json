@@ -7,7 +7,7 @@
     "strict": true, // Activer le mode strict pour un code plus sûr
     "rootDir": "./src",
     "outDir": "./server", // Dossier de sortie pour les fichiers compilés
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     // "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -17,6 +17,6 @@
 
     "allowJs": true // Allow JS file in commit
   },
-  "include": ["src/*ts"],
+  "include": ["src/**/*ts"],
   "exclude": ["tsconfig.json", "node_modules"]
 }

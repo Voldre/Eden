@@ -1,6 +1,6 @@
 import { persosJSON, resumeJSON } from "./JDRstore"
 import { Resume } from "./model"
-import { createElement, fillSelectOptions, stringToDate } from "./utils"
+import { createElement, fillSelectOptions, stringToDate } from "./utils/index.js"
 
 const urlParams = new URLSearchParams(window.location.search)
 let params: { [key: string]: string | number | undefined } = {

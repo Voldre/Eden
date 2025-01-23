@@ -2174,7 +2174,7 @@
     "nom": "Barnardo - Barde Elogieux",
     "pvmax": 170,
     "skills": [
-      "Guérison: Heal 2D10+25 (2 tours : résurrection +15) / Bombe Vocale : 2D6+10 : Intelligence",
+      "Guérison: Heal 2D10+25 (2 tours : résurrec +15) / Bombe Vocale : 2D6+10 : Intelligence",
       "Encouragement Musical : Dégât subi -1D4-6 AoE, 0 dodo, +2 rés esprit, 4 tours : Charisme",
       "Symphonie de guerre : Dégât +1D6+5 AoE (3 tours) : Charisme",
       "Passif : Si PV < 50% : Effet de tous les buffs +2"
@@ -3126,7 +3126,7 @@
     ],
     "stats": "21,6,15,8,18",
     "desc": "Grosse limace insectoïde avec un dos pulpeux qui est depuis longtemps prolifique à Vulcain où elle y a établi son royaume.",
-    "drop": "Mucus Royal *X (ver : Soie d'Or), rare : Membrane de Reine, Epée nauséabonde, Dague Toxique",
+    "drop": "Mucus Royal *X (ver : Soie d'Or), rare : Membrane de Reine, Epée nauséabonde",
     "weaknesses": ["tranchant", "feu"]
   },
   "211": {
@@ -3170,7 +3170,7 @@
       "Constitution de Roi : Armure =5, Bloc/Esq/Res +1, durée Malus /2<br/>PV <150 : Effet Rugissement *2. Si Bloc/Esq/Res critique : Coup opportun"
     ],
     "stats": "21,15,11,15,13",
-    "desc": "Berserker réputé pour sa puissance hors-norme, il est connu comme étant le bras armé de la Venturo. Il a été vainqueur pendant 3 années de suite au plus grand tournoi Luposia.",
+    "desc": "Berserker réputé pour sa puissance hors-norme, il est connu comme étant le bras armé de la Venturo. Il a été vainqueur pendant 3 années de suite au plus grand tournoi de Luposia.",
     "drop": "Hache Cruelle, Anneau du Conquérant",
     "weaknesses": ["foudre", "ténèbres"]
   },
@@ -3194,7 +3194,7 @@
     "nom": "Avale-esprit",
     "pvmax": 110,
     "skills": [
-      "Absorbe-esprit : Esprit -4 AoE 3 tours : Esprit",
+      "Absorbe-esprit : Esprit -4 et se fixe sur la tête. -1 esprit par tour (jusqu'à la mort + mini contrôle & Fatigue +X",
       "Tentacules : 2D6+11 : Force",
       "Toxine : 1D6+4 sur 4 tours : Intelligence",
       "Passif : si ennemi esprit <10 : dégât +50%"
@@ -3338,5 +3338,35 @@
     "desc": "Drakaï Démoniste qui a transcendé son corps avec la magie noire, lui octroyant une forme supérieure, éveillée, à l'apparence de monstre.",
     "drop": "(Bourgeon de Vie), rare : Bâton Perturbant, Tunique de Mage Noir, Collier Lueur d'âme",
     "weaknesses": ["lumière", "contondant"]
+  },
+  "225": {
+    "visuel3D": "m017b",
+    "nom": "Loup Gardien d'Obelia",
+    "pvmax": 270,
+    "skills": [
+      "Coup de griffe / Cicatrice esprit : 4D6+18 (+7 // -1 buff) : dextérité",
+      "Hurlement : Esprit -4 (4 tours) + Fatigue +15 AoE : esprit",
+      "Attaque tournoyante : 3D6+16 AoE : dextérité",
+      "Perturbation magique : Intel/Esprit -3 sur 3 tours AoE (+ effet selon ce qu'il a ingéré) : Esprit"
+    ],
+    "stats": "13,19,11,11,17",
+    "desc": "Grand loup gardant la sécurité de la Forêt d'Obelia, il a été parasité par des Avale-esprits...",
+    "drop": "...",
+    "weaknesses": ["perçant", "ténèbres"]
+  },
+  "226": {
+    "visuel3D": "m177b",
+    "nom": "Lunicorne - Esprit du Lac d'Obelia",
+    "pvmax": 370,
+    "skills": [
+      "Corne enchantée : 3D6+24  (Bloc/esq -2), malus : Dégât reçu +5 sur 2 tours : Force/Intel",
+      "Vague d'énergie : 3D6+20 AoE (Fatigue +15) : Intel",
+      "Perturbation magique : Intel/Esprit -3 sur 3 tours AoE (+ effet selon ce qu'il a ingéré) : Esprit",
+      "Passif : Revers Magique : Si critique Bloc M (1,2,3) : renvoi 100%<br/>PV <150 : Blocage +1, Dégât +5"
+    ],
+    "stats": "16,9,17,11,19",
+    "desc": "Lunicorne est l'Esprit qui veille sur le Lac d'Obelia. Personne ne connait vraiment ses origines, mais il semblerait qu'il soit là pour maintenir un certain équilibre.",
+    "drop": "(Compo ex : corne licorne, peau licorne), Amulette d'Expérience, très rare : Crinière de Lunicorne",
+    "weaknesses": ["foudre", "ténèbres"]
   }
 }

@@ -12,7 +12,7 @@ import {
   setCookie,
   stringToDate,
   toastNotification,
-} from "./utils.js"
+} from "./utils/index.js"
 
 const charactersList = document.querySelector(".charactersList")!
 const persosE = [...charactersList.children]

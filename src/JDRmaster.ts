@@ -15,7 +15,7 @@ import {
   addClickListener,
   callPHP,
   createElement,
-  eventOnClick,
+  shortAndLongEventsOnClick,
   fillSelectOptions,
   inputElement,
   inputSelector,
@@ -23,7 +23,7 @@ import {
   setCookie,
   toastNotification,
   unformatText,
-} from "./utils.js"
+} from "./utils/index.js"
 
 const logged = !!document.querySelector(".admin")
 
@@ -312,7 +312,7 @@ addChangeListener(inputSelector("#filtre", "string"), (e) => {
   })
 })
 ;[...document.querySelectorAll<HTMLElement>(".enemyDesc")].forEach((descE) => {
-  eventOnClick(descE, () => toggleDesc(descE))
+  shortAndLongEventsOnClick(descE, () => toggleDesc(descE))
 })
 
 function toggleDesc(descE: HTMLElement): void {

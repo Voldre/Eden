@@ -734,6 +734,14 @@
     "kindId": "m296h"
   },
   {
+    "id": 1080,
+    "value": 3,
+    "kind": "boss",
+    "name": "Loup Gardien d'Obelia",
+    "description": "Grand loup gardant la sécurité de la Forêt d'Obelia, il a été parasité par des Avale-esprit...",
+    "kindId": "m017b"
+  },
+  {
     "id": 1201,
     "value": 1,
     "kind": "composant",
@@ -4934,7 +4942,7 @@
     "kind": "anecdote",
     "name": "Recrutement à la Veyda",
     "description": "La Veyda peut se montrer convaincante lors des recrutements, surtout si le candidat est redevable ! Willy peut en témoigner : en échange du sauvetage de Samba face à des braconniers, la guilde lui a présenté une facture de 1200 po ! Il en a même tremblé !",
-    "maps": [4],
+    "maps": [501],
     "enemies": [],
     "kindId": "skillIcon/E0334b",
     "group": 3

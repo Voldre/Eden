@@ -1,5 +1,5 @@
 import { elements, enemyJSON, persoJSON } from "../JDRstore";
-import { isTextInText } from "../utils";
+import { isTextInText } from "../utils/index.js";
 
 // Convert infos "Faible au X et Y" to wekanesses ["X","Y"]
 for (const key in enemyJSON) {

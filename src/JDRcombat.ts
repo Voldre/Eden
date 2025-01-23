@@ -28,6 +28,8 @@ import {
   callPHP,
   createElement,
   dateToString,
+  getRandomBetween,
+  getRandomItem,
   initDialog,
   inputElement,
   inputSelector,
@@ -37,7 +39,7 @@ import {
   setCookie,
   sum,
   toastNotification,
-} from "./utils.js"
+} from "./utils/index.js"
 
 console.log(combatSkillsJSON)
 
@@ -50,7 +52,7 @@ let indexPlayer: Joueurs | undefined
 let joueurData: Player | undefined
 let selectedEnemy: Enemy | undefined
 let currentPersoEntries: number | undefined
-const turnToCheck = 6 + Math.floor(Math.random() * 3)
+const turnToCheck = 6 + getRandomBetween(0, 2)
 
 const MIN_COMMON = 15
 const MAX_COMMON = 29
@@ -110,7 +112,7 @@ window.addEventListener("load", () => {
 
     // Update to get current perso entries
     const persoIDforPlayer = joueurData.persos.indexOf(indexPerso)
-    currentPersoEntries = joueurData.entries[persoIDforPlayer]
+    currentPersoEntries = joueurData.entries[persoIDforPlayer] ?? 0
 
     // 29/11/23 : Add check of entries at the beginning of the fight (here)
     if (currentPersoEntries <= 0) {
@@ -390,9 +392,7 @@ function chooseEnemy(category = null): Enemy {
     enemyList = enemyList.filter((e) => boss.includes(e[0]))
   }
 
-  const randomEnemy = Math.floor(Math.random() * enemyList.length)
-
-  return enemyList[randomEnemy][1]
+  return getRandomItem(enemyList)[1]
 }
 // ***********
 
@@ -442,44 +442,46 @@ function dicesAverageConversion(skill: string): number {
 
 function dicesConversion(skill: string): number {
   let dices = 0
+  const roll = (number: 4 | 6 | 8 | 10 | 12): number => getRandomBetween(1, number)
+
   if (skill.includes("1D12")) {
-    dices += Math.floor(Math.random() * 12 + 1)
+    dices += roll(12)
   }
   if (skill.includes("1D10")) {
-    dices += Math.floor(Math.random() * 10 + 1)
+    dices += roll(10)
   }
   if (skill.includes("2D10")) {
-    dices += Math.floor(Math.random() * 10 + 1) + Math.floor(Math.random() * 10 + 1)
+    dices += roll(10) + roll(10)
   }
   if (skill.includes("3D10")) {
-    dices += Math.floor(Math.random() * 10 + 1) * 2 + Math.floor(Math.random() * 10 + 1)
+    dices += roll(10) * 2 + roll(10)
   }
   if (skill.includes("1D8")) {
-    dices += Math.floor(Math.random() * 8 + 1)
+    dices += roll(8)
   }
   if (skill.includes("2D8")) {
-    dices += Math.floor(Math.random() * 8 + 1) + Math.floor(Math.random() * 8 + 1)
+    dices += roll(8) + roll(8)
   }
   if (skill.includes("1D6")) {
-    dices += Math.floor(Math.random() * 6 + 1)
+    dices += roll(6)
   }
   if (skill.includes("2D6")) {
-    dices += Math.floor(Math.random() * 6 + 1) + Math.floor(Math.random() * 6 + 1)
+    dices += roll(6) + roll(6)
   }
   if (skill.includes("3D6")) {
-    dices += Math.floor(Math.random() * 6 + 1) * 2 + Math.floor(Math.random() * 6 + 1)
+    dices += roll(6) * 2 + roll(6)
   }
   if (skill.includes("4D6")) {
-    dices += Math.floor(Math.random() * 6 + 1) * 3 + Math.floor(Math.random() * 6 + 1)
+    dices += roll(6) * 3 + roll(6)
   }
   if (skill.includes("5D6")) {
-    dices += Math.floor(Math.random() * 6 + 1) * 4 + Math.floor(Math.random() * 6 + 1)
+    dices += roll(6) * 4 + roll(6)
   }
   if (skill.includes("6D6")) {
-    dices += Math.floor(Math.random() * 6 + 1) * 5 + Math.floor(Math.random() * 6 + 1)
+    dices += roll(6) * 5 + roll(6)
   }
   if (skill.includes("1D4")) {
-    dices += Math.floor(Math.random() * 4 + 1)
+    dices += roll(4)
   }
   return dices
 }
@@ -580,8 +582,7 @@ async function victory(): Promise<void> {
 
   // Compo card
   const cardsCompo = cardJSON.filter((card) => card.kind === "composant")
-  const compoCardID = Math.floor(Math.random() * cardsCompo.length)
-  const compoCard = cardsCompo[compoCardID]
+  const compoCard = getRandomItem(cardsCompo)
   newJoueurData.cards = addCard(newJoueurData.cards, compoCard)
   if (compoCard) winCards.push(compoCard)
 
@@ -594,8 +595,7 @@ async function victory(): Promise<void> {
     )
 
     // Choose 1 between all possibilities
-    const randomAnecdoteCardID = Math.floor(Math.random() * anecdoteCardsList.length)
-    const anecdoteCard = anecdoteCardsList[randomAnecdoteCardID]
+    const anecdoteCard = getRandomItem(anecdoteCardsList)
 
     newJoueurData.cards = addCard(newJoueurData.cards, anecdoteCard)
     if (anecdoteCard) winCards.push(anecdoteCard)
@@ -802,7 +802,7 @@ function rollDice<T extends SkillType>(user: EnemyCombat | PersoCombat, type: T,
   }
 
   // Result (correction 20/11/23 : change round to floor to have nice repartition)
-  const diceValue = Math.floor(Math.random() * 20 + 1)
+  const diceValue = getRandomBetween(1, 20)
 
   let result
   if (diceValue > success) {
@@ -936,7 +936,7 @@ function enemyTurn(): void {
   const sumStatsATK = stats[0][1] + stats[1][1]
 
   // enemy.force+enemy.dexté+enemy.intel;
-  const randValue = Math.round(Math.random() * sumStatsATK)
+  const randValue = getRandomBetween(0, sumStatsATK)
 
   const statName: StatsShort = randValue < stats[0][1] ? stats[0][0] : stats[1][0]
 

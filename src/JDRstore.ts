@@ -88,3 +88,11 @@ export const iconsEveil = [ "J009", "J011", "J013", "j043", "J015", "J017", "J01
 
 // prettier-ignore
 export const elements : Elements[] = ["contondant","tranchant", "perçant", "feu", "glace", "foudre", "nature", "lumière", "ténèbres"];
+
+export const aoeDescInfo = {
+  range: ["L", "R"],
+  type: ["-", "+"],
+  rangeName: ["Ligne de", "Rond de"],
+  typeName: ["Courte portée", "Longue portée"],
+  typeMalus: ["Esquivable Malus 4 si proche, 2 si éloigné", "Esquivable seulement de loin, Malus 3-4"],
+}

@@ -12,6 +12,7 @@ import {
   iconsClasses,
   iconsEveil,
   elements,
+  aoeDescInfo,
 } from "./JDRstore.js"
 import {
   callPHP,
@@ -20,7 +21,6 @@ import {
   parseEqptsByRegex,
   unformatText,
   capitalize,
-  aoeDescInfo,
   sum,
   sumEqptsAsAccess,
   isTextInText,
@@ -36,7 +36,7 @@ import {
   SelectElement,
   eqptBonusQuantity,
   splitParenthesisText,
-} from "./utils.js"
+} from "./utils/index.js"
 
 console.log("Skills JSON", skillsJSON)
 console.log("Persos JSON", persosJSON)

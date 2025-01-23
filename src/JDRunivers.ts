@@ -1,5 +1,5 @@
-import { classes, iconsClasses, skillsAwakenJSON, skillsJSON } from "./JDRstore.js"
-import { aoeDescInfo, countEachOccurences, createElement, eventOnClick, initDialog } from "./utils.js"
+import { aoeDescInfo, classes, iconsClasses, skillsAwakenJSON, skillsJSON } from "./JDRstore.js"
+import { countEachOccurences, createElement, shortAndLongEventsOnClick, initDialog } from "./utils/index.js"
 
 const classesDesc = [
   "Les guerriers possèdent de solides aptitudes au combat ainsi que de lourdes armures résistantes. Peut effrayer les ennemis et motiver ses alliés.",
@@ -129,7 +129,7 @@ const updateSkillsList = (classe: string, isAwaken: boolean): void => {
 
       updateAwakenButtonTriggered()
     }
-    eventOnClick(skillE, fastClickEvent)
+    shortAndLongEventsOnClick(skillE, fastClickEvent)
 
     skillsListE.append(skillE)
     updateAwakenButtonTriggered()
@@ -191,7 +191,7 @@ console.warn(
   Object.values(skillsJSON).filter((skill) => !classes.find((classe) => skill.classe.includes(classe)))
 )
 
-// ---
+// #region Labels
 
 function aoeDesc(): string {
   let description = "Il existe 4 types d'Attaques de Zone (AoE) :<br/>"
@@ -264,6 +264,7 @@ const labelsDescription = {
       </tr>
     </tbody>
   </table>
+  Pour rappel : les buffs convertis en malus par des échecs critiques ne sont pas annulables.
   `,
   aoe: `${aoeDesc()}<br/>Concernant l'esquive, tout sort mono-cible peut être esquivé, sauf les sorts d'esprits.`,
   bloquage:

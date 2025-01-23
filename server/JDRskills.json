@@ -586,9 +586,9 @@
   },
   "73": {
     "nom": "Purgatoire",
-    "desc": "Envoi une tranche de flamme sur plusieurs mètres, peut toucher les ennemis larges 2 fois. Dégât en plus si l'ennemi à subi la Coupe Asura",
+    "desc": "Envoi une tranche de flamme sur plusieurs mètres (blocage physique), peut toucher les ennemis larges 2 fois. Dégât en plus si l'ennemi à subi la Coupe Asura",
     "effet": "Dégât AoE L-",
-    "montant": "1D8+1 (+4) (+1D8+1)",
+    "montant": "1D8+1 (Asura +4) (Large +1D8+1)",
     "icone": "E0462",
     "stat": "Esprit",
     "classe": ["Samouraï"]
