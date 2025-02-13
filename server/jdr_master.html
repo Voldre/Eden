@@ -329,10 +329,12 @@
   <!-- Line below is useless, because I know it -->
   <!-- <h5>Bonus de drop si BreakPoint (BP) comme dans le jeu, # faiblesse élémentaire et type (contondant, tranchant, perçant)</h5> -->
 
-  <div class="flexContainer" style="justify-content: center; gap: 0.5rem">
-    <button id="randomBoss" style="width: 60px">Random Boss</button>
+  <div class="notes-and-music">
     <div>
-      <h4 style="margin: 6px">Notes à moi-même</h4>
+      <div class="flexContainer">
+        <button id="randomBoss">Random Boss</button>
+        <h4 style="margin: 6px">Notes à moi-même</h4>
+      </div>
       <textarea style="width: 100%" name="" id="" cols="45" rows="10" class="notes"></textarea>
     </div>
     <div>
@@ -423,7 +425,7 @@
           </audio>
         </div>
         <div>
-          <p id="bgm015">Palais des Malices / Baltaroï / Jungle Dieu Serpent / Cerisier</p>
+          <p id="bgm015">Palais des Malices / Baltaroï / Jungle Dieu Serpent / Cerisier / Aridel</p>
           <audio loop controls="">
             <source src="bgm/bgm015.ogg" type="audio/ogg" />
           </audio>
@@ -780,7 +782,7 @@
         <div>
           <p id="Thomas">Thomas - KHR Hibari</p>
           <audio loop controls="">
-            <source src="bgm/Thomas - KHR Hibari.ogg" type="audio/ogg" />
+            <source src="bgm/Thomas - KHR Hibari.mp3" type="audio/mp3" />
           </audio>
         </div>
         <div>
@@ -934,9 +936,15 @@
           </audio>
         </div>
         <div>
-          <p id="crimson">Qorina - Sky Battle (Reborn)</p>
+          <p id="qorina">Qorina - Sky Battle (Reborn)</p>
           <audio loop controls="">
             <source src="bgm/Katekyo Hitman Reborn OST 3 - Sky Battle.mp3" type="audio/mp3" />
+          </audio>
+        </div>
+        <div>
+          <p id="luminary">1er Luminary - Iruma - Asmodeus Alice</p>
+          <audio loop controls="">
+            <source src="bgm/1er Luminary - Iruma - Asmodeus Alice.mp3" type="audio/mp3" />
           </audio>
         </div>
         <div>
@@ -1012,6 +1020,10 @@
           </audio>
         </div>
       </div>
+    </div>
+    <div class="speed-wrapper">
+      <input id="speed-input" type="range" min="0.7" max="1.4" value="1" step="0.1" orient="vertical" />
+      <span id="speed"></span>
     </div>
   </div>
   <div class="adding">

@@ -878,5 +878,35 @@
     "contexte": "",
     "key_events": [],
     "objectifs": []
+  },
+  {
+    "groupe": 3,
+    "seance": 21,
+    "date": "19/01/25",
+    "titre": "Obelia et le Loup Gardien",
+    "personnages": ["Aradia", "Draigos", "Le Poisseux", "Shkrouk", "Yuki Hart"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 31,
+    "date": "26/01/25",
+    "titre": "Acte final : Xonifar et le Prince du Fléau",
+    "personnages": ["Estia Ryujin", "Azora", "Zhaïtan"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 32,
+    "date": "02/02/25",
+    "titre": "Le mariage du frère de Zhaïtan",
+    "personnages": ["Estia Ryujin", "Azora", "Zhaïtan"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
   }
 ]

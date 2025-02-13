@@ -3029,8 +3029,8 @@
     "nom": "Esprit Brûlant Altéré",
     "pvmax": 260,
     "skills": [
-      "Rayon de feu # Baram : 3D10 15 : Intelligence",
-      "Feu propageur : 2D10 +15 AoE : Intelligence",
+      "Rayon de feu # Baram : 3D10 14 : Intelligence",
+      "Feu propageur : 2D10 +14 AoE : Intelligence",
       "Aura perturbante : Dé +1 pendant 3 tours AoE : Esprit",
       "Passif : Si ennemi dé 20, amplifie (+5 dgt).<br/> Dégât +5, buff +1 tour si PV <130"
     ],
@@ -3286,8 +3286,8 @@
     "skills": [
       "Coupe Asura / Purgatoire : Degat 2D6 (+6 si Asura) +24 AoE : Force",
       "Eclair unique : Degat 3D6 (+7 si Asura) +30 : Force (jdrcombat +45)",
-      "Frénésie/Aura Khan : Buff Mono/AoE dégât +2D6+10 / 1D6 +6 (*1.5 si Cor) sur 4/3 tours AoE : Esprit",
-      "Passif Draconite : sur les DK : Dégât +33%, Reçu -33% (si PV <150 : 50%)"
+      "Frénésie/Aura Khan : Buff Mono/AoE dégât +2D6+10 / 1D6 +6 sur 4 tours AoE : Esprit",
+      "Passif Draconite : sur les DK : Dégât +33%, Reçu -33% (si PV <150 : 50%)<br/>Cor de Guerre (instant') : Ralliement + Confiance, Buff Stats+2; Dégât/Armure +1D6+9 AoE 4 tours"
     ],
     "stats": "21,13,9,12,17",
     "desc": "Chef de la tribu Khan et initiateur de la révoluion des Ogres des steppes. Motivé à détruire Heldentod",
@@ -3329,10 +3329,10 @@
     "nom": "Xonifar - Drakaï Transcendé",
     "pvmax": 280,
     "skills": [
-      "Rayon/Flèches des Ombres : Dégât  5D6 (3D6 AoE) +25 : Intelligence",
+      "Rayon/Flèches des Ombres : Dégât  5Đ6 (3D6 AoE) +24 : Intelligence",
       "Pacte unifié (pacte/hommage avec soi) : Dégât +1D6+4, Armure +5, pendant 5 tours : Esprit",
       "Menaces Mortelles : Réussite -4, Esq/Bloc/Res -2, AoE dure 3 tours (rejoue si critique (1,2,3)) : Esprit",
-      "Passif : Si dé <= 5 : esq/bloc cible -2, si critique : Stats -2 (2 tours),<br/>Prince du Fléau : Si PV <50 : Bombe à retardement (2-3 tours ?)"
+      "Passif : Si dé <= 5 : esq/bloc cible -2, si critique ou déformé : Stats -2 (2 tours),<br/>Déformation Fléau : PV < 100 => Stats+2 / DGT+10 (rejoue si crit)<br/>+ Bombe à retardement (6D6+50 Bloc M/2) (2-3 tours)"
     ],
     "stats": "11,15,19,12,18",
     "desc": "Drakaï Démoniste qui a transcendé son corps avec la magie noire, lui octroyant une forme supérieure, éveillée, à l'apparence de monstre.",
@@ -3368,5 +3368,20 @@
     "desc": "Lunicorne est l'Esprit qui veille sur le Lac d'Obelia. Personne ne connait vraiment ses origines, mais il semblerait qu'il soit là pour maintenir un certain équilibre.",
     "drop": "(Compo ex : corne licorne, peau licorne), Amulette d'Expérience, très rare : Crinière de Lunicorne",
     "weaknesses": ["foudre", "ténèbres"]
+  },
+  "227": {
+    "visuel3D": "baton_fleau",
+    "nom": "Sceptre du Fléau",
+    "pvmax": 200,
+    "skills": [
+      "Trait de ténèbres (mode combat) : Dégât 2D6+18 : Intelligence",
+      "Aura noir (mode combat) : Dégât 2D6+10 Stats -2 (2 tours) AoE : Intelligence",
+      "Si trop provoqué / pris : Invocation du Prince",
+      "Passif : Epines 5 (si stimulé)"
+    ],
+    "stats": "10,0,18,10,18",
+    "desc": "L'un des sceptres du Prince du Fléau, amplie d'une très puissante magie noire, sa présence résonne en lui",
+    "drop": "N/A",
+    "weaknesses": ["contondant", "lumière"]
   }
 }

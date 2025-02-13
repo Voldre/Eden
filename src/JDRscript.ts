@@ -274,20 +274,13 @@ function defineAwaken(classe: Classes | ""): void {
 
   awakenSkillE.classList.remove("hide")
 
-  let nbUse
-  if (niv >= 15) {
-    nbUse = 3
-  } else if (niv >= 12) {
-    nbUse = 2
-  } else {
-    nbUse = 1
-  }
+  const nbUse = niv >= 15 ? 3 : niv >= 12 ? 2 : 1
+  const nbTurns = nbUse === 1 ? "4" : "3"
 
   awakenSkillE.id = classe
   awakenSkillE.querySelector<HTMLParagraphElement>(".nom")!.innerText = `Eveil du ${classe}`
   awakenSkillE.querySelector<HTMLParagraphElement>(".effet")!.innerText = "Inactif"
 
-  const nbTurns = nbUse === 1 ? "4" : "3"
   awakenSkillE.querySelector<HTMLParagraphElement>(".montant")!.innerText =
     `${nbUse} fois par combat : Eveil des compétences : Durée ${nbTurns} tours`
 
@@ -307,14 +300,31 @@ addClickListener(awakenSkillE, (e) => {
 
 addClickListener(document.querySelector<HTMLButtonElement>("#awakenButton")!, (e) => {
   let awakenClass // Classe à éveiller
+
+  const nbUse = nivE.value >= 15 ? 3 : nivE.value >= 12 ? 2 : 1
+  const nbTurns = nbUse === 1 ? "4" : "3"
+
+  const buffTurnE = awakenSkillE.querySelector<HTMLElement & { children: [HTMLImageElement] }>(".buffTurn")!
+  buffTurnE.style.cursor = "pointer"
+
+  awakenClass = awakenSkillE.id as Classes
+
+  const currentTurnE = buffTurnE.children[1] as HTMLParagraphElement | undefined
   if (e.target.innerText === "Inactif") {
     e.target.innerText = "Actif"
     e.target.style.color = "green"
-    awakenClass = awakenSkillE.id as Classes
+
+    const turnOfBuffE = createElement("p", nbTurns)
+    buffTurnE.append(turnOfBuffE)
+    buttonBuffs.className = ""
+  } else if (currentTurnE && parseInt(currentTurnE.innerText) > 1) {
+    currentTurnE.innerText = `${parseInt(currentTurnE.innerText) - 1}`
   } else {
     e.target.innerText = "Inactif"
     e.target.style.color = "black"
-    awakenClass = undefined
+    currentTurnE?.remove()
+    buttonBuffs.className = "hide"
+    awakenClass = undefined // Remove the awaken class for displayed skills
   }
 
   persoData?.skills.forEach((skill, index) => {
@@ -462,11 +472,16 @@ competenceEs.forEach((competenceE) => {
 
 function updateSkillsSlots(): void {
   // Display skils slots
-  competenceEs.forEach((competenceE, i) => {
+  competenceEs.forEach((competenceE, index) => {
     const niv = nivE.value || 1
-    const SlotsAvailable = Math.trunc(niv / 2) + 3 // Update 17/05/23, 3 au lieu de 2, car 4 skills sur ~ 12-13 possibles
-    if (i > SlotsAvailable) {
+    const slotsAvailable = Math.trunc(niv / 2) + 3 // Update 17/05/23, 3 au lieu de 2, car 4 skills sur ~ 12-13 possibles
+    if (index > slotsAvailable) {
       competenceE.classList.add("hide")
+    } else if (index === competenceEs.length - 1) {
+      // Update 29/01/25, passif 12 : +1 skill
+      if (persoData?.passif12?.includes("+1 emplacement de sort")) {
+        competenceE.classList.remove("hide")
+      } else competenceE.classList.add("hide")
     } else {
       competenceE.classList.remove("hide")
     }
@@ -638,6 +653,7 @@ function insertBuffInteraction(
         const turnOfBuffE = createElement("p", turnE.value)
         const amountOfBuffE = createElement("p", hasAmount ? amountE.value : "")
         buffTurnE.append(turnOfBuffE, amountOfBuffE)
+        buttonBuffs.className = "" // Show button
         dialog.close()
       },
     })
@@ -662,8 +678,6 @@ function insertBuffInteraction(
     dialog.append(globalE)
     // Ouverture en "modal"
     dialog.showModal()
-
-    buttonBuffs.className = ""
   }
 
   if (

@@ -256,21 +256,26 @@ function nextTurn(): void {
   }
 }
 
-// Disable the possibility of launching many audio simultaneously
-const audiosE = document.getElementsByTagName("audio")
+const audiosE = [...document.getElementsByTagName("audio")]
 const currentMusicE = document.getElementById("currentMusic")!
+
+audiosE.forEach((audioE) => {
+  // Make music speed change the tonality
+  audioE.preservesPitch = false
+})
 
 document.addEventListener(
   "play",
   (e) => {
-    for (let i = 0, len = audiosE.length; i < len; i++) {
-      if (audiosE[i] !== e.target) {
-        audiosE[i].pause()
-        if (audiosE[i].currentTime < 30) {
-          audiosE[i].currentTime = 0
+    // Disable the possibility of launching many audio simultaneously
+    audiosE.forEach((audioE) => {
+      if (audioE !== e.target) {
+        audioE.pause()
+        if (audioE.currentTime < 30) {
+          audioE.currentTime = 0
         }
       }
-    }
+    })
 
     const currentBGME = e.target instanceof HTMLElement && e.target.previousElementSibling
     if (currentBGME instanceof HTMLParagraphElement) {
@@ -279,6 +284,15 @@ document.addEventListener(
   },
   true
 )
+
+const speedInputE = inputElement(document.querySelector("#speed-input")!, "number")
+const speedE = document.querySelector<HTMLSpanElement>("#speed")!
+speedInputE.addEventListener("input", () => {
+  speedE.innerText = speedInputE.value.toFixed(1)
+  audiosE.forEach((audioE) => {
+    audioE.playbackRate = speedInputE.value
+  })
+})
 
 const abnormalWeaknesses = Object.values(enemyJSON)
   .filter((enemy) => !enemy.nom.includes("Veyda") && enemy.pvmax < 500)
@@ -702,6 +716,7 @@ document.querySelector("#createEnemy")!.addEventListener("click", () => {
 document.querySelector("#randomBoss")!.addEventListener("click", () => {
   const bosses = Object.entries(enemyJSON).filter((e) => e[1].pvmax > 200)
   const randomIndex = Math.floor(Math.random() * bosses.length)
+  document.querySelector<HTMLSelectElement>(".ennemi")!.value = bosses[randomIndex][0]
   loadEnemy(bosses[randomIndex][0], document.querySelector("#e0")!)
 })
 

@@ -742,6 +742,14 @@
     "kindId": "m017b"
   },
   {
+    "id": 1081,
+    "value": 3,
+    "kind": "boss",
+    "name": "Xonifar - Drakaï Transcendé",
+    "description": "Drakaï Démoniste qui a transcendé son corps avec la magie noire, lui octroyant une forme supérieure, éveillée, à l'apparence de monstre",
+    "kindId": "xonifar"
+  },
+  {
     "id": 1201,
     "value": 1,
     "kind": "composant",
@@ -2307,7 +2315,7 @@
     "value": 3,
     "kind": "composant",
     "name": "Bourgeon de Vie",
-    "description": "Cette bague, ornée d’un joyau rouge Vermillon, est une relique transmise de génération en génération d'Empereurs jusqu'à Heldentod III et son drame. Depuis elle était gardée à la cour royale, jusqu'au vol de Conrad. Elle apporte la fertilité et décuple le potentiel est descendants.",
+    "description": "Cette bague, ornée d'un joyau rouge Vermillon, est une relique transmise de génération en génération d'Empereurs jusqu'à Heldentod III et son drame. Depuis elle était gardée à la cour royale, jusqu'au vol de Conrad. Elle apporte la fertilité et décuple le potentiel des descendants.",
     "kindId": "i01309i"
   },
   {
@@ -2730,8 +2738,8 @@
     "value": 3,
     "kind": "anecdote",
     "name": "Le l\u00e9gendaire bouclier Zuminator",
-    "description": "Zuminator aurait laiss\u00e9 en ce monde le symbole de sa puissance et de sa justice : son bouclier !",
-    "maps": [19],
+    "description": "Zuminator aurait laiss\u00e9 en ce monde le symbole de sa puissance et de sa justice : son bouclier ! C'est ce qu'un Zumi fan a raconté à Kibo, du moins.",
+    "maps": [1],
     "enemies": [],
     "kindId": "items/W73002",
     "group": 2
@@ -3633,7 +3641,7 @@
     "kind": "anecdote",
     "name": "La Veyda et les soins",
     "description": "Se soigner n'est pas facile pour le groupe. En effet la plupart des soigneurs préfèrent tanker et frapper ! On peut citer l'un d'eux, Shkrouk, je cite : \"Le soin c'est pour les pédales !\"",
-    "maps": [4],
+    "maps": [501],
     "enemies": [],
     "kindId": "skillIcon/E1014",
     "group": 3
@@ -4953,9 +4961,42 @@
     "kind": "anecdote",
     "name": "Déflagration de la monstruosité",
     "description": "En traquant Xonifar à la Vallée de la Mort, ils tombent sur une immense créature difforme, servant d'appareil reproducteur de créatures mutantes : encore une de ses abomination. Le groupe s'en débarasse en la faisant brûler de l'intérieur avec ses gaz, infligeant de lourd dégât de zone.",
-    "maps": [4],
+    "maps": [25],
     "enemies": [],
     "kindId": "skillIcon/j060b",
+    "group": 2
+  },
+  {
+    "id": 1876,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Les monstres ventouses",
+    "description": "Pendant leur escapade à Obelia, le groupe est tombé sur d'étranges parasites : des Avale-esprits, des créatures qui se ventousent à leurs ennemis pour les contrôler et les paralyser : Shkrouk, Draigos et Yuki en on fait l'expérience !",
+    "maps": [61],
+    "enemies": [],
+    "kindId": "monsters/m171",
+    "group": 3
+  },
+  {
+    "id": 1877,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Le Sceptre du Fléau",
+    "description": "Le groupe tombe face à Xonifar qui a trouvé un sceptre un peu particulier... Un des bâtons du Prince du Fléau ! Cela ne fait plus de doute, il est un de ses adaptes au même titre que l'était Heldentod III ! Il représente une vraie menace !",
+    "maps": [25],
+    "enemies": [],
+    "kindId": "monsters/baton_fleau",
+    "group": 2
+  },
+  {
+    "id": 1878,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Réminiscence du Prince",
+    "description": "Estia en plein combat face à Xonifar croise le regard du Prince du Fléau, et une sorte de souvenir jaillit dans son esprit, elle le voit... jeune ? Enchaîné ? Et ce dernier déclare la connaître ? Qu'elle aurait transcendé le temps ?!",
+    "maps": [25],
+    "enemies": [],
+    "kindId": "wallpaper/Dascha Adwin young",
     "group": 2
   },
   {

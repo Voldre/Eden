@@ -303,7 +303,7 @@
     "map_z": null,
     "map_r": null,
     "bgm": 12,
-    "mobs": [129, 150, 176, 177, 167]
+    "mobs": [129, 150, 176, 177, 167, 224]
   },
   "26": {
     "name": "Plaines Fleuries",
@@ -593,6 +593,18 @@
     "map_r": null,
     "bgm": 0,
     "mobs": [215, 216, 217, 190, 225]
+  },
+  "62": {
+    "name": "Aridel",
+    "wmap_x": 29.3,
+    "wmap_y": 39,
+    "wmap": 1,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": 15,
+    "mobs": []
   },
   "97": {
     "name": "Île du Mariage",

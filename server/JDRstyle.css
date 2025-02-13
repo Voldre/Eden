@@ -689,6 +689,15 @@ td {
 .adding h4 {
   margin-bottom: 8px;
 }
+
+.notes-and-music {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  height: 140px;
+  align-items: center;
+}
+
 #currentMusic {
   display: inline;
   color: lightgray;
@@ -711,6 +720,17 @@ td {
 .musique div p {
   margin: auto;
   max-width: 23vw;
+}
+
+.speed-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 135px;
+  margin-top: 0.5rem;
+}
+.speed-wrapper #speed-input {
+  height: inherit;
 }
 
 .button-container {
