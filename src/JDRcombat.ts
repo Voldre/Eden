@@ -40,6 +40,7 @@ import {
   sum,
   toastNotification,
 } from "./utils/index.js"
+import { LoggerService } from "./utils/logger.js"
 
 console.log(combatSkillsJSON)
 
@@ -503,10 +504,6 @@ function newturn(): void {
   // Bug Fix 28/11/23 : Ajout condition "ingame". Car si on a déjà gagné (isEnded => victory() / defeat), on a déjà
   // log toutes les informations (avec winCards + earnedcoins), donc pas besoin de re-log !
   if (turn === turnToCheck && ingame) {
-    const urlParams = new URLSearchParams(window.location.search)
-
-    if (!urlParams.has("perso") || !joueurData) return
-
     saveLog(0, undefined)
     savePlayer()
   }
@@ -532,25 +529,14 @@ async function isEnded(): Promise<void> {
       return
     }
 
-    try {
-      if (isVictory) {
-        await victory()
-      } else {
-        await saveLog(0, undefined)
-        await savePlayer()
-      }
-      toastNotification("Sauvegarde effectuée, redirection ...", 6000)
-    } catch (e) {
-      console.error(e)
-      toastNotification(
-        `Erreur : le combat n'a pas pu être sauvegardé :${e instanceof Error ? e.message : e}`,
-        6000,
-        true
-      )
+    if (isVictory) {
+      await victory()
+    } else {
+      await saveLog(0, undefined)
+      await savePlayer()
     }
-  }
+    toastNotification("Sauvegarde effectuée, redirection ...", 6000)
 
-  if (!ingame) {
     endRediction()
   }
 }
@@ -642,55 +628,71 @@ async function saveCheat(enemyName: string | null): Promise<void> {
 }
 
 async function saveLog(earnedCoins: number, winCards: Card[] | undefined): Promise<void> {
-  const logsJSON = getData<{ [key: string]: CombatLog }>("combatLogs")
+  try {
+    const logsJSON = getData<{ [key: string]: CombatLog }>("combatLogs")
 
-  if (logID === undefined) logID = parseInt(Object.keys(logsJSON).reverse()[0]) + 1 || 1
+    if (logID === undefined) logID = parseInt(Object.keys(logsJSON).reverse()[0]) + 1 || 1
 
-  const newLog: { [key: string]: Partial<CombatLog> } = {}
-  newLog[logID] = {
-    date: dateToString(new Date(), true),
-    joueur: indexPlayer,
-    perso: nomPerso,
-    map: mapID,
-    cardRarity,
-    enemy: selectedEnemy?.nom,
-    earnedCoins,
-    winCards: winCards?.map((w) => [w.id, w.name]) || [],
-    turn: parseInt(turnE.innerText),
-    pv: perso?.pv,
-    epv: enemy?.pv,
+    const newLog: { [key: string]: Partial<CombatLog> } = {}
+    newLog[logID] = {
+      date: dateToString(new Date(), true),
+      joueur: indexPlayer,
+      perso: nomPerso,
+      map: mapID,
+      cardRarity,
+      enemy: selectedEnemy?.nom,
+      earnedCoins,
+      winCards: winCards?.map((w) => [w.id, w.name]) || [],
+      turn: parseInt(turnE.innerText),
+      pv: perso?.pv,
+      epv: enemy?.pv,
+    }
+
+    // console.log(newLog);
+
+    setCookie("combatLogsJSON", newLog)
+    // console.log("saveFile done : combatLogs, jdr_backend.php executed");
+    await callPHP({ action: "saveFile", name: "combatLogs" })
+  } catch (e) {
+    console.error(e)
+    LoggerService.logError(`Combat (combatLogsJSON) : échec de la sauvegarde  : ${e instanceof Error ? e.message : e}`)
+    toastNotification(`Erreur : le log n'a pas pu être sauvegardé : ${e instanceof Error ? e.message : e}`, 6000, true)
   }
-
-  // console.log(newLog);
-
-  setCookie("combatLogsJSON", newLog)
-  // console.log("saveFile done : combatLogs, jdr_backend.php executed");
-  await callPHP({ action: "saveFile", name: "combatLogs" })
 }
 
 async function savePlayer(): Promise<void> {
-  if (!indexPerso || !joueurData) {
-    toastNotification("Erreur : Le personnage n'a pas été identifié.", 6000, true)
-    return
+  try {
+    if (!indexPerso || !joueurData || !indexPlayer) {
+      toastNotification("Erreur : Le joueur n'a pas été identifié.", 6000, true)
+      throw new Error(`Le joueur ${indexPlayer} du perso ${perso?.nom} n'a pas été identifié.`)
+    }
+    // Last control before save : if entries are negative, don't save !
+    const persoIDforPlayer = joueurData.persos.indexOf(indexPerso)
+
+    // Glitch Bug fixes : Victorine 27/11/23 "Infini combat si tu gagnes avant T6-8 !"
+    // En effet, l'entrée n'était pas décomptée/consommée si tu finissais avant, mtn dès la save je la compte
+    if (currentPersoEntries === joueurData.entries[persoIDforPlayer]) joueurData.entries[persoIDforPlayer] -= 1
+
+    if (joueurData.entries[persoIDforPlayer] <= -1) {
+      toastNotification("Erreur : Le personnage a déjà consommé toutes ses entrées.", 6000, true)
+      throw new Error(`${perso?.nom} a déjà consommé toutes ses entrées`)
+    }
+
+    const newPlayer: { [key: string]: Player } = {}
+    newPlayer[indexPlayer] = joueurData
+    // console.log(newPlayer);
+
+    setCookie("playerJSON", newPlayer)
+    await callPHP({ action: "saveFile", name: "player" })
+  } catch (e) {
+    console.error(e)
+    LoggerService.logError(`Combat (playerJSON) : échec de la sauvegarde : ${e instanceof Error ? e.message : e}`)
+    toastNotification(
+      `Erreur : le combat n'a pas pu être sauvegardé : ${e instanceof Error ? e.message : e}`,
+      6000,
+      true
+    )
   }
-  // Last control before save : if entries are negative, don't save !
-  const persoIDforPlayer = joueurData.persos.indexOf(indexPerso)
-
-  // Glitch Bug fixes : Victorine 27/11/23 "Infini combat si tu gagnes avant T6-8 !"
-  // En effet, l'entrée n'était pas décomptée/consommée si tu finissais avant, mtn dès la save je la compte
-  if (currentPersoEntries === joueurData.entries[persoIDforPlayer]) joueurData.entries[persoIDforPlayer] -= 1
-
-  if (!indexPlayer || joueurData.entries[persoIDforPlayer] <= -1) {
-    toastNotification("Erreur : Le personnage a déjà consommé toutes ses entrées.", 6000, true)
-    return
-  }
-
-  const newPlayer: { [key: string]: Player } = {}
-  newPlayer[indexPlayer] = joueurData
-  // console.log(newPlayer);
-
-  setCookie("playerJSON", newPlayer)
-  await callPHP({ action: "saveFile", name: "player" })
 }
 
 function addCard(joueurDataCards: number[], card: Card | undefined): number[] {

@@ -17,7 +17,7 @@ include("menu.html");
 global $audioMap;
 $audioMap = json_decode(file_get_contents("audioMap.json"),true);
 
-$maplist = $_SESSION["maplist"];
+$maplist = json_decode(file_get_contents("maps.json"),true);
 
 function All($value){
     return true;

@@ -78,6 +78,8 @@ exit();
     <?php
         if($repository == "maps"){
             echo "<option value=''>Sélectionner ...</option>";
+
+            $maplist = json_decode(file_get_contents("maps.json"),true);
         }
         foreach($files as $file){
             if(strpos($file,".obj") !== false){
@@ -86,8 +88,8 @@ exit();
                 if($repository == "maps"){ 
                     if($file[0] == "S"){ // Si le fichier est bien une carte (S***.obj), # 1er char = "S"
                         
-                        if(isset($_SESSION["maplist"][ intval(substr($file,1)) ])){
-                            $mapName = $_SESSION["maplist"][ intval(substr($file,1))]["name"];
+                        if(isset($maplist[ intval(substr($file,1)) ])){
+                            $mapName = $maplist[ intval(substr($file,1))]["name"];
                             echo "<option value=$file>$mapName</option>";
                         }else{
                             echo "<option value=$file>$file</option>";

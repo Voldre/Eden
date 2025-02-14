@@ -469,9 +469,9 @@
   },
   "60": {
     "nom": "Prière Divine",
-    "desc": "Action Instantanée. Soigne l'utilisateur et boost les prochains dégâts de lumières : obligé de faire de la lumière. (Utilisable tous les 3 tours max si réussi)",
+    "desc": "Action Instantanée. Soigne l'utilisateur et boost les prochains dégâts de lumières : obligé de faire de la lumière.",
     "effet": "Buff et Soin",
-    "montant": "Soin 1D8 +5. Prochain dégât lumière +1D6 +2 (1 tour max)",
+    "montant": "Soin 1D8 +5. Prochain dégât lumière +1D6 +2 (1 tour max) - Cooldown 2 tours",
     "icone": "E0610",
     "stat": "Esprit",
     "classe": ["Luminary"]
@@ -1146,7 +1146,7 @@
     "nom": "Dédoublement",
     "desc": "Crée un double de soi avec les mêmes stats et buffs (à l'invocation). La durée des sorts lancées sont divisées par 2, ou, cas échéant, ses dégâts/soins et ses montants (invocation/buff/malus), sont divisés par 2. Ses dégâts reçus touchent le porteur et sont aussi divisés par 2 (avec armure/2).",
     "effet": "Invocation",
-    "montant": "Invoque un double de soi pendant 2 tours (max 3 tours avec boost).",
+    "montant": "Invoque un double de soi pendant 2 tours (max 3 tours avec boost) - Cooldown 2 tours",
     "icone": "E1042",
     "stat": "Esprit",
     "classe": ["Illusionniste"]

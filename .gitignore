@@ -11,4 +11,5 @@ images/other 3D/*
 images/loadingframe/*
 jdr_master_admin.html
 ignore*
+*.log
 server/**/*.js

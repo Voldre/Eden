@@ -1,6 +1,7 @@
 import { playerJSON, mapsJSON, pnjJSON, persosJSON, enemyJSON } from "./JDRstore.js"
 import { Enemy, Joueurs, Map, Perso, Player, PNJ } from "./model.js"
 import {
+  callPHP,
   createElement,
   getRandomBetween,
   getRandomItem,
@@ -132,12 +133,8 @@ window.addEventListener("load", async () => {
 
 async function getChatGPTKey(): Promise<string | undefined> {
   try {
-    const result = await fetch("jdr_backend.php", {
-      headers: { "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8" },
-      method: "POST",
-      body: new URLSearchParams({ action: "chatGpt" }),
-    })
-    return result.text()
+    const chatGPTKey = await callPHP({ action: "chatGpt" })
+    return chatGPTKey
   } catch (error) {
     console.log(error)
     responseElement.innerHTML = `Echec de la récupération de la clé de l'API ChatGPT :${JSON.stringify(error)}`

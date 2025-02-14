@@ -369,7 +369,7 @@
   },
   "96": {
     "nom": "Aura : Ami du Marteau",
-    "montant": "Soin 1D10 +2. Prochain dégât +1D6+2 (enchanté de l'élément de l'Aura) (3 tours max)"
+    "montant": "Soin 1D10 +8. Prochain dégât +1D6+4 (enchanté de l'élément de l'Aura) (3 tours max)"
   },
   "98": {
     "nom": "Perforation",

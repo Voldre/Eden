@@ -1,4 +1,4 @@
-import { Equipment, Perso, Skill, Classes, Races, StatsName, RaceClassStatsValue } from "./model"
+import { Equipment, Perso, Skill, Classes, Races, StatsName, RaceClassStatsValue } from "./model.js"
 import {
   skillsJSON,
   skillsAwakenJSON,
@@ -37,6 +37,7 @@ import {
   eqptBonusQuantity,
   splitParenthesisText,
 } from "./utils/index.js"
+import { LoggerService } from "./utils/logger.js"
 
 console.log("Skills JSON", skillsJSON)
 console.log("Persos JSON", persosJSON)
@@ -1351,6 +1352,7 @@ saveButton.addEventListener("click", () => {
     callPHP({ action: "saveFile", name: "persos" })
     toastNotification("Sauvegarde effectuée")
   } else {
+    LoggerService.logError(`Plus de place sur la fiche de ${Object.values(newPerso)[0].nom}`)
     toastNotification("ECHEC : Plus de place disponible sur la fiche !", 10000, true)
   }
 })
