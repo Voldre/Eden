@@ -12,7 +12,7 @@ $log_file = __DIR__ . '/JDRerror.log';
 function logger($message, $currentDate = null)
 {
     global $log_file;
-    $date = $currentDate ?? date('Y-m-d H:i:s');
+    $date = isset($currentDate) ? $currentDate : date('Y-m-d H:i:s');
     $full_message = "[$date] $message\n";
 
     // Utilisation de error_log avec un fichier personnalisé
@@ -50,12 +50,28 @@ try {
             }
         }
 
+        if ($_POST['action'] === 'lastId') {
+            $filename = 'JDR' . $_POST['name'] . '.json';
+            if (!file_exists($filename)) {
+                logger("File '$filename' does not exist.");
+            }
+
+            $file = json_decode(file_get_contents($filename, true), true);
+
+            $keys = array_keys($file);
+            echo end($keys);
+        }
+
         if ($_POST['action'] === "saveFile") {
 
             $name = $_POST['name'];
+            $filename = 'JDR' . $name . '.json';
 
             if (isset($_COOKIE[$name . 'JSON'])) {
 
+                if (!file_exists($filename)) {
+                    logger("File '$filename' does not exist.");
+                }
                 // 29/11 : Remove print_r, echo and var_dump, to reduce time of save
                 // print_r($_COOKIE[$name.'JSON']);
                 // echo "<br/><br/>";

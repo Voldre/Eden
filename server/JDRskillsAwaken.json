@@ -456,7 +456,7 @@
   "118": {
     "nom": "Explosion Glaciale",
     "desc": "L'utilisateur canalyse sa magie pendant 2 tours (1 dé par tour) et la balance à toute puissance sur ses adversaires en face (chance blocage/2)",
-    "montant": "3D6 +15 (Blocage +2 pendant l'incantation)"
+    "montant": "Incantation 2 tours (1 dé/tour) : 3D6 +15 (Blocage +2 pendant l'incantation)"
   },
   "119": {
     "nom": "Encouragement Musical",

@@ -2984,8 +2984,8 @@
     "nom": "Kachgar - Commandant Khan",
     "pvmax": 260,
     "skills": [
-      "Coupure de lumière / noire (Destruction/Portail) : Degat 3D6 (-5 AoE) +17, Mono : Force",
-      "Prière Divine (Sacrifice ombre) : Soin 2D6+24, prochain dégât lumière +1D8 +12, (chaque tour : PV -10, Force/Intel +4, ténèbres +10) : Espr",
+      "Coupure lumière/noire (Destruct/Portail) : Degat 3D6 (-5 AoE) +17 : Force",
+      "Prière Divine (Sacrifice ombre) : Soin 2D6+24, prochain dég lum +1D8 +12, (PV -10/t, Force/Intel +4, ténèbres +10) : Espr",
       "Menaces Mortelles : Réussite -3, Esq/Bloc/Res -2, dure 2 tours (AoE) : Esprit",
       "Saut Dimensionnel : Esquive , 3 tentatives : Intelligence<br/>Passif : si PV <130 : Sacrifice = +5 DGT (et soin +5 PV/coup)"
     ],
@@ -3267,12 +3267,12 @@
   "220": {
     "visuel3D": "m060c",
     "nom": "Maître des Brumes Khan",
-    "pvmax": 190,
+    "pvmax": 210,
     "skills": [
       "Éclair en Furie : 3D6+15 (réussite -4 sur 1 tour) : Intelligence",
       "Guérison (Résurrection) : Soin 3D6 (2t, PV+20) +20 : Intelligence",
-      "Puma Noir Agile (instant) : (Force/Dexté+4) 4 tours max : Triple Griffe : 3D6+14 (Dextérité), Saut d'esquive (2x par transfo) : Esprit",
-      "Passif (si incantation 1/4 tour) : Brume Khan : Epais brouillard perturbant (Stats -1 à -3, + -2 si DK)"
+      "Puma Noir Agile (instant) : (Force/Dexté+4) 4 tours max : Triple Griffe : 3D6+14 (Dexté), Saut d'esq (2 par transfo) : Esprit",
+      "Passif (si incantation 1/4 tour) : Brume Khan : Brouillard perturb (Stats -1 à -3, + -2 si DK)"
     ],
     "stats": "11,14,17,10,16",
     "desc": "Grand maître Shaman affilié à Tengri. Arborant l'étendard Khan et portant la Brume sur le champ de bataille.",
@@ -3286,8 +3286,8 @@
     "skills": [
       "Coupe Asura / Purgatoire : Degat 2D6 (+6 si Asura) +24 AoE : Force",
       "Eclair unique : Degat 3D6 (+7 si Asura) +30 : Force (jdrcombat +45)",
-      "Frénésie/Aura Khan : Buff Mono/AoE dégât +2D6+10 / 1D6 +6 sur 4 tours AoE : Esprit",
-      "Passif Draconite : sur les DK : Dégât +33%, Reçu -33% (si PV <150 : 50%)<br/>Cor de Guerre (instant') : Ralliement + Confiance, Buff Stats+2; Dégât/Armure +1D6+9 AoE 4 tours"
+      "Frénésie Khan : -1 malus, Buff Mono dégât +2D6+10 sur 4 tours : Esprit",
+      "Passif Draconite : sur les DK : Dégât +33%, Reçu -33% (si PV <150 : 50%)<br/>Cor de Guerre (dé <= 6 = instant') : Cohésion & -1 malus, Buff Stats+2; Dégât +1D6+9 AoE++ 4 tours"
     ],
     "stats": "21,13,9,12,17",
     "desc": "Chef de la tribu Khan et initiateur de la révoluion des Ogres des steppes. Motivé à détruire Heldentod",

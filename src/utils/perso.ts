@@ -78,14 +78,14 @@ export const newPerso = (persoData: Perso, inFight: boolean = true): PersoCombat
 
   // Bonus de dégât par niveau (20/11/23 : Fixe à 2 en +, exponentiel par niveau)
   perso.degat = Math.round(
-    (2 + montantArme1 + montantArme2) * Math.pow(1.1, perso.niv) + montantAccessD + montantAccessDegatNat
+    (2 + montantArme1 + montantArme2) * Math.pow(1.09, perso.niv) + montantAccessD + montantAccessDegatNat
   )
 
   // Bonus d'armure par niveau (20/11/23 : Fixe à 2 en +, exponentiel par niveau)
   // 02/12/23 : l'exponentiel du bouclier est réduit, car sinon trop cheat
   perso.armure = Math.round(
-    (2 + montantArmure) * Math.pow(1.1, perso.niv) +
-      montantBouclier * Math.pow(1.05, perso.niv) +
+    (2 + montantArmure) * Math.pow(1.09, perso.niv) +
+      montantBouclier * Math.pow(1.06, perso.niv) +
       montantAccessA +
       montantAccessArmureNat
   )

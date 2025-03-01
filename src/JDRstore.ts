@@ -1,7 +1,6 @@
 import {
   Card,
   RaceClassStats,
-  CombatLog,
   CombatSkill,
   Enemy,
   Equipment,
@@ -55,7 +54,8 @@ export const pnjJSON = getData<{ [key: string]: PNJ }>("pnj")
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const combatSkillsJSON = getData<CombatSkill<any>[]>("combatS")
 
-export const logsJSON = getData<{ [key: string]: CombatLog }>("combatLogs")
+// combat logs are too heavy to be fetched, get last id instead
+// export const logsJSON = getData<{ [key: string]: CombatLog }>("combatLogs")
 export const cheatJSON = getData<{ [key: string]: CombatCheatLog }>("combatCheat")
 
 export const resumeJSON = getData<Resume[]>("resume")

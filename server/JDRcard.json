@@ -5000,6 +5000,28 @@
     "group": 2
   },
   {
+    "id": 1879,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Primordius, frère de Zhaïtan",
+    "description": "Le groupe assiste au mariage du frère aîné de Zhaïtan qui est à son opposé : charismatique, éloquent, expressif et taquin. Et ça n'a pas manqué lors de la danse avec \"sa partenaire\" ou des jeux (cartes, corde) ...",
+    "maps": [35],
+    "enemies": [],
+    "kindId": "monsters/primordius",
+    "group": 2
+  },
+  {
+    "id": 1880,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "L'amour dans le mariage",
+    "description": "En plus des deux mariés, il y avait de l'amour dans l'air : Azora et Magnus (qui vont se fiancés), Estia et Marcus (et Noah ❤️), et surtout : Zhaïtan et \"Bianca\" (et Drakania ❤️)",
+    "maps": [35],
+    "enemies": [],
+    "kindId": "items/i01319",
+    "group": 2
+  },
+  {
     "id": 15000,
     "value": 3,
     "kind": "anecdoteII",

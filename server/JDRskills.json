@@ -21,7 +21,7 @@
     "nom": "Provocation",
     "desc": "Le lanceur provoque la cible ce qui augmente les chances d'être visé",
     "effet": "Provocation",
-    "montant": "Dégât 1D6, et 75% de chance d'être visé pendant 3 tours",
+    "montant": "1D6+4 (0 dégât/effet d'arme, 0 armure), et 75% de chance d'être visé pendant 3 tours",
     "icone": "E0003",
     "stat": "Charisme",
     "classe": ["Guerrier", "Chevalier", "Templier", "Chev Dragon"]
@@ -217,7 +217,7 @@
   },
   "32": {
     "nom": "Blessure Douloureuse",
-    "desc": "Blesse l'ennemi et l'empêche de se soigner pendant 3 tours",
+    "desc": "Blesse l'ennemi (dégât de nature) et l'empêche de se soigner pendant 3 tours",
     "effet": "Dégât Malus",
     "montant": "1D8+1",
     "icone": "E0070",
@@ -282,7 +282,7 @@
     "nom": "Sérénité",
     "desc": "Réduit les dégâts et augmente la dextérité",
     "effet": "Buff",
-    "montant": "Dexté+2, Dégât subi -1D4 (min 2) pendant 3 tours",
+    "montant": "Dextérité +2, Dégât subi -1D4 (min 2) pendant 3 tours",
     "icone": "E0091",
     "stat": "Esprit",
     "classe": ["Corsaire"]
@@ -633,7 +633,7 @@
     "nom": "Vent Purificateur",
     "desc": "Ôte un effet négatif au hasard aux membres à proximité, soigne un peu",
     "effet": "Buff et Soin AoE",
-    "montant": "Soin 1D6+6 (-1 malus)",
+    "montant": "Soin 1D6+6 (-1 malus) - Cooldown 1 tour",
     "icone": "E0098",
     "stat": "Intelligence",
     "classe": ["Clerc"]
@@ -948,7 +948,7 @@
     "nom": "Provocation de Groupe",
     "desc": "Les ennemis ont 50% de chance de cibler le joueur",
     "effet": "Provocation",
-    "montant": "Dégât 1D4, et 50% de chance d'être ciblé pendant 3 tours",
+    "montant": "1D4+2 (0 dégât/effet d'arme, 0 armure), et 50% de chance d'être ciblé pendant 3 tours",
     "icone": "E0248",
     "stat": "Charisme",
     "classe": ["Guerrier"]

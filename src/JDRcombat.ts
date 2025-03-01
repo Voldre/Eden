@@ -4,7 +4,6 @@ import {
   enemyJSON,
   combatSkillsJSON,
   playerJSON,
-  getData,
   classes,
   iconsClasses,
   cheatJSON,
@@ -135,7 +134,7 @@ window.addEventListener("load", () => {
     const sumStats = perso.force + perso.dexté + perso.intel + perso.charisme + perso.esprit
 
     // Not Malvis, because she is overcheat with her damage
-    if ((perso.degat > 52 && perso.nom !== "Malvis") || perso.armure > 35 || perso.pvmax > 200 || sumStats > 72) {
+    if ((perso.degat > 52 && perso.nom !== "Malvis") || perso.armure > 36 || perso.pvmax > 220 || sumStats > 72) {
       console.log("new C log...")
       saveCheat(urlParams.get("enemy"))
     }
@@ -590,8 +589,9 @@ async function victory(): Promise<void> {
   newJoueurData.alpagaCoin = addCoins(newJoueurData.alpagaCoin, winCards)
 
   // Security 30/12 : Bug when update files, cookies of player are like "corrupted" and enemy data doesn't work well
-  if (!newJoueurData.alpagaCoin) {
+  if (!newJoueurData.alpagaCoin && newJoueurData.alpagaCoin !== 0) {
     toastNotification("Erreur : Données corrompues : Supprimez vos cookies.", 12000, true)
+    LoggerService.logError(`Erreur : Données corrompues pour ${indexPlayer} : Supprimez vos cookies.`)
     stop()
   }
 
@@ -629,9 +629,9 @@ async function saveCheat(enemyName: string | null): Promise<void> {
 
 async function saveLog(earnedCoins: number, winCards: Card[] | undefined): Promise<void> {
   try {
-    const logsJSON = getData<{ [key: string]: CombatLog }>("combatLogs")
+    const lastLogId = logID === undefined ? await callPHP({ action: "lastId", name: "combatLogs" }) : undefined
 
-    if (logID === undefined) logID = parseInt(Object.keys(logsJSON).reverse()[0]) + 1 || 1
+    logID = logID ?? (lastLogId ? parseInt(lastLogId) + 1 : 1)
 
     const newLog: { [key: string]: Partial<CombatLog> } = {}
     newLog[logID] = {
@@ -655,7 +655,9 @@ async function saveLog(earnedCoins: number, winCards: Card[] | undefined): Promi
     await callPHP({ action: "saveFile", name: "combatLogs" })
   } catch (e) {
     console.error(e)
-    LoggerService.logError(`Combat (combatLogsJSON) : échec de la sauvegarde  : ${e instanceof Error ? e.message : e}`)
+    LoggerService.logError(
+      `Combat (combatLogsJSON) : échec de la sauvegarde pour ${nomPerso ?? indexPerso}, pièces : ${earnedCoins}, erreur : ${e instanceof Error ? e.message : e}`
+    )
     toastNotification(`Erreur : le log n'a pas pu être sauvegardé : ${e instanceof Error ? e.message : e}`, 6000, true)
   }
 }
@@ -686,7 +688,9 @@ async function savePlayer(): Promise<void> {
     await callPHP({ action: "saveFile", name: "player" })
   } catch (e) {
     console.error(e)
-    LoggerService.logError(`Combat (playerJSON) : échec de la sauvegarde : ${e instanceof Error ? e.message : e}`)
+    LoggerService.logError(
+      `Combat (playerJSON) : échec de la sauvegarde pour ${nomPerso} : ${e instanceof Error ? e.message : e}`
+    )
     toastNotification(
       `Erreur : le combat n'a pas pu être sauvegardé : ${e instanceof Error ? e.message : e}`,
       6000,

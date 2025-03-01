@@ -996,7 +996,7 @@
     "nom": "Arc du Dompteur",
     "desc": "Amélioration de l'Arc du Dresseur, il a été pris en main par un grand dompteur.",
     "effet": "Familier",
-    "montant": "Dégât +8, Familier : dégât/soin+4 (AoE/2), réussite sort+1",
+    "montant": "Dégât +8, Familier : dégât+4/soin+2 (AoE/2), réussite sort+1",
     "icone": "W50503"
   },
   "138": {
@@ -1010,7 +1010,7 @@
     "nom": "Grimoire de l'Invocateur",
     "desc": "Amélioration du Grimoire de la Bête, il a été pris en main par un grand invoncateur.",
     "effet": "Familier",
-    "montant": "Dégât +8, Familier : dégât/soin+4 (AoE/2), réussite sort+1",
+    "montant": "Dégât +8, Familier : dégât+4/soin+2 (AoE/2), réussite sort+1",
     "icone": "W62903"
   },
   "140": {
@@ -1315,7 +1315,7 @@
     "nom": "Bible du Familier",
     "desc": "Un ouvrage rare permettant d'améliorer la puissance des familiers",
     "effet": "Familier",
-    "montant": "Familier : PV+10, dégât/soin+4 (AoE/2)",
+    "montant": "Familier : PV+10, dégât+4/soin+2 (AoE/2)",
     "icone": "I00134",
     "access": "D3"
   },
@@ -2979,7 +2979,7 @@
     "nom": "Robe de Générale du Nord",
     "desc": "Amélioration de la \"Robe de démone du Nord\", elle représente mieux la hauteur de sa personne !",
     "effet": "Familier",
-    "montant": "Dégât -4, Familier : dégât/soin+4 (AoE/2), réussite sort+1",
+    "montant": "Dégât -4, Familier : dégât+4/soin+2 (AoE/2), réussite sort+1",
     "icone": "k20926"
   },
   "403": {
@@ -3665,7 +3665,7 @@
     "nom": "Tenue du Dompteur",
     "desc": "Une tenue du dresseur amélioré pour les plus dompteurs endurcis",
     "effet": "Familier",
-    "montant": "Dégât -5, Familier : dégât/soin+4 (AoE/2), réussite sort+1",
+    "montant": "Dégât -5, Familier : dégât+4/soin+2 (AoE/2), réussite sort+1",
     "icone": "k20230"
   },
   "493": {

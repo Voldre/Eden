@@ -1,5 +1,5 @@
 import { cardJSON, persosJSON, enemyJSON, mapsJSON, playerJSON, classes, iconsClasses } from "./JDRstore.js"
-import { Joueurs, Perso, Player } from "./model.js"
+import { Card, Joueurs, Perso, Player } from "./model.js"
 import {
   addClickListener,
   callPHP,
@@ -30,6 +30,13 @@ const mapMenuEs = [...document.querySelectorAll<HTMLElement>(".mapMenu")!]
 //  LOADING
 let indexPerso: string | undefined
 // var selectedID = selectPerso.selectedIndex;
+
+const percentCardsOfKind = (playerCards: Card[], kind: string): number =>
+  Math.floor(
+    // Ignore hidden bosses
+    (100 * playerCards?.filter((p) => p.kind === kind && !p.hidden).length) /
+      cardJSON.filter((p) => p.kind === kind && !p.hidden).length
+  )
 
 window.addEventListener("load", () => {
   const urlParams = new URLSearchParams(window.location.search)
@@ -70,18 +77,10 @@ window.addEventListener("load", () => {
       const playerCards = playerData.cards.map((pC) => cardJSON.find((c) => c.id === pC)).filter((p) => !!p)
       // console.log(playerCards);
 
-      const pBossP = Math.floor(
-        // Ignore hidden bosses
-        (100 * playerCards?.filter((p) => p.kind === "boss" && !p.hidden).length) /
-          cardJSON.filter((p) => p.kind === "boss" && !p.hidden).length
-      )
-      const pMapsP = Math.floor(
-        (100 * playerCards?.filter((p) => p.kind === "map").length) / cardJSON.filter((p) => p.kind === "map").length
-      )
-      const pAnecdoteP = Math.floor(
-        (100 * playerCards?.filter((p) => p.kind === "anecdote").length) /
-          cardJSON.filter((p) => p.kind === "anecdote").length
-      )
+      const pBossP = percentCardsOfKind(playerCards, "boss")
+      const pMapsP = percentCardsOfKind(playerCards, "map")
+      const pAnecdoteP = percentCardsOfKind(playerCards, "anecdote")
+
       const pTotalP = Math.floor((100 * playerCards?.length) / cardJSON.length)
 
       const playerCardsEP = createElement("p", undefined, { style: { fontSize: "13.5px" } })
@@ -173,17 +172,9 @@ function loadPlayer(player: Joueurs): void {
   // Display 100% image
   const playerCards = joueurData.cards.map((pC) => cardJSON.find((c) => c.id === pC)).filter((p) => !!p)
 
-  const pBossP = Math.round(
-    (100 * playerCards.filter((p) => p.kind === "boss").length) / cardJSON.filter((p) => p.kind === "boss").length
-  )
-  const pComposP = Math.round(
-    (100 * playerCards.filter((p) => p.kind === "composant").length) /
-      cardJSON.filter((p) => p.kind === "composant").length
-  )
-  const pAnecdoteP = Math.round(
-    (100 * playerCards.filter((p) => p.kind === "anecdote").length) /
-      cardJSON.filter((p) => p.kind === "anecdote").length
-  )
+  const pBossP = percentCardsOfKind(playerCards, "boss")
+  const pComposP = percentCardsOfKind(playerCards, "composant")
+  const pAnecdoteP = percentCardsOfKind(playerCards, "anecdote")
 
   const allDone = pBossP === 100 && pComposP === 100 && pAnecdoteP === 100
   document.querySelector("#image100")!.closest("label")!.style.display = allDone ? "block" : "none"
