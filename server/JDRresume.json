@@ -908,5 +908,15 @@
     "contexte": "",
     "key_events": [],
     "objectifs": []
+  },
+  {
+    "groupe": 2,
+    "seance": 33,
+    "date": "09/02/25",
+    "titre": "Infiltration dans les Plaines d’Elos",
+    "personnages": ["Estia Ryujin", "Azora", "Zhaïtan"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
   }
 ]

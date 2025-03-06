@@ -506,17 +506,18 @@
   },
   "36": {
     "visuel3D": "m135",
-    "nom": "Capitaine de ville",
-    "pvmax": 85,
+    "nom": "Garde haut gradé",
+    "pvmax": 150,
     "skills": [
-      "Charge : 1D12 +7 : force",
+      "Charge : 2D10 +15 : force",
+      "Attaque Cyclone : 1D10 +15 : force",
       "Défense : dégât reçu -7 pendant 3 tours : esprit",
-      "Coup de Lance/Epee : 1D12 +7 : dextérité",
+      "Renforcement : Dégât ou Armure +5 sur 3 tours : esprit",
       ""
     ],
-    "stats": "16,13,9,12,9",
-    "desc": "Capitaine de ville et village en armure",
-    "drop": "20po Rare : Epée des Plaines Dorées",
+    "stats": "17,14,11,14,11",
+    "desc": "Capitaine/Lieutenant de ville et village en armure",
+    "drop": "50po, Rare,  Epée ...",
     "weaknesses": ["tranchant", "glace"]
   },
   "37": {
@@ -2991,7 +2992,7 @@
     ],
     "stats": "16,10,17,12,16",
     "desc": "Commandant de la grande tribu d'ogres des Khan, il a accomplit plusieurs exploits dans sa carrière. Il est très fourbe comme le reste de son clan.",
-    "drop": "Gemme du chaos, Epée Colossale du Savoir",
+    "drop": "Gemme du chaos, Epée Colossale du Savoir, rare : Plastron de concentration",
     "weaknesses": ["contondant", "nature"]
   },
   "202": {
@@ -3182,7 +3183,7 @@
       "Coup Incandescant : 3D6 +30 (+5 mono poing/lum) : Force/Intel<br/>Feu Dévoreur : 2D6+20, Stats -3 (3 tours, 2 si bloc) : Intel (3 → 4 si DK)",
       "Flamme Impériale : Mode \"+1D6+9, Bloc/Esq+2\" sur 5 tours : Esprit",
       "Lumière Pure : Soin 3D6+25, -1 malus (rejoue si critique)",
-      "Art Khan (buff indéf, instant, Esprit), mode :<br/> - Offensif : Flamme dégât / malus,<br/> - Défensif : Flamme soin / buff,<br/> PV <50% : Flamme \"+5, Bloc/Esq+1\"<br/>Anti-DK : Stuff Dragonite (25%) + revers, vs DK"
+      "Art Khan (buff indéf, instant, Esprit), mode :<br/> - Offensif : Flamme dégât / malus,<br/> - Défensif : Flamme soin / buff,<br/> PV <50% : Flamme \"+5, Bloc/Esq+1\"<br/>Anti-DK : Stuff Draconite (25%) + revers, vs DK"
     ],
     "stats": "17,11,17,13,17",
     "desc": "Descendante d'une ancienne lignée Khan, Qorina possède la puissante flamme ancestrale de son glorieux empire perdu. Ses desseins semblent être la destruction d'Heldentod, mais elle n'agit pas de paire avec ses semblables...",
@@ -3246,7 +3247,7 @@
     ],
     "stats": "13,16,9,13,16",
     "desc": "Ogre jaune à dos de bête de fer ou de yack, originaire du coeur des steppes. Habile et dangereux",
-    "drop": "Fragment de Draconite, rare : Pendentif du Ranger",
+    "drop": "Fragment de Draconite, rare : Pendentif du Ranger, Anneau d'évasion",
     "weaknesses": ["nature", "ténèbres"]
   },
   "219": {
@@ -3276,7 +3277,7 @@
     ],
     "stats": "11,14,17,10,16",
     "desc": "Grand maître Shaman affilié à Tengri. Arborant l'étendard Khan et portant la Brume sur le champ de bataille.",
-    "drop": "Rare : Bâton Perturbant, Robe Shamanique",
+    "drop": "(Bâton Perturbant) Rare : Charme de Tengri, Robe Shamanique",
     "weaknesses": ["contondant", "ténèbres"]
   },
   "221": {

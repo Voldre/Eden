@@ -90,7 +90,7 @@ export interface Perso extends MainElementPerso {
   passif14?: string
   isArchived: boolean
   joueur: Joueurs | ""
-  guardian?: MainElementPerso[]
+  guardian?: { type: "full" | "partial"; config: MainElementPerso[] }
 }
 
 export interface Enemy {

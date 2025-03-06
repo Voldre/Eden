@@ -433,7 +433,8 @@
     "map_y": null,
     "map_z": null,
     "map_r": null,
-    "bgm": 50
+    "bgm": 50,
+    "mobs": [35, 36, 137, 139]
   },
   "37": {
     "name": "Marina d'Edouard",

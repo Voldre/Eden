@@ -1,4 +1,4 @@
-import { Equipment, Perso, Skill, Classes, Races, StatsName, RaceClassStatsValue } from "./model.js"
+import { Equipment, Perso, Skill, Classes, Races, StatsName, RaceClassStatsValue, MainElementPerso } from "./model.js"
 import {
   skillsJSON,
   skillsAwakenJSON,
@@ -161,18 +161,20 @@ allClassE.forEach((classE, i) => {
       if (iconClassE)
         iconClassE.src = `http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE${iconsClasses[selectedClassID]}.png`
 
+      if (persoData?.guardian) {
+        // If guardian, apply for second class the primary class
+        classeSElement.value = selectedClass
+      }
+
       updateAvailableSkillsList()
 
-      const classConfig = persoData?.guardian?.find((config) => config.classeP === selectedClass)
+      const classConfig = persoData?.guardian?.config.find((config) => config.classeP === selectedClass)
 
       if (classConfig) {
         classConfig.skills.forEach((skill, index) => {
           const competenceE = competenceEs[index]
           insertSkill(competenceE, skill)
         })
-
-        // If guardian, apply for second class the primary class
-        classeSElement.value = selectedClass
 
         updateAvailableSkillsList()
 
@@ -992,11 +994,24 @@ function loadFiche(): void {
     !guardian ? e.classList.add("hide") : e.classList.remove("hide")
   )
 
+  const niv = persoData.niv
+  const classes1: Classes[] = ["Guerrier", "Voleur", "Chasseur", "Clerc", "Magicien"]
+  const classes2: Classes[] = niv >= 5 ? ["Chevalier", "Assassin", "Ingénieur", "Barde", "Illusionniste"] : []
+  const classes3: Classes[] = niv >= 8 ? ["Templier", "Danselame", "Corsaire", "Shaman", "Démoniste"] : []
+
   fillSelectOptions(
     classePElement,
     ["", ...classes]
       // Filtre Gardien Eternel
-      .filter((c) => !guardian || guardian?.find((config) => config.classeP === c))
+      .filter(
+        (c) =>
+          // Not guardian = all
+          !guardian ||
+          // Full guardian and right level = 5*x classes
+          (guardian.type === "full" && ["", ...classes1, ...classes2, ...classes3].includes(c)) ||
+          // Any guardian with existing class
+          guardian.config.find((config) => config.classeP === c)
+      )
       .map((classe) => ({ value: classe, innerText: classe }))
   )
 
@@ -1010,9 +1025,9 @@ function loadFiche(): void {
 
   displayArmorTypes()
   xpE.value = persoData.xp
-  nivE.value = persoData.niv
+  nivE.value = niv
 
-  onChangeNiv(persoData.niv)
+  onChangeNiv(niv)
 
   pvE.value = persoData.pv
   pvmaxE.value = persoData.pvmax
@@ -1347,10 +1362,17 @@ saveButton.addEventListener("click", () => {
     toastNotification("Erreur : ID Perso ou Nom invalide", 4000, true)
     return
   }
-  const result = setCookie("persosJSON", newPerso)
-  if (result) {
-    callPHP({ action: "saveFile", name: "persos" })
-    toastNotification("Sauvegarde effectuée")
+  const cookieLength = setCookie("persosJSON", newPerso)
+  if (cookieLength <= 4000) {
+    try {
+      callPHP({ action: "saveFile", name: "persos" })
+      toastNotification(
+        `Sauvegarde effectuée ${cookieLength > 3000 ? `(${Math.round(cookieLength / 40)}% remplis)` : ""}`
+      )
+    } catch (e) {
+      LoggerService.logError(`Echec sauvegarde de la fiche de ${Object.values(newPerso)[0].nom}`)
+      toastNotification(`ECHEC : ${e instanceof Error ? e.message : e}`, 10000, true)
+    }
   } else {
     LoggerService.logError(`Plus de place sur la fiche de ${Object.values(newPerso)[0].nom}`)
     toastNotification("ECHEC : Plus de place disponible sur la fiche !", 10000, true)
@@ -1367,7 +1389,7 @@ function savePerso(): {
 
   if (!persoId || parseInt(persoId) < 0 || !name) return null
 
-  const mainElement = {
+  const mainElement: MainElementPerso = {
     classeP: classePElement.value,
     pvmax: pvmaxE.value,
     force: forceE.value,
@@ -1378,11 +1400,12 @@ function savePerso(): {
     skills: skillsName,
   }
 
+  const currentPerso = persosJSON[persoId] ?? undefined
   persosJSON[persoId] = {
     nom: name,
     race: raceE.value,
 
-    classeS: persosJSON[persoId]?.guardian ? classePElement.value : classeSElement.value,
+    classeS: currentPerso?.guardian ? classePElement.value : classeSElement.value,
     xp: xpE.value,
     niv: nivE.value,
 
@@ -1409,17 +1432,20 @@ function savePerso(): {
     background: backgroundE.value,
     notes: notesE.value,
     sticky: stickyE.value,
-    passif10: persosJSON[persoId]?.passif10 ?? undefined,
-    passif12: persosJSON[persoId]?.passif12 ?? undefined,
-    passif14: persosJSON[persoId]?.passif14 ?? undefined,
-    isArchived: persosJSON[persoId]?.isArchived ?? false,
-    joueur: persosJSON[persoId]?.joueur ?? null,
-    guardian: persosJSON[persoId]?.guardian
-      ? [
-          // Save
-          ...persosJSON[persoId].guardian.filter((config) => config.classeP !== classePElement.value),
-          mainElement,
-        ]
+    passif10: currentPerso?.passif10 ?? undefined,
+    passif12: currentPerso?.passif12 ?? undefined,
+    passif14: currentPerso?.passif14 ?? undefined,
+    isArchived: currentPerso?.isArchived ?? false,
+    joueur: currentPerso?.joueur ?? null,
+    guardian: currentPerso?.guardian
+      ? {
+          type: currentPerso.guardian.type,
+          config: [
+            // Save current class config
+            ...currentPerso.guardian.config.filter((config) => config.classeP !== classePElement.value),
+            mainElement,
+          ],
+        }
       : undefined,
   }
 
@@ -1519,7 +1545,7 @@ const labelsDescription = {
   </ul>
   A noter : Les capacités liés aux sorts ne sont pas consommées en cas d'échec, sauf en cas de critique (19,20)`,
   guardianFatigue:
-    "En tant que Gardien Eternel, vous avez la possibilité de Switcher de classe. Mais cela n'est pas sans coût.<br/>- Chaque switch augmente votre fatigue (entre 50 et 10 selon votre niveau).<br/>- Avant le niveau 10, le switch consomme votre tour. Au-delà, le switch devient une action instantanée.",
+    "En tant que Gardien Eternel, vous avez la possibilité de Switcher de classe. Mais cela n'est pas sans coût.<br/>- Chaque switch supprime les buffs actifs du personnage<br/>- Chaque switch augmente votre fatigue (entre 50 et 10 selon votre niveau).<br/>- Avant le niveau 10, le switch consomme votre tour. Au-delà, le switch devient une action instantanée.",
 }
 
 initDialog(labelsDescription)
@@ -1670,13 +1696,13 @@ function setPassifs(niv: number): void {
 
   // Set fatigue cost for guardian
   let fatigueCost
-  if (niv < 5) {
+  if (niv <= 4) {
     fatigueCost = 50
-  } else if (niv < 9) {
+  } else if (niv <= 7) {
     fatigueCost = 40
-  } else if (niv < 12) {
+  } else if (niv <= 11) {
     fatigueCost = 30
-  } else if (niv < 15) {
+  } else if (niv <= 14) {
     fatigueCost = 20
   } else {
     fatigueCost = 10

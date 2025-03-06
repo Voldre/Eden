@@ -4371,11 +4371,7 @@
     "desc": "Cette ancienne gravure de Delphes semble tenir sa puissance de la forêt elle-même. Appartient à la Panoplie de Delphes.",
     "effet": "",
     "montant": "Dégât +1 & Dégât reçu -1 (+1 par objet de Delphes)",
-    "condition": {
-      "type": "panoplie",
-      "value": ["Delphes"],
-      "bonus": "Dégât +1, Dégât reçu -1"
-    },
+    "condition": { "type": "panoplie", "value": ["Delphes"], "bonus": "Dégât +1, Dégât reçu -1" },
     "icone": "i00787"
   },
   "592": {
@@ -4384,5 +4380,19 @@
     "effet": "Force +1",
     "montant": "Dégât +7",
     "icone": "W24106"
+  },
+  "593": {
+    "nom": "Katana de givre",
+    "desc": "un katana forgé à partir de platine de glace, enchante vos coups physiques en dégât de glace.",
+    "effet": "Element : Glace",
+    "montant": "Dégât +10",
+    "icone": "W27601"
+  },
+  "594": {
+    "nom": "Charme de Tengri",
+    "desc": "Ce charme a été conçu par de grands Shamans de Tengri, il renforce sa puissance. Les aléas climatiques affectent moins le porteur.",
+    "effet": "",
+    "montant": "Montant des buffs +1, (dégât/soin+2 Si Shaman)",
+    "icone": "i01609"
   }
 }

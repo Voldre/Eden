@@ -5015,10 +5015,32 @@
     "value": 3,
     "kind": "anecdote",
     "name": "L'amour dans le mariage",
-    "description": "En plus des deux mariés, il y avait de l'amour dans l'air : Azora et Magnus (qui vont se fiancés), Estia et Marcus (et Noah ❤️), et surtout : Zhaïtan et \"Bianca\" (et Drakania ❤️)",
+    "description": "En plus des deux mariés, il y avait de l'amour dans l'air : Azora et Magnus (qui vont se fiancer), Estia et Marcus (et Noah ❤️), et surtout : Zhaïtan et \"Bianca\" (et Drakania ❤️)",
     "maps": [35],
     "enemies": [],
     "kindId": "items/i01319",
+    "group": 2
+  },
+  {
+    "id": 1881,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Infiltration chez les Barclay",
+    "description": "Afin de retrouver des documents sur des échanges commerciaux entre Heldentod et les républiques maritimes, le groupe s'infiltre chez la famille Barclay, mais ils trouvent d'autres lettres surprenantes...",
+    "maps": [36],
+    "enemies": [],
+    "kindId": "skillIcon/E0356",
+    "group": 2
+  },
+  {
+    "id": 1882,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Estia la monstre",
+    "description": "Pendant la fuite de Valence, Estia tente d'effrayer les civils et de les faire fuir en lançant une attaque, mais c'est ainsi qu'elle blesse un pauvre enfant, ce qui a pour effet d'énerver et révolter la populace.",
+    "maps": [36],
+    "enemies": [],
+    "kindId": "skillIcon/E0474b",
     "group": 2
   },
   {
