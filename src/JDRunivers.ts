@@ -1,5 +1,16 @@
 import { aoeDescInfo, classes, iconsClasses, skillsAwakenJSON, skillsJSON } from "./JDRstore.js"
-import { countEachOccurences, createElement, shortAndLongEventsOnClick, initDialog } from "./utils/index.js"
+import { Classes, Skill } from "./model.js"
+import {
+  countEachOccurences,
+  createElement,
+  shortAndLongEventsOnClick,
+  initDialog,
+  closeButton,
+  unformatText,
+  capitalize,
+} from "./utils/index.js"
+
+const dialog = document.querySelector<HTMLDialogElement>("dialog")!
 
 const classesDesc = [
   "Les guerriers possèdent de solides aptitudes au combat ainsi que de lourdes armures résistantes. Peut effrayer les ennemis et motiver ses alliés.",
@@ -24,6 +35,29 @@ const classesDesc = [
   "Les Luminarys sont des guerriers-mages utilisant les opposées : les ténèbres et la lumière, pour anéantir leurs ennemis. Ils doivent cependant conserver cet équilibre pour ne pas vasciller dans le chaos.<br/><b>Contrainte : Doit s'équilibrer entre la lumière et les ténèbres pour éviter la folie, le chaos. <br/>Exception : Cette règle ne s'applique pas si le personnage n'a qu'un élément (jusqu'au niveau 5)</b>",
 ]
 
+const classesSpe = [
+  "Spécialisé contre les ennemis nombreux qui l'attaque",
+  "Spécialisé contre les ennemis puissants et magiques",
+  "Polyvalent dans chaque domaine, soigneur, efficace contre les ennemis faible à la magie",
+  "Polyvalent en physique et en magique, capable de tenir comme d'affaiblir",
+  "Spécialisé contre les ennemis mono-cible",
+  "Spécialisé contre les ennemis buffés",
+  "Spécialisé dans la communication et la négociation",
+  "Spécialisé contre les ennemis nombreux ou imposant",
+  "Spécialisé dans le combat face à un ennemi, accompagné de familiers",
+  "Très polyvalent face à tout type d'ennemis, pour les blesser, les affaiblir, etc...",
+  "Spécialisé pour découvrir/explorer et se sortir de situation critique",
+  "Spécialisé contre les ennemis très physiques et/ou sans esprit",
+  "Spécialisé dans les soins, adaptés pour les grands groupes.",
+  "Spécialisé dans les soutiens de groupe, adaptés pour les grands groupes.",
+  "Polyvalent et peut changer de rôle rapidement dans le combat",
+  "Spécialisé dans tout type de soutiens, peut affaiblir les ennemis",
+  "Spécialisé contre les ennemis très résistant et faible à la magie",
+  "Spécialisé contre les ennemis sans esprit.",
+  "Assez polyvalent et diablement efficace entouré des siens",
+  "Spécialisé dans les dégâts purs face à tout type d'ennemis",
+]
+
 // Generate classes elements
 const classesListE = document.querySelector(".classeslist")!
 classes.forEach((classe, i) => {
@@ -35,13 +69,7 @@ classes.forEach((classe, i) => {
   const classeE = createElement("div", [nomE, iconeE], { id: classe })
 
   classeE.addEventListener("click", () => {
-    ;[...classesListE.children].forEach((cE) => {
-      cE.classList.remove("highlight")
-    })
-    classeE.classList.add("highlight")
-
-    document.querySelector(".classeDesc")!.innerHTML = classesDesc[classes.indexOf(classe)]
-    updateSkillsList(classe, false)
+    showClassSkills(classe)
   })
 
   classesListE.append(classeE)
@@ -68,87 +96,122 @@ buttonElem.addEventListener("click", () => {
   document.querySelector("#elem")?.classList.toggle("hide")
 })
 
-// Skills list
-const skillsListE = document.querySelector(".skillslist")!
-const awakenButton = document.querySelector<HTMLImageElement>("#awakenButton")!
-const updateSkillsList = (classe: string, isAwaken: boolean): void => {
-  skillsListE.innerHTML = ""
+// #region Skill Element
 
+const getSkillElement = (skill: Skill, isAwaken?: boolean, updateAwakenButton?: () => void): HTMLDivElement => {
+  const nomE = createElement("p", skill.nom, { className: "nom" })
+
+  const awakenSkill = Object.values(skillsAwakenJSON).find((s) => s.nom === skill.nom)
+
+  const descE = createElement("p", isAwaken && awakenSkill?.desc ? awakenSkill.desc : skill.desc, {
+    className: "desc",
+  })
+  const montantE = createElement("p", isAwaken && awakenSkill?.montant ? awakenSkill.montant : skill.montant, {
+    className: "montant",
+  })
+
+  const iconeE = createElement("img", undefined, {
+    className: "icone",
+    src: `http://voldre.free.fr/Eden/images/skillIcon/${skill.icone}.png`,
+  })
+
+  const skillRange = skill.effet.split("AoE ")[1] ?? null // en bas [0] + "AoE"
+
+  const effetDesc = skillRange ? skill.effet.split(" AoE")[0] : skill.effet
+  const skillRangeIconE =
+    skillRange &&
+    createElement("span", undefined, {
+      className: "skillRangeIcon",
+      style: { backgroundImage: `url(http://voldre.free.fr/Eden/images/layout/${skillRange}.png)` },
+    })
+  const statDesc = ` / ${skill.stat} ${skill.classe.length ? ` / ${skill.classe.join(", ")}` : ""}`
+
+  const effetE = createElement("p", skillRangeIconE ? [effetDesc, skillRangeIconE, statDesc] : [effetDesc, statDesc], {
+    className: "effet",
+  })
+
+  const skillE = createElement("div", [nomE, descE, effetE, montantE, iconeE], {
+    className: `skill ${isAwaken ? "awaken" : ""}`,
+  })
+
+  // Add manually event for fastClick
+  const fastClickEvent = (): void => {
+    skillE.classList.toggle("awaken")
+
+    const selectedAwakenSkill = skillE.classList.contains("awaken")
+      ? Object.values(skillsAwakenJSON).find((s) => s.nom === skill.nom)
+      : undefined
+
+    descE.innerText = selectedAwakenSkill?.desc || skill.desc
+    montantE.innerText = selectedAwakenSkill?.montant || skill.montant
+
+    updateAwakenButton?.()
+  }
+  shortAndLongEventsOnClick(skillE, fastClickEvent)
+
+  return skillE
+}
+
+// #region Skills list
+const showClassSkills = (classe: Classes): void => {
   const skillsList = Object.values(skillsJSON).filter((skill) => skill.classe.includes(classe))
 
-  skillsList.forEach((skill) => {
-    const nomE = createElement("p", skill.nom, { className: "nom" })
+  const updateAwakenButtonTriggered = (): void => {
+    const isAllSkillsAwaken = [...skillsListE.children].every((child) => child.classList.contains("awaken"))
+    awakenButton.src = `images/otherIcon/function02${isAllSkillsAwaken ? 5 : 4}.png`
+  }
 
-    const awakenSkill = Object.values(skillsAwakenJSON).find((s) => s.nom === skill.nom)
+  // Skills elements
+  const skillsEs = (isAwaken: boolean): HTMLDivElement[] =>
+    skillsList.map((skill): HTMLDivElement => getSkillElement(skill, isAwaken, updateAwakenButtonTriggered))
 
-    const descE = createElement("p", isAwaken && awakenSkill?.desc ? awakenSkill.desc : skill.desc, {
-      className: "desc",
-    })
-    const montantE = createElement("p", isAwaken && awakenSkill?.montant ? awakenSkill.montant : skill.montant, {
-      className: "montant",
-    })
+  // #region Modal
 
-    const iconeE = createElement("img", undefined, {
-      className: "icone",
-      src: `http://voldre.free.fr/Eden/images/skillIcon/${skill.icone}.png`,
-    })
+  // Reset dialog
+  dialog.innerText = ""
+  dialog.style.width = "min(1200px,90%)"
+  dialog.style.padding = "0.75rem"
 
-    const skillRange = skill.effet.split("AoE ")[1] ?? null // en bas [0] + "AoE"
+  const wallpaper = createElement("img", undefined, {
+    src: `http://voldre.free.fr/Eden/images/wallpaper/classes/${capitalize(unformatText(classe))}.png`,
+    style: { borderBlockEnd: "1px solid gold", width: "100%", aspectRatio: "16/7" },
+  })
 
-    const effetDesc = skillRange ? skill.effet.split(" AoE")[0] : skill.effet
-    const skillRangeIconE =
-      skillRange &&
-      createElement("span", undefined, {
-        className: "skillRangeIcon",
-        style: { backgroundImage: `url(http://voldre.free.fr/Eden/images/layout/${skillRange}.png)` },
-      })
-    const statDesc = ` / ${skill.stat} / ${skill.classe?.toString().replaceAll(",", ", ")}`
+  const classDesc = createElement("div", undefined, { className: "classeDesc" })
+  classDesc.innerHTML = classesDesc[classes.indexOf(classe)]
+  classDesc.append(createElement("p", classesSpe[classes.indexOf(classe)]))
 
-    const effetE = createElement(
-      "p",
-      skillRangeIconE ? [effetDesc, skillRangeIconE, statDesc] : [effetDesc, statDesc],
-      {
-        className: "effet",
-      }
-    )
+  const awakenButton = createElement("img", undefined, {
+    id: "awakenButton",
+    className: "skillRangeIcon",
+    src: "images/otherIcon/function024.png",
+    title: "Compétences Eveillés !",
+  })
 
-    const skillE = createElement("div", [nomE, descE, effetE, montantE, iconeE], {
-      className: `skill ${isAwaken ? "awaken" : ""}`,
-    })
+  awakenButton.addEventListener("click", () => {
+    // If all skills are awaken, remove awaken. Else add it.
+    const isAwaken = awakenButton.src.includes("25")
 
-    // Add manually event for fastClick
-    const fastClickEvent = (): void => {
-      skillE.classList.toggle("awaken")
-
-      const selectedAwakenSkill = skillE.classList.contains("awaken")
-        ? Object.values(skillsAwakenJSON).find((s) => s.nom === skill.nom)
-        : undefined
-
-      descE.innerText = selectedAwakenSkill?.desc || skill.desc
-      montantE.innerText = selectedAwakenSkill?.montant || skill.montant
-
-      updateAwakenButtonTriggered()
-    }
-    shortAndLongEventsOnClick(skillE, fastClickEvent)
-
-    skillsListE.append(skillE)
+    skillsListE.innerHTML = ""
+    skillsListE.append(...skillsEs(!isAwaken))
     updateAwakenButtonTriggered()
   })
+
+  const skillsHeader = createElement("h4", ["Compétences ", awakenButton])
+
+  const skillsListE = createElement("div", skillsEs(false), { className: "skillslist" })
+
+  const globalE = createElement("div", [wallpaper, classDesc, skillsHeader, skillsListE, closeButton(dialog)])
+
+  dialog.append(globalE)
+  // Ouverture en "modal"
+  dialog.showModal()
+  dialog.scrollTop = 0
 }
 
-awakenButton.addEventListener("click", () => {
-  // If all skills are awaken, remove awaken. Else add it.
-  const isAwaken = awakenButton.src.includes("25")
-  updateSkillsList(document.querySelector(".highlight")!.id, !isAwaken)
-})
-
-const updateAwakenButtonTriggered = (): void => {
-  const isAllSkillsAwaken = [...skillsListE.children].every((child) => child.classList.contains("awaken"))
-  awakenButton.src = `images/otherIcon/function02${isAllSkillsAwaken ? 5 : 4}.png`
-}
+// #region Analyze
 
 // ANALYZE :  Counts which stats are most used for skills
-
 console.log("Skills JSON", Object.values(skillsJSON))
 // Nb skills by stats
 const skillsJSONStat = Object.values(skillsJSON).map((skill) => skill.stat)
@@ -333,6 +396,21 @@ const labelsDescription = {
       </tr>
     </tbody>
   </table>
+  `,
+  eternalGuardian: `<img src="http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE20.png" style="float: left;  margin-right: 0.5rem;"/>
+  Les Gardiens Eternels sont les élus d'une prophétie missionné pour sauver le monde. Ils naissent dans des Crystaux Bleus qui se forme naturellement et aléatoirement.<br/><br/>
+  D'après la prophétie les Gardiens Éternels se réveillent quand ils sentent inconsciemment que le mal grandit, leur nombre dépend du niveau de menace qui pèse sur Ezur.<br/><br/>
+  La singularité des Gardiens Eternels réside dans leur capacité à pouvoir s'adapter à toute situation en changeant leurs aptitudes de combat (aka changement de classe).<br/>
+  Ainsi, ils sont capables à tout moment de switcher d'une classe à l'autre, ce qui les rends très polyvalent.
+  <br/><br/>
+  Il existe 2 types de Gardiens Eternels :<br/>
+  - Partiel : Né d'un crystal défectueux (ou de façon prématuré), ces Gardiens possèdent un choix limité de classes,<br/>
+  - Complet : Né au terme de leur croissance, ces Gardiens maîtrisent au fur et à mesure de leur gain d'expériences de nouvelles classes :
+  <ul><li>Par défaut : les 5 premières classes de chaque catégorie</li>
+  <li>Au niveau 5 : les 5 secondes classes de chaque catégorie</li>
+  <li>Au niveau 8 : les 5 troisièmes classes de chaque catégorie</li>
+  <li>Au niveau 10: additionné de la réussite d'une épreuve dédiée, l'une ou plusieurs des 5 quatrièmes classes</li></ul>
+  Dernières particularités des Gardiens Eternels : <br/>- Chaque switch supprime les buffs actifs du personnage<br/>- Chaque switch augmente votre fatigue (entre 50 et 10 selon votre niveau).<br/>- Avant le niveau 10, le switch consomme votre tour. Au-delà, le switch devient une action instantanée.
   `,
 }
 

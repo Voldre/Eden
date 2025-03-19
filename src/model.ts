@@ -155,7 +155,7 @@ export interface Skill {
   montant: string
   icone: string
   stat: StatsName
-  classe: string[]
+  classe: Classes[]
 }
 export interface SkillsAwaken extends Partial<Skill> {
   nom: string

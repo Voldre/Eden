@@ -17,6 +17,7 @@ import {
   EnemyGeneric,
   CombatCheatLog,
   Resume,
+  Races,
 } from "./model"
 
 const xhReq = new XMLHttpRequest()
@@ -69,7 +70,7 @@ export function getData<T>(filename: string, JDR = true): T {
         xhReq.open("GET", `./${filename}.json?${new Date().getTime()}`, false)
       }
       xhReq.send(null)
-      return xhReq.responseText ? JSON.parse(xhReq.responseText) : undefined
+      return JSON.parse(xhReq.responseText)
     }
     throw new Error("Not in HTTP location")
   } catch (e) {
@@ -77,7 +78,10 @@ export function getData<T>(filename: string, JDR = true): T {
     return {} as T
   }
 }
+
 // Enum as variables
+
+export const races: Races[] = ["Humain", "Ezelin", "Ursun", "Zumi", "Anuran", "Torturran", "Drakai", "Tuskar", "Ogre"]
 
 // prettier-ignore
 export const classes : Classes[] = [ "Guerrier", "Chevalier", "Templier", "Chev Dragon", "Voleur", "Assassin", "Danselame", "Samouraï", "Chasseur", "Ingénieur", "Corsaire", "Juge", "Clerc", "Barde", "Shaman", "Sage", "Magicien", "Illusionniste", "Démoniste", "Luminary",];

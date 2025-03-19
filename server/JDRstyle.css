@@ -20,7 +20,8 @@ dialog {
   margin-top: 10px;
   background-color: rgba(26, 25, 25, 0.99);
   position: fixed;
-  width: 98%;
+  width: 97%;
+  max-height: 90%;
   border: 2px wheat solid;
   border-radius: 1rem;
   color: wheat;
@@ -266,6 +267,27 @@ label:hover {
 
 .galerie img:hover {
   filter: brightness(120%);
+}
+
+.nivContainer {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+.bar {
+  position: relative;
+  height: 4px;
+  background-color: black;
+  border-radius: 1rem;
+  width: 65px;
+  margin: auto;
+}
+.bar .xpbar {
+  position: absolute;
+  height: 4px;
+  background-color: rgb(96, 69, 216);
+  border-radius: 1rem;
 }
 
 #galerie {

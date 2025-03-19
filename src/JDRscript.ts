@@ -13,6 +13,7 @@ import {
   iconsEveil,
   elements,
   aoeDescInfo,
+  races,
 } from "./JDRstore.js"
 import {
   callPHP,
@@ -60,8 +61,6 @@ console.log(
     ),
   }))
 )
-
-const races: Races[] = ["Humain", "Ezelin", "Ursun", "Zumi", "Anuran", "Torturran", "Drakai", "Tuskar", "Ogre"]
 
 const poids = ["Moyen", "Léger", "Lourd", "Léger", "Moyen", "Moyen", "Léger", "Lourd", "Lourd"]
 
@@ -338,9 +337,31 @@ addClickListener(document.querySelector<HTMLButtonElement>("#awakenButton")!, (e
 // PV
 pvmaxE.addEventListener("change", () => statsVerification())
 
-// Niv
+// XP & Niv
 
-const onChangeNiv = (niv: number): void => {
+const onChangeXP = (xp: number): void => {
+  // -- XP --
+  // Update 02/04/24 : From lvl 10 to 15 : 200 xp instead of 150
+  // Update 12/06/23 : From lvl 5 to 10 : 150 xp instead of 100
+  let niv = 1
+  let baseXp = 0
+  let step = 100
+
+  while (xp >= baseXp + step) {
+    baseXp += step
+    niv++
+    if (niv % 5 === 0) step += 50
+  }
+
+  const percentBeforeNext = (xp - baseXp) / step
+  const xpNext = baseXp + step
+
+  ;(document.querySelector(".xpbar") as HTMLElement).style.width = `${percentBeforeNext * 100}%`
+  ;(document.querySelector(".bar") as HTMLElement).title = `${xp}/${xpNext}`
+
+  // -- Niv --
+  nivE.value = niv
+
   updateSkillsSlots()
 
   // Nouveauté 15/08/23 : Calcul automatique du montant des stats, 12/05/24 : Add stats repertatition
@@ -367,19 +388,7 @@ const onChangeNiv = (niv: number): void => {
 const xpE = inputSelector("#xp", "number")!
 addChangeListener(xpE, (e) => {
   const xp = e.target.value
-  let niv
-  // Update 02/04/24 : From lvl 10 to 15 : 200 xp instead of 150
-  // Update 12/06/23 : From lvl 5 to 10 : 150 xp instead of 100
-  if (xp >= 1150) {
-    niv = Math.trunc((xp - 1150) / 200) + 10
-  } else if (xp >= 400) {
-    niv = Math.trunc((xp - 400) / 150) + 5
-  } else {
-    niv = Math.trunc(xp / 100) + 1
-  }
-  nivE.value = niv
-
-  onChangeNiv(niv)
+  onChangeXP(xp)
 })
 
 // Nouveauté 15/08 : Calcul automatique du montant des stats
@@ -1024,10 +1033,9 @@ function loadFiche(): void {
   classeSElement.value = persoData.classeS
 
   displayArmorTypes()
-  xpE.value = persoData.xp
-  nivE.value = niv
 
-  onChangeNiv(niv)
+  xpE.value = persoData.xp
+  onChangeXP(persoData.xp)
 
   pvE.value = persoData.pv
   pvmaxE.value = persoData.pvmax

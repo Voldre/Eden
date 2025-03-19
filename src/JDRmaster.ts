@@ -9,7 +9,7 @@ import {
   getData,
   elements,
 } from "./JDRstore.js"
-import { Enemy, Equipment, Perso, Skill, StatsName } from "./model.js"
+import { Classes, Enemy, Equipment, Perso, Skill, StatsName } from "./model.js"
 import {
   addChangeListener,
   addClickListener,
@@ -644,7 +644,7 @@ document.querySelector("#createSkill")!.addEventListener("click", () => {
     montant: addSkill.children[6 + 1].value,
     icone: addSkill.children[8 + 1].value,
     stat: addSkill.children[10 + 1].value as StatsName,
-    classe: addSkill.children[12 + 1].value.split(","),
+    classe: addSkill.children[12 + 1].value.split(",") as Classes[],
   }
   console.log(newSkill)
   setCookie("skillsJSON", newSkill)
