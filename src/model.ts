@@ -311,7 +311,7 @@ export interface Map {
 // #region Histoires
 export interface Resume {
   groupe: 0 | 1 | 2 | 3
-  seance: number
+  seance: number | "epilogue"
   date: string
   titre: string
   personnages: string[]

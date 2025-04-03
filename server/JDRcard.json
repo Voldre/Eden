@@ -5044,6 +5044,61 @@
     "group": 2
   },
   {
+    "id": 1883,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Enlevement de Magnus",
+    "description": "Une lettre est retrouvée par Azora chez les Ogres mentionnant que Magnus a été enlevé et qu'ils les attendent au coeur des steppes. La situation est critique mais il faut garder son calme et avoir une stratégie.",
+    "maps": [35],
+    "enemies": [],
+    "kindId": "skillIcon/E0227b",
+    "group": 2
+  },
+  {
+    "id": 1884,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Bataille des Steppes",
+    "description": "Afin de sauver Magnus et de faire tomber Qaïdu Khan, initiateur de la révolution des Ogres des steppes; Heldentod entre en guerre avec plus de 200 soldats pour une bataille épique et sanglante, elle sera le théatre de nombreux drames et renversement de situations.",
+    "maps": [59],
+    "enemies": [],
+    "kindId": "otherIcon/flag_heldentod",
+    "group": 2
+  },
+  {
+    "id": 1885,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Plan de Qorina",
+    "description": "Qorina a interrompu la bataille des Steppes en contaminant la Brume Khan à l'aide d'un produit suspect, lui permettant de mettre la main sur le Cor de Guerre. Après des menaces mystérieuses, elle s'en va en abandonnant Qaïdu avec un plan plus grand en tête... Est-ce lié à Valence ?",
+    "maps": [59],
+    "enemies": [],
+    "kindId": "items/I00278c",
+    "group": 2
+  },
+  {
+    "id": 1886,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Enterrement de Magnus",
+    "description": "Après la tragique mort de Magnus par Qaïdu Khan, une cérémonie est faite pour les 105 soldats et l'héritier, un moment triste et émouvant, mais important... Un moment qui marque un tournant pour tout le monde.",
+    "maps": [35],
+    "enemies": [],
+    "kindId": "skillIcon/E0731",
+    "group": 2
+  },
+  {
+    "id": 1887,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Rapport de Zhaïtan",
+    "description": "Après leurs missions, Estia et Zhaïtan sont convoqués par l'Empereur afin de parler d'un rapport que Estia a rédigé le concernant, à propos de \"manquement\" à son travail. Après une longues dispute, la décision est prise : Zhaïtan n'a plus besoin de travailler pour l'héritier Marcus !",
+    "maps": [35],
+    "enemies": [],
+    "kindId": "items/I00305b",
+    "group": 2
+  },
+  {
     "id": 15000,
     "value": 3,
     "kind": "anecdoteII",

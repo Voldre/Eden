@@ -3,7 +3,7 @@ import { Resume } from "./model"
 import { createElement, fillSelectOptions, stringToDate } from "./utils/index.js"
 
 const urlParams = new URLSearchParams(window.location.search)
-let params: { [key: string]: string | number | undefined } = {
+let params: { [key: string]: string } = {
   groupe: urlParams.get("groupe") ?? "",
   resume: urlParams.get("resume") ?? "",
 }
@@ -45,7 +45,7 @@ let params: { [key: string]: string | number | undefined } = {
 const addResume = async (resume: Resume): Promise<void> => {
   const header = createElement(
     "h3",
-    `${resume.groupe !== 0 ? `Séance ${resume.seance} - Groupe ${resume.groupe}` : "Hors Série"} - ${resume.date}`
+    `${resume.groupe !== 0 ? `${resume.seance === "epilogue" ? "Épilogue" : `Séance ${resume.seance}`} - Groupe ${resume.groupe}` : "Hors Série"} - ${resume.date}`
   )
   const titleE = createElement("h2", resume.titre, { style: { flexGrow: "0.75" } })
   const personnageIconsE = createElement(
@@ -104,7 +104,7 @@ const seanceSelectE = document.querySelector<HTMLSelectElement>("#seance-select"
 const prevSeanceE = document.querySelector<HTMLButtonElement>("#prev-seance")!
 const nextSeanceE = document.querySelector<HTMLButtonElement>("#next-seance")!
 
-const prevNextEventListener = (offset: number) => () => onChangeSeance(`${parseInt(seanceSelectE.value) + offset}`)
+const prevNextEventListener = (offset: number) => () => onChangeSeance(seanceSelectE.selectedIndex + offset)
 
 ;[prevSeanceE, nextSeanceE].forEach((element, index) =>
   element.addEventListener("click", prevNextEventListener(index === 0 ? -1 : 1))
@@ -117,22 +117,32 @@ const onChange = (param: string, value: string | number): void => {
 
 const onChangeGroupe = (groupe: string): void => {
   groupSelectE.value = groupe
+  fillSelectOptions(seanceSelectE, [
+    { innerText: "Séance ...", value: "" },
+    ...resumeJSON
+      .filter((resume) => resume.groupe.toString() === groupe)
+      .map((resume) => ({
+        innerText:
+          resume.seance === "epilogue" ? "Épilogue" : `${groupe !== "0" ? "Séance" : "Hors Série"} ${resume.seance}`,
+        value: resume.seance.toString(),
+      })),
+  ])
   onChange("groupe", groupe)
 }
 groupSelectE.addEventListener("change", (e) => {
-  onChangeSeance("") // Remove seance when group change
+  onChangeSeance(0) // Remove seance when group change
   onChangeGroupe((e.target as HTMLSelectElement).value)
 })
 
-const onChangeSeance = (seance: string): void => {
-  seanceSelectE.value = seance
+const onChangeSeance = (seanceIndex: number): void => {
+  seanceSelectE.selectedIndex = seanceIndex // Change selected seance
+  const seance = seanceSelectE.value
   onChange("seance", seance)
 
-  const seances = resumeJSON.filter((resume) => resume.groupe === params.groupe).map((resume) => resume.seance)
-  prevSeanceE.disabled = !seance || parseInt(seance) === Math.min(...seances)
-  nextSeanceE.disabled = !seance || parseInt(seance) === Math.max(...seances)
+  prevSeanceE.disabled = seanceIndex === 0
+  nextSeanceE.disabled = seanceIndex === seanceSelectE.options.length - 1
 }
-seanceSelectE.addEventListener("change", (e) => onChangeSeance((e.target as HTMLSelectElement).value))
+seanceSelectE.addEventListener("change", (e) => onChangeSeance((e.target as HTMLSelectElement).selectedIndex))
 
 const setResumeLinks = (group: number, container: Element): void => {
   container.innerHTML = ""
@@ -145,11 +155,15 @@ const setResumeLinks = (group: number, container: Element): void => {
         "li",
         createElement(
           "a",
-          `${group !== 0 ? `Séance ${resume.seance}` : "Hors Série"} : ${resume.titre} - ${resume.date}`,
+          resume.seance === "epilogue"
+            ? `${resume.titre} - ${resume.date}`
+            : `${group !== 0 ? `Séance ${resume.seance}` : "Hors Série"} : ${resume.titre} - ${resume.date}`,
           {
-            onClick: () => {
-              onChangeSeance(`${resume.seance}`)
-            },
+            onClick: () =>
+              onChangeSeance(
+                // Find index of selected seance with value
+                [...seanceSelectE.options].findIndex((option) => option.value === resume.seance.toString())
+              ),
           }
         )
       )
@@ -160,9 +174,8 @@ const setResumeLinks = (group: number, container: Element): void => {
 
 const update = async (): Promise<void> => {
   const storyType = (urlParams.get("type") ?? "resume") as "resume" | "lore" | "moymoy"
-  const selectedGroup = parseInt(urlParams.get("groupe") ?? "")
-  const seance = urlParams.get("seance")
-  const selectedSeance = seance !== null ? parseInt(seance) : undefined
+  const selectedGroup = urlParams.get("groupe") ?? ""
+  const selectedSeance = urlParams.get("seance") ?? ""
 
   // Type update
   if (params.type !== storyType) {
@@ -176,40 +189,30 @@ const update = async (): Promise<void> => {
     await loadHtmlIntoElement("stories/lore.html", storyE)
   } else if (storyType === "resume") {
     // Group update
-    if (params.groupe !== selectedGroup) {
-      fillSelectOptions(seanceSelectE, [
-        { innerText: "Séance ...", value: "" },
-        ...resumeJSON
-          .filter((resume) => resume.groupe === selectedGroup)
-          .map((resume) => ({
-            innerText: `${selectedGroup !== 0 ? "Séance" : "Hors Série"} ${resume.seance}`,
-            value: resume.seance.toString(),
-          })),
-      ])
-
+    if (!selectedGroup || params.groupe !== selectedGroup) {
       // Do not update story content if a seance exist
-      if (params.seance !== undefined) {
-        if (selectedGroup !== undefined) {
-          setResumeLinks(selectedGroup, storyE)
+      if (!params.seance) {
+        if (selectedGroup) {
+          setResumeLinks(parseInt(selectedGroup), storyE)
         } else {
           storyE.innerHTML = "<h1 style='text-align: center;'>Résumés des dernières séances...</h1>"
           // Add 3 lasts resumes
-          resumeJSON
-            .sort((a, b) => stringToDate(b.date).getTime() - stringToDate(a.date).getTime())
-            .slice(0, 3)
-            .forEach(async (resume) => {
-              await addResume(resume)
-              storyE.append(createElement("hr", undefined)) // Separator
-            })
+          const lastResumes = resumeJSON.reverse().slice(0, 3)
+
+          // Use for...of instead of forEach to guarantee requests order (forEach is not sequential, it doesn't lock the loop)
+          for (const resume of lastResumes) {
+            await addResume(resume)
+            storyE.append(createElement("hr", undefined)) // Separator
+          }
         }
       }
     }
 
     // Seance update
-    if (selectedGroup !== undefined && params.seance !== selectedSeance) {
+    if (selectedGroup && params.seance !== selectedSeance) {
       storyE.innerHTML = ""
       const selectedResume = resumeJSON.find(
-        (resume) => resume.groupe === selectedGroup && resume.seance === selectedSeance
+        (resume) => resume.groupe === parseInt(selectedGroup) && resume.seance.toString() === selectedSeance
       )
       if (selectedResume) {
         await addResume(selectedResume)
@@ -218,7 +221,9 @@ const update = async (): Promise<void> => {
 
         const bottomSeanceSelectE = seanceSelectE.cloneNode(true) as HTMLSelectElement
         bottomSeanceSelectE.value = `${selectedSeance}`
-        bottomSeanceSelectE.addEventListener("change", (e) => onChangeSeance((e.target as HTMLSelectElement).value))
+        bottomSeanceSelectE.addEventListener("change", (e) =>
+          onChangeSeance((e.target as HTMLSelectElement).selectedIndex)
+        )
 
         const bottomNextSeance = nextSeanceE.cloneNode(true) as HTMLElement
         bottomNextSeance.addEventListener("click", prevNextEventListener(1))
@@ -228,18 +233,17 @@ const update = async (): Promise<void> => {
         })
         storyE.append(bottomNavigation)
       } else {
-        setResumeLinks(selectedGroup, storyE)
+        setResumeLinks(parseInt(selectedGroup), storyE)
       }
     }
   }
   // Update global params variable
   // eslint-disable-next-line require-atomic-updates
-  params = { type: storyType, groupe: selectedGroup, seance: selectedSeance }
+  params = { type: storyType, groupe: selectedGroup ?? "", seance: selectedSeance }
 }
 
 window.addEventListener("load", async () => {
   onChangeGroupe(urlParams.get("groupe") ?? "")
-  await update()
-  onChangeSeance(urlParams.get("seance") ?? "")
+  onChangeSeance([...seanceSelectE.options].findIndex((option) => option.value === urlParams.get("seance")))
   await update()
 })

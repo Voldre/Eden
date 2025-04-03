@@ -2,7 +2,10 @@
 
 session_start();
 
-$log_file = __DIR__ . '/JDRerror.log';
+header("Access-Control-Allow-Origin: http://voldre.free.fr");
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, X-API-KEY");
+
 // With following in .htaccess (for security) : 
 // <Files "*.log">
 // Order allow,deny
@@ -11,13 +14,28 @@ $log_file = __DIR__ . '/JDRerror.log';
 
 function logger($message, $currentDate = null)
 {
-    global $log_file;
+    $log_file = __DIR__ . '/JDRerror.log';
     $date = isset($currentDate) ? $currentDate : date('Y-m-d H:i:s');
     $full_message = "[$date] $message\n";
 
     // Utilisation de error_log avec un fichier personnalisé
     // error_log($full_message . PHP_EOL, 3, $log_file);
     file_put_contents($log_file, $full_message, FILE_APPEND);
+}
+
+
+$apiKey = getenv("API_KEY");
+
+$origin = $_SERVER['HTTP_ORIGIN'];
+if ($origin === "http://voldre.free.fr") {
+} else {
+    $providedKey = $_SERVER['HTTP_X_API_KEY'];
+    if ($providedKey !== $apiKey) {
+        logger("Tentative d'accès bloqué");
+        http_response_code(403);
+        echo "Accès interdit";
+        exit;
+    }
 }
 
 try {
@@ -123,7 +141,7 @@ try {
         if (!isset($_POST['username']) || !isset($_POST['mdp'])) {
             exit('Mot de passe et login nécessaire');
         } else {
-            if ($_POST['username'] == "etincellia" && password_verify($_POST['mdp'], '$2y$10$axhMYbrOHajA7PouuLWjC.B5spkil3cTKR4EbIZ6/uxOL/BRNU4pK')) {
+            if ($_POST['username'] == getenv('eden_master_username') && password_verify($_POST['mdp'], getenv('eden_master_hash'))) {
                 $_SESSION['login'] = true;
                 echo '<h3>Connecté</h3>';
                 echo '<meta http-equiv="refresh" content="0; URL=./jdr_master.php">';
