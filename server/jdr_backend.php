@@ -89,6 +89,8 @@ try {
 
                 if (!file_exists($filename)) {
                     logger("File '$filename' does not exist.");
+                    echo false;
+                    return;
                 }
                 // 29/11 : Remove print_r, echo and var_dump, to reduce time of save
                 // print_r($_COOKIE[$name.'JSON']);
@@ -141,7 +143,10 @@ try {
         if (!isset($_POST['username']) || !isset($_POST['mdp'])) {
             exit('Mot de passe et login nécessaire');
         } else {
-            if ($_POST['username'] == getenv('eden_master_username') && password_verify($_POST['mdp'], getenv('eden_master_hash'))) {
+            if (
+                ($_POST['username'] == getenv('eden_master_username') && password_verify($_POST['mdp'], getenv('eden_master_hash')))
+                || ($_POST['username'] == getenv('eden_master_username2') && password_verify($_POST['mdp'], getenv('eden_master_hash2')))
+            ) {
                 $_SESSION['login'] = true;
                 echo '<h3>Connecté</h3>';
                 echo '<meta http-equiv="refresh" content="0; URL=./jdr_master.php">';

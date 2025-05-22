@@ -31,3 +31,7 @@ export const setCookie = (name: string, value: object | boolean): number => {
   }
   return stringValue.length
 }
+
+export const deleteCookie = (name: string): void => {
+  document.cookie = `${name}=; SameSite=Strict`
+}

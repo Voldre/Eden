@@ -27,6 +27,7 @@ import {
   callPHP,
   createElement,
   dateToString,
+  deleteCookie,
   getRandomBetween,
   getRandomItem,
   initDialog,
@@ -697,6 +698,7 @@ async function saveLog(earnedCoins: number, winCards: Card[] | undefined): Promi
     setCookie("combatLogsJSON", newLog)
     // console.log("saveFile done : combatLogs, jdr_backend.php executed");
     await callPHP({ action: "saveFile", name: "combatLogs" })
+    deleteCookie("combatLogsJSON")
   } catch (e) {
     console.error(e)
     LoggerService.logError(
@@ -730,6 +732,7 @@ async function savePlayer(): Promise<void> {
 
     setCookie("playerJSON", newPlayer)
     await callPHP({ action: "saveFile", name: "player" })
+    deleteCookie("playerJSON")
   } catch (e) {
     console.error(e)
     LoggerService.logError(

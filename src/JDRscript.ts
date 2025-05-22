@@ -37,6 +37,7 @@ import {
   SelectElement,
   eqptBonusQuantity,
   splitParenthesisText,
+  deleteCookie,
 } from "./utils/index.js"
 import { LoggerService } from "./utils/logger.js"
 
@@ -1118,7 +1119,9 @@ function statsValue(resistance: boolean): number[] {
   const statB = [forceBE, dextéBE, intelBE, charismeBE, espritBE]
   return [forceE, dextéE, intelE, charismeE, espritE].map((statE, index) => {
     const statMain = statE.value
-    const statBWithRegex = statB[index].value.replace(/[^\d.+-]/g, "")
+    let statBValue = statB[index].value
+    statBValue = statBValue.replaceAll("++", "").replaceAll("--", "")
+    const statBWithRegex = statBValue.replace(/[^\d.+-]/g, "")
 
     const statsBValue = statBWithRegex.match(/^[-+]\d+|\d*$/)?.[0]
       ? parseInt(statBWithRegex.replace("+", "").replace("-", ""))
@@ -1387,6 +1390,7 @@ saveButton.addEventListener("click", () => {
     LoggerService.logError(`Plus de place sur la fiche de ${Object.values(newPerso)[0].nom}`)
     toastNotification("ECHEC : Plus de place disponible sur la fiche !", 10000, true)
   }
+  deleteCookie("persosJSON")
 })
 
 function savePerso(): {

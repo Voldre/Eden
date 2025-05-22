@@ -5,6 +5,7 @@ import {
   callPHP,
   createElement,
   dateToString,
+  deleteCookie,
   initDialog,
   inputSelector,
   newPerso,
@@ -233,6 +234,7 @@ function updateDay(joueurData: Player, indexPlayer: Joueurs): Player {
 
   setCookie("playerJSON", newPlayer)
   callPHP({ action: "saveFile", name: "player" })
+  deleteCookie("playerJSON")
 
   toastNotification("Cadeau de Connexion Quotidienne : 5 Pièces Alpaga !", 6000)
 

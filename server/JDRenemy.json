@@ -3429,5 +3429,20 @@
     "desc": "Automate de combat dédié à évaluer les capacités de ses adversaires grâce à une batterie de capteurs et un système de combat polyvalent. Créé par la Venturo.",
     "drop": "Aucun",
     "weaknesses": []
+  },
+  "231": {
+    "visuel3D": "lapin_des_mirages",
+    "nom": "Lapin des mirages",
+    "pvmax": 400,
+    "skills": [
+      "Pertubation sensorielle: Stat -2 sur 3 tours AoE (+10 PV soigner par perso touché): Esprit",
+      "Coup d'énergie : 2D6+20 : Intelligent // Coup de montre : 2D6+20",
+      "Marionnette : Double de lui à 50 PV, lui fait perdre 20 PV à chaque double : Esprit",
+      "Passif : 3 fois par combat peut changer une réussite critique en échec critique // PV <100 : +2 sur le dés"
+    ],
+    "stats": "7,16,19,12,19",
+    "desc": "Créature cauchemardesque à l’apparence d’un lapin déchiré, toujours souriant jusqu’aux oreilles. Ses yeux brillent d'une jaune instable et sa montre tordue semble battre au rythme des illusions qu’il crée.",
+    "drop": "Eclat de montre fracturée, rare : Anneau de résistance mentale ",
+    "weaknesses": ["tranchant", "feu"]
   }
 }
