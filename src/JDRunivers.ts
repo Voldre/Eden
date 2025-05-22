@@ -1,4 +1,4 @@
-import { aoeDescInfo, classes, iconsClasses, skillsAwakenJSON, skillsJSON } from "./JDRstore.js"
+import { aoeDescInfo, classes, iconsClasses, races, skillsAwakenJSON, skillsJSON } from "./JDRstore.js"
 import { Classes, Skill } from "./model.js"
 import {
   countEachOccurences,
@@ -154,7 +154,8 @@ const getSkillElement = (skill: Skill, isAwaken?: boolean, updateAwakenButton?: 
 
 // #region Skills list
 const showClassSkills = (classe: Classes): void => {
-  const skillsList = Object.values(skillsJSON).filter((skill) => skill.classe.includes(classe))
+  // Display all skills, except race skills
+  const skillsList = Object.values(skillsJSON).filter((skill) => skill.classe.includes(classe) && !skill.race)
 
   const updateAwakenButtonTriggered = (): void => {
     const isAllSkillsAwaken = [...skillsListE.children].every((child) => child.classList.contains("awaken"))
@@ -254,6 +255,35 @@ console.warn(
   Object.values(skillsJSON).filter((skill) => !classes.find((classe) => skill.classe.includes(classe)))
 )
 
+// #region Race skills
+
+const raceClassTable = document.querySelector<HTMLTableElement>("#raceClassTable")!
+const bodyTable = raceClassTable.createTBody()
+races.forEach((race) => {
+  const raceImg = createElement(
+    "td",
+    createElement("img", undefined, {
+      src: `http://voldre.free.fr/Eden/images/jdrgalerie/Race_${race}.webp`,
+      width: 120,
+      height: 120,
+    })
+  )
+
+  const raceSkills = Object.values(skillsJSON).filter((skill) => skill.race === race)
+
+  const skills = [...Array(5).keys()].map((i) =>
+    // Get skills of each kind of classes
+    raceSkills.find((skill) => skill.classe.every((c) => classes.slice(4 * i, 4 * (i + 1)).includes(c)))
+  )
+
+  const cells = skills.map((skill) => {
+    return createElement("td", skill ? getSkillElement({ ...skill, classe: [] }) : "")
+  })
+
+  const tr = bodyTable.insertRow()
+  tr.append(raceImg, ...cells)
+})
+
 // #region Labels
 
 function aoeDesc(): string {
@@ -284,13 +314,13 @@ const labelsDescription = {
       <tr>
         <td>Dé 0</td>
         <td>Montant max des dés +50%</td>
-        <td>Durée +2 tours</td>
+        <td>Montant max des dés +50% SINON Durée +2 tours</td>
         <td>Selon contexte</td>
       </tr>
       <tr>
         <td>Dé 1</td>
         <td>Montant max des dés</td>
-        <td>Durée +1 tour</td>
+        <td>Montant max des dés SINON Durée +1 tour</td>
         <td>Selon contexte</td>
       </tr>
       <tr>
@@ -342,7 +372,7 @@ const labelsDescription = {
   "coup-allié":
     "Lorsqu'on décide de se prendre un coup par un allié (joueur, familier), comme pour un blocage sur un dé 20 : le joueur prend les dégâts divisés par 2 et sans armure.",
   status:
-    "Un status est un malus d'altération d'état qui est non annulable. Autrement dit, les sorts qui retire des malus comme \"Prévention\" ne fonctionnent pas.<br/><br/>Ils peuvent être retiré à chaque tour en suivant ce calcul pour la stat définie :<ul><li>Tour 1 (lorsqu'on subit le sort) : Stat/2,</li><li> Tour 2 : Stat*0.75,</li><li> Tour 3 et + : Stat</li></ul>Une nouvelle tentative (pour annuler) est possible si la personne est attaquée, le jet de dé change selon l'altération.<br/>Voici les trois altérations d'états qui existent :<br/><ul><li>Hypnose (Esprit) : Si frappé : Tentative égale au montant de la stat pour le Tour X (réussite +1 après chaque reçu, ne compte que sur le tour actuel).</li><li>Endormissement (Esprit) : Si frappé : Tentative égale à 17. Si sort d'esprit : Tentative égale à l'esprit. (-2 si 1er tour).</li><li>Entrave (Force) : Si frappé <b>par un allié en Mono</b> : Tentative égale à 17.</li></ul>A noter : L'énervement des ennemis (leur blessure) augmente leur <b>résistance d'esprit</b> face aux altérations d'Esprit (jusqu'à atteindre leur stat d'Esprit)",
+    "Un status est un malus d'altération d'état qui est non annulable. Autrement dit, les sorts qui retire des malus comme \"Prévention\" ne fonctionnent pas.<br/><br/>Ils peuvent être retiré à chaque tour en suivant ce calcul pour la stat définie :<ul><li>Tour 1 (lorsqu'on subit le sort) : Stat/2,</li><li> Tour 2 : Stat*0.75,</li><li> Tour 3 et + : Stat</li></ul>Une nouvelle tentative (pour annuler) est possible si la personne est attaquée, le jet de dé change selon l'altération.<br/>Voici les trois altérations d'états qui existent :<br/><ul><li>Hypnose (Esprit) : Si frappé : Tentative égale au montant de la stat pour le Tour X (réussite +1 après chaque reçu, ne compte que sur le tour actuel).</li><li>Endormissement/Assomé (Esprit/Force) : Si frappé : Tentative égale à 17. Si sort d'esprit : Tentative égale à l'esprit. (-2 si 1er tour).</li><li>Entrave (Force) : Si frappé <b>par un allié en Mono</b> : Tentative égale à 17.</li></ul>A noter : L'énervement des ennemis (leur blessure) augmente leur <b>résistance d'esprit</b> face aux altérations d'Esprit (jusqu'à atteindre leur stat d'Esprit)",
   familier:
     "Il est possible d'invoquer jusqu'à 2 familiers simultanément, toutes sources confondues (compétences, équipements). Ils agissent pendant le tour du joueur comme un personnage (attaque, blocage, ...).",
   armure:

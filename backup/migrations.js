@@ -29,7 +29,7 @@ for (const key in enemyJSON) {
 }
 
 // -------------------------------------------------------
-// Convert Discord Summaries to HTML files
+// #region Discord Summaries to HTML files
 
 // 1) JS Conversion from summaries (string[]) to JSON resume
 
@@ -124,3 +124,46 @@ console.log(
 // 3) Open zip archive and get HTML files, enjoy !
 
 // -------------------------------------------------------
+
+// #region Excel Race Skills
+
+// 1) JS Conversion from Excel "_Stats classes races" : https://beautifytools.com/excel-to-json-converter.php
+
+// 2) rawRaceSkills = result["Sorts de Race"]
+
+// 3) Apply function and insert in JDRSkills.json
+
+// "Race" : string
+// "Tank" : string
+// "DPS CàC" : string
+// "DPS Dist" : string
+// "Heal" : string
+// "Magie" : string
+
+let rawRaceSkills = []; // All Race skills
+const races = ["Humain", "Ezelin", "Ursun", "Zumi", "Anuran", "Torturran", "Drakai", "Tuskar", "Ogre"];
+// prettier-ignore
+const classes = [ "Guerrier", "Chevalier", "Templier", "Chev Dragon", "Voleur", "Assassin", "Danselame", "Samouraï", "Chasseur", "Ingénieur", "Corsaire", "Juge", "Clerc", "Barde", "Shaman", "Sage", "Magicien", "Illusionniste", "Démoniste", "Luminary",];
+
+const getRaceSkills = (
+  index // index (end of JDRSkills.json), eg : 147
+) =>
+  rawRaceSkills
+    .filter((raw) => races.includes(raw.Race))
+    .map((raceSkill, raceSkillIndex) =>
+      ["Tank", "DPS CàC", "DPS Dist", "Heal", "Magie"].map((type, typeIndex) => ({
+        [index + raceSkillIndex * 5 + typeIndex]: {
+          nom: "",
+          desc: raceSkill?.[type],
+          effet: "",
+          montant: "",
+          icone: "",
+          stat: "",
+          classe: classes.slice(4 * typeIndex, 4 * (typeIndex + 1)),
+          race: raceSkill.Race,
+        },
+      }))
+    )
+    .flat()
+    // Merge objects in once;
+    .reduce((acc, obj) => Object.assign(acc, obj), {});

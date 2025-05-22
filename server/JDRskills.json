@@ -21,7 +21,7 @@
     "nom": "Provocation",
     "desc": "Le lanceur provoque la cible ce qui augmente les chances d'être visé",
     "effet": "Provocation",
-    "montant": "1D6+4 (0 dégât/effet d'arme, 0 armure), et 75% de chance d'être visé pendant 3 tours",
+    "montant": "1D6+4 (0 dégât/effet de stuff, 0 armure), et 75% de chance d'être visé pendant 3 tours",
     "icone": "E0003",
     "stat": "Charisme",
     "classe": ["Guerrier", "Chevalier", "Templier", "Chev Dragon"]
@@ -129,7 +129,7 @@
     "nom": "Perce-Armure",
     "desc": "Frappe et réduit la défense de l'ennemi (non cumulable)",
     "effet": "Dégât Malus",
-    "montant": "Dégât 1D8, et dégât physique reçu +3 pendant 3 tours",
+    "montant": "Dégât 1D8, et dégât physique reçu +4 pendant 3 tours",
     "icone": "E0054",
     "stat": "Force",
     "classe": ["Voleur", "Assassin", "Danselame", "Samouraï"]
@@ -145,7 +145,7 @@
   },
   "23": {
     "nom": "Cicatrice de l'esprit",
-    "desc": "Frappe et retire un buff de l'ennemi",
+    "desc": "Frappe et retire un buff à l'ennemi",
     "effet": "Dégât Malus",
     "montant": "1D8+3, retire un buff",
     "icone": "E0060",
@@ -219,7 +219,7 @@
     "nom": "Blessure Douloureuse",
     "desc": "Blesse l'ennemi (dégât de nature) et l'empêche de se soigner pendant 3 tours",
     "effet": "Dégât Malus",
-    "montant": "1D8+1",
+    "montant": "1D8+1, 0 soin pendant 3 tours",
     "icone": "E0070",
     "stat": "Dextérité",
     "classe": ["Chasseur", "Ingénieur", "Corsaire", "Juge"]
@@ -333,10 +333,10 @@
     "classe": ["Barde"]
   },
   "45": {
-    "nom": "Hymne à la Guerre",
-    "desc": "Augmente les dégâts physiques infligés par le groupe",
+    "nom": "Hymne/Symphonie à la Guerre",
+    "desc": "Augmente les dégâts physiques OU magique infligés par le groupe",
     "effet": "Buff AoE",
-    "montant": "Dégât physique 1D4 (min 2) +1 pendant 3 tours",
+    "montant": "Dégât physique ou magique +1D4 (min 2) +1 pendant 3 tours",
     "icone": "E0105",
     "stat": "Esprit",
     "classe": ["Barde"]
@@ -363,7 +363,7 @@
     "nom": "Puma Noir",
     "desc": "Action Instantanée (max 3 fois par combat). Vous transforme en Puma Noir. Impossible de jeter des sorts magiques (Intel/Esprit). Nouveaux sorts : Saignement : 1D8 puis 3 pendant 3 tours (Force). Triple Griffe : 3D6 (Dextérité)",
     "effet": "Transformation",
-    "montant": "Dégât +4 (+1/niveau, max 8), 0 dégât/effet d'arme. Force+2, Dexté+2 pendant 1D4 (min 2) +1 tours (annulable)",
+    "montant": "Dégât +4 (+1/niveau, max 8), 0 dégât/effet de stuff. Force+2, Dexté+2 pendant 1D4 (min 2) +1 tours (annulable)",
     "icone": "E0271",
     "stat": "Esprit",
     "classe": ["Shaman"]
@@ -597,7 +597,7 @@
     "nom": "Éclair en Furie",
     "desc": "Infige des dégats de foudre à la cible et l'affaibli",
     "effet": "Dégât Malus",
-    "montant": "1D8, et dégât magique reçu +3 pendant 3 tours",
+    "montant": "1D8, et dégât magique reçu +4 pendant 3 tours",
     "icone": "E0109",
     "stat": "Intelligence",
     "classe": ["Shaman"]
@@ -903,7 +903,7 @@
     "nom": "Aura du Pourfendeur",
     "desc": "Le juge se prépare à pourfendre ses ennemis : les dégâts physiques deviennent ténèbreux",
     "effet": "Buff",
-    "montant": "Dégât ténèbres +1D4 (min 2) +2 pendant 3 tours",
+    "montant": "Dégât ténèbres +1D4 (min 2) +3 pendant 3 tours",
     "icone": "E0879",
     "stat": "Esprit",
     "classe": ["Juge"]
@@ -947,8 +947,8 @@
   "113": {
     "nom": "Provocation de Groupe",
     "desc": "Les ennemis ont 50% de chance de cibler le joueur",
-    "effet": "Provocation",
-    "montant": "1D4+2 (0 dégât/effet d'arme, 0 armure), et 50% de chance d'être ciblé pendant 3 tours",
+    "effet": "Provocation AoE R-",
+    "montant": "1D4+2 AoE (0 dégât/effet de stuff, 0 armure), et 50% de chance d'être ciblé pendant 3 tours",
     "icone": "E0248",
     "stat": "Charisme",
     "classe": ["Guerrier"]
@@ -956,8 +956,8 @@
   "114": {
     "nom": "Coup de Poing Irrité",
     "desc": "Frappe et inflige des dégâts de nature à l'ennemi, l'affaiblissant.",
-    "effet": "Dégât",
-    "montant": "1D6+2 : Force -2 (pendant 2 tours)",
+    "effet": "Dégât Malus",
+    "montant": "1D6+2 : Force -3 (pendant 2 tours)",
     "icone": "E0027",
     "stat": "Force",
     "classe": ["Guerrier"]
@@ -1020,7 +1020,7 @@
     "nom": "Transe - Mode Tueur",
     "desc": "Met son lanceur dans un état de transe lui permettant de taper plus fort.",
     "effet": "Buff",
-    "montant": "Dégât +1D4 (min 2) +2 pendant 3 tours (tour 0 : Blocage +2)",
+    "montant": "Dégât +1D4 (min 2) +3 pendant 3 tours (tour 0 : Blocage +2)",
     "icone": "E0912",
     "stat": "Esprit",
     "classe": ["Assassin"]
@@ -1110,7 +1110,7 @@
     "nom": "Robot Destructeur",
     "desc": "Invoque un Robot Nano Autodestructeur. Explose sur courte portée. Peut être surchargé : Feu = +3, Foudre = Portée +,  Glace = Dexté-2 (3t),  Nature = Force/Int -2 (2t),  Lumière = Réuss -2 (1t),  Ténèbres = Aspire",
     "effet": "Dégât Malus AoE R-",
-    "montant": "1D6+2 (+1/niveau, 0 dégât/effet d'arme)",
+    "montant": "1D6+2 (+1/niveau, 0 dégât/effet de stuff)",
     "icone": "robot",
     "stat": "Intelligence",
     "classe": ["Ingénieur"]
@@ -1119,7 +1119,7 @@
     "nom": "Piège d'Entrave",
     "desc": "Pose un piège au sol pour entraver l'ennemi (dégât tranchant), l'empêchant de se déplacer, Esquive-5. L'ennemi peut tenter de s'en échapper (force).",
     "effet": "Dégât Status",
-    "montant": "1D10+2 (+1/niveau, 0 dégât/effet d'arme). Inflige le status \"Entrave\" pendant 3 tours",
+    "montant": "1D10+2 (+1/niveau, 0 dégât/effet de stuff). Inflige le status \"Entrave\" pendant 3 tours",
     "icone": "E0179",
     "stat": "Dextérité",
     "classe": ["Chasseur", "Juge"]
@@ -1172,7 +1172,7 @@
   "138": {
     "nom": "Ferveur du Guerrier",
     "desc": "Lorsque la dévotion du Guerrier est totale (réussite 25%), il parvient à se maintenir en vie au-delà d'un coup fatal.",
-    "effet": "Soin",
+    "effet": "Survie",
     "montant": "Avant de tomber KO (3 fois par combat) : succès 1D4 (5/20) : Soigne 1D10+5 PV (buffs préservés)",
     "icone": "E0662",
     "stat": "",
@@ -1249,5 +1249,454 @@
     "icone": "E0873",
     "stat": "Force",
     "classe": ["gorille vulcain"]
+  },
+  "147": {
+    "nom": "Halo de Guérison",
+    "desc": "Les humains émettent une aura de guérison autour d'eux pour soigner leurs camarades",
+    "effet": "Soin AoE",
+    "montant": "1D6+6",
+    "icone": "E0930",
+    "stat": "Intelligence",
+    "classe": ["Guerrier", "Chevalier", "Templier", "Chev Dragon"],
+    "race": "Humain"
+  },
+  "148": {
+    "nom": "Coup Aggravant",
+    "desc": "Assène un violent coup qui aggrave la durée des maléfices de 1 tour (non augmentable)",
+    "effet": "Dégât Malus",
+    "montant": "1D6+1, durée des malus actif +1 tour - Cooldown (cible) 2 tours (si touché)",
+    "icone": "E0900",
+    "stat": "Force",
+    "classe": ["Voleur", "Assassin", "Danselame", "Samouraï"],
+    "race": "Humain"
+  },
+  "149": {
+    "nom": "",
+    "desc": "((7,5-8))",
+    "effet": "",
+    "montant": "",
+    "icone": "",
+    "stat": "",
+    "classe": ["Chasseur", "Ingénieur", "Corsaire", "Juge"],
+    "race": "Humain"
+  },
+  "150": {
+    "nom": "Protection de Lumière",
+    "desc": "La magie de lumière entoure l'utilisateur qui voit ses compétences physiques convertis en lumière.",
+    "effet": "Buff Conversion",
+    "montant": "Dégât reçu -1D4 (min 2), (Physique > Lumière) Dégât lumière +3 pendant 3 tours",
+    "icone": "E0562",
+    "stat": "Esprit",
+    "classe": ["Clerc", "Barde", "Shaman", "Sage"],
+    "race": "Humain"
+  },
+  "151": {
+    "nom": "Inversion élémentaire",
+    "desc": "L'utilisateur enchante sa magie d'un effet d'inversion pour tous les sorts lancés pendant le buff (Feu <> Glace, Foudre <> Nature, Lumière <> Ténèbres), tout en se renforçant.",
+    "effet": "Buff Conversion",
+    "montant": "Inversion d'élément, dégât +3 pendant 4 tours (annulable)",
+    "icone": "j066",
+    "stat": "Esprit",
+    "classe": ["Magicien", "Illusionniste", "Démoniste", "Luminary"],
+    "race": "Humain"
+  },
+  "152": {
+    "nom": "Pointe aiguisée",
+    "desc": "La précision du porteur est accrue et l'impact de ses percés est amélioré, tel la maîtrise de l'aiguille.",
+    "effet": "Buff",
+    "montant": "Dégât perçant +1D4 (min 2) +4 pendant 3 tours",
+    "icone": "E0577",
+    "stat": "Esprit",
+    "classe": ["Guerrier", "Chevalier", "Templier", "Chev Dragon"],
+    "race": "Ezelin"
+  },
+  "153": {
+    "nom": "Me tape pas...",
+    "desc": "L'utilisateur dissuade (par sa mignonnerie ?) les ennemis de l'attaquer, sauf quand il est tout seul !",
+    "effet": "Buff",
+    "montant": "-75% de chance d'être visé pendant 3 tours (sauf si seul)",
+    "icone": "E0342",
+    "stat": "Charisme",
+    "classe": ["Voleur", "Assassin", "Danselame", "Samouraï"],
+    "race": "Ezelin"
+  },
+  "154": {
+    "nom": "Piou piou !",
+    "desc": "Trois flèches ailées téléguidées partent aléatoirement un direction des ennemis les plus proches. Chaque flèche nécessite de la part de l'ennemi un blocage ou une esquive.",
+    "effet": "Dégât",
+    "montant": "3 coups chacun : (Dégât fixe /3) + 1D6+1 vers l'une des cibles les plus proches",
+    "icone": "E0994",
+    "stat": "Dextérité",
+    "classe": ["Chasseur", "Ingénieur", "Corsaire", "Juge"],
+    "race": "Ezelin"
+  },
+  "155": {
+    "nom": "Guérison enchantée",
+    "desc": "Accentue les effets magiques de la cible tout en la soignant",
+    "effet": "Buff et Soin",
+    "montant": "Augmente la durée des buffs actifs de la cible de 1 tour, Soin 1D6+4 - Cooldown (cible) 2 tours",
+    "icone": "E0821",
+    "stat": "Esprit",
+    "classe": ["Clerc", "Barde", "Shaman", "Sage"],
+    "race": "Ezelin"
+  },
+  "156": {
+    "nom": "Esprit tourmenté",
+    "desc": "Inflige des dégâts de ténèbres à l'ennemi par l'intermédiaire de son esprit, tel les anciens magiciens d'Amur",
+    "effet": "Dégât",
+    "montant": "1D10+2, si critique : réussite cible -4 (2 tours)",
+    "icone": "E0453",
+    "stat": "Esprit",
+    "classe": ["Magicien", "Illusionniste", "Démoniste", "Luminary"],
+    "race": "Ezelin"
+  },
+  "157": {
+    "nom": "Armure électrifiée",
+    "desc": "L'armure technologique des Zumis leur permet d'infliger un coup de foudre à chaque fois qu'il subisse un coup (non bloqué/esquivé)",
+    "effet": "Buff",
+    "montant": "Pour chaque coup reçu : Dégât 1D8 +5 pendant 1 tour (max 2 tours avec boost)",
+    "icone": "E0495",
+    "stat": "Esprit",
+    "classe": ["Guerrier", "Chevalier", "Templier", "Chev Dragon"],
+    "race": "Zumi"
+  },
+  "158": {
+    "nom": "Thunder Set",
+    "desc": "La tenue technologique des Zumis les rends rapide comme l'éclair et électrifie leurs attaques !",
+    "effet": "Buff Conversion",
+    "montant": "Dextérité +2, (Physique > Foudre) Dégât foudre +3 pendant 3 tours",
+    "icone": "E0770b",
+    "stat": "Esprit",
+    "classe": ["Voleur", "Assassin", "Danselame", "Samouraï"],
+    "race": "Zumi"
+  },
+  "159": {
+    "nom": "Mode Focus",
+    "desc": "Le Zumi se concentre et analyse la situation pour améliorer sa chance, lui évitant ainsi les échecs cuisants.",
+    "effet": "Buff",
+    "montant": "Valeur des D20 : -1 (si >1) pendant 3 tours",
+    "icone": "E0691",
+    "stat": "Esprit",
+    "classe": ["Chasseur", "Ingénieur", "Corsaire", "Juge"],
+    "race": "Zumi"
+  },
+  "160": {
+    "nom": "Scellement de Zygmund",
+    "desc": "Héritage du fondateur Zygmund de l'Ordre des Chevaliers de la Rose, les Zumis sont capables de sceller les compétences physiques de leur cible.",
+    "effet": "Malus",
+    "montant": "Aucun sort physique pendant 3 tours",
+    "icone": "E0595",
+    "stat": "Esprit",
+    "classe": ["Clerc", "Barde", "Shaman", "Sage"],
+    "race": "Zumi"
+  },
+  "161": {
+    "nom": "Paralysie magique",
+    "desc": "Inflige des dégâts de foudre et retire un buff à l'ennemi",
+    "effet": "Dégât Malus",
+    "montant": "1D8+2, retire un buff",
+    "icone": "E0839",
+    "stat": "Intelligence",
+    "classe": ["Magicien", "Illusionniste", "Démoniste", "Luminary"],
+    "race": "Zumi"
+  },
+  "162": {
+    "nom": "Marquage Glyphique",
+    "desc": "Les Ursuns utilisent leurs artisanats pour imprégner leur coup d'un puissant glyphe de fracas.",
+    "effet": "Buff",
+    "montant": "Dégât contondant +1D4 (min 2) +4 pendant 3 tours",
+    "icone": "E0493",
+    "stat": "Esprit",
+    "classe": ["Guerrier", "Chevalier", "Templier", "Chev Dragon"],
+    "race": "Ursun"
+  },
+  "163": {
+    "nom": "Hémorragie",
+    "desc": "Inflige une violente attaque de zone autour de soi qui empêche les ennemis de se soigner.",
+    "effet": "Dégât AoE R-",
+    "montant": "1D6, 0 soin pendant 3 tours",
+    "icone": "j053",
+    "stat": "Force",
+    "classe": ["Voleur", "Assassin", "Danselame", "Samouraï"],
+    "race": "Ursun"
+  },
+  "164": {
+    "nom": "Tir Dragonvent",
+    "desc": "Tir une flèche qui se propage sur une grande distance, infligeant de lourd dégât.",
+    "effet": "Dégât AoE L+",
+    "montant": "1D8+3",
+    "icone": "E0514",
+    "stat": "Dextérité",
+    "classe": ["Chasseur", "Ingénieur", "Corsaire", "Juge"],
+    "race": "Ursun"
+  },
+  "165": {
+    "nom": "",
+    "effet": "",
+    "montant": "",
+    "icone": "",
+    "stat": "",
+    "classe": ["Clerc", "Barde", "Shaman", "Sage"],
+    "race": "Ursun"
+  },
+  "166": {
+    "nom": "Restauration Mentale",
+    "desc": "Retire un effet négatif au hasard à soi-même et soigne",
+    "effet": "Buff et Soin",
+    "montant": "Soin 1D6+6, -1 malus",
+    "icone": "E0534",
+    "stat": "Esprit",
+    "classe": ["Magicien", "Illusionniste", "Démoniste", "Luminary"],
+    "race": "Ursun"
+  },
+  "167": {
+    "nom": "Sécrétion de Mucus",
+    "desc": "Les Anurans sécrètent un mucus très visqueux qui ralenti leurs ennemis.",
+    "effet": "Malus AoE L-",
+    "montant": "Dextérité -3 AoE pendant 3 tours",
+    "icone": "E0492",
+    "stat": "Force",
+    "classe": ["Guerrier", "Chevalier", "Templier", "Chev Dragon"],
+    "race": "Anuran"
+  },
+  "168": {
+    "nom": "",
+    "desc": "Avec une petite dose de poison, les Anurans assènent un coup qui réduit la force de leur ennemi",
+    "effet": "Dégât Malus",
+    "montant": "1D6+2, et -3 force pendant 3 tours",
+    "icone": "E0163b",
+    "stat": "Dextérité",
+    "classe": ["Voleur", "Assassin", "Danselame", "Samouraï"],
+    "race": "Anuran"
+  },
+  "169": {
+    "nom": "Régénération d'amphibien",
+    "desc": "Les Anurans utilise leur régénération naturelle pour guérir de leurs blessures.",
+    "effet": "Soin",
+    "montant": "2D6+9",
+    "icone": "E0178b",
+    "stat": "Esprit",
+    "classe": ["Chasseur", "Ingénieur", "Corsaire", "Juge"],
+    "race": "Anuran"
+  },
+  "170": {
+    "nom": "Champignoïde de Vie",
+    "desc": "Invoque un Champignoïde de la Lagune Enchantée : 25 PV, Force : 13, Dexté : 9, Intel/Esprit : 15. Sort : Coup de Boule 1D6+2 (Force), Soin : 1D6+2 (Intel)",
+    "effet": "Invocation",
+    "montant": "Invocation jusqu'à coupure magique",
+    "icone": "E0414b",
+    "stat": "Esprit",
+    "classe": ["Clerc", "Barde", "Shaman", "Sage"],
+    "race": "Anuran"
+  },
+  "171": {
+    "nom": "Bouclier de Glace",
+    "desc": "La magie de glace entoure l'utilisateur qui voit ses compétences physiques convertis en glace.",
+    "effet": "Buff Conversion",
+    "montant": "Dégât reçu -1D4 (min 2), (Physique > Glace) Dégât glace +3 pendant 3 tours",
+    "icone": "E0429",
+    "stat": "Esprit",
+    "classe": ["Magicien", "Illusionniste", "Démoniste", "Luminary"],
+    "race": "Anuran"
+  },
+  "172": {
+    "nom": "",
+    "desc": "((6,5))",
+    "effet": "",
+    "montant": "",
+    "icone": "",
+    "stat": "",
+    "classe": ["Guerrier", "Chevalier", "Templier", "Chev Dragon"],
+    "race": "Torturran"
+  },
+  "173": {
+    "nom": "Barrière magique",
+    "desc": "Les Torturrans canalysent leur énergie pour bloquer davantage les attaques magiques des attaquants.",
+    "effet": "Buff",
+    "montant": "Blocage magique +3 pendant 3 tours",
+    "icone": "E0769",
+    "stat": "Esprit",
+    "classe": ["Voleur", "Assassin", "Danselame", "Samouraï"],
+    "race": "Torturran"
+  },
+  "174": {
+    "nom": "Connaissance de l'Environnement",
+    "desc": "L'énergie de la nature entoure l'utilisateur qui voit ses compétences physiques convertis en nature.",
+    "effet": "Buff Conversion",
+    "montant": "Réussite +2, (Physique > Nature) Dégât nature +3 pendant 3 tours",
+    "icone": "E0592b",
+    "stat": "Esprit",
+    "classe": ["Chasseur", "Ingénieur", "Corsaire", "Juge"],
+    "race": "Torturran"
+  },
+  "175": {
+    "nom": "Dissipation",
+    "desc": "Dissipe tous les buffs de l'ennemi : débuff total",
+    "effet": "Malus",
+    "montant": "Retire les buffs de l'ennemi",
+    "icone": "E0276b",
+    "stat": "Esprit",
+    "classe": ["Clerc", "Barde", "Shaman", "Sage"],
+    "race": "Torturran"
+  },
+  "176": {
+    "nom": "Silence des érudits",
+    "desc": "Les Torturrans parviennent à couper la magie de leur cible. Ainsi, l'ennemi est incapable d'utiliser ses compétences magiques (intel/esprit)",
+    "effet": "Malus",
+    "montant": "Aucun sort magique pendant 3 tours",
+    "icone": "E0035b",
+    "stat": "Esprit",
+    "classe": ["Magicien", "Illusionniste", "Démoniste", "Luminary"],
+    "race": "Torturran"
+  },
+  "177": {
+    "nom": "",
+    "desc": "Attaque coup sur la tête \r\n(Dégât 1D6+2, malus -3 intel 3t)",
+    "effet": "",
+    "montant": "",
+    "icone": "",
+    "stat": "",
+    "classe": ["Guerrier", "Chevalier", "Templier", "Chev Dragon"],
+    "race": "Drakai"
+  },
+  "178": {
+    "nom": "",
+    "desc": "Equiv Blessure Doul (1D8+1, 3t 0 soin)",
+    "effet": "",
+    "montant": "",
+    "icone": "",
+    "stat": "",
+    "classe": ["Voleur", "Assassin", "Danselame", "Samouraï"],
+    "race": "Drakai"
+  },
+  "179": {
+    "nom": "",
+    "desc": "Analyse - Détecte 1 faiblesse aléat\r\net bloc/esq cible -1 si l'user atk (4t)",
+    "effet": "",
+    "montant": "",
+    "icone": "E0372",
+    "stat": "",
+    "classe": ["Chasseur", "Ingénieur", "Corsaire", "Juge"],
+    "race": "Drakai"
+  },
+  "180": {
+    "nom": "",
+    "desc": "Buff ténèbres (lum > ténèbres)\r\n\"soin noir\", + DGT === Aura pourf",
+    "effet": "",
+    "montant": "",
+    "icone": "",
+    "stat": "",
+    "classe": ["Clerc", "Barde", "Shaman", "Sage"],
+    "race": "Drakai"
+  },
+  "181": {
+    "nom": "",
+    "desc": "Buff AoE sur alliés : +1 durée malus infligé pendant 3 tours AoE",
+    "effet": "",
+    "montant": "",
+    "icone": "",
+    "stat": "",
+    "classe": ["Magicien", "Illusionniste", "Démoniste", "Luminary"],
+    "race": "Drakai"
+  },
+  "182": {
+    "nom": "",
+    "desc": "Sort retire malus total (sur soi)\r\nSoin 10 PV",
+    "effet": "",
+    "montant": "",
+    "icone": "",
+    "stat": "",
+    "classe": ["Guerrier", "Chevalier", "Templier", "Chev Dragon"],
+    "race": "Tuskar"
+  },
+  "183": {
+    "nom": "",
+    "desc": "Coup de Résonnance (détecte 1\r\nfaiblesse physique # brisure vibr)\r\nFrappe sur la faiblesse, 1D6+2",
+    "effet": "",
+    "montant": "",
+    "icone": "",
+    "stat": "",
+    "classe": ["Voleur", "Assassin", "Danselame", "Samouraï"],
+    "race": "Tuskar"
+  },
+  "184": {
+    "nom": "",
+    "desc": "Buff feu : Flèche embrasée\r\nPhysique > Feu, DGT +1D4 +2, 3t",
+    "effet": "",
+    "montant": "",
+    "icone": "",
+    "stat": "",
+    "classe": ["Chasseur", "Ingénieur", "Corsaire", "Juge"],
+    "race": "Tuskar"
+  },
+  "185": {
+    "nom": "",
+    "desc": "Sort psycho Tuskar magie chelou \r\n***à développer*** # Azul\r\n(0 dgt arme, Dgt 1D6+3, -3 esprit 3t)",
+    "effet": "",
+    "montant": "",
+    "icone": "",
+    "stat": "",
+    "classe": ["Clerc", "Barde", "Shaman", "Sage"],
+    "race": "Tuskar"
+  },
+  "186": {
+    "nom": "",
+    "desc": "Blocage physique +3 (3t)",
+    "effet": "",
+    "montant": "",
+    "icone": "",
+    "stat": "",
+    "classe": ["Magicien", "Illusionniste", "Démoniste", "Luminary"],
+    "race": "Tuskar"
+  },
+  "187": {
+    "nom": "Cri Menaçant",
+    "desc": "Les Ogres ont un sacré coffre ! Ils sont capable de poussé un hurlement des plus menaçants et perturbant, allant même jusqu'à blesser !",
+    "effet": "Dégât Malus AoE R-",
+    "montant": "Dégât 1D6+4 (0 dégât/effet de stuff, 0 armure), réussite -2 pendant 2 tours",
+    "icone": "J504",
+    "stat": "Charisme",
+    "classe": ["Guerrier", "Chevalier", "Templier", "Chev Dragon"],
+    "race": "Ogre"
+  },
+  "188": {
+    "nom": "Lame Tranchante",
+    "desc": "Les Ogres manient les armes comme personne, leur force destructrice peut découper n'importe quoi ! Voilà la puissance d'un Ogre !",
+    "effet": "Buff",
+    "montant": "Réussite +2, Dégât tranchant +1D4 (min 2) +4 pendant 3 tours",
+    "icone": "j615",
+    "stat": "Force",
+    "classe": ["Voleur", "Assassin", "Danselame", "Samouraï"],
+    "race": "Ogre"
+  },
+  "189": {
+    "nom": "Ténacité",
+    "desc": "En puisant au fin fond de leurs ressources, les Ogres parviennent parfois à survivre à un coup fatal en consolidant leur esprit.",
+    "effet": "Survie",
+    "montant": "Empêche de tomber KO (1 fois par combat) : 1 PV restant, +1 d'esquive sur le tour",
+    "icone": "E0662b",
+    "stat": "Esprit",
+    "classe": ["Chasseur", "Ingénieur", "Corsaire", "Juge"],
+    "race": "Ogre"
+  },
+  "190": {
+    "nom": "Coup assomant",
+    "desc": "Inflige un violent coup sur la tête qui assome/endort la cible. Voir règle du statut \"Endormissement\".",
+    "effet": "Dégât Status",
+    "montant": "1D6+1, inflige le status \"Endormissement\" pendant 2 tours - Cooldown (global) 2 tours (si touché)",
+    "icone": "E0664b",
+    "stat": "Force",
+    "classe": ["Clerc", "Barde", "Shaman", "Sage"],
+    "race": "Ogre"
+  },
+  "191": {
+    "nom": "Tempête de Tengri",
+    "desc": "Grâce à la magie de Tengri, les forces de la nature se lève pour infliger de lourd dégât de nature aux ennemis.",
+    "effet": "Dégât AoE R+",
+    "montant": "1D8+2",
+    "icone": "E0531",
+    "stat": "Intelligence",
+    "classe": ["Magicien", "Illusionniste", "Démoniste", "Luminary"],
+    "race": "Ogre"
   }
 }

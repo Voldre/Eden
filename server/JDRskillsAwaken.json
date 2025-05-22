@@ -64,7 +64,7 @@
   },
   "21": {
     "nom": "Perce-Armure",
-    "montant": "Dégât 1D10, et dégât physique reçu +5 pendant 4 tours"
+    "montant": "Dégât 1D10+2, et dégât physique reçu +5 pendant 4 tours"
   },
   "25": {
     "nom": "Charme tape-à-l-oeil",
@@ -154,9 +154,8 @@
     "montant": "1D10+6 (Element Feu et Glace)"
   },
   "45": {
-    "nom": "Hymne à la Guerre",
-    "desc": "Augmente les dégâts physiques infligés par le groupe",
-    "montant": "Dégât physique 1D4 (min 2) +3 pendant 4 tours"
+    "nom": "Hymne/Symphonie à la Guerre",
+    "montant": "Dégât total +1D4 (min 2) +1 pendant 4 tours"
   },
   "46": {
     "nom": "Bouclier d'épines",
@@ -434,7 +433,7 @@
   },
   "114": {
     "nom": "Coup de Poing Irrité",
-    "montant": "1D6+5 : Force -3 (pendant 2 tours)"
+    "montant": "1D6+6 : Force -3 (pendant 2 tours)"
   },
   "115": {
     "nom": "Destruction Noire",

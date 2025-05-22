@@ -156,6 +156,7 @@ export interface Skill {
   icone: string
   stat: StatsName
   classe: Classes[]
+  race?: Races
 }
 export interface SkillsAwaken extends Partial<Skill> {
   nom: string

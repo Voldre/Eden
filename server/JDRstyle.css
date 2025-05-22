@@ -568,6 +568,38 @@ td {
   padding: 2px 4px;
 }
 
+#raceClassTable {
+  border-collapse: collapse; /* Avoid double borders */
+  width: 101%;
+  margin: 0 -1%;
+  overflow-x: auto;
+  display: block;
+}
+
+#raceClassTable tr > * {
+  border-inline: none;
+  padding: 0px 4px;
+}
+
+#raceClassTable tr .skill {
+  inline-size: 280px;
+}
+
+#raceClassTable thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: rgb(36, 35, 35);
+}
+
+#raceClassTable tbody td:first-child,
+#raceClassTable thead th:first-child {
+  position: sticky;
+  left: 0;
+  background: #333;
+  z-index: 3;
+}
+
 #awakenButton:hover {
   filter: drop-shadow(0px -1px 5px wheat);
 }

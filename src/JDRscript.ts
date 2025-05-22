@@ -136,6 +136,7 @@ addChangeListener(raceE, (e) => {
   document.querySelector<HTMLParagraphElement>(".poids")!.innerText = poids[races.indexOf(race)]
   // Verify stats repartition
   statsVerification()
+  updateAvailableSkillsList()
 })
 
 // CLASSES
@@ -511,13 +512,14 @@ function updateAvailableSkillsList(): void {
     // Look at the First weapon name
     const weaponName = (document.querySelector(".arme")!.children[0] as HTMLInputElement).value
 
-    // Liste des sorts des classes (+ arme)
+    // Liste des sorts des classes (+ arme) et de race
     const options = Object.values(skillsJSON)
       .filter(
         (skill) =>
-          skill.classe.includes(classeP) ||
-          skill.classe.includes(classeS) ||
-          skill.classe.some((mount) => isTextInText(weaponName, mount))
+          (skill.classe.includes(classeP) ||
+            skill.classe.includes(classeS) ||
+            skill.classe.some((mount) => isTextInText(weaponName, mount))) &&
+          (!skill.race || skill.race === raceE.value)
       )
       .map((skill) => ({ value: skill.nom, innerText: skill.nom }))
 
