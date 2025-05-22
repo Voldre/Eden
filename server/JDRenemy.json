@@ -1933,7 +1933,7 @@
   "131": {
     "visuel3D": "botassius",
     "nom": "Botassius - Général Défensif",
-    "pvmax": 300,
+    "pvmax": 330,
     "skills": [
       "Lumière de Guérison / Bouclier de Lumière : 2D10+18 (1/3 rejouer) / Armure 1D4+5 AoE pendant 4 tours : Intelligence",
       "Vague Foudroyante : 3D6+17, Blocage-3 AoE 3 tours : Force (jdrCombat +25)",
@@ -2252,7 +2252,7 @@
     "skills": [
       "Solo (-6) / Faiblesse Critique : 3D6 +16 (Crit X1.5) : Force  (jdrCombat +35)",
       "Griffure Noire : 2D6 +12 et -2 blocage/esquive pour 3 tours AoE : Force",
-      "Contrôle Energie RES : -1 buff, dégât reçu -1D6 -8, res esprit +3 sur 4 tours : Esprit",
+      "Contrôle Energie RES : -1 malus, dégât reçu -1D6 -8, res esprit +3 sur 4 tours : Esprit",
       "Passif \"Transe - Mode Tueur\": Dégât +1D4 (min 2) +2, pour chaque 50 PV !"
     ],
     "stats": "17,9,9,12,17",
@@ -2475,12 +2475,12 @@
     "nom": "Vassago - Général Déchu",
     "pvmax": 330,
     "skills": [
-      "Verdict Final : 5D6 +25 Crit (1,2 : *1.5; 3,4 : *1.25) : Force<br/> Entrave Mentale : 4D6+20 et -3 Res Espr'it sur 3 tours : Espr'it",
+      "Verdict Final : 5D6 +25 Crit (1,2 : *1.5; 3,4 : *1.25) : Force<br/> Entrave Mentale : 4D6+18 AoE et -3 Res Espr'it sur 3 tours : Espr'it",
       "Aura du Sanguinaire : Dégât +1D6+9 (Absorbe +5 PV), Bloc/Esq +2 sur 5 tours : Esprit",
       "Scellement AoE : Aucun sort physique pendant 3 tours (Absorbe +5 PV) : Espr'it, (jdrcombat +40)",
-      "Passif : Absorbe 1/3 des dégâts (après armure) en PV. Si \"0 soin\" : Heal/2"
+      "Passif : Absorbe 1/3 des dégâts (après armure, sur 1 seul ennemi) en PV. Si \"0 soin\" : Heal/2"
     ],
-    "stats": "17,13,11,13,19",
+    "stats": "17,13,11,14,19",
     "desc": "Juge et Ancien Général de Division Offensive de la Curie Métérole, formateur de Diana. Il considère que la Curie n'est pas fiable/juste. Il a réussi à être en possession d'une magie hors norme...",
     "drop": "Minerai de Sang, rare : Faucille Sanguinaire",
     "weaknesses": ["contondant", "feu"]
@@ -3168,7 +3168,7 @@
       "Frappe Frénétique : 4D6+30 (+3/touche, max 5) (bloc/esq -2), cumule reset après 4 tours, mini-AoE : Force<br/>Impact Cinétique : 4D6+20 (réussite -5) : Force (même scellé), mais Esq/Bloc m",
       "Griffure Noire : 4D6 +22 et -2 blocage/esquive AoE pour 4 tours : Force",
       "Rugissement Meurtrier : Dégât +1D6+4, Soin PV +10 quand ennemi touché, pendant 5 tours : Force (même scellé)",
-      "Constitution de Roi : Armure =5, Bloc/Esq/Res +1, durée Malus /2<br/>PV <150 : Effet Rugissement *2. Si Bloc/Esq/Res critique : Coup opportun"
+      "Constitution de Roi : Armure =5, Bloc/Esq/Res +1, durée Malus /2<br/>PV <160 : Effet Rugissement *2. Si Bloc/Esq/Res critique : Coup opportun"
     ],
     "stats": "21,15,11,15,13",
     "desc": "Berserker réputé pour sa puissance hors-norme, il est connu comme étant le bras armé de la Venturo. Il a été vainqueur pendant 3 années de suite au plus grand tournoi de Luposia.",
@@ -3358,7 +3358,7 @@
   "226": {
     "visuel3D": "m177b",
     "nom": "Lunicorne - Esprit du Lac d'Obelia",
-    "pvmax": 370,
+    "pvmax": 300,
     "skills": [
       "Corne enchantée : 3D6+24  (Bloc/esq -2), malus : Dégât reçu +5 sur 2 tours : Force/Intel",
       "Vague d'énergie : 3D6+20 AoE (Fatigue +15) : Intel",
@@ -3384,5 +3384,50 @@
     "desc": "L'un des sceptres du Prince du Fléau, amplie d'une très puissante magie noire, sa présence résonne en lui",
     "drop": "N/A",
     "weaknesses": ["contondant", "lumière"]
+  },
+  "228": {
+    "visuel3D": "xanxus",
+    "nom": "Xanxus - Flammes du Dernier Souffle",
+    "pvmax": 320,
+    "skills": [
+      "Canon brasier : 2D6 +20 (2 coups) : Dexté/Intel<br/>Torrent Infernal : 3D6+30 (Bloc/Esq-2) AoE<br/>-1 charge : +5/10 dégât (esq/bloc-1)",
+      "Propulsion (-1 charge sauf crit) : Remplace l'esquive (blocage 14 max), replace : Dextérité",
+      "Invoc Lion (Bester): 70 PV, Stats 16, Griffe 2D6+23 FOR, Rugissement -2 stats AoE (2-3 tours) INT, Heal : 1D6+14, -1 malus INT",
+      "Passif : +1 charge /2 tours (1t si >2 ennemis)<br/>Esquive +2, si PV <160 : Dégât +5, crit : charge+1"
+    ],
+    "stats": "13,20,15,13,16",
+    "desc": "Parrain de la Varia, il excelle dans le maniement d'armes à feu à une main, prototypé par la Venturo. Froid et violent, il cache des intentions sombres.",
+    "drop": "Revolver...",
+    "weaknesses": ["tranchant", "nature"]
+  },
+  "229": {
+    "visuel3D": "squalo",
+    "nom": "Squalo - Seigneur des Lames",
+    "pvmax": 260,
+    "skills": [
+      "Triple Lames / Attaco di Squalo : 3D6+20 (+5 / -1 buff OU Stats-2 sur 2 tours) : Dexté",
+      "Copia di Squalo : copie un sort lancé par l'ennemi (si ok à l'épée, certains buffs) : Esprit (puis l'atk)",
+      "Silence : Aucun sort magique (3 tours) : Esprit<br/>Lame Tranchante : Ennemi Bloc/Esq-1 (2 si <130) & Dégât +1D6+7 sur 4 tours",
+      "Passif Maître Epeiste (si ennemi atk au CàC) : Dégât +5, Armure +5, si bloc crit : renvoi 1/3<br/>Si PV <130 : Effet*2, Malus+50% ou +1 tour"
+    ],
+    "stats": "16,18,10,11,17",
+    "desc": "Bras Droit de la famille Varia. Squalo a un tempérament colérique mais est un Grand Maître Epeiste, il aurait déjà vaincu plus de 100 puissants épéistes.",
+    "drop": "Pendentif du Combattant / Rapière Aggravante ?",
+    "weaknesses": ["feu", "foudre"]
+  },
+  "230": {
+    "visuel3D": "m034b",
+    "nom": "Robot d'évaluation",
+    "pvmax": 100,
+    "skills": [
+      "Bras étendu : 2D6 +15 : Force",
+      "Bras rayon : 2D10 + 15 : Intel",
+      "Attaque tournoyante : 2D6+10 : Dexté",
+      "Lavage de Cerveau : Résistance d'Esprit -3 et réussite -2 sur 3 tours : Esprit<br/> Passif : 10 Armure, 5 tours : auto-réparat° (+2D10+20 PV)"
+    ],
+    "stats": "15,15,15,10,15",
+    "desc": "Automate de combat dédié à évaluer les capacités de ses adversaires grâce à une batterie de capteurs et un système de combat polyvalent. Créé par la Venturo.",
+    "drop": "Aucun",
+    "weaknesses": []
   }
 }

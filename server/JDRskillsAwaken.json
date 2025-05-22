@@ -174,12 +174,10 @@
   },
   "49": {
     "nom": "Bombe Incendiaire",
-    "desc": "Boule de feu sur l'ennemi",
     "montant": "1D10+5, réussite cible -3 (2 tours)"
   },
   "50": {
     "nom": "Attaque Foudroyante",
-    "desc": "Attaque de foudre autour de soi (3m)",
     "montant": "1D8+5"
   },
   "51": {
@@ -208,7 +206,6 @@
   },
   "58": {
     "nom": "Destruction de l'aurore",
-    "desc": "Portée supplémentaire : Envoie un rayon de lumière jusqu'à 4m devant et 2m sur les côtés.",
     "montant": "1D6+5"
   },
   "59": {
@@ -433,7 +430,7 @@
   },
   "113": {
     "nom": "Provocation de Groupe",
-    "montant": "Dégât 1D6+2, et 75% de chance d'être ciblé pendant 3 tours"
+    "montant": "1D6+2 AoE (0 dégât/effet de stuff, 0 armure), et 75% de chance d'être ciblé pendant 3 tours"
   },
   "114": {
     "nom": "Coup de Poing Irrité",

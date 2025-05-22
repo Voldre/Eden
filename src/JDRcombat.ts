@@ -296,6 +296,50 @@ function loadEnemy(enemyData: Enemy, isElite: boolean = false): void {
 
   if (!enemyData) return
 
+  // OST - @TODO Rework this in a more proper way
+  const ostE = document.querySelector("#ost") as HTMLAudioElement
+
+  const bossMusic = [
+    { boss: "lucius", ost: "bgm/Lucius Normal Oh92 - hrbrm.ogg" },
+    { boss: "adonis", ost: "bgm/DD - Combat in the Ruins.mp3" },
+    { boss: "leonhart", ost: "bgm/Best Team - Overlord NPC Battle.mp3" },
+    { boss: "diana", ost: "bgm/Best Team - Overlord NPC Battle.mp3" },
+    { boss: "botassius", ost: "bgm/Best Team - Overlord NPC Battle.mp3" },
+    { boss: "vimess", ost: "bgm/Best Team - Overlord NPC Battle.mp3" },
+    { boss: "vassago", ost: "bgm/Best Old Team - Overlord NPC Battle Rock.mp3" },
+    { boss: "akala", ost: "bgm/Hydra - Critical Clash 2 Metal (Octopath Traveler II).mp3" },
+    { boss: "m063", ost: "bgm/Hydra - Critical Clash 2 (Octopath Traveler II).mp3" },
+    { boss: "m069b", ost: "bgm/Hydra - Critical Clash 2 (Octopath Traveler II).mp3" },
+    { boss: "crimson", ost: "bgm/Crimson - (Twisted Wonderland op).mp3" },
+    { boss: "fira", ost: "bgm/Symbardy - Cait Battle (Octopath Traveler II).mp3" },
+    { boss: "xonifar", ost: "bgm/DD - Situation tendue Mournweald Encounter.mp3" },
+    { boss: "qaidu", ost: "bgm/Stress Militaire - Arslan Chinurareshi Gyokuza.mp3" },
+    { boss: "qorina", ost: "bgm/Katekyo Hitman Reborn - Sky Battle.mp3" },
+    { boss: "daryun", ost: "bgm/Daryun- KHR OST - Seisen.mp3" },
+    { boss: "xanxus", ost: "bgm/Katekyo Hitman Reborn - Xanxus.mp3" },
+    { boss: "azrael", ost: "bgm/Force Divine (Mael - SDS).mp3" },
+    { boss: "m158e", ost: "bgm/Force Divine Dark.mp3" },
+    { boss: "leviathan", ost: "bgm/bgm038.ogg" },
+    { boss: "ochak", ost: "bgm/bgm038.ogg" },
+    { boss: "m077", ost: "bgm/bgm038.ogg" },
+    { boss: "m197", ost: "bgm/bgm038.ogg" },
+  ]
+  const defaultBossMusic = [
+    "bgm/Jugement - Seraph of the End - Extinction Evil.mp3",
+    "bgm/Attaque - Critical Clash 1 Octopath 2.mp3",
+    "bgm/Battlefield - Octopath Traveler 2 (tempest).mp3",
+    "bgm/Guilde - Normal Battle I (Octopath Traveler II).mp3",
+  ]
+  const defaultMobMusic = ["bgm/bgm005.ogg", "bgm/bgm014.ogg", "bgm/bgm030.ogg", "bgm/bgm040.ogg"]
+
+  const music =
+    enemyData.pvmax > 200
+      ? (bossMusic.find((b) => b.boss === enemyData.visuel3D)?.ost ?? getRandomItem(defaultBossMusic))
+      : getRandomItem(defaultMobMusic)
+  ostE.src = music
+  ostE.title = music
+  console.log({ music, bossMusic })
+
   enemy = newEnemy(enemyData)
 
   // Apply "isElite" only if not an elite or a boss

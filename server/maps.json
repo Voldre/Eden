@@ -586,14 +586,14 @@
   "61": {
     "name": "Obelia",
     "wmap_x": 27.3,
-    "wmap_y": 45,
+    "wmap_y": 45.5,
     "wmap": 1,
     "map_x": null,
     "map_y": null,
     "map_z": null,
     "map_r": null,
     "bgm": 0,
-    "mobs": [215, 216, 217, 190, 225]
+    "mobs": [215, 216, 217, 190, 225, 226]
   },
   "62": {
     "name": "Aridel",
@@ -605,6 +605,18 @@
     "map_z": null,
     "map_r": null,
     "bgm": 15,
+    "mobs": []
+  },
+  "63": {
+    "name": "Ferranova",
+    "wmap_x": 29.3,
+    "wmap_y": 39,
+    "wmap": 0,
+    "map_x": null,
+    "map_y": null,
+    "map_z": null,
+    "map_r": null,
+    "bgm": 0,
     "mobs": []
   },
   "97": {

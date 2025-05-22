@@ -78,7 +78,8 @@ export const newPerso = (persoData: Perso, inFight: boolean = true): PersoCombat
 
   // Bonus de dégât par niveau (20/11/23 : Fixe à 2 en +, exponentiel par niveau)
   perso.degat = Math.round(
-    (2 + montantArme1 + montantArme2) * Math.pow(1.09, perso.niv) + montantAccessD + montantAccessDegatNat
+    // Limit the sum of 2 weapons to 13 (ex: Zhaïtan 15 Bultik)
+    (2 + Math.min(montantArme1 + montantArme2, 13)) * Math.pow(1.09, perso.niv) + montantAccessD + montantAccessDegatNat
   )
 
   // Bonus d'armure par niveau (20/11/23 : Fixe à 2 en +, exponentiel par niveau)
@@ -130,7 +131,7 @@ export const newPerso = (persoData: Perso, inFight: boolean = true): PersoCombat
   const statsB = [persoData.forceB, persoData.dextéB, persoData.intelB, persoData.charismeB, persoData.espritB].map(
     (statB) => {
       const statBWithRegex = statB.replace(/[^\d.+-]/g, "")
-      if (statB.match(/^[-+]\d+|\d*$/)?.[0]) return statBWithRegex
+      if (statB.match(/^[-+]\d+|\d*$/)?.[0]) return statBWithRegex.replaceAll("++", "").replaceAll("--", "")
       return ""
     }
   )

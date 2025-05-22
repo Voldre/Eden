@@ -750,6 +750,14 @@
     "kindId": "xonifar"
   },
   {
+    "id": 1082,
+    "value": 3,
+    "kind": "boss",
+    "name": "Lunicorne - Esprit du Lac d'Obelia",
+    "description": "Lunicorne est l'Esprit qui veille sur le Lac d'Obelia. Personne ne connait vraiment ses origines, mais il semblerait qu'il soit là pour maintenir un certain équilibre.",
+    "kindId": "m177b"
+  },
+  {
     "id": 1201,
     "value": 1,
     "kind": "composant",
@@ -937,7 +945,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Potion stimulante",
-    "description": "Une potion coup-de-boost, un véritable petit remontant, tel un bon café (Fatigue -25 sur 5 tours)",
+    "description": "Une potion coup-de-boost, un véritable petit remontant, tel un bon café (Fatigue -25 sur 6 tours)",
     "kindId": "I00042"
   },
   {
@@ -945,7 +953,7 @@
     "value": 2,
     "kind": "composant",
     "name": "Potion dynamisante",
-    "description": "Cette potion dynamise tout votre corps, réduisant considérablement les effets de la fatigue. Mais attention au contre-coup... (Fatigue -50 sur 5 tours)",
+    "description": "Cette potion dynamise tout votre corps, réduisant considérablement les effets de la fatigue. Mais attention au contre-coup... (Fatigue -50 sur 6 tours)",
     "kindId": "I00050"
   },
   {
@@ -2211,7 +2219,7 @@
     "value": 3,
     "kind": "composant",
     "name": "Bombe Méga-BOOM",
-    "description": "Une bombe avec... beaucoup trop d'explosif, tellement qu'elle risque d'exploser à tout moment (3D8 +17) : à manier avec avec grande précaution, sinon, c'est le drame !",
+    "description": "Une bombe avec... beaucoup trop d'explosif, tellement qu'elle risque d'exploser à tout moment (3D8 +17) : à manier avec grande précaution, sinon, c'est le drame !",
     "kindId": "i00597b"
   },
   {
@@ -2322,8 +2330,8 @@
     "id": 12900,
     "value": 3,
     "kind": "composantX",
-    "name": "Bombe Noire",
-    "description": "Une bombe très spéciale conçue dans les laboratoires de la Veyda (3D10+15)",
+    "name": "Bombe Veyda",
+    "description": "Une bombe très spéciale conçue dans les laboratoires de la Veyda (SELON IDEE LEYLA, ask Lucius # Amur)",
     "kindId": "I00385c"
   },
   {
@@ -5097,6 +5105,28 @@
     "enemies": [],
     "kindId": "items/I00305b",
     "group": 2
+  },
+  {
+    "id": 1888,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "L'Histoire de Poisseux",
+    "description": "Poisseux et le groupe ont pu apprendre la vérité sur son passé. Une Ursun psychopathe nommée Winna l'a bien vendu à des pirates, dans le dos du village. Et ses parents ont été forcés à partir, sûrement à cause de leur chagrin trop \"encombrant\"...",
+    "maps": [61],
+    "enemies": [],
+    "kindId": "otherIcon/group015b",
+    "group": 3
+  },
+  {
+    "id": 1889,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Eveil de Rageux",
+    "description": "Alors que le groupe affronte la Lunicorne suite à la destruction de la pierre maudite de Yuki. Lorsque Poisseux invoque une 3eme fois Rageux, ce dernier fini possédé par l'esprit du lac et devient un boss ! Un aigle mutant très vénère ! Quelles en seront les conséquences ?",
+    "maps": [61],
+    "enemies": [],
+    "kindId": "monsters/m219b",
+    "group": 3
   },
   {
     "id": 15000,

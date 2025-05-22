@@ -948,5 +948,15 @@
     "contexte": "",
     "key_events": [],
     "objectifs": []
+  },
+  {
+    "groupe": 3,
+    "seance": 22,
+    "date": "27/04/25",
+    "titre": "Le passé de Poisseux et le Lac",
+    "personnages": ["Aradia", "Draigos", "Le Poisseux", "Shkrouk", "Yuki Hart"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
   }
 ]

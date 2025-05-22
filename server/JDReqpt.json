@@ -412,7 +412,7 @@
   },
   "57": {
     "nom": "Grimoire infernal",
-    "desc": "Grimoire obtenu dans un ancien château dans une cité de flamme",
+    "desc": "Grimoire aux origines inconnues, parlant d'une cité de flamme",
     "effet": "Dégât de feu +2",
     "montant": "Dégât +6",
     "icone": "W61505"
@@ -661,38 +661,38 @@
     "icone": "A20102"
   },
   "91": {
-    "nom": "Grimoire démoniaque",
-    "desc": "Forme éveillée du grimoire maléfique du Royaume Dévasté",
+    "nom": "Grimoire Démoniaque",
+    "desc": "Amélioration du mystérieux grimoire maléfique du Royaume Dévasté...",
     "effet": "Dégât ténèbres +2",
     "montant": "Dégât +7",
     "icone": "W61508"
   },
   "92": {
-    "nom": "Grimoire Noireflammes",
-    "desc": "Forme éveillée du grimoire infernal provenant d'une cité de flamme",
+    "nom": "Grimoire Incandescant",
+    "desc": "Forme éveillée du grimoire infernal, une chaleur intense s'en dégage...",
     "effet": "Dégât de feu +3",
-    "montant": "Dégât +7",
+    "montant": "Dégât +8",
     "icone": "W61507"
   },
   "93": {
-    "nom": "Grimoire corrosif",
-    "desc": "Grimoire produisant des miasmes dangereux, ses origines sont inconnues",
+    "nom": "Grimoire Corrosif",
+    "desc": "Grimoire produisant des miasmes dangereux, retrouvé dans le Tombeau de Lucius...",
     "effet": "Dégât sur faiblesse +2",
-    "montant": "Dégât +6",
+    "montant": "Dégât +7",
     "icone": "W61603"
   },
   "94": {
-    "nom": "Grimoire corrompu",
+    "nom": "Grimoire Corrompu",
     "desc": "Forme éveillée du grimoire corrosif, les miasmes qui en sortent sont une vraie toxine",
     "effet": "Dégât sur faiblesse +3",
-    "montant": "Dégât +8",
+    "montant": "Dégât +9",
     "icone": "W61601"
   },
   "95": {
     "nom": "Codex du Démoniste",
-    "desc": "Un livre formé de grimoires démoniaques reliés ensemble",
+    "desc": "Un livre formé de grimoires de magies interdites reliés ensemble, il semble posséder un autre pouvoir inconnu...",
     "effet": "Intelligence +1",
-    "montant": "Dégât +10 (+1 si Démoniste)",
+    "montant": "Dégât +11 (+1 si Démoniste), + effet inconnu",
     "condition": { "type": "classe", "value": ["Démoniste"], "bonus": "Dégât +1" },
     "icone": "W64808"
   },
@@ -870,7 +870,7 @@
     "nom": "Bouclier d'épines",
     "desc": "Un bouclier naturel pouvant blesser l'ennemi qui tente d'attaquer au corps à corps. Fonctionne si touché ou bloqué.",
     "effet": "",
-    "montant": "Dégât -3, dégât piquant : 2",
+    "montant": "Dégât -3, dégât épine : 2",
     "icone": "W70402"
   },
   "120": {
@@ -2114,14 +2114,14 @@
     "nom": "Bouclier d'épines renforcé",
     "desc": "Renforcement du bouclier d'épines. Ces épines vicieuses blessent l'ennemi qui tente d'attaquer au corps à corps. Fonctionne si touché ou bloqué.",
     "effet": "",
-    "montant": "Dégât -4, dégât piquant : 4",
+    "montant": "Dégât -4, dégât épine : 3",
     "icone": "W70406"
   },
   "289": {
     "nom": "Gilet d'épines",
     "desc": "Gilet sur lequel différentes épines ont été placés pour blesser les ennemis qui attaquent au corps à corps. Fonctionne si touché ou bloqué.",
     "effet": "",
-    "montant": "Dégât -4, dégât piquant : 4",
+    "montant": "Dégât -4, dégât épine : 3",
     "icone": "A20051b"
   },
   "290": {
@@ -4394,5 +4394,19 @@
     "effet": "",
     "montant": "Montant des buffs +1, (dégât/soin+2 Si Shaman)",
     "icone": "i01609"
+  },
+  "595": {
+    "nom": "Bandeau à Plume du Rageux",
+    "desc": "Maintient l'Aigle en vie malgré la distance. Un bandeau à l'effigie d'un perroquet, ce qui ne représente pas du tout le Rageux, un aigle. Mais il y a une vraie plume d'aigle ! C'est même la sienne",
+    "effet": "Familier / Capacité",
+    "montant": "Rageux : PV+10, Esprit+3. Nouveau buff : Dégât +1D6+4 (4 tours), mais si Dé >15 ...",
+    "icone": "bandeau2"
+  },
+  "596": {
+    "nom": "Pendentif du Combattant",
+    "desc": "Ce pendentif augmente les dégats et la force du porteur",
+    "effet": "",
+    "montant": "Dégât +3, Force +1",
+    "icone": "A00045b"
   }
 }
