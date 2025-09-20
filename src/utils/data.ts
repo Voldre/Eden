@@ -1,9 +1,21 @@
-export const callPHP = async (data: {
-  action: string
+/* eslint-disable no-unused-vars */
+
+type PHPAction = "jdrGalerie" | "wallpaper" | "chatGpt" | "lastId" | "saveFile" | "saveBackup" | "logout" | "logging"
+
+type CallPHPData<A extends PHPAction> = {
+  action: A
   name?: string
   value?: string
   date?: string
-}): Promise<string> => {
+}
+
+// Overloads
+export async function callPHP(data: CallPHPData<"saveFile">): Promise<boolean>
+export async function callPHP<A extends Exclude<PHPAction, "saveFile">>(data: CallPHPData<A>): Promise<string>
+
+export async function callPHP<T extends PHPAction>(
+  data: CallPHPData<T>
+): Promise<T extends "saveFile" ? boolean : string> {
   const result = await fetch("jdr_backend.php", {
     headers: { "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8" },
     method: "POST",
@@ -12,9 +24,8 @@ export const callPHP = async (data: {
   console.log("jdr_backend.php executed, data : ", data)
 
   if (!result.ok) throw new Error(`HTTP Error ${result.status}: ${result.statusText}`)
-  return result.text()
-  // Later content-type JSON, body JSON.stringify, and retrieve result.json() ?
-  // If that, also change jdr_backend to json_decode input url parameters
+  const value = await result.text()
+  return (data.action === "saveFile" ? value === "1" : value) as T extends "saveFile" ? boolean : string
 }
 
 export const readCookie = (key: string): string | undefined => {

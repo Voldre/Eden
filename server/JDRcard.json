@@ -528,7 +528,7 @@
     "value": 3,
     "kind": "boss",
     "name": "Diana - Tigresse Pourpre",
-    "description": "Diana la G\u00e9n\u00e9rale Offensive : froide et franche de la Curie M\u00e9t\u00e9role, la l\u00e9gendaire G\u00e9n\u00e9rale de Division Offensive.",
+    "description": "Surnommée la Tigresse Pourpre, Diana est la plus jeune femme à être devenue Générale de Division Offensive de l'histoire de la Curie Métérole. Froide et franche, elle à une grande maîtrise de soi.",
     "kindId": "diana"
   },
   {
@@ -2292,7 +2292,8 @@
     "kind": "composant",
     "name": "Trèfle d'Obelia",
     "description": "Ce magnifique trèfle à une double particularité : il vient d'Obelia, une zone chargée en magie, et il possède 4 feuilles. Cela en fait un objet porteur de chance. On dit qu'il peut transmettre cette capacité à d'autres objets.",
-    "kindId": "k10053b"
+    "kindId": "k10053b",
+    "maps": [61]
   },
   {
     "id": 1470,
@@ -2325,6 +2326,24 @@
     "name": "Bourgeon de Vie",
     "description": "Cette bague, ornée d'un joyau rouge Vermillon, est une relique transmise de génération en génération d'Empereurs jusqu'à Heldentod III et son drame. Depuis elle était gardée à la cour royale, jusqu'au vol de Conrad. Elle apporte la fertilité et décuple le potentiel des descendants.",
     "kindId": "i01309i"
+  },
+  {
+    "id": 1474,
+    "value": 1,
+    "kind": "composant",
+    "name": "Écailles Lunaire",
+    "description": "Des écailles récupérées sur une créature riche en magie, qui émet des reflets sous la lumière de la lune. Utile pour des potions ou armures.",
+    "kindId": "I00243b",
+    "maps": [61]
+  },
+  {
+    "id": 1475,
+    "value": 2,
+    "kind": "composant",
+    "name": "Minerai Anti-magie",
+    "description": "Ce minerai grisâtre et terne semble repousser la magie, il ne se forme que dans quelques zones spécifiques ce qui le rend rare. Utilisable pour des armures et armes.",
+    "kindId": "I00214c",
+    "maps": [62]
   },
   {
     "id": 12900,
@@ -5126,6 +5145,28 @@
     "maps": [61],
     "enemies": [],
     "kindId": "monsters/m219b",
+    "group": 3
+  },
+  {
+    "id": 1890,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "L'Observatoire d'Obelia",
+    "description": "Le groupe se rend par curiosité à l'observatoire d'Obelia et apprend de nombreuses choses liées aux étoiles, à la lune, et à la divination : prédiction d'évènements, Gardiens Eternels, ...",
+    "maps": [61],
+    "enemies": [],
+    "kindId": "otherIcon/observatoire",
+    "group": 3
+  },
+  {
+    "id": 1891,
+    "value": 3,
+    "kind": "anecdote",
+    "name": "Le Crystal du Tombeau",
+    "description": "Après le Leviathan, lorsque le groupe de Lucius retourne au Tombeau, ils découvrent une salle secrète où il semblait se trouver un crystal, similaire à celui de Sekhmet... Mais où est-il passé ? Et la scientifique qui l'a étudié s'est faite tuée. Pourquoi ? Et... par qui ?",
+    "maps": [8],
+    "enemies": [],
+    "kindId": "items/i01082c",
     "group": 3
   },
   {

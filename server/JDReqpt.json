@@ -691,10 +691,10 @@
   "95": {
     "nom": "Codex du Démoniste",
     "desc": "Un livre formé de grimoires de magies interdites reliés ensemble, il semble posséder un autre pouvoir inconnu...",
-    "effet": "Intelligence +1",
-    "montant": "Dégât +11 (+1 si Démoniste), + effet inconnu",
+    "effet": "Mode, ??? (inconnu)",
+    "montant": "Dégât +10 (Destruction : Dégât+2, Corruption : malus +2, ...) @TODO : Faire en sorte que ça soit ok avec le fait que changer de mode = instantanée, ou alors  changer d'idée",
     "condition": { "type": "classe", "value": ["Démoniste"], "bonus": "Dégât +1" },
-    "icone": "W64808"
+    "icone": "W63001b"
   },
   "96": {
     "nom": "Epée d'Asbi raffinée",

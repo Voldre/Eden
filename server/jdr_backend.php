@@ -12,7 +12,7 @@ header("Access-Control-Allow-Headers: Content-Type, X-API-KEY");
 // Deny from all
 // </Files>
 
-function logger($message, $currentDate = null)
+function error_logger($message, $currentDate = null)
 {
     $log_file = __DIR__ . '/JDRerror.log';
     $date = isset($currentDate) ? $currentDate : date('Y-m-d H:i:s');
@@ -20,6 +20,15 @@ function logger($message, $currentDate = null)
 
     // Utilisation de error_log avec un fichier personnalisé
     // error_log($full_message . PHP_EOL, 3, $log_file);
+    file_put_contents($log_file, $full_message, FILE_APPEND);
+}
+
+function logger($message, $currentDate = null)
+{
+    $log_file = __DIR__ . '/JDRlog.log';
+    $date = isset($currentDate) ? $currentDate : date('Y-m-d H:i:s');
+    $full_message = "[$date] $message\n";
+
     file_put_contents($log_file, $full_message, FILE_APPEND);
 }
 
@@ -31,7 +40,7 @@ if ($origin === "http://voldre.free.fr") {
 } else {
     $providedKey = $_SERVER['HTTP_X_API_KEY'];
     if ($providedKey !== $apiKey) {
-        logger("Tentative d'accès bloqué");
+        error_logger("Tentative d'accès bloqué");
         http_response_code(403);
         echo "Accès interdit";
         exit;
@@ -62,7 +71,7 @@ try {
 
             if (!isset($chatgptkey)) {
                 echo false;
-                logger("ChatGPT key does not exists");
+                error_logger("ChatGPT key does not exists");
             } else {
                 echo $chatgptkey;
             }
@@ -71,7 +80,7 @@ try {
         if ($_POST['action'] === 'lastId') {
             $filename = 'JDR' . $_POST['name'] . '.json';
             if (!file_exists($filename)) {
-                logger("File '$filename' does not exist.");
+                error_logger("File '$filename' does not exist.");
             }
 
             $file = json_decode(file_get_contents($filename, true), true);
@@ -85,10 +94,12 @@ try {
             $name = $_POST['name'];
             $filename = 'JDR' . $name . '.json';
 
-            if (isset($_COOKIE[$name . 'JSON'])) {
+            if (isset($_COOKIE[$name . 'JSON']) && !empty($_COOKIE[$name . 'JSON'])) {
+
+                logger("Try to save file on $filename, cookie : " . $_COOKIE[$name . 'JSON']);
 
                 if (!file_exists($filename)) {
-                    logger("File '$filename' does not exist.");
+                    error_logger("File '$filename' does not exist.");
                     echo false;
                     return;
                 }
@@ -109,7 +120,7 @@ try {
                 file_put_contents('JDR' . $name . '.json', json_encode($file, JSON_UNESCAPED_UNICODE));
                 echo true;
             } else {
-                logger("Cookie " . $name . "JSON' does not exist : " . json_encode($_POST));
+                error_logger("Cookie " . $name . "JSON does not exist : " . json_encode($_POST));
             }
             echo false;
         }
@@ -125,7 +136,7 @@ try {
                 echo "JDRplayer_backup.json saved";
             } else {
                 echo "Not connected";
-                logger("Try to save backup without connexion");
+                error_logger("Try to save backup without connexion");
             }
         }
 
@@ -135,7 +146,7 @@ try {
         }
 
         if ($_POST['action'] === 'logging') {
-            logger("Frontend error : " . $_POST['value'], $_POST['date']);
+            error_logger("Frontend error : " . $_POST['value'], $_POST['date']);
             echo true;
         }
 
@@ -155,17 +166,16 @@ try {
                 echo '<h3>Erreur de connexion</h3>';
                 echo '<meta http-equiv="refresh" content="0; URL=./jdr.html">';
 
-                logger("Bad connexion : " . json_encode($_POST));
+                error_logger("Bad connexion : " . json_encode($_POST));
             }
         }
     }
 } catch (Exception $e) {
-    logger("Error catched : " . $e->getMessage());
-    logger("Error operation : " . json_encode($_POST));
+    error_logger("Error catched : " . $e->getMessage());
+    error_logger("Error operation : " . json_encode($_POST));
     if (isset($_COOKIE[$name . 'JSON'])) {
-        logger("Error cookie content : " . json_encode($_COOKIE[$name . 'JSON']));
-
+        error_logger("Error cookie content : " . json_encode($_COOKIE[$name . 'JSON']));
     }
-    logger("Error session : " . json_encode($_SESSION));
+    error_logger("Error session : " . json_encode($_SESSION));
 }
 ?>

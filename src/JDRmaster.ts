@@ -23,6 +23,7 @@ import {
   setCookie,
   toastNotification,
   unformatText,
+  getNewEnemy,
 } from "./utils/index.js"
 
 const logged = !!document.querySelector(".admin")
@@ -607,33 +608,35 @@ const toggleButton = (): void => {
 }
 toggleButton()
 
-const masterSave = (): void => {
+const masterSave = async (): Promise<void> => {
   masterJSON.notes = notesE.value
   setCookie("masterJSON", masterJSON)
-  callPHP({ action: "saveFile", name: "master" })
+  const res = await callPHP({ action: "saveFile", name: "master" })
+  if (!res) throw new Error("callPHP return false")
 }
 
-allowSaveE.addEventListener("click", () => {
+allowSaveE.addEventListener("click", async () => {
   masterJSON.allow = !masterJSON.allow
   toggleButton()
 
-  masterSave()
+  await masterSave()
   toastNotification("Autorisation modifiée")
 })
 
-document.querySelector("#save")!.addEventListener("click", () => {
-  masterSave()
+document.querySelector("#save")!.addEventListener("click", async () => {
+  await masterSave()
   toastNotification("Note modifiée")
 })
 
-document.querySelector("#saveBackup")!.addEventListener("click", () => {
-  callPHP({ action: "saveBackup" })
+document.querySelector("#saveBackup")!.addEventListener("click", async () => {
+  const res = await callPHP({ action: "saveBackup" })
+  if (!res) throw new Error("callPHP return false")
   toastNotification("JDRpersos_backup.json et JDRplayer sauvegardés")
 })
 
 // Create skill & Save
 
-document.querySelector("#createSkill")!.addEventListener("click", () => {
+document.querySelector("#createSkill")!.addEventListener("click", async () => {
   const addSkill = document.querySelector<HTMLElement & { children: HTMLInputElement[] }>(".addSkill")!
   const skillID = parseInt(Object.keys(skillsJSON).reverse()[0]) + 1 || 1
   const newSkill: { [key: string]: Skill } = {}
@@ -649,14 +652,16 @@ document.querySelector("#createSkill")!.addEventListener("click", () => {
   console.log(newSkill)
   setCookie("skillsJSON", newSkill)
 
-  callPHP({ action: "saveFile", name: "skills" })
+  const res = await callPHP({ action: "saveFile", name: "skills" })
+  if (!res) throw new Error("callPHP return false")
+  // eslint-disable-next-line require-atomic-updates
   skillsJSON[skillID] = newSkill[skillID]
-  toastNotification("Compétence créé")
+  toastNotification("Compétence créée")
 })
 
 // Create eqpt & Save
 
-document.querySelector("#createEqpt")!.addEventListener("click", () => {
+document.querySelector("#createEqpt")!.addEventListener("click", async () => {
   const addEqpt = document.querySelector<HTMLElement & { children: HTMLInputElement[] }>(".addEqpt")!
   const eqptID = parseInt(Object.keys(eqptJSON).reverse()[0]) + 1 || 1
   const newEqpt: { [key: string]: Equipment } = {}
@@ -671,7 +676,9 @@ document.querySelector("#createEqpt")!.addEventListener("click", () => {
 
   setCookie("eqptJSON", newEqpt)
 
-  callPHP({ action: "saveFile", name: "eqpt" })
+  const res = await callPHP({ action: "saveFile", name: "eqpt" })
+  if (!res) throw new Error("callPHP return false")
+  // eslint-disable-next-line require-atomic-updates
   eqptJSON[eqptID] = newEqpt[eqptID]
   toastNotification("Equipement créé")
 })
@@ -686,7 +693,34 @@ const addEnemyE = document.querySelector<HTMLElement & { children: HTMLInputElem
   ])
 })
 
-document.querySelector("#createEnemy")!.addEventListener("click", () => {
+const enemyDamageE = document.querySelector("#enemyDamage") as HTMLSpanElement
+
+// Skills inputs
+;[addEnemyE.children[6 + 1], addEnemyE.children[8 + 1], addEnemyE.children[10 + 1], addEnemyE.children[12 + 1]].forEach(
+  (skillE) => {
+    skillE.addEventListener("change", () => {
+      const enemyData: Enemy = {
+        visuel3D: addEnemyE.children[0 + 1].value,
+        nom: addEnemyE.children[2 + 1].value,
+        pvmax: parseInt(addEnemyE.children[4 + 1].value),
+        skills: [
+          addEnemyE.children[6 + 1].value,
+          addEnemyE.children[8 + 1].value,
+          addEnemyE.children[10 + 1].value,
+          addEnemyE.children[12 + 1].value,
+        ],
+        stats: addEnemyE.children[14 + 1].value,
+        desc: addEnemyE.children[16 + 1].value,
+        drop: addEnemyE.children[18 + 1].value,
+        weaknesses: ["", ""],
+      }
+      const enemyDamage = getNewEnemy(enemyData).degat
+      enemyDamageE.innerText = `${enemyDamage}`
+    })
+  }
+)
+
+document.querySelector("#createEnemy")!.addEventListener("click", async () => {
   const enemyID = parseInt(Object.keys(enemyJSON).reverse()[0]) + 1 || 1
   const newEnemy: { [key: string]: Enemy } = {}
   newEnemy[enemyID] = {
@@ -708,7 +742,9 @@ document.querySelector("#createEnemy")!.addEventListener("click", () => {
 
   setCookie("enemyJSON", newEnemy)
 
-  callPHP({ action: "saveFile", name: "enemy" })
+  const res = await callPHP({ action: "saveFile", name: "enemy" })
+  if (!res) throw new Error("callPHP return false")
+  // eslint-disable-next-line require-atomic-updates
   enemyJSON[enemyID] = newEnemy[enemyID]
   toastNotification("Ennemi créé")
 })

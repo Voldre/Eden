@@ -15,26 +15,26 @@ let params: { [key: string]: string } = {
 
   let currentSearchParams = new URLSearchParams(window.location.search)
 
-  const notifyChange = (): void => {
+  const notifyChange = async (): Promise<void> => {
     const newSearchParams = new URLSearchParams(window.location.search)
 
     // Vérifier si les paramètres ont changé
     if (currentSearchParams.toString() !== newSearchParams.toString()) {
       // console.log("Les searchParams ont changé :", newSearchParams.toString())
       currentSearchParams = newSearchParams
-      update()
+      await update()
     }
   }
 
   // Surveiller `pushState` et `replaceState`
-  history.pushState = function (...args) {
+  history.pushState = async function (...args) {
     originalPushState.apply(this, args)
-    notifyChange()
+    await notifyChange()
   }
 
-  history.replaceState = function (...args) {
+  history.replaceState = async function (...args) {
     originalReplaceState.apply(this, args)
-    notifyChange()
+    await notifyChange()
   }
 
   // Écouter les événements pertinents

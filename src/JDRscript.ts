@@ -945,7 +945,7 @@ const onArchive = (isArchived: boolean): void => {
 }
 
 //  LOADING
-window.addEventListener("load", () => {
+window.addEventListener("load", async () => {
   const urlParams = new URLSearchParams(window.location.search)
   if (urlParams.has("perso")) {
     selectPersoE.value = `J${urlParams.get("perso")}`
@@ -964,7 +964,7 @@ window.addEventListener("load", () => {
   downloadButton.disabled = false
   screenshotButton.disabled = false
 
-  callPHP({ action: "jdrGalerie" })
+  await callPHP({ action: "jdrGalerie" })
 
   // Fill galery
   if (!galeryJSON?.length) {
@@ -1363,7 +1363,7 @@ galeryE.addEventListener("click", (e) => {
 // Save persos
 const saveButton = document.querySelector<HTMLButtonElement>("#save")!
 
-saveButton.addEventListener("click", () => {
+saveButton.addEventListener("click", async () => {
   if (!masterJSON.allow) {
     toastNotification("Les sauvegardes sont bloquées par le MJ")
     return
@@ -1378,7 +1378,8 @@ saveButton.addEventListener("click", () => {
   const cookieLength = setCookie("persosJSON", newPerso)
   if (cookieLength <= 4000) {
     try {
-      callPHP({ action: "saveFile", name: "persos" })
+      const res = await callPHP({ action: "saveFile", name: "persos" })
+      if (!res) throw new Error("callPHP return false")
       toastNotification(
         `Sauvegarde effectuée ${cookieLength > 3000 ? `(${Math.round(cookieLength / 40)}% remplis)` : ""}`
       )
@@ -1549,7 +1550,7 @@ const labelsDescription = {
   </ul>
   Capacités utilisables 3 fois par séance :
   <ul>
-  <li>Seconde Chance : Relance de dé (sauf si échec critique)</li>
+  <li>Seconde Chance : Relance de dé (sauf si échec critique (19,20))</li>
   <li>Adaptation : Changement de stuff en combat sans contrepartie, poids supportable augmenté</li>
   <li>Attaque Chargé : 1 tour d'incantation (sans 1er jet de dé), l'attaque aura +33% de dégât et l'ennemi -3 Bloc/Esq/Res</li>
   </ul>

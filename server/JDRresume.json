@@ -958,5 +958,25 @@
     "contexte": "",
     "key_events": [],
     "objectifs": []
+  },
+  {
+    "groupe": 0,
+    "seance": 3,
+    "date": "11/05/25",
+    "titre": "Tournoi de Luposia",
+    "personnages": ["Malvis", "Erida", "Zhaïtan"],
+    "contexte": "Hors série découpé en 2 parties : 11/05/25 et 18/05/25",
+    "key_events": [],
+    "objectifs": []
+  },
+  {
+    "groupe": 3,
+    "seance": 23,
+    "date": "29/05/25",
+    "titre": "Fin d’Obelia et le retour au Tombeau",
+    "personnages": ["Aradia", "Draigos", "Le Poisseux", "Shkrouk", "Yuki Hart"],
+    "contexte": "",
+    "key_events": [],
+    "objectifs": []
   }
 ]

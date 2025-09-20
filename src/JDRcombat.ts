@@ -28,12 +28,14 @@ import {
   createElement,
   dateToString,
   deleteCookie,
+  dicesAverageConversion,
+  dicesConversion,
+  getNewEnemy,
   getRandomBetween,
   getRandomItem,
   initDialog,
   inputElement,
   inputSelector,
-  isTextInText,
   newPerso,
   readCookie,
   setCookie,
@@ -42,6 +44,7 @@ import {
 } from "./utils/index.js"
 import { LoggerService } from "./utils/logger.js"
 
+// #region Variables
 console.log(combatSkillsJSON)
 
 let perso: PersoCombat | undefined
@@ -85,8 +88,10 @@ const lifebarE = document.querySelector<HTMLElement>(".lifebar")!
 
 const buffEs = [...document.querySelectorAll<HTMLElement>(".buff")!]
 
+// #region On load
+
 // Load perso if URL parameter
-window.addEventListener("load", () => {
+window.addEventListener("load", async () => {
   const urlParams = new URLSearchParams(window.location.search)
 
   if (urlParams.has("perso")) {
@@ -118,7 +123,7 @@ window.addEventListener("load", () => {
     // 29/11/23 : Add check of entries at the beginning of the fight (here)
     if (currentPersoEntries <= 0) {
       toastNotification("Erreur : Le personnage a déjà consommé toutes ses entrées.", 6000, true)
-      endRediction()
+      endRedirection()
       return
     }
 
@@ -127,7 +132,7 @@ window.addEventListener("load", () => {
     // 30/01/24 : Short security to handle abberation (like Nyx with more than 1 billion damage)
     if (!perso || perso.degat > 75 || perso.armure > 50 || perso.pvmax > 275) {
       toastNotification("Erreur : Le personnage a des statistiques hors-norme.", 6000, true)
-      endRediction()
+      endRedirection()
       return
     }
 
@@ -137,12 +142,12 @@ window.addEventListener("load", () => {
     // Not Malvis, because she is overcheat with her damage
     if ((perso.degat > 52 && perso.nom !== "Malvis") || perso.armure > 36 || perso.pvmax > 220 || sumStats > 72) {
       console.log("new C log...")
-      saveCheat(urlParams.get("enemy"))
+      await saveCheat(urlParams.get("enemy"))
     }
   } else {
     // Not in real fight
     const enemyCombatData = Object.entries(enemyJSON).map(([id, e]) => {
-      const enemyStats = newEnemy(e)
+      const enemyStats = getNewEnemy(e)
       enemyStats.rarity = enemyStats.pvmax >= 200 ? "BOSS" : enemyStats.pvmax > 120 ? "ELITE" : "COMMUN"
       enemyStats.degatMin =
         (enemyStats.rarity === "BOSS" && enemyStats.degat < MIN_BOSS) ||
@@ -178,7 +183,7 @@ window.addEventListener("load", () => {
 
   if (!selectedEnemy) {
     toastNotification("Erreur : L'ennemi n'a pas été trouvé.", 5000, true)
-    endRediction()
+    endRedirection()
     return
   }
 
@@ -196,13 +201,15 @@ window.addEventListener("load", () => {
   cardRarity = Math.min(enemyRarity, 3) as 1 | 2 | 3
 
   // First turn
-  newturn()
+  await newturn()
 })
+
+// #region Load
 
 function cookieCheck(): boolean {
   if (readCookie("loadJDRcombat") !== "true") {
     toastNotification("Erreur : Lancez un combat à partir d'une quête", 6000, true)
-    endRediction()
+    endRedirection()
     return false
   }
   console.log("Allowed")
@@ -341,7 +348,7 @@ function loadEnemy(enemyData: Enemy, isElite: boolean = false): void {
   ostE.title = music
   console.log({ music, bossMusic })
 
-  enemy = newEnemy(enemyData)
+  enemy = getNewEnemy(enemyData)
 
   // Apply "isElite" only if not an elite or a boss
   if (isElite && enemy.pvmax <= 120) {
@@ -364,56 +371,6 @@ function loadEnemy(enemyData: Enemy, isElite: boolean = false): void {
   document.querySelector<HTMLParagraphElement>("#desc")!.innerText = enemyData.desc
 
   inputSelector("#edegat", "number").value = enemy.degat
-}
-
-function newEnemy(enemyData: Enemy): EnemyCombat {
-  enemy = undefined
-
-  const loadingEnemy: Partial<EnemyCombat> = {}
-  loadingEnemy.nom = enemyData.nom
-
-  loadingEnemy.pvmax = loadingEnemy.pv = enemyData.pvmax
-
-  const enemyStats = enemyData.stats.split(",")
-  loadingEnemy.force = parseInt(enemyStats[0])
-  loadingEnemy.dexté = parseInt(enemyStats[1])
-  loadingEnemy.intel = parseInt(enemyStats[2])
-  loadingEnemy.charisme = parseInt(enemyStats[3])
-  loadingEnemy.esprit = parseInt(enemyStats[4])
-
-  // Calcul des dégâts fixes
-  const montantSkills = enemyData.skills
-    // Ignorer les compétences passives, buff, soins, etc.
-    .filter((skill) => !["passif", "esprit", "soin", "buff", "provocation"].some((text) => isTextInText(skill, text)))
-    .map((skill) => {
-      const skillText = skill.replaceAll(" ", "")
-      // Trouver toutes les positions des "+"
-      const plusPositions = [...skillText].map((char, i) => (char === "+" ? i : -1)).filter((i) => i !== -1)
-      if (plusPositions.length === 0) return NaN
-
-      // Calculer les montants après chaque "+"
-      const amounts = plusPositions
-        .map((pos) => {
-          const value = parseInt(skillText.slice(pos + 1, pos + 3))
-          // Don't count values with "D" for Dices, and "1,2,3,4" like "3D6"
-          return isNaN(value) || value < 5 ? 0 : value
-        })
-        .filter((v) => !!v)
-      const average = amounts.reduce((a, b) => a + b, 0) / amounts.length
-
-      // In average, add Dices
-      const dices = dicesAverageConversion(skillText)
-
-      return average + dices
-    })
-    .filter((value) => !Number.isNaN(value))
-
-  // Pour les ennemis, sachant que des sorts sont mal comptés (ex 1D8 +1D6 +4)
-  // Je rajoute 50% de dégâts (contre x% par niveau pour les joueurs), que 50% pas 100% car les des (1D10,2D6,...) sont comptés !
-  loadingEnemy.degat = Math.round((montantSkills.reduce(sum, 0) / montantSkills.length) * 1.5)
-  // console.log(this.degat)
-  enemy = loadingEnemy as EnemyCombat
-  return enemy as EnemyCombat
 }
 
 // var enemyGenerated = Object.values(enemyJSON).map((enemy) => {
@@ -439,104 +396,13 @@ function chooseEnemy(category = null): Enemy {
 
   return getRandomItem(enemyList)[1]
 }
-// ***********
 
-function dicesAverageConversion(skill: string): number {
-  let dices = 0
-  if (skill.includes("1D12")) {
-    dices += 6.5
-  }
-  if (skill.includes("1D10")) {
-    dices += 5.5
-  }
-  if (skill.includes("2D10")) {
-    dices += 11
-  }
-  if (skill.includes("3D10")) {
-    dices += 16.5
-  }
-  if (skill.includes("1D8")) {
-    dices += 4.5
-  }
-  if (skill.includes("2D8")) {
-    dices += 9
-  }
-  if (skill.includes("1D6")) {
-    dices += 3.5
-  }
-  if (skill.includes("2D6")) {
-    dices += 7
-  }
-  if (skill.includes("3D6")) {
-    dices += 10.5
-  }
-  if (skill.includes("4D6")) {
-    dices += 14
-  }
-  if (skill.includes("5D6")) {
-    dices += 17.5
-  }
-  if (skill.includes("6D6")) {
-    dices += 21
-  }
-  if (skill.includes("1D4")) {
-    dices += 2.5
-  }
-  return dices
-}
+// #region FIGHT
 
-function dicesConversion(skill: string): number {
-  let dices = 0
-  const roll = (number: 4 | 6 | 8 | 10 | 12): number => getRandomBetween(1, number)
-
-  if (skill.includes("1D12")) {
-    dices += roll(12)
-  }
-  if (skill.includes("1D10")) {
-    dices += roll(10)
-  }
-  if (skill.includes("2D10")) {
-    dices += roll(10) + roll(10)
-  }
-  if (skill.includes("3D10")) {
-    dices += roll(10) * 2 + roll(10)
-  }
-  if (skill.includes("1D8")) {
-    dices += roll(8)
-  }
-  if (skill.includes("2D8")) {
-    dices += roll(8) + roll(8)
-  }
-  if (skill.includes("1D6")) {
-    dices += roll(6)
-  }
-  if (skill.includes("2D6")) {
-    dices += roll(6) + roll(6)
-  }
-  if (skill.includes("3D6")) {
-    dices += roll(6) * 2 + roll(6)
-  }
-  if (skill.includes("4D6")) {
-    dices += roll(6) * 3 + roll(6)
-  }
-  if (skill.includes("5D6")) {
-    dices += roll(6) * 4 + roll(6)
-  }
-  if (skill.includes("6D6")) {
-    dices += roll(6) * 5 + roll(6)
-  }
-  if (skill.includes("1D4")) {
-    dices += roll(4)
-  }
-  return dices
-}
-
-// FIGHT
-
-function newturn(): void {
+async function newturn(): Promise<Promise<Promise<void>>> {
   // Correcting inExecution
   inExecution = false
-  isEnded()
+  await isEnded()
 
   turn++
   turnE.innerText = turn.toString()
@@ -548,8 +414,8 @@ function newturn(): void {
   // Bug Fix 28/11/23 : Ajout condition "ingame". Car si on a déjà gagné (isEnded => victory() / defeat), on a déjà
   // log toutes les informations (avec winCards + earnedcoins), donc pas besoin de re-log !
   if (turn === turnToCheck && ingame) {
-    saveLog(0, undefined)
-    savePlayer()
+    await saveLog(0, undefined)
+    await savePlayer()
   }
 
   toastNotification(`Tour n°${turn}, choisissez une action`)
@@ -558,268 +424,6 @@ function newturn(): void {
   updateBuff()
 
   unlockInputs(true)
-}
-
-async function isEnded(): Promise<void> {
-  if (ingame && perso && enemy && (enemy.pv <= 0 || perso.pv <= 0)) {
-    ingame = false
-    const isVictory = enemy.pv <= 0
-    toastNotification(isVictory ? "Victoire !" : "Défaite")
-    instructionE.innerText = isVictory ? "Victoire !" : "Défaite"
-    updateDesc(`Vous avez ${isVictory ? "vaincu" : "perdu contre"} ${enemy.nom}`)
-
-    if (!joueurData) {
-      toastNotification("Erreur : Pas de joueur détecté, sauvegarde impossible", 6000, true)
-      return
-    }
-
-    if (isVictory) {
-      await victory()
-    } else {
-      await saveLog(0, undefined)
-      await savePlayer()
-    }
-    toastNotification("Sauvegarde effectuée, redirection ...", 6000)
-
-    endRediction()
-  }
-}
-
-async function victory(): Promise<void> {
-  const e = Object.entries(enemyJSON).find((e) => e[1] === selectedEnemy)
-
-  const enemyID = e ? parseInt(e[0]) : undefined
-
-  if (!joueurData) return
-
-  const newJoueurData: Player = { ...joueurData }
-  const winCards = []
-
-  // Map card
-  if (mapID) {
-    const mapCard = cardJSON.find((card) => card.kind === "map" && card.kindId === mapID && card.value === cardRarity)
-    newJoueurData.cards = addCard(newJoueurData.cards, mapCard)
-    if (mapCard) winCards.push(mapCard)
-  }
-  // Boss card
-  if (cardRarity === 3) {
-    const bossCard = cardJSON.find(
-      (card) => card.kind === "boss" && card.kindId.toString().toLowerCase() === selectedEnemy?.visuel3D.toLowerCase()
-    )
-    newJoueurData.cards = addCard(newJoueurData.cards, bossCard)
-    if (bossCard) winCards.push(bossCard)
-  }
-
-  // Compo card
-  const cardsCompo = cardJSON.filter((card) => card.kind === "composant")
-  const compoCard = getRandomItem(cardsCompo)
-  newJoueurData.cards = addCard(newJoueurData.cards, compoCard)
-  if (compoCard) winCards.push(compoCard)
-
-  // Anecdote card (50% chance to get)
-  if (Math.random() * 2 <= 1) {
-    const anecdoteCardsList = cardJSON.filter(
-      (card) =>
-        card.kind === "anecdote" &&
-        ((mapID && card.maps?.includes(mapID)) || (enemyID && card.enemies?.includes(enemyID)))
-    )
-
-    // Choose 1 between all possibilities
-    const anecdoteCard = getRandomItem(anecdoteCardsList)
-
-    newJoueurData.cards = addCard(newJoueurData.cards, anecdoteCard)
-    if (anecdoteCard) winCards.push(anecdoteCard)
-  }
-  // Coins
-  newJoueurData.alpagaCoin = addCoins(newJoueurData.alpagaCoin, winCards)
-
-  // Security 30/12 : Bug when update files, cookies of player are like "corrupted" and enemy data doesn't work well
-  if (!newJoueurData.alpagaCoin && newJoueurData.alpagaCoin !== 0) {
-    toastNotification("Erreur : Données corrompues : Supprimez vos cookies.", 12000, true)
-    LoggerService.logError(`Erreur : Données corrompues pour ${indexPlayer} : Supprimez vos cookies.`)
-    stop()
-  }
-
-  // Save fight in log
-  const earnedCoins = newJoueurData.alpagaCoin - joueurData.alpagaCoin
-
-  // Update player data
-  joueurData = newJoueurData
-
-  await saveLog(earnedCoins, winCards)
-  await savePlayer()
-
-  // Show rewards (cards)
-  showCardsAndCoins(winCards, earnedCoins)
-}
-
-async function saveCheat(enemyName: string | null): Promise<void> {
-  const cheatID = parseInt(Object.keys(cheatJSON).reverse()[0]) + 1 || 1
-
-  const newCheatLog: { [key: string]: Partial<CombatCheatLog> } = {}
-  newCheatLog[cheatID] = {
-    date: dateToString(new Date(), true),
-    joueur: indexPlayer,
-    perso: nomPerso,
-    enemy: enemyName ?? undefined,
-    degat: perso?.degat,
-    armure: perso?.armure,
-    pvmax: perso?.pvmax,
-    sumStats: [perso?.force, perso?.dexté, perso?.intel, perso?.charisme, perso?.esprit],
-  }
-
-  setCookie("combatCheatJSON", newCheatLog)
-  await callPHP({ action: "saveFile", name: "combatCheat" })
-}
-
-async function saveLog(earnedCoins: number, winCards: Card[] | undefined): Promise<void> {
-  try {
-    const lastLogId = logID === undefined ? await callPHP({ action: "lastId", name: "combatLogs" }) : undefined
-
-    logID = logID ?? (lastLogId ? parseInt(lastLogId) + 1 : 1)
-
-    const newLog: { [key: string]: Partial<CombatLog> } = {}
-    newLog[logID] = {
-      date: dateToString(new Date(), true),
-      joueur: indexPlayer,
-      perso: nomPerso,
-      map: mapID,
-      cardRarity,
-      enemy: selectedEnemy?.nom,
-      earnedCoins,
-      winCards: winCards?.map((w) => [w.id, w.name]) || [],
-      turn: parseInt(turnE.innerText),
-      pv: perso?.pv,
-      epv: enemy?.pv,
-    }
-
-    // console.log(newLog);
-
-    setCookie("combatLogsJSON", newLog)
-    // console.log("saveFile done : combatLogs, jdr_backend.php executed");
-    await callPHP({ action: "saveFile", name: "combatLogs" })
-    deleteCookie("combatLogsJSON")
-  } catch (e) {
-    console.error(e)
-    LoggerService.logError(
-      `Combat (combatLogsJSON) : échec de la sauvegarde pour ${nomPerso ?? indexPerso}, pièces : ${earnedCoins}, erreur : ${e instanceof Error ? e.message : e}`
-    )
-    toastNotification(`Erreur : le log n'a pas pu être sauvegardé : ${e instanceof Error ? e.message : e}`, 6000, true)
-  }
-}
-
-async function savePlayer(): Promise<void> {
-  try {
-    if (!indexPerso || !joueurData || !indexPlayer) {
-      toastNotification("Erreur : Le joueur n'a pas été identifié.", 6000, true)
-      throw new Error(`Le joueur ${indexPlayer} du perso ${perso?.nom} n'a pas été identifié.`)
-    }
-    // Last control before save : if entries are negative, don't save !
-    const persoIDforPlayer = joueurData.persos.indexOf(indexPerso)
-
-    // Glitch Bug fixes : Victorine 27/11/23 "Infini combat si tu gagnes avant T6-8 !"
-    // En effet, l'entrée n'était pas décomptée/consommée si tu finissais avant, mtn dès la save je la compte
-    if (currentPersoEntries === joueurData.entries[persoIDforPlayer]) joueurData.entries[persoIDforPlayer] -= 1
-
-    if (joueurData.entries[persoIDforPlayer] <= -1) {
-      toastNotification("Erreur : Le personnage a déjà consommé toutes ses entrées.", 6000, true)
-      throw new Error(`${perso?.nom} a déjà consommé toutes ses entrées`)
-    }
-
-    const newPlayer: { [key: string]: Player } = {}
-    newPlayer[indexPlayer] = joueurData
-    // console.log(newPlayer);
-
-    setCookie("playerJSON", newPlayer)
-    await callPHP({ action: "saveFile", name: "player" })
-    deleteCookie("playerJSON")
-  } catch (e) {
-    console.error(e)
-    LoggerService.logError(
-      `Combat (playerJSON) : échec de la sauvegarde pour ${nomPerso} : ${e instanceof Error ? e.message : e}`
-    )
-    toastNotification(
-      `Erreur : le combat n'a pas pu être sauvegardé : ${e instanceof Error ? e.message : e}`,
-      6000,
-      true
-    )
-  }
-}
-
-function addCard(joueurDataCards: number[], card: Card | undefined): number[] {
-  if (card && !joueurDataCards.includes(card.id)) {
-    newCards.push(card.id)
-    joueurDataCards.push(card.id)
-  }
-  return joueurDataCards
-}
-function addCoins(alpagaCoin: number, winCards: Card[]): number {
-  const cardsValue = winCards?.map((card) => (card ? card.value : 0) as number).reduce(sum) || enemyRarity
-  if (cardRarity === 2) {
-    // 13/12/23 : Add 1 alpaga Coin for Elite !
-    alpagaCoin += 1
-  }
-  return alpagaCoin + cardsValue + Math.max(enemyRarity - 3, 0)
-}
-
-function showCardsAndCoins(winCards: Card[], newCoins: number): void {
-  // console.log("Earned : " + newCoins.toString() + ", New sold : " + (newCoins + joueurData.alpagaCoin).toString());
-  // console.log(winCards.map((card) => card?.name));
-  // winCards.forEach((card) => {
-  //   if (!oldJoueurData.cards.includes(card.id)) {
-  //     console.log(card.name + " is a new Card !");
-  //   }
-  // });
-
-  const dialog = document.querySelector("dialog")!
-  // Disable outside click to close dialog
-  dialog.style.pointerEvents = "none"
-  document.querySelector<HTMLParagraphElement>("#coins")!.innerText = newCoins.toString()
-
-  const cardsE = document.querySelector("#cards")!
-
-  winCards.forEach((card) => {
-    const li = createElement("li", `${card.name}${newCards.includes(card.id) ? " (NEW)" : ""}`, {
-      style: newCards.includes(card.id) ? { color: "gold" } : {},
-    })
-
-    const imgEndPoint = "images/"
-    let imgSrc
-    switch (card.kind) {
-      case "map": {
-        imgSrc = `${imgEndPoint}loadingframe/Loading_${card.kindId}.png`
-        break
-      }
-      case "boss": {
-        imgSrc = `${imgEndPoint}monsters/${card.kindId}.png`
-        break
-      }
-      case "composant": {
-        imgSrc = `${imgEndPoint}items/${card.kindId}.png`
-        break
-      }
-      case "anecdote": {
-        imgSrc = `${imgEndPoint + card.kindId}.png`
-        break
-      }
-      default:
-        console.log(`Erreur, type non reconnu : ${card.kind}`)
-    }
-
-    const imgCardE = createElement("img", undefined, { src: imgSrc })
-    const div = createElement("div", [li, imgCardE])
-
-    cardsE.append(div)
-  })
-
-  // Ouverture en "modal"
-  dialog.showModal()
-}
-
-function endRediction(): void {
-  setTimeout(() => {
-    window.location.href = `jdr_profil.html?joueur=${indexPlayer}`
-  }, 5500)
 }
 
 // Dice
@@ -912,7 +516,8 @@ statsButton.forEach((buttonStat) => {
   })
 })
 
-// *** Turn execution ***
+// #region Turn execution
+
 const enemySkill = (stat: StatsShort): CombatSkill<"attaque"> => ({
   nom: "Attaque ennemi",
   type: "attaque",
@@ -940,12 +545,12 @@ function turnExecution<T extends SkillType>(persoSkill: CombatSkill<T>, skillE?:
 
   executeAction(perso, persoSkill)
 
-  setTimeout(() => {
-    enemyTurn()
+  setTimeout(async () => {
+    await enemyTurn()
   }, 3000)
 
-  setTimeout(() => {
-    newturn()
+  setTimeout(async () => {
+    await newturn()
 
     // Add 05/11/2023 : Can't use same skill 2 times
     if (skillE) {
@@ -964,8 +569,8 @@ function turnExecution<T extends SkillType>(persoSkill: CombatSkill<T>, skillE?:
 
 // Enemy Turn
 
-function enemyTurn(): void {
-  isEnded()
+async function enemyTurn(): Promise<void> {
+  await isEnded()
 
   if (!ingame || !enemy) {
     toastNotification(`Le combat est terminé ${!enemy ? " : Pas d'ennemi détecté" : ""}`, 4000, !enemy)
@@ -1210,6 +815,283 @@ function updateBuff(): void {
       buffE.id = ""
     }
   })
+}
+
+// #region End and Save
+
+async function isEnded(): Promise<void> {
+  if (ingame && perso && enemy && (enemy.pv <= 0 || perso.pv <= 0)) {
+    ingame = false
+    const isVictory = enemy.pv <= 0
+    toastNotification(isVictory ? "Victoire !" : "Défaite")
+    instructionE.innerText = isVictory ? "Victoire !" : "Défaite"
+    updateDesc(`Vous avez ${isVictory ? "vaincu" : "perdu contre"} ${enemy.nom}`)
+
+    if (!joueurData) {
+      toastNotification("Erreur : Pas de joueur détecté, sauvegarde impossible", 6000, true)
+      return
+    }
+
+    let res
+    if (isVictory) {
+      res = await victory()
+    } else {
+      await saveLog(0, undefined)
+      res = await savePlayer()
+    }
+    if (res) toastNotification("Sauvegarde effectuée, redirection ...", 6000)
+
+    endRedirection()
+  }
+}
+
+async function victory(): Promise<boolean> {
+  const e = Object.entries(enemyJSON).find((e) => e[1] === selectedEnemy)
+
+  const enemyID = e ? parseInt(e[0]) : undefined
+
+  if (!joueurData) {
+    toastNotification("Erreur : Données du joueur non trouvée.", 12000, true)
+    LoggerService.logError(`Erreur : Données du joueur non trouvée pour ${indexPlayer}.`)
+    return false
+  }
+
+  const newJoueurData: Player = { ...joueurData }
+  const winCards = []
+
+  // Map card
+  if (mapID) {
+    const mapCard = cardJSON.find((card) => card.kind === "map" && card.kindId === mapID && card.value === cardRarity)
+    newJoueurData.cards = addCard(newJoueurData.cards, mapCard)
+    if (mapCard) winCards.push(mapCard)
+  }
+  // Boss card
+  if (cardRarity === 3) {
+    const bossCard = cardJSON.find(
+      (card) => card.kind === "boss" && card.kindId.toString().toLowerCase() === selectedEnemy?.visuel3D.toLowerCase()
+    )
+    newJoueurData.cards = addCard(newJoueurData.cards, bossCard)
+    if (bossCard) winCards.push(bossCard)
+  }
+
+  // Compo card
+  const cardsCompo = cardJSON.filter((card) => card.kind === "composant")
+  const compoCard = getRandomItem(cardsCompo)
+  newJoueurData.cards = addCard(newJoueurData.cards, compoCard)
+  if (compoCard) winCards.push(compoCard)
+
+  // Anecdote card (50% chance to get)
+  if (Math.random() * 2 <= 1) {
+    const anecdoteCardsList = cardJSON.filter(
+      (card) =>
+        card.kind === "anecdote" &&
+        ((mapID && card.maps?.includes(mapID)) || (enemyID && card.enemies?.includes(enemyID)))
+    )
+
+    // Choose 1 between all possibilities
+    const anecdoteCard = getRandomItem(anecdoteCardsList)
+
+    newJoueurData.cards = addCard(newJoueurData.cards, anecdoteCard)
+    if (anecdoteCard) winCards.push(anecdoteCard)
+  }
+  // Coins
+  newJoueurData.alpagaCoin = addCoins(newJoueurData.alpagaCoin, winCards)
+
+  // Security 30/12 : Bug when update files, cookies of player are like "corrupted" and enemy data doesn't work well
+  if (!newJoueurData.alpagaCoin && newJoueurData.alpagaCoin !== 0) {
+    toastNotification("Erreur : Données corrompues : Supprimez vos cookies.", 12000, true)
+    LoggerService.logError(`Erreur : Données corrompues pour ${indexPlayer} : Supprimez vos cookies.`)
+    return false
+  }
+
+  // Save fight in log
+  const earnedCoins = newJoueurData.alpagaCoin - joueurData.alpagaCoin
+
+  // Update player data
+  joueurData = newJoueurData
+
+  await saveLog(earnedCoins, winCards)
+  const res = await savePlayer()
+
+  if (res)
+    // Show rewards (cards)
+    showCardsAndCoins(winCards, earnedCoins)
+  return res
+}
+
+async function saveCheat(enemyName: string | null): Promise<void> {
+  const cheatID = parseInt(Object.keys(cheatJSON).reverse()[0]) + 1 || 1
+
+  const newCheatLog: { [key: string]: Partial<CombatCheatLog> } = {}
+  newCheatLog[cheatID] = {
+    date: dateToString(new Date(), true),
+    joueur: indexPlayer,
+    perso: nomPerso,
+    enemy: enemyName ?? undefined,
+    degat: perso?.degat,
+    armure: perso?.armure,
+    pvmax: perso?.pvmax,
+    sumStats: [perso?.force, perso?.dexté, perso?.intel, perso?.charisme, perso?.esprit],
+  }
+
+  setCookie("combatCheatJSON", newCheatLog)
+  await callPHP({ action: "saveFile", name: "combatCheat" })
+}
+
+async function saveLog(earnedCoins: number, winCards: Card[] | undefined): Promise<void> {
+  try {
+    const lastLogId = logID === undefined ? await callPHP({ action: "lastId", name: "combatLogs" }) : undefined
+
+    logID = logID ?? (lastLogId ? parseInt(lastLogId) + 1 : 1)
+
+    const newLog: { [key: string]: Partial<CombatLog> } = {}
+    newLog[logID] = {
+      date: dateToString(new Date(), true),
+      joueur: indexPlayer,
+      perso: nomPerso,
+      map: mapID,
+      cardRarity,
+      enemy: selectedEnemy?.nom,
+      earnedCoins,
+      winCards: winCards?.map((w) => [w.id, w.name]) || [],
+      turn: parseInt(turnE.innerText),
+      pv: perso?.pv,
+      epv: enemy?.pv,
+    }
+
+    // console.log(newLog);
+
+    setCookie("combatLogsJSON", newLog)
+    // console.log("saveFile done : combatLogs, jdr_backend.php executed");
+    const res = await callPHP({ action: "saveFile", name: "combatLogs" })
+    if (!res) throw new Error("callPHP return false")
+  } catch (e) {
+    console.error(e)
+    LoggerService.logError(
+      `Combat (combatLogsJSON) : échec de la sauvegarde pour ${nomPerso ?? indexPerso}, pièces : ${earnedCoins}, erreur : ${e instanceof Error ? e.message : e}`
+    )
+    toastNotification(`Erreur : le log n'a pas pu être sauvegardé : ${e instanceof Error ? e.message : e}`, 6000, true)
+  }
+}
+
+async function savePlayer(): Promise<boolean> {
+  try {
+    if (!indexPerso || !joueurData || !indexPlayer) {
+      toastNotification("Erreur : Le joueur n'a pas été identifié.", 6000, true)
+      throw new Error(`Le joueur ${indexPlayer} du perso ${perso?.nom} n'a pas été identifié.`)
+    }
+    // Last control before save : if entries are negative, don't save !
+    const persoIDforPlayer = joueurData.persos.indexOf(indexPerso)
+
+    // Glitch Bug fixes : Victorine 27/11/23 "Infini combat si tu gagnes avant T6-8 !"
+    // En effet, l'entrée n'était pas décomptée/consommée si tu finissais avant, mtn dès la save je la compte
+    if (currentPersoEntries === joueurData.entries[persoIDforPlayer]) joueurData.entries[persoIDforPlayer] -= 1
+
+    if (joueurData.entries[persoIDforPlayer] <= -1) {
+      toastNotification("Erreur : Le personnage a déjà consommé toutes ses entrées.", 6000, true)
+      throw new Error(`${perso?.nom} a déjà consommé toutes ses entrées`)
+    }
+
+    const newPlayer: { [key: string]: Player } = {}
+    newPlayer[indexPlayer] = joueurData
+    // console.log(newPlayer);
+
+    setCookie("playerJSON", newPlayer)
+    const res = await callPHP({ action: "saveFile", name: "player" })
+    if (!res) throw new Error("callPHP return false")
+    return true
+  } catch (e) {
+    console.error(e)
+    LoggerService.logError(
+      `Combat (playerJSON) : échec de la sauvegarde pour ${nomPerso} : ${e instanceof Error ? e.message : e}`
+    )
+    toastNotification(
+      `Erreur : le combat n'a pas pu être sauvegardé : ${e instanceof Error ? e.message : e}`,
+      6000,
+      true
+    )
+    return false
+  }
+}
+
+function addCard(joueurDataCards: number[], card: Card | undefined): number[] {
+  if (card && !joueurDataCards.includes(card.id)) {
+    newCards.push(card.id)
+    joueurDataCards.push(card.id)
+  }
+  return joueurDataCards
+}
+function addCoins(alpagaCoin: number, winCards: Card[]): number {
+  const cardsValue = winCards?.map((card) => (card ? card.value : 0) as number).reduce(sum) || enemyRarity
+  if (cardRarity === 2) {
+    // 13/12/23 : Add 1 alpaga Coin for Elite !
+    alpagaCoin += 1
+  }
+  return alpagaCoin + cardsValue + Math.max(enemyRarity - 3, 0)
+}
+
+function showCardsAndCoins(winCards: Card[], newCoins: number): void {
+  // console.log("Earned : " + newCoins.toString() + ", New sold : " + (newCoins + joueurData.alpagaCoin).toString());
+  // console.log(winCards.map((card) => card?.name));
+  // winCards.forEach((card) => {
+  //   if (!oldJoueurData.cards.includes(card.id)) {
+  //     console.log(card.name + " is a new Card !");
+  //   }
+  // });
+
+  const dialog = document.querySelector("dialog")!
+  // Disable outside click to close dialog
+  dialog.style.pointerEvents = "none"
+  document.querySelector<HTMLParagraphElement>("#coins")!.innerText = newCoins.toString()
+
+  const cardsE = document.querySelector("#cards")!
+
+  winCards.forEach((card) => {
+    const li = createElement("li", `${card.name}${newCards.includes(card.id) ? " (NEW)" : ""}`, {
+      style: newCards.includes(card.id) ? { color: "gold" } : {},
+    })
+
+    const imgEndPoint = "images/"
+    let imgSrc
+    switch (card.kind) {
+      case "map": {
+        imgSrc = `${imgEndPoint}loadingframe/Loading_${card.kindId}.png`
+        break
+      }
+      case "boss": {
+        imgSrc = `${imgEndPoint}monsters/${card.kindId}.png`
+        break
+      }
+      case "composant": {
+        imgSrc = `${imgEndPoint}items/${card.kindId}.png`
+        break
+      }
+      case "anecdote": {
+        imgSrc = `${imgEndPoint + card.kindId}.png`
+        break
+      }
+      default:
+        console.log(`Erreur, type non reconnu : ${card.kind}`)
+    }
+
+    const imgCardE = createElement("img", undefined, { src: imgSrc })
+    const div = createElement("div", [li, imgCardE])
+
+    cardsE.append(div)
+  })
+
+  // Ouverture en "modal"
+  dialog.showModal()
+}
+
+function endRedirection(): void {
+  setTimeout(() => {
+    // Remove cookies (at the end to avoid missing cookie error)
+    deleteCookie("playerJSON")
+    deleteCookie("combatLogsJSON")
+
+    window.location.href = `jdr_profil.html?joueur=${indexPlayer}`
+  }, 5500)
 }
 
 // Modal (Dialog) des informations de bases des labels

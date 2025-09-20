@@ -3392,7 +3392,7 @@
     "skills": [
       "Canon brasier : 2D6 +20 (2 coups) : Dexté/Intel<br/>Torrent Infernal : 3D6+30 (Bloc/Esq-2) AoE<br/>-1 charge : +5/10 dégât (esq/bloc-1)",
       "Propulsion (-1 charge sauf crit) : Remplace l'esquive (blocage 14 max), replace : Dextérité",
-      "Invoc Lion (Bester): 70 PV, Stats 16, Griffe 2D6+23 FOR, Rugissement -2 stats AoE (2-3 tours) INT, Heal : 1D6+14, -1 malus INT",
+      "Invoc Lion (Bester): 70 PV, Stats 16, Griffe 2D6+23 FOR, Rugissement -2 stats AoE (2-3 tours) INT, Soin : 1D6+14, -1 malus INT",
       "Passif : +1 charge /2 tours (1t si >2 ennemis)<br/>Esquive +2, si PV <160 : Dégât +5, crit : charge+1"
     ],
     "stats": "13,20,15,13,16",
@@ -3406,7 +3406,7 @@
     "pvmax": 260,
     "skills": [
       "Triple Lames / Attaco di Squalo : 3D6+20 (+5 / -1 buff OU Stats-2 sur 2 tours) : Dexté",
-      "Copia di Squalo : copie un sort lancé par l'ennemi (si ok à l'épée, certains buffs) : Esprit (puis l'atk)",
+      "Copia di Squalo : copie un sort lancé par l'ennemi (si ok à l'épée, certains boosts) : Espr'it (puis l'atk) (jdrCombat +28)",
       "Silence : Aucun sort magique (3 tours) : Esprit<br/>Lame Tranchante : Ennemi Bloc/Esq-1 (2 si <130) & Dégât +1D6+7 sur 4 tours",
       "Passif Maître Epeiste (si ennemi atk au CàC) : Dégât +5, Armure +5, si bloc crit : renvoi 1/3<br/>Si PV <130 : Effet*2, Malus+50% ou +1 tour"
     ],
@@ -3444,5 +3444,20 @@
     "desc": "Créature cauchemardesque à l’apparence d’un lapin déchiré, toujours souriant jusqu’aux oreilles. Ses yeux brillent d'une jaune instable et sa montre tordue semble battre au rythme des illusions qu’il crée.",
     "drop": "Eclat de montre fracturée, rare : Anneau de résistance mentale ",
     "weaknesses": ["tranchant", "feu"]
+  },
+  "232": {
+    "visuel3D": "m179b",
+    "nom": "Poisson Lunaire",
+    "pvmax": 105,
+    "skills": [
+      "Croc perturbant : 1D10+11, stats -2 (3 tours) : force",
+      "Projection d'eau : 1D10+14 AoE : intelligence",
+      "Coup de queue : 2D10+14 : force",
+      "Rayon chargé (2 mobs) : 4D6+26 (2 tours) : intel/esprit"
+    ],
+    "stats": "16,8,17,8,13",
+    "desc": "Originaire d'Obelia, ce poisson recharge sa magie par la lumière de la lune.",
+    "drop": "Ecailles Lunaire",
+    "weaknesses": ["glace", "ténèbres"]
   }
 }

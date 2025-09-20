@@ -2,7 +2,7 @@
   "env": { "browser": true },
 
   "ignorePatterns": [
-    "server/*.js",
+    "server/**/*.js",
     "*.css",
     "*.html",
     "MTLLoader.js",
@@ -86,7 +86,7 @@
     "no-useless-constructor": "off",
     "no-useless-rename": "warn",
     "no-useless-return": "warn",
-    "no-void": "warn",
+    "no-void": ["error", { "allowAsStatement": true }],
     "object-shorthand": "error",
     "operator-assignment": "warn",
     "prefer-arrow-callback": "warn",
@@ -99,6 +99,7 @@
     // TypeScript
 
     "@typescript-eslint/explicit-function-return-type": ["warn", { "allowExpressions": true }],
+    "@typescript-eslint/no-floating-promises": "error",
 
     // TypeScript extensions
 

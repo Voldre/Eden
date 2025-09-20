@@ -867,7 +867,7 @@
     "nom": "Réparation Armure",
     "desc": "Permet à l'ingénieur de soigner et réparer son armure",
     "effet": "Soin",
-    "montant": "2D6+9",
+    "montant": "2D6+9 sur soi",
     "icone": "E0079",
     "stat": "Esprit",
     "classe": ["Ingénieur"]
@@ -1272,7 +1272,7 @@
   },
   "149": {
     "nom": "",
-    "desc": "((7,5-8))",
+    "desc": "Malus d'armure pour l'ennemi (attaque ? Malus pur ?) -1D4-2 pendant 3 tours ? ((7,5-8))",
     "effet": "",
     "montant": "",
     "icone": "",
@@ -1332,9 +1332,9 @@
   },
   "155": {
     "nom": "Guérison enchantée",
-    "desc": "Accentue les effets magiques de la cible tout en la soignant",
+    "desc": "Accentue les effets magiques de la cible tout en la soignant légèrement",
     "effet": "Buff et Soin",
-    "montant": "Augmente la durée des buffs actifs de la cible de 1 tour, Soin 1D6+4 - Cooldown (cible) 2 tours",
+    "montant": "Augmente la durée des buffs actifs de la cible de 1 tour, Soin 1D6+2 - Cooldown (cible) 2 tours",
     "icone": "E0821",
     "stat": "Esprit",
     "classe": ["Clerc", "Barde", "Shaman", "Sage"],
@@ -1473,7 +1473,7 @@
     "nom": "Régénération d'amphibien",
     "desc": "Les Anurans utilise leur régénération naturelle pour guérir de leurs blessures.",
     "effet": "Soin",
-    "montant": "2D6+9",
+    "montant": "2D6+9 sur soi",
     "icone": "E0178b",
     "stat": "Esprit",
     "classe": ["Chasseur", "Ingénieur", "Corsaire", "Juge"],

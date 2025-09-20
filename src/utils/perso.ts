@@ -1,7 +1,7 @@
 import { combatSkillsJSON, eqptJSON } from "../JDRstore"
-import { Equipment, Perso, PersoCombat, StatsShort } from "../model"
+import { Enemy, EnemyCombat, Equipment, Perso, PersoCombat, StatsShort } from "../model"
 import { toastNotification } from "./elements"
-import { sum, unformatText } from "./variables"
+import { getRandomBetween, isTextInText, sum, unformatText } from "./variables"
 
 // #region Perso
 
@@ -269,4 +269,146 @@ export const eqptBonusQuantity = (eqpt: Equipment, eqpts: (Equipment | undefined
     }
   }
   return bonusQuantity
+}
+
+// #region Enemy
+
+export function getNewEnemy(enemyData: Enemy): EnemyCombat {
+  const loadingEnemy: Partial<EnemyCombat> = {}
+  loadingEnemy.nom = enemyData.nom
+
+  loadingEnemy.pvmax = loadingEnemy.pv = enemyData.pvmax
+
+  const enemyStats = enemyData.stats.split(",")
+  loadingEnemy.force = parseInt(enemyStats[0])
+  loadingEnemy.dexté = parseInt(enemyStats[1])
+  loadingEnemy.intel = parseInt(enemyStats[2])
+  loadingEnemy.charisme = parseInt(enemyStats[3])
+  loadingEnemy.esprit = parseInt(enemyStats[4])
+
+  // Calcul des dégâts fixes
+  const montantSkills = enemyData.skills
+    // Ignorer les compétences passives, buff, soins, etc.
+    .filter((skill) => !["passif", "esprit", "soin", "buff", "provocation"].some((text) => isTextInText(skill, text)))
+    .map((skill) => {
+      const skillText = skill.replaceAll(" ", "")
+      // Trouver toutes les positions des "+"
+      const plusPositions = [...skillText].map((char, i) => (char === "+" ? i : -1)).filter((i) => i !== -1)
+      if (plusPositions.length === 0) return NaN
+
+      // Calculer les montants après chaque "+"
+      const amounts = plusPositions
+        .map((pos) => {
+          const value = parseInt(skillText.slice(pos + 1, pos + 3))
+          // Don't count values with "D" for Dices, and "1,2,3,4" like "3D6"
+          return isNaN(value) || value < 5 ? 0 : value
+        })
+        .filter((v) => !!v)
+      const average = amounts.reduce((a, b) => a + b, 0) / amounts.length
+
+      // In average, add Dices
+      const dices = dicesAverageConversion(skillText)
+
+      return average + dices
+    })
+    .filter((value) => !Number.isNaN(value))
+
+  // Pour les ennemis, sachant que des sorts sont mal comptés (ex 1D8 +1D6 +4)
+  // Je rajoute 50% de dégâts (contre x% par niveau pour les joueurs), que 50% pas 100% car les des (1D10,2D6,...) sont comptés !
+  loadingEnemy.degat = Math.round((montantSkills.reduce(sum, 0) / montantSkills.length) * 1.5)
+  // console.log(this.degat)
+
+  return loadingEnemy as EnemyCombat
+}
+
+// #region Dices
+
+export function dicesAverageConversion(skill: string): number {
+  let dices = 0
+  if (skill.includes("1D12")) {
+    dices += 6.5
+  }
+  if (skill.includes("1D10")) {
+    dices += 5.5
+  }
+  if (skill.includes("2D10")) {
+    dices += 11
+  }
+  if (skill.includes("3D10")) {
+    dices += 16.5
+  }
+  if (skill.includes("1D8")) {
+    dices += 4.5
+  }
+  if (skill.includes("2D8")) {
+    dices += 9
+  }
+  if (skill.includes("1D6")) {
+    dices += 3.5
+  }
+  if (skill.includes("2D6")) {
+    dices += 7
+  }
+  if (skill.includes("3D6")) {
+    dices += 10.5
+  }
+  if (skill.includes("4D6")) {
+    dices += 14
+  }
+  if (skill.includes("5D6")) {
+    dices += 17.5
+  }
+  if (skill.includes("6D6")) {
+    dices += 21
+  }
+  if (skill.includes("1D4")) {
+    dices += 2.5
+  }
+  return dices
+}
+
+export function dicesConversion(skill: string): number {
+  let dices = 0
+  const roll = (number: 4 | 6 | 8 | 10 | 12): number => getRandomBetween(1, number)
+
+  if (skill.includes("1D12")) {
+    dices += roll(12)
+  }
+  if (skill.includes("1D10")) {
+    dices += roll(10)
+  }
+  if (skill.includes("2D10")) {
+    dices += roll(10) + roll(10)
+  }
+  if (skill.includes("3D10")) {
+    dices += roll(10) * 2 + roll(10)
+  }
+  if (skill.includes("1D8")) {
+    dices += roll(8)
+  }
+  if (skill.includes("2D8")) {
+    dices += roll(8) + roll(8)
+  }
+  if (skill.includes("1D6")) {
+    dices += roll(6)
+  }
+  if (skill.includes("2D6")) {
+    dices += roll(6) + roll(6)
+  }
+  if (skill.includes("3D6")) {
+    dices += roll(6) * 2 + roll(6)
+  }
+  if (skill.includes("4D6")) {
+    dices += roll(6) * 3 + roll(6)
+  }
+  if (skill.includes("5D6")) {
+    dices += roll(6) * 4 + roll(6)
+  }
+  if (skill.includes("6D6")) {
+    dices += roll(6) * 5 + roll(6)
+  }
+  if (skill.includes("1D4")) {
+    dices += roll(4)
+  }
+  return dices
 }

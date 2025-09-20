@@ -55,11 +55,11 @@ export const LoggerService = {
     localStorage.removeItem(this.LOG_STORAGE_KEY)
   },
 
-  init() {
-    this.trySendPendingLogs()
+  async init() {
+    await this.trySendPendingLogs()
     window.addEventListener("online", this.trySendPendingLogs.bind(this))
   },
 }
 
 // Initialisation au démarrage de l'application
-LoggerService.init()
+await LoggerService.init()

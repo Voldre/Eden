@@ -39,12 +39,12 @@ const percentCardsOfKind = (playerCards: Card[], kind: string): number =>
       cardJSON.filter((p) => p.kind === kind && !p.hidden).length
   )
 
-window.addEventListener("load", () => {
+window.addEventListener("load", async () => {
   const urlParams = new URLSearchParams(window.location.search)
 
   if (urlParams.has("joueur")) {
     // selectedID = selectPerso.selectedIndex;
-    loadPlayer(urlParams.get("joueur") as Joueurs)
+    await loadPlayer(urlParams.get("joueur") as Joueurs)
   } else {
     // Default page with all players information
     document.querySelector("#allCards")!.classList.add("hide")
@@ -158,7 +158,7 @@ window.addEventListener("load", () => {
   }
 })
 
-function loadPlayer(player: Joueurs): void {
+async function loadPlayer(player: Joueurs): Promise<void> {
   charactersList.id = player
   ;[...document.querySelectorAll("fieldset")].map(
     (fieldSetE) => (fieldSetE.className = playerJSON[player] ? "" : "hide")
@@ -166,7 +166,7 @@ function loadPlayer(player: Joueurs): void {
 
   if (!playerJSON[player]) return
 
-  const joueurData = updateDay(playerJSON[player], player)
+  const joueurData = await updateDay(playerJSON[player], player)
 
   console.log(joueurData)
 
@@ -209,7 +209,7 @@ function loadPlayer(player: Joueurs): void {
   toastNotification(`Chargement réussi de ${player}`)
 }
 
-function updateDay(joueurData: Player, indexPlayer: Joueurs): Player {
+async function updateDay(joueurData: Player, indexPlayer: Joueurs): Promise<Player> {
   const joueurDate = stringToDate(joueurData.date)
   const today = stringToDate(dateToString(new Date()))
 
@@ -233,7 +233,7 @@ function updateDay(joueurData: Player, indexPlayer: Joueurs): Player {
   // console.log(joueurData);
 
   setCookie("playerJSON", newPlayer)
-  callPHP({ action: "saveFile", name: "player" })
+  await callPHP({ action: "saveFile", name: "player" }) // No need to catch error
   deleteCookie("playerJSON")
 
   toastNotification("Cadeau de Connexion Quotidienne : 5 Pièces Alpaga !", 6000)
@@ -257,7 +257,7 @@ function loadPerso(perso: Perso, index: number, joueurData: Player): void {
   const persoWith10kPic = ["Malvis"]
   persoE.querySelector<HTMLImageElement>(".persoPic")!.src =
     joueurData.alpagaCoin >= 10000 && persoWith10kPic.includes(perso.nom)
-      ? perso.pp.replaceAll(".jpg", "_10k.jpg")
+      ? perso.pp.replaceAll(".jpg", "_10k.jpg").replaceAll(".png", "_10k.jpg")
       : perso.pp
 
   persoE.addEventListener("click", () => {
