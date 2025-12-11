@@ -631,7 +631,7 @@
           "montantVariable": 0,
           "type": "Buff",
           "portee": "Mono",
-          "effet": "Valeur Dé -1 (si >1) / Blocage et Esquive +",
+          "effet": "Valeur Dé -1 (si >1) / Blocage et Esprit +",
           "montantEffet": 2,
           "duree": 4
         }

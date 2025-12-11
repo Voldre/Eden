@@ -661,6 +661,10 @@ td {
   filter: brightness(110%);
 }
 
+.competence {
+  white-space: pre-wrap;
+}
+
 #weaknesses {
   gap: 0.25rem;
   display: inline-flex;

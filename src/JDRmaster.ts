@@ -637,7 +637,7 @@ document.querySelector("#saveBackup")!.addEventListener("click", async () => {
 // Create skill & Save
 
 document.querySelector("#createSkill")!.addEventListener("click", async () => {
-  const addSkill = document.querySelector<HTMLElement & { children: HTMLInputElement[] }>(".addSkill")!
+  const addSkill = document.querySelector<HTMLElement & { children: HTMLTextAreaElement[] }>(".addSkill")!
   const skillID = parseInt(Object.keys(skillsJSON).reverse()[0]) + 1 || 1
   const newSkill: { [key: string]: Skill } = {}
   newSkill[skillID] = {

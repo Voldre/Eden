@@ -21,7 +21,7 @@
     "nom": "Provocation",
     "desc": "Le lanceur provoque la cible ce qui augmente les chances d'être visé",
     "effet": "Provocation",
-    "montant": "1D6+4 (0 dégât/effet de stuff, 0 armure), et 75% de chance d'être visé pendant 3 tours",
+    "montant": "1D6+4 (+1/ 2 niveaux, 0 dégât stuff/buff, 0 armure), et 75% de chance d'être visé pendant 3 tours",
     "icone": "E0003",
     "stat": "Charisme",
     "classe": ["Guerrier", "Chevalier", "Templier", "Chev Dragon"]
@@ -361,9 +361,9 @@
   },
   "48": {
     "nom": "Puma Noir",
-    "desc": "Action Instantanée (max 3 fois par combat). Vous transforme en Puma Noir. Impossible de jeter des sorts magiques (Intel/Esprit). Nouveaux sorts : Saignement : 1D8 puis 3 pendant 3 tours (Force). Triple Griffe : 3D6 (Dextérité)",
+    "desc": "Action Instantanée (Cooldown 3 tours après transfo). Vous transforme en Puma Noir. Impossible de jeter des sorts magiques (Intel/Esprit). Nouveaux sorts : Saignement : 1D8 puis 3 pendant 3 tours (Force). Triple Griffe : 3D6 (Dextérité)",
     "effet": "Transformation",
-    "montant": "Dégât +4 (+1/niveau, max 8), 0 dégât/effet de stuff. Force+2, Dexté+2 pendant 1D4 (min 2) +1 tours (annulable)",
+    "montant": "Dégât +4 (+1/niveau, max 8), 0 dégât stuff. Force+2, Dexté+2 pendant 1D4 (min 2) +1 tours (annulable)",
     "icone": "E0271",
     "stat": "Esprit",
     "classe": ["Shaman"]
@@ -482,7 +482,7 @@
     "effet": "Dégât Malus AoE R+",
     "montant": "1D10+3, dégât reçu de l'élément +3 pendant 3 tours",
     "icone": "j674",
-    "stat": "Intelligence",
+    "stat": "Force/Intel",
     "classe": ["Luminary"]
   },
   "62": {
@@ -510,15 +510,6 @@
     "montant": "Dextérité +2 pendant 1D4 +2",
     "icone": "E0107",
     "stat": "Charisme",
-    "classe": ["Barde"]
-  },
-  "65": {
-    "nom": "Symphonie Démoniaque",
-    "desc": "Augmente les dégâts magiques infligés par le groupe",
-    "effet": "Buff AoE",
-    "montant": "Dégât magique 1D4 (min 2) +1 pendant 3 tours",
-    "icone": "E0103",
-    "stat": "Esprit",
     "classe": ["Barde"]
   },
   "66": {
@@ -948,7 +939,7 @@
     "nom": "Provocation de Groupe",
     "desc": "Les ennemis ont 50% de chance de cibler le joueur",
     "effet": "Provocation AoE R-",
-    "montant": "1D4+2 AoE (0 dégât/effet de stuff, 0 armure), et 50% de chance d'être ciblé pendant 3 tours",
+    "montant": "1D4+2 AoE (+1/ 2 niveaux, 0 dégât stuff/buff, 0 armure), et 50% de chance d'être ciblé pendant 3 tours",
     "icone": "E0248",
     "stat": "Charisme",
     "classe": ["Guerrier"]
@@ -1110,7 +1101,7 @@
     "nom": "Robot Destructeur",
     "desc": "Invoque un Robot Nano Autodestructeur. Explose sur courte portée. Peut être surchargé : Feu = +3, Foudre = Portée +,  Glace = Dexté-2 (3t),  Nature = Force/Int -2 (2t),  Lumière = Réuss -2 (1t),  Ténèbres = Aspire",
     "effet": "Dégât Malus AoE R-",
-    "montant": "1D6+2 (+1/niveau, 0 dégât/effet de stuff)",
+    "montant": "1D6+2 (+1/niveau, 0 dégât stuff/buff)",
     "icone": "robot",
     "stat": "Intelligence",
     "classe": ["Ingénieur"]
@@ -1119,7 +1110,7 @@
     "nom": "Piège d'Entrave",
     "desc": "Pose un piège au sol pour entraver l'ennemi (dégât tranchant), l'empêchant de se déplacer, Esquive-5. L'ennemi peut tenter de s'en échapper (force).",
     "effet": "Dégât Status",
-    "montant": "1D10+2 (+1/niveau, 0 dégât/effet de stuff). Inflige le status \"Entrave\" pendant 3 tours",
+    "montant": "1D10+2 (+1/niveau, 0 dégât stuff/buff). Inflige le status \"Entrave\" pendant 3 tours",
     "icone": "E0179",
     "stat": "Dextérité",
     "classe": ["Chasseur", "Juge"]
@@ -1262,9 +1253,9 @@
   },
   "148": {
     "nom": "Coup Aggravant",
-    "desc": "Assène un violent coup qui aggrave la durée des maléfices de 1 tour (non augmentable)",
+    "desc": "Assène un violent coup qui aggrave la durée des maléfices de 1 tour (non re-augmentable)",
     "effet": "Dégât Malus",
-    "montant": "1D6+1, durée des malus actif +1 tour - Cooldown (cible) 2 tours (si touché)",
+    "montant": "1D6+1, durée des malus actif +1 tour (non re-augmentable) (si touché)",
     "icone": "E0900",
     "stat": "Force",
     "classe": ["Voleur", "Assassin", "Danselame", "Samouraï"],
@@ -1332,9 +1323,9 @@
   },
   "155": {
     "nom": "Guérison enchantée",
-    "desc": "Accentue les effets magiques de la cible tout en la soignant légèrement",
+    "desc": "Augmente la durée des bénédictions de la cible de 1 tour (non re-augmentable) tout en la soignant légèrement",
     "effet": "Buff et Soin",
-    "montant": "Augmente la durée des buffs actifs de la cible de 1 tour, Soin 1D6+2 - Cooldown (cible) 2 tours",
+    "montant": "Augmente la durée des buffs actifs de la cible de 1 tour (non re-augmentable), Soin 1D6+2",
     "icone": "E0821",
     "stat": "Esprit",
     "classe": ["Clerc", "Barde", "Shaman", "Sage"],
@@ -1354,7 +1345,7 @@
     "nom": "Armure électrifiée",
     "desc": "L'armure technologique des Zumis leur permet d'infliger un coup de foudre à chaque fois qu'il subisse un coup (non bloqué/esquivé)",
     "effet": "Buff",
-    "montant": "Pour chaque coup reçu : Dégât 1D8 +5 pendant 1 tour (max 2 tours avec boost)",
+    "montant": "Pour chaque coup reçu : Inflige 1D8 +5 (0 dégât stuff/buff sauf Epine, l'ennemi à 0 armure), pendant 1 tour (max 2 tours avec boost)",
     "icone": "E0495",
     "stat": "Esprit",
     "classe": ["Guerrier", "Chevalier", "Templier", "Chev Dragon"],
@@ -1653,7 +1644,7 @@
     "nom": "Cri Menaçant",
     "desc": "Les Ogres ont un sacré coffre ! Ils sont capable de poussé un hurlement des plus menaçants et perturbant, allant même jusqu'à blesser !",
     "effet": "Dégât Malus AoE R-",
-    "montant": "Dégât 1D6+4 (0 dégât/effet de stuff, 0 armure), réussite -2 pendant 2 tours",
+    "montant": "Dégât 1D6+4 (+1/ 2 niveaux, 0 dégât stuff/buff, 0 armure), réussite -2 pendant 2 tours",
     "icone": "J504",
     "stat": "Charisme",
     "classe": ["Guerrier", "Chevalier", "Templier", "Chev Dragon"],
@@ -1683,7 +1674,7 @@
     "nom": "Coup assomant",
     "desc": "Inflige un violent coup sur la tête qui assome/endort la cible. Voir règle du statut \"Endormissement\".",
     "effet": "Dégât Status",
-    "montant": "1D6+1, inflige le status \"Endormissement\" pendant 2 tours - Cooldown (global) 2 tours (si touché)",
+    "montant": "1D6+1, inflige le status \"Endormissement\" pendant 2 tours - Cooldown (global et cible) 2 tours (si touché)",
     "icone": "E0664b",
     "stat": "Force",
     "classe": ["Clerc", "Barde", "Shaman", "Sage"],

@@ -11,7 +11,7 @@
   "2": {
     "nom": "Provocation",
     "desc": "Le lanceur provoque la cible ce qui augmente les chances d'être visé",
-    "montant": "Dégât 1D10+2, et 90% de chance d'être visé pendant 3 tours"
+    "montant": "1D8+6 (+1/ 2 niveaux, 0 dégât stuff/buff, 0 armure), et 90% de chance d'être visé pendant 3 tours"
   },
   "3": {
     "nom": "Euphorie",
@@ -42,7 +42,7 @@
   },
   "9": {
     "nom": "Revers d'écaille",
-    "montant": "1 tentative offerte par éveil, renvoi (<10 : 66%, >=10 : 33%)"
+    "montant": "1 fois par éveil, renvoi (<10 : 66%, >=10 : 33%)"
   },
   "10": {
     "nom": "Pouvoir du dragon",
@@ -155,7 +155,7 @@
   },
   "45": {
     "nom": "Hymne/Symphonie à la Guerre",
-    "montant": "Dégât total +1D4 (min 2) +1 pendant 4 tours"
+    "montant": "Dégât physique ET magique +1D4 (min 2) +1 pendant 4 tours"
   },
   "46": {
     "nom": "Bouclier d'épines",
@@ -168,8 +168,7 @@
   },
   "48": {
     "nom": "Puma Noir",
-    "desc": "Action Instantanée (1 tentative offerte en éveil). Vous transforme en Puma Noir. Impossible de jeter des sorts magiques (Intel/Esprit). Nouveaux sorts : Saignement : 1D8 puis 3 pendant 3 tours (Force). Triple Griffe : 3D6 (Dextérité)",
-    "montant": "Dégât +15, 0 dégât/effet d'arme. Force+3, Dexté+3 pendant 1D4 (min 2) +1 tours (annulable)"
+    "montant": "Dégât +15, 0 dégât stuff. Force+3, Dexté+3 pendant 1D4 (min 2) +1 tours (annulable)"
   },
   "49": {
     "nom": "Bombe Incendiaire",
@@ -215,7 +214,7 @@
   "60": {
     "nom": "Prière Divine",
     "desc": "Action Instantanée. Soigne l'utilisateur et boost les prochains dégâts de lumières : obligé de faire de la lumière",
-    "montant": "Soin 1D8 +10. Prochain dégât lumières +1D6 +2 (3 tours max)"
+    "montant": "Soin 1D8 +10. Prochain dégât lumière +1D6 +1 (3 tour max) - Cooldown 1 tour"
   },
   "61": {
     "nom": "Assaut du Chaos",
@@ -236,11 +235,6 @@
     "nom": "Poème du Vent",
     "desc": "Un chant qui augmente la dextérité des alliés",
     "montant": "Dextérité +2 et Esquive +1 pendant 1D4 +2"
-  },
-  "65": {
-    "nom": "Symphonie Démoniaque",
-    "desc": "Augmente les dégâts magiques infligés par le groupe",
-    "montant": "Dégât magique 1D4 (min 2) +3 pendant 4 tours"
   },
   "66": {
     "nom": "Danse de l'oiseau de feu",
@@ -373,7 +367,7 @@
   },
   "99": {
     "nom": "Défense d'Acier",
-    "montant": "Force +1, Blocage Physique +3 et Magique +2, pendant 1D4 (min 2) +2 tours"
+    "montant": "Force +2, Blocage +2 pendant 1D4 (min 2) +2 tours"
   },
   "100": {
     "nom": "Scellement",
@@ -429,7 +423,7 @@
   },
   "113": {
     "nom": "Provocation de Groupe",
-    "montant": "1D6+2 AoE (0 dégât/effet de stuff, 0 armure), et 75% de chance d'être ciblé pendant 3 tours"
+    "montant": "1D6+3 AoE (+1/ 2 niveaux, 0 dégât stuff/buff, 0 armure), et 75% de chance d'être ciblé pendant 3 tours"
   },
   "114": {
     "nom": "Coup de Poing Irrité",

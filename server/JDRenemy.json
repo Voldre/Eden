@@ -903,7 +903,7 @@
       "Mode Draconique : Embrasé : Force/Intel+2, Démoniaque : Charisme+2, Caché : Esprit+2 : Esprit",
       "Terreur du Dragon AoE : Réussite des sorts : -3 sur 3 tours AoE (+ mode Cf. DK) : Charisme",
       "Atk Cyclone / Pouvoir du Dragon : 3D6+23 (Mono+7) (feu, ténèb,phys) : Force",
-      "Revers d'écaille éveillé (instant) : 5 tentatives (<10 : 66%, >=10 : 33%) (+ mode Cf. DK) : Esprit<br/>Passif : (Def Acier Perma) Blocage+2, PV < 140 : Dégât +5 (Crit +10)"
+      "Revers d'écaille éveillé (instant) : 5 tentatives (<10 : 66%, >=10 : 33%) (+ mode Cf. DK) : Esprit\nPassif : (Def Acier Perma) Blocage+2, PV < 140 : Dégât +5 (Crit +10)"
     ],
     "stats": "17,13,9,15,17",
     "desc": "Héritière de l'empire Heldentod, connue pour sa détermination et sa prestance. Elle est très stratège mais froide et parfois sans pitié.",
@@ -978,7 +978,7 @@
       "Âme Enchainée : 2D6+16 et dexté-3 (AoE) sur 3 tours : Dextérité",
       "Scellement Douloureux : Aucun sort physique, 0 SOIN pendant 3-4 tours : Esprit",
       "Verdict Final : 3D6 +18 (crit (1,2) X1.5) : Force",
-      "Furtivité / Aura du Pourfendeur : DGT Ténèb +1D6+8 pendant 4 tours : Esprit <br/> 2 fois : Oeil Hypnotique (res -3), idem Flûte : Contrôle esprit AoE, (res -2)"
+      "Furtivité / Aura du Pourfendeur : DGT Ténèb +1D6+8 pendant 4 tours : Esprit \n 2 fois : Oeil Hypnotique (res -3), idem Flûte : Contrôle esprit AoE, (res -2)"
     ],
     "stats": "16,16,9,12,16",
     "desc": "Anuran bleu très social et très tueur, il cherche à condamner... ?",
@@ -1203,7 +1203,7 @@
       "Croc Féroce : 2D10 + 8+8 : force",
       "Vent Enflammé :  1D10 + 8+8 AoE : intelligence",
       "Croc Brûlant :  2D10 +13+8 : force",
-      "Cri défiguré : réussite -2 AoE (3 tours) : Esprit <br/>Si PV < 100 : Dégât +5"
+      "Cri défiguré : réussite -2 AoE (3 tours) : Esprit \nSi PV < 100 : Dégât +5"
     ],
     "stats": "16,12,15,9,14",
     "desc": "Un aigle brun qui a avalé un fragment d'embyron d'un esprit un peu spécial... et qui a muté avec ce dernier.",
@@ -1743,7 +1743,7 @@
       "Zone noire : 2D10+18 (bloc m-2) AoE stat -2 (stat-3 si parasite) pendant 3 tours : Intelligence",
       "Eclair en Furie : 4D6 +20 (bloc m-2) et réussite -5 sur 1 tour : Intelligence",
       "Aura Bouclier Protec (+ Ctrl mentale) : Blocage +3 et (-1 Malus si dé <=6) pendant 4 tours : esprit",
-      "Esprit Descellé : Invoque 1 Fantôme Léthargique (2 si dé <= 8, si crit : Esprit de la Vengeance) : Esprit<br/> Prévention du Descelleur : Dégât -1D4-4 pour 4 tours, -1 malus : (même silence) Intelligence"
+      "Esprit Descellé : Invoque 1 Fantôme Léthargique (2 si dé <= 8, si crit : Esprit de la Vengeance) : Esprit\n Prévention du Descelleur : Dégât -1D4-4 pour 4 tours, -1 malus : (même silence) Intelligence"
     ],
     "stats": "13,7,17,10,17",
     "desc": "Torturran riche qui est Primat (Cardinal) de la Chelona, il a travaillé à l'Ordre des Chevaliers de la rose, capable de desceller",
@@ -2010,7 +2010,7 @@
     "nom": "Vimess - Général d'Expédition",
     "pvmax": 250,
     "skills": [
-      "Invoc Phénix (Torch) : 40 PV (revie 1 fois), Stats 15 (bloc 8), Charge 2D10+13 FOR, Tornade Feu AoE (-1D) INT, Prévention : Buff Armure +5 & -1 malus INT.<br/> Explosion à la mort : Dégât AoE à la mort (2D10+20, idem soin Vimess)",
+      "Invoc Phénix (Torch) : 40 PV (revie 1 fois), Stats 15 (bloc 8), Charge 2D10+13 FOR, Tornade Feu AoE (-1D) INT, Prévention : Buff Armure +5 & -1 malus INT.\n Explosion à la mort : Dégât AoE à la mort (2D10+20, idem soin Vimess)",
       "Pluie de Flèches (/Douloureuse) : 3D6+23 AoE (/-7 et 0 heal 3 tours) (Mono +7) : Dextérité",
       "Saut d'esquive (& blocage) : 5 tentatives : tir 2D6+14 (jdrcombat +40)",
       "Passif : Esquive +2, si PV < 125 : esq/bloc cible -2"
@@ -2163,7 +2163,7 @@
       "Atk foudr / Tempête Glace (Pouvoir du Dragon) : 3D6+23 (Mono+5) : Intel",
       "Saut Dimensionnel : 3 tentatives par combat : remplace l'esquive/blocage (buff prochain dégât +5) : intel",
       "Magie Extrême : Prochain dégât magique +2D6 +9 : Esprit",
-      "Revers d'écaille (instant) : 4 tentatives par combat (<10 : 66%, >=10 : 33%) (+Soin PV+15 #Mode Caché) : Esprit<br/>Passif : Blocage+1"
+      "Revers d'écaille (instant) : 4 tentatives par combat (<10 : 66%, >=10 : 33%) (+Soin PV+15 #Mode Caché) : Esprit\nPassif : Blocage+1"
     ],
     "stats": "15,7,17,11,16",
     "desc": "Héritier de l'Empire aux cheveux noir de jais, il s'agit d'un des grands sorciers de la cour Heldentod, il a un potentiel magique énorme.",
@@ -2297,7 +2297,7 @@
     "skills": [
       "Destruction/Coupure Noir/Blanc : AoE 3D6+20 (+ 1D Mono) (Chaque -100 PV : -5), Force/Intel (jdrCombat +30)",
       "Assaut du Chaos HYDRA (7 têtes/charges) : 3D6+22 (chance blocage/2) : Intel",
-      "Terreur du Dragon : Résistance d'Esprit et Réussite -3 (3 tours (2t si double)) AoE.<br/>Double < 100 PV : Revers d'écaille : 2 tentatives chacun + perd son tour (Soin 20 PV #Caché) : Esprit",
+      "Terreur du Dragon : Résistance d'Esprit et Réussite -3 (3 tours (2t si double)) AoE.\nDouble < 100 PV : Revers d'écaille : 2 tentatives chacun + perd son tour (Soin 20 PV #Caché) : Esprit",
       "Passif : Blocage +1. Tous les 100 PV : Dédoublement Eveillé (Incante 1 tour pour spawn : prend des dégâts pendant ce temps et double à les mêmes PV)."
     ],
     "stats": "17,11,17,13,16",
@@ -2313,7 +2313,7 @@
       "Châtiment Sacré / Vent purificateur : 2D6+12 (-1 malus) : Intel",
       "Guérison / Résurrection : 2D10+18 (*2) : Intel",
       "Grâce de la Sagesse : Blocage +3, Esprit +3, 4 tours : Esprit",
-      "Bénédiction de la Lumière : -1 sur le Dé, pendant 4 tours : Esprit<br/>Passif : durée des malus -1 tour"
+      "Bénédiction de la Lumière : -1 sur le Dé, pendant 4 tours : Esprit\nPassif : durée des malus -1 tour"
     ],
     "stats": "7,13,17,12,17",
     "desc": "Zumi Clerc à la peau verte, spécialisé en soin et 6eme tête de l'Hydra. Attitude calme et posée, réfléchis.",
@@ -2448,7 +2448,7 @@
       "Rayon Noir : 6D6 +45 (bloc/esq -2) mini-AoE : Intelligence // Coup Physique : 3D6+22",
       "Zone de calamité : 4D6+30 (bloc-2) et -2 réussites sur 3 tours (AoE) : Intelligence",
       "Parasite Inviolable : 2D6+8 pendant 4 tours -2 stats, non annulable : Espr'it (jdrCombat +30)",
-      "Bouclier Noir : Armure 2D6+10 pendant 4 tours : Esprit (même si silence)"
+      "Bouclier Noir : Armure 2D6+10 pendant 4 tours : Esprit (même si silence)\nPassif: -1 durée malus"
     ],
     "stats": "15,13,20,11,19",
     "desc": "Le légendaire Prince du Fléau sous forme d'esprit. Il n'y a presque aucune aura aussi noire que la sienne. Et encore, ce n'est pas la pire de ses formes...",
@@ -2463,7 +2463,7 @@
       "Oeil d'Al-hara (Contrôle / Dodo) AoE : (Mono -3 res esprit, Dodo -3) durée 3 tours : Esprit (même si silence)",
       "Détriplement : Invoque 2 doubles pendant 2 tours (dégâts infligé/reçu /2) : Esprit",
       "Météore / Stalactites Glaciales : 4D6+20 (+10 mono) (+10 si PV<150) : Intelligence // Coup Physique : 3D6+16",
-      "Voile du Blizzard (bloc/esq+2) // Saut dimensionnel : 5 tentatives. <br/>Passif : résistance d'esprit = esprit"
+      "Voile du Blizzard (bloc/esq+2) // Saut dimensionnel : 5 tentatives. \nPassif : résistance d'esprit = esprit"
     ],
     "stats": "11,15,18,13,18",
     "desc": "Illusionniste dôté de l'oeil de l'être divin Al-hara, lui conférant des pouvoirs hors du commun.",
@@ -2475,7 +2475,7 @@
     "nom": "Vassago - Général Déchu",
     "pvmax": 330,
     "skills": [
-      "Verdict Final : 5D6 +25 Crit (1,2 : *1.5; 3,4 : *1.25) : Force<br/> Entrave Mentale : 4D6+18 AoE et -3 Res Espr'it sur 3 tours : Espr'it",
+      "Verdict Final : 5D6 +25 Crit (1,2 : *1.5; 3,4 : *1.25) : Force\n Entrave Mentale : 4D6+18 AoE et -3 Res Espr'it sur 3 tours : Espr'it",
       "Aura du Sanguinaire : Dégât +1D6+9 (Absorbe +5 PV), Bloc/Esq +2 sur 5 tours : Esprit",
       "Scellement AoE : Aucun sort physique pendant 3 tours (Absorbe +5 PV) : Espr'it, (jdrcombat +40)",
       "Passif : Absorbe 1/3 des dégâts (après armure, sur 1 seul ennemi) en PV. Si \"0 soin\" : Heal/2"
@@ -2523,7 +2523,7 @@
       "Punition Divine : 2D6+10 : Intelligence",
       "Totem Gracieux : Mode Soin : Soin 4 PV par tour. - Mode Soutien : attaque/bloque ((Invoque un familier Totem : 30 PV, Force : 9, Dexté : 13, Intel : 14. - Mode Soin : Ne peut pas bouger / se protéger, 0 jet de dé. - Mode Soutien : peut bouger et bloquer, 2 sorts : 1) Renforcement : +2 Force ou +2 Intel sur la cible : 3 tours (intel) , 2) Eclair : 1D8 (intel))) : Esprit",
       "Résurrection : Incantation 2 tours (1 dé/tour) : Soin 2D10+18 (utilisable sur un vivant) : Intelligence",
-      "Bouclier d'épines : Dégât subi (-) et dégât d'épines (+) 1D4 (min 2)+1 pendant 4 tours : Intelligence<br/>Passif : Si coup critique : se soigne 1D6+6."
+      "Bouclier d'épines : Dégât subi (-) et dégât d'épines (+) 1D4 (min 2)+1 pendant 4 tours : Intelligence\nPassif : Si coup critique : se soigne 1D6+6."
     ],
     "stats": "8,9,17,11,16",
     "desc": "Drakai Alchimiste qui est très peu précautionneux, le laboratoire vie parfois des jours sombres...",
@@ -2596,9 +2596,9 @@
     "pvmax": 280,
     "skills": [
       "Soin Inverseur (4 fois max) : Transforme les soins reçus par les ennemis en dégât (AoE) sur 3 tours (non annulable) : Esprit",
-      "Faiblesse Critique : 4D6 +18 Crit (1,2 : *1.5, 3 : *1.25) : Force<br/>Cicatrice : 4D6+20 (-1 bonus) : Force -1",
+      "Faiblesse Critique : 4D6 +18 Crit (1,2 : *1.5, 3 : *1.25) : Force\nCicatrice : 4D6+20 (-1 bonus) : Force -1",
       "Griffure Noire : 3D6 +12, et -2 blocage/esquive pour 3 tours AoE : Force",
-      "Pelote d'entrave : 4 tentatives (Instantanée) : Mono/AoE force à re-esquiver ou re-bloquer (réussite -1) : Esprit <br/> Passif : Si Blocage/Esquive critique : Coup d'opportunité (max 2 fois par tour)"
+      "Pelote d'entrave : 4 tentatives (Instantanée) : Mono/AoE force à re-esquiver ou re-bloquer (réussite -1) : Esprit \n Passif : Si Blocage/Esquive critique : Coup d'opportunité (max 2 fois par tour)"
     ],
     "stats": "18,8,14,14,17",
     "desc": "Lucius, ancien Roi Déchu du passé, il a fondé la Veyda pour assouvir ses nouvelles ambitions de conquêtes du monde. Avec cette fois plus de préparation.",
@@ -2643,7 +2643,7 @@
       "Âme Enchainée / Entrave Mentale : 3D6+20 et dexté-3  / res espr -3 (AoE) sur 3 tours : Dextérité/Espr'it",
       "Scellement Douloureux : Aucun sort physique, 0 SOIN pendant 4-5 tours : Esprit",
       "Verdict Final : 4D6 +22 (1,2,3 : X1.5) : Force",
-      "Furtivité / Aura du Pourfendeur : DGT Ténèb +2D6+8 (+5 PV<100) pendant 4 tours : Esprit<br/><br/>2 fois (Cape/Flûte) : Oeil Hypnotique (res -3) / Contrôle Esprit AoE (res -2) <br/> Bague Corail (Instantanée) : (blocage -2, résistance esprit -3) AoE sur 3 tours"
+      "Furtivité / Aura du Pourfendeur : DGT Ténèb +2D6+8 (+5 PV<100) pendant 4 tours : Esprit\n\n2 fois (Cape/Flûte) : Oeil Hypnotique (res -3) / Contrôle Esprit AoE (res -2) \n Bague Corail (Instantanée) : (blocage -2, résistance esprit -3) AoE sur 3 tours"
     ],
     "stats": "17,17,11,12,17",
     "desc": "Adonis a perfectionné sa technique de meurtre, cet anuran bleu n'hésite pas à utiliser son charme et sa sociabilité pour condamner ses ennemis.",
@@ -2673,7 +2673,7 @@
       "Coup de Serre : 4D6+24 : force",
       "Griffures Pénétrantes : 3D6+15 (Armure/2 sur 3 tours) AoE : force",
       "Cri strident : Blocage -3 AoE pendant 4 tours : Esprit",
-      "Passif : si critique (1,2,3) : Empêche de se soigner pendant 3 tours (+ dégât reçu +10 (5 AoE))<br/>Si PV < 150 : Dégât +5"
+      "Passif : si critique (1,2,3) : Empêche de se soigner pendant 3 tours (+ dégât reçu +10 (5 AoE))\nSi PV < 150 : Dégât +5"
     ],
     "stats": "18,15,11,11,17",
     "desc": "Une créature mutante ailée, mi-gorille mi-faucon, ses serres sont gorgées de haine et de sang.",
@@ -2730,10 +2730,10 @@
     "nom": "Héméra - Sainte Vivante",
     "pvmax": 700,
     "skills": [
-      "Aura Bénite : Soin 5D6 +30. Buff dégât +3D6+12 sur 3 tours : Intel",
+      "Aura Bénite : Soin 5D6 +30, -1 malus. Buff dégât +3D6+12 sur 3 tours : Intel",
       "Bouclier Divin : (5 fois max) Retire tout malus et immunise de tout dégât pendant 2 tours (puis 2 tours dégât +25%, non relançable) : Esprit (même silence)",
-      "Tranche du Destin : 6D6+50, chance de bloc/esq /2 : Force<br/>Désintégration : 5D6+40 AoE et 0 ténèbres / malus utilisable, Bloc/Res -3 pendant 3 tours : Intel",
-      "Passif : 20 armure,  Soin 10 PV/tour, Res esprit 13, durée des malus /2"
+      "Tranche du Destin : 6D6+50 (-10 mini-AoE), chance de bloc/esq /2 : Force\nDésintégration : 5D6+40 AoE et 0 ténèbres / malus utilisable, Bloc/Res -3 (-1t si annul) pendant 3 tours : Intel",
+      "Passif : 20 armure, Soin 10 PV/tour, Res esprit 13, durée des malus /2"
     ],
     "stats": "17,15,20,17,18",
     "desc": "Héméra est une divinité liée à la Curie Métérole, seule une poignée de personnes connaissent son existence. Elle est la mère de la magie de lumière.",
@@ -2823,7 +2823,7 @@
       "Parasite frénétique : 2D6+18 et -7 sur 5 tours (2 vie # infection/prévention) : Intelligence",
       "Tempête Noire / Infection Pullulante : 2D6+24 / -6 + (tours para)*3 : Intelligence",
       "Esprit Descellé : Invoque 1 Fantôme Léthargique (2 si dé <= 6, si crit : Esprit de la Vengeance -50 PV) : Esprit",
-      "Hommage : Soin 2 à 35 +15, Armure +5 sur 4 tours : Esprit<br/>Saut Dimensionnel : 3 tentatives : Intelligence"
+      "Hommage : Soin 2 à 35 +15, Armure +5 sur 4 tours : Esprit\nSaut Dimensionnel : 3 tentatives : Intelligence"
     ],
     "stats": "7,15,19,11,18",
     "desc": "Incantatrice et Briseuse de sceau, elle est la bras-droit de la Beholder, on raconte quelle aurait travaillée pour l'Ordre des Chevaliers de la Rose...",
@@ -2883,7 +2883,7 @@
       "Artillerie Lourde (Blessure Douloureuse) : 3D6+25 (1D10) +25 (0 soin) sur 4 tours : Dextérité",
       "Boost d'Armure / Robotisation (instantanée) : Soin 2D6 +13 / Dégât +1D4+6 (4 t) , Armure +1D4 (min 2) +4 sur 4 tours : Esprit",
       "Bombe à Huile (Explosifs Visqueux) : Dégât 2D6+20 (-1D, Esquive -3 sur 4 tours) AoE : Dextérité",
-      "Lavage de Cerveau : Résistance d'esprit et réussite -4 sur 4 tours : Esprit<br/>Passif : Blocage +1. Si PV <140 : en robot' : Dégât +5, Armure à 10 fixe"
+      "Lavage de Cerveau : Résistance d'esprit et réussite -4 sur 4 tours : Esprit\nPassif : Blocage +1. Si PV <140 : en robot' : Dégât +5, Armure à 10 fixe"
     ],
     "stats": "11,17,13,14,17",
     "desc": "Chef de l'Expedita, il a voyagé dans tout Ezur à bord de son propre dirigeable et bâteau en compagnie de ses camarades.",
@@ -2898,7 +2898,7 @@
       "Percée du Chevalier : 3D6 +22 (+5 si provoqué) : Dextérité",
       "Tempête Infernale : 2D6 +18 (50% provoc 2 tours) AoE : Dextérité",
       "Silence : Aucun sort magique sur 4 tours, + provocation (3/4) : Esprit",
-      "Vivacité Accrue : Dextérité et Esquive +3 sur 5 tours : Esprit<br/>Passif : 5 Armure, Bloc/Esq +1"
+      "Vivacité Accrue : Dextérité et Esquive +3 sur 5 tours : Esprit\nPassif : 5 Armure, Bloc/Esq +1"
     ],
     "stats": "13,17,7,15,17",
     "desc": "Diplomate blond et noble chef de la Légion Saphir, c'est un homme très éloquant et loquace",
@@ -2913,7 +2913,7 @@
       "Triple Tir (Blessure Douloureuse / Entrave) : 3D6 (1D10) +22, (0 soin / entrave) sur 4 tours : Dextérité",
       "Invocation du Guépard (40 PV) : Force/Dexté : 16, Intel/Esprit : 11, dégât Mono (AoE), 2D6 (1D6) +10 Mono : Esprit",
       "Perforation  : Dégât Malus 2D6 +18, Blocage et réussite -3 sur 3 tours : Dextérité",
-      "Saut d'esquive : 4 tentatives : tir 2D6+10<br/>Passif : Esquive +2, si PV < 125 : esq/bloc cible -2"
+      "Saut d'esquive : 4 tentatives : tir 2D6+10\nPassif : Esquive +2, si PV < 125 : esq/bloc cible -2"
     ],
     "stats": "10,18,9,13,16",
     "desc": "Ezelin passionné par l'exploration et l'aventure, c'est un ami du Général de Division d'Expédition Vimess, les deux se sont beaucoup entrainés ensemble.",
@@ -2971,7 +2971,7 @@
     "pvmax": 215,
     "skills": [
       "Guérison (Résurrection) : Heal 3D6 (2t, PV+15) +20 // Eclair Furie (Tempête) : 3D6+10+5 (-1D -5) : Intelligence",
-      "Totem Gracieux : 40 PV, Force : 11, Dexté/Intel/Esprit : 15. Mode Soin : 6 PV/tour.<br/>Soutien : Eclair (AoE) : 2D6 (1D6) +10 // Sort Force/Intel +4 sur 4 tours : Esprit",
+      "Totem Gracieux : 40 PV, Force : 11, Dexté/Intel/Esprit : 15. Mode Soin : 6 PV/tour.\nSoutien : Eclair (AoE) : 2D6 (1D6) +10 // Sort Force/Intel +4 sur 4 tours : Esprit",
       "Prévention d'épines : Armure/Epines +1D6+4, -1 malus sur 5 tours : Esprit",
       "Passif : Soin critique == -1 malus +5 PV. Si PV <100 : Totem +2 PV/tour"
     ],
@@ -2988,7 +2988,7 @@
       "Coupure lumière/noire (Destruct/Portail) : Degat 3D6 (-5 AoE) +17 : Force",
       "Prière Divine (Sacrifice ombre) : Soin 2D6+24, prochain dég lum +1D8 +12, (PV -10/t, Force/Intel +4, ténèbres +10) : Espr",
       "Menaces Mortelles : Réussite -3, Esq/Bloc/Res -2, dure 2 tours (AoE) : Esprit",
-      "Saut Dimensionnel : Esquive , 3 tentatives : Intelligence<br/>Passif : si PV <130 : Sacrifice = +5 DGT (et soin +5 PV/coup)"
+      "Saut Dimensionnel : Esquive , 3 tentatives : Intelligence\nPassif : si PV <130 : Sacrifice = +5 DGT (et soin +5 PV/coup)"
     ],
     "stats": "16,10,17,12,16",
     "desc": "Commandant de la grande tribu d'ogres des Khan, il a accomplit plusieurs exploits dans sa carrière. Il est très fourbe comme le reste de son clan.",
@@ -3033,7 +3033,7 @@
       "Rayon de feu # Baram : 3D10 14 : Intelligence",
       "Feu propageur : 2D10 +14 AoE : Intelligence",
       "Aura perturbante : Dé +1 pendant 3 tours AoE : Esprit",
-      "Passif : Si ennemi dé 20, amplifie (+5 dgt).<br/> Dégât +5, buff +1 tour si PV <130"
+      "Passif : Si ennemi dé 20, amplifie (+5 dgt).\n Dégât +5, buff +1 tour si PV <130"
     ],
     "stats": "15,9,17,11,14",
     "desc": "Un esprit qui a pris comme réceptacle une étrange roche magmatique, lui accordant des pouvoirs très perturbant.",
@@ -3048,7 +3048,7 @@
       "Aura de Mauvaise Fortune (3 fois : +1) : +1 sur le dé (AoE) 3 tours : Esprit",
       "Attaque Furieuse/Rapide : 4D6+22 (+'8 mono) : Dextérité (jdrCombat +15)",
       "Etoile Protectrice : Bloc/Esq/Res +2 (-2 malus) sur 4 tours : Esprit",
-      "Passif 1 : (1/tour) Force à relancer 1 fois et stock le dé (x5), sauf crit dé 1<br/>Après le stock (pdt 5t) : paire/triple/quad/quint (DGT++5 (sauf paire), atk Bloc/Esq/Res --1)<br/>Suite : -1 sur le dé (combo 3/4/5 chiffres : 1/3/5t)<br/>Passif 2 : PV<200/100 : 1 relance chaque 2/1t"
+      "Passif 1 : (1/tour) Force à relancer 1 fois et stock le dé (x5), sauf crit dé 1\nAprès le stock (pdt 5t) : paire/triple/quad/quint (DGT++5 (sauf paire), atk Bloc/Esq/Res --1)\nSuite : -1 sur le dé (combo 3/4/5 chiffres : 1/3/5t)\nPassif 2 : PV<200/100 : 1 relance chaque 2/1t"
     ],
     "stats": "14,19,12,12,19",
     "desc": "Fille Ezelin rebelle au caractère bien trempée, elle est joyeuse et franche. Bénie par la chance, elle a reçue ce don de façon mystérieuse par une divinité.",
@@ -3063,7 +3063,7 @@
       "Atk Foudroyante (Stalactites) : 3D6+20 (+6) : Intelligence",
       "Oeil Hypnotique : Endort 1D4 tours, res esprit -1 AoE : Intelligence",
       "Contrôle de l'Esprit : Hypnose 1D4 tours (-1 res esprit) : Esprit",
-      "Voile du Blizzard (Intel+2) / Rituel de Mana : Esprit AoE +3 sur 5 tours AoE : Esprit<br/>Saut Dimensionnel : 4 tentatives (esquive) : Intel"
+      "Voile du Blizzard (Intel+2) / Rituel de Mana : Esprit AoE +3 sur 5 tours AoE : Esprit\nSaut Dimensionnel : 4 tentatives (esquive) : Intel"
     ],
     "stats": "7,15,17,12,19",
     "desc": "Zumi bleuté qui est un menteur qui fait tout pour ses propres intérêts, 0 intégrité",
@@ -3078,7 +3078,7 @@
       "Châtiment Sacré (Punition Divine) / Destruc Noire : 3D6 +16 (+ 6) : Intel",
       "Prière Divine/Sacrifice Ombres : Soin 2D6 +14 (Lum +5) / -5 PV et Ténèbres 1D6+6 (Force,Intel+2) : Esprit",
       "Vent purificateur : 2D6+14 (-1 malus) : Intel",
-      "(Voile du Blizzard) Saut Dimensionnel : 3 tentatives : Intel<br/>Passif PV <120 : Dégât & Soin +5 (+5 si critique)"
+      "(Voile du Blizzard) Saut Dimensionnel : 3 tentatives : Intel\nPassif PV <120 : Dégât & Soin +5 (+5 si critique)"
     ],
     "stats": "13,7,18,14,18",
     "desc": "Sous ses airs mignons, cette jeune filoute manigance des trucs louches pour son propre intérêt",
@@ -3090,8 +3090,8 @@
     "nom": "Shellona - Fondateur Réincarné",
     "pvmax": 360,
     "skills": [
-      "Lumière Guérison : 2D10+22 (1/4 rejouer) : Intelligence<br/> Prévention Chelona : -2 malus Armure/Epines +1D6+5 sur 5 tours : Espr (même silence)",
-      "Totem Chelona (esprit) : 60 PV - Stats 17.<br/>Soin : 1D6 +9 chaque tour<br/>Soutien : renforcement +2 force/intel AoE (3 tours), éclair : 2D6+16",
+      "Lumière Guérison : 2D10+22 (1/4 rejouer) : Intelligence\n Prévention Chelona : -2 malus Armure/Epines +1D6+5 sur 5 tours : Espr (même silence)",
+      "Totem Chelona (esprit) : 60 PV - Stats 17.\nSoin : 1D6 +9 chaque tour\nSoutien : renforcement +2 force/intel AoE (3 tours), éclair : 2D6+16",
       "Lumière Noire / Coup Infernal : 3D6+40 (-8 AoE, idem physique) : Intelligence",
       "Passif : Blocage +1, Noyau Schiste : critique = soin (+ totem) X2 (AoE/2), Dé 3 : /2 aussi"
     ],
@@ -3105,8 +3105,8 @@
     "nom": "Leviathan - Serpent du Cataclysme",
     "pvmax": 500,
     "skills": [
-      "(bloc/esq -3) mini-AoE : Force/Intel. Mâchoire Abyssale : 6D6 +45 <br/>Souffle : 4D6+30, soin reçu -50% sur 5 tours",
-      "Queue Déferlante : 4D6 +35 (bloc-2) AoE : Force (jdrCombat +33)<br/>Tempête Océanique : 1D6 +19 (-2 réussite 1t) AoE sur 3 tours : Intelligence",
+      "(bloc/esq -3) mini-AoE : Force/Intel. Mâchoire Abyssale : 6D6 +45 \nSouffle : 4D6+30, soin reçu -50% sur 5 tours",
+      "Queue Déferlante : 4D6 +35 (bloc-2) AoE : Force (jdrCombat +33)\nTempête Océanique : 1D6 +19 (-2 réussite 1t) AoE sur 3 tours : Intelligence",
       "Aura d'Anéantissement : -2 buffs et Stats -1 pendant 4 tours (AoE) : Esprit",
       "Passif : chaque -150 PV : Onde (AoE++) 1D6 +19 et -3,4,5 réussite : 3 tours (Res E)"
     ],
@@ -3120,10 +3120,10 @@
     "nom": "Bulblarve - Reine Prolifique",
     "pvmax": 350,
     "skills": [
-      "Roulement massif (bloc-3 (-4 si ⩽ 5)) : 4D6+25 (~+15) AoE ⇔ : Force<br/>Crachat : 2D10+16 AoE (bloc-2) : Intel",
+      "Roulement massif (bloc-3 (-4 si ⩽ 5)) : 4D6+25 (~+15) AoE ⇔ : Force\nCrachat : 2D10+16 AoE (bloc-2) : Intel",
       "Gelée Royale : Buff mono ∞ : PV +50, Dégât +5, Stats +1, mais -25 PV (mob wait 1t) : 0 dé",
       "Survie Royale : Buf'f Dégât +1D4+6 AoE sur 4 tours : Espr'it",
-      "Passif : 0 esquive, Bloc = 6 ALL<br/>Chaque 5 tours : +2 mobs # 2D6<br/>Si PV < 150 : Gelée Royale : Effet positif *2"
+      "Passif : 0 esquive, Bloc = 6 ALL\nChaque 5 tours : +2 mobs # 2D6\nSi PV < 150 : Gelée Royale : Effet positif *2"
     ],
     "stats": "21,6,15,8,18",
     "desc": "Grosse limace insectoïde avec un dos pulpeux qui est depuis longtemps prolifique à Vulcain où elle y a établi son royaume.",
@@ -3138,7 +3138,7 @@
       "Atk Cyclone (Pouvoir du Dragon) : 3D6+18 (Mono+5) (feu, tén, phys) : Force",
       "Terreur du Dragon : Res Esprit / Réussite -3 sur 3 tours : Charisme",
       "Instinct de Survie : PV & Dégât : +1D6+6 pendant 3 tours : Esprit",
-      "Revers d'écaille (instant) : 3 tentatives par combat (<10 : 66%, >=10 : 33%) (Dégât renv+5 #Embrasé) : Esprit<br/>Passif : Mode Défense : Dexté-3, Armure +5"
+      "Revers d'écaille (instant) : 3 tentatives par combat (<10 : 66%, >=10 : 33%) (Dégât renv+5 #Embrasé) : Esprit\nPassif : Mode Défense : Dexté-3, Armure +5"
     ],
     "stats": "16,13,7,15,16",
     "desc": "Héritier de l'Empire Heldentod, Marcus est déterminé mais un peu instable, il est en recherche de bonnes opportunités mais est honnête et juste.",
@@ -3152,7 +3152,7 @@
     "skills": [
       "Bombe Incendiaire / Stalactites Glaciales : Degat 3D6 (<150 : +5) +20, Mono : Intelligence",
       "Attaque Foudroyante / Oeil Hypnotique : Degat 2D6 +20, / Endort pendant 1D4 tours, Res espr -2 AoE : Intelligence",
-      "Contrôle de l'Esprit : Hypnose pendant 1D4 tours<br/>Rituel de Mana : Esprit AoE +3 sur 5 tours : Esprit",
+      "Contrôle de l'Esprit : Hypnose pendant 1D4 tours\nRituel de Mana : Esprit AoE +3 sur 5 tours : Esprit",
       "Saut Dimensionnel : 3 Esquive : Intelligence"
     ],
     "stats": "8,11,17,13,20",
@@ -3165,10 +3165,10 @@
     "nom": "Daryun - Conquérant de Luposia",
     "pvmax": 360,
     "skills": [
-      "Frappe Frénétique : 4D6+30 (+3/touche, max 5) (bloc/esq -2), cumule reset après 4 tours, mini-AoE : Force<br/>Impact Cinétique : 4D6+20 (réussite -5) : Force (même scellé), mais Esq/Bloc m",
+      "Frappe Frénétique : 4D6+30 (+3/touche, max 5) (bloc/esq -2), cumule reset après 4 tours, mini-AoE : Force\nImpact Cinétique : 4D6+20 (réussite -5) : Force (même scellé), mais Esq/Bloc m",
       "Griffure Noire : 4D6 +22 et -2 blocage/esquive AoE pour 4 tours : Force",
       "Rugissement Meurtrier : Dégât +1D6+4, Soin PV +10 quand ennemi touché, pendant 5 tours : Force (même scellé)",
-      "Constitution de Roi : Armure =5, Bloc/Esq/Res +1, durée Malus /2<br/>PV <160 : Effet Rugissement *2. Si Bloc/Esq/Res critique : Coup opportun"
+      "Constitution de Roi : Armure =5, Bloc/Esq/Res +1, durée Malus /2\nPV <160 : Effet Rugissement *2. Si Bloc/Esq/Res critique : Coup opportun"
     ],
     "stats": "21,15,11,15,13",
     "desc": "Berserker réputé pour sa puissance hors-norme, il est connu comme étant le bras armé de la Venturo. Il a été vainqueur pendant 3 années de suite au plus grand tournoi de Luposia.",
@@ -3180,10 +3180,10 @@
     "nom": "Qorina - Princesse Flamboyante",
     "pvmax": 380,
     "skills": [
-      "Coup Incandescant : 3D6 +30 (+5 mono poing/lum) : Force/Intel<br/>Feu Dévoreur : 2D6+20, Stats -3 (3 tours, 2 si bloc) : Intel (3 → 4 si DK)",
+      "Coup Incandescant : 3D6 +30 (+5 mono poing/lum) : Force/Intel\nFeu Dévoreur : 2D6+20, Stats -3 (3 tours, 2 si bloc) : Intel (3 → 4 si DK)",
       "Flamme Impériale : Mode \"+1D6+9, Bloc/Esq+2\" sur 5 tours : Esprit",
       "Lumière Pure : Soin 3D6+25, -1 malus (rejoue si critique)",
-      "Art Khan (buff indéf, instant, Esprit), mode :<br/> - Offensif : Flamme dégât / malus,<br/> - Défensif : Flamme soin / buff,<br/> PV <50% : Flamme \"+5, Bloc/Esq+1\"<br/>Anti-DK : Stuff Draconite (25%) + revers, vs DK"
+      "Art Khan (buff indéf, instant, Esprit), mode :\n - Offensif : Flamme dégât / malus,\n - Défensif : Flamme soin / buff,\n PV <50% : Flamme \"+5, Bloc/Esq+1\"\nAnti-DK : Stuff Draconite (25%) + revers, vs DK"
     ],
     "stats": "17,11,17,13,17",
     "desc": "Descendante d'une ancienne lignée Khan, Qorina possède la puissante flamme ancestrale de son glorieux empire perdu. Ses desseins semblent être la destruction d'Heldentod, mais elle n'agit pas de paire avec ses semblables...",
@@ -3288,7 +3288,7 @@
       "Coupe Asura / Purgatoire : Degat 2D6 (+6 si Asura) +24 AoE : Force",
       "Eclair unique : Degat 3D6 (+7 si Asura) +30 : Force (jdrcombat +45)",
       "Frénésie Khan : -1 malus, Buff Mono dégât +2D6+10 sur 4 tours : Esprit",
-      "Passif Draconite : sur les DK : Dégât +33%, Reçu -33% (si PV <150 : 50%)<br/>Cor de Guerre (dé <= 6 = instant') : Cohésion & -1 malus, Buff Stats+2; Dégât +1D6+9 AoE++ 4 tours"
+      "Passif Draconite : sur les DK : Dégât +33%, Reçu -33% (si PV <150 : 50%)\nCor de Guerre (dé <= 6 = instant') : Cohésion & -1 malus, Buff Stats+2; Dégât +1D6+9 AoE++ 4 tours"
     ],
     "stats": "21,13,9,12,17",
     "desc": "Chef de la tribu Khan et initiateur de la révoluion des Ogres des steppes. Motivé à détruire Heldentod",
@@ -3333,7 +3333,7 @@
       "Rayon/Flèches des Ombres : Dégât  5Đ6 (3D6 AoE) +24 : Intelligence",
       "Pacte unifié (pacte/hommage avec soi) : Dégât +1D6+4, Armure +5, pendant 5 tours : Esprit",
       "Menaces Mortelles : Réussite -4, Esq/Bloc/Res -2, AoE dure 3 tours (rejoue si critique (1,2,3)) : Esprit",
-      "Passif : Si dé <= 5 : esq/bloc cible -2, si critique ou déformé : Stats -2 (2 tours),<br/>Déformation Fléau : PV < 100 => Stats+2 / DGT+10 (rejoue si crit)<br/>+ Bombe à retardement (6D6+50 Bloc M/2) (2-3 tours)"
+      "Passif : Si dé <= 5 : esq/bloc cible -2, si critique ou déformé : Stats -2 (2 tours),\nDéformation Fléau : PV < 100 => Stats+2 / DGT+10 (rejoue si crit)\n+ Bombe à retardement (6D6+50 Bloc M/2) (2-3 tours)"
     ],
     "stats": "11,15,19,12,18",
     "desc": "Drakaï Démoniste qui a transcendé son corps avec la magie noire, lui octroyant une forme supérieure, éveillée, à l'apparence de monstre.",
@@ -3363,7 +3363,7 @@
       "Corne enchantée : 3D6+24  (Bloc/esq -2), malus : Dégât reçu +5 sur 2 tours : Force/Intel",
       "Vague d'énergie : 3D6+20 AoE (Fatigue +15) : Intel",
       "Perturbation magique : Intel/Esprit -3 sur 3 tours AoE (+ effet selon ce qu'il a ingéré) : Esprit",
-      "Passif : Revers Magique : Si critique Bloc M (1,2,3) : renvoi 100%<br/>PV <150 : Blocage +1, Dégât +5"
+      "Passif : Revers Magique : Si critique Bloc M (1,2,3) : renvoi 100%\nPV <150 : Blocage +1, Dégât +5"
     ],
     "stats": "16,9,17,11,19",
     "desc": "Lunicorne est l'Esprit qui veille sur le Lac d'Obelia. Personne ne connait vraiment ses origines, mais il semblerait qu'il soit là pour maintenir un certain équilibre.",
@@ -3390,10 +3390,10 @@
     "nom": "Xanxus - Flammes du Dernier Souffle",
     "pvmax": 320,
     "skills": [
-      "Canon brasier : 2D6 +20 (2 coups) : Dexté/Intel<br/>Torrent Infernal : 3D6+30 (Bloc/Esq-2) AoE<br/>-1 charge : +5/10 dégât (esq/bloc-1)",
+      "Canon brasier : 2D6 +20 (2 coups) : Dexté/Intel\nTorrent Infernal : 3D6+30 (Bloc/Esq-2) AoE\n-1 charge : +5/10 dégât (esq/bloc-1)",
       "Propulsion (-1 charge sauf crit) : Remplace l'esquive (blocage 14 max), replace : Dextérité",
       "Invoc Lion (Bester): 70 PV, Stats 16, Griffe 2D6+23 FOR, Rugissement -2 stats AoE (2-3 tours) INT, Soin : 1D6+14, -1 malus INT",
-      "Passif : +1 charge /2 tours (1t si >2 ennemis)<br/>Esquive +2, si PV <160 : Dégât +5, crit : charge+1"
+      "Passif : +1 charge /2 tours (1t si >2 ennemis)\nEsquive +2, si PV <160 : Dégât +5, crit : charge+1"
     ],
     "stats": "13,20,15,13,16",
     "desc": "Parrain de la Varia, il excelle dans le maniement d'armes à feu à une main, prototypé par la Venturo. Froid et violent, il cache des intentions sombres.",
@@ -3407,8 +3407,8 @@
     "skills": [
       "Triple Lames / Attaco di Squalo : 3D6+20 (+5 / -1 buff OU Stats-2 sur 2 tours) : Dexté",
       "Copia di Squalo : copie un sort lancé par l'ennemi (si ok à l'épée, certains boosts) : Espr'it (puis l'atk) (jdrCombat +28)",
-      "Silence : Aucun sort magique (3 tours) : Esprit<br/>Lame Tranchante : Ennemi Bloc/Esq-1 (2 si <130) & Dégât +1D6+7 sur 4 tours",
-      "Passif Maître Epeiste (si ennemi atk au CàC) : Dégât +5, Armure +5, si bloc crit : renvoi 1/3<br/>Si PV <130 : Effet*2, Malus+50% ou +1 tour"
+      "Silence : Aucun sort magique (3 tours) : Esprit\nLame Tranchante : Ennemi Bloc/Esq-1 (2 si <130) & Dégât +1D6+7 sur 4 tours",
+      "Passif Maître Epeiste (si ennemi atk au CàC) : Dégât +5, Armure +5, si bloc crit : renvoi 1/3\nSi PV <130 : Effet*2, Malus+50% ou +1 tour"
     ],
     "stats": "16,18,10,11,17",
     "desc": "Bras Droit de la famille Varia. Squalo a un tempérament colérique mais est un Grand Maître Epeiste, il aurait déjà vaincu plus de 100 puissants épéistes.",
@@ -3423,7 +3423,7 @@
       "Bras étendu : 2D6 +15 : Force",
       "Bras rayon : 2D10 + 15 : Intel",
       "Attaque tournoyante : 2D6+10 : Dexté",
-      "Lavage de Cerveau : Résistance d'Esprit -3 et réussite -2 sur 3 tours : Esprit<br/> Passif : 10 Armure, 5 tours : auto-réparat° (+2D10+20 PV)"
+      "Lavage de Cerveau : Résistance d'Esprit -3 et réussite -2 sur 3 tours : Esprit\n Passif : 10 Armure, 5 tours : auto-réparat° (+2D10+20 PV)"
     ],
     "stats": "15,15,15,10,15",
     "desc": "Automate de combat dédié à évaluer les capacités de ses adversaires grâce à une batterie de capteurs et un système de combat polyvalent. Créé par la Venturo.",
@@ -3459,5 +3459,110 @@
     "desc": "Originaire d'Obelia, ce poisson recharge sa magie par la lumière de la lune.",
     "drop": "Ecailles Lunaire",
     "weaknesses": ["glace", "ténèbres"]
+  },
+  "233": {
+    "visuel3D": "m212c",
+    "nom": "Poisson d'Aridel",
+    "pvmax": 85,
+    "skills": [
+      "Dent argenté : 1D10+16 : Force",
+      "Queue coupante : 1D10+11 AoE : Dextérité",
+      "Vibrations brisantes :  Armure -1D4+4 AoE : Force",
+      "Passif : Bloc P / Esq +2, Bloc M -1"
+    ],
+    "stats": "17,15,9,9,13",
+    "desc": "Poisson rocheux originaire d'Aridel, son corps s'est habitué à une absence de magie.",
+    "drop": "Minerai Anti-magie",
+    "weaknesses": ["tranchant", "glace"]
+  },
+  "234": {
+    "visuel3D": "temenos",
+    "nom": "Temenos",
+    "pvmax": 300,
+    "skills": [
+      "Guérison: Soin 3D6+32 (-1 Malus), Résurrection: Soin 1t 3D6+15 : Int",
+      "Châtiment Sacré. Mono Dégât 2D6 +30, AoE Dégat 2D6 +20 : Int",
+      "Bénédiction /Grâce Sagesse : Valeur Dé -2 (si >1) / Blocage et Esprit +3  sur 5 tours Mono : Esprit",
+      "Passif : +1 charge /2 tours (1t si >2 ennemis)\n-1 Charge = Silence ignoré, ou +10 dégat/soin"
+    ],
+    "stats": "7,14,20,15,18",
+    "desc": "Voyageur énigmatique et mystérieux. Il semble très souvent frivole.",
+    "drop": "",
+    "weaknesses": ["ténèbres", "contondant"]
+  },
+  "235": {
+    "visuel3D": "ori",
+    "nom": "Ori",
+    "pvmax": 400,
+    "skills": [
+      "Trinité Élementaire: 4D6 +30 (malus 3t) INT\nFeu+Glace : Blocage -3\nFeu+Foudre : Esprit -4\nFoudre+Glace : dext -4\nTrinité : Stat -2 AoE (non annulable)",
+      "Tempête du tengri: 4D6+40 (bloc-2) INT\nCoup assomant : 2D6+20 Statut Endormis 2t FOR",
+      "Invoc Loup (Kökbörü): 100 PV, Stats 16 (ESP)\nSoin: 2D6+20 -1Malus Mono, 2D6+15 AoE INT\nAura : Bloc P+2, M+1 (3t) ESP\nGriffe 2D6+25 FOR\n",
+      "Passif 1 : Arrêt du temps, joue une deuxième fois 3 fois\nPassif Tengri : PV <160, Tempête: +1D6+10 (bloc-1) / Loup: Griffe (AoE), Soin+10, Aura+1"
+    ],
+    "stats": "15,9,20,16,19",
+    "desc": "Gardienne des bourbes, elle maintien la faille ouverte pour entraîner les jeunes aventuriers.",
+    "drop": "",
+    "weaknesses": ["perçant", "tranchant"]
+  },
+  "236": {
+    "visuel3D": "m223b",
+    "nom": "Esprit cristal bleu",
+    "pvmax": 70,
+    "skills": [
+      "Coup de pince : 1D10 + 1D6 +5 FOR",
+      "Dégagement d'énergie : (1 tour incant) 2D6 +10 AoE INT",
+      "Perturbation d'esprit : - 2 réussite (3t) ESP",
+      ""
+    ],
+    "stats": "14,9,16,10,13",
+    "desc": "Un esprit qui s'est nourrit de l'énergie résiduelle d'un cristal bleu",
+    "drop": "Pourdre d'esprit. Rare: Fragment de cristal bleu",
+    "weaknesses": ["foudre", "contondant"]
+  },
+  "237": {
+    "visuel3D": "faille",
+    "nom": "Hurleur de Failles - Bavefosse",
+    "pvmax": 100,
+    "skills": [
+      "Morsure toxique: 1D10 +6 (-1 stats selon faille, 3t) FOR",
+      "Cri perturbant : -2 de réussite + 1 Malus, 3t (selon la faille) AoE ESP",
+      "Crachat baveux : 2D6 +5 (-1 réussite, 3t) DEX",
+      ""
+    ],
+    "stats": "15,12,8,8,16",
+    "desc": "Nés des failles instables et saturées de magie, les Bavefosses sont des amas vivants. Leur peau est épaisse, couverte d'écailles spongieuses, et il sécrète une bave corrosive.",
+    "drop": "Bave corrosive, dent de bavefosses, Rare : Ecaille de bavefosses",
+    "weaknesses": ["feu", "glace"]
+  },
+  "238": {
+    "visuel3D": "faille_elite",
+    "nom": "Hurleur de Failles - Sombrefosse",
+    "pvmax": 160,
+    "skills": [
+      "Hurlement perturbateur : Bloque les sorts d'un type 2t ESP",
+      "Morsure : 2D6 +18 (-1 stats selon failles, 4t) FOR",
+      "Tempête Noire : 1D6+15 AoE INT",
+      "Passif: Dégâts de ténèbres reçus /2"
+    ],
+    "stats": "15,10,15,8,16",
+    "desc": "Monstres massifs faits de ténèbres compactes, les Sombrefosses vivent dans les failles de niveau supérieures, leurs gueules luminescentes déchirant la nuit d'un éclat bleu maladif.",
+    "drop": "Poils de Sombrefosse, Rare: Dent de Sombrefosse",
+    "weaknesses": ["lumière", "nature"]
+  },
+  "239": {
+    "visuel3D": "heldentod",
+    "nom": "Heldentod 1er - Souverain des Dragons",
+    "pvmax": 500,
+    "skills": [
+      "Pouvoir du Dragon: 4D6 +50\nEmbrasé: Mono > AoE • Démoniaque: -3 bloc/esq • Caché: -1 buf'f",
+      "Terreur du Dragon: Stats -3 (-4 Mono, *2 DK) sur 3 tours\nEmbrasé: Non-annulable (res-2)\nDémoniaque: PV-10 (-15 AoE) /tour\nCaché: +2 tours",
+      "Mode Draconique: Instantanée 4t\nEmbrasé: Force/Intel+3 • Démoniaque: Charisme+3 • Caché: Esprit+3",
+      "Passif : 10 armure • Revers Ecaille: -1|2 malus, renvoi x%, (1 + 1.5/ennemi) tentatives\nPV <200: Soin 10 PV auto, Pouvoir/Terreur: -1 bloc/esq/res\n Terreur/Revers ennemi : effet/2, et 0 effet subi si PV<100"
+    ],
+    "stats": "19,11,15,17,18",
+    "desc": "Eldric Heldentod, fondateur de l'Empire, est un homme qui a reçu la bénédiction d'un Dragon lui permettant de jouer un rôle majeur dans l'histoire d'Ezur.",
+    "drop": "",
+    "weaknesses": ["perçant", "nature"]
   }
 }
