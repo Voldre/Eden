@@ -1,4 +1,14 @@
-import { Equipment, Perso, Skill, Classes, Races, StatsName, RaceClassStatsValue, MainElementPerso } from "./model.js"
+import {
+  Equipment,
+  Perso,
+  Skill,
+  Classes,
+  Races,
+  StatsName,
+  RaceClassStatsValue,
+  MainElementPerso,
+  ArmorType,
+} from "./model.js"
 import {
   skillsJSON,
   skillsAwakenJSON,
@@ -14,6 +24,9 @@ import {
   elements,
   aoeDescInfo,
   races,
+  iconsArmorTypes,
+  armorTypes,
+  malusArmorTypes,
 } from "./JDRstore.js"
 import {
   callPHP,
@@ -223,33 +236,34 @@ const displayArmorTypes = (): void => {
     }
   })
 
-  let armorTypes = []
+  let persoArmorTypes = []
 
   if (physicException) {
     const otherClass = classesArmorTypes.filter((c) => !physicBorderClasses.includes(c.Classe))[0]
-    armorTypes.push("lourd")
+    persoArmorTypes.push("lourd")
     if (!otherClass) {
       // Chevalier Chevalier
-      armorTypes.push("leger")
+      persoArmorTypes.push("leger")
     } else if (otherClass.armure !== "lourd") {
-      armorTypes.push("leger")
-      armorTypes.push(otherClass.armure)
+      persoArmorTypes.push("leger")
+      persoArmorTypes.push(otherClass.armure)
     }
   } else if (magicException) {
     const otherClass = classesArmorTypes.filter((c) => !magicBorderClasses.includes(c.Classe))[0]
-    armorTypes.push("magique")
+    persoArmorTypes.push("magique")
     if (!otherClass) {
       // Sage Luminary - or one twice
-      armorTypes.push("leger")
+      persoArmorTypes.push("leger")
     } else if (otherClass.armure !== "magique") {
-      armorTypes.push("leger")
-      armorTypes.push(otherClass.armure)
+      persoArmorTypes.push("leger")
+      persoArmorTypes.push(otherClass.armure)
     }
-  } else
-    armorTypes = classesArmorTypes.map((classStat) => classStat.armure).flat()
-    // Display icons
-  ;["magique", "leger", "lourd"].forEach((type) => {
-    document.querySelector(`#${type}`)!.className = armorTypes.includes(type) ? "skillRangeIcon" : "hide skillRangeIcon"
+  } else persoArmorTypes = classesArmorTypes.map((classStat) => classStat.armure).flat()
+  // Display icons
+  armorTypes.forEach((type) => {
+    document.querySelector(`#${type}`)!.className = persoArmorTypes.includes(type)
+      ? "skillRangeIcon"
+      : "hide skillRangeIcon"
   })
 }
 
@@ -854,6 +868,28 @@ function insertEqpt(eqptElement: EquipmentE, selectedEqpt: Equipment | undefined
         ? `\nCompétences : ${mountSkills.map((skill) => skill.nom).join(", ")}`
         : ""
     }
+
+    // Armor
+    if (selectedEqpt.type === "armure" && eqptElement.classList.contains("armure")) {
+      const armorTypesE =
+        selectedEqpt.type === "armure"
+          ? selectedEqpt.armorTypes.map((type) =>
+              createElement("img", undefined, {
+                className: "skillRangeIcon",
+                src: `images/skillIcon/${iconsArmorTypes[armorTypes.indexOf(type)]}.png`,
+                title: capitalize(type),
+              })
+            )
+          : []
+
+      let armorWrapperE = eqptElement.querySelector(".armor-wrapper")
+      if (armorWrapperE) {
+        armorWrapperE.append(...armorTypesE)
+      } else {
+        armorWrapperE = createElement("div", armorTypesE, { className: "armor-wrapper" })
+        eqptElement.append(armorWrapperE)
+      }
+    }
   }
 }
 
@@ -1248,7 +1284,20 @@ function createEquipmentSynthesis(): void {
   ]
   // console.log(accesLimitsByCategory);
   const eqptOverLimits = accesLimitsByCategory.filter((category) => category.value && category.value > category.limit)
-  errorEqptE.innerText = eqptOverLimits.length ? "/!\\ Des montants dépassent les limites" : ""
+
+  const authorizedArmorTypes = armorTypes
+    .map((t) => document.querySelector(`#${t}`)!)
+    .filter((e) => !e?.classList.contains("hide"))
+    .map((e) => e.id) as ArmorType[]
+  const armor = persoEqpts?.[3]
+  const isWrongArmorType = armor
+    ? !authorizedArmorTypes.some((a) => (armor?.type === "armure" ? armor.armorTypes.includes(a) : false))
+    : true
+
+  const textErrors = []
+  if (eqptOverLimits.length) textErrors.push("/!\\ Des montants dépassent les limites")
+  if (isWrongArmorType) textErrors.push("/!\\ Armure non autorisée")
+  errorEqptE.innerText = textErrors.join(" • ")
 
   if (eqptOverLimits) {
     synthesisCategoryEs.forEach((synthesisCategoryE) => {
@@ -1267,7 +1316,9 @@ function createEquipmentSynthesis(): void {
       eqptSynthesisE.append(synthesisCategoryE[1])
     })
 
-    errorEqptE.addEventListener("click", () => showEqptErrors(eqptOverLimits))
+    errorEqptE.addEventListener("click", () =>
+      showEqptErrors(eqptOverLimits, isWrongArmorType ? authorizedArmorTypes : [])
+    )
   }
 }
 
@@ -1276,17 +1327,39 @@ function showEqptErrors(
     label: string
     limit: number
     value: number | undefined
-  }[]
+  }[],
+  armorTypesNotRespected: ArmorType[]
 ): void {
-  dialog.innerText = "La somme des montants des accessoires sont trop élevés sur les catégories suivantes :"
-  const listE = createElement(
-    "ul",
-    eqptOverLimits.map((eqptLimit) =>
-      createElement("li", `${eqptLimit.label} : ${eqptLimit.value} > ${eqptLimit.limit}`)
-    )
-  )
+  dialog.innerHTML = ""
 
-  dialog.append(listE)
+  if (eqptOverLimits.length) {
+    dialog.append(
+      createElement("div", "La somme des montants des accessoires sont trop élevés sur les catégories suivantes :")
+    )
+
+    const listE = createElement(
+      "ul",
+      eqptOverLimits.map((eqptLimit) =>
+        createElement("li", `${eqptLimit.label} : ${eqptLimit.value} > ${eqptLimit.limit}`)
+      )
+    )
+    dialog.append(listE)
+  }
+
+  if (armorTypesNotRespected.length) {
+    dialog.append(createElement("div", "L'armure choisie est d'un type non autorisé, les malus suivants s'appliquent:"))
+
+    const listE = createElement(
+      "ul",
+      armorTypesNotRespected.map((armorType) =>
+        createElement(
+          "li",
+          `Stuff non-${armorType}: ${malusArmorTypes[armorTypes.indexOf(armorType)]} -${armorTypesNotRespected.length > 1 ? 2 : 3}`
+        )
+      )
+    )
+    dialog.append(listE)
+  }
 
   // Bouton de fermeture
   dialog.append(closeButton(dialog))

@@ -4,70 +4,86 @@
     "desc": "Simple tenue en soie",
     "effet": "",
     "montant": "Dégât -1",
-    "icone": "A20002"
+    "icone": "A20002",
+    "type": "armure",
+    "armorTypes": ["magique"]
   },
   "2": {
     "nom": "Veste en cuir",
     "desc": "Simple veste en cuir",
     "effet": "",
     "montant": "Dégât -2",
-    "icone": "A20061"
+    "icone": "A20061",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "3": {
     "nom": "Plastron en mailles",
     "desc": "Simple plastron en mailles",
     "effet": "",
     "montant": "Dégât -3",
-    "icone": "A20101"
+    "icone": "A20101",
+    "type": "armure",
+    "armorTypes": ["lourd"]
   },
   "4": {
     "nom": "Robe étoilée",
-    "desc": "Robe d'un magicien de niveau intermédiaire",
+    "desc": "Robe d'un magicien débutant",
     "effet": "Intelligence +1",
     "montant": "Dégât -2",
-    "icone": "A20032"
+    "icone": "A20032",
+    "type": "armure",
+    "armorTypes": ["magique"]
   },
   "5": {
     "nom": "Veste d'aventurier",
     "desc": "Veste conçue pour les aventuriers voulant se déplacer avec légerté",
     "effet": "Dextérité +1",
     "montant": "Dégât -3",
-    "icone": "A20037"
+    "icone": "A20037",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "6": {
     "nom": "Plastron de garde",
     "desc": "Plastron renforcé pour des soldats de ville",
     "effet": "Force +1",
     "montant": "Dégât -4",
-    "icone": "A20105"
+    "icone": "A20105",
+    "type": "armure",
+    "armorTypes": ["lourd"]
   },
   "7": {
     "nom": "Epée en Acier",
     "desc": "Simple épée en acier",
     "effet": "",
     "montant": "Dégât +2",
-    "icone": "W10101"
+    "icone": "W10101",
+    "type": "arme-1m"
   },
   "8": {
     "nom": "Epée Colossale en Acier",
     "desc": "Simple épée colossale",
     "effet": "",
     "montant": "Dégât +4",
-    "icone": "W10301"
+    "icone": "W10301",
+    "type": "arme-2m"
   },
   "9": {
     "nom": "Lance en Acier",
     "desc": "Simple lance en acier",
     "effet": "",
-    "montant": "Dégât +3",
-    "icone": "W10801"
+    "montant": "Dégât +4",
+    "icone": "W10801",
+    "type": "arme-2m"
   },
   "10": {
     "nom": "Dague en Acier",
     "desc": "Simple dague en acier",
     "effet": "",
     "montant": "Dégât +2",
-    "icone": "W10901"
+    "icone": "W10901",
+    "type": "arme-1m"
   },
   "11": {
     "nom": "Rapière de chevalier",
@@ -75,64 +91,80 @@
     "effet": "",
     "montant": "Dégât +4 (+1 si Chevalier)",
     "condition": { "type": "classe", "value": ["Chevalier"], "bonus": "Dégât +1" },
-    "icone": "W11402"
+    "icone": "W11402",
+    "type": "arme-1m"
   },
   "12": {
     "nom": "Epée de côté jumelle",
     "desc": "Cette épée extrêmement ancienne est l'ancêtre de la rapière",
     "effet": "",
     "montant": "Dégât +3",
-    "icone": "W11503"
+    "icone": "W11503",
+    "type": "arme-1m"
   },
   "13": {
     "nom": "Epée sacrée des Plaines",
     "desc": "Epée légendaire des Plaines Dorées",
     "effet": "Dégât lumière +3",
     "montant": "Dégât +6",
-    "icone": "W14301"
+    "icone": "W14301",
+    "type": "arme-1m"
   },
   "14": {
     "nom": "Hache en Acier",
     "desc": "Simple hache en acier",
     "effet": "",
     "montant": "Dégât +4",
-    "icone": "W20201"
+    "icone": "W20201",
+    "type": "arme-2m"
   },
   "15": {
     "nom": "Katana en Acier",
     "desc": "Simple Katana en acier",
     "effet": "",
     "montant": "Dégât +4",
-    "icone": "W21301"
+    "icone": "W21301",
+    "type": "arme-2m"
   },
   "16": {
     "nom": "Masse en Acier",
     "desc": "Simple masse en acier",
     "effet": "",
     "montant": "Dégât +2",
-    "icone": "W30101"
+    "icone": "W30101",
+    "type": "arme-1m"
   },
   "17": {
     "nom": "Griffe en Acier",
     "desc": "Simple griffe en acier",
     "effet": "",
     "montant": "Dégât +2",
-    "icone": "W31301"
+    "icone": "W31301",
+    "type": "arme-1m"
   },
   "18": {
     "nom": "Marteau en Acier",
     "desc": "Simple marteau en acier",
     "effet": "",
     "montant": "Dégât +4",
-    "icone": "W40301"
+    "icone": "W40301",
+    "type": "arme-2m"
   },
-  "19": { "nom": "Arc en bois", "desc": "Simple arc en bois", "effet": "", "montant": "Dégât +3", "icone": "W50101" },
+  "19": {
+    "nom": "Arc en bois",
+    "desc": "Simple arc en bois",
+    "effet": "",
+    "montant": "Dégât +4",
+    "icone": "W50101",
+    "type": "arme-2m"
+  },
   "20": {
     "nom": "Sakura",
     "desc": "Un bâton mystérieux inconnu. On raconte que tout ceux qui le touche finissent par disparaître... !",
     "effet": "(???)",
     "montant": "Dégât +6",
-    "icone": "W27301"
+    "icone": "W27301",
+    "type": "arme-2m"
   },
   "21": {
     "nom": "Pendentif occulte",
@@ -140,7 +172,8 @@
     "effet": "Buff",
     "montant": "Dégâts de ténèbres +3",
     "icone": "A00047",
-    "access": "D1"
+    "access": "D1",
+    "type": "access"
   },
   "22": {
     "nom": "Ceinture Tuskar",
@@ -148,7 +181,8 @@
     "effet": "",
     "montant": "PV +10",
     "icone": "A30018",
-    "access": "A1"
+    "access": "A1",
+    "type": "access"
   },
   "23": {
     "nom": "Noyau de Schiste",
@@ -156,7 +190,8 @@
     "effet": "Soin",
     "montant": "Soin Critique (Dé 1,2) : +50%, si AoE : 25%. Dé 3 : la moitié",
     "icone": "i00667",
-    "access": "A3"
+    "access": "A3",
+    "type": "access"
   },
   "24": {
     "nom": "Anneau du remède",
@@ -164,7 +199,8 @@
     "effet": "Buff",
     "montant": "Soin +4, (AoE/2)",
     "icone": "A00005",
-    "access": "D2"
+    "access": "D2",
+    "type": "access"
   },
   "25": {
     "nom": "Anneau de résistance",
@@ -172,77 +208,88 @@
     "effet": "Buff",
     "montant": "Dégât reçu -2, Blocage physique +1",
     "icone": "A00017",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "26": {
     "nom": "Marteau de guerre",
     "desc": "Marteau renforcé par différents alliages",
     "effet": "",
     "montant": "Dégât +6",
-    "icone": "W30302"
+    "icone": "W30302",
+    "type": "arme-2m"
   },
   "27": {
     "nom": "Fusil de guerre",
     "desc": "Fusil classique de la curie métérole",
     "effet": "",
     "montant": "Dégât +5",
-    "icone": "W50801"
+    "icone": "W50801",
+    "type": "arme-2m"
   },
   "28": {
     "nom": "Bâton magique",
     "desc": "Un simple bâton magique",
     "effet": "",
     "montant": "Dégât +4",
-    "icone": "W60101"
+    "icone": "W60101",
+    "type": "arme-2m"
   },
   "29": {
     "nom": "Bâton maléfique",
     "desc": "Bâton orné d'un crâne enchanté",
     "effet": "",
     "montant": "Dégât +6",
-    "icone": "W60201"
+    "icone": "W60201",
+    "type": "arme-2m"
   },
   "30": {
     "nom": "Bâton d'Asbi",
     "desc": "Bâton enchanté à la pierre Asbi",
     "effet": "",
     "montant": "Dégât +8, réussite des sorts +1",
-    "icone": "W60503"
+    "icone": "W60503",
+    "type": "arme-2m"
   },
   "31": {
     "nom": "Guitare en bois",
     "desc": "Simple guitare en bois",
     "effet": "",
     "montant": "Dégât +5",
-    "icone": "W60801"
+    "icone": "W60801",
+    "type": "arme-2m"
   },
   "32": {
     "nom": "Violon Magique",
     "desc": "Guitare créé avec l'amour du vent",
     "effet": "Dextérité +2",
     "montant": "Dégât +6",
-    "icone": "W60904"
+    "icone": "W60904",
+    "type": "arme-2m"
   },
   "33": {
     "nom": "Grimoire maléfique",
     "desc": "Grimoire d'un château du Royaume Dévasté",
     "effet": "",
     "montant": "Dégât +4",
-    "icone": "W61502"
+    "icone": "W61502",
+    "type": "arme-2m"
   },
   "34": {
     "nom": "Griffe embrasée",
     "desc": "Griffe enchanté par une magie de feu",
     "effet": "",
     "montant": "Dégât +3, dégât de feu +2",
-    "icone": "W31505"
+    "icone": "W31505",
+    "type": "arme-1m"
   },
   "35": {
     "nom": "Chapeau de champignoïde",
     "desc": "Chapeau ayant appartenu à un champignoïde",
     "effet": "",
     "montant": "Soin +1 et Dégât magique +1",
-    "icone": "A10025"
+    "icone": "A10025",
+    "type": "access"
   },
   "36": {
     "nom": "Noyau abyssal",
@@ -250,7 +297,8 @@
     "effet": "",
     "montant": "Esprit +2",
     "icone": "I00223",
-    "access": "A1"
+    "access": "A1",
+    "type": "access"
   },
   "37": {
     "nom": "Pierre algue",
@@ -258,7 +306,8 @@
     "effet": "",
     "montant": "Dégât de nature +3",
     "icone": "I00210",
-    "access": "D2"
+    "access": "D2",
+    "type": "access"
   },
   "38": {
     "nom": "Crochet porte bonheur",
@@ -266,21 +315,24 @@
     "effet": "",
     "montant": "Dégât physique +1",
     "icone": "I00286",
-    "access": "D1"
+    "access": "D1",
+    "type": "access"
   },
   "39": {
     "nom": "Epée odorante",
     "desc": "Une épée émettant une odeur qui déconcentre les insectes",
     "effet": "",
     "montant": "Dégât +3, pour les insectes : Dexté-2 Esprit -4",
-    "icone": "W11606"
+    "icone": "W11606",
+    "type": "arme-1m"
   },
   "40": {
     "nom": "Epée d'Asbi",
     "desc": "Epée forgé avec un alliage d'Acier et de Cristal d'Asbi",
     "effet": "",
     "montant": "Dégât +3, réussite des sorts +1",
-    "icone": "W10105"
+    "icone": "W10105",
+    "type": "arme-1m"
   },
   "41": {
     "nom": "Cache oeil de Pirate",
@@ -289,7 +341,8 @@
     "montant": "Dextérité +2 (Charisme+1 si Corsaire)",
     "condition": { "type": "classe", "value": ["Corsaire"], "bonus": "Charisme +1" },
     "icone": "k10200",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "42": {
     "nom": "Chapeau de capitaine",
@@ -297,21 +350,24 @@
     "effet": "",
     "montant": "Charisme +2",
     "icone": "k10328",
-    "access": "A1"
+    "access": "A1",
+    "type": "access"
   },
   "43": {
     "nom": "Dague dentée",
     "desc": "Une dague très aguisée et formée de dents",
     "effet": "",
     "montant": "Dégât +4",
-    "icone": "W13201"
+    "icone": "W13201",
+    "type": "arme-1m"
   },
   "44": {
     "nom": "Epée de Pirate",
     "desc": "Une épée très robuste et fortifiante",
     "effet": "Force +1",
     "montant": "Dégât +3",
-    "icone": "W10205"
+    "icone": "W10205",
+    "type": "arme-1m"
   },
   "45": {
     "nom": "Cape de sorcier",
@@ -319,7 +375,8 @@
     "effet": "Intelligence +1",
     "montant": "Durée des sorts +1 tour",
     "icone": "A60011",
-    "access": "A2"
+    "access": "A2",
+    "type": "access"
   },
   "46": {
     "nom": "Crystal de Baltaroï",
@@ -327,7 +384,8 @@
     "effet": "",
     "montant": "Dégât de feu +3",
     "icone": "I00400",
-    "access": "D2"
+    "access": "D2",
+    "type": "access"
   },
   "47": {
     "nom": "Calice de la Curie Métérole",
@@ -335,7 +393,8 @@
     "effet": "",
     "montant": "Dégât de lumière +3",
     "icone": "i00552",
-    "access": "D2"
+    "access": "D2",
+    "type": "access"
   },
   "48": {
     "nom": "Puce électronique Silus",
@@ -344,7 +403,8 @@
     "montant": "Dégât de foudre +3 (+1 si Ingénieur)",
     "condition": { "type": "classe", "value": ["Ingénieur"], "bonus": "Dégât de foudre +1" },
     "icone": "i00689",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "49": {
     "nom": "Sac à dos extensible",
@@ -352,7 +412,8 @@
     "effet": "",
     "montant": "Retire tous les malus liés à l'inventaire",
     "icone": "i00791",
-    "access": "A2"
+    "access": "A2",
+    "type": "access"
   },
   "50": {
     "nom": "Pièce dorée Alpaga",
@@ -360,7 +421,8 @@
     "effet": "",
     "montant": "Double l'or trouvé par le porteur (ennemi, coffre)",
     "icone": "i00807",
-    "access": "A3"
+    "access": "A3",
+    "type": "access"
   },
   "51": {
     "nom": "Pièce argentée Alpaga",
@@ -368,7 +430,8 @@
     "effet": "",
     "montant": "Augmente de 50% l'or trouvé par le porteur (ennemi, coffre)",
     "icone": "i00808",
-    "access": "A2"
+    "access": "A2",
+    "type": "access"
   },
   "52": {
     "nom": "Coeur crystalisé",
@@ -376,7 +439,8 @@
     "effet": "",
     "montant": "PV +25",
     "icone": "i00956",
-    "access": "A1"
+    "access": "A1",
+    "type": "access"
   },
   "53": {
     "nom": "Pierre de sécurité",
@@ -384,7 +448,8 @@
     "effet": "",
     "montant": "Dégât reçu -2",
     "icone": "i01017",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "54": {
     "nom": "Boucle d'oreilles du Maëlstrom",
@@ -392,7 +457,8 @@
     "effet": "",
     "montant": "Dégât de glace +3",
     "icone": "k10159",
-    "access": "D2"
+    "access": "D2",
+    "type": "access"
   },
   "55": {
     "nom": "Anneau de résistance magique",
@@ -400,7 +466,8 @@
     "effet": "",
     "montant": "Dégât reçu -2, Blocage magique +1",
     "icone": "A00019",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "56": {
     "nom": "Pendentif du Croc Brumeux",
@@ -408,35 +475,43 @@
     "effet": "",
     "montant": "Force +2",
     "icone": "A00045",
-    "access": "A1"
+    "access": "A1",
+    "type": "access"
   },
   "57": {
     "nom": "Grimoire infernal",
     "desc": "Grimoire aux origines inconnues, parlant d'une cité de flamme",
     "effet": "Dégât de feu +2",
     "montant": "Dégât +6",
-    "icone": "W61505"
+    "icone": "W61505",
+    "type": "arme-2m"
   },
   "58": {
     "nom": "Robe duveteuse",
     "desc": "Une robe cousue avec les cotons les plus doux qui existent",
     "effet": "",
     "montant": "Dégât -3",
-    "icone": "A20015"
+    "icone": "A20015",
+    "type": "armure",
+    "armorTypes": ["magique"]
   },
   "59": {
     "nom": "Veste rafistolé",
     "desc": "Une veste cousue avec plusieurs tissus robustes",
     "effet": "",
     "montant": "Dégât -4",
-    "icone": "A20040"
+    "icone": "A20040",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "60": {
     "nom": "Plastron d'Ogre",
     "desc": "Un plastron robuste fabriqué par des Ogres",
     "effet": "PV +5",
     "montant": "Dégât -5",
-    "icone": "A20107"
+    "icone": "A20107",
+    "type": "armure",
+    "armorTypes": ["lourd"]
   },
   "61": {
     "nom": "Tunique de Delphes",
@@ -444,21 +519,27 @@
     "effet": "PV Soin reçu +3",
     "montant": "Dégât -3 (-1 si Shaman)",
     "condition": { "type": "classe", "value": ["Shaman"], "bonus": "Dégât reçu -1" },
-    "icone": "A20028"
+    "icone": "A20028",
+    "type": "armure",
+    "armorTypes": ["magique"]
   },
   "62": {
     "nom": "Gilet des Dunes",
     "desc": "Gilet tissé dans la Terre des Dunes Eternelles",
     "effet": "Esquive +2",
     "montant": "Dégât -4",
-    "icone": "A20049"
+    "icone": "A20049",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "63": {
     "nom": "Plastron de Tuskar",
     "desc": "Un plastron forgé par des Tuskars avec des matériaux de qualité standard",
     "effet": "Force +1",
     "montant": "Dégât -5",
-    "icone": "A20089"
+    "icone": "A20089",
+    "type": "armure",
+    "armorTypes": ["lourd"]
   },
   "64": {
     "nom": "Hache Défensive",
@@ -466,63 +547,72 @@
     "effet": "Dégât reçu -2",
     "montant": "Dégât +5",
     "icone": "W20501",
-    "access": "A2"
+    "access": "A2",
+    "type": "arme-2m"
   },
   "65": {
     "nom": "Croc de Smilodon",
     "desc": "Un croc intact d'un tigre à dent de sabre",
     "effet": "",
     "montant": "Dégât perçant +2",
-    "icone": "I00262"
+    "icone": "I00262",
+    "type": "access"
   },
   "66": {
     "nom": "Epée d'Obsidienne",
     "desc": "Une épée fait d'un alliage d'acier volcanique et d'acier d'obsidienne, fait par les meilleurs forgerons Tuskar",
     "effet": "Dégât de feu +1",
     "montant": "Dégât +4",
-    "icone": "W10106"
+    "icone": "W10106",
+    "type": "arme-1m"
   },
   "67": {
     "nom": "Hache d'Obsidienne",
     "desc": "Une hache faite d'un alliage d'acier volcanique et d'acier d'obsidienne, fait par les meilleurs forgerons Tuskar",
     "effet": "Dégât de feu +2",
     "montant": "Dégât +7",
-    "icone": "W20406"
+    "icone": "W20406",
+    "type": "arme-2m"
   },
   "68": {
     "nom": "Epée Colossale d'Obsidienne",
     "desc": "Une épée colossale faite d'un alliage d'acier volcanique et d'acier d'obsidienne, fait par les meilleurs forgerons Tuskar",
     "effet": "Dégât de feu +2",
     "montant": "Dégât +7",
-    "icone": "W27402"
+    "icone": "W27402",
+    "type": "arme-1m"
   },
   "69": {
     "nom": "Arc d'Acier Volcanique",
     "desc": "Un arc léger composé d'acier volcanique, fait par les meilleurs forgerons Tuskar",
     "effet": "Dégât de feu +2",
     "montant": "Dégât +6",
-    "icone": "W50103"
+    "icone": "W50103",
+    "type": "arme-2m"
   },
   "70": {
     "nom": "Rapière de givre",
     "desc": "Une rapière faite en platine de glace, enchante vos coups physiques en dégât de glace",
     "effet": "Element : Glace",
     "montant": "Dégât +5 (glace)",
-    "icone": "W13408"
+    "icone": "W13408",
+    "type": "arme-1m"
   },
   "71": {
     "nom": "Epée Verdoyante",
     "desc": "Une épée conçue avec des jades, la lame semble vivante. Dégât physique changé en dégât nature",
     "effet": "Element : Nature",
     "montant": "Dégât +5 (nature)",
-    "icone": "W21204"
+    "icone": "W21204",
+    "type": "arme-1m"
   },
   "72": {
     "nom": "Epée Rougeoyante",
     "desc": "Une épée conçue avec des diamants volcaniques, la lame est brûlante. Dégât physique changé en dégât de feu",
     "effet": "Element : Feu",
     "montant": "Dégât +5 (feu)",
-    "icone": "W21201"
+    "icone": "W21201",
+    "type": "arme-1m"
   },
   "73": {
     "nom": "Poupée de Tortue",
@@ -530,14 +620,16 @@
     "effet": "",
     "montant": "Charisme face aux Torturrans/Anurans : +3",
     "icone": "k30010",
-    "access": "A1"
+    "access": "A1",
+    "type": "access"
   },
   "74": {
     "nom": "Lance Incandescente",
     "desc": "Une lance d'une finition presque parfaite, enchanté par les flammes",
     "effet": "Dégât de feu +2",
     "montant": "Dégât +10",
-    "icone": "k30094"
+    "icone": "k30094",
+    "type": "arme-2m"
   },
   "75": {
     "nom": "Baga portatif",
@@ -545,7 +637,8 @@
     "effet": "Capacité",
     "montant": "1 fois par combat (Instantanée) : Spore dopant : dégât +1D4+4 pendant 4 tours",
     "icone": "k60038",
-    "access": "D4"
+    "access": "D4",
+    "type": "access"
   },
   "76": {
     "nom": "Gourde miraculeuse",
@@ -553,7 +646,8 @@
     "effet": "Capacité",
     "montant": "2 fois par combat (Instantanée) : soin 2D6+10 (fixe)",
     "icone": "k60034",
-    "access": "A3"
+    "access": "A3",
+    "type": "access"
   },
   "77": {
     "nom": "Sac d'Alpaga Doré",
@@ -561,7 +655,8 @@
     "effet": "Familier",
     "montant": "Renforce l'invocation Alpaga : PV+10, toutes stat +1, dégât+2",
     "icone": "k60100",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "78": {
     "nom": "Viseur High Tech",
@@ -569,63 +664,80 @@
     "effet": "",
     "montant": "Dégât critique (Dé 1,2) +50%. Dé 3 : +25%",
     "icone": "k10180",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "79": {
     "nom": "Robe du désert",
     "desc": "Une robe conçue pour mieux voyager dans les déserts",
     "effet": "",
     "montant": "Dégât -3 (0 malus dans les déserts)",
-    "icone": "A20027"
+    "icone": "A20027",
+    "type": "armure",
+    "armorTypes": ["magique"]
   },
   "80": {
     "nom": "Veste naturelle",
     "desc": "Veste d'aventurier renforcée par des composants naturels",
     "effet": "Dextérité +1",
     "montant": "Dégât -4",
-    "icone": "A20038"
+    "icone": "A20038",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "81": {
     "nom": "Plastron des plaines",
     "desc": "Plastron forgé aux plaines dorées, le soleil énergise.",
     "effet": "Dégât de lumière +1",
     "montant": "Dégât -5",
-    "icone": "A20088"
+    "icone": "A20088",
+    "type": "armure",
+    "armorTypes": ["lourd"]
   },
   "82": {
     "nom": "Robe légère",
     "desc": "Une robe confectionnée avec le plus léger des cotons",
     "effet": "Esquive +3",
     "montant": "Dégât -3",
-    "icone": "A20001"
+    "icone": "A20001",
+    "type": "armure",
+    "armorTypes": ["magique"]
   },
   "83": {
     "nom": "Veste des Hautes-terres",
     "desc": "Une veste conçue par l'arsenal fédéral des Hautes-terres",
     "effet": "PV +5",
     "montant": "Dégât -5",
-    "icone": "A20065"
+    "icone": "A20065",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "84": {
     "nom": "Plastron d'Obsidienne",
     "desc": "Plastron forgé d'un alliage d'acier volcanique et d'acier d'obsidienne, fait par les meilleurs forgerons Tuskar",
     "effet": "Force +1",
     "montant": "Dégât -6",
-    "icone": "A20096"
+    "icone": "A20096",
+    "type": "armure",
+    "armorTypes": ["lourd"]
   },
   "85": {
     "nom": "Robe Alpaga Verte",
     "desc": "Une magnifique robe cousue avec la plus douce des laines, celle des Alpagas",
     "effet": "Dextérité +2",
     "montant": "Dégât -4",
-    "icone": "k20638"
+    "icone": "k20638",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "86": {
     "nom": "Corset Distingué",
     "desc": "Un corset digne de la haute noblesse",
     "effet": "Charisme +2",
     "montant": "Dégât -5",
-    "icone": "k20262"
+    "icone": "k20262",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "87": {
     "nom": "Plastron de Templier",
@@ -633,7 +745,9 @@
     "effet": "Intelligence +1",
     "montant": "Dégât -6 (PV+5 pour les Templiers)",
     "condition": { "type": "classe", "value": ["Templier"], "bonus": "PV +5" },
-    "icone": "k20475"
+    "icone": "k20475",
+    "type": "armure",
+    "armorTypes": ["lourd"]
   },
   "88": {
     "nom": "Tunique de Mage Noir",
@@ -642,7 +756,9 @@
     "montant": "Dégât -4, dégât ténèbres +2 (+1 si Démoniste)",
     "condition": { "type": "classe", "value": ["Démoniste"], "bonus": "Dégât ténèbres +1" },
     "icone": "k20806",
-    "access": "D2"
+    "access": "D2",
+    "type": "armure",
+    "armorTypes": ["magique"]
   },
   "89": {
     "nom": "Tenue de Ninja",
@@ -651,42 +767,50 @@
     "montant": "Dégât -5, dégât tranchant +2 (+1 si Voleur)",
     "condition": { "type": "classe", "value": ["Voleur"], "bonus": "Dégât tranchant +1" },
     "icone": "k20213",
-    "access": "D2"
+    "access": "D2",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "90": {
     "nom": "Plastron Ecailleux",
     "desc": "Un plastron composé de l'écailles de plusieurs créatures. Il est étonnament léger et résistant.",
     "effet": "Dextérité +1",
     "montant": "Dégât -6",
-    "icone": "A20102"
+    "icone": "A20102",
+    "type": "armure",
+    "armorTypes": ["lourd"]
   },
   "91": {
     "nom": "Grimoire Démoniaque",
     "desc": "Amélioration du mystérieux grimoire maléfique du Royaume Dévasté...",
     "effet": "Dégât ténèbres +2",
     "montant": "Dégât +7",
-    "icone": "W61508"
+    "icone": "W61508",
+    "type": "arme-2m"
   },
   "92": {
     "nom": "Grimoire Incandescant",
     "desc": "Forme éveillée du grimoire infernal, une chaleur intense s'en dégage...",
     "effet": "Dégât de feu +3",
     "montant": "Dégât +8",
-    "icone": "W61507"
+    "icone": "W61507",
+    "type": "arme-2m"
   },
   "93": {
     "nom": "Grimoire Corrosif",
     "desc": "Grimoire produisant des miasmes dangereux, retrouvé dans le Tombeau de Lucius...",
     "effet": "Dégât sur faiblesse +2",
     "montant": "Dégât +7",
-    "icone": "W61603"
+    "icone": "W61603",
+    "type": "arme-2m"
   },
   "94": {
     "nom": "Grimoire Corrompu",
     "desc": "Forme éveillée du grimoire corrosif, les miasmes qui en sortent sont une vraie toxine",
     "effet": "Dégât sur faiblesse +3",
     "montant": "Dégât +9",
-    "icone": "W61601"
+    "icone": "W61601",
+    "type": "arme-2m"
   },
   "95": {
     "nom": "Codex du Démoniste",
@@ -694,14 +818,16 @@
     "effet": "Mode, ??? (inconnu)",
     "montant": "Dégât +10 (Destruction : Dégât+2, Corruption : malus +2, ...) @TODO : Faire en sorte que ça soit ok avec le fait que changer de mode = instantanée, ou alors  changer d'idée",
     "condition": { "type": "classe", "value": ["Démoniste"], "bonus": "Dégât +1" },
-    "icone": "W63001b"
+    "icone": "W63001b",
+    "type": "arme-2m"
   },
   "96": {
     "nom": "Epée d'Asbi raffinée",
     "desc": "Epée composée d'un alliage d'Acier et de Cristaux d'Asbis de très haute qualitée",
     "effet": "",
     "montant": "Dégât +5, réussite des sorts +1",
-    "icone": "W10107"
+    "icone": "W10107",
+    "type": "arme-1m"
   },
   "97": {
     "nom": "Plume brillante",
@@ -709,14 +835,16 @@
     "effet": "",
     "montant": "Esquive +2, PV +5",
     "icone": "I00251",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "98": {
     "nom": "Griffe du Désert",
     "desc": "Une griffe conçu par des artisans du désert",
     "effet": "",
     "montant": "Dégât +4 (0 malus dans les déserts)",
-    "icone": "W31303"
+    "icone": "W31303",
+    "type": "arme-1m"
   },
   "99": {
     "nom": "Capuche du Désert",
@@ -724,7 +852,8 @@
     "effet": "",
     "montant": "Dégât -1 (0 malus dans les déserts)",
     "icone": "A10061",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "100": {
     "nom": "Tablette Antique",
@@ -732,7 +861,8 @@
     "effet": "",
     "montant": "Dégât critique (Dé 1,2 et 3) +25% (33% si Illusionniste)",
     "icone": "I00343",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "101": {
     "nom": "Réacteur Zumi",
@@ -740,7 +870,8 @@
     "effet": "Capacité",
     "montant": "2 fois par combat : Nouvelle esquive",
     "icone": "k60077",
-    "access": "A4"
+    "access": "A4",
+    "type": "access"
   },
   "102": {
     "nom": "Plaque Réfléchissante",
@@ -748,28 +879,32 @@
     "effet": "Renvoi",
     "montant": "Blocage magique critique : renvoi le coup",
     "icone": "I00238",
-    "access": "A3"
+    "access": "A3",
+    "type": "access"
   },
   "103": {
     "nom": "Marteau de Delphes",
     "desc": "Un marteau fabriqué avec un bois sacré",
     "effet": "Dégât de nature +2",
     "montant": "Dégât +8",
-    "icone": "W40106b"
+    "icone": "W40106b",
+    "type": "arme-2m"
   },
   "104": {
     "nom": "Arc de Delphes",
     "desc": "Un arc fabriqué avec un bois sacré",
     "effet": "Dégât de nature +2",
     "montant": "Dégât +8",
-    "icone": "W50203"
+    "icone": "W50203",
+    "type": "arme-2m"
   },
   "105": {
     "nom": "Bâton de Delphes",
     "desc": "Un bâton fabriqué avec un bois sacré",
     "effet": "Dégât de nature +2",
     "montant": "Dégât +8",
-    "icone": "W60306"
+    "icone": "W60306",
+    "type": "arme-2m"
   },
   "106": {
     "nom": "Glyphe des Ursuns",
@@ -777,7 +912,8 @@
     "effet": "",
     "montant": "Dégât tranchant +2",
     "icone": "i01611",
-    "access": "D2"
+    "access": "D2",
+    "type": "access"
   },
   "107": {
     "nom": "Glyphe des Ursuns (2)",
@@ -785,7 +921,8 @@
     "effet": "",
     "montant": "Dégât contondant +2",
     "icone": "i01640",
-    "access": "D2"
+    "access": "D2",
+    "type": "access"
   },
   "108": {
     "nom": "Anneau curatif",
@@ -793,7 +930,8 @@
     "effet": "",
     "montant": "Soin +6, (AoE/2)",
     "icone": "A000052",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "109": {
     "nom": "Crochet enchanté",
@@ -801,273 +939,312 @@
     "effet": "",
     "montant": "Soin +2 et Dégât magique +2, (AoE/2)",
     "icone": "I002862",
-    "access": "D2"
+    "access": "D2",
+    "type": "access"
   },
   "110": {
     "nom": "Masse cloutée",
     "desc": "Une masse recouverte de pique",
     "effet": "",
     "montant": "Dégât +4",
-    "icone": "W30901"
+    "icone": "W30901",
+    "type": "arme-1m"
   },
   "111": {
     "nom": "Masse de l'Esprit",
     "desc": "Une masse améliorant l'esprit de son porteur",
     "effet": "Esprit +1",
     "montant": "Dégât +3",
-    "icone": "W31106"
+    "icone": "W31106",
+    "type": "arme-1m"
   },
   "112": {
     "nom": "Epée Colossale Magique",
     "desc": "Une grande épée améliorant l'intelligence du porteur",
     "effet": "Intelligence +1",
     "montant": "Dégât +6",
-    "icone": "W23902"
+    "icone": "W23902",
+    "type": "arme-2m"
   },
   "113": {
     "nom": "Epée Colossale du Savoir",
     "desc": "Amélioration de l'épée colossale magique. Enrichit son porteur",
     "effet": "Intelligence +2",
     "montant": "Dégât +8",
-    "icone": "W23904"
+    "icone": "W23904",
+    "type": "arme-2m"
   },
   "114": {
     "nom": "Masse glaciale",
     "desc": "Une masse faite en platine de glace, enchante vos coups physiques en dégât de glace",
     "effet": "Element : Glace",
     "montant": "Dégât +5 (glace)",
-    "icone": "W30502"
+    "icone": "W30502",
+    "type": "arme-1m"
   },
   "115": {
     "nom": "Masse du remède",
     "desc": "Une masse avec une gemme de soin incrustée",
     "effet": "",
     "montant": "Dégât +4, Soin +2 (AoE/2)",
-    "icone": "W30606"
+    "icone": "W30606",
+    "type": "arme-1m"
   },
   "116": {
     "nom": "Bouclier en Acier",
     "desc": "Simple bouclier en acier",
     "effet": "",
     "montant": "Dégât -2",
-    "icone": "W70101"
+    "icone": "W70101",
+    "type": "arme-1m"
   },
   "117": {
     "nom": "Bouclier de Valence",
     "desc": "Un bouclier très résistant confectionné pour l'armée de Valence aux Hautes-Terres",
     "effet": "",
     "montant": "Dégât -4",
-    "icone": "W70202"
+    "icone": "W70202",
+    "type": "arme-1m"
   },
   "118": {
     "nom": "Bouclier miroir",
     "desc": "Un bouclier pouvant réfléchir les dégâts magiques",
     "effet": "",
     "montant": "Dégât -4. Blocage magique critique : renvoi le coup",
-    "icone": "W70501"
+    "icone": "W70501",
+    "type": "arme-1m"
   },
   "119": {
     "nom": "Bouclier d'épines",
     "desc": "Un bouclier naturel pouvant blesser l'ennemi qui tente d'attaquer au corps à corps. Fonctionne si touché ou bloqué.",
     "effet": "",
     "montant": "Dégât -3, dégât épine : 2",
-    "icone": "W70402"
+    "icone": "W70402",
+    "type": "arme-1m"
   },
   "120": {
     "nom": "Bouclier de garde",
     "desc": "Bouclier renforcé pour des soldats de ville",
     "effet": "Force +1",
     "montant": "Dégât -3",
-    "icone": "W70303"
+    "icone": "W70303",
+    "type": "arme-1m"
   },
   "121": {
     "nom": "Dague écailles noires",
     "desc": "Une dague composée de matériaux de créature rare",
     "effet": "",
     "montant": "Dégât +5, dégât critique +5",
-    "icone": "W13106"
+    "icone": "W13106",
+    "type": "arme-1m"
   },
   "122": {
     "nom": "Dague de Valence",
     "desc": "Une dague légère venant de l'arsenal fédéral de Valence",
     "effet": "Dextérité +1",
     "montant": "Dégât +4",
-    "icone": "W16801"
+    "icone": "W16801",
+    "type": "arme-1m"
   },
   "123": {
     "nom": "Faucille démoniaque ",
     "desc": "Une faucille aux origines inconnues",
     "effet": "Dégât ténèbres +2",
     "montant": "Dégât +9",
-    "icone": "W23606"
+    "icone": "W23606",
+    "type": "arme-2m"
   },
   "124": {
     "nom": "Faucille en Acier",
     "desc": "Une simple faucille en Acier",
     "effet": "",
     "montant": "Dégât +4",
-    "icone": "W55401"
+    "icone": "W55401",
+    "type": "arme-2m"
   },
   "125": {
     "nom": "Faucille Rouillée",
     "desc": "Une faucille très puissante mais rouillée pouvant souiller l'ennemi",
     "effet": "",
     "montant": "Dégât +8",
-    "icone": "W55403"
+    "icone": "W55403",
+    "type": "arme-2m"
   },
   "126": {
     "nom": "Faucille du Marais",
     "desc": "Une faucille retrouvé dans un mystérieux marais bourbeux, imprégné de vase.",
     "effet": "Dégât nature +2",
     "montant": "Dégât +8",
-    "icone": "W55407"
+    "icone": "W55407",
+    "type": "arme-2m"
   },
   "127": {
     "nom": "Faucille de l'Esprit",
     "desc": "Une faucille ayant absorbés des âmes",
     "effet": "Esprit +2",
     "montant": "Dégât +7",
-    "icone": "W55504"
+    "icone": "W55504",
+    "type": "arme-2m"
   },
   "128": {
     "nom": "Faucille Agile",
     "desc": "Une faucille rendant l'utilisateur très agile",
     "effet": "Esquive +2",
     "montant": "Dégât +6",
-    "icone": "W55406"
+    "icone": "W55406",
+    "type": "arme-2m"
   },
   "129": {
     "nom": "Marteau Canon",
     "desc": "Un marteau pouvant tirer un projectile comme un pistolet.",
     "effet": "",
     "montant": "Dégât +4",
-    "icone": "W40501"
+    "icone": "W40501",
+    "type": "arme-2m"
   },
   "130": {
     "nom": "Marteau Canon AV",
     "desc": "Un marteau canon renforcé par de l'Acier Volcanique",
     "effet": "Dégât de feu +2",
     "montant": "Dégât +5",
-    "icone": "W40504"
+    "icone": "W40504",
+    "type": "arme-2m"
   },
   "131": {
     "nom": "Marteau Canon V2 AV",
     "desc": "Un marteau canon V2 renforcé par de l'Acier Volcanique",
     "effet": "Dégât de feu +2",
     "montant": "Dégât +7",
-    "icone": "W40506"
+    "icone": "W40506",
+    "type": "arme-2m"
   },
   "132": {
     "nom": "Marteau Canon V2",
     "desc": "Un marteau canon de nouvelle génération : V2 !",
     "effet": "",
     "montant": "Dégât +6",
-    "icone": "W40502"
+    "icone": "W40502",
+    "type": "arme-2m"
   },
   "133": {
     "nom": "Marteau Bolter",
     "desc": "Un marteau équipé d'un \"Bolter\", un model de flingue",
     "effet": "",
     "montant": "Dégât +9",
-    "icone": "W41401"
+    "icone": "W41401",
+    "type": "arme-2m"
   },
   "134": {
     "nom": "Epée d'épines",
     "desc": "Une épée recouverte de différents types d'épines",
     "effet": "Dégât nature +2",
     "montant": "Dégât +4",
-    "icone": "W10403"
+    "icone": "W10403",
+    "type": "arme-1m"
   },
   "135": {
     "nom": "Arc de l'Esprit",
     "desc": "Un arc apportant de la lucidité à son porteur",
     "effet": "Esprit +2",
     "montant": "Dégât +7",
-    "icone": "W50204"
+    "icone": "W50204",
+    "type": "arme-2m"
   },
   "136": {
     "nom": "Arc Arc-en-Ciel",
     "desc": "Un Arc forgé avec un composant très précieux : le Minerai Arc-en-Ciel",
     "effet": "Blocage +2",
     "montant": "Dégât +10",
-    "icone": "W50502"
+    "icone": "W50502",
+    "type": "arme-2m"
   },
   "137": {
     "nom": "Arc du Dompteur",
     "desc": "Amélioration de l'Arc du Dresseur, il a été pris en main par un grand dompteur.",
     "effet": "Familier",
     "montant": "Dégât +8, Familier : dégât+4/soin+2 (AoE/2), réussite sort+1",
-    "icone": "W50503"
+    "icone": "W50503",
+    "type": "arme-2m"
   },
   "138": {
     "nom": "Grimoire de la Bête",
     "desc": "Un grimoire renforçant les liens avec votre Familier.",
     "effet": "Familier",
     "montant": "Dégât +6, Familier : dégât/soin+2 (AoE/2), réussite sort+1",
-    "icone": "W62907"
+    "icone": "W62907",
+    "type": "arme-2m"
   },
   "139": {
     "nom": "Grimoire de l'Invocateur",
     "desc": "Amélioration du Grimoire de la Bête, il a été pris en main par un grand invoncateur.",
     "effet": "Familier",
     "montant": "Dégât +8, Familier : dégât+4/soin+2 (AoE/2), réussite sort+1",
-    "icone": "W62903"
+    "icone": "W62903",
+    "type": "arme-2m"
   },
   "140": {
     "nom": "Masse cloutée améliorée",
     "desc": "Une masse cloutée renforcée qui améliore son porteur",
     "effet": "Force +1",
     "montant": "Dégât +5",
-    "icone": "W31806"
+    "icone": "W31806",
+    "type": "arme-1m"
   },
   "141": {
     "nom": "Masse du Prolongement",
     "desc": "Une masse conçue par l'Ordre des Chevaliers de la rose. Prolonge la durée des sorts.",
     "effet": "",
     "montant": "Dégât +5, durée des sorts +1 tour",
-    "icone": "W31701"
+    "icone": "W31701",
+    "type": "arme-1m"
   },
   "142": {
     "nom": "Epée de parade",
     "desc": "Une épée conçue pour mieux parer le coup des ennemis",
     "effet": "Blocage +1",
     "montant": "Dégât +4",
-    "icone": "W10304"
+    "icone": "W10304",
+    "type": "arme-1m"
   },
   "143": {
     "nom": "Epée Colossale de parade",
     "desc": "Une grande épée conçue pour mieux parer le coup des ennemis",
     "effet": "Blocage +2",
     "montant": "Dégât +7",
-    "icone": "W27501"
+    "icone": "W27501",
+    "type": "arme-2m"
   },
   "144": {
     "nom": "Masse de Lumière",
     "desc": "Une masse incrusté d'une pierre luminescente",
     "effet": "Dégât lumière +1",
     "montant": "Dégât +4",
-    "icone": "W31104"
+    "icone": "W31104",
+    "type": "arme-1m"
   },
   "145": {
     "nom": "Masse Zumi",
     "desc": "Une masse conçue par les Zumis, efficace pour les attaques de zone",
     "effet": "Dégât AoE+2",
     "montant": "Dégât +4",
-    "icone": "W33602"
+    "icone": "W33602",
+    "type": "arme-1m"
   },
   "146": {
     "nom": "Griffe de l'Esprit",
     "desc": "Une griffe améliorant l'esprit de son porteur",
     "effet": "Esprit +1",
     "montant": "Dégât +4",
-    "icone": "W35008"
+    "icone": "W35008",
+    "type": "arme-1m"
   },
   "148": {
     "nom": "Epée Titanesque",
     "desc": "L'épée la plus lourde qui existe aujourd'hui",
     "effet": "Dexté -5",
     "montant": "Dégât +15 (Si force >=16, Dexté +1)",
-    "icone": "W21106"
+    "icone": "W21106",
+    "type": "arme-2m"
   },
   "149": {
     "nom": "Ceinture de Samouraï",
@@ -1076,7 +1253,8 @@
     "montant": "PV +20 (+5 si Samouraï)",
     "condition": { "type": "classe", "value": ["Samouraï"], "bonus": "PV +5" },
     "icone": "a30054",
-    "access": "A1"
+    "access": "A1",
+    "type": "access"
   },
   "150": {
     "nom": "Gantelet de Lieutenant",
@@ -1084,7 +1262,8 @@
     "effet": "",
     "montant": "Dégât reçu -2, PV +10",
     "icone": "A40016",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "151": {
     "nom": "Bague de Glaciation",
@@ -1092,7 +1271,8 @@
     "effet": "Element : Glace",
     "montant": "Dégât +5 (glace)",
     "icone": "i01311",
-    "access": "D0"
+    "access": "D0",
+    "type": "access"
   },
   "152": {
     "nom": "Perle de Nihilité",
@@ -1100,7 +1280,8 @@
     "effet": "Debuff",
     "montant": "Nullifie la magie autour du porteur",
     "icone": "i01490",
-    "access": "A3"
+    "access": "A3",
+    "type": "access"
   },
   "153": {
     "nom": "Pendentif Ailé",
@@ -1108,119 +1289,136 @@
     "effet": "",
     "montant": "PV Soin reçu +33%",
     "icone": "k10113",
-    "access": "A2"
+    "access": "A2",
+    "type": "access"
   },
   "154": {
     "nom": "Epée des Plaines Dorées",
     "desc": "Une épée forgée sous le soleil des Plaînes Dorées",
     "effet": "Dégât de lumière +1",
     "montant": "Dégât +5",
-    "icone": "W13404"
+    "icone": "W13404",
+    "type": "arme-1m"
   },
   "155": {
     "nom": "Arc Bélouga",
     "desc": "Arc créé par des corsaires de la Baie Bélouga",
     "effet": "Dégât nature +1",
     "montant": "Dégât +6",
-    "icone": "W50106"
+    "icone": "W50106",
+    "type": "arme-2m"
   },
   "156": {
     "nom": "Arc du Dresseur",
     "desc": "Arc renforçant les liens avec votre Familier.",
     "effet": "Familier",
     "montant": "Dégât +6, Familier : dégât/soin+2 (AoE/2), réussite sort+1",
-    "icone": "W50303"
+    "icone": "W50303",
+    "type": "arme-2m"
   },
   "157": {
     "nom": "Bouclier Pourpre",
     "desc": "Un bouclier aux propriétés inconnus conservé par la Curie Métérole",
     "effet": "",
     "montant": "Dégât -6",
-    "icone": "W71209"
+    "icone": "W71209",
+    "type": "arme-1m"
   },
   "158": {
     "nom": "Bouclier du Démon",
     "desc": "Un bouclier vivant qui bouge et absorbe la magie et se renforce, il était conservé par la Curie Métérole, il a l'air de grandir avec le temps et l'énergie absorbée.",
     "effet": "Malédiction du Lien",
     "montant": "Dégât -5 - Niveau",
-    "icone": "W71207"
+    "icone": "W71207",
+    "type": "arme-1m"
   },
   "159": {
     "nom": "Katana de l'apprenti",
     "desc": "Un katana apportant du savoir à son porteur",
     "effet": "XP reçu +10%",
     "montant": "Dégât +6",
-    "icone": "W21306"
+    "icone": "W21306",
+    "type": "arme-2m"
   },
   "160": {
     "nom": "Katana de Delphes",
     "desc": "Katana fabriqué avec un bois et un acier sacré",
     "effet": "Dégât nature +2",
     "montant": "Dégât +8",
-    "icone": "W21404"
+    "icone": "W21404",
+    "type": "arme-2m"
   },
   "161": {
     "nom": "Katana Eclair Pourpre",
     "desc": "Un katana gravé d'un éclair pourpre ressemblant à une fleur de ceriser",
     "effet": "Dégât foudre +2",
     "montant": "Dégât +8",
-    "icone": "W21503"
+    "icone": "W21503",
+    "type": "arme-2m"
   },
   "162": {
     "nom": "Katana Brûlant",
     "desc": "Les veines de ce Katana ressemblent à des flammes.",
     "effet": "Dégât de feu +2",
     "montant": "Dégât +9",
-    "icone": "W21302"
+    "icone": "W21302",
+    "type": "arme-2m"
   },
   "163": {
     "nom": "Epée Colossale - Destruction Sacrée",
     "desc": "Une épée de rang \"Sacrée\", détenant le pouvoir de frénésie : +2 dégât par touche sur la cible, le cumule est réinitialisé après 2 tours sans toucher.",
     "effet": "",
     "montant": "Dégât +10, +2/touche (max 5, reset si 0 touche 2 tours)",
-    "icone": "W21105"
+    "icone": "W21105",
+    "type": "arme-2m"
   },
   "164": {
     "nom": "Katana Lame Noire",
     "desc": "Un Katana ancien forgé à partir du matériau le plus noir qui existe. Appartient à la Panoplie Noireflammes (2 pièces)",
     "effet": "Element : Ténèbres",
     "montant": "Dégât +10, (si panoplie : conversion Physique => Ténèbres)",
-    "icone": "W21506"
+    "icone": "W21506",
+    "type": "arme-2m"
   },
   "165": {
     "nom": "Katana Plume",
     "desc": "Un katana très léger aussi fin qu'une plume, le porteur se sent léger.",
     "effet": "Dextérité +2",
     "montant": "Dégât +6",
-    "icone": "W27607"
+    "icone": "W27607",
+    "type": "arme-2m"
   },
   "166": {
     "nom": "Katana Incisif",
     "desc": "Un katana aggravant les blessures de ses victimes",
     "effet": "Dégât critique +10",
     "montant": "Dégât +8",
-    "icone": "W24105"
+    "icone": "W24105",
+    "type": "arme-2m"
   },
   "167": {
     "nom": "Katana Renforcé",
     "desc": "Un katana en acier amélioré par l'expertise d'un forgeron.",
     "effet": "",
     "montant": "Dégât +7",
-    "icone": "W21403"
+    "icone": "W21403",
+    "type": "arme-2m"
   },
   "168": {
     "nom": "Bâton Flocon",
     "desc": "Un bâton en forme de flocon, froid et chargé en magie",
     "effet": "Dégat de glace +3",
     "montant": "Dégât +8",
-    "icone": "W62201"
+    "icone": "W62201",
+    "type": "arme-2m"
   },
   "169": {
     "nom": "Sceptre du remède",
     "desc": "Un bâton incrusté d'un joyau guérisseur",
     "effet": "",
     "montant": "Dégât +8, Soin +4 (/2)",
-    "icone": "W62504"
+    "icone": "W62504",
+    "type": "arme-2m"
   },
   "170": {
     "nom": "Sceptre du Shaman",
@@ -1228,28 +1426,32 @@
     "effet": "",
     "montant": "Dégât +8 (+3 si Shaman)",
     "condition": { "type": "classe", "value": ["Shaman"], "bonus": "Dégât +3" },
-    "icone": "W62608"
+    "icone": "W62608",
+    "type": "arme-2m"
   },
   "171": {
     "nom": "Croix sacrée",
     "desc": "Une croix forgé par l'église pour accompagner les adeptes",
     "effet": "Dégât lumière +2",
     "montant": "Dégât +6",
-    "icone": "W64401"
+    "icone": "W64401",
+    "type": "arme-2m"
   },
   "172": {
     "nom": "Croix corrompue",
     "desc": "Une croix forgée pour les adeptes de magie noire",
     "effet": "Dégât ténèbres +2",
     "montant": "Dégât +7",
-    "icone": "W64404"
+    "icone": "W64404",
+    "type": "arme-2m"
   },
   "173": {
     "nom": "Croix divine",
     "desc": "Une croix sacrée améliorée pour les plus grands adeptes",
     "effet": "Dégât lumière +3",
     "montant": "Dégât +8",
-    "icone": "W64403"
+    "icone": "W64403",
+    "type": "arme-2m"
   },
   "174": {
     "nom": "Charme d'Expérience",
@@ -1257,7 +1459,8 @@
     "effet": "",
     "montant": "Expérience reçu +10%",
     "icone": "I00425",
-    "access": "A1"
+    "access": "A1",
+    "type": "access"
   },
   "175": {
     "nom": "Amulette d'Expérience",
@@ -1265,7 +1468,8 @@
     "effet": "",
     "montant": "Expérience reçu +20%",
     "icone": "I00428",
-    "access": "A2"
+    "access": "A2",
+    "type": "access"
   },
   "176": {
     "nom": "Bijou Iris",
@@ -1273,7 +1477,8 @@
     "effet": "Groupe",
     "montant": "Expérience reçu +10%, porteur PV +5",
     "icone": "i00541",
-    "access": "A3"
+    "access": "A3",
+    "type": "access"
   },
   "177": {
     "nom": "Pierre de sécurité Sublime",
@@ -1281,35 +1486,40 @@
     "effet": "",
     "montant": "Dégât reçu -4",
     "icone": "I00529b",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "178": {
     "nom": "Bâton Sadique",
     "desc": "Un bâton pouvant sortir les mauvais côtés de son porteur, bâton à l'effigie d'un grand démon",
     "effet": "Dégât critique +10",
     "montant": "Dégât +8",
-    "icone": "W60701"
+    "icone": "W60701",
+    "type": "arme-2m"
   },
   "179": {
     "nom": "Grimoire du Savoir",
     "desc": "Un grimoire améliorant l'intelligence du porteur",
     "effet": "Intelligence +2",
     "montant": "Dégât +7",
-    "icone": "W61405"
+    "icone": "W61405",
+    "type": "arme-2m"
   },
   "180": {
     "nom": "Grimoire Protecteur",
     "desc": "Un grimoire améliorant la résistance de son porteur",
     "effet": "Blocage +2",
     "montant": "Dégât +8",
-    "icone": "W62401"
+    "icone": "W62401",
+    "type": "arme-2m"
   },
   "181": {
     "nom": "Grimoire de l'apprenti",
     "desc": "Un grimoire améliorant la rétention de son porteur",
     "effet": "XP reçu +10%",
     "montant": "Dégât +7",
-    "icone": "W61401"
+    "icone": "W61401",
+    "type": "arme-2m"
   },
   "182": {
     "nom": "Bible du Familier",
@@ -1317,84 +1527,99 @@
     "effet": "Familier",
     "montant": "Familier : PV+10, dégât+4/soin+2 (AoE/2)",
     "icone": "I00134",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "183": {
     "nom": "Dague Aquatique",
     "desc": "Dague composée de différentes créatures aquatiques dangereuses",
     "effet": "Dégât sur faiblesse +2",
     "montant": "Dégât +5",
-    "icone": "W14601"
+    "icone": "W14601",
+    "type": "arme-1m"
   },
   "184": {
     "nom": "Faucille Méprisante",
     "desc": "Une faucille infligeant des dégâts en profondeur",
     "effet": "Dégât sur faiblesse +3",
     "montant": "Dégât +8",
-    "icone": "W55404"
+    "icone": "W55404",
+    "type": "arme-2m"
   },
   "185": {
     "nom": "Marteau Canon Glacial",
     "desc": "Un marteau canon fait en platine de glace",
     "effet": "Dégât de glace +3",
     "montant": "Dégât +7",
-    "icone": "W40505"
+    "icone": "W40505",
+    "type": "arme-2m"
   },
   "186": {
     "nom": "Marteau Bolter Asbi",
     "desc": "Un marteau ultra high-tech équipé d'un \"Bolter\" et de crystaux d'Asbi",
     "effet": "",
     "montant": "Dégât +11, réussite des sorts +1",
-    "icone": "W41301"
+    "icone": "W41301",
+    "type": "arme-2m"
   },
   "187": {
     "nom": "Brassard du Pouvoir",
     "desc": "Un brassard augmentant les pouvoirs de son porteur",
     "effet": "",
     "montant": "Toutes Stats +1, Dégât +1",
-    "icone": "a40045"
+    "icone": "a40045",
+    "type": "access"
   },
   "188": {
     "nom": "Brassard du Combattant",
     "desc": "Un brassard augmentant les dégâts du porteur.",
     "effet": "",
     "montant": "Dégât +2, PV +10",
-    "icone": "A40021"
+    "icone": "A40021",
+    "type": "access"
   },
   "189": {
     "nom": "Tenue de Supporter",
     "desc": "Une tenue mignonne pour montrer son soutien à son équipe",
     "effet": "Charisme +3",
     "montant": "Dégât -4",
-    "icone": "k20566"
+    "icone": "k20566",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "190": {
     "nom": "Tenue de Noblesse",
     "desc": "Une tenue prestigieuse et noble donnant de la crédibilité",
     "effet": "Charisme +2",
     "montant": "Dégât -5",
-    "icone": "k20630"
+    "icone": "k20630",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "191": {
     "nom": "Armure Distinguée",
     "desc": "Une armure prestigieuse et noble donnant de la crédibilité",
     "effet": "Charisme +2",
     "montant": "Dégât -6",
-    "icone": "k20873"
+    "icone": "k20873",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "192": {
     "nom": "Faucille Anarchiste",
     "desc": "Une faucille semant le chaos dans l'esprit de son porteur",
     "effet": "Esprit -4",
     "montant": "Dégât +15",
-    "icone": "k30100"
+    "icone": "k30100",
+    "type": "arme-2m"
   },
   "193": {
     "nom": "Epée du Chaos",
     "desc": "Une épée amenant désastre et prospérité",
     "effet": "Amplification",
     "montant": "Dégât +6. Effet Critique à Dé 2 et 19",
-    "icone": "k30148"
+    "icone": "k30148",
+    "type": "arme-1m"
   },
   "194": {
     "nom": "Cape Hypnotique",
@@ -1402,21 +1627,24 @@
     "effet": "Capacité",
     "montant": "2 fois par combat : Oeil Hypnotique (res esprit -2)",
     "icone": "k60288",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "195": {
     "nom": "Dé Amplificateur",
     "desc": "Un dé qui amplifie l'effet des critiques : 1 (20) Méga critique, 2 (19) critique, 3 (18) semi-critique",
     "effet": "",
     "montant": "Critique à 1, 2, 3 et 20, 19, 18",
-    "icone": "i01231b"
+    "icone": "i01231b",
+    "type": "access"
   },
   "196": {
     "nom": "Bouclier d'Asbi",
     "desc": "Un bouclier composé de Crystaux d'Asbi augmentant la réussite des blocages",
     "effet": "Blocage +1",
     "montant": "Dégât -3",
-    "icone": "W70503"
+    "icone": "W70503",
+    "type": "arme-1m"
   },
   "197": {
     "nom": "Guitare du Papillon",
@@ -1424,7 +1652,8 @@
     "effet": "Montant des buffs +2",
     "montant": "Dégât +6",
     "icone": "W61003",
-    "access": "D2"
+    "access": "D2",
+    "type": "arme-2m"
   },
   "198": {
     "nom": "Collier d'Asbi",
@@ -1432,7 +1661,8 @@
     "effet": "",
     "montant": "Esquive +1 & Blocage +1",
     "icone": "A00032",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "199": {
     "nom": "Anneau du Sorcier",
@@ -1440,14 +1670,16 @@
     "effet": "",
     "montant": "Montant des buffs +2",
     "icone": "A00008",
-    "access": "D2"
+    "access": "D2",
+    "type": "access"
   },
   "200": {
     "nom": "Bouclier de l'Esprit",
     "desc": "Un bouclier améliorant l'esprit de son porteur",
     "effet": "Esprit +1",
     "montant": "Dégât -4",
-    "icone": "W70507"
+    "icone": "W70507",
+    "type": "arme-1m"
   },
   "201": {
     "nom": "Bague de Vigueur",
@@ -1455,14 +1687,16 @@
     "effet": "",
     "montant": "PV Soin reçu +25%",
     "icone": "A00018",
-    "access": "A1"
+    "access": "A1",
+    "type": "access"
   },
   "202": {
     "nom": "Poignard de Skleros",
     "desc": "Un poignard fait de glace extrêmement solide. Dégât physique changé en dégât de glace. Le porteur peut subir des engelures.",
     "effet": "Element : Glace",
     "montant": "Dégât +7, si échec critique : -15 PV",
-    "icone": "W11302"
+    "icone": "W11302",
+    "type": "arme-1m"
   },
   "203": {
     "nom": "Couvre-chef Fleuri",
@@ -1470,7 +1704,8 @@
     "effet": "",
     "montant": "Dégât de nature +3, tranchant +2",
     "icone": "k10613",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "204": {
     "nom": "Gemme du Chaos",
@@ -1478,7 +1713,8 @@
     "effet": "",
     "montant": "Dégât de ténèbres +3, lumière +2",
     "icone": "I00354b",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "205": {
     "nom": "Glyphe du Chasseur",
@@ -1486,7 +1722,8 @@
     "effet": "",
     "montant": "Dégât perçant +3, nature +2",
     "icone": "i01130",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "206": {
     "nom": "Glyphe du Danselame",
@@ -1494,7 +1731,8 @@
     "effet": "",
     "montant": "Dégât de feu +3, tranchant +2",
     "icone": "i01128",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "207": {
     "nom": "Glyphe du Templier",
@@ -1502,7 +1740,8 @@
     "effet": "",
     "montant": "Dégât lumière +3, contondant +2",
     "icone": "i01124",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "208": {
     "nom": "Glyphe du Magicien",
@@ -1510,7 +1749,8 @@
     "effet": "",
     "montant": "Dégât de glace +3, foudre +2",
     "icone": "i01137",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "209": {
     "nom": "Crystal du Forgeron",
@@ -1518,7 +1758,8 @@
     "effet": "",
     "montant": "Dégât de feu +3, contondant +2",
     "icone": "I00221",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "210": {
     "nom": "Crystal de Skleros",
@@ -1526,7 +1767,8 @@
     "effet": "Esprit +1",
     "montant": "Dégât de glace +3,  ténèbres +3",
     "icone": "I00235",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "211": {
     "nom": "Puce de visée",
@@ -1534,14 +1776,17 @@
     "effet": "",
     "montant": "Dégât de foudre +3,  perçant +2",
     "icone": "i01714",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "212": {
     "nom": "Robe de l'Hiver",
     "desc": "Une robe conçue par une chanteuse talentueuse",
     "effet": "Soin +2",
     "montant": "Dégât -3",
-    "icone": "k21049"
+    "icone": "k21049",
+    "type": "armure",
+    "armorTypes": ["magique"]
   },
   "213": {
     "nom": "Tenue du Juge",
@@ -1549,14 +1794,18 @@
     "effet": "Dégât ténèbres +2",
     "montant": "Dégât -5 (-1 si Juge)",
     "condition": { "type": "classe", "value": ["Juge"], "bonus": "Dégât reçu -1" },
-    "icone": "k21023"
+    "icone": "k21023",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "214": {
     "nom": "Tenue de Richesse",
     "desc": "Une tenue apportant abondance et prospérité à son porteur. Augmente de 50% l'or trouvé par le porteur (ennemi, coffre)",
     "effet": "Or trouvé +50%",
     "montant": "Dégât -4",
-    "icone": "k21062"
+    "icone": "k21062",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "215": {
     "nom": "Tenue Militaire",
@@ -1564,63 +1813,73 @@
     "effet": "Force +1 Charisme +1",
     "montant": "Dégât -4 (-1 si Chevalier)",
     "condition": { "type": "classe", "value": ["Chevalier"], "bonus": "Dégât reçu -1" },
-    "icone": "k20280"
+    "icone": "k20280",
+    "type": "armure",
+    "armorTypes": ["lourd", "leger"]
   },
   "216": {
     "nom": "Hache de Glace",
     "desc": "Une hache forgée avec un alliage d'acier et de platine de glace",
     "effet": "Dégât de glace +3",
     "montant": "Dégât +8",
-    "icone": "W20106"
+    "icone": "W20106",
+    "type": "arme-2m"
   },
   "217": {
     "nom": "Guitare Flamboyante",
     "desc": "Une guitare composée d'un alliage d'acier volcanique et d'acier d'obsidienne très raffiné",
     "effet": "Dégât de feu +2",
     "montant": "Dégât +7",
-    "icone": "W60806"
+    "icone": "W60806",
+    "type": "arme-2m"
   },
   "218": {
     "nom": "Guitare Enchantée",
     "desc": "Une guitare très ancienne ayant appartenu aux ancêtres de la Forêt Arc-en-Ciel",
     "effet": "Soin +3",
     "montant": "Dégât +6",
-    "icone": "W60804"
+    "icone": "W60804",
+    "type": "arme-2m"
   },
   "219": {
     "nom": "Guitare de Delphes",
     "desc": "Guitare fabriqué avec un bois sacré",
     "effet": "Dégât nature +2",
     "montant": "Dégât +8",
-    "icone": "W61002"
+    "icone": "W61002",
+    "type": "arme-2m"
   },
   "220": {
     "nom": "Guitare Electronique",
     "desc": "Une guitare pour les métalleux, conçu par les Zumis",
     "effet": "Dégât de foudre +2",
     "montant": "Dégât +8",
-    "icone": "W62808"
+    "icone": "W62808",
+    "type": "arme-2m"
   },
   "221": {
     "nom": "Guitare Congelée",
     "desc": "Une guitare ayant subi un froid extrême lui donnant une forme unique",
     "effet": "Dégât de glace +2",
     "montant": "Dégât +8",
-    "icone": "W62802"
+    "icone": "W62802",
+    "type": "arme-2m"
   },
   "222": {
     "nom": "Guitare de la Rose",
     "desc": "Une guitare conçue par l'Ordre des Chevaliers de la Rose, elle aurait la capacité de sceller de grands démons",
     "effet": "Dégât sur faiblesse +3",
     "montant": "Dégât +8",
-    "icone": "W62701"
+    "icone": "W62701",
+    "type": "arme-2m"
   },
   "223": {
     "nom": "Guitare Radieuse",
     "desc": "Une guitare composée de crystaux de la lagune enchantée et de l'écorce de l'Arbre Sacré Rando",
     "effet": "Durée des sorts +1 tour",
     "montant": "Dégât +9",
-    "icone": "W62301"
+    "icone": "W62301",
+    "type": "arme-2m"
   },
   "224": {
     "nom": "Brassard du Héros",
@@ -1628,7 +1887,8 @@
     "effet": "",
     "montant": "Force +1, Intelligence +1",
     "icone": "a40052",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "225": {
     "nom": "Pantoufles Discrètes",
@@ -1636,7 +1896,8 @@
     "effet": "",
     "montant": "En invisibilité : chance d'être touché -3",
     "icone": "A50008",
-    "access": "A3"
+    "access": "A3",
+    "type": "access"
   },
   "226": {
     "nom": "Bottes de Guerre",
@@ -1644,14 +1905,16 @@
     "effet": "",
     "montant": "Dégât reçu -3, Dextérité -2",
     "icone": "A50030",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "227": {
     "nom": "Grimoire des bourbes",
     "desc": "Un grimoire créé par un puissant Magicien Anuran vivant aux Bourbes au temps de la grande guerre. On raconte qu'il aurait scellé son âme à l'intérieur.",
     "effet": "Esprit +2",
     "montant": "Dégât +10",
-    "icone": "W62402"
+    "icone": "W62402",
+    "type": "arme-2m"
   },
   "228": {
     "nom": "Epée du Héros",
@@ -1659,7 +1922,8 @@
     "effet": "Force +1, Intelligence +1",
     "montant": "Dégât +4 (+2 si panoplie)",
     "condition": { "type": "panoplie", "value": "Brassard du Héros", "bonus": "Dégât +2" },
-    "icone": "W10604"
+    "icone": "W10604",
+    "type": "arme-1m"
   },
   "229": {
     "nom": "Flacon secret de Rumbledore",
@@ -1667,14 +1931,16 @@
     "effet": "",
     "montant": "Intelligence +2, Dégât magique +3",
     "icone": "I00085",
-    "access": "A1"
+    "access": "A1",
+    "type": "access"
   },
   "230": {
     "nom": "Puissance de Bélouga",
     "desc": "Un artefact ancien gardé à Bélouga, on dit qu'il contient la puissance des baleines.",
     "effet": "PV +10",
     "montant": "Dégât +3, si AoE : réussite +1",
-    "icone": "I00344"
+    "icone": "I00344",
+    "type": "access"
   },
   "231": {
     "nom": "Médaille Versatile",
@@ -1682,7 +1948,8 @@
     "effet": "",
     "montant": "Dégât +3, Dégât reçu -2",
     "icone": "I00390",
-    "access": "D0"
+    "access": "D0",
+    "type": "access"
   },
   "232": {
     "nom": "Noyau chargé de Stella",
@@ -1690,7 +1957,8 @@
     "effet": "Intelligence -1",
     "montant": "Dégât sur faiblesse +6",
     "icone": "I00224",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "233": {
     "nom": "Sang Fossilisé",
@@ -1698,7 +1966,8 @@
     "effet": "Stress Accentué",
     "montant": "PV +30",
     "icone": "I00211",
-    "access": "A1"
+    "access": "A1",
+    "type": "access"
   },
   "234": {
     "nom": "Coeur Fossilisé",
@@ -1706,7 +1975,8 @@
     "effet": "Stress Accentué",
     "montant": "Toutes Stats +1, PV +10",
     "icone": "I00271",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "235": {
     "nom": "Toxine Noire",
@@ -1714,7 +1984,8 @@
     "effet": "Stress Accentué",
     "montant": "Dégât +2, Dégât sur Faiblesse +5",
     "icone": "I00396",
-    "access": "D2"
+    "access": "D2",
+    "type": "access"
   },
   "236": {
     "nom": "Charme d'Expérience Noir",
@@ -1722,7 +1993,8 @@
     "effet": "Stress Accentué",
     "montant": "Expérience reçu +40%",
     "icone": "I00427",
-    "access": "A4"
+    "access": "A4",
+    "type": "access"
   },
   "237": {
     "nom": "Pierre de Securite Diamant Noir",
@@ -1730,7 +2002,8 @@
     "effet": "Stress Accentué",
     "montant": "Dégât reçu -5",
     "icone": "i01555",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "238": {
     "nom": "Orbe Démoniaque",
@@ -1738,14 +2011,16 @@
     "effet": "Stress Accentué / Capacité",
     "montant": "2 fois par combat (0 jet) : Invoque un familier démon ",
     "icone": "i01461",
-    "access": "D4"
+    "access": "D4",
+    "type": "access"
   },
   "239": {
     "nom": "Faucille tranche-rêve",
     "desc": "Cette faucille est capable de trancher les illusions pour laisser apparaître la vérité.",
     "effet": "Tranche les illusions",
     "montant": "Dégât +9",
-    "icone": "W55506"
+    "icone": "W55506",
+    "type": "arme-2m"
   },
   "240": {
     "nom": "Bijou Aurique",
@@ -1753,14 +2028,17 @@
     "effet": "",
     "montant": "Réduit le stress généré du porteur. XP du groupe +10%",
     "icone": "i00542",
-    "access": "A4"
+    "access": "A4",
+    "type": "access"
   },
   "241": {
     "nom": "Plastron du Démon",
     "desc": "Un plastron d'un démon supérieur, sa résistance est sans faille",
     "effet": "Stress Accentué",
     "montant": "Dégât -7, PV +5",
-    "icone": "a20126"
+    "icone": "a20126",
+    "type": "armure",
+    "armorTypes": ["lourd"]
   },
   "242": {
     "nom": "Bougie de l'Espoir",
@@ -1768,14 +2046,16 @@
     "effet": "",
     "montant": "Stress Diminué",
     "icone": "I00347",
-    "access": "A1"
+    "access": "A1",
+    "type": "access"
   },
   "243": {
     "nom": "Dague Heldentod",
     "desc": "Une dague fabriquée à la Plaine du Levant par les Heldentods",
     "effet": "Force +1",
     "montant": "Dégât +5",
-    "icone": "W13102"
+    "icone": "W13102",
+    "type": "arme-1m"
   },
   "244": {
     "nom": "Tentacule de Mandragore",
@@ -1783,44 +2063,57 @@
     "effet": "",
     "montant": "PV Soin reçu +50%",
     "icone": "I00185",
-    "access": "A3"
+    "access": "A3",
+    "type": "access"
   },
   "245": {
     "nom": "Katana taillé",
     "desc": "Un katana conçu avec une corne taillée d'un monstre. Très tranchant et acéré",
     "effet": "Dégât critique +5",
     "montant": "Dégât +7",
-    "icone": "W22906"
+    "icone": "W22906",
+    "type": "arme-2m"
   },
   "246": {
     "nom": "Grimoire du Créateur",
     "desc": "Un grimoire légendaire capable d'invoquer une créature de l'élément de son choix. Invoqué : 30 PV, Force : 15, Dexté : 12, Intel : 14, Charisme : 12, Esprit : 12. Sort : Coup perçant 1D10+2 (Force), Jet Elementaire 1D10+2 (Intel)",
     "effet": "Capacité",
     "montant": "Dégât +12, 3 fois par combat : invoque une créature élémentaire",
-    "icone": "W63401"
+    "icone": "W63401",
+    "type": "arme-2m"
   },
   "247": {
     "nom": "Katana Polymorphe",
     "desc": "Un Katana légendaire capable de s'enchanter d'un élément qu'il a subi (il y a moins de 3 tours) pendant 3 tours.",
     "effet": "Capacité",
     "montant": "Dégât +10, 2 fois par combat (Instantané) : s'enchante et dégât+5 sur 3 tours",
-    "icone": "W26901"
+    "icone": "W26901",
+    "type": "arme-2m"
   },
   "248": {
     "nom": "Trèfle à Cinq Feuilles",
     "desc": "Chance et Maudit",
     "effet": "",
     "montant": "Dé amplif ?",
-    "icone": "k10340"
+    "icone": "k10340",
+    "type": "access"
   },
-  "249": { "nom": "Trèfle à Quatre Feuilles", "desc": "Chance", "effet": "", "montant": "", "icone": "k10053" },
+  "249": {
+    "nom": "Trèfle à Quatre Feuilles",
+    "desc": "Chance",
+    "effet": "",
+    "montant": "",
+    "icone": "k10053",
+    "type": "access"
+  },
   "250": {
     "nom": "Lapin chou rose",
     "desc": "Un lapin trop chou et adorable, bienveillant et gentil. Le lapin agit indépendamment de son porteur.",
     "effet": "Malédiction du Lien / Capacité",
     "montant": "3 fois par séance : le Lapin influence un Dé (±5)",
     "icone": "k10145",
-    "access": "A4"
+    "access": "A4",
+    "type": "access"
   },
   "251": {
     "nom": "Pierre de Chance",
@@ -1828,7 +2121,8 @@
     "effet": "Malédiction du Lien",
     "montant": "2 fois par séance : Relance d'un Dé possible (si identique : Amplification, miracle si Dé 1 & 20)",
     "icone": "i01472",
-    "access": "A3"
+    "access": "A3",
+    "type": "access"
   },
   "252": {
     "nom": "Lapin chou violet",
@@ -1836,35 +2130,40 @@
     "effet": "Malédiction du Lien / Capacité",
     "montant": "3 fois par séance : le Lapin influence un Dé (±5)",
     "icone": "k10146",
-    "access": "A4"
+    "access": "A4",
+    "type": "access"
   },
   "253": {
     "nom": "Griffe en Acier renforcé",
     "desc": "Une griffe en acier amélioré par un acier de qualité",
     "effet": "Blocage physique +1",
     "montant": "Dégât +3",
-    "icone": "W31302"
+    "icone": "W31302",
+    "type": "arme-1m"
   },
   "254": {
     "nom": "Griffe d'épines",
     "desc": "Une griffe recouverte de différents types d'épines",
     "effet": "Dégât nature +2",
     "montant": "Dégât +4",
-    "icone": "W31404"
+    "icone": "W31404",
+    "type": "arme-1m"
   },
   "255": {
     "nom": "Griffe enchantée",
     "desc": "On raconte que cette griffe aurait trempée dans une source magique très puissante",
     "effet": "Durée des sorts +1 tour",
     "montant": "Dégât +4",
-    "icone": "W31502"
+    "icone": "W31502",
+    "type": "arme-1m"
   },
   "256": {
     "nom": "Griffe à Plasma",
     "desc": "Une griffe électrique saturé en magie lui conférant son pouvoir de plasma.",
     "effet": "Elément : Foudre",
     "montant": "Dégât +5",
-    "icone": "W35105"
+    "icone": "W35105",
+    "type": "arme-1m"
   },
   "257": {
     "nom": "Lunettes Anciennes",
@@ -1872,14 +2171,17 @@
     "effet": "Capacité",
     "montant": "2 fois par combat (Instantanée) : Dextérité+3 pendant 3 tours",
     "icone": "k19016",
-    "access": "D2"
+    "access": "D2",
+    "type": "access"
   },
   "258": {
     "nom": "Robe de Lucius",
     "desc": "Robe confectionnée par le Roi Ezelin Lucius. Permet d'invoquer son esprit : 35 PV, Force : 15, Dexté : 14, Intel : 13, Charisme : 14, Esprit : 14.  Sorts : Percée 1D10+6 (Force), Aura Noire : 1D6+4 AoE (Intel)",
     "effet": "Capacité, Malédiction du lien",
     "montant": "Dégât -4, 2 fois par combat : invoque l'Esprit du Roi",
-    "icone": "a20128"
+    "icone": "a20128",
+    "type": "armure",
+    "armorTypes": ["magique"]
   },
   "259": {
     "nom": "Bouquin Pare-balle",
@@ -1887,7 +2189,8 @@
     "effet": "",
     "montant": "Blocage physique +2, Blocage magique +1",
     "icone": "I00136",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "260": {
     "nom": "Tiare du Savoir",
@@ -1895,7 +2198,8 @@
     "effet": "",
     "montant": "Intelligence +1, Esprit +1",
     "icone": "A10017",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "261": {
     "nom": "Chaussures d'agilité",
@@ -1904,7 +2208,8 @@
     "montant": "Dextérité +1, Esprit +1 (Charisme+1 si Danselame)",
     "condition": { "type": "classe", "value": ["Danselame"], "bonus": "Charisme +1" },
     "icone": "A50022",
-    "access": "A1"
+    "access": "A1",
+    "type": "access"
   },
   "262": {
     "nom": "Pelote d'entrave",
@@ -1912,7 +2217,8 @@
     "effet": "",
     "montant": "2 fois par combat (Instantanée) : oblige un ennemi à re-esquiver ou re-bloquer (-1 si attaque du porteur)",
     "icone": "i00794",
-    "access": "D4"
+    "access": "D4",
+    "type": "access"
   },
   "263": {
     "nom": "Gantelet Noireflammes",
@@ -1921,7 +2227,8 @@
     "montant": "Dégât +2 (+2 si Panoplie)",
     "condition": { "type": "panoplie", "value": "Katana Lame Noire", "bonus": "Dégât +2" },
     "icone": "A40036",
-    "access": "D0"
+    "access": "D0",
+    "type": "access"
   },
   "264": {
     "nom": "Griffe de Puissance",
@@ -1929,14 +2236,16 @@
     "effet": "Force +1",
     "montant": "Dégât +5 (+1 si panoplie)",
     "condition": { "type": "panoplie", "value": "de Puissance", "bonus": "Dégât +1" },
-    "icone": "W33801"
+    "icone": "W33801",
+    "type": "arme-1m"
   },
   "265": {
     "nom": "Rapière de Stella",
     "desc": "Une rapière forgée avec le minerai de Stella, perce efficacement l'ennemi.",
     "effet": "Blocage physique cible -2",
     "montant": "Dégât +5",
-    "icone": "W12706"
+    "icone": "W12706",
+    "type": "arme-1m"
   },
   "266": {
     "nom": "Lance de Stella",
@@ -1944,7 +2253,8 @@
     "effet": "Blocage physique cible -3",
     "montant": "Dégât +10 (+1 si Chev. Dragon)",
     "condition": { "type": "classe", "value": ["Chev Dragon"], "bonus": "Dégât +1" },
-    "icone": "W11007"
+    "icone": "W11007",
+    "type": "arme-2m"
   },
   "267": {
     "nom": "Chapeau d'Ursun",
@@ -1952,14 +2262,16 @@
     "effet": "Capacité Groupe",
     "montant": "3 fois par séance : Diminue le stress et (si Ursun) baisse l'augmentation (3 tours)",
     "icone": "monokuma",
-    "access": "A4"
+    "access": "A4",
+    "type": "access"
   },
   "268": {
     "nom": "Katana Entaille-cerisier",
     "desc": "La rumeur raconte que ce katana tire son pouvoir de la sève d'un grand cerisier.",
     "effet": "Durée des sorts +1 tour",
     "montant": "Dégât +9",
-    "icone": "W21505"
+    "icone": "W21505",
+    "type": "arme-2m"
   },
   "269": {
     "nom": "Miroir de la Vérité",
@@ -1967,14 +2279,16 @@
     "effet": "Capacité",
     "montant": "2 fois par combat (Instantanée) : Réduit le stress généré par les ennemis (3 tours)",
     "icone": "k10233",
-    "access": "A4"
+    "access": "A4",
+    "type": "access"
   },
   "270": {
     "nom": "Luth du Charmeur",
     "desc": "Un luth fabriqué à partir de matières humaines et de créatures. Malgré sa composition morbide, le son qu'il produit est très relaxant.",
     "effet": "Charisme +2, Capacité",
     "montant": "Dégât +7, 2 fois par combat :Charme tape-à-l-oeil",
-    "icone": "W63702"
+    "icone": "W63702",
+    "type": "arme-2m"
   },
   "271": {
     "nom": "Flûte des Fleurs de Lune",
@@ -1982,7 +2296,8 @@
     "effet": "Capacité",
     "montant": "1 fois par combat : Contrôle de l'Esprit AoE (res esprit -1)",
     "icone": "I00154",
-    "access": "D4"
+    "access": "D4",
+    "type": "access"
   },
   "272": {
     "nom": "Oreillette-micro",
@@ -1990,14 +2305,17 @@
     "effet": "",
     "montant": "Durée des sorts +1 tour",
     "icone": "k10682",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "273": {
     "nom": "Tenue d'Idole",
     "desc": "Une tenue faite sur-mesure pour les idoles. Love love love ! Confère la compétence \"Charme tape-à-l'oeil\" : Esquive et réussite : -2 sur 3 tours",
     "effet": "Charisme +1, Capacité",
     "montant": "Dégât -4,  3 fois par combat : Charme tape-à-l'oeil",
-    "icone": "k20425"
+    "icone": "k20425",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "274": {
     "nom": "Ceinture Pharaonique",
@@ -2006,7 +2324,8 @@
     "montant": "Dégât reçu -2, Intelligence +1 (Intel+1 si Illusionniste)",
     "condition": { "type": "classe", "value": ["Illusionniste"], "bonus": "Intelligence +1" },
     "icone": "A30011",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "275": {
     "nom": "Anneau de résistance mentale",
@@ -2014,7 +2333,8 @@
     "effet": "",
     "montant": "Résistance d'esprit +3",
     "icone": "A00020",
-    "access": "A2"
+    "access": "A2",
+    "type": "access"
   },
   "276": {
     "nom": "Brassard de résistance",
@@ -2022,7 +2342,8 @@
     "effet": "",
     "montant": "Résistance d'esprit +2, dégât reçu -1",
     "icone": "A40024",
-    "access": "A1"
+    "access": "A1",
+    "type": "access"
   },
   "277": {
     "nom": "Mitaine amplificatrice",
@@ -2030,7 +2351,8 @@
     "effet": "",
     "montant": "Montant des buffs +1, dégât reçu -1",
     "icone": "A40010",
-    "access": "D1"
+    "access": "D1",
+    "type": "access"
   },
   "278": {
     "nom": "Puce amplificatrice",
@@ -2039,21 +2361,24 @@
     "montant": "Montant des buffs +1, dégât +1 (+1 si Ingénieur)",
     "condition": { "type": "classe", "value": ["Ingénieur"], "bonus": "Dégât +1" },
     "icone": "i00688",
-    "access": "D1"
+    "access": "D1",
+    "type": "access"
   },
   "279": {
     "nom": "Hache Cruelle",
     "desc": "Une hache vicieuse capable de blesser fortement ses cibles, si elles sont touchées",
     "effet": "Réussite -2",
     "montant": "Dégât +14",
-    "icone": "W22704"
+    "icone": "W22704",
+    "type": "arme-2m"
   },
   "280": {
     "nom": "Fusil du Bourrin",
     "desc": "Une fusil extrêmement puissant capable de blesser fortement ses cibles, si elles sont touchées",
     "effet": "Réussite -2",
     "montant": "Dégât +14",
-    "icone": "W53002"
+    "icone": "W53002",
+    "type": "arme-2m"
   },
   "281": {
     "nom": "Gemme de Puissance",
@@ -2062,7 +2387,8 @@
     "montant": "Dégât +4 (+1 si panoplie)",
     "condition": { "type": "panoplie", "value": "de Puissance", "bonus": "Dégât +1" },
     "icone": "i01146",
-    "access": "D0"
+    "access": "D0",
+    "type": "access"
   },
   "282": {
     "nom": "Crystal de Volesang",
@@ -2070,7 +2396,8 @@
     "effet": "",
     "montant": "Durée des malus +1 tour, montant dégât malus +1",
     "icone": "I00220b",
-    "access": "D4"
+    "access": "D4",
+    "type": "access"
   },
   "283": {
     "nom": "Brassard de Nihilité",
@@ -2078,14 +2405,16 @@
     "effet": "Capacité/ Intel,Esprit -1",
     "montant": "Blocage magique +2, 2 fois par combat (Instantanée) : Zone Antimagie",
     "icone": "a40061",
-    "access": "A2"
+    "access": "A2",
+    "type": "access"
   },
   "284": {
     "nom": "Dague Euphorique",
     "desc": "Une dague maudite pouvant infliger de lourds dégâts, mais avec une contre-partie... Capacité : Euphorie (Instantanée) : +3 dégât par coup reçu (max 5) durée 3 tours",
     "effet": "Capacité",
     "montant": "Dégât +5, 3 fois par combat : Euphorie. Dégât reçus +3",
-    "icone": "W14201"
+    "icone": "W14201",
+    "type": "arme-1m"
   },
   "285": {
     "nom": "Appel Mondial",
@@ -2093,7 +2422,8 @@
     "effet": "Capacité",
     "montant": "4 fois par combat (Instantanée Charisme) : Permet de provoquer les ennemis (75% chance d'être ciblé) pour 1 tour",
     "icone": "I00420",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "286": {
     "nom": "Ceinture de Volesang",
@@ -2101,35 +2431,42 @@
     "effet": "Capacité",
     "montant": "Dégât reçu -2, 3 fois par combat (Esprit) : Dégât miroir",
     "icone": "a30061",
-    "access": "A2"
+    "access": "A2",
+    "type": "access"
   },
   "287": {
     "nom": "Fusil d'Ogre",
     "desc": "Un fusil fabriqué pour les ogres pour tirer de puissant coup",
     "effet": "",
     "montant": "Dégât +9",
-    "icone": "W51403"
+    "icone": "W51403",
+    "type": "arme-2m"
   },
   "288": {
     "nom": "Bouclier d'épines renforcé",
     "desc": "Renforcement du bouclier d'épines. Ces épines vicieuses blessent l'ennemi qui tente d'attaquer au corps à corps. Fonctionne si touché ou bloqué.",
     "effet": "",
     "montant": "Dégât -4, dégât épine : 3",
-    "icone": "W70406"
+    "icone": "W70406",
+    "type": "arme-1m"
   },
   "289": {
     "nom": "Gilet d'épines",
     "desc": "Gilet sur lequel différentes épines ont été placés pour blesser les ennemis qui attaquent au corps à corps. Fonctionne si touché ou bloqué.",
     "effet": "",
     "montant": "Dégât -4, dégât épine : 3",
-    "icone": "A20051b"
+    "icone": "A20051b",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "290": {
     "nom": "Manteau de Delphes",
     "desc": "Ce manteau est fait avec un tissu riche en magie, le secret de sa régénération réside dans la façon dont il est cousu.",
     "effet": "PV Soin reçu +3",
     "montant": "Dégât -4",
-    "icone": "A20057b"
+    "icone": "A20057b",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "291": {
     "nom": "Perle de l'éclipse",
@@ -2137,7 +2474,8 @@
     "effet": "",
     "montant": "Si coup critique (1, 2) : réussite cible -2 (1 tour)",
     "icone": "I00232",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "292": {
     "nom": "Croc sombre",
@@ -2145,7 +2483,8 @@
     "effet": "",
     "montant": "Dégât de ténèbres +3, perçant +2",
     "icone": "I00263b",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "293": {
     "nom": "Statuette de Prévention",
@@ -2153,7 +2492,8 @@
     "effet": "Capacité",
     "montant": "2 fois par combat (Instantanée Esprit) : retire un malus. Dégât reçu -1D4 (min 2) pour 3 tours",
     "icone": "I00408",
-    "access": "A3"
+    "access": "A3",
+    "type": "access"
   },
   "294": {
     "nom": "Parchemin de l'épine",
@@ -2161,49 +2501,57 @@
     "effet": "Capacité",
     "montant": "2 fois par combat (Instantanée Esprit) : Dégât reçu : -4, dégât d'épines +4 (3 tours)",
     "icone": "I00312",
-    "access": "A3"
+    "access": "A3",
+    "type": "access"
   },
   "295": {
     "nom": "Poignard Quartz d'Automne",
     "desc": "Un poignard forgé à la méthode Heldentod avec du Quartz d'Automne",
     "effet": "Durée des sorts +1",
     "montant": "Dégât +4",
-    "icone": "W11306"
+    "icone": "W11306",
+    "type": "arme-1m"
   },
   "296": {
     "nom": "Bâton Quartz d'Automne",
     "desc": "Un bâton fabriquée à la méthode Heldentod et incrusté d'un Quartz d'Automne",
     "effet": "Durée des sorts +1",
     "montant": "Dégât +9",
-    "icone": "W62505"
+    "icone": "W62505",
+    "type": "arme-2m"
   },
   "297": {
     "nom": "Plastron Quartz d'Automne",
     "desc": "Un plastron forgé à la méthode Heldentod et incrusté d'un Quartz d'Automne",
     "effet": "Durée des sorts +1",
     "montant": "Dégât -5",
-    "icone": "A20090"
+    "icone": "A20090",
+    "type": "armure",
+    "armorTypes": ["lourd"]
   },
   "298": {
     "nom": "Dague vorace",
     "desc": "Une dague maudite en recherche de vitalité",
     "effet": "-3 PV par coup",
     "montant": "Dégât +7, si critique (1,2) : soin PV = dégâts/2",
-    "icone": "W13207"
+    "icone": "W13207",
+    "type": "arme-1m"
   },
   "299": {
     "nom": "Pistolet Quartz d'Automne",
     "desc": "Un pistolet forgé à la méthode Heldentod et incrusté d'un Quartz d'Automne",
     "effet": "Durée des sorts +1",
     "montant": "Dégât +9",
-    "icone": "W52008"
+    "icone": "W52008",
+    "type": "arme-2m"
   },
   "300": {
     "nom": "Marteau Pulvérisant",
     "desc": "Un marteau capable de pulvériser la défense de sa cible.",
     "effet": "Blocage cible -2",
     "montant": "Dégât +9",
-    "icone": "W40701"
+    "icone": "W40701",
+    "type": "arme-2m"
   },
   "301": {
     "nom": "Marteau du Sage",
@@ -2211,28 +2559,33 @@
     "effet": "Intelligence +1",
     "montant": "Dégât +7, Soin +2 (AoE/2) (dégât/soin+1 si Sage)",
     "condition": { "type": "classe", "value": ["Sage"], "bonus": "Dégât +1, Soin +1" },
-    "icone": "W40908"
+    "icone": "W40908",
+    "type": "arme-2m"
   },
   "302": {
     "nom": "Griffe en platine",
     "desc": "Une griffe en platine conçue pour infliger de lourd dégâts",
     "effet": "",
     "montant": "Dégât +5, Dégât reçu -2",
-    "icone": "W31402"
+    "icone": "W31402",
+    "type": "arme-1m"
   },
   "303": {
     "nom": "Masse de Ténèbres",
     "desc": "Une masse incrusté d'une pierre pleine de magie obscure",
     "effet": "Dégât ténèbres +2",
     "montant": "Dégât +4",
-    "icone": "W30505"
+    "icone": "W30505",
+    "type": "arme-1m"
   },
   "304": {
     "nom": "Cotte de Maille",
-    "desc": "(Armure Légère) Une cotte de maille, flexible et solide à la fois, permet à son porteur de mieux bloquer.",
+    "desc": "Une cotte de maille, flexible et solide à la fois, permet à son porteur de mieux bloquer.",
     "effet": "Blocage +1",
     "montant": "Dégât -4",
-    "icone": "A20073"
+    "icone": "A20073",
+    "type": "armure",
+    "armorTypes": ["lourd", "leger"]
   },
   "305": {
     "nom": "Robe Elementaire",
@@ -2240,7 +2593,9 @@
     "effet": "",
     "montant": "Dégât -3, dégât élémentaire +3",
     "icone": "A20019",
-    "access": "D2"
+    "access": "D2",
+    "type": "armure",
+    "armorTypes": ["magique"]
   },
   "306": {
     "nom": "Veste de l'Esprit",
@@ -2248,7 +2603,9 @@
     "effet": "Esprit +1",
     "montant": "Dégât -4, (si panoplie : résistance esprit+2)",
     "condition": { "type": "panoplie", "value": "Esprit", "bonus": "Résistance d'esprit +2" },
-    "icone": "A20064"
+    "icone": "A20064",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "307": {
     "nom": "Plastron Elementaire",
@@ -2256,7 +2613,9 @@
     "effet": "",
     "montant": "Dégât -5, dégât élémentaire +3",
     "icone": "A20095",
-    "access": "D2"
+    "access": "D2",
+    "type": "armure",
+    "armorTypes": ["lourd"]
   },
   "308": {
     "nom": "Masse Gravée",
@@ -2264,7 +2623,8 @@
     "effet": "",
     "montant": "Dégât +4 (+1 par glyphe équipée)",
     "condition": { "type": "panoplie", "value": "Glyphe", "bonus": "Dégât +1" },
-    "icone": "W34704"
+    "icone": "W34704",
+    "type": "arme-1m"
   },
   "309": {
     "nom": "Glyphe des Ursuns (3)",
@@ -2272,7 +2632,8 @@
     "effet": "",
     "montant": "Dégât tranchant +3, contondant +3",
     "icone": "i01607",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "310": {
     "nom": "Glyphe du Sage",
@@ -2280,7 +2641,8 @@
     "effet": "",
     "montant": "Dégât de glace +3, contondant +2",
     "icone": "i01136",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "311": {
     "nom": "Glyphe du Samouraï",
@@ -2288,7 +2650,8 @@
     "effet": "",
     "montant": "Dégât de tranchant +3, foudre +2",
     "icone": "i01129",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "312": {
     "nom": "Glyphe du Shaman",
@@ -2296,7 +2659,8 @@
     "effet": "",
     "montant": "Dégât de nature +3, lumière +2",
     "icone": "i01135",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "313": {
     "nom": "Bâton Chromatique",
@@ -2304,7 +2668,8 @@
     "effet": "Inversion Elementaire",
     "montant": "Dégât +10 (+1 Si Magicien)",
     "condition": { "type": "classe", "value": ["Magicien"], "bonus": "Dégât +1" },
-    "icone": "W62507"
+    "icone": "W62507",
+    "type": "arme-2m"
   },
   "314": {
     "nom": "Sphère des Elus",
@@ -2312,7 +2677,8 @@
     "effet": "Groupe",
     "montant": "Expérience reçu +20%, porteur +10 PV",
     "icone": "I00348b",
-    "access": "A4"
+    "access": "A4",
+    "type": "access"
   },
   "315": {
     "nom": "Sphère Opaque",
@@ -2320,7 +2686,8 @@
     "effet": "Groupe",
     "montant": "Expérience reçu +10%, porteur +5 PV",
     "icone": "I00348",
-    "access": "A2"
+    "access": "A2",
+    "type": "access"
   },
   "316": {
     "nom": "Epée Knowledge",
@@ -2328,21 +2695,26 @@
     "effet": "XP reçu +10%",
     "montant": "Dégât +4 (+2 si panoplie)",
     "condition": { "type": "panoplie", "value": "Ecolier, Bijou, Experience", "bonus": "Dégât +2" },
-    "icone": "W10108"
+    "icone": "W10108",
+    "type": "arme-1m"
   },
   "317": {
     "nom": "Manteau Polaire",
     "desc": "Un manteau cousu avec une fourrure d'une créature mythique, très utile dans des climats hostiles.",
     "effet": "Esquive +1 & Blocage +1",
     "montant": "Dégât -5 (0 malus froid), dégât de glace +2",
-    "icone": "A20059b"
+    "icone": "A20059b",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "318": {
     "nom": "Manteau Fourrure",
     "desc": "Un manteau cousu avec une épaisse fourrure, malgré sa résistance elle reste très légère et permet à son porteur d'être plus agile.",
     "effet": "Esquive +1 & Blocage +1",
     "montant": "Dégât -4",
-    "icone": "A20057"
+    "icone": "A20057",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "319": {
     "nom": "Bague Apaisante",
@@ -2350,7 +2722,8 @@
     "effet": "Capacité",
     "montant": "2 fois par combat (Instantanée Charisme) : Apaise les ennemis (blocage -1, résistance esprit -2) sur 3 tours",
     "icone": "A00003b",
-    "access": "D2"
+    "access": "D2",
+    "type": "access"
   },
   "320": {
     "nom": "Masse Pulvérisante",
@@ -2358,42 +2731,48 @@
     "effet": "Blocage cible -1",
     "montant": "Dégât +5 (+1 si Guerrier)",
     "condition": { "type": "classe", "value": ["Guerrier"], "bonus": "Dégât +1" },
-    "icone": "W33501"
+    "icone": "W33501",
+    "type": "arme-1m"
   },
   "321": {
     "nom": "Bâton de Stella",
     "desc": "Un bâton Heldentod forgé avec le minerai de Stella, perce efficacement l'ennemi.",
     "effet": "Blocage magique cible -3",
     "montant": "Dégât +10",
-    "icone": "W64504"
+    "icone": "W64504",
+    "type": "arme-2m"
   },
   "322": {
     "nom": "Arc de précision",
     "desc": "Un arc qui aide à ne pas rater sa cible.",
     "effet": "Esquive/Blocage cible -2",
     "montant": "Dégât +8",
-    "icone": "W50705"
+    "icone": "W50705",
+    "type": "arme-2m"
   },
   "323": {
     "nom": "Arc de l'apprenti",
     "desc": "Un arc apportant du savoir à son porteur",
     "effet": "XP reçu +10%",
     "montant": "Dégât +7",
-    "icone": "W50102"
+    "icone": "W50102",
+    "type": "arme-2m"
   },
   "324": {
     "nom": "Arc Divin",
     "desc": "Un arc conçu par une magie divine de l'église, elle enchante vos coups physiques en dégât de lumière",
     "effet": "Element : Lumière",
     "montant": "Dégât +11 (lumière)",
-    "icone": "W54001"
+    "icone": "W54001",
+    "type": "arme-2m"
   },
   "325": {
     "nom": "Fusil d'Asbi",
     "desc": "Un Fusil technologique inscrusté d'une pierre Asbi",
     "effet": "",
     "montant": "Dégât +8, réussite des sorts +1",
-    "icone": "W51002"
+    "icone": "W51002",
+    "type": "arme-2m"
   },
   "326": {
     "nom": "Joyau de Sekhmet",
@@ -2401,7 +2780,8 @@
     "effet": "Conversion Lumière en Ténèbres",
     "montant": "Ne peut pas être retiré (malédiction du lien) : Force +1, Intelligence +1",
     "icone": "i01082b",
-    "access": "D1"
+    "access": "D1",
+    "type": "access"
   },
   "327": {
     "nom": "Graine Sacrée",
@@ -2409,7 +2789,8 @@
     "effet": "",
     "montant": "Dégât reçu -2, dégât nature +3",
     "icone": "I00160",
-    "access": "D2"
+    "access": "D2",
+    "type": "access"
   },
   "328": {
     "nom": "Insigne de l'Ordre du Temple",
@@ -2422,7 +2803,8 @@
       "bonus": "Dégât +1, Soin +1"
     },
     "icone": "i01340",
-    "access": "D0"
+    "access": "D0",
+    "type": "access"
   },
   "329": {
     "nom": "Anneau Ouragan",
@@ -2430,7 +2812,8 @@
     "effet": "",
     "montant": "Si coup critique (1,2) : Soigne 1D6+6",
     "icone": "A00019",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "330": {
     "nom": "Super Chapeau Champi",
@@ -2438,14 +2821,17 @@
     "effet": "",
     "montant": "Soin +3 et Dégât magique +3, (AoE/2)",
     "icone": "A10028",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "331": {
     "nom": "Robe de Démone du Nord",
     "desc": "Une robe cousue spécialement pour la \"générale de l'armée de démons du nord\" par le Roi Lucius",
     "effet": "Familier",
     "montant": "Dégât -4, Familier : dégât/soin+2 (AoE/2), réussite sort+1",
-    "icone": "k20180"
+    "icone": "k20180",
+    "type": "armure",
+    "armorTypes": ["magique"]
   },
   "332": {
     "nom": "Bouclier Zuminator",
@@ -2453,7 +2839,8 @@
     "effet": "Blocage physique critique : renvoi le coup",
     "montant": "Dégât -4 (PV+10 si Zumi)",
     "condition": { "type": "race", "value": ["Zumi"], "bonus": "PV +10" },
-    "icone": "W73002"
+    "icone": "W73002",
+    "type": "arme-1m"
   },
   "333": {
     "nom": "Serre-tête d'Acteur",
@@ -2461,7 +2848,8 @@
     "effet": "",
     "montant": "Dextérité +1, Charisme +1",
     "icone": "k10298",
-    "access": "A1"
+    "access": "A1",
+    "type": "access"
   },
   "334": {
     "nom": "Bandeau du Rageux",
@@ -2469,7 +2857,8 @@
     "effet": "Familier",
     "montant": "Maintient l'Aigle en vie malgré la distance, + 5 PV pour lui",
     "icone": "bandeau",
-    "access": "A4"
+    "access": "A4",
+    "type": "access"
   },
   "335": {
     "nom": "Crochet de Gimu",
@@ -2477,21 +2866,24 @@
     "effet": "",
     "montant": "Soin +4 et Dégât magique +4, (AoE/2)",
     "icone": "I002863",
-    "access": "D4"
+    "access": "D4",
+    "type": "access"
   },
   "336": {
     "nom": "Dague Toxique",
     "desc": "Une dague créée à partir de créatures toxiques. Être planté par cette dague peut rapidement être fatal.",
     "effet": "",
     "montant": "Dégât +5, si coup critique (1,2,3) : prochains dégâts reçus +5 (1 tour)",
-    "icone": "W14604"
+    "icone": "W14604",
+    "type": "arme-1m"
   },
   "337": {
     "nom": "Hache Verdâtre",
     "desc": "Une hache composée de résidus d'insectes, d'arbres et de plantes magiques. Ces résidus imprègnent les attaques physiques exécutées.",
     "effet": "Element : Nature",
     "montant": "Dégât +9, dégât de nature +3",
-    "icone": "W23707"
+    "icone": "W23707",
+    "type": "arme-2m"
   },
   "338": {
     "nom": "Gemme de pétale",
@@ -2499,7 +2891,8 @@
     "effet": "",
     "montant": "PV +10, Blocage +1",
     "icone": "I00364",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "339": {
     "nom": "Pierre Loukoum",
@@ -2507,7 +2900,8 @@
     "effet": "",
     "montant": "2 fois par combat (Instantanée) : PV+5 et réussite des sorts +1 sur 3 tours",
     "icone": "I00218",
-    "access": "D2"
+    "access": "D2",
+    "type": "access"
   },
   "340": {
     "nom": "Pierre Algue Gelée",
@@ -2515,56 +2909,64 @@
     "effet": "",
     "montant": "Dégât de nature +3, glace +3",
     "icone": "I00212",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "341": {
     "nom": "Gunner",
     "desc": "Le Gunner est une arme évolutive, son nom signifie \"le pistoleur\", en référence à ... :)",
     "effet": "",
     "montant": "Dégât +6",
-    "icone": "W51901"
+    "icone": "W51901",
+    "type": "arme-2m"
   },
   "342": {
     "nom": "Gunner AV",
     "desc": "Un Gunner renforcé par de l'Acier Volcanique",
     "effet": "Dégât de feu +2",
     "montant": "Dégât +7",
-    "icone": "W51902"
+    "icone": "W51902",
+    "type": "arme-2m"
   },
   "343": {
     "nom": "Gunner de l'Esprit",
     "desc": "Un Gunner qui améliore les capacités de concentration de son porteur",
     "effet": "Esprit +2",
     "montant": "Dégât +8",
-    "icone": "W51900"
+    "icone": "W51900",
+    "type": "arme-2m"
   },
   "344": {
     "nom": "Gunner de parade",
     "desc": "Un Gunner amélioré militairement pour aider son porteur à résister face aux attaques.",
     "effet": "Blocage +2",
     "montant": "Dégât +8",
-    "icone": "W51903"
+    "icone": "W51903",
+    "type": "arme-2m"
   },
   "345": {
     "nom": "Gunner Pulvérisant",
     "desc": "Un Gunner conçu pour pulvériser tout sur son passage",
     "effet": "Blocage cible -2",
     "montant": "Dégât +10",
-    "icone": "W51904"
+    "icone": "W51904",
+    "type": "arme-2m"
   },
   "346": {
     "nom": "Gunner Asbi",
     "desc": "Un Gunner renforcé par des Crystaux d'Asbis raffinés, il est redoutable.",
     "effet": "",
     "montant": "Dégât +10, réussite des sorts +1",
-    "icone": "W51900c"
+    "icone": "W51900c",
+    "type": "arme-2m"
   },
   "347": {
     "nom": "Gunner du Savoir",
     "desc": "Un Gunner qui améliore les capacités magique de son porteur",
     "effet": "",
     "montant": "Dégât +8, Intelligence +1 et Esprit +1",
-    "icone": "W51903b"
+    "icone": "W51903b",
+    "type": "arme-2m"
   },
   "348": {
     "nom": "Plastron de Delphes",
@@ -2572,7 +2974,9 @@
     "effet": "PV Soin reçu +3",
     "montant": "Dégât -5, (PV+5 si Torturran ou Ursun)",
     "condition": { "type": "race", "value": ["Torturran", "Ursun"], "bonus": "PV +5" },
-    "icone": "A20108"
+    "icone": "A20108",
+    "type": "armure",
+    "armorTypes": ["lourd"]
   },
   "349": {
     "nom": "Veste de Ténacité",
@@ -2580,7 +2984,9 @@
     "effet": "PV +10",
     "montant": "Dégât -5, résiste à un coup fatal (laissant 1 PV)",
     "icone": "A20068",
-    "access": "A2"
+    "access": "A2",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "350": {
     "nom": "Chaîne du destin",
@@ -2588,14 +2994,17 @@
     "effet": "Malédiction du Lien",
     "montant": "PV +10, Par combat : Jet 1D6 : Dégât/Soin ±6,4,2 (-6 à +6) AoE/2",
     "icone": "A00039",
-    "access": "D2"
+    "access": "D2",
+    "type": "access"
   },
   "351": {
     "nom": "Plastron du partage",
     "desc": "Ce plastron résistant et maudit force son porteur à aider un camarade en subissant la moitié de ses dégâts à sa place.",
     "effet": "Malédiction du Lien",
     "montant": "Dégât -7, partage des dégâts de moitié d'une personne",
-    "icone": "a20109b"
+    "icone": "a20109b",
+    "type": "armure",
+    "armorTypes": ["lourd"]
   },
   "352": {
     "nom": "Pierre de Férégal Sublime",
@@ -2604,21 +3013,24 @@
     "montant": "Dégât reçu -2 (-1 par objet d'Asbi)",
     "condition": { "type": "panoplie", "value": "Asbi", "bonus": "Dégât reçu -1" },
     "icone": "i01009",
-    "access": "D0"
+    "access": "D0",
+    "type": "access"
   },
   "353": {
     "nom": "Griffe de Monstre",
     "desc": "Une griffe à l'effigie d'un monstre, elle peut impressionner l'ennemi et attirer son attention.",
     "effet": "Charisme +1",
     "montant": "Dégât +4",
-    "icone": "W31604"
+    "icone": "W31604",
+    "type": "arme-1m"
   },
   "354": {
     "nom": "Griffe de Démon",
     "desc": "Une griffe à l'effigie d'un démon elle frappe violemment et peut effrayer ceux qui la voit.",
     "effet": "Charisme +1",
     "montant": "Dégât +6",
-    "icone": "W31606"
+    "icone": "W31606",
+    "type": "arme-1m"
   },
   "355": {
     "nom": "Bouclier du Sorcier",
@@ -2626,7 +3038,8 @@
     "effet": "",
     "montant": "Dégât -3, montant des buffs +1",
     "icone": "W70304",
-    "access": "D1"
+    "access": "D1",
+    "type": "arme-1m"
   },
   "356": {
     "nom": "Chaîne Heldentod",
@@ -2634,21 +3047,25 @@
     "effet": "",
     "montant": "Force +1, Dégât physique +2",
     "icone": "A00038",
-    "access": "D2"
+    "access": "D2",
+    "type": "access"
   },
   "357": {
     "nom": "Cotte Heldentod",
-    "desc": "(Armure Lourde) Une cotte de maille très résistante portée par certaines unités Heldentod.",
+    "desc": "Une cotte de maille très résistante portée par certaines unités Heldentod.",
     "effet": "",
     "montant": "Dégât -6",
-    "icone": "A20074"
+    "icone": "A20074",
+    "type": "armure",
+    "armorTypes": ["lourd"]
   },
   "358": {
     "nom": "Masse Heldentod",
     "desc": "Une masse inspirée du style de l'armée Heldentod.",
     "effet": "",
     "montant": "Dégât +5, dégât critique +5",
-    "icone": "W30402"
+    "icone": "W30402",
+    "type": "arme-1m"
   },
   "359": {
     "nom": "Grimoire Heldentod",
@@ -2656,7 +3073,8 @@
     "effet": "PV +10",
     "montant": "Dégât +8 (+1 par objet Heldentod)",
     "condition": { "type": "panoplie", "value": "Heldentod", "bonus": "Dégât +1" },
-    "icone": "W61402"
+    "icone": "W61402",
+    "type": "arme-2m"
   },
   "360": {
     "nom": "Gantelet Heldentod",
@@ -2665,7 +3083,8 @@
     "montant": "Dégât reçu -2, dégât +1 (+1 par objet Heldentod)",
     "condition": { "type": "panoplie", "value": "Heldentod", "bonus": "Dégât +1" },
     "icone": "A40015",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "361": {
     "nom": "Bracelet Maudit d'Heldentod III",
@@ -2673,7 +3092,8 @@
     "effet": "Charisme +1",
     "montant": "Durée des malus +1 tour, dégâts ténèbres +3",
     "icone": "A00010",
-    "access": "D4"
+    "access": "D4",
+    "type": "access"
   },
   "362": {
     "nom": "Croc de Caldari",
@@ -2681,7 +3101,8 @@
     "effet": "",
     "montant": "Si coup critique (1,2,3) : Soin 1D6+4, prochaine réussite +1",
     "icone": "I00260b",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "363": {
     "nom": "Bracelet Heldentod",
@@ -2689,7 +3110,8 @@
     "effet": "",
     "montant": "Intelligence +1, dégât magique +2",
     "icone": "A00012",
-    "access": "D2"
+    "access": "D2",
+    "type": "access"
   },
   "364": {
     "nom": "Lance Heldentod",
@@ -2697,7 +3119,8 @@
     "effet": "PV +10",
     "montant": "Dégât +8 (+1 par objet Heldentod)",
     "condition": { "type": "panoplie", "value": "Heldentod", "bonus": "Dégât +1" },
-    "icone": "W54308"
+    "icone": "W54308",
+    "type": "arme-2m"
   },
   "365": {
     "nom": "Plastron Draconique",
@@ -2705,7 +3128,9 @@
     "effet": "",
     "montant": "Dégât -6 (Force+1, Intel+1 pour les Chev D.)",
     "condition": { "type": "classe", "value": ["Chev Dragon"], "bonus": "Force +1, Intelligence +1" },
-    "icone": "A20081"
+    "icone": "A20081",
+    "type": "armure",
+    "armorTypes": ["lourd"]
   },
   "366": {
     "nom": "Glyphe du Chevalier Dragon",
@@ -2713,7 +3138,8 @@
     "effet": "",
     "montant": "Dégât perçant +3, feu +2, ténèbres +2",
     "icone": "i01125",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "367": {
     "nom": "Charme de Butin",
@@ -2721,14 +3147,16 @@
     "effet": "",
     "montant": "Améliore la rareté des butins",
     "icone": "I00426",
-    "access": "A2"
+    "access": "A2",
+    "type": "access"
   },
   "368": {
     "nom": "Guitare Endiablée",
     "desc": "Une guitare octroyant à son porteur et ses alliés une puissance supérieure.",
     "effet": "Montant des buffs +1",
     "montant": "Dégât +10, PV +10",
-    "icone": "W62806"
+    "icone": "W62806",
+    "type": "arme-2m"
   },
   "369": {
     "nom": "Lunettes Bling-bling",
@@ -2736,7 +3164,8 @@
     "effet": "",
     "montant": "Si provocation : chance d'être touché +25% (max 90%), durée +1 tour",
     "icone": "k10530",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "370": {
     "nom": "Veste d'Ingénieur",
@@ -2744,7 +3173,9 @@
     "effet": "",
     "montant": "Dégât -5 (Si ingénieur : dégâts +3) ",
     "condition": { "type": "classe", "value": ["Ingénieur"], "bonus": "Dégât +3" },
-    "icone": "A20048"
+    "icone": "A20048",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "371": {
     "nom": "Gantelet Ecailleux",
@@ -2752,7 +3183,8 @@
     "effet": "",
     "montant": "Dégât reçu -3, Dextérité +1",
     "icone": "A40029",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "372": {
     "nom": "Collier Lueur d'âme",
@@ -2760,28 +3192,32 @@
     "effet": "",
     "montant": "Durée des malus +1 tour, Soin +2 et Dégât magique +2",
     "icone": "A00044",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "373": {
     "nom": "Bâton Kifépeur",
     "desc": "Un bâton qui a tendance à surprendre les ennemis !",
     "effet": "Charisme +1",
     "montant": "Dégât +7",
-    "icone": "W60203"
+    "icone": "W60203",
+    "type": "arme-2m"
   },
   "374": {
     "nom": "Bâton Kifétrépeur",
     "desc": "Une amélioration du bâton Kifépeur. Seul les plus grands peuvent l'avoir, quelle prestance !",
     "effet": "Charisme +2",
     "montant": "Dégât +8",
-    "icone": "W60703"
+    "icone": "W60703",
+    "type": "arme-2m"
   },
   "375": {
     "nom": "Hache Forte",
     "desc": "Une hache qui donne de la force à son porteur, huss !",
     "effet": "Force +1",
     "montant": "Dégât +7",
-    "icone": "W20104"
+    "icone": "W20104",
+    "type": "arme-2m"
   },
   "376": {
     "nom": "Hache Puissante",
@@ -2789,56 +3225,64 @@
     "effet": "Force +2",
     "montant": "Dégât +8 (+1 si Guerrier)",
     "condition": { "type": "classe", "value": ["Guerrier"], "bonus": "Dégât +1" },
-    "icone": "W20103"
+    "icone": "W20103",
+    "type": "arme-2m"
   },
   "377": {
     "nom": "Masse de Magie",
     "desc": "Une masse conçue pour renforcer la puissance magique.",
     "effet": "Intelligence +1",
     "montant": "Dégât +4",
-    "icone": "W30103"
+    "icone": "W30103",
+    "type": "arme-1m"
   },
   "378": {
     "nom": "Bâton de l'Esprit",
     "desc": "Un bâton améliorant l'esprit de son porteur.",
     "effet": "Esprit +2",
     "montant": "Dégât +7",
-    "icone": "W60102"
+    "icone": "W60102",
+    "type": "arme-2m"
   },
   "379": {
     "nom": "Rapière Arc-en-Ciel",
     "desc": "Une rapière forgée avec un composant très précieux : le Minerai Arc-en-Ciel",
     "effet": "Blocage +1",
     "montant": "Dégât +5",
-    "icone": "W11807"
+    "icone": "W11807",
+    "type": "arme-1m"
   },
   "380": {
     "nom": "Bâton Arc-en-Ciel",
     "desc": "Un bâton serti d'un composant très précieux : le Minerai Arc-en-Ciel",
     "effet": "Blocage +1",
     "montant": "Dégât +10",
-    "icone": "W64501b"
+    "icone": "W64501b",
+    "type": "arme-2m"
   },
   "381": {
     "nom": "Epée Colossale Perturbante",
     "desc": "Cette épée colossale à le pouvoir de perturber son adversaire.",
     "effet": "",
     "montant": "Dégât +10, Si coup critique (1,2,3) : Force/Intel -2 (2 tours)",
-    "icone": "W21005"
+    "icone": "W21005",
+    "type": "arme-2m"
   },
   "382": {
     "nom": "Epée Colossale Arc-en-Ciel",
     "desc": "Une épée colossale forgée avec un composant très précieux : le Minerai Arc-en-Ciel",
     "effet": "Blocage +2",
     "montant": "Dégât +10",
-    "icone": "W21207"
+    "icone": "W21207",
+    "type": "arme-2m"
   },
   "383": {
     "nom": "Pistolet suspect",
     "desc": "Ce pistolet a été conçu par des ingénieurs, c'est un pur prototype, mais que va-t-il faire ?",
     "effet": "Inconnu ?",
     "montant": "Dégât +9",
-    "icone": "W54105"
+    "icone": "W54105",
+    "type": "arme-2m"
   },
   "384": {
     "nom": "Anneau du Bagarreur",
@@ -2846,28 +3290,32 @@
     "effet": "",
     "montant": "Dégât +2, PV +5",
     "icone": "A00006",
-    "access": "D0"
+    "access": "D0",
+    "type": "access"
   },
   "385": {
     "nom": "Grimoire Gravitationnel",
     "desc": "Ce grimoire possède un pouvoir unique, il est capable de ralentir sa cible en augmentant la gravité.",
     "effet": "",
     "montant": "Dégât +10, Si coup critique (1,2,3) : Dexté -4 (2 tours)",
-    "icone": "W64803"
+    "icone": "W64803",
+    "type": "arme-2m"
   },
   "386": {
     "nom": "Hache de la Terreur",
     "desc": "Cette hache peut complètement pétrifier de peur ses adversaires.",
     "effet": "",
     "montant": "Dégât +10, Si coup critique (1,2,3) : Esprit -4 (2 tours)",
-    "icone": "W20606"
+    "icone": "W20606",
+    "type": "arme-2m"
   },
   "387": {
     "nom": "Bouclier Solaire",
     "desc": "Un bouclier de lumière avec une défense incomparable, il a été créé pour l'un des plus grands templiers qui existe.",
     "effet": "",
     "montant": "Dégât -5, dégât lumière +3",
-    "icone": "W71303"
+    "icone": "W71303",
+    "type": "arme-1m"
   },
   "388": {
     "nom": "Ceinture Anti-magie",
@@ -2875,7 +3323,8 @@
     "effet": "",
     "montant": "PV +5, Blocage magique +2",
     "icone": "A30019",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "389": {
     "nom": "Anneau de Vie",
@@ -2883,14 +3332,16 @@
     "effet": "",
     "montant": "Soin +4 (AoE/2), PV +15",
     "icone": "A00005b",
-    "access": "D2"
+    "access": "D2",
+    "type": "access"
   },
   "390": {
     "nom": "Griffe Déchirante",
     "desc": "Cette griffe peut fragmenter et déchiqueter la force de ses victimes.",
     "effet": "",
     "montant": "Dégât +5, Si coup critique (1,2,3) : Force -4 (2 tours)",
-    "icone": "W31903"
+    "icone": "W31903",
+    "type": "arme-1m"
   },
   "391": {
     "nom": "Anneau protecteur",
@@ -2898,35 +3349,40 @@
     "effet": "",
     "montant": "Blocage physique +2",
     "icone": "A00013",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "392": {
     "nom": "Masse isolante",
     "desc": "Cette masse peut absorber la magie qui l'entoure pour protéger son porteur.",
     "effet": "Blocage magique +1",
     "montant": "Dégât +4",
-    "icone": "W32401"
+    "icone": "W32401",
+    "type": "arme-1m"
   },
   "393": {
     "nom": "Griffe de finesse",
     "desc": "Cette griffe a appartenu à un grand aventurier de petite taille. Utile pour être rapide et agile !",
     "effet": "Esquive +1",
     "montant": "Dégât +5",
-    "icone": "W31503"
+    "icone": "W31503",
+    "type": "arme-1m"
   },
   "394": {
     "nom": "Marteau Isolant",
     "desc": "Ce marteau peut absorber la magie qui l'entoure pour protéger son porteur.",
     "effet": "Blocage magique +2",
     "montant": "Dégât +10",
-    "icone": "W40304"
+    "icone": "W40304",
+    "type": "arme-2m"
   },
   "395": {
     "nom": "Guitare massive",
     "desc": "Cette guitare est utile pour faire du Heavy Metal (et pour mieux bloquer) car elle est massive !",
     "effet": "Blocage physique +2",
     "montant": "Dégât +9",
-    "icone": "W63802"
+    "icone": "W63802",
+    "type": "arme-2m"
   },
   "396": {
     "nom": "Lunettes Zumis",
@@ -2935,7 +3391,8 @@
     "montant": "Dextérité +1, Esprit +1 (Esprit+1 si Zumi)",
     "condition": { "type": "race", "value": ["Zumi"], "bonus": "Esprit +1" },
     "icone": "k10106",
-    "access": "A1"
+    "access": "A1",
+    "type": "access"
   },
   "397": {
     "nom": "Lunettes d'Intello",
@@ -2943,7 +3400,8 @@
     "effet": "",
     "montant": "Intelligence +1, Chance d'être visée -25%",
     "icone": "k10029",
-    "access": "A1"
+    "access": "A1",
+    "type": "access"
   },
   "398": {
     "nom": "Oreilles de Lapin",
@@ -2951,7 +3409,8 @@
     "effet": "",
     "montant": "Charisme +1, Chance d'être visée -25%",
     "icone": "k10657",
-    "access": "A1"
+    "access": "A1",
+    "type": "access"
   },
   "399": {
     "nom": "Tenue de Ranger",
@@ -2959,49 +3418,62 @@
     "effet": "",
     "montant": "Dégât -5, Dégât +1 (+1 par classe citée)",
     "condition": { "type": "classe", "value": ["Voleur", "Assassin", "Chasseur", "Corsaire"], "bonus": "Dégât +1" },
-    "icone": "k20820"
+    "icone": "k20820",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "400": {
     "nom": "Robe Fleurie",
     "desc": "Cette robe de très haute couture va à merveille à tous les utilisateurs de magie.",
     "effet": "Esprit +1",
     "montant": "Dégât -4, Dégât magique +2",
-    "icone": "k20882"
+    "icone": "k20882",
+    "type": "armure",
+    "armorTypes": ["magique"]
   },
   "401": {
     "nom": "Tenue de Soubrette",
     "desc": "Cette tenue très mignonne à le mérite de faire hésiter certains adversaires.",
     "effet": "",
     "montant": "Dégât -3, Chance d'être visée -33%",
-    "icone": "k20026"
+    "icone": "k20026",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "402": {
     "nom": "Robe de Générale du Nord",
     "desc": "Amélioration de la \"Robe de démone du Nord\", elle représente mieux la hauteur de sa personne !",
     "effet": "Familier",
     "montant": "Dégât -4, Familier : dégât+4/soin+2 (AoE/2), réussite sort+1",
-    "icone": "k20926"
+    "icone": "k20926",
+    "type": "armure",
+    "armorTypes": ["magique"]
   },
   "403": {
     "nom": "Tenue d'écolière",
     "desc": "Une tenue excellente pour apprendre de nouvelles choses !",
     "effet": "",
     "montant": "Dégât -3, Expérience reçu +20%",
-    "icone": "k20104"
+    "icone": "k20104",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "404": {
     "nom": "Tenue d'écolier",
     "desc": "Une tenue excellente pour apprendre de nouvelles choses !",
     "effet": "",
     "montant": "Dégât -3, Expérience reçu +20%",
-    "icone": "k20100"
+    "icone": "k20100",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "405": {
     "nom": "Griffe Royale",
     "desc": "Cette griffe antique aurait appartenu au 1er Grand Roi Ursun il y a plus de 400 ans. Son pouvoir est démentiel.",
     "effet": "Action +",
     "montant": "Dégât +5, Si Blocage/Esquive critique : Coup d'opportunité",
-    "icone": "W35106"
+    "icone": "W35106",
+    "type": "arme-1m"
   },
   "406": {
     "nom": "Chaussures anti-bruit",
@@ -3009,7 +3481,8 @@
     "effet": "Dextérité +1",
     "montant": "En invisibilité : chance d'être touché -3",
     "icone": "A50013",
-    "access": "A2"
+    "access": "A2",
+    "type": "access"
   },
   "407": {
     "nom": "Bague Enchantée",
@@ -3017,14 +3490,17 @@
     "effet": "",
     "montant": "Dégât +2, Esprit +1",
     "icone": "A00004",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "408": {
     "nom": "Robe étoilée renforcée",
     "desc": "Une version améliorée de la robe étoilée, conçue pour des magiciens de haut niveau",
     "effet": "Intelligence +1",
     "montant": "Dégât -3, Dégât magique +2",
-    "icone": "A20032b"
+    "icone": "A20032b",
+    "type": "armure",
+    "armorTypes": ["magique"]
   },
   "409": {
     "nom": "Gants du Sniper",
@@ -3033,7 +3509,8 @@
     "montant": "Dégât perçant +3, Dextérité +1 (+1 si Chasseur)",
     "condition": { "type": "classe", "value": ["Chasseur"], "bonus": "Dextérité +1" },
     "icone": "A40017",
-    "access": "D2"
+    "access": "D2",
+    "type": "access"
   },
   "410": {
     "nom": "Brassard sacré",
@@ -3042,7 +3519,8 @@
     "montant": "Dégât lumière +2, dégât reçu -2 (-1 si Templier)",
     "condition": { "type": "classe", "value": ["Templier"], "bonus": "Dégât reçu -1" },
     "icone": "A40033",
-    "access": "D1"
+    "access": "D1",
+    "type": "access"
   },
   "411": {
     "nom": "Pendentif du risque",
@@ -3051,7 +3529,8 @@
     "montant": "Si PV <33%, Dégât : +4 et Soin : +3",
     "condition": { "type": "PV", "value": "3", "bonus": "Dégât +4, Soin +3" },
     "icone": "A00046d",
-    "access": "D2"
+    "access": "D2",
+    "type": "access"
   },
   "412": {
     "nom": "Cape de fuite",
@@ -3060,51 +3539,60 @@
     "montant": "Si PV < 33%, Esquive et Dextérité+2",
     "condition": { "type": "PV", "value": "3", "bonus": "Esquive +2, Dextérité +2" },
     "icone": "A60015",
-    "access": "A1"
+    "access": "A1",
+    "type": "access"
   },
   "413": {
     "nom": "Cotte du Survivant",
-    "desc": "(Armure Légère) Cette cotte de maille est réputée pour avoir sauvé la vie à un bon nombre de héros.",
+    "desc": "Cette cotte de maille est réputée pour avoir sauvé la vie à un bon nombre de héros.",
     "effet": "",
     "montant": "Dégât -4, Blocage +1 (Bloc+1 si PV < 33%)",
     "condition": { "type": "PV", "value": "3", "bonus": "Blocage +1" },
     "icone": "A20076",
-    "access": "A1"
+    "access": "A1",
+    "type": "armure",
+    "armorTypes": ["lourd", "leger"]
   },
   "414": {
     "nom": "Dague de Molman",
     "desc": "Dague ayant appartenu au défunt Roi de Braider Molman, sa puissance n'est plus à démontrer",
     "effet": "Dextérité +1",
     "montant": "Dégât +6",
-    "icone": "W16802"
+    "icone": "W16802",
+    "type": "arme-1m"
   },
   "415": {
     "nom": "Rapière de Braider",
     "desc": "Cette rapière a été forgée par les meilleures forgerons de Braider, très pratique en combat ",
     "effet": "Dégât critique +5",
     "montant": "Dégât +5",
-    "icone": "W16701"
+    "icone": "W16701",
+    "type": "arme-1m"
   },
   "416": {
     "nom": "Veste de Braider",
     "desc": "Cette veste très légère a été conçue pour les soldats de Braider souvent en déplacement.",
     "effet": "Dextérité +1",
     "montant": "Dégât -5",
-    "icone": "A20055"
+    "icone": "A20055",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "417": {
     "nom": "Hache Protectrice",
     "desc": "Amélioration de la hache défensive, capable de mieux protéger son porteur",
     "effet": "Dégât reçu -3",
     "montant": "Dégât +8",
-    "icone": "W20503"
+    "icone": "W20503",
+    "type": "arme-2m"
   },
   "418": {
     "nom": "Gravité?",
     "desc": "Permet d'accentuer ou de diminuer la gravité sur une zone de 3m, hauteur de saut max 1.5m. Multiplicateur de poids *2 /2.",
     "effet": "Capacité",
     "montant": "2 fois par combat (Instantanée jet de dé) : Dextérité ±4 pendant 3 tours",
-    "icone": "?"
+    "icone": "?",
+    "type": "access"
   },
   "419": {
     "nom": "Griffe sanglante",
@@ -3112,35 +3600,40 @@
     "effet": "",
     "montant": "Dégât +4 (+3 Si PV <33%)",
     "condition": { "type": "PV", "value": "3", "bonus": "Dégât +3" },
-    "icone": "W31406"
+    "icone": "W31406",
+    "type": "arme-1m"
   },
   "420": {
     "nom": "Bâton Brasier",
     "desc": "Ce bâton à la capacité de changer la Glace en Feu !",
     "effet": "Element : Glace > Feu",
     "montant": "Dégât +9, dégât de feu +3",
-    "icone": "W60501b"
+    "icone": "W60501b",
+    "type": "arme-2m"
   },
   "421": {
     "nom": "Bâton Gemme Sombre",
     "desc": "Ce bâton est incrusté d'une gemme sombre emplie de méchanceté, elle convertit la Foudre en Ténèbres",
     "effet": "Element : Foudre > Ténèbres",
     "montant": "Dégât +9, dégât de ténèbres +3",
-    "icone": "W60501"
+    "icone": "W60501",
+    "type": "arme-2m"
   },
   "422": {
     "nom": "Masse de Plasma",
     "desc": "Cette masse est un générateur d'électricité très particulier qui se base sur les photons.",
     "effet": "Element : Lumière > Foudre",
     "montant": "Dégât +4, dégât de foudre +2",
-    "icone": "W34605b"
+    "icone": "W34605b",
+    "type": "arme-1m"
   },
   "423": {
     "nom": "Thunder Gun",
     "desc": "Ce pistolet est chargé à bloc en électricité, même vos balles normales seront électrisées !",
     "effet": "Element : Foudre",
     "montant": "Dégât +10",
-    "icone": "W54108b"
+    "icone": "W54108b",
+    "type": "arme-2m"
   },
   "424": {
     "nom": "Marteau Sacré",
@@ -3148,21 +3641,24 @@
     "effet": "Dégât lumière +3",
     "montant": "Dégât +8 (+1 si Templier)",
     "condition": { "type": "classe", "value": ["Templier"], "bonus": "Dégât +1" },
-    "icone": "W41201"
+    "icone": "W41201",
+    "type": "arme-2m"
   },
   "425": {
     "nom": "Pic du Maëlstrom",
     "desc": "Cette lance est l'incarnation même de la puissance du Pic du Maëlstrom, elle donne des frissons rien qu'en la regardant.",
     "effet": "Element : Glace",
     "montant": "Dégât +10, dégât de glace +2",
-    "icone": "W53207"
+    "icone": "W53207",
+    "type": "arme-2m"
   },
   "426": {
     "nom": "Lance Divine",
     "desc": "Cette lance a été conçu par les Chevalier Templiers, elle convertit les coups physiques en lumière.",
     "effet": "Element : Lumière",
     "montant": "Dégât +10",
-    "icone": "W53102"
+    "icone": "W53102",
+    "type": "arme-2m"
   },
   "427": {
     "nom": "Epée Gemme Noire",
@@ -3170,14 +3666,16 @@
     "effet": "Element : Ténèbres",
     "montant": "Dégât +9 , dégât de ténèbres +2 (dégât+1 si Luminary) ",
     "condition": { "type": "classe", "value": ["Luminary"], "bonus": "Dégât +1" },
-    "icone": "W25607"
+    "icone": "W25607",
+    "type": "arme-2m"
   },
   "428": {
     "nom": "Hache Embrasée",
     "desc": "Une hache conçue avec de l'acier  volcanique de très haute qualité, très pratique pour couper facilement.",
     "effet": "Element : Feu",
     "montant": "Dégât +9, dégât de feu +2",
-    "icone": "W20102"
+    "icone": "W20102",
+    "type": "arme-2m"
   },
   "429": {
     "nom": "Bouclier du Survivant",
@@ -3186,14 +3684,16 @@
     "montant": "Dégât -3 (-3 si PV < 33%)",
     "condition": { "type": "PV", "value": "3", "bonus": "Dégât reçu -3" },
     "icone": "W70206d",
-    "access": "A1"
+    "access": "A1",
+    "type": "arme-1m"
   },
   "430": {
     "nom": "Lance Quartz d'Automne",
     "desc": "Une lance fabriquée à la méthode Heldentod, forgé à partir d'un Quartz d'Automne",
     "effet": "Durée des sorts +1",
     "montant": "Dégât +9",
-    "icone": "W54305"
+    "icone": "W54305",
+    "type": "arme-2m"
   },
   "431": {
     "nom": "Bouclier Quartz d'Automne",
@@ -3201,42 +3701,48 @@
     "effet": "Durée des sorts +1",
     "montant": "Dégât -3",
     "icone": "W70508",
-    "access": "D1"
+    "access": "D1",
+    "type": "arme-1m"
   },
   "432": {
     "nom": "Faucille Sanguinaire",
     "desc": "Une faucille forgé dans un Minerai de Sang, très rare et difficile à manipuler. Cette faucille est d'une qualité extrême.",
     "effet": "Force -1, Esprit -3",
     "montant": "Dégât +12, si critique (1,2) : Soin PV = dégâts/2 (fixe)",
-    "icone": "W55502"
+    "icone": "W55502",
+    "type": "arme-2m"
   },
   "433": {
     "nom": "Rapière de la Curie",
     "desc": "Cette rapière est conçue pour les meilleures troupes de la Curie Métérole",
     "effet": "Dégât de lumière +2",
     "montant": "Dégât +5",
-    "icone": "W11802"
+    "icone": "W11802",
+    "type": "arme-1m"
   },
   "434": {
     "nom": "Bâton de la Curie",
     "desc": "Bâton conçu pour les meilleures troupes de la Curie Métérole",
     "effet": "Dégât de lumière +3",
     "montant": "Dégât +9",
-    "icone": "W60601"
+    "icone": "W60601",
+    "type": "arme-2m"
   },
   "435": {
     "nom": "Grimoire Sacré de la Curie",
     "desc": "Un grimoire confié seulement aux plus dignes membres de la Curie Métérole.",
     "effet": "Dégât de lumière +3",
     "montant": "Dégât +10, Soin +3",
-    "icone": "W64806"
+    "icone": "W64806",
+    "type": "arme-2m"
   },
   "436": {
     "nom": "Couronne de Richesse",
     "desc": "Une ancienne couronne de souverain amenant prospérité à son porteur.",
     "effet": "",
     "montant": "Stats +1, Or trouvé +50%",
-    "icone": "A10022"
+    "icone": "A10022",
+    "type": "access"
   },
   "437": {
     "nom": "Mitre de l'Evêque",
@@ -3244,21 +3750,25 @@
     "effet": "Soin +2",
     "montant": "Intelligence +1, Esprit +1, (Charisme+1 si Clerc/Sage)",
     "condition": { "type": "classe", "value": ["Clerc", "Sage"], "bonus": "Charisme +1" },
-    "icone": "A10011"
+    "icone": "A10011",
+    "type": "access"
   },
   "438": {
     "nom": "Veste parfaite",
     "desc": "Cette veste est parfaite pour tout style d'aventurier. Très utile !",
     "effet": "",
     "montant": "Dégât -4, Toutes stats +1",
-    "icone": "A20043"
+    "icone": "A20043",
+    "type": "armure",
+    "armorTypes": ["lourd", "leger", "magique"]
   },
   "439": {
     "nom": "Boucles d'oreilles bénites",
     "desc": "Fabriquées par un ancien humain maître d'art de la joaillerie, ces bijoux sont à la fois magnifique et extrêmement utile.",
     "effet": "",
     "montant": "Toutes stats +1",
-    "icone": "k10158"
+    "icone": "k10158",
+    "type": "access"
   },
   "440": {
     "nom": "Pendentif du sang",
@@ -3266,14 +3776,17 @@
     "effet": "",
     "montant": "PV +15, si critique (1,2) : Soin PV = dégâts/3",
     "icone": "k10160",
-    "access": "D2"
+    "access": "D2",
+    "type": "access"
   },
   "441": {
     "nom": "Robe de la Curie",
     "desc": "Une robe conçue pour les membres de l'église de la Curie Métérole",
     "effet": "",
     "montant": "Dégât -3, Soin +2 et Dégât magique +2",
-    "icone": "A20020"
+    "icone": "A20020",
+    "type": "armure",
+    "armorTypes": ["magique"]
   },
   "442": {
     "nom": "Anneau de la Curie",
@@ -3281,7 +3794,8 @@
     "effet": "",
     "montant": "Dégât +2, Dégât reçu -2",
     "icone": "A00006b",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "443": {
     "nom": "Casque de concentration",
@@ -3289,21 +3803,25 @@
     "effet": "",
     "montant": "Dégât reçu -2, Force +1, Esprit +1",
     "icone": "A10090",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "444": {
     "nom": "Tenue de Général",
     "desc": "Cette tenue est conçue pour les hauts gradés du corps militaire",
     "effet": "Force +2 Charisme +1",
     "montant": "Dégât -5",
-    "icone": "k20976"
+    "icone": "k20976",
+    "type": "armure",
+    "armorTypes": ["lourd", "leger"]
   },
   "445": {
     "nom": "Hache du Bul'tik",
     "desc": "Une ancienne vieille hache appartenant aux Drakaïs envahisseur de la Grande Guerre. L'agonie de ses victimes est encore perceptible.",
     "effet": "Esprit -4",
     "montant": "Dégât +15",
-    "icone": "W27203b"
+    "icone": "W27203b",
+    "type": "arme-2m"
   },
   "446": {
     "nom": "Ecusson de la Curie - Bronze",
@@ -3311,7 +3829,8 @@
     "effet": "",
     "montant": "Résistance d'esprit +2, dégât reçu -2",
     "icone": "i00871",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "447": {
     "nom": "Ecusson de la Curie - Argent",
@@ -3319,7 +3838,8 @@
     "effet": "Charisme +1",
     "montant": "Résistance d'esprit +3, PV +10",
     "icone": "i00870",
-    "access": "A1"
+    "access": "A1",
+    "type": "access"
   },
   "448": {
     "nom": "Ecusson de la Curie - Or",
@@ -3327,14 +3847,17 @@
     "effet": "Charisme +2",
     "montant": "Résistance d'esprit +2, Esprit +2",
     "icone": "i00869",
-    "access": "A1"
+    "access": "A1",
+    "type": "access"
   },
   "449": {
     "nom": "Doudoune",
     "desc": "Une doudoune conçue pour mieux voyager dans les contrées glacées",
     "effet": "",
     "montant": "Dégât -3 (0 malus dans les zones froides)",
-    "icone": "A20014"
+    "icone": "A20014",
+    "type": "armure",
+    "armorTypes": ["lourd", "leger", "magique"]
   },
   "450": {
     "nom": "Bague Corail",
@@ -3342,7 +3865,8 @@
     "effet": "Capacité",
     "montant": "2 fois par combat (Instantanée Esprit) : Perturbe les ennemis (blocage -1, résistance esprit -2) sur 3 tours",
     "icone": "k10115b",
-    "access": "D2"
+    "access": "D2",
+    "type": "access"
   },
   "451": {
     "nom": "Chapeau du barde",
@@ -3351,7 +3875,8 @@
     "montant": "Dextérité +1, Intelligence +1 (Charisme+1 si Barde)",
     "condition": { "type": "classe", "value": ["Barde"], "bonus": "Charisme +1" },
     "icone": "A10058",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "452": {
     "nom": "Couteau porte-bonheur",
@@ -3360,7 +3885,8 @@
     "montant": "Dégât +2 (+1 si Voleur, Assassin, Juge)",
     "condition": { "type": "classe", "value": ["Voleur", "Assassin", "Juge"], "bonus": "Dégât +1" },
     "icone": "k10261",
-    "access": "D0"
+    "access": "D0",
+    "type": "access"
   },
   "453": {
     "nom": "Tenue de Vagabond",
@@ -3368,7 +3894,9 @@
     "effet": "",
     "montant": "Dégât -5, Esquive +1 (+1 si Voleur ou Danselame)",
     "condition": { "type": "classe", "value": ["Voleur", "Danselame"], "bonus": "Esquive +1" },
-    "icone": "k20664"
+    "icone": "k20664",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "454": {
     "nom": "Trèfle du risque",
@@ -3376,35 +3904,40 @@
     "effet": "Amplification",
     "montant": "Dégât +2, Si PV < 33% : Critique à 1, 2, 3 et 20, 19, 18",
     "icone": "k10052",
-    "access": "D0"
+    "access": "D0",
+    "type": "access"
   },
   "455": {
     "nom": "Guitare de l'Esprit",
     "desc": "Une guitare amenant la lucidité à son porteur",
     "effet": "Esprit +2",
     "montant": "Dégât +8",
-    "icone": "W60805"
+    "icone": "W60805",
+    "type": "arme-2m"
   },
   "456": {
     "nom": "Guitare Ensorcelée",
     "desc": "Une guitare très ancienne ayant appartenu aux ancêtres de la Forêt Arc-en-Ciel",
     "effet": "Soin +3",
     "montant": "Dégât +8, Intelligence +1",
-    "icone": "W61004"
+    "icone": "W61004",
+    "type": "arme-2m"
   },
   "457": {
     "nom": "Bâton de Grand Mage",
     "desc": "Ce bâton est conçue pour renforcer la puissance magique.",
     "effet": "Intelligence +2",
     "montant": "Dégât +8",
-    "icone": "W60304"
+    "icone": "W60304",
+    "type": "arme-2m"
   },
   "458": {
     "nom": "Poignard d'Andredi",
     "desc": "Ce poignard récupéré sur les serres d'Andredi est capable d'infliger des blessures presque insoignable. A ne pas confier entre de mauvaises mains.",
     "effet": "",
     "montant": "Dégât +5, si critique (1,2,3) : Empêche de se soigner pendant 3 tours",
-    "icone": "W11105"
+    "icone": "W11105",
+    "type": "arme-1m"
   },
   "459": {
     "nom": "Pierre de sécurité d'Améthyste",
@@ -3412,7 +3945,8 @@
     "effet": "",
     "montant": "Dégât reçu -3, Esprit +1",
     "icone": "i01204",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "460": {
     "nom": "Cape de la Confrérie Ecarlate",
@@ -3420,7 +3954,8 @@
     "effet": "",
     "montant": "Dégât +2, dégât critique +5",
     "icone": "A60013b",
-    "access": "D1"
+    "access": "D1",
+    "type": "access"
   },
   "461": {
     "nom": "Plastron du Templier Noir",
@@ -3428,7 +3963,9 @@
     "effet": "Malédiction du lien",
     "montant": "Dégât -5 (-2 par pièce) : Force +1, Intelligence +1",
     "icone": "k20472b",
-    "condition": { "type": "panoplie", "value": "Templier Noir", "bonus": "Dégât reçu -2" }
+    "condition": { "type": "panoplie", "value": "Templier Noir", "bonus": "Dégât reçu -2" },
+    "type": "armure",
+    "armorTypes": ["lourd"]
   },
   "462": {
     "nom": "Bouclier du Templier Noir",
@@ -3437,7 +3974,8 @@
     "montant": "Dégât -5, dégât ténèbres +3 (+1 par pièce)",
     "icone": "W71306b",
     "condition": { "type": "panoplie", "value": "Templier Noir", "bonus": "Dégât ténèbres +1" },
-    "access": "D2"
+    "access": "D2",
+    "type": "arme-1m"
   },
   "463": {
     "nom": "Masse du Templier Noir",
@@ -3445,7 +3983,8 @@
     "effet": "Malédiction du lien",
     "montant": "Dégât +6 (+2 par pièce), conversion Lumière => Ténèbres",
     "icone": "W33403b",
-    "condition": { "type": "panoplie", "value": "Templier Noir", "bonus": "Dégât +2" }
+    "condition": { "type": "panoplie", "value": "Templier Noir", "bonus": "Dégât +2" },
+    "type": "arme-1m"
   },
   "464": {
     "nom": "Esprit errant",
@@ -3453,7 +3992,8 @@
     "effet": "Malédiction du Lien / Esprit -5",
     "montant": "Déphasage (Instantanée Esprit) : Permet de voir et entendre à la place du fantôme : traverse les murs",
     "icone": "k10683",
-    "access": "D2"
+    "access": "D2",
+    "type": "access"
   },
   "465": {
     "nom": "Chaîne de Jade",
@@ -3461,7 +4001,8 @@
     "effet": "",
     "montant": "Dégât reçu -1. Durée des malus -1 tour",
     "icone": "A00040b",
-    "access": "A2"
+    "access": "A2",
+    "type": "access"
   },
   "466": {
     "nom": "Plastron de Jade",
@@ -3469,7 +4010,9 @@
     "effet": "",
     "montant": "Dégât -5, durée des malus -1 tour",
     "icone": "A20083b",
-    "access": "A1"
+    "access": "A1",
+    "type": "armure",
+    "armorTypes": ["lourd"]
   },
   "467": {
     "nom": "Pendentif Ryujin",
@@ -3477,7 +4020,8 @@
     "effet": "PV +10",
     "montant": "Montant du mode draconique : +1",
     "icone": "k10159c",
-    "access": "D2"
+    "access": "D2",
+    "type": "access"
   },
   "468": {
     "nom": "Coiffe de soldats d'Amur",
@@ -3485,7 +4029,8 @@
     "effet": "",
     "montant": "Dégât reçu -3, Esprit +1",
     "icone": "k10549",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "469": {
     "nom": "Cape de capitaine",
@@ -3493,7 +4038,8 @@
     "effet": "",
     "montant": "Dégât reçu -2, Soin reçu +25%",
     "icone": "A60015b",
-    "access": "A1"
+    "access": "A1",
+    "type": "access"
   },
   "470": {
     "nom": "Marque de rouge à lèvres",
@@ -3501,7 +4047,8 @@
     "effet": "Malédiction du lien",
     "montant": "Charisme +4 face au sexe opposé",
     "icone": "k10354",
-    "access": "A1"
+    "access": "A1",
+    "type": "access"
   },
   "471": {
     "nom": "Masque de Nekao",
@@ -3509,7 +4056,8 @@
     "effet": "Malédiction du lien",
     "montant": "A définir",
     "icone": "k10437",
-    "access": "A1"
+    "access": "A1",
+    "type": "access"
   },
   "472": {
     "nom": "Pendentif de platine",
@@ -3517,7 +4065,8 @@
     "effet": "",
     "montant": "PV Soin reçu +33%, dégât reçu -2",
     "icone": "k10498",
-    "access": "A2"
+    "access": "A2",
+    "type": "access"
   },
   "473": {
     "nom": "Tatouage draconique",
@@ -3525,28 +4074,33 @@
     "effet": "Malédiction du Lien",
     "montant": "A définir",
     "icone": "k10573",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "474": {
     "nom": "Griffe vivante",
     "desc": "Cette griffe est en réalité un organisme vivant. Une fois à votre poignée elle ne veut plus s'en séparer : vous la maintenez en vie, tel un parasite.",
     "effet": "Malédiction du lien",
     "montant": "Dégât +8, Force +1. Et -3 PV par attaque lancée",
-    "icone": "W32805"
+    "icone": "W32805",
+    "type": "arme-1m"
   },
   "475": {
     "nom": "Arc Titanesque",
     "desc": "Un arc extrêmement grand et lourd. Très puissant mais peu précis.",
     "effet": "Dextérité -5",
     "montant": "Dégât +15  (Si force >=15, Dexté +1)",
-    "icone": "W51702"
+    "icone": "W51702",
+    "type": "arme-2m"
   },
   "476": {
     "nom": "Tenue de Prisonnier",
     "desc": "La tenue officielle des prisons d'Aven. La couleur correspond au crime connu. Des rumeurs courent comme quoi il y aurait des combats clandestins.",
     "effet": "Malédiction du Lien",
     "montant": "Dégât -2",
-    "icone": "k20453"
+    "icone": "k20453",
+    "type": "armure",
+    "armorTypes": ["lourd", "leger", "magique"]
   },
   "477": {
     "nom": "Robe de Jade",
@@ -3554,7 +4108,9 @@
     "effet": "",
     "montant": "Dégât -3, durée des malus -1 tour",
     "icone": "A20004",
-    "access": "A1"
+    "access": "A1",
+    "type": "armure",
+    "armorTypes": ["magique"]
   },
   "478": {
     "nom": "Tenue de Luminary",
@@ -3562,14 +4118,18 @@
     "effet": "",
     "montant": "Dégât -4 (Si Luminary : dégât+3)",
     "condition": { "type": "classe", "value": ["Luminary"], "bonus": "Dégât +3" },
-    "icone": "k20578"
+    "icone": "k20578",
+    "type": "armure",
+    "armorTypes": ["magique"]
   },
   "479": {
     "nom": "Tenue de Noble Fortuné",
     "desc": "Une tenue alliant noblesse et richesse, idéale pour les diplomates aventureux.",
     "effet": "Or trouvé +50%",
     "montant": "Dégât -5, Charisme +2",
-    "icone": "k20635"
+    "icone": "k20635",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "480": {
     "nom": "Tenue de Mage Académique",
@@ -3577,35 +4137,43 @@
     "effet": "Expérience reçu +20%",
     "montant": "Dégât -4 (Si magicien/illusionniste : dégât+2)",
     "condition": { "type": "classe", "value": ["Magicien", "Illusionniste"], "bonus": "Dégât +2" },
-    "icone": "k21032"
+    "icone": "k21032",
+    "type": "armure",
+    "armorTypes": ["magique"]
   },
   "481": {
     "nom": "Combinaison de Pilote Ezuréen",
     "desc": "La combinaison officielle des pilotes de l'écurie Ferralpaga !",
     "montant": "Dégât -4, Dextérité +2",
     "effet": "Monture : Vitesse++",
-    "icone": "k20199"
+    "icone": "k20199",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "482": {
     "nom": "Loup du Givre",
     "desc": "Originaire des steppes arctiques, c'est une monture très fidèle : améliorable. Stats: 13,16,9,12,13",
     "effet": "Monture de Combat",
     "montant": "Dégât +6 (PV : 80 + 5*niveau)",
-    "icone": "i01513b"
+    "icone": "i01513b",
+    "type": "monture"
   },
   "483": {
     "nom": "Loup du Givre (A,A)",
     "desc": "Originaire des steppes arctiques, c'est une monture très fidèle : améliorable. Stats: 13,16,9,12,14",
     "effet": "Monture de Combat",
     "montant": "Dégât +8 (PV : 100 + 5*niveau)",
-    "icone": "i01513e"
+    "icone": "i01513e",
+    "type": "monture"
   },
   "484": {
     "nom": "Robe Protectrice",
     "desc": "Une robe conçue pour améliorer la résistance de son porteur",
     "effet": "PV +5",
     "montant": "Dégât -3, Blocage +1",
-    "icone": "k20297"
+    "icone": "k20297",
+    "type": "armure",
+    "armorTypes": ["magique"]
   },
   "485": {
     "nom": "Casque Incognito",
@@ -3613,7 +4181,8 @@
     "effet": "Méconnaissable",
     "montant": "Réussite -1, Chance d'être visée -33%",
     "icone": "k10635",
-    "access": "A1"
+    "access": "A1",
+    "type": "access"
   },
   "486": {
     "nom": "Sifflet Alpaga",
@@ -3621,7 +4190,8 @@
     "effet": "Capacité",
     "montant": "3 fois par combat (Instantanée) Réussite -3 (AoE) pendant 1 tour",
     "icone": "k10268",
-    "access": "D2"
+    "access": "D2",
+    "type": "access"
   },
   "487": {
     "nom": "Oeuf de Vie",
@@ -3629,7 +4199,8 @@
     "effet": "Capacité",
     "montant": "Avant de tomber KO (2 fois par combat) : 1/2 chance de tenir : Soigne 1D10+10 PV (buffs préservés)",
     "icone": "k60194",
-    "access": "A4"
+    "access": "A4",
+    "type": "access"
   },
   "488": {
     "nom": "Sac à dos Lapin",
@@ -3637,7 +4208,8 @@
     "effet": "Malédiction du Lien",
     "montant": "La moitié des soins et effets donnés aux autres sont redonnés au porteur",
     "icone": "k60026",
-    "access": "A3"
+    "access": "A3",
+    "type": "access"
   },
   "489": {
     "nom": "Veste d'Archerie",
@@ -3645,28 +4217,36 @@
     "effet": "",
     "montant": "Dégât -5 (Si Chasseur, Corsaire : dégât+2)",
     "condition": { "type": "classe", "value": ["Chasseur", "Corsaire"], "bonus": "Dégât +2" },
-    "icone": "k21068"
+    "icone": "k21068",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "490": {
     "nom": "Veste du Voyageur",
     "desc": "Une veste parfaite pour les voyageurs tout terrain !",
     "effet": "Dextérité +1, Esprit +1",
     "montant": "Dégât -5, 0 malus intempéries",
-    "icone": "k21044"
+    "icone": "k21044",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "491": {
     "nom": "Tenue de Dresseur",
     "desc": "Une tenue avec tout l'attirail du dresseur pour le bien des bêtes.",
     "effet": "Familier",
     "montant": "Dégât -4, Familier : dégât/soin+2 (AoE/2), réussite sort+1",
-    "icone": "k20017"
+    "icone": "k20017",
+    "type": "armure",
+    "armorTypes": ["leger", "magique"]
   },
   "492": {
     "nom": "Tenue du Dompteur",
     "desc": "Une tenue du dresseur amélioré pour les plus dompteurs endurcis",
     "effet": "Familier",
     "montant": "Dégât -5, Familier : dégât+4/soin+2 (AoE/2), réussite sort+1",
-    "icone": "k20230"
+    "icone": "k20230",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "493": {
     "nom": "Gourde merveilleuse",
@@ -3674,7 +4254,8 @@
     "effet": "Capacité",
     "montant": "3 fois par combat (Instantanée) : 3D6 + 12 (fixe)",
     "icone": "k60035",
-    "access": "A4"
+    "access": "A4",
+    "type": "access"
   },
   "494": {
     "nom": "Puce du Barde",
@@ -3683,7 +4264,8 @@
     "montant": "Montant des buffs +1, (dégât/soin+2 Si Barde)",
     "condition": { "type": "classe", "value": ["Barde"], "bonus": "Dégât +2, Soin +2" },
     "icone": "i01631",
-    "access": "D2"
+    "access": "D2",
+    "type": "access"
   },
   "495": {
     "nom": "Dragon-Serpent de Jade",
@@ -3691,7 +4273,8 @@
     "effet": "",
     "montant": "Durée des malus -1 tour, peut faire des actions",
     "icone": "i00938b",
-    "access": "A2"
+    "access": "A2",
+    "type": "access"
   },
   "496": {
     "nom": "Pendentif de la Bête",
@@ -3699,7 +4282,8 @@
     "effet": "Familier",
     "montant": "Familier : Stats +1, dégât/soin+2 (AoE/2)",
     "icone": "A00048b",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "497": {
     "nom": "Oeuf Digital",
@@ -3707,14 +4291,16 @@
     "effet": "Familier",
     "montant": "Familier : PV+15 (+10 si Monture)",
     "icone": "i00946b",
-    "access": "A2"
+    "access": "A2",
+    "type": "access"
   },
   "498": {
     "nom": "Echarpe chaude",
     "desc": "Une douce écharpe permettant de résister au froid.",
     "effet": "PV +5",
     "montant": "Dégât reçu -1, (0 malus dans les zones froides)",
-    "icone": "A40001"
+    "icone": "A40001",
+    "type": "access"
   },
   "499": {
     "nom": "Corne d'Aigle Rhino",
@@ -3722,14 +4308,16 @@
     "effet": "",
     "montant": "Dégât +2, dégât perçant +2",
     "icone": "I00263",
-    "access": "D1"
+    "access": "D1",
+    "type": "access"
   },
   "500": {
     "nom": "Pierre de Magma Maudite",
     "desc": "Cette pierre de magma a été altéré par une malédiction divine, amenant la malchance à son porteur.",
     "effet": "Malédiction du Lien",
     "montant": "Dégat +3, Montant du Dé +1",
-    "icone": "I00235c"
+    "icone": "I00235c",
+    "type": "access"
   },
   "501": {
     "nom": "Morceau de Météorite",
@@ -3737,14 +4325,16 @@
     "effet": "",
     "montant": "Montant des buffs +2, Esprit +1",
     "icone": "i00547b",
-    "access": "D2"
+    "access": "D2",
+    "type": "access"
   },
   "502": {
     "nom": "Pistolet de Parade",
     "desc": "Ce pistolet est équipé d'un bouclier permettant à son utilisateur de mieux bloquer les attaques.",
     "effet": "Blocage physique +2",
     "montant": "Dégât +8",
-    "icone": "W51101"
+    "icone": "W51101",
+    "type": "arme-2m"
   },
   "503": {
     "nom": "Carapace Sacrificiel",
@@ -3752,7 +4342,8 @@
     "effet": "??? (inconnu)",
     "montant": "Si PV <33%, Dégâts et Soin : +4",
     "icone": "I00285b",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "504": {
     "nom": "Membrane de Reine",
@@ -3760,14 +4351,16 @@
     "effet": "",
     "montant": "Dégât reçu -3, Soin reçu +25%",
     "icone": "I00297b",
-    "access": "A1"
+    "access": "A1",
+    "type": "access"
   },
   "505": {
     "nom": "Epée Nauséabonde",
     "desc": "Cette épée emet une odeur très forte qui peut désorienter plus d'un.",
     "effet": "Charisme -2",
     "montant": "Dégât +5, si coup critique (1,2,3) : Esprit -3 sur 2 tours",
-    "icone": "W13502"
+    "icone": "W13502",
+    "type": "arme-1m"
   },
   "506": {
     "nom": "Pierre de sécurité Fétiche",
@@ -3775,7 +4368,8 @@
     "effet": "",
     "montant": "Dégât reçu -3",
     "icone": "I00529",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "507": {
     "nom": "Pierre de Sécurité de Hurlevent",
@@ -3783,7 +4377,8 @@
     "effet": "",
     "montant": "Dégât reçu -2, Intelligence +1",
     "icone": "i01007",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "508": {
     "nom": "Pierre de Hurlevent Sublime",
@@ -3791,7 +4386,8 @@
     "effet": "",
     "montant": "Dégât reçu -3, Intelligence +1",
     "icone": "i01010",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "509": {
     "nom": "Pierre de Sécurité de Noireflamme",
@@ -3799,7 +4395,8 @@
     "effet": "",
     "montant": "Dégât reçu -2, Force +1",
     "icone": "i01008",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "510": {
     "nom": "Pierre de Noireflamme Sublime",
@@ -3807,7 +4404,8 @@
     "effet": "",
     "montant": "Dégât reçu -3, Force +1",
     "icone": "i01011",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "511": {
     "nom": "Pierre de Sécurité de Férégal",
@@ -3815,7 +4413,8 @@
     "effet": "",
     "montant": "Dégât reçu -2, Dextérité +1",
     "icone": "i01006",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "512": {
     "nom": "Pierre de Securite de Jade",
@@ -3823,7 +4422,8 @@
     "effet": "",
     "montant": "Dégât reçu -2. Durée des malus -1 tour",
     "icone": "i01550",
-    "access": "A1"
+    "access": "A1",
+    "type": "access"
   },
   "513": {
     "nom": "Pierre de Securite Diamant Blanc",
@@ -3831,91 +4431,104 @@
     "effet": "",
     "montant": "Dégât reçu -5",
     "icone": "i01554",
-    "access": "A0"
+    "access": "A0",
+    "type": "access"
   },
   "514": {
     "nom": "Echarpe du Totem",
     "desc": "Cette écharpe possède un motif de totem, elle confère à son porteur une capacité d'invocation, tout en permettant de résister au froid.",
     "effet": "0 malus froid, capacité",
     "montant": "3 fois par combat (Esprit) : Invocation du Totem, dégât reçu -1",
-    "icone": "A40001b"
+    "icone": "A40001b",
+    "type": "access"
   },
   "515": {
     "nom": "Gantelet Leviathan",
     "desc": "Ce gantelet a été conçu à partir d'écailles du légendaire Leviathan, lui octroyant une grande puissance.",
     "effet": "",
     "montant": "Dégât reçu -2, Dégât +3",
-    "icone": "A40032b"
+    "icone": "A40032b",
+    "type": "access"
   },
   "516": {
     "nom": "Anneau du Conquérant",
     "desc": "Un anneau conçu pour les plus déterminés à conquérir le monde !",
     "effet": "",
     "montant": "Dégât +4, PV +5",
-    "icone": "A00006c"
+    "icone": "A00006c",
+    "type": "access"
   },
   "517": {
     "nom": "Anneau de Santé",
     "desc": "Une des améliorations de l'anneau du bagarreur, orienté vitalité",
     "effet": "",
     "montant": "Dégât +2, PV +15",
-    "icone": "A00006e"
+    "icone": "A00006e",
+    "type": "access"
   },
   "518": {
     "nom": "Anneau du Lien Eternel",
     "desc": "Cet anneau permet de lier 2 \"amants\" afin de leur permettre de vivre un amour puissant. Si puissant que s'éloigner en est désagréable. Attention à la tromperie !",
     "effet": "Malédiction du Lien",
     "montant": "Dégât reçu -3*X, Esprit +1*X. X =\"degré amour/proximité\"",
-    "icone": "i01312b"
+    "icone": "i01312b",
+    "type": "access"
   },
   "519": {
     "nom": "C'est ma peluche",
     "desc": "Cette peluche de chat noir trop mignon possède une étrange magie qui fait régresser l'âge mental et physique de son porteur (jusqu'à 6 ans).",
     "effet": "Malédiction du Lien",
     "montant": "Charisme +5, Esprit -5",
-    "icone": "k60245"
+    "icone": "k60245",
+    "type": "access"
   },
   "520": {
     "nom": "Casque Anti-magie",
     "desc": "Ce casque d'apparence ordinaire annule un peu la magie, mais aussi l'intelligence de son porteur.",
     "effet": "Intelligence -2",
     "montant": "Dégât reçu -2, Blocage magique +3",
-    "icone": "A10100"
+    "icone": "A10100",
+    "type": "access"
   },
   "521": {
     "nom": "Griffe Anti-magie",
     "desc": "Cette griffe est renforcée d'un alliange réduisant la magie, pratique pour se protéger de sort.",
     "effet": "Intelligence -1",
     "montant": "Dégât +4, Blocage magique +2",
-    "icone": "W35104"
+    "icone": "W35104",
+    "type": "arme-1m"
   },
   "522": {
     "nom": "Anneau du défenseur",
     "desc": "Cet anneau est la fusion d'un anneau de résistance et d'un anneau protecteur, il assure la sécurité.",
     "effet": "",
     "montant": "Dégât reçu -2, Blocage physique +2",
-    "icone": "A00014b"
+    "icone": "A00014b",
+    "type": "access"
   },
   "523": {
     "nom": "Pendentif du Ranger",
     "desc": "Ce pendentif améliore les capacités athlétique de son porteur.",
     "effet": "",
     "montant": "Force +1, Dextérité +1",
-    "icone": "A00048c"
+    "icone": "A00048c",
+    "type": "access"
   },
   "524": {
     "nom": "Casque de Chevalier Alpaga",
     "desc": "Le Roi Alpaga décerne ce casque aux personnes auxquelles il fait réellement confiance.",
     "effet": "Force +1, Charisme +1",
     "montant": "Dégât reçu -2",
-    "icone": "k10250"
+    "icone": "k10250",
+    "type": "access"
   },
   "525": {
     "nom": "Casque Imposant",
     "desc": "Ce casque améliore la carrure de celui qui le porte",
     "effet": "Force +1, Charisme +1",
     "montant": "Dégât reçu -1",
-    "icone": "A10081"
+    "icone": "A10081",
+    "type": "access"
   },
   "526": {
     "nom": "Gantelet du Pugilat",
@@ -3923,7 +4536,8 @@
     "effet": "",
     "montant": "Dégât +2, Dégât contondant +1 (dégât+1 si Assassin)",
     "condition": { "type": "classe", "value": ["Assassin"], "bonus": "Dégât contondant +1" },
-    "icone": "A40030b"
+    "icone": "A40030b",
+    "type": "access"
   },
   "527": {
     "nom": "Collier du Vaillant",
@@ -3931,21 +4545,25 @@
     "effet": "",
     "montant": "Force +1, Esprit +1 (Esprit+1 si Samouraï)",
     "condition": { "type": "classe", "value": ["Samouraï"], "bonus": "Esprit +1" },
-    "icone": "A00042"
+    "icone": "A00042",
+    "type": "access"
   },
   "528": {
     "nom": "Epée Colossale Khan",
     "desc": "Une ancienne épée de l'Empire Khan, très aiguisée, lourde et puissante.",
     "effet": "Blocage cible -1",
     "montant": "Dégât +9",
-    "icone": "W20904"
+    "icone": "W20904",
+    "type": "arme-2m"
   },
   "529": {
     "nom": "Plastron de Draconite",
     "desc": "Un plastron renforcé au minerai de Draconite.",
     "effet": "",
     "montant": "Dégât -6, face aux Dragons : Dégât +25%, reçu -25%",
-    "icone": "A20101b"
+    "icone": "A20101b",
+    "type": "armure",
+    "armorTypes": ["lourd"]
   },
   "530": {
     "nom": "Robe Shamanique",
@@ -3953,21 +4571,25 @@
     "effet": "Intelligence +1",
     "montant": "Dégât -4, (dégât/soin+2 Si Shaman)",
     "condition": { "type": "classe", "value": ["Shaman"], "bonus": "Dégât +2, Soin +2" },
-    "icone": "A20025"
+    "icone": "A20025",
+    "type": "armure",
+    "armorTypes": ["magique"]
   },
   "531": {
     "nom": "Bâton Perturbant",
     "desc": "Ce bâton à le pouvoir de perturber son adversaire.",
     "effet": "",
     "montant": "Dégât +10, Si coup critique (1,2,3) : Force/Intel -2 (2 tours)",
-    "icone": "W64501d"
+    "icone": "W64501d",
+    "type": "arme-2m"
   },
   "532": {
     "nom": "Katana de Draconite Pure",
     "desc": "Katana de Qaïdu Khan, il est composé de minerai de Draconite Pure, infligeant de sévère dégâts aux dragons.",
     "effet": "Force +1",
     "montant": "Dégât +11, face aux Dragons : Dégât +25%",
-    "icone": "W24007"
+    "icone": "W24007",
+    "type": "arme-2m"
   },
   "533": {
     "nom": "Glyphe du Démoniste",
@@ -3975,7 +4597,8 @@
     "effet": "",
     "montant": "Dégât de ténèbres +4",
     "icone": "i01139",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "534": {
     "nom": "Glyphe du Chevalier",
@@ -3983,7 +4606,8 @@
     "effet": "",
     "montant": "Dégât tranchant +3, perçant +2, glace +2",
     "icone": "i01123",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "535": {
     "nom": "Glyphe de l'Ingénieur",
@@ -3991,21 +4615,24 @@
     "effet": "",
     "montant": "Dégât contondant +3, foudre +2",
     "icone": "i01131",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "536": {
     "nom": "Bâton de foudre",
     "desc": "Un Bâton améliorant l'effet de la foudre (améliorable)",
     "effet": "Dégât de foudre +2",
     "montant": "Dégât +7",
-    "icone": "W60105"
+    "icone": "W60105",
+    "type": "arme-2m"
   },
   "537": {
     "nom": "Bâton à Induction",
     "desc": "Un Bâton conçu par les Zumis pour amplifier la magie électrique, la foudre !",
     "effet": "Dégât de foudre +3",
     "montant": "Dégât +10",
-    "icone": "W60105b"
+    "icone": "W60105b",
+    "type": "arme-2m"
   },
   "538": {
     "nom": "Croix démoniaque",
@@ -4013,70 +4640,80 @@
     "effet": "Dégât ténèbres +3",
     "montant": "Dégât +8 (+1 si Démoniste)",
     "condition": { "type": "classe", "value": ["Démoniste"], "bonus": "Dégât +1" },
-    "icone": "W64408"
+    "icone": "W64408",
+    "type": "arme-2m"
   },
   "539": {
     "nom": "Bâton de soin",
     "desc": "Un bâton améliorant l'effet des soins",
     "effet": "",
     "montant": "Dégât +7, Soin +2",
-    "icone": "W60104"
+    "icone": "W60104",
+    "type": "arme-2m"
   },
   "544": {
     "nom": "Marteau Réversible",
     "desc": "Un marteau capable d'alterner entre un mode \"soin\" et un mode dégât\"",
     "effet": "Mode (2 tours min)",
     "montant": "Dégât +7",
-    "icone": "W41403"
+    "icone": "W41403",
+    "type": "arme-2m"
   },
   "545": {
     "nom": "Epée en Acier renforcé",
     "desc": "Une simple épée en acier de grande qualité forgé par un maître forgeron : simple et efficace.",
     "effet": "Blocage physique +1",
     "montant": "Dégât +5",
-    "icone": "W10601"
+    "icone": "W10601",
+    "type": "arme-1m"
   },
   "546": {
     "nom": "Rapière du Vaillant",
     "desc": "Cette rapière donne une aura valeureuse à celui qui la porte.",
     "effet": "Charisme +1",
     "montant": "Dégât +4",
-    "icone": "W11501"
+    "icone": "W11501",
+    "type": "arme-1m"
   },
   "547": {
     "nom": "Rapière Distinguée",
     "desc": "Une rapière conçue pour mettre en avant l'importance de son porteur.",
     "effet": "Charisme +2",
     "montant": "Dégât +4",
-    "icone": "W11502b"
+    "icone": "W11502b",
+    "type": "arme-1m"
   },
   "548": {
     "nom": "Arc de Valence",
     "desc": "Un arc léger venant de l'arsenal fédéral de Valence",
     "effet": "Dextérité +2",
     "montant": "Dégât +8",
-    "icone": "W50301"
+    "icone": "W50301",
+    "type": "arme-2m"
   },
   "549": {
     "nom": "Arc de Valence raffiné",
     "desc": "Un Arc de Valence amélioré par l'expertise d'un maître ébéniste.",
     "effet": "Dextérité +2",
     "montant": "Dégât +10",
-    "icone": "W50304"
+    "icone": "W50304",
+    "type": "arme-2m"
   },
   "550": {
     "nom": "Faucille Rapide",
     "desc": "Une faucille rendant l'utilisateur aussi véloce que le vent",
     "effet": "Dextérité +2",
     "montant": "Dégât +9",
-    "icone": "W55406b"
+    "icone": "W55406b",
+    "type": "arme-2m"
   },
   "551": {
     "nom": "Faucille Aggravante",
     "desc": "Cette faucille est imprégnée d'une magie noire qui amplifie les altérations.",
     "effet": "",
     "montant": "Dégât +9, durée des malus +1 tour",
-    "icone": "W55503"
+    "icone": "W55503",
+    "type": "arme-2m"
   },
   "552": {
     "nom": "Ecaille Exalté",
@@ -4084,7 +4721,8 @@
     "effet": "",
     "montant": "Montant des buffs +2, dégât reçu -1",
     "icone": "I00282c",
-    "access": "D2"
+    "access": "D2",
+    "type": "access"
   },
   "553": {
     "nom": "Collier Durable",
@@ -4092,7 +4730,8 @@
     "effet": "",
     "montant": "Durée des sorts +1 tour",
     "icone": "A00029b",
-    "access": "A2"
+    "access": "A2",
+    "type": "access"
   },
   "554": {
     "nom": "Glyphe du Juge",
@@ -4100,28 +4739,35 @@
     "effet": "",
     "montant": "Dégât de tranchant +3, ténèbres +2",
     "icone": "i01440",
-    "access": "D3"
+    "access": "D3",
+    "type": "access"
   },
   "555": {
     "nom": "Robe Renforcée",
     "desc": "Une robe spécialement conçue pour améliorer la résistance de son porteur",
     "effet": "",
     "montant": "Dégât -4, Blocage physique +2",
-    "icone": "k20299"
+    "icone": "k20299",
+    "type": "armure",
+    "armorTypes": ["magique"]
   },
   "556": {
     "nom": "Robe de Sorcier",
     "desc": "Cette robe a été fabriquée pour des sorciers de haut rang, elle apporte une certaine classe.",
     "effet": "Intelligence +1",
     "montant": "Dégât -4",
-    "icone": "k20175"
+    "icone": "k20175",
+    "type": "armure",
+    "armorTypes": ["magique"]
   },
   "557": {
     "nom": "Robe de Grand Sorcier",
     "desc": "Cette robe a été fabriquée pour des sorciers de très haut rang, elle apporte une grande classe.",
     "effet": "Intelligence +1, Charisme +1",
     "montant": "Dégât -4, Dégât magique +2",
-    "icone": "k20177"
+    "icone": "k20177",
+    "type": "armure",
+    "armorTypes": ["magique"]
   },
   "558": {
     "nom": "Robe de Prêtre",
@@ -4129,7 +4775,9 @@
     "effet": "",
     "montant": "Dégât -3, Soin +2 (Intel+1 si Clerc)",
     "condition": { "type": "classe", "value": ["Clerc"], "bonus": "Intelligence +1" },
-    "icone": "k20467"
+    "icone": "k20467",
+    "type": "armure",
+    "armorTypes": ["magique"]
   },
   "559": {
     "nom": "Robe de Vitalité",
@@ -4137,14 +4785,18 @@
     "effet": "PV +5",
     "montant": "Dégât -2, Soin +4 (Intel+1 si Clerc)",
     "condition": { "type": "classe", "value": ["Clerc"], "bonus": "Intelligence +1" },
-    "icone": "k20468"
+    "icone": "k20468",
+    "type": "armure",
+    "armorTypes": ["magique"]
   },
   "560": {
     "nom": "Robe de Lumière",
     "desc": "Une robe élégante renforçant la puissance des magies de lumière.",
     "effet": "",
     "montant": "Dégât -3, dégât de lumière +3",
-    "icone": "k20466"
+    "icone": "k20466",
+    "type": "armure",
+    "armorTypes": ["magique"]
   },
   "561": {
     "nom": "Armure Technologique",
@@ -4152,7 +4804,9 @@
     "effet": "Dégât de foudre +3",
     "montant": "Dégât -4 (Esprit+1 si Zumi)",
     "condition": { "type": "race", "value": ["Zumi"], "bonus": "Esprit +1" },
-    "icone": "k20351"
+    "icone": "k20351",
+    "type": "access",
+    "armorTypes": ["lourd", "leger"]
   },
   "562": {
     "nom": "Coeur du Fléau",
@@ -4160,119 +4814,142 @@
     "effet": "Esprit -2",
     "montant": "Durée des malus +1 tour, montant dégât malus +2, dégât ténèbres +2",
     "icone": "I00271b",
-    "access": "D4"
+    "access": "D4",
+    "type": "access"
   },
   "563": {
     "nom": "Lance Aggravante",
     "desc": "Cette lance peut amplifier les maléfices que ses cibles subissent.",
     "effet": "",
     "montant": "Dégât +9, Si coup critique (1,2,3) : Durée des malus de la cible +1",
-    "icone": "W11005"
+    "icone": "W11005",
+    "type": "arme-2m"
   },
   "564": {
     "nom": "Rapière Aggravante",
     "desc": "Cette rapière peut amplifier les maléfices que ses cibles subissent.",
     "effet": "",
     "montant": "Dégât +4, Si coup critique (1,2,3) : Durée des malus de la cible +1",
-    "icone": "W11706"
+    "icone": "W11706",
+    "type": "arme-1m"
   },
   "565": {
     "nom": "Katana Aggravant",
     "desc": "Ce Katana peut amplifier les maléfices que ses cibles subissent.",
     "effet": "",
     "montant": "Dégât +9, Si coup critique (1,2,3) : Durée des malus de la cible +1",
-    "icone": "W25801"
+    "icone": "W25801",
+    "type": "arme-2m"
   },
   "566": {
     "nom": "Pistolet Aggravant",
     "desc": "Ce pistolet peut amplifier les maléfices que ses cibles subissent.",
     "effet": "",
     "montant": "Dégât +9, Si coup critique (1,2,3) : Durée des malus de la cible +1",
-    "icone": "W50902"
+    "icone": "W50902",
+    "type": "arme-2m"
   },
   "567": {
     "nom": "Grimoire Aggravant",
     "desc": "Ce grimoire peut amplifier les maléfices que ses cibles subissent.",
     "effet": "",
     "montant": "Dégât +9, Si coup critique (1,2,3) : Durée des malus de la cible +1",
-    "icone": "W61805b"
+    "icone": "W61805b",
+    "type": "arme-2m"
   },
   "568": {
     "nom": "Lunettes Opaques",
     "desc": "Ces lunettes, bien qu'elles soient stylées et qu'elles imposent le respect, sont très opaque et réduise la vision de celui qui les portent.",
     "effet": "Malédiction du Lien",
     "montant": "Réussite (sauf charisme) -4, Charisme +2",
-    "icone": "k10156"
+    "icone": "k10156",
+    "type": "access"
   },
   "569": {
     "nom": "Bague d'Améthyste",
     "desc": "Une bague fabriquée à partir d'Améthyste et renforcée par un enchantement. Elle attire parfois les esprits magiques.",
     "effet": "",
     "montant": "Dégât +3, Esprit +1",
-    "icone": "A00004b"
+    "icone": "A00004b",
+    "type": "access"
   },
   "570": {
     "nom": "Gorille Vulcain",
     "desc": "Originaire de la Vallée de Vulcain, c'est un gorille joueur et très fidèle : améliorable. Stats: 14,15,9,12,13",
     "effet": "Monture de Combat",
     "montant": "Dégât +6 (PV : 80 + 5*niveau)",
-    "icone": "sambab"
+    "icone": "sambab",
+    "type": "monture"
   },
   "571": {
     "nom": "Gorille Vulcain (A,A)",
     "desc": "Originaire de la Vallée de Vulcain, c'est un gorille joueur et très fidèle : améliorable. Stats: 14,15,9,12,14",
     "effet": "Monture de Combat",
     "montant": "Dégât +8 (PV : 100 + 5*niveau)",
-    "icone": "sambae"
+    "icone": "sambae",
+    "type": "monture"
   },
   "572": {
     "nom": "Veste de Puissance",
     "desc": "Une veste conçue pour améliorer la force de son porteur",
     "effet": "Force +1",
     "montant": "Dégât -4",
-    "icone": "A20039"
+    "icone": "A20039",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "573": {
     "nom": "Gilet de Puissance",
     "desc": "Un gilet très résistant conçu pour améliorer la force de son porteur",
     "effet": "Force +1",
     "montant": "Dégât -5",
-    "icone": "A20049b"
+    "icone": "A20049b",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "574": {
     "nom": "Cotte légère",
     "desc": "Cette cotte est assez légère pour donner de l'agilité à son porteur.",
     "effet": "Dextérité +1",
     "montant": "Dégât -5",
-    "icone": "A20075"
+    "icone": "A20075",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "575": {
     "nom": "Veste perçante",
     "desc": "Une veste conçue pour améliorer les dégâts perçants.",
     "effet": "",
     "montant": "Dégât -5, dégât perçant +2",
-    "icone": "k20834"
+    "icone": "k20834",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "576": {
     "nom": "Veste d'aventurier raffiné",
     "desc": "Cette veste est réservé aux aventuriers expérimentés",
     "effet": "Force +1, Dextérité +1",
     "montant": "Dégât -4",
-    "icone": "A20046"
+    "icone": "A20046",
+    "type": "armure",
+    "armorTypes": ["leger"]
   },
   "577": {
     "nom": "Plastron de concentration",
     "desc": "Ce plastron concentre la puissance de son porteur.",
     "effet": "Force +1, Esprit +1",
     "montant": "Dégât -5",
-    "icone": "A20078"
+    "icone": "A20078",
+    "type": "armure",
+    "armorTypes": ["lourd"]
   },
   "578": {
     "nom": "Anneau d'évasion",
     "desc": "Réduit les dégâts reçus et améliore l'esquive",
     "effet": "",
     "montant": "Dégât reçu -2, Esquive +1",
-    "icone": "A00018b"
+    "icone": "A00018b",
+    "type": "access"
   },
   "579": {
     "nom": "Collier de Métamorphose",
@@ -4280,14 +4957,16 @@
     "effet": "Malédiction du lien / Capacité",
     "montant": "1 fois par combat (Esprit) : Métamorphose",
     "icone": "k10715",
-    "access": "A3"
+    "access": "A3",
+    "type": "access"
   },
   "580": {
     "nom": "Bague d'agilité",
     "desc": "Cette bague offre de l'agilité à son porteur.",
     "effet": "",
     "montant": "PV +5, Esquive +1",
-    "icone": "k10114"
+    "icone": "k10114",
+    "type": "access"
   },
   "581": {
     "nom": "Ecouteur Futuriste",
@@ -4295,7 +4974,8 @@
     "effet": "",
     "montant": "Charisme +1 (+ voix dans la tête)",
     "icone": "k10175",
-    "access": "A1"
+    "access": "A1",
+    "type": "access"
   },
   "582": {
     "nom": "Marteau du Sage Scelleur",
@@ -4303,7 +4983,8 @@
     "effet": "Blocage cible -2",
     "montant": "Dégât +8 (+2 si Sage)",
     "condition": { "type": "classe", "value": ["Sage"], "bonus": "Dégât +2" },
-    "icone": "W40902"
+    "icone": "W40902",
+    "type": "arme-2m"
   },
   "583": {
     "nom": "Marteau du Sage Enchanteur",
@@ -4311,7 +4992,8 @@
     "effet": "Soin +2, Intelligence +1",
     "montant": "Dégât +8 (Montant des buffs+1 si Sage)",
     "condition": { "type": "classe", "value": ["Sage"], "bonus": "Montant des buffs +1" },
-    "icone": "W40902b"
+    "icone": "W40902b",
+    "type": "arme-2m"
   },
   "584": {
     "nom": "Anneau de soin magique",
@@ -4319,7 +5001,8 @@
     "effet": "",
     "montant": "Soin +4 (AoE/2), Intelligence +1",
     "icone": "A00005c",
-    "access": "D2"
+    "access": "D2",
+    "type": "access"
   },
   "585": {
     "nom": "Anneau de soin enchanté",
@@ -4328,28 +5011,33 @@
     "montant": "Soin +4 (AoE/2) (+2 si Torturran)",
     "condition": { "type": "race", "value": ["Torturran"], "bonus": "Soin +2" },
     "icone": "A00005d",
-    "access": "D2"
+    "access": "D2",
+    "type": "access"
   },
   "586": {
     "nom": "Bâton du Dévoué",
     "desc": "Ce bâton amplifie les soins prodigués aux alliés, au détriment de celle de son porteur...",
     "effet": "Malédiction du Lien",
     "montant": "Dégât +9, Soin +5 (-5 PV/soigné)",
-    "icone": "W62605"
+    "icone": "W62605",
+    "type": "arme-2m"
   },
   "587": {
     "nom": "Grimoire de l'Esclave",
     "desc": "Cet ancien grimoire était utilisé autrefois à Amur pour forcer les esclaves à soigner leur maître plutôt qu'eux-même.",
     "effet": "Malédiction du Lien",
     "montant": "Dégât +9, Soin +5 (Impossible de se soigner)",
-    "icone": "W61805"
+    "icone": "W61805",
+    "type": "arme-2m"
   },
   "588": {
     "nom": "Tenue de Gradé de l'Ordre",
     "desc": "Uniforme officiel des membres haut gradés de l'Ordre des Chevaliers du Temple",
     "effet": "Intelligence +1",
     "montant": "Dégât -5, Charisme +2",
-    "icone": "k21056"
+    "icone": "k21056",
+    "type": "armure",
+    "armorTypes": ["lourd", "leger", "magique"]
   },
   "589": {
     "nom": "Crinière de Lunicorne",
@@ -4357,14 +5045,16 @@
     "effet": "PV +5",
     "montant": "Esprit +1, durée des sorts +1",
     "icone": "a30052",
-    "access": "A2"
+    "access": "A2",
+    "type": "access"
   },
   "590": {
     "nom": "Noyau abyssal vivant",
     "desc": "Ce noyau alimentait un esprit magique lié à la vitalité",
     "effet": "",
     "montant": "Esprit +2, PV +15",
-    "icone": "I00223b"
+    "icone": "I00223b",
+    "type": "access"
   },
   "591": {
     "nom": "Gravure de Delphes",
@@ -4372,41 +5062,73 @@
     "effet": "",
     "montant": "Dégât +1 & Dégât reçu -1 (+1 par objet de Delphes)",
     "condition": { "type": "panoplie", "value": ["Delphes"], "bonus": "Dégât +1, Dégât reçu -1" },
-    "icone": "i00787"
+    "icone": "i00787",
+    "type": "access"
   },
   "592": {
     "nom": "Katana de Puissance",
     "desc": "Un Katana conçu pour porter plus facilement des coups.",
     "effet": "Force +1",
     "montant": "Dégât +7",
-    "icone": "W24106"
+    "icone": "W24106",
+    "type": "arme-2m"
   },
   "593": {
     "nom": "Katana de givre",
     "desc": "un katana forgé à partir de platine de glace, enchante vos coups physiques en dégât de glace.",
     "effet": "Element : Glace",
     "montant": "Dégât +10",
-    "icone": "W27601"
+    "icone": "W27601",
+    "type": "arme-2m"
   },
   "594": {
     "nom": "Charme de Tengri",
     "desc": "Ce charme a été conçu par de grands Shamans de Tengri, il renforce sa puissance. Les aléas climatiques affectent moins le porteur.",
     "effet": "",
     "montant": "Montant des buffs +1, (dégât/soin+2 Si Shaman)",
-    "icone": "i01609"
+    "icone": "i01609",
+    "type": "access"
   },
   "595": {
     "nom": "Bandeau à Plume du Rageux",
     "desc": "Maintient l'Aigle en vie malgré la distance. Un bandeau à l'effigie d'un perroquet, ce qui ne représente pas du tout le Rageux, un aigle. Mais il y a une vraie plume d'aigle ! C'est même la sienne",
     "effet": "Familier / Capacité",
     "montant": "Rageux : PV+10, Esprit+3. Nouveau buff : Dégât +1D6+4 (4 tours), mais si Dé >15 ...",
-    "icone": "bandeau2"
+    "icone": "bandeau2",
+    "type": "access"
   },
   "596": {
     "nom": "Pendentif du Combattant",
     "desc": "Ce pendentif augmente les dégats et la force du porteur",
     "effet": "",
     "montant": "Dégât +3, Force +1",
-    "icone": "A00045b"
+    "icone": "A00045b",
+    "type": "access"
+  },
+  "597": {
+    "nom": "Bâton d'Entraînement Douteux",
+    "desc": "Un bâton unique créé par la Gardienne de la faille des Bourbes pour ses \"petits\" entraînements.",
+    "effet": "Durée des sorts +1 tour",
+    "montant": "Dégât +14, chaque niveau <15 : -1 Intel, -0.5 Esprit",
+    "icone": "W64508",
+    "type": "arme-2m"
+  },
+  "598": {
+    "nom": "Volonté de Loju",
+    "desc": "Amure plutôt spécial qui donne un sentiment de légerté.",
+    "effet": "Malédiction du lien",
+    "montant": "Dégât -2, Dextérité +2, Esquive +2",
+    "icone": "k20582",
+    "type": "armure",
+    "armorTypes": ["lourd", "leger", "magique"]
+  },
+  "599": {
+    "nom": "Chapeau d'apprenti sorcier",
+    "desc": "Un chapeau qui aide les jeunes à réussir plus facilement leur sort.",
+    "effet": "",
+    "montant": "Dégât magique +1, Intelligence +2",
+    "icone": "k10579",
+    "type": "access",
+    "armorTypes": ["lourd"]
   }
 }

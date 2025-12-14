@@ -18,6 +18,9 @@ import {
   CombatCheatLog,
   Resume,
   Races,
+  EquipmentType,
+  ArmorType,
+  StatsName,
 } from "./model"
 
 const xhReq = new XMLHttpRequest()
@@ -30,7 +33,7 @@ export const persosJSON = getData<{ [key: string]: Perso }>("persos")
 
 export const skillsJSON = getData<{ [key: string]: Skill }>("skills")
 export const skillsAwakenJSON = getData<{ [key: string]: SkillsAwaken }>("skillsAwaken")
-export const eqptJSON = getData<{ [key: string]: Equipment }>("eqpt")
+export const eqptJSON = getData<{ [key: string]: Equipment<EquipmentType> }>("eqpt")
 
 export const enemyJSON = getData<{ [key: string]: Enemy }>("enemy")
 
@@ -79,7 +82,7 @@ export function getData<T>(filename: string, JDR = true): T {
   }
 }
 
-// Enum as variables
+// Enum as variables @TODO Change by const arrays and create types from them
 
 export const races: Races[] = ["Humain", "Ezelin", "Ursun", "Zumi", "Anuran", "Torturran", "Drakai", "Tuskar", "Ogre"]
 
@@ -92,6 +95,11 @@ export const iconsEveil = [ "J009", "J011", "J013", "j043", "J015", "J017", "J01
 
 // prettier-ignore
 export const elements : Elements[] = ["contondant","tranchant", "perçant", "feu", "glace", "foudre", "nature", "lumière", "ténèbres"];
+
+export const equipmentsTypes: EquipmentType[] = ["access", "arme-1m", "arme-2m", "armure", "monture"]
+export const armorTypes: ArmorType[] = ["lourd", "leger", "magique"]
+export const iconsArmorTypes = ["E0649", "E0648", "E0647"]
+export const malusArmorTypes: StatsName[] = ["Force", "Dextérité", "Intelligence"]
 
 export const aoeDescInfo = {
   range: ["L", "R"],

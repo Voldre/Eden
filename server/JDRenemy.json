@@ -3407,8 +3407,8 @@
     "skills": [
       "Triple Lames / Attaco di Squalo : 3D6+20 (+5 / -1 buff OU Stats-2 sur 2 tours) : Dexté",
       "Copia di Squalo : copie un sort lancé par l'ennemi (si ok à l'épée, certains boosts) : Espr'it (puis l'atk) (jdrCombat +28)",
-      "Silence : Aucun sort magique (3 tours) : Esprit\nLame Tranchante : Ennemi Bloc/Esq-1 (2 si <130) & Dégât +1D6+7 sur 4 tours",
-      "Passif Maître Epeiste (si ennemi atk au CàC) : Dégât +5, Armure +5, si bloc crit : renvoi 1/3\nSi PV <130 : Effet*2, Malus+50% ou +1 tour"
+      "Silence : Aucun sort magique (3 tours) : Esprit\nLame Tranchante : Ennemi Bloc/Esq-1 & Dégât +1D6+7 sur 4 tours",
+      "Passif Maître Epeiste (si ennemi atk au CàC) : Dégât +10, Armure +5, Bloc/Esq+1, si bloc crit : renvoi 1/3\nSi PV <130 : Lame Tranchante*2, Malus+50% ou +1 tour"
     ],
     "stats": "16,18,10,11,17",
     "desc": "Bras Droit de la famille Varia. Squalo a un tempérament colérique mais est un Grand Maître Epeiste, il aurait déjà vaincu plus de 100 puissants épéistes.",

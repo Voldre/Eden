@@ -101,6 +101,9 @@ label:hover {
   font-size: 17px;
 }
 
+.equipements {
+  position: relative;
+}
 .skill,
 .equipements div,
 .skillCombat,
@@ -167,6 +170,21 @@ label:hover {
 .equipements div > .montant,
 .awakenSkill > .montant {
   grid-area: mon;
+}
+
+/* equipments JDR perso + JDR master */
+.equipements .armor-wrapper {
+  position: absolute;
+  right: 0;
+  border: 0;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.eqpt {
+  position: relative;
 }
 
 .skill input[type="text"] {

@@ -1106,6 +1106,12 @@
       <br />
       Icone<input type="text" />
       <br />
+      Type d'équipement
+      <select></select>
+      <br />
+      Type d'armure
+      <select class="hide"></select>
+      <br />
       <button id="createEqpt">Créer</button>
     </div>
     <div class="notInMobile">
@@ -1170,13 +1176,17 @@
         </div> -->
   </div>
   <h4 style="display: inline; margin-right: 12px">Equipements</h4>
-  <button id="buttonEqpt">Afficher</button>
+  <span id="nbEqptFiltered"></span>
   <span>Nom</span>
   <input type="text" id="eqptNameFilter" placeholder="epee, asbi, robe" />
   <input type="checkbox" id="revertNameFilter" title="Inverser la sélection des Noms" />
   &nbsp; &nbsp; &nbsp;
   <span>Effet</span>
   <input type="text" id="eqptEffectFilter" placeholder="dexterite, feu, blocage +, panoplie" />
-  <span id="nbEqptFiltered"></span>
-  <div class="equipements hide"></div>
+  &nbsp; &nbsp;
+  <span>Type</span>
+  <select type="text" id="eqptTypeFilter"></select>
+  <select type="text" class="hide" id="eqptArmorTypeFilter"></select>
+
+  <div class="equipements"></div>
 </div>

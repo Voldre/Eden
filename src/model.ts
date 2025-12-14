@@ -138,15 +138,23 @@ export interface EnemyGeneric {
   }[]
 }
 
-export interface Equipment {
+export type EquipmentType = "arme-1m" | "arme-2m" | "armure" | "access" | "monture"
+export type ArmorType = "lourd" | "leger" | "magique"
+
+interface BaseEquipment<T extends EquipmentType> {
   nom: string
   desc: string
   effet: string
   montant: string
   condition?: { type: "classe" | "race" | "panoplie"; value: (Classes | Races)[] | string; bonus: string }
   icone: string
+  type: T
   access?: `D${0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9}` | `A${0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9}`
 }
+
+export type Equipment<T extends EquipmentType = EquipmentType> = T extends "armure"
+  ? BaseEquipment<T> & { armorTypes: ArmorType[] }
+  : BaseEquipment<T>
 
 export interface Skill {
   nom: string
@@ -181,7 +189,7 @@ export interface RaceClassStatsValue {
 export interface RaceClassStats {
   classes: ({
     Classe: Classes
-    armure: "lourd" | "leger" | "magique"
+    armure: ArmorType
   } & RaceClassStatsValue)[]
   races: ({
     Race: string

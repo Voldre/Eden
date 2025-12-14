@@ -8,8 +8,11 @@ import {
   persosJSON,
   getData,
   elements,
+  equipmentsTypes,
+  armorTypes,
+  iconsArmorTypes,
 } from "./JDRstore.js"
-import { Classes, Enemy, Equipment, Perso, Skill, StatsName } from "./model.js"
+import { ArmorType, Classes, Enemy, Equipment, EquipmentType, Perso, Skill, StatsName } from "./model.js"
 import {
   addChangeListener,
   addClickListener,
@@ -24,6 +27,8 @@ import {
   toastNotification,
   unformatText,
   getNewEnemy,
+  SelectElement,
+  capitalize,
 } from "./utils/index.js"
 
 const logged = !!document.querySelector(".admin")
@@ -345,7 +350,7 @@ function toggleDesc(descE: HTMLElement): void {
 // EQPTS
 const equipementsE = document.querySelector(".equipements")!
 // eqpts list
-Object.values(eqptJSON).forEach((eqpt) => {
+Object.entries(eqptJSON).forEach(([id, eqpt]) => {
   const nomE = createElement("p", eqpt.nom, { className: "nom" })
   const descE = createElement("p", eqpt.desc, { className: "desc" })
   const effetE = createElement("p", eqpt.effet, { className: "effet" })
@@ -356,19 +361,24 @@ Object.values(eqptJSON).forEach((eqpt) => {
     src: eqpt.icone !== "?" ? `http://voldre.free.fr/Eden/images/items/${eqpt.icone}.png` : "",
   })
 
-  const eqptE = createElement("div", [nomE, descE, effetE, montantE, iconeE], { className: "eqpt" })
-  equipementsE.append(eqptE)
-})
+  const armorTypesE =
+    eqpt.type === "armure"
+      ? eqpt.armorTypes.map((type) =>
+          createElement("img", undefined, {
+            id: `${eqpt.nom}-${type}`,
+            className: "skillRangeIcon",
+            src: `images/skillIcon/${iconsArmorTypes[armorTypes.indexOf(type)]}.png`,
+            title: capitalize(type),
+          })
+        )
+      : []
+  const armorWrapperE = createElement("div", armorTypesE, { className: "armor-wrapper" })
 
-// Show/Hide eqpts
-const buttonEqpt = document.querySelector<HTMLParagraphElement>("#buttonEqpt")!
-buttonEqpt.addEventListener("click", () => {
-  if (buttonEqpt.innerText === "Afficher") {
-    buttonEqpt.innerText = "Masquer"
-  } else {
-    buttonEqpt.innerText = "Afficher"
-  }
-  equipementsE.classList.toggle("hide")
+  const eqptE = createElement("div", [nomE, descE, effetE, montantE, iconeE, armorWrapperE], {
+    className: "eqpt",
+    id,
+  })
+  equipementsE.append(eqptE)
 })
 
 // Filter eqpts by name (08/02/2024)
@@ -377,14 +387,29 @@ const eqptNameFilter = inputSelector("#eqptNameFilter", "string")
 const eqptEffectFilter = inputSelector("#eqptEffectFilter", "string")
 const revertFilterNames = inputSelector("#revertNameFilter", "string")
 
+const eqptTypeFilter = document.querySelector("#eqptTypeFilter") as SelectElement<EquipmentType>
+fillSelectOptions(eqptTypeFilter, [
+  { value: "", innerText: "" },
+  ...equipmentsTypes.map((type) => ({ innerText: type, value: type })),
+])
+const eqptArmorTypeFilter = document.querySelector("#eqptArmorTypeFilter") as SelectElement<ArmorType>
+fillSelectOptions(eqptArmorTypeFilter, [
+  { value: "", innerText: "" },
+  ...armorTypes.map((type) => ({ innerText: type, value: type })),
+])
 ;[eqptNameFilter, eqptEffectFilter].map((element) =>
   element.addEventListener("blur", () => {
     eqptFilter()
   })
 )
-revertFilterNames.addEventListener("change", () => {
-  eqptFilter()
-})
+;[revertFilterNames, eqptTypeFilter, eqptArmorTypeFilter].map((element) =>
+  element.addEventListener("change", () => {
+    eqptFilter()
+
+    if (eqptTypeFilter.value === "armure") eqptArmorTypeFilter.classList.remove("hide")
+    else eqptArmorTypeFilter.classList.add("hide")
+  })
+)
 
 const eqptFilter = (): void => {
   // Update 02/05/2024 : Handle multiple filters if splited by coma, + revert filter
@@ -393,31 +418,43 @@ const eqptFilter = (): void => {
   const filterEffects = eqptEffectFilter.value ? eqptEffectFilter.value.split(",") : []
   const isRevertFilterNames = revertFilterNames.checked
 
-  let nbEqptsDisplayed = 0
+  const filterEqptType = eqptTypeFilter.value ?? ""
+  const filterArmorType = eqptArmorTypeFilter.value ?? ""
 
-  ;[...equipementsE.children].forEach((eqptE) => {
-    const eqptName = eqptE.querySelector<HTMLParagraphElement>(".nom")!.innerText
-    const eqptEffect = eqptE.querySelector<HTMLParagraphElement>(".effet")!.innerText
-    const eqptMontant = eqptE.querySelector<HTMLParagraphElement>(".montant")!.innerText
+  const eqptsDisplay = [...equipementsE.children].map((eqptE): [Element, boolean] => {
+    const eqpt = eqptJSON[eqptE.id]
 
-    const filterNamesCondition =
-      !filterNames.length || filterNames.find((filterName) => isTextInText(eqptName, filterName))
-    const filtersConditionsMet =
-      //         isRevertFilterNames ^= filterNamesCondition
-      // The revert is only applied on filterNames
-      (isRevertFilterNames ? !filterNamesCondition : filterNamesCondition) &&
-      (!filterEffects.length ||
-        filterEffects.find(
-          (filterEffect) => isTextInText(eqptEffect, filterEffect) || isTextInText(eqptMontant, filterEffect)
-        ))
-
-    if (filtersConditionsMet) {
+    if (!eqpt) {
       eqptE.classList.remove("hide")
-      nbEqptsDisplayed++
-    } else eqptE.classList.add("hide")
+
+      return [eqptE, true]
+    }
+
+    const matchesName = !filterNames.length || filterNames.some((f) => isTextInText(eqpt.nom, f))
+
+    const matchesEffects =
+      !filterEffects.length || filterEffects.some((f) => isTextInText(eqpt.effet, f) || isTextInText(eqpt.montant, f))
+
+    const matchesType = !filterEqptType || isTextInText(eqpt.type, filterEqptType)
+
+    const matchesArmor =
+      !filterArmorType ||
+      filterEqptType !== "armure" ||
+      (eqpt.type === "armure" && eqpt.armorTypes.some((a) => isTextInText(a, filterArmorType)))
+
+    const shouldDisplay =
+      (isRevertFilterNames ? !matchesName : matchesName) && matchesEffects && matchesType && matchesArmor
+
+    return [eqptE, shouldDisplay]
   })
 
-  document.querySelector<HTMLParagraphElement>("#nbEqptFiltered")!.innerText = `(${nbEqptsDisplayed})`
+  // Update class in one batch
+  for (const [eqptE, display] of eqptsDisplay) {
+    eqptE.classList.toggle("hide", !display)
+  }
+
+  document.querySelector<HTMLParagraphElement>("#nbEqptFiltered")!.innerText =
+    `(${eqptsDisplay.filter(([, displayed]) => !!displayed).length})`
 }
 
 // Add new enemy (4th)
@@ -660,18 +697,46 @@ document.querySelector("#createSkill")!.addEventListener("click", async () => {
 })
 
 // Create eqpt & Save
+const addEqpt = document.querySelector<HTMLElement & { children: (HTMLInputElement | HTMLSelectElement)[] }>(
+  ".addEqpt"
+)!
+
+const selectEqptType = addEqpt.querySelectorAll("select")[0] as SelectElement<EquipmentType>
+
+fillSelectOptions(selectEqptType, [...equipmentsTypes.map((type) => ({ innerText: type, value: type }))])
+
+const selectArmorType = addEqpt.querySelectorAll("select")[1] as SelectElement<ArmorType>
+selectEqptType.addEventListener("change", () => {
+  if (selectEqptType.value === "armure") selectArmorType.classList.remove("hide")
+  else selectArmorType.classList.add("hide")
+})
+
+fillSelectOptions(selectArmorType, [...armorTypes.map((type) => ({ innerText: type, value: type }))])
 
 document.querySelector("#createEqpt")!.addEventListener("click", async () => {
-  const addEqpt = document.querySelector<HTMLElement & { children: HTMLInputElement[] }>(".addEqpt")!
   const eqptID = parseInt(Object.keys(eqptJSON).reverse()[0]) + 1 || 1
   const newEqpt: { [key: string]: Equipment } = {}
-  newEqpt[eqptID] = {
-    nom: addEqpt.children[0 + 1].value,
-    desc: addEqpt.children[2 + 1].value,
-    effet: addEqpt.children[4 + 1].value,
-    montant: addEqpt.children[6 + 1].value,
-    icone: addEqpt.children[8 + 1].value,
-  }
+
+  newEqpt[eqptID] =
+    // @TODO Remove this workaround
+    selectEqptType.value === "armure"
+      ? {
+          nom: addEqpt.children[0 + 1].value,
+          desc: addEqpt.children[2 + 1].value,
+          effet: addEqpt.children[4 + 1].value,
+          montant: addEqpt.children[6 + 1].value,
+          icone: addEqpt.children[8 + 1].value,
+          type: selectEqptType.value,
+          armorTypes: [selectArmorType.value],
+        }
+      : {
+          nom: addEqpt.children[0 + 1].value,
+          desc: addEqpt.children[2 + 1].value,
+          effet: addEqpt.children[4 + 1].value,
+          montant: addEqpt.children[6 + 1].value,
+          icone: addEqpt.children[8 + 1].value,
+          type: selectEqptType.value,
+        }
   console.log(newEqpt)
 
   setCookie("eqptJSON", newEqpt)
