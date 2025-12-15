@@ -154,7 +154,7 @@ interface BaseEquipment<T extends EquipmentType> {
 
 export type Equipment<T extends EquipmentType = EquipmentType> = T extends "armure"
   ? BaseEquipment<T> & { armorTypes: ArmorType[] }
-  : BaseEquipment<T>
+  : BaseEquipment<T> & { armorTypes: undefined }
 
 export interface Skill {
   nom: string
@@ -165,6 +165,7 @@ export interface Skill {
   stat: StatsName
   classe: Classes[]
   race?: Races
+  cooldown?: number
 }
 export interface SkillsAwaken extends Partial<Skill> {
   nom: string

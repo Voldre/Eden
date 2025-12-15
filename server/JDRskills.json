@@ -366,7 +366,8 @@
     "montant": "Dégât +4 (+1/niveau, max 8), 0 dégât stuff. Force+2, Dexté+2 pendant 1D4 (min 2) +1 tours (annulable)",
     "icone": "E0271",
     "stat": "Esprit",
-    "classe": ["Shaman"]
+    "classe": ["Shaman"],
+    "cooldown": 3
   },
   "49": {
     "nom": "Bombe Incendiaire",
@@ -471,10 +472,11 @@
     "nom": "Prière Divine",
     "desc": "Action Instantanée. Soigne l'utilisateur et boost les prochains dégâts de lumières : obligé de faire de la lumière.",
     "effet": "Buff et Soin",
-    "montant": "Soin 1D8 +5. Prochain dégât lumière +1D6 +2 (1 tour max) - Cooldown 2 tours",
+    "montant": "Soin 1D8 +5. Prochain dégât lumière +1D6 +2 (2 tours max) - Cooldown 2 tours",
     "icone": "E0610",
     "stat": "Esprit",
-    "classe": ["Luminary"]
+    "classe": ["Luminary"],
+    "cooldown": 2
   },
   "61": {
     "nom": "Assaut du Chaos",
@@ -507,7 +509,7 @@
     "nom": "Poème du Vent",
     "desc": "Un chant qui augmente la dextérité des alliés",
     "effet": "Buff AoE",
-    "montant": "Dextérité +2 pendant 1D4 +2",
+    "montant": "Dextérité +2 pendant 1D4 +2 tours",
     "icone": "E0107",
     "stat": "Charisme",
     "classe": ["Barde"]
@@ -623,11 +625,12 @@
   "78": {
     "nom": "Vent Purificateur",
     "desc": "Ôte un effet négatif au hasard aux membres à proximité, soigne un peu",
-    "effet": "Buff et Soin AoE",
+    "effet": "Debuff et Soin AoE",
     "montant": "Soin 1D6+6 (-1 malus) - Cooldown 1 tour",
     "icone": "E0098",
     "stat": "Intelligence",
-    "classe": ["Clerc"]
+    "classe": ["Clerc"],
+    "cooldown": 1
   },
   "79": {
     "nom": "Grâce de la Sagesse",
@@ -993,7 +996,7 @@
     "nom": "Encouragement Musical",
     "desc": "(effet montant des buffs /2). Incante et réduit les dégâts subis, immunise à l'endormissement et augmente la résistance mentale (Blocage Esprit/2)",
     "effet": "Buff AoE",
-    "montant": "Incantation 2 tours (1 dé) : Dégât subi -1D4-2, 0 dodo, +2 rés esprit, pour 4 tours",
+    "montant": "Incantation 2-tours (1 dé) : Dégât subi -1D4-2, 0 dodo, +2 rés esprit, pour 4 tours",
     "icone": "E0406",
     "stat": "Charisme",
     "classe": ["Barde"]
@@ -1140,7 +1143,8 @@
     "montant": "Invoque un double de soi pendant 2 tours (max 3 tours avec boost) - Cooldown 2 tours",
     "icone": "E1042",
     "stat": "Esprit",
-    "classe": ["Illusionniste"]
+    "classe": ["Illusionniste"],
+    "cooldown": 2
   },
   "136": {
     "nom": "Aura du Samouraï",
@@ -1678,7 +1682,8 @@
     "icone": "E0664b",
     "stat": "Force",
     "classe": ["Clerc", "Barde", "Shaman", "Sage"],
-    "race": "Ogre"
+    "race": "Ogre",
+    "cooldown": 2
   },
   "191": {
     "nom": "Tempête de Tengri",

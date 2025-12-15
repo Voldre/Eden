@@ -736,6 +736,7 @@ document.querySelector("#createEqpt")!.addEventListener("click", async () => {
           montant: addEqpt.children[6 + 1].value,
           icone: addEqpt.children[8 + 1].value,
           type: selectEqptType.value,
+          armorTypes: undefined,
         }
   console.log(newEqpt)
 

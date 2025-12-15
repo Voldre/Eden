@@ -234,7 +234,7 @@
   "64": {
     "nom": "Poème du Vent",
     "desc": "Un chant qui augmente la dextérité des alliés",
-    "montant": "Dextérité +2 et Esquive +1 pendant 1D4 +2"
+    "montant": "Dextérité +2 et Esquive +1 pendant 1D4 +2 tours"
   },
   "66": {
     "nom": "Danse de l'oiseau de feu",

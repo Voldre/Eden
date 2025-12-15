@@ -322,7 +322,7 @@ addClickListener(document.querySelector<HTMLButtonElement>("#awakenButton")!, (e
   const nbUse = nivE.value >= 15 ? 3 : nivE.value >= 12 ? 2 : 1
   const nbTurns = nbUse === 1 ? "4" : "3"
 
-  const buffTurnE = awakenSkillE.querySelector<HTMLElement & { children: [HTMLImageElement] }>(".buffTurn")!
+  const buffTurnE = awakenSkillE.querySelector<BuffElement>(".buffTurn")!
   buffTurnE.style.cursor = "pointer"
 
   awakenClass = awakenSkillE.id as Classes
@@ -461,15 +461,18 @@ const updateStress = (): void => {
 stressE.addEventListener("change", updateStress)
 
 // COMPETENCES
+type BuffElement = HTMLElement & {
+  children: [HTMLImageElement, ...HTMLParagraphElement[]]
+  dataset: Partial<{ skillName: string; skillMontant: string }>
+}
+
 // const competencesE = document.querySelector(".skills")!
 // Map competence elements to easily interact with
 type CompetenceE = HTMLElement & {
   selectE: HTMLSelectElement
   effetE: HTMLInputElement
   montantE: HTMLInputElement
-  iconeWrapperE: HTMLElement & {
-    children: [HTMLImageElement]
-  }
+  buffE: BuffElement
   descE: HTMLInputElement
 }
 
@@ -479,7 +482,7 @@ const competenceEs: CompetenceE[] = ([...document.querySelector(".skills")!.chil
       selectE: competenceE.children[0] as HTMLSelectElement,
       effetE: competenceE.children[1] as HTMLInputElement,
       montantE: competenceE.children[2] as HTMLInputElement,
-      iconeWrapperE: competenceE.children[3] as HTMLElement & { children: [HTMLImageElement] },
+      buffE: competenceE.children[3] as BuffElement,
       descE: competenceE.children[4] as HTMLInputElement,
     })
 )
@@ -544,13 +547,15 @@ function updateAvailableSkillsList(): void {
 }
 
 function insertSkill(skillElement: CompetenceE, skillName: string, awakenClass?: Classes): void {
-  const selectedSkill = Object.values(skillsJSON).find((skill) => unformatText(skill.nom) === unformatText(skillName))
+  const selectedSkill = Object.values(skillsJSON).find(
+    (skill) => !!skillName && unformatText(skill.nom) === unformatText(skillName)
+  )
 
   skillElement.selectE.value = skillName
 
   skillElement.classList.remove("awaken")
 
-  const currentIconSrc = skillElement.iconeWrapperE.children[0].src
+  const currentIconSrc = skillElement.buffE.children[0].src
 
   if (!selectedSkill) {
     if (skillName !== "") {
@@ -558,130 +563,156 @@ function insertSkill(skillElement: CompetenceE, skillName: string, awakenClass?:
     }
     skillElement.effetE.innerText = ""
     skillElement.montantE.innerText = ""
-    skillElement.iconeWrapperE.children[0].src = ""
-    skillElement.iconeWrapperE.children[0].title = ""
+    skillElement.buffE.children[0].src = ""
+    skillElement.buffE.children[0].title = ""
     skillElement.descE.innerText = ""
+
+    return
+  }
+
+  let selectedAwakenSkill
+  if (awakenClass && selectedSkill.classe.includes(awakenClass)) {
+    skillElement.classList.add("awaken")
+    selectedAwakenSkill = Object.values(skillsAwakenJSON).find(
+      (skill) => unformatText(skill.nom) === unformatText(skillName)
+    )
+  }
+
+  const skillDesc = selectedAwakenSkill?.desc || selectedSkill.desc
+  const skillMontant = selectedAwakenSkill?.montant || selectedSkill.montant
+
+  const skillRange = selectedSkill.effet.split("AoE ")[1] ?? null // en bas [0] + "AoE"
+  const selectedSkillEffet = skillRange ? selectedSkill.effet.split(" AoE")[0] : selectedSkill.effet
+  skillElement.effetE.innerText = selectedSkillEffet
+
+  if (skillRange) {
+    const rangeI = aoeDescInfo.range.findIndex((x) => x === skillRange[0])
+    const typeI = aoeDescInfo.type.findIndex((x) => x === skillRange[1])
+
+    const skillRangeIconE = createElement("span", undefined, {
+      title: `AoE en ${aoeDescInfo.rangeName[rangeI]} ${aoeDescInfo.typeName[typeI]}`,
+      className: "skillRangeIcon",
+      style: { backgroundImage: `url(http://voldre.free.fr/Eden/images/layout/${skillRange}.png)` },
+    })
+
+    const skillStatE = createElement("span", `/ ${selectedSkill.stat}`)
+
+    skillElement.effetE.append(skillRangeIconE, skillStatE)
   } else {
-    let selectedAwakenSkill
-    if (awakenClass && selectedSkill.classe.includes(awakenClass)) {
-      skillElement.classList.add("awaken")
-      selectedAwakenSkill = Object.values(skillsAwakenJSON).find(
-        (skill) => unformatText(skill.nom) === unformatText(skillName)
-      )
-    }
+    skillElement.effetE.innerText += ` / ${selectedSkill.stat}`
+  }
 
-    const skillDesc = selectedAwakenSkill?.desc || selectedSkill.desc
-    const skillMontant = selectedAwakenSkill?.montant || selectedSkill.montant
+  skillElement.montantE.innerText = skillMontant
 
-    const skillRange = selectedSkill.effet.split("AoE ")[1] ?? null // en bas [0] + "AoE"
-    const selectedSkillEffet = skillRange ? selectedSkill.effet.split(" AoE")[0] : selectedSkill.effet
-    skillElement.effetE.innerText = selectedSkillEffet
+  // Add new buff parameters
+  skillElement.buffE.dataset.skillName = selectedSkill.nom
+  skillElement.buffE.dataset.skillMontant = skillMontant
+  skillElement.buffE.children[0].src = `http://voldre.free.fr/Eden/images/skillIcon/${selectedSkill.icone}.png`
+  skillElement.buffE.title = skillDesc
+  skillElement.buffE.style.cursor = `url('images/layout/cursor-${isBuffSkill(selectedSkill) ? "x" : "hover"}.png'), auto`
 
-    if (skillRange) {
-      const rangeI = aoeDescInfo.range.findIndex((x) => x === skillRange[0])
-      const typeI = aoeDescInfo.type.findIndex((x) => x === skillRange[1])
+  skillElement.descE.innerText = skillDesc
 
-      const skillRangeIconE = createElement("span", undefined, {
-        title: `AoE en ${aoeDescInfo.rangeName[rangeI]} ${aoeDescInfo.typeName[typeI]}`,
-        className: "skillRangeIcon",
-        style: { backgroundImage: `url(http://voldre.free.fr/Eden/images/layout/${skillRange}.png)` },
-      })
+  // Update 29/07/2023, case de PV pour familiers
+  const inputExists = skillElement.children.length >= 6
+  if (inputExists) {
+    // Check if it's same skill by icon
+    const sameSkill = currentIconSrc.includes(selectedSkill.icone)
+    if (sameSkill) return // No need to update
+    skillElement.removeChild(skillElement.children[5]) // Update
+  }
 
-      const skillStatE = createElement("span", `/ ${selectedSkill.stat}`)
+  if (selectedSkill.effet === "Invocation") {
+    const pvPetE = createElement("input", undefined, { type: "number" })
+    skillElement.append(pvPetE)
+  }
+  // Update 05/01/2024, add inputs to handle charges (light/dark)
+  if (skillName === "Assaut du Chaos") {
+    const textE = createElement("span", "Lum/Ten")
+    const lumiereE = createElement("input", undefined, { type: "number", style: { width: "40px" } })
+    const tenebresE = createElement("input", undefined, { type: "number", style: { width: "40px" } })
 
-      skillElement.effetE.append(skillRangeIconE, skillStatE)
-    } else {
-      skillElement.effetE.innerText += ` / ${selectedSkill.stat}`
-    }
+    const wrapperE = createElement("div", [textE, lumiereE, tenebresE], { style: { width: "max-content" } })
+    skillElement.append(wrapperE)
+  }
 
-    skillElement.montantE.innerText = skillMontant
-    insertBuffInteraction(skillElement.iconeWrapperE, skillName, selectedSkill, skillMontant)
-    skillElement.iconeWrapperE.children[0].src = `http://voldre.free.fr/Eden/images/skillIcon/${selectedSkill.icone}.png`
-    skillElement.iconeWrapperE.title = skillDesc
-    skillElement.descE.innerText = skillDesc
-
-    // Update 29/07/2023, case de PV pour familiers
-    const inputExists = skillElement.children.length >= 6
-    if (inputExists) {
-      // Check if it's same skill by icon
-      const sameSkill = currentIconSrc.includes(selectedSkill.icone)
-      if (sameSkill) return // No need to update
-      skillElement.removeChild(skillElement.children[5]) // Update
-    }
-
-    if (selectedSkill.effet === "Invocation") {
-      const pvPetE = createElement("input", undefined, { type: "number" })
-      skillElement.append(pvPetE)
-    }
-    // Update 05/01/2024, add inputs to handle charges (light/dark)
-    if (skillName === "Assaut du Chaos") {
-      const textE = createElement("span", "Lum/Ten")
-      const lumiereE = createElement("input", undefined, { type: "number", style: { width: "40px" } })
-      const tenebresE = createElement("input", undefined, { type: "number", style: { width: "40px" } })
-
-      const wrapperE = createElement("div", [textE, lumiereE, tenebresE], { style: { width: "max-content" } })
-      skillElement.append(wrapperE)
-    }
-
-    // Update 14/01/2024, add inputs to handle number of hits
-    if (skillName === "Euphorie") {
-      const textE = createElement("span", "Coups")
-      const hitsE = createElement("input", undefined, { style: { width: "40px" }, type: "number", max: "5" })
-      const wrapperE = createElement("div", [textE, hitsE], { style: { width: "max-content" } })
-      skillElement.append(wrapperE)
-    }
+  // Update 14/01/2024, add inputs to handle number of hits
+  if (skillName === "Euphorie") {
+    const textE = createElement("span", "Coups")
+    const hitsE = createElement("input", undefined, { style: { width: "40px" }, type: "number", max: "5" })
+    const wrapperE = createElement("div", [textE, hitsE], { style: { width: "max-content" } })
+    skillElement.append(wrapperE)
   }
 }
 
 // Buff
-const buffEs: (HTMLElement & {
-  children: [InputElement<"number">, HTMLParagraphElement, HTMLParagraphElement]
-})[] = [
-  ...document.querySelectorAll<
-    HTMLElement & { children: [InputElement<"number">, HTMLParagraphElement, HTMLParagraphElement] }
-  >(".buffTurn"),
-]
+const buffEs: BuffElement[] = [...document.querySelectorAll<BuffElement>(".buffTurn")]
 
 const malusEs = [...document.querySelector(".malus")!.children] as (HTMLElement & {
   children: [InputElement<"number">]
 })[]
 
-function insertBuffInteraction(
-  buffTurnE: CompetenceE["iconeWrapperE"],
-  skillName: string,
-  selectedSkill: Skill,
-  skillMontant: string
-): void {
-  const skillEffet = selectedSkill.effet
-  buffTurnE.style.cursor = "pointer"
+const isBuffSkill = (skill: Skill): boolean => {
+  return (
+    ["Provocation", "Buff", "Malus", "Transformation", "Status", "Invisible"].some((effet) =>
+      skill.effet.includes(effet)
+    ) || // exceptions
+    ["Dédoublement"].includes(skill.nom)
+  )
+}
 
-  const buffEvent = (): void => {
-    if (buffTurnE.children[1]) {
-      if (buffTurnE.children[1].innerText === "0") {
-        buffTurnE.children[2]?.remove()
-        buffTurnE.children[1].remove()
-      } else {
-        // Don't update, remove skill before
-        return
-      }
-    }
+function showBuffForm(buffE: CompetenceE["buffE"]): void {
+  const skillName = buffE.dataset.skillName
+  if (!skillName) return
+
+  const selectedSkill = Object.values(skillsJSON).find((skill) => unformatText(skill.nom) === unformatText(skillName))
+
+  if (!selectedSkill) {
+    console.log(`${skillName} is not a skill (in the list)`)
+    return
+  }
+
+  const skillMontant = buffE.dataset.skillMontant
+
+  if (isBuffSkill(selectedSkill)) {
+    // If there is ongoing event, skip
+    if (buffE.children.length > 1) return
+
+    // Show form
     dialog.innerText = ""
     dialog.style.width = "60%"
 
     const turnText = createElement("p", "Tours ")
 
+    const matchTurnValue = selectedSkill.montant.match(/(\d+)(?=\s*tour)/)
+    const turnValue = matchTurnValue ? matchTurnValue[1] : undefined
     const turnE = createElement("input", undefined, {
       type: "number",
       min: "1",
       max: "9",
-      value: "3",
+      value: turnValue ?? "3",
+    })
+
+    const amountText = createElement("p", "Montants ")
+    const amountE = createElement("input", undefined, { type: "number", min: "1", max: "20", value: "2" })
+
+    const hasAmount = skillMontant?.includes("1D") || skillMontant?.includes("effet mode")
+
+    const inputs = createElement("div", hasAmount ? [turnText, turnE, amountText, amountE] : [turnText, turnE], {
+      style: { display: "flex", alignItems: "center" },
     })
 
     const confirmE = createElement("button", "Confirmer", {
       onClick: () => {
-        const turnOfBuffE = createElement("p", turnE.value)
-        const amountOfBuffE = createElement("p", hasAmount ? amountE.value : "")
-        buffTurnE.append(turnOfBuffE, amountOfBuffE)
+        const turnOfBuffE = createElement("p", turnE.value, { className: "turnE" })
+        const amountOfBuffE = createElement("p", hasAmount ? amountE.value : "", { className: "amontOfBuffE" })
+        buffE.append(turnOfBuffE, amountOfBuffE)
+
+        const cooldownBuffE = selectedSkill.cooldown
+          ? createElement("p", selectedSkill.cooldown, { className: "cooldownBuffE hide" })
+          : undefined
+        if (cooldownBuffE) buffE.append(cooldownBuffE)
+
         buttonBuffs.className = "" // Show button
         dialog.close()
       },
@@ -692,46 +723,62 @@ function insertBuffInteraction(
       confirmE.disabled = parseInt(e.target.value) < 1
     })
 
-    const amountText = createElement("p", "Montants ")
-    const amountE = createElement("input", undefined, { type: "number", min: "1", max: "20", value: "2" })
-
-    const hasAmount = skillMontant.includes("1D") || skillMontant.includes("effet mode")
-
-    const inputs = createElement("div", hasAmount ? [turnText, turnE, amountText, amountE] : [turnText, turnE], {
-      style: { display: "flex", alignItems: "center" },
-    })
-
     const name = createElement("p", skillName)
     const globalE = createElement("p", [name, inputs, confirmE, closeButton(dialog)], { className: "dialogBuff" })
 
     dialog.append(globalE)
     // Ouverture en "modal"
     dialog.showModal()
-  }
-
-  if (
-    ["Provocation", "Buff", "Malus", "Transformation", "Status", "Invisible"].some((effet) =>
-      skillEffet.includes(effet)
-    )
-  ) {
-    buffTurnE.style.cursor = "url('images/layout/cursor-x.png'), auto"
-    buffTurnE.addEventListener("click", buffEvent)
+  } else if (selectedSkill.cooldown) {
+    // Add cooldown directly, not hidden
+    buffE.append(createElement("p", selectedSkill.cooldown, { className: "cooldownBuffE" }))
   }
 }
 
-buttonBuffs.addEventListener("click", () => {
+// All skills buffs ongoing events
+const spendBuffTurn = (buffE: BuffElement): boolean => {
   let buffExist = false
-  buffEs.forEach((buffE) => {
-    if (buffE.children.length > 1) {
-      const turnLeftElement = buffE.children[1]
+  if (buffE.children.length > 1) {
+    const turnLeftElement = buffE.querySelector(".turnE") as HTMLElement | undefined
+    const amountOfBuffElement = buffE.querySelector(".amontOfBuffE") as HTMLElement | undefined
+    const cooldownBuffElement = buffE.querySelector(".cooldownBuffE") as HTMLElement | undefined
+    if (turnLeftElement) {
       if (turnLeftElement.innerText === "1") {
-        buffE.children[2]?.remove()
-        buffE.children[1].remove()
+        amountOfBuffElement?.remove()
+        turnLeftElement.remove()
+        cooldownBuffElement?.classList.remove("hide")
+        buffExist = !!cooldownBuffElement // Only if there is a cooldown
       } else {
         buffExist = true
         turnLeftElement.innerText = `${parseInt(turnLeftElement.innerText) - 1}`
       }
+    } else if (cooldownBuffElement) {
+      if (cooldownBuffElement.innerText === "1") {
+        cooldownBuffElement.remove()
+      } else {
+        buffExist = true
+        cooldownBuffElement.innerText = `${parseInt(cooldownBuffElement.innerText) - 1}`
+      }
     }
+  }
+
+  return buffExist
+}
+
+// Apply buff form and spend turn on each buff element click
+buffEs.map((buffE) =>
+  buffE.addEventListener("click", () => {
+    if (buffE.children.length === 1) showBuffForm(buffE)
+    else spendBuffTurn(buffE)
+  })
+)
+
+// On global button buffs...
+buttonBuffs.addEventListener("click", () => {
+  let buffExist = false
+  buffEs.forEach((buffE) => {
+    const currentBuffExist = spendBuffTurn(buffE)
+    buffExist = buffExist || currentBuffExist
   })
   malusEs.forEach((malusE) => {
     const turnLeftElement = malusE.children[0]
@@ -749,20 +796,6 @@ malusEs.forEach((malusE) => {
     if (e.target.value > 0) buttonBuffs.className = ""
   })
 })
-buffEs.forEach((buffE) => {
-  buffE.addEventListener("click", () => {
-    if (buffE.children.length > 1) {
-      const turnLeftElement = buffE.children[1]
-      if (turnLeftElement.innerText === "1") {
-        buffE.children[2]?.remove()
-        buffE.children[1].remove()
-      } else {
-        turnLeftElement.innerText = `${parseInt(turnLeftElement.innerText) - 1}`
-      }
-    }
-  })
-})
-
 // EQUIPEMENTS
 
 // Like competenceEs
@@ -1292,7 +1325,7 @@ function createEquipmentSynthesis(): void {
   const armor = persoEqpts?.[3]
   const isWrongArmorType = armor
     ? !authorizedArmorTypes.some((a) => (armor?.type === "armure" ? armor.armorTypes.includes(a) : false))
-    : true
+    : false
 
   const textErrors = []
   if (eqptOverLimits.length) textErrors.push("/!\\ Des montants dépassent les limites")

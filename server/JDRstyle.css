@@ -9,7 +9,8 @@ body {
 }
 
 #errorStat,
-#errorEQPT {
+#errorEQPT,
+.cooldownBuffE {
   color: rgb(213, 70, 70);
   font-size: 16px;
   align-content: center;

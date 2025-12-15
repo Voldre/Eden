@@ -877,7 +877,7 @@
     "nom": "Plaque Réfléchissante",
     "desc": "Une plaque conçue avec un matériau ultra réfléchissant",
     "effet": "Renvoi",
-    "montant": "Blocage magique critique : renvoi le coup",
+    "montant": "Blocage magique critique : renvoi le coup (50%)",
     "icone": "I00238",
     "access": "A3",
     "type": "access"
@@ -1010,7 +1010,7 @@
     "nom": "Bouclier miroir",
     "desc": "Un bouclier pouvant réfléchir les dégâts magiques",
     "effet": "",
-    "montant": "Dégât -4. Blocage magique critique : renvoi le coup",
+    "montant": "Dégât -4. Blocage magique critique : renvoi le coup (50%)",
     "icone": "W70501",
     "type": "arme-1m"
   },
@@ -1328,7 +1328,7 @@
     "nom": "Bouclier du Démon",
     "desc": "Un bouclier vivant qui bouge et absorbe la magie et se renforce, il était conservé par la Curie Métérole, il a l'air de grandir avec le temps et l'énergie absorbée.",
     "effet": "Malédiction du Lien",
-    "montant": "Dégât -5 - Niveau",
+    "montant": "Dégât -5 - Niveau/2",
     "icone": "W71207",
     "type": "arme-1m"
   },
@@ -2836,7 +2836,7 @@
   "332": {
     "nom": "Bouclier Zuminator",
     "desc": "Un bouclier à l'effigie de Zuminator, le Zumi du conte de super-heros.",
-    "effet": "Blocage physique critique : renvoi le coup",
+    "effet": "Blocage physique critique : renvoi le coup (50%)",
     "montant": "Dégât -4 (PV+10 si Zumi)",
     "condition": { "type": "race", "value": ["Zumi"], "bonus": "PV +10" },
     "icone": "W73002",
@@ -5128,7 +5128,172 @@
     "effet": "",
     "montant": "Dégât magique +1, Intelligence +2",
     "icone": "k10579",
+    "type": "access"
+  },
+  "600": {
+    "nom": " Casquette de livreur",
+    "desc": "Une caquette qui est utilisé par les livreurs de tout Ezur",
+    "effet": "",
+    "montant": "Dextérité +2, 0 malus dans les zones intempéries",
+    "icone": "k10593",
+    "type": "access"
+  },
+  "601": {
+    "nom": "Epée rouillée",
+    "desc": "Une épée rouillée, qui semble coincé dans son fourreau depuis des centaines d'années",
+    "effet": "",
+    "montant": "Dégat +2",
+    "icone": "i01404",
+    "type": "arme-1m"
+  },
+  "602": {
+    "nom": "La Volchance",
+    "desc": "Une pierre bénie pour son utilisateur, mais qui maudit son équipe en leur volant leur chance.",
+    "effet": "Malus +2 aux dés alliés",
+    "montant": "-1 au dé du porteur (max -3). Dé minimum : 1, ou 0 si total < -1",
+    "icone": "i01471",
+    "type": "access"
+  },
+  "603": {
+    "nom": "Tenue de réveil",
+    "desc": "Tenue de réveil des gardiens éternels.",
+    "effet": "",
+    "montant": "Dégât -2",
+    "icone": "A20061b",
+    "type": "armure",
+    "armorTypes": ["lourd", "leger", "magique"]
+  },
+  "604": {
+    "nom": "Tenue de gardien",
+    "desc": "Tenue crée spécialement pour les gardiens éternels.",
+    "effet": "Esprit +1",
+    "montant": "Dégât -3",
+    "icone": "k20252",
+    "type": "armure",
+    "armorTypes": ["lourd", "leger", "magique"]
+  },
+  "605": {
+    "nom": "Armure de gardien",
+    "desc": "Armure renforcée utilisée par les gardiens éternels expérimentés",
+    "effet": "Esprit +1",
+    "montant": "Dégât -4, PV +5",
+    "icone": "k20390",
+    "type": "armure",
+    "armorTypes": ["lourd", "leger", "magique"]
+  },
+  "606": {
+    "nom": "Cuirasse de gardien",
+    "desc": "Armure de haute qualité dédier à l'élite des gardiens éternels.",
+    "effet": "Esprit +1",
+    "montant": "Dégât -5, Blocage +1",
+    "icone": "k21021",
+    "type": "armure",
+    "armorTypes": ["lourd", "leger", "magique"]
+  },
+  "607": {
+    "nom": "Collier d'héritage",
+    "desc": "Une partie du collier de l'ancien pape Zephyrinus.",
+    "effet": "Soin +1 ",
+    "montant": "Familier : dégât/soin+2 (AoE/2)",
+    "icone": "collier1",
     "type": "access",
     "armorTypes": ["lourd"]
+  },
+  "608": {
+    "nom": "Grimoire de débutant",
+    "desc": "Grimoire qui sert pour les jeunes débutants soigneurs.",
+    "effet": "Soin +2",
+    "montant": "Dégat +5",
+    "icone": "W61403",
+    "type": "arme-2m"
+  },
+  "609": {
+    "nom": "Grimoire papillon",
+    "desc": "Grimoire crée par l'un des 7 héros à partir d'ancien ouvrage.",
+    "effet": "Résistance d'esprit cible -2 ",
+    "montant": "Dégat +6, l'effet s'applique aussi pendant les malus.",
+    "icone": "W64002",
+    "type": "arme-2m"
+  },
+  "611": {
+    "nom": "Lance technologique",
+    "desc": "Une lance conçue conçue par des ingénieurs Zumis.",
+    "effet": "",
+    "montant": "Dégat +7 (Réussite+2 si Zumi) ",
+    "icone": "k90017",
+    "type": "arme-2m"
+  },
+  "612": {
+    "nom": "Lance du dragon métal",
+    "desc": "Une lance conçue par des ingénieurs Zumis, en s'inspirant des chevaliers dragons.",
+    "effet": "",
+    "montant": "Dégat +9, Blocage critique : renvoi le coup (50%)",
+    "icone": "k90023",
+    "type": "arme-2m"
+  },
+  "613": {
+    "nom": "Guide spirituelle",
+    "desc": "Une voix qui semble venir de loin, évolue selon les choix de son gardien.",
+    "effet": "Malédiction du lien",
+    "montant": "Résistance d'esprit +2",
+    "icone": "I00411",
+    "type": "access"
+  },
+  "614": {
+    "nom": "Robe rafistolée",
+    "desc": "Une robe cousue avec plusieurs tissus robustes",
+    "effet": "",
+    "montant": "Dégât -3, Dégât +1 ",
+    "icone": "A20022",
+    "type": "armure",
+    "armorTypes": ["magique"]
+  },
+  "615": {
+    "nom": "Cape de départ",
+    "desc": "Une cape pour rappeler que même si leurs chemins se sont séparés, ils pourront se retrouver...",
+    "effet": "",
+    "montant": "Force +1, Dégat +2",
+    "icone": "A60013e",
+    "type": "access"
+  },
+  "616": {
+    "nom": "Dague affaiblissante",
+    "desc": "Une dague recouverte de poison, qui affaibli l'ennemi touché.",
+    "effet": "",
+    "montant": "Dégât +4, blocage -1 pendant 1 tour",
+    "icone": "W11304",
+    "type": "arme-1m"
+  },
+  "617": {
+    "nom": "Dague agile",
+    "desc": "Une dague créée pour les voleurs, permettant d'être plus agile.",
+    "effet": "Esquive +1",
+    "montant": "Dégât +3 (Dextérité +1 si Voleur)",
+    "icone": "W11104",
+    "type": "arme-1m"
+  },
+  "618": {
+    "nom": "Dague magique",
+    "desc": "Une dague créée par les magiciens devant combattre au corps à corps.",
+    "effet": "",
+    "montant": "Dégât +4, dégat magique +2",
+    "icone": "W16602",
+    "type": "arme-1m"
+  },
+  "619": {
+    "nom": "Dague du héros",
+    "desc": "Dague utilisé par un grand héros, qui lui a permis de gagner plusieurs batailles.",
+    "effet": "",
+    "montant": "Dégât +6, Blocage et esquive de la cible -1",
+    "icone": "W14607",
+    "type": "arme-1m"
+  },
+  "620": {
+    "nom": "Dague de furtivité",
+    "desc": "Dague qui permet au porteur d'être plus discret.",
+    "effet": "",
+    "montant": "Dégât +3. En invisibilité: Chance d'être touché -2",
+    "icone": "W14801",
+    "type": "arme-1m"
   }
 }
