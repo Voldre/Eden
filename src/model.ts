@@ -227,10 +227,10 @@ export interface CombatCheatLog {
 export interface CombatLog {
   date: string
   joueur: Joueurs
-  perso: string
+  perso: number
   map: number
   cardRarity: number
-  enemy: string
+  enemy: number
   earnedCoins: number
   winCards: [number, string][]
   turn: number

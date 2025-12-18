@@ -944,14 +944,16 @@ async function saveLog(earnedCoins: number, winCards: Card[] | undefined): Promi
 
     logID = logID ?? (lastLogId ? parseInt(lastLogId) + 1 : 1)
 
+    const selectedEnemyId = Object.entries(enemyJSON).find(([, e]) => e.nom === selectedEnemy?.nom)?.[0]
+
     const newLog: { [key: string]: Partial<CombatLog> } = {}
     newLog[logID] = {
       date: dateToString(new Date(), true),
       joueur: indexPlayer,
-      perso: nomPerso,
+      perso: indexPerso, // Not using name anymore
       map: mapID,
       cardRarity,
-      enemy: selectedEnemy?.nom,
+      enemy: selectedEnemyId ? parseInt(selectedEnemyId) : undefined, // Not using name anymore
       earnedCoins,
       winCards: winCards?.map((w) => [w.id, w.name]) || [],
       turn: parseInt(turnE.innerText),
