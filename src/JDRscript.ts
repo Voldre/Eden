@@ -53,6 +53,7 @@ import {
   deleteCookie,
 } from "./utils/index.js"
 import { LoggerService } from "./utils/logger.js"
+import { loadState, setupAutoSave } from "./utils/handle-state.js"
 
 console.log("Skills JSON", skillsJSON)
 console.log("Persos JSON", persosJSON)
@@ -108,7 +109,6 @@ const synthesisCategories = [
 // Main elements
 
 const persoE = document.querySelector(".perso")!
-let indexPerso: number = -1
 let persoData: Perso | undefined
 
 const nomE = document.querySelector<HTMLInputElement>("#nom")!
@@ -178,32 +178,32 @@ allClassE.forEach((classE, i) => {
       if (persoData?.guardian) {
         // If guardian, apply for second class the primary class
         classeSElement.value = selectedClass
-      }
 
-      updateAvailableSkillsList()
+        const classConfig = persoData.guardian.config.find((config) => config.classeP === selectedClass)
+        if (classConfig)
+          classConfig.skills.forEach((skill, index) => {
+            const competenceE = competenceEs[index]
+            insertSkill(competenceE, skill)
+          })
 
-      const classConfig = persoData?.guardian?.config.find((config) => config.classeP === selectedClass)
-
-      if (classConfig) {
-        classConfig.skills.forEach((skill, index) => {
-          const competenceE = competenceEs[index]
-          insertSkill(competenceE, skill)
-        })
-
-        updateAvailableSkillsList()
-
-        const currentPv = (pvE.value / pvmaxE.value) * classConfig.pvmax
+        const pvMax = classConfig?.pvmax ?? getStats().allStats.PVMax
+        const currentPv = (pvE.value / pvmaxE.value) * pvMax
         pvE.value = Math.round(currentPv)
-        pvmaxE.value = classConfig.pvmax
+        pvmaxE.value = pvMax
 
         // This syntaxe is 100% lighter than :
         // document.querySelector<HTMLInputElement>("#force")!.value = `${classConfig.force}`
-        forceE.value = classConfig.force
-        dextéE.value = classConfig.dexté
-        intelE.value = classConfig.intel
-        charismeE.value = classConfig.charisme
-        espritE.value = classConfig.esprit
+        forceE.value = classConfig?.force ?? 0
+        dextéE.value = classConfig?.dexté ?? 0
+        intelE.value = classConfig?.intel ?? 0
+        charismeE.value = classConfig?.charisme ?? 0
+        espritE.value = classConfig?.esprit ?? 0
+
+        getAllRes()
+        statsVerification()
       }
+
+      updateAvailableSkillsList()
 
       // Display armor type
       displayArmorTypes()
@@ -434,12 +434,10 @@ function statsVerification(): void {
       statE.classList.remove("wrong")
     }
   })
-  // PV are always the right value (character cannot have more, stuff are handled)
-  if (pvmaxE.value !== allStats.PVMax) {
-    pvmaxE.classList.add("wrong")
-  } else {
-    pvmaxE.classList.remove("wrong")
-  }
+
+  // PV Max are always the right value (character cannot have more, stuff are handled)
+  pvmaxE.value = allStats.PVMax
+  pvE.classList.toggle("wrong", pvE.value > allStats.PVMax)
 }
 
 const statsE = inputSelector(".stats", "number")
@@ -649,7 +647,7 @@ function insertSkill(skillElement: CompetenceE, skillName: string, awakenClass?:
 const buffEs: BuffElement[] = [...document.querySelectorAll<BuffElement>(".buffTurn")]
 
 const malusEs = [...document.querySelector(".malus")!.children] as (HTMLElement & {
-  children: [InputElement<"number">]
+  children: [InputElement<"number">, HTMLInputElement]
 })[]
 
 const isBuffSkill = (skill: Skill): boolean => {
@@ -931,7 +929,11 @@ const inventaireE = document.querySelector<HTMLInputElement>(".inventaire")!
 
 // Display items in the inventory
 const getItemsInInventory = (inventory: string): void => {
-  const inventoryUnformated = unformatText(inventory).replaceAll("bombes", "bombe").replaceAll("potions", "potion")
+  // @TODO To improve
+  const inventoryUnformated = unformatText(inventory)
+    .replaceAll("bombes", "bombe")
+    .replaceAll("potions", "potion")
+    .replaceAll("minerais", "minerai")
 
   const itemsInInventory = allItems.filter((item) => isTextInText(inventoryUnformated, item.title))
 
@@ -1020,12 +1022,12 @@ window.addEventListener("load", async () => {
     selectPersoE.value = `J${urlParams.get("perso")}`
     // loadFiche(urlParams.get('perso'));
     selectedPerso = selectPersoE.value
-    indexPerso = selectPersoE.selectedIndex
-    loadFiche()
+    const indexPerso = selectPersoE.selectedIndex
+    loadFiche(indexPerso)
+
     toastNotification(`Chargement réussi de ${selectedPerso}`)
   } else {
-    indexPerso = 0
-    loadFiche()
+    loadFiche(0)
   }
 
   // Enable all buttons
@@ -1050,19 +1052,35 @@ window.addEventListener("load", async () => {
 
 addChangeListener(selectPersoE, (e) => {
   const perso = e.target.value
-  indexPerso = e.target.selectedIndex
+  const indexPerso = e.target.selectedIndex
 
-  loadFiche()
+  loadFiche(indexPerso)
 
   const newUrl = `${window.location.origin}${window.location.pathname}?perso=${indexPerso + 1}`
   window.history.pushState({}, perso, newUrl)
   toastNotification(`Chargement réussi de ${perso}`)
 })
 
-function loadFiche(): void {
+const STORAGE_KEY = "perso_state"
+type StorageState = Perso & { malus: { turn: number; text: string }[] }
+
+function loadFiche(indexPerso: number): void {
   // Define perso
   persoE.id = indexPerso.toString()
-  persoData = persosJSON[indexPerso]
+
+  const storedState = loadState<StorageState>(STORAGE_KEY)
+
+  // If there is data in the local storage, load them
+  // The check is not the best, but enough 99% of times
+  if (storedState && storedState.nom === persosJSON[indexPerso].nom) {
+    persoData = storedState
+    malusEs.forEach((malusE, index) => {
+      malusE.children[0].value = storedState.malus[index].turn
+      malusE.children[1].value = storedState.malus[index].text
+    })
+  } else {
+    persoData = persosJSON[indexPerso]
+  }
 
   if (!persoData) return
 
@@ -1183,6 +1201,21 @@ function loadFiche(): void {
   personnaliteE.value = persoData.personnalite
   backgroundE.value = persoData.background
 }
+
+setupAutoSave<StorageState>(() => {
+  const rawSave = savePerso()
+
+  if (!rawSave) return undefined
+  const perso = rawSave[persoE.id]
+
+  return {
+    ...perso,
+    malus: malusEs.map((malusE) => ({
+      turn: malusE.children[0].value,
+      text: malusE.children[1].value,
+    })),
+  }
+}, STORAGE_KEY)
 
 function statsValue(resistance: boolean): number[] {
   const statB = [forceBE, dextéBE, intelBE, charismeBE, espritBE]

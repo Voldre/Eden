@@ -48,10 +48,11 @@ export const initDialog = (labelsDescription: { [key: string]: string }): void =
   dialog.addEventListener("click", (e) => {
     const dialogDimensions = dialog.getBoundingClientRect()
     if (
-      e.clientX < dialogDimensions.left ||
-      e.clientX > dialogDimensions.right ||
-      e.clientY < dialogDimensions.top ||
-      e.clientY > dialogDimensions.bottom
+      (e.clientX < dialogDimensions.left ||
+        e.clientX > dialogDimensions.right ||
+        e.clientY < dialogDimensions.top ||
+        e.clientY > dialogDimensions.bottom) &&
+      e.target === dialog
     ) {
       dialog.close()
     }
@@ -169,7 +170,7 @@ export const addClickListener = <T extends HTMLElement>(
   listener: (_event: MouseEvent & { target: T extends HTMLButtonElement | HTMLSelectElement ? T : HTMLElement }) => void
 ): void => {
   element.addEventListener("click", (event) => {
-    listener(event as MouseEvent & { target: T extends HTMLButtonElement | HTMLSelectElement ? T : HTMLElement })
+    listener(event as PointerEvent & { target: T extends HTMLButtonElement | HTMLSelectElement ? T : HTMLElement })
   })
 }
 
