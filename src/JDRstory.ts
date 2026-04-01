@@ -1,4 +1,4 @@
-import { persosJSON, resumeJSON } from "./JDRstore"
+import { persosJSON, resumeJSON } from "./JDRstore.js"
 import { Resume } from "./model"
 import { createElement, fillSelectOptions, stringToDate } from "./utils/index.js"
 

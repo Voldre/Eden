@@ -262,6 +262,23 @@ function nextTurn(): void {
   }
 }
 
+// Music elements
+const musicFilter = inputSelector("#musicFilter", "string")
+const musicWrappers = [...(document.querySelector(".musique")?.querySelectorAll("p") ?? [])]
+  .map((e) => e.parentElement)
+  .filter((e) => !!e)
+
+musicFilter.addEventListener("blur", () => {
+  const filterNames = musicFilter.value ? musicFilter.value.split(",") : []
+
+  for (const wrapper of musicWrappers) {
+    const musicName = wrapper.querySelector("p")?.innerText
+
+    const matchesName = !filterNames.length || filterNames.some((f) => !musicName || isTextInText(musicName, f))
+    wrapper.classList.toggle("hide", !matchesName)
+  }
+})
+
 const audiosE = [...document.getElementsByTagName("audio")]
 const currentMusicE = document.getElementById("currentMusic")!
 

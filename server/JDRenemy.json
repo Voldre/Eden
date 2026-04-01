@@ -2265,8 +2265,8 @@
     "nom": "Diana - Tigresse Pourpre",
     "pvmax": 270,
     "skills": [
-      "Faiblesse Critique : 5D6 +20 Crit (1,2 : *1.5,  3 : *1.25) : Force (jdrcombat +10)",
-      "Dash (Cicatrice) de l'esprit : 4D6 +16 : -1 buff, se replace : Force",
+      "Faiblesse Critique : 4D6 +24 Crit (1,2 : *1.5,  3 : *1.25) : Force (jdrcombat +10)",
+      "Cicatrice de l'esprit : 4D6 +16 : -1 buff, se replace : Force\nDash Froudroyant: 4D6 + 20 : +2 esquive (1 tour) : Force",
       "Transe - Tueuse X : Atk Mono -> AoE, bloc/esq +2, -1 malus : 4 tours : Esprit",
       "Passif : Si PV < 120 : Absorbe 1/3 des dégâts (après armure) en PV. (+ Furtivité fuite dexté +3)"
     ],
@@ -3564,5 +3564,165 @@
     "desc": "Eldric Heldentod, fondateur de l'Empire, est un homme qui a reçu la bénédiction d'un Dragon lui permettant de jouer un rôle majeur dans l'histoire d'Ezur.",
     "drop": "",
     "weaknesses": ["perçant", "nature"]
+  },
+  "240": {
+    "visuel3D": "bryson",
+    "nom": "Bryson - Tueur de gardien",
+    "pvmax": 280,
+    "skills": [
+      "Faiblesse Critique : 5D6 +20 Crit (1,2 : *1.5,  3 : *1.25) : Force",
+      "Griffure Noire/(Hémorragie) : 2D6 +20, et -2 blocage et esquive pour 3 tours AoE /(+0 soin): Force",
+      "Contrôle de l'Energie: 2D6 +26, Dexté -2 et Résistance d'esprit +3 sur 4 tours Mono : Esprit",
+      "Furtivité > Embuscade : Dégât 2D6 (total X2) +20, Dextérité +2 sur 4 tours Mono : Esprit > Dextérité"
+    ],
+    "stats": "19,13,11,11,17",
+    "desc": "Ursun qui a décider de tuer tous les gardiens éternels pour se venger.",
+    "drop": "A voir",
+    "weaknesses": ["foudre", "tranchant"]
+  },
+  "241": {
+    "visuel3D": "encresouris",
+    "nom": "Encre - Souris ",
+    "pvmax": 55,
+    "skills": [
+      "Cri Strident : -2 réussite (3t) ESP",
+      "Crachat :  1D6 +2, -1 dext (2t) DEX",
+      "Coup de croc : 1D10+5 : FOR",
+      "Explosion à la mort: 2D6 +10 AoE "
+    ],
+    "stats": "14,13,7,9,16",
+    "desc": "Petit monstre crée par les failles, mélange de magie noir et d'encre",
+    "drop": "Pourdre de fléau",
+    "weaknesses": ["lumière", "glace"]
+  },
+  "242": {
+    "visuel3D": "grimpy",
+    "nom": "Grimpy - Esprit Malicieux",
+    "pvmax": 200,
+    "skills": [
+      "Disparation/Buff: Invisible/ 1D4 +3 dégâts (3t) : Esprit",
+      "Coup de griffe/Queue:  1D10 +10, -1 stat (3t) /2D6 +5 (Aoe) : Force",
+      "Hurlement douteux : - 3 Force (Aoe) : Esprit",
+      "Charge : 2D10+10 : Force"
+    ],
+    "stats": "15,14,11,12,16",
+    "desc": "Un esprit qui se balade dans la faille de bourbe, sert d'entrainement à plusieurs groupe d'aventuriers",
+    "drop": "Rien",
+    "weaknesses": ["nature", "contondant"]
+  },
+  "243": {
+    "visuel3D": "astra",
+    "nom": "Astra",
+    "pvmax": 205,
+    "skills": [
+      "Encouragement Musical : Dégât subi -1D4-6 AoE, 0 dodo, +2 rés (incant 2t) Charisme\nHymne à la Guerre : Buff , dégât physique +1D4 +5 sur 5 tours AoE Charisme",
+      "Guérison: Soin 2D10+28 Intel\nPrévention : Armure +1d4 +3 (-1malus) 3t Intel",
+      "Passif : Si Astra et Umbra ne sont pas tuer dans les 2 tours ensembles. celui tombé se relèvera à 50PV",
+      ""
+    ],
+    "stats": "7,13,17,18,15",
+    "desc": "D'après les survivants, Astra incarnerai la lumière douce et protectrice du duo. Calme, elle saura retourner le combat",
+    "drop": "A voir",
+    "weaknesses": ["feu", "perçant"]
+  },
+  "244": {
+    "visuel3D": "m080a",
+    "nom": "Tyrannosaure Dopée",
+    "pvmax": 200,
+    "skills": [
+      "Éclat de roche : 2D6+10 : force",
+      "Fracassement terrestre : 2D6+3 AoE : force",
+      "Morsure: 2D6+5 et infection fléau -3pv (3t) force",
+      "Cri perturbant: -2 réussite (3t). Si infecté +(-1 blocage). Esprit"
+    ],
+    "stats": "18,11,8,12,16",
+    "desc": "Grand tyrannosaure avec des écailles en rocher ayant été corrompu par la faille résiduels.",
+    "drop": "Noyau ayssal, rare:Crystal de Baltaroï",
+    "weaknesses": ["tranchant", "lumière"]
+  },
+  "245": {
+    "visuel3D": "cyan",
+    "nom": "Cyan -  Le trèfle de la chance",
+    "pvmax": 300,
+    "skills": [
+      "Chasseur Skills:\n\nTriple Tir: Dégât 3D6 +32, Mono : Dextérité\n\nBlessure Douloureuse: 1D10 +32,  (0 soin) sur 4 tours, Mono : Dextérité\n\nFlèche Éblouissante: 1D10 +22, -2stat sur 3 tours, Mono: Dextérité",
+      "Barde Skills :\n\nEncouragement Musical: 0 dodo, +2 res esprit, Armure +1D4 +3 sur 5 tours, Mono : Charisme\n\nHymne : Buff , Réussite des sorts +1, dégâts phy. +1D4 +5 sur 4 tours, Mono : Esprit\n\nPrévention : Armure +1D4 +2, -1 malus sur 5 tours, Mono : Esprit\n\n\n",
+      "Passif : -1 sur dès ",
+      ""
+    ],
+    "stats": "9,19,11,17,18",
+    "desc": "Cyan est une femme à plusieurs casquettes. Elle passe d'une idole, à une politicienne, à chef de ville aussi rapidement qu'elle décoche ses flèches.",
+    "drop": "A Voir",
+    "weaknesses": ["ténèbres", "glace"]
+  },
+  "246": {
+    "visuel3D": "umbra",
+    "nom": "Umbra",
+    "pvmax": 205,
+    "skills": [
+      "Verdict Final (Blessure Douloureuse) : Dégât 3D6 (Crit X1.5) +23, Mono : Force\n\nBlessure Douloureuse: 1D10+20, 0 soin sur 5 tours Mono: Force",
+      "Scellement : Aucun sort physique sur 5 tours Mono : Esprit\n\nEntrave Mentale : Degat Malus 2D6 +22, Dextérité ou Résistance d'Esprit -2 sur 3 tours AoE : Esprit",
+      "Passif : Si Astra et Umbra ne sont pas tués dans les 2 tours ensembles. celui tombé se relèvera à 50PV",
+      ""
+    ],
+    "stats": "17,13,7,15,18",
+    "desc": "D'après les survivants, Umbra serait les dégâts brutals de l'équipe. Si elle est accompagné d'Astra, fuyez.",
+    "drop": "A voir",
+    "weaknesses": ["glace", "contondant"]
+  },
+  "247": {
+    "visuel3D": "dualsoldat",
+    "nom": "Dual-Soldat",
+    "pvmax": 100,
+    "skills": [
+      "Percée du Chevalier : Dégât 2D6 +10,  Mono : Dextérité",
+      "Silence : Aucun sort magique sur 3 tours Mono : Esprit\n\nSpirale Glaciale : Bonus A la fin : Dgt +1D6 +9, Blocage+2 sur 3 tours Mono : Esprit",
+      "Tempête Infernale : Dégât 2D6 +5, 50% de chance d'être ciblé sur 1 tour AoE : Dextérité",
+      "Passif : 1ère partie que touché par les dégât magique.\n2éme partie que les dégâts physiques"
+    ],
+    "stats": "13,16,9,11,15",
+    "desc": "Monstre de failles ressemblant à des soldats. Ils sont entouré d'une magie particulière.",
+    "drop": "A voir",
+    "weaknesses": ["contondant", "feu"]
+  },
+  "248": {
+    "visuel3D": "slimefleau",
+    "nom": "Fléau-Slime",
+    "pvmax": 55,
+    "skills": ["Crachat : 2D6 +6 DEX", "Coup de boule : 1D10 +5 FOR", "Écrase face (AoE) : 1D6 +3 FOR", ""],
+    "stats": "15,12,7,10,13",
+    "desc": "Slime crée par le fléau. Créature visqueuse.",
+    "drop": "",
+    "weaknesses": ["lumière", "glace"]
+  },
+  "249": {
+    "visuel3D": "renard",
+    "nom": "Renard Squelletique",
+    "pvmax": 150,
+    "skills": [
+      "Morsure empoissonnée: 2D8 +3, -2 dex sur 3 tours FOR",
+      "Cri perturbant: -2 réussites sur 3t AoE CHA",
+      "Coup de queue: AoE 2D6 +5 ",
+      ""
+    ],
+    "stats": "16,7,9,14,11",
+    "desc": "Renard squelletique, ou tu miasme noir s'est mis sur ce corp mort.",
+    "drop": "Pierre de sécurité, rare: Croc sombre",
+    "weaknesses": ["nature", "contondant"]
+  },
+  "250": {
+    "visuel3D": "alice",
+    "nom": "Alice",
+    "pvmax": 280,
+    "skills": [
+      "Stalactites Glaciales: 4D6+15 et entrave 3t INT\n\nBoules de feu : AoE 4D6+20 (blocage-2) INT\n\n",
+      "Rituel de mana: +2 RES Esprit, Armure +5 et Soin 2D6+15 4 tours Esprit \n\nEndormissement : Dodo AoE 3t (RES -1) Esprit\n\nSaut dimensionnel : 4 tentatives Intel",
+      "Dédoublement : Invoque 1 doubles pendant 3 tours (dégâts infligé/reçu /2) : Esprit\n\nCauchemar: Invoque une ombre (conseil des soso, ou une peur de l'ennemi)\nPV invoc. = 80 à 130 selon grade",
+      "Infusion de thé : Se prépare une mixture pendant le combat au choix\nPotion invisibilité 3t\nPotion soin : 3D6+12\nPotion d'encaissement : armure +8 et -1malus 3t"
+    ],
+    "stats": "7,14,19,13,21",
+    "desc": "Jeune Ezelin faisant partie du conseil des sorcières. Elle se balade toujours avec sa tasse de thé.",
+    "drop": "A voir",
+    "weaknesses": ["perçant", "tranchant"]
   }
 }

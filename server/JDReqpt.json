@@ -2092,17 +2092,17 @@
   },
   "248": {
     "nom": "Trèfle à Cinq Feuilles",
-    "desc": "Chance et Maudit",
+    "desc": "Un trèfle imprégné d'une bénédiction subtile, influençant le destin en votre faveur, normalement...",
     "effet": "",
-    "montant": "Dé amplif ?",
+    "montant": "Toutes stats +1, sauf si échec critique...",
     "icone": "k10340",
     "type": "access"
   },
   "249": {
     "nom": "Trèfle à Quatre Feuilles",
-    "desc": "Chance",
+    "desc": "n trèfle qui semble béni, vous accordant une chance exceptionnelle et facilitant la réussite de tout ce que vous entreprenez.",
     "effet": "",
-    "montant": "",
+    "montant": "Réussite +2",
     "icone": "k10053",
     "type": "access"
   },
@@ -3740,7 +3740,7 @@
     "nom": "Couronne de Richesse",
     "desc": "Une ancienne couronne de souverain amenant prospérité à son porteur.",
     "effet": "",
-    "montant": "Stats +1, Or trouvé +50%",
+    "montant": "Toutes stats +1, Or trouvé +50%",
     "icone": "A10022",
     "type": "access"
   },
@@ -5260,7 +5260,7 @@
     "nom": "Dague affaiblissante",
     "desc": "Une dague recouverte de poison, qui affaibli l'ennemi touché.",
     "effet": "",
-    "montant": "Dégât +4, blocage -1 pendant 1 tour",
+    "montant": "Dégât +4, Blocage -1 pendant 1 tour",
     "icone": "W11304",
     "type": "arme-1m"
   },
@@ -5295,5 +5295,159 @@
     "montant": "Dégât +3. En invisibilité: Chance d'être touché -2",
     "icone": "W14801",
     "type": "arme-1m"
+  },
+  "621": {
+    "nom": "Dague de l'esprit",
+    "desc": "Une dague améliorant l'esprit de son porteur",
+    "effet": "Esprit +1",
+    "montant": "Dégat +3",
+    "icone": "W10905",
+    "type": "arme-1m"
+  },
+  "622": {
+    "nom": "Dague pernicieuse",
+    "desc": "Une dague permettant de prolonger les effets néfastes.",
+    "effet": "Durée des malus +1 tour",
+    "montant": "Dégat +3",
+    "icone": "W11205",
+    "type": "arme-1m"
+  },
+  "623": {
+    "nom": "Arc pernicieux",
+    "desc": "Un arc permettant de prolonger les effets néfastes.",
+    "effet": "Durée des malus +1 tour",
+    "montant": "Dégat +6",
+    "icone": "W50305",
+    "type": "arme-2m"
+  },
+  "624": {
+    "nom": "Grimoire pernicieux",
+    "desc": "Un grimoire permettant de prolonger les effets néfastes.",
+    "effet": "Durée des malus +1 tour",
+    "montant": "Dégat +6",
+    "icone": "W61704",
+    "type": "arme-2m"
+  },
+  "625": {
+    "nom": "Dague abimée",
+    "desc": "Dague usée ayant déjà servi lors de différents combats. Semble assez fragile.",
+    "effet": "Réussite -1",
+    "montant": "Dégât +4",
+    "icone": "W11103a",
+    "type": "arme-1m"
+  },
+  "626": {
+    "nom": "Epée Abimée",
+    "desc": "Epée usée ayant déjà servi lors de différents combats. Semble assez fragile.",
+    "effet": "Blocage -1",
+    "montant": "Dégât +5",
+    "icone": "W10304a",
+    "type": "arme-1m"
+  },
+  "627": {
+    "nom": "Bouclier massif",
+    "desc": "Un bouclier massif, capable d'absorber de lourds impacts, mais dont le poids entrave les déplacements et brise toute fluidité dans les mouvements.",
+    "effet": "Dextérité -2",
+    "montant": "Dégât -5",
+    "icone": "W70704",
+    "type": "arme-1m"
+  },
+  "628": {
+    "nom": "Epée Colossale Abimée",
+    "desc": "Epée Colossale usée ayant déjà servi lors de différents combats. Semble assez fragile.",
+    "effet": "Blocage physique -2",
+    "montant": "Dégât +8",
+    "icone": "W21001a",
+    "type": "arme-2m"
+  },
+  "629": {
+    "nom": "Bâton Abimé",
+    "desc": "Bâton usée ayant déjà servi lors de différents combats. Semble assez fragile....",
+    "effet": "Blocage magique -2",
+    "montant": "Dégât +8",
+    "icone": "W62204a",
+    "type": "arme-2m"
+  },
+  "630": {
+    "nom": "Arc abimé",
+    "desc": "Arc usé ayant déjà servi lors de différents combats. Semble assez fragile.",
+    "effet": "Dextérité -3",
+    "montant": "Dégat +10",
+    "icone": "W50104a",
+    "type": "arme-2m"
+  },
+  "631": {
+    "nom": "Clé de Scellement",
+    "desc": "Une clé magique imprégnée de magie, crée par des sages donnant accès à une capacité.",
+    "effet": "Capacité",
+    "montant": "3 fois par combat : Scellement",
+    "icone": "I00104",
+    "type": "access"
+  },
+  "632": {
+    "nom": "Gandiva V12",
+    "desc": "Le Gandiva est une arme évolutive, permet à son utilisateur d'avoir accès aux compétences de Luminary",
+    "effet": "",
+    "montant": "Dégât +6",
+    "icone": "gandivaV12",
+    "type": "arme-2m"
+  },
+  "633": {
+    "nom": "Lance renforcée",
+    "desc": "Une lance en acier améliorée par un acier de qualité",
+    "effet": "",
+    "montant": "Dégât +6",
+    "icone": "W10802",
+    "type": "arme-2m"
+  },
+  "634": {
+    "nom": "Plastron en Mousserite",
+    "desc": "Une armure renforcée en Mousserite. Idéal pour résister aux coups physiques.",
+    "effet": "Blocage physique +2",
+    "montant": "Dégât -6",
+    "icone": "A20101f",
+    "type": "armure",
+    "armorTypes": ["lourd"]
+  },
+  "635": {
+    "nom": "Cotte en Mousserite",
+    "desc": "Une cotte de bonne qualité renforcée avec de la mousserite pour absorber les coups physiques.",
+    "effet": "Blocage physique +1",
+    "montant": "Dégât -5",
+    "icone": "A20075b",
+    "type": "armure",
+    "armorTypes": ["lourd"]
+  },
+  "636": {
+    "nom": "Epée Colossale en Mousserite",
+    "desc": "Une épée colossale forgé dans un alliage en mousserite.",
+    "effet": "",
+    "montant": "Dégât +9, Si coup critique (1,2,3) : Dexté -4 (2 tours)",
+    "icone": "W20802",
+    "type": "arme-2m"
+  },
+  "637": {
+    "nom": "Gourdin en Mousserite",
+    "desc": "Un gourdin forgé avec de la mousserite.",
+    "effet": "",
+    "montant": "Dégât +4, Si coup critique (1,2,3) : Dexté -3 (2 tours)",
+    "icone": "W31003b",
+    "type": "arme-1m"
+  },
+  "638": {
+    "nom": "Pistolet en Mousserite",
+    "desc": "Ce pistolet fait passer les balles dans les filaments générés par la mousserite, leur ajoutant un effet.",
+    "effet": "",
+    "montant": "Dégât +8, Si coup critique (1,2,3) : Dexté -4 (2 tours)",
+    "icone": "W51004",
+    "type": "arme-2m"
+  },
+  "639": {
+    "nom": "Bouclier en Mousserite",
+    "desc": "Un bouclier fabriqué avec un alliage en mousserite.",
+    "effet": "Blocage physique +2",
+    "montant": "Dégât -3",
+    "icone": "W70703c",
+    "type": "arme-2m"
   }
 }

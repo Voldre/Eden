@@ -768,11 +768,27 @@ td {
 }
 
 .notes-and-music {
-  display: flex;
+  display: grid;
+  grid-template-columns: 45% 50% 5%;
   justify-content: center;
   gap: 0.75rem;
   height: 140px;
   align-items: center;
+}
+
+.musics-header {
+  padding: 0.5rem 0.5rem 0rem 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 0.5rem;
+}
+.musics-header > :first-child {
+  flex-grow: 1;
+}
+.musics-header > * {
+  margin: 0;
 }
 
 #currentMusic {

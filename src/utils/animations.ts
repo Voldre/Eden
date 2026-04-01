@@ -1,4 +1,4 @@
-import { createElement } from "./elements"
+import { createElement } from "./elements.js"
 
 const createSnowflake = (): void => {
   // Position initiale horizontale aléatoire

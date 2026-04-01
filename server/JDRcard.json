@@ -2346,6 +2346,42 @@
     "maps": [62]
   },
   {
+    "id": 1476,
+    "value": 2,
+    "kind": "composant",
+    "name": "Minerai de faille fermée",
+    "description": "Minerai qui existe à des endroits ou des failles ont été fermées. Ce matériau permet de créér des armures qui limite les effets néfastes des failles.",
+    "kindId": "I00225a",
+    "maps": []
+  },
+  {
+    "id": 1477,
+    "value": 1,
+    "kind": "composant",
+    "name": "Fragment de crystal bleu",
+    "description": "L'assemblage de plusieurs fragments de crystal bleu permet de former un crystal complet. Utilisés séparément, ces fragments servent à la fabrication d’accessoires.",
+    "kindId": "I00450a",
+    "maps": []
+  },
+  {
+    "id": 1478,
+    "value": 2,
+    "kind": "composant",
+    "name": "Crystal Bleu",
+    "description": "Crystal apparaissant là où naissent les Gardiens éternels, prisé pour la création d’armures dignes de leur puissance.",
+    "kindId": "I00222a",
+    "maps": []
+  },
+  {
+    "id": 1479,
+    "value": 2,
+    "kind": "composant",
+    "name": "Mousserite",
+    "description": "Un minerai se trouvant dans des grottes humides et peu profondes. Leur rareté vient de la quantité de paramètres à respecter pour qu'ils se forment (taux d'humidité, luminosité, etc...). Utilisé pour fabriquer des armures résistantes et des armes ralentissantes.",
+    "kindId": "i00547f",
+    "maps": []
+  },
+  {
     "id": 12900,
     "value": 3,
     "kind": "composantX",

@@ -1,7 +1,7 @@
-import { combatSkillsJSON, eqptJSON } from "../JDRstore"
+import { combatSkillsJSON, eqptJSON } from "../JDRstore.js"
 import { Enemy, EnemyCombat, Equipment, Perso, PersoCombat, StatsShort } from "../model"
-import { toastNotification } from "./elements"
-import { getRandomBetween, isTextInText, sum, unformatText } from "./variables"
+import { toastNotification } from "./elements.js"
+import { getRandomBetween, isTextInText, sum, unformatText } from "./variables.js"
 
 // #region Perso
 
