@@ -58,6 +58,8 @@ import { loadState, setupAutoSave } from "./utils/handle-state.js"
 console.log("Skills JSON", skillsJSON)
 console.log("Persos JSON", persosJSON)
 
+const MINIMUM_OVERSTAT = 17
+
 const dialog = document.querySelector<HTMLDialogElement>("dialog")!
 
 const buttonBuffs = document.querySelector<HTMLButtonElement>("#buttonBuffs")!
@@ -427,10 +429,11 @@ function statsVerification(): void {
   allStats.Intel = allStats.Intelligence
   ;["force", "dexté", "intel", "charisme", "esprit"].forEach((statName) => {
     const statE = inputSelector(`#${statName}`, "number")
-    // The maximum is 17
-    if (statE.value < Math.min(allStats[capitalize(statName)], 17)) {
+    // The minimum is 17 if stat is above
+    if (statE.value < Math.min(allStats[capitalize(statName)], MINIMUM_OVERSTAT)) {
       statE.classList.add("wrong")
     } else {
+      statE.classList.toggle("over", statE.value > MINIMUM_OVERSTAT)
       statE.classList.remove("wrong")
     }
   })
@@ -1249,14 +1252,15 @@ function getAllRes(): void {
   const montantBlocM = parseEqptsByRegex(["Blocage +", "Blocage magique +"], persoEqpts, persoData).reduce(sum, 0)
   const montantRes = parseEqptsByRegex(["Résistance d'esprit +"], persoEqpts, persoData).reduce(sum, 0)
 
-  document.querySelector<HTMLParagraphElement>("#resForce")!.innerText =
-    `Bloc ${resAmount[0]} ${montantBlocP ? `+ ${montantBlocP}` : ""}`
-  document.querySelector<HTMLParagraphElement>("#resDexté")!.innerText =
-    `Esq ${resAmount[1]} ${montantEsq ? `+ ${montantEsq}` : ""}`
-  document.querySelector<HTMLParagraphElement>("#resIntel")!.innerText =
-    `Bloc ${resAmount[2]} ${montantBlocM ? `+ ${montantBlocM}` : ""}`
-  document.querySelector<HTMLParagraphElement>("#resEsprit")!.innerText =
-    `Res ${resAmount[4]} ${montantRes ? `+ ${montantRes}` : ""}`
+  const displayRes = (element: HTMLParagraphElement, text: string, value: number, bonusValue: number): void => {
+    element.innerText = `${text} ${value} ${bonusValue ? `+ ${bonusValue}` : ""}`
+    element.classList.toggle("over", value + bonusValue > 13)
+  }
+
+  displayRes(document.querySelector("#resForce")!, "Bloc", resAmount[0], montantBlocP)
+  displayRes(document.querySelector("#resDexté")!, "Esq", resAmount[1], montantEsq)
+  displayRes(document.querySelector("#resIntel")!, "Bloc", resAmount[2], montantBlocM)
+  displayRes(document.querySelector("#resEsprit")!, "Res", resAmount[4], montantRes)
 }
 
 function createEquipmentSynthesis(): void {
@@ -1655,15 +1659,15 @@ A noter : ces montants ne comptent pas dans la limite des stuffs (voir "Equipeme
 
 const labelsDescription = {
   force:
-    "Permet d'utiliser des attaques lourdes, de pousser, de soulever.<br/>Si la stat est à 1 ou 2 : Impossible de tenir une arme. 0 : Immobile. <br/>Permet de bloquer des coups physiques (Dé/2)<br/><br/> Un blocage à 20 inflige 5 dégâts de plus. <br/>Les stats sont limitées à 17, et 17 (+1) avec buff/stuff.<br/>Le blocage est limité à 13.",
+    "Permet d'utiliser des attaques lourdes, de pousser, de soulever.<br/>Si la stat est à 1 ou 2 : Impossible de tenir une arme. 0 : Immobile. <br/>Permet de bloquer des coups physiques (Dé/2)<br/><br/> Un blocage à 20 inflige 5 dégâts de plus. <br/>La réussite est limité à 18.<br/>Le blocage est limité à 13.",
   dexté:
-    "Permet d'utiliser des attaques agiles et rapide, de se mouvoir, courir.<br/>Si la stat est à 1 ou 2 : Impossible de se déplacer. 0 : Immobile. <br/>Permet d'esquiver des attaques mono-cible (Dé/2) et quelques AoE selon le contexte (voir Infos JDR).<br/><br/> Une esquive à 20 inflige 5 dégâts de plus. <br/> Les stats sont limitées à 17, et 17 (+1) avec buff/stuff.<br/>L'esquive est limité à 13.",
+    "Permet d'utiliser des attaques agiles et rapide, de se mouvoir, courir.<br/>Si la stat est à 1 ou 2 : Impossible de se déplacer. 0 : Immobile. <br/>Permet d'esquiver des attaques mono-cible (Dé/2) et quelques AoE selon le contexte (voir Infos JDR).<br/><br/> Une esquive à 20 inflige 5 dégâts de plus. <br/> La réussite est limité à 18.<br/>L'esquive est limité à 13.",
   intel:
-    "Permet d'utiliser des attaques magiques, de tester son érudition, sa réflexion.<br/>Si la stat est à 1 ou 2 : Impossible de réfléchir, action directe. 0 : Immobile. <br/>Permet de bloquer des coups magiques (Dé/2)<br/><br/> Un blocage à 20 inflige 5 dégâts de plus.<br/> Les stats sont limitées à 17, et 17 (+1) avec buff/stuff.<br/>Le blocage est limité à 13.",
+    "Permet d'utiliser des attaques magiques, de tester son érudition, sa réflexion.<br/>Si la stat est à 1 ou 2 : Impossible de réfléchir, action directe. 0 : Immobile. <br/>Permet de bloquer des coups magiques (Dé/2)<br/><br/> Un blocage à 20 inflige 5 dégâts de plus.<br/> La réussite est limité à 18.<br/>Le blocage est limité à 13.",
   charisme:
-    "Permet d'intéragir avec les autres personnes dans différents contexte :<br/> éloquence, persuasion, négociation, menace, distraction, ... <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff/stuff.",
+    "Permet d'intéragir avec les autres personnes dans différents contexte :<br/> éloquence, persuasion, négociation, menace, distraction, ... <br/><br/> La réussite est limité à 18.",
   esprit:
-    "Permet d'utiliser des buffs, des débuffs et des invocations.<br/>Si la stat est à 3 ou 4 : Immobile, 1 ou 2 : Evanouissement. 0 : Mort cérébrale. <br/> Permet aussi de résister (Dé/2) à des envoûtements (contrôle d'esprit, peur) <br/><br/> Les stats sont limitées à 17, et 17 (+1) avec buff/stuff.<br/>La résistance est limitée à 13.",
+    "Permet d'utiliser des buffs, des débuffs et des invocations.<br/>Si la stat est à 3 ou 4 : Immobile, 1 ou 2 : Evanouissement. 0 : Mort cérébrale. <br/> Permet aussi de résister (Dé/2) à des envoûtements (contrôle d'esprit, peur) <br/><br/> La réussite est limité à 18.<br/>La résistance est limitée à 13.",
   niv: "Augmente automatiquement tous les 100 points d'expériences du Niveau 1 à 5, puis tous les 150 de 6 à 10, puis 200.<br/> Tous les niveaux paire (2,4,6,8), vous obtenez une compétence.<br/> Au Niveau 5 vous avez +1 en Esprit.<br/> Au Niveau 10 et 15, c'est +1 où vous voulez.",
   pv: "Statistique des PV, augmente de 5 par niveau.",
   stress:
@@ -1727,14 +1731,14 @@ infoStatsE.addEventListener("click", () => {
   )
 
   // Count stats over 17
-  const statOver = statistiques.map((statName) => Math.max(allStats[statName] - 17, 0)).reduce(sum)
+  const statOver = statistiques.map((statName) => Math.max(allStats[statName] - MINIMUM_OVERSTAT, 0)).reduce(sum)
 
   const statsElem = createElement(
     "div",
     statistiques.map((statName) => {
       const statNameE = createElement("p", statName)
 
-      const over = Math.max(allStats[statName] - 17, 0)
+      const over = Math.max(allStats[statName] - MINIMUM_OVERSTAT, 0)
       return createElement("div", [statNameE, `${allStats[statName]}${over > 0 ? ` (-${over})` : ""}`], {
         className: "stat",
       })
@@ -1743,9 +1747,13 @@ infoStatsE.addEventListener("click", () => {
   )
 
   const nbStatsToChoose = 60 - sumStats + Math.max(Math.ceil((niv - 9) / 5), 0)
-  const nivInfoE = createElement("p", `+ ${nbStatsToChoose + statOver} stat(s) au choix, car niveau ${niv}`)
+  const overInfoE = createElement(
+    "p",
+    `+ ${statOver} stat(s) au choix, car certaines stats dépassent "${MINIMUM_OVERSTAT}", la valeur max théorique`
+  )
+  const nivInfoE = createElement("p", `+ ${nbStatsToChoose} stat(s) au choix, car niveau ${niv}`)
 
-  const globalE = createElement("p", [titleE, pvElem, statsElem, nivInfoE], { className: "dialogStats" })
+  const globalE = createElement("p", [titleE, pvElem, statsElem, overInfoE, nivInfoE], { className: "dialogStats" })
 
   if (60 - sumStats > 1) {
     const classWithPointsToChoose = createElement(

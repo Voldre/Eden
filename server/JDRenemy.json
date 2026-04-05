@@ -3724,5 +3724,50 @@
     "desc": "Jeune Ezelin faisant partie du conseil des sorcières. Elle se balade toujours avec sa tasse de thé.",
     "drop": "A voir",
     "weaknesses": ["perçant", "tranchant"]
+  },
+  "251": {
+    "visuel3D": "forge",
+    "nom": "Forge 1.8",
+    "pvmax": 150,
+    "skills": [
+      "Coup de perceuse : 2D10 +10 FOR\n\nCoup de pioche : 2D6 +7 AoE FOR",
+      "Coup de jus : 2D6 +4,-2 réussite 3t AoE INT\n\nLance flamme: 3D6 +5 INT",
+      "5 Armure physique",
+      ""
+    ],
+    "stats": "16,12,15,10,11",
+    "desc": "Zumi android touché par le Virus Smog.",
+    "drop": "Crystaux d'asbi 1-2, rare: Puce électronique Silus",
+    "weaknesses": ["feu", "foudre"]
+  },
+  "252": {
+    "visuel3D": "zik",
+    "nom": "Zik",
+    "pvmax": 175,
+    "skills": [
+      "Mur de Titan : Armure , 1D4 (min 2) +3 sur 4 tours Mono : Force",
+      "Provocation AoE : 1D6+3, , et 75% de chance d'être ciblé pendant 3t CHA",
+      "Armure électrifiée : Pour chaque coup reçu : Inflige 1D8 +5 2t Esprit\n\nEuphorie : Buff , Par coup, dégât +1D4 (min 2) +1 sur 4 tours AoE : Esprit",
+      "Charge du Guerrier : Degat Malus 3D6 +13, Si critique, réussite-4 sur 1 tours Mono : Force"
+    ],
+    "stats": "16,11,6,15,16",
+    "desc": "Zumi jaune, légerement stupide. Il est toujours accompagné de son bras gauche Zak.",
+    "drop": "commun: Chapeau de capitainerare: Plastron de Tuskar",
+    "weaknesses": ["nature", "ténèbres"]
+  },
+  "253": {
+    "visuel3D": "zak",
+    "nom": "Zak",
+    "pvmax": 175,
+    "skills": [
+      "Faiblesse Critique / Cicatrice de l'Esprit : Dégât 3D6 (Crit X1.5) (ou -1 buff) +9,  Mono : Force",
+      "Griffure Noire (Atk Furieuse) : Degat Malus 2D6 (+5) +8, Blocage et Esquive -1 sur 3 tours AoE : Dextérité/Force",
+      "Ombre Rapide: Esquive +2 pendant 1D4 (min 2) +2 tours Esprit",
+      "Contrôle de l'Energie : Soin Buff 2D6 +15, Dexté -2 et Résistance d'esprit +4 sur 3 tours Mono : Esprit"
+    ],
+    "stats": "18,16,6,10,15",
+    "desc": "Zumi bleuté, avec un regard spécial. Il est toujours accompagné de son bras droit Zik.",
+    "drop": "commun: Glyphe des Ursuns (2)  rare: Griffe en Mousserite",
+    "weaknesses": ["perçant", "foudre"]
   }
 }

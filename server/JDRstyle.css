@@ -375,6 +375,10 @@ label:hover {
   border: 2px rgb(190, 10, 10, 0.6) solid !important;
 }
 
+.over {
+  color: orange !important;
+}
+
 .items {
   padding: 2px;
   padding-bottom: 0px;

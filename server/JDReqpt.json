@@ -5449,5 +5449,29 @@
     "montant": "Dégât -3",
     "icone": "W70703c",
     "type": "arme-2m"
+  },
+  "640": {
+    "nom": "Griffe en Mousserite",
+    "desc": "Une griffe forgé avec de la mousserite.",
+    "effet": "",
+    "montant": "Dégât +4, Si coup critique (1,2,3) : Dexté -3 (2 tours)",
+    "icone": "W31304",
+    "type": "arme-1m"
+  },
+  "641": {
+    "nom": "Griffe d'Asbi",
+    "desc": "Une griffe avec un alliage d'Acier et de Cristal d'Asbi",
+    "effet": "",
+    "montant": "Dégât +3, réussite des sorts +1",
+    "icone": "W31305b",
+    "type": "arme-1m"
+  },
+  "642": {
+    "nom": "Griffe de Tuskar",
+    "desc": "Une griffe forgé par des Tuskars avec des matériaux de qualité standard",
+    "effet": "Force +1",
+    "montant": "Dégât +3",
+    "icone": "W31401",
+    "type": "arme-1m"
   }
 }
