@@ -1073,9 +1073,12 @@ function loadFiche(indexPerso: number): void {
 
   const storedState = loadState<StorageState>(STORAGE_KEY)
 
-  // If there is data in the local storage, load them
-  // The check is not the best, but enough 99% of times
-  if (storedState && storedState.nom === persosJSON[indexPerso].nom) {
+  // If there is data in the local storage, load them, unless the save date has changed
+  if (
+    storedState &&
+    storedState.nom === persosJSON[indexPerso].nom &&
+    storedState.lastUpdate === persosJSON[indexPerso].lastUpdate
+  ) {
     persoData = storedState
     malusEs.forEach((malusE, index) => {
       malusE.children[0].value = storedState.malus[index].turn
@@ -1206,7 +1209,7 @@ function loadFiche(indexPerso: number): void {
 }
 
 setupAutoSave<StorageState>(() => {
-  const rawSave = savePerso()
+  const rawSave = savePerso(false) // Do not update the date to keep real update date
 
   if (!rawSave) return undefined
   const perso = rawSave[persoE.id]
@@ -1511,7 +1514,7 @@ saveButton.addEventListener("click", async () => {
     toastNotification("Les sauvegardes sont bloquées par le MJ")
     return
   }
-  const newPerso = savePerso()
+  const newPerso = savePerso(true)
   // Save to JSON...
   // Only store persosJSON current user (perso id)
   if (!newPerso) {
@@ -1537,7 +1540,7 @@ saveButton.addEventListener("click", async () => {
   deleteCookie("persosJSON")
 })
 
-function savePerso(): {
+function savePerso(updateDate: boolean): {
   [x: string]: Perso
 } | null {
   const skillsName = competenceEs.map((competenceE) => competenceE.selectE.value)
@@ -1605,6 +1608,7 @@ function savePerso(): {
           ],
         }
       : undefined,
+    lastUpdate: updateDate ? new Date().toISOString() : currentPerso.lastUpdate,
   }
 
   console.log(persosJSON[persoId])

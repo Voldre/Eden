@@ -91,6 +91,7 @@ export interface Perso extends MainElementPerso {
   isArchived: boolean
   joueur: Joueurs | ""
   guardian?: { type: "full" | "partial"; config: MainElementPerso[] }
+  lastUpdate:string
 }
 
 export interface Enemy {
