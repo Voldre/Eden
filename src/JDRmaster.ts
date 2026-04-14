@@ -7,12 +7,14 @@ import {
   statsJSON,
   persosJSON,
   getData,
-  elements,
+  ELEMENTS,
   equipmentsTypes,
   armorTypes,
   iconsArmorTypes,
+  WEAPONS,
+  WEAPONS_INFO,
 } from "./JDRstore.js"
-import { ArmorType, Classes, Enemy, Equipment, EquipmentType, Perso, Skill, StatsName } from "./model.js"
+import { ArmorType, Classes, Enemy, Equipment, EquipmentType, Perso, Skill, StatsName, Weapons } from "./model.js"
 import {
   addChangeListener,
   addClickListener,
@@ -320,7 +322,7 @@ speedInputE.addEventListener("input", () => {
 const abnormalWeaknesses = Object.values(enemyJSON)
   .filter((enemy) => !enemy.nom.includes("Veyda") && enemy.pvmax < 500)
   .map((enemy) => {
-    const weaknesses = elements.filter((element) => enemy.weaknesses?.includes(element))
+    const weaknesses = ELEMENTS.filter((element) => enemy.weaknesses?.includes(element))
     if (weaknesses.length !== 2) return { nom: enemy.nom, elements: weaknesses }
     return undefined
   })
@@ -329,7 +331,7 @@ const abnormalWeaknesses = Object.values(enemyJSON)
 if (abnormalWeaknesses.length) console.warn("Abnormal weaknesses :", abnormalWeaknesses)
 
 const elementsCount: { [key: string]: number } = {}
-elements.forEach((element) => {
+ELEMENTS.forEach((element) => {
   const fullText = unformatText(JSON.stringify(Object.values(enemyJSON).map((enemy) => enemy.weaknesses)))
   // The g in the regular expression (meaning "g"lobal) says to search the whole string rather than just find the first occurrence
   const regex = new RegExp(unformatText(element), "g") // Regex for the element in global
@@ -722,39 +724,41 @@ const selectEqptType = addEqpt.querySelectorAll("select")[0] as SelectElement<Eq
 
 fillSelectOptions(selectEqptType, [...equipmentsTypes.map((type) => ({ innerText: type, value: type }))])
 
-const selectArmorType = addEqpt.querySelectorAll("select")[1] as SelectElement<ArmorType>
+const select2ndEqptType = addEqpt.querySelectorAll("select")[1] as SelectElement<ArmorType | Weapons>
 selectEqptType.addEventListener("change", () => {
-  if (selectEqptType.value === "armure") selectArmorType.classList.remove("hide")
-  else selectArmorType.classList.add("hide")
-})
+  let options: (ArmorType | Weapons)[] = []
+  if (selectEqptType.value === "arme-1m" || selectEqptType.value === "arme-2m") {
+    options = WEAPONS.filter((w) => selectEqptType.value.includes(WEAPONS_INFO[w].hands.toString()))
+  } else if (selectEqptType.value === "armure") {
+    options = armorTypes
+  }
 
-fillSelectOptions(selectArmorType, [...armorTypes.map((type) => ({ innerText: type, value: type }))])
+  select2ndEqptType.classList.toggle("hide", !options.length)
+  fillSelectOptions(select2ndEqptType, [...options.map((type) => ({ innerText: type, value: type }))])
+})
 
 document.querySelector("#createEqpt")!.addEventListener("click", async () => {
   const eqptID = parseInt(Object.keys(eqptJSON).reverse()[0]) + 1 || 1
   const newEqpt: { [key: string]: Equipment } = {}
 
+  const commonProps = {
+    nom: addEqpt.children[0 + 1].value,
+    desc: addEqpt.children[2 + 1].value,
+    effet: addEqpt.children[4 + 1].value,
+    montant: addEqpt.children[6 + 1].value,
+    icone: addEqpt.children[8 + 1].value,
+    armorTypes: undefined,
+    weaponType: undefined,
+  }
   newEqpt[eqptID] =
     // @TODO Remove this workaround
     selectEqptType.value === "armure"
-      ? {
-          nom: addEqpt.children[0 + 1].value,
-          desc: addEqpt.children[2 + 1].value,
-          effet: addEqpt.children[4 + 1].value,
-          montant: addEqpt.children[6 + 1].value,
-          icone: addEqpt.children[8 + 1].value,
-          type: selectEqptType.value,
-          armorTypes: [selectArmorType.value],
-        }
-      : {
-          nom: addEqpt.children[0 + 1].value,
-          desc: addEqpt.children[2 + 1].value,
-          effet: addEqpt.children[4 + 1].value,
-          montant: addEqpt.children[6 + 1].value,
-          icone: addEqpt.children[8 + 1].value,
-          type: selectEqptType.value,
-          armorTypes: undefined,
-        }
+      ? { ...commonProps, type: selectEqptType.value, armorTypes: [select2ndEqptType.value] as ArmorType[] }
+      : selectEqptType.value === "arme-1m"
+        ? { ...commonProps, type: selectEqptType.value, weaponType: select2ndEqptType.value as Weapons }
+        : selectEqptType.value === "arme-2m"
+          ? { ...commonProps, type: selectEqptType.value, weaponType: select2ndEqptType.value as Weapons }
+          : { ...commonProps, type: selectEqptType.value }
   console.log(newEqpt)
 
   setCookie("eqptJSON", newEqpt)
@@ -772,7 +776,7 @@ const addEnemyE = document.querySelector<HTMLElement & { children: HTMLInputElem
   selectE.style.fontSize = "12px"
   fillSelectOptions(selectE, [
     { value: "", innerText: "" },
-    ...elements.map((element) => ({ innerText: element, value: element })),
+    ...ELEMENTS.map((element) => ({ innerText: element, value: element })),
   ])
 })
 

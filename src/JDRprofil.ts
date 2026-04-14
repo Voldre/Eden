@@ -1,4 +1,4 @@
-import { cardJSON, persosJSON, enemyJSON, mapsJSON, playerJSON, classes, iconsClasses } from "./JDRstore.js"
+import { cardJSON, persosJSON, enemyJSON, mapsJSON, playerJSON, CLASSES, iconsClasses } from "./JDRstore.js"
 import { Card, Joueurs, Perso, Player } from "./model.js"
 import {
   addClickListener,
@@ -122,7 +122,7 @@ window.addEventListener("load", async () => {
     const inactiveP = Object.values(persosJSON).filter((p) => !activeP.includes(p))
 
     ;[false, true].forEach((isArchived) => {
-      const persosByClasses = classes.map((c) => {
+      const persosByClasses = CLASSES.map((c) => {
         const persos = (isArchived ? inactiveP : activeP).filter((p) => p.classeP === c || p.classeS === c)
         return { className: c, persos }
       })
@@ -272,8 +272,8 @@ function loadPerso(perso: Perso, index: number, joueurData: Player): void {
   })
 
   // Classes du perso
-  const classePID = classes.indexOf(perso.classeP)
-  const classeSID = classes.indexOf(perso.classeS)
+  const classePID = CLASSES.indexOf(perso.classeP)
+  const classeSID = CLASSES.indexOf(perso.classeS)
 
   const iconClassesEs = persoE.querySelector<HTMLElement & { children: [HTMLImageElement, HTMLImageElement] }>(
     ".iconClasses"

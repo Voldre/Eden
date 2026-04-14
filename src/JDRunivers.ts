@@ -1,4 +1,4 @@
-import { aoeDescInfo, classes, iconsClasses, races, skillsAwakenJSON, skillsJSON } from "./JDRstore.js"
+import { aoeDescInfo, CLASSES, iconsClasses, RACES, skillsAwakenJSON, skillsJSON } from "./JDRstore.js"
 import { Classes, Skill } from "./model.js"
 import {
   countEachOccurences,
@@ -60,7 +60,7 @@ const classesSpe = [
 
 // Generate classes elements
 const classesListE = document.querySelector(".classeslist")!
-classes.forEach((classe, i) => {
+CLASSES.forEach((classe, i) => {
   const nomE = createElement("p", classe === "Chev Dragon" ? "C. Dragon" : classe)
   const iconeE = createElement("img", undefined, {
     src: `http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE${iconsClasses[i]}.png`,
@@ -179,8 +179,8 @@ const showClassSkills = (classe: Classes): void => {
   })
 
   const classDesc = createElement("div", undefined, { className: "classeDesc" })
-  classDesc.innerHTML = classesDesc[classes.indexOf(classe)]
-  classDesc.append(createElement("p", classesSpe[classes.indexOf(classe)]))
+  classDesc.innerHTML = classesDesc[CLASSES.indexOf(classe)]
+  classDesc.append(createElement("p", classesSpe[CLASSES.indexOf(classe)]))
 
   const awakenButton = createElement("img", undefined, {
     id: "awakenButton",
@@ -242,7 +242,7 @@ console.log(
 
 // Nb skills by class by stat
 const allListSkillsByClassByStats: { [key: string]: { [key: string]: number } } = {}
-classes.forEach((classe) => {
+CLASSES.forEach((classe) => {
   const skillsClass = Object.values(skillsJSON).filter((skill) => skill.classe.includes(classe))
   const skillsClassStats = Object.values(skillsClass).map((skill) => skill.stat)
   const listSkillsByClassStats = countEachOccurences(skillsClassStats)
@@ -252,14 +252,14 @@ console.log("Nb skills by class by stat", allListSkillsByClassByStats)
 
 console.warn(
   "Skills without class",
-  Object.values(skillsJSON).filter((skill) => !classes.find((classe) => skill.classe.includes(classe)))
+  Object.values(skillsJSON).filter((skill) => !CLASSES.find((classe) => skill.classe.includes(classe)))
 )
 
 // #region Race skills
 
 const raceClassTable = document.querySelector<HTMLTableElement>("#raceClassTable")!
 const bodyTable = raceClassTable.createTBody()
-races.forEach((race) => {
+RACES.forEach((race) => {
   const raceImg = createElement(
     "td",
     createElement("img", undefined, {
@@ -273,7 +273,7 @@ races.forEach((race) => {
 
   const skills = [...Array(5).keys()].map((i) =>
     // Get skills of each kind of classes
-    raceSkills.find((skill) => skill.classe.every((c) => classes.slice(4 * i, 4 * (i + 1)).includes(c)))
+    raceSkills.find((skill) => skill.classe.every((c) => CLASSES.slice(4 * i, 4 * (i + 1)).includes(c)))
   )
 
   const cells = skills.map((skill) => {

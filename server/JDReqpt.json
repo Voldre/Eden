@@ -59,7 +59,8 @@
     "effet": "",
     "montant": "Dégât +2",
     "icone": "W10101",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "épée"
   },
   "8": {
     "nom": "Epée Colossale en Acier",
@@ -67,7 +68,8 @@
     "effet": "",
     "montant": "Dégât +4",
     "icone": "W10301",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "épée colossale"
   },
   "9": {
     "nom": "Lance en Acier",
@@ -75,7 +77,8 @@
     "effet": "",
     "montant": "Dégât +4",
     "icone": "W10801",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "lance"
   },
   "10": {
     "nom": "Dague en Acier",
@@ -83,7 +86,8 @@
     "effet": "",
     "montant": "Dégât +2",
     "icone": "W10901",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "dague"
   },
   "11": {
     "nom": "Rapière de chevalier",
@@ -92,7 +96,8 @@
     "montant": "Dégât +4 (+1 si Chevalier)",
     "condition": { "type": "classe", "value": ["Chevalier"], "bonus": "Dégât +1" },
     "icone": "W11402",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "rapière"
   },
   "12": {
     "nom": "Epée de côté jumelle",
@@ -100,7 +105,8 @@
     "effet": "",
     "montant": "Dégât +3",
     "icone": "W11503",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "épée"
   },
   "13": {
     "nom": "Epée sacrée des Plaines",
@@ -108,7 +114,8 @@
     "effet": "Dégât lumière +3",
     "montant": "Dégât +6",
     "icone": "W14301",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "épée"
   },
   "14": {
     "nom": "Hache en Acier",
@@ -116,7 +123,8 @@
     "effet": "",
     "montant": "Dégât +4",
     "icone": "W20201",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "hache"
   },
   "15": {
     "nom": "Katana en Acier",
@@ -124,7 +132,8 @@
     "effet": "",
     "montant": "Dégât +4",
     "icone": "W21301",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "katana"
   },
   "16": {
     "nom": "Masse en Acier",
@@ -132,7 +141,8 @@
     "effet": "",
     "montant": "Dégât +2",
     "icone": "W30101",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "masse"
   },
   "17": {
     "nom": "Griffe en Acier",
@@ -140,7 +150,8 @@
     "effet": "",
     "montant": "Dégât +2",
     "icone": "W31301",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "griffe"
   },
   "18": {
     "nom": "Marteau en Acier",
@@ -148,7 +159,8 @@
     "effet": "",
     "montant": "Dégât +4",
     "icone": "W40301",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "marteau"
   },
   "19": {
     "nom": "Arc en bois",
@@ -156,7 +168,8 @@
     "effet": "",
     "montant": "Dégât +4",
     "icone": "W50101",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "arc"
   },
   "20": {
     "nom": "Sakura",
@@ -164,7 +177,8 @@
     "effet": "(???)",
     "montant": "Dégât +6",
     "icone": "W27301",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bâton"
   },
   "21": {
     "nom": "Pendentif occulte",
@@ -217,7 +231,8 @@
     "effet": "",
     "montant": "Dégât +6",
     "icone": "W30302",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "marteau"
   },
   "27": {
     "nom": "Fusil de guerre",
@@ -225,7 +240,8 @@
     "effet": "",
     "montant": "Dégât +5",
     "icone": "W50801",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "flingue"
   },
   "28": {
     "nom": "Bâton magique",
@@ -233,7 +249,8 @@
     "effet": "",
     "montant": "Dégât +4",
     "icone": "W60101",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bâton"
   },
   "29": {
     "nom": "Bâton maléfique",
@@ -241,7 +258,8 @@
     "effet": "",
     "montant": "Dégât +6",
     "icone": "W60201",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bâton"
   },
   "30": {
     "nom": "Bâton d'Asbi",
@@ -249,7 +267,8 @@
     "effet": "",
     "montant": "Dégât +8, réussite des sorts +1",
     "icone": "W60503",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bâton"
   },
   "31": {
     "nom": "Guitare en bois",
@@ -257,7 +276,8 @@
     "effet": "",
     "montant": "Dégât +5",
     "icone": "W60801",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "instrument"
   },
   "32": {
     "nom": "Violon Magique",
@@ -265,7 +285,8 @@
     "effet": "Dextérité +2",
     "montant": "Dégât +6",
     "icone": "W60904",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "instrument"
   },
   "33": {
     "nom": "Grimoire maléfique",
@@ -273,7 +294,8 @@
     "effet": "",
     "montant": "Dégât +4",
     "icone": "W61502",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "grimoire"
   },
   "34": {
     "nom": "Griffe embrasée",
@@ -281,7 +303,8 @@
     "effet": "",
     "montant": "Dégât +3, dégât de feu +2",
     "icone": "W31505",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "griffe"
   },
   "35": {
     "nom": "Chapeau de champignoïde",
@@ -324,7 +347,8 @@
     "effet": "",
     "montant": "Dégât +3, pour les insectes : Dexté-2 Esprit -4",
     "icone": "W11606",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "épée"
   },
   "40": {
     "nom": "Epée d'Asbi",
@@ -332,7 +356,8 @@
     "effet": "",
     "montant": "Dégât +3, réussite des sorts +1",
     "icone": "W10105",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "épée"
   },
   "41": {
     "nom": "Cache oeil de Pirate",
@@ -359,7 +384,8 @@
     "effet": "",
     "montant": "Dégât +4",
     "icone": "W13201",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "dague"
   },
   "44": {
     "nom": "Epée de Pirate",
@@ -367,7 +393,8 @@
     "effet": "Force +1",
     "montant": "Dégât +3",
     "icone": "W10205",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "épée"
   },
   "45": {
     "nom": "Cape de sorcier",
@@ -484,7 +511,8 @@
     "effet": "Dégât de feu +2",
     "montant": "Dégât +6",
     "icone": "W61505",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "grimoire"
   },
   "58": {
     "nom": "Robe duveteuse",
@@ -548,7 +576,8 @@
     "montant": "Dégât +5",
     "icone": "W20501",
     "access": "A2",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "hache"
   },
   "65": {
     "nom": "Croc de Smilodon",
@@ -564,7 +593,8 @@
     "effet": "Dégât de feu +1",
     "montant": "Dégât +4",
     "icone": "W10106",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "épée"
   },
   "67": {
     "nom": "Hache d'Obsidienne",
@@ -572,7 +602,8 @@
     "effet": "Dégât de feu +2",
     "montant": "Dégât +7",
     "icone": "W20406",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "hache"
   },
   "68": {
     "nom": "Epée Colossale d'Obsidienne",
@@ -580,7 +611,8 @@
     "effet": "Dégât de feu +2",
     "montant": "Dégât +7",
     "icone": "W27402",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "épée colossale"
   },
   "69": {
     "nom": "Arc d'Acier Volcanique",
@@ -588,7 +620,8 @@
     "effet": "Dégât de feu +2",
     "montant": "Dégât +6",
     "icone": "W50103",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "arc"
   },
   "70": {
     "nom": "Rapière de givre",
@@ -596,7 +629,8 @@
     "effet": "Element : Glace",
     "montant": "Dégât +5 (glace)",
     "icone": "W13408",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "rapière"
   },
   "71": {
     "nom": "Epée Verdoyante",
@@ -604,7 +638,8 @@
     "effet": "Element : Nature",
     "montant": "Dégât +5 (nature)",
     "icone": "W21204",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "épée"
   },
   "72": {
     "nom": "Epée Rougeoyante",
@@ -612,7 +647,8 @@
     "effet": "Element : Feu",
     "montant": "Dégât +5 (feu)",
     "icone": "W21201",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "épée"
   },
   "73": {
     "nom": "Poupée de Tortue",
@@ -629,7 +665,8 @@
     "effet": "Dégât de feu +2",
     "montant": "Dégât +10",
     "icone": "k30094",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "lance"
   },
   "75": {
     "nom": "Baga portatif",
@@ -786,7 +823,8 @@
     "effet": "Dégât ténèbres +2",
     "montant": "Dégât +7",
     "icone": "W61508",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "grimoire"
   },
   "92": {
     "nom": "Grimoire Incandescant",
@@ -794,7 +832,8 @@
     "effet": "Dégât de feu +3",
     "montant": "Dégât +8",
     "icone": "W61507",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "grimoire"
   },
   "93": {
     "nom": "Grimoire Corrosif",
@@ -802,7 +841,8 @@
     "effet": "Dégât sur faiblesse +2",
     "montant": "Dégât +7",
     "icone": "W61603",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "grimoire"
   },
   "94": {
     "nom": "Grimoire Corrompu",
@@ -810,7 +850,8 @@
     "effet": "Dégât sur faiblesse +3",
     "montant": "Dégât +9",
     "icone": "W61601",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "grimoire"
   },
   "95": {
     "nom": "Codex du Démoniste",
@@ -819,7 +860,8 @@
     "montant": "Dégât +10 (Destruction : Dégât+2, Corruption : malus +2, ...) @TODO : Faire en sorte que ça soit ok avec le fait que changer de mode = instantanée, ou alors  changer d'idée",
     "condition": { "type": "classe", "value": ["Démoniste"], "bonus": "Dégât +1" },
     "icone": "W63001b",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "grimoire"
   },
   "96": {
     "nom": "Epée d'Asbi raffinée",
@@ -827,7 +869,8 @@
     "effet": "",
     "montant": "Dégât +5, réussite des sorts +1",
     "icone": "W10107",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "épée"
   },
   "97": {
     "nom": "Plume brillante",
@@ -844,7 +887,8 @@
     "effet": "",
     "montant": "Dégât +4 (0 malus dans les déserts)",
     "icone": "W31303",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "griffe"
   },
   "99": {
     "nom": "Capuche du Désert",
@@ -888,7 +932,8 @@
     "effet": "Dégât de nature +2",
     "montant": "Dégât +8",
     "icone": "W40106b",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "marteau"
   },
   "104": {
     "nom": "Arc de Delphes",
@@ -896,7 +941,8 @@
     "effet": "Dégât de nature +2",
     "montant": "Dégât +8",
     "icone": "W50203",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "arc"
   },
   "105": {
     "nom": "Bâton de Delphes",
@@ -904,7 +950,8 @@
     "effet": "Dégât de nature +2",
     "montant": "Dégât +8",
     "icone": "W60306",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bâton"
   },
   "106": {
     "nom": "Glyphe des Ursuns",
@@ -948,7 +995,8 @@
     "effet": "",
     "montant": "Dégât +4",
     "icone": "W30901",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "masse"
   },
   "111": {
     "nom": "Masse de l'Esprit",
@@ -956,7 +1004,8 @@
     "effet": "Esprit +1",
     "montant": "Dégât +3",
     "icone": "W31106",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "masse"
   },
   "112": {
     "nom": "Epée Colossale Magique",
@@ -964,7 +1013,8 @@
     "effet": "Intelligence +1",
     "montant": "Dégât +6",
     "icone": "W23902",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "épée colossale"
   },
   "113": {
     "nom": "Epée Colossale du Savoir",
@@ -972,7 +1022,8 @@
     "effet": "Intelligence +2",
     "montant": "Dégât +8",
     "icone": "W23904",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "épée colossale"
   },
   "114": {
     "nom": "Masse glaciale",
@@ -980,7 +1031,8 @@
     "effet": "Element : Glace",
     "montant": "Dégât +5 (glace)",
     "icone": "W30502",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "masse"
   },
   "115": {
     "nom": "Masse du remède",
@@ -988,7 +1040,8 @@
     "effet": "",
     "montant": "Dégât +4, Soin +2 (AoE/2)",
     "icone": "W30606",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "masse"
   },
   "116": {
     "nom": "Bouclier en Acier",
@@ -996,7 +1049,8 @@
     "effet": "",
     "montant": "Dégât -2",
     "icone": "W70101",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "bouclier"
   },
   "117": {
     "nom": "Bouclier de Valence",
@@ -1004,7 +1058,8 @@
     "effet": "",
     "montant": "Dégât -4",
     "icone": "W70202",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "bouclier"
   },
   "118": {
     "nom": "Bouclier miroir",
@@ -1012,7 +1067,8 @@
     "effet": "",
     "montant": "Dégât -4. Blocage magique critique : renvoi le coup (50%)",
     "icone": "W70501",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "bouclier"
   },
   "119": {
     "nom": "Bouclier d'épines",
@@ -1020,7 +1076,8 @@
     "effet": "",
     "montant": "Dégât -3, dégât épine : 2",
     "icone": "W70402",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "bouclier"
   },
   "120": {
     "nom": "Bouclier de garde",
@@ -1028,7 +1085,8 @@
     "effet": "Force +1",
     "montant": "Dégât -3",
     "icone": "W70303",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "bouclier"
   },
   "121": {
     "nom": "Dague écailles noires",
@@ -1036,7 +1094,8 @@
     "effet": "",
     "montant": "Dégât +5, dégât critique +5",
     "icone": "W13106",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "dague"
   },
   "122": {
     "nom": "Dague de Valence",
@@ -1044,7 +1103,8 @@
     "effet": "Dextérité +1",
     "montant": "Dégât +4",
     "icone": "W16801",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "dague"
   },
   "123": {
     "nom": "Faucille démoniaque ",
@@ -1052,7 +1112,8 @@
     "effet": "Dégât ténèbres +2",
     "montant": "Dégât +9",
     "icone": "W23606",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "faucille"
   },
   "124": {
     "nom": "Faucille en Acier",
@@ -1060,7 +1121,8 @@
     "effet": "",
     "montant": "Dégât +4",
     "icone": "W55401",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "faucille"
   },
   "125": {
     "nom": "Faucille Rouillée",
@@ -1068,7 +1130,8 @@
     "effet": "",
     "montant": "Dégât +8",
     "icone": "W55403",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "faucille"
   },
   "126": {
     "nom": "Faucille du Marais",
@@ -1076,7 +1139,8 @@
     "effet": "Dégât nature +2",
     "montant": "Dégât +8",
     "icone": "W55407",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "faucille"
   },
   "127": {
     "nom": "Faucille de l'Esprit",
@@ -1084,7 +1148,8 @@
     "effet": "Esprit +2",
     "montant": "Dégât +7",
     "icone": "W55504",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "faucille"
   },
   "128": {
     "nom": "Faucille Agile",
@@ -1092,7 +1157,8 @@
     "effet": "Esquive +2",
     "montant": "Dégât +6",
     "icone": "W55406",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "faucille"
   },
   "129": {
     "nom": "Marteau Canon",
@@ -1100,7 +1166,8 @@
     "effet": "",
     "montant": "Dégât +4",
     "icone": "W40501",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "marteau"
   },
   "130": {
     "nom": "Marteau Canon AV",
@@ -1108,7 +1175,8 @@
     "effet": "Dégât de feu +2",
     "montant": "Dégât +5",
     "icone": "W40504",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "marteau"
   },
   "131": {
     "nom": "Marteau Canon V2 AV",
@@ -1116,7 +1184,8 @@
     "effet": "Dégât de feu +2",
     "montant": "Dégât +7",
     "icone": "W40506",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "marteau"
   },
   "132": {
     "nom": "Marteau Canon V2",
@@ -1124,7 +1193,8 @@
     "effet": "",
     "montant": "Dégât +6",
     "icone": "W40502",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "marteau"
   },
   "133": {
     "nom": "Marteau Bolter",
@@ -1132,7 +1202,8 @@
     "effet": "",
     "montant": "Dégât +9",
     "icone": "W41401",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "marteau"
   },
   "134": {
     "nom": "Epée d'épines",
@@ -1140,7 +1211,8 @@
     "effet": "Dégât nature +2",
     "montant": "Dégât +4",
     "icone": "W10403",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "épée"
   },
   "135": {
     "nom": "Arc de l'Esprit",
@@ -1148,7 +1220,8 @@
     "effet": "Esprit +2",
     "montant": "Dégât +7",
     "icone": "W50204",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "arc"
   },
   "136": {
     "nom": "Arc Arc-en-Ciel",
@@ -1156,7 +1229,8 @@
     "effet": "Blocage +2",
     "montant": "Dégât +10",
     "icone": "W50502",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "arc"
   },
   "137": {
     "nom": "Arc du Dompteur",
@@ -1164,7 +1238,8 @@
     "effet": "Familier",
     "montant": "Dégât +8, Familier : dégât+4/soin+2 (AoE/2), réussite sort+1",
     "icone": "W50503",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "arc"
   },
   "138": {
     "nom": "Grimoire de la Bête",
@@ -1172,7 +1247,8 @@
     "effet": "Familier",
     "montant": "Dégât +6, Familier : dégât/soin+2 (AoE/2), réussite sort+1",
     "icone": "W62907",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "grimoire"
   },
   "139": {
     "nom": "Grimoire de l'Invocateur",
@@ -1180,7 +1256,8 @@
     "effet": "Familier",
     "montant": "Dégât +8, Familier : dégât+4/soin+2 (AoE/2), réussite sort+1",
     "icone": "W62903",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "grimoire"
   },
   "140": {
     "nom": "Masse cloutée améliorée",
@@ -1188,7 +1265,8 @@
     "effet": "Force +1",
     "montant": "Dégât +5",
     "icone": "W31806",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "masse"
   },
   "141": {
     "nom": "Masse du Prolongement",
@@ -1196,7 +1274,8 @@
     "effet": "",
     "montant": "Dégât +5, durée des sorts +1 tour",
     "icone": "W31701",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "masse"
   },
   "142": {
     "nom": "Epée de parade",
@@ -1204,7 +1283,8 @@
     "effet": "Blocage +1",
     "montant": "Dégât +4",
     "icone": "W10304",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "épée"
   },
   "143": {
     "nom": "Epée Colossale de parade",
@@ -1212,7 +1292,8 @@
     "effet": "Blocage +2",
     "montant": "Dégât +7",
     "icone": "W27501",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "épée colossale"
   },
   "144": {
     "nom": "Masse de Lumière",
@@ -1220,7 +1301,8 @@
     "effet": "Dégât lumière +1",
     "montant": "Dégât +4",
     "icone": "W31104",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "masse"
   },
   "145": {
     "nom": "Masse Zumi",
@@ -1228,7 +1310,8 @@
     "effet": "Dégât AoE+2",
     "montant": "Dégât +4",
     "icone": "W33602",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "masse"
   },
   "146": {
     "nom": "Griffe de l'Esprit",
@@ -1236,7 +1319,8 @@
     "effet": "Esprit +1",
     "montant": "Dégât +4",
     "icone": "W35008",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "griffe"
   },
   "148": {
     "nom": "Epée Titanesque",
@@ -1244,7 +1328,8 @@
     "effet": "Dexté -5",
     "montant": "Dégât +15 (Si force >=16, Dexté +1)",
     "icone": "W21106",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "épée"
   },
   "149": {
     "nom": "Ceinture de Samouraï",
@@ -1298,7 +1383,8 @@
     "effet": "Dégât de lumière +1",
     "montant": "Dégât +5",
     "icone": "W13404",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "épée"
   },
   "155": {
     "nom": "Arc Bélouga",
@@ -1306,7 +1392,8 @@
     "effet": "Dégât nature +1",
     "montant": "Dégât +6",
     "icone": "W50106",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "arc"
   },
   "156": {
     "nom": "Arc du Dresseur",
@@ -1314,7 +1401,8 @@
     "effet": "Familier",
     "montant": "Dégât +6, Familier : dégât/soin+2 (AoE/2), réussite sort+1",
     "icone": "W50303",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "arc"
   },
   "157": {
     "nom": "Bouclier Pourpre",
@@ -1322,7 +1410,8 @@
     "effet": "",
     "montant": "Dégât -6",
     "icone": "W71209",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "bouclier"
   },
   "158": {
     "nom": "Bouclier du Démon",
@@ -1330,7 +1419,8 @@
     "effet": "Malédiction du Lien",
     "montant": "Dégât -5 - Niveau/2",
     "icone": "W71207",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "bouclier"
   },
   "159": {
     "nom": "Katana de l'apprenti",
@@ -1338,7 +1428,8 @@
     "effet": "XP reçu +10%",
     "montant": "Dégât +6",
     "icone": "W21306",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "katana"
   },
   "160": {
     "nom": "Katana de Delphes",
@@ -1346,7 +1437,8 @@
     "effet": "Dégât nature +2",
     "montant": "Dégât +8",
     "icone": "W21404",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "katana"
   },
   "161": {
     "nom": "Katana Eclair Pourpre",
@@ -1354,7 +1446,8 @@
     "effet": "Dégât foudre +2",
     "montant": "Dégât +8",
     "icone": "W21503",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "katana"
   },
   "162": {
     "nom": "Katana Brûlant",
@@ -1362,7 +1455,8 @@
     "effet": "Dégât de feu +2",
     "montant": "Dégât +9",
     "icone": "W21302",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "katana"
   },
   "163": {
     "nom": "Epée Colossale - Destruction Sacrée",
@@ -1370,7 +1464,8 @@
     "effet": "",
     "montant": "Dégât +10, +2/touche (max 5, reset si 0 touche 2 tours)",
     "icone": "W21105",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "épée colossale"
   },
   "164": {
     "nom": "Katana Lame Noire",
@@ -1378,7 +1473,8 @@
     "effet": "Element : Ténèbres",
     "montant": "Dégât +10, (si panoplie : conversion Physique => Ténèbres)",
     "icone": "W21506",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "katana"
   },
   "165": {
     "nom": "Katana Plume",
@@ -1386,7 +1482,8 @@
     "effet": "Dextérité +2",
     "montant": "Dégât +6",
     "icone": "W27607",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "katana"
   },
   "166": {
     "nom": "Katana Incisif",
@@ -1394,7 +1491,8 @@
     "effet": "Dégât critique +10",
     "montant": "Dégât +8",
     "icone": "W24105",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "katana"
   },
   "167": {
     "nom": "Katana Renforcé",
@@ -1402,7 +1500,8 @@
     "effet": "",
     "montant": "Dégât +7",
     "icone": "W21403",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "katana"
   },
   "168": {
     "nom": "Bâton Flocon",
@@ -1410,7 +1509,8 @@
     "effet": "Dégat de glace +3",
     "montant": "Dégât +8",
     "icone": "W62201",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bâton"
   },
   "169": {
     "nom": "Sceptre du remède",
@@ -1418,7 +1518,8 @@
     "effet": "",
     "montant": "Dégât +8, Soin +4 (/2)",
     "icone": "W62504",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bâton"
   },
   "170": {
     "nom": "Sceptre du Shaman",
@@ -1427,7 +1528,8 @@
     "montant": "Dégât +8 (+3 si Shaman)",
     "condition": { "type": "classe", "value": ["Shaman"], "bonus": "Dégât +3" },
     "icone": "W62608",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bâton"
   },
   "171": {
     "nom": "Croix sacrée",
@@ -1435,7 +1537,8 @@
     "effet": "Dégât lumière +2",
     "montant": "Dégât +6",
     "icone": "W64401",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bâton"
   },
   "172": {
     "nom": "Croix corrompue",
@@ -1443,7 +1546,8 @@
     "effet": "Dégât ténèbres +2",
     "montant": "Dégât +7",
     "icone": "W64404",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bâton"
   },
   "173": {
     "nom": "Croix divine",
@@ -1451,7 +1555,8 @@
     "effet": "Dégât lumière +3",
     "montant": "Dégât +8",
     "icone": "W64403",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bâton"
   },
   "174": {
     "nom": "Charme d'Expérience",
@@ -1495,7 +1600,8 @@
     "effet": "Dégât critique +10",
     "montant": "Dégât +8",
     "icone": "W60701",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bâton"
   },
   "179": {
     "nom": "Grimoire du Savoir",
@@ -1503,7 +1609,8 @@
     "effet": "Intelligence +2",
     "montant": "Dégât +7",
     "icone": "W61405",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "grimoire"
   },
   "180": {
     "nom": "Grimoire Protecteur",
@@ -1511,7 +1618,8 @@
     "effet": "Blocage +2",
     "montant": "Dégât +8",
     "icone": "W62401",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "grimoire"
   },
   "181": {
     "nom": "Grimoire de l'apprenti",
@@ -1519,7 +1627,8 @@
     "effet": "XP reçu +10%",
     "montant": "Dégât +7",
     "icone": "W61401",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "grimoire"
   },
   "182": {
     "nom": "Bible du Familier",
@@ -1536,7 +1645,8 @@
     "effet": "Dégât sur faiblesse +2",
     "montant": "Dégât +5",
     "icone": "W14601",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "dague"
   },
   "184": {
     "nom": "Faucille Méprisante",
@@ -1544,7 +1654,8 @@
     "effet": "Dégât sur faiblesse +3",
     "montant": "Dégât +8",
     "icone": "W55404",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "faucille"
   },
   "185": {
     "nom": "Marteau Canon Glacial",
@@ -1552,7 +1663,8 @@
     "effet": "Dégât de glace +3",
     "montant": "Dégât +7",
     "icone": "W40505",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "marteau"
   },
   "186": {
     "nom": "Marteau Bolter Asbi",
@@ -1560,7 +1672,8 @@
     "effet": "",
     "montant": "Dégât +11, réussite des sorts +1",
     "icone": "W41301",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "marteau"
   },
   "187": {
     "nom": "Brassard du Pouvoir",
@@ -1611,7 +1724,8 @@
     "effet": "Esprit -4",
     "montant": "Dégât +15",
     "icone": "k30100",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "arc"
   },
   "193": {
     "nom": "Epée du Chaos",
@@ -1619,7 +1733,8 @@
     "effet": "Amplification",
     "montant": "Dégât +6. Effet Critique à Dé 2 et 19",
     "icone": "k30148",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "épée"
   },
   "194": {
     "nom": "Cape Hypnotique",
@@ -1644,7 +1759,8 @@
     "effet": "Blocage +1",
     "montant": "Dégât -3",
     "icone": "W70503",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "bouclier"
   },
   "197": {
     "nom": "Guitare du Papillon",
@@ -1653,7 +1769,8 @@
     "montant": "Dégât +6",
     "icone": "W61003",
     "access": "D2",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "instrument"
   },
   "198": {
     "nom": "Collier d'Asbi",
@@ -1679,7 +1796,8 @@
     "effet": "Esprit +1",
     "montant": "Dégât -4",
     "icone": "W70507",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "bouclier"
   },
   "201": {
     "nom": "Bague de Vigueur",
@@ -1696,7 +1814,8 @@
     "effet": "Element : Glace",
     "montant": "Dégât +7, si échec critique : -15 PV",
     "icone": "W11302",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "dague"
   },
   "203": {
     "nom": "Couvre-chef Fleuri",
@@ -1823,7 +1942,8 @@
     "effet": "Dégât de glace +3",
     "montant": "Dégât +8",
     "icone": "W20106",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "hache"
   },
   "217": {
     "nom": "Guitare Flamboyante",
@@ -1831,7 +1951,8 @@
     "effet": "Dégât de feu +2",
     "montant": "Dégât +7",
     "icone": "W60806",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "instrument"
   },
   "218": {
     "nom": "Guitare Enchantée",
@@ -1839,7 +1960,8 @@
     "effet": "Soin +3",
     "montant": "Dégât +6",
     "icone": "W60804",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "instrument"
   },
   "219": {
     "nom": "Guitare de Delphes",
@@ -1847,7 +1969,8 @@
     "effet": "Dégât nature +2",
     "montant": "Dégât +8",
     "icone": "W61002",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "instrument"
   },
   "220": {
     "nom": "Guitare Electronique",
@@ -1855,7 +1978,8 @@
     "effet": "Dégât de foudre +2",
     "montant": "Dégât +8",
     "icone": "W62808",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "instrument"
   },
   "221": {
     "nom": "Guitare Congelée",
@@ -1863,7 +1987,8 @@
     "effet": "Dégât de glace +2",
     "montant": "Dégât +8",
     "icone": "W62802",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "instrument"
   },
   "222": {
     "nom": "Guitare de la Rose",
@@ -1871,7 +1996,8 @@
     "effet": "Dégât sur faiblesse +3",
     "montant": "Dégât +8",
     "icone": "W62701",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "instrument"
   },
   "223": {
     "nom": "Guitare Radieuse",
@@ -1879,7 +2005,8 @@
     "effet": "Durée des sorts +1 tour",
     "montant": "Dégât +9",
     "icone": "W62301",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "instrument"
   },
   "224": {
     "nom": "Brassard du Héros",
@@ -1914,7 +2041,8 @@
     "effet": "Esprit +2",
     "montant": "Dégât +10",
     "icone": "W62402",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "grimoire"
   },
   "228": {
     "nom": "Epée du Héros",
@@ -1923,7 +2051,8 @@
     "montant": "Dégât +4 (+2 si panoplie)",
     "condition": { "type": "panoplie", "value": "Brassard du Héros", "bonus": "Dégât +2" },
     "icone": "W10604",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "épée"
   },
   "229": {
     "nom": "Flacon secret de Rumbledore",
@@ -2020,7 +2149,8 @@
     "effet": "Tranche les illusions",
     "montant": "Dégât +9",
     "icone": "W55506",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "faucille"
   },
   "240": {
     "nom": "Bijou Aurique",
@@ -2055,7 +2185,8 @@
     "effet": "Force +1",
     "montant": "Dégât +5",
     "icone": "W13102",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "dague"
   },
   "244": {
     "nom": "Tentacule de Mandragore",
@@ -2072,7 +2203,8 @@
     "effet": "Dégât critique +5",
     "montant": "Dégât +7",
     "icone": "W22906",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "katana"
   },
   "246": {
     "nom": "Grimoire du Créateur",
@@ -2080,7 +2212,8 @@
     "effet": "Capacité",
     "montant": "Dégât +12, 3 fois par combat : invoque une créature élémentaire",
     "icone": "W63401",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "grimoire"
   },
   "247": {
     "nom": "Katana Polymorphe",
@@ -2088,7 +2221,8 @@
     "effet": "Capacité",
     "montant": "Dégât +10, 2 fois par combat (Instantané) : s'enchante et dégât+5 sur 3 tours",
     "icone": "W26901",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "katana"
   },
   "248": {
     "nom": "Trèfle à Cinq Feuilles",
@@ -2139,7 +2273,8 @@
     "effet": "Blocage physique +1",
     "montant": "Dégât +3",
     "icone": "W31302",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "griffe"
   },
   "254": {
     "nom": "Griffe d'épines",
@@ -2147,7 +2282,8 @@
     "effet": "Dégât nature +2",
     "montant": "Dégât +4",
     "icone": "W31404",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "griffe"
   },
   "255": {
     "nom": "Griffe enchantée",
@@ -2155,7 +2291,8 @@
     "effet": "Durée des sorts +1 tour",
     "montant": "Dégât +4",
     "icone": "W31502",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "griffe"
   },
   "256": {
     "nom": "Griffe à Plasma",
@@ -2163,7 +2300,8 @@
     "effet": "Elément : Foudre",
     "montant": "Dégât +5",
     "icone": "W35105",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "griffe"
   },
   "257": {
     "nom": "Lunettes Anciennes",
@@ -2237,7 +2375,8 @@
     "montant": "Dégât +5 (+1 si panoplie)",
     "condition": { "type": "panoplie", "value": "de Puissance", "bonus": "Dégât +1" },
     "icone": "W33801",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "griffe"
   },
   "265": {
     "nom": "Rapière de Stella",
@@ -2245,7 +2384,8 @@
     "effet": "Blocage physique cible -2",
     "montant": "Dégât +5",
     "icone": "W12706",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "rapière"
   },
   "266": {
     "nom": "Lance de Stella",
@@ -2254,7 +2394,8 @@
     "montant": "Dégât +10 (+1 si Chev. Dragon)",
     "condition": { "type": "classe", "value": ["Chev Dragon"], "bonus": "Dégât +1" },
     "icone": "W11007",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "lance"
   },
   "267": {
     "nom": "Chapeau d'Ursun",
@@ -2271,7 +2412,8 @@
     "effet": "Durée des sorts +1 tour",
     "montant": "Dégât +9",
     "icone": "W21505",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "katana"
   },
   "269": {
     "nom": "Miroir de la Vérité",
@@ -2288,7 +2430,8 @@
     "effet": "Charisme +2, Capacité",
     "montant": "Dégât +7, 2 fois par combat :Charme tape-à-l-oeil",
     "icone": "W63702",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "instrument"
   },
   "271": {
     "nom": "Flûte des Fleurs de Lune",
@@ -2370,7 +2513,8 @@
     "effet": "Réussite -2",
     "montant": "Dégât +14",
     "icone": "W22704",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "hache"
   },
   "280": {
     "nom": "Fusil du Bourrin",
@@ -2378,7 +2522,8 @@
     "effet": "Réussite -2",
     "montant": "Dégât +14",
     "icone": "W53002",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "flingue"
   },
   "281": {
     "nom": "Gemme de Puissance",
@@ -2414,7 +2559,8 @@
     "effet": "Capacité",
     "montant": "Dégât +5, 3 fois par combat : Euphorie. Dégât reçus +3",
     "icone": "W14201",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "dague"
   },
   "285": {
     "nom": "Appel Mondial",
@@ -2440,7 +2586,8 @@
     "effet": "",
     "montant": "Dégât +9",
     "icone": "W51403",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "flingue"
   },
   "288": {
     "nom": "Bouclier d'épines renforcé",
@@ -2448,7 +2595,8 @@
     "effet": "",
     "montant": "Dégât -4, dégât épine : 3",
     "icone": "W70406",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "bouclier"
   },
   "289": {
     "nom": "Gilet d'épines",
@@ -2510,7 +2658,8 @@
     "effet": "Durée des sorts +1",
     "montant": "Dégât +4",
     "icone": "W11306",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "dague"
   },
   "296": {
     "nom": "Bâton Quartz d'Automne",
@@ -2518,7 +2667,8 @@
     "effet": "Durée des sorts +1",
     "montant": "Dégât +9",
     "icone": "W62505",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bâton"
   },
   "297": {
     "nom": "Plastron Quartz d'Automne",
@@ -2535,7 +2685,8 @@
     "effet": "-3 PV par coup",
     "montant": "Dégât +7, si critique (1,2) : soin PV = dégâts/2",
     "icone": "W13207",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "dague"
   },
   "299": {
     "nom": "Pistolet Quartz d'Automne",
@@ -2543,7 +2694,8 @@
     "effet": "Durée des sorts +1",
     "montant": "Dégât +9",
     "icone": "W52008",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "flingue"
   },
   "300": {
     "nom": "Marteau Pulvérisant",
@@ -2551,7 +2703,8 @@
     "effet": "Blocage cible -2",
     "montant": "Dégât +9",
     "icone": "W40701",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "marteau"
   },
   "301": {
     "nom": "Marteau du Sage",
@@ -2560,7 +2713,8 @@
     "montant": "Dégât +7, Soin +2 (AoE/2) (dégât/soin+1 si Sage)",
     "condition": { "type": "classe", "value": ["Sage"], "bonus": "Dégât +1, Soin +1" },
     "icone": "W40908",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "marteau"
   },
   "302": {
     "nom": "Griffe en platine",
@@ -2568,7 +2722,8 @@
     "effet": "",
     "montant": "Dégât +5, Dégât reçu -2",
     "icone": "W31402",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "griffe"
   },
   "303": {
     "nom": "Masse de Ténèbres",
@@ -2576,7 +2731,8 @@
     "effet": "Dégât ténèbres +2",
     "montant": "Dégât +4",
     "icone": "W30505",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "masse"
   },
   "304": {
     "nom": "Cotte de Maille",
@@ -2624,7 +2780,8 @@
     "montant": "Dégât +4 (+1 par glyphe équipée)",
     "condition": { "type": "panoplie", "value": "Glyphe", "bonus": "Dégât +1" },
     "icone": "W34704",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "masse"
   },
   "309": {
     "nom": "Glyphe des Ursuns (3)",
@@ -2669,7 +2826,8 @@
     "montant": "Dégât +10 (+1 Si Magicien)",
     "condition": { "type": "classe", "value": ["Magicien"], "bonus": "Dégât +1" },
     "icone": "W62507",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bâton"
   },
   "314": {
     "nom": "Sphère des Elus",
@@ -2696,7 +2854,8 @@
     "montant": "Dégât +4 (+2 si panoplie)",
     "condition": { "type": "panoplie", "value": "Ecolier, Bijou, Experience", "bonus": "Dégât +2" },
     "icone": "W10108",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "épée"
   },
   "317": {
     "nom": "Manteau Polaire",
@@ -2732,7 +2891,8 @@
     "montant": "Dégât +5 (+1 si Guerrier)",
     "condition": { "type": "classe", "value": ["Guerrier"], "bonus": "Dégât +1" },
     "icone": "W33501",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "masse"
   },
   "321": {
     "nom": "Bâton de Stella",
@@ -2740,7 +2900,8 @@
     "effet": "Blocage magique cible -3",
     "montant": "Dégât +10",
     "icone": "W64504",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bâton"
   },
   "322": {
     "nom": "Arc de précision",
@@ -2748,7 +2909,8 @@
     "effet": "Esquive/Blocage cible -2",
     "montant": "Dégât +8",
     "icone": "W50705",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "arc"
   },
   "323": {
     "nom": "Arc de l'apprenti",
@@ -2756,7 +2918,8 @@
     "effet": "XP reçu +10%",
     "montant": "Dégât +7",
     "icone": "W50102",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "arc"
   },
   "324": {
     "nom": "Arc Divin",
@@ -2764,7 +2927,8 @@
     "effet": "Element : Lumière",
     "montant": "Dégât +11 (lumière)",
     "icone": "W54001",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "arc"
   },
   "325": {
     "nom": "Fusil d'Asbi",
@@ -2772,7 +2936,8 @@
     "effet": "",
     "montant": "Dégât +8, réussite des sorts +1",
     "icone": "W51002",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "flingue"
   },
   "326": {
     "nom": "Joyau de Sekhmet",
@@ -2840,7 +3005,8 @@
     "montant": "Dégât -4 (PV+10 si Zumi)",
     "condition": { "type": "race", "value": ["Zumi"], "bonus": "PV +10" },
     "icone": "W73002",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "bouclier"
   },
   "333": {
     "nom": "Serre-tête d'Acteur",
@@ -2875,7 +3041,8 @@
     "effet": "",
     "montant": "Dégât +5, si coup critique (1,2,3) : prochains dégâts reçus +5 (1 tour)",
     "icone": "W14604",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "dague"
   },
   "337": {
     "nom": "Hache Verdâtre",
@@ -2883,7 +3050,8 @@
     "effet": "Element : Nature",
     "montant": "Dégât +9, dégât de nature +3",
     "icone": "W23707",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "hache"
   },
   "338": {
     "nom": "Gemme de pétale",
@@ -2918,7 +3086,8 @@
     "effet": "",
     "montant": "Dégât +6",
     "icone": "W51901",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "flingue"
   },
   "342": {
     "nom": "Gunner AV",
@@ -2926,7 +3095,8 @@
     "effet": "Dégât de feu +2",
     "montant": "Dégât +7",
     "icone": "W51902",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "flingue"
   },
   "343": {
     "nom": "Gunner de l'Esprit",
@@ -2934,7 +3104,8 @@
     "effet": "Esprit +2",
     "montant": "Dégât +8",
     "icone": "W51900",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "flingue"
   },
   "344": {
     "nom": "Gunner de parade",
@@ -2942,7 +3113,8 @@
     "effet": "Blocage +2",
     "montant": "Dégât +8",
     "icone": "W51903",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "flingue"
   },
   "345": {
     "nom": "Gunner Pulvérisant",
@@ -2950,7 +3122,8 @@
     "effet": "Blocage cible -2",
     "montant": "Dégât +10",
     "icone": "W51904",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "flingue"
   },
   "346": {
     "nom": "Gunner Asbi",
@@ -2958,7 +3131,8 @@
     "effet": "",
     "montant": "Dégât +10, réussite des sorts +1",
     "icone": "W51900c",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "flingue"
   },
   "347": {
     "nom": "Gunner du Savoir",
@@ -2966,7 +3140,8 @@
     "effet": "",
     "montant": "Dégât +8, Intelligence +1 et Esprit +1",
     "icone": "W51903b",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "flingue"
   },
   "348": {
     "nom": "Plastron de Delphes",
@@ -3022,7 +3197,8 @@
     "effet": "Charisme +1",
     "montant": "Dégât +4",
     "icone": "W31604",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "griffe"
   },
   "354": {
     "nom": "Griffe de Démon",
@@ -3030,7 +3206,8 @@
     "effet": "Charisme +1",
     "montant": "Dégât +6",
     "icone": "W31606",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "griffe"
   },
   "355": {
     "nom": "Bouclier du Sorcier",
@@ -3039,7 +3216,8 @@
     "montant": "Dégât -3, montant des buffs +1",
     "icone": "W70304",
     "access": "D1",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "bouclier"
   },
   "356": {
     "nom": "Chaîne Heldentod",
@@ -3065,7 +3243,8 @@
     "effet": "",
     "montant": "Dégât +5, dégât critique +5",
     "icone": "W30402",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "masse"
   },
   "359": {
     "nom": "Grimoire Heldentod",
@@ -3074,7 +3253,8 @@
     "montant": "Dégât +8 (+1 par objet Heldentod)",
     "condition": { "type": "panoplie", "value": "Heldentod", "bonus": "Dégât +1" },
     "icone": "W61402",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "grimoire"
   },
   "360": {
     "nom": "Gantelet Heldentod",
@@ -3120,7 +3300,8 @@
     "montant": "Dégât +8 (+1 par objet Heldentod)",
     "condition": { "type": "panoplie", "value": "Heldentod", "bonus": "Dégât +1" },
     "icone": "W54308",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "lance"
   },
   "365": {
     "nom": "Plastron Draconique",
@@ -3156,7 +3337,8 @@
     "effet": "Montant des buffs +1",
     "montant": "Dégât +10, PV +10",
     "icone": "W62806",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "instrument"
   },
   "369": {
     "nom": "Lunettes Bling-bling",
@@ -3201,7 +3383,8 @@
     "effet": "Charisme +1",
     "montant": "Dégât +7",
     "icone": "W60203",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bâton"
   },
   "374": {
     "nom": "Bâton Kifétrépeur",
@@ -3209,7 +3392,8 @@
     "effet": "Charisme +2",
     "montant": "Dégât +8",
     "icone": "W60703",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bâton"
   },
   "375": {
     "nom": "Hache Forte",
@@ -3217,7 +3401,8 @@
     "effet": "Force +1",
     "montant": "Dégât +7",
     "icone": "W20104",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "hache"
   },
   "376": {
     "nom": "Hache Puissante",
@@ -3226,7 +3411,8 @@
     "montant": "Dégât +8 (+1 si Guerrier)",
     "condition": { "type": "classe", "value": ["Guerrier"], "bonus": "Dégât +1" },
     "icone": "W20103",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "hache"
   },
   "377": {
     "nom": "Masse de Magie",
@@ -3234,7 +3420,8 @@
     "effet": "Intelligence +1",
     "montant": "Dégât +4",
     "icone": "W30103",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "masse"
   },
   "378": {
     "nom": "Bâton de l'Esprit",
@@ -3242,7 +3429,8 @@
     "effet": "Esprit +2",
     "montant": "Dégât +7",
     "icone": "W60102",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bâton"
   },
   "379": {
     "nom": "Rapière Arc-en-Ciel",
@@ -3250,7 +3438,8 @@
     "effet": "Blocage +1",
     "montant": "Dégât +5",
     "icone": "W11807",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "arc"
   },
   "380": {
     "nom": "Bâton Arc-en-Ciel",
@@ -3258,7 +3447,8 @@
     "effet": "Blocage +1",
     "montant": "Dégât +10",
     "icone": "W64501b",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "arc"
   },
   "381": {
     "nom": "Epée Colossale Perturbante",
@@ -3266,7 +3456,8 @@
     "effet": "",
     "montant": "Dégât +10, Si coup critique (1,2,3) : Force/Intel -2 (2 tours)",
     "icone": "W21005",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "épée colossale"
   },
   "382": {
     "nom": "Epée Colossale Arc-en-Ciel",
@@ -3274,7 +3465,8 @@
     "effet": "Blocage +2",
     "montant": "Dégât +10",
     "icone": "W21207",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "épée colossale"
   },
   "383": {
     "nom": "Pistolet suspect",
@@ -3282,7 +3474,8 @@
     "effet": "Inconnu ?",
     "montant": "Dégât +9",
     "icone": "W54105",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "flingue"
   },
   "384": {
     "nom": "Anneau du Bagarreur",
@@ -3299,7 +3492,8 @@
     "effet": "",
     "montant": "Dégât +10, Si coup critique (1,2,3) : Dexté -4 (2 tours)",
     "icone": "W64803",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "grimoire"
   },
   "386": {
     "nom": "Hache de la Terreur",
@@ -3307,7 +3501,8 @@
     "effet": "",
     "montant": "Dégât +10, Si coup critique (1,2,3) : Esprit -4 (2 tours)",
     "icone": "W20606",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "hache"
   },
   "387": {
     "nom": "Bouclier Solaire",
@@ -3315,7 +3510,8 @@
     "effet": "",
     "montant": "Dégât -5, dégât lumière +3",
     "icone": "W71303",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "bouclier"
   },
   "388": {
     "nom": "Ceinture Anti-magie",
@@ -3341,7 +3537,8 @@
     "effet": "",
     "montant": "Dégât +5, Si coup critique (1,2,3) : Force -4 (2 tours)",
     "icone": "W31903",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "griffe"
   },
   "391": {
     "nom": "Anneau protecteur",
@@ -3358,7 +3555,8 @@
     "effet": "Blocage magique +1",
     "montant": "Dégât +4",
     "icone": "W32401",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "masse"
   },
   "393": {
     "nom": "Griffe de finesse",
@@ -3366,7 +3564,8 @@
     "effet": "Esquive +1",
     "montant": "Dégât +5",
     "icone": "W31503",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "griffe"
   },
   "394": {
     "nom": "Marteau Isolant",
@@ -3374,7 +3573,8 @@
     "effet": "Blocage magique +2",
     "montant": "Dégât +10",
     "icone": "W40304",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "marteau"
   },
   "395": {
     "nom": "Guitare massive",
@@ -3382,7 +3582,8 @@
     "effet": "Blocage physique +2",
     "montant": "Dégât +9",
     "icone": "W63802",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "instrument"
   },
   "396": {
     "nom": "Lunettes Zumis",
@@ -3473,7 +3674,8 @@
     "effet": "Action +",
     "montant": "Dégât +5, Si Blocage/Esquive critique : Coup d'opportunité",
     "icone": "W35106",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "griffe"
   },
   "406": {
     "nom": "Chaussures anti-bruit",
@@ -3559,7 +3761,8 @@
     "effet": "Dextérité +1",
     "montant": "Dégât +6",
     "icone": "W16802",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "dague"
   },
   "415": {
     "nom": "Rapière de Braider",
@@ -3567,7 +3770,8 @@
     "effet": "Dégât critique +5",
     "montant": "Dégât +5",
     "icone": "W16701",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "rapière"
   },
   "416": {
     "nom": "Veste de Braider",
@@ -3584,7 +3788,8 @@
     "effet": "Dégât reçu -3",
     "montant": "Dégât +8",
     "icone": "W20503",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "hache"
   },
   "418": {
     "nom": "Gravité?",
@@ -3601,7 +3806,8 @@
     "montant": "Dégât +4 (+3 Si PV <33%)",
     "condition": { "type": "PV", "value": "3", "bonus": "Dégât +3" },
     "icone": "W31406",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "griffe"
   },
   "420": {
     "nom": "Bâton Brasier",
@@ -3609,7 +3815,8 @@
     "effet": "Element : Glace > Feu",
     "montant": "Dégât +9, dégât de feu +3",
     "icone": "W60501b",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bâton"
   },
   "421": {
     "nom": "Bâton Gemme Sombre",
@@ -3617,7 +3824,8 @@
     "effet": "Element : Foudre > Ténèbres",
     "montant": "Dégât +9, dégât de ténèbres +3",
     "icone": "W60501",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bâton"
   },
   "422": {
     "nom": "Masse de Plasma",
@@ -3625,7 +3833,8 @@
     "effet": "Element : Lumière > Foudre",
     "montant": "Dégât +4, dégât de foudre +2",
     "icone": "W34605b",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "masse"
   },
   "423": {
     "nom": "Thunder Gun",
@@ -3633,7 +3842,8 @@
     "effet": "Element : Foudre",
     "montant": "Dégât +10",
     "icone": "W54108b",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "flingue"
   },
   "424": {
     "nom": "Marteau Sacré",
@@ -3642,7 +3852,8 @@
     "montant": "Dégât +8 (+1 si Templier)",
     "condition": { "type": "classe", "value": ["Templier"], "bonus": "Dégât +1" },
     "icone": "W41201",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "marteau"
   },
   "425": {
     "nom": "Pic du Maëlstrom",
@@ -3650,7 +3861,8 @@
     "effet": "Element : Glace",
     "montant": "Dégât +10, dégât de glace +2",
     "icone": "W53207",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "lance"
   },
   "426": {
     "nom": "Lance Divine",
@@ -3658,7 +3870,8 @@
     "effet": "Element : Lumière",
     "montant": "Dégât +10",
     "icone": "W53102",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "lance"
   },
   "427": {
     "nom": "Epée Gemme Noire",
@@ -3667,7 +3880,8 @@
     "montant": "Dégât +9 , dégât de ténèbres +2 (dégât+1 si Luminary) ",
     "condition": { "type": "classe", "value": ["Luminary"], "bonus": "Dégât +1" },
     "icone": "W25607",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "épée"
   },
   "428": {
     "nom": "Hache Embrasée",
@@ -3675,7 +3889,8 @@
     "effet": "Element : Feu",
     "montant": "Dégât +9, dégât de feu +2",
     "icone": "W20102",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "hache"
   },
   "429": {
     "nom": "Bouclier du Survivant",
@@ -3685,7 +3900,8 @@
     "condition": { "type": "PV", "value": "3", "bonus": "Dégât reçu -3" },
     "icone": "W70206d",
     "access": "A1",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "bouclier"
   },
   "430": {
     "nom": "Lance Quartz d'Automne",
@@ -3693,7 +3909,8 @@
     "effet": "Durée des sorts +1",
     "montant": "Dégât +9",
     "icone": "W54305",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "lance"
   },
   "431": {
     "nom": "Bouclier Quartz d'Automne",
@@ -3702,7 +3919,8 @@
     "montant": "Dégât -3",
     "icone": "W70508",
     "access": "D1",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "bouclier"
   },
   "432": {
     "nom": "Faucille Sanguinaire",
@@ -3710,7 +3928,8 @@
     "effet": "Force -1, Esprit -3",
     "montant": "Dégât +12, si critique (1,2) : Soin PV = dégâts/2 (fixe)",
     "icone": "W55502",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "faucille"
   },
   "433": {
     "nom": "Rapière de la Curie",
@@ -3718,7 +3937,8 @@
     "effet": "Dégât de lumière +2",
     "montant": "Dégât +5",
     "icone": "W11802",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "rapière"
   },
   "434": {
     "nom": "Bâton de la Curie",
@@ -3726,7 +3946,8 @@
     "effet": "Dégât de lumière +3",
     "montant": "Dégât +9",
     "icone": "W60601",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bâton"
   },
   "435": {
     "nom": "Grimoire Sacré de la Curie",
@@ -3734,7 +3955,8 @@
     "effet": "Dégât de lumière +3",
     "montant": "Dégât +10, Soin +3",
     "icone": "W64806",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "grimoire"
   },
   "436": {
     "nom": "Couronne de Richesse",
@@ -3821,7 +4043,8 @@
     "effet": "Esprit -4",
     "montant": "Dégât +15",
     "icone": "W27203b",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "hache"
   },
   "446": {
     "nom": "Ecusson de la Curie - Bronze",
@@ -3913,7 +4136,8 @@
     "effet": "Esprit +2",
     "montant": "Dégât +8",
     "icone": "W60805",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "instrument"
   },
   "456": {
     "nom": "Guitare Ensorcelée",
@@ -3921,7 +4145,8 @@
     "effet": "Soin +3",
     "montant": "Dégât +8, Intelligence +1",
     "icone": "W61004",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "instrument"
   },
   "457": {
     "nom": "Bâton de Grand Mage",
@@ -3929,7 +4154,8 @@
     "effet": "Intelligence +2",
     "montant": "Dégât +8",
     "icone": "W60304",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bâton"
   },
   "458": {
     "nom": "Poignard d'Andredi",
@@ -3937,7 +4163,8 @@
     "effet": "",
     "montant": "Dégât +5, si critique (1,2,3) : Empêche de se soigner pendant 3 tours",
     "icone": "W11105",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "dague"
   },
   "459": {
     "nom": "Pierre de sécurité d'Améthyste",
@@ -3975,7 +4202,8 @@
     "icone": "W71306b",
     "condition": { "type": "panoplie", "value": "Templier Noir", "bonus": "Dégât ténèbres +1" },
     "access": "D2",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "bouclier"
   },
   "463": {
     "nom": "Masse du Templier Noir",
@@ -3984,7 +4212,8 @@
     "montant": "Dégât +6 (+2 par pièce), conversion Lumière => Ténèbres",
     "icone": "W33403b",
     "condition": { "type": "panoplie", "value": "Templier Noir", "bonus": "Dégât +2" },
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "masse"
   },
   "464": {
     "nom": "Esprit errant",
@@ -4083,7 +4312,8 @@
     "effet": "Malédiction du lien",
     "montant": "Dégât +8, Force +1. Et -3 PV par attaque lancée",
     "icone": "W32805",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "griffe"
   },
   "475": {
     "nom": "Arc Titanesque",
@@ -4091,7 +4321,8 @@
     "effet": "Dextérité -5",
     "montant": "Dégât +15  (Si force >=15, Dexté +1)",
     "icone": "W51702",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "arc"
   },
   "476": {
     "nom": "Tenue de Prisonnier",
@@ -4334,7 +4565,8 @@
     "effet": "Blocage physique +2",
     "montant": "Dégât +8",
     "icone": "W51101",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "flingue"
   },
   "503": {
     "nom": "Carapace Sacrificiel",
@@ -4360,7 +4592,8 @@
     "effet": "Charisme -2",
     "montant": "Dégât +5, si coup critique (1,2,3) : Esprit -3 sur 2 tours",
     "icone": "W13502",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "épée"
   },
   "506": {
     "nom": "Pierre de sécurité Fétiche",
@@ -4496,7 +4729,8 @@
     "effet": "Intelligence -1",
     "montant": "Dégât +4, Blocage magique +2",
     "icone": "W35104",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "griffe"
   },
   "522": {
     "nom": "Anneau du défenseur",
@@ -4554,7 +4788,8 @@
     "effet": "Blocage cible -1",
     "montant": "Dégât +9",
     "icone": "W20904",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "épée colossale"
   },
   "529": {
     "nom": "Plastron de Draconite",
@@ -4581,7 +4816,8 @@
     "effet": "",
     "montant": "Dégât +10, Si coup critique (1,2,3) : Force/Intel -2 (2 tours)",
     "icone": "W64501d",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bâton"
   },
   "532": {
     "nom": "Katana de Draconite Pure",
@@ -4589,7 +4825,8 @@
     "effet": "Force +1",
     "montant": "Dégât +11, face aux Dragons : Dégât +25%",
     "icone": "W24007",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "katana"
   },
   "533": {
     "nom": "Glyphe du Démoniste",
@@ -4624,7 +4861,8 @@
     "effet": "Dégât de foudre +2",
     "montant": "Dégât +7",
     "icone": "W60105",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bâton"
   },
   "537": {
     "nom": "Bâton à Induction",
@@ -4632,7 +4870,8 @@
     "effet": "Dégât de foudre +3",
     "montant": "Dégât +10",
     "icone": "W60105b",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bâton"
   },
   "538": {
     "nom": "Croix démoniaque",
@@ -4641,7 +4880,8 @@
     "montant": "Dégât +8 (+1 si Démoniste)",
     "condition": { "type": "classe", "value": ["Démoniste"], "bonus": "Dégât +1" },
     "icone": "W64408",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bâton"
   },
   "539": {
     "nom": "Bâton de soin",
@@ -4649,7 +4889,8 @@
     "effet": "",
     "montant": "Dégât +7, Soin +2",
     "icone": "W60104",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bâton"
   },
   "544": {
     "nom": "Marteau Réversible",
@@ -4657,7 +4898,8 @@
     "effet": "Mode (2 tours min)",
     "montant": "Dégât +7",
     "icone": "W41403",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "marteau"
   },
   "545": {
     "nom": "Epée en Acier renforcé",
@@ -4665,7 +4907,8 @@
     "effet": "Blocage physique +1",
     "montant": "Dégât +5",
     "icone": "W10601",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "épée"
   },
   "546": {
     "nom": "Rapière du Vaillant",
@@ -4673,7 +4916,8 @@
     "effet": "Charisme +1",
     "montant": "Dégât +4",
     "icone": "W11501",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "rapière"
   },
   "547": {
     "nom": "Rapière Distinguée",
@@ -4681,7 +4925,8 @@
     "effet": "Charisme +2",
     "montant": "Dégât +4",
     "icone": "W11502b",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "rapière"
   },
   "548": {
     "nom": "Arc de Valence",
@@ -4689,7 +4934,8 @@
     "effet": "Dextérité +2",
     "montant": "Dégât +8",
     "icone": "W50301",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "arc"
   },
   "549": {
     "nom": "Arc de Valence raffiné",
@@ -4697,7 +4943,8 @@
     "effet": "Dextérité +2",
     "montant": "Dégât +10",
     "icone": "W50304",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "arc"
   },
   "550": {
     "nom": "Faucille Rapide",
@@ -4705,7 +4952,8 @@
     "effet": "Dextérité +2",
     "montant": "Dégât +9",
     "icone": "W55406b",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "faucille"
   },
   "551": {
     "nom": "Faucille Aggravante",
@@ -4713,7 +4961,8 @@
     "effet": "",
     "montant": "Dégât +9, durée des malus +1 tour",
     "icone": "W55503",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "faucille"
   },
   "552": {
     "nom": "Ecaille Exalté",
@@ -4823,7 +5072,8 @@
     "effet": "",
     "montant": "Dégât +9, Si coup critique (1,2,3) : Durée des malus de la cible +1",
     "icone": "W11005",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "lance"
   },
   "564": {
     "nom": "Rapière Aggravante",
@@ -4831,7 +5081,8 @@
     "effet": "",
     "montant": "Dégât +4, Si coup critique (1,2,3) : Durée des malus de la cible +1",
     "icone": "W11706",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "rapière"
   },
   "565": {
     "nom": "Katana Aggravant",
@@ -4839,7 +5090,8 @@
     "effet": "",
     "montant": "Dégât +9, Si coup critique (1,2,3) : Durée des malus de la cible +1",
     "icone": "W25801",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "katana"
   },
   "566": {
     "nom": "Pistolet Aggravant",
@@ -4847,7 +5099,8 @@
     "effet": "",
     "montant": "Dégât +9, Si coup critique (1,2,3) : Durée des malus de la cible +1",
     "icone": "W50902",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "flingue"
   },
   "567": {
     "nom": "Grimoire Aggravant",
@@ -4855,7 +5108,8 @@
     "effet": "",
     "montant": "Dégât +9, Si coup critique (1,2,3) : Durée des malus de la cible +1",
     "icone": "W61805b",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "grimoire"
   },
   "568": {
     "nom": "Lunettes Opaques",
@@ -4984,7 +5238,8 @@
     "montant": "Dégât +8 (+2 si Sage)",
     "condition": { "type": "classe", "value": ["Sage"], "bonus": "Dégât +2" },
     "icone": "W40902",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "marteau"
   },
   "583": {
     "nom": "Marteau du Sage Enchanteur",
@@ -4993,7 +5248,8 @@
     "montant": "Dégât +8 (Montant des buffs+1 si Sage)",
     "condition": { "type": "classe", "value": ["Sage"], "bonus": "Montant des buffs +1" },
     "icone": "W40902b",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "marteau"
   },
   "584": {
     "nom": "Anneau de soin magique",
@@ -5020,7 +5276,8 @@
     "effet": "Malédiction du Lien",
     "montant": "Dégât +9, Soin +5 (-5 PV/soigné)",
     "icone": "W62605",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bâton"
   },
   "587": {
     "nom": "Grimoire de l'Esclave",
@@ -5028,7 +5285,8 @@
     "effet": "Malédiction du Lien",
     "montant": "Dégât +9, Soin +5 (Impossible de se soigner)",
     "icone": "W61805",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "grimoire"
   },
   "588": {
     "nom": "Tenue de Gradé de l'Ordre",
@@ -5071,7 +5329,8 @@
     "effet": "Force +1",
     "montant": "Dégât +7",
     "icone": "W24106",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "katana"
   },
   "593": {
     "nom": "Katana de givre",
@@ -5079,7 +5338,8 @@
     "effet": "Element : Glace",
     "montant": "Dégât +10",
     "icone": "W27601",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "katana"
   },
   "594": {
     "nom": "Charme de Tengri",
@@ -5111,7 +5371,8 @@
     "effet": "Durée des sorts +1 tour",
     "montant": "Dégât +14, chaque niveau <15 : -1 Intel, -0.5 Esprit",
     "icone": "W64508",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bâton"
   },
   "598": {
     "nom": "Volonté de Loju",
@@ -5144,7 +5405,8 @@
     "effet": "",
     "montant": "Dégat +2",
     "icone": "i01404",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "épée"
   },
   "602": {
     "nom": "La Volchance",
@@ -5205,7 +5467,8 @@
     "effet": "Soin +2",
     "montant": "Dégat +5",
     "icone": "W61403",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "grimoire"
   },
   "609": {
     "nom": "Grimoire papillon",
@@ -5213,7 +5476,8 @@
     "effet": "Résistance d'esprit cible -2 ",
     "montant": "Dégat +6, l'effet s'applique aussi pendant les malus.",
     "icone": "W64002",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "grimoire"
   },
   "611": {
     "nom": "Lance technologique",
@@ -5221,7 +5485,8 @@
     "effet": "",
     "montant": "Dégat +7 (Réussite+2 si Zumi) ",
     "icone": "k90017",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "lance"
   },
   "612": {
     "nom": "Lance du dragon métal",
@@ -5229,7 +5494,8 @@
     "effet": "",
     "montant": "Dégat +9, Blocage critique : renvoi le coup (50%)",
     "icone": "k90023",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "lance"
   },
   "613": {
     "nom": "Guide spirituelle",
@@ -5262,7 +5528,8 @@
     "effet": "",
     "montant": "Dégât +4, Blocage -1 pendant 1 tour",
     "icone": "W11304",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "dague"
   },
   "617": {
     "nom": "Dague agile",
@@ -5270,7 +5537,8 @@
     "effet": "Esquive +1",
     "montant": "Dégât +3 (Dextérité +1 si Voleur)",
     "icone": "W11104",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "dague"
   },
   "618": {
     "nom": "Dague magique",
@@ -5278,7 +5546,8 @@
     "effet": "",
     "montant": "Dégât +4, dégat magique +2",
     "icone": "W16602",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "dague"
   },
   "619": {
     "nom": "Dague du héros",
@@ -5286,7 +5555,8 @@
     "effet": "",
     "montant": "Dégât +6, Blocage et esquive de la cible -1",
     "icone": "W14607",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "dague"
   },
   "620": {
     "nom": "Dague de furtivité",
@@ -5294,7 +5564,8 @@
     "effet": "",
     "montant": "Dégât +3. En invisibilité: Chance d'être touché -2",
     "icone": "W14801",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "dague"
   },
   "621": {
     "nom": "Dague de l'esprit",
@@ -5302,7 +5573,8 @@
     "effet": "Esprit +1",
     "montant": "Dégat +3",
     "icone": "W10905",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "dague"
   },
   "622": {
     "nom": "Dague pernicieuse",
@@ -5310,7 +5582,8 @@
     "effet": "Durée des malus +1 tour",
     "montant": "Dégat +3",
     "icone": "W11205",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "dague"
   },
   "623": {
     "nom": "Arc pernicieux",
@@ -5318,7 +5591,8 @@
     "effet": "Durée des malus +1 tour",
     "montant": "Dégat +6",
     "icone": "W50305",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "arc"
   },
   "624": {
     "nom": "Grimoire pernicieux",
@@ -5326,7 +5600,8 @@
     "effet": "Durée des malus +1 tour",
     "montant": "Dégat +6",
     "icone": "W61704",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "grimoire"
   },
   "625": {
     "nom": "Dague abimée",
@@ -5334,7 +5609,8 @@
     "effet": "Réussite -1",
     "montant": "Dégât +4",
     "icone": "W11103a",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "dague"
   },
   "626": {
     "nom": "Epée Abimée",
@@ -5342,7 +5618,8 @@
     "effet": "Blocage -1",
     "montant": "Dégât +5",
     "icone": "W10304a",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "épée"
   },
   "627": {
     "nom": "Bouclier massif",
@@ -5350,7 +5627,8 @@
     "effet": "Dextérité -2",
     "montant": "Dégât -5",
     "icone": "W70704",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "bouclier"
   },
   "628": {
     "nom": "Epée Colossale Abimée",
@@ -5358,7 +5636,8 @@
     "effet": "Blocage physique -2",
     "montant": "Dégât +8",
     "icone": "W21001a",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "épée colossale"
   },
   "629": {
     "nom": "Bâton Abimé",
@@ -5366,7 +5645,8 @@
     "effet": "Blocage magique -2",
     "montant": "Dégât +8",
     "icone": "W62204a",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bâton"
   },
   "630": {
     "nom": "Arc abimé",
@@ -5374,7 +5654,8 @@
     "effet": "Dextérité -3",
     "montant": "Dégat +10",
     "icone": "W50104a",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "arc"
   },
   "631": {
     "nom": "Clé de Scellement",
@@ -5390,7 +5671,8 @@
     "effet": "",
     "montant": "Dégât +6",
     "icone": "gandivaV12",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "flingue"
   },
   "633": {
     "nom": "Lance renforcée",
@@ -5398,7 +5680,8 @@
     "effet": "",
     "montant": "Dégât +6",
     "icone": "W10802",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "lance"
   },
   "634": {
     "nom": "Plastron en Mousserite",
@@ -5424,7 +5707,8 @@
     "effet": "",
     "montant": "Dégât +9, Si coup critique (1,2,3) : Dexté -4 (2 tours)",
     "icone": "W20802",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "épée colossale"
   },
   "637": {
     "nom": "Gourdin en Mousserite",
@@ -5432,7 +5716,8 @@
     "effet": "",
     "montant": "Dégât +4, Si coup critique (1,2,3) : Dexté -3 (2 tours)",
     "icone": "W31003b",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "masse"
   },
   "638": {
     "nom": "Pistolet en Mousserite",
@@ -5440,7 +5725,8 @@
     "effet": "",
     "montant": "Dégât +8, Si coup critique (1,2,3) : Dexté -4 (2 tours)",
     "icone": "W51004",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "flingue"
   },
   "639": {
     "nom": "Bouclier en Mousserite",
@@ -5448,7 +5734,8 @@
     "effet": "Blocage physique +2",
     "montant": "Dégât -3",
     "icone": "W70703c",
-    "type": "arme-2m"
+    "type": "arme-2m",
+    "weaponType": "bouclier"
   },
   "640": {
     "nom": "Griffe en Mousserite",
@@ -5456,7 +5743,8 @@
     "effet": "",
     "montant": "Dégât +4, Si coup critique (1,2,3) : Dexté -3 (2 tours)",
     "icone": "W31304",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "griffe"
   },
   "641": {
     "nom": "Griffe d'Asbi",
@@ -5464,7 +5752,8 @@
     "effet": "",
     "montant": "Dégât +3, réussite des sorts +1",
     "icone": "W31305b",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "griffe"
   },
   "642": {
     "nom": "Griffe de Tuskar",
@@ -5472,6 +5761,7 @@
     "effet": "Force +1",
     "montant": "Dégât +3",
     "icone": "W31401",
-    "type": "arme-1m"
+    "type": "arme-1m",
+    "weaponType": "griffe"
   }
 }

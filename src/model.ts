@@ -1,45 +1,20 @@
 // Use type instead of enum to easily handle types
 
+import { CLASSES, ELEMENTS, RACES, WEAPONS } from "./JDRstore"
+
 // *********************
 // #region Enums types
 // *********************
 
 export type Joueurs = "Victorine" | "Jérémy" | "Florian" | "Hugo" | "Rachel" | "Cyrille"
 
-export type Classes =
-  | "Guerrier"
-  | "Chevalier"
-  | "Templier"
-  | "Chev Dragon"
-  | "Voleur"
-  | "Assassin"
-  | "Danselame"
-  | "Samouraï"
-  | "Chasseur"
-  | "Ingénieur"
-  | "Corsaire"
-  | "Juge"
-  | "Clerc"
-  | "Barde"
-  | "Shaman"
-  | "Sage"
-  | "Magicien"
-  | "Illusionniste"
-  | "Démoniste"
-  | "Luminary"
+export type Classes = (typeof CLASSES)[number]
 
-export type Races = "Humain" | "Ezelin" | "Ursun" | "Zumi" | "Anuran" | "Torturran" | "Drakai" | "Tuskar" | "Ogre"
+export type Races = (typeof RACES)[number]
 
-export type Elements =
-  | "contondant"
-  | "tranchant"
-  | "perçant"
-  | "feu"
-  | "glace"
-  | "foudre"
-  | "nature"
-  | "lumière"
-  | "ténèbres"
+export type Weapons = (typeof WEAPONS)[number]
+
+export type Elements = (typeof ELEMENTS)[number]
 
 export type StatsShort = "force" | "dexté" | "intel" | "charisme" | "esprit"
 
@@ -91,7 +66,7 @@ export interface Perso extends MainElementPerso {
   isArchived: boolean
   joueur: Joueurs | ""
   guardian?: { type: "full" | "partial"; config: MainElementPerso[] }
-  lastUpdate:string
+  lastUpdate: string
 }
 
 export interface Enemy {
@@ -154,8 +129,12 @@ interface BaseEquipment<T extends EquipmentType> {
 }
 
 export type Equipment<T extends EquipmentType = EquipmentType> = T extends "armure"
-  ? BaseEquipment<T> & { armorTypes: ArmorType[] }
-  : BaseEquipment<T> & { armorTypes: undefined }
+  ? BaseEquipment<T> & { armorTypes: ArmorType[]; weaponType: undefined }
+  : T extends "arme-1m"
+    ? BaseEquipment<T> & { armorTypes: undefined; weaponType: Weapons }
+    : T extends "arme-2m"
+      ? BaseEquipment<T> & { armorTypes: undefined; weaponType: Weapons }
+      : BaseEquipment<T> & { armorTypes: undefined; weaponType: undefined }
 
 export interface Skill {
   nom: string

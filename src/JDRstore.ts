@@ -12,12 +12,12 @@ import {
   Skill,
   SkillsAwaken,
   Classes,
+  Weapons,
   Elements,
   Joueurs,
   EnemyGeneric,
   CombatCheatLog,
   Resume,
-  Races,
   EquipmentType,
   ArmorType,
   StatsName,
@@ -82,19 +82,66 @@ export function getData<T>(filename: string, JDR = true): T {
   }
 }
 
-// Enum as variables @TODO Change by const arrays and create types from them
-
-export const races: Races[] = ["Humain", "Ezelin", "Ursun", "Zumi", "Anuran", "Torturran", "Drakai", "Tuskar", "Ogre"]
+// prettier-ignore
+export const RACES = ["Humain", "Ezelin", "Ursun", "Zumi", "Anuran", "Torturran", "Drakai", "Tuskar", "Ogre"] as const
 
 // prettier-ignore
-export const classes : Classes[] = [ "Guerrier", "Chevalier", "Templier", "Chev Dragon", "Voleur", "Assassin", "Danselame", "Samouraï", "Chasseur", "Ingénieur", "Corsaire", "Juge", "Clerc", "Barde", "Shaman", "Sage", "Magicien", "Illusionniste", "Démoniste", "Luminary",];
+export const CLASSES  = [ "Guerrier", "Chevalier", "Templier", "Chev Dragon", "Voleur", "Assassin", "Danselame", "Samouraï", "Chasseur", "Ingénieur", "Corsaire", "Juge", "Clerc", "Barde", "Shaman", "Sage", "Magicien", "Illusionniste", "Démoniste", "Luminary",] as const
 // prettier-ignore
 export const iconsClasses = [ "01", "02", "03", "18", "04", "05", "06", "16", "07", "08", "09", "59", "10", "11", "12", "17", "13", "14", "15", "19",];
 // prettier-ignore
 export const iconsEveil = [ "J009", "J011", "J013", "j043", "J015", "J017", "J019", "j039", "J021", "J023", "J025", "j087", "J027", "J029", "J031", "j041", "J033", "J035", "J037", "j045"];
 
 // prettier-ignore
-export const elements : Elements[] = ["contondant","tranchant", "perçant", "feu", "glace", "foudre", "nature", "lumière", "ténèbres"];
+export const ELEMENTS = ["contondant","tranchant", "perçant", "feu", "glace", "foudre", "nature", "lumière", "ténèbres"] as const
+
+// prettier-ignore
+export const WEAPONS = [ "épée", "hache", "masse", "épée colossale", "griffe", "katana", "flingue", "arc", "lance", "bâton", "grimoire", "instrument", "dague", "rapière", "faucille", "marteau","bouclier"] as const
+
+export const WEAPONS_INFO: Record<Weapons, { hands: 1 | 2; elements: Elements[] }> = {
+  // Contondant
+  masse: { hands: 1, elements: ["contondant"] },
+  griffe: { hands: 1, elements: ["contondant", "perçant"] },
+  bouclier: { hands: 1, elements: ["contondant"] },
+  marteau: { hands: 2, elements: ["contondant"] },
+  bâton: { hands: 2, elements: ["contondant"] },
+  grimoire: { hands: 2, elements: ["contondant"] },
+  instrument: { hands: 2, elements: ["contondant"] },
+  // Tranchant
+  épée: { hands: 1, elements: ["tranchant", "perçant"] },
+  dague: { hands: 1, elements: ["tranchant", "perçant"] },
+  hache: { hands: 2, elements: ["tranchant"] },
+  "épée colossale": { hands: 2, elements: ["tranchant"] },
+  katana: { hands: 2, elements: ["tranchant"] },
+  faucille: { hands: 2, elements: ["tranchant"] },
+  // Perçant
+  rapière: { hands: 1, elements: ["perçant", "tranchant"] },
+  lance: { hands: 2, elements: ["perçant"] },
+  arc: { hands: 2, elements: ["perçant"] },
+  flingue: { hands: 2, elements: ["perçant", "contondant"] },
+}
+export const CLASSES_WEAPONS: Record<Classes, Weapons[]> = {
+  Guerrier: ["hache", "épée"],
+  Chevalier: ["rapière", "épée"],
+  Templier: ["masse", "marteau"],
+  "Chev Dragon": ["lance", "bâton"],
+  Voleur: ["dague", "rapière"],
+  Assassin: ["griffe", "dague"],
+  Danselame: ["rapière", "lance"], // "épée"],
+  Samouraï: ["katana", "épée colossale"], // "lance"],
+  Chasseur: ["arc", "flingue"],
+  Ingénieur: ["flingue", "arc"],
+  Corsaire: ["arc", "dague"], // @TODO Rendre la classe plus "ranger" (du CàC) "flingue"],
+  Juge: ["faucille", "flingue"],
+  Clerc: ["masse", "bâton"],
+  Barde: ["instrument"],
+  Shaman: ["bâton", "griffe"], // @TODO Rendre la classe plus physique # puma (force/dexté) "grimoire"],
+  Sage: ["marteau", "masse"],
+  Magicien: ["bâton", "grimoire"],
+  Illusionniste: ["grimoire", "bâton"],
+  Démoniste: ["grimoire", "bâton"],
+  Luminary: ["épée", "épée colossale"],
+}
 
 export const equipmentsTypes: EquipmentType[] = ["access", "arme-1m", "arme-2m", "armure", "monture"]
 export const armorTypes: ArmorType[] = ["lourd", "leger", "magique"]

@@ -18,12 +18,12 @@ import {
   masterJSON,
   statsJSON,
   cardJSON,
-  classes,
+  CLASSES,
   iconsClasses,
   iconsEveil,
-  elements,
+  ELEMENTS,
   aoeDescInfo,
-  races,
+  RACES,
   iconsArmorTypes,
   armorTypes,
   malusArmorTypes,
@@ -51,6 +51,7 @@ import {
   eqptBonusQuantity,
   splitParenthesisText,
   deleteCookie,
+  monoClassBonus,
 } from "./utils/index.js"
 import { LoggerService } from "./utils/logger.js"
 import { loadState, setupAutoSave } from "./utils/handle-state.js"
@@ -68,9 +69,9 @@ const buttonBuffs = document.querySelector<HTMLButtonElement>("#buttonBuffs")!
 
 console.log(
   "Combo de classes (Tableau X*Y) 20-20 :",
-  classes.map((c1) => ({
+  CLASSES.map((c1) => ({
     classe: c1,
-    nb: classes.map(
+    nb: CLASSES.map(
       (c2) =>
         Object.values(persosJSON).filter(
           (p) => (p.classeP === c1 && p.classeS === c2) || (p.classeP === c2 && p.classeS === c1)
@@ -81,7 +82,7 @@ console.log(
 
 const poids = ["Moyen", "Léger", "Lourd", "Léger", "Moyen", "Moyen", "Léger", "Lourd", "Lourd"]
 
-const elementsCategories = elements.map((element) => {
+const elementsCategories = ELEMENTS.map((element) => {
   // Remove all accents (é,è,ç)
   const labelElement = unformatText(element)
   // Dégât xxx + || Dégât de xxx + ... ?
@@ -149,7 +150,7 @@ const errorEqptE = document.querySelector<HTMLParagraphElement>("#errorEQPT")!
 const raceE = document.querySelector<SelectElement<Races>>("#race")!
 addChangeListener(raceE, (e) => {
   const race = e.target.value
-  document.querySelector<HTMLParagraphElement>(".poids")!.innerText = poids[races.indexOf(race)]
+  document.querySelector<HTMLParagraphElement>(".poids")!.innerText = poids[RACES.indexOf(race)]
   // Verify stats repartition
   statsVerification()
   updateAvailableSkillsList()
@@ -162,14 +163,14 @@ const iconClassesEs = [...document.querySelector(".iconClasses")!.children] as H
 allClassE.forEach((classE, i) => {
   fillSelectOptions(
     classE,
-    ["", ...classes].map((classe) => ({ value: classe, innerText: classe }))
+    ["", ...CLASSES].map((classe) => ({ value: classe, innerText: classe }))
   )
 
   const iconClassE = iconClassesEs[i] as HTMLImageElement
 
   addChangeListener(classE, (e) => {
     const selectedClass = e.target.value
-    const selectedClassID = classes.indexOf(selectedClass)
+    const selectedClassID = CLASSES.indexOf(selectedClass)
     if (selectedClassID === -1) {
       console.log(`${selectedClass} is not a class (in the list)`)
       if (iconClassE) iconClassE.src = ""
@@ -288,7 +289,7 @@ function defineAwaken(classe: Classes | ""): void {
 
   awakenSkillE.classList.add("hide")
 
-  const stuffsName = equipementEs.map((eqptE) => eqptE.selectE.value.toLowerCase())
+  const stuffsName = equipementEs.map((eqptE) => eqptE.inputE.value.toLowerCase())
   const niv = nivE.value
   if (classe === "" || (niv < 10 && !stuffsName.includes("pistolet suspect"))) return
 
@@ -304,7 +305,7 @@ function defineAwaken(classe: Classes | ""): void {
   awakenSkillE.querySelector<HTMLParagraphElement>(".montant")!.innerText =
     `${nbUse} fois par combat : Eveil des compétences : Durée ${nbTurns} tours`
 
-  const classeID = classes.indexOf(classe)
+  const classeID = CLASSES.indexOf(classe)
   awakenSkillE.querySelector<HTMLImageElement>(".icone")!.src =
     `http://voldre.free.fr/Eden/images/skillIcon/${iconsEveil[classeID]}.png`
   awakenSkillE.querySelector<HTMLParagraphElement>(".desc")!.innerText =
@@ -528,8 +529,8 @@ function updateAvailableSkillsList(): void {
     const classeP = classePElement.value
     const classeS = classeSElement.value
 
-    // Look at the First weapon name
-    const weaponName = (document.querySelector(".arme")!.children[0] as HTMLInputElement).value
+    // Look at the 3rd weapon name
+    const thirdWeapon = ([...document.querySelectorAll(".arme")][2].children[0] as HTMLInputElement).value
 
     // Liste des sorts des classes (+ arme) et de race
     const options = Object.values(skillsJSON)
@@ -537,7 +538,7 @@ function updateAvailableSkillsList(): void {
         (skill) =>
           (skill.classe.includes(classeP) ||
             skill.classe.includes(classeS) ||
-            skill.classe.some((mount) => isTextInText(weaponName, mount))) &&
+            skill.classe.some((mount) => isTextInText(thirdWeapon, mount))) &&
           (!skill.race || skill.race === raceE.value)
       )
       .map((skill) => ({ value: skill.nom, innerText: skill.nom }))
@@ -801,7 +802,7 @@ malusEs.forEach((malusE) => {
 
 // Like competenceEs
 type EquipmentE = HTMLElement & {
-  selectE: HTMLSelectElement
+  inputE: HTMLInputElement
   effetE: HTMLInputElement
   montantE: HTMLInputElement
   iconeE: HTMLImageElement
@@ -810,7 +811,7 @@ type EquipmentE = HTMLElement & {
 const equipementEs: EquipmentE[] = ([...document.querySelector(".equipements")!.children] as HTMLElement[]).map(
   (equipementE) =>
     Object.assign(equipementE, {
-      selectE: equipementE.children[0] as HTMLSelectElement,
+      inputE: equipementE.children[0] as HTMLInputElement,
       effetE: equipementE.children[1] as HTMLInputElement,
       montantE: equipementE.children[2] as HTMLInputElement,
       iconeE: equipementE.children[3] as HTMLImageElement,
@@ -820,12 +821,12 @@ const equipementEs: EquipmentE[] = ([...document.querySelector(".equipements")!.
 // Use function to get updated select value
 const getPersoEqptsFromSelects = (): (Equipment | undefined)[] =>
   equipementEs.map((eqptE) =>
-    Object.values(eqptJSON).find((eqpt) => unformatText(eqpt.nom) === unformatText(eqptE.selectE.value))
+    Object.values(eqptJSON).find((eqpt) => unformatText(eqpt.nom) === unformatText(eqptE.inputE.value))
   )
 
 equipementEs.forEach((equipementE) => {
   // Selected eqpt
-  addChangeListener(equipementE.selectE, (e) => {
+  addChangeListener(equipementE.inputE, (e) => {
     const newEqpt = Object.values(eqptJSON).find((eqpt) => unformatText(eqpt.nom) === unformatText(e.target.value))
     insertEqpt(equipementE, newEqpt)
 
@@ -836,7 +837,7 @@ equipementEs.forEach((equipementE) => {
     persoEqpts.forEach((eqpt, index) => {
       const eqptE = equipementEs[index]
       if (eqptE === equipementE) return // Don't update current eqpt again
-      equipementEs[index].selectE.value = eqpt?.nom ?? ""
+      equipementEs[index].inputE.value = eqpt?.nom ?? ""
       insertEqpt(eqptE, eqpt)
     })
     getAllRes()
@@ -867,19 +868,35 @@ function insertEqpt(eqptElement: EquipmentE, selectedEqpt: Equipment | undefined
     eqptElement.effetE.innerText = selectedEqpt.effet
 
     const bonusQuantity = persoData ? eqptBonusQuantity(selectedEqpt, persoEqpts, persoData) : 0
-    const descParts = splitParenthesisText(selectedEqpt.montant)
+    const montantParts = splitParenthesisText(selectedEqpt.montant)
 
     const conditionedDescE =
-      !!bonusQuantity && !!descParts
-        ? createElement("span", `(${descParts[1]})${bonusQuantity > 1 ? ` ×${bonusQuantity}` : ""} `, {
+      !!bonusQuantity && !!montantParts
+        ? createElement("span", `(${montantParts[1]})${bonusQuantity > 1 ? ` ×${bonusQuantity}` : ""} `, {
             style: { color: "goldenrod" },
           })
         : undefined
 
     eqptElement.montantE.innerHTML = "" // Reset
     eqptElement.montantE.append(
-      ...(conditionedDescE ? [descParts![0], conditionedDescE, descParts![2]] : [selectedEqpt.montant])
+      ...(conditionedDescE ? [montantParts![0], conditionedDescE, montantParts![2]] : [selectedEqpt.montant])
     )
+
+    // Monoclass weapon bonus
+    const maxE = persoData
+      ? monoClassBonus(
+          persoData,
+          ([...document.querySelectorAll(".arme")] as EquipmentE[]).map((e) => e.inputE).slice(0, 2)
+        )
+      : undefined
+
+    if (maxE && maxE.weaponE === eqptElement.inputE && maxE.bonus !== 0) {
+      eqptElement.montantE.append(
+        createElement("span", ` (Dégât + ${maxE.bonus}, Soin +${maxE.bonus})`, {
+          style: { color: "lightgreen" },
+        })
+      )
+    }
 
     eqptElement.iconeE.src = `http://voldre.free.fr/Eden/images/items/${selectedEqpt.icone}.png`
     eqptElement.iconeE.title = selectedEqpt.desc
@@ -1106,7 +1123,7 @@ function loadFiche(indexPerso: number): void {
 
   fillSelectOptions(
     classePElement,
-    ["", ...classes]
+    ["", ...CLASSES]
       // Filtre Gardien Eternel
       .filter(
         (c) =>
@@ -1158,8 +1175,8 @@ function loadFiche(indexPerso: number): void {
   onArchive(persoData.isArchived)
 
   // Classes du perso
-  const classePID = classes.indexOf(persoData.classeP)
-  const classeSID = classes.indexOf(persoData.classeS)
+  const classePID = CLASSES.indexOf(persoData.classeP)
+  const classeSID = CLASSES.indexOf(persoData.classeS)
 
   iconClassesEs[0].id = persoData.classeP
   iconClassesEs[0].src = `http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE${iconsClasses[classePID]}.png`
@@ -1178,7 +1195,7 @@ function loadFiche(indexPerso: number): void {
 
   persoEqpts.forEach((eqpt, index) => {
     const eqptE = equipementEs[index]
-    equipementEs[index].selectE.value = eqpt?.nom ?? ""
+    equipementEs[index].inputE.value = eqpt?.nom ?? ""
     insertEqpt(eqptE, eqpt)
   })
 
@@ -1200,7 +1217,7 @@ function loadFiche(indexPerso: number): void {
 
   getItemsInInventory(persoData.inventaire)
 
-  document.querySelector<HTMLParagraphElement>(".poids")!.innerText = poids[races.indexOf(persoData.race)]
+  document.querySelector<HTMLParagraphElement>(".poids")!.innerText = poids[RACES.indexOf(persoData.race)]
 
   argentE.value = persoData.argent
 
@@ -1276,7 +1293,15 @@ function createEquipmentSynthesis(): void {
     .map((category): [string, HTMLDivElement] | undefined => {
       if (!persoData) return undefined
       const eqptsValueList = parseEqptsByRegex(category.regex, persoEqpts, persoData)
-      const eqptsValue = eqptsValueList.reduce(sum, 0)
+
+      const monoClassBonusValue = ["DGT", "S"].some((cat) => cat === category.label)
+        ? monoClassBonus(
+            persoData,
+            ([...document.querySelectorAll(".arme")] as EquipmentE[]).map((e) => e.inputE).slice(0, 2)
+          ).bonus
+        : 0
+
+      const eqptsValue = eqptsValueList.reduce(sum, 0) + monoClassBonusValue
 
       // 01/06/2024 : Get category over the defined limit for accessories (exclude passif)
       accessValues.push({
@@ -1331,7 +1356,7 @@ function createEquipmentSynthesis(): void {
     .filter((v) => ["DGT", "M"].includes(v.label))
     .map((v) => v.value)
     .reduce(sum, 0)
-  const degatElems = accessValues.filter((v) => elements.map((e) => unformatText(e)).includes(v.label))
+  const degatElems = accessValues.filter((v) => ELEMENTS.map((e) => unformatText(e)).includes(v.label))
 
   console.log("Synthesis Access Values", accessValues)
 

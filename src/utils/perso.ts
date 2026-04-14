@@ -1,4 +1,4 @@
-import { combatSkillsJSON, eqptJSON } from "../JDRstore.js"
+import { CLASSES_WEAPONS, combatSkillsJSON, eqptJSON } from "../JDRstore.js"
 import { Enemy, EnemyCombat, Equipment, Perso, PersoCombat, StatsShort } from "../model"
 import { toastNotification } from "./elements.js"
 import { getRandomBetween, isTextInText, sum, unformatText } from "./variables.js"
@@ -269,6 +269,27 @@ export const eqptBonusQuantity = (eqpt: Equipment, eqpts: (Equipment | undefined
     }
   }
   return bonusQuantity
+}
+
+export const monoClassBonus = (
+  persoData: Perso,
+  weaponsE: HTMLInputElement[]
+): {
+  weaponE: HTMLInputElement
+  bonus: number
+} => {
+  if (persoData.classeP === persoData.classeS) {
+    const classesWeapons = CLASSES_WEAPONS[persoData.classeP]
+    const weaponsData = weaponsE.map((weaponE) => ({
+      weaponE,
+      bonus: isTextInText(weaponE.value, classesWeapons[0])
+        ? 2
+        : Number(isTextInText(weaponE.value, classesWeapons[1])),
+    }))
+    // Only display the max of the two
+    return weaponsData.find((e) => e.bonus === Math.max(...weaponsData.map((e2) => e2.bonus)))!
+  }
+  return { weaponE: weaponsE[0], bonus: 0 }
 }
 
 // #region Enemy

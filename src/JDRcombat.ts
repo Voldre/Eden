@@ -4,7 +4,7 @@ import {
   enemyJSON,
   combatSkillsJSON,
   playerJSON,
-  classes,
+  CLASSES,
   iconsClasses,
   cheatJSON,
 } from "./JDRstore.js"
@@ -249,8 +249,8 @@ function loadFiche(): void {
   inputSelector("#esprit", "number").value = perso.esprit
 
   // Classes du perso
-  const classePID = classes.indexOf(perso.classeP)
-  const classeSID = classes.indexOf(perso.classeS)
+  const classePID = CLASSES.indexOf(perso.classeP)
+  const classeSID = CLASSES.indexOf(perso.classeS)
 
   loadSkills(perso.classeP, perso.classeS)
 

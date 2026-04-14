@@ -167,3 +167,35 @@ const getRaceSkills = (
     .flat()
     // Merge objects in once;
     .reduce((acc, obj) => Object.assign(acc, obj), {});
+
+// -------------------------------------------------------
+
+// #region EQPT Weapons types
+
+const assignWeaponType = (eqpts) => {
+  // "épée colossale" first, to don't put it in "épée"
+  // prettier-ignore
+  const WEAPONS = [ "épée colossale","épée", "hache", "masse",  "griffe", "katana", "flingue", "arc", "lance", "bâton", "grimoire", "instrument", "dague", "rapière", "faucille", "marteau","bouclier"]
+
+  const ASSOCIATED_WEAPONS = {
+    bâton: ["Sakura", "sceptre", "croix"],
+    grimoire: ["codex"],
+    flingue: ["fusil", "pistolet", "gunner", "gun", "gandiva"],
+    instrument: ["violon", "guitare", "luth"],
+    faucille: ["faux"],
+    dague: ["poignard"],
+    lance: ["pic"],
+    masse: ["gourdin"],
+  };
+
+  return Object.fromEntries(
+    Object.entries(eqpts).map(([id, eqpt]) => {
+      const weaponType = WEAPONS.find(
+        // Weapon type in name, or an associated weapon name is in name
+        (weapon) => isTextInText(eqpt.nom, weapon) || ASSOCIATED_WEAPONS[weapon]?.some((w) => isTextInText(eqpt.nom, w))
+      );
+
+      return [id, { ...eqpt, weaponType: eqpt.type.includes("arme") ? weaponType : undefined }];
+    })
+  );
+};
