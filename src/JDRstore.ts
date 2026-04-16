@@ -131,11 +131,11 @@ export const CLASSES_WEAPONS: Record<Classes, Weapons[]> = {
   Samouraï: ["katana", "épée colossale"], // "lance"],
   Chasseur: ["arc", "flingue"],
   Ingénieur: ["flingue", "arc"],
-  Corsaire: ["arc", "dague"], // @TODO Rendre la classe plus "ranger" (du CàC) "flingue"],
+  Corsaire: ["arc", "dague"],
   Juge: ["faucille", "flingue"],
   Clerc: ["masse", "bâton"],
   Barde: ["instrument"],
-  Shaman: ["bâton", "griffe"], // @TODO Rendre la classe plus physique # puma (force/dexté) "grimoire"],
+  Shaman: ["bâton", "griffe"], // ?
   Sage: ["marteau", "masse"],
   Magicien: ["bâton", "grimoire"],
   Illusionniste: ["grimoire", "bâton"],

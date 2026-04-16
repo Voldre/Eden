@@ -1687,16 +1687,26 @@ const passifWarning = `<span style="color: lightcoral;">/!\\ Attention : vous ne
 A noter : ces montants ne comptent pas dans la limite des stuffs (voir "Equipements - Infos")`
 
 const labelsDescription = {
-  force:
-    "Permet d'utiliser des attaques lourdes, de pousser, de soulever.<br/>Si la stat est à 1 ou 2 : Impossible de tenir une arme. 0 : Immobile. <br/>Permet de bloquer des coups physiques (Dé/2)<br/><br/> Un blocage à 20 inflige 5 dégâts de plus. <br/>La réussite est limité à 18.<br/>Le blocage est limité à 13.",
-  dexté:
-    "Permet d'utiliser des attaques agiles et rapide, de se mouvoir, courir.<br/>Si la stat est à 1 ou 2 : Impossible de se déplacer. 0 : Immobile. <br/>Permet d'esquiver des attaques mono-cible (Dé/2) et quelques AoE selon le contexte (voir Infos JDR).<br/><br/> Une esquive à 20 inflige 5 dégâts de plus. <br/> La réussite est limité à 18.<br/>L'esquive est limité à 13.",
-  intel:
-    "Permet d'utiliser des attaques magiques, de tester son érudition, sa réflexion.<br/>Si la stat est à 1 ou 2 : Impossible de réfléchir, action directe. 0 : Immobile. <br/>Permet de bloquer des coups magiques (Dé/2)<br/><br/> Un blocage à 20 inflige 5 dégâts de plus.<br/> La réussite est limité à 18.<br/>Le blocage est limité à 13.",
-  charisme:
-    "Permet d'intéragir avec les autres personnes dans différents contexte :<br/> éloquence, persuasion, négociation, menace, distraction, ... <br/><br/> La réussite est limité à 18.",
-  esprit:
-    "Permet d'utiliser des buffs, des débuffs et des invocations.<br/>Si la stat est à 3 ou 4 : Immobile, 1 ou 2 : Evanouissement. 0 : Mort cérébrale. <br/> Permet aussi de résister (Dé/2) à des envoûtements (contrôle d'esprit, peur) <br/><br/> La réussite est limité à 18.<br/>La résistance est limitée à 13.",
+  force: `Permet d'utiliser des attaques lourdes, de pousser, de soulever.
+    <br/>Si la stat est à 1 ou 2 : Impossible de tenir une arme. 0 : Immobile.
+    <br/>Permet de bloquer des coups physiques (Dé/2)<br/>
+    <br/>Un blocage à 20 inflige 5 dégâts de plus.<br/>La réussite est limité à 18.<br/>Le blocage est limité à 13.`,
+  dexté: `Permet d'utiliser des attaques agiles et rapide, de se mouvoir, courir.
+    <br/>Si la stat est à 1 ou 2 : Impossible de se déplacer. 0 : Immobile.
+    <br/>Permet d'esquiver des attaques mono-cible (Dé/2) et quelques AoE selon le contexte (voir Infos JDR).
+    <br/><br/> Une esquive à 20 inflige 5 dégâts de plus. <br/> La réussite est limité à 18.<br/>L'esquive est limité à 13.`,
+  intel: `Permet d'utiliser des attaques magiques, de tester son érudition, sa réflexion.
+    <br/>Si la stat est à 1 ou 2 : Impossible de réfléchir, action directe. 0 : Immobile.
+    <br/>Permet de bloquer des coups magiques (Dé/2)<br/>
+    <br/> Un blocage à 20 inflige 5 dégâts de plus.<br/> La réussite est limité à 18.<br/>Le blocage est limité à 13.`,
+  charisme: `Permet d'intéragir avec les autres personnes dans différents contexte :
+    <br/> éloquence, persuasion, négociation, menace, distraction, ...
+    <br/><br/> La réussite est limité à 18.`,
+  esprit: `Permet d'utiliser des buffs, des débuffs et des invocations.
+    <br/>L'Esprit est la statistique la plus polyvalente et partagée par l'ensemble des classes (Facilite le gameplay inter-classe).
+    <br/>Si la stat est à 3 ou 4 : Immobile, 1 ou 2 : Evanouissement. 0 : Mort cérébrale.
+    <br/> Permet aussi de résister (Dé/2) à des envoûtements (contrôle d'esprit, peur)<br/>
+    <br/>La réussite est limité à 18.<br/>La résistance est limitée à 13.`,
   niv: "Augmente automatiquement tous les 100 points d'expériences du Niveau 1 à 5, puis tous les 150 de 6 à 10, puis 200.<br/> Tous les niveaux paire (2,4,6,8), vous obtenez une compétence.<br/> Au Niveau 5 vous avez +1 en Esprit.<br/> Au Niveau 10 et 15, c'est +1 où vous voulez.",
   pv: "Statistique des PV, augmente de 5 par niveau.",
   stress:
@@ -1787,7 +1797,7 @@ infoStatsE.addEventListener("click", () => {
   if (60 - sumStats > 1) {
     const classWithPointsToChoose = createElement(
       "p",
-      "L'ingénieur et le Chevalier Dragon ont chcaun 1 point en plus à répartir"
+      "L'ingénieur et le Chevalier Dragon ont chacun 1 point en plus à répartir"
     )
     globalE.append(classWithPointsToChoose)
   }

@@ -23,7 +23,7 @@ const classesDesc = [
   "Un samouraï ne fait confiance qu’à son katana. Au bout d’années d’entraînement, même le plus lourd des katanas semble léger comme une plume. Leur code d'honneur est sans faille. Ils cherchent en permanence leur voie. Attaque beucoup à mi-distance. <br/><b>Contrainte : Croit et applique le code d'honneur des Samouraïs : Honnête, Courageux, Respectueux, Loyal : Servir une Cause pour Protéger.</b>",
   "Les chasseurs utilisent leurs compétences de tir et leurs félins pour immobiliser leurs ennemis à distance, avant de déclencher des tirs mortels. Peuvent poser des pièges",
   "Les ingénieurs aiment utiliser des explosifs et autres machines pour prouver l’utilité de la technologie au combat. Ils peuvent crafter différents objets et se mécaniser. <br/><b>Contrainte : Être intéressé par la technologie.</b>",
-  "Les corsaires étudient attentivement l’ennemi pour repérer ses faiblesses et les éventuelles ouvertures avant d'attaquer à distance. Attaques en rafale à distance.",
+  "Les corsaires sont rapides et agiles, ils s'adaptent à tout environnement et étudient l’ennemi pour repérer ses faiblesses. Expert d'attaque à distance, mais peuvent être au CàC.",
   "les juges sont des pourfendeurs se battant avec une faux. Ils combattent à la fois au corps à corps et à distance et utilise la peur pour entraver leurs ennemis. <br/><b>Contrainte : Servir une cause (à choisir), avec pour engagement de devoir Tuer/Condamner.</b>",
   "Les clercs invoquent le pouvoir divin pour soigner les blessures et protéger les alliés. Ce sont des fervents de l'église de la Curie Métérole, ils sont généralement missionnés par le pape.",
   "Les bardes sont des artistes qui utilisent les rimes, les sons et les ballades pour influer sur l’ambiance d’une bataille. Très doué pour soutenir et soigner les alliés, ils se complètent avec les danselames.",
@@ -371,8 +371,24 @@ const labelsDescription = {
   //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."
   "coup-allié":
     "Lorsqu'on décide de se prendre un coup par un allié (joueur, familier), comme pour un blocage sur un dé 20 : le joueur prend les dégâts divisés par 2 et sans armure.",
-  status:
-    "Un status est un malus d'altération d'état qui est non annulable. Autrement dit, les sorts qui retire des malus comme \"Prévention\" ne fonctionnent pas.<br/><br/>Ils peuvent être retiré à chaque tour en suivant ce calcul pour la stat définie :<ul><li>Tour 1 (lorsqu'on subit le sort) : Stat/2,</li><li> Tour 2 : Stat*0.75,</li><li> Tour 3 et + : Stat</li></ul>Une nouvelle tentative (pour annuler) est possible si la personne est attaquée, le jet de dé change selon l'altération.<br/>Voici les trois altérations d'états qui existent :<br/><ul><li>Hypnose (Esprit) : Si frappé : Tentative égale au montant de la stat pour le Tour X (réussite +1 après chaque reçu, ne compte que sur le tour actuel).</li><li>Endormissement/Assomé (Esprit/Force) : Si frappé : Tentative égale à 17. Si sort d'esprit : Tentative égale à l'esprit. (-2 si 1er tour).</li><li>Entrave (Force) : Si frappé <b>par un allié en Mono</b> : Tentative égale à 17.</li></ul>A noter : L'énervement des ennemis (leur blessure) augmente leur <b>résistance d'esprit</b> face aux altérations d'Esprit (jusqu'à atteindre leur stat d'Esprit)<br/>Il n'est pas possible de remetre un statut déjà actif (refresh).",
+  status: `Un status est un malus d'altération d'état qui est non annulable. Autrement dit, les sorts qui retire des malus comme "Prévention" ne fonctionnent pas.
+    <br/>Voici les altérations d'états qui existent (+ la Stat d'annulation) :
+    <ul><li>Hypnose (Esprit) : Le lanceur contrôle la cible.</li>
+    <li>Endormissement/Assomé (Esprit/Force) : La cible ne peut plus agir.</li>
+    <li>Entrave (Force) : La cible ne peut plus bouger, Esquive -5.</li>
+    </ul>Ces altérations peuvent être retirées à chaque tour en suivant ce calcul pour la stat définie :
+    <ul>
+    <li>Tour 1 (lorsqu'on subit le sort) : Stat/2,</li>
+    <li>Tour 2 : Stat*0.75,</li>
+    <li>Tour 3 et + : Stat</li>
+    </ul>
+    Une nouvelle tentative (pour retirer l'altération) est possible si la personne est attaquée, le jet de dé change selon l'altération :
+    <ul>
+    <li>Hypnose : Si frappé : Tentative égale au montant de la stat pour le Tour X (réussite +1 après chaque coup reçu, ne compte que sur le tour actuel).</li>
+    <li>Endormissement/Assomé : - Si frappé (hors esprit) : Tentative égale à 17 (-2 si 1er tour). - Si frappé (esprit) : Tentative égale à la Stat d'esprit (-2 si 1er tour).</li>
+    <li>Entrave : Si aidé <b>par un allié en Mono</b> : Tentative égale à 17.</li>
+    </ul>A noter : L'énervement des ennemis (leur blessure) augmente leur <b>résistance d'esprit</b> face aux altérations d'Esprit (jusqu'à atteindre leur stat d'Esprit)
+    <br/>Il n'est pas possible de remetre un statut déjà actif (refresh).`,
   familier:
     "Il est possible d'invoquer jusqu'à 2 familiers simultanément, toutes sources confondues (compétences, équipements). Ils agissent pendant le tour du joueur comme un personnage (attaque, blocage, ...).",
   armure:

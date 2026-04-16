@@ -23,8 +23,8 @@
     {
       "Classe": "Templier",
       "Force": 7,
-      "Dextérité": 5,
-      "Intelligence": 6,
+      "Dextérité": 4,
+      "Intelligence": 7,
       "Charisme": 6,
       "Esprit": 6,
       "PV": 60,
@@ -94,18 +94,18 @@
       "Classe": "Ingénieur",
       "Force": 5,
       "Dextérité": 7,
-      "Intelligence": 5,
+      "Intelligence": 6,
       "Charisme": 5,
-      "Esprit": 7,
+      "Esprit": 6,
       "PV": 50,
       "armure": "leger"
     },
     {
       "Classe": "Corsaire",
-      "Force": 5,
+      "Force": 6,
       "Dextérité": 8,
       "Intelligence": 4,
-      "Charisme": 7,
+      "Charisme": 6,
       "Esprit": 6,
       "PV": 45,
       "armure": "leger"
@@ -115,8 +115,8 @@
       "Force": 7,
       "Dextérité": 7,
       "Intelligence": 4,
-      "Charisme": 6,
-      "Esprit": 6,
+      "Charisme": 5,
+      "Esprit": 7,
       "PV": 50,
       "armure": "leger"
     },
@@ -142,10 +142,10 @@
     },
     {
       "Classe": "Shaman",
-      "Force": 4,
+      "Force": 5,
       "Dextérité": 4,
       "Intelligence": 8,
-      "Charisme": 6,
+      "Charisme": 5,
       "Esprit": 8,
       "PV": 40,
       "armure": "magique"

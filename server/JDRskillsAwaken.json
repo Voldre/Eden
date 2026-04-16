@@ -164,7 +164,7 @@
   "47": {
     "nom": "Totem Gracieux",
     "desc": "Invoque un familier Totem : 30 PV, Force : 9, Dexté : 13, Intel/Esprit : 15. - Mode Soin : Ne peut pas bouger / se protéger, 0 jet de dé. - Mode Soutien : peut bouger et bloquer, 2 sorts : 1) Renforcement : +3 Force ou +3 Intel sur la cible : 3 tours (intel) , 2) Eclair : 1D8+3 (intel)",
-    "montant": "(jusqu'à coupure magique), Mode Soin : Soin 4 PV par tour. - Mode Soutien : attaque/bloque"
+    "montant": "(jusqu'à coupure magique), Mode Soin : Soin 4 PV (AoE) par tour. - Mode Soutien : attaque/bloque"
   },
   "48": {
     "nom": "Puma Noir",

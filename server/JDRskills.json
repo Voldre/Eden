@@ -3,7 +3,7 @@
     "nom": "Charge du Guerrier",
     "desc": "Fonce sur la cible et peut l'étourdir (malus de réussite) si coup critique.",
     "effet": "Dégât",
-    "montant": "1D10+2, si critique : réussite cible -4 (2 tours)",
+    "montant": "1D10+2, si critique : ennemi réussite -4 (2 tours)",
     "icone": "E0280",
     "stat": "Force",
     "classe": ["Guerrier", "Chevalier", "Templier", "Chev Dragon"]
@@ -73,11 +73,11 @@
   },
   "8": {
     "nom": "Bouclier de Lumière",
-    "desc": "Réduit les dégâts reçu de tout le monde",
+    "desc": "Invoque un bouclier qui réduit les dégâts reçu de tout le monde",
     "effet": "Buff AoE",
-    "montant": "1D4 (min 2) pendant 3 tours",
+    "montant": "Dégât reçu - 1D4 (min 2) pendant 3 tours",
     "icone": "E0309",
-    "stat": "Esprit",
+    "stat": "Intelligence",
     "classe": ["Templier"]
   },
   "9": {
@@ -163,18 +163,18 @@
   },
   "26": {
     "nom": "Coupe Asura",
-    "desc": "Envoi une tranche sur plusieurs mètres, peut toucher les ennemis larges 2 fois. Pose sur l'ennemi une marque Asura.",
+    "desc": "Envoi une tranche sur plusieurs mètres, peut toucher les ennemis larges 2 fois. Pose sur l'ennemi la marque Asura.",
     "effet": "Dégât Malus AoE L-",
-    "montant": "1D8+1 + (1D8+1), marque Asura (3 tours max)",
+    "montant": "1D8+1 + (Large +1D6), pose la marque Asura (2 tours max, ou fin Aura)",
     "icone": "E0481",
     "stat": "Force",
     "classe": ["Samouraï"]
   },
   "27": {
     "nom": "Eclair unique",
-    "desc": "Tranche avec un coup d'éclair, un second éclair touche si l'ennemi à subi la Coupe Asura",
+    "desc": "Tranche avec un coup d'éclair, un second éclair touche si l'ennemi est marqué par Asura",
     "effet": "Dégât",
-    "montant": "1D8+2 + (1D10)",
+    "montant": "1D8+2 (Si Asura +1D10, et si Aura : Bloc/Esq -1)",
     "icone": "E0480",
     "stat": "Force",
     "classe": ["Samouraï"]
@@ -235,12 +235,13 @@
   },
   "34": {
     "nom": "Robotisation",
-    "desc": "Vous transforme en Guerrier Méca capable d'utiliser des attaques technologiques",
+    "desc": "Vous transforme en Guerrier Méca capable d'utiliser des attaques technologiques (Cooldown - 1 tour)",
     "effet": "Transformation",
     "montant": "Action Instantanée. Réduit les dégâts reçu de 1D4 (min 2), Dextérité -1, dure 4 tours",
     "icone": "E0083",
     "stat": "Esprit",
-    "classe": ["Ingénieur"]
+    "classe": ["Ingénieur"],
+    "cooldown": 1
   },
   "35": {
     "nom": "Bombe à Huile",
@@ -262,25 +263,25 @@
   },
   "37": {
     "nom": "Saut d'esquive",
-    "desc": "Fait bondir en arrière et tir sur l'ennemi. Remplace l'esquive par une attaque (elle-même blocable/esquivable avec malus).",
+    "desc": "Fait bondir en arrière et attaque l'ennemi. Remplace l'esquive par une attaque (elle-même blocable/esquivable avec malus).",
     "effet": "Esquive Dégât",
-    "montant": "3 tentatives par combat : remplace l'esquive par un tir 1D6 (blocable)",
+    "montant": "3 tentatives par combat : remplace l'esquive par une attaque 1D6 (blocable, Bloc-1 si CàC)",
     "icone": "E0087",
     "stat": "Dextérité",
     "classe": ["Corsaire"]
   },
   "38": {
-    "nom": "Flèche Terrorisante",
-    "desc": "Le tir effraye l'ennemi et le déconcentre, réduit la chance d'être ciblé",
+    "nom": "Attaque Terrorisante",
+    "desc": "L'attaque effraye l'ennemi et le déconcentre",
     "effet": "Dégât Malus",
-    "montant": "1D6+1 : Esquive -2 et réussite des sorts -3 (pendant 2 tours)",
+    "montant": "1D6+1 : Esquive -2 (Dist: Rés. esprit -1 | CàC: Dégât +3) (pendant 2 tours)",
     "icone": "E0090",
     "stat": "Dextérité",
     "classe": ["Corsaire"]
   },
   "39": {
     "nom": "Sérénité",
-    "desc": "Réduit les dégâts et augmente la dextérité",
+    "desc": "Se concentre et réduit les dégâts et augmente la dextérité",
     "effet": "Buff",
     "montant": "Dextérité +2, Dégât subi -1D4 (min 2) pendant 3 tours",
     "icone": "E0091",
@@ -338,7 +339,7 @@
     "effet": "Buff AoE",
     "montant": "Dégât physique ou magique +1D4 (min 2) +1 pendant 3 tours",
     "icone": "E0105",
-    "stat": "Esprit",
+    "stat": "Charisme",
     "classe": ["Barde"]
   },
   "46": {
@@ -361,9 +362,9 @@
   },
   "48": {
     "nom": "Puma Noir",
-    "desc": "Action Instantanée (Cooldown 3 tours après transfo). Vous transforme en Puma Noir. Impossible de jeter des sorts magiques (Intel/Esprit). Nouveaux sorts : Saignement : 1D8 puis 3 pendant 3 tours (Force). Triple Griffe : 3D6 (Dextérité)",
+    "desc": "Action Instantanée (Cooldown 3 tours après transfo), utilisable sous silence (Esprit/2). Impossible de jeter des sorts magiques (Intel/Esprit). \nNouveaux sorts : Triple Griffe : 3D6 (Dexté), Saignement : 1D6+2 : Esquive cible -1 (Dexté)",
     "effet": "Transformation",
-    "montant": "Dégât +4 (+1/niveau, max 8), 0 dégât stuff. Force+2, Dexté+2 pendant 1D4 (min 2) +1 tours (annulable)",
+    "montant": "Dégât +4 (+1/niveau, max 8), 0 arme. Dexté+4 pendant 1D4 (min 2) +1 tours (annulable)",
     "icone": "E0271",
     "stat": "Esprit",
     "classe": ["Shaman"],
@@ -373,7 +374,7 @@
     "nom": "Bombe Incendiaire",
     "desc": "Lance une boule de feu sur l'ennemi et peut l'étourdir (malus de réussite) si coup critique",
     "effet": "Dégât",
-    "montant": "1D10+2, si critique : réussite cible -4 (2 tours)",
+    "montant": "1D10+2, si critique : ennemi réussite -4 (2 tours)",
     "icone": "E0021",
     "stat": "Intelligence",
     "classe": ["Magicien", "Illusionniste", "Démoniste", "Luminary"]
@@ -472,9 +473,9 @@
     "nom": "Prière Divine",
     "desc": "Action Instantanée. Soigne l'utilisateur et boost les prochains dégâts de lumières : obligé de faire de la lumière.",
     "effet": "Buff et Soin",
-    "montant": "Soin 1D8 +5. Prochain dégât lumière +1D6 +2 (2 tours max) - Cooldown 2 tours",
+    "montant": "Soin 1D8 +4. Prochain dégât lumière +1D6 +2 (2 tours max) - Cooldown 2 tours",
     "icone": "E0610",
-    "stat": "Esprit",
+    "stat": "Intelligence",
     "classe": ["Luminary"],
     "cooldown": 2
   },
@@ -563,7 +564,7 @@
     "nom": "Magie Extrême",
     "desc": "Renforce la prochaine attaque magique réussie du lanceur",
     "effet": "Buff",
-    "montant": "Prochain dégât +1D6 +4, réussite +1 (3 tours max)",
+    "montant": "Prochain dégât +1D6 +4, Bloc/Esq cible -1 (3 tours max)",
     "icone": "E0430",
     "stat": "Esprit",
     "classe": ["Magicien"]
@@ -579,9 +580,9 @@
   },
   "73": {
     "nom": "Purgatoire",
-    "desc": "Envoi une tranche de flamme sur plusieurs mètres (blocage physique), peut toucher les ennemis larges 2 fois. Dégât en plus si l'ennemi à subi la Coupe Asura",
+    "desc": "Si Aura du Samouraï: Envoi une tranche de flamme sur plusieurs mètres (blocage physique), peut toucher les ennemis larges 2 fois. Dégât en plus si l'ennemi à subi la Coupe Asura",
     "effet": "Dégât AoE L-",
-    "montant": "1D8+1 (Asura +4) (Large +1D8+1)",
+    "montant": "Si Aura: 1D10+1 (Si Asura +1D6 Bloc/Esq -1) (Large +1D6)",
     "icone": "E0462",
     "stat": "Esprit",
     "classe": ["Samouraï"]
@@ -615,7 +616,7 @@
   },
   "77": {
     "nom": "Hommage",
-    "desc": "Sacrifie le familier. Soigne selon ses PV et renforce",
+    "desc": "Sacrifie son familier. Soigne selon ses PV et renforce",
     "effet": "Buff et Soin",
     "montant": "Soin de 2 à 25 PV, réduit les dégâts reçus de 4 pendant 3 tours",
     "icone": "E0137",
@@ -672,7 +673,7 @@
     "nom": "Foi du Temple",
     "desc": "Réduit les dégâts reçus et augmente l'esprit",
     "effet": "Buff",
-    "montant": "Esprit+2, Dégât subi -1D4 (min 2) pendant 3 tours",
+    "montant": "Esprit+2, Dégât subi -1D4 (min 2), (Si Aura: Soin 1D6 +2) pendant 3 tours",
     "icone": "E0483",
     "stat": "Esprit",
     "classe": ["Samouraï"]
@@ -744,7 +745,7 @@
     "nom": "Danse de la guerrière",
     "desc": "Enchaîne des pas de danse pour infliger un prochain coup puissant",
     "effet": "Buff",
-    "montant": "Prochain dégât +1D6+4, réussite +1 (3 tours max)",
+    "montant": "Prochain dégât +1D6 +4, Bloc/Esq cible -1 (3 tours max)",
     "icone": "E0343",
     "stat": "Charisme",
     "classe": ["Danselame"]
@@ -760,7 +761,7 @@
   },
   "93": {
     "nom": "Aura : Enchantement Elementaire",
-    "desc": "Le sage utilise son expertise des enchantements pour renforcer la résistance et les dégâts du groupe sur un élément.",
+    "desc": "Le sage utilise son expertise des enchantements pour renforcer la défense et les dégâts du groupe sur un élément.",
     "effet": "Buff AoE",
     "montant": "Pour l'élément magique choisi : Dégât subi (-) et dégât infligé (+) : 1D4 (min 2) +1 pendant 3 tours",
     "icone": "E0555",
@@ -807,7 +808,7 @@
     "nom": "Perforation",
     "desc": "Tir une flèche qui perfore l'armure de l'ennemi et le déconcentre.",
     "effet": "Dégât Malus",
-    "montant": "1D6+1 : Blocage -2 et réussite des sorts -2 (pendant 2 tours)",
+    "montant": "1D6+2 : Blocage -2 (pendant 2 tours)",
     "icone": "E0012",
     "stat": "Dextérité",
     "classe": ["Chasseur", "Ingénieur", "Corsaire", "Juge"]
@@ -863,7 +864,7 @@
     "effet": "Soin",
     "montant": "2D6+9 sur soi",
     "icone": "E0079",
-    "stat": "Esprit",
+    "stat": "Intelligence",
     "classe": ["Ingénieur"]
   },
   "105": {
@@ -922,11 +923,11 @@
   },
   "111": {
     "nom": "A la Charge !",
-    "desc": "Renforce la prochaine attaque physique du lanceur, diminue la précision",
+    "desc": "Renforce la prochaine attaque physique du lanceur",
     "effet": "Buff",
-    "montant": "Prochain dégât +1D6+6, réussite -1 (3 tours max)",
+    "montant": "Prochain dégât +1D6 +4, Bloc/Esq cible -1 (3 tours max)",
     "icone": "E0088",
-    "stat": "Esprit",
+    "stat": "Force",
     "classe": ["Corsaire"]
   },
   "112": {
@@ -975,12 +976,12 @@
     "classe": ["Luminary"]
   },
   "117": {
-    "nom": "Frénésie",
-    "desc": "Action Instantanée. La détermination du Samouraï permet au lanceur de dilater ses veines, le mettant dans un été frénétique de Berserker.",
-    "effet": "Buff Malus",
-    "montant": "A chaque tour (4 max) : Dégât (+) et PV (-) 1D6+6, réussite des sorts -1",
-    "icone": "E0779",
-    "stat": "Force",
+    "nom": "Garde rapprochée",
+    "desc": "Bondit devant son camarade pour le protéger. La protection réussie selon le type d'attaque : Physique > Force, Magique : Intelligence.",
+    "effet": "Blocage",
+    "montant": "3 tentatives par combat : protège un allié (Physique > Force, Magique > Intel)",
+    "icone": "E0328",
+    "stat": "Force/Intel",
     "classe": ["Samouraï"]
   },
   "118": {
@@ -996,7 +997,7 @@
     "nom": "Encouragement Musical",
     "desc": "(effet montant des buffs /2). Incante et réduit les dégâts subis, immunise à l'endormissement et augmente la résistance mentale (Blocage Esprit/2)",
     "effet": "Buff AoE",
-    "montant": "Incantation 2-tours (1 dé) : Dégât subi -1D4-2, 0 dodo, +2 rés esprit, pour 4 tours",
+    "montant": "Incantation 2-tours (1 dé) : Dégât subi -1D4-2, 0 dodo, +2 rés. esprit, pour 4 tours",
     "icone": "E0406",
     "stat": "Charisme",
     "classe": ["Barde"]
@@ -1070,7 +1071,7 @@
     "effet": "Blocage",
     "montant": "1 fois par combat : Mono : Blocage, AoE : Blocage -3, dégât * 2.5 (-10) sur le tour",
     "icone": "j058b",
-    "stat": "Esprit",
+    "stat": "",
     "classe": ["Guerrier"]
   },
   "128": {
@@ -1093,7 +1094,7 @@
   },
   "130": {
     "nom": "Vague Foudroyante",
-    "desc": "(MASSE OU MARTEAU REQUIS) Inflige des dégâts de contondant en fracassant le sol. Les ennemis touchés sont destabilisés.",
+    "desc": "(ARME CONTONDANTE REQUISE) Inflige des dégâts de contondant en fracassant le sol. Les ennemis touchés sont destabilisés.",
     "effet": "Dégât Malus AoE R-",
     "montant": "1D6, Blocage -2 pour 3 tours",
     "icone": "E0310",
@@ -1148,12 +1149,13 @@
   },
   "136": {
     "nom": "Aura du Samouraï",
-    "desc": "Le samouraï concentre toute son énergie pour insuffler de la puissance à tout ses camarades (dont lui-même)",
-    "effet": "Buff AoE",
-    "montant": "Dégât +1D4+3 pendant 1 tour (lanceur inclus)",
-    "icone": "E0484",
+    "desc": "Le Samouraï concentre son énergie, son Ki, pour booster son corps et accéder à de nouveaux pouvoirs.",
+    "effet": "Buff",
+    "montant": "Action Instantanée. marque Asura persistante, Fatigue +20, dure 4 tours",
+    "icone": "E0058",
     "stat": "Esprit",
-    "classe": ["Samouraï"]
+    "classe": ["Samouraï"],
+    "cooldown": 2
   },
   "137": {
     "nom": "Instinct de Survie",
@@ -1276,7 +1278,7 @@
     "race": "Humain"
   },
   "150": {
-    "nom": "Protection de Lumière",
+    "nom": "@TODO Protection de Lumière",
     "desc": "La magie de lumière entoure l'utilisateur qui voit ses compétences physiques convertis en lumière.",
     "effet": "Buff Conversion",
     "montant": "Dégât reçu -1D4 (min 2), (Physique > Lumière) Dégât lumière +3 pendant 3 tours",
@@ -1296,7 +1298,7 @@
     "race": "Humain"
   },
   "152": {
-    "nom": "Pointe aiguisée",
+    "nom": "@TODO Pointe aiguisée",
     "desc": "La précision du porteur est accrue et l'impact de ses percés est amélioré, tel la maîtrise de l'aiguille.",
     "effet": "Buff",
     "montant": "Dégât perçant +1D4 (min 2) +4 pendant 3 tours",
@@ -1331,7 +1333,7 @@
     "effet": "Buff et Soin",
     "montant": "Augmente la durée des buffs actifs de la cible de 1 tour (non re-augmentable), Soin 1D6+2",
     "icone": "E0821",
-    "stat": "Esprit",
+    "stat": "Intelligence",
     "classe": ["Clerc", "Barde", "Shaman", "Sage"],
     "race": "Ezelin"
   },
@@ -1339,7 +1341,7 @@
     "nom": "Esprit tourmenté",
     "desc": "Inflige des dégâts de ténèbres à l'ennemi par l'intermédiaire de son esprit, tel les anciens magiciens d'Amur",
     "effet": "Dégât",
-    "montant": "1D10+2, si critique : réussite cible -4 (2 tours)",
+    "montant": "1D10+2, si critique : ennemi réussite -4 (2 tours)",
     "icone": "E0453",
     "stat": "Esprit",
     "classe": ["Magicien", "Illusionniste", "Démoniste", "Luminary"],
@@ -1356,7 +1358,7 @@
     "race": "Zumi"
   },
   "158": {
-    "nom": "Thunder Set",
+    "nom": "@TODO Thunder Set",
     "desc": "La tenue technologique Zumi rend rapide comme l'éclair et électrifie les attaques !",
     "effet": "Buff Conversion",
     "montant": "Dextérité +2, (Physique > Foudre) Dégât foudre +3 pendant 3 tours",
@@ -1396,7 +1398,7 @@
     "race": "Zumi"
   },
   "162": {
-    "nom": "Marquage Glyphique",
+    "nom": "@TODO Marquage Glyphique",
     "desc": "Les Ursuns utilisent leurs artisanats pour imprégner leur coup d'un puissant glyphe de fracas.",
     "effet": "Buff",
     "montant": "Dégât contondant +1D4 (min 2) +4 pendant 3 tours",
@@ -1426,11 +1428,12 @@
     "race": "Ursun"
   },
   "165": {
-    "nom": "",
-    "effet": "",
-    "montant": "",
-    "icone": "",
-    "stat": "",
+    "nom": "Glyphe de puissance",
+    "desc": "Les Ursuns utilisent leurs artisanats pour imprégner leurs alliés d'un puissant glyphe d'attaque.",
+    "effet": "Buff AoE",
+    "montant": "Dégât +1D4+3 pendant 1 tour (lanceur inclus)",
+    "icone": "E0523",
+    "stat": "Esprit",
     "classe": ["Clerc", "Barde", "Shaman", "Sage"],
     "race": "Ursun"
   },
@@ -1440,7 +1443,7 @@
     "effet": "Buff et Soin",
     "montant": "Soin 1D6+8 sur soi, -1 malus",
     "icone": "E0534",
-    "stat": "Esprit",
+    "stat": "Intelligence",
     "classe": ["Magicien", "Illusionniste", "Démoniste", "Luminary"],
     "race": "Ursun"
   },
@@ -1485,7 +1488,7 @@
     "race": "Anuran"
   },
   "171": {
-    "nom": "Bouclier de Glace",
+    "nom": "@TODO Bouclier de Glace",
     "desc": "La magie de glace entoure l'utilisateur qui voit ses compétences physiques convertis en glace.",
     "effet": "Buff Conversion",
     "montant": "Dégât reçu -1D4 (min 2), (Physique > Glace) Dégât glace +3 pendant 3 tours",
@@ -1515,7 +1518,7 @@
     "race": "Torturran"
   },
   "174": {
-    "nom": "Connaissance de l'Environnement",
+    "nom": "@TODO Connaissance de l'Environnement",
     "desc": "L'énergie de la nature entoure l'utilisateur qui voit ses compétences physiques convertis en nature.",
     "effet": "Buff Conversion",
     "montant": "Réussite +2, (Physique > Nature) Dégât nature +3 pendant 3 tours",
@@ -1655,11 +1658,11 @@
     "race": "Ogre"
   },
   "188": {
-    "nom": "Lame Tranchante",
-    "desc": "Les Ogres manient les armes comme personne, leur force destructrice peut découper n'importe quoi ! Voilà la puissance d'un Ogre !",
-    "effet": "Buff",
-    "montant": "Réussite +2, Dégât tranchant +1D4 (min 2) +4 pendant 3 tours",
-    "icone": "j615",
+    "nom": "Frénésie des Ogres",
+    "desc": "Action Instantanée. La détermination des Ogres leur permet de dilater leurs veines, les mettant dans un été frénétique de Berserker.",
+    "effet": "Buff Malus",
+    "montant": "A chaque tour (4 max) : Dégât (+) et PV (-) 1D6+6, réussite des sorts -1",
+    "icone": "E0779",
     "stat": "Force",
     "classe": ["Voleur", "Assassin", "Danselame", "Samouraï"],
     "race": "Ogre"
@@ -1694,5 +1697,24 @@
     "stat": "Intelligence",
     "classe": ["Magicien", "Illusionniste", "Démoniste", "Luminary"],
     "race": "Ogre"
+  },
+  "192": {
+    "nom": "Connaissance du Terrain",
+    "desc": "Expert tout-terrain, le corsaire analyse le terrain pour rendre ses alliés plus agile",
+    "effet": "Buff AoE",
+    "montant": "Dextérité +2 pendant 1D4 +2 tours",
+    "icone": "J544",
+    "stat": "Esprit",
+    "classe": ["Corsaire"]
+  },
+  "193": {
+    "nom": "Crocodile des Marais",
+    "desc": "Action Instantanée (Cooldown 3 tours après transfo), utilisable sous silence (Esprit/2). Impossible de jeter des sorts magiques (Intel/Esprit). \nNouveaux sorts : Morsure : 2D6+3 (Force), Attrape-proie : 1D6 : Entrave la cible 1 tour (Force)",
+    "effet": "Transformation",
+    "montant": "Dégât +2 (+1/niveau, max 8), +2 Armure, 0 arme. Force+4 pendant 1D4 (min 2) +1 tours (annulable)",
+    "icone": "E0962",
+    "stat": "Esprit",
+    "classe": ["Shaman"],
+    "cooldown": 3
   }
 }
