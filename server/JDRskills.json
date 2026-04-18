@@ -1152,7 +1152,7 @@
     "desc": "Le Samouraï concentre son énergie, son Ki, pour booster son corps et accéder à de nouveaux pouvoirs.",
     "effet": "Buff",
     "montant": "Action Instantanée. marque Asura persistante, Fatigue +20, dure 4 tours",
-    "icone": "E0058",
+    "icone": "E0852",
     "stat": "Esprit",
     "classe": ["Samouraï"],
     "cooldown": 2
@@ -1268,12 +1268,12 @@
     "race": "Humain"
   },
   "149": {
-    "nom": "",
-    "desc": "Malus d'armure pour l'ennemi (attaque ? Malus pur ?) -1D4-2 pendant 3 tours ? ((7,5-8))",
-    "effet": "",
-    "montant": "",
-    "icone": "",
-    "stat": "",
+    "nom": "Flèche perçante",
+    "desc": "Tir avec précision pour réduire la défense de l'ennemi (non cumulable)",
+    "effet": "Dégât Malus",
+    "montant": "Dégât 1D8+1, et dégât physique reçu +4 pendant 3 tours",
+    "icone": "E0513",
+    "stat": "Dextérité",
     "classe": ["Chasseur", "Ingénieur", "Corsaire", "Juge"],
     "race": "Humain"
   },
@@ -1461,7 +1461,7 @@
     "nom": "Coup Affaiblissant",
     "desc": "Avec une petite dose de poison, les Anurans assènent un coup qui réduit la force de leur ennemi",
     "effet": "Dégât Malus",
-    "montant": "1D6+2, et -3 force pendant 3 tours",
+    "montant": "1D6+2, et Force -3 pendant 3 tours",
     "icone": "E0163b",
     "stat": "Dextérité",
     "classe": ["Voleur", "Assassin", "Danselame", "Samouraï"],
@@ -1498,18 +1498,18 @@
     "race": "Anuran"
   },
   "172": {
-    "nom": "",
-    "desc": "((6,5))",
-    "effet": "",
-    "montant": "",
-    "icone": "",
-    "stat": "",
+    "nom": "Coup Abrutissant",
+    "desc": "Inflige un violent coup sur la tête qui donne le tourni",
+    "effet": "Dégât Malus",
+    "montant": "1D6, et Intelligence -3 pendant 3 tours",
+    "icone": "E0932",
+    "stat": "Force",
     "classe": ["Guerrier", "Chevalier", "Templier", "Chev Dragon"],
     "race": "Torturran"
   },
   "173": {
     "nom": "Barrière magique",
-    "desc": "Les Torturrans canalysent leur énergie pour bloquer davantage les attaques magiques des attaquants.",
+    "desc": "Les Torturrans canalysent leur énergie pour bloquer davantage les attaques magiques.",
     "effet": "Buff",
     "montant": "Blocage magique +3 pendant 3 tours",
     "icone": "E0769",
@@ -1529,13 +1529,14 @@
   },
   "175": {
     "nom": "Dissipation",
-    "desc": "Dissipe tous les buffs de l'ennemi : débuff total",
+    "desc": "Dissipe tous les buffs de l'ennemi : debuff total",
     "effet": "Malus",
-    "montant": "Retire les buffs de l'ennemi",
+    "montant": "Retire les buffs de l'ennemi - Cooldown 2 tours",
     "icone": "E0276b",
     "stat": "Esprit",
     "classe": ["Clerc", "Barde", "Shaman", "Sage"],
-    "race": "Torturran"
+    "race": "Torturran",
+    "cooldown": 2
   },
   "176": {
     "nom": "Silence des érudits",
@@ -1548,32 +1549,32 @@
     "race": "Torturran"
   },
   "177": {
-    "nom": "",
-    "desc": "Attaque coup sur la tête \r\n(Dégât 1D6+2, malus -3 intel 3t)",
-    "effet": "",
-    "montant": "",
-    "icone": "",
-    "stat": "",
+    "nom": "Spectre Bouclier",
+    "desc": "Invoque un spectre à la forme de bouclier qui se colle à une personne pour prendre les dégâts à sa place, il n'a pas d'autres actions.",
+    "effet": "Invocation",
+    "montant": "Invocation jusqu'à coupure magique (15 PV + 2/niveau, max 35)",
+    "icone": "E0250b",
+    "stat": "Esprit",
     "classe": ["Guerrier", "Chevalier", "Templier", "Chev Dragon"],
     "race": "Drakai"
   },
   "178": {
-    "nom": "",
-    "desc": "Equiv Blessure Doul (1D8+1, 3t 0 soin)",
-    "effet": "",
-    "montant": "",
-    "icone": "",
-    "stat": "",
+    "nom": "Entaille Douloureuse",
+    "desc": "Blesse l'ennemi (dégât de nature) et l'empêche de se soigner pendant 3 tours",
+    "effet": "Dégât Malus",
+    "montant": "1D8+1, 0 soin pendant 3 tours",
+    "icone": "E0352b",
+    "stat": "Force",
     "classe": ["Voleur", "Assassin", "Danselame", "Samouraï"],
     "race": "Drakai"
   },
   "179": {
-    "nom": "",
-    "desc": "Analyse - Détecte 1 faiblesse aléat\r\net bloc/esq cible -1 si l'user atk (4t)",
-    "effet": "",
-    "montant": "",
+    "nom": "Analyse de Faiblesse",
+    "desc": "Permet de détecter aléatoirement une faiblesse de l'ennemi.",
+    "effet": "Malus",
+    "montant": "Détecte 1 faiblesse aléatoire, Blocage/Esquive -1 (3 tours)",
     "icone": "E0372",
-    "stat": "",
+    "stat": "Esprit",
     "classe": ["Chasseur", "Ingénieur", "Corsaire", "Juge"],
     "race": "Drakai"
   },
@@ -1588,12 +1589,12 @@
     "race": "Drakai"
   },
   "181": {
-    "nom": "",
-    "desc": "Buff AoE sur alliés : +1 durée malus infligé pendant 3 tours AoE",
-    "effet": "",
-    "montant": "",
-    "icone": "",
-    "stat": "",
+    "nom": "Aggravation",
+    "desc": "La magie noire des Drakaïs imprègne l'équipe, la durée des maléfices infligé par le groupe augmente de 1 tour (non re-augmentable)",
+    "effet": "Buff AoE",
+    "montant": "Pendant 3 tours : Durée +1 tour pour les malus infligés",
+    "icone": "E0829",
+    "stat": "Esprit",
     "classe": ["Magicien", "Illusionniste", "Démoniste", "Luminary"],
     "race": "Drakai"
   },
@@ -1638,12 +1639,12 @@
     "race": "Tuskar"
   },
   "186": {
-    "nom": "",
-    "desc": "Blocage physique +3 (3t)",
-    "effet": "",
-    "montant": "",
-    "icone": "",
-    "stat": "",
+    "nom": "Corps de pierre",
+    "desc": "Les Tuskars durcissent leur corps pour bloquer davantage les attaques physiques.",
+    "effet": "Buff",
+    "montant": "Blocage physique +3 pendant 3 tours",
+    "icone": "E0141b",
+    "stat": "Esprit",
     "classe": ["Magicien", "Illusionniste", "Démoniste", "Luminary"],
     "race": "Tuskar"
   },

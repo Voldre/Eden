@@ -389,8 +389,9 @@ const labelsDescription = {
     <li>Entrave : Si aidé <b>par un allié en Mono</b> : Tentative égale à 17.</li>
     </ul>A noter : L'énervement des ennemis (leur blessure) augmente leur <b>résistance d'esprit</b> face aux altérations d'Esprit (jusqu'à atteindre leur stat d'Esprit)
     <br/>Il n'est pas possible de remetre un statut déjà actif (refresh).`,
-  familier:
-    "Il est possible d'invoquer jusqu'à 2 familiers simultanément, toutes sources confondues (compétences, équipements). Ils agissent pendant le tour du joueur comme un personnage (attaque, blocage, ...).",
+  familier: `Il est possible d'invoquer jusqu'à 2 familiers <b>différents</b> simultanément, toutes sources confondues (compétences, équipements).
+    <br/> Ils agissent pendant le tour du joueur comme un personnage (attaque, blocage, ...).
+    <br/> Il n'est pas possible de le ré-invoquer un familier encore en vie.`,
   armure:
     "Il existe 3 types d'armures (magique, léger, lourd), chaque classe permet de porter l'un de ces types.<br/>Certaines classes combinées peuvent porter un type supplémentaire (Chevalier hors tank, Sage et Luminary hors mage)<br/><br/>Si le personnage porte une armure d'un type différent de ces classes, les malus suivants sont appliqués :<ul><li>Stuff non magique : Intelligence -2,</li><li>Stuff non léger : Dextérité -2,</li><li>Stuff non lourd : Force -2,</li></ul>Si le type d'armure est le même pour les 2 classes du personnage, le malus de la Stat est de -3.",
   montant:

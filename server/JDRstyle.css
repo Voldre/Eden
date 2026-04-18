@@ -541,10 +541,15 @@ label:hover {
   height: 200px;
   border-radius: 8%;
 }
+
 .informations {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+}
+.informations > * {
+  margin-left: 2rem;
 }
 
 .classeslist {
