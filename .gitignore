@@ -14,3 +14,4 @@ jdr_master_admin.html
 ignore*
 *.log
 server/**/*.js
+server/moymoy_missions/*.json

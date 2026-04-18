@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="description" content="Missions Moymoy" />
+
+    <link rel="stylesheet" href="../JDRstyle.css" />
+    <link rel="stylesheet" href="http://voldre.free.fr/style.css" />
+    <link rel="stylesheet" href="../eden.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="shortcut icon" href="moymoy_logo.png" />
+
+    <script type="module" src="index.js" defer></script>
+    <title>Missions Moymoy</title>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Never forget the viewport ! -->
+    <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=5.0, minimum-scale=0.86" />
+  </head>
+  <body>
+    <div id="toast"></div>
+    <dialog></dialog>
+    <div class="header">
+      <div>
+        <h1>Pièces</h1>
+        <label for="moymoyCoin" style="font-size: 32px">
+          <span class="moymoyCoin"></span>
+          <span class="moymoyCoinSpent"></span>
+        </label>
+        <img src="../images/layout/moymoyCoin.png" class="moymoyCoinPic" alt=" pièces" />
+      </div>
+      <img src="./moymoy_missions_logo.png" class="moymoyLogo" id="logo" />
+      <div class="connectionPoint hide" style="background-color: green"></div>
+    </div>
+    <h2>Évènements : <button id="add-event">Ajouter</button></h2>
+    <div id="missions-days-wrapper" class="missions-wrapper"></div>
+  </body>
+  <footer>
+    <br />
+  </footer>
+</html>

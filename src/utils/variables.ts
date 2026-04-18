@@ -51,6 +51,13 @@ export const sameDay = (first: Date, second: Date): boolean =>
   first.getUTCMonth() === second.getUTCMonth() &&
   first.getUTCDate() === second.getUTCDate()
 
+export const daysBetween = (date1: Date, date2: Date): number => {
+  const ONE_DAY = 1000 * 60 * 60 * 24
+  // Calculate the difference in milliseconds
+  const differenceMs = Math.abs(date1.getTime() - date2.getTime())
+  return Math.trunc(differenceMs / ONE_DAY)
+}
+
 export const dateToString = (date: Date, full: boolean = false): string => {
   const stringDate = date.toLocaleString("fr-FR")
   return full ? stringDate : stringDate.split(" ")[0]
