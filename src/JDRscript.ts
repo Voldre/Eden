@@ -52,6 +52,7 @@ import {
   splitParenthesisText,
   deleteCookie,
   monoClassBonus,
+  mapTuple,
 } from "./utils/index.js"
 import { LoggerService } from "./utils/logger.js"
 import { loadState, setupAutoSave } from "./utils/handle-state.js"
@@ -123,17 +124,13 @@ const nivE = inputSelector("#niv", "number")
 const pvmaxE = inputSelector("#pvmax", "number")
 const pvE = inputSelector("#pv", "number")
 
-const forceE = inputSelector("#force", "number")
-const dextéE = inputSelector("#dexté", "number")
-const intelE = inputSelector("#intel", "number")
-const charismeE = inputSelector("#charisme", "number")
-const espritE = inputSelector("#esprit", "number")
-
-const forceBE = inputSelector("#forceB", "string")
-const dextéBE = inputSelector("#dextéB", "string")
-const intelBE = inputSelector("#intelB", "string")
-const charismeBE = inputSelector("#charismeB", "string")
-const espritBE = inputSelector("#espritB", "string")
+const statsInputs: Record<StatsName, { main: InputElement<"number">; sub: InputElement<"string"> }> = {
+  Force: { main: inputSelector("#force", "number"), sub: inputSelector("#forceB", "string") },
+  Dextérité: { main: inputSelector("#dexté", "number"), sub: inputSelector("#dextéB", "string") },
+  Intelligence: { main: inputSelector("#intel", "number"), sub: inputSelector("#intelB", "string") },
+  Charisme: { main: inputSelector("#charisme", "number"), sub: inputSelector("#charismeB", "string") },
+  Esprit: { main: inputSelector("#esprit", "number"), sub: inputSelector("#espritB", "string") },
+}
 
 const argentE = inputSelector("#argent", "string")
 const personnaliteE = inputSelector(".personnalité", "string")
@@ -150,15 +147,16 @@ const errorEqptE = document.querySelector<HTMLParagraphElement>("#errorEQPT")!
 const raceE = document.querySelector<SelectElement<Races>>("#race")!
 addChangeListener(raceE, (e) => {
   const race = e.target.value
-  document.querySelector<HTMLParagraphElement>(".poids")!.innerText = poids[RACES.indexOf(race)]
+  // @TODO Improve with react
+  document.querySelector<HTMLParagraphElement>(".poids")!.innerText = poids[RACES.indexOf(race)]!
   // Verify stats repartition
   statsVerification()
   updateAvailableSkillsList()
 })
 
 // CLASSES
-const allClassE = [classePElement, classeSElement]
-const iconClassesEs = [...document.querySelector(".iconClasses")!.children] as HTMLImageElement[]
+const allClassE: [SelectElement<Classes>, SelectElement<Classes>] = [classePElement, classeSElement]
+const iconClassesEs = [...document.querySelector(".iconClasses")!.children] as [HTMLImageElement, HTMLImageElement]
 
 allClassE.forEach((classE, i) => {
   fillSelectOptions(
@@ -186,7 +184,7 @@ allClassE.forEach((classE, i) => {
         if (classConfig)
           classConfig.skills.forEach((skill, index) => {
             const competenceE = competenceEs[index]
-            insertSkill(competenceE, skill)
+            if (competenceE) insertSkill(competenceE, skill)
           })
 
         const pvMax = classConfig?.pvmax ?? getStats().allStats.PVMax
@@ -196,11 +194,11 @@ allClassE.forEach((classE, i) => {
 
         // This syntaxe is 100% lighter than :
         // document.querySelector<HTMLInputElement>("#force")!.value = `${classConfig.force}`
-        forceE.value = classConfig?.force ?? 0
-        dextéE.value = classConfig?.dexté ?? 0
-        intelE.value = classConfig?.intel ?? 0
-        charismeE.value = classConfig?.charisme ?? 0
-        espritE.value = classConfig?.esprit ?? 0
+        statsInputs.Force.main.value = classConfig?.force ?? 0
+        statsInputs.Dextérité.main.value = classConfig?.dexté ?? 0
+        statsInputs.Intelligence.main.value = classConfig?.intel ?? 0
+        statsInputs.Charisme.main.value = classConfig?.charisme ?? 0
+        statsInputs.Esprit.main.value = classConfig?.esprit ?? 0
 
         getAllRes()
         statsVerification()
@@ -274,9 +272,9 @@ const displayArmorTypes = (): void => {
 iconClassesEs.forEach((iconClasseE, i) => {
   iconClasseE.addEventListener("click", () => {
     iconClassesEs.forEach((e2) => e2.classList.remove("awaken"))
-    iconClassesEs[i].classList.add("awaken")
+    iconClasseE.classList.add("awaken")
 
-    const classe = allClassE[i].value
+    const classe = allClassE[i]!.value
 
     defineAwaken(classe)
   })
@@ -349,12 +347,12 @@ addClickListener(document.querySelector<HTMLButtonElement>("#awakenButton")!, (e
   }
 
   persoData?.skills.forEach((skill, index) => {
-    insertSkill(competenceEs[index], skill, awakenClass)
+    if (competenceEs[index]) insertSkill(competenceEs[index], skill, awakenClass)
   })
 })
 
 // PV
-pvmaxE.addEventListener("change", () => statsVerification())
+pvE.addEventListener("change", () => statsVerification())
 
 // XP & Niv
 
@@ -387,16 +385,18 @@ const onChangeXP = (xp: number): void => {
   statsVerification()
 
   // Nouveauté 27/05/23 : 4eme accessoire au niveau 4
+  const lv4Eqpt = equipementEs[equipementEs.length - 2]!
+  const lv8Eqpt = equipementEs[equipementEs.length - 1]!
   if (niv >= 4) {
-    equipementEs[equipementEs.length - 2].classList.remove("hide")
+    lv4Eqpt.classList.remove("hide")
   } else {
-    equipementEs[equipementEs.length - 2].classList.add("hide")
+    lv4Eqpt.classList.add("hide")
   }
   // Nouveauté 12/06/23 : 5eme accessoire au niveau 8
   if (niv >= 8) {
-    equipementEs[equipementEs.length - 1].classList.remove("hide")
+    lv8Eqpt.classList.remove("hide")
   } else {
-    equipementEs[equipementEs.length - 1].classList.add("hide")
+    lv8Eqpt.classList.add("hide")
   }
   // Nouveauté 18/10/23 : Compétence éveillés
   if (persoData) defineAwaken(persoData.awaken)
@@ -425,13 +425,11 @@ function statsVerification(): void {
   if (!classePElement.value || !classeSElement.value || !raceE.value) return
 
   const { allStats } = getStats()
-  // Rename stats name according to element
-  allStats.Dexté = allStats.Dextérité
-  allStats.Intel = allStats.Intelligence
-  ;["force", "dexté", "intel", "charisme", "esprit"].forEach((statName) => {
-    const statE = inputSelector(`#${statName}`, "number")
+
+  Object.entries(statsInputs).forEach(([statName, inputs]): void => {
+    const statE = inputs.main
     // The minimum is 17 if stat is above
-    if (statE.value < Math.min(allStats[capitalize(statName)], MINIMUM_OVERSTAT)) {
+    if (statE.value < Math.min(allStats[statName as StatsName], MINIMUM_OVERSTAT)) {
       statE.classList.add("wrong")
     } else {
       statE.classList.toggle("over", statE.value > MINIMUM_OVERSTAT)
@@ -530,7 +528,7 @@ function updateAvailableSkillsList(): void {
     const classeS = classeSElement.value
 
     // Look at the 3rd weapon name
-    const thirdWeapon = ([...document.querySelectorAll(".arme")][2].children[0] as HTMLInputElement).value
+    const thirdWeapon = ([...document.querySelectorAll(".arme")][2]?.children[0] as HTMLInputElement).value
 
     // Liste des sorts des classes (+ arme) et de race
     const options = Object.values(skillsJSON)
@@ -585,7 +583,7 @@ function insertSkill(skillElement: CompetenceE, skillName: string, awakenClass?:
 
   const skillRange = selectedSkill.effet.split("AoE ")[1] ?? null // en bas [0] + "AoE"
   const selectedSkillEffet = skillRange ? selectedSkill.effet.split(" AoE")[0] : selectedSkill.effet
-  skillElement.effetE.innerText = selectedSkillEffet
+  skillElement.effetE.innerText = selectedSkillEffet ?? ""
 
   if (skillRange) {
     const rangeI = aoeDescInfo.range.findIndex((x) => x === skillRange[0])
@@ -621,7 +619,7 @@ function insertSkill(skillElement: CompetenceE, skillName: string, awakenClass?:
     // Check if it's same skill by icon
     const sameSkill = currentIconSrc.includes(selectedSkill.icone)
     if (sameSkill) return // No need to update
-    skillElement.removeChild(skillElement.children[5]) // Update
+    skillElement.removeChild(skillElement.children[5]!) // Update
   }
 
   if (selectedSkill.effet === "Invocation") {
@@ -836,8 +834,8 @@ equipementEs.forEach((equipementE) => {
     // Refresh all eqpt (for bonus condition)
     persoEqpts.forEach((eqpt, index) => {
       const eqptE = equipementEs[index]
-      if (eqptE === equipementE) return // Don't update current eqpt again
-      equipementEs[index].inputE.value = eqpt?.nom ?? ""
+      if (!eqptE || eqptE === equipementE) return // Don't update current eqpt again
+      eqptE.inputE.value = eqpt?.nom ?? ""
       insertEqpt(eqptE, eqpt)
     })
     getAllRes()
@@ -904,7 +902,7 @@ function insertEqpt(eqptElement: EquipmentE, selectedEqpt: Equipment | undefined
 
     // Update eqptElement 05/2024, case de PV pour monture
     if (eqptElement.children.length >= 6) {
-      eqptElement.removeChild(eqptElement.children[5])
+      eqptElement.removeChild(eqptElement.children[5]!)
     }
 
     if (selectedEqpt.effet === "Monture de Combat") {
@@ -1030,7 +1028,8 @@ archiveE.addEventListener("change", () => {
 const onArchive = (isArchived: boolean): void => {
   Object.entries(persosJSON).forEach(([id, perso]) => {
     // Hidden if isArchived is matching
-    selectPersoE.options[parseInt(id)].hidden = isArchived !== perso.isArchived
+    const option = selectPersoE.options[parseInt(id)]
+    if (option) option.hidden = isArchived !== perso.isArchived
   })
   archiveE.checked = isArchived
 }
@@ -1087,22 +1086,21 @@ type StorageState = Perso & { malus: { turn: number; text: string }[] }
 function loadFiche(indexPerso: number): void {
   // Define perso
   persoE.id = indexPerso.toString()
+  const perso = persosJSON[indexPerso]
 
   const storedState = loadState<StorageState>(STORAGE_KEY)
 
   // If there is data in the local storage, load them, unless the save date has changed
-  if (
-    storedState &&
-    storedState.nom === persosJSON[indexPerso].nom &&
-    storedState.lastUpdate === persosJSON[indexPerso].lastUpdate
-  ) {
+  if (storedState && storedState.nom === perso?.nom && storedState.lastUpdate === perso?.lastUpdate) {
     persoData = storedState
     malusEs.forEach((malusE, index) => {
-      malusE.children[0].value = storedState.malus[index].turn
-      malusE.children[1].value = storedState.malus[index].text
+      if (storedState.malus[index]) {
+        malusE.children[0].value = storedState.malus[index].turn
+        malusE.children[1].value = storedState.malus[index].text
+      }
     })
   } else {
-    persoData = persosJSON[indexPerso]
+    persoData = perso
   }
 
   if (!persoData) return
@@ -1157,17 +1155,17 @@ function loadFiche(indexPerso: number): void {
   updateStress()
 
   ppE.src = persoData.pp
-  forceE.value = persoData.force
-  dextéE.value = persoData.dexté
-  intelE.value = persoData.intel
-  charismeE.value = persoData.charisme
-  espritE.value = persoData.esprit
+  statsInputs.Force.main.value = persoData.force
+  statsInputs.Dextérité.main.value = persoData.dexté
+  statsInputs.Intelligence.main.value = persoData.intel
+  statsInputs.Charisme.main.value = persoData.charisme
+  statsInputs.Esprit.main.value = persoData.esprit
 
-  forceBE.value = persoData.forceB
-  dextéBE.value = persoData.dextéB
-  intelBE.value = persoData.intelB
-  charismeBE.value = persoData.charismeB
-  espritBE.value = persoData.espritB
+  statsInputs.Force.sub.value = persoData.forceB
+  statsInputs.Dextérité.sub.value = persoData.dextéB
+  statsInputs.Intelligence.sub.value = persoData.intelB
+  statsInputs.Charisme.sub.value = persoData.charismeB
+  statsInputs.Esprit.sub.value = persoData.espritB
 
   notesE.value = persoData.notes
   stickyE.value = persoData.sticky ?? ""
@@ -1195,8 +1193,10 @@ function loadFiche(indexPerso: number): void {
 
   persoEqpts.forEach((eqpt, index) => {
     const eqptE = equipementEs[index]
-    equipementEs[index].inputE.value = eqpt?.nom ?? ""
-    insertEqpt(eqptE, eqpt)
+    if (eqptE) {
+      eqptE.inputE.value = eqpt?.nom ?? ""
+      insertEqpt(eqptE, eqpt)
+    }
   })
 
   getAllRes()
@@ -1209,7 +1209,7 @@ function loadFiche(indexPerso: number): void {
   // Fill skills
   persoData.skills.forEach((skill, index) => {
     const competenceE = competenceEs[index]
-    insertSkill(competenceE, skill)
+    if (competenceE) insertSkill(competenceE, skill)
   })
 
   // Inventaire du perso
@@ -1217,7 +1217,8 @@ function loadFiche(indexPerso: number): void {
 
   getItemsInInventory(persoData.inventaire)
 
-  document.querySelector<HTMLParagraphElement>(".poids")!.innerText = poids[RACES.indexOf(persoData.race)]
+  // @TODO Improve with react
+  document.querySelector<HTMLParagraphElement>(".poids")!.innerText = poids[RACES.indexOf(persoData.race)]!
 
   argentE.value = persoData.argent
 
@@ -1229,7 +1230,7 @@ setupAutoSave<StorageState>(() => {
   const rawSave = savePerso(false) // Do not update the date to keep real update date
 
   if (!rawSave) return undefined
-  const perso = rawSave[persoE.id]
+  const perso = rawSave[persoE.id]!
 
   return {
     ...perso,
@@ -1240,26 +1241,28 @@ setupAutoSave<StorageState>(() => {
   }
 }, STORAGE_KEY)
 
-function statsValue(resistance: boolean): number[] {
-  const statB = [forceBE, dextéBE, intelBE, charismeBE, espritBE]
-  return [forceE, dextéE, intelE, charismeE, espritE].map((statE, index) => {
-    const statMain = statE.value
-    let statBValue = statB[index].value
-    statBValue = statBValue.replaceAll("++", "").replaceAll("--", "")
-    const statBWithRegex = statBValue.replace(/[^\d.+-]/g, "")
+function statsValue(resistance: boolean): [number, number, number, number, number] {
+  return mapTuple(
+    [statsInputs.Force, statsInputs.Dextérité, statsInputs.Intelligence, statsInputs.Charisme, statsInputs.Esprit],
+    (statE): number => {
+      const statMain = statE.main.value
+      let statBValue = statE.sub.value
+      statBValue = statBValue.replaceAll("++", "").replaceAll("--", "")
+      const statBWithRegex = statBValue.replace(/[^\d.+-]/g, "")
 
-    const statsBValue = statBWithRegex.match(/^[-+]\d+|\d*$/)?.[0]
-      ? parseInt(statBWithRegex.replace("+", "").replace("-", ""))
-      : 0
+      const statsBValue = statBWithRegex.match(/^[-+]\d+|\d*$/)?.[0]
+        ? parseInt(statBWithRegex.replace("+", "").replace("-", ""))
+        : 0
 
-    return resistance
-      ? statsBValue !== 0
-        ? statBWithRegex.includes("+")
-          ? Math.ceil((statMain + statsBValue) / 2)
-          : Math.ceil((statMain - statsBValue) / 2)
-        : Math.ceil(statMain / 2)
-      : statMain
-  })
+      return resistance
+        ? statsBValue !== 0
+          ? statBWithRegex.includes("+")
+            ? Math.ceil((statMain + statsBValue) / 2)
+            : Math.ceil((statMain - statsBValue) / 2)
+          : Math.ceil(statMain / 2)
+        : statMain
+    }
+  )
 }
 // SYNTHESE DES EQUIPEMENTS
 
@@ -1313,7 +1316,7 @@ function createEquipmentSynthesis(): void {
 
       let categoryValue
       if (category.label === "DGT" && eqptsValueList[2]) {
-        categoryValue = `${eqptsValue - eqptsValueList[2]} | ${eqptsValue - eqptsValueList[0] - eqptsValueList[1]}`
+        categoryValue = `${eqptsValue - eqptsValueList[2]} | ${eqptsValue - (eqptsValueList[0] ?? 0) - (eqptsValueList[1] ?? 0)}`
       } else {
         categoryValue = eqptsValue
       }
@@ -1555,11 +1558,11 @@ saveButton.addEventListener("click", async () => {
         `Sauvegarde effectuée ${cookieLength > 3000 ? `(${Math.round(cookieLength / 40)}% remplis)` : ""}`
       )
     } catch (e) {
-      LoggerService.logError(`Echec sauvegarde de la fiche de ${Object.values(newPerso)[0].nom}`)
+      LoggerService.logError(`Echec sauvegarde de la fiche de ${Object.values(newPerso)?.[0]?.nom}`)
       toastNotification(`ECHEC : ${e instanceof Error ? e.message : e}`, 10000, true)
     }
   } else {
-    LoggerService.logError(`Plus de place sur la fiche de ${Object.values(newPerso)[0].nom}`)
+    LoggerService.logError(`Plus de place sur la fiche de ${Object.values(newPerso)?.[0]?.nom}`)
     toastNotification("ECHEC : Plus de place disponible sur la fiche !", 10000, true)
   }
   deleteCookie("persosJSON")
@@ -1578,11 +1581,11 @@ function savePerso(updateDate: boolean): {
   const mainElement: MainElementPerso = {
     classeP: classePElement.value,
     pvmax: pvmaxE.value,
-    force: forceE.value,
-    dexté: dextéE.value,
-    intel: intelE.value,
-    charisme: charismeE.value,
-    esprit: espritE.value,
+    force: statsInputs.Force.main.value,
+    dexté: statsInputs.Dextérité.main.value,
+    intel: statsInputs.Intelligence.main.value,
+    charisme: statsInputs.Charisme.main.value,
+    esprit: statsInputs.Esprit.main.value,
     skills: skillsName,
   }
 
@@ -1605,11 +1608,11 @@ function savePerso(updateDate: boolean): {
 
     ...mainElement,
 
-    forceB: forceBE.value,
-    dextéB: dextéBE.value,
-    intelB: intelBE.value,
-    charismeB: charismeBE.value,
-    espritB: espritBE.value,
+    forceB: statsInputs.Force.sub.value,
+    dextéB: statsInputs.Dextérité.sub.value,
+    intelB: statsInputs.Intelligence.sub.value,
+    charismeB: statsInputs.Charisme.sub.value,
+    espritB: statsInputs.Esprit.sub.value,
 
     eqpts: getPersoEqptsFromSelects().map((eqpt) => eqpt?.nom ?? ""),
     inventaire: inventaireE.value,
@@ -1633,7 +1636,7 @@ function savePerso(updateDate: boolean): {
           ],
         }
       : undefined,
-    lastUpdate: updateDate ? new Date().toISOString() : currentPerso.lastUpdate,
+    lastUpdate: updateDate ? new Date().toISOString() : (currentPerso?.lastUpdate ?? new Date().toISOString()),
   }
 
   console.log(persosJSON[persoId])
@@ -1671,7 +1674,7 @@ function syntheseDesc(): string {
     if (category.img) {
       description += `<br/><img src='http://voldre.free.fr/Eden/images/layout/${category.label}.png'/> = Dégât de ${category.label}`
     } else {
-      description += `<br/>${category.label} : ${category.regex[0].replace("+", "").replace("Soin", "Soin effectué")}`
+      description += `<br/>${category.label} : ${category.regex[0]?.replace("+", "").replace("Soin", "Soin effectué")}`
     }
   })
   return description
@@ -1811,7 +1814,7 @@ infoStatsE.addEventListener("click", () => {
 
 const getStats = (): {
   sumStats: number
-  allStats: { [key: string]: number }
+  allStats: RaceClassStatsValue & { PVMax: number }
   pvStuff: number
 } => {
   const race = raceE.value
@@ -1819,50 +1822,54 @@ const getStats = (): {
   const classeS = classeSElement.value
   const niv = nivE.value
 
-  const classesStats = statsJSON.classes.filter((e) => [classeP, classeS].includes(e.Classe))
+  const [classStatsP, classStatsS] = mapTuple(
+    [classeP, classeS],
+    (classe) => statsJSON.classes.find((c) => c.Classe === classe)!
+  )
 
   const raceStats = statsJSON.races.find((e) => e.Race === race)
 
   const pvStuff = persoData ? parseEqptsByRegex(["PV +"], persoEqpts, persoData).reduce(sum, 0) : 0
 
   const allStats = raceStats
-    ? sumObjectsByKey<RaceClassStatsValue>(classesStats[0], classesStats[1] ?? classesStats[0], raceStats)
-    : sumObjectsByKey<RaceClassStatsValue>(classesStats[0], classesStats[1] ?? classesStats[0])
+    ? sumObjectsByKey<RaceClassStatsValue>(classStatsP, classStatsS ?? classStatsP, raceStats)
+    : sumObjectsByKey<RaceClassStatsValue>(classStatsP, classStatsS ?? classStatsP)
 
   const sumStats =
     allStats.Force + allStats["Dextérité"] + allStats.Intelligence + allStats.Charisme + (allStats.Esprit - 2)
 
   // Esprit is "- 1" under level 5
   allStats.Esprit += niv < 5 ? -1 : 0
-  allStats.PVMax = allStats.PV + 5 * (niv - 1) + pvStuff
 
-  return { sumStats, allStats, pvStuff }
+  return { sumStats, allStats: { ...allStats, PVMax: allStats.PV + 5 * (niv - 1) + pvStuff }, pvStuff }
 }
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function sumObjectsByKey<T extends { [key: string]: any }>(...objs: T[]): Record<string, number> {
-  const objsWithValue = objs.map((obj) => {
-    const filteredObj: Record<string, number> = {}
 
+type NumericKeys<T> = {
+  [K in keyof T]: T[K] extends number ? K : never
+}[keyof T]
+
+type NumericObject<T> = {
+  // eslint-disable-next-line no-unused-vars
+  [K in NumericKeys<T>]: number
+}
+function sumObjectsByKey<T extends object>(...objs: T[]): NumericObject<T> {
+  const totals: Record<string, number> = {}
+
+  for (const obj of objs) {
     for (const [key, value] of Object.entries(obj)) {
       if (typeof value === "number") {
-        filteredObj[key] = value
+        totals[key] = (totals[key] ?? 0) + value
       }
     }
-    return filteredObj
-  })
-  return objsWithValue.reduce(
-    (a, b) => {
-      for (const k in b) {
-        a[k] = (a[k] || 0) + (b?.[k] || 0)
-      }
-      return a
-    },
-    {} as Record<string, number>
-  )
+  }
+
+  return totals as NumericObject<T>
 }
 
 function setPassifs(niv: number): void {
   const perso = persosJSON[persoE.id]
+
+  if (!perso) return
 
   const passif10E = document.querySelector("#passif10")!
   const passif12E = document.querySelector("#passif12")!

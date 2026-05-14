@@ -1,6 +1,6 @@
 // #region Notif + Dialog
 
-let currentTimeout: NodeJS.Timeout | undefined
+let currentTimeout: ReturnType<typeof setTimeout> | undefined
 export const toastNotification = (text: string, duration = 3000, error = false): void => {
   const toaster = document.getElementById("toast")!
 
@@ -34,7 +34,7 @@ export const initDialog = (labelsDescription: { [key: string]: string }): void =
 
       const desc = document.createElement("p")
       // Don't use util createElement function because HTML insert
-      desc.innerHTML = labelsDescription[label.htmlFor] // description
+      desc.innerHTML = labelsDescription[label.htmlFor] ?? "" // description
       dialog.append(desc)
 
       dialog.append(closeButton(dialog))

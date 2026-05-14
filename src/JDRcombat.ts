@@ -101,16 +101,16 @@ window.addEventListener("load", async () => {
 
     // Init Perso
     indexPerso = parseInt(urlParams.get("perso")!)
-    nomPerso = persosJSON[indexPerso - 1].nom
+    const persoData = persosJSON[indexPerso - 1]
+    if (!persoData) {
+      toastNotification("Erreur : Le personnage n'a pas ete trouve.", 4000, true)
+      return
+    }
+    nomPerso = persoData.nom
 
-    indexPlayer = Object.entries(playerJSON)
-      .map((player) => {
-        if (player[1].persos.includes(indexPerso!)) {
-          return player[0] as Joueurs
-        }
-        return undefined
-      })
-      .filter((e) => !!e)[0]
+    indexPlayer = Object.entries(playerJSON).find(([, player]) => player.persos.includes(indexPerso!))?.[0] as
+      | Joueurs
+      | undefined
 
     if (!cookieCheck() || !indexPlayer) return
 
@@ -118,6 +118,9 @@ window.addEventListener("load", async () => {
 
     // Update to get current perso entries
     const persoIDforPlayer = joueurData.persos.indexOf(indexPerso)
+    if (persoIDforPlayer === -1) {
+      throw new Error(`Le personnage ${indexPerso} n'est pas lie au joueur ${indexPlayer}.`)
+    }
     currentPersoEntries = joueurData.entries[persoIDforPlayer] ?? 0
 
     // 29/11/23 : Add check of entries at the beginning of the fight (here)
@@ -265,31 +268,32 @@ function loadSkills(c1: Classes, c2: Classes): void {
   Object.entries([...document.querySelectorAll<HTMLElement>(".skillCombat")!]).forEach(([i, skillE]) => {
     const id = parseInt(i)
     const skills = combatSkillsJSON.filter((skill) => skill.classes.includes(c1) || skill.classes.includes(c2))
-    if (!skills[id]) return
-    inputElement(skillE.querySelector(".skillName")!, "string").value = skills[id].nom
-    skillE.querySelector<HTMLParagraphElement>(".skillStat")!.innerText = skills[id].statUsed
+    const skill = skills[id]
+    if (!skill) return
+    inputElement(skillE.querySelector(".skillName")!, "string").value = skill.nom
+    skillE.querySelector<HTMLParagraphElement>(".skillStat")!.innerText = skill.statUsed
 
     const skillMontantE = skillE.querySelector<HTMLParagraphElement>(".montant")!
 
-    if (skills[id].type === "buff") {
-      const skill = skills[id] as CombatSkill<"buff">
+    if (skill.type === "buff") {
+      const buffSkill = skill as CombatSkill<"buff">
       skillE.querySelector<HTMLParagraphElement>(".montant")!.innerText =
-        `${skill.type} : ${skill.buffElem} +` +
-        `${skill.montant ? `${skill.montant}+` : ""}${skill.montantFixe}, 
-        ${skill.duree} tours`
+        `${buffSkill.type} : ${buffSkill.buffElem} +` +
+        `${buffSkill.montant ? `${buffSkill.montant}+` : ""}${buffSkill.montantFixe}, 
+        ${buffSkill.duree} tours`
       skillMontantE.innerText = skillMontantE.innerText.replaceAll(",", ", ")
-    } else if (!skills[id].montantFixe) {
-      skillMontantE.innerText = `${skills[id].type} : ${skills[id].montant}`
+    } else if (!skill.montantFixe) {
+      skillMontantE.innerText = `${skill.type} : ${skill.montant}`
     } else {
-      skillMontantE.innerText = `${skills[id].type} : ${skills[id].montant}+${skills[id].montantFixe}`
+      skillMontantE.innerText = `${skill.type} : ${skill.montant}+${skill.montantFixe}`
     }
     skillE.querySelector<HTMLImageElement>(".icone")!.src =
-      `http://voldre.free.fr/Eden/images/skillIcon/${skills[id].icone}.png`
+      `http://voldre.free.fr/Eden/images/skillIcon/${skill.icone}.png`
 
     skillE.addEventListener("click", () => {
       // Bug fix Victorine 26/11/2023 : check if button disabled
       // Because the Event Listener is the whole skill Element, not only the button
-      if (!skillE.querySelector<HTMLButtonElement>(".skillName")!.disabled) turnExecution(skills[id], skillE)
+      if (!skillE.querySelector<HTMLButtonElement>(".skillName")!.disabled) turnExecution(skill, skillE)
     })
   })
 }
@@ -591,12 +595,15 @@ async function enemyTurn(): Promise<void> {
     ] as [StatsShort, number][]
   ).sort((a, b) => b[1] - a[1])
 
-  const sumStatsATK = stats[0][1] + stats[1][1]
+  const [bestStat, secondStat] = stats
+  if (!bestStat || !secondStat) return
+
+  const sumStatsATK = bestStat[1] + secondStat[1]
 
   // enemy.force+enemy.dexté+enemy.intel;
   const randValue = getRandomBetween(0, sumStatsATK)
 
-  const statName: StatsShort = randValue < stats[0][1] ? stats[0][0] : stats[1][0]
+  const statName: StatsShort = randValue < bestStat[1] ? bestStat[0] : secondStat[0]
 
   executeAction(enemy, enemySkill(statName))
 }
@@ -787,7 +794,9 @@ function updateBuff(): void {
 
       // If buff per turn (ex : Euphorie), apply buff
       if (buffIconE.title.includes("/tour")) {
-        const buffVar = buffElem[0].replace("/tour", "") as keyof CombatVariables
+        const buffVarName = buffElem[0]?.replace("/tour", "")
+        if (!buffVarName) return
+        const buffVar = buffVarName as keyof CombatVariables
         perso[buffVar] += parseInt(buffMontant.innerText)
         inputElement(document.querySelector(`#${buffVar}`)!, "number").value = perso[buffVar]
       }
@@ -795,7 +804,9 @@ function updateBuff(): void {
     } else {
       if (buffIconE.title.includes("/tour")) {
         // If buff each turn, we remove the whole buff (amount * duration)
-        const buffVar = buffElem[0].replace("/tour", "") as keyof CombatVariables
+        const buffVarName = buffElem[0]?.replace("/tour", "")
+        if (!buffVarName) return
+        const buffVar = buffVarName as keyof CombatVariables
         perso[buffVar] -= parseInt(buffMontant.innerText) * (parseInt(dureeE.children[1].innerText) + 1)
         inputElement(document.querySelector(`#${buffVar}`)!, "number").value = perso[buffVar]
       } else {
@@ -920,7 +931,8 @@ async function victory(): Promise<boolean> {
 }
 
 async function saveCheat(enemyName: string | null): Promise<void> {
-  const cheatID = parseInt(Object.keys(cheatJSON).reverse()[0]) + 1 || 1
+  const lastCheatID = Object.keys(cheatJSON).reverse()[0]
+  const cheatID = lastCheatID ? parseInt(lastCheatID) + 1 : 1
 
   const newCheatLog: { [key: string]: Partial<CombatCheatLog> } = {}
   newCheatLog[cheatID] = {
@@ -987,9 +999,10 @@ async function savePlayer(): Promise<boolean> {
 
     // Glitch Bug fixes : Victorine 27/11/23 "Infini combat si tu gagnes avant T6-8 !"
     // En effet, l'entrée n'était pas décomptée/consommée si tu finissais avant, mtn dès la save je la compte
-    if (currentPersoEntries === joueurData.entries[persoIDforPlayer]) joueurData.entries[persoIDforPlayer] -= 1
+    const entries = joueurData.entries[persoIDforPlayer] ?? 0
+    if (currentPersoEntries === entries) joueurData.entries[persoIDforPlayer] = entries - 1
 
-    if (joueurData.entries[persoIDforPlayer] <= -1) {
+    if (!joueurData.entries[persoIDforPlayer] || joueurData.entries[persoIDforPlayer] <= -1) {
       toastNotification("Erreur : Le personnage a déjà consommé toutes ses entrées.", 6000, true)
       throw new Error(`${perso?.nom} a déjà consommé toutes ses entrées`)
     }

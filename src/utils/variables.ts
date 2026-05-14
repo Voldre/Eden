@@ -4,8 +4,10 @@ export const capitalize = (string: string): string => string.charAt(0).toUpperCa
 
 export const splitParenthesisText = (text: string): [string, string, string] | null => {
   const result = text.match(/(.*)\((.*?)\)(.*)/)
-  // result[0] is the whole string, then we have before, inside and after
-  return result ? [result[1], result[2], result[3]] : null
+  if (!result) return null
+
+  const [, before = "", inside = "", after = ""] = result
+  return [before, inside, after]
 }
 
 export const isTextInText = (mainText: string, subText: string): boolean => {
@@ -29,9 +31,11 @@ export const getRandomBetween = (min: number, max: number): number => {
 }
 
 export const getRandomItem = <T>(array: T[]): T => {
-  // getRandomBetween(0, array.length - 1)
+  if (!array.length) throw new Error("Cannot get a random item from an empty array")
   const randomIndex = Math.floor(Math.random() * array.length)
-  return array[randomIndex]
+  const item = array[randomIndex]
+  if (item === undefined) throw new Error("Random item index is out of bounds")
+  return item
 }
 
 export const sum = (a: number, b: number): number => a + b
@@ -43,6 +47,18 @@ export const countEachOccurences = (list: string[]): { [key: string]: number } =
     },
     {} as { [key: string]: number }
   )
+
+type MappedTuple<T extends readonly unknown[], R> = {
+  // eslint-disable-next-line no-unused-vars
+  -readonly [K in keyof T]: R
+}
+
+export const mapTuple = <T extends readonly unknown[], R>(
+  tuple: T,
+  fn: (_value: T[number], _index: number) => R
+): MappedTuple<T, R> => {
+  return tuple.map(fn) as MappedTuple<T, R>
+}
 
 // #region Date utils
 
@@ -60,13 +76,14 @@ export const daysBetween = (date1: Date, date2: Date): number => {
 
 export const dateToString = (date: Date, full: boolean = false): string => {
   const stringDate = date.toLocaleString("fr-FR")
-  return full ? stringDate : stringDate.split(" ")[0]
+  return full ? stringDate : (stringDate.split(" ")[0] ?? "Error date")
 }
 
 export const stringToDate = (stringDate: string): Date => {
-  const splitDate = stringDate.split("/")
+  const [day, month, year] = stringDate.split("/")
+  if (!day || !month || !year) throw new Error(`Invalide date format ${stringDate}`)
   // console.log(splitDate, new Date(splitDate[2], parseInt(splitDate[1]) - 1, splitDate[0]));
 
   // Date(year,month-1,day,hours) : hours = 2 to Handle conversion locale string FR
-  return new Date(parseInt(splitDate[2]), parseInt(splitDate[1]) - 1, parseInt(splitDate[0]), 2)
+  return new Date(parseInt(year), parseInt(month) - 1, parseInt(day), 2)
 }

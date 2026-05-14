@@ -44,15 +44,23 @@ window.addEventListener("load", async () => {
   const joueurData = indexPlayer && playerJSON[indexPlayer]
   console.log(joueurData, indexPerso)
 
-  if (!joueurData || !indexPerso || joueurData.entries[joueurData.persos.indexOf(parseInt(indexPerso))] <= 0) {
-    responseElement.innerText = "Erreur : Le personnage a déjà fait ses 3 entrées, veuillez en choisir un autre !"
-    console.log("Erreur : Le personnage a déjà fait ses 3 entrées, veuillez en choisir un autre !")
+  const persoData = indexPerso ? persosJSON[(parseInt(indexPerso) - 1).toString()] : undefined
+
+  const entries =
+    joueurData && indexPerso ? joueurData.entries[joueurData.persos.indexOf(parseInt(indexPerso))] : undefined
+  if (!persoData || !entries || entries <= 0) {
+    const error =
+      entries && entries <= 0
+        ? "Erreur : Le personnage a déjà fait ses 3 entrées, veuillez en choisir un autre !"
+        : !persoData
+          ? "Error : Personnage non trouvé"
+          : "Erreur : Joueur non trouvé"
+    responseElement.innerText = error
+    console.log(error)
     stop()
     document.querySelector(".loading")!.remove()
     return
   }
-
-  const persoData = persosJSON[(parseInt(indexPerso) - 1).toString()]
 
   mapId = urlParams.get("map") ?? undefined
   const enemyData = chooseEnemy()
@@ -65,13 +73,13 @@ window.addEventListener("load", async () => {
 
   const randomPNJ = Math.floor(Math.random() * Object.entries(pnjJSON).length + 1)
   console.log("randomPNJ :", randomPNJ)
-  const pnjData = pnjJSON[randomPNJ]
+  const pnjData = pnjJSON[randomPNJ]!
 
   pnjEnemy = Object.values(enemyJSON).find((e) => isTextInText(e.visuel3D, pnjData.id))
 
   // 10 pour le moment en desc
   mapId = urlParams.get("map") || getRandomBetween(3, 10).toString()
-  const mapData = mapsJSON[mapId]
+  const mapData = mapsJSON[mapId]!
 
   gameE.style.backgroundImage = `url('./images/loadingframe/Loading_${mapId}B.jpg')`
 
@@ -170,22 +178,23 @@ function chooseEnemy(category: "boss" | "mob" | undefined = undefined): Enemy | 
   }
 
   if (mapId) {
-    if (!mapsJSON[mapId].mobs) {
+    const map = mapsJSON[mapId]
+    if (!map?.mobs) {
       responseElement.innerText = "Erreur : Aucun n'ennemi n'existe pour le moment sur cette carte, désolé !"
       return undefined
     }
-    enemyListId = enemyListId.filter((eID) => mapsJSON[mapId!].mobs?.includes(parseInt(eID)))
+    enemyListId = enemyListId.filter((eID) => map?.mobs?.includes(parseInt(eID)))
 
     // If map choosed for fight, filter by rarity !
     rarity = getRandomBetween(1, 3)
 
     if (rarity <= 2) {
       // Handle ennemy rarity 1 & 2 (Common & Rare)
-      enemyListId = enemyListId.filter((eID) => enemyJSON[eID].pvmax < 200)
-    } else if (enemyListId.filter((eID) => enemyJSON[eID].pvmax >= 200).length === 0) {
+      enemyListId = enemyListId.filter((eID) => enemyJSON[eID] && enemyJSON[eID].pvmax < 200)
+    } else if (enemyListId.filter((eID) => enemyJSON[eID] && enemyJSON[eID].pvmax >= 200).length === 0) {
       rarity = 2
     } else {
-      enemyListId = enemyListId.filter((eID) => enemyJSON[eID].pvmax >= 200)
+      enemyListId = enemyListId.filter((eID) => enemyJSON[eID] && enemyJSON[eID].pvmax >= 200)
     }
   }
 

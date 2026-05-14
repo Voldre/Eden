@@ -35,7 +35,7 @@ export const newPerso = (persoData: Perso, inFight: boolean = true): PersoCombat
     .map((stuff) => {
       if (!stuff) return 0
       if (!!stuff.access && stuff.access[0] === "D") {
-        return parseInt(stuff.access[1])
+        return parseInt(stuff.access[1] ?? "0")
       }
       return 0
     })
@@ -45,7 +45,7 @@ export const newPerso = (persoData: Perso, inFight: boolean = true): PersoCombat
     .map((stuff) => {
       if (!stuff) return 0
       if (!!stuff.access && stuff.access[0] === "A") {
-        return parseInt(stuff.access[1])
+        return parseInt(stuff.access[1] ?? "0")
       }
       return 0
     })
@@ -55,10 +55,10 @@ export const newPerso = (persoData: Perso, inFight: boolean = true): PersoCombat
   const stuffsDamages = parseEqptsByRegex(["Dégât +"], stuffs, persoData)
   const stuffsArmor = parseEqptsByRegex(["Dégât -", "Dégât reçu -"], stuffs, persoData)
 
-  const montantBouclier = stuffsArmor[1]
-  const montantArmure = stuffsArmor[3]
-  const montantArme1 = stuffsDamages[0]
-  const montantArme2 = stuffsDamages[1]
+  const montantBouclier = stuffsArmor[1] ?? 0
+  const montantArmure = stuffsArmor[3] ?? 0
+  const montantArme1 = stuffsDamages[0] ?? 0
+  const montantArme2 = stuffsDamages[1] ?? 0
 
   const montantAccessDegatNat = stuffsDamages.slice(3).reduce(sum)
   const montantAccessArmureNat = stuffsArmor.reduce(sum) - montantBouclier - montantArmure
@@ -128,20 +128,26 @@ export const newPerso = (persoData: Perso, inFight: boolean = true): PersoCombat
 
   const montantBlocM = parseEqptsByRegex(["Blocage +", "Blocage magique +"], stuffs, persoData).reduce(sum)
 
-  const statsB = [persoData.forceB, persoData.dextéB, persoData.intelB, persoData.charismeB, persoData.espritB].map(
-    (statB) => {
-      const statBWithRegex = statB.replace(/[^\d.+-]/g, "")
-      if (statB.match(/^[-+]\d+|\d*$/)?.[0]) return statBWithRegex.replaceAll("++", "").replaceAll("--", "")
-      return ""
-    }
-  )
+  const statBValue = (value: string): string => {
+    const statBWithRegex = value.replace(/[^\d.+-]/g, "")
+    if (value.match(/^[-+]\d+|\d*$/)?.[0]) return statBWithRegex.replaceAll("++", "").replaceAll("--", "")
+    return ""
+  }
+
+  const statsB: Record<StatsShort, string> = {
+    force: statBValue(persoData.forceB),
+    dexté: statBValue(persoData.dextéB),
+    intel: statBValue(persoData.intelB),
+    charisme: statBValue(persoData.charismeB),
+    esprit: statBValue(persoData.espritB),
+  }
 
   perso.forceRes = montantBlocP
   perso.dextéRes = montantEsq
   perso.intelRes = montantBlocM
-  ;(["force", "dexté", "intel", "charisme", "esprit"] as StatsShort[]).forEach((stat, i) => {
+  ;(["force", "dexté", "intel", "charisme", "esprit"] as StatsShort[]).forEach((stat) => {
     perso[stat] = parseInt(
-      eval(persoData[stat] + statsB[i])
+      eval(persoData[stat] + statsB[stat])
         .toString()
         .slice(0, 2)
     )
@@ -171,7 +177,7 @@ export const parseEqptValue = (text: string, eqpt: Equipment): number => {
     return eqptText[position] + (eqptText[position + 1] ?? "")
   })
   // if (regex.includes("glace")) console.log(`(${regex})`, eqpt, eqptValue);
-  return parseInt(eqptValue[0]) + parseInt(eqptValue[1])
+  return eqptValue.map((v) => parseInt(v)).reduce(sum)
 }
 
 // Shortcut function to make sum of access amounts (without passif, only access parts)
@@ -216,7 +222,7 @@ export const parseEqptBonus = (
       if (!eqpt.condition) return 0
       const hasValue = unformatText(eqpt.condition.bonus)?.split(unformatText(text))[1]
       if (!hasValue) return 0
-      return parseInt(hasValue.split(",")[0].split(" ")[0])
+      return parseInt(hasValue.split(",")[0]!.split(" ")[0]!)
     })
     .reduce((total, item) => total + item)
 
@@ -278,6 +284,7 @@ export const monoClassBonus = (
   weaponE: HTMLInputElement
   bonus: number
 } => {
+  if (!weaponsE[0]) throw new Error("No weapons input set")
   if (persoData.classeP === persoData.classeS) {
     const classesWeapons = CLASSES_WEAPONS[persoData.classeP]
     const weaponsData = weaponsE.map((weaponE) => ({
@@ -300,12 +307,12 @@ export function getNewEnemy(enemyData: Enemy): EnemyCombat {
 
   loadingEnemy.pvmax = loadingEnemy.pv = enemyData.pvmax
 
-  const enemyStats = enemyData.stats.split(",")
-  loadingEnemy.force = parseInt(enemyStats[0])
-  loadingEnemy.dexté = parseInt(enemyStats[1])
-  loadingEnemy.intel = parseInt(enemyStats[2])
-  loadingEnemy.charisme = parseInt(enemyStats[3])
-  loadingEnemy.esprit = parseInt(enemyStats[4])
+  const [force, dexte, intel, charisme, esprit] = enemyData.stats.split(",")
+  loadingEnemy.force = force ? parseInt(force) : undefined
+  loadingEnemy.dexté = dexte ? parseInt(dexte) : undefined
+  loadingEnemy.intel = intel ? parseInt(intel) : undefined
+  loadingEnemy.charisme = charisme ? parseInt(charisme) : undefined
+  loadingEnemy.esprit = esprit ? parseInt(esprit) : undefined
 
   // Calcul des dégâts fixes
   const montantSkills = enemyData.skills

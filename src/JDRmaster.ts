@@ -115,7 +115,7 @@ function loadEnemy(indexEnemy: string, ennemiElement: HTMLElement, genericEnemy:
   const espritE = inputSelector("#esprit", "string", ennemiElement)
 
   if (!enemyData || !enemyData.pvmax) {
-    const errorMessage = `${enemyData?.nom ?? indexEnemy} ${!enemyData.pvmax ? "has no HP !" : "is not an enemy (in the list)"}`
+    const errorMessage = `${enemyData?.nom ?? indexEnemy} ${!enemyData?.pvmax ? "has no HP !" : "is not an enemy (in the list)"}`
     toastNotification(errorMessage, 5000, true)
     console.error(errorMessage)
     // ennemiElement.querySelector('#nom').innerText = "";
@@ -170,17 +170,18 @@ function loadEnemy(indexEnemy: string, ennemiElement: HTMLElement, genericEnemy:
         : enemyData.pvmax
 
   // Stats
-  forceE.value = enemyData.stats.split(",")[0]
-  dextéE.value = enemyData.stats.split(",")[1]
-  intelE.value = enemyData.stats.split(",")[2]
-  charismeE.value = enemyData.stats.split(",")[3]
-  espritE.value = enemyData.stats.split(",")[4]
+  const statsParts = enemyData.stats.split(",")
+  forceE.value = statsParts[0] ?? ""
+  dextéE.value = statsParts[1] ?? ""
+  intelE.value = statsParts[2] ?? ""
+  charismeE.value = statsParts[3] ?? ""
+  espritE.value = statsParts[4] ?? ""
 
   // Skills de l'ennemi
   enemyData.skills.forEach((skill, index) => {
     const competenceE = [...ennemiElement.querySelectorAll(".competence")][index]
     // innerHTML because enemy skill can have <br/>
-    competenceE.innerHTML = skill
+    if (competenceE) competenceE.innerHTML = skill
   })
 
   if (logged) updateSlots()
@@ -480,6 +481,8 @@ const eqptFilter = (): void => {
 
 document.querySelector("#newEnemy")!.addEventListener("click", () => {
   const lastEnemy = ennemiEs[ennemiEs.length - 1]
+  if (!lastEnemy) return
+
   if (ennemiEs.length > 5) {
     lastEnemy.remove()
 
@@ -487,7 +490,8 @@ document.querySelector("#newEnemy")!.addEventListener("click", () => {
     const hasCurrentTurn = !!lastEnemy.querySelector("#currentTurnE")
     if (hasCurrentTurn) {
       tourE.value += 1
-      const nextTurnE = allSlots[0].querySelector(".nextTurn")!
+      const nextTurnE = allSlots[0]?.querySelector(".nextTurn")
+      if (!nextTurnE) return
       nextTurnE.classList.remove("hide")
       nextTurnE.id = "currentTurnE"
     }
@@ -548,7 +552,8 @@ document.querySelector("#updatePInfo")!.addEventListener("click", () => {
     const player = Object.values(newPersosJSON).find((perso) => isTextInText(perso.nom, playerLabel))
     if (!player) return // Can't continue
 
-    if (persoEs[parseInt(index)]) persoEs[parseInt(index)].children[0].value = player.nom
+    const persoE = persoEs[parseInt(index)]
+    if (persoE) persoE.children[0].value = player.nom
 
     const liElem = createElement("li", `${player.nom} : ${player.pv}/${player.pvmax}`)
     pInfo.append(liElem)
@@ -653,7 +658,8 @@ function handleGenericSelectChange(selectElements: HTMLSelectElement[]): void {
     weaknesses: ["", ""] as [string, string],
   }
 
-  loadEnemy("0", selectElements[0].closest(".infoEnnemi")!, enemyData)
+  const infoEnemyE = selectElements[0]?.closest<HTMLElement>(".infoEnnemi")
+  if (infoEnemyE) loadEnemy("0", infoEnemyE, enemyData)
 }
 
 // ALL SAVES
@@ -690,28 +696,37 @@ document.querySelector("#saveBackup")!.addEventListener("click", async () => {
   toastNotification("JDRpersos_backup.json et JDRplayer sauvegardés")
 })
 
+// #region Create
+
+const nextNumericId = (record: Record<string, unknown>): number => {
+  const lastId = Object.keys(record).reverse()[0]
+  return lastId ? parseInt(lastId) + 1 : 1
+}
+
 // Create skill & Save
 
 document.querySelector("#createSkill")!.addEventListener("click", async () => {
   const addSkill = document.querySelector<HTMLElement & { children: HTMLTextAreaElement[] }>(".addSkill")!
-  const skillID = parseInt(Object.keys(skillsJSON).reverse()[0]) + 1 || 1
+  const skillID = nextNumericId(skillsJSON)
+  const skillField = (index: number): HTMLTextAreaElement => addSkill.children[index]!
   const newSkill: { [key: string]: Skill } = {}
-  newSkill[skillID] = {
-    nom: addSkill.children[0 + 1].value,
-    desc: addSkill.children[2 + 1].value,
-    effet: addSkill.children[4 + 1].value,
-    montant: addSkill.children[6 + 1].value,
-    icone: addSkill.children[8 + 1].value,
-    stat: addSkill.children[10 + 1].value as StatsName,
-    classe: addSkill.children[12 + 1].value.split(",") as Classes[],
+  const skill: Skill = {
+    nom: skillField(0 + 1).value,
+    desc: skillField(2 + 1).value,
+    effet: skillField(4 + 1).value,
+    montant: skillField(6 + 1).value,
+    icone: skillField(8 + 1).value,
+    stat: skillField(10 + 1).value as StatsName,
+    classe: skillField(12 + 1).value.split(",") as Classes[],
   }
+  newSkill[skillID] = skill
   console.log(newSkill)
   setCookie("skillsJSON", newSkill)
 
   const res = await callPHP({ action: "saveFile", name: "skills" })
   if (!res) throw new Error("callPHP return false")
   // eslint-disable-next-line require-atomic-updates
-  skillsJSON[skillID] = newSkill[skillID]
+  skillsJSON[skillID] = skill
   toastNotification("Compétence créée")
 })
 
@@ -738,19 +753,20 @@ selectEqptType.addEventListener("change", () => {
 })
 
 document.querySelector("#createEqpt")!.addEventListener("click", async () => {
-  const eqptID = parseInt(Object.keys(eqptJSON).reverse()[0]) + 1 || 1
+  const eqptID = nextNumericId(eqptJSON)
   const newEqpt: { [key: string]: Equipment } = {}
+  const eqptField = (index: number): HTMLInputElement | HTMLSelectElement => addEqpt.children[index]!
 
   const commonProps = {
-    nom: addEqpt.children[0 + 1].value,
-    desc: addEqpt.children[2 + 1].value,
-    effet: addEqpt.children[4 + 1].value,
-    montant: addEqpt.children[6 + 1].value,
-    icone: addEqpt.children[8 + 1].value,
+    nom: eqptField(0 + 1).value,
+    desc: eqptField(2 + 1).value,
+    effet: eqptField(4 + 1).value,
+    montant: eqptField(6 + 1).value,
+    icone: eqptField(8 + 1).value,
     armorTypes: undefined,
     weaponType: undefined,
   }
-  newEqpt[eqptID] =
+  const eqpt: Equipment =
     // @TODO Remove this workaround
     selectEqptType.value === "armure"
       ? { ...commonProps, type: selectEqptType.value, armorTypes: [select2ndEqptType.value] as ArmorType[] }
@@ -759,6 +775,7 @@ document.querySelector("#createEqpt")!.addEventListener("click", async () => {
         : selectEqptType.value === "arme-2m"
           ? { ...commonProps, type: selectEqptType.value, weaponType: select2ndEqptType.value as Weapons }
           : { ...commonProps, type: selectEqptType.value }
+  newEqpt[eqptID] = eqpt
   console.log(newEqpt)
 
   setCookie("eqptJSON", newEqpt)
@@ -766,12 +783,13 @@ document.querySelector("#createEqpt")!.addEventListener("click", async () => {
   const res = await callPHP({ action: "saveFile", name: "eqpt" })
   if (!res) throw new Error("callPHP return false")
   // eslint-disable-next-line require-atomic-updates
-  eqptJSON[eqptID] = newEqpt[eqptID]
+  eqptJSON[eqptID] = eqpt
   toastNotification("Equipement créé")
 })
 
 // Create enemy & Save
 const addEnemyE = document.querySelector<HTMLElement & { children: HTMLInputElement[] }>(".addEnemy")!
+const enemyField = (index: number): HTMLInputElement => addEnemyE.children[index]!
 ;[...addEnemyE.querySelectorAll("select")].forEach((selectE) => {
   selectE.style.fontSize = "12px"
   fillSelectOptions(selectE, [
@@ -783,48 +801,37 @@ const addEnemyE = document.querySelector<HTMLElement & { children: HTMLInputElem
 const enemyDamageE = document.querySelector("#enemyDamage") as HTMLSpanElement
 
 // Skills inputs
-;[addEnemyE.children[6 + 1], addEnemyE.children[8 + 1], addEnemyE.children[10 + 1], addEnemyE.children[12 + 1]].forEach(
-  (skillE) => {
-    skillE.addEventListener("change", () => {
-      const enemyData: Enemy = {
-        visuel3D: addEnemyE.children[0 + 1].value,
-        nom: addEnemyE.children[2 + 1].value,
-        pvmax: parseInt(addEnemyE.children[4 + 1].value),
-        skills: [
-          addEnemyE.children[6 + 1].value,
-          addEnemyE.children[8 + 1].value,
-          addEnemyE.children[10 + 1].value,
-          addEnemyE.children[12 + 1].value,
-        ],
-        stats: addEnemyE.children[14 + 1].value,
-        desc: addEnemyE.children[16 + 1].value,
-        drop: addEnemyE.children[18 + 1].value,
-        weaknesses: ["", ""],
-      }
-      const enemyDamage = getNewEnemy(enemyData).degat
-      enemyDamageE.innerText = `${enemyDamage}`
-    })
-  }
-)
+;[enemyField(6 + 1), enemyField(8 + 1), enemyField(10 + 1), enemyField(12 + 1)].forEach((skillE) => {
+  skillE.addEventListener("change", () => {
+    const enemyData: Enemy = {
+      visuel3D: enemyField(0 + 1).value,
+      nom: enemyField(2 + 1).value,
+      pvmax: parseInt(enemyField(4 + 1).value),
+      skills: [enemyField(6 + 1).value, enemyField(8 + 1).value, enemyField(10 + 1).value, enemyField(12 + 1).value],
+      stats: enemyField(14 + 1).value,
+      desc: enemyField(16 + 1).value,
+      drop: enemyField(18 + 1).value,
+      weaknesses: ["", ""],
+    }
+    const enemyDamage = getNewEnemy(enemyData).degat
+    enemyDamageE.innerText = `${enemyDamage}`
+  })
+})
 
 document.querySelector("#createEnemy")!.addEventListener("click", async () => {
-  const enemyID = parseInt(Object.keys(enemyJSON).reverse()[0]) + 1 || 1
+  const enemyID = nextNumericId(enemyJSON)
   const newEnemy: { [key: string]: Enemy } = {}
-  newEnemy[enemyID] = {
-    visuel3D: addEnemyE.children[0 + 1].value,
-    nom: addEnemyE.children[2 + 1].value,
-    pvmax: parseInt(addEnemyE.children[4 + 1].value),
-    skills: [
-      addEnemyE.children[6 + 1].value,
-      addEnemyE.children[8 + 1].value,
-      addEnemyE.children[10 + 1].value,
-      addEnemyE.children[12 + 1].value,
-    ],
-    stats: addEnemyE.children[14 + 1].value,
-    desc: addEnemyE.children[16 + 1].value,
-    drop: addEnemyE.children[18 + 1].value,
+  const enemy: Enemy = {
+    visuel3D: enemyField(0 + 1).value,
+    nom: enemyField(2 + 1).value,
+    pvmax: parseInt(enemyField(4 + 1).value),
+    skills: [enemyField(6 + 1).value, enemyField(8 + 1).value, enemyField(10 + 1).value, enemyField(12 + 1).value],
+    stats: enemyField(14 + 1).value,
+    desc: enemyField(16 + 1).value,
+    drop: enemyField(18 + 1).value,
     weaknesses: [...addEnemyE.querySelectorAll("select")].map((s) => s.value).filter((s) => !!s) as [string, string],
   }
+  newEnemy[enemyID] = enemy
   console.log(newEnemy)
 
   setCookie("enemyJSON", newEnemy)
@@ -832,15 +839,18 @@ document.querySelector("#createEnemy")!.addEventListener("click", async () => {
   const res = await callPHP({ action: "saveFile", name: "enemy" })
   if (!res) throw new Error("callPHP return false")
   // eslint-disable-next-line require-atomic-updates
-  enemyJSON[enemyID] = newEnemy[enemyID]
+  enemyJSON[enemyID] = enemy
   toastNotification("Ennemi créé")
 })
 
 document.querySelector("#randomBoss")!.addEventListener("click", () => {
   const bosses = Object.entries(enemyJSON).filter((e) => e[1].pvmax > 200)
   const randomIndex = Math.floor(Math.random() * bosses.length)
-  document.querySelector<HTMLSelectElement>(".ennemi")!.value = bosses[randomIndex][0]
-  loadEnemy(bosses[randomIndex][0], document.querySelector("#e0")!)
+  const boss = bosses[randomIndex]
+  if (!boss) return
+
+  document.querySelector<HTMLSelectElement>(".ennemi")!.value = boss[0]
+  loadEnemy(boss[0], document.querySelector("#e0")!)
 })
 
 document.querySelector("#logout")!.addEventListener("click", async () => {

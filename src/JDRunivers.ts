@@ -117,7 +117,7 @@ const getSkillElement = (skill: Skill, isAwaken?: boolean, updateAwakenButton?: 
 
   const skillRange = skill.effet.split("AoE ")[1] ?? null // en bas [0] + "AoE"
 
-  const effetDesc = skillRange ? skill.effet.split(" AoE")[0] : skill.effet
+  const effetDesc = skillRange ? (skill.effet.split(" AoE")[0] ?? "") : skill.effet
   const skillRangeIconE =
     skillRange &&
     createElement("span", undefined, {
@@ -179,7 +179,9 @@ const showClassSkills = (classe: Classes): void => {
   })
 
   const classDesc = createElement("div", undefined, { className: "classeDesc" })
-  classDesc.innerHTML = classesDesc[CLASSES.indexOf(classe)]
+
+  // @TODO Improve with react
+  classDesc.innerHTML = classesDesc[CLASSES.indexOf(classe)]!
   classDesc.append(createElement("p", classesSpe[CLASSES.indexOf(classe)]))
 
   const awakenButton = createElement("img", undefined, {

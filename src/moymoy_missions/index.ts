@@ -30,7 +30,7 @@ interface Mission {
   completed: boolean
 }
 
-const dateToISOString = (date: Date): string => date.toISOString().split("T")[0]
+const dateToISOString = (date: Date): string => date.toISOString().split("T")[0]!
 const today = new Date(dateToISOString(new Date()))
 
 const callPHP = async (

@@ -142,9 +142,16 @@ window.addEventListener("load", async () => {
     console.log("Anecdotes par map (ID,nom,nb)", anecdoteByMap)
 
     // Display nb anecdotes by map
-    const enemiesOnMap: [string, [string, number][]][] = Object.values(mapsJSON)
-      .filter((map) => map.mobs !== undefined)
-      .map((map) => [map.name, map.mobs!.map((e) => [enemyJSON[e.toString()].nom, enemyJSON[e.toString()].pvmax])])
+    const enemiesOnMap: [string, [string, number][]][] = Object.values(mapsJSON).flatMap((map) => {
+      if (!map.mobs) return []
+
+      const mobs: [string, number][] = map.mobs.flatMap((enemyId) => {
+        const enemy = enemyJSON[enemyId.toString()]
+        return enemy ? [[enemy.nom, enemy.pvmax]] : []
+      })
+
+      return [[map.name, mobs]]
+    })
 
     console.log("Ennemis par map", enemiesOnMap)
 
@@ -197,7 +204,7 @@ async function loadPlayer(player: Joueurs): Promise<void> {
   persosE.forEach((e) => e.classList.add("hide"))
 
   persosData.forEach((perso, index) => {
-    loadPerso(perso, index, joueurData)
+    if (perso) loadPerso(perso, index, joueurData)
   })
 
   loadCards(joueurData)
@@ -245,6 +252,8 @@ function loadPerso(perso: Perso, index: number, joueurData: Player): void {
   // console.log(perso, index);
   const persoE = persosE[index]
 
+  if (!persoE) throw new Error(`Perso ${index} not found`)
+
   // Entrées du perso
   persoE.querySelector<HTMLParagraphElement>(".entries")!.innerText = `${joueurData.entries[index]}/3 `
 
@@ -261,12 +270,12 @@ function loadPerso(perso: Perso, index: number, joueurData: Player): void {
       : perso.pp
 
   persoE.addEventListener("click", () => {
-    if (joueurData.entries[index] <= 0) {
+    if (joueurData.entries[index] && joueurData.entries[index] <= 0) {
       toastNotification("Erreur : Le personnage ne peut plus aller combattre, revenez demain !", 4000, true)
     } else {
       worldmapE.classList.remove("hide")
       continentE.classList.add("active")
-      mapMenuEs[1].classList.add("activate")
+      mapMenuEs[1]?.classList.add("activate")
       indexPerso = Object.entries(persosJSON).find((p) => p[1] === perso)?.[0]
     }
   })

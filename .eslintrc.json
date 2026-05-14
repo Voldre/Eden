@@ -2,6 +2,7 @@
   "env": { "browser": true },
 
   "ignorePatterns": [
+    "backup/**/*.js",
     "server/**/*.js",
     "*.css",
     "*.html",
@@ -9,6 +10,7 @@
     "OBJLoader.js",
     "jtest.js",
     "loading-bar.js",
+    "threeEden.js",
     "three.min.js",
     "images/*"
   ],

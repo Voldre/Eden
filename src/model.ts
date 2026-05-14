@@ -64,9 +64,10 @@ export interface Perso extends MainElementPerso {
   passif12?: string
   passif14?: string
   isArchived: boolean
-  joueur: Joueurs | ""
+  joueur: Joueurs | null
   guardian?: { type: "full" | "partial"; config: MainElementPerso[] }
   lastUpdate: string
+  // customSkill?: Omit<Skill, "classe" | "race">
 }
 
 export interface Enemy {
@@ -159,14 +160,7 @@ export interface MasterData {
   notes: string
 }
 
-export interface RaceClassStatsValue {
-  Force: number
-  Dextérité: number
-  Intelligence: number
-  Charisme: number
-  Esprit: number
-  PV: number
-}
+export type RaceClassStatsValue = Record<StatsName, number> & { PV: number }
 export interface RaceClassStats {
   classes: ({
     Classe: Classes

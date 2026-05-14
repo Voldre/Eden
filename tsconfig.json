@@ -15,8 +15,17 @@
 
     "esModuleInterop": true, // Permet une meilleure compatibilité avec les modules CommonJS
 
+    "forceConsistentCasingInFileNames": true,
+    "allowUnreachableCode": true, // Avoid to aggressively delete unreachable code
+    "noImplicitReturns": true, // Check that every function branch returns explicitly
+    "noImplicitOverride": true, // Force override keyword on inherited members
+    "noUnusedLocals": true, // Detect dead imports and local variables
+    "noUnusedParameters": true, // Detect unused function parameters
+    "noUncheckedIndexedAccess": true, // Check if array[x] exists
+    "noFallthroughCasesInSwitch": true,
+
     "allowJs": true // Allow JS file in commit
   },
-  "include": ["src/**/*ts"],
-  "exclude": ["tsconfig.json", "node_modules"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", ".next", "**/test*", "**/*.js"]
 }
