@@ -2928,12 +2928,12 @@
       "Tempête Infernale (Percée du Chevalier) : 4D6 +23 (+7 mono), Prov 50% 1t : force (jdrCombat +40)",
       "Enchantement Glaciale : Blocage/Res +3,  dégât +1D6+4 sur 4 tours, relâchement : (Montant*2) : Esprit",
       "Silence du néant : Nullifie la magie (sort, soin, buff)  pendant 3 tours (non annulable) : Esprit",
-      "Passif : Armure +10, vivacité : esquive+2"
+      "Passif : Armure +10, vivacité : Esquive+2. Si PV<120: durée Malus /2\nEsprit Shonen: avant de tomber: succès ('Volonté'/20) : Soigne 'Volonté'*5 PV (buffs préservés)"
     ],
     "stats": "18,15,9,17,18",
     "desc": "Héros et 1er chevalier de l'ordre des Chevaliers du Temple, c'est un homme dévoué pour aider les autres, très fiable et généreux.",
     "drop": "Insigne de l'Ordre du Temple, Rapière ...",
-    "weaknesses": ["glace", "nature"]
+    "weaknesses": ["feu", "nature"]
   },
   "198": {
     "visuel3D": "m041c",
@@ -3769,5 +3769,110 @@
     "desc": "Zumi bleuté, avec un regard spécial. Il est toujours accompagné de son bras droit Zik.",
     "drop": "commun: Glyphe des Ursuns (2)  rare: Griffe en Mousserite",
     "weaknesses": ["perçant", "foudre"]
+  },
+  "254": {
+    "visuel3D": "saga",
+    "nom": "Saga",
+    "pvmax": 330,
+    "skills": [
+      "Ami du Marteau : Soin 2D10 +20. Prochain dégât +2D6+10 : Intel\n\nBarrière glaciale : AoE autour de soi, 3D6+17, -1 buff pour l'ennemi : Intel\n\nScellement: Scelle les compétences soit magique soit physique de l'ennemi. : Intel\n-Mode rapide: 3t scellement \n-Mode écriture : 2t incantation, Scellement 5t, et enlève tout les buffs actifs. (non annulable)",
+      "Pluie de Flèches: AoE 4D6+23 AoE: Dextérité\n\nBlessure Douloureuse 4D6+ 20 et 0 soin 3t : Dextérité \n\nTriple attaque : 4D6+ 30 : Dextérité\n\nSaut d'esquive (& blocage) : 5 tentatives ",
+      "Invocation Corbeau (Oz) :Esprit: 50 PV et Stats 16\n-Soin : 1D6+14, -1 malus INT\n-Coup de Bec/(Tornade): 3D6 +15 (AoE -7)\n\n",
+      ""
+    ],
+    "stats": "11,18,18,11,15",
+    "desc": "Une jeune fille aux cheveux blancs et aux yeux rouges appartient à une confrérie mystérieuse, chargée de veiller sur les secrets d’Ezur.",
+    "drop": "a voir",
+    "weaknesses": ["foudre", "feu"]
+  },
+  "255": {
+    "visuel3D": "fleauloup",
+    "nom": "Ombryss - Le loup du fléau",
+    "pvmax": 385,
+    "skills": [
+      "Aura de Néant : AoE 2D6+20, -3 stats 3t, Intel\nDéferlante Obscure : AoE ligne  3D6+25. Intel",
+      "Entraves Tentaculaires: 3D6+20, Entraver pendant 3t : Intel\nRegard Multiple : AoE Malus, Endormissement 3t ou -3blo/Esq/Rés: Esprit",
+      "Régénération Corrompue: -1 malus et 3D6 +20 : Esprit",
+      "Morsure Abyssale : Force\nMode Normal: 4D6 +27\nMode Corruption: 2D6 +15, Empoisonné par le fléau "
+    ],
+    "stats": "18,7,19,10,18",
+    "desc": "Monstre ressemblant à un loup avec des racines, venant d'une dimension inconnu",
+    "drop": "Fourrure corrompu Rare: Griffe corrompu ",
+    "weaknesses": ["lumière", "feu"]
+  },
+  "256": {
+    "visuel3D": "salamandre",
+    "nom": "Salamandre Moussu",
+    "pvmax": 200,
+    "skills": [
+      "Spore : AoE 2D10 + 7 et -2 réussite 3t ",
+      "Coup de queue : Aoe 3D6+10 Dext\nCoup patte : 2D10+15   Dext",
+      "Explosion champi: -1 stat pendant 3t",
+      ""
+    ],
+    "stats": "9,18,16,11,14",
+    "desc": "Une salamandre vivant dans une grotte humide a laissé pousser des champignons sur son dos, formant une étrange symbiose",
+    "drop": "",
+    "weaknesses": ["feu", "ténèbres"]
+  },
+  "257": {
+    "visuel3D": "m474b",
+    "nom": "Serpent d'Amur",
+    "pvmax": 90,
+    "skills": [
+      "Tempête de Sable: 1D8+10 AoE (malus dexté -2) 2 tours (*2 si duo) : Dexté",
+      "Défense d'Acier : Blocage +4 pendant 1D4+1 tours : Esprit",
+      "Morsure: 1D10+12 Dexté",
+      "Venin : Esprit -2, PV-4 sur 4 tours\nPassif : Si tempête, Bloc/Esq +1"
+    ],
+    "stats": "13,17,10,9,13",
+    "desc": "Serpent originaire d'Amur aux reflets de bronze qui s'enfoui dans le sable",
+    "drop": "rare: Bouclier du Désert, Ecailles de serpent",
+    "weaknesses": ["perçant", "glace"]
+  },
+  "258": {
+    "visuel3D": "m474",
+    "nom": "Serpent Géant d'Amur",
+    "pvmax": 340,
+    "skills": [
+      "Appel du Désert: 2D10+20 AoE (lève une tempête pendant 5 tours) : Dexté\nFatigue+20 à la fin",
+      "Regard terrifiant : -2 stats AoE pendant 4 tours. Esprit\nSi échec critique : paralysie 1 tour",
+      "Morsure géante: 3D10+35 (min 10) Dexté\nBalayage : 2D10+25 AoE Dexté",
+      "Passif: pendant une tempête: Blocage/Esquive cible -2\nPV < 120 : Bloc/Esq+2"
+    ],
+    "stats": "15,19,12,10,18",
+    "desc": "Un serpent géant du désert, on raconte qu'il serait le fruit d'un rituel divin",
+    "drop": "rare: Coiffe de soldats d'Amur, Ceinture Pharaonique, Ecailles de serpent géant",
+    "weaknesses": ["perçant", "glace"]
+  },
+  "259": {
+    "visuel3D": "m017f",
+    "nom": "Smilodon d'Amur",
+    "pvmax": 90,
+    "skills": [
+      "Morsure/Griffe : 1D10 +12 : force",
+      "Attaque tournoyante : 1D6+10 : dextérité",
+      "Rage : Dégât 1D6+4 (pour les Smilodons) pendant 3 tours : force ",
+      "Passif  Si coup critique : soin 50%"
+    ],
+    "stats": "16,16,9,9,11",
+    "desc": "Tigre à dents de sabre avec un pelage couleur sable. Plus féroce et enragé que son cousin des déserts du Nord.",
+    "drop": "Peau de Smilodon d'Amur, rare : Croc de Smilodon d'Amur",
+    "weaknesses": ["nature", "glace"]
+  },
+  "260": {
+    "visuel3D": "m480",
+    "nom": "Scorpion d'Amur",
+    "pvmax": 50,
+    "skills": [
+      "Coup de Pince : 1D6+12 : Dexté",
+      "Blessure Douloureuse : 1D6 +6 : empêche le soin sur 3 tours : Dexté",
+      "Venin : Force -2, PV-4 sur 4 tours : Dexté",
+      ""
+    ],
+    "stats": "11,19,9,9,13",
+    "desc": "Scorpion de petite taille vivant dans les déserts, il s'adapte très facilement à son environnement. En groupe ils peuvent être très dangereux avec leur toxine.",
+    "drop": "Venin de Scorpion, rare : Dard de Scorpion",
+    "weaknesses": ["tranchant", "foudre"]
   }
 }

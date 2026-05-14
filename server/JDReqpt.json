@@ -5763,5 +5763,193 @@
     "icone": "W31401",
     "type": "arme-1m",
     "weaponType": "griffe"
+  },
+  "643": {
+    "nom": "Griffe du fléau",
+    "desc": "Forgée de matière corrompue, cette griffe diffuse une énergie sombre. Chaque utilisation accélère une détérioration insidieuse.",
+    "effet": "Malédiction du Lien",
+    "montant": "Dégât +8",
+    "icone": "griffef",
+    "weaponType": "griffe",
+    "type": "arme-1m"
+  },
+  "644": {
+    "nom": "Bague anti-faille",
+    "desc": "Bague fabriquée à partir de minerais de failles scellées, offrant une résistance accrue lors des incursions dans les failles.",
+    "effet": "",
+    "montant": "Résistance faille +2 et dégat reçu -2",
+    "icone": "A00005e",
+    "type": "access"
+  },
+  "645": {
+    "nom": "Collier anti-faille",
+    "desc": "Collier fabriqué à partir de minerais de failles scellées, offrant une résistance accrue lors des incursions dans les failles",
+    "effet": "",
+    "montant": "Résistance faille +2 et dégat +2 ",
+    "icone": "k10159e",
+    "type": "access"
+  },
+  "646": {
+    "nom": "Catalyseur magique",
+    "desc": "Un simple catalyseur magique.",
+    "effet": "",
+    "montant": "Dégât +5",
+    "icone": "W80007",
+    "weaponType": "catalyseur",
+    "type": "arme-2m"
+  },
+  "647": {
+    "nom": "Catalyseur givré",
+    "desc": "Un simple catalyseur magique avec un noyau gelé.",
+    "effet": "Dégât de glace +2",
+    "montant": "Dégât +6",
+    "icone": "W80017",
+    "weaponType": "catalyseur",
+    "type": "arme-2m"
+  },
+  "648": {
+    "nom": "Catalyseur glacé",
+    "desc": "Un catalyseur créé à partir d'un noyau de monstre de glace.",
+    "effet": "Dégât de glace +3",
+    "montant": "Dégât +8",
+    "icone": "W80009",
+    "weaponType": "catalyseur",
+    "type": "arme-2m"
+  },
+  "649": {
+    "nom": "Catalyseur brûlant",
+    "desc": "Un catalyseur magique créé avec un noyau brûlant",
+    "effet": "Dégât de feu +2",
+    "montant": "Dégât +6",
+    "icone": "W80010",
+    "weaponType": "catalyseur",
+    "type": "arme-2m"
+  },
+  "650": {
+    "nom": "Catalyseur volcanique",
+    "desc": "Un catalyseur magique créé avec un noyau volcanique",
+    "effet": "Dégât de feu +3",
+    "montant": "Dégât +9",
+    "icone": "W80045",
+    "weaponType": "catalyseur",
+    "type": "arme-2m"
+  },
+  "651": {
+    "nom": "Catalyseur Cryo-thermique",
+    "desc": "Catalyseur magique alimenté par l’énergie d’un noyau multi-élémentaire.",
+    "effet": "",
+    "montant": "Dégât +8, Dégât de feu +2 et dégat de glace +2",
+    "icone": "W80002",
+    "weaponType": "catalyseur",
+    "type": "arme-2m"
+  },
+  "652": {
+    "nom": "Catalyseur illusoire",
+    "desc": "Catalyseur forgé à partir de créatures tentaculaires.",
+    "effet": "Intelligence +1",
+    "montant": "Dégât +7 (Esprit+1 si Illusionniste)",
+    "condition": { "type": "classe", "value": ["Illusionniste"], "bonus": "Esprit +1" },
+    "icone": "W80008",
+    "weaponType": "catalyseur",
+    "type": "arme-2m"
+  },
+  "653": {
+    "nom": "Catalyseur du Sorcier",
+    "desc": "Catalyseur forgé à partir d’un noyau élémentaire extrêmement stable, lui conférant un parfait équilibre magique.",
+    "effet": "Intelligence +2",
+    "montant": "Dégât +8 (+3 si magicien/shaman)",
+    "condition": { "type": "classe", "value": ["Magicien", "Shaman"], "bonus": "Dégât +3" },
+    "icone": "W80046",
+    "weaponType": "catalyseur",
+    "type": "arme-2m"
+  },
+  "654": {
+    "nom": "Catalyseur d'épines",
+    "desc": "Une ronce enserrant un noyau magique donnant naissance à ce catalyseur.",
+    "effet": "",
+    "montant": "Dégât +6, dégât épine : 3",
+    "icone": "W80018",
+    "weaponType": "catalyseur",
+    "type": "arme-2m"
+  },
+  "655": {
+    "nom": "Catalyseur Glacéa",
+    "desc": "Un cœur magique d’essence glacé a donné naissance à ce catalyseur.",
+    "effet": "Intelligence +1 ",
+    "montant": "Dégât +9, dégât de nature +2 et dégât de glace +2 ",
+    "icone": "W80035",
+    "weaponType": "catalyseur",
+    "type": "arme-2m"
+  },
+  "656": {
+    "nom": "Catalyseur clairvoyant",
+    "desc": "Catalyseur qui améliore la concentration, offrant une perception accrue de soi et de son environnement.",
+    "effet": "Esprit + 2",
+    "montant": "Dégât +7",
+    "icone": "W80027",
+    "weaponType": "catalyseur",
+    "type": "arme-2m"
+  },
+  "657": {
+    "nom": "Catalyseur affaiblissant",
+    "desc": "Créé à partir du noyau d’un puissant monstre ténébreux, ce catalyseur diffuse son énergie en puisant dans la force de son porteur.",
+    "effet": "Force -4",
+    "montant": "Dégât +15",
+    "icone": "W80040",
+    "weaponType": "catalyseur",
+    "type": "arme-2m"
+  },
+  "658": {
+    "nom": "Catalyseur de lumière",
+    "desc": "Un catalyseur créé à partir d'un noyau de lumière.",
+    "effet": "Dégât de lumière +3",
+    "montant": "Dégât +6",
+    "icone": "W80026",
+    "weaponType": "catalyseur",
+    "type": "arme-2m"
+  },
+  "659": {
+    "nom": "Catalyseur rayonnant",
+    "desc": "Un catalyseur créé à partir d'un noyau pur.",
+    "effet": "Dégât de lumière +3",
+    "montant": "Dégât +9",
+    "icone": "W80028",
+    "weaponType": "catalyseur",
+    "type": "arme-2m"
+  },
+  "660": {
+    "nom": "Anneau union",
+    "desc": "Un anneau qui aide l’équipe à renforcer sa cohésion et à rester unie.Fonctionne que si deux personnes le porte.",
+    "effet": "Malédiction du Lien",
+    "montant": "Dégat reçu -2 et Esprit +1",
+    "icone": "A00003d",
+    "type": "access"
+  },
+  "661": {
+    "nom": "Bouclier du Désert",
+    "desc": "Un bouclier ouvragé par un artisan d'Amur, qualité standard.",
+    "effet": "Force +1",
+    "montant": "Dégât -3 (0 malus dans les déserts)",
+    "icone": "W74101",
+    "weaponType": "bouclier",
+    "type": "arme-1m"
+  },
+  "662": {
+    "nom": "Veste du Désert",
+    "desc": "Une veste conçue pour mieux voyager dans les déserts",
+    "effet": "",
+    "montant": "Dégât -4 (0 malus dans les déserts)",
+    "icone": "A60005",
+    "armorTypes": ["leger"],
+    "type": "armure"
+  },
+  "663": {
+    "nom": "Plastron du Désert",
+    "desc": "Un plastron conçu pour mieux voyager dans les déserts",
+    "effet": "",
+    "montant": "Dégât -5 (0 malus dans les déserts)",
+    "icone": "A20086",
+    "armorTypes": ["lourd"],
+    "type": "armure"
   }
 }

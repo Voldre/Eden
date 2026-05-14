@@ -815,6 +815,7 @@ td {
 .musique div {
   display: flex;
   height: 47px;
+  align-items: center;
 }
 .musique div audio {
   height: 40px;

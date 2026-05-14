@@ -96,7 +96,7 @@ export const iconsEveil = [ "J009", "J011", "J013", "j043", "J015", "J017", "J01
 export const ELEMENTS = ["contondant","tranchant", "perçant", "feu", "glace", "foudre", "nature", "lumière", "ténèbres"] as const
 
 // prettier-ignore
-export const WEAPONS = [ "épée", "hache", "masse", "épée colossale", "griffe", "katana", "flingue", "arc", "lance", "bâton", "grimoire", "instrument", "dague", "rapière", "faucille", "marteau","bouclier"] as const
+export const WEAPONS = [ "épée", "hache", "masse", "épée colossale", "griffe", "katana", "flingue", "arc", "lance", "bâton", "grimoire", "instrument", "dague", "rapière", "faucille", "marteau","bouclier","catalyseur"] as const
 
 export const WEAPONS_INFO: Record<Weapons, { hands: 1 | 2; elements: Elements[] }> = {
   // Contondant
@@ -107,6 +107,7 @@ export const WEAPONS_INFO: Record<Weapons, { hands: 1 | 2; elements: Elements[] 
   bâton: { hands: 2, elements: ["contondant"] },
   grimoire: { hands: 2, elements: ["contondant"] },
   instrument: { hands: 2, elements: ["contondant"] },
+  catalyseur: { hands: 2, elements: ["contondant"] },
   // Tranchant
   épée: { hands: 1, elements: ["tranchant", "perçant"] },
   dague: { hands: 1, elements: ["tranchant", "perçant"] },
@@ -120,7 +121,7 @@ export const WEAPONS_INFO: Record<Weapons, { hands: 1 | 2; elements: Elements[] 
   arc: { hands: 2, elements: ["perçant"] },
   flingue: { hands: 2, elements: ["perçant", "contondant"] },
 }
-export const CLASSES_WEAPONS: Record<Classes, Weapons[]> = {
+export const CLASSES_WEAPONS: Record<Classes, [Weapons, Weapons]> = {
   Guerrier: ["hache", "épée"],
   Chevalier: ["rapière", "épée"],
   Templier: ["masse", "marteau"],
@@ -134,11 +135,11 @@ export const CLASSES_WEAPONS: Record<Classes, Weapons[]> = {
   Corsaire: ["arc", "dague"],
   Juge: ["faucille", "flingue"],
   Clerc: ["masse", "bâton"],
-  Barde: ["instrument"],
-  Shaman: ["bâton", "griffe"], // ?
+  Barde: ["instrument", "grimoire"], // A revoir ?
+  Shaman: ["bâton", "catalyseur"],
   Sage: ["marteau", "masse"],
-  Magicien: ["bâton", "grimoire"],
-  Illusionniste: ["grimoire", "bâton"],
+  Magicien: ["bâton", "catalyseur"],
+  Illusionniste: ["grimoire", "catalyseur"],
   Démoniste: ["grimoire", "bâton"],
   Luminary: ["épée", "épée colossale"],
 }
