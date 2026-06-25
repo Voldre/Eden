@@ -15,3 +15,4 @@ ignore*
 *.log
 server/**/*.js
 server/moymoy_missions/*.json
+server/stories/summaries/output_json

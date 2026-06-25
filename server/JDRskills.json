@@ -1,9 +1,9 @@
 {
   "0": {
     "nom": "Charge du Guerrier",
-    "desc": "Fonce sur la cible et peut l'étourdir (malus de réussite) si coup critique.",
+    "desc": "Fonce sur la cible et peut l'étourdir si coup critique.",
     "effet": "Dégât",
-    "montant": "1D10+2, si critique : ennemi réussite -4 (2 tours)",
+    "montant": "1D10+2, si critique : assomé (1 tour, non annulable)",
     "icone": "E0280",
     "stat": "Force",
     "classe": ["Guerrier", "Chevalier", "Templier", "Chev Dragon"]
@@ -41,7 +41,7 @@
     "effet": "Dégât",
     "montant": "2D6 + 1D4",
     "icone": "E0290",
-    "stat": "Force",
+    "stat": "Force/Dexté",
     "classe": ["Chevalier"]
   },
   "5": {
@@ -120,7 +120,7 @@
     "nom": "Embuscade",
     "desc": "Frappe sournoisement l'ennemi, dégât doublé si par surprise",
     "effet": "Dégât",
-    "montant": "1D8+3 (Furtif = X2)",
+    "montant": "1D8+3 (Furtif = X2, si critique : reste invisible)",
     "icone": "E0048",
     "stat": "Dextérité",
     "classe": ["Voleur"]
@@ -129,7 +129,7 @@
     "nom": "Perce-Armure",
     "desc": "Frappe et réduit la défense de l'ennemi (non cumulable)",
     "effet": "Dégât Malus",
-    "montant": "Dégât 1D8, et dégât physique reçu +4 pendant 3 tours",
+    "montant": "Dégât 1D6, et dégât reçu +3 pendant 3 tours",
     "icone": "E0054",
     "stat": "Force",
     "classe": ["Voleur", "Assassin", "Danselame", "Samouraï"]
@@ -165,7 +165,7 @@
     "nom": "Coupe Asura",
     "desc": "Envoi une tranche sur plusieurs mètres, peut toucher les ennemis larges 2 fois. Pose sur l'ennemi la marque Asura.",
     "effet": "Dégât Malus AoE L-",
-    "montant": "1D8+1 + (Large +1D6), pose la marque Asura (2 tours max, ou fin Aura)",
+    "montant": "1D8+1 + (Large +1D6), pose la marque Asura (2 tours max)",
     "icone": "E0481",
     "stat": "Force",
     "classe": ["Samouraï"]
@@ -174,7 +174,7 @@
     "nom": "Eclair unique",
     "desc": "Tranche avec un coup d'éclair, un second éclair touche si l'ennemi est marqué par Asura",
     "effet": "Dégât",
-    "montant": "1D8+2 (Si Asura +1D10, et si Aura : Bloc/Esq -1)",
+    "montant": "1D8+2 (Si Asura +1D10)",
     "icone": "E0480",
     "stat": "Force",
     "classe": ["Samouraï"]
@@ -199,7 +199,7 @@
   },
   "30": {
     "nom": "Invocation du Tigre",
-    "desc": "Invoque un Tigre Crocs-Tranchants : 30 PV, Force : 15, Dexté : 13, Intel : 9, Charisme : 11, Esprit : 13. Sort : Morsure 1D8 (Force), Cri strident : -2 réussite 1 tour AoE (Esprit)",
+    "desc": "Invoque un Tigre Crocs-Tranchants : 20 PV, Force: 15, Dexté: 13, Intel: 9, Charisme: 11, Esprit: 13. Sorts :: Morsure: 1D8+2 (Force), Cri strident: -2 réussite 1 tour AoE (Esprit)",
     "effet": "Invocation",
     "montant": "Invocation jusqu'à coupure magique",
     "icone": "E0075",
@@ -208,7 +208,7 @@
   },
   "31": {
     "nom": "Invocation Aigle Chasseur",
-    "desc": "Invoque un Aigle chasseur : 25 PV, Force : 13, Dexté : 15, Intel : 9, Charisme : 12, Esprit : 11. Sort : Coup de Bec 1D8+2 (Force), Vent coupant 1D8+1 (Dexté)",
+    "desc": "Invoque un Aigle chasseur : 15 PV, Force: 13, Dexté: 15, Intel: 9, Charisme: 12, Esprit: 11. Sorts :: Coup de Bec: 1D8+2 (Force), Vent coupant: 1D6 mini-AoE (Dexté)",
     "effet": "Invocation",
     "montant": "Invocation jusqu'à coupure magique",
     "icone": "E0264",
@@ -225,11 +225,11 @@
     "classe": ["Chasseur", "Ingénieur", "Corsaire", "Juge"]
   },
   "33": {
-    "nom": "Récupération de la bête",
-    "desc": "Soigne votre Familier et le renforce",
-    "effet": "Soin",
-    "montant": "2D6 +8. Dégât+4 pour 3 tours",
-    "icone": "E0260",
+    "nom": "Lien Bestial",
+    "desc": "Le chasseur renforce le lien avec ses familiers, qui devienent plus puissant.",
+    "effet": "Buff",
+    "montant": "Familier : Dégât +1D4 (min 2) +3 pendant 4 tours",
+    "icone": "E0788",
     "stat": "Esprit",
     "classe": ["Chasseur"]
   },
@@ -273,8 +273,8 @@
   "38": {
     "nom": "Attaque Terrorisante",
     "desc": "L'attaque effraye l'ennemi et le déconcentre",
-    "effet": "Dégât Malus",
-    "montant": "1D6+1 : Esquive -2 (Dist: Rés. esprit -1 | CàC: Dégât +3) (pendant 2 tours)",
+    "effet": "Dégât",
+    "montant": "1D6+1 : Cible Esquive -2 (Dist: Rés. esprit -1 | CàC: Dégât +3) (pendant 2 tours)",
     "icone": "E0090",
     "stat": "Dextérité",
     "classe": ["Corsaire"]
@@ -290,9 +290,9 @@
   },
   "40": {
     "nom": "Séisme",
-    "desc": "Inflige des dégâts de nature à la cible",
+    "desc": "Inflige des dégâts de nature à la cible et peut l'étourdir",
     "effet": "Dégât",
-    "montant": "1D10+2 (+3 si faiblesse)",
+    "montant": "1D10+1, si critique : assomé (1 tour, non annulable)",
     "icone": "E0016",
     "stat": "Intelligence",
     "classe": ["Clerc", "Barde", "Shaman", "Sage"]
@@ -308,9 +308,9 @@
   },
   "42": {
     "nom": "Punition Divine",
-    "desc": "Inflige des dégâts de lumières à la cible",
+    "desc": "Inflige des dégâts de lumières à la cible, peut retirer un buff",
     "effet": "Dégât",
-    "montant": "1D10+2 (+3 si faiblesse)",
+    "montant": "1D10+2, si critique : retire un buff",
     "icone": "E0092",
     "stat": "Intelligence",
     "classe": ["Clerc", "Barde", "Shaman", "Sage"]
@@ -353,9 +353,9 @@
   },
   "47": {
     "nom": "Totem Gracieux",
-    "desc": "Invoque un familier Totem : 30 PV, Force : 9, Dexté : 13, Intel/Esprit : 14. - Mode Soin : Ne peut pas bouger / se protéger, 0 jet de dé. - Mode Soutien : peut bouger et bloquer, 2 sorts : 1) Renforcement : +2 Force ou +2 Intel sur la cible : 3 tours (intel) , 2) Eclair : 1D8 (intel)",
+    "desc": "Invoque un familier Totem : 20 PV, Force: 9, Dexté: 13, Intel: 14, Charisme: 10, Esprit: 14. - Mode Soin : Ne peut pas bouger / se protéger, 0 jet de dé. - Mode Soutien : peut bouger et bloquer, sorts :: Renforcement: +2 Force ou +2 Intel sur la cible 3 tours (Intel),  Eclair : 1D8+1 (Intel)",
     "effet": "Invocation",
-    "montant": "(jusqu'à coupure magique), Mode Soin : Soin 3 PV (AoE) par tour. - Mode Soutien : attaque/bloque",
+    "montant": "(jusqu'à coupure magique), Mode Soin : Soin 3 PV (AoE sauf lui) par tour. - Mode Soutien : attaque/bloque",
     "icone": "E0115",
     "stat": "Esprit",
     "classe": ["Shaman"]
@@ -372,9 +372,9 @@
   },
   "49": {
     "nom": "Bombe Incendiaire",
-    "desc": "Lance une boule de feu sur l'ennemi et peut l'étourdir (malus de réussite) si coup critique",
+    "desc": "Lance une boule de feu sur l'ennemi et peut l'étourdir si coup critique",
     "effet": "Dégât",
-    "montant": "1D10+2, si critique : ennemi réussite -4 (2 tours)",
+    "montant": "1D10+2, si critique : assomé (1 tour, non annulable)",
     "icone": "E0021",
     "stat": "Intelligence",
     "classe": ["Magicien", "Illusionniste", "Démoniste", "Luminary"]
@@ -408,9 +408,9 @@
   },
   "53": {
     "nom": "Affaiblissement Mental",
-    "desc": "Réduit la resistance de l'ennemi aux éléments",
-    "effet": "Malus",
-    "montant": "Dégât magique reçu +1D4 (min 2) +3 pendant 3 tours",
+    "desc": "Réduit la resistance des ennemis (non cumulable)",
+    "effet": "Malus AoE R+",
+    "montant": "Dégât reçu +3 pendant 3 tours",
     "icone": "E0120",
     "stat": "Esprit",
     "classe": ["Magicien"]
@@ -580,25 +580,25 @@
   },
   "73": {
     "nom": "Purgatoire",
-    "desc": "Si Aura du Samouraï: Envoi une tranche de flamme sur plusieurs mètres (blocage physique), peut toucher les ennemis larges 2 fois. Dégât en plus si l'ennemi à subi la Coupe Asura",
+    "desc": "Nécessite l'Aura du Samouraï: Envoi une tranche de flamme sur plusieurs mètres (blocage physique), peut toucher les ennemis larges 2 fois. Dégât en plus si l'ennemi à subi la Coupe Asura",
     "effet": "Dégât AoE L-",
-    "montant": "Si Aura: 1D10+1 (Si Asura +1D6 Bloc/Esq -1) (Large +1D6)",
+    "montant": "Si Aura: 1D10+1 (Asura +4) (Large +1D6)",
     "icone": "E0462",
     "stat": "Esprit",
     "classe": ["Samouraï"]
   },
   "74": {
     "nom": "Éclair en Furie",
-    "desc": "Infige des dégats de foudre à la cible et l'affaibli",
+    "desc": "Infige des dégats de foudre à la cible et l'affaibli (non cumulable)",
     "effet": "Dégât Malus",
-    "montant": "1D8, et dégât magique reçu +4 pendant 3 tours",
+    "montant": "1D6, et dégât reçu +3 pendant 3 tours",
     "icone": "E0109",
     "stat": "Intelligence",
     "classe": ["Shaman"]
   },
   "75": {
     "nom": "Invocation d'Alpaga",
-    "desc": "Invoque un esprit Alpaga de ténèbres, peut flotter. 30 PV, Force : 12, Dexté : 13, Intel : 14, Charisme : 12, Esprit : 10. Sort : Crachat 1D8 (Intel), Charge 1D10 (Force)",
+    "desc": "Invoque un esprit Alpaga de ténèbres, peut flotter. 20 PV, Force: 9, Dexté: 14, Intel: 14, Charisme: 12, Esprit: 11. Sorts :: Crachat: 1D8+2 (Intel), Charge: 1D8+2 (Dexté), Anti-soin: 2 tours (Intel)",
     "effet": "Invocation",
     "montant": "Invocation jusqu'à coupure magique",
     "icone": "VicAlpaga",
@@ -607,7 +607,7 @@
   },
   "76": {
     "nom": "Pacte",
-    "desc": "Invoque un Panopticor (démon à tentacules). 25 PV, Force : 9, Dexté : 14, Intel : 15, Charisme : 10, Esprit : 12. Sort : Jet de Ténèbres 1D8 (Intel), Coup tentacule 1D10 (Dexté)",
+    "desc": "Invoque un Panopticor (démon à tentacules). 15 PV, Force: 9, Dexté: 14, Intel: 15, Charisme: 10, Esprit: 12. Sorts :: Jet de Ténèbres: 1D8+2 (Intel), Coup tentacule: 1D8+2 (Dexté), Annulation: retire 1 malus (Esprit)",
     "effet": "Invocation",
     "montant": "Invocation jusqu'à coupure magique",
     "icone": "E0139",
@@ -618,7 +618,7 @@
     "nom": "Hommage",
     "desc": "Sacrifie son familier. Soigne selon ses PV et renforce",
     "effet": "Buff et Soin",
-    "montant": "Soin de 2 à 25 PV, réduit les dégâts reçus de 4 pendant 3 tours",
+    "montant": "Soin égaux aux PV du familier (maximum 25), réduit les dégâts reçus de 4 pendant 3 tours",
     "icone": "E0137",
     "stat": "Esprit",
     "classe": ["Démoniste"]
@@ -718,7 +718,7 @@
     "nom": "Lame Dansante du Poète",
     "desc": "Envoi des lames de vent (dégât de nature si Poème du Vent actif) et tranche 3 fois l'ennemi choisi",
     "effet": "Dégât",
-    "montant": "3D6 (+1 si Poème du Vent actif)",
+    "montant": "3D6 (+2 si Super Star)",
     "icone": "LameDansantePoete",
     "stat": "Dextérité",
     "classe": ["Danselame"]
@@ -733,13 +733,14 @@
     "classe": ["Chasseur"]
   },
   "90": {
-    "nom": "Flèche Empoisonnée",
-    "desc": "Tir une flèche empoisonnée (dégât nature) sur la cible",
-    "effet": "Dégât",
-    "montant": "1D6 puis 3 pendant 3 tours (poison)",
-    "icone": "E0071",
-    "stat": "Dextérité",
-    "classe": ["Chasseur"]
+    "nom": "Soutien de la bête",
+    "desc": "Action Instantanée. Consomme le tour d'un familier (au choix) pour faciliter l'attaque de son propriétaire sur une cible (au choix si AoE).",
+    "effet": "Malus",
+    "montant": "Ce tour, sur la cible du dresseur : Blocage/Esquive -1 (Mono) - Cooldown 2 tours",
+    "icone": "E0791",
+    "stat": "Esprit",
+    "classe": ["Chasseur"],
+    "cooldown": 2
   },
   "91": {
     "nom": "Danse de la guerrière",
@@ -995,7 +996,7 @@
   },
   "119": {
     "nom": "Encouragement Musical",
-    "desc": "(effet montant des buffs /2). Incante et réduit les dégâts subis, immunise à l'endormissement et augmente la résistance mentale (Blocage Esprit/2)",
+    "desc": "(effet montant des buffs /2). Incante et réduit les dégâts subis, immunise à l'endormissement/assomé et augmente la résistance mentale (Blocage Esprit/2)",
     "effet": "Buff AoE",
     "montant": "Incantation 2-tours (1 dé) : Dégât subi -1D4-2, 0 dodo, +2 rés. esprit, pour 4 tours",
     "icone": "E0406",
@@ -1120,11 +1121,11 @@
     "classe": ["Chasseur", "Juge"]
   },
   "133": {
-    "nom": "Dague Chapardeuse",
-    "desc": "L'excitation du voleur monte. Il lance sa dague sur la bourse de l'ennemi pour tenter de subtiliser plus d'argent. Cumulable 3 fois par ennemi.",
-    "effet": "Dégât et Or+",
-    "montant": "1D6+2, +33% d'or reçu sur l'ennemi",
-    "icone": "E0497",
+    "nom": "Coup précis",
+    "desc": "La précision du voleur permet de frapper sur la/les faiblesse(s) physiques de la cible.",
+    "effet": "Dégât",
+    "montant": "1D6+2 (Indique la présence ou non d'une faiblesse physique)",
+    "icone": "E0163",
     "stat": "Dextérité",
     "classe": ["Voleur"]
   },
@@ -1132,14 +1133,14 @@
     "nom": "Hymne Inspirant",
     "desc": "Encourage ses camarades, augmentant ainsi leur chance de réussir leur sort. Sort complexe à exécuter.",
     "effet": "Buff AoE",
-    "montant": "Réussite des sorts +1 sur 3 tours (réussite -3)",
+    "montant": "Réussite des sorts +1 sur 3 tours, Soin 1D4+1 PV (réussite -3)",
     "icone": "E0559",
     "stat": "Charisme",
     "classe": ["Barde"]
   },
   "135": {
     "nom": "Dédoublement",
-    "desc": "Crée un double de soi avec les mêmes stats et buffs (à l'invocation). La durée des sorts lancées sont divisées par 2, ou, cas échéant, ses dégâts/soins et ses montants (invocation/buff/malus), sont divisés par 2. Ses dégâts reçus touchent le porteur et sont aussi divisés par 2 (avec armure/2).",
+    "desc": "Crée un double de soi avec les mêmes stats et buffs (à l'invocation). La durée des sorts lancées sont divisées par 2, ou, cas échéant, ses dégâts/soins et ses montants (invocation/buff/malus), sont divisés par 2. Ses dégâts reçus touchent le porteur et sont aussi divisés par 2 (avec armure/2). Contrôle de l'Esprit interdit.",
     "effet": "Invocation",
     "montant": "Invoque un double de soi pendant 2 tours (max 3 tours avec boost) - Cooldown 2 tours",
     "icone": "E1042",
@@ -1149,9 +1150,9 @@
   },
   "136": {
     "nom": "Aura du Samouraï",
-    "desc": "Le Samouraï concentre son énergie, son Ki, pour booster son corps et accéder à de nouveaux pouvoirs.",
+    "desc": "Action Instantanée. Le Samouraï concentre son énergie, son Ki, pour booster son corps et accéder à de nouveaux pouvoirs.",
     "effet": "Buff",
-    "montant": "Action Instantanée. marque Asura persistante, Fatigue +20, dure 4 tours",
+    "montant": "Chaque tour (4 max) : PV - 1D4 -4, Force +1, Dexté +1, Bloc/Esq cible -1 - Cooldown 2 tours",
     "icone": "E0852",
     "stat": "Esprit",
     "classe": ["Samouraï"],
@@ -1271,7 +1272,7 @@
     "nom": "Flèche perçante",
     "desc": "Tir avec précision pour réduire la défense de l'ennemi (non cumulable)",
     "effet": "Dégât Malus",
-    "montant": "Dégât 1D8+1, et dégât physique reçu +4 pendant 3 tours",
+    "montant": "Dégât 1D6+1, et dégât reçu +3 pendant 3 tours",
     "icone": "E0513",
     "stat": "Dextérité",
     "classe": ["Chasseur", "Ingénieur", "Corsaire", "Juge"],
@@ -1479,7 +1480,7 @@
   },
   "170": {
     "nom": "Champignoïde de Vie",
-    "desc": "Invoque un Champignoïde de la Lagune Enchantée : 25 PV, Force : 13, Dexté : 9, Intel/Esprit : 15. Sort : Coup de Boule 1D6+2 (Force), Soin : 1D6+2 (Intel)",
+    "desc": "Invoque un Champignoïde de la Lagune Enchantée : 15 PV, Force: 13, Dexté: 9, Intel:15, Charisme:11, Esprit: 13. Sorts :: Coup de Boule: 1D8+2 (Force), Soin: 1D6+2 (Intel)",
     "effet": "Invocation",
     "montant": "Invocation jusqu'à coupure magique",
     "icone": "E0414b",
@@ -1550,9 +1551,9 @@
   },
   "177": {
     "nom": "Spectre Bouclier",
-    "desc": "Invoque un spectre à la forme de bouclier qui se colle à une personne pour prendre les dégâts à sa place, il n'a pas d'autres actions.",
+    "desc": "Invoque un spectre (15 PV) à la forme de bouclier. Action: se coller à une personne pour prendre les dégâts à sa place, il n'a pas d'autres actions.",
     "effet": "Invocation",
-    "montant": "Invocation jusqu'à coupure magique (15 PV + 2/niveau, max 35)",
+    "montant": "Invocation jusqu'à coupure magique (15 PV)",
     "icone": "E0250b",
     "stat": "Esprit",
     "classe": ["Guerrier", "Chevalier", "Templier", "Chev Dragon"],
@@ -1662,7 +1663,7 @@
     "nom": "Frénésie des Ogres",
     "desc": "Action Instantanée. La détermination des Ogres leur permet de dilater leurs veines, les mettant dans un été frénétique de Berserker.",
     "effet": "Buff Malus",
-    "montant": "A chaque tour (4 max) : Dégât (+) et PV (-) 1D6+6, réussite des sorts -1",
+    "montant": "Chaque tour (4 max) : Dégât (+) et PV (-) 1D6+6, réussite des sorts -1",
     "icone": "E0779",
     "stat": "Force",
     "classe": ["Voleur", "Assassin", "Danselame", "Samouraï"],
@@ -1680,14 +1681,13 @@
   },
   "190": {
     "nom": "Coup assomant",
-    "desc": "Inflige un violent coup sur la tête qui assome/endort la cible. Voir règle du statut \"Endormissement\".",
+    "desc": "Inflige un violent coup sur la tête qui assome la cible. Voir règle du statut \"Assomé\".",
     "effet": "Dégât Status",
-    "montant": "1D6+1, inflige le status \"Endormissement\" pendant 2 tours - Cooldown (global et cible) 2 tours (si touché)",
+    "montant": "1D6+1, inflige le status \"Assomé\" pendant 2 tours",
     "icone": "E0664b",
     "stat": "Force",
     "classe": ["Clerc", "Barde", "Shaman", "Sage"],
-    "race": "Ogre",
-    "cooldown": 2
+    "race": "Ogre"
   },
   "191": {
     "nom": "Tempête de Tengri",
@@ -1717,5 +1717,23 @@
     "stat": "Esprit",
     "classe": ["Shaman"],
     "cooldown": 3
+  },
+  "194": {
+    "nom": "Volonté Inébranlable",
+    "desc": "Le Chevalier motive les troupes en rappelant leur devoir, leur responsabilité, et la gloire à continuer le combat ! Shonen !",
+    "effet": "Buff AoE",
+    "montant": "Force, Dexté, Intel +1 pendant 1D4 +2 tours",
+    "icone": "E0655",
+    "stat": "Charisme",
+    "classe": ["Chevalier"]
+  },
+  "195": {
+    "nom": "Paralysie",
+    "desc": "Inflige un violent coup électrique qui paralyse la cible, l'empêchant d'agir",
+    "effet": "Status",
+    "montant": "Inflige le status \"Paralysie\" pendant 1D4 tours",
+    "icone": "E1057",
+    "stat": "Force",
+    "classe": ["Voleur"]
   }
 }

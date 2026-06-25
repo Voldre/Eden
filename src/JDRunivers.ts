@@ -365,7 +365,7 @@ const labelsDescription = {
   bloquage:
     "Toutes les attaques peuvent être bloquées (physiquement (force) ou magiquement (intelligence))<br/>Bloquer plusieurs fois de suite donne des malus (Blocage -1 par coup), si le coup suivant est une attaque mono-cible, blocage -1 sur le coup.<br/>Cumule max : -4 blocage.<br/><br/>Même avec malus et autres effets, un Dé à 1 ou 2 génèrera tout le temps une réussite de blocage.",
   invisible:
-    "Quand un personnage est invisible : au 1er tour, -3 de chance de le toucher (sauf AoE : 0); aux tours suivants (2+) : Chance/2 (sauf AoE : -3).<br/>&nbsp; A l'inverse, un personnage invisible qui frappe réduit les chances d'esquive/blocage/résistance de -2. <br/>&nbsp; Seuls les sorts d'Esprit (et Parasite Obscur) laissent invisible, SAUF les sorts qui infligent des dégâts ou des statuts (hypnose/dodo/...). Se prendre un coup fait sortir aussi.<br/><br/> A noter : il n'est pas possible de relancer un sort d'invisibilité tant qu'on l'est encore.",
+    "Quand un personnage est invisible : Réussite/ Chance de toucher /2 (sauf AoE : -4).<br/>&nbsp; A l'inverse, un personnage invisible qui frappe réduit les chances d'esquive/blocage/résistance de -2. <br/>&nbsp; Seuls les sorts d'Esprit (et Parasite Obscur) laissent invisible, SAUF les sorts qui infligent des dégâts ou des statuts (hypnose/dodo/...). Se prendre un coup fait sortir aussi.<br/><br/> A noter : il n'est pas possible de relancer un sort d'invisibilité tant qu'on l'est encore.",
   protege:
     "Un personnage peut protéger un allié d'une seule attaque par tour. Pour cela, il aura un malus de blocage selon la situation (2 ou +).<br/> Si un second ennemi attaque, la protection est impossible.<br/> Sur un échec critique, c'est la personne protégée qui se prend le coup. Dé 19 ou Dé 20 : 0 blocage.",
   incanter:
@@ -376,8 +376,10 @@ const labelsDescription = {
   status: `Un status est un malus d'altération d'état qui est non annulable. Autrement dit, les sorts qui retire des malus comme "Prévention" ne fonctionnent pas.
     <br/>Voici les altérations d'états qui existent (+ la Stat d'annulation) :
     <ul><li>Hypnose (Esprit) : Le lanceur contrôle la cible.</li>
-    <li>Endormissement/Assomé (Esprit/Force) : La cible ne peut plus agir.</li>
-    <li>Entrave (Force) : La cible ne peut plus bouger, Esquive -5.</li>
+    <li>Endormissement (Esprit) : La cible ne peut plus agir, endormi.</li>
+    <li>Assomé (Esprit) : La cible ne peut plus agir, dans le coma.</li>
+    <li>Entrave (Force) : La cible peut agir, mais ne peut plus bouger, Esquive -5.</li>
+    <li>Paralysie (Force) : La cible ne peut plus agir, son corps est bloqué.</li>
     </ul>Ces altérations peuvent être retirées à chaque tour en suivant ce calcul pour la stat définie :
     <ul>
     <li>Tour 1 (lorsqu'on subit le sort) : Stat/2,</li>
@@ -386,14 +388,20 @@ const labelsDescription = {
     </ul>
     Une nouvelle tentative (pour retirer l'altération) est possible si la personne est attaquée, le jet de dé change selon l'altération :
     <ul>
-    <li>Hypnose : Si frappé : Tentative égale au montant de la stat pour le Tour X (réussite +1 après chaque coup reçu, ne compte que sur le tour actuel).</li>
-    <li>Endormissement/Assomé : - Si frappé (hors esprit) : Tentative égale à 17 (-2 si 1er tour). - Si frappé (esprit) : Tentative égale à la Stat d'esprit (-2 si 1er tour).</li>
-    <li>Entrave : Si aidé <b>par un allié en Mono</b> : Tentative égale à 17.</li>
-    </ul>A noter : L'énervement des ennemis (leur blessure) augmente leur <b>résistance d'esprit</b> face aux altérations d'Esprit (jusqu'à atteindre leur stat d'Esprit)
-    <br/>Il n'est pas possible de remetre un statut déjà actif (refresh).`,
-  familier: `Il est possible d'invoquer jusqu'à 2 familiers <b>différents</b> simultanément, toutes sources confondues (compétences, équipements).
+    <li>Hypnose, Assomée, Paralysie : Si frappé : Tentative égale au montant de la stat pour le Tour X (réussite +1 après chaque coup reçu, ne compte que sur le tour actuel).</li>
+    <li>Endormissement : - Si frappé en Mono : Libérée, - Si frappé en AoE : Tentative égale au montant de la stat pour le Tour X.</li>
+    <li>Entrave : Aucune annulation de l'altération</li>
+    </ul>
+    A noter : plus le combat dure et plus les ennemis ont subis des altérations, <b>moins ils ont de chance d'être de nouveau touché</b> (bonus de blocage/résistance).
+    <br/>Cela évite le spam et ajoute du RP : difficile d'endormir quand bien éveillé, le corps s'adapte pour résister à l'hypnose et la paralysie, etc...
+    <br/>
+    <br/>Il n'est pas possible de remettre un statut déjà actif (refresh).`,
+  familier: `Il est possible d'invoquer jusqu'à 2 familiers simultanément, toutes sources confondues (compétences, équipements). Un même familier ne peut être invoqué qu'une fois.
+    <br/>
+    <br/>Chaque familier gagne +10 PV par tranche de 5 niveaux du joueur.
+    <br/>
     <br/> Ils agissent pendant le tour du joueur comme un personnage (attaque, blocage, ...).
-    <br/> Il n'est pas possible de le ré-invoquer un familier encore en vie.`,
+    <br/> Il n'est pas possible de ré-invoquer un familier encore en vie.`,
   armure:
     "Il existe 3 types d'armures (magique, léger, lourd), chaque classe permet de porter l'un de ces types.<br/>Certaines classes combinées peuvent porter un type supplémentaire (Chevalier hors tank, Sage et Luminary hors mage)<br/><br/>Si le personnage porte une armure d'un type différent de ces classes, les malus suivants sont appliqués :<ul><li>Stuff non magique : Intelligence -2,</li><li>Stuff non léger : Dextérité -2,</li><li>Stuff non lourd : Force -2,</li></ul>Si le type d'armure est le même pour les 2 classes du personnage, le malus de la Stat est de -3.",
   montant:

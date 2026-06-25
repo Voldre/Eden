@@ -180,6 +180,9 @@ allClassE.forEach((classE, i) => {
         // If guardian, apply for second class the primary class
         classeSElement.value = selectedClass
 
+        // List must be updated before insert skills
+        updateAvailableSkillsList()
+
         const classConfig = persoData.guardian.config.find((config) => config.classeP === selectedClass)
         if (classConfig)
           classConfig.skills.forEach((skill, index) => {
@@ -624,6 +627,9 @@ function insertSkill(skillElement: CompetenceE, skillName: string, awakenClass?:
 
   if (selectedSkill.effet === "Invocation") {
     const pvPetE = createElement("input", undefined, { type: "number" })
+    const match = selectedSkill.desc.match(/(\d{2})\s*PV/)
+    const pv = match ? Number(match[1]) + Math.floor((persoData?.niv ?? 1) / 5) * 10 : undefined
+    pvPetE.placeholder = `PV (${pv} + stuff ?)`
     skillElement.append(pvPetE)
   }
   // Update 05/01/2024, add inputs to handle charges (light/dark)
@@ -1730,7 +1736,7 @@ const labelsDescription = {
     <ul><li>Exception sur la durée : Parasite, Blessure Douloureuse, Silence et Scellement dure entre 2 et 3 tours. Dédoublement dure 1 tour max.</li></ul>
   </li>
   <li>Amplification : Augmente de 50% tout les effets (stat, bloc, montant, ...) des sorts de buff (sauf sort d'atk/malus, et indéfni). Les sorts Buff et Soin, la partie Soin n'est pas amplifiée.
-    <ul><li>Exception : Les stats du Sacrifice d'Ombre ne sont boostés que de +1.</li><li>Les sorts boostés par les éveils (ex : Aura : Bouclier Protecteur, Intégration) sont limités à +4 max (au lieu de +5)</li></ul>
+    <ul><li>Particularité : Le 50% est fait à l'arrondi inférieur (règle à tester en pratique)</li></ul>
   </li>
   </ul>
   Capacités utilisables 3 fois par séance :
