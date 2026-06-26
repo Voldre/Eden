@@ -524,19 +524,25 @@ label:hover {
 
 /* JDR Univers */
 
-#races .race {
+.universActions {
+  display: flex;
+  gap: 1rem;
+  margin-block: 1rem;
+}
+
+.racesList .race {
   display: block;
   padding: 3px 0px;
   width: 97%;
 }
-#races .race h4 {
+.racesList .race h4 {
   border-top: 1px gray dashed;
   text-decoration: underline;
   font-size: 17px;
   margin-bottom: 4px;
   margin-top: 0px;
 }
-#races .race img {
+.racesList .race img {
   width: 200px;
   height: 200px;
   border-radius: 8%;

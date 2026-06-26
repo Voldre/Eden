@@ -165,10 +165,43 @@ export interface RaceClassStats {
   classes: ({
     Classe: Classes
     armure: ArmorType
+    description: string
+    specialisation: string
   } & RaceClassStatsValue)[]
   races: ({
-    Race: string
+    Race: Races
+    image: string
+    traits: string[]
+    description: string[]
   } & RaceClassStatsValue)[]
+}
+
+export type RuleListItem =
+  | string
+  | string[]
+  | {
+      text: string | string[]
+      list?: RuleListItem[]
+    }
+
+export type RuleBlock = string | { list: RuleListItem[] }
+
+export interface LabeledRule {
+  label: string
+  description: RuleBlock[]
+}
+
+export interface RulesData {
+  personnageLabels: Record<string, RuleBlock[]>
+  universLabels: Record<string, LabeledRule>
+  elementsInfo: {
+    description: string | string[]
+    elements: {
+      element: Elements
+      icon: string
+      description: string
+    }[]
+  }
 }
 
 // #region Mini-jeu

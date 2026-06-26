@@ -18,6 +18,7 @@ import {
   EnemyGeneric,
   CombatCheatLog,
   Resume,
+  RulesData,
   EquipmentType,
   ArmorType,
   StatsName,
@@ -40,6 +41,7 @@ export const enemyJSON = getData<{ [key: string]: Enemy }>("enemy")
 export const galeryJSON = getData<string[]>("galery")
 
 export const masterJSON = getData<MasterData>("master")
+export const rulesJSON = getData<RulesData>("rules")
 
 export const enemyGenericJSON = getData<EnemyGeneric>("enemyG")
 export const statsJSON = getData<RaceClassStats>("stats")
