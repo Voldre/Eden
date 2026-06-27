@@ -313,6 +313,7 @@ export interface PNJ {
 
 export interface Map {
   name: string
+  wmap_name?: string
   desc?: string
   wmap_x: number
   wmap_y: number
