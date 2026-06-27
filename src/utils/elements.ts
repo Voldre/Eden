@@ -1,5 +1,7 @@
 // #region Notif + Dialog
 
+import { RuleListItem } from "../model"
+
 let currentTimeout: ReturnType<typeof setTimeout> | undefined
 export const toastNotification = (text: string, duration = 3000, error = false): void => {
   const toaster = document.getElementById("toast")!
@@ -24,7 +26,29 @@ export const toastNotification = (text: string, duration = 3000, error = false):
   }
 }
 
-export const initDialog = (labelsDescription: { [key: string]: string }): void => {
+type LabelDescriptionBlock = string | { list: RuleListItem[] }
+
+type LabelDescription = string | LabelDescriptionBlock[]
+
+const formatTextLines = (text: string | string[]): string => (Array.isArray(text) ? text.join("<br/>") : text)
+
+const formatListItems = (items: RuleListItem[]): string =>
+  `<ul>${items
+    .map((item) => {
+      if (typeof item === "string" || Array.isArray(item)) {
+        return `<li>${formatTextLines(item)}</li>`
+      }
+
+      return `<li>${formatTextLines(item.text)}${item.list ? formatListItems(item.list) : ""}</li>`
+    })
+    .join("")}</ul>`
+
+const formatLabelDescription = (description: LabelDescription): string =>
+  Array.isArray(description)
+    ? description.map((block) => (typeof block === "string" ? block : formatListItems(block.list))).join("<br/>")
+    : description
+
+export const initDialog = (labelsDescription: { [key: string]: LabelDescription }): void => {
   const dialog = document.querySelector<HTMLDialogElement>("dialog")!
   document.querySelectorAll("label").forEach((label) => {
     if (!labelsDescription[label.htmlFor]) return // Si le label n'a pas de description
@@ -34,7 +58,7 @@ export const initDialog = (labelsDescription: { [key: string]: string }): void =
 
       const desc = document.createElement("p")
       // Don't use util createElement function because HTML insert
-      desc.innerHTML = labelsDescription[label.htmlFor] ?? "" // description
+      desc.innerHTML = formatLabelDescription(labelsDescription[label.htmlFor] ?? "") // description
       dialog.append(desc)
 
       dialog.append(closeButton(dialog))

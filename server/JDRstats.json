@@ -8,7 +8,9 @@
       "Charisme": 7,
       "Esprit": 7,
       "PV": 60,
-      "armure": "lourd"
+      "armure": "lourd",
+      "description": "Les guerriers possèdent de solides aptitudes au combat ainsi que de lourdes armures résistantes. Peut effrayer les ennemis et motiver ses alliés.",
+      "specialisation": "Spécialisé contre les ennemis nombreux qui l'attaque"
     },
     {
       "Classe": "Chevalier",
@@ -18,7 +20,9 @@
       "Charisme": 7,
       "Esprit": 7,
       "PV": 50,
-      "armure": "lourd"
+      "armure": "lourd",
+      "description": "Les chevaliers incarnent le courage. Esquivant et bloquant les coups, ils attaquent sans relâche jusqu’à obtenir la victoire. Ils aiment les duels et sont très précis et rapide.",
+      "specialisation": "Spécialisé contre les ennemis puissants et magiques"
     },
     {
       "Classe": "Templier",
@@ -28,7 +32,9 @@
       "Charisme": 6,
       "Esprit": 6,
       "PV": 60,
-      "armure": "lourd"
+      "armure": "lourd",
+      "description": "Stimulés par leur noble croyance, les templiers invoquent le pouvoir divin pour punir le mal. Tout comme les clercs, ce sont des fervents de l'église et agisse pour elle.",
+      "specialisation": "Polyvalent dans chaque domaine, soigneur, efficace contre les ennemis faible à la magie"
     },
     {
       "Classe": "Chev Dragon",
@@ -38,7 +44,9 @@
       "Charisme": 7,
       "Esprit": 7,
       "PV": 55,
-      "armure": "lourd"
+      "armure": "lourd",
+      "description": "Après avoir passé un pacte avec un terrible dragon, les DK (Dragon Knight) ont reçu des pouvoirs proches de l'immortalité. Leurs visages intimident leurs ennemis. Mieux vaut ne pas leur chercher des noises.<br/><b>Contrainte : Être un descendant indirect de l'empereur \"Heldentod Ier\" (l'avoir comme ascendant sachant qu'il est mort il y a plus de 200 ans).</b>",
+      "specialisation": "Polyvalent en physique et en magique, capable de tenir comme d'affaiblir"
     },
     {
       "Classe": "Voleur",
@@ -48,7 +56,9 @@
       "Charisme": 6,
       "Esprit": 7,
       "PV": 40,
-      "armure": "leger"
+      "armure": "leger",
+      "description": "Tapis dans l'ombre, Le voleur rusé et silencieux tire profit de sa vitesse pour prendre les ennemis de court lors des combats. Très discret.",
+      "specialisation": "Spécialisé contre les ennemis mono-cible"
     },
     {
       "Classe": "Assassin",
@@ -58,7 +68,9 @@
       "Charisme": 5,
       "Esprit": 6,
       "PV": 50,
-      "armure": "leger"
+      "armure": "leger",
+      "description": "Les assassins maîtrisent l’art de supprimer leurs adversaires, sans laisser de traces. Grâce à leurs techniques de combat avancées, ils peuvent également affronter leurs adversaires en face à face.",
+      "specialisation": "Spécialisé contre les ennemis buffés"
     },
     {
       "Classe": "Danselame",
@@ -68,7 +80,9 @@
       "Charisme": 8,
       "Esprit": 6,
       "PV": 40,
-      "armure": "leger"
+      "armure": "leger",
+      "description": "Les danselames sont avant tout des artistes, ils savent jouer de leur charme et ont une grande agilité pour se mouvoir dans l'environnement, les rendant imprévisibles. Ils préfèrent cependant éviter les combats car ils ne résistent pas beaucoup. Enchaîne des mouvements en combo.",
+      "specialisation": "Spécialisé dans la communication et la négociation"
     },
     {
       "Classe": "Samouraï",
@@ -78,7 +92,9 @@
       "Charisme": 5,
       "Esprit": 7,
       "PV": 55,
-      "armure": "lourd"
+      "armure": "lourd",
+      "description": "Un samouraï ne fait confiance qu’à son katana. Au bout d’années d’entraînement, même le plus lourd des katanas semble léger comme une plume. Leur code d'honneur est sans faille. Ils cherchent en permanence leur voie. Attaque beucoup à mi-distance. <br/><b>Contrainte : Croit et applique le code d'honneur des Samouraïs : Honnête, Courageux, Respectueux, Loyal : Servir une Cause pour Protéger.</b>",
+      "specialisation": "Spécialisé contre les ennemis nombreux ou imposant"
     },
     {
       "Classe": "Chasseur",
@@ -88,7 +104,9 @@
       "Charisme": 6,
       "Esprit": 7,
       "PV": 45,
-      "armure": "leger"
+      "armure": "leger",
+      "description": "Les chasseurs utilisent leurs compétences de tir et leurs félins pour immobiliser leurs ennemis à distance, avant de déclencher des tirs mortels. Peuvent poser des pièges",
+      "specialisation": "Spécialisé dans le combat face à un ennemi, accompagné de familiers"
     },
     {
       "Classe": "Ingénieur",
@@ -98,7 +116,9 @@
       "Charisme": 5,
       "Esprit": 6,
       "PV": 50,
-      "armure": "leger"
+      "armure": "leger",
+      "description": "Les ingénieurs aiment utiliser des explosifs et autres machines pour prouver l’utilité de la technologie au combat. Ils peuvent crafter différents objets et se mécaniser. <br/><b>Contrainte : Être intéressé par la technologie.</b>",
+      "specialisation": "Très polyvalent face à tout type d'ennemis, pour les blesser, les affaiblir, etc..."
     },
     {
       "Classe": "Corsaire",
@@ -108,7 +128,9 @@
       "Charisme": 6,
       "Esprit": 6,
       "PV": 45,
-      "armure": "leger"
+      "armure": "leger",
+      "description": "Les corsaires sont rapides et agiles, ils s'adaptent à tout environnement et étudient l’ennemi pour repérer ses faiblesses. Expert d'attaque à distance, mais peuvent être au CàC.",
+      "specialisation": "Spécialisé pour découvrir/explorer et se sortir de situation critique"
     },
     {
       "Classe": "Juge",
@@ -118,7 +140,9 @@
       "Charisme": 5,
       "Esprit": 7,
       "PV": 50,
-      "armure": "leger"
+      "armure": "leger",
+      "description": "les juges sont des pourfendeurs se battant avec une faux. Ils combattent à la fois au corps à corps et à distance et utilise la peur pour entraver leurs ennemis. <br/><b>Contrainte : Servir une cause (à choisir), avec pour engagement de devoir Tuer/Condamner.</b>",
+      "specialisation": "Spécialisé contre les ennemis très physiques et/ou sans esprit"
     },
     {
       "Classe": "Clerc",
@@ -128,7 +152,9 @@
       "Charisme": 7,
       "Esprit": 7,
       "PV": 35,
-      "armure": "magique"
+      "armure": "magique",
+      "description": "Les clercs invoquent le pouvoir divin pour soigner les blessures et protéger les alliés. Ce sont des fervents de l'église de la Curie Métérole, ils sont généralement missionnés par le pape.",
+      "specialisation": "Spécialisé dans les soins, adaptés pour les grands groupes."
     },
     {
       "Classe": "Barde",
@@ -138,7 +164,9 @@
       "Charisme": 8,
       "Esprit": 7,
       "PV": 35,
-      "armure": "magique"
+      "armure": "magique",
+      "description": "Les bardes sont des artistes qui utilisent les rimes, les sons et les ballades pour influer sur l’ambiance d’une bataille. Très doué pour soutenir et soigner les alliés, ils se complètent avec les danselames.",
+      "specialisation": "Spécialisé dans les soutiens de groupe, adaptés pour les grands groupes."
     },
     {
       "Classe": "Shaman",
@@ -148,7 +176,9 @@
       "Charisme": 5,
       "Esprit": 8,
       "PV": 40,
-      "armure": "magique"
+      "armure": "magique",
+      "description": "Les shamans invoquent la nature et les anciens esprits pendant le combat, ils utilisent leur pouvoir pour soutenir leurs alliés et affaiblir leurs ennemis. Ils peuvent communiquer avec les esprits.<br/><b>Contrainte : Être proche de la nature, la préserver.</b>",
+      "specialisation": "Polyvalent et peut changer de rôle rapidement dans le combat"
     },
     {
       "Classe": "Sage",
@@ -158,7 +188,9 @@
       "Charisme": 6,
       "Esprit": 8,
       "PV": 40,
-      "armure": "magique"
+      "armure": "magique",
+      "description": "Les sages sont des érudits de l'église, ils se battent généralement avec un marteau, sont capables de bénir l'équipement de leurs alliés et d'enchanter des gemmes.<br/><b>Contrainte : @TODO Rework (Trouver une contre-partie qui est plus réalisable et apporte une vraie contrainte dans le gameplay comme les autres) : Travail pour la Curie Métérole ou l'Ordre des Chevaliers de la Rose : obligation de participer à des rites et évènements, de travailler la semaine et de poser des congés.</b>",
+      "specialisation": "Spécialisé dans tout type de soutiens, peut affaiblir les ennemis"
     },
     {
       "Classe": "Magicien",
@@ -168,7 +200,9 @@
       "Charisme": 6,
       "Esprit": 8,
       "PV": 35,
-      "armure": "magique"
+      "armure": "magique",
+      "description": "Les magiciens sont spécialisés dans le contrôle des éléments, utilisant ces particularités pour vaincre leurs ennemis. Ils maîtrisent généralement 2 éléments différents.",
+      "specialisation": "Spécialisé contre les ennemis très résistant et faible à la magie"
     },
     {
       "Classe": "Illusionniste",
@@ -178,7 +212,9 @@
       "Charisme": 6,
       "Esprit": 9,
       "PV": 35,
-      "armure": "magique"
+      "armure": "magique",
+      "description": "Les illusionnistes maîtrisent les arts de la tromperie, ils affectent l'état mental de leurs ennemis pour les vaincres, ils sont discrets et fourbes.",
+      "specialisation": "Spécialisé contre les ennemis sans esprit."
     },
     {
       "Classe": "Démoniste",
@@ -188,7 +224,9 @@
       "Charisme": 6,
       "Esprit": 8,
       "PV": 35,
-      "armure": "magique"
+      "armure": "magique",
+      "description": "Les démonistes empruntent le pouvoir des ténèbres, insouciants du danger que représente le mal. Ils peuvent ainsi réaliser des sacrifices pour attaquer, se renforcer ou affaiblir. Ils peuvent être possédé par un esprit démoniaque.",
+      "specialisation": "Assez polyvalent et diablement efficace entouré des siens"
     },
     {
       "Classe": "Luminary",
@@ -198,7 +236,9 @@
       "Charisme": 5,
       "Esprit": 7,
       "PV": 45,
-      "armure": "magique"
+      "armure": "magique",
+      "description": "Les Luminarys sont des guerriers-mages utilisant les opposées : les ténèbres et la lumière, pour anéantir leurs ennemis. Ils doivent cependant conserver cet équilibre pour ne pas vaciller dans le chaos.<br/><b>Contrainte : Doit s'équilibrer entre la lumière et les ténèbres pour éviter la folie, le chaos. <br/>Exception : Cette règle ne s'applique pas si le personnage n'a qu'un élément (jusqu'au niveau 5)</b>",
+      "specialisation": "Spécialisé dans les dégâts purs face à tout type d'ennemis"
     }
   ],
   "races": [
@@ -209,7 +249,13 @@
       "Intelligence": 0,
       "Charisme": 0,
       "Esprit": 1,
-      "PV": 0
+      "PV": 0,
+      "image": "images/jdrgalerie/Race_Humain.webp",
+      "traits": ["Art : Joaillerie", "Ambitieux et polyvalent"],
+      "description": [
+        "Les humains sont une race intelligente, provenant d'un des continents du Nord. Étant une des premières races à avoir colonisé le continent central, leurs cultures tendent à être les plus diverses et répandues. Ils ont construit de nombreuses villes et même des états sur le continent central, et tout ce qui reste de leur passé dans le Nord sont quelques tribus nomades éparpillées.",
+        "Leur artisanat racial est la Fusion de Bijoux (Humains) (création de gemmes pour armes et armures)."
+      ]
     },
     {
       "Race": "Ezelin",
@@ -218,7 +264,13 @@
       "Intelligence": 0,
       "Charisme": 1,
       "Esprit": 0,
-      "PV": -5
+      "PV": -5,
+      "image": "images/jdrgalerie/Race_Ezelin.webp",
+      "traits": ["Art : Tisserie", "Malin et débrouillard"],
+      "description": [
+        "Les Ezelins sont semblables à des enfants humains. Ils sont connus pour être espiègles et très autonome. Grâce à leur aptitude, les Ezelins ont tendances à se dresser en haut de la hiérarchie, c'est la race possèdant le plus de nobles.",
+        "Leur artisanat racial est le Tissage (améliore l'efficacité des trophées)."
+      ]
     },
     {
       "Race": "Ursun",
@@ -227,7 +279,13 @@
       "Intelligence": 0,
       "Charisme": 0,
       "Esprit": 1,
-      "PV": 5
+      "PV": 5,
+      "image": "images/jdrgalerie/Race_Ursun.webp",
+      "traits": ["Art : Glyphes", "Fidèle et respectueux", "Anti-héros : Ursuns Belliqueux"],
+      "description": [
+        "Les Ursuns sont une race soudée venant des hautes montagnes du continent central. L'histoire et la culture sont sacro-saintes pour eux, car ils en ont beaucoup. Il y a plusieurs centaines d'années, tous les Ursun vivaient sous la loi d'un grand Roi, mais un conflit pour le trône a divisé le royaume en deux factions belligérantes. L'usurpateur a échoué mais a mené ses adeptes dans les basses terres. Bien qu'il soit mort depuis longtemps, ses adeptes, nommés les belliqueux, continuent encore la guerre de nos jours.",
+        "Leur artisanat racial est le Décryptage de Glyphes (fabrication de glyphes de classe donnant un bonus)."
+      ]
     },
     {
       "Race": "Zumi",
@@ -236,7 +294,13 @@
       "Intelligence": 0,
       "Charisme": 0,
       "Esprit": 1,
-      "PV": -5
+      "PV": -5,
+      "image": "images/jdrgalerie/Race_Zumi.webp",
+      "traits": ["Art : Technologie", "Créatif et commerciaux"],
+      "description": [
+        "Les petits Zumis sont une race créative, aimant innover et commercer. Ils proviennent des lointains déserts arides du Sud-Ouest et une théorie affirme que cette existence désertique a laissé leurs esprits ouverts aux inspirations du cosmos (il est important de noter que ce point de vue romanesque a été émis par les Zumis eux-mêmes). Ils ont voyagé vers le continent central pour profiter des énormes opportunités commerciales qu'il offre et s'entendent généralement bien avec les autres races. Cependant, ils méprisent les Anurans, les considérant trop frivoles et obtus aux arts scientifiques.",
+        "Leur artisanat racial est l'Ingénierie (fabrication d'objets donnant divers bonus)."
+      ]
     },
     {
       "Race": "Anuran",
@@ -245,7 +309,13 @@
       "Intelligence": 1,
       "Charisme": 1,
       "Esprit": -1,
-      "PV": 0
+      "PV": 0,
+      "image": "images/jdrgalerie/Race_Anuran.webp",
+      "traits": ["Art : Alchimie et Teintures", "Amicaux et drôles"],
+      "description": [
+        "Avant leur voyage vers le continent central, les Anuran vivaient assez isolés au continent du Sud-Est. Après être entrés en contact avec d'autres races, leur curiosité a pris le dessus et leur timidité s'est envolée. Il se sont bien adaptés, devenant sociables et de bonne compagnie, amicaux et hospitaliers. Leur structure sociologique a également évolué, et ils sont désormais connus pour leur grand sens de l'humour.",
+        "Leur artisanat racial est l'Alchimie (création de potions augmentant les capacités, ainsi que des teintures spéciales pour coiffes et habits)."
+      ]
     },
     {
       "Race": "Torturran",
@@ -254,7 +324,13 @@
       "Intelligence": 1,
       "Charisme": 0,
       "Esprit": 1,
-      "PV": 5
+      "PV": 5,
+      "image": "images/jdrgalerie/Race_Torturran.webp",
+      "traits": ["Art : Herbologie et Magie ancienne", "Conseiller et intelligent", "Anti-héros : cultes sombres"],
+      "description": [
+        "Les Torturrans foulaient déjà le sol d'Eden alors que les rivières n'avaient même pas encore rempli les mers (origine continent sud-est comme les Anurans ?). Ancienne comme aucune autre, cette race est célèbre pour son savoir accumulé dans les herbes traditionnelles, la magie et les secrets perdus. Avec le temps, ils sont devenus un symbole de bons conseils et d'intelligence.",
+        "Malgré cela, un culte s'est formé parmi la race. Ce culte exécute de sombres rituels, et bien que ces pratiquants soient une minorité, leur notoriété grandit."
+      ]
     },
     {
       "Race": "Drakai",
@@ -263,7 +339,13 @@
       "Intelligence": 1,
       "Charisme": -1,
       "Esprit": 0,
-      "PV": 0
+      "PV": 0,
+      "image": "images/jdrgalerie/Race_Drakai.webp",
+      "traits": ["Art : Nécromancie et Magie", "Mystérieux et naïf", "Anti-héros : Drakaïs du Bul'tik"],
+      "description": [
+        "Les Drakais sont originaies d'un continent du Nord auquel personne ne sait rien, et ils se réjouissent de ce mystère. Ils sont très sociaux, formant des clans familiaux très soudés sans rapport avec les liens du sang. Les Drakaïs sont connus pour être de puissants magiciens qui aiment tremper dans la nécromancie et la magie noire. A tel point que certains de leurs ancêtres ont organisés un massacre de milier d'être humain il y a 200 ans pendant la Grande Guerre. Cela à entaché énormément leur réputation.",
+        "Malgré cela, ils n'ont en quelque sorte pas grand chose dans le crâne et sont facilement manipulables pour commettre des mauvais actes pour d'autres."
+      ]
     },
     {
       "Race": "Tuskar",
@@ -272,7 +354,14 @@
       "Intelligence": -1,
       "Charisme": 0,
       "Esprit": 0,
-      "PV": 5
+      "PV": 5,
+      "image": "images/jdrgalerie/Race_Tuskar.webp",
+      "traits": ["Art : Forge", "Méfiant et constructif"],
+      "description": [
+        "Comme les Ursuns, les Tuskars viennent du continent central, plus précisément aux niveaux des basses terres. Bien que pas vraiment méchants, ils ont une réputation d'être très associal et peu courtois. Leur nature méfiante et leurs gestes quelques peu aggressif peuvent induire en erreur.",
+        "Mais ces défauts sont contrebalancés par leur génie dans le domaine de l'architecture et de la forge. On raconte que leur capitale pourrait résister aux intempéries pendant plusieurs millénaires.",
+        "Pour les Tuskars, leur défense est un symbole d'honneur."
+      ]
     },
     {
       "Race": "Ogre",
@@ -281,7 +370,12 @@
       "Intelligence": -1,
       "Charisme": 0,
       "Esprit": 0,
-      "PV": 0
+      "PV": 0,
+      "image": "images/jdrgalerie/Race_Ogre.webp",
+      "traits": ["Art : Combat", "Violent et téméraire", "Anti-héros : Ogres d'Aristère"],
+      "description": [
+        "Les Ogres passent la plupart de leur temps à se battre. Ils détestent quitter un combat et se réjouissent particulièrement lors des massacres. Bien qu'ambitieux, ils ne sont pas toujours très malins et finissent souvent comme soldats d'infanterie. Sauf pour les plus malins d'entre eux, notamment la tribu des Khan en Aristère."
+      ]
     }
   ]
 }

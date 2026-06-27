@@ -1,0 +1,484 @@
+{
+  "personnageLabels": {
+    "force": [
+      "Permet d'utiliser des attaques lourdes, de pousser, de soulever.",
+      "Si la stat est à 1 ou 2 : Impossible de tenir une arme. 0 : Immobile.",
+      "Permet de bloquer des coups physiques (Dé/2)",
+      "",
+      "Un blocage à 20 inflige 5 dégâts de plus.",
+      "La réussite est limité à 18.",
+      "Le blocage est limité à 13."
+    ],
+    "dexté": [
+      "Permet d'utiliser des attaques agiles et rapide, de se mouvoir, courir.",
+      "Si la stat est à 1 ou 2 : Impossible de se déplacer. 0 : Immobile.",
+      "Permet d'esquiver des attaques mono-cible (Dé/2) et quelques AoE selon le contexte (voir Infos JDR).",
+      "",
+      "Une esquive à 20 inflige 5 dégâts de plus.",
+      "La réussite est limité à 18.",
+      "L'esquive est limité à 13."
+    ],
+    "intel": [
+      "Permet d'utiliser des attaques magiques, de tester son érudition, sa réflexion.",
+      "Si la stat est à 1 ou 2 : Impossible de réfléchir, action directe. 0 : Immobile.",
+      "Permet de bloquer des coups magiques (Dé/2)",
+      "",
+      "Un blocage à 20 inflige 5 dégâts de plus.",
+      "La réussite est limité à 18.",
+      "Le blocage est limité à 13."
+    ],
+    "charisme": [
+      "Permet d'intéragir avec les autres personnes dans différents contexte :",
+      "éloquence, persuasion, négociation, menace, distraction, ...",
+      "",
+      "La réussite est limité à 18."
+    ],
+    "esprit": [
+      "Permet d'utiliser des buffs, des débuffs et des invocations.",
+      "L'Esprit est la statistique la plus polyvalente et partagée par l'ensemble des classes (Facilite le gameplay inter-classe).",
+      "Si la stat est à 3 ou 4 : Immobile, 1 ou 2 : Evanouissement. 0 : Mort cérébrale.",
+      "Permet aussi de résister (Dé/2) à des envoûtements (contrôle d'esprit, peur)",
+      "",
+      "La réussite est limité à 18.",
+      "La résistance est limitée à 13."
+    ],
+    "niv": [
+      "Augmente automatiquement tous les 100 points d'expériences du Niveau 1 à 5, puis tous les 150 de 6 à 10, puis 200.",
+      "Tous les niveaux paire (2,4,6,8), vous obtenez une compétence.",
+      "Au Niveau 5 vous avez +1 en Esprit.",
+      "Au Niveau 10 et 15, c'est +1 où vous voulez."
+    ],
+    "pv": ["Statistique des PV, augmente de 5 par niveau."],
+    "stress": [
+      "Fatigue/Stress max : 200%. Chaque 50%, les stats diminue de 1 (4 max).",
+      "La fatigue s'accumule au fur et à mesures des combats (sauf tour des cieux). Le stress uniquement dans les zones dédiées.",
+      "",
+      "Le stress accentué augmente de 50%, la réduction diminue de 33%."
+    ],
+    "infoEQPT": [
+      "Changer d'arme en combat (si équipée) se fait en début de tour (action instantanée).",
+      "Sinon, échanger d'arme ou d'accessoire prend 1 tour.",
+      "",
+      "Porter une armure non adapté (magique, léger, lourd) implique des malus de stats (voir page Infos JDR, section Armure).",
+      "",
+      "Le montant total de l'ensemble des stuffs est limité :",
+      {
+        "list": [
+          "+2 de montant des sorts",
+          "+1 durée des sorts",
+          "-1 durée des malus",
+          "+50% PV soin reçu",
+          "+50% de dégât critique",
+          "Chance d'être visé (+ compétence) : 90% / -90%"
+        ]
+      },
+      "",
+      "Le montant fixe total (hors %) des accessoires est limité :",
+      {
+        "list": [
+          "+2 par stat",
+          "+3 blocage/esquive",
+          "Soins (infligé, reçu) : 6",
+          "Dégâts infligés (Soi, Pet) : 6 (+2 si bonus élémentaire)",
+          "Dégâts reçu (armure) : 5"
+        ]
+      }
+    ],
+    "passif10": [
+      "Le passif niveau 10 consiste en un ajout de montant de stats.",
+      "Vous avez 2 points à répartir dans les montants suivant :",
+      "1 point :",
+      {
+        "list": ["Dégât +1", "Soin +1", "Dégât reçu -1", "PV +7.5", "Familier : Dégât et Soin +1"]
+      },
+      "2 points :",
+      {
+        "list": [
+          "Blocage Physique +1",
+          "Esquive +1",
+          "Blocage Magique +1",
+          "Résistance d'esprit +1",
+          "Montant des sorts +1",
+          "Une statistique +1"
+        ]
+      },
+      "<span style='color: lightcoral;'>/!\\ Attention : vous ne pourrez plus facilement changer votre passif après avoir choisi !</span>",
+      "A noter : ces montants ne comptent pas dans la limite des stuffs (voir Equipements - Infos)"
+    ],
+    "passif12": [
+      "Le passif niveau 12 consiste en un ajout de montant de stats.",
+      "Vous avez 4 points à répartir dans les montants suivant (max 2 points par montant, sauf montant 3 & 4) :",
+      "1 point :",
+      {
+        "list": ["Dégât +1", "Soin +1", "Dégât reçu -1", "PV +7.5", "Familier : Dégât et Soin +1"]
+      },
+      "2 points :",
+      {
+        "list": [
+          "Blocage Physique +1",
+          "Esquive +1",
+          "Blocage Magique +1",
+          "Résistance d'esprit +1",
+          "Montant des sorts +1",
+          "Une statistique +1"
+        ]
+      },
+      "3 points :",
+      {
+        "list": ["+1 emplacement de sort"]
+      },
+      "4 points :",
+      {
+        "list": ["Durée des sorts +1"]
+      },
+      "<span style='color: lightcoral;'>/!\\ Attention : vous ne pourrez plus facilement changer votre passif après avoir choisi !</span>",
+      "A noter : ces montants ne comptent pas dans la limite des stuffs (voir Equipements - Infos)"
+    ],
+    "passif14": [
+      "Le passif niveau 14 octroi au personnage une nouvelle capacité unique, il peut s'agir d'un passif ou d'une aptitude.",
+      "Ces capacités sont similaires à celles des boss, car le niveau 14+ reflète un très haut niveau de puissance.",
+      "Voici la liste des capacités...",
+      "",
+      "Capacités utilisables 2 fois par séance :",
+      {
+        "list": [
+          "Survivaliste : Survie à 1 PV à un coup fatal, et immunise au prochain coup reçu (s'il y en a un) ce même tour (ne fonctionne pas 2 fois le même tour)",
+          {
+            "text": "Propagation : Change la portée d'un sort Mono en AoE courte-portée, ou AoE courte en grande, si sort de buff/malus : durée -1 tour",
+            "list": [
+              "Exception sur la durée : Parasite, Blessure Douloureuse, Silence et Scellement dure entre 2 et 3 tours. Dédoublement dure 1 tour max."
+            ]
+          },
+          {
+            "text": "Amplification : Augmente de 50% tout les effets (stat, bloc, montant, ...) des sorts de buff (sauf sort d'atk/malus, et indéfni). Les sorts Buff et Soin, la partie Soin n'est pas amplifiée.",
+            "list": ["Particularité : Le 50% est fait à l'arrondi inférieur (règle à tester en pratique)"]
+          }
+        ]
+      },
+      "Capacités utilisables 3 fois par séance :",
+      {
+        "list": [
+          "Seconde Chance : Relance de dé (sauf si échec critique (19,20))",
+          "Adaptation : Changement de stuff en combat sans contrepartie, poids supportable augmenté",
+          "Attaque Chargé : 1 tour d'incantation (sans 1er jet de dé), l'attaque aura +33% de dégât et l'ennemi -3 Bloc/Esq/Res"
+        ]
+      },
+      "Capacité activée en permanence :",
+      {
+        "list": [
+          "Constitution Supérieure : Esprit +1 et +3 points à choisir sur le Passif 12, toujours avec la limite totale de 2 points par montant."
+        ]
+      },
+      "A noter : Les capacités liés aux sorts ne sont pas consommées en cas d'échec, sauf en cas de critique (19,20)"
+    ],
+    "guardianFatigue": [
+      "En tant que Gardien Eternel, vous avez la possibilité de Switcher de classe. Mais cela n'est pas sans coût.",
+      "- Chaque switch supprime les buffs actifs du personnage",
+      "- Chaque switch augmente votre fatigue (entre 50 et 10 selon votre niveau).",
+      "- Avant le niveau 10, le switch consomme votre tour. Au-delà, le switch devient une action instantanée."
+    ]
+  },
+  "universLabels": {
+    "critique": {
+      "label": "Critique",
+      "description": [
+        "Les valeurs extrêmes des Dé (1, 20) sont des critiques et (2, 19) semi-critiques. Voici leurs effets :",
+        "<table><thead><tr><th scope='col'>Dé (+effet)</th><th scope='col'>Effet Attaques</th><th scope='col'>Effet Buffs</th><th scope='col'>Effet Bloc/Esq</th></tr></thead><tbody><tr><td>Dé 0</td><td>Montant max des dés +50%</td><td>Montant max des dés +50% SINON Durée +2 tours</td><td>Selon contexte</td></tr><tr><td>Dé 1</td><td>Montant max des dés</td><td>Montant max des dés SINON Durée +1 tour</td><td>Selon contexte</td></tr><tr><td>Dé 2</td><td>Selon contexte & stuffs</td></tr><tr><td>Dé 19</td><td>Selon contexte & stuffs</td></tr><tr><td>Dé 20/21/22</td><td>Mono : le lanceur prend les dégâts : 0 armure,<br/>AoE : les alliés dedans prennent, sinon : le lanceur</td><td>Buff converti en Malus</td><td>Dégât reçu +X</td></tr><tr><td>Dé 20</td><td>Dégât = Jet de dé, montant/2</td><td>Durée divisée par 2</td><td>Dégât reçu +5</td></tr><tr><td>Dé 21</td><td>Dégât = Jet de dé, montant total</td><td>Durée totale</td><td>Dégât reçu +10</td></tr><tr><td>Dé 22</td><td>Dégât max (zone AoE élargie)</td><td>Durée totale, Effet *2</td><td>Dégât reçu +50%</td></tr></tbody></table>Pour rappel : les buffs convertis en malus par des échecs critiques ne sont pas annulables."
+      ]
+    },
+    "aoe": {
+      "label": "AoE & Esquive",
+      "description": [
+        "Il existe 4 types d'Attaques de Zone (AoE) :",
+        "",
+        "<img class='skillRangeIcon' src='http://voldre.free.fr/Eden/images/layout/L-.png'/> Attaque en Ligne de Courte portée :",
+        "Esquivable Malus 4 si proche, 2 si éloigné.",
+        "",
+        "<img class='skillRangeIcon' src='http://voldre.free.fr/Eden/images/layout/L+.png'/> Attaque en Ligne de Longue portée :",
+        "Esquivable seulement de loin, Malus 3-4.",
+        "",
+        "<img class='skillRangeIcon' src='http://voldre.free.fr/Eden/images/layout/R-.png'/> Attaque en Rond de Courte portée :",
+        "Esquivable Malus 4 si proche, 2 si éloigné.",
+        "",
+        "<img class='skillRangeIcon' src='http://voldre.free.fr/Eden/images/layout/R+.png'/> Attaque en Rond de Longue portée :",
+        "Esquivable seulement de loin, Malus 3-4.",
+        "",
+        "Concernant l'esquive, tout sort mono-cible peut être esquivé, sauf les sorts d'esprits."
+      ]
+    },
+    "bloquage": {
+      "label": "Bloquage",
+      "description": [
+        "Toutes les attaques peuvent être bloquées (physiquement (force) ou magiquement (intelligence))",
+        "Bloquer plusieurs fois de suite donne des malus (Blocage -1 par coup), si le coup suivant est une attaque mono-cible, blocage -1 sur le coup.",
+        "Cumule max : -4 blocage.",
+        "",
+        "Même avec malus et autres effets, un Dé à 1 ou 2 génèrera tout le temps une réussite de blocage."
+      ]
+    },
+    "invisible": {
+      "label": "Invisible",
+      "description": [
+        "Quand un personnage est invisible : Réussite/ Chance de toucher /2 (sauf AoE : -4).",
+        "A l'inverse, un personnage invisible qui frappe réduit les chances d'esquive/blocage/résistance de -2.",
+        "Seuls les sorts d'Esprit (et Parasite Obscur) laissent invisible, SAUF les sorts qui infligent des dégâts ou des statuts (hypnose/dodo/...). Se prendre un coup fait sortir aussi.",
+        "",
+        "A noter : il n'est pas possible de relancer un sort d'invisibilité tant qu'on l'est encore."
+      ]
+    },
+    "protege": {
+      "label": "Protéger",
+      "description": [
+        "Un personnage peut protéger un allié d'une seule attaque par tour. Pour cela, il aura un malus de blocage selon la situation (2 ou +).",
+        "Si un second ennemi attaque, la protection est impossible.",
+        "Sur un échec critique, c'est la personne protégée qui se prend le coup. Dé 19 ou Dé 20 : 0 blocage."
+      ]
+    },
+    "incanter": {
+      "label": "Incanter",
+      "description": [
+        "Un personnage peut incanter un sort sur plusieurs tours. Pendant ce temps, le personnage ne peut plus esquiver ni se déplacer.",
+        "Sur un échec critique de blocage (voire une réussite critique de l'ennemi, selon le contexte), l'incantation est annulée.",
+        "",
+        "Les effets des réussites critiques varient selon les incantations :",
+        "- Incantation en 3 tours (3 dés) : le 1er supprime le 2nd tour, le 2nd tour augmente les dégâts de 5 (ou +?), le 3eme tour implique le montant maximum des dés,",
+        "- Incantation en 2 tours (2 dés) : le 1er tour augmente les dégâts de 5 (ou +?), le 2nd tour implique le montant maximum des dés,",
+        "- Incantation en 2 tours (1 dé) : le dé est au Tour 1 et implique le montant maximum des dés."
+      ]
+    },
+    "coup-allié": {
+      "label": "Coup Allié",
+      "description": [
+        "Lorsqu'on décide de se prendre un coup par un allié (joueur, familier), comme pour un blocage sur un dé 20 : le joueur prend les dégâts divisés par 2 et sans armure."
+      ]
+    },
+    "status": {
+      "label": "Status",
+      "description": [
+        "Un status est un malus d'altération d'état qui est non annulable. Autrement dit, les sorts qui retire des malus comme Prévention ne fonctionnent pas.",
+        "Voici les altérations d'états qui existent (+ la Stat d'annulation) :",
+        {
+          "list": [
+            "Hypnose (Esprit) : Le lanceur contrôle la cible.",
+            "Endormissement (Esprit) : La cible ne peut plus agir, endormi.",
+            "Assomé (Esprit) : La cible ne peut plus agir, dans le coma.",
+            "Entrave (Force) : La cible peut agir, mais ne peut plus bouger, Esquive -5.",
+            "Paralysie (Force) : La cible ne peut plus agir, son corps est bloqué."
+          ]
+        },
+        "Ces altérations peuvent être retirées à chaque tour en suivant ce calcul pour la stat définie :",
+        {
+          "list": ["Tour 1 (lorsqu'on subit le sort) : Stat/2,", "Tour 2 : Stat*0.75,", "Tour 3 et + : Stat"]
+        },
+        "Une nouvelle tentative (pour retirer l'altération) est possible si la personne est attaquée, le jet de dé change selon l'altération :",
+        {
+          "list": [
+            "Hypnose, Assomée, Paralysie : Si frappé : Tentative égale au montant de la stat pour le Tour X (réussite +1 après chaque coup reçu, ne compte que sur le tour actuel).",
+            "Endormissement : - Si frappé en Mono : Libérée, - Si frappé en AoE : Tentative égale au montant de la stat pour le Tour X.",
+            "Entrave : Aucune annulation de l'altération"
+          ]
+        },
+        "A noter : plus le combat dure et plus les ennemis ont subis des altérations, <b>moins ils ont de chance d'être de nouveau touché</b> (bonus de blocage/résistance).",
+        "Cela évite le spam et ajoute du RP : difficile d'endormir quand bien éveillé, le corps s'adapte pour résister à l'hypnose et la paralysie, etc...",
+        "",
+        "Il n'est pas possible de remettre un statut déjà actif (refresh)."
+      ]
+    },
+    "familier": {
+      "label": "Familier",
+      "description": [
+        "Il est possible d'invoquer jusqu'à 2 familiers simultanément, toutes sources confondues (compétences, équipements). Un même familier ne peut être invoqué qu'une fois.",
+        "",
+        "Chaque familier gagne +10 PV par tranche de 5 niveaux du joueur.",
+        "",
+        "Ils agissent pendant le tour du joueur comme un personnage (attaque, blocage, ...).",
+        "Il n'est pas possible de ré-invoquer un familier encore en vie."
+      ]
+    },
+    "armure": {
+      "label": "Armure",
+      "description": [
+        "Il existe 3 types d'armures (magique, léger, lourd), chaque classe permet de porter l'un de ces types.",
+        "Certaines classes combinées peuvent porter un type supplémentaire (Chevalier hors tank, Sage et Luminary hors mage)",
+        "",
+        "Si le personnage porte une armure d'un type différent de ces classes, les malus suivants sont appliqués :",
+        {
+          "list": [
+            "Stuff non magique : Intelligence -2,",
+            "Stuff non léger : Dextérité -2,",
+            "Stuff non lourd : Force -2,"
+          ]
+        },
+        "Si le type d'armure est le même pour les 2 classes du personnage, le malus de la Stat est de -3."
+      ]
+    },
+    "montant": {
+      "label": "Montant Buff",
+      "description": [
+        "Le montant des buffs augmente :",
+        {
+          "list": [
+            "Les dégâts infligés des buffs (A la charge, Magie extrême, Aura du Samouraï, ...),",
+            "Les dégâts reçus des buffs (Encouragement musical, Mur de Titan, Robotisation, ...)"
+          ]
+        },
+        "Les montants des malus sont également compris dans ce terme montant des buffs :",
+        {
+          "list": [
+            "Les dégâts infligés des malus (Parasite, Flèche empoisonnée, ...)",
+            "Les dégâts reçus des malus (Perce-Armure, Affablissement Mental, ...)"
+          ]
+        },
+        "Rappel : le montant des buffs de l'ensemble des stuffs est limité à +2",
+        "",
+        "Pour la durée des sorts, le max est à +1 tour (2 si passif 12). Les capacités des équipements en bénéficient aussi, mais ne peuvent gagner qu'un tour max."
+      ]
+    },
+    "monture": {
+      "label": "Monture Combat",
+      "description": [
+        "Une monture de combat est considérée comme :",
+        "1) Une arme évolutive (emplacement d'arme) qui octroie des compétences au personnage (les compétences consomment le tour du perso), les autres emplacements d'armes n'affectent que le perso, pas la monture",
+        "2) Un familier : il a ses PV, ses stats, et seuls les compétences et accessoires dédiés aux familiers agissent dessus."
+      ]
+    },
+    "instant": {
+      "label": "Instantanée",
+      "description": [
+        "Dans chaque tour d'un joueur, il est possible de faire 1 action (attaque, ...) et 1 action instantanée qui est facultative, voici la liste de ces actions :",
+        {
+          "list": [
+            [
+              "Changement d'armes parmi les 3 emplacements.",
+              "/!\\ changer un équipement par un autre consomme le tour"
+            ],
+            [
+              "Compétences instantanées : octroyées par certaines classes ou équipements.",
+              "/!\\ Un même sort instantanée ne peut être utilisé que tous les 3 tours (anti-spam)"
+            ],
+            "Utiliser un objet/gadget : 1 potion, 1 bombe, ..."
+          ]
+        },
+        "A noter : il est possible d'utiliser 2 actions instantanées en 1 tour, la seconde action consommera le tour.",
+        "/!\\ Faire un échec critique (19, 20) sur une action instantanée fait perdre le tour."
+      ]
+    },
+    "degatPM": {
+      "label": "Phys / Mag",
+      "description": [
+        "Les dégâts physiques (P) englobe les dégâts réalisés par des attaques de Force, de Dextérité et de Charisme.",
+        "Les dégâts magiques (M) englobe les dégâts réalisés par des sorts d'Intelligence et d'Esprit"
+      ]
+    },
+    "survie": {
+      "label": "Survie",
+      "description": [
+        "Lorsqu'un joueur tombe KO, sa vie est en jeu. Son temps avant la mort est compté selon les cicronstances (lieu, contexte) et ses dégâts, soit <b>environ</b> :",
+        {
+          "list": [
+            "A 0 : 10 tours",
+            "A -25 : 8 tours",
+            "A -50 : 5 tours",
+            "A -75 : 3 tours",
+            "A -100 : 2 tours",
+            "Si les PV descendent à l'équivalent des PV max (ou -150 PV) : 0 tour (mort instantanée)"
+          ]
+        },
+        "A noter qu'il est possible d'être soigné (sort, potion) et blessé, et que franchir un seuil augmente/diminue les tours.",
+        "De plus, pour chaque KO supplémentaire dans un laps de temps court, la survie est diminué de 2 tours.",
+        "",
+        "Un jet de survie est lancé quand il reste 5, 2 puis 0 tours. Le jet de survie peut changer la durée de survie (en tour) : Dé 1 : +2 tours, Dé 2-5 : +1 et l'inverse en négatif."
+      ]
+    },
+    "soin-recu": {
+      "label": "Soin Reçu",
+      "description": [
+        "Les bonus de soins reçus (montant fixe ou %), ne s'appliquent que sur les compétences et certains accessoires, mais pas sur les objets (gadgets, potions, ...)."
+      ]
+    },
+    "lowStats": {
+      "label": "Stat basse",
+      "description": [
+        "Lorsqu'une statistique descend trop, des effets néfastes arrivent. Voici leurs effets :",
+        "<table><thead><tr><th scope='col'>Statistique</th><th scope='col'>2 (Esprit : 4 et 3)</th><th scope='col'>1 (Esprit : 2 et 1)</th><th scope='col'>0</th></tr></thead><tbody><tr><td>Force</td><td>Impossible de tenir une arme</td><td>Impossible de porter une armure</td><td>Immobile</td></tr><tr><td>Dextérité</td><td>Déplacement extrêmement ralentit</td><td>Impossible de se déplacer</td><td>Immobile</td></tr><tr><td>Intelligence</td><td>Impossible de réfléchir, action immédiate</td><td>Impossible d'utiliser une compétence</td><td>Immobile</td></tr><tr><td>Esprit</td><td>Immobile</td><td>Evanouis</td><td>Mort Immédiate</td></tr></tbody></table>"
+      ]
+    },
+    "eternalGuardian": {
+      "label": "Gardien Eternel",
+      "description": [
+        "<img src='http://voldre.free.fr/Eden/images/skillIcon/xoBIamgE20.png' style='float: left; margin-right: 0.5rem;'/>Les Gardiens Eternels sont les élus d'une prophétie missionné pour sauver le monde. Ils naissent dans des Crystaux Bleus qui se forme naturellement et aléatoirement.",
+        "",
+        "D'après la prophétie les Gardiens Éternels se réveillent quand ils sentent inconsciemment que le mal grandit, leur nombre dépend du niveau de menace qui pèse sur Ezur.",
+        "",
+        "La singularité des Gardiens Eternels réside dans leur capacité à pouvoir s'adapter à toute situation en changeant leurs aptitudes de combat (aka changement de classe).",
+        "Ainsi, ils sont capables à tout moment de switcher d'une classe à l'autre, ce qui les rends très polyvalent.",
+        "",
+        "Il existe 2 types de Gardiens Eternels :",
+        "- Partiel : Né d'un crystal défectueux (ou de façon prématuré), ces Gardiens possèdent un choix limité de classes,",
+        "- Complet : Né au terme de leur croissance, ces Gardiens maîtrisent au fur et à mesure de leur gain d'expériences de nouvelles classes :",
+        {
+          "list": [
+            "Par défaut : les 5 premières classes de chaque catégorie",
+            "Au niveau 5 : les 5 secondes classes de chaque catégorie",
+            "Au niveau 8 : les 5 troisièmes classes de chaque catégorie",
+            "Au niveau 10: additionné de la réussite d'une épreuve dédiée, l'une ou plusieurs des 5 quatrièmes classes"
+          ]
+        },
+        "Dernières particularités des Gardiens Eternels :",
+        "- Chaque switch supprime les buffs actifs du personnage",
+        "- Chaque switch augmente votre fatigue (entre 50 et 10 selon votre niveau).",
+        "- Avant le niveau 10, le switch consomme votre tour. Au-delà, le switch devient une action instantanée."
+      ]
+    }
+  },
+  "elementsInfo": {
+    "description": "Chaque attaque possède un élément (physique ou élémentaire), connaîtres les faiblesses des ennemis permet de récupérer des trésors précieux. Chaque ennemi possède 2 faiblesses, parmis :",
+    "elements": [
+      {
+        "element": "contondant",
+        "icon": "images/layout/contondant.png",
+        "description": "(frappe) : est causée par les griffes, marteaux, masses, gourdins, ainsi que bâton et grimoire"
+      },
+      {
+        "element": "tranchant",
+        "icon": "images/layout/tranchant.png",
+        "description": ": est causée par les épées, dagues, hache, épée colossale, faux"
+      },
+      {
+        "element": "perçant",
+        "icon": "images/layout/percant.png",
+        "description": ": est causée par les arcs, pistolets, lances"
+      },
+      {
+        "element": "feu",
+        "icon": "images/layout/feu.png",
+        "description": ": utilisé principalement par les classes : DPS magiques, Danselame, Chevalier dragon"
+      },
+      {
+        "element": "glace",
+        "icon": "images/layout/glace.png",
+        "description": ": utilisé principalement par les classes : Magicien, Illusionniste, Chevalier, Sage"
+      },
+      {
+        "element": "foudre",
+        "icon": "images/layout/foudre.png",
+        "description": ": utilisé principalement par les classes : DPS magiques, Shaman, Samouraï"
+      },
+      {
+        "element": "nature",
+        "icon": "images/layout/nature.png",
+        "description": ": utilisé principalement par les classes : Soins, Ingénieur, Guerrier"
+      },
+      {
+        "element": "lumière",
+        "icon": "images/layout/lumiere.png",
+        "description": ": utilisé principalement par les classes : Soins, Templier, Luminary"
+      },
+      {
+        "element": "ténèbres",
+        "icon": "images/layout/tenebres.png",
+        "description": ": utilisé principalement par les classes : Démoniste, Luminary, Juge"
+      }
+    ]
+  }
+}

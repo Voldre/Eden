@@ -25,8 +25,65 @@ const cardKinds = ["map", "boss", "composant", "anecdote"]
 // Map Elements
 
 const worldmapE = document.querySelector("#worldmap")!
-const continentE = document.querySelector(".continent")!
+const continentE = document.querySelector<HTMLElement>('.continent[data-worldmap="0"]')!
 const mapMenuEs = [...document.querySelectorAll<HTMLElement>(".mapMenu")!]
+
+type WorldmapPoint = {
+  id: string
+  name: string
+  hasMobs: boolean
+}
+
+const getWorldmapMarkerRoot = (wmap: number): HTMLElement | null => {
+  const continent = document.querySelector<HTMLElement>(`.continent[data-worldmap="${wmap}"]`)
+
+  return continent?.querySelector<HTMLElement>("[data-worldmap-markers]") ?? continent
+}
+
+const renderWorldmapMarkers = (): void => {
+  const groupedMaps = new Map<string, WorldmapPoint[]>()
+
+  Object.entries(mapsJSON).forEach(([id, map]) => {
+    if (
+      !Number.isFinite(map.wmap) ||
+      !Number.isFinite(map.wmap_x) ||
+      !Number.isFinite(map.wmap_y) ||
+      !getWorldmapMarkerRoot(map.wmap)
+    ) {
+      return
+    }
+
+    const groupKey = `${map.wmap}|${map.wmap_x}|${map.wmap_y}`
+    const group = groupedMaps.get(groupKey) ?? []
+    group.push({ id, name: map.wmap_name ?? map.name, hasMobs: !!map.mobs?.length })
+    groupedMaps.set(groupKey, group)
+  })
+
+  groupedMaps.forEach((maps, groupKey) => {
+    const [wmap, top, left] = groupKey.split("|").map(Number) as [number, number, number]
+    const marker = createElement("div", undefined, {
+      style: {
+        top: `${top}%`,
+        left: `${left}%`,
+        filter: maps.some((map) => map.hasMobs) ? undefined : "saturate(0.5) hue-rotate(180deg)",
+      },
+    })
+
+    if (maps.length === 1) marker.dataset.map = maps[0]!.id
+
+    maps.forEach((map, index) => {
+      const label = createElement("p", map.name, index ? { style: { top: `${16 + index * 20}px` } } : undefined)
+
+      if (maps.length > 1) label.dataset.map = map.id
+
+      marker.append(label)
+    })
+
+    getWorldmapMarkerRoot(wmap)?.append(marker)
+  })
+}
+
+renderWorldmapMarkers()
 
 //  LOADING
 let indexPerso: string | undefined

@@ -195,8 +195,8 @@
       "Brassard du Héros",
       "Collier d'Asbi"
     ],
-    "inventaire": "Monture Avocalpaga -> Brocoli\n1 semaine de repas Alpaga\n10 médaille d'arène\nChapeau de capitaine,\nGemme du chaos\nPendentif occulte\n1 fragment de crystal d'eden\nÉpine de monstre\nFourrure alpaga *2\nPoudre magnétique ×4\nNoyau abyssal\nCollier d'asbi\nCarapace Sacrificiel\n1 semaine de nourriture fraîche \n\nMoi :\nLivre sur les drakais\nPoils d'alpaga\nCrystal liquide\nCache oreille v2  *1\n1 eau forêt ensoleillée  \n3 potion de soins ( 2 des10+6)\n1 potion de résurrection (3 des 10 + 10)\nPotion stimulante\nSac d'Alpaga Doré\nÉcusson de la curie - Argent (Maël)\nPoignard d'andredie\nCarapace Sacrificiel\n\nLassar maison :\nDédicace de de Leonhard\nFaucille démoniaque (trophée 🏆)\n3 crystal \n6 fragments ",
-    "argent": "635",
+    "inventaire": "Monture Avocalpaga -> Brocoli\n1 semaine de repas Alpaga\n10 médaille d'arène\nChapeau de capitaine,\nVeste du Désert\nManteau Polaire\nGemme du chaos\nPendentif occulte\n1 fragment de crystal d'eden\nÉpine de monstre\nFourrure alpaga *2\nPoudre magnétique ×4\nNoyau abyssal\nCollier d'asbi\nCarapace Sacrificiel\n1 semaine de nourriture fraîche \n\nMoi :\nLivre sur les drakais\nPoils d'alpaga\nCrystal liquide\nCache oreille v2  *1\n1 eau forêt ensoleillée  \n3 potion de soins ( 2 des10+6)\n1 potion de résurrection (3 des 10 + 10)\nPotion stimulante\nSac d'Alpaga Doré\nÉcusson de la curie - Argent (Maël)\nPoignard d'andredie\nCarapace Sacrificiel\n\nLassar maison :\nDédicace de de Leonhard\nFaucille démoniaque (trophée 🏆)\n3 crystal \n6 fragments ",
+    "argent": "407",
     "personnalite": "Malvis: joviale, drôle,fonce dans le tas, attire les problèmes, ne sait pas chanter\nMilo : fonce dans le tas, protecteur, pas comique\nMode Milo (+2 force / -1 dex / -1 intel).\nMalvis a 18 ans\nCapable de Switch entre Milo et Malvis (réussite a 10) action instantanée \nMont schaka\nArdua ??? \n",
     "background": "Malvis Doreval est originaire de la haute terre et vit avec sa famille dans une ferme d'alpaga. Son père, puis son frère jumeau Milo qui a pris le relais, a poursuivi son exploration pour trouver les alpagas les plus rares au monde << alpagas dorés >>. Cependant lors d'une expéditions son frère Milo meurt tragiquement. \nElle doit donc prendre sa place pour trouver des alpagas uniques, néanmoins elle ne sera jamais vraiment seule lors de ses expéditions car l'âme de son frère a trouvé refuge dans sa folie.\nCommence a détesté les nobles de chez Erida",
     "notes": "Rumbledore magicien qui vit au bourbes chelona-> anti dieu faire réapparaître (xénophobie) -> marais decrepi et sud ouest\nRomy ingénieur mines (ami)\nTorturans forêt arc en ciel\nMamie dans la coline tranquille\nLassar -> chef expédition au sein de la curimeterol (mec)\nBilly -> commerçant Alpaga.\nSteve le corsaire (ami)\nMaesly fille ingénieur Alpaga désert \nTemplier 3vs3 -> Sora\nVoleur 3vs3 -> Dalas\nMarma Templier chef d'une unité défense curie meterole (Milo)(ami)\nUrsina\nMoyemoye-> Zumi robot\nAdonis -> tueur enfui\nKasar - braconnier qui connait Milo\nEnro - maître d'art\nPaolo - corsaire \nLes 3 filles que Marma t'a décrite suivant ta description : Narissa (unité offensive), Peroni (unité offensive), Vimira (lieutenant défensive)\n\nOsbo est un maître chasseur éveillé à la Vallée de Vulcain : renards !\nAmanda guerrier que connait etincellia \nAuranne\nAlara - désert ville \nStar (Basile ) famille Schwartz Zumi noir\nFresnel Augustin\nAguero toturan mort\nFaible au contondant et à la foudre",
@@ -205,7 +205,7 @@
     "passif14": "Seconde Chance : Relance de dé (sauf si échec critique)",
     "isArchived": true,
     "joueur": "Victorine",
-    "lastUpdate": "2026-05-05T01:36:13.687Z"
+    "lastUpdate": "2026-06-13T20:12:19.022Z"
   },
   "4": {
     "nom": "Eivor",
@@ -1288,7 +1288,7 @@
       "Embuscade",
       "Coup Névralgique",
       "Pluie de Flèches",
-      "Flèche Terrorisante",
+      "Attaque Terrorisante",
       ""
     ],
     "forceB": "",
@@ -1780,9 +1780,8 @@
             "Morsure Sauvage",
             "Invocation du Tigre",
             "Invocation Aigle Chasseur",
-            "Récupération de la bête",
+            "Soutien de la bête",
             "Flèche Eblouissante",
-            "Flèche Empoisonnée",
             "Perforation",
             ""
           ]
@@ -1802,7 +1801,7 @@
             "Coup Névralgique",
             "Perce-Armure",
             "Embuscade",
-            "Dague Chapardeuse",
+            "Coup précis",
             ""
           ]
         },
@@ -1966,7 +1965,7 @@
     "skills": [
       "Poème du Vent",
       "Flèche Eblouissante",
-      "Récupération de la bête",
+      "Soutien de la bête",
       "Blessure Douloureuse",
       "Attaque tournoyante",
       "Encouragement Musical",
@@ -2205,7 +2204,7 @@
     "pvmax": 135,
     "force": 10,
     "dexté": 14,
-    "intel": 12,
+    "intel": 13,
     "charisme": 10,
     "esprit": 16,
     "skills": [
@@ -2233,7 +2232,7 @@
     "sticky": "",
     "isArchived": false,
     "joueur": "Victorine",
-    "lastUpdate": "2026-04-21T21:36:24.324Z"
+    "lastUpdate": "2026-06-25T19:42:50.210Z"
   },
   "43": {
     "nom": "Foudroyeur",
@@ -2304,7 +2303,7 @@
     "intel": 5,
     "charisme": 12,
     "esprit": 14,
-    "skills": ["Furtivité", "Embuscade", "Frénésie des Ogres", "Attaque Rapide", "Dague Chapardeuse", "", "", "", ""],
+    "skills": ["Furtivité", "Embuscade", "Frénésie des Ogres", "Attaque Rapide", "Coup précis", "", "", "", ""],
     "forceB": "",
     "dextéB": "+2",
     "intelB": "",
@@ -2360,17 +2359,7 @@
           "intel": 5,
           "charisme": 12,
           "esprit": 14,
-          "skills": [
-            "Furtivité",
-            "Embuscade",
-            "Frénésie des Ogres",
-            "Attaque Rapide",
-            "Dague Chapardeuse",
-            "",
-            "",
-            "",
-            ""
-          ]
+          "skills": ["Furtivité", "Embuscade", "Frénésie des Ogres", "Attaque Rapide", "Coup précis", "", "", "", ""]
         }
       ]
     },
@@ -2585,7 +2574,7 @@
     "xp": 365,
     "niv": 4,
     "awaken": "",
-    "pv": 55,
+    "pv": 56,
     "stress": 0,
     "pp": "http://voldre.free.fr/Eden/images/jdrgalerie/Callisto.jpg",
     "classeP": "Sage",
@@ -2620,7 +2609,7 @@
     "sticky": "Shroom-Dono = nom du Champi",
     "isArchived": false,
     "joueur": "Valentin",
-    "lastUpdate": "2026-04-26T17:01:07.065Z"
+    "lastUpdate": "2026-05-14T22:04:49.546Z"
   },
   "48": {
     "nom": "Tucker",
@@ -3027,10 +3016,10 @@
     "nom": "Ugluk",
     "race": "Ogre",
     "classeS": "Shaman",
-    "xp": 1200,
+    "xp": 1260,
     "niv": 10,
-    "awaken": "Shaman",
-    "pv": 150,
+    "awaken": "Chev Dragon",
+    "pv": 75,
     "stress": 0,
     "pp": "http://voldre.free.fr/Eden/images/jdrgalerie/Ogre Shaman.png",
     "classeP": "Chev Dragon",
@@ -3068,23 +3057,23 @@
       "Collier Durable"
     ],
     "inventaire": "3 potions de soin",
-    "argent": "50",
+    "argent": "148",
     "personnalite": "Petit il faisait peur à tout le monde de par son charisme et ses cris.\nEn grandissant, il en a fait sa spécialité et si cela ne suffit pas, pourquoi ne pas devenir un crocodile pour régler la situation.",
     "background": "",
     "notes": "",
     "sticky": "",
     "isArchived": false,
     "joueur": null,
-    "lastUpdate": "2026-05-10T10:58:47.050Z"
+    "lastUpdate": "2026-05-10T21:28:23.935Z"
   },
   "57": {
     "nom": "Squiz",
     "race": "Torturran",
     "classeS": "Sage",
-    "xp": 1200,
+    "xp": 1260,
     "niv": 10,
-    "awaken": "Shaman",
-    "pv": 145,
+    "awaken": "Sage",
+    "pv": 118,
     "stress": 0,
     "pp": "http://voldre.free.fr/Eden/images/jdrgalerie/TorturranShaman.png",
     "classeP": "Samouraï",
@@ -3096,11 +3085,11 @@
     "esprit": 17,
     "skills": [
       "Guérison",
-      "Résurrection",
       "Séisme",
+      "Résurrection",
       "Aura : Bouclier protecteur",
-      "Barrière magique",
       "Garde rapprochée",
+      "Barrière magique",
       "Dissipation",
       "Dash Foudroyant",
       ""
@@ -3121,24 +3110,24 @@
       "Pierre de sécurité Fétiche",
       "Bouquin Pare-balle"
     ],
-    "inventaire": "3 potions de soin",
-    "argent": "50",
+    "inventaire": "3 potions de soin\nCroc de smilodon d'Amur",
+    "argent": "145",
     "personnalite": "<A définir>",
     "background": "",
     "notes": "",
     "sticky": "",
     "isArchived": false,
     "joueur": null,
-    "lastUpdate": "2026-05-10T10:57:53.790Z"
+    "lastUpdate": "2026-05-10T21:29:44.624Z"
   },
   "58": {
     "nom": "Corsa",
     "race": "Zumi",
     "classeS": "Illusionniste",
-    "xp": 1200,
+    "xp": 1260,
     "niv": 10,
-    "awaken": "Shaman",
-    "pv": 120,
+    "awaken": "Corsaire",
+    "pv": 75,
     "stress": 0,
     "pp": "http://voldre.free.fr/Eden/images/jdrgalerie/Zumi Mage F.png",
     "classeP": "Corsaire",
@@ -3160,7 +3149,7 @@
       ""
     ],
     "forceB": "",
-    "dextéB": "+2",
+    "dextéB": "+4",
     "intelB": "",
     "charismeB": "+1",
     "espritB": "+1",
@@ -3176,13 +3165,13 @@
       "Cache oeil de Pirate"
     ],
     "inventaire": "3 potions de soin",
-    "argent": "50",
-    "personnalite": "Elle est très bipolaire dû à la présence de son frère dans son esprit.",
+    "argent": "147",
+    "personnalite": "Elle est très bipolaire dû à la présence de son frère dans son esprit. On l'a surnomme la doublure des mers.",
     "background": "Alors qu'elle était encore dans le ventre de sa mère avec son frère, ses pouvoirs d'illusionniste se sont éveillés, consumant son frère. Depuis sa naissance elle vit avec son frère dans son esprit, qu'elle a nommé Corso. Ses parents l'ont abandonnés par peur de ses pouvoirs et de sa personnalité, elle s'est alors tournée vers la piraterie. Elle a grandi sur un navire pirate où elle appris a maitrisé ses pouvoirs. Elle est aujourd'hui une pirate crainte et incontrôlable.",
-    "notes": "",
+    "notes": "Trésor aux ruines d'Amur\nThefnac",
     "sticky": "",
     "isArchived": false,
     "joueur": null,
-    "lastUpdate": "2026-05-10T10:57:37.548Z"
+    "lastUpdate": "2026-05-10T21:28:08.630Z"
   }
 }

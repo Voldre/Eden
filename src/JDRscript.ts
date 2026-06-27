@@ -16,6 +16,7 @@ import {
   persosJSON,
   galeryJSON,
   masterJSON,
+  rulesJSON,
   statsJSON,
   cardJSON,
   CLASSES,
@@ -179,6 +180,9 @@ allClassE.forEach((classE, i) => {
       if (persoData?.guardian) {
         // If guardian, apply for second class the primary class
         classeSElement.value = selectedClass
+
+        // List must be updated before insert skills
+        updateAvailableSkillsList()
 
         const classConfig = persoData.guardian.config.find((config) => config.classeP === selectedClass)
         if (classConfig)
@@ -624,6 +628,9 @@ function insertSkill(skillElement: CompetenceE, skillName: string, awakenClass?:
 
   if (selectedSkill.effet === "Invocation") {
     const pvPetE = createElement("input", undefined, { type: "number" })
+    const match = selectedSkill.desc.match(/(\d{2})\s*PV/)
+    const pv = match ? Number(match[1]) + Math.floor((persoData?.niv ?? 1) / 5) * 10 : undefined
+    pvPetE.placeholder = `PV (${pv} + stuff ?)`
     skillElement.append(pvPetE)
   }
   // Update 05/01/2024, add inputs to handle charges (light/dark)
@@ -1680,73 +1687,7 @@ function syntheseDesc(): string {
   return description
 }
 
-const passifPoints12Desc = `1 point :<ul><li>Dégât +1</li><li>Soin +1</li><li>Dégât reçu -1</li><li>PV +7.5</li><li>Familier : Dégât et Soin +1</li></ul>
-2 points :<ul><li>Blocage Physique +1</li><li>Esquive +1</li><li>Blocage Magique +1</li><li>Résistance d'esprit +1</li><li>Montant des sorts +1</li><li>Une statistique +1</li></ul>`
-
-const passifPoints34Desc = `3 points :<ul><li>+1 emplacement de sort</li></ul>
-4 points :<ul><li>Durée des sorts +1</li></ul>`
-
-const passifWarning = `<span style="color: lightcoral;">/!\\ Attention : vous ne pourrez plus facilement changer votre passif après avoir choisi !</span><br/>
-A noter : ces montants ne comptent pas dans la limite des stuffs (voir "Equipements - Infos")`
-
-const labelsDescription = {
-  force: `Permet d'utiliser des attaques lourdes, de pousser, de soulever.
-    <br/>Si la stat est à 1 ou 2 : Impossible de tenir une arme. 0 : Immobile.
-    <br/>Permet de bloquer des coups physiques (Dé/2)<br/>
-    <br/>Un blocage à 20 inflige 5 dégâts de plus.<br/>La réussite est limité à 18.<br/>Le blocage est limité à 13.`,
-  dexté: `Permet d'utiliser des attaques agiles et rapide, de se mouvoir, courir.
-    <br/>Si la stat est à 1 ou 2 : Impossible de se déplacer. 0 : Immobile.
-    <br/>Permet d'esquiver des attaques mono-cible (Dé/2) et quelques AoE selon le contexte (voir Infos JDR).
-    <br/><br/> Une esquive à 20 inflige 5 dégâts de plus. <br/> La réussite est limité à 18.<br/>L'esquive est limité à 13.`,
-  intel: `Permet d'utiliser des attaques magiques, de tester son érudition, sa réflexion.
-    <br/>Si la stat est à 1 ou 2 : Impossible de réfléchir, action directe. 0 : Immobile.
-    <br/>Permet de bloquer des coups magiques (Dé/2)<br/>
-    <br/> Un blocage à 20 inflige 5 dégâts de plus.<br/> La réussite est limité à 18.<br/>Le blocage est limité à 13.`,
-  charisme: `Permet d'intéragir avec les autres personnes dans différents contexte :
-    <br/> éloquence, persuasion, négociation, menace, distraction, ...
-    <br/><br/> La réussite est limité à 18.`,
-  esprit: `Permet d'utiliser des buffs, des débuffs et des invocations.
-    <br/>L'Esprit est la statistique la plus polyvalente et partagée par l'ensemble des classes (Facilite le gameplay inter-classe).
-    <br/>Si la stat est à 3 ou 4 : Immobile, 1 ou 2 : Evanouissement. 0 : Mort cérébrale.
-    <br/> Permet aussi de résister (Dé/2) à des envoûtements (contrôle d'esprit, peur)<br/>
-    <br/>La réussite est limité à 18.<br/>La résistance est limitée à 13.`,
-  niv: "Augmente automatiquement tous les 100 points d'expériences du Niveau 1 à 5, puis tous les 150 de 6 à 10, puis 200.<br/> Tous les niveaux paire (2,4,6,8), vous obtenez une compétence.<br/> Au Niveau 5 vous avez +1 en Esprit.<br/> Au Niveau 10 et 15, c'est +1 où vous voulez.",
-  pv: "Statistique des PV, augmente de 5 par niveau.",
-  stress:
-    'Fatigue/Stress max : 200%. Chaque 50%, les stats diminue de 1 (4 max).<br/> La fatigue s\'accumule au fur et à mesures des combats (sauf tour des cieux). Le stress uniquement dans les zones dédiées.<br/><br/>Le stress "accentué" augmente de 50%, la "réduction" diminue de 33%.',
-  infoEQPT:
-    "Changer d'arme en combat (si équipée) se fait en début de tour (action instantanée).<br/>Sinon, échanger d'arme ou d'accessoire prend 1 tour.<br/><br/>Porter une armure non adapté (magique, léger, lourd) implique des malus de stats (voir page \"Infos JDR\", section \"Armure\").<br/><br/>Le montant total de l'ensemble des stuffs est limité : <ul><li>+2 de montant des sorts</li><li> +1 durée des sorts</li><li> -1 durée des malus</li><li>+50% PV soin reçu</li><li>+50% de dégât critique</li><li>Chance d'être visé (+ compétence) : 90% / -90%</li></ul><br/>Le montant fixe total (hors %) des accessoires est limité : <ul><li>+2 par stat</li><li>+3 blocage/esquive</li><li>Soins (infligé, reçu) : 6</li><li>Dégâts infligés (Soi, Pet) : 6 (+2 si bonus élémentaire)</li><li>Dégâts reçu (armure) : 5</li></ul>",
-  //  'argent':"L'or permet d'acheter des objets, des armes, des armures, de se nourrir, dormir, etc..."
-  synthese: syntheseDesc(),
-  passif10: `Le passif niveau 10 consiste en un ajout de montant de stats.<br/>Vous avez 2 points à répartir dans les montants suivant :<br/>${passifPoints12Desc}${passifWarning}`,
-  passif12: `Le passif niveau 12 consiste en un ajout de montant de stats.<br/>Vous avez 4 points à répartir dans les montants suivant (max 2 points par montant, sauf montant 3 & 4) :<br/>${passifPoints12Desc}${passifPoints34Desc}${passifWarning}`,
-  passif14: `Le passif niveau 14 octroi au personnage une nouvelle capacité unique, il peut s'agir d'un passif ou d'une aptitude.
-  <br/>Ces capacités sont similaires à celles des boss, car le niveau 14+ reflète un très haut niveau de puissance.
-  <br/>Voici la liste des capacités...
-  <br/><br/>Capacités utilisables 2 fois par séance : 
-  <ul>
-  <li>Survivaliste : Survie à 1 PV à un coup fatal, et immunise au prochain coup reçu (s'il y en a un) ce même tour (ne fonctionne pas 2 fois le même tour)</li>
-  <li>Propagation : Change la portée d'un sort Mono en AoE courte-portée, ou AoE courte en grande, si sort de buff/malus : durée -1 tour
-    <ul><li>Exception sur la durée : Parasite, Blessure Douloureuse, Silence et Scellement dure entre 2 et 3 tours. Dédoublement dure 1 tour max.</li></ul>
-  </li>
-  <li>Amplification : Augmente de 50% tout les effets (stat, bloc, montant, ...) des sorts de buff (sauf sort d'atk/malus, et indéfni). Les sorts Buff et Soin, la partie Soin n'est pas amplifiée.
-    <ul><li>Exception : Les stats du Sacrifice d'Ombre ne sont boostés que de +1.</li><li>Les sorts boostés par les éveils (ex : Aura : Bouclier Protecteur, Intégration) sont limités à +4 max (au lieu de +5)</li></ul>
-  </li>
-  </ul>
-  Capacités utilisables 3 fois par séance :
-  <ul>
-  <li>Seconde Chance : Relance de dé (sauf si échec critique (19,20))</li>
-  <li>Adaptation : Changement de stuff en combat sans contrepartie, poids supportable augmenté</li>
-  <li>Attaque Chargé : 1 tour d'incantation (sans 1er jet de dé), l'attaque aura +33% de dégât et l'ennemi -3 Bloc/Esq/Res</li>
-  </ul>
-  Capacité activée en permanence : 
-  <ul>
-  <li>Constitution Supérieure : Esprit +1 et +3 points à choisir sur le Passif 12, toujours avec la limite totale de 2 points par montant.</li>
-  </ul>
-  A noter : Les capacités liés aux sorts ne sont pas consommées en cas d'échec, sauf en cas de critique (19,20)`,
-  guardianFatigue:
-    "En tant que Gardien Eternel, vous avez la possibilité de Switcher de classe. Mais cela n'est pas sans coût.<br/>- Chaque switch supprime les buffs actifs du personnage<br/>- Chaque switch augmente votre fatigue (entre 50 et 10 selon votre niveau).<br/>- Avant le niveau 10, le switch consomme votre tour. Au-delà, le switch devient une action instantanée.",
-}
+const labelsDescription = { ...rulesJSON.personnageLabels, synthese: syntheseDesc() }
 
 initDialog(labelsDescription)
 
