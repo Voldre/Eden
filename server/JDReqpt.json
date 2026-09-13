@@ -5474,7 +5474,7 @@
     "nom": "Grimoire papillon",
     "desc": "Grimoire crée par l'un des 7 héros à partir d'ancien ouvrage.",
     "effet": "Résistance d'esprit cible -2 ",
-    "montant": "Dégat +6, l'effet s'applique aussi pendant les malus.",
+    "montant": "Dégat +6, l'effet s'applique aussi pendant les status.",
     "icone": "W64002",
     "type": "arme-2m",
     "weaponType": "grimoire"
@@ -5734,7 +5734,7 @@
     "effet": "Blocage physique +2",
     "montant": "Dégât -3",
     "icone": "W70703c",
-    "type": "arme-2m",
+    "type": "arme-1m",
     "weaponType": "bouclier"
   },
   "640": {
@@ -5922,7 +5922,7 @@
     "desc": "Un anneau qui aide l’équipe à renforcer sa cohésion et à rester unie.Fonctionne que si deux personnes le porte.",
     "effet": "Malédiction du Lien",
     "montant": "Dégat reçu -2 et Esprit +1",
-    "icone": "A00003d",
+    "icone": "A00020e",
     "type": "access"
   },
   "661": {
@@ -5951,5 +5951,32 @@
     "icone": "A20086",
     "armorTypes": ["lourd"],
     "type": "armure"
+  },
+  "664": {
+    "nom": "Gandiva V12 A",
+    "desc": "Améliration du coeur du Gandiva avec de l'Asbi",
+    "effet": "",
+    "montant": "Dégât +7, réussite des sorts +1",
+    "icone": "gandivaV12A",
+    "weaponType": "flingue",
+    "type": "arme-2m"
+  },
+  "665": {
+    "nom": "Gandiva V12 M",
+    "desc": "Améliration du corps du Gandiva avec de la Mousserite",
+    "effet": "Blocage physique +1",
+    "montant": "Dégât +7",
+    "icone": "gandivaV12M",
+    "weaponType": "flingue",
+    "type": "arme-2m"
+  },
+  "666": {
+    "nom": "Gandiva V12 A.M",
+    "desc": "Améliration du coeur (Asbi)  et du corps (Mousserite) du Gandiva.",
+    "effet": "Blocage physique +1",
+    "montant": "Dégât +8, réussite des sorts +1",
+    "icone": "gandivaV12MA",
+    "weaponType": "flingue",
+    "type": "arme-2m"
   }
 }

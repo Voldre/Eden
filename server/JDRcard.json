@@ -1100,10 +1100,10 @@
   },
   {
     "id": 1247,
-    "value": 1,
+    "value": 2,
     "kind": "composant",
     "name": "Coton Cuivré",
-    "description": "Ce coton infusé de minerai pousse dans les sols riches en minéraux. Bien traité, il fait un tisu résistant.",
+    "description": "Ce coton infusé de minerai pousse dans les sols riches en minéraux. Bien traité, il fait un tissu très résistant.",
     "kindId": "I00200",
     "maps": [5, 9, 11]
   },
@@ -1793,7 +1793,7 @@
     "value": 2,
     "kind": "composant",
     "name": "Soie de tisseuse",
-    "description": "Cette soie très douce et résistante est issue d'araignée tisseuse, cela en fait une matière assez rare.",
+    "description": "Cette soie extrêmement belle est issue d'araignée tisseuse, cela en fait une matière assez rare et très prisée.",
     "kindId": "I00289b"
   },
   {
@@ -2026,7 +2026,7 @@
     "value": 2,
     "kind": "composant",
     "name": "Coton Violacée",
-    "description": "Un coton rare qui est réceptif à la magie, surtout aux ténèbres.",
+    "description": "Un coton rare qui est réceptif à la magie, améliore les effets magiques.",
     "kindId": "I00199b",
     "maps": [34, 29]
   },
@@ -2139,7 +2139,7 @@
     "value": 1,
     "kind": "composant",
     "name": "Ramie",
-    "description": "La ramie est une fibre végétale issue de l'ortie, qui appartient à la famille des urticacées, elle est présente un peu partout.",
+    "description": "La ramie est une fibre végétale issue de l'ortie, qui appartient à la famille des urticacées, elle est présente un peu partout. Si elle est bien traitée, elle peut devenir très résistante \"bloquante\".",
     "kindId": "I00147"
   },
   {
@@ -2147,7 +2147,7 @@
     "value": 2,
     "kind": "composant",
     "name": "Fleur de Lin",
-    "description": "Le lin est une matière naturelle végétale cultivée principalement dans les zones tempérées proche de la mer, très utile à la confection de vêtements.",
+    "description": "Le lin est une matière naturelle végétale cultivée principalement dans les zones tempérées proche de la mer, très utile à la confection de vêtements léger et volatile.",
     "kindId": "I00149"
   },
   {
@@ -2155,7 +2155,7 @@
     "value": 3,
     "kind": "composant",
     "name": "Coléus",
-    "description": "Le Coleus est une plante à fleur rougeoyante de la famille des Labiées, c'est une plante originaie des oasis d'Amur. Elle est connue pour apporter aux textiles des propriétés magiques tout en renforçant la matière.",
+    "description": "Le Coleus est une plante à fleur rougeoyante de la famille des Labiées, c'est une plante originaie des oasis d'Amur. Elle est connue pour apporter aux textiles des propriétés magiques.",
     "kindId": "I00148"
   },
   {
@@ -2380,6 +2380,62 @@
     "description": "Un minerai se trouvant dans des grottes humides et peu profondes. Leur rareté vient de la quantité de paramètres à respecter pour qu'ils se forment (taux d'humidité, luminosité, etc...). Utilisé pour fabriquer des armures résistantes et des armes ralentissantes.",
     "kindId": "i00547f",
     "maps": []
+  },
+  {
+    "id": 1480,
+    "value": 2,
+    "kind": "composant",
+    "name": "Chrysanthème résilient",
+    "description": "Une plante très rare capable de survivre dans tout type d'environnement, ne change que très peu face aux aléas.",
+    "kindId": "I100004e"
+  },
+  {
+    "id": 1481,
+    "value": 1,
+    "kind": "composant",
+    "name": "Esprit de petit lutin",
+    "description": "Esprit d'un jeune farfadet vigoureux. Possède une grande capacité de soin.",
+    "kindId": "I00416b"
+  },
+  {
+    "id": 1482,
+    "value": 1,
+    "kind": "composant",
+    "name": "Talisman Pigeon voyageur",
+    "description": "Permet d'envoyer un message à une connaissance. Ce talisman se transforme en oiseau pour le livrer.",
+    "kindId": "It002"
+  },
+  {
+    "id": 1483,
+    "value": 1,
+    "kind": "composant",
+    "name": "Talisman d'Observation",
+    "description": "Permet de voir à travers les murs pendant 3 tours.",
+    "kindId": "It004"
+  },
+  {
+    "id": 1484,
+    "value": 2,
+    "kind": "composant",
+    "name": "Talisman de communication",
+    "description": "Permet de communiquer avec la personnage qui possède l'autre partie du talisman.",
+    "kindId": "It001"
+  },
+  {
+    "id": 1485,
+    "value": 2,
+    "kind": "composant",
+    "name": "Talisman de scellement",
+    "description": "Permet de sceller une créature dans un réceptacle, peut échouer.",
+    "kindId": "It006"
+  },
+  {
+    "id": 1486,
+    "value": 3,
+    "kind": "composant",
+    "name": "Talisman de voyage",
+    "description": "Permet de voyager à un endroit prédéfinis.",
+    "kindId": "It003"
   },
   {
     "id": 12900,

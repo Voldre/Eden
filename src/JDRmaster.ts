@@ -406,6 +406,7 @@ Object.entries(eqptJSON).forEach(([id, eqpt]) => {
 const eqptNameFilter = inputSelector("#eqptNameFilter", "string")
 const eqptEffectFilter = inputSelector("#eqptEffectFilter", "string")
 const revertFilterNames = inputSelector("#revertNameFilter", "string")
+const conditionalFilter = inputSelector("#conditionalFilter", "string")
 
 const eqptTypeFilter = document.querySelector("#eqptTypeFilter") as SelectElement<EquipmentType>
 fillSelectOptions(eqptTypeFilter, [
@@ -422,7 +423,7 @@ fillSelectOptions(eqptArmorTypeFilter, [
     eqptFilter()
   })
 )
-;[revertFilterNames, eqptTypeFilter, eqptArmorTypeFilter].map((element) =>
+;[revertFilterNames, eqptTypeFilter, eqptArmorTypeFilter, conditionalFilter].map((element) =>
   element.addEventListener("change", () => {
     eqptFilter()
 
@@ -437,6 +438,7 @@ const eqptFilter = (): void => {
   const filterNames = eqptNameFilter.value ? eqptNameFilter.value.split(",") : []
   const filterEffects = eqptEffectFilter.value ? eqptEffectFilter.value.split(",") : []
   const isRevertFilterNames = revertFilterNames.checked
+  const isConditionalFilter = conditionalFilter.checked
 
   const filterEqptType = eqptTypeFilter.value ?? ""
   const filterArmorType = eqptArmorTypeFilter.value ?? ""
@@ -463,7 +465,11 @@ const eqptFilter = (): void => {
       (eqpt.type === "armure" && eqpt.armorTypes.some((a) => isTextInText(a, filterArmorType)))
 
     const shouldDisplay =
-      (isRevertFilterNames ? !matchesName : matchesName) && matchesEffects && matchesType && matchesArmor
+      (isConditionalFilter ? !!eqpt.condition : true) &&
+      (isRevertFilterNames ? !matchesName : matchesName) &&
+      matchesEffects &&
+      matchesType &&
+      matchesArmor
 
     return [eqptE, shouldDisplay]
   })

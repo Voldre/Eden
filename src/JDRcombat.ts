@@ -119,7 +119,7 @@ window.addEventListener("load", async () => {
     // Update to get current perso entries
     const persoIDforPlayer = joueurData.persos.indexOf(indexPerso)
     if (persoIDforPlayer === -1) {
-      throw new Error(`Le personnage ${indexPerso} n'est pas lie au joueur ${indexPlayer}.`)
+      throw new Error(`Le personnage ${indexPerso} n'est pas lié au joueur ${indexPlayer}.`)
     }
     currentPersoEntries = joueurData.entries[persoIDforPlayer] ?? 0
 
@@ -990,19 +990,19 @@ async function saveLog(earnedCoins: number, winCards: Card[] | undefined): Promi
 
 async function savePlayer(): Promise<boolean> {
   try {
-    if (!indexPerso || !joueurData || !indexPlayer) {
+    const persoIDforPlayer = indexPerso !== undefined ? joueurData?.persos.indexOf(indexPerso) : undefined
+
+    if (persoIDforPlayer === undefined || joueurData?.entries[persoIDforPlayer] === undefined || !indexPlayer) {
       toastNotification("Erreur : Le joueur n'a pas été identifié.", 6000, true)
       throw new Error(`Le joueur ${indexPlayer} du perso ${perso?.nom} n'a pas été identifié.`)
     }
     // Last control before save : if entries are negative, don't save !
-    const persoIDforPlayer = joueurData.persos.indexOf(indexPerso)
 
     // Glitch Bug fixes : Victorine 27/11/23 "Infini combat si tu gagnes avant T6-8 !"
     // En effet, l'entrée n'était pas décomptée/consommée si tu finissais avant, mtn dès la save je la compte
-    const entries = joueurData.entries[persoIDforPlayer] ?? 0
-    if (currentPersoEntries === entries) joueurData.entries[persoIDforPlayer] = entries - 1
+    if (currentPersoEntries === joueurData.entries[persoIDforPlayer]) joueurData.entries[persoIDforPlayer] -= 1
 
-    if (!joueurData.entries[persoIDforPlayer] || joueurData.entries[persoIDforPlayer] <= -1) {
+    if (joueurData.entries[persoIDforPlayer] <= -1) {
       toastNotification("Erreur : Le personnage a déjà consommé toutes ses entrées.", 6000, true)
       throw new Error(`${perso?.nom} a déjà consommé toutes ses entrées`)
     }
